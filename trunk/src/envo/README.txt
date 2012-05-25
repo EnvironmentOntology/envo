@@ -11,6 +11,24 @@
 
 == Details ==
 
-Basic Version:
+Complete Version (envo.obo):
+
+The complete version of the ontology includes "MIREOT"ed subsets of
+other ontologies such as CHEBI required in order to complete logical
+definitions.
+
+Basic Version (envo-basic.obo):
+
+The basic version of the ontology EXCLUDES any external ontology terms
+and any relationships that link to them.
+
+Which version should you use?
+
+Use of the complete version is encouraged; however, some systems have
+expectations of ontologies that are broken by the complete version
+(e.g. OLS does not allow mixed IDs), so envo-basic.obo may be more
+appropriate in some contexts.
+
+
 
 
