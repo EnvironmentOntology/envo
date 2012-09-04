@@ -22,8 +22,8 @@ These are stored in the file
  profile you create here by clicking on the settings icon (cog wheels) next to the profile 
  name. In the window that appears, you can set the ID range by editing the default rule: 
  "ID:$sequence(<number of digits>,<minimum of range>,<maximum of range>)$"
- Thus, "ENVO:$sequence(8,2000000,2999999)$" will set a range of 8 digit IDs from 300000 
- to 3999999.  
+ Thus, "ENVO:$sequence(8,2000000,2999999)$" will set a range of 8 digit IDs from 200000 
+ to 2999999.  
  
 == Derived Files ==
 
