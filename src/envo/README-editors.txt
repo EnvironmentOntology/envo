@@ -42,4 +42,15 @@ Chris Mungall is the acting release manager for now, but this role should be tak
 
 == Jenkins Continuous Integration System ==
 
+Check:
+
+http://build.berkeleybop.org/job/build-envo/
+
+after committing
+
 Contact Chris Mungall for access to the Jenkins CI system
+
+== General Guidelines ==
+
+See:
+http://wiki.geneontology.org/index.php/Curator_Guide:_General_Conventions
