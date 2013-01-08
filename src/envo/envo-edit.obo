@@ -15820,7 +15820,9 @@ id: disconnected_from
 name: disconnected_from
 def: "A is disconnected_from B if they have no parts in common." [SO:cjm]
 synonym: "non_overlapping_with" EXACT []
+expand_assertion_to: "Class: <http://www.w3.org/2002/07/owl#Nothing> EquivalentTo: (BFO_0000050 some ?X) and (BFO_0000050 some ?Y)" []
 is_metadata_tag: true
+is_class_level: true
 
 [Typedef]
 id: enriched_with
@@ -15829,6 +15831,7 @@ name: enriched_with
 [Typedef]
 id: has_part
 name: has_part
+xref: BFO:0000051
 xref: OBO_REL:has_part
 is_transitive: true
 
@@ -15848,10 +15851,12 @@ name: made_of
 [Typedef]
 id: part_of
 name: part_of
+xref: BFO:0000050
 xref: OBO_REL:part_of
 is_transitive: true
 
 [Typedef]
 id: surrounded_by
 name: surrounded_by
+xref: RO:0002219 ! surrounded by
 
