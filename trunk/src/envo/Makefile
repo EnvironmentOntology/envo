@@ -10,7 +10,7 @@ release: envo-basic.obo
 # all release files are derived from the editors version.
 # we use the default Oort setup (hermit as reasoner)
 envo-simple.obo: envo-edit.obo
-	ontology-release-runner $< --allow-overwrite --asserted --simple
+	ontology-release-runner --run-obo-basic-dag-check --error-report envo-errors.txt $< --allow-overwrite --asserted --simple
 .PRECIOUS: envo.obo
 
 envo-basic.obo: envo-simple.obo
