@@ -2730,6 +2730,7 @@ xref: Geonames:FLLS
 xref: TGN:21161
 xref: TGN:21166
 xref: Wikipedia:Waterfall
+is_a:  ENVO:00000012 ! hydrographic feature
 relationship: part_of ENVO:00000023 ! stream
 
 [Term]
@@ -2742,7 +2743,6 @@ xref: FTT:105
 xref: FTT:1223
 xref: Geonames:CRKT
 xref: Wikipedia:Tidal_creek
-is_a: ENVO:00000230 ! coastal wetland
 is_a: ENVO:00000412 ! tidal watercourse
 
 [Term]
@@ -2756,6 +2756,7 @@ xref: FTT:129
 xref: FTT:401
 xref: Geonames:CNLD
 is_a: ENVO:00000014 ! canal
+is_a: ENVO:00000070 ! constructed feature
 
 [Term]
 id: ENVO:00000043
@@ -2851,6 +2852,7 @@ xref: Geonames:BOG
 xref: TGN:21304
 xref: Wikipedia:Peatland
 is_a: ENVO:00000243 ! freshwater wetland
+relationship: has_part ENVO:00005774 ! peat soil
 
 [Term]
 id: ENVO:00000045
@@ -5516,8 +5518,7 @@ synonym: "lake" BROAD [USGS:SDTS]
 xref: FTT:221
 xref: FTT:871
 is_a: ENVO:00000016 ! sea
-intersection_of: ENVO:00000016 ! sea
-intersection_of: disconnected_from ENVO:00000015 ! ocean
+relationship: disconnected_from ENVO:00000015 ! ocean
 
 [Term]
 id: ENVO:00000220
@@ -5532,6 +5533,7 @@ xref: TGN:21470
 xref: TGN:21474
 xref: Wikipedia:Archipelago
 is_a: ENVO:00000012 ! hydrographic feature
+relationship: has_part ENVO:00000098 ! island
 
 [Term]
 id: ENVO:00000221
@@ -5550,9 +5552,8 @@ synonym: "volcanic island" RELATED []
 xref: Wikipedia:Oceanic_island
 is_a: ENVO:00000094 ! volcanic feature
 is_a: ENVO:00000098 ! island
-intersection_of: ENVO:00000098 ! island
-intersection_of: derives_from ENVO:00000247 ! volcano
-intersection_of: disconnected_from ENVO:00000223 ! continental shelf
+relationship: derives_from ENVO:00000247 ! volcano
+relationship: disconnected_from ENVO:00000223 ! continental shelf
 
 [Term]
 id: ENVO:00000223
@@ -12144,6 +12145,7 @@ relationship: part_of ENVO:00000266 ! pasture
 [Term]
 id: ENVO:00005774
 name: peat soil
+synonym: "peat" RELATED [ENVO:cjm]
 xref: Wikipedia:Peat_soil
 is_a: ENVO:00001998 ! soil
 
@@ -15809,10 +15811,13 @@ is_a: PATO:0001238 ! quality of related physical entities
 [Typedef]
 id: adjacent_to
 name: adjacent_to
+xref: RO:0002220
+is_symmetric: true
 
 [Typedef]
 id: derives_from
 name: derives_from
+xref: RO:0001000
 
 [Typedef]
 id: disconnected_from
@@ -15826,12 +15831,12 @@ is_class_level: true
 [Typedef]
 id: enriched_with
 name: enriched_with
+is_a: has_part
 
 [Typedef]
 id: has_part
 name: has_part
 xref: BFO:0000051
-xref: OBO_REL:has_part
 is_transitive: true
 
 [Typedef]
@@ -15851,7 +15856,6 @@ name: made_of
 id: part_of
 name: part_of
 xref: BFO:0000050
-xref: OBO_REL:part_of
 is_transitive: true
 
 [Typedef]
