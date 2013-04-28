@@ -1,13 +1,17 @@
 format-version: 1.2
-data-version: releases/2013-03-01
-date: 08:01:2013 13:30
+data-version: releases/2013-04-27
+date: 27:04:2013 16:52
 saved-by: cjm
+auto-generated-by: OBO-Edit 2.1-beta7
 subsetdef: abnormal_slim "Abnormal/normal slim"
 subsetdef: absent_slim "Absent/present slim"
 subsetdef: attribute_slim "Attribute slim"
 subsetdef: cell_quality "cell_quality"
+subsetdef: disposition_slim "Disposition slim"
 subsetdef: EnvO-Lite-GSC "Lite category for GSC community"
+subsetdef: mpath_slim "Pathology slim"
 subsetdef: relational_slim "Relational slim: types of quality that require an additional entity in order to exist"
+subsetdef: scalar_slim "Scalar slim"
 subsetdef: value_slim "Value slim"
 synonymtypedef: BRAND_NAME "BRAND NAME"
 synonymtypedef: FORMULA "FORMULA"
@@ -472,9 +476,10 @@ is_a: ENVO:00000063 ! water body
 
 [Term]
 id: ENVO:00000028
-name: sand pit
+name: sand pit quarry
 def: "A quarry from which sand is extracted." [MA:ma]
 synonym: "mine" BROAD [USGS:SDTS]
+synonym: "sand pit" RELATED []
 xref: Wikipedia:Sand_pit
 is_a: ENVO:00000284 ! quarry
 
@@ -945,6 +950,7 @@ is_a: ENVO:00000014 ! canal
 id: ENVO:00000049
 name: volcanic hydrographic feature
 is_a: ENVO:00000012 ! hydrographic feature
+is_a: ENVO:00000094 ! volcanic feature
 relationship: part_of ENVO:00000247 ! volcano
 
 [Term]
@@ -3507,7 +3513,6 @@ synonym: "HydrothermalVents" EXACT [NASA:earthrealm]
 xref: FTT:834
 xref: Wikipedia:Hydrothermal_vent
 is_a: ENVO:00000049 ! volcanic hydrographic feature
-is_a: ENVO:00000094 ! volcanic feature
 
 [Term]
 id: ENVO:00000216
@@ -4300,6 +4305,7 @@ name: quarry
 def: "An open-pit mine from which rock or minerals are extracted." [Wikipedia:Quarry]
 synonym: "mine" BROAD [USGS:SDTS]
 synonym: "mine site" BROAD [ADL:FTT]
+synonym: "open pit mine" BROAD []
 synonym: "quarry" EXACT [Geonames:feature]
 xref: FTT:14
 xref: FTT:974
@@ -4845,9 +4851,10 @@ is_a: ENVO:00000067 ! cave
 [Term]
 id: ENVO:00000327
 name: speleothem
-def: "A secondary mineral deposit formed in caves, most commonly calcite." [Wikipedia:Enclave_and_exclave]
+def: "A secondary mineral deposit formed in caves, most commonly calcite." [Wikipedia:Speleothem]
 xref: Wikipedia:Speleothem
-is_a: ENVO:00000067 ! cave
+is_a: ENVO:00000339 ! piece of rock
+relationship: part_of ENVO:00000067 ! cave
 
 [Term]
 id: ENVO:00000328
@@ -4928,7 +4935,7 @@ is_a: ENVO:02000019 ! bodily fluid
 [Term]
 id: ENVO:00000339
 name: piece of rock
-def: "An abiotic  mesoscopic feature  made of the mineral material of the crust of the Earth." [MA:ma]
+def: "An abiotic  mesoscopic feature made of the mineral material of the crust of the Earth." [MA:ma]
 xref: FTT:1010
 xref: FTT:145
 xref: Geonames:RK
@@ -4946,7 +4953,7 @@ disjoint_from: ENVO:01000017 ! sand
 [Term]
 id: ENVO:00000341
 name: piece of gravel
-def: "rock whose pieces are at least two millimeters (2mm) in its largest dimension (about 1/12 of an inch) and no more than 75 millimeters (about 3 inches)." [Wikipedia:Gravel]
+def: "A piece of rock that is two millimeters (2mm) in its largest dimension (about 1/12 of an inch) and no more than 75 millimeters (about 3 inches)." [Wikipedia:Gravel]
 is_a: ENVO:00000339 ! piece of rock
 
 [Term]
@@ -5262,6 +5269,7 @@ synonym: "watercourse" BROAD [USGS:SDTS]
 xref: TGN:21154
 xref: Wikipedia:River_bed
 is_a: ENVO:00000383 ! stream bed
+relationship: part_of ENVO:00000022 ! river
 
 [Term]
 id: ENVO:00000385
@@ -5998,7 +6006,6 @@ name: harbor
 def: "A place where ships may shelter from the weather or are stored." [Wikipedia:Harbor]
 xref: Wikipedia:Harbor
 is_a: ENVO:00000012 ! hydrographic feature
-is_a: ENVO:00000070 ! constructed feature
 
 [Term]
 id: ENVO:00000464
@@ -6006,6 +6013,7 @@ name: artificial harbor
 def: "A harbor constructed by human agency." [MA:ma]
 synonym: "artificial harbour" EXACT []
 xref: Wikipedia:Artificial_harbour
+is_a: ENVO:00000070 ! constructed feature
 is_a: ENVO:00000463 ! harbor
 
 [Term]
@@ -6074,6 +6082,7 @@ synonym: "mine site" RELATED [ADL:FTT]
 xref: FTT:772
 xref: Wikipedia:Gravel_pit
 is_a: ENVO:00000284 ! quarry
+relationship: has_part ENVO:01000018 ! gravel
 
 [Term]
 id: ENVO:00000474
@@ -6533,7 +6542,7 @@ id: ENVO:00000512
 name: pond bed
 def: "The ground surface that lies beneath a pond." [MA:ma]
 synonym: "pond bottom" EXACT []
-is_a: ENVO:00000501 ! bed
+is_a: ENVO:00000268 ! lake bed
 relationship: part_of ENVO:00000033 ! pond
 
 [Term]
@@ -6541,7 +6550,7 @@ id: ENVO:00000513
 name: reservoir bed
 def: "The ground surface that lies beneath a reservoir." [MA:ma]
 synonym: "reservoir bottom" EXACT []
-is_a: ENVO:00000501 ! bed
+is_a: ENVO:00000268 ! lake bed
 relationship: part_of ENVO:00000025 ! reservoir
 
 [Term]
@@ -6775,7 +6784,7 @@ synonym: "disposal site" RELATED [ADL:FTT]
 xref: FTT:621
 xref: FTT:624
 xref: Wikipedia:Landfill
-is_a: ENVO:00002204 ! contamination feature
+is_a: ENVO:00002204 ! anthropogenic contamination feature
 
 [Term]
 id: ENVO:00000534
@@ -7075,8 +7084,9 @@ is_a: ENVO:00002036 ! habitat
 id: ENVO:00000572
 name: subterrestrial habitat
 def: "A habitat that is below the surface of the earth." [NM:nm]
-synonym: "hypogeal habitat" EXACT []
+synonym: "hypogeal habitat" RELATED []
 synonym: "subterranean habitat" EXACT []
+synonym: "underground habitat" EXACT []
 is_a: ENVO:00002036 ! habitat
 
 [Term]
@@ -7261,6 +7271,7 @@ relationship: part_of ENVO:00000076 ! mine
 id: ENVO:00001997
 name: acid mine drainage
 def: "A mine drainage with an acidic pH." [MA:ma]
+synonym: "acid rock drainage" RELATED [Wikipedia:Acid_mine_drainage]
 xref: Wikipedia:Acid_mine_drainage
 is_a: ENVO:00001996 ! mine drainage
 
@@ -7702,7 +7713,7 @@ id: ENVO:00002061
 name: oil spill
 def: "The result of the unintentional release of liquid petroleum hydrocarbon into the environment as a result of human activity." [Wikipedia:Oil_spill]
 xref: Wikipedia:Oil_spill
-is_a: ENVO:00002204 ! contamination feature
+is_a: ENVO:00002204 ! anthropogenic contamination feature
 
 [Term]
 id: ENVO:00002062
@@ -7717,14 +7728,16 @@ replaced_by: ENVO:00002985
 id: ENVO:00002063
 name: oil seep
 def: "The result of the release of natural hydrocarbons to the surface of the earth, including beneath the sea, by natural geological processes." [MA:ma]
-synonym: "methane seep" EXACT []
+synonym: "methane seep" RELATED []
+synonym: "petroleam seep" RELATED []
 xref: Wikipedia:Oil_seep
-is_a: ENVO:00002204 ! contamination feature
+is_a: ENVO:00002204 ! anthropogenic contamination feature
 
 [Term]
 id: ENVO:00002112
 name: gold mine drainage
 is_a: ENVO:00001996 ! mine drainage
+relationship: derives_from ENVO:00002168 ! gold mine
 
 [Term]
 id: ENVO:00002113
@@ -7742,7 +7755,8 @@ is_a: ENVO:00002007 ! sediment
 [Term]
 id: ENVO:00002115
 name: petroleum contaminated sediment
-is_a: ENVO:00002202 ! organically contaminated sediment
+is_a: ENVO:00002180 ! naphthalene contaminated sediment
+relationship: has_increased_levels_of ENVO:00002984 ! petroleum
 
 [Term]
 id: ENVO:00002116
@@ -7753,6 +7767,7 @@ is_a: ENVO:00001998 ! soil
 id: ENVO:00002117
 name: creosote contaminated soil
 is_a: ENVO:00002116 ! contaminated soil
+relationship: has_increased_levels_of ENVO:2000001 ! creosote
 
 [Term]
 id: ENVO:00002118
@@ -7979,10 +7994,10 @@ is_a: ENVO:00002154 ! radioactive sediment
 
 [Term]
 id: ENVO:00002156
-name: Superfund Site
+name: Superfund site
 def: "A highly contaminated site designated by the United States of America's Comprehensive Environmental Response, Compensation, and Liability Act." [Wikipedia:Superfund_site]
 xref: Wikipedia:Superfund_Site
-is_a: ENVO:00002204 ! contamination feature
+is_a: ENVO:00002204 ! anthropogenic contamination feature
 
 [Term]
 id: ENVO:00002157
@@ -8004,6 +8019,7 @@ is_a: ENVO:00002006 ! water
 id: ENVO:00002160
 name: estuarine mud
 is_a: ENVO:01000001 ! mud
+relationship: part_of ENVO:00000045 ! estuary
 
 [Term]
 id: ENVO:00002161
@@ -8257,13 +8273,13 @@ is_a: ENVO:00002114 ! contaminated sediment
 
 [Term]
 id: ENVO:00002204
-name: contamination feature
+name: anthropogenic contamination feature
 is_a: ENVO:00000002 ! anthropogenic feature
 
 [Term]
 id: ENVO:00002205
 name: unexploded-ordnance dump
-is_a: ENVO:00002204 ! contamination feature
+is_a: ENVO:00002204 ! anthropogenic contamination feature
 
 [Term]
 id: ENVO:00002206
@@ -8610,6 +8626,7 @@ relationship: part_of ENVO:00000170 ! dune
 id: ENVO:00002261
 name: forest soil
 is_a: ENVO:00001998 ! soil
+relationship: part_of ENVO:00000111 ! forest
 
 [Term]
 id: ENVO:00002262
@@ -8631,6 +8648,7 @@ is_a: ENVO:0010001 ! anthropogenic environmental material
 [Term]
 id: ENVO:00002265
 name: agricultural waste
+def: "Wastewater produced in the course of agricultural activities" [Wikipedia:Agricultural_wastewater_treatment]
 xref: Wikipedia:Agricultural_waste
 is_a: ENVO:00002873 ! organic waste
 is_a: ENVO:0010003 ! agricultural environmental material
@@ -8683,6 +8701,7 @@ is_a: ENVO:00000070 ! constructed feature
 id: ENVO:00002273
 name: fluvisol
 def: "Fluvisols accommodate genetically young, azonal soils in alluvial deposits." [FAO:http\://fao.org/ag/agl/agll/wrb/doc/wrb2006final.pdf]
+xref: Wikipedia:Fluvisols
 is_a: ENVO:00001998 ! soil
 
 [Term]
@@ -8727,12 +8746,13 @@ is_a: ENVO:01000031 ! marine feature
 [Term]
 id: ENVO:00002869
 name: hay
+def: "Hay is grass, legumes or other herbaceous plants that have been cut, dried, and stored for use as animal fodder, particularly for grazing livestock such as cattle, horses, goats, and sheep." [Wikipedia:Hay]
 xref: Wikipedia:Hay
 is_a: ENVO:0010003 ! agricultural environmental material
 
 [Term]
 id: ENVO:00002870
-name: abode soil
+name: adobe soil
 is_a: ENVO:00001998 ! soil
 
 [Term]
@@ -8764,6 +8784,7 @@ is_a: ENVO:00003074 ! manufactured product
 id: ENVO:00002875
 name: oil contaminated soil
 is_a: ENVO:00002116 ! contaminated soil
+relationship: has_increased_levels_of ENVO:00002985 ! oil
 
 [Term]
 id: ENVO:00002926
@@ -8787,6 +8808,7 @@ is_a: ENVO:00002985 ! oil
 [Term]
 id: ENVO:00002984
 name: petroleum
+def: "a naturally occurring flammable liquid consisting of a complex mixture of hydrocarbons of various molecular weights and other liquid organic compounds, that are found in geologic formations beneath the Earth's surface." [Wikipedia:Petroleum]
 synonym: "crude oil" RELATED []
 xref: Wikipedia:Petroleum
 is_a: ENVO:00002985 ! oil
@@ -9694,6 +9716,7 @@ is_a: ENVO:0010154 ! processed pork
 id: ENVO:00003914
 name: chalk soil
 is_a: ENVO:00001998 ! soil
+relationship: has_increased_levels_of ENVO:00002054 ! chalk
 
 [Term]
 id: ENVO:00003915
@@ -9902,14 +9925,14 @@ is_a: ENVO:00000011 ! garden
 [Term]
 id: ENVO:00005746
 name: savanna soil
-is_a: ENVO:00001998 ! soil
+is_a: ENVO:00005750 ! grassland soil
 relationship: part_of ENVO:00000261 ! savanna
 
 [Term]
 id: ENVO:00005747
 name: compost soil
 is_a: ENVO:00001998 ! soil
-relationship: part_of ENVO:00002170 ! compost
+relationship: derives_from ENVO:00002170 ! compost
 
 [Term]
 id: ENVO:00005748
@@ -9968,12 +9991,15 @@ is_a: ENVO:00003082 ! enriched soil
 id: ENVO:00005758
 name: alluvial swamp soil
 is_a: ENVO:00002871 ! alluvial soil
+relationship: part_of ENVO:00000233 ! swamp
 
 [Term]
 id: ENVO:00005759
 name: alluvial paddy field soil
 is_a: ENVO:00002871 ! alluvial soil
 is_a: ENVO:00005740 ! paddy field soil
+is_a: ENVO:00005755 ! field soil
+relationship: part_of ENVO:00000297 ! paddy field
 
 [Term]
 id: ENVO:00005760
@@ -9989,13 +10015,14 @@ is_a: ENVO:00001998 ! soil
 
 [Term]
 id: ENVO:00005762
-name: chloropicrine-enriched soil
+name: chloropicrin enriched soil
 is_a: ENVO:00003082 ! enriched soil
 
 [Term]
 id: ENVO:00005763
 name: humus-rich acidic ash soil
 is_a: ENVO:00001998 ! soil
+relationship: has_increased_levels_of ENVO:01000000 ! humus
 
 [Term]
 id: ENVO:00005764
@@ -10046,7 +10073,7 @@ relationship: part_of ENVO:00000115 ! orchard
 [Term]
 id: ENVO:00005773
 name: pasture soil
-is_a: ENVO:00001998 ! soil
+is_a: ENVO:00005750 ! grassland soil
 relationship: part_of ENVO:00000266 ! pasture
 
 [Term]
@@ -10070,7 +10097,7 @@ is_a: ENVO:00005740 ! paddy field soil
 [Term]
 id: ENVO:00005777
 name: steppe soil
-is_a: ENVO:00001998 ! soil
+is_a: ENVO:00005750 ! grassland soil
 relationship: part_of ENVO:00000262 ! steppe
 
 [Term]
@@ -10119,6 +10146,7 @@ relationship: part_of ENVO:00000247 ! volcano
 id: ENVO:00005786
 name: upland soil
 is_a: ENVO:00001998 ! soil
+relationship: part_of ENVO:00000182 ! plateau
 
 [Term]
 id: ENVO:00005787
@@ -10165,6 +10193,7 @@ is_a: ENVO:00003930 ! scum
 id: ENVO:00005795
 name: marine mud
 is_a: ENVO:01000001 ! mud
+relationship: part_of ENVO:00000447 ! marine biome
 
 [Term]
 id: ENVO:00005796
@@ -10175,6 +10204,7 @@ is_a: ENVO:00002044 ! sludge
 id: ENVO:00005797
 name: lake bottom mud
 is_a: ENVO:01000001 ! mud
+relationship: part_of ENVO:00000268 ! lake bed
 
 [Term]
 id: ENVO:00005798
@@ -10209,17 +10239,25 @@ is_a: ENVO:00001998 ! soil
 id: ENVO:00005803
 name: animal habitation
 def: "The dwelling of an animal or group of similar animals." [MA:ma]
+synonym: "den" NARROW []
+synonym: "nest" NARROW []
 is_a: ENVO:01000009 ! biotic mesoscopic physical object
 
 [Term]
 id: ENVO:00005804
 name: nest of ant
+def: "A pile of earth, sand, pine needles, or clay or a composite of these and other materials that build up at the entrances of the subterranean dwellings of ant colonies as they are excavated. A colony is built and maintained by legions of worker ants, who carry tiny bits of dirt and pebbles in their mandibles and deposit them near the exit of the colony. They normally deposit the dirt or vegetation at the top of the hill to prevent it from sliding back into the colony, but in some species they actively sculpt the materials into specific shapes, and may create nest chambers within the mound." [Wikipedia:Ant_colony#Ant-hills]
 synonym: "ant hill" RELATED []
+synonym: "ant's nest	" EXACT []
 is_a: ENVO:00005803 ! animal habitation
 
 [Term]
 id: ENVO:00005805
 name: nest of bird
+def: "A bird nest is the spot in which a bird lays and incubates its eggs and raises its young." [Wikipedia:Bird_nest]
+synonym: "bird nest" EXACT []
+synonym: "bird's nest" EXACT []
+synonym: "eyrie" NARROW []
 is_a: ENVO:00005803 ! animal habitation
 
 [Term]
@@ -11456,7 +11494,7 @@ name: gravel
 def: "Rock whose pieces are at least two millimeters (2mm) in its largest dimension (about 1/12 of an inch) and no more than 75 millimeters (about 3 inches)." [Wikipedia:Gravel]
 xref: Wikipedia:Gravel
 is_a: ENVO:00001995 ! rock
-relationship: part_of ENVO:00000473 ! gravel pit
+relationship: has_part ENVO:00000341 ! piece of gravel
 
 [Term]
 id: ENVO:01000019
@@ -11556,6 +11594,7 @@ id: ENVO:01000031
 name: marine feature
 def: "A prominent or distinctive aspect, quality, or characteristic of a marine biome." [ISBN-10:0618455043, PLB:plb]
 is_a: ENVO:00002297 ! environmental feature
+relationship: located_in ENVO:00000447 ! marine biome
 created_by: pbuttigieg
 creation_date: 2010-03-16T12:04:50Z
 
@@ -11763,7 +11802,10 @@ creation_date: 2010-03-16T12:12:30Z
 id: ENVO:01000057
 name: marine algal bloom
 def: "A marine algal bloom is a rapid increase or accumulation in the population of algae in a marine system. Typically, only one or a small number of phytoplankton  species are involved. Although there is no officially recognized threshold level, algae can be considered to be blooming at concentrations of hundreds to thousands of cells per milliliter, depending on the severity." [PLB:plb, Wikipedia:Algal_bloom]
+synonym: "red tide" NARROW [Wikipedia:Red_tide]
 is_a: ENVO:01000031 ! marine feature
+is_a: ENVO:2000004 ! algal bloom
+relationship: located_in ENVO:00000447 ! marine biome
 created_by: pbuttigieg
 creation_date: 2010-03-16T12:12:30Z
 
@@ -12131,6 +12173,7 @@ id: ENVO:01000105
 name: marine benthic feature
 def: "A prominent or distinctive aspect, quality, or characteristic of environments occurring on or along marine benthic environments." [ISBN-10:0618455043, PLB:plb]
 is_a: ENVO:01000031 ! marine feature
+relationship: located_in ENVO:01000024 ! marine benthic biome
 created_by: pbuttigieg
 creation_date: 2010-03-16T12:27:00Z
 
@@ -12267,7 +12310,9 @@ creation_date: 2010-03-17T01:58:08Z
 id: ENVO:01000122
 name: marine hydrothermal vent
 def: "A marine hydrothermal vent is a marine benthic feature where heat generated due to tectonic activity, either at divergent plate boundaries or convergent ocean plates where back-arc spreading occurs, is released or 'vented' to the surface. The resultant high temperature water jets are laden with dissolved metals and minerals." [ISBN:044482619X, PLB:plb]
+is_a: ENVO:00000215 ! hydrothermal vent
 is_a: ENVO:01000105 ! marine benthic feature
+relationship: located_in ENVO:00000447 ! marine biome
 created_by: pbuttigieg
 creation_date: 2010-03-17T02:13:33Z
 
@@ -13262,6 +13307,66 @@ id: ENVO:02000089
 name: unpasteurized ovine milk
 is_a: ENVO:00003069 ! ovine milk
 
+[Term]
+id: ENVO:2000000
+name: chemical product
+def: "A manufactured product that is some mixture of chemicals created through some chemical engineering process" [ENVO:cjm]
+is_a: ENVO:00003074 ! manufactured product
+created_by: cjm
+creation_date: 2013-04-27T10:32:07Z
+
+[Term]
+id: ENVO:2000001
+name: creosote
+def: "The portion of chemical products obtained by the distillation of a tar that remains heavier than water, notably useful for its anti-septic and preservative properties" [Wikipedia:Creosote]
+xref: Wikipedia:Creosote
+is_a: ENVO:2000000 ! chemical product
+created_by: cjm
+creation_date: 2013-04-27T10:35:14Z
+
+[Term]
+id: ENVO:2000002
+name: industrial wastewate treatment plant
+def: "A wastewater treatment plant that treates industrial wastewater. Industrial wastewater treatment covers the mechanisms and processes used to treat waters that have been contaminated in some way by anthropogenic industrial or commercial activities prior to its release into the environment or its re-use." [Wikipedia:Industrial_wastewater_treatment]
+is_a: ENVO:00002043 ! wastewater treatment plant
+created_by: cjm
+creation_date: 2013-04-27T03:16:01Z
+
+[Term]
+id: ENVO:2000003
+name: agricultural wastewater treatment plant
+def: "A wastewater treatment plant that treats agriculatural wastewater. Agricultural wastewater treatment relates to the treatment of wastewaters produced in the course of agricultural activities. Agriculture is a highly intensified industry in many parts of the world, producing a range of wastewaters requiring a variety of treatment technologies and management practices." [Wikipedia:Agricultural_wastewater_treatment]
+is_a: ENVO:00002043 ! wastewater treatment plant
+created_by: cjm
+creation_date: 2013-04-27T03:17:36Z
+
+[Term]
+id: ENVO:2000004
+name: algal bloom
+def: "A feature that arises from a rapid increase or accumulation in the population of algae (typically microscopic) in an aquatic system." [Wikipedia:Algal_bloom]
+xref: Wikipedia:Algal_bloom
+is_a: ENVO:00000012 ! hydrographic feature
+created_by: cjm
+creation_date: 2013-04-27T04:26:24Z
+
+[Term]
+id: ENVO:2000005
+name: freshwater algal bloom
+def: "An algal bloom that is located in freshwater. Freshwater algal blooms are the result of an excess of nutrients, particularly some phosphates." [Wikipedia:Algal_bloom#Freshwater_algal_blooms]
+is_a: ENVO:2000004 ! algal bloom
+relationship: located_in ENVO:00000873 ! freshwater biome
+created_by: cjm
+creation_date: 2013-04-27T04:28:27Z
+
+[Term]
+id: ENVO:2000006
+name: nest of termite
+def: "An animal habitation constructed by termites. Termite workers build and maintain nests which house the colony. These are elaborate structures made using a combination of soil, mud, chewed wood/cellulose, saliva, and faeces. A nest has many functions such as providing a protected living space and water conservation (through controlled condensation)." [Wikipedia:Termite#Nests]
+synonym: "termite nest" EXACT []
+is_a: ENVO:00005803 ! animal habitation
+created_by: cjm
+creation_date: 2013-04-27T04:49:24Z
+
 [Typedef]
 id: adjacent_to
 name: adjacent_to
@@ -13283,8 +13388,8 @@ is_metadata_tag: true
 is_class_level: true
 
 [Typedef]
-id: enriched_with
-name: enriched_with
+id: has_increased_levels_of
+name: has_increased_levels_of
 is_a: has_part ! has_part
 
 [Typedef]
@@ -13300,11 +13405,8 @@ name: has_quality
 [Typedef]
 id: located_in
 name: located_in
+xref: RO:0001025
 is_transitive: true
-
-[Typedef]
-id: made_of
-name: made_of
 
 [Typedef]
 id: part_of
