@@ -7,7 +7,12 @@
 
 OBO=http://purl.obolibrary.org/obo
 
-release: envo-basic.obo release-diffs
+all: build
+
+build: envo-basic.obo
+
+release: build release-diffs
+#release: envo-basic.obo release-diffs
 
 # all release files are derived from the editors version.
 # we use the default Oort setup (hermit as reasoner)
