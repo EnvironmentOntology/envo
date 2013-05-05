@@ -1,7 +1,7 @@
 format-version: 1.2
-date: 27:04:2013 16:52
-saved-by: cjm
-auto-generated-by: OBO-Edit 2.1-beta7
+date: 05:05:2013 17:11
+saved-by: PLB
+auto-generated-by: OBO-Edit 2.2
 subsetdef: abnormal_slim "Abnormal/normal slim"
 subsetdef: absent_slim "Absent/present slim"
 subsetdef: attribute_slim "Attribute slim"
@@ -14323,9 +14323,10 @@ relationship: derives_from ENVO:00001995 ! rock
 [Term]
 id: ENVO:01000018
 name: gravel
-def: "Rock whose pieces are at least two millimeters (2mm) in its largest dimension (about 1/12 of an inch) and no more than 75 millimeters (about 3 inches)." [Wikipedia:Gravel]
+def: "Gravel is an environmental material which is composed of pieces of rock that are at least two millimeters (2mm) in its largest dimension and no more than 75 millimeters." [Wikipedia:Gravel]
 xref: Wikipedia:Gravel
-is_a: ENVO:00001995 ! rock
+is_a: ENVO:00010483 ! environmental material
+relationship: has_part ENVO:00000339 ! piece of rock
 relationship: has_part ENVO:00000341 ! piece of gravel
 
 [Term]
@@ -16011,6 +16012,56 @@ def: "An arid condition is an environmental condition in which annual precipitat
 is_a: ENVO:01000203 ! environmental condition
 created_by: pbuttigieg
 creation_date: 2013-04-24T13:28:18Z
+
+[Term]
+id: ENVO:01000231
+name: lava
+def: "Lava is an environmental material which is primarily composed of molten rock." [Wikipedia:lava]
+is_a: ENVO:00010483 ! environmental material
+created_by: PLB
+creation_date: 2013-05-05T16:52:47Z
+
+[Term]
+id: ENVO:01000232
+name: felsic lava
+synonym: "silicic lava" EXACT [Wikipedia:Lava]
+is_a: ENVO:01000231 ! lava
+created_by: PLB
+creation_date: 2013-05-05T16:56:29Z
+
+[Term]
+id: ENVO:01000233
+name: intermediate lava
+synonym: "andesitic lava" EXACT [Wikipedia:Lava]
+is_a: ENVO:01000231 ! lava
+created_by: PLB
+creation_date: 2013-05-05T16:56:29Z
+
+[Term]
+id: ENVO:01000234
+name: mafic lava
+synonym: "basaltic lava" RELATED [Wikipedia:Lava]
+is_a: ENVO:01000231 ! lava
+created_by: PLB
+creation_date: 2013-05-05T16:56:29Z
+
+[Term]
+id: ENVO:01000235
+name: ultramafic lava
+is_a: ENVO:01000231 ! lava
+created_by: PLB
+creation_date: 2013-05-05T16:56:29Z
+
+[Term]
+id: ENVO:01000236
+name: basalt
+def: "Basalt is a volcanic rock which is formed by the rapid cooling of basaltic lava." [Wikipedia:Basalt]
+is_a: ENVO:00002015 ! volcanic rock
+intersection_of: ENVO:00002015 ! volcanic rock
+intersection_of: derives_from ENVO:01000234 ! mafic lava
+relationship: derives_from ENVO:01000234 ! mafic lava
+created_by: PLB
+creation_date: 2013-05-05T17:07:15Z
 
 [Term]
 id: ENVO:02000000
