@@ -1,5 +1,5 @@
 format-version: 1.2
-date: 04:06:2013 22:45
+date: 06:06:2013 15:35
 saved-by: PLB
 auto-generated-by: OBO-Edit 2.2
 subsetdef: abnormal_slim "Abnormal/normal slim"
@@ -4315,6 +4315,8 @@ xref: Geonames:DSRT
 xref: TGN:21201
 xref: Wikipedia:Desert
 is_a: ENVO:00000191 ! physiographic feature
+intersection_of: ENVO:00000191 ! physiographic feature
+intersection_of: has_condition ENVO:01000230 ! arid
 
 [Term]
 id: ENVO:00000098
@@ -7116,6 +7118,8 @@ synonym: "maquis" RELATED [USGS:SDTS]
 synonym: "woodland" RELATED [USGS:SDTS]
 xref: FTT:473
 is_a: ENVO:00000300 ! scrubland
+intersection_of: ENVO:00000300 ! scrubland
+intersection_of: has_condition ENVO:01000207 ! mediterranean
 
 [Term]
 id: ENVO:00000302
@@ -9012,7 +9016,7 @@ is_a: ENVO:00000012 ! hydrographic feature
 id: ENVO:00000501
 name: bed
 def: "The portion of the ground surface which lies below water." [USGS:SDTS]
-synonym: "BOTTOM" EXACT [USGS:SDTS]
+synonym: "BOTTOM" BROAD [USGS:SDTS]
 xref: FTT:804
 xref: Wikipedia:Stream_bed
 relationship: part_of ENVO:00000063 ! water body
@@ -9444,6 +9448,7 @@ xref: FTT:289
 xref: Geonames:BLDR
 xref: TGN:21501
 is_a: ENVO:00000191 ! physiographic feature
+relationship: has_part ENVO:01000243 ! boulder
 
 [Term]
 id: ENVO:00000538
@@ -9911,7 +9916,6 @@ xref: Geonames:RK
 xref: Geonames:RKS
 xref: TGN:21444
 xref: Wikipedia:Rock
-is_a: ENVO:00000191 ! physiographic feature
 is_a: ENVO:00010483 ! environmental material
 
 [Term]
@@ -11119,6 +11123,7 @@ id: ENVO:00002229
 name: arenosol
 def: "Arenosols are sandy soils, including both soils developed in residual sands after in situ weathering of usually quartz-rich sediments or rock, and soils developed in recently deposited sands such as dunes in deserts and beach lands." [FAO:http\://fao.org/ag/agl/agll/wrb/doc/wrb2006final.pdf]
 synonym: "psamment" EXACT []
+synonym: "sandy soil" EXACT [ORCID:0000-0001-8743-9574]
 xref: Wikipedia:Arenosol
 is_a: ENVO:00001998 ! soil
 
@@ -15093,6 +15098,7 @@ id: ENVO:01000114
 name: boulder sediment
 def: "Sediment characterised by an average particle diameter greater than 256 mm." [Wikipedia:Particle_size]
 is_a: ENVO:00002007 ! sediment
+relationship: has_part ENVO:01000243 ! boulder
 created_by: pbuttigieg
 creation_date: 2010-03-17T01:58:08Z
 
@@ -16130,6 +16136,50 @@ created_by: PLB
 creation_date: 2013-06-04T22:33:52Z
 
 [Term]
+id: ENVO:01000240
+name: conifer woodland
+def: "A conifer woodland is a woodland which has a tree community primarily composed of coniferous trees, from the Division Pinophyta, also known as Coniferophyta or Coniferae." [ORCID:0000-0001-8743-9574, Wikipedia:Conifer]
+is_a: ENVO:00000109 ! woodland
+created_by: PLB
+creation_date: 2013-06-06T14:39:17Z
+
+[Term]
+id: ENVO:01000241
+name: juniper woodland
+def: "A juniper woodland is a woodland which has a tree community primarily composed of trees of the genus Juniperus." [ORCID:0000-0001-8743-9574, Wikipedia:Juniper]
+is_a: ENVO:01000240 ! conifer woodland
+created_by: PLB
+creation_date: 2013-06-06T14:44:52Z
+
+[Term]
+id: ENVO:01000242
+name: desert scrubland
+def: "A scrubland which is located in a desert." [ORCID:0000-0001-8743-9574]
+synonym: "desert scrub" EXACT [ORCID:0000-0001-8743-9574]
+is_a: ENVO:00000300 ! scrubland
+intersection_of: ENVO:00000300 ! scrubland
+intersection_of: has_condition ENVO:01000230 ! arid
+intersection_of: located_in ENVO:00000097 ! desert
+created_by: PLB
+creation_date: 2013-06-06T15:02:30Z
+
+[Term]
+id: ENVO:01000243
+name: boulder
+def: "A piece of rock with a grain size above 300 millimetres in diameter. Smaller boulders are, at times, referred to as rocks or stones." [ORCID:0000-0001-8743-9574, Wikipedia:Boulder]
+is_a: ENVO:00000339 ! piece of rock
+created_by: PLB
+creation_date: 2013-06-06T15:10:50Z
+
+[Term]
+id: ENVO:01000244
+name: pinyon juniper woodland
+def: "A pinyon juniper woodland is a conifer woodland which has a tree community primarily composed of trees of the subsection Cembroides of the genus Pinus and the genus Juniperus." [ORCID:0000-0001-8743-9574, Wikipedia:Juniper, Wikipedia:Pinyon pine]
+is_a: ENVO:01000240 ! conifer woodland
+created_by: PLB
+creation_date: 2013-06-06T15:22:52Z
+
+[Term]
 id: ENVO:02000000
 name: hypodermic needle
 def: "A hypodermic needle is a medical instrument made from a hollow needle. It is commonly used with a syringe to inject substances into the body of an organism." [GEMINA:ag, Wikipedia:Hypodermic_needle]
@@ -17159,7 +17209,7 @@ is_metadata_tag: true
 [Typedef]
 id: has_condition
 name: has_condition
-comment: Experimental relation used in EnvO. A condition defines a restricted range of a given quality or combination of qualities. If an environment class, E, has_condition C, then all qualities listed in C are restricted to the ranges defined in C in E. This is not intended as a logical conditional.
+comment: Experimental relation used in EnvO. A condition defines a restricted range of a given quality or combination of qualities. If an environment class, E, has_condition C, then all qualities listed in C are restricted to the ranges defined in C in E. This is not intended as a logical conditional. Note that this relation is transitive.
 is_transitive: true
 creation_date: 2013-05-08T07:33:05Z
 
