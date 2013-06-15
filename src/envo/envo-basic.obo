@@ -1,8 +1,8 @@
 format-version: 1.2
-data-version: releases/2013-05-02
-date: 27:04:2013 16:52
-saved-by: cjm
-auto-generated-by: OBO-Edit 2.1-beta7
+data-version: releases/2013-06-14
+date: 14:06:2013 12:00
+saved-by: pbuttigieg
+auto-generated-by: OBO-Edit 2.2
 subsetdef: abnormal_slim "Abnormal/normal slim"
 subsetdef: absent_slim "Absent/present slim"
 subsetdef: attribute_slim "Attribute slim"
@@ -1484,6 +1484,7 @@ xref: TGN:21431
 xref: TGN:21432
 xref: Wikipedia:Mountain_range
 is_a: ENVO:00000478 ! range of mounts
+relationship: has_part ENVO:00000081 ! mountain
 
 [Term]
 id: ENVO:00000081
@@ -1519,6 +1520,7 @@ id: ENVO:00000082
 name: hill range
 def: "A group of hills bordered by lowlands." [MA:ma]
 is_a: ENVO:00000478 ! range of mounts
+relationship: has_part ENVO:00000083 ! hill
 
 [Term]
 id: ENVO:00000083
@@ -1757,6 +1759,7 @@ xref: Geonames:DSRT
 xref: TGN:21201
 xref: Wikipedia:Desert
 is_a: ENVO:00000191 ! physiographic feature
+relationship: has_condition ENVO:01000230 ! arid
 
 [Term]
 id: ENVO:00000098
@@ -2076,7 +2079,7 @@ xref: Geonames:GRSLD
 xref: TGN:21604
 xref: TGN:54052
 xref: Wikipedia:Grassland
-is_a: ENVO:00002009 ! terrestrial habitat
+is_a: ENVO:00000191 ! physiographic feature
 
 [Term]
 id: ENVO:00000107
@@ -2091,7 +2094,7 @@ xref: FTT:792
 xref: Geonames:HTH
 xref: TGN:21609
 xref: Wikipedia:Heath
-is_a: ENVO:00002009 ! terrestrial habitat
+is_a: ENVO:00000191 ! physiographic feature
 
 [Term]
 id: ENVO:00000108
@@ -2164,7 +2167,7 @@ xref: TGN:21631
 xref: TGN:21632
 xref: TGN:21641
 xref: Wikipedia:Woodland
-is_a: ENVO:00002009 ! terrestrial habitat
+is_a: ENVO:00000191 ! physiographic feature
 
 [Term]
 id: ENVO:00000110
@@ -2193,7 +2196,7 @@ xref: TGN:21641
 xref: TGN:21642
 xref: TGN:21645
 xref: Wikipedia:Forest
-is_a: ENVO:00000109 ! woodland
+is_a: ENVO:00000191 ! physiographic feature
 
 [Term]
 id: ENVO:00000112
@@ -2208,7 +2211,7 @@ xref: FTT:152
 xref: Geonames:TUND
 xref: TGN:21611
 xref: Wikipedia:Tundra
-is_a: ENVO:00002009 ! terrestrial habitat
+is_a: ENVO:00000191 ! physiographic feature
 
 [Term]
 id: ENVO:00000113
@@ -3340,7 +3343,9 @@ xref: FTT:96
 xref: Geonames:TAL
 xref: TGN:21508
 xref: Wikipedia:Scree
-is_a: ENVO:00000176 ! elevation
+is_a: ENVO:00010483 ! environmental material
+relationship: derives_from ENVO:00001995 ! rock
+relationship: has_part ENVO:00000339 ! piece of rock
 
 [Term]
 id: ENVO:00000195
@@ -3388,7 +3393,7 @@ is_a: ENVO:00000488 ! glacial lake
 
 [Term]
 id: ENVO:00000199
-name: meromictoc lake
+name: meromictic lake
 def: "A lake which has layers of water which do not intermix. The deepest layer of water in such a lake does not contain any dissolved oxygen. The layers of sediment at the bottom of a meromictic lake remain relatively undisturbed because there are no living organisms to stir them up." [Wikipedia:Lake#Types_of_lakes]
 is_a: ENVO:00000020 ! lake
 
@@ -4187,7 +4192,7 @@ synonym: "ridge" RELATED [USGS:SDTS]
 xref: FTT:647
 xref: TGN:21411
 xref: Wikipedia:Drumlin
-relationship: part_of ENVO:00000431 ! drumlin field
+is_a: ENVO:00000083 ! hill
 
 [Term]
 id: ENVO:00000277
@@ -4526,17 +4531,18 @@ xref: Geonames:SCRB
 xref: TGN:21644
 xref: TGN:21652
 xref: Wikipedia:Scrubland
-is_a: ENVO:00002009 ! terrestrial habitat
+is_a: ENVO:00000191 ! physiographic feature
 
 [Term]
 id: ENVO:00000301
-name: chaparal
-def: "A shrubland area found primarily in regions with a Mediterranean climate (mid, wet winters and hot dry summers) often shaped by wildfires." [Wikipedia:Chapparal]
+name: chaparral
+def: "A shrubland area found primarily in regions with a Mediterranean climate (mid, wet winters and hot dry summers) often shaped by wildfires." [Wikipedia:Chaparral]
 synonym: "chaparal area" RELATED [ADL:FTT]
 synonym: "maquis" RELATED [USGS:SDTS]
 synonym: "woodland" RELATED [USGS:SDTS]
 xref: FTT:473
 is_a: ENVO:00000300 ! scrubland
+relationship: has_condition ENVO:01000207 ! mediterranean
 
 [Term]
 id: ENVO:00000302
@@ -5755,7 +5761,8 @@ name: drumlin field
 def: "A cluster of dozens to hundreds of similarly shaped, sized and oriented drumlins." [Wikipedia:Drumlin_field]
 synonym: "drumlin swarm" RELATED []
 xref: Wikipedia:Drumlin_field
-is_a: ENVO:00000176 ! elevation
+is_a: ENVO:00000082 ! hill range
+relationship: has_part ENVO:00000276 ! drumlin
 
 [Term]
 id: ENVO:00000432
@@ -6400,7 +6407,7 @@ is_a: ENVO:00000012 ! hydrographic feature
 id: ENVO:00000501
 name: bed
 def: "The portion of the ground surface which lies below water." [USGS:SDTS]
-synonym: "BOTTOM" EXACT [USGS:SDTS]
+synonym: "BOTTOM" BROAD [USGS:SDTS]
 xref: FTT:804
 xref: Wikipedia:Stream_bed
 relationship: part_of ENVO:00000063 ! water body
@@ -6821,6 +6828,7 @@ xref: FTT:289
 xref: Geonames:BLDR
 xref: TGN:21501
 is_a: ENVO:00000191 ! physiographic feature
+relationship: has_part ENVO:01000243 ! boulder
 
 [Term]
 id: ENVO:00000538
@@ -6940,6 +6948,7 @@ xref: TGN:23145
 xref: TGN:23344
 is_a: ENVO:00000478 ! range of mounts
 is_a: ENVO:01000105 ! marine benthic feature
+relationship: has_part ENVO:00000264 ! seamount
 
 [Term]
 id: ENVO:00000551
@@ -7286,7 +7295,6 @@ xref: Geonames:RK
 xref: Geonames:RKS
 xref: TGN:21444
 xref: Wikipedia:Rock
-is_a: ENVO:00000191 ! physiographic feature
 is_a: ENVO:00010483 ! environmental material
 
 [Term]
@@ -7578,7 +7586,6 @@ name: habitat
 def: "A spatial region having environmental qualities which may sustain an organism or a community of organisms." [EnvO:EnvO]
 synonym: "biotope" RELATED []
 xref: Wikipedia:Habitat
-is_a: ENVO:00002297 ! environmental feature
 
 [Term]
 id: ENVO:00002037
@@ -7872,14 +7879,14 @@ id: ENVO:00002130
 name: hypolimnion
 def: "The dense, bottom layer of water in a thermally-stratified lake. It is the layer that lies below the thermocline." [Wikipedia:Hypolimnion]
 xref: Wikipedia:Hypolimnion
-relationship: part_of ENVO:00000199 ! meromictoc lake
+relationship: part_of ENVO:00000199 ! meromictic lake
 
 [Term]
 id: ENVO:00002131
 name: epilimnion
 def: "The top-most layer in a thermally stratified lake, occurring above the deeper hypolimnion. It is warmer and typically has a higher pH and dissolved oxygen concentration than the hypolimnion." [Wikipedia:Epilimnion]
 xref: Wikipedia:Epilimnion
-relationship: part_of ENVO:00000199 ! meromictoc lake
+relationship: part_of ENVO:00000199 ! meromictic lake
 
 [Term]
 id: ENVO:00002132
@@ -7887,7 +7894,7 @@ name: metalimnion
 def: "The layer within a body of water or air where the temperature changes rapidly with depth." [Wikipedia:Metalimnion]
 synonym: "thermocline" RELATED []
 xref: Wikipedia:Metalimnion
-relationship: part_of ENVO:00000199 ! meromictoc lake
+relationship: part_of ENVO:00000199 ! meromictic lake
 
 [Term]
 id: ENVO:00002133
@@ -8442,6 +8449,7 @@ id: ENVO:00002229
 name: arenosol
 def: "Arenosols are sandy soils, including both soils developed in residual sands after in situ weathering of usually quartz-rich sediments or rock, and soils developed in recently deposited sands such as dunes in deserts and beach lands." [FAO:http\://fao.org/ag/agl/agll/wrb/doc/wrb2006final.pdf]
 synonym: "psamment" EXACT []
+synonym: "sandy soil" EXACT [ORCID:0000-0001-8743-9574]
 xref: Wikipedia:Arenosol
 is_a: ENVO:00001998 ! soil
 
@@ -10196,6 +10204,7 @@ relationship: part_of ENVO:00000262 ! steppe
 id: ENVO:00005778
 name: tropical soil
 is_a: ENVO:00001998 ! soil
+relationship: has_condition ENVO:01000204 ! tropical
 
 [Term]
 id: ENVO:00005779
@@ -11585,9 +11594,9 @@ relationship: derives_from ENVO:00001995 ! rock
 [Term]
 id: ENVO:01000018
 name: gravel
-def: "Rock whose pieces are at least two millimeters (2mm) in its largest dimension (about 1/12 of an inch) and no more than 75 millimeters (about 3 inches)." [Wikipedia:Gravel]
+def: "Gravel is an environmental material which is composed of pieces of rock that are at least two millimeters (2mm) in its largest dimension and no more than 75 millimeters." [Wikipedia:Gravel]
 xref: Wikipedia:Gravel
-is_a: ENVO:00001995 ! rock
+is_a: ENVO:00010483 ! environmental material
 relationship: has_part ENVO:00000341 ! piece of gravel
 
 [Term]
@@ -11598,7 +11607,7 @@ relationship: part_of ENVO:00000067 ! cave
 [Term]
 id: ENVO:01000020
 name: estuarine biome
-def: "Expressions of the estuarine biome occur at wide lower courses of a rivers where they flows into a sea. Estuaries experience tidal flows and their water is a changing mixture of fresh and salt." [ISBN-10:0618455043, PLB:plb]
+def: "Expressions of the estuarine biome occur at wide lower courses of a rivers where they flow into a sea. Estuaries experience tidal flows and their water is a changing mixture of fresh and salt." [ISBN-10:0618455043, PLB:plb]
 is_a: ENVO:00000447 ! marine biome
 created_by: pbuttigieg
 creation_date: 2010-03-15T11:17:06Z
@@ -11607,7 +11616,8 @@ creation_date: 2010-03-15T11:17:06Z
 id: ENVO:01000021
 name: mangrove biome
 def: "Expressions of the mangrove biome are typically found in tropical and sub-tropical tidal areas, in depositional coastal environments where fine sediments (often with high organic content) collect in areas protected from high energy wave action. A variety of characteristic trees and shrubs occur here and are able to withstand a high degree of salinity as well as regions of anoxia and frequent tidal inundation. These areas include estuaries and marine shorelines." [PLB:plb, Wikipedia:Mangrove]
-is_a: ENVO:00000447 ! marine biome
+is_obsolete: true
+replaced_by: ENVO:01000181
 created_by: pbuttigieg
 creation_date: 2010-03-15T11:17:06Z
 
@@ -11819,6 +11829,7 @@ id: ENVO:01000047
 name: mediterranean sea biome
 def: "The mediterranean sea biome comprises mostly enclosed seas that have limited exchange of deep water with outer oceans and where the water circulation is dominated by salinity and temperature differences rather than winds." [PLB:plb, Wikipedia:Mediterranean_sea]
 is_a: ENVO:00000447 ! marine biome
+relationship: has_condition ENVO:01000207 ! mediterranean
 created_by: pbuttigieg
 creation_date: 2010-03-15T11:23:23Z
 
@@ -12184,6 +12195,7 @@ creation_date: 2010-03-16T12:23:26Z
 id: ENVO:01000094
 name: subtropical convergence front
 is_a: ENVO:01000071 ! oceanic front
+relationship: has_condition ENVO:01000205 ! subtropical
 created_by: pbuttigieg
 creation_date: 2010-03-16T12:23:26Z
 
@@ -12341,6 +12353,7 @@ id: ENVO:01000114
 name: boulder sediment
 def: "Sediment characterised by an average particle diameter greater than 256 mm." [Wikipedia:Particle_size]
 is_a: ENVO:00002007 ! sediment
+relationship: has_part ENVO:01000243 ! boulder
 created_by: pbuttigieg
 creation_date: 2010-03-17T01:58:08Z
 
@@ -12867,7 +12880,7 @@ creation_date: 2013-04-07T14:26:46Z
 [Term]
 id: ENVO:01000181
 name: mangrove biome
-def: "A mangrove biome is a terrestrial biome which includes, across its spatial extent, mangrove plants (Rhizophoraceae)." []
+def: "A mangrove biome is a terrestrial biome which includes, across its spatial extent, mangrove plants (Rhizophoraceae). Mangrove plants are able to withstand high levels of salinity as well as regions of anoxia and frequent tidal inundation. Mangrove biomes often occur near tropical and sub-tropical estuaries and depositional marine coastal environments where fine sediments (often with high organic content) collect in areas protected from high energy wave action." [PLB:plb, Wikipedia:Mangrove]
 comment: Preliminary definition. Depending on whether mangrove trees or shrubs are present, this class could be a child of shrubland biome or woodland biome. Consider creating the appropriate classes.
 is_a: ENVO:00000446 ! terrestrial biome
 created_by: pbuttigi
@@ -12878,6 +12891,7 @@ id: ENVO:01000182
 name: temperate desert biome
 comment: Preliminary definition. The semantics and definitions of "mediterranean", "subtropical", "tropical", "temperate", "polar", and similar climate types may be transferred to an "environmental condition" class once the semantics of this class have been established.
 is_a: ENVO:01000179 ! desert biome
+relationship: has_condition ENVO:01000206 ! temperate
 created_by: pbuttigi
 creation_date: 2013-04-07T14:28:08Z
 
@@ -12887,6 +12901,7 @@ name: tropical desert biome
 def: "A tropical desert biome is a desert biome which has communities adapted to temperatures above a monthly average of 18 degrees Celsius, high daily temperature ranges of approximately 20 degrees Celsius, very high insolation due to inhibited cloud formation, and very low precipitation. Tropical desert biomes located near coasts with cold upwellings may have cooler temperatures and reduced insolution due to fog." [WWW:http\://www.earthonlinemedia.com/ebooks/tpe_3e/title_page.html]
 comment: Preliminary definition. The semantics and definitions of "mediterranean", "subtropical", "tropical", "temperate", "polar", and similar climate types may be transferred to an "environmental condition" class once the semantics of this class have been established.
 is_a: ENVO:01000179 ! desert biome
+relationship: has_condition ENVO:01000204 ! tropical
 created_by: pbuttigi
 creation_date: 2013-04-07T14:28:08Z
 
@@ -12895,6 +12910,7 @@ id: ENVO:01000184
 name: subtropical desert biome
 comment: Preliminary definition. The semantics and definitions of "mediterranean", "subtropical", "tropical", "temperate", "polar", and similar climate types may be transferred to an "environmental condition" class once the semantics of this class have been established.
 is_a: ENVO:01000179 ! desert biome
+relationship: has_condition ENVO:01000205 ! subtropical
 created_by: pbuttigi
 creation_date: 2013-04-07T14:28:08Z
 
@@ -12912,6 +12928,7 @@ id: ENVO:01000186
 name: polar desert biome
 comment: Preliminary definition. The semantics and definitions of "mediterranean", "subtropical", "tropical", "temperate", "polar", and similar climate types may be transferred to an "environmental condition" class once the semantics of this class have been established.
 is_a: ENVO:01000179 ! desert biome
+relationship: has_condition ENVO:01000238 ! polar
 created_by: pbuttigi
 creation_date: 2013-04-07T14:28:08Z
 
@@ -12920,6 +12937,7 @@ id: ENVO:01000187
 name: subtropical savanna biome
 comment: Preliminary definition. The semantics and definitions of "mediterranean", "subtropical", "tropical", "temperate", "polar", and similar climate types may be transferred to an "environmental condition" class once the semantics of this class have been established.
 is_a: ENVO:01000178 ! savanna biome
+relationship: has_condition ENVO:01000205 ! subtropical
 created_by: pbuttigi
 creation_date: 2013-04-07T14:28:51Z
 
@@ -12928,6 +12946,7 @@ id: ENVO:01000188
 name: tropical savanna biome
 comment: Preliminary definition. The semantics and definitions of "mediterranean", "subtropical", "tropical", "temperate", "polar", and similar climate types may be transferred to an "environmental condition" class once the semantics of this class have been established.
 is_a: ENVO:01000178 ! savanna biome
+relationship: has_condition ENVO:01000204 ! tropical
 created_by: pbuttigi
 creation_date: 2013-04-07T14:28:51Z
 
@@ -12937,6 +12956,7 @@ name: temperate savanna biome
 comment: Preliminary definition. The semantics and definitions of "mediterranean", "subtropical", "tropical", "temperate", "polar", and similar climate types may be transferred to an "environmental condition" class once the semantics of this class have been established.
 synonym: "prairie biome" BROAD []
 is_a: ENVO:01000178 ! savanna biome
+relationship: has_condition ENVO:01000206 ! temperate
 created_by: pbuttigi
 creation_date: 2013-04-07T14:28:51Z
 
@@ -12955,6 +12975,7 @@ id: ENVO:01000191
 name: subtropical grassland biome
 comment: Preliminary definition. The semantics and definitions of "mediterranean", "subtropical", "tropical", "temperate", "polar", and similar climate types may be transferred to an "environmental condition" class once the semantics of this class have been established.
 is_a: ENVO:01000177 ! grassland biome
+relationship: has_condition ENVO:01000205 ! subtropical
 created_by: pbuttigi
 creation_date: 2013-04-07T14:29:48Z
 
@@ -12963,6 +12984,7 @@ id: ENVO:01000192
 name: tropical grassland biome
 comment: Preliminary definition. The semantics and definitions of "mediterranean", "subtropical", "tropical", "temperate", "polar", and similar climate types may be transferred to an "environmental condition" class once the semantics of this class have been established.
 is_a: ENVO:01000177 ! grassland biome
+relationship: has_condition ENVO:01000204 ! tropical
 created_by: pbuttigi
 creation_date: 2013-04-07T14:29:48Z
 
@@ -12972,6 +12994,7 @@ name: temperate grassland biome
 comment: Preliminary definition. The semantics and definitions of "mediterranean", "subtropical", "tropical", "temperate", "polar", and similar climate types may be transferred to an "environmental condition" class once the semantics of this class have been established.
 synonym: "prairie biome" BROAD []
 is_a: ENVO:01000177 ! grassland biome
+relationship: has_condition ENVO:01000206 ! temperate
 created_by: pbuttigi
 creation_date: 2013-04-07T14:29:48Z
 
@@ -13024,6 +13047,7 @@ name: mediterranean forest biome
 def: "A mediterranean forest biome is a forest biome which includes communities adapted to hot to warm, dry summers, mild to cold, rainy winters, and the influence of large, usually marine, bodies of water." []
 comment: Preliminary definition. The semantics and definitions of "mediterranean", "subtropical", "tropical", "temperate", "polar", and similar climate types may be transferred to an "environmental condition" class once the semantics of this class have been established.
 is_a: ENVO:01000174 ! forest biome
+relationship: has_condition ENVO:01000207 ! mediterranean
 created_by: pbuttigi
 creation_date: 2013-04-07T14:31:01Z
 
@@ -13032,6 +13056,7 @@ id: ENVO:01000200
 name: tropical broadleaf forest biome
 comment: Preliminary definition. The semantics and definitions of "mediterranean", "subtropical", "tropical", "temperate", "polar", and similar climate types may be transferred to an "environmental condition" class once the semantics of this class have been established.
 is_a: ENVO:01000197 ! broadleaf forest biome
+relationship: has_condition ENVO:01000204 ! tropical
 created_by: pbuttigi
 creation_date: 2013-04-07T14:32:28Z
 
@@ -13040,6 +13065,7 @@ id: ENVO:01000201
 name: subtropical broadleaf forest biome
 comment: Preliminary definition. The semantics and definitions of "mediterranean", "subtropical", "tropical", "temperate", "polar", and similar climate types may be transferred to an "environmental condition" class once the semantics of this class have been established.
 is_a: ENVO:01000197 ! broadleaf forest biome
+relationship: has_condition ENVO:01000205 ! subtropical
 created_by: pbuttigi
 creation_date: 2013-04-07T14:32:28Z
 
@@ -13048,12 +13074,14 @@ id: ENVO:01000202
 name: temperate broadleaf forest biome
 comment: Preliminary definition. The semantics and definitions of "mediterranean", "subtropical", "tropical", "temperate", "polar", and similar climate types may be transferred to an "environmental condition" class once the semantics of this class have been established.
 is_a: ENVO:01000197 ! broadleaf forest biome
+relationship: has_condition ENVO:01000206 ! temperate
 created_by: pbuttigi
 creation_date: 2013-04-07T14:32:28Z
 
 [Term]
 id: ENVO:01000203
 name: environmental condition
+comment: Experimental class created in EnvO. A condition defines a restricted range of a given quality or combination of qualities. If an environment class, E, has_condition C, then all qualities listed in C are restricted to the ranges defined in C in E. This is not intended as a logical conditional.
 created_by: pbuttigi
 creation_date: 2013-04-07T14:35:18Z
 
@@ -13081,7 +13109,7 @@ creation_date: 2013-04-07T14:36:47Z
 [Term]
 id: ENVO:01000207
 name: mediterranean
-is_a: ENVO:01000203 ! environmental condition
+is_a: ENVO:01000205 ! subtropical
 created_by: pbuttigi
 creation_date: 2013-04-07T14:36:47Z
 
@@ -13091,6 +13119,7 @@ name: mediterranean woodland biome
 def: "A mediterranean woodland biome is a subtropical woodland biome which includes communities adapted to hot to warm, dry summers, mild to cold, rainy winters, and the influence of large, usually marine, bodies of water." []
 comment: Preliminary definition. The semantics and definitions of "mediterranean", "subtropical", "tropical", "temperate", "polar", and similar climate types may be transferred to an "environmental condition" class once the semantics of this class have been established.
 is_a: ENVO:01000222 ! subtropical woodland biome
+relationship: has_condition ENVO:01000207 ! mediterranean
 created_by: pbuttigieg
 creation_date: 2013-04-07T15:01:04Z
 
@@ -13099,6 +13128,7 @@ id: ENVO:01000209
 name: subtropical coniferous forest biome
 comment: Preliminary definition. The semantics and definitions of "mediterranean", "subtropical", "tropical", "temperate", "polar", and similar climate types may be transferred to an "environmental condition" class once the semantics of this class have been established.
 is_a: ENVO:01000196 ! coniferous forest biome
+relationship: has_condition ENVO:01000205 ! subtropical
 created_by: pbuttigi
 creation_date: 2013-04-07T14:39:14Z
 
@@ -13107,6 +13137,7 @@ id: ENVO:01000210
 name: tropical coniferous forest biome
 comment: Preliminary definition. The semantics and definitions of "mediterranean", "subtropical", "tropical", "temperate", "polar", and similar climate types may be transferred to an "environmental condition" class once the semantics of this class have been established.
 is_a: ENVO:01000196 ! coniferous forest biome
+relationship: has_condition ENVO:01000204 ! tropical
 created_by: pbuttigi
 creation_date: 2013-04-07T14:39:14Z
 
@@ -13115,6 +13146,7 @@ id: ENVO:01000211
 name: temperate coniferous forest biome
 comment: Preliminary definition. The semantics and definitions of "mediterranean", "subtropical", "tropical", "temperate", "polar", and similar climate types may be transferred to an "environmental condition" class once the semantics of this class have been established.
 is_a: ENVO:01000196 ! coniferous forest biome
+relationship: has_condition ENVO:01000206 ! temperate
 created_by: pbuttigi
 creation_date: 2013-04-07T14:39:14Z
 
@@ -13122,6 +13154,7 @@ creation_date: 2013-04-07T14:39:14Z
 id: ENVO:01000212
 name: temperate mixed forest biome
 is_a: ENVO:01000198 ! mixed forest biome
+relationship: has_condition ENVO:01000206 ! temperate
 created_by: pbuttigi
 creation_date: 2013-04-07T14:39:30Z
 
@@ -13130,6 +13163,7 @@ id: ENVO:01000213
 name: subtropical shrubland biome
 comment: Preliminary definition. The semantics and definitions of "mediterranean", "subtropical", "tropical", "temperate", "polar", and similar climate types may be transferred to an "environmental condition" class once the semantics of this class have been established.
 is_a: ENVO:01000176 ! shrubland biome
+relationship: has_condition ENVO:01000205 ! subtropical
 created_by: pbuttigi
 creation_date: 2013-04-07T14:40:32Z
 
@@ -13138,6 +13172,7 @@ id: ENVO:01000214
 name: tropical shrubland biome
 comment: Preliminary definition. The semantics and definitions of "mediterranean", "subtropical", "tropical", "temperate", "polar", and similar climate types may be transferred to an "environmental condition" class once the semantics of this class have been established.
 is_a: ENVO:01000176 ! shrubland biome
+relationship: has_condition ENVO:01000204 ! tropical
 created_by: pbuttigi
 creation_date: 2013-04-07T14:40:32Z
 
@@ -13147,6 +13182,7 @@ name: temperate shrubland biome
 comment: Preliminary definition. The semantics and definitions of "mediterranean", "subtropical", "tropical", "temperate", "polar", and similar climate types may be transferred to an "environmental condition" class once the semantics of this class have been established.
 synonym: "prairie biome" BROAD []
 is_a: ENVO:01000176 ! shrubland biome
+relationship: has_condition ENVO:01000206 ! temperate
 created_by: pbuttigi
 creation_date: 2013-04-07T14:40:32Z
 
@@ -13165,6 +13201,7 @@ name: mediterranean shrubland biome
 def: "A mediterranean shrubland biome is a subtropical shrubland biome which includes communities adapted to hot to warm, dry summers, mild to cold, rainy winters, and the influence of large, usually marine, bodies of water." []
 comment: Preliminary definition. The semantics and definitions of "mediterranean", "subtropical", "tropical", "temperate", "polar", and similar climate types may be transferred to an "environmental condition" class once the semantics of this class have been established.
 is_a: ENVO:01000213 ! subtropical shrubland biome
+relationship: has_condition ENVO:01000207 ! mediterranean
 created_by: pbuttigi
 creation_date: 2013-04-07T14:40:32Z
 
@@ -13190,6 +13227,7 @@ id: ENVO:01000220
 name: tropical woodland biome
 comment: Preliminary definition. The semantics and definitions of "mediterranean", "subtropical", "tropical", "temperate", "polar", and similar climate types may be transferred to an "environmental condition" class once the semantics of this class have been established.
 is_a: ENVO:01000175 ! woodland biome
+relationship: has_condition ENVO:01000204 ! tropical
 created_by: pbuttigieg
 creation_date: 2013-04-07T15:01:04Z
 
@@ -13198,6 +13236,7 @@ id: ENVO:01000221
 name: temperate woodland biome
 comment: Preliminary definition. The semantics and definitions of "mediterranean", "subtropical", "tropical", "temperate", "polar", and similar climate types may be transferred to an "environmental condition" class once the semantics of this class have been established.
 is_a: ENVO:01000175 ! woodland biome
+relationship: has_condition ENVO:01000206 ! temperate
 created_by: pbuttigieg
 creation_date: 2013-04-07T15:01:04Z
 
@@ -13206,6 +13245,7 @@ id: ENVO:01000222
 name: subtropical woodland biome
 comment: Preliminary definition. The semantics and definitions of "mediterranean", "subtropical", "tropical", "temperate", "polar", and similar climate types may be transferred to an "environmental condition" class once the semantics of this class have been established.
 is_a: ENVO:01000175 ! woodland biome
+relationship: has_condition ENVO:01000205 ! subtropical
 created_by: pbuttigieg
 creation_date: 2013-04-07T15:01:04Z
 
@@ -13224,6 +13264,7 @@ name: mediterranean grassland biome
 def: "A mediterranean grassland biome is a  subtropical grassland biome which includes communities adapted to hot to warm, dry summers, mild to cold, rainy winters, and the influence of large, usually marine, bodies of water." []
 comment: Preliminary definition. The semantics and definitions of "mediterranean", "subtropical", "tropical", "temperate", "polar", and similar climate types may be transferred to an "environmental condition" class once the semantics of this class have been established.
 is_a: ENVO:01000191 ! subtropical grassland biome
+relationship: has_condition ENVO:01000207 ! mediterranean
 created_by: pbuttigieg
 creation_date: 2013-04-19T11:42:48Z
 
@@ -13260,6 +13301,7 @@ creation_date: 2013-04-24T12:05:25Z
 id: ENVO:01000229
 name: mediterranean savanna biome
 is_a: ENVO:01000187 ! subtropical savanna biome
+relationship: has_condition ENVO:01000207 ! mediterranean
 created_by: pbuttigieg
 creation_date: 2013-04-24T12:20:42Z
 
@@ -13270,6 +13312,163 @@ def: "An arid condition is an environmental condition in which annual precipitat
 is_a: ENVO:01000203 ! environmental condition
 created_by: pbuttigieg
 creation_date: 2013-04-24T13:28:18Z
+
+[Term]
+id: ENVO:01000231
+name: lava
+def: "Lava is an environmental material which is primarily composed of molten rock." [Wikipedia:lava]
+is_a: ENVO:00010483 ! environmental material
+created_by: PLB
+creation_date: 2013-05-05T16:52:47Z
+
+[Term]
+id: ENVO:01000232
+name: felsic lava
+synonym: "silicic lava" EXACT [Wikipedia:Lava]
+is_a: ENVO:01000231 ! lava
+created_by: PLB
+creation_date: 2013-05-05T16:56:29Z
+
+[Term]
+id: ENVO:01000233
+name: intermediate lava
+synonym: "andesitic lava" EXACT [Wikipedia:Lava]
+is_a: ENVO:01000231 ! lava
+created_by: PLB
+creation_date: 2013-05-05T16:56:29Z
+
+[Term]
+id: ENVO:01000234
+name: mafic lava
+synonym: "basaltic lava" RELATED [Wikipedia:Lava]
+is_a: ENVO:01000231 ! lava
+created_by: PLB
+creation_date: 2013-05-05T16:56:29Z
+
+[Term]
+id: ENVO:01000235
+name: ultramafic lava
+is_a: ENVO:01000231 ! lava
+created_by: PLB
+creation_date: 2013-05-05T16:56:29Z
+
+[Term]
+id: ENVO:01000236
+name: basalt
+def: "Basalt is a volcanic rock which is formed by the rapid cooling of basaltic lava." [Wikipedia:Basalt]
+is_a: ENVO:00002015 ! volcanic rock
+relationship: derives_from ENVO:01000234 ! mafic lava
+created_by: PLB
+creation_date: 2013-05-05T17:07:15Z
+
+[Term]
+id: ENVO:01000237
+name: coastal scrubland
+def: "A coastal scrubland is a scrubland which is part of a coast." [Wikipedia:California_coastal_sage_and_chaparral_ecoregion, Wikipedia:Coastal_sage_scrub]
+synonym: "coastal chaparral" NARROW [Wikipedia:California_chaparral_and_woodlands]
+is_a: ENVO:00000300 ! scrubland
+relationship: part_of ENVO:00000303 ! coast
+created_by: pbuttigieg
+creation_date: 2013-05-06T09:47:07Z
+
+[Term]
+id: ENVO:01000238
+name: polar
+is_a: ENVO:01000203 ! environmental condition
+created_by: pbuttigieg
+creation_date: 2013-05-08T07:49:36Z
+
+[Term]
+id: ENVO:01000239
+name: oak woodland
+def: "An oak woodland is a woodland which has a tree community primarily composed of oak trees." [ORCID:0000-0001-8743-9574]
+is_a: ENVO:00000109 ! woodland
+created_by: PLB
+creation_date: 2013-06-04T22:33:52Z
+
+[Term]
+id: ENVO:01000240
+name: conifer woodland
+def: "A conifer woodland is a woodland which has a tree community primarily composed of coniferous trees, from the Division Pinophyta, also known as Coniferophyta or Coniferae." [ORCID:0000-0001-8743-9574, Wikipedia:Conifer]
+is_a: ENVO:00000109 ! woodland
+created_by: PLB
+creation_date: 2013-06-06T14:39:17Z
+
+[Term]
+id: ENVO:01000241
+name: juniper woodland
+def: "A juniper woodland is a woodland which has a tree community primarily composed of trees of the genus Juniperus." [ORCID:0000-0001-8743-9574, Wikipedia:Juniper]
+is_a: ENVO:01000240 ! conifer woodland
+created_by: PLB
+creation_date: 2013-06-06T14:44:52Z
+
+[Term]
+id: ENVO:01000242
+name: desert scrubland
+def: "A scrubland which is located in a desert." [ORCID:0000-0001-8743-9574]
+synonym: "desert scrub" EXACT [ORCID:0000-0001-8743-9574]
+is_a: ENVO:00000097 ! desert
+is_a: ENVO:00000300 ! scrubland
+relationship: has_condition ENVO:01000230 ! arid
+relationship: located_in ENVO:00000097 ! desert
+created_by: PLB
+creation_date: 2013-06-06T15:02:30Z
+
+[Term]
+id: ENVO:01000243
+name: boulder
+def: "A piece of rock with a grain size above 300 millimetres in diameter. Smaller boulders are, at times, referred to as rocks or stones." [ORCID:0000-0001-8743-9574, Wikipedia:Boulder]
+is_a: ENVO:00000339 ! piece of rock
+created_by: PLB
+creation_date: 2013-06-06T15:10:50Z
+
+[Term]
+id: ENVO:01000244
+name: pinyon juniper woodland
+def: "A pinyon juniper woodland is a conifer woodland which has a tree community primarily composed of trees of the subsection Cembroides of the genus Pinus and the genus Juniperus." [ORCID:0000-0001-8743-9574, Wikipedia:Juniper, Wikipedia:Pinyon pine]
+is_a: ENVO:01000240 ! conifer woodland
+created_by: PLB
+creation_date: 2013-06-06T15:22:52Z
+
+[Term]
+id: ENVO:01000245
+name: cropland biome
+def: "A cropland biome is an anthropogenic terrestrial biome which is primarily used for agricultural activity and which contains no village or larger human settlement." [DOI:10.1111/j.1466-8238.2010.00540.x, DOI:10.1890/070062]
+is_a: ENVO:01000219 ! anthropogenic terrestrial biome
+created_by: pbuttigieg
+creation_date: 2013-06-14T11:45:47Z
+
+[Term]
+id: ENVO:01000246
+name: village biome
+def: "A village biome is an anthropogenic terrestrial biome which contains settlements such as villages, towns, and/or small cities and which is primarily used for agricultural activity." [DOI:10.1111/j.1466-8238.2010.00540.x, DOI:10.1890/070062]
+is_a: ENVO:01000219 ! anthropogenic terrestrial biome
+created_by: pbuttigieg
+creation_date: 2013-06-14T11:45:47Z
+
+[Term]
+id: ENVO:01000247
+name: rangeland biome
+def: "A rangeland biome is an anthropogenic terrestrial biome which is primarily used for the rearing and grazing of livestock." [DOI:10.1111/j.1466-8238.2010.00540.x, DOI:10.1890/070062]
+is_a: ENVO:01000219 ! anthropogenic terrestrial biome
+created_by: pbuttigieg
+creation_date: 2013-06-14T11:45:47Z
+
+[Term]
+id: ENVO:01000248
+name: dense settlement biome
+def: "A dense settlement biome is an anthropogenic terrestrial biome which is primarily used for human habitation, recreation, and industry within built structures with little other land use." [DOI:10.1111/j.1466-8238.2010.00540.x, DOI:10.1890/070062]
+is_a: ENVO:01000219 ! anthropogenic terrestrial biome
+created_by: pbuttigieg
+creation_date: 2013-06-14T11:45:47Z
+
+[Term]
+id: ENVO:01000249
+name: urban biome
+def: "An urban biome is a dense settlement biome which has been urbanised." [DOI:10.1111/j.1466-8238.2010.00540.x, DOI:10.1890/070062]
+is_a: ENVO:01000248 ! dense settlement biome
+created_by: pbuttigieg
+creation_date: 2013-06-14T11:45:47Z
 
 [Term]
 id: ENVO:02000000
@@ -13949,6 +14148,13 @@ synonym: "non_overlapping_with" EXACT []
 expand_assertion_to: "Class: <http://www.w3.org/2002/07/owl#Nothing> EquivalentTo: (BFO_0000050 some ?X) and (BFO_0000050 some ?Y)" []
 is_metadata_tag: true
 is_class_level: true
+
+[Typedef]
+id: has_condition
+name: has_condition
+comment: Experimental relation used in EnvO. A condition defines a restricted range of a given quality or combination of qualities. If an environment class, E, has_condition C, then all qualities listed in C are restricted to the ranges defined in C in E. This is not intended as a logical conditional. Note that this relation is transitive.
+is_transitive: true
+creation_date: 2013-05-08T07:33:05Z
 
 [Typedef]
 id: has_increased_levels_of
