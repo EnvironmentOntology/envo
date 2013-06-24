@@ -93,7 +93,8 @@ term_score(C,_N,S) :-
         (   subclassT(C,'ENVO:00000002') % anthropogenic feature
         ->  S=3
         ;   S=1).
-        
+
+valid_envo(X) :- X\='ENVO:00000031'. % Wadi
 valid_envo(X) :- \+ \+ subclassT(X,'ENVO:00000000'),!.  % geographic feature
 
         
