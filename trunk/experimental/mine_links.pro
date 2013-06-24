@@ -51,7 +51,7 @@ type_from_name(C,SC):-
         debug(gaz,'~w < ~w',[N,SCN]).
 
 gaz_envo(I,C):-
-        gaz_envo(I,C,_,Score).
+        gaz_envo(I,C,_,_).
 
 gaz_envo(I,C,CN,Score):-
         class(I,INx),
@@ -64,14 +64,20 @@ gaz_envo(I,C,CN,Score):-
         valid_envo(C).
 
 % city of X ==> city
-tsub(Toks,SubToks,5) :-
-        append(SubToks,[of|_],Toks).
+tsub(Toks,SubToks,S) :-
+        append(SubToks,[of|_],Toks),
+        length(SubToks,Len),
+        S is 5+Len*3.
 % glacier bay ==> glacier
-tsub(Toks,SubToks,1) :-
-        append(SubToks,[_|_],Toks).
+tsub(Toks,SubToks,S) :-
+        append(SubToks,[_|_],Toks),
+        length(SubToks,Len),
+        S is Len*3.
 % glacier bay ==> bay
-tsub(Toks,SubToks,2) :-
-        append([_|_],SubToks,Toks).
+tsub(Toks,SubToks,S) :-
+        append([_|_],SubToks,Toks),
+        length(SubToks,Len),
+        S is 1+Len*3.
 
 
 gaz_envo_best(I,C) :-
@@ -83,14 +89,10 @@ gaz_envo_best(I,C) :-
              S2 is S2x + S2y,
              S2 > S1)).
 
-term_score(C,N,S) :-
-        atom_length(N,Len),
+term_score(C,_N,S) :-
         (   subclassT(C,'ENVO:00000002') % anthropogenic feature
-        ->  Mod=5
-        ;   Mod=1),
-        S is Len + Mod.
-
-        
+        ->  S=3
+        ;   S=1).
         
 valid_envo(X) :- \+ \+ subclassT(X,'ENVO:00000000'),!.  % geographic feature
 
