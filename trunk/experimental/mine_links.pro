@@ -51,59 +51,46 @@ type_from_name(C,SC):-
         debug(gaz,'~w < ~w',[N,SCN]).
 
 gaz_envo(I,C):-
-        gaz_envo(I,C,_).
+        gaz_envo(I,C,_,Score).
 
-gaz_envo(I,C,CN):-
+gaz_envo(I,C,CN,Score):-
         class(I,INx),
         id_idspace(I,'GAZ'),
         downcase_atom(INx,IN),
         concat_atom(Toks,' ',IN),
-        tsub(Toks,SubToks),
+        tsub(Toks,SubToks,Score),
         concat_atom(SubToks,' ',CN),
         entity_label_override(C,CN),
         valid_envo(C).
 
-tsub(Toks,SubToks) :-
+% city of X ==> city
+tsub(Toks,SubToks,5) :-
+        append(SubToks,[of|_],Toks).
+% glacier bay ==> glacier
+tsub(Toks,SubToks,1) :-
         append(SubToks,[_|_],Toks).
-tsub(Toks,SubToks) :-
+% glacier bay ==> bay
+tsub(Toks,SubToks,2) :-
         append([_|_],SubToks,Toks).
 
 
-zzzgaz_envo(I,C,CN):-
-        class(I,INx),
-        downcase_atom(INx,IN),
-        id_idspace(I,'GAZ'),
-        envo_name(C,CN),
-        (   ends_with(IN,CN)
-        ;   starts_with(IN,CN)).
-
 gaz_envo_best(I,C) :-
-        gaz_envo(I,C,CN),
-        \+ ((gaz_envo(I,C2,CN2),
-             C2\=C,
-             atom_length(CN,Len1),
-             atom_length(CN2,Len2),
-             Len2 > Len1)).
+        gaz_envo(I,C,CN,S1x),
+        term_score(C,CN,S1y),
+        S1 is S1x + S1y,
+        \+ ((gaz_envo(I,C2,CN2,S2x),
+             term_score(C2,CN2,S2y),
+             S2 is S2x + S2y,
+             S2 > S1)).
+
+term_score(C,N,S) :-
+        atom_length(N,Len),
+        (   subclassT(C,'ENVO:00000002') % anthropogenic feature
+        ->  Mod=5
+        ;   Mod=1),
+        S is Len + Mod.
 
         
-
-ends_with(X,Y) :-
-        atom_concat(_,Y,X), % quick
-        atom_concat(' ',Y,Spc_Y),
-        atom_concat(_,Spc_Y,X).
-starts_with(X,Y) :-
-        atom_concat(Y,_,X), % quick
-        atom_concat(Y,' ',Y_Spc),
-        atom_concat(Y_Spc,_,X).
-
-
-        
-envo_name(C,CN) :-
-        class(C),
-        id_idspace(C,'ENVO'),
-        entity_label_override(C,CN),
-        valid_envo(C).
-
         
 valid_envo(X) :- \+ \+ subclassT(X,'ENVO:00000000'),!.  % geographic feature
 
