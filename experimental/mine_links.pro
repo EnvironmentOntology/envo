@@ -28,39 +28,31 @@ true_class(C) :-
         \+ ((parentT(C,R,_),
              R\=subclass)).
 
-
-entity_label_override('ENVO:00000081',mount) :- !.   % mountain
-entity_label_override(E,N) :- entity_label(E,N).
-
-
-% Lake Nyar
-%% type_from_name('GAZ:nnn','ENVO:nnn')
-type_from_name(C,SC):-
-        entity_label(C,N),
-        downcase_atom(N,Nd),
-        concat_atom([SCN|_],' ',Nd),
-        entity_label_override(SC,SCN),
-        debug(gaz,'~w < ~w',[N,SCN]).
-
-type_from_name(C,SC):-
-        entity_label(C,N),
-        downcase_atom(N,Nd),
-        concat_atom(Toks,' ',Nd),
-        reverse(Toks,[SCN|_]),
-        entity_label_override(SC,SCN),
-        debug(gaz,'~w < ~w',[N,SCN]).
+%% entity_label_override(?,+) is semidet
+entity_label_override('ENVO:00000081',mount,1) :- !.   % mountain
+entity_label_override(E,N,1) :- entity_label(E,N),!.
+%% entity_label_override(E,N,0.9) :- entity_label_or_exact_synonym(E,N),!.
 
 gaz_envo(I,C):-
         gaz_envo(I,C,_,_).
 
+% rules
+gaz_envo(I,C,CN,25):-
+        class(I,INx),
+        atom_concat(_,' Trench',INx),
+        is_oceanic(I),
+        CN='ocean trench',
+        class(C,CN).
+% generic
 gaz_envo(I,C,CN,Score):-
         class(I,INx),
         id_idspace(I,'GAZ'),
         downcase_atom(INx,IN),
         concat_atom(Toks,' ',IN),
-        tsub(Toks,SubToks,Score),
+        tsub(Toks,SubToks,LenScore),
         concat_atom(SubToks,' ',CN),
-        entity_label_override(C,CN),
+        entity_label_override(C,CN,SynScore),
+        Score is LenScore + SynScore,
         valid_envo(C).
 
 % city of X ==> city
@@ -96,6 +88,10 @@ term_score(C,_N,S) :-
 
 % 31 = wadi
 valid_envo(X) :- X\='ENVO:00000031', \+ \+ subclassT(X,'ENVO:00000000'),!.  % geographic feature
+
+is_oceanic(I) :-
+        parentT(I,'GAZ:00000590').
+% foo('0').
 
         
 
