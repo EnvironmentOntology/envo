@@ -9,7 +9,7 @@ OBO=http://purl.obolibrary.org/obo
 
 all: build
 
-build: envo-basic.obo
+build: subsets/envo-basic.obo
 
 release: build release-diffs
 #release: envo-basic.obo release-diffs
@@ -20,7 +20,7 @@ envo-simple.obo: envo-edit.obo
 	ontology-release-runner --no-subsets --skip-format owx --run-obo-basic-dag-check --error-report envo-errors.txt $< --allow-overwrite --asserted --simple
 .PRECIOUS: envo.obo
 
-envo-basic.obo: envo-simple.obo
+subsets/envo-basic.obo: envo-simple.obo
 	cp envo-simple.obo $@
 
 envo-mireot.obo: envo-edit.obo chebi-lite.obo pato-lite.obo
@@ -33,3 +33,12 @@ pato-lite.obo:
 
 release-diffs:
 	cd diffs && make
+
+
+# ----------------------------------------
+# SLIMS
+# ----------------------------------------
+subsets/EnvO-Lite-GSC.owl: subsets/envo-basic.obo
+	owltools $< --extract-ontology-subset --subset EnvO-Lite-GSC --iri $(OBO)/envo/subsets/$@ -o $@
+subsets/EnvO-Lite-GSC.obo: subsets/EnvO-Lite-GSC.owl
+	obolib-owl2obo $< -o $@
