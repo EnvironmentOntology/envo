@@ -1,5 +1,5 @@
 format-version: 1.2
-date: 05:10:2013 12:59
+date: 06:10:2013 21:31
 saved-by: pbuttigieg
 auto-generated-by: OBO-Edit 2.2
 subsetdef: abnormal_slim "Abnormal/normal slim"
@@ -2819,7 +2819,6 @@ xref: SWEETRealm:Ocean
 xref: TGN:21102
 xref: Wikipedia:Ocean
 is_a: ENVO:00001999 ! marine water body
-is_a: ENVO:01000031 ! marine feature
 
 [Term]
 id: ENVO:00000016
@@ -2841,7 +2840,6 @@ xref: Geonames:H.SEA
 xref: TGN:21103
 xref: Wikipedia:Sea
 is_a: ENVO:00001999 ! marine water body
-is_a: ENVO:01000031 ! marine feature
 
 [Term]
 id: ENVO:00000017
@@ -3582,7 +3580,7 @@ xref: FTT:755
 xref: Geonames:H.GYSR
 xref: TGN:21171
 xref: Wikipedia:Geyser
-is_a: ENVO:00000215 ! hydrothermal vent
+is_a: ENVO:00000051 ! hot spring
 
 [Term]
 id: ENVO:00000051
@@ -3600,7 +3598,6 @@ xref: FTT:815
 xref: Geonames:H.SPNT
 xref: Wikipedia:Hot_spring
 is_a: ENVO:00000027 ! spring
-is_a: ENVO:00000215 ! hydrothermal vent
 
 [Term]
 id: ENVO:00000052
@@ -6298,8 +6295,7 @@ synonym: "HydrothermalVents" EXACT [NASA:earthrealm]
 xref: EcoLexicon:hydrothermal_vent
 xref: FTT:834
 xref: Wikipedia:Hydrothermal_vent
-is_a: ENVO:00000049 ! volcanic hydrographic feature
-is_a: ENVO:00000094 ! volcanic feature
+is_a: ENVO:00000027 ! spring
 
 [Term]
 id: ENVO:00000216
@@ -6330,7 +6326,7 @@ synonym: "oceanic vent" RELATED [SPIRE:Oceanic_vent]
 synonym: "sea vent" RELATED []
 xref: SPIRE:Oceanic_vent
 xref: Wikipedia:Black_smoker
-is_a: ENVO:00000215 ! hydrothermal vent
+is_a: ENVO:01000122 ! marine hydrothermal vent
 
 [Term]
 id: ENVO:00000219
@@ -8450,8 +8446,8 @@ synonym: "undersea ridge" RELATED [Getty:TGN]
 xref: EcoLexicon:oceanic_ridge
 xref: TGN:23151
 xref: Wikipedia:Mid-ocean_ridge
-is_a: ENVO:00000049 ! volcanic hydrographic feature
 is_a: ENVO:00000550 ! range of seamounts
+is_a: ENVO:01000105 ! marine benthic feature
 relationship: part_of ENVO:00000015 ! ocean
 
 [Term]
@@ -10905,7 +10901,7 @@ is_a: ENVO:01000017 ! sand
 id: ENVO:00002119
 name: alkaline hot spring
 def: "A hot spring whose water has an alkaline pH." [MA:ma]
-is_a: ENVO:00000215 ! hydrothermal vent
+is_a: ENVO:00000051 ! hot spring
 intersection_of: ENVO:00000051 ! hot spring
 intersection_of: has_quality PATO:0001430 ! alkaline
 
@@ -10914,7 +10910,7 @@ id: ENVO:00002120
 name: acid hot spring
 def: "A hot spring whose water has an acidic pH." [MA:ma]
 synonym: "acidic hot spring" EXACT []
-is_a: ENVO:00000215 ! hydrothermal vent
+is_a: ENVO:00000051 ! hot spring
 intersection_of: ENVO:00000051 ! hot spring
 intersection_of: has_quality PATO:0001429 ! acidic
 
@@ -11078,7 +11074,7 @@ is_a: ENVO:00002141 ! leachate
 [Term]
 id: ENVO:00002143
 name: calcite hot spring
-is_a: ENVO:00000215 ! hydrothermal vent
+is_a: ENVO:00000051 ! hot spring
 
 [Term]
 id: ENVO:00002144
@@ -11310,7 +11306,7 @@ intersection_of: has_increased_levels_of CHEBI:16482 ! naphthalene
 id: ENVO:00002181
 name: neutral hot spring
 def: "A hot spring whose water has a neutral pH." [MA:ma]
-is_a: ENVO:00000215 ! hydrothermal vent
+is_a: ENVO:00000051 ! hot spring
 
 [Term]
 id: ENVO:00002182
@@ -11864,14 +11860,14 @@ def: "A layer within a water body where the temperature changes rapidly with dep
 xref: EcoLexicon:thermocline
 xref: SWEETRealm:Thermocline
 xref: Wikipedia:Thermocline
-relationship: part_of ENVO:00000063 ! water body
+is_a: ENVO:01000258 ! cline
 
 [Term]
 id: ENVO:00002270
 name: chemocline
 def: "A layer within a water body where the chemical composition changes rapidly with depth." [MA:ma]
 xref: Wikipedia:Chemocline
-relationship: part_of ENVO:00000063 ! water body
+is_a: ENVO:01000258 ! cline
 
 [Term]
 id: ENVO:00002271
@@ -11984,7 +11980,7 @@ intersection_of: has_increased_levels_of ENVO:00002985 ! oil
 [Term]
 id: ENVO:00002926
 name: warm seep
-is_a: ENVO:00000215 ! hydrothermal vent
+is_a: ENVO:01000262 ! seep
 relationship: part_of ENVO:00000015 ! ocean
 
 [Term]
@@ -15164,7 +15160,6 @@ name: marine algal bloom
 def: "A marine algal bloom is a rapid increase or accumulation in the population of algae in a marine system. Typically, only one or a small number of phytoplankton  species are involved. Although there is no officially recognized threshold level, algae can be considered to be blooming at concentrations of hundreds to thousands of cells per milliliter, depending on the severity." [PLB:plb, Wikipedia:Algal_bloom]
 synonym: "red tide" NARROW [Wikipedia:Red_tide]
 xref: EcoLexicon:red_tide
-is_a: ENVO:01000031 ! marine feature
 is_a: ENVO:2000004 ! algal bloom
 intersection_of: ENVO:2000004 ! algal bloom
 intersection_of: located_in ENVO:00000447 ! marine biome
@@ -15174,7 +15169,10 @@ creation_date: 2010-03-16T12:12:30Z
 [Term]
 id: ENVO:01000058
 name: kelp forest
-is_a: ENVO:01000031 ! marine feature
+def: "Kelp forests are underwater areas with a high density of kelp. They are recognized as one of the most productive and dynamic ecosystems on Earth. Smaller areas of anchored kelp are called kelp beds." [Wikipedia:Kelp_Forest]
+comment: Kelp forests and beds may extend many meters above the sea floor, thus should not be considered a type of "bed".
+synonym: "kelp bed" RELATED [Wikipedia:Kelp_forest]
+is_a: ENVO:00000104 ! undersea feature
 created_by: pbuttigieg
 creation_date: 2010-03-16T12:12:30Z
 
@@ -15282,7 +15280,7 @@ creation_date: 2010-03-17T01:14:02Z
 id: ENVO:01000071
 name: oceanic front
 def: "An oceanic front is a narrow zone of enhanced horizontal gradients of water properties (temperature, salinity, nutrients, etc.) that separates broader areas with different water masses or different vertical structure (stratification)." [DOI:10.1016/j.pocean.2009.04.015, ISBN10:\:0717259463]
-is_a: ENVO:01000044 ! marine pelagic feature
+is_a: ENVO:00000012 ! hydrographic feature
 created_by: pbuttigieg
 creation_date: 2010-03-16T12:16:11Z
 
@@ -15315,7 +15313,9 @@ creation_date: 2010-03-16T12:16:11Z
 id: ENVO:01000075
 name: marine thermocline
 def: "The marine thermocline describes a sharp change in the temperature of seawater (in relation to the temperature gradients of the water mass surrounding it) in the marine water column, which is usually associated with rapid changes in water density and salinity." [ISBN:044482619X, PLB:plb]
-is_a: ENVO:01000044 ! marine pelagic feature
+is_a: ENVO:00002269 ! thermocline
+intersection_of: ENVO:00002269 ! thermocline
+intersection_of: located_in ENVO:01000023 ! marine pelagic biome
 created_by: pbuttigieg
 creation_date: 2010-03-16T12:16:11Z
 
@@ -15323,7 +15323,9 @@ creation_date: 2010-03-16T12:16:11Z
 id: ENVO:01000076
 name: marine chemocline
 def: "A marine chemocline is a marine cline caused by a strong, vertical chemistry gradient within a body of marine water. Chemoclines most commonly occur where local conditions favor the formations of anoxic bottom water." [PLB:plb, Wikipedia:Chemocline]
-is_a: ENVO:01000044 ! marine pelagic feature
+is_a: ENVO:00002270 ! chemocline
+intersection_of: ENVO:00002270 ! chemocline
+intersection_of: located_in ENVO:01000023 ! marine pelagic biome
 created_by: pbuttigieg
 creation_date: 2010-03-16T12:16:11Z
 
@@ -15331,7 +15333,9 @@ creation_date: 2010-03-16T12:16:11Z
 id: ENVO:01000077
 name: marine pycnocline
 def: "The marine pycnocline describes a sharp change in the density of seawater (in relation to the gradients of the water mass surrounding it) in the marine water column. Pycnoclines are usually associated with thermo- and haloclines." [PLB:plb, Wikipedia:Mixed_layer]
-is_a: ENVO:01000044 ! marine pelagic feature
+is_a: ENVO:01000259 ! pycnocline
+intersection_of: ENVO:01000259 ! pycnocline
+intersection_of: located_in ENVO:01000023 ! marine pelagic biome
 created_by: pbuttigieg
 creation_date: 2010-03-16T12:16:11Z
 
@@ -15339,7 +15343,9 @@ creation_date: 2010-03-16T12:16:11Z
 id: ENVO:01000078
 name: marine nutricline
 def: "The marine nutricline describes a sharp change in the nutrient content of seawater (in relation to the gradients of the water mass surrounding it) in the marine water column." [PLB:plb, Wikipedia:Mixed_layer]
-is_a: ENVO:01000044 ! marine pelagic feature
+is_a: ENVO:01000260 ! nutricline
+intersection_of: ENVO:01000260 ! nutricline
+intersection_of: located_in ENVO:01000023 ! marine pelagic biome
 created_by: pbuttigieg
 creation_date: 2010-03-16T12:16:11Z
 
@@ -15347,7 +15353,9 @@ creation_date: 2010-03-16T12:16:11Z
 id: ENVO:01000079
 name: marine lysocline
 def: "The marine lysocline denotes the depth in the ocean below which the rate of dissolution of calcite increases dramatically. As water column depth and therefore pressure increases, the corresponding calcite saturation of seawater decreases and the calcite begins dissolve." [PLB:plb, Wikipedia:Lysocline]
-is_a: ENVO:01000044 ! marine pelagic feature
+is_a: ENVO:01000261 ! lysocline
+intersection_of: ENVO:01000261 ! lysocline
+intersection_of: located_in ENVO:01000023 ! marine pelagic biome
 created_by: pbuttigieg
 creation_date: 2010-03-16T12:16:11Z
 
@@ -15542,7 +15550,7 @@ creation_date: 2010-03-16T12:26:13Z
 id: ENVO:01000105
 name: marine benthic feature
 def: "A prominent or distinctive aspect, quality, or characteristic of environments occurring on or along marine benthic environments." [ISBN-10:0618455043, PLB:plb]
-is_a: ENVO:01000031 ! marine feature
+is_a: ENVO:00000104 ! undersea feature
 intersection_of: ENVO:00002297 ! environmental feature
 intersection_of: located_in ENVO:01000024 ! marine benthic biome
 created_by: pbuttigieg
@@ -15683,7 +15691,7 @@ creation_date: 2010-03-17T01:58:08Z
 id: ENVO:01000122
 name: marine hydrothermal vent
 def: "A marine hydrothermal vent is a marine benthic feature where heat generated due to tectonic activity, either at divergent plate boundaries or convergent ocean plates where back-arc spreading occurs, is released or 'vented' to the surface. The resultant high temperature water jets are laden with dissolved metals and minerals." [ISBN:044482619X, PLB:plb]
-is_a: ENVO:01000105 ! marine benthic feature
+is_a: ENVO:00000215 ! hydrothermal vent
 intersection_of: ENVO:00000215 ! hydrothermal vent
 intersection_of: located_in ENVO:00000447 ! marine biome
 created_by: pbuttigieg
@@ -15790,7 +15798,10 @@ creation_date: 2010-03-20T08:33:33Z
 [Term]
 id: ENVO:01000136
 name: drop stone
-is_a: ENVO:01000105 ! marine benthic feature
+def: "An isolated fragment of rock, which fell vertically through the water column into  finer-grained water-deposited sedimentary rocks. Drop stones range in size from small pebbles to boulders." [Wikipedia:Dropstone]
+synonym: "Dropstone" EXACT [Wikipedia:Dropstone]
+is_a: ENVO:00000339 ! piece of rock
+relationship: part_of ENVO:00000501 ! bed
 creation_date: 2010-03-20T06:25:06Z
 
 [Term]
@@ -15844,7 +15855,7 @@ creation_date: 2010-03-20T06:27:01Z
 [Term]
 id: ENVO:01000143
 name: marine reef
-is_a: ENVO:01000105 ! marine benthic feature
+is_a: ENVO:00000130 ! reef
 created_by: pbuttigieg
 creation_date: 2010-03-20T06:43:45Z
 
@@ -16822,6 +16833,76 @@ comment: From Wikipedia: [A mineral] is different from a rock, which can be an a
 is_a: ENVO:00010483 ! environmental material
 created_by: pbuttigieg
 creation_date: 2013-10-05T12:37:41Z
+
+[Term]
+id: ENVO:01000257
+name: white smoker
+def: "A hydrothermal vent found on the ocean floor which emits lighter-hued minerals, such as those containing barium, calcium and silicon. These alkaline hydrothermal vents also continuously generate acetyl thioesters, providing both the starting point for more complex organic molecules and the energy needed to produce them." [Wikipedia:Hydrothermal_vent]
+is_a: ENVO:01000122 ! marine hydrothermal vent
+created_by: pbuttigieg
+creation_date: 2013-10-06T19:57:22Z
+
+[Term]
+id: ENVO:01000258
+name: cline
+def: "In hydrology and related sciences and technologies, a cline is a comparatively thin, typically horizontal layer within a fluid, in which a property of the fluid varies greatly over a relatively short vertical distance." [Wikipedia:Cline_(hydrology)]
+comment: A similar term exists in linguistics and mathematics. An ecocline, or biological cline, is a related concept; however, cannot be included in the hydrographic feature hierarchy.
+is_a: ENVO:00000012 ! hydrographic feature
+relationship: part_of ENVO:00000063 ! water body
+created_by: pbuttigieg
+creation_date: 2013-10-06T20:10:13Z
+
+[Term]
+id: ENVO:01000259
+name: pycnocline
+def: "A layer within a water body where the density gradient changes rapidly with depth." [Wikipedia:<new dbxref>Pycnocline]
+synonym: "stable density gradient" RELATED [Wikipedia:<new dbxref>Pycnocline]
+is_a: ENVO:01000258 ! cline
+created_by: pbuttigieg
+creation_date: 2013-10-06T20:16:10Z
+
+[Term]
+id: ENVO:01000260
+name: nutricline
+def: "A layer within a water body where the nutrient content changes rapidly with depth." [Wikipedia:Mixed_layer]
+is_a: ENVO:01000258 ! cline
+created_by: pbuttigieg
+creation_date: 2013-10-06T20:16:10Z
+
+[Term]
+id: ENVO:01000261
+name: lysocline
+def: "A layer within a water body where the rate of calcite dissolution changes rapidly with depth. The increase in the rate of calcite dissolution with depth is largely due to the concomitant fall in calcite saturation." [Wikipedia:Lysocline]
+is_a: ENVO:01000258 ! cline
+created_by: pbuttigieg
+creation_date: 2013-10-06T20:16:10Z
+
+[Term]
+id: ENVO:01000262
+name: seep
+def: "A seep is a spring in which water has filtered through permeable earth to the surface." [Wikipedia:Spring_(hydrology)]
+is_a: ENVO:00000027 ! spring
+created_by: pbuttigieg
+creation_date: 2013-10-06T21:13:21Z
+
+[Term]
+id: ENVO:01000263
+name: cold seep
+def: "A cold seep is a seep in which methane and other hydrocarbon-rich fluids rise to the sea floor." []
+synonym: "hydrocarbon seep" EXACT []
+synonym: "methane seep" EXACT []
+is_a: ENVO:01000262 ! seep
+created_by: pbuttigieg
+creation_date: 2013-10-06T21:16:39Z
+
+[Term]
+id: ENVO:01000265
+name: hydrothermal seep
+def: "A hydrothermal seep is a seep in which diffuse flow of geothermally heated fluids with high methane concentrations. This seep has been proposed as an intermediate between cold seeps and hydrothermal vents." [DOI:10.1098/rspb.2012.0205]
+synonym: "hot seep" RELATED []
+is_a: ENVO:01000262 ! seep
+created_by: pbuttigieg
+creation_date: 2013-10-06T21:19:00Z
 
 [Term]
 id: ENVO:02000000
