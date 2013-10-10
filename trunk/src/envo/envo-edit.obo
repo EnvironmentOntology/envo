@@ -1,5 +1,5 @@
 format-version: 1.2
-date: 08:10:2013 09:59
+date: 10:10:2013 08:32
 saved-by: pbuttigieg
 auto-generated-by: OBO-Edit 2.2
 subsetdef: abnormal_slim "Abnormal/normal slim"
@@ -16897,6 +16897,16 @@ created_by: pbuttigieg
 creation_date: 2013-10-06T21:16:39Z
 
 [Term]
+id: ENVO:01000264
+name: vapour
+def: "A vapour is an environmental material in the gas phase at a temperature lower than its critical point." [Wikipedia:Vapor]
+synonym: "vapor" EXACT []
+is_a: ENVO:00010483 ! environmental material
+disjoint_from: ENVO:00002005 ! air
+disjoint_from: ENVO:00010505 ! aerosol
+creation_date: 2013-10-10T07:55:56Z
+
+[Term]
 id: ENVO:01000265
 name: hydrothermal seep
 def: "A hydrothermal seep is a seep in which diffuse flow of geothermally heated fluids with high methane concentrations. This seep has been proposed as an intermediate between cold seeps and hydrothermal vents." [DOI:10.1098/rspb.2012.0205]
@@ -16904,6 +16914,38 @@ synonym: "hot seep" RELATED []
 is_a: ENVO:01000262 ! seep
 created_by: pbuttigieg
 creation_date: 2013-10-06T21:19:00Z
+
+[Term]
+id: ENVO:01000266
+name: water vapour
+def: "Water vapour is a vapour which is the gas phase of water." [Wikipedia:Water_vapor]
+comment: Perhaps a better relation between water vapour and water can be found in or added to RO?
+synonym: "aqueous vapor" EXACT [Wikipedia:Water_vapor]
+synonym: "aqueous vapour" EXACT [Wikipedia:Water_vapor]
+synonym: "water vapor" EXACT [Wikipedia:Water_vapor]
+is_a: ENVO:01000264 ! vapour
+relationship: has_part ENVO:00002006 ! water
+created_by: pbuttigieg
+creation_date: 2013-10-10T07:58:18Z
+
+[Term]
+id: ENVO:01000267
+name: atmosphere
+def: "An atmosphere is a physiographic feature which is a layer of gases surrounding a material body of sufficient mass that is held in place by the gravity of the body." [Wikipedia:Atmosphere, Wikipedia:Physical_geography]
+is_a: ENVO:00000191 ! physiographic feature
+created_by: pbuttigieg
+creation_date: 2013-10-10T08:14:50Z
+
+[Term]
+id: ENVO:01000268
+name: atmospheric water vapour
+def: "Atmospheric water vapour is water vapour that is part of an atmosphere." [Wikipedia:Water_vapor]
+synonym: "atmospheric water vapor" EXACT [Wikipedia:Water_vapor]
+is_a: ENVO:01000266 ! water vapour
+intersection_of: ENVO:01000266 ! water vapour
+intersection_of: part_of ENVO:01000267 ! atmosphere
+created_by: pbuttigieg
+creation_date: 2013-10-10T08:22:07Z
 
 [Term]
 id: ENVO:02000000
