@@ -1,5 +1,5 @@
 format-version: 1.2
-date: 12:10:2013 15:10
+date: 12:10:2013 17:09
 saved-by: pbuttigieg
 auto-generated-by: OBO-Edit 2.2
 subsetdef: abnormal_slim "Abnormal/normal slim"
@@ -3753,6 +3753,8 @@ is_a: ENVO:00000002 ! anthropogenic geographic feature
 [Term]
 id: ENVO:00000063
 name: water body
+def: "An accumulation of water of varying size." [Wikipedia:<new dbxref>Body_of_water]
+comment: Wikipedia: The term body of water most often refers to large accumulations of water, such as oceans, seas, and lakes, but it includes smaller pools of water such as ponds, wetlands, or more rarely, puddles. A body of water does not have to be still or contained; Rivers, streams, canals, and other geographical features where water moves from one place to another are also considered bodies of water.
 synonym: "aquatic feature" EXACT []
 synonym: "bodies of water" EXACT [Getty:TGN]
 synonym: "body of water" EXACT [ADL:FTT]
@@ -7741,15 +7743,19 @@ relationship: part_of ENVO:00000067 ! cave
 [Term]
 id: ENVO:00000328
 name: vadoze zone
-def: "The zone where voids in the rock are partly filled." [web:http\://wasg.iinet.net.au/terminol.html]
-relationship: part_of ENVO:00000067 ! cave
+def: "A zone beneath the land surface and above the level of permanent groundwater or phreatic zone in which water has a hydraulic head less than atmospheric pressure and is retained by a combination of adhesion and capillary action." [web:http\://wasg.iinet.net.au/terminol.html, Wikipedia:Vadose_zone]
+comment: Wikipedia: If the vadose zone envelops soil, the water contained therein is termed soil moisture. In fine grained soils, capillary action can cause the pores of the soil to be fully saturated above the water table at a pressure less than atmospheric. In such soils, therefore, the unsaturated zone is the upper section of the vadose zone and not identical to it.
+synonym: "unsaturated zone" EXACT [Wikipedia:Vadose_zone]
+synonym: "vadose zone" EXACT [Wikipedia:Vadose_zone]
+is_a: ENVO:00000012 ! hydrographic feature
 
 [Term]
 id: ENVO:00000329
 name: phreatic zone
-def: "Zone where voids in the rock are completely filled." [web:http\://wasg.iinet.net.au/terminol.html]
+def: "A zone beneath the land surface in which all interstices are filled with water. Water in the phreatic zone has a hydraulic head greater than atmospheric pressure due to the weight of overlying groundwater." [web:http\://wasg.iinet.net.au/terminol.html, Wikipedia:Phreatic_zone]
+synonym: "zone of saturation" RELATED [Wikipedia:Phreatic_zone]
 xref: Wikipedia:Phreatic_zone
-relationship: part_of ENVO:00000067 ! cave
+is_a: ENVO:00000012 ! hydrographic feature
 
 [Term]
 id: ENVO:00000330
@@ -11929,10 +11935,12 @@ comment: This class is currently being aligned to the Basic Formal Ontology. Fol
 [Term]
 id: ENVO:00002450
 name: ocean basin
+def: "A structural basin that is below sea level." [Wikipedia:Ocean_basin]
+comment: This class is defined in its geological sense:\nWikipedia: Hydrologically, an oceanic basin may be anywhere on Earth that is covered by seawater, but geologically ocean basins are large geologic basins that are below sea level. Geologically, there are other undersea geomorphological features such as the continental shelves, the deep ocean trenches, and the undersea mountain ranges (for example, the mid-Atlantic ridge) which are not considered to be part of the ocean basins; while hydrologically, oceanic basins include the flanking continental shelves and shallow, epeiric seas.
 xref: EcoLexicon:ocean_basin
 xref: Wikipedia:Ocean_basin
-is_a: ENVO:00000309 ! depression
-is_a: ENVO:01000031 ! marine feature
+is_a: ENVO:01000275 ! structural basin
+relationship: adjacent_to ENVO:00000015 ! ocean
 
 [Term]
 id: ENVO:00002869
@@ -13742,7 +13750,8 @@ def: "An underground layer of water-bearing permeable rock or unconsolidated mat
 xref: EcoLexicon:aquifer
 xref: SWEETRealm:Aquifer
 xref: Wikipedia:Aquifer
-is_a: ENVO:00000063 ! water body
+relationship: has_part ENVO:00000328 ! vadoze zone
+relationship: has_part ENVO:00000329 ! phreatic zone
 
 [Term]
 id: ENVO:00012411
@@ -15060,7 +15069,7 @@ creation_date: 2010-03-15T11:22:09Z
 id: ENVO:01000044
 name: marine pelagic feature
 def: "A prominent or distinctive aspect, quality, or characteristic of environments occurring within the marine water column." [ISBN-10:0618455043, PLB:plb]
-is_a: ENVO:01000031 ! marine feature
+is_a: ENVO:00000012 ! hydrographic feature
 created_by: pbuttigieg
 creation_date: 2010-03-16T12:10:50Z
 
@@ -15286,7 +15295,7 @@ creation_date: 2010-03-17T01:14:02Z
 id: ENVO:01000071
 name: oceanic front
 def: "An oceanic front is a narrow zone of enhanced horizontal gradients of water properties (temperature, salinity, nutrients, etc.) that separates broader areas with different water masses or different vertical structure (stratification)." [DOI:10.1016/j.pocean.2009.04.015, ISBN10:\:0717259463]
-is_a: ENVO:00000012 ! hydrographic feature
+is_a: ENVO:01000044 ! marine pelagic feature
 created_by: pbuttigieg
 creation_date: 2010-03-16T12:16:11Z
 
@@ -17008,6 +17017,14 @@ is_a: ENVO:00002017 ! metamorphic rock
 relationship: derives_from ENVO:01000271 ! clastic sedimentary rock
 created_by: pbuttigieg
 creation_date: 2013-10-12T14:51:19Z
+
+[Term]
+id: ENVO:01000275
+name: structural basin
+def: "A structural basin is a geological depression formed by tectonic warping of previously flat lying rock strata." [Wikipedia:Structural_basin]
+is_a: ENVO:00000309 ! depression
+created_by: pbuttigieg
+creation_date: 2013-10-12T16:30:32Z
 
 [Term]
 id: ENVO:02000000
