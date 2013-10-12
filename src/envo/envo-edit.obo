@@ -1,5 +1,5 @@
 format-version: 1.2
-date: 10:10:2013 09:46
+date: 12:10:2013 15:10
 saved-by: pbuttigieg
 auto-generated-by: OBO-Edit 2.2
 subsetdef: abnormal_slim "Abnormal/normal slim"
@@ -10792,14 +10792,14 @@ name: sandstone
 def: "A sedimentary rock composed mainly of sand-size mineral or rock grains." [Wikipedia:Sandstone]
 xref: EcoLexicon:sandstone
 xref: Wikipedia:Sandstone
-is_a: ENVO:00002016 ! sedimentary rock
+is_a: ENVO:01000271 ! clastic sedimentary rock
 
 [Term]
 id: ENVO:00002056
 name: shale
 def: "A fine-grained sedimentary rock whose original constituents were clays or muds. It is characterized by thin laminae breaking with an irregular curving fracture, often splintery and usually parallel to the often-indistinguishable bedding plane." [Wikipedia:Shale]
 xref: Wikipedia:Shale
-is_a: ENVO:00002016 ! sedimentary rock
+is_a: ENVO:01000271 ! clastic sedimentary rock
 
 [Term]
 id: ENVO:00002057
@@ -14824,10 +14824,14 @@ is_a: ENVO:0010013 ! fermented cereal beverage
 [Term]
 id: ENVO:01000016
 name: silt
+def: "Silt is granular material of a size somewhere between sand and clay whose mineral origin is quartz and feldspar." [Wikipedia:Silt]
+comment: Wikipedia: In the Udden-Wentworth scale (due to Krumbein), silt particles range between 0.0039 to 0.0625 mm, larger than clay but smaller than sand particles. ISO 14688 grades silts between 0.002 mm and 0.063 mm. In actuality, silt is chemically distinct from clay, and unlike clay, grains of silt are approximately the same size in all dimensions; furthermore, their size ranges overlap. Clays are formed from thin plate-shaped particles held together by electrostatic forces, so present a cohesion. According to the U.S. Department of Agriculture Soil Texture Classification system, the sand-silt distinction is made at the 0.05 mm particle size. The USDA system has been adopted by the Food and Agriculture Organization (FAO). In the Unified Soil Classification System (USCS) and the AASHTO Soil Classification system, the sand-silt distinction is made at the 0.075 mm particle size (i.e., material passing the #200 sieve). Silts and clays are distinguished mechanically by their plasticity.
 xref: EcoLexicon:silt
 xref: SWEETRealm:Silt
 xref: Wikipedia:Silt
-is_a: ENVO:00001995 ! rock
+is_a: ENVO:00010483 ! environmental material
+disjoint_from: ENVO:00002982 ! clay
+disjoint_from: ENVO:01000017 ! sand
 
 [Term]
 id: ENVO:01000017
@@ -16947,6 +16951,63 @@ intersection_of: ENVO:01000266 ! water vapour
 intersection_of: part_of ENVO:01000267 ! atmosphere
 created_by: pbuttigieg
 creation_date: 2013-10-10T08:22:07Z
+
+[Term]
+id: ENVO:01000269
+name: siltstone
+def: "A sedimentary rock which is composed mainly of silt. This rock has a grainsize in the silt range, finer than sandstone and coarser than claystones." [Wikipedia:Siltstone]
+is_a: ENVO:01000271 ! clastic sedimentary rock
+relationship: derives_from ENVO:01000016 ! silt
+created_by: pbuttigieg
+creation_date: 2013-10-12T14:51:19Z
+
+[Term]
+id: ENVO:01000270
+name: claystone
+def: "A clastic sedimentary rock which is composed primarily of clay sized particles." [Wikipedia:Claystone]
+is_a: ENVO:01000271 ! clastic sedimentary rock
+relationship: derives_from ENVO:00002982 ! clay
+created_by: pbuttigieg
+creation_date: 2013-10-12T14:51:19Z
+
+[Term]
+id: ENVO:01000271
+name: clastic sedimentary rock
+def: "Clastic sedimentary rocks are sedimentary rocks that are composed of silicate minerals and rock fragments that were transported by moving fluids. Clastic rocks are composed largely of quartz, feldspar, rock (lithic) fragments, clay minerals, and mica; numerous other minerals may be present as accessories and may be important locally." [Wikipedia:Sedimentary_rock#Clastic_sedimentary_rocks]
+is_a: ENVO:00002016 ! sedimentary rock
+created_by: pbuttigieg
+creation_date: 2013-10-12T14:51:19Z
+
+[Term]
+id: ENVO:01000272
+name: mudstone
+def: "A mudstone is a clastic sedimentary rock which contains a mixture of at least one third of silt- and one third of clay-sized particles." [Wikipedia:Mudrock#Nomenclature, Wikipedia:Mudstone]
+comment: There is debate on the usage of mudstone and mudrock, and some ambiguity is to be expected. Wikipedia: The terminology of "mudstone" is not to be confused with the Dunham classification scheme for limestones. In Dunham's classification, a mudstone is any limestone containing less than ten percent carbonate grains. Note, a siliciclastic mudstone does not deal with carbonate grains. Friedman, Sanders, and Kopaska-Merkel (1992) suggest the use of "lime mudstone" to avoid confusion with siliciclastic rocks.
+is_a: ENVO:01000271 ! clastic sedimentary rock
+relationship: derives_from ENVO:01000001 ! mud
+created_by: pbuttigieg
+creation_date: 2013-10-12T14:51:19Z
+
+[Term]
+id: ENVO:01000273
+name: lime mudstone
+def: "Lime mudstone is a limestone which is primarily composed of either clay-size or both silt-size and clay-size detrital (transported) carbonate grains." [Wikipedia:Calcilutite, Wikipedia:Mudstone]
+comment: Wikipedia: The terminology of "mudstone" is not to be confused with the Dunham classification scheme for limestones. In Dunham's classification, a mudstone is any limestone containing less than ten percent carbonate grains. Note, a siliciclastic mudstone does not deal with carbonate grains. Friedman, Sanders, and Kopaska-Merkel (1992) suggest the use of "lime mudstone" to avoid confusion with siliciclastic rocks.
+synonym: "calcilutite" EXACT [Wikipedia:Calcilutite]
+synonym: "cementstone" EXACT [Wikipedia:Calcilutite]
+is_a: ENVO:00002053 ! limestone
+disjoint_from: ENVO:01000272 ! mudstone
+created_by: pbuttigieg
+creation_date: 2013-10-12T14:51:19Z
+
+[Term]
+id: ENVO:01000274
+name: slate
+def: "Slate is a metamorphic rock which is fine-grained, foliated, homogeneous, Slates are derived from clastic sedimentary rocks." [Wikipedia:Slate]
+is_a: ENVO:00002017 ! metamorphic rock
+relationship: derives_from ENVO:01000271 ! clastic sedimentary rock
+created_by: pbuttigieg
+creation_date: 2013-10-12T14:51:19Z
 
 [Term]
 id: ENVO:02000000
