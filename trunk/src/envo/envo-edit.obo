@@ -1,5 +1,5 @@
 format-version: 1.2
-date: 13:10:2013 12:41
+date: 13:10:2013 21:20
 saved-by: pbuttigieg
 auto-generated-by: OBO-Edit 2.2
 subsetdef: abnormal_slim "Abnormal/normal slim"
@@ -16179,6 +16179,7 @@ def: "A desert biome is a terrestrial biome which loses more liquid water by eva
 comment: Preliminary definition.
 xref: SPIRE:Desert_or_dune
 is_a: ENVO:00000446 ! terrestrial biome
+relationship: has_condition ENVO:01000230 ! arid
 created_by: pbuttigi
 creation_date: 2013-04-07T14:26:46Z
 
@@ -16204,6 +16205,7 @@ creation_date: 2013-04-07T14:26:46Z
 [Term]
 id: ENVO:01000182
 name: temperate desert biome
+def: "A temperate desert biome is a desert biome which has communities adapted to intermediate insolation, low rainfall, and large temperature variations between winter and summer. Winter temperatures may fall below 0 degrees Celsius. Some precipitation in this biome may fall as snow." [WWW:http\://www.fs.fed.us/land/ecosysmgmt/colorimagemap/images/340.html]
 comment: Preliminary definition. The semantics and definitions of "mediterranean", "subtropical", "tropical", "temperate", "polar", and similar climate types may be transferred to an "environmental condition" class once the semantics of this class have been established.
 is_a: ENVO:01000179 ! desert biome
 relationship: has_condition ENVO:01000206 ! temperate
@@ -16223,6 +16225,7 @@ creation_date: 2013-04-07T14:28:08Z
 [Term]
 id: ENVO:01000184
 name: subtropical desert biome
+def: "A subtropical desert biome is a desert biome which has communities adapted to temperatures above a monthly average of 18 degrees Celsius, high daily temperature ranges of approximately 20 degrees Celsius, high insolation (but lower than that of a tropical desert biome), inhibited cloud formation, and very low precipitation. Subtropical desert biomes located near coasts with cold upwellings may have cooler temperatures and reduced insolution due to fog." [Wikipedia:Subtropical#Semi-desert.2Fdesert_climate, WWW:http\://www.earthonlinemedia.com/ebooks/tpe_3e/title_page.html]
 comment: Preliminary definition. The semantics and definitions of "mediterranean", "subtropical", "tropical", "temperate", "polar", and similar climate types may be transferred to an "environmental condition" class once the semantics of this class have been established.
 is_a: ENVO:01000179 ! desert biome
 relationship: has_condition ENVO:01000205 ! subtropical
@@ -16241,6 +16244,7 @@ creation_date: 2013-04-07T14:28:08Z
 [Term]
 id: ENVO:01000186
 name: polar desert biome
+def: "A polar desert biome is a desert biome which is subject to low levels of insolation, annual precipitation less than 250 millimeters, and a mean temperature less than 10 degrees Celsius during its warmest month. Temperature changes in polar deserts frequently cross the freezing point of water." [Wikipedia:Polar_desert]
 comment: Preliminary definition. The semantics and definitions of "mediterranean", "subtropical", "tropical", "temperate", "polar", and similar climate types may be transferred to an "environmental condition" class once the semantics of this class have been established.
 is_a: ENVO:01000179 ! desert biome
 relationship: has_condition ENVO:01000238 ! polar
@@ -17043,7 +17047,8 @@ creation_date: 2013-10-12T16:30:32Z
 id: ENVO:01000276
 name: ecoregion
 def: "A large unit of land or water containing a geographically distinct assemblage of species, natural communities, and environmental conditions." [DOI:10.1641/0006-3568(2001)051[0933\:TEOTWA\]2.0.CO;2, URL:http\://worldwildlife.org/biomes]
-comment: Unlike biomes, ecoregions are geographically defined entities. ENVO's sister project, GAZ, contains terms for instances of ecoregions (e.g. Beringia lowland tundra). Requests for new terms should be directed to GAZ. ENVO will only contain this top-level class.
+comment: Unlike biomes, ecoregions are geographically defined entities. ENVO's sister project, GAZ, contains terms for instances of ecoregions (e.g. Beringia lowland tundra). Requests for new terms should be directed to GAZ. ENVO will only contain this top-level class. The class' definition is preliminary and will be aligned to BFO.
+disjoint_from: ENVO:00000428 ! biome
 created_by: pbuttigieg
 creation_date: 2013-10-12T17:21:09Z
 
@@ -17071,6 +17076,15 @@ synonym: "ice lenses" EXACT PLURAL []
 is_a: ENVO:00000299 ! ice mass
 created_by: pbuttigieg
 creation_date: 2013-10-13T12:20:34Z
+
+[Term]
+id: ENVO:01000280
+name: ecozone
+def: "Ecozones delineate large areas of the Earth's surface within which organisms have been evolving in relative isolation over long periods of time, separated from one another by geographic features, such as oceans, broad deserts, or high mountain ranges, that constitute barriers to migration." [Wikipedia:ecozone]
+comment: ENVO contains this top-level class, but all instances will be in GAZ. The definition is preliminary and will be aligned to BFO.\nWikipedia:  Ecozones correspond to the floristic kingdoms of botany or zoogeographic regions of zoology. Ecozones are characterized by the evolutionary history of the organisms they contain. They are distinct from biomes, also known as major habitat types, which are divisions of the Earth's surface based on life form, or the adaptation of plants and animals to climatic, soil, and other conditions. Biomes are characterized by similar climax vegetation. Each ecozone may include a number of different biomes. A tropical moist broadleaf forest in Central America, for example, may be similar to one in New Guinea in its vegetation type and structure, climate, soils, etc., but these forests are inhabited by plants and animals with very different evolutionary histories.
+disjoint_from: ENVO:00000428 ! biome
+created_by: pbuttigieg
+creation_date: 2013-10-13T18:32:46Z
 
 [Term]
 id: ENVO:02000000
