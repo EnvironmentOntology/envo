@@ -1,5 +1,5 @@
 format-version: 1.2
-date: 12:10:2013 17:30
+date: 13:10:2013 01:04
 saved-by: pbuttigieg
 auto-generated-by: OBO-Edit 2.2
 subsetdef: abnormal_slim "Abnormal/normal slim"
@@ -4404,7 +4404,7 @@ xref: FTT:384
 xref: Geonames:T.CLDA
 xref: TGN:21409
 xref: Wikipedia:Caldera
-relationship: part_of ENVO:00000247 ! volcano
+is_a: ENVO:00000309 ! depression
 
 [Term]
 id: ENVO:00000097
@@ -5936,7 +5936,7 @@ xref: Geonames:T.NTKS
 xref: TGN:21495
 xref: Wikipedia:Nunatak
 is_a: ENVO:00000131 ! glacial feature
-is_a: ENVO:00000176 ! elevation
+relationship: part_of ENVO:00000176 ! elevation
 
 [Term]
 id: ENVO:00000182
@@ -6376,7 +6376,6 @@ def: "An island that does not sit on a continental shelf, and is of volcanic ori
 synonym: "volcanic island" RELATED []
 xref: EcoLexicon:oceanic_island
 xref: Wikipedia:Oceanic_island
-is_a: ENVO:00000094 ! volcanic feature
 is_a: ENVO:00000098 ! island
 relationship: derives_from ENVO:00000247 ! volcano
 property_value: disconnected_from ENVO:00000223
@@ -6609,7 +6608,7 @@ id: ENVO:00000245
 name: maar
 def: "A broad, low relief crater that results from a phreatic eruption or explosion caused by groundwater contact with hot lava or magma. The maar typically fills with water to form a relatively shallow crater lake." [Wikipedia:Maar]
 xref: Wikipedia:Maar
-relationship: part_of ENVO:00000247 ! volcano
+is_a: ENVO:00000514 ! crater
 
 [Term]
 id: ENVO:00000246
@@ -6622,6 +6621,7 @@ xref: Wikipedia:Volcanic_crater
 is_a: ENVO:00000514 ! crater
 intersection_of: ENVO:00000514 ! crater
 intersection_of: part_of ENVO:00000247 ! volcano
+disjoint_from: ENVO:00000096 ! caldera
 relationship: part_of ENVO:00000247 ! volcano
 
 [Term]
@@ -7198,7 +7198,7 @@ xref: Geonames:T.BUTE
 xref: SWEETRealm:Butte
 xref: TGN:21443
 xref: Wikipedia:Butte
-is_a: ENVO:00000191 ! physiographic feature
+is_a: ENVO:00000176 ! elevation
 
 [Term]
 id: ENVO:00000288
@@ -8461,9 +8461,11 @@ relationship: part_of ENVO:00000015 ! ocean
 id: ENVO:00000407
 name: subglacial volcano
 def: "A volcano produced by subglacial eruptions or eruptions beneath the surface of a lake melted into a glacier or ice mass by the rising lava." [Wikipedia:Subglacial_volcano]
+comment: Something more specific than an adjacent_to relation would be better, especially considering the volcano in question may have melted nearby glacial mass.
 synonym: "tuya" RELATED []
 xref: Wikipedia:Subglacial_volcano
 is_a: ENVO:00000247 ! volcano
+relationship: adjacent_to ENVO:00000133 ! glacier
 
 [Term]
 id: ENVO:00000408
@@ -9048,7 +9050,7 @@ synonym: "CUT" EXACT [USGS:SDTS]
 synonym: "cutting" EXACT []
 xref: FTT:1182
 xref: Wikipedia:Cut
-is_a: ENVO:00000191 ! physiographic feature
+is_a: ENVO:00000002 ! anthropogenic geographic feature
 
 [Term]
 id: ENVO:00000475
@@ -9158,6 +9160,7 @@ xref: Geonames:T.PKS
 xref: SWEETRealm:Peak
 xref: TGN:21490
 xref: Wikipedia:Peak
+is_a: ENVO:00000191 ! physiographic feature
 relationship: part_of ENVO:00000176 ! elevation
 
 [Term]
@@ -9493,6 +9496,7 @@ xref: TGN:21498
 xref: TGN:21513
 xref: Wikipedia:Terrace
 is_a: ENVO:00000191 ! physiographic feature
+relationship: has_part ENVO:00002000 ! slope
 
 [Term]
 id: ENVO:00000509
