@@ -1,5 +1,5 @@
 format-version: 1.2
-date: 13:10:2013 01:04
+date: 13:10:2013 12:41
 saved-by: pbuttigieg
 auto-generated-by: OBO-Edit 2.2
 subsetdef: abnormal_slim "Abnormal/normal slim"
@@ -18,8 +18,8 @@ synonymtypedef: InChI "InChI"
 synonymtypedef: InChIKey "InChIKey"
 synonymtypedef: INN "INN"
 synonymtypedef: IUPAC_NAME "IUPAC NAME"
-synonymtypedef: SMILES "SMILES"
 synonymtypedef: PLURAL "plural term"
+synonymtypedef: SMILES "SMILES"
 default-namespace: ENVO
 idspace: SWEETRealm http://sweet.jpl.nasa.gov/2.3/realm.owl#
 remark: Comments to Norman Morrison
@@ -7337,6 +7337,7 @@ is_a: ENVO:00000131 ! glacial feature
 id: ENVO:00000299
 name: ice mass
 def: "Fields of ice, formed in regions of perennial frost." [ADL:FTT]
+comment: Ice mass may need to be resolved from ice field, the former referring simply to an accumulation of ice.
 synonym: "ice field" RELATED [ADL:FTT]
 synonym: "ice patch" NARROW [ADL:FTT]
 synonym: "ice sheet" RELATED [ADL:FTT]
@@ -7356,6 +7357,7 @@ xref: FTT:842
 xref: SWEETRealm:IceField
 xref: TGN:21147
 is_a: ENVO:00000131 ! glacial feature
+relationship: has_part ENVO:01000277 ! ice
 
 [Term]
 id: ENVO:00000300
@@ -8522,12 +8524,14 @@ is_a: ENVO:00000029 ! watercourse
 [Term]
 id: ENVO:00000413
 name: pingo
-def: "A mound of earth-covered ice found in the Arctic, subarctic, and Antarctica that can reach up to 70 metres in height and up to 2 kilometres in diameter." [Wikipedia:Pingo]
+def: "A mound of earth-covered ice found in the Arctic, subarctic, and Antarctica that can reach up to 70 metres in height and up to 2 kilometres in diameter." [DOI:10.1016/0033-5894(76)90039-9, Wikipedia:Pingo]
+comment: Pingos may occur in cold-climate wetland areas, but are not necessarily wetlands themselves.
 synonym: "bugor" RELATED []
 synonym: "bulginniakh" RELATED []
+synonym: "hydrolaccolith" EXACT [Wikipedia:Pingo]
 synonym: "mount" BROAD [USGS:SDTS]
+synonym: "pingos" EXACT PLURAL []
 xref: Wikipedia:Pingo
-is_a: ENVO:00000043 ! wetland
 is_a: ENVO:00000176 ! elevation
 
 [Term]
@@ -9205,17 +9209,20 @@ relationship: part_of ENVO:00000023 ! stream
 id: ENVO:00000484
 name: polynya
 def: "Any enclosed water area in pack ice other than a lead, not large enough to be called open water. When frozen over, a polyna becomes an ice skylight from the point of view of the submariner." [USGS:SDTS]
+comment: Could be a subclass of a class that describes holes in solid material covering water or other liquids. Perhaps a class like "clearing". Logical def can include surrounded_by "ice mass".
 synonym: "big clearing" RELATED [USGS:SDTS]
 synonym: "clearing" RELATED [USGS:SDTS]
 synonym: "glade" RELATED [USGS:SDTS]
 synonym: "ice clearing" RELATED [USGS:SDTS]
 synonym: "POLYNA" EXACT [USGS:SDTS]
+synonym: "polynia" EXACT [Wikipedia:polynia]
 synonym: "Polynya" EXACT [NASA:earthrealm]
 synonym: "regional clearing" RELATED [USGS:SDTS]
 xref: EcoLexicon:polynya
 xref: SWEETRealm:Polynya
 xref: Wikipedia:Polynya
-relationship: part_of ENVO:00000299 ! ice mass
+is_a: ENVO:00000012 ! hydrographic feature
+relationship: adjacent_to ENVO:00000299 ! ice mass
 
 [Term]
 id: ENVO:00000485
@@ -9268,7 +9275,8 @@ def: "A low oval elevation in areas with permafrost, frequently peat bogs, where
 synonym: "palsa bog" EXACT []
 synonym: "wetland" RELATED [USGS:SDTS]
 xref: Wikipedia:Palsa
-is_a: ENVO:00000413 ! pingo
+is_a: ENVO:00000176 ! elevation
+relationship: has_part ENVO:01000279 ! ice lens
 
 [Term]
 id: ENVO:00000490
@@ -15200,7 +15208,7 @@ creation_date: 2010-03-16T12:12:30Z
 id: ENVO:01000059
 name: sea grass bed
 def: "Seagrass beds are highly diverse and productive ecosystems, and can harbour hundreds of associated species from all phyla. They partly create their own habitat: the leaves slow down water-currents increasing sedimentation, and the seagrass roots and rhizomes stabilize the seabed." [ISBN:0195141725, PLB:plb, Wikipedia:Seagrass]
-is_a: ENVO:01000031 ! marine feature
+is_a: ENVO:01000105 ! marine benthic feature
 created_by: pbuttigieg
 creation_date: 2010-03-16T12:12:30Z
 
@@ -17038,6 +17046,31 @@ def: "A large unit of land or water containing a geographically distinct assembl
 comment: Unlike biomes, ecoregions are geographically defined entities. ENVO's sister project, GAZ, contains terms for instances of ecoregions (e.g. Beringia lowland tundra). Requests for new terms should be directed to GAZ. ENVO will only contain this top-level class.
 created_by: pbuttigieg
 creation_date: 2013-10-12T17:21:09Z
+
+[Term]
+id: ENVO:01000277
+name: ice
+def: "Ice is water frozen into a solid state. It can appear transparent or opaque bluish-white color, depending on the presence of impurities or air inclusions. The addition of other materials such as soil may further alter its appearance." [Wikipedia:Ice]
+is_a: ENVO:00010483 ! environmental material
+created_by: pbuttigieg
+creation_date: 2013-10-13T12:01:28Z
+
+[Term]
+id: ENVO:01000278
+name: pingo scar
+def: "A depression caused by the collapse of a pingo." [DOI:10.1016/0033-5894(76)90039-9]
+relationship: derives_from ENVO:00000413 ! pingo
+created_by: pbuttigieg
+creation_date: 2013-10-13T12:15:55Z
+
+[Term]
+id: ENVO:01000279
+name: ice lens
+def: "An mass which is formed when moisture, diffused within soil or rock, accumulates and freezes in a localized zone, wedging soil or rock apart." [Wikipedia:Ice_Lens]
+synonym: "ice lenses" EXACT PLURAL []
+is_a: ENVO:00000299 ! ice mass
+created_by: pbuttigieg
+creation_date: 2013-10-13T12:20:34Z
 
 [Term]
 id: ENVO:02000000
