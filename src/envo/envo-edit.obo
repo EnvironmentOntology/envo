@@ -1,6 +1,6 @@
 format-version: 1.2
-date: 15:10:2013 17:38
-saved-by: pbuttigieg
+date: 15:10:2013 18:18
+saved-by: PLB
 auto-generated-by: OBO-Edit 2.2
 subsetdef: abnormal_slim "Abnormal/normal slim"
 subsetdef: absent_slim "Absent/present slim"
@@ -17120,6 +17120,7 @@ name: lake layer
 def: "A layer which is part of a lake." []
 comment: Note that this class does not contain metalimnion as a subclass. The metaliminon is classified as a thermocline.
 is_a: ENVO:01000281 ! layer
+relationship: part_of ENVO:00000020 ! lake
 created_by: pbuttigieg
 creation_date: 2013-10-15T16:57:43Z
 
@@ -17147,6 +17148,7 @@ id: ENVO:01000286
 name: dimictic lake
 def: "A dimitic lake is a holomictic lake which mixes from top to bottom during two mixing periods each year. Mixing typically occurs during the spring and autumn, when the lake is \"isothermal\" (i.e., at the same temperature from the top to the bottom). At this time the water throughout the lake is about 4°C, and, in the absence of any temperature or density differences, the lake readily mixes from top to bottom. These lakes are common in regions with temperate climates." [DOI:10.1139/f83-207, Wikipedia:Dimictic_lake]
 is_a: ENVO:01000285 ! holomictic lake
+disjoint_from: ENVO:01000288 ! monomictic lake
 created_by: pbuttigieg
 creation_date: 2013-10-15T17:08:47Z
 
@@ -17155,6 +17157,8 @@ id: ENVO:01000287
 name: polymictic lake
 def: "A polymictic lake is a holomictic lake which is too shallow to allow thermal stratification and which can mix from top to bottom through the ice-free period of the year." [DOI:10.1139/f83-207, Wikipedia:Polymictic]
 is_a: ENVO:01000285 ! holomictic lake
+disjoint_from: ENVO:01000286 ! dimictic lake
+disjoint_from: ENVO:01000288 ! monomictic lake
 created_by: pbuttigieg
 creation_date: 2013-10-15T17:08:47Z
 
