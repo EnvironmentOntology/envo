@@ -1,5 +1,5 @@
 format-version: 1.2
-date: 13:10:2013 21:20
+date: 15:10:2013 17:38
 saved-by: pbuttigieg
 auto-generated-by: OBO-Edit 2.2
 subsetdef: abnormal_slim "Abnormal/normal slim"
@@ -6145,6 +6145,7 @@ def: "A lake from which there is no outflow of water, either on the surface as r
 xref: EcoLexicon:endorheic_lake
 xref: Wikipedia:Endorheic_lake
 is_a: ENVO:00000020 ! lake
+relationship: adjacent_to ENVO:00000551 ! endorheic basin
 
 [Term]
 id: ENVO:00000198
@@ -6159,6 +6160,7 @@ name: meromictic lake
 def: "A lake which has layers of water which do not intermix. The deepest layer of water in such a lake does not contain any dissolved oxygen. The layers of sediment at the bottom of a meromictic lake remain relatively undisturbed because there are no living organisms to stir them up." [Wikipedia:Lake#Types_of_lakes]
 xref: EcoLexicon:meromictic_lake_
 is_a: ENVO:00000020 ! lake
+disjoint_from: ENVO:01000285 ! holomictic lake
 
 [Term]
 id: ENVO:00000200
@@ -7230,7 +7232,7 @@ is_a: ENVO:00000309 ! depression
 [Term]
 id: ENVO:00000291
 name: drainage basin
-def: "A regions or area bounded by drainage divides and occupied by a drainage system; specifically the tract of country that gathers water originating as precipitation and contributes it to a particular stream channel or system of channels, or to a lake, reservoir, or other body of water." [ADL:FTT]
+def: "An extent or area of land where surface water from rain and melting snow or ice converges to a single point at lower elevation, usually the exit of the basin, where the waters join another waterbody." [Wikipedia:Drainage_basin]
 synonym: "Basin" EXACT [NASA:earthrealm]
 synonym: "CATCHMENT" RELATED [USGS:SDTS]
 synonym: "Catchment" RELATED [NASA:earthrealm]
@@ -9398,6 +9400,7 @@ xref: EcoLexicon:bed
 xref: FTT:804
 xref: SWEETRealm:Bottom
 xref: Wikipedia:Stream_bed
+is_a: ENVO:00000012 ! hydrographic feature
 relationship: part_of ENVO:00000063 ! water body
 
 [Term]
@@ -11001,6 +11004,8 @@ name: hypolimnion
 def: "The dense, bottom layer of water in a thermally-stratified lake. It is the layer that lies below the thermocline." [Wikipedia:Hypolimnion]
 xref: EcoLexicon:hypolimnion
 xref: Wikipedia:Hypolimnion
+is_a: ENVO:01000283 ! lake layer
+relationship: adjacent_to ENVO:00002132 ! metalimnion
 relationship: part_of ENVO:00000199 ! meromictic lake
 
 [Term]
@@ -11009,14 +11014,18 @@ name: epilimnion
 def: "The top-most layer in a thermally stratified lake, occurring above the deeper hypolimnion. It is warmer and typically has a higher pH and dissolved oxygen concentration than the hypolimnion." [Wikipedia:Epilimnion]
 xref: EcoLexicon:epilimnion_
 xref: Wikipedia:Epilimnion
+is_a: ENVO:01000283 ! lake layer
+relationship: adjacent_to ENVO:00002132 ! metalimnion
 relationship: part_of ENVO:00000199 ! meromictic lake
 
 [Term]
 id: ENVO:00002132
 name: metalimnion
 def: "The layer within a body of water or air where the temperature changes rapidly with depth." [Wikipedia:Metalimnion]
+comment: Especially used in connection with lakes.
 synonym: "thermocline" RELATED []
 xref: Wikipedia:Metalimnion
+is_a: ENVO:00002269 ! thermocline
 relationship: part_of ENVO:00000199 ! meromictic lake
 
 [Term]
@@ -11876,7 +11885,7 @@ is_a: ENVO:00000044 ! peatland
 [Term]
 id: ENVO:00002269
 name: thermocline
-def: "A layer within a water body where the temperature changes rapidly with depth." [Wikipedia:Thermocline]
+def: "A layer within a fluid where the temperature changes rapidly with depth." [Wikipedia:Thermocline]
 xref: EcoLexicon:thermocline
 xref: SWEETRealm:Thermocline
 xref: Wikipedia:Thermocline
@@ -11885,7 +11894,7 @@ is_a: ENVO:01000258 ! cline
 [Term]
 id: ENVO:00002270
 name: chemocline
-def: "A layer within a water body where the chemical composition changes rapidly with depth." [MA:ma]
+def: "A layer within a fluid where the chemical composition changes rapidly with depth." [MA:ma]
 xref: Wikipedia:Chemocline
 is_a: ENVO:01000258 ! cline
 
@@ -13696,7 +13705,7 @@ name: surface
 xref: EcoLexicon:surface
 xref: SWEETRealm:Surface
 xref: Wikipedia:Surface
-relationship: part_of ENVO:00000063 ! water body
+is_a: ENVO:00000000 ! geographic feature
 
 [Term]
 id: ENVO:00010505
@@ -16877,17 +16886,16 @@ creation_date: 2013-10-06T19:57:22Z
 [Term]
 id: ENVO:01000258
 name: cline
-def: "In hydrology and related sciences and technologies, a cline is a comparatively thin, typically horizontal layer within a fluid, in which a property of the fluid varies greatly over a relatively short vertical distance." [Wikipedia:Cline_(hydrology)]
-comment: A similar term exists in linguistics and mathematics. An ecocline, or biological cline, is a related concept; however, cannot be included in the hydrographic feature hierarchy.
-is_a: ENVO:00000012 ! hydrographic feature
-relationship: part_of ENVO:00000063 ! water body
+def: "A cline is a comparatively thin, typically horizontal layer within a fluid, in which a property of the fluid varies greatly over a relatively short vertical distance." [Wikipedia:Cline_(hydrology)]
+comment: A similar term exists in linguistics and mathematics. An ecocline, or biological cline, is a related concept; however, may be better placed as a child of a class like "ecotone".
+is_a: ENVO:01000281 ! layer
 created_by: pbuttigieg
 creation_date: 2013-10-06T20:10:13Z
 
 [Term]
 id: ENVO:01000259
 name: pycnocline
-def: "A layer within a water body where the density gradient changes rapidly with depth." [Wikipedia:<new dbxref>Pycnocline]
+def: "A layer within a fluid where the density gradient changes rapidly with depth." [Wikipedia:<new dbxref>Pycnocline]
 synonym: "stable density gradient" RELATED [Wikipedia:<new dbxref>Pycnocline]
 is_a: ENVO:01000258 ! cline
 created_by: pbuttigieg
@@ -16896,16 +16904,18 @@ creation_date: 2013-10-06T20:16:10Z
 [Term]
 id: ENVO:01000260
 name: nutricline
-def: "A layer within a water body where the nutrient content changes rapidly with depth." [Wikipedia:Mixed_layer]
+def: "A layer within a water body where the nutrient content changes rapidly with depth." [CMECS:1345, Wikipedia:Mixed_layer]
 is_a: ENVO:01000258 ! cline
+relationship: part_of ENVO:00000063 ! water body
 created_by: pbuttigieg
 creation_date: 2013-10-06T20:16:10Z
 
 [Term]
 id: ENVO:01000261
 name: lysocline
-def: "A layer within a water body where the rate of calcite dissolution changes rapidly with depth. The increase in the rate of calcite dissolution with depth is largely due to the concomitant fall in calcite saturation." [Wikipedia:Lysocline]
+def: "A layer within a marine water body where the rate of calcite dissolution changes rapidly with depth. The increase in the rate of calcite dissolution with depth is largely due to the concomitant fall in calcite saturation." [Wikipedia:Lysocline]
 is_a: ENVO:01000258 ! cline
+relationship: part_of ENVO:00001999 ! marine water body
 created_by: pbuttigieg
 creation_date: 2013-10-06T20:16:10Z
 
@@ -17085,6 +17095,108 @@ comment: ENVO contains this top-level class, but all instances will be in GAZ. T
 disjoint_from: ENVO:00000428 ! biome
 created_by: pbuttigieg
 creation_date: 2013-10-13T18:32:46Z
+
+[Term]
+id: ENVO:01000281
+name: layer
+def: "A layer is a quantity of some material which has comparable thickness and usually covers some surface." [Wiktionary:layer]
+comment: Preliminary defintion.
+is_a: ENVO:00000000 ! geographic feature
+created_by: pbuttigieg
+creation_date: 2013-10-15T16:42:02Z
+
+[Term]
+id: ENVO:01000282
+name: stratum
+def: "A stratum is a layer which is composed of sedimentary rock or soil with internally consistent characteristics that distinguish it from other layers." [Wikipedia:Stratum]
+comment: Preliminary definition. Concepts such as "characteristic" may be problematic.
+is_a: ENVO:01000281 ! layer
+created_by: pbuttigieg
+creation_date: 2013-10-15T16:49:04Z
+
+[Term]
+id: ENVO:01000283
+name: lake layer
+def: "A layer which is part of a lake." []
+comment: Note that this class does not contain metalimnion as a subclass. The metaliminon is classified as a thermocline.
+is_a: ENVO:01000281 ! layer
+created_by: pbuttigieg
+creation_date: 2013-10-15T16:57:43Z
+
+[Term]
+id: ENVO:01000284
+name: amictic lake
+def: "A lake which is permanently covered by ice, does not mix, and exhibit inverse cold water stratification whereby water temperature increases with depth below the ice surface." [Wikipedia:Amictic_lake]
+is_a: ENVO:00000020 ! lake
+disjoint_from: ENVO:01000285 ! holomictic lake
+relationship: adjacent_to ENVO:01000277 ! ice
+created_by: pbuttigieg
+creation_date: 2013-10-15T17:08:47Z
+
+[Term]
+id: ENVO:01000285
+name: holomictic lake
+def: "A holomictic lake is a lake which mixes at least once per year. Mixing is caused by a uniform temperature distribution from the upper to lower layers of the lake." [DOI:10.1139/f83-207, Wikipedia:Holomictic]
+synonym: "non-meromictic lake" RELATED [DOI:10.1139/f83-207, Wikipedia:Holomictic]
+is_a: ENVO:00000020 ! lake
+created_by: pbuttigieg
+creation_date: 2013-10-15T17:08:47Z
+
+[Term]
+id: ENVO:01000286
+name: dimictic lake
+def: "A dimitic lake is a holomictic lake which mixes from top to bottom during two mixing periods each year. Mixing typically occurs during the spring and autumn, when the lake is \"isothermal\" (i.e., at the same temperature from the top to the bottom). At this time the water throughout the lake is about 4°C, and, in the absence of any temperature or density differences, the lake readily mixes from top to bottom. These lakes are common in regions with temperate climates." [DOI:10.1139/f83-207, Wikipedia:Dimictic_lake]
+is_a: ENVO:01000285 ! holomictic lake
+created_by: pbuttigieg
+creation_date: 2013-10-15T17:08:47Z
+
+[Term]
+id: ENVO:01000287
+name: polymictic lake
+def: "A polymictic lake is a holomictic lake which is too shallow to allow thermal stratification and which can mix from top to bottom through the ice-free period of the year." [DOI:10.1139/f83-207, Wikipedia:Polymictic]
+is_a: ENVO:01000285 ! holomictic lake
+created_by: pbuttigieg
+creation_date: 2013-10-15T17:08:47Z
+
+[Term]
+id: ENVO:01000288
+name: monomictic lake
+def: "A monomictic  lake is a holomictic lake which mixes from top to bottom during one mixing period each year." [DOI:10.1139/f83-207, Wikipedia:Monomictic]
+is_a: ENVO:01000285 ! holomictic lake
+created_by: pbuttigieg
+creation_date: 2013-10-15T17:08:47Z
+
+[Term]
+id: ENVO:01000289
+name: cold monomictic lake
+def: "A monomictic lake which is covered by ice throughout much of the year and only mixes when its surface ice melts and the lake lacks thermal stratification." [Wikipedia:Monomictic]
+is_a: ENVO:01000288 ! monomictic lake
+created_by: pbuttigieg
+creation_date: 2013-10-15T17:23:51Z
+
+[Term]
+id: ENVO:01000290
+name: warm monomictic lake
+def: "A monomictic lake which does not freeze and is thermally stratified throughout most of the year, only mixing in winter when cooler temperatures ease stratification." [Wikipedia:Monomictic]
+is_a: ENVO:01000288 ! monomictic lake
+created_by: pbuttigieg
+creation_date: 2013-10-15T17:26:42Z
+
+[Term]
+id: ENVO:01000291
+name: cold polymictic lake
+def: "A cold polymictic lake is a polymictic lake which is covered by ice in winter." [DOI:10.1139/f83-207, Wikipedia:Polymictic]
+is_a: ENVO:01000287 ! polymictic lake
+created_by: pbuttigieg
+creation_date: 2013-10-15T17:31:50Z
+
+[Term]
+id: ENVO:01000292
+name: warm polymictic lake
+def: "A warm polymictic lake is a polymictic lake which is not covered by ice at any point during the year." [DOI:10.1139/f83-207, Wikipedia:Polymictic]
+is_a: ENVO:01000287 ! polymictic lake
+created_by: pbuttigieg
+creation_date: 2013-10-15T17:32:26Z
 
 [Term]
 id: ENVO:02000000
