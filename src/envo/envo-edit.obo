@@ -1,5 +1,5 @@
 format-version: 1.2
-date: 16:10:2013 00:45
+date: 16:10:2013 13:08
 saved-by: pbuttigieg
 auto-generated-by: OBO-Edit 2.2
 subsetdef: abnormal_slim "Abnormal/normal slim"
@@ -2877,7 +2877,6 @@ xref: Geonames:H.LKN
 xref: Geonames:H.LKSN
 xref: TGN:21116
 xref: Wikipedia:Saline_lake
-is_a: ENVO:00000017 ! saline hydrographic feature
 is_a: ENVO:00000020 ! lake
 
 [Term]
@@ -3564,10 +3563,11 @@ is_a: ENVO:00000014 ! canal
 [Term]
 id: ENVO:00000049
 name: volcanic hydrographic feature
-is_a: ENVO:00000012 ! hydrographic feature
-is_a: ENVO:00000094 ! volcanic feature
-intersection_of: ENVO:00000012 ! hydrographic feature
-intersection_of: part_of ENVO:00000247 ! volcano
+is_obsolete: true
+consider: ENVO:00000052
+consider: ENVO:00000215
+consider: ENVO:00000407
+consider: ENVO:01000265
 
 [Term]
 id: ENVO:00000050
@@ -3615,9 +3615,9 @@ xref: Geonames:H.LKSC
 xref: TGN:21138
 xref: Wikipedia:Crater_lake
 is_a: ENVO:00000020 ! lake
-is_a: ENVO:00000049 ! volcanic hydrographic feature
 intersection_of: ENVO:00000020 ! lake
 intersection_of: located_in ENVO:00000246 ! volcanic crater
+relationship: located_in ENVO:00000246 ! volcanic crater
 
 [Term]
 id: ENVO:00000053
@@ -3641,7 +3641,6 @@ xref: FTT:185
 xref: Geonames:H.MRSHN
 xref: TGN:21323
 xref: Wikipedia:Saline_marsh
-is_a: ENVO:00000017 ! saline hydrographic feature
 is_a: ENVO:00000035 ! marsh
 is_a: ENVO:00000240 ! saline wetland
 
@@ -5381,6 +5380,7 @@ xref: Geonames:H.CRNT
 xref: SWEETRealm:OceanCurrent
 xref: TGN:21169
 xref: Wikipedia:Ocean_current
+is_a: ENVO:01000067 ! marine current
 relationship: part_of ENVO:00000015 ! ocean
 
 [Term]
@@ -5970,7 +5970,7 @@ xref: TGN:21441
 xref: TGN:21493
 xref: TGN:21494
 xref: Wikipedia:Plateau
-is_a: ENVO:00000191 ! physiographic feature
+is_a: ENVO:00000176 ! elevation
 
 [Term]
 id: ENVO:00000183
@@ -6128,7 +6128,7 @@ is_a: ENVO:00000309 ! depression
 [Term]
 id: ENVO:00000196
 name: alkaline flat
-def: "A dry lakebead consisting of fine-grained sediments infused with alkali salts. Generally the shore or bed of an endorheic lake." [Wikipedia:Sabkha]
+def: "A dry lakebed consisting of fine-grained sediments infused with alkali salts. Generally the shore or bed of an endorheic lake." [Wikipedia:Sabkha]
 synonym: "chott" RELATED [ADL:FTT]
 synonym: "kavir" RELATED [ADL:FTT]
 synonym: "playa" RELATED [ADL:FTT]
@@ -6138,8 +6138,7 @@ xref: FTT:477
 xref: FTT:706
 xref: FTT:895
 xref: SWEETRealm:Playa
-is_a: ENVO:00000017 ! saline hydrographic feature
-is_a: ENVO:00000277 ! dry lake
+is_a: ENVO:01000296 ! dry lake bed
 
 [Term]
 id: ENVO:00000197
@@ -6221,7 +6220,7 @@ def: "The water mass of an ocean directly above a continental shelf." [Wikipedia
 xref: EcoLexicon:neritic_zone
 xref: SWEETRealm:NeriticZone
 xref: Wikipedia:Neritic_zone
-is_a: ENVO:00000207 ! oceanic zone
+is_a: ENVO:01000295 ! marine layer
 
 [Term]
 id: ENVO:00000207
@@ -6229,6 +6228,8 @@ name: oceanic zone
 def: "The water mass of an ocean that is not above a continental shelf." [Wikipedia:Ocean]
 synonym: "OceanLayer" EXACT [NASA:earthrealm]
 xref: EcoLexicon:oceanic_zone
+is_a: ENVO:01000295 ! marine layer
+disjoint_from: ENVO:00000206 ! neritic zone
 relationship: part_of ENVO:00000015 ! ocean
 
 [Term]
@@ -6239,7 +6240,7 @@ xref: EcoLexicon:pelagic_zone
 xref: SPIRE:Pelagic
 xref: SWEETRealm:PelagicZone
 xref: Wikipedia:Pelagic_zone
-is_a: ENVO:00000207 ! oceanic zone
+is_a: ENVO:01000295 ! marine layer
 
 [Term]
 id: ENVO:00000209
@@ -6251,7 +6252,7 @@ xref: EcoLexicon:epipelagic_zone
 xref: SPIRE:Epipelagic_zone
 xref: SWEETRealm:PhoticZone
 xref: Wikipedia:Photic_zone
-is_a: ENVO:00000207 ! oceanic zone
+is_a: ENVO:01000295 ! marine layer
 
 [Term]
 id: ENVO:00000210
@@ -6261,7 +6262,7 @@ synonym: "AphoticZone" EXACT [NASA:earthrealm]
 xref: EcoLexicon:aphotic_zone
 xref: SWEETRealm:AphoticZone
 xref: Wikipedia:Aphotic_zone
-is_a: ENVO:00000207 ! oceanic zone
+is_a: ENVO:01000295 ! marine layer
 
 [Term]
 id: ENVO:00000211
@@ -7070,7 +7071,7 @@ xref: SWEETRealm:SaltFlat
 xref: TGN:21459
 xref: TGN:21506
 is_a: ENVO:00000017 ! saline hydrographic feature
-is_a: ENVO:00000277 ! dry lake
+is_a: ENVO:01000296 ! dry lake bed
 
 [Term]
 id: ENVO:00000280
@@ -7719,6 +7720,7 @@ id: ENVO:00000323
 name: live cave
 def: "A cave containing a stream or active speleothems." [web:http\://wasg.iinet.net.au/terminol.html]
 is_a: ENVO:00000067 ! cave
+disjoint_from: ENVO:00000030 ! dead cave
 
 [Term]
 id: ENVO:00000324
@@ -7785,7 +7787,7 @@ is_a: ENVO:00000327 ! speleothem
 [Term]
 id: ENVO:00000332
 name: doline
-def: "A closed depression draining underground in karst, ofsimple but variable form, e.g. cylindrical, conical, bowl- or dish-shaped. From a few to many hundreds of metres in dimensions." [web:http\://wasg.iinet.net.au/terminol.html]
+def: "A closed depression draining underground in karst, of simple but variable form, e.g. cylindrical, conical, bowl- or dish-shaped. From a few to many hundreds of metres in dimensions." [web:http\://wasg.iinet.net.au/terminol.html]
 xref: Wikipedia:Doline
 is_a: ENVO:00000309 ! depression
 relationship: part_of ENVO:00000175 ! karst
@@ -8822,7 +8824,7 @@ is_a: ENVO:00000025 ! reservoir
 [Term]
 id: ENVO:00000444
 name: clearing
-def: "An open area in a forest." [USGS:SDTS]
+def: "A tract of land with few or no trees in the middle of a wooded area." [USGS:SDTS, Wikipedia:Glade_(geography)]
 synonym: "burn" RELATED [USGS:SDTS]
 synonym: "burnt over area" RELATED [USGS:SDTS]
 synonym: "CLEARING" EXACT [USGS:SDTS]
@@ -8840,7 +8842,8 @@ xref: Geonames:L.CLG
 xref: SWEETRealm:Burning
 xref: TGN:21651
 xref: Wikipedia:Clearing
-relationship: part_of ENVO:00000111 ! forest
+is_a: ENVO:00000191 ! physiographic feature
+relationship: part_of ENVO:00000109 ! woodland
 
 [Term]
 id: ENVO:00000445
@@ -11953,7 +11956,7 @@ id: ENVO:00002277
 name: back-arc basin
 def: "A depression in the sea floor that results from the collision of continental plates; the weight of the sinking plate causes the overlying plate to stretch and thin, causing a basin in the overlying plate. Sometimes, the Earth's crust in these basins stretches so much it cracks, allowing magma through from the mantle beneath. Hence, basins often contain active volcanoes and hydrothermal vents." [webpage:http\://www.venturedeepocean.org/vents/stretching.html]
 synonym: "backarc basin" EXACT []
-synonym: "basin" EXACT []
+synonym: "basin" BROAD []
 xref: EcoLexicon:basin
 xref: SWEETRealm:BackArcBasin
 xref: SWEETRealm:Basin
@@ -14933,6 +14936,7 @@ id: ENVO:01000023
 name: marine pelagic biome
 def: "The marine pelagic biome (pelagic meaning open sea) is that of the marine water column, from the surface to the greatest depths." [ISBN:0750633840]
 is_a: ENVO:00000447 ! marine biome
+relationship: has_part ENVO:00001999 ! marine water body
 created_by: pbuttigieg
 creation_date: 2010-03-15T11:17:06Z
 
@@ -15139,6 +15143,7 @@ id: ENVO:01000048
 name: ocean biome
 def: "The ocean biome comprises major bodies of saline water, principal components of the hydrosphere. Approximately 71% of the Earth's surface is covered by ocean, a continuous body of water that is customarily divided into several principal oceans and smaller seas. More than half of this area is over 3,000 metres (9,800 ft) deep. Average oceanic salinity is around 35 parts per thousand (ppt) (3.5%), and nearly all seawater has a salinity in the range of 30 to 38 ppt." [PLB:plb, Wikipedia:Ocean]
 is_a: ENVO:00000447 ! marine biome
+relationship: has_part ENVO:00000015 ! ocean
 created_by: pbuttigieg
 creation_date: 2010-03-15T11:23:23Z
 
@@ -15246,7 +15251,8 @@ creation_date: 2010-03-16T12:16:11Z
 id: ENVO:01000061
 name: marine wind mixed layer
 def: "The upper part of the marine water column with generally uniform properties resulting from wind-driven mixing." [ISBN:044482619X, PLB:plb]
-is_a: ENVO:01000044 ! marine pelagic feature
+is_a: ENVO:01000281 ! layer
+relationship: part_of ENVO:00000209 ! photic zone
 created_by: pbuttigieg
 creation_date: 2010-03-16T12:16:11Z
 
@@ -15262,7 +15268,7 @@ creation_date: 2010-03-16T12:16:11Z
 id: ENVO:01000063
 name: marine upwelling
 def: "A marine upwelling is a net flow of marine water to the surface of the water column from deeper regions. This is often a result of surface water displacement off continental coasts by wind action. Localised upwellings may also occur along divergent fronts around eddies and along some of the major oceanographic features. Deeper waters often have higher nutrient content; consequently blooms of primary producers, such as planktonic algae, are generally observed around upwelling zones." [ISBN:044482619X, ISBN:0750633840, PLB:plb]
-is_a: ENVO:01000044 ! marine pelagic feature
+is_a: ENVO:01000067 ! marine current
 created_by: pbuttigieg
 creation_date: 2010-03-16T12:16:11Z
 
@@ -15270,7 +15276,7 @@ creation_date: 2010-03-16T12:16:11Z
 id: ENVO:01000064
 name: marine downwelling
 def: "A marine downwelling describes a net current of marine surface water towards deeper regions of the water column. Marine downwellings are usually caused by differences in the density (and hence, temperature and salinity) of seawater." [PLB:plb]
-is_a: ENVO:01000044 ! marine pelagic feature
+is_a: ENVO:01000067 ! marine current
 created_by: pbuttigieg
 creation_date: 2010-03-16T12:16:11Z
 
@@ -15355,7 +15361,7 @@ id: ENVO:01000074
 name: oceanic gyre
 def: "A gyre in oceanography is any large system of rotating ocean currents, particularly those involved with large wind movements. Gyres are caused by the Coriolis Effect; planetary vorticity  along with horizontal and vertical friction, which determine the circulation patterns from the wind curl (torque)." [Wikipedia:Ocean_gyre]
 xref: SWEETRealm:OceanGyre
-is_a: ENVO:01000044 ! marine pelagic feature
+is_a: ENVO:01000067 ! marine current
 created_by: pbuttigieg
 creation_date: 2010-03-16T12:16:11Z
 
@@ -16036,7 +16042,7 @@ creation_date: 2010-03-20T09:00:40Z
 id: ENVO:01000160
 name: marine pockmark
 def: "Pockmarks are craters in the seabed resulting from the release of gas or liquid. Generally, they are formed in soft, fine-grained seabed sediments by the escape of fluids (gas or water, but mainly methane) into the water column." [PLB:plb, Wikipedia:Pockmark]
-relationship: part_of ENVO:02000003 ! pockmark field
+is_a: ENVO:00000309 ! depression
 created_by: pbuttigieg
 creation_date: 2010-03-20T09:14:38Z
 
@@ -16154,6 +16160,7 @@ def: "A forest biome is a terrestrial biome which includes, across its entire sp
 comment: Preliminary definition.
 xref: SPIRE:Forest
 is_a: ENVO:00000446 ! terrestrial biome
+relationship: has_part ENVO:00000111 ! forest
 created_by: pbuttigi
 creation_date: 2013-04-07T14:26:46Z
 
@@ -16163,6 +16170,7 @@ name: woodland biome
 def: "A woodland biome is a terrestrial biome which includes, across its entire spatial extent, woody plants spaced sufficiently far apart to allow light penetration to support communities of herbaceous plants or shrubs living closer to the woodland floor." []
 comment: Preliminary definition.
 is_a: ENVO:00000446 ! terrestrial biome
+relationship: has_part ENVO:00000109 ! woodland
 created_by: pbuttigi
 creation_date: 2013-04-07T14:26:46Z
 
@@ -16181,6 +16189,7 @@ name: grassland biome
 def: "A grassland biome is a terrestrial biome which  includes, across its entire spatial extent, an unbroken layer of grasses (Gramineae), sedges (Cyperaceae) or  rushes (Juncaceae)." []
 xref: SPIRE:Savannah_or_grassland
 is_a: ENVO:00000446 ! terrestrial biome
+relationship: has_part ENVO:00000106 ! grassland
 created_by: pbuttigi
 creation_date: 2013-04-07T14:26:46Z
 
@@ -16202,6 +16211,7 @@ comment: Preliminary definition.
 xref: SPIRE:Desert_or_dune
 is_a: ENVO:00000446 ! terrestrial biome
 relationship: has_condition ENVO:01000230 ! arid
+relationship: has_part ENVO:00000097 ! desert
 created_by: pbuttigi
 creation_date: 2013-04-07T14:26:46Z
 
@@ -16212,6 +16222,7 @@ def: "A tundra is a terrestrial biome which includes, across its spatial extent,
 comment: Preliminary definition.
 xref: SPIRE:Tundra
 is_a: ENVO:00000446 ! terrestrial biome
+relationship: has_part ENVO:00000112 ! tundra
 created_by: pbuttigi
 creation_date: 2013-04-07T14:26:46Z
 
@@ -16852,12 +16863,14 @@ creation_date: 2013-09-04T07:08:34Z
 id: ENVO:01000252
 name: freshwater lake biome
 is_a: ENVO:00000873 ! freshwater biome
+relationship: has_part ENVO:00000021 ! freshwater lake
 creation_date: 2013-09-19T11:11:01Z
 
 [Term]
 id: ENVO:01000253
 name: freshwater river biome
 is_a: ENVO:00000873 ! freshwater biome
+relationship: has_part ENVO:01000297 ! freshwater river
 creation_date: 2013-09-19T11:11:01Z
 
 [Term]
@@ -16985,8 +16998,8 @@ creation_date: 2013-10-10T07:58:18Z
 [Term]
 id: ENVO:01000267
 name: atmosphere
-def: "An atmosphere is a physiographic feature which is a layer of gases surrounding a material body of sufficient mass that is held in place by the gravity of the body." [Wikipedia:Atmosphere, Wikipedia:Physical_geography]
-is_a: ENVO:00000191 ! physiographic feature
+def: "An atmosphere is a layer of gases surrounding a material body of sufficient mass that is held in place by the gravity of the body." [Wikipedia:Atmosphere, Wikipedia:Physical_geography]
+is_a: ENVO:01000281 ! layer
 created_by: pbuttigieg
 creation_date: 2013-10-10T08:14:50Z
 
@@ -17233,6 +17246,37 @@ created_by: pbuttigieg
 creation_date: 2013-10-16T00:42:47Z
 
 [Term]
+id: ENVO:01000295
+name: marine layer
+def: "A layer that is part of a marine water body." [PLB:plb]
+is_a: ENVO:01000281 ! layer
+relationship: part_of ENVO:00001999 ! marine water body
+created_by: pbuttigieg
+creation_date: 2013-10-16T11:55:20Z
+
+[Term]
+id: ENVO:01000296
+name: dry lake bed
+def: "A lake bed which is dry. That is, the bed of a dry lake." []
+is_a: ENVO:00000268 ! lake bed
+intersection_of: ENVO:00000268 ! lake bed
+intersection_of: has_quality PATO:0001824 ! dry
+relationship: part_of ENVO:00000277 ! dry lake
+created_by: pbuttigieg
+creation_date: 2013-10-16T12:12:53Z
+
+[Term]
+id: ENVO:01000297
+name: freshwater river
+def: "A river where fresh water flows." [PLB:plb]
+comment: Preliminary definition.
+is_a: ENVO:00000022 ! river
+intersection_of: ENVO:00000022 ! river
+intersection_of: has_part ENVO:00002011 ! fresh water
+created_by: pbuttigieg
+creation_date: 2013-10-16T12:56:48Z
+
+[Term]
 id: ENVO:02000000
 name: hypodermic needle
 def: "A hypodermic needle is a medical instrument made from a hollow needle. It is commonly used with a syringe to inject substances into the body of an organism." [GEMINA:ag, Wikipedia:Hypodermic_needle]
@@ -17257,6 +17301,7 @@ id: ENVO:02000003
 name: pockmark field
 def: "A pockmark field is an undersea feature formed by shallow seabed depressions, typically several tens of metres across and a few metres deep. Generally, they are formed in soft, fine-grained seabed sediments by the escape of fluids (gas or water, but mainly methane) into the water column." [GEMINA:ag, Wikipedia:Pockmark]
 is_a: ENVO:01000105 ! marine benthic feature
+relationship: has_part ENVO:01000160 ! marine pockmark
 
 [Term]
 id: ENVO:02000004
