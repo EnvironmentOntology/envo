@@ -1,5 +1,5 @@
 format-version: 1.2
-date: 16:10:2013 15:29
+date: 18:10:2013 01:05
 saved-by: pbuttigieg
 auto-generated-by: OBO-Edit 2.2
 subsetdef: abnormal_slim "Abnormal/normal slim"
@@ -6390,10 +6390,9 @@ property_value: disconnected_from ENVO:00000223
 id: ENVO:00000223
 name: continental shelf
 def: "The extended perimeter of each continent, which is covered during interglacial periods such as the current epoch by relatively shallow sea." [Wikipedia:Continental_shelf]
+comment: The continental shelf is a gentle slope. This class refers to the geographical continental shelf and not the legal concept of the same name.
 synonym: "borderland" RELATED [Geonames:feature]
 synonym: "borderland (continental margin)" RELATED [ADL:FTT]
-synonym: "continental margin" EXACT [ADL:FTT]
-synonym: "ContinentalMargin" RELATED [NASA:earthrealm]
 synonym: "platform (continental margin)" RELATED [ADL:FTT]
 synonym: "shelf" EXACT [Geonames:feature]
 synonym: "shelf edge (ocean)" RELATED [ADL:FTT]
@@ -6410,7 +6409,8 @@ xref: Geonames:U.BDLU
 xref: Geonames:U.SHFU
 xref: SWEETRealm:ContinentalMargin
 xref: Wikipedia:Continental_shelf
-is_a: ENVO:01000105 ! marine benthic feature
+is_a: ENVO:00002000 ! slope
+relationship: part_of ENVO:01000298 ! continental margin
 
 [Term]
 id: ENVO:00000224
@@ -6607,7 +6607,8 @@ xref: FTT:4
 xref: SPIRE:Abyssal
 xref: TGN:23302
 xref: Wikipedia:Abyssal_plain
-is_a: ENVO:01000105 ! marine benthic feature
+is_a: ENVO:00000086 ! plain
+relationship: adjacent_to ENVO:00000426 ! ocean floor
 
 [Term]
 id: ENVO:00000245
@@ -6853,7 +6854,6 @@ xref: TGN:23176
 xref: TGN:23178
 xref: Wikipedia:Seamount
 is_a: ENVO:00000081 ! mountain
-is_a: ENVO:01000105 ! marine benthic feature
 
 [Term]
 id: ENVO:00000265
@@ -6904,7 +6904,8 @@ xref: TGN:23415
 xref: TGN:23416
 xref: Wikipedia:Submarine_canyon
 is_a: ENVO:00000169 ! canyon
-is_a: ENVO:01000105 ! marine benthic feature
+relationship: adjacent_to ENVO:00000426 ! ocean floor
+relationship: adjacent_to ENVO:00000482 ! sea floor
 
 [Term]
 id: ENVO:00000268
@@ -6973,7 +6974,8 @@ def: "The seabed below the end of the continental shelf (the shelf break). The c
 xref: EcoLexicon:continental_slope
 xref: FTT:536
 xref: Wikipedia:Continental_slope
-is_a: ENVO:01000105 ! marine benthic feature
+is_a: ENVO:00002000 ! slope
+relationship: part_of ENVO:01000298 ! continental margin
 
 [Term]
 id: ENVO:00000274
@@ -6984,7 +6986,8 @@ xref: FTT:534
 xref: Geonames:U.CRSU
 xref: TGN:23110
 xref: Wikipedia:Continental_rise
-is_a: ENVO:01000105 ! marine benthic feature
+is_a: ENVO:00002000 ! slope
+relationship: part_of ENVO:01000298 ! continental margin
 
 [Term]
 id: ENVO:00000275
@@ -7012,7 +7015,7 @@ xref: TGN:23462
 xref: TGN:23464
 xref: Wikipedia:Ocean_trench
 is_a: ENVO:00000309 ! depression
-is_a: ENVO:01000105 ! marine benthic feature
+relationship: adjacent_to ENVO:00000426 ! ocean floor
 
 [Term]
 id: ENVO:00000276
@@ -7441,6 +7444,8 @@ xref: SWEETRealm:CoastalRegion
 xref: TGN:21483
 xref: Wikipedia:Coast
 is_a: ENVO:00000012 ! hydrographic feature
+intersection_of: ENVO:01000005 ! upwelling
+intersection_of: adjacent_to ENVO:00000303 ! coast
 
 [Term]
 id: ENVO:00000304
@@ -7663,6 +7668,7 @@ name: tidal pool
 def: "Pools formed as a high tide comes in over a rocky shore. Water fills depressions in the ground, which turn into isolated pools as the tide retreats." [Wikipedia:Tide_pool]
 xref: EcoLexicon:tidal_pool
 xref: Wikipedia:Tidal_pool
+is_a: ENVO:00000063 ! water body
 relationship: part_of ENVO:00000316 ! intertidal zone
 
 [Term]
@@ -8070,8 +8076,11 @@ is_a: ENVO:00000098 ! island
 [Term]
 id: ENVO:00000369
 name: brine pool
-def: "A large area of brine on the ocean basin near cold seep vents which release methane into the water. These pools are concentrations of water having an extremely high salinity as compared to the surrounding ocean, caused by the motion of large salt deposits through salt tectonics." [Wikipedia:Brine_pool]
+alt_id: ENVO:01000060
+def: "MERGED DEFINITION:\nTARGET DEFINITION: A large area of brine on the ocean basin near cold seep vents which release methane into the water. These pools are concentrations of water having an extremely high salinity as compared to the surrounding ocean, caused by the motion of large salt deposits through salt tectonics.\n--------------------\nSOURCE DEFINITION: Marine brine pools are large areas of brine on the ocean basin. These pools are bodies of water that have a salinity three to five times greater than the surrounding ocean. For deep-sea brine pools the source of the salt is the dissolution of large salt deposits through salt tectonics. The brine often contains high concentrations of methane, providing energy to chemosynthetic animals that live near the pool." [Wikipedia:Brine_pool]
+synonym: "marine brine pool" EXACT []
 xref: Wikipedia:Brine_pool
+is_a: ENVO:00000063 ! water body
 relationship: part_of ENVO:00000015 ! ocean
 
 [Term]
@@ -8468,7 +8477,6 @@ xref: EcoLexicon:oceanic_ridge
 xref: TGN:23151
 xref: Wikipedia:Mid-ocean_ridge
 is_a: ENVO:00000550 ! range of seamounts
-is_a: ENVO:01000105 ! marine benthic feature
 relationship: part_of ENVO:00000015 ! ocean
 
 [Term]
@@ -8622,6 +8630,7 @@ def: "The narrow flat area often seen at the base of a sea cliff caused by the a
 synonym: "marine terrace" RELATED []
 xref: SWEETRealm:WaveCutPlatform
 xref: Wikipedia:Wave-cut_platform
+is_a: ENVO:00000012 ! hydrographic feature
 relationship: part_of ENVO:00000303 ! coast
 
 [Term]
@@ -8652,13 +8661,6 @@ xref: Wikipedia:Lake_island
 is_a: ENVO:00000098 ! island
 intersection_of: ENVO:00000098 ! island
 intersection_of: located_in ENVO:00000020 ! lake
-
-[Term]
-id: ENVO:00000425
-name: cold seep
-def: "An area of the ocean floor where hydrogen sulfide, methane and other hydrocarbon-rich fluid seepage occurs. Cold seeps are distinct from hydrothermal vents: the former's emissions are of the same temperature as the surrounding seawater, whereas the latter's emissions are super-heated." [Wikipedia:Cold_seep]
-xref: Wikipedia:Cold_seep
-is_a: ENVO:01000105 ! marine benthic feature
 
 [Term]
 id: ENVO:00000426
@@ -8692,6 +8694,7 @@ name: biome
 def: "A major class of ecologically similar communities of plants, animals, and other organisms. Biomes are defined based on factors such as plant structures (such as trees, shrubs, and grasses), leaf types (such as broadleaf and needleleaf), plant spacing (forest, woodland, savanna), and other factors like climate. Unlike ecozones, biomes are not defined by genetic, taxonomic, or historical similarities. Biomes are often identified with particular patterns of ecological succession and climax vegetation." [Wikipedia:Biome]
 synonym: "ecosystem" RELATED []
 synonym: "EcosytemType" RELATED [NASA:earthrealm]
+synonym: "major habitat type" EXACT [WWF:Biome]
 xref: EcoLexicon:biome
 xref: Wikipedia:Biome
 is_a: ENVO:01000254 ! environmental system
@@ -9209,7 +9212,7 @@ synonym: "SeaFloor" EXACT [NASA:earthrealm]
 xref: EcoLexicon:sea_floor
 xref: Wikipedia:Sea_floor
 is_a: ENVO:00000501 ! bed
-relationship: part_of ENVO:00000016 ! sea
+relationship: adjacent_to ENVO:00000016 ! sea
 
 [Term]
 id: ENVO:00000483
@@ -9392,7 +9395,7 @@ xref: Geonames:U.DEPU
 xref: SWEETRealm:Trench
 xref: SWEETRealm:Trough
 xref: TGN:21512
-is_a: ENVO:01000105 ! marine benthic feature
+is_a: ENVO:00000309 ! depression
 
 [Term]
 id: ENVO:00000500
@@ -9784,7 +9787,7 @@ xref: FTT:122
 xref: Geonames:U.APNU
 xref: TGN:23187
 xref: Wikipedia:Apron
-is_a: ENVO:00000501 ! bed
+is_a: ENVO:00002000 ! slope
 
 [Term]
 id: ENVO:00000531
@@ -9844,7 +9847,8 @@ name: moatan
 def: "An annular depression that may not be continuous, located at the base of many seamounts, islands, and other isolated elevations." [Geonames:feature]
 synonym: "moatan" EXACT [Geonames:feature]
 xref: Geonames:U.MOTU
-is_a: ENVO:01000105 ! marine benthic feature
+is_a: ENVO:00000309 ! depression
+relationship: adjacent_to ENVO:00000012 ! hydrographic feature
 
 [Term]
 id: ENVO:00000537
@@ -9978,7 +9982,6 @@ xref: TGN:23131
 xref: TGN:23145
 xref: TGN:23344
 is_a: ENVO:00000478 ! range of mounts
-is_a: ENVO:01000105 ! marine benthic feature
 relationship: has_part ENVO:00000264 ! seamount
 
 [Term]
@@ -11961,7 +11964,9 @@ xref: EcoLexicon:basin
 xref: SWEETRealm:BackArcBasin
 xref: SWEETRealm:Basin
 xref: Wikipedia:Back-arc_basin
-is_a: ENVO:01000105 ! marine benthic feature
+is_a: ENVO:01000275 ! structural basin
+relationship: adjacent_to ENVO:00000426 ! ocean floor
+relationship: adjacent_to ENVO:00000482 ! sea floor
 
 [Term]
 id: ENVO:00002297
@@ -14803,18 +14808,25 @@ creation_date: 2010-03-19T09:32:59Z
 [Term]
 id: ENVO:01000005
 name: upwelling
-def: "An oceanographic feature that involves wind-driven motion of dense, cooler, and usually nutrient-rich water towards the ocean surface, replacing the warmer, usually nutrient-deplete surface water." [Wikipedia:Upwelling]
+alt_id: ENVO:01000063
+def: "MERGED DEFINITION:\nTARGET DEFINITION: An oceanographic feature that involves wind-driven motion of dense, cooler, and usually nutrient-rich water towards the ocean surface, replacing the warmer, usually nutrient-deplete surface water.\n--------------------\nSOURCE DEFINITION: A marine upwelling is a net flow of marine water to the surface of the water column from deeper regions. This is often a result of surface water displacement off continental coasts by wind action. Localised upwellings may also occur along divergent fronts around eddies and along some of the major oceanographic features. Deeper waters often have higher nutrient content; consequently blooms of primary producers, such as planktonic algae, are generally observed around upwelling zones." [Wikipedia:Upwelling]
+comment: This term is specific to marine upwellings.
+synonym: "marine upwelling" EXACT []
 xref: EcoLexicon:upwell
 xref: EcoLexicon:upwelling
 xref: SWEETRealm:Upwelling
 xref: Wikipedia:Upwelling
+is_a: ENVO:00000012 ! hydrographic feature
 relationship: part_of ENVO:00000015 ! ocean
 
 [Term]
 id: ENVO:01000006
 name: coastal upwelling
+def: "An upwelling that is near a coast." [PLB:plb]
 xref: Wikipedia:Coastal_upwelling
 is_a: ENVO:01000005 ! upwelling
+intersection_of: ENVO:01000005 ! upwelling
+intersection_of: adjacent_to ENVO:00000303 ! coast
 
 [Term]
 id: ENVO:01000007
@@ -15243,14 +15255,6 @@ created_by: pbuttigieg
 creation_date: 2010-03-16T12:12:30Z
 
 [Term]
-id: ENVO:01000060
-name: marine brine pool
-def: "Marine brine pools are large areas of brine on the ocean basin. These pools are bodies of water that have a salinity three to five times greater than the surrounding ocean. For deep-sea brine pools the source of the salt is the dissolution of large salt deposits through salt tectonics. The brine often contains high concentrations of methane, providing energy to chemosynthetic animals that live near the pool." [PLB:plb, Wikipedia:Brine_pool]
-is_a: ENVO:01000044 ! marine pelagic feature
-created_by: pbuttigieg
-creation_date: 2010-03-16T12:16:11Z
-
-[Term]
 id: ENVO:01000061
 name: marine wind mixed layer
 def: "The upper part of the marine water column with generally uniform properties resulting from wind-driven mixing." [ISBN:044482619X, PLB:plb]
@@ -15264,14 +15268,6 @@ id: ENVO:01000062
 name: marine benthic storm
 def: "Benthic storms are strong benthic (near bottom) currents transporting sediment, created by the input of energy (largely kinetic) to the seabed. In regions with high mesoscale eddy activity, benthic storms are frequent and can create isohaline and isothermal conditions extending as much as 1000m above the seafloor." [ISBN:044482619X, PLB:plb]
 is_a: ENVO:01000044 ! marine pelagic feature
-created_by: pbuttigieg
-creation_date: 2010-03-16T12:16:11Z
-
-[Term]
-id: ENVO:01000063
-name: marine upwelling
-def: "A marine upwelling is a net flow of marine water to the surface of the water column from deeper regions. This is often a result of surface water displacement off continental coasts by wind action. Localised upwellings may also occur along divergent fronts around eddies and along some of the major oceanographic features. Deeper waters often have higher nutrient content; consequently blooms of primary producers, such as planktonic algae, are generally observed around upwelling zones." [ISBN:044482619X, ISBN:0750633840, PLB:plb]
-is_a: ENVO:01000067 ! marine current
 created_by: pbuttigieg
 creation_date: 2010-03-16T12:16:11Z
 
@@ -16959,10 +16955,13 @@ creation_date: 2013-10-06T21:13:21Z
 [Term]
 id: ENVO:01000263
 name: cold seep
-def: "A cold seep is a seep in which methane and other hydrocarbon-rich fluids rise to the sea floor." []
+alt_id: ENVO:00000425
+def: "MERGED DEFINITION:\nTARGET DEFINITION: A cold seep is a seep in which methane and other hydrocarbon-rich fluids rise to the sea floor.\n--------------------\nSOURCE DEFINITION: An area of the ocean floor where hydrogen sulfide, methane and other hydrocarbon-rich fluid seepage occurs. Cold seeps are distinct from hydrothermal vents: the former's emissions are of the same temperature as the surrounding seawater, whereas the latter's emissions are super-heated." [Wikipedia:Cold_seep]
 synonym: "hydrocarbon seep" EXACT []
 synonym: "methane seep" EXACT []
 is_a: ENVO:01000262 ! seep
+relationship: adjacent_to ENVO:00000426 ! ocean floor
+relationship: adjacent_to ENVO:00000482 ! sea floor
 created_by: pbuttigieg
 creation_date: 2013-10-06T21:16:39Z
 
@@ -17278,6 +17277,16 @@ intersection_of: ENVO:00000022 ! river
 intersection_of: has_part ENVO:00002011 ! fresh water
 created_by: pbuttigieg
 creation_date: 2013-10-16T12:56:48Z
+
+[Term]
+id: ENVO:01000298
+name: continental margin
+def: "The continental margin is the zone of the ocean floor that separates the thin oceanic crust from thick continental crust. Together, the continental shelf, continental slope, and continental rise are called continental margin. Continental margins constitute about 28% of the oceanic area." [Wikipedia:Continental_margin]
+xref:  SWEETRealm:ContinentalMargin
+xref: EcoLexicon :continental_margin
+is_a: ENVO:00002000 ! slope
+created_by: pbuttigieg
+creation_date: 2013-10-18T00:04:57Z
 
 [Term]
 id: ENVO:02000000
