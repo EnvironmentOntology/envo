@@ -1,5 +1,5 @@
 format-version: 1.2
-date: 18:10:2013 11:06
+date: 19:10:2013 02:01
 saved-by: pbuttigieg
 auto-generated-by: OBO-Edit 2.2
 subsetdef: abnormal_slim "Abnormal/normal slim"
@@ -4725,6 +4725,8 @@ is_a: ENVO:00000012 ! hydrographic feature
 id: ENVO:00000105
 name: lake surface
 is_a: ENVO:00010504 ! surface
+intersection_of: ENVO:00010504 ! surface
+intersection_of: part_of ENVO:00000020 ! lake
 relationship: part_of ENVO:00000020 ! lake
 
 [Term]
@@ -13724,10 +13726,12 @@ synonym: "portion of environmental material" EXACT []
 [Term]
 id: ENVO:00010504
 name: surface
+def: "A surface is the uppermost layer of some material entity." [URL:http\://www.merriam-webster.com/dictionary/surface]
+comment: This class is distinct from a geometric surface, which is two-dimensional. The idea of "uppermost" may be problematic. Further, the definition of layer (the superclass of surface in rev 133) references surface. This may be another issue.
 xref: EcoLexicon:surface
 xref: SWEETRealm:Surface
 xref: Wikipedia:Surface
-is_a: ENVO:00000000 ! geographic feature
+is_a: ENVO:01000281 ! layer
 
 [Term]
 id: ENVO:00010505
@@ -15339,9 +15343,10 @@ creation_date: 2010-03-16T12:16:11Z
 
 [Term]
 id: ENVO:01000072
-name: marine Taylor column
-def: "A Taylor column effect describes the acceleration and destabilistion of currents flowing over shoaling topography such as seamounts. Eddies and internal waves are generated downstream of the topological feature and may extend 1000 m or so above them. This may result in a localised increase in primary production where the Taylor column reaches surface waters." [ISBN:044482619X, PLB:plb]
-is_a: ENVO:01000044 ! marine pelagic feature
+name: Taylor column
+def: "A Taylor column is a column of deflected fluid flow which is formed in a perturbed, rotating fluid, is parallel to the axis of rotation, and extends above the obstacle perturbing the fluid in a rigid manner. Currents flowing over shoaling topography such as seamounts are accelerated and destabilised, resulting in Taylor columns. Eddies and internal waves are generated downstream of the topological feature and may extend 1000 m or so above them. This may result in a localised increase in primary production where the Taylor column reaches surface waters. Taylor columns also form above islands resulting in vortex streets in the atmosphere." [ISBN:044482619X, PLB:plb, Wikipedia:Taylor_column]
+comment: This is an interesting class. It's not really a column in the sense of a water column, nor is it a current, exactly. It may also occur in any fluid, gaseous or liquid.
+is_a: ENVO:00000000 ! geographic feature
 created_by: pbuttigieg
 creation_date: 2010-03-16T12:16:11Z
 
@@ -17126,7 +17131,7 @@ creation_date: 2013-10-13T18:32:46Z
 id: ENVO:01000281
 name: layer
 def: "A layer is a quantity of some material which has comparable thickness and usually covers some surface." [Wiktionary:layer]
-comment: Preliminary defintion.
+comment: Preliminary definition.
 is_a: ENVO:00000000 ! geographic feature
 created_by: pbuttigieg
 creation_date: 2013-10-15T16:42:02Z
@@ -17146,6 +17151,8 @@ name: lake layer
 def: "A layer which is part of a lake." []
 comment: Note that this class does not contain metalimnion as a subclass. The metaliminon is classified as a thermocline.
 is_a: ENVO:01000281 ! layer
+intersection_of: ENVO:01000281 ! layer
+intersection_of: part_of ENVO:00000020 ! lake
 relationship: part_of ENVO:00000020 ! lake
 created_by: pbuttigieg
 creation_date: 2013-10-15T16:57:43Z
