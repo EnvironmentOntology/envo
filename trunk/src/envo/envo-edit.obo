@@ -1,5 +1,5 @@
 format-version: 1.2
-date: 19:10:2013 02:01
+date: 19:10:2013 11:34
 saved-by: pbuttigieg
 auto-generated-by: OBO-Edit 2.2
 subsetdef: abnormal_slim "Abnormal/normal slim"
@@ -15018,9 +15018,8 @@ creation_date: 2010-03-15T11:18:40Z
 id: ENVO:01000031
 name: marine feature
 def: "A prominent or distinctive aspect, quality, or characteristic of a marine biome." [ISBN-10:0618455043, PLB:plb]
-is_a: ENVO:00002297 ! environmental feature
-intersection_of: ENVO:00002297 ! environmental feature
-intersection_of: located_in ENVO:00000447 ! marine biome
+is_obsolete: true
+consider: ENVO:00001999
 created_by: pbuttigieg
 creation_date: 2010-03-16T12:04:50Z
 
@@ -15215,14 +15214,19 @@ creation_date: 2010-03-15T11:29:37Z
 [Term]
 id: ENVO:01000055
 name: marine bulk water
-is_a: ENVO:01000031 ! marine feature
+is_obsolete: true
+consider: ENVO:00002149
+consider: ENVO:00002151
+consider: ENVO:01000061
+consider: ENVO:01000295
 created_by: pbuttigieg
 creation_date: 2010-03-16T12:12:30Z
 
 [Term]
 id: ENVO:01000056
 name: estuarine bulk water
-is_a: ENVO:01000031 ! marine feature
+is_obsolete: true
+consider: ENVO:01000301
 created_by: pbuttigieg
 creation_date: 2010-03-16T12:12:30Z
 
@@ -15343,10 +15347,11 @@ creation_date: 2010-03-16T12:16:11Z
 
 [Term]
 id: ENVO:01000072
-name: Taylor column
-def: "A Taylor column is a column of deflected fluid flow which is formed in a perturbed, rotating fluid, is parallel to the axis of rotation, and extends above the obstacle perturbing the fluid in a rigid manner. Currents flowing over shoaling topography such as seamounts are accelerated and destabilised, resulting in Taylor columns. Eddies and internal waves are generated downstream of the topological feature and may extend 1000 m or so above them. This may result in a localised increase in primary production where the Taylor column reaches surface waters. Taylor columns also form above islands resulting in vortex streets in the atmosphere." [ISBN:044482619X, PLB:plb, Wikipedia:Taylor_column]
-comment: This is an interesting class. It's not really a column in the sense of a water column, nor is it a current, exactly. It may also occur in any fluid, gaseous or liquid.
-is_a: ENVO:00000000 ! geographic feature
+name: marine Taylor column
+def: "A marine Taylor column is a Taylor column that is formed in a marine body of water. Currents flowing over shoaling topography such as seamounts are accelerated and destabilised, resulting in Taylor columns. Eddies and internal waves are generated downstream of the topological feature and may extend 1000 m or so above them. This may result in a localised increase in primary production where the Taylor column reaches surface waters." [ISBN:044482619X, PLB:plb, Wikipedia:Taylor_column]
+is_a: ENVO:01000299 ! Taylor column
+intersection_of: ENVO:01000299 ! Taylor column
+intersection_of: located_in ENVO:00001999 ! marine water body
 created_by: pbuttigieg
 creation_date: 2010-03-16T12:16:11Z
 
@@ -16060,8 +16065,6 @@ creation_date: 2010-03-20T09:18:54Z
 id: ENVO:01000162
 name: organ
 def: "A collection of tissues joined in structural unit to serve a common function." [Wikipedia:Organ]
-xref: EcoLexicon:organism
-xref: SWEETRealm:Organism
 is_a: ENVO:01000159 ! organic feature
 created_by: pbuttigieg
 creation_date: 2010-03-20T09:21:27Z
@@ -17292,6 +17295,36 @@ xref: SWEETRealm:ContinentalMargin
 is_a: ENVO:00002000 ! slope
 created_by: pbuttigieg
 creation_date: 2013-10-18T00:04:57Z
+
+[Term]
+id: ENVO:01000299
+name: Taylor column
+def: "A Taylor column is a column of deflected fluid flow which is formed in a perturbed, rotating fluid, is parallel to the axis of rotation, and extends above the obstacle perturbing the fluid in a rigid manner." [ISBN:044482619X, PLB:plb, Wikipedia:Taylor_column]
+comment: This is an interesting class. It's not really a column in the sense of a water column, nor is it a current, exactly. It may also occur in any fluid, gaseous or liquid.
+is_a: ENVO:00000000 ! geographic feature
+created_by: pbuttigieg
+creation_date: 2013-10-19T11:11:28Z
+
+[Term]
+id: ENVO:01000300
+name: atmospheric Taylor column
+def: "An atmospheric Taylor column is a Taylor column that is formed in the atmosphere. Atmospheric Taylor columns often form above islands resulting in vortex streets in the atmosphere." [ISBN:044482619X, PLB:plb, Wikipedia:Taylor_column]
+synonym: "vortex street" RELATED [Wikipedia:Kármán_vortex_street]
+is_a: ENVO:01000299 ! Taylor column
+intersection_of: ENVO:01000299 ! Taylor column
+intersection_of: located_in ENVO:01000267 ! atmosphere
+created_by: pbuttigieg
+creation_date: 2013-10-19T11:12:43Z
+
+[Term]
+id: ENVO:01000301
+name: estuarine water
+def: "Brackish water which is part of an estuary." [Wikipedia:Estuary]
+is_a: ENVO:00002019 ! brackish water
+intersection_of: ENVO:00002019 ! brackish water
+intersection_of: part_of ENVO:00002137 ! brackish estuary
+created_by: pbuttigieg
+creation_date: 2013-10-19T11:30:46Z
 
 [Term]
 id: ENVO:02000000
