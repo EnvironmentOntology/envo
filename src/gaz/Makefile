@@ -4,7 +4,11 @@ OWLTOOLS = OWLTOOLS_MEMORY=10G $(OTPATH)owltools
 
 all: gaz.owl gaz-as-classes.owl
 
-src/gaz.obo: trigger
+src:
+	mkdir $@
+
+# https://www.dropbox.com/l/PUJtJW9k6HkbMo6VErsme8
+src/gaz.obo: trigger src
 	cd src && wget --no-check-certificate 'https://www.dropbox.com/s/h5njkvs6bfwsihc/gaz.obo%20copy' -O $@
 
 gaz.obo: src/gaz.obo
