@@ -9,7 +9,7 @@ src:
 
 # https://www.dropbox.com/l/PUJtJW9k6HkbMo6VErsme8
 src/gaz.obo: trigger src
-	cd src && wget --no-check-certificate 'https://www.dropbox.com/s/h5njkvs6bfwsihc/gaz.obo%20copy' -O $@
+	wget --no-check-certificate 'https://www.dropbox.com/s/h5njkvs6bfwsihc/gaz.obo%20copy' -O $@
 
 gaz.obo: src/gaz.obo
 	perl -np fix.pl $< > $@.tmp && ./gaz-swap-relations.pl $@.tmp gaz-relations.obo > $@
