@@ -4,8 +4,8 @@ OWLTOOLS = OWLTOOLS_MEMORY=10G $(OTPATH)owltools
 
 all: gaz.owl gaz-as-classes.owl
 
-src/gaz.obo:
-	cd src && wget -N --no-check-certificate 'https://www.dropbox.com/s/h5njkvs6bfwsihc/gaz.obo%20copy' && cp gaz.obo\ copy $@
+src/gaz.obo: trigger
+	cd src && wget --no-check-certificate 'https://www.dropbox.com/s/h5njkvs6bfwsihc/gaz.obo%20copy' -O $@
 
 gaz.obo: src/gaz.obo
 	perl -np fix.pl $< > $@.tmp && ./gaz-swap-relations.pl $@.tmp gaz-relations.obo > $@
