@@ -21,4 +21,4 @@ gaz-abox.owl: gaz.obo
 	$(OWLTOOLS) $< --tbox-to-abox -p --set-ontology-id $(OBO)/$@ -o $@
 
 gaz.owl: gaz-abox.owl
-	$(OWLTOOLS) $< --add-imports-declarations  $(OBO)/envo.owl gaz-to-envo.ttl --merge-support-ontologies  -o $@
+	$(OWLTOOLS) $< gaz-to-envo.ttl --merge-support-ontologies --add-imports-declarations  $(OBO)/envo.owl --set-ontology-id $(OBO)/$@   -o $@
