@@ -6,3 +6,5 @@ s@^amespace:@namespace:@;
 s@^transitive_over:@\!transitive_over:@;
 # line 5415960
 s@^inverse_of:@\!inverse_of:@;
+# line 5418955
+s@(namespace: GAZ)(def.*)@$1\n$2@;
