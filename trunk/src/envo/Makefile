@@ -20,6 +20,7 @@ envo-simple.obo: envo-edit.obo
 	ontology-release-runner --no-subsets --skip-format owx --run-obo-basic-dag-check --error-report envo-errors.txt $< --allow-overwrite --asserted --simple
 .PRECIOUS: envo.obo
 
+# TODO - fix IRI
 subsets/envo-basic.obo: envo-simple.obo
 	cp envo-simple.obo $@
 
