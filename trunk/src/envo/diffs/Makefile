@@ -1,5 +1,5 @@
 OBO=http://purl.obolibrary.org/obo
-ONT = envo
+ONT = gaz
 SRC = ../$(ONT).obo
 LAST = $(OBO)/$(ONT).obo
 
