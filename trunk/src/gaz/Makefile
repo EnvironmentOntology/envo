@@ -30,4 +30,4 @@ gaz-to-envo.ttl: ../../experimental/gaz-to-envo.ttl
 	cp $< $@
 
 release-diffs:
-        cd diffs && make
+	cd diffs && make
