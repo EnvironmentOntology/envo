@@ -1,6 +1,6 @@
 format-version: 1.2
-date: 24:04:2014 13:04
-saved-by: pbuttigi
+date: 24:04:2014 13:31
+saved-by: pbuttigieg
 auto-generated-by: OBO-Edit 2.2
 subsetdef: abnormal_slim "Abnormal/normal slim"
 subsetdef: absent_slim "Absent/present slim"
@@ -4724,8 +4724,8 @@ is_a: ENVO:00000012 ! hydrographic feature
 [Term]
 id: ENVO:00000105
 name: lake surface
-is_a: ENVO:00010504 ! surface
-intersection_of: ENVO:00010504 ! surface
+is_a: ENVO:00010504 ! surface layer
+intersection_of: ENVO:00010504 ! surface layer
 intersection_of: part_of ENVO:00000020 ! lake
 relationship: part_of ENVO:00000020 ! lake
 
@@ -13724,8 +13724,8 @@ synonym: "portion of environmental material" EXACT []
 
 [Term]
 id: ENVO:00010504
-name: surface
-def: "A surface is the uppermost layer of some material entity." [URL:http\://www.merriam-webster.com/dictionary/surface]
+name: surface layer
+def: "A surface layer is the uppermost layer of some material entity." [URL:http\://www.merriam-webster.com/dictionary/surface]
 comment: This class is distinct from a geometric surface, which is two-dimensional. The idea of "uppermost" may be problematic. Further, the definition of layer (the superclass of surface in rev 133) references surface. This may be another issue.
 xref: EcoLexicon:surface
 xref: SWEETRealm:Surface
@@ -17324,6 +17324,15 @@ intersection_of: ENVO:00002019 ! brackish water
 intersection_of: part_of ENVO:00002137 ! brackish estuary
 created_by: pbuttigieg
 creation_date: 2013-10-19T11:30:46Z
+
+[Term]
+id: ENVO:01000302
+name: outcrop
+def: "A portion of environmental material which protrudes through a surface layer." []
+comment: This is kept as a general class. One can specify subclasses by identifying the protruding material (e.g. rock outcroup, mineral outcrop, etc ) and the material(s) the protrusion emerges from. Possible logical definition:   A portion of ENVO:environmental material which has_quality PATO:"protruding out of" a ENVO:surface layer of an ENVO:environmental material.
+is_a: ENVO:00000191 ! physiographic feature
+created_by: pbuttigieg
+creation_date: 2014-04-24T13:12:49Z
 
 [Term]
 id: ENVO:02000000
