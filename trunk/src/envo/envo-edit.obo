@@ -1,6 +1,6 @@
 format-version: 1.2
-date: 25:04:2014 11:49
-saved-by: pbuttigi
+date: 07:07:2014 11:45
+saved-by: pbuttigieg
 auto-generated-by: OBO-Edit 2.2
 subsetdef: abnormal_slim "Abnormal/normal slim"
 subsetdef: absent_slim "Absent/present slim"
@@ -7257,7 +7257,7 @@ xref: Geonames:L.BSND
 xref: SWEETRealm:DrainageBasin
 xref: TGN:21455
 xref: Wikipedia:Drainage_basin
-is_a: ENVO:00000191 ! physiographic feature
+is_a: ENVO:00000309 ! depression
 
 [Term]
 id: ENVO:00000292
@@ -8690,7 +8690,8 @@ relationship: part_of ENVO:00000023 ! stream
 [Term]
 id: ENVO:00000428
 name: biome
-def: "A major class of ecologically similar communities of plants, animals, and other organisms. Biomes are defined based on factors such as plant structures (such as trees, shrubs, and grasses), leaf types (such as broadleaf and needleleaf), plant spacing (forest, woodland, savanna), and other factors like climate. Unlike ecozones, biomes are not defined by genetic, taxonomic, or historical similarities. Biomes are often identified with particular patterns of ecological succession and climax vegetation." [Wikipedia:Biome]
+def: "A biome is an environmental system to which resident ecological communities have evolved adaptations." [DOI:10.1186/2041-1480-4-43, Wikipedia:Biome]
+comment: This class is currently being aligned to the Basic Formal Ontology. Following this alignment, its definition and the definitions of its subclasses will be revised.
 synonym: "ecosystem" RELATED []
 synonym: "EcosytemType" RELATED [NASA:earthrealm]
 synonym: "major habitat type" EXACT [WWF:Biome]
@@ -9413,8 +9414,10 @@ xref: EcoLexicon:bed
 xref: FTT:804
 xref: SWEETRealm:Bottom
 xref: Wikipedia:Stream_bed
-is_a: ENVO:00000012 ! hydrographic feature
-relationship: part_of ENVO:00000063 ! water body
+is_a: ENVO:00010504 ! surface layer
+intersection_of: ENVO:00010504 ! surface layer
+intersection_of: adjacent_to ENVO:00000063 ! water body
+relationship: adjacent_to ENVO:00000063 ! water body
 
 [Term]
 id: ENVO:00000502
@@ -11970,8 +11973,8 @@ relationship: adjacent_to ENVO:00000482 ! sea floor
 [Term]
 id: ENVO:00002297
 name: environmental feature
-def: "A feature that is." [NM:nm]
-comment: This class is currently being aligned to the Basic Formal Ontology. Following this alignment, its definition and the definitions of its subclasses will be revised.
+def: "A material entity which determines an environmental system." [DOI:10.1186/2041-1480-4-43, NM:nm, ORCID:0000-0002-4366-3088]
+comment: A material entity determines an environmental system when its removal would cause the collapse of that system. For example, a seamount determines a seamount environment, acting as its 'hub'. This class is currently being aligned to the Basic Formal Ontology. Following this alignment, its definition and the definitions of its subclasses will be revised.
 
 [Term]
 id: ENVO:00002450
@@ -13718,8 +13721,8 @@ is_a: ENVO:00000002 ! anthropogenic geographic feature
 [Term]
 id: ENVO:00010483
 name: environmental material
-def: "Material in or on which organisms may live." [MA:ma]
-comment: Everything under this parent must be a mass noun.
+def: "A portion of environmental material is a fiat object which forms the medium or part of the medium of an environmental system." [DOI:10.1186/2041-1480-4-43, MA:ma, ORCID:0000-0002-4366-3088, URL:http\://ontology.buffalo.edu/smith/articles/niches.html]
+comment: Everything under this parent must be a mass noun. This class is currently being aligned to the Basic Formal Ontology. Following this alignment, its definition and the definitions of its subclasses will be revised.
 synonym: "portion of environmental material" EXACT []
 
 [Term]
@@ -16437,6 +16440,7 @@ creation_date: 2013-04-07T14:32:28Z
 [Term]
 id: ENVO:01000203
 name: environmental condition
+def: "An environmental condition is a range of a determinate quality  or combination of qualities that are present in an environmental system." [DOI:10.1186/2041-1480-4-43]
 comment: Experimental class created in EnvO. A condition defines a restricted range of a given quality or combination of qualities. If an environment class, E, has_condition C, then all qualities listed in C are restricted to the ranges defined in C in E. This is not intended as a logical conditional.
 created_by: pbuttigi
 creation_date: 2013-04-07T14:35:18Z
@@ -16880,7 +16884,7 @@ creation_date: 2013-09-19T11:11:01Z
 [Term]
 id: ENVO:01000254
 name: environmental system
-def: "A system which has the disposition to environ one or more material entities." []
+def: "A system which has the disposition to environ one or more material entities." [DOI:10.1186/2041-1480-4-43]
 comment: In ENVO's alignment with the Basic Formal Ontology, this class is being considered as a subclass of a proposed BFO class "system". The relation "environed_by" is also under development. Roughly, a system which includes a material entity (at least partially) within its site and causally influences that entity may be considered to environ it. Following the completion of this alignment, this class' definition and the definitions of its subclasses will be revised.
 synonym: "environment" EXACT []
 xref: EcoLexicon:environment
@@ -17259,6 +17263,8 @@ id: ENVO:01000295
 name: marine layer
 def: "A layer that is part of a marine water body." [PLB:plb]
 is_a: ENVO:01000281 ! layer
+intersection_of: ENVO:01000281 ! layer
+intersection_of: part_of ENVO:00001999 ! marine water body
 relationship: part_of ENVO:00001999 ! marine water body
 created_by: pbuttigieg
 creation_date: 2013-10-16T11:55:20Z
