@@ -1,6 +1,20 @@
 These notes are for the EDITORS of envo
 
+== Preliminary ==
+
+Make sure you are using Protege 4 or Protege 5
+
+More docs will be added here later. For now, crib from:
+https://github.com/Planteome/plant-trait-ontology/blob/master/README-editors.txt
+
+
+=== Plugins ===
+
+http://wiki.geneontology.org/index.php/Ontology_editor_plugins
+
 == Editors Version ==
+
+NOTE: we have switched to OWL as the edit version
 
 The editors version is envo-edit.obo
 
