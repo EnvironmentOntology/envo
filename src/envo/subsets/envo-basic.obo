@@ -1,6 +1,6 @@
 format-version: 1.2
-data-version: releases/2013-12-21
-date: 19:10:2013 11:34
+data-version: releases/2014-09-16
+date: 07:07:2014 11:45
 saved-by: pbuttigieg
 auto-generated-by: OBO-Edit 2.2
 subsetdef: abnormal_slim "Abnormal/normal slim"
@@ -955,7 +955,7 @@ xref: SPIRE:Bog
 xref: SWEETRealm:Peatland
 xref: TGN:21304
 xref: Wikipedia:Peatland
-is_a: ENVO:00000243 ! freshwater wetland
+is_a: ENVO:00000043 ! wetland
 relationship: has_part ENVO:00005774 ! peat soil
 
 [Term]
@@ -1072,7 +1072,6 @@ id: ENVO:00000053
 name: freshwater marsh
 def: "A marsh associated with water that contains low concentrations of salts." [MA:ma]
 is_a: ENVO:00000035 ! marsh
-is_a: ENVO:00000243 ! freshwater wetland
 
 [Term]
 id: ENVO:00000054
@@ -2167,7 +2166,7 @@ is_a: ENVO:00000012 ! hydrographic feature
 [Term]
 id: ENVO:00000105
 name: lake surface
-is_a: ENVO:00010504 ! surface
+is_a: ENVO:00010504 ! surface layer
 is_a: ENVO:01000283 ! lake layer
 relationship: part_of ENVO:00000020 ! lake
 
@@ -3267,8 +3266,8 @@ id: ENVO:00000175
 name: karst
 def: "A feature shaped by the dissolution of a soluble layer or layers of bedrock, usually carbonate rock such as limestone or dolomite. These landscapes display distinctive surface features and underground drainages, and in some examples there may be little or no surface drainage." [Wikipedia:Karst]
 synonym: "karst" EXACT [Geonames:feature]
-synonym: "karst area" RELATED [ADL:FTT]
 synonym: "karst area" RELATED [Getty:TGN]
+synonym: "karst area" RELATED [ADL:FTT]
 xref: EcoLexicon:karst
 xref: FTT:894
 xref: Geonames:T.KRST
@@ -3781,7 +3780,7 @@ synonym: "lake" BROAD [ADL:FTT]
 xref: FTT:221
 xref: FTT:871
 is_a: ENVO:00000016 ! sea
-property_value: disconnected_from ENVO:00000015
+relationship: disconnected_from ENVO:00000015 ! ocean
 
 [Term]
 id: ENVO:00000220
@@ -3817,7 +3816,7 @@ xref: EcoLexicon:oceanic_island
 xref: Wikipedia:Oceanic_island
 is_a: ENVO:00000098 ! island
 relationship: derives_from ENVO:00000247 ! volcano
-property_value: disconnected_from ENVO:00000223
+relationship: disconnected_from ENVO:00000223 ! continental shelf
 
 [Term]
 id: ENVO:00000223
@@ -3927,8 +3926,8 @@ def: "A wetland that features permanent inundation of large areas of land by sha
 synonym: "cienaga" RELATED [ADL:FTT]
 synonym: "Swamp" EXACT [NASA:earthrealm]
 synonym: "swamp" EXACT [Geonames:feature]
-synonym: "wetland" BROAD [USGS:SDTS]
 synonym: "wetland" BROAD [ADL:FTT]
+synonym: "wetland" BROAD [USGS:SDTS]
 xref: EcoLexicon:swamp
 xref: FTT:1226
 xref: FTT:185
@@ -3938,7 +3937,7 @@ xref: SPIRE:Swamp
 xref: SWEETRealm:Swamp
 xref: TGN:21324
 xref: Wikipedia:Swamp
-is_a: ENVO:00000243 ! freshwater wetland
+is_a: ENVO:00000043 ! wetland
 
 [Term]
 id: ENVO:00000234
@@ -4020,7 +4019,6 @@ id: ENVO:00000242
 name: lacustrine mudflat
 def: "A wetland that forms when mud is deposited by a stream." [MA:ma]
 is_a: ENVO:00000192 ! mudflat
-is_a: ENVO:00000243 ! freshwater wetland
 
 [Term]
 id: ENVO:00000243
@@ -4200,8 +4198,8 @@ is_a: ENVO:00000106 ! grassland
 id: ENVO:00000261
 name: savanna
 def: "A grassland of the tropics or subtropics with scattered trees." [Wikipedia:Tropical_and_subtropical_grasslands%2C_savannas%2C_and_shrublands]
-synonym: "grassland" RELATED [ADL:FTT]
 synonym: "grassland" RELATED [USGS:SDTS]
+synonym: "grassland" RELATED [ADL:FTT]
 synonym: "Savanna" EXACT [NASA:earthrealm]
 synonym: "savannah" RELATED [ADL:FTT]
 xref: FTT:259
@@ -4344,6 +4342,7 @@ synonym: "lake" RELATED [ADL:FTT]
 synonym: "lake bottom" EXACT []
 xref: FTT:221
 xref: FTT:804
+is_a: ENVO:00000105 ! lake surface
 is_a: ENVO:00000501 ! bed
 relationship: part_of ENVO:00000020 ! lake
 
@@ -4679,7 +4678,7 @@ xref: Geonames:L.BSND
 xref: SWEETRealm:DrainageBasin
 xref: TGN:21455
 xref: Wikipedia:Drainage_basin
-is_a: ENVO:00000191 ! physiographic feature
+is_a: ENVO:00000309 ! depression
 
 [Term]
 id: ENVO:00000292
@@ -6065,6 +6064,7 @@ synonym: "ocean floor feature" RELATED [ADL:FTT]
 xref: FTT:1020
 xref: Wikipedia:Ocean_floor
 is_a: ENVO:00000501 ! bed
+is_a: ENVO:01000295 ! marine layer
 relationship: part_of ENVO:00000015 ! ocean
 
 [Term]
@@ -6085,7 +6085,8 @@ relationship: part_of ENVO:00000023 ! stream
 [Term]
 id: ENVO:00000428
 name: biome
-def: "A major class of ecologically similar communities of plants, animals, and other organisms. Biomes are defined based on factors such as plant structures (such as trees, shrubs, and grasses), leaf types (such as broadleaf and needleleaf), plant spacing (forest, woodland, savanna), and other factors like climate. Unlike ecozones, biomes are not defined by genetic, taxonomic, or historical similarities. Biomes are often identified with particular patterns of ecological succession and climax vegetation." [Wikipedia:Biome]
+def: "A biome is an environmental system to which resident ecological communities have evolved adaptations." [DOI:10.1186/2041-1480-4-43, Wikipedia:Biome]
+comment: This class is currently being aligned to the Basic Formal Ontology. Following this alignment, its definition and the definitions of its subclasses will be revised.
 synonym: "ecosystem" RELATED []
 synonym: "EcosytemType" RELATED [NASA:earthrealm]
 synonym: "major habitat type" EXACT [WWF:Biome]
@@ -6802,8 +6803,8 @@ xref: EcoLexicon:bed
 xref: FTT:804
 xref: SWEETRealm:Bottom
 xref: Wikipedia:Stream_bed
-is_a: ENVO:00000012 ! hydrographic feature
-relationship: part_of ENVO:00000063 ! water body
+is_a: ENVO:00010504 ! surface layer
+relationship: adjacent_to ENVO:00000063 ! water body
 
 [Term]
 id: ENVO:00000502
@@ -8345,8 +8346,7 @@ is_a: ENVO:00002123 ! bioreactor
 id: ENVO:00002127
 name: stream sediment
 is_a: ENVO:00002007 ! sediment
-relationship: part_of ENVO:00000022 ! river
-relationship: part_of ENVO:00000029 ! watercourse
+relationship: adjacent_to ENVO:00000023 ! stream
 
 [Term]
 id: ENVO:00002128
@@ -9289,8 +9289,8 @@ relationship: adjacent_to ENVO:00000482 ! sea floor
 [Term]
 id: ENVO:00002297
 name: environmental feature
-def: "A feature that is." [NM:nm]
-comment: This class is currently being aligned to the Basic Formal Ontology. Following this alignment, its definition and the definitions of its subclasses will be revised.
+def: "A material entity which determines an environmental system." [DOI:10.1186/2041-1480-4-43, NM:nm, ORCID:0000-0002-4366-3088]
+comment: A material entity determines an environmental system when its removal would cause the collapse of that system. For example, a seamount determines a seamount environment, acting as its 'hub'. This class is currently being aligned to the Basic Formal Ontology. Following this alignment, its definition and the definitions of its subclasses will be revised.
 
 [Term]
 id: ENVO:00002450
@@ -10643,8 +10643,8 @@ is_a: ENVO:00001998 ! soil
 [Term]
 id: ENVO:00005761
 name: meadow soil
-is_a: ENVO:00000108 ! meadow
-is_a: ENVO:00001998 ! soil
+is_a: ENVO:00005750 ! grassland soil
+relationship: part_of ENVO:00000108 ! meadow
 
 [Term]
 id: ENVO:00005762
@@ -10975,14 +10975,14 @@ is_a: ENVO:00000002 ! anthropogenic geographic feature
 [Term]
 id: ENVO:00010483
 name: environmental material
-def: "Material in or on which organisms may live." [MA:ma]
-comment: Everything under this parent must be a mass noun.
+def: "A portion of environmental material is a fiat object which forms the medium or part of the medium of an environmental system." [DOI:10.1186/2041-1480-4-43, MA:ma, ORCID:0000-0002-4366-3088, URL:http\://ontology.buffalo.edu/smith/articles/niches.html]
+comment: Everything under this parent must be a mass noun. This class is currently being aligned to the Basic Formal Ontology. Following this alignment, its definition and the definitions of its subclasses will be revised.
 synonym: "portion of environmental material" EXACT []
 
 [Term]
 id: ENVO:00010504
-name: surface
-def: "A surface is the uppermost layer of some material entity." [URL:http\://www.merriam-webster.com/dictionary/surface]
+name: surface layer
+def: "A surface layer is the uppermost layer of some material entity." [URL:http\://www.merriam-webster.com/dictionary/surface]
 comment: This class is distinct from a geometric surface, which is two-dimensional. The idea of "uppermost" may be problematic. Further, the definition of layer (the superclass of surface in rev 133) references surface. This may be another issue.
 xref: EcoLexicon:surface
 xref: SWEETRealm:Surface
@@ -12516,7 +12516,7 @@ creation_date: 2010-03-16T12:12:30Z
 id: ENVO:01000061
 name: marine wind mixed layer
 def: "The upper part of the marine water column with generally uniform properties resulting from wind-driven mixing." [ISBN:044482619X, PLB:plb]
-is_a: ENVO:01000281 ! layer
+is_a: ENVO:01000295 ! marine layer
 relationship: part_of ENVO:00000209 ! photic zone
 created_by: pbuttigieg
 creation_date: 2010-03-16T12:16:11Z
@@ -12672,7 +12672,7 @@ creation_date: 2010-03-16T12:16:11Z
 id: ENVO:01000080
 name: pelagic isothermal surface
 def: "A roughly planar, pelagic region characterised by equal water temperature." [PLB:plb]
-is_a: ENVO:01000044 ! marine pelagic feature
+is_a: ENVO:01000281 ! layer
 created_by: pbuttigieg
 creation_date: 2010-03-16T12:16:11Z
 
@@ -12680,7 +12680,7 @@ creation_date: 2010-03-16T12:16:11Z
 id: ENVO:01000081
 name: pelagic isohaline surface
 def: "A roughly planar, pelagic region characterised by equal salinity." [PLB:plb]
-is_a: ENVO:01000044 ! marine pelagic feature
+is_a: ENVO:01000281 ! layer
 created_by: pbuttigieg
 creation_date: 2010-03-16T12:16:11Z
 
@@ -12696,7 +12696,7 @@ creation_date: 2010-03-17T01:14:02Z
 id: ENVO:01000083
 name: pelagic isopycnal surface
 def: "A roughly planar, pelagic region characterised by equal water density." [PLB:plb]
-is_a: ENVO:01000044 ! marine pelagic feature
+is_a: ENVO:01000281 ! layer
 created_by: pbuttigieg
 creation_date: 2010-03-16T12:16:11Z
 
@@ -13682,6 +13682,7 @@ creation_date: 2013-04-07T14:32:28Z
 [Term]
 id: ENVO:01000203
 name: environmental condition
+def: "An environmental condition is a range of a determinate quality  or combination of qualities that are present in an environmental system." [DOI:10.1186/2041-1480-4-43]
 comment: Experimental class created in EnvO. A condition defines a restricted range of a given quality or combination of qualities. If an environment class, E, has_condition C, then all qualities listed in C are restricted to the ranges defined in C in E. This is not intended as a logical conditional.
 created_by: pbuttigi
 creation_date: 2013-04-07T14:35:18Z
@@ -14121,7 +14122,7 @@ creation_date: 2013-09-19T11:11:01Z
 [Term]
 id: ENVO:01000254
 name: environmental system
-def: "A system which has the disposition to environ one or more material entities." []
+def: "A system which has the disposition to environ one or more material entities." [DOI:10.1186/2041-1480-4-43]
 comment: In ENVO's alignment with the Basic Formal Ontology, this class is being considered as a subclass of a proposed BFO class "system". The relation "environed_by" is also under development. Roughly, a system which includes a material entity (at least partially) within its site and causally influences that entity may be considered to environ it. Following the completion of this alignment, this class' definition and the definitions of its subclasses will be revised.
 synonym: "environment" EXACT []
 xref: EcoLexicon:environment
@@ -14186,6 +14187,7 @@ id: ENVO:01000261
 name: lysocline
 def: "A layer within a marine water body where the rate of calcite dissolution changes rapidly with depth. The increase in the rate of calcite dissolution with depth is largely due to the concomitant fall in calcite saturation." [Wikipedia:Lysocline]
 is_a: ENVO:01000258 ! cline
+is_a: ENVO:01000295 ! marine layer
 relationship: part_of ENVO:00001999 ! marine water body
 created_by: pbuttigieg
 creation_date: 2013-10-06T20:16:10Z
@@ -14553,6 +14555,15 @@ is_a: ENVO:00002019 ! brackish water
 relationship: part_of ENVO:00002137 ! brackish estuary
 created_by: pbuttigieg
 creation_date: 2013-10-19T11:30:46Z
+
+[Term]
+id: ENVO:01000302
+name: outcrop
+def: "A portion of environmental material which protrudes through a surface layer." []
+comment: This is kept as a general class. One can specify subclasses by identifying the protruding material (e.g. rock outcroup, mineral outcrop, etc ) and the material(s) the protrusion emerges from. Possible logical definition:   A portion of ENVO:environmental material which has_quality PATO:"protruding out of" a ENVO:surface layer of an ENVO:environmental material.
+is_a: ENVO:00000191 ! physiographic feature
+created_by: pbuttigieg
+creation_date: 2014-04-24T13:12:49Z
 
 [Term]
 id: ENVO:02000000
@@ -15216,6 +15227,20 @@ synonym: "termite nest" EXACT []
 is_a: ENVO:00005803 ! animal habitation
 created_by: cjm
 creation_date: 2013-04-27T04:49:24Z
+
+[Term]
+id: ENVO:2100000
+name: anatomical entity environment
+is_a: ENVO:01000254 ! environmental system
+
+[Term]
+id: ENVO:2100002
+name: intestine environment
+is_a: ENVO:2100000 ! anatomical entity environment
+
+[Typedef]
+id: ENVO:2100001
+name: determined by
 
 [Typedef]
 id: adjacent_to
