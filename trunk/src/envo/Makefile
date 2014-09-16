@@ -16,15 +16,15 @@ release: build release-diffs
 
 # all release files are derived from the editors version.
 # we use the default Oort setup (hermit as reasoner)
-envo-simple.obo: envo-edit.obo
-	ontology-release-runner --no-subsets --skip-format owx --run-obo-basic-dag-check --error-report envo-errors.txt $< --allow-overwrite --asserted --simple
+envo-simple.obo: envo-edit.owl
+	ontology-release-runner --catalog-xml catalog-v001.xml --no-subsets --skip-format owx --run-obo-basic-dag-check --error-report envo-errors.txt $< --allow-overwrite --asserted --simple
 .PRECIOUS: envo.obo
 
 # TODO - fix IRI
 subsets/envo-basic.obo: envo-simple.obo
 	cp envo-simple.obo $@
 
-envo-mireot.obo: envo-edit.obo chebi-lite.obo pato-lite.obo
+envo-mireot.obo: envo-edit.owl chebi-lite.obo pato-lite.obo
 	ontology-release-runner --no-subsets --skip-format owx --run-obo-basic-dag-check --no-reasoner --allow-overwrite --asserted --outdir build $< chebi-lite.obo pato-lite.obo && cp build/envo-merged.obo $@
 
 chebi-lite.obo: 
@@ -44,12 +44,12 @@ release-diffs:
 # Type 'make imports/X_import.owl' whenever you wish to refresh the import for an ontology X. This is when:
 #
 #  1. X has changed and we want to include these changes
-#  2. We have added onr or more new IRI from X into cl-edit.owl
-#  3. We have removed references to one or more IRIs in X from cl-edit.owl
+#  2. We have added onr or more new IRI from X into envo-edit.owl
+#  3. We have removed references to one or more IRIs in X from envo-edit.owl
 #
 # You should NOT edit these files directly, changes will be overwritten.
 #
-# If you want to add something to these, edit cl-edit.owl and add an axiom with a IRI from X. You don't need to add any information about X.
+# If you want to add something to these, edit envo-edit.owl and add an axiom with a IRI from X. You don't need to add any information about X.
 
 # Base URI for local subset imports
 CL_IMPORTS_BASE_URI = $(OBO)/cl/imports
