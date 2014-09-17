@@ -6,7 +6,7 @@ LAST = $(OBO)/$(ONT).obo
 all: $(ONT)-obo-diff.html $(ONT)-def-diff.html $(ONT)-lastbuild.obo $(ONT)-combined-diff.txt
 
 $(ONT)-obo-diff.html: $(ONT)-lastbuild.obo $(SRC)
-	compare-obo-files.pl --config 'html/ontology_name=$(ONT)' --rss-path . -f1 $< -f2 $(SRC) -m html text rss email --config email_to=cjm@berkeleybop.org --config email_cc=cjmungall@lbl.gov  -o $(ONT)-obo-diff && replace-amigo-urls-with-purls.pl $@
+	compare-obo-files.pl --config 'html/ontology_name=$(ONT)' --rss-path . -f1 $< -f2 $(SRC) -m html text rss --config email_to=cjm@berkeleybop.org --config email_cc=cjmungall@lbl.gov  -o $(ONT)-obo-diff && replace-amigo-urls-with-purls.pl $@
 $(ONT)-def-diff.html: $(ONT)-lastbuild.obo $(SRC)
 	compare-defs.pl --config 'html/ontology_name=$(ONT)' --rss-path . -f1 $< -f2 $(SRC) -m html text rss -o $(ONT)-def-diff && replace-amigo-urls-with-purls.pl $@
 
