@@ -6,6 +6,7 @@
 # To make a release, type 'make release' in this directory
 
 OBO=http://purl.obolibrary.org/obo
+USECAT= --catalog-xml catalog-v001.xml
 
 all: build
 
@@ -52,7 +53,7 @@ release-diffs:
 # If you want to add something to these, edit envo-edit.owl and add an axiom with a IRI from X. You don't need to add any information about X.
 
 # Base URI for local subset imports
-CL_IMPORTS_BASE_URI = $(OBO)/cl/imports
+ENVO_IMPORTS_BASE_URI = $(OBO)/envo/imports
 
 # Ontology dependencies
 # We don't include clo, as this is currently not working
@@ -66,8 +67,8 @@ KEEPRELS = BFO:0000050 BFO:0000051 RO:0002202 immediate_transformation_of
 # Create an import module using the OWLAPI module extraction code via OWLTools.
 # We use the standard catalog, but rewrite the import to X to be a local mirror of ALL of X.
 # After extraction, we further reduce the ontology by creating a "mingraph" (removes all annotations except label) and by 
-imports/%_import.owl: envo-edit.owl mirror/%.owl
-	owltools  $(USECAT) --map-ontology-iri $(CL_IMPORTS_BASE_URI)/$*_import.owl mirror/$*.owl $<  --extract-module -s $(OBO)/$*.owl -c --remove-axiom-annotations --make-subset-by-properties $(KEEPRELS) --set-ontology-id $(CL_IMPORTS_BASE_URI)/$@ -o $@
+imports/%_import.owl: envo-edit.owl mirror/%.owl imports/%_seed.owl
+	owltools  $(USECAT) --map-ontology-iri $(ENVO_IMPORTS_BASE_URI)/$*_import.owl mirror/$*.owl $< imports/$*_seed.owl --merge-support-ontologies  --extract-module -s $(OBO)/$*.owl -c --remove-axiom-annotations --make-subset-by-properties $(KEEPRELS) --set-ontology-id $(ENVO_IMPORTS_BASE_URI)/$@ -o $@
 
 imports/%_import.obo: imports/%_import.owl
 	owltools $(USECAT) $< -o -f obo $@
