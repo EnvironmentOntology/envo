@@ -75,16 +75,14 @@ imports/%_import.obo: imports/%_import.owl
 
 # clone remote ontology locally, perfoming some excision of relations and annotations
 mirror/%.owl: envo-edit.owl
-	owltools $(OBO)/$*.owl --remove-annotation-assertions -l --remove-dangling-annotations --make-subset-by-properties $(KEEPRELS)  -o $@
+	owltools $(OBO)/$*.owl --remove-annotation-assertions -l --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS)  -o $@
+.PRECIOUS: mirror/%.owl
 mirror/uberon.owl: envo-edit.owl
 	owltools $(OBO)/uberon/basic.owl --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties $(KEEPRELS) --set-ontology-id $(OBO)/uberon.owl -o $@
-mirror/pr.obo: envo-edit.owl
-	wget $(OBO)/pr.obo -O $@.tmp && ./util/obo-grep.pl -r 'id: PR:' $@.tmp > $@
-mirror/pr.owl: mirror/pr.obo
-	owltools $< --remove-dangling --set-ontology-id $(OBO)/pr.owl -o $@
-mirror/clo.owl:
-	owltools $(OBO)/clo.owl --remove-imports-declarations --set-ontology-id $(OBO)/clo.owl -o $@
-.PRECIOUS: mirror/%.owl
+mirror/ncbitaxon.owl:
+	OWLTOOLS_MEMORY=12G owltools $(OBO)/ncbitaxon.obo --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations  --set-ontology-id $(OBO)/ncbitaxon.owl -o $@
+.PRECIOUS: mirror/ncbitaxon.owl
+
 
 
 # ----------------------------------------
