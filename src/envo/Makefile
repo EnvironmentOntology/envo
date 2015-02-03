@@ -23,7 +23,7 @@ envo.owl: envo-edit.owl
 .PRECIOUS: envo.obo
 
 envo.obo: envo.owl
-	owltools $(USECAT) $< --merge-imports-closure --add-obo-shorthand-to-properties -o -f obo $@
+	owltools $(USECAT) $< --merge-imports-closure --add-obo-shorthand-to-properties -o -f obo $@.tmp && grep -v ^owl-axioms $@.tmp > $@
 
 # TODO - fix IRI
 subsets/envo-basic.obo: envo-simple.obo
@@ -108,3 +108,10 @@ subsets/EnvO-Lite-GSC.obo: subsets/EnvO-Lite-GSC.owl
 # ----------------------------------------
 reports/envo-%.csv: envo.owl sparql/%.sparql
 	arq --data $< --query sparql/$*.sparql --results csv > $@.tmp && mv $@.tmp $@
+
+
+# ----------------------------------------
+# Temp
+# ----------------------------------------
+mappings/gold-mapping.txt: envo-simple.obo
+	blip-findall -u metadata_nlp_parent_dist2_hook -r obol_av -i sources/gold.obo -i $< -u metadata_nlp -goal index_entity_pair_label_match "entity_pair_label_reciprocal_best_intermatch(X,Y,S)" -use_tabs -label -no_pred > $@.tmp && cut -f1-4 $@.tmp | sort -u > $@
