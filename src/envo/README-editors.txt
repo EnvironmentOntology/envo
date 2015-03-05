@@ -12,6 +12,8 @@ https://github.com/Planteome/plant-trait-ontology/blob/master/README-editors.txt
 
 http://wiki.geneontology.org/index.php/Ontology_editor_plugins
 
+Elk and the obsoletion plugins are a must
+
 == Editors Version ==
 
 NOTE: we have switched to OWL as the edit version
@@ -22,6 +24,18 @@ The editors version is envo-edit.obo
 
 envo.obo is the release version
 
+== Checklist: Read this before starting ==
+
+Do you have an ID range in the idranges file (hp-idranges.owl), in
+the src/ontology/ directory)? If not, Chris can add one for you.
+
+Ensure that you have Protege configured to generate new URIs in your
+own range. Note that if you edit multiple files, you need to check this every time to ensure that the proper settings are in place. 
+Do a test to ensure that the ID generator is working properly.
+
+A word of caution about protege auto-id functionality. Protege will allow reuse of a URI in your range according to the numbering scheme. It will keep track of what you did during last session, but *does not check* for use of the URI before assigning it (doh!!). Therefore, if you added any IDs in your range prior to the switch to OWL, protege will not know not to start from the beginning. Some tips to check to see where you are in your range: Go to the view menu, click "render by label (rdf:id)", and then use the search box to search for things starting within your range, such as HP_04 for Melissa's range. If you have IDs in your range already, you may wish to set Protege at the next unused ID in your range rather than the beginning of the range. It should then remember it for next time, though you should double check.
+
+
 == ID Ranges ==
 
 These are stored in the file
@@ -30,14 +44,10 @@ These are stored in the file
 
 ** ONLY USE IDs WITHIN YOUR RANGE!! **
 
-=== Setting ID ranges in OBO-Edit ===
+Note: you may want to have a 2nd range if you plan to edit an
+experimental ENVO module that doesn't sit within the main file, e.g. envo-process.owl
 
- In the Metadata menu, select the ID manager option. You can set the ID range of any 
- profile you create here by clicking on the settings icon (cog wheels) next to the profile 
- name. In the window that appears, you can set the ID range by editing the default rule: 
- "ID:$sequence(<number of digits>,<minimum of range>,<maximum of range>)$"
- Thus, "ENVO:$sequence(8,2000000,2999999)$" will set a range of 8 digit IDs from 200000 
- to 2999999.  
+=== Setting ID ranges in Protege ===
  
 == Derived Files ==
 
