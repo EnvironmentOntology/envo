@@ -19,7 +19,7 @@ release: build release-diffs
 # we use the default Oort setup (hermit as reasoner)
 envo-simple.obo: envo.owl
 envo.owl: envo-edit.owl
-	ontology-release-runner --catalog-xml catalog-v001.xml --no-subsets --skip-format owx --run-obo-basic-dag-check --error-report envo-errors.txt $< --allow-overwrite --asserted --simple
+	ontology-release-runner --catalog-xml catalog-v001.xml  --skip-format owx --run-obo-basic-dag-check --error-report envo-errors.txt $< --allow-overwrite --asserted --simple
 .PRECIOUS: envo.obo
 
 envo.obo: envo.owl
@@ -61,7 +61,7 @@ ENVO_IMPORTS_BASE_URI = $(OBO)/envo/imports
 
 # Ontology dependencies
 # We don't include clo, as this is currently not working
-IMPORTS = pato uberon chebi pr go
+IMPORTS = pato uberon chebi ro
 
 # Make this target to regenerate ALL
 all_imports: $(patsubst %, imports/%_import.owl,$(IMPORTS)) $(patsubst %, imports/%_import.obo,$(IMPORTS))
@@ -98,6 +98,7 @@ mirror/ncbitaxon.owl: ncbitaxon.obo
 # ----------------------------------------
 # SLIMS
 # ----------------------------------------
+# These all depend on envo-basic, which is the whole ontology (ie all classes), minus non-basic axioms (e.g. complex owl axioms, some relations)
 subsets/EnvO-Lite-GSC.owl: subsets/envo-basic.obo
 	owltools $< --extract-ontology-subset --subset EnvO-Lite-GSC --iri $(OBO)/envo/subsets/$@ -o $@
 subsets/EnvO-Lite-GSC.obo: subsets/EnvO-Lite-GSC.owl
