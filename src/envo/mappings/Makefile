@@ -1,4 +1,4 @@
-SRC= ../envo-edit.obo
+SRC= ../envo.obo
 
 all: spire-mapping.tsv spire-mapping-by-type.tsv geonames-mapping.tsv sweetrealm-mapping.tsv lter-mapping.tsv
 
