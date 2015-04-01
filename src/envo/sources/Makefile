@@ -1,6 +1,9 @@
 align-lter.tsv: lter.obo
 	blip-findall -i $< -i ../envo.obo -u metadata_nlp -goal index_entity_pair_label_match "class(X),id_idspace(X,'LTER'),entity_pair_label_reciprocal_best_intermatch(X,Y,S),id_idspace(Y,'ENVO'),\+entity_xref_idspace(Y,Z,'LTER')" -select "x(X,Y,S)" -label -use_tabs -no_pred > $@.tmp && mv $@.tmp $@
 
+align-lter-chebi.tsv: lter.obo
+	blip-findall -i $< -r chebi -u metadata_nlp -goal index_entity_pair_label_match "class(X),id_idspace(X,'LTER'),entity_pair_label_reciprocal_best_intermatch(X,Y,S),id_idspace(Y,'CHEBI'),\+entity_xref_idspace(Y,Z,'LTER')" -select "x(X,Y,S)" -label -use_tabs -no_pred > $@.tmp && mv $@.tmp $@
+
 align-%.tsv: %.obo
 	blip-findall -i $< -i ../envo.obo -u metadata_nlp -goal index_entity_pair_label_match "class(X),id_idspace(X,'SPIRE'),entity_pair_label_reciprocal_best_intermatch(Y,X,S),id_idspace(Y,'ENVO'),\+((entity_xref(Y,Z),id_idspace(Z,'SPIRE')))" -select "x(X,Y,S)" -label -use_tabs -no_pred > $@.tmp && mv $@.tmp $@
 

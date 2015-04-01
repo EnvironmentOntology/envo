@@ -1,6 +1,8 @@
 SRC= ../envo.obo
 
-all: spire-mapping.tsv spire-mapping-by-type.tsv geonames-mapping.tsv sweetrealm-mapping.tsv lter-mapping.tsv
+all: all_mapped all_unmapped
+all_mapped: spire-mapping.tsv spire-mapping-by-type.tsv geonames-mapping.tsv sweetrealm-mapping.tsv lter-mapping.tsv 
+all_unmapped: spire-unmapped.tsv spire-mapping-by-type.tsv geonames-unmapped.tsv sweetrealm-unmapped.tsv lter-unmapped.tsv 
 
 %-mapping.tsv: ../sources/%.obo $(SRC)
 	blip-findall -i $< -i $(SRC) "entity_xref(E,X),id_idspace(X,S),downcase_atom(S,'$*')" -select X-E -label -use_tabs -no_pred > $@.tmp && mv $@.tmp $@
