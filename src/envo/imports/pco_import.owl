@@ -1,0 +1,543 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://purl.obolibrary.org/obo/envo/imports/imports/pco_import.owl#"
+     xml:base="http://purl.obolibrary.org/obo/envo/imports/imports/pco_import.owl"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:obo="http://purl.obolibrary.org/obo/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/envo/imports/imports/pco_import.owl">
+        <dc:source rdf:resource="http://purl.obolibrary.org/obo/pco.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000115 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000115"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PCO_0000000 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PCO_0000000">
+        <rdfs:label xml:lang="en">collection of organisms</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.ifomis.org/bfo/1.1/snap#ObjectAggregate"/>
+        <obo:IAO_0000115 xml:lang="en">A material entity that consists of two or more organisms, viruses, or viroids.</obo:IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PCO_0000002 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PCO_0000002">
+        <rdfs:label xml:lang="en">ecological community</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PCO_0000000"/>
+        <obo:IAO_0000115 xml:lang="en">A collection of organisms of at least two different species, living in a particular area.</obo:IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ifomis.org/bfo/1.1#Entity -->
+
+    <owl:Class rdf:about="http://www.ifomis.org/bfo/1.1#Entity">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">entity</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.ifomis.org/bfo/1.1/snap#Continuant"/>
+                    <rdf:Description rdf:about="http://www.ifomis.org/bfo/1.1/span#Occurrent"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ifomis.org/bfo/1.1/snap#Continuant -->
+
+    <owl:Class rdf:about="http://www.ifomis.org/bfo/1.1/snap#Continuant">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">continuant</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.ifomis.org/bfo/1.1/snap#DependentContinuant"/>
+                    <rdf:Description rdf:about="http://www.ifomis.org/bfo/1.1/snap#IndependentContinuant"/>
+                    <rdf:Description rdf:about="http://www.ifomis.org/bfo/1.1/snap#SpatialRegion"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.ifomis.org/bfo/1.1#Entity"/>
+        <owl:disjointWith rdf:resource="http://www.ifomis.org/bfo/1.1/span#Occurrent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ifomis.org/bfo/1.1/snap#DependentContinuant -->
+
+    <owl:Class rdf:about="http://www.ifomis.org/bfo/1.1/snap#DependentContinuant">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dependent_continuant</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.ifomis.org/bfo/1.1/snap#GenericallyDependentContinuant"/>
+                    <rdf:Description rdf:about="http://www.ifomis.org/bfo/1.1/snap#SpecificallyDependentContinuant"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.ifomis.org/bfo/1.1/snap#Continuant"/>
+        <owl:disjointWith rdf:resource="http://www.ifomis.org/bfo/1.1/snap#IndependentContinuant"/>
+        <owl:disjointWith rdf:resource="http://www.ifomis.org/bfo/1.1/snap#SpatialRegion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ifomis.org/bfo/1.1/snap#FiatObjectPart -->
+
+    <owl:Class rdf:about="http://www.ifomis.org/bfo/1.1/snap#FiatObjectPart">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">fiat_object_part</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.ifomis.org/bfo/1.1/snap#MaterialEntity"/>
+        <owl:disjointWith rdf:resource="http://www.ifomis.org/bfo/1.1/snap#Object"/>
+        <owl:disjointWith rdf:resource="http://www.ifomis.org/bfo/1.1/snap#ObjectAggregate"/>
+        <owl:disjointWith rdf:resource="http://www.ifomis.org/bfo/1.1/snap#ObjectBoundary"/>
+        <owl:disjointWith rdf:resource="http://www.ifomis.org/bfo/1.1/snap#Site"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ifomis.org/bfo/1.1/snap#GenericallyDependentContinuant -->
+
+    <owl:Class rdf:about="http://www.ifomis.org/bfo/1.1/snap#GenericallyDependentContinuant">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">generically_dependent_continuant</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.ifomis.org/bfo/1.1/snap#DependentContinuant"/>
+        <owl:disjointWith rdf:resource="http://www.ifomis.org/bfo/1.1/snap#SpecificallyDependentContinuant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ifomis.org/bfo/1.1/snap#IndependentContinuant -->
+
+    <owl:Class rdf:about="http://www.ifomis.org/bfo/1.1/snap#IndependentContinuant">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">independent_continuant</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.ifomis.org/bfo/1.1/snap#MaterialEntity"/>
+                    <rdf:Description rdf:about="http://www.ifomis.org/bfo/1.1/snap#ObjectBoundary"/>
+                    <rdf:Description rdf:about="http://www.ifomis.org/bfo/1.1/snap#Site"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.ifomis.org/bfo/1.1/snap#Continuant"/>
+        <owl:disjointWith rdf:resource="http://www.ifomis.org/bfo/1.1/snap#SpatialRegion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ifomis.org/bfo/1.1/snap#MaterialEntity -->
+
+    <owl:Class rdf:about="http://www.ifomis.org/bfo/1.1/snap#MaterialEntity">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">material_entity</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.ifomis.org/bfo/1.1/snap#FiatObjectPart"/>
+                    <rdf:Description rdf:about="http://www.ifomis.org/bfo/1.1/snap#Object"/>
+                    <rdf:Description rdf:about="http://www.ifomis.org/bfo/1.1/snap#ObjectAggregate"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.ifomis.org/bfo/1.1/snap#IndependentContinuant"/>
+        <owl:disjointWith rdf:resource="http://www.ifomis.org/bfo/1.1/snap#ObjectBoundary"/>
+        <owl:disjointWith rdf:resource="http://www.ifomis.org/bfo/1.1/snap#Site"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ifomis.org/bfo/1.1/snap#Object -->
+
+    <owl:Class rdf:about="http://www.ifomis.org/bfo/1.1/snap#Object">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">object</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.ifomis.org/bfo/1.1/snap#MaterialEntity"/>
+        <owl:disjointWith rdf:resource="http://www.ifomis.org/bfo/1.1/snap#ObjectAggregate"/>
+        <owl:disjointWith rdf:resource="http://www.ifomis.org/bfo/1.1/snap#ObjectBoundary"/>
+        <owl:disjointWith rdf:resource="http://www.ifomis.org/bfo/1.1/snap#Site"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ifomis.org/bfo/1.1/snap#ObjectAggregate -->
+
+    <owl:Class rdf:about="http://www.ifomis.org/bfo/1.1/snap#ObjectAggregate">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">object_aggregate</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.ifomis.org/bfo/1.1/snap#MaterialEntity"/>
+        <owl:disjointWith rdf:resource="http://www.ifomis.org/bfo/1.1/snap#ObjectBoundary"/>
+        <owl:disjointWith rdf:resource="http://www.ifomis.org/bfo/1.1/snap#Site"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ifomis.org/bfo/1.1/snap#ObjectBoundary -->
+
+    <owl:Class rdf:about="http://www.ifomis.org/bfo/1.1/snap#ObjectBoundary">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">object_boundary</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.ifomis.org/bfo/1.1/snap#IndependentContinuant"/>
+        <owl:disjointWith rdf:resource="http://www.ifomis.org/bfo/1.1/snap#Site"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ifomis.org/bfo/1.1/snap#OneDimensionalRegion -->
+
+    <owl:Class rdf:about="http://www.ifomis.org/bfo/1.1/snap#OneDimensionalRegion">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">one_dimensional_region</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.ifomis.org/bfo/1.1/snap#SpatialRegion"/>
+        <owl:disjointWith rdf:resource="http://www.ifomis.org/bfo/1.1/snap#ThreeDimensionalRegion"/>
+        <owl:disjointWith rdf:resource="http://www.ifomis.org/bfo/1.1/snap#TwoDimensionalRegion"/>
+        <owl:disjointWith rdf:resource="http://www.ifomis.org/bfo/1.1/snap#ZeroDimensionalRegion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ifomis.org/bfo/1.1/snap#Quality -->
+
+    <owl:Class rdf:about="http://www.ifomis.org/bfo/1.1/snap#Quality">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">quality</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.ifomis.org/bfo/1.1/snap#SpecificallyDependentContinuant"/>
+        <owl:disjointWith rdf:resource="http://www.ifomis.org/bfo/1.1/snap#RealizableEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ifomis.org/bfo/1.1/snap#RealizableEntity -->
+
+    <owl:Class rdf:about="http://www.ifomis.org/bfo/1.1/snap#RealizableEntity">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">realizable_entity</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.ifomis.org/bfo/1.1/snap#SpecificallyDependentContinuant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ifomis.org/bfo/1.1/snap#Site -->
+
+    <owl:Class rdf:about="http://www.ifomis.org/bfo/1.1/snap#Site">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">site</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.ifomis.org/bfo/1.1/snap#IndependentContinuant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ifomis.org/bfo/1.1/snap#SpatialRegion -->
+
+    <owl:Class rdf:about="http://www.ifomis.org/bfo/1.1/snap#SpatialRegion">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">spatial_region</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.ifomis.org/bfo/1.1/snap#OneDimensionalRegion"/>
+                    <rdf:Description rdf:about="http://www.ifomis.org/bfo/1.1/snap#ThreeDimensionalRegion"/>
+                    <rdf:Description rdf:about="http://www.ifomis.org/bfo/1.1/snap#TwoDimensionalRegion"/>
+                    <rdf:Description rdf:about="http://www.ifomis.org/bfo/1.1/snap#ZeroDimensionalRegion"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.ifomis.org/bfo/1.1/snap#Continuant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ifomis.org/bfo/1.1/snap#SpecificallyDependentContinuant -->
+
+    <owl:Class rdf:about="http://www.ifomis.org/bfo/1.1/snap#SpecificallyDependentContinuant">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">specifically_dependent_continuant</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.ifomis.org/bfo/1.1/snap#Quality"/>
+                    <rdf:Description rdf:about="http://www.ifomis.org/bfo/1.1/snap#RealizableEntity"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.ifomis.org/bfo/1.1/snap#DependentContinuant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ifomis.org/bfo/1.1/snap#ThreeDimensionalRegion -->
+
+    <owl:Class rdf:about="http://www.ifomis.org/bfo/1.1/snap#ThreeDimensionalRegion">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">three_dimensional_region</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.ifomis.org/bfo/1.1/snap#SpatialRegion"/>
+        <owl:disjointWith rdf:resource="http://www.ifomis.org/bfo/1.1/snap#TwoDimensionalRegion"/>
+        <owl:disjointWith rdf:resource="http://www.ifomis.org/bfo/1.1/snap#ZeroDimensionalRegion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ifomis.org/bfo/1.1/snap#TwoDimensionalRegion -->
+
+    <owl:Class rdf:about="http://www.ifomis.org/bfo/1.1/snap#TwoDimensionalRegion">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">two_dimensional_region</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.ifomis.org/bfo/1.1/snap#SpatialRegion"/>
+        <owl:disjointWith rdf:resource="http://www.ifomis.org/bfo/1.1/snap#ZeroDimensionalRegion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ifomis.org/bfo/1.1/snap#ZeroDimensionalRegion -->
+
+    <owl:Class rdf:about="http://www.ifomis.org/bfo/1.1/snap#ZeroDimensionalRegion">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">zero_dimensional_region</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.ifomis.org/bfo/1.1/snap#SpatialRegion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ifomis.org/bfo/1.1/span#ConnectedSpatiotemporalRegion -->
+
+    <owl:Class rdf:about="http://www.ifomis.org/bfo/1.1/span#ConnectedSpatiotemporalRegion">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">connected_spatiotemporal_region</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.ifomis.org/bfo/1.1/span#SpatiotemporalInstant"/>
+                    <rdf:Description rdf:about="http://www.ifomis.org/bfo/1.1/span#SpatiotemporalInterval"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.ifomis.org/bfo/1.1/span#SpatiotemporalRegion"/>
+        <owl:disjointWith rdf:resource="http://www.ifomis.org/bfo/1.1/span#ScatteredSpatiotemporalRegion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ifomis.org/bfo/1.1/span#ConnectedTemporalRegion -->
+
+    <owl:Class rdf:about="http://www.ifomis.org/bfo/1.1/span#ConnectedTemporalRegion">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">connected_temporal_region</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.ifomis.org/bfo/1.1/span#TemporalInstant"/>
+                    <rdf:Description rdf:about="http://www.ifomis.org/bfo/1.1/span#TemporalInterval"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.ifomis.org/bfo/1.1/span#TemporalRegion"/>
+        <owl:disjointWith rdf:resource="http://www.ifomis.org/bfo/1.1/span#ScatteredTemporalRegion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ifomis.org/bfo/1.1/span#FiatProcessPart -->
+
+    <owl:Class rdf:about="http://www.ifomis.org/bfo/1.1/span#FiatProcessPart">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">fiat_process_part</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.ifomis.org/bfo/1.1/span#ProcessualEntity"/>
+        <owl:disjointWith rdf:resource="http://www.ifomis.org/bfo/1.1/span#Process"/>
+        <owl:disjointWith rdf:resource="http://www.ifomis.org/bfo/1.1/span#ProcessAggregate"/>
+        <owl:disjointWith rdf:resource="http://www.ifomis.org/bfo/1.1/span#ProcessBoundary"/>
+        <owl:disjointWith rdf:resource="http://www.ifomis.org/bfo/1.1/span#ProcessualContext"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ifomis.org/bfo/1.1/span#Occurrent -->
+
+    <owl:Class rdf:about="http://www.ifomis.org/bfo/1.1/span#Occurrent">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">occurrent</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.ifomis.org/bfo/1.1/span#ProcessualEntity"/>
+                    <rdf:Description rdf:about="http://www.ifomis.org/bfo/1.1/span#SpatiotemporalRegion"/>
+                    <rdf:Description rdf:about="http://www.ifomis.org/bfo/1.1/span#TemporalRegion"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.ifomis.org/bfo/1.1#Entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ifomis.org/bfo/1.1/span#Process -->
+
+    <owl:Class rdf:about="http://www.ifomis.org/bfo/1.1/span#Process">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">process</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.ifomis.org/bfo/1.1/span#ProcessualEntity"/>
+        <owl:disjointWith rdf:resource="http://www.ifomis.org/bfo/1.1/span#ProcessAggregate"/>
+        <owl:disjointWith rdf:resource="http://www.ifomis.org/bfo/1.1/span#ProcessBoundary"/>
+        <owl:disjointWith rdf:resource="http://www.ifomis.org/bfo/1.1/span#ProcessualContext"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ifomis.org/bfo/1.1/span#ProcessAggregate -->
+
+    <owl:Class rdf:about="http://www.ifomis.org/bfo/1.1/span#ProcessAggregate">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">process_aggregate</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.ifomis.org/bfo/1.1/span#ProcessualEntity"/>
+        <owl:disjointWith rdf:resource="http://www.ifomis.org/bfo/1.1/span#ProcessBoundary"/>
+        <owl:disjointWith rdf:resource="http://www.ifomis.org/bfo/1.1/span#ProcessualContext"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ifomis.org/bfo/1.1/span#ProcessBoundary -->
+
+    <owl:Class rdf:about="http://www.ifomis.org/bfo/1.1/span#ProcessBoundary">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">process_boundary</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.ifomis.org/bfo/1.1/span#ProcessualEntity"/>
+        <owl:disjointWith rdf:resource="http://www.ifomis.org/bfo/1.1/span#ProcessualContext"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ifomis.org/bfo/1.1/span#ProcessualContext -->
+
+    <owl:Class rdf:about="http://www.ifomis.org/bfo/1.1/span#ProcessualContext">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">processual_context</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.ifomis.org/bfo/1.1/span#ProcessualEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ifomis.org/bfo/1.1/span#ProcessualEntity -->
+
+    <owl:Class rdf:about="http://www.ifomis.org/bfo/1.1/span#ProcessualEntity">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">processual_entity</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.ifomis.org/bfo/1.1/span#FiatProcessPart"/>
+                    <rdf:Description rdf:about="http://www.ifomis.org/bfo/1.1/span#Process"/>
+                    <rdf:Description rdf:about="http://www.ifomis.org/bfo/1.1/span#ProcessAggregate"/>
+                    <rdf:Description rdf:about="http://www.ifomis.org/bfo/1.1/span#ProcessBoundary"/>
+                    <rdf:Description rdf:about="http://www.ifomis.org/bfo/1.1/span#ProcessualContext"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.ifomis.org/bfo/1.1/span#Occurrent"/>
+        <owl:disjointWith rdf:resource="http://www.ifomis.org/bfo/1.1/span#SpatiotemporalRegion"/>
+        <owl:disjointWith rdf:resource="http://www.ifomis.org/bfo/1.1/span#TemporalRegion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ifomis.org/bfo/1.1/span#ScatteredSpatiotemporalRegion -->
+
+    <owl:Class rdf:about="http://www.ifomis.org/bfo/1.1/span#ScatteredSpatiotemporalRegion">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">scattered_spatiotemporal_region</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.ifomis.org/bfo/1.1/span#SpatiotemporalRegion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ifomis.org/bfo/1.1/span#ScatteredTemporalRegion -->
+
+    <owl:Class rdf:about="http://www.ifomis.org/bfo/1.1/span#ScatteredTemporalRegion">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">scattered_temporal_region</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.ifomis.org/bfo/1.1/span#TemporalRegion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ifomis.org/bfo/1.1/span#SpatiotemporalInstant -->
+
+    <owl:Class rdf:about="http://www.ifomis.org/bfo/1.1/span#SpatiotemporalInstant">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">spatiotemporal_instant</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.ifomis.org/bfo/1.1/span#ConnectedSpatiotemporalRegion"/>
+        <owl:disjointWith rdf:resource="http://www.ifomis.org/bfo/1.1/span#SpatiotemporalInterval"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ifomis.org/bfo/1.1/span#SpatiotemporalInterval -->
+
+    <owl:Class rdf:about="http://www.ifomis.org/bfo/1.1/span#SpatiotemporalInterval">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">spatiotemporal_interval</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.ifomis.org/bfo/1.1/span#ConnectedSpatiotemporalRegion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ifomis.org/bfo/1.1/span#SpatiotemporalRegion -->
+
+    <owl:Class rdf:about="http://www.ifomis.org/bfo/1.1/span#SpatiotemporalRegion">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">spatiotemporal_region</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.ifomis.org/bfo/1.1/span#ConnectedSpatiotemporalRegion"/>
+                    <rdf:Description rdf:about="http://www.ifomis.org/bfo/1.1/span#ScatteredSpatiotemporalRegion"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.ifomis.org/bfo/1.1/span#Occurrent"/>
+        <owl:disjointWith rdf:resource="http://www.ifomis.org/bfo/1.1/span#TemporalRegion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ifomis.org/bfo/1.1/span#TemporalInstant -->
+
+    <owl:Class rdf:about="http://www.ifomis.org/bfo/1.1/span#TemporalInstant">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">temporal_instant</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.ifomis.org/bfo/1.1/span#ConnectedTemporalRegion"/>
+        <owl:disjointWith rdf:resource="http://www.ifomis.org/bfo/1.1/span#TemporalInterval"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ifomis.org/bfo/1.1/span#TemporalInterval -->
+
+    <owl:Class rdf:about="http://www.ifomis.org/bfo/1.1/span#TemporalInterval">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">temporal_interval</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.ifomis.org/bfo/1.1/span#ConnectedTemporalRegion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ifomis.org/bfo/1.1/span#TemporalRegion -->
+
+    <owl:Class rdf:about="http://www.ifomis.org/bfo/1.1/span#TemporalRegion">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">temporal_region</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.ifomis.org/bfo/1.1/span#ConnectedTemporalRegion"/>
+                    <rdf:Description rdf:about="http://www.ifomis.org/bfo/1.1/span#ScatteredTemporalRegion"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.ifomis.org/bfo/1.1/span#Occurrent"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 0.2.2-SNAPSHOT) http://owlapi.sourceforge.net -->
+
