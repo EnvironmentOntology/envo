@@ -86,6 +86,12 @@ mirror/ro.owl: envo-edit.owl
 .PRECIOUS: mirror/%.owl
 mirror/uberon.owl: envo-edit.owl
 	owltools $(OBO)/uberon/basic.owl --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/uberon.owl -o $@
+.PRECIOUS: mirror/%.owl
+mirror/po.owl: envo-edit.owl
+	owltools $(OBO)/po.owl --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/po.owl -o $@
+.PRECIOUS: mirror/%.owl
+mirror/pco.owl: envo-edit.owl
+	owltools $(OBO)/pco.owl --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/pco.owl -o $@
 ncbitaxon.obo:
 	wget -N $(OBO)/ncbitaxon.obo
 .PRECIOUS: ncbitaxon.obo
