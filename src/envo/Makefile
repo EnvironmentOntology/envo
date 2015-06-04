@@ -10,7 +10,7 @@ USECAT= --catalog-xml catalog-v001.xml
 
 all: build
 
-build: subsets/envo-basic.obo
+build: envo.owl subsets/envo-basic.obo
 
 release: build release-diffs
 #release: envo-basic.obo release-diffs
