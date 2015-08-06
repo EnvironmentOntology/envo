@@ -19,3 +19,38 @@ lter-controlled-vocabulary.rdf:
 
 lter.obo: lter-controlled-vocabulary.rdf
 	xmlstarlet fo $<  | ./skos2obo.pl > $@
+
+GEMETS = backbone definitions groups
+GEMETFS = $(patsubst %,gemet-%.rdf,$(GEMETS))
+
+gemet-backbone.rdf:
+	wget http://www.eionet.europa.eu/gemet/gemet-backbone.rdf -O $@
+
+gemet-definitions.rdf:
+	wget 'http://www.eionet.europa.eu/gemet/gemet-definitions.rdf?langcode=en' -O $@
+
+gemet-groups.rdf:
+	wget 'http://www.eionet.europa.eu/gemet/gemet-groups.rdf?langcode=en' -O $@
+
+gemet-all.rdf: $(GEMETFS)
+	rdfcat $^ > $@
+
+gemet.obo: priority-gemet.tsv 
+	perl -npe 's//GEMET:/' $< | cut -f1,2 | tbl2obo.pl  > $@
+
+gemet-labels.txt: priority-gemet.tsv
+	cut -f2 $<  > $@
+
+GEMETX = eo envo chebi
+
+gemet: $(patsubst %, xrefs-gemet-%.obo,$(GEMETX)) summary-xrefs-gemet.txt
+
+align-gemet-%.tsv: gemet.obo
+	blip-findall -i ignore_gemet.pro -i $< -r $* -u metadata_nlp -goal index_entity_pair_label_match "class(X),id_idspace(X,'GEMET'),entity_pair_label_reciprocal_best_intermatch(X,Y,S)" -select "x(X,Y,S)" -label -use_tabs -no_pred > $@.tmp && mv $@.tmp $@
+.PRECIOUS: align-gemet-%.tsv
+
+xrefs-%.obo: align-%.tsv
+	cut -f1-4 $< | sort -u | tbl2obolinks.pl --rel xref - > $@
+
+summary-xrefs-%.txt:
+	grep -c ^id: xrefs-$*-*.obo

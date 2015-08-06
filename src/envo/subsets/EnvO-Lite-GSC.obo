@@ -1,22 +1,10 @@
 format-version: 1.2
-subsetdef: abnormal_slim "Abnormal/normal slim"
-subsetdef: absent_slim "Absent/present slim"
-subsetdef: attribute_slim "Attribute slim"
-subsetdef: cell_quality "cell_quality"
 subsetdef: disposition_slim "Disposition slim"
-subsetdef: EnvO-Lite-GSC "Lite category for GSC community"
 subsetdef: mpath_slim "Pathology slim"
 subsetdef: relational_slim "Relational slim: types of quality that require an additional entity in order to exist"
 subsetdef: scalar_slim "Scalar slim"
 subsetdef: value_slim "Value slim"
-synonymtypedef: BRAND_NAME "BRAND NAME"
-synonymtypedef: FORMULA "FORMULA"
-synonymtypedef: InChI "InChI"
-synonymtypedef: InChIKey "InChIKey"
-synonymtypedef: INN "INN"
-synonymtypedef: IUPAC_NAME "IUPAC NAME"
-synonymtypedef: SMILES "SMILES"
-ontology: envo/subsets/subsets/EnvO-Lite-GSC
+ontology: envo/subsets/EnvO-Lite-GSC
 
 [Term]
 id: ENVO:00000051
@@ -29,11 +17,11 @@ synonym: "hotspring" EXACT []
 synonym: "spring" BROAD [USGS:SDTS]
 synonym: "thermal feature" EXACT [ADL:FTT]
 synonym: "thermal spring" EXACT []
+xref: EcoLexicon:thermal_spring
 xref: FTT:732
 xref: FTT:815
-xref: Geonames:SPNT
+xref: Geonames:H.SPNT
 xref: Wikipedia:Hot_spring
-is_a: ENVO:00000215 ! hydrothermal vent
 
 [Term]
 id: ENVO:00000144
@@ -42,6 +30,8 @@ namespace: ENVO
 def: "A habitat that is in or on water." [NM:nm]
 subset: EnvO-Lite-GSC
 xref: Wikipedia:Aquatic_habitat
+is_obsolete: true
+replaced_by: ENVO:01000317
 
 [Term]
 id: ENVO:00000215
@@ -50,6 +40,7 @@ namespace: ENVO
 def: "A fissure in the Earths's surface from which geothermally heated water issues." [Wikipedia:Hydrothermal_vents]
 subset: EnvO-Lite-GSC
 synonym: "HydrothermalVents" EXACT [NASA:earthrealm]
+xref: EcoLexicon:hydrothermal_vent
 xref: FTT:834
 xref: Wikipedia:Hydrothermal_vent
 
@@ -60,6 +51,8 @@ namespace: ENVO
 def: "A habitat that is in or on a sea or ocean containing high concentrations of dissolved salts and other total dissolved solids (typically >35 grams dissolved salts per litre)." [NM:nm]
 subset: EnvO-Lite-GSC
 is_a: ENVO:00000144 ! aquatic habitat
+is_obsolete: true
+replaced_by: ENVO:01000321
 
 [Term]
 id: ENVO:00001998
@@ -67,8 +60,10 @@ name: soil
 namespace: ENVO
 def: "Any material within 2 m from the Earth's surface that is in contact with the atmosphere, with the exclusion of living organisms, areas with continuous ice not covered by other material, and water bodies deeper than 2 m." [FAO:http\://fao.org/ag/agl/agll/wrb/doc/wrb2006final.pdf]
 subset: EnvO-Lite-GSC
+xref: LTER:535
+xref: SPIRE:Soil
+xref: SWEETRealm:Soil
 xref: Wikipedia:Soil
-relationship: part_of ENVO:00002009 ! terrestrial habitat
 
 [Term]
 id: ENVO:00002001
@@ -76,6 +71,8 @@ name: waste water
 namespace: ENVO
 def: "Water that has been adversely affected in quality by anthropogenic influence." [Wikipedia:Wastewater]
 subset: EnvO-Lite-GSC
+xref: EcoLexicon:waste_water
+xref: SWEETRealm:Wastewater
 xref: Wikipedia:Waste_water
 
 [Term]
@@ -83,6 +80,7 @@ id: ENVO:00002002
 name: food product
 namespace: ENVO
 def: "A substance, usually composed primarily of carbohydrates, fats, water and/or proteins, that can be eaten or drunk by an animal or human being for nutrition or pleasure." [Wikipedia:Food]
+comment: The FAO has the following definition for "food": "Any substance, whether processed, semi-processed, or raw, which is intended for human consumption, and includes drink, chewing gum and any substance which has been used in the manufacture, preparation or treatment of "food" but does not include cosmetics or tobacco or substances used only as drugs." (Nutrition Division/Meeting Programming and Documentation Service, FAO, 2013 (MI198) adopted from Codex Alimentarius Commission, Procedural Manual, Twentieth edition, 2011 (ftp://ftp.fao.org/codex/Publications/ProcManuals/Manual_20e.pdf). )
 subset: EnvO-Lite-GSC
 xref: Wikipedia:Food
 
@@ -92,6 +90,9 @@ name: air
 namespace: ENVO
 def: "The mixture of gases (roughly (by molar content/volume: 78% nitrogen, 20.95% oxygen, 0.93% argon, 0.038% carbon dioxide, trace amounts of other gases, and a variable amount (average around 1%) of water vapor) that surrounds the planet Earth." [Wikipedia:Air]
 subset: EnvO-Lite-GSC
+xref: EcoLexicon:air
+xref: LTER:18
+xref: SWEETRealm:Air
 xref: Wikipedia:Air
 
 [Term]
@@ -100,6 +101,11 @@ name: sediment
 namespace: ENVO
 def: "Sediment is an environmental substance comprised of any particulate matter that can be transported by fluid flow and which eventually is deposited as a layer of solid particles on the bedor bottom of a body of water or other liquid." [Wikipedia:Sediment]
 subset: EnvO-Lite-GSC
+xref: EcoLexicon:sediment
+xref: EcoLexicon:sedimentation
+xref: LTER:492
+xref: LTER:493
+xref: SWEETRealm:Sediment
 xref: Wikipedia:Sediment
 
 [Term]
@@ -108,6 +114,7 @@ name: terrestrial habitat
 namespace: ENVO
 def: "A habitat that is on or at the boundary of the surface of the Earth." [NM:nm]
 subset: EnvO-Lite-GSC
+is_obsolete: true
 
 [Term]
 id: ENVO:00002020
@@ -115,6 +122,7 @@ name: extreme habitat
 namespace: ENVO
 def: "A habitat having at least one environmental quality that tends towards either the largest or smallest element of the set. The physical or geochemical extreme conditions found in an extreme habitat are often detrimental to the majority of life on Earth." [NM:nm, Wikipedia:Extremophile#Types_of_extremophiles]
 subset: EnvO-Lite-GSC
+is_obsolete: true
 
 [Term]
 id: ENVO:00002032
@@ -122,6 +130,7 @@ name: organism-associated habitat
 namespace: ENVO
 def: "A habitat that is in or on a living thing." [NM:nm]
 subset: EnvO-Lite-GSC
+is_obsolete: true
 
 [Term]
 id: ENVO:00002034
@@ -129,6 +138,7 @@ name: biofilm
 namespace: ENVO
 def: "A complex aggregation of microorganisms marked by the excretion of a protective and adhesive matrix; usually adhering to a substratum." [Wikipedia:Biofilm]
 subset: EnvO-Lite-GSC
+xref: EcoLexicon:biofilm
 xref: Wikipedia:Biofilm
 
 [Term]
@@ -137,7 +147,8 @@ name: freshwater habitat
 namespace: ENVO
 def: "A habitat that is in or on a body of water containing low concentrations of dissolved salts and other total dissolved solids (<0.5 grams dissolved salts per litre)." [NM:nm]
 subset: EnvO-Lite-GSC
-is_a: ENVO:00000144 ! aquatic habitat
+is_obsolete: true
+replaced_by: ENVO:01000306
 
 [Term]
 id: ENVO:00002044
@@ -145,6 +156,7 @@ name: sludge
 namespace: ENVO
 def: "The residual semi-solid material left from domestic or industrial processes, or wastewater treatment processes." [Wikipedia:Sludge]
 subset: EnvO-Lite-GSC
+xref: EcoLexicon:sludge
 xref: Wikipedia:Sludge
 
 [Term]
@@ -153,6 +165,7 @@ name: fossil
 namespace: ENVO
 def: "The mineralized or otherwise preserved remains or traces (such as footprints) of animals, plants, and other organisms." [Wikipedia:Fossil]
 subset: EnvO-Lite-GSC
+xref: SWEETRealm:Fossil
 xref: Wikipedia:Fossil
 
 [Term]
@@ -163,6 +176,7 @@ def: "A habitat that is in or on a living animal. Here \"animal\" denotes an ind
 subset: EnvO-Lite-GSC
 synonym: "metazoan-associated habitat" EXACT []
 is_a: ENVO:00002032 ! organism-associated habitat
+is_obsolete: true
 
 [Term]
 id: ENVO:00009001
@@ -171,6 +185,7 @@ namespace: ENVO
 def: "A habitat that is in or on a living plant. Here \"plant\" denotes an individual of a species that is a sub-taxon of NCBITaxon:33090 (viridiplantae)." [PATOC:cjm]
 subset: EnvO-Lite-GSC
 is_a: ENVO:00002032 ! organism-associated habitat
+is_obsolete: true
 
 [Term]
 id: ENVO:01000008
@@ -186,19 +201,21 @@ name: cultured habitat
 namespace: ENVO
 def: "Cultured habitat is an controlled habitat created by humans through laboratory techniques usually for the purposes of preparing cell, organ, tissue and plant tissue cultures." [Wikipedia:Cell_culture]
 subset: EnvO-Lite-GSC
+is_obsolete: true
+replaced_by: ENVO:01000312
 
 [Typedef]
-id: adjacent_to
-name: adjacent_to
-namespace: ENVO
-xref: RO:0002220
-is_symmetric: true
+id: ENVO:01001307
+name: partially_surrounded_by
 
 [Typedef]
-id: derives_from
-name: derives_from
-namespace: ENVO
-xref: RO:0001000
+id: ENVO:2100001
+name: determined by
+is_a: ENVO:2100007 ! determined by part of
+
+[Typedef]
+id: ENVO:2100007
+name: determined by part of
 
 [Typedef]
 id: disconnected_from
@@ -214,45 +231,6 @@ is_class_level: true
 id: has_condition
 name: has_condition
 namespace: ENVO
-comment: Experimental relation used in EnvO. A condition defines a restricted range of a given quality or combination of qualities. If an environment class, E, has_condition C, then all qualities listed in C are restricted to the ranges defined in C in E. This is not intended as a logical conditional. Note that this relation is transitive.
-is_transitive: true
+comment: Experimental relation used in EnvO. A condition defines a restricted range of a given quality or combination of qualities. If an environment class, E, has_condition C, then all qualities listed in C are restricted to the ranges defined in C in E. This is not intended as a logical conditional.
 creation_date: 2013-05-08T07:33:05Z
-
-[Typedef]
-id: has_increased_levels_of
-name: has_increased_levels_of
-namespace: ENVO
-is_a: has_part ! has_part
-
-[Typedef]
-id: has_part
-name: has_part
-namespace: ENVO
-xref: BFO:0000051
-is_transitive: true
-
-[Typedef]
-id: has_quality
-name: has_quality
-namespace: ENVO
-
-[Typedef]
-id: located_in
-name: located_in
-namespace: ENVO
-xref: RO:0001025
-is_transitive: true
-
-[Typedef]
-id: part_of
-name: part_of
-namespace: ENVO
-xref: BFO:0000050
-is_transitive: true
-
-[Typedef]
-id: surrounded_by
-name: surrounded_by
-namespace: ENVO
-xref: RO:0002219
 
