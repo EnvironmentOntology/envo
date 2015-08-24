@@ -56,9 +56,16 @@ summary-xrefs-%.txt:
 	grep -c ^id: xrefs-$*-*.obo
 
 
+align-earth: xrefs-earth-envo.obo
+
 earth.rdf:
 	wget http://thesaurus.iia.cnr.it/images/thesaurus/earth.rdf -O $@
 
 PREFIXMAPF = prefixes.yaml
 earth.obo: earth.rdf
 	skos2obo.py -p $(PREFIXMAPF) $< > $@.tmp && mv $@.tmp $@ && ./fix-earth.pl $@
+
+
+align-earth-%.tsv: earth.obo
+	blip-findall -i ignore_gemet.pro -i $< -r $* -u metadata_nlp -goal index_entity_pair_label_match "class(X),id_idspace(X,'EARTH'),entity_pair_label_reciprocal_best_intermatch(X,Y,S)" -select "x(X,Y,S)" -label -use_tabs -no_pred > $@.tmp && mv $@.tmp $@
+.PRECIOUS: align-earth-%.tsv
