@@ -64,6 +64,10 @@ envo-process.owl
 
 ### Setting ID ranges in Protege
 
+See the documentation here:
+
+http://obofoundry.github.io/docs/SettingUpProtege.html
+
 Derived Files
 -------------
 
