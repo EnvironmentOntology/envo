@@ -54,3 +54,11 @@ xrefs-%.obo: align-%.tsv
 
 summary-xrefs-%.txt:
 	grep -c ^id: xrefs-$*-*.obo
+
+
+earth.rdf:
+	wget http://thesaurus.iia.cnr.it/images/thesaurus/earth.rdf -O $@
+
+PREFIXMAPF = prefixes.yaml
+earth.obo: earth.rdf
+	skos2obo.py -p $(PREFIXMAPF) $< > $@.tmp && mv $@.tmp $@ && ./fix-earth.pl $@
