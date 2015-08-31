@@ -12,18 +12,28 @@ all: build
 
 build: envo.owl subsets/envo-basic.obo
 
-release: build release-diffs
+release: build release-diffs copy-release
+
+copy-release:
+	cp -pr envo.obo envo.owl subsets mappings ../..
+
 #release: envo-basic.obo release-diffs
 
 # all release files are derived from the editors version.
 # we use the default Oort setup (hermit as reasoner)
 envo-simple.obo: envo.owl
+
 envo.owl: envo-edit.owl
 	ontology-release-runner --catalog-xml catalog-v001.xml  --skip-format owx --run-obo-basic-dag-check --error-report envo-errors.txt $< --allow-overwrite --asserted --simple
+
+#envo.owl: envo-edit.owl
+#	robot reason -s true --input $< --reasoner elk --output $@
+
+
 .PRECIOUS: envo.obo
 
 envo.obo: envo.owl
-	owltools $(USECAT) $< --merge-imports-closure --add-obo-shorthand-to-properties -o -f obo $@.tmp && grep -v ^owl-axioms $@.tmp > $@
+	owltools $(USECAT) $< --merge-imports-closure --add-obo-shorthand-to-properties -o -f obo --no-check $@.tmp && grep -v ^owl-axioms $@.tmp > $@
 
 # TODO - fix IRI
 subsets/envo-basic.obo: envo-simple.obo
@@ -66,7 +76,7 @@ IMPORTS = pato uberon chebi ro
 # Make this target to regenerate ALL
 all_imports: $(patsubst %, imports/%_import.owl,$(IMPORTS)) $(patsubst %, imports/%_import.obo,$(IMPORTS))
 
-KEEPRELS = BFO:0000050 BFO:0000051 RO:0002202 immediate_transformation_of
+KEEPRELS = BFO:0000050 BFO:0000051 RO:0002202 immediate_transformation_of RO:0002176
 
 # Create an import module using the OWLAPI module extraction code via OWLTools.
 # We use the standard catalog, but rewrite the import to X to be a local mirror of ALL of X.
@@ -84,8 +94,10 @@ mirror/%.owl: envo-edit.owl
 mirror/ro.owl: envo-edit.owl
 	owltools $(OBO)/ro.owl --merge-imports-closure -o $@
 .PRECIOUS: mirror/%.owl
+
 mirror/uberon.owl: envo-edit.owl
-	owltools $(OBO)/uberon/basic.owl --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/uberon.owl -o $@
+	owltools $(OBO)/uberon.owl  --remove-axiom-annotations  --make-subset-by-properties -f $(KEEPRELS) --remove-dangling-annotations --remove-annotation-assertions -l -s -d --set-ontology-id $(OBO)/uberon.owl -o $@
+
 .PRECIOUS: mirror/%.owl
 mirror/po.owl: envo-edit.owl
 	owltools $(OBO)/po.owl --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/po.owl -o $@

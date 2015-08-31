@@ -1,0 +1,38 @@
+format-version: 1.2
+subsetdef: disposition_slim "Disposition slim"
+subsetdef: mpath_slim "Pathology slim"
+subsetdef: relational_slim "Relational slim: types of quality that require an additional entity in order to exist"
+subsetdef: scalar_slim "Scalar slim"
+subsetdef: value_slim "Value slim"
+ontology: envo/subsets/ro-eco
+
+[Typedef]
+id: ENVO:01001307
+name: partially_surrounded_by
+
+[Typedef]
+id: ENVO:2100001
+name: determined by
+is_a: ENVO:2100007 ! determined by part of
+
+[Typedef]
+id: ENVO:2100007
+name: determined by part of
+
+[Typedef]
+id: disconnected_from
+name: disconnected_from
+namespace: ENVO
+def: "A is disconnected_from B if they have no parts in common." [SO:cjm]
+synonym: "non_overlapping_with" EXACT []
+expand_assertion_to: "Class: <http://www.w3.org/2002/07/owl#Nothing> EquivalentTo: (BFO_0000050 some ?X) and (BFO_0000050 some ?Y)" []
+is_metadata_tag: true
+is_class_level: true
+
+[Typedef]
+id: has_condition
+name: has_condition
+namespace: ENVO
+comment: Experimental relation used in EnvO. A condition defines a restricted range of a given quality or combination of qualities. If an environment class, E, has_condition C, then all qualities listed in C are restricted to the ranges defined in C in E. This is not intended as a logical conditional.
+creation_date: 2013-05-08T07:33:05Z
+

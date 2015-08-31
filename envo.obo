@@ -1,4 +1,5 @@
 format-version: 1.2
+data-version: releases/2015-08-31
 subsetdef: disposition_slim "Disposition slim"
 subsetdef: mpath_slim "Pathology slim"
 subsetdef: relational_slim "Relational slim: types of quality that require an additional entity in order to exist"
@@ -6,7 +7,24 @@ subsetdef: scalar_slim "Scalar slim"
 subsetdef: value_slim "Value slim"
 default-namespace: ENVO
 remark: This is the editors' version of the ontology - classes and relations seen here may not necessarily be in the release version. For the release version, see: http://purl.obolibrary.org/obo/envo.owl
-ontology: subsets/envo-basic.obo
+import: http://purl.obolibrary.org/obo/envo/imports/chebi_import.owl
+import: http://purl.obolibrary.org/obo/envo/imports/ncbitaxon_import.owl
+import: http://purl.obolibrary.org/obo/envo/imports/pato_import.owl
+import: http://purl.obolibrary.org/obo/envo/imports/pco_bfo_bridge.owl
+import: http://purl.obolibrary.org/obo/envo/imports/pco_import.owl
+import: http://purl.obolibrary.org/obo/envo/imports/po_import.owl
+import: http://purl.obolibrary.org/obo/envo/imports/ro_import.owl
+import: http://purl.obolibrary.org/obo/envo/imports/uberon_import.owl
+ontology: envo
+owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\nSubClassOf(<http://purl.obolibrary.org/obo/ENVO_00000047> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> ObjectUnionOf(<http://purl.obolibrary.org/obo/ENVO_00000111> <http://purl.obolibrary.org/obo/ENVO_00000109>)))\nDisjointUnion(<http://purl.obolibrary.org/obo/ENVO_00000051> <http://purl.obolibrary.org/obo/ENVO_00002119> <http://purl.obolibrary.org/obo/ENVO_00002120> <http://purl.obolibrary.org/obo/ENVO_00002181>)\nSubClassOf(<http://purl.obolibrary.org/obo/ENVO_00000131> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002473> ObjectUnionOf(<http://purl.obolibrary.org/obo/ENVO_01000406> <http://purl.obolibrary.org/obo/ENVO_01000277>)))\nSubClassOf(<http://purl.obolibrary.org/obo/ENVO_00000146> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000051> ObjectIntersectionOf(ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002473> <http://purl.obolibrary.org/obo/ENVO_01000406>) <http://purl.obolibrary.org/obo/ENVO_00010504>)))\nSubClassOf(<http://purl.obolibrary.org/obo/ENVO_00000267> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002220> ObjectUnionOf(<http://purl.obolibrary.org/obo/ENVO_00000482> <http://purl.obolibrary.org/obo/ENVO_00000426>)))\nSubClassOf(<http://purl.obolibrary.org/obo/ENVO_00000444> ObjectIntersectionOf(ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002219> ObjectUnionOf(<http://purl.obolibrary.org/obo/ENVO_00000111> <http://purl.obolibrary.org/obo/ENVO_00000109>)) <http://purl.obolibrary.org/obo/ENVO_01000352>))\nSubClassOf(<http://purl.obolibrary.org/obo/ENVO_00000501> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002473> ObjectIntersectionOf(ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0000086> <http://purl.obolibrary.org/obo/PATO_0001546>) <http://purl.obolibrary.org/obo/ENVO_00010483>)))\nSubClassOf(<http://purl.obolibrary.org/obo/ENVO_00000552> ObjectComplementOf(<http://purl.obolibrary.org/obo/ENVO_00000134>))\nEquivalentClasses(<http://purl.obolibrary.org/obo/ENVO_00002149> ObjectIntersectionOf(ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> ObjectUnionOf(<http://purl.obolibrary.org/obo/ENVO_00000016> <http://purl.obolibrary.org/obo/ENVO_00000015>)) <http://purl.obolibrary.org/obo/ENVO_00002010>))\nSubClassOf(<http://purl.obolibrary.org/obo/ENVO_00002149> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> ObjectUnionOf(<http://purl.obolibrary.org/obo/ENVO_00000016> <http://purl.obolibrary.org/obo/ENVO_00000015>)))\nSubClassOf(<http://purl.obolibrary.org/obo/ENVO_01000284> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000051> ObjectIntersectionOf(ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002220> <http://purl.obolibrary.org/obo/ENVO_01000277>) <http://purl.obolibrary.org/obo/ENVO_00010504>)))\nSubClassOf(<http://purl.obolibrary.org/obo/ENVO_01000302> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002473> ObjectIntersectionOf(ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0000086> <http://purl.obolibrary.org/obo/PATO_0001646>) <http://purl.obolibrary.org/obo/ENVO_00010483>)))\nEquivalentClasses(<http://purl.obolibrary.org/obo/ENVO_01000319> ObjectIntersectionOf(ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000051> ObjectIntersectionOf(ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002473> <http://purl.obolibrary.org/obo/ENVO_00001995>) <http://purl.obolibrary.org/obo/ENVO_00010504>)) <http://purl.obolibrary.org/obo/ENVO_00002000>))\nSubClassOf(<http://purl.obolibrary.org/obo/ENVO_01000319> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000051> ObjectIntersectionOf(ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002473> <http://purl.obolibrary.org/obo/ENVO_00001995>) <http://purl.obolibrary.org/obo/ENVO_00010504>)))\nSubClassOf(<http://purl.obolibrary.org/obo/ENVO_01000323> ObjectIntersectionOf(<https://purl.obolibrary.org/obo/ENVO_01000544> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/ENVO_01000267>) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002220> <http://purl.obolibrary.org/obo/ENVO_01000324>)))\nSubClassOf(<http://purl.obolibrary.org/obo/ENVO_01000324> ObjectUnionOf(ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0000086> <http://purl.obolibrary.org/obo/PATO_0001548>) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0000086> <http://purl.obolibrary.org/obo/PATO_0001546>)))\nEquivalentClasses(<http://purl.obolibrary.org/obo/ENVO_01000332> ObjectIntersectionOf(ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000051> ObjectIntersectionOf(ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002473> <http://purl.obolibrary.org/obo/ENVO_01000018>) <http://purl.obolibrary.org/obo/ENVO_00010504>)) <http://purl.obolibrary.org/obo/ENVO_00002000>))\nSubClassOf(<http://purl.obolibrary.org/obo/ENVO_01000332> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000051> ObjectIntersectionOf(ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002473> <http://purl.obolibrary.org/obo/ENVO_01000018>) <http://purl.obolibrary.org/obo/ENVO_00010504>)))\nEquivalentClasses(<http://purl.obolibrary.org/obo/ENVO_01000334> ObjectIntersectionOf(ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000051> ObjectIntersectionOf(ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002473> <http://purl.obolibrary.org/obo/ENVO_00000194>) <http://purl.obolibrary.org/obo/ENVO_00010504>)) <http://purl.obolibrary.org/obo/ENVO_00002000>))\nSubClassOf(<http://purl.obolibrary.org/obo/ENVO_01000334> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000051> ObjectIntersectionOf(ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002473> <http://purl.obolibrary.org/obo/ENVO_00000194>) <http://purl.obolibrary.org/obo/ENVO_00010504>)))\nSubClassOf(<http://purl.obolibrary.org/obo/ENVO_01000335> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> ObjectUnionOf(<http://purl.obolibrary.org/obo/ENVO_00000111> <http://purl.obolibrary.org/obo/ENVO_00000109>)))\nSubClassOf(<http://purl.obolibrary.org/obo/ENVO_01000336> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> ObjectUnionOf(<http://purl.obolibrary.org/obo/ENVO_00000111> <http://purl.obolibrary.org/obo/ENVO_00000109>)))\nSubClassOf(<http://purl.obolibrary.org/obo/ENVO_01000337> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> ObjectUnionOf(<http://purl.obolibrary.org/obo/ENVO_00000111> <http://purl.obolibrary.org/obo/ENVO_00000109>)))\nSubClassOf(<http://purl.obolibrary.org/obo/ENVO_01000338> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> ObjectUnionOf(<http://purl.obolibrary.org/obo/ENVO_00000111> <http://purl.obolibrary.org/obo/ENVO_00000109>)))\nSubClassOf(<http://purl.obolibrary.org/obo/ENVO_01000355> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> ObjectUnionOf(<http://purl.obolibrary.org/obo/ENVO_00000111> <http://purl.obolibrary.org/obo/ENVO_00000109>)))\nSubClassOf(<http://purl.obolibrary.org/obo/ENVO_01000374> ObjectIntersectionOf(ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/envo#has_condition> <http://purl.obolibrary.org/obo/ENVO_01000375>) <http://purl.obolibrary.org/obo/ENVO_00000109>))\nSubClassOf(<http://purl.obolibrary.org/obo/ENVO_01000389> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> ObjectIntersectionOf(<http://purl.obolibrary.org/obo/ENVO_01000212> <http://purl.obolibrary.org/obo/ENVO_01000202>)))\nSubClassOf(<http://purl.obolibrary.org/obo/ENVO_01000409> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002220> ObjectUnionOf(<http://purl.obolibrary.org/obo/ENVO_01000297> <http://purl.obolibrary.org/obo/ENVO_00000021>)))\nSubClassOf(<http://purl.obolibrary.org/obo/ENVO_01000410> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002220> ObjectIntersectionOf(<http://purl.obolibrary.org/obo/ENVO_01000126> <http://purl.obolibrary.org/obo/ENVO_01000124>)))\nSubClassOf(<http://purl.obolibrary.org/obo/ENVO_01000492> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002473> ObjectIntersectionOf(ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0000086> <http://purl.obolibrary.org/obo/PATO_0001824>) <http://purl.obolibrary.org/obo/ENVO_00002003>)))\nSubClassOf(<http://purl.obolibrary.org/obo/ENVO_01000512> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000051> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002473> <http://purl.obolibrary.org/obo/ENVO_00002040>)))\nSubClassOf(<http://purl.obolibrary.org/obo/ENVO_01000538> ObjectIntersectionOf(ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/ENVO_01000267>) ObjectIntersectionOf(ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002220> <http://purl.obolibrary.org/obo/ENVO_01000540>) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002220> <http://purl.obolibrary.org/obo/ENVO_01000539>))))\nSubClassOf(<http://purl.obolibrary.org/obo/ENVO_01000539> ObjectIntersectionOf(ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/ENVO_01000267>) ObjectIntersectionOf(ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002220> <http://purl.obolibrary.org/obo/ENVO_01000541>) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002220> <http://purl.obolibrary.org/obo/ENVO_01000538>))))\nSubClassOf(<http://purl.obolibrary.org/obo/ENVO_01000540> ObjectIntersectionOf(ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/ENVO_01000267>) ObjectIntersectionOf(ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002220> <http://purl.obolibrary.org/obo/ENVO_01000540>) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002220> <http://purl.obolibrary.org/obo/ENVO_01000324>))))\nEquivalentClasses(<http://purl.obolibrary.org/obo/ENVO_01001304> ObjectIntersectionOf(<http://purl.obolibrary.org/obo/ENVO_01001305> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000051> <http://purl.obolibrary.org/obo/ENVO_00000027>) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002219> ObjectIntersectionOf(ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/envo#has_condition> <http://purl.obolibrary.org/obo/ENVO_01000230>) ObjectUnionOf(<http://purl.obolibrary.org/obo/ENVO_00001995> <http://purl.obolibrary.org/obo/ENVO_00001998> <http://purl.obolibrary.org/obo/ENVO_01000017>)))))\nSubClassOf(<http://purl.obolibrary.org/obo/ENVO_01001304> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002219> ObjectIntersectionOf(ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/envo#has_condition> <http://purl.obolibrary.org/obo/ENVO_01000230>) ObjectUnionOf(<http://purl.obolibrary.org/obo/ENVO_00001995> <http://purl.obolibrary.org/obo/ENVO_00001998> <http://purl.obolibrary.org/obo/ENVO_01000017>))))\nSubClassOf(<https://purl.obolibrary.org/obo/ENVO_01000545> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000051> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/ENVO_01000539>)))\nSubClassOf(<https://purl.obolibrary.org/obo/ENVO_01000545> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000051> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <https://purl.obolibrary.org/obo/ENVO_01000546>)))\nAnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/ENVO_01000419> \"\"^^xsd:string)\n)
+
+[Term]
+id: CHEBI:24431
+is_a: BFO:0000040
+
+[Term]
+id: CHEBI:36342
+is_a: BFO:0000040
 
 [Term]
 id: ENVO:00000000
@@ -98,6 +116,7 @@ xref: FTT:569
 xref: Geonames:A.ADM1
 xref: TGN:81100
 is_a: ENVO:00000004 ! administrative region
+relationship: BFO:0000050 ENVO:00000009 ! national geopolitical entity
 
 [Term]
 id: ENVO:00000006
@@ -111,6 +130,7 @@ xref: FTT:576
 xref: Geonames:A.ADM2
 xref: TGN:81300
 is_a: ENVO:00000004 ! administrative region
+relationship: BFO:0000050 ENVO:00000005 ! first-order administrative region
 
 [Term]
 id: ENVO:00000007
@@ -126,6 +146,7 @@ xref: FTT:578
 xref: Geonames:A.ADM3
 xref: TGN:82401
 is_a: ENVO:00000004 ! administrative region
+relationship: BFO:0000050 ENVO:00000006 ! second-order administrative region
 
 [Term]
 id: ENVO:00000008
@@ -139,6 +160,7 @@ xref: FTT:581
 xref: Geonames:A.ADM4
 xref: TGN:82402
 is_a: ENVO:00000004 ! administrative region
+relationship: BFO:0000050 ENVO:00000007 ! third-order administrative region
 
 [Term]
 id: ENVO:00000009
@@ -210,12 +232,14 @@ xref: FTT:828
 xref: FTT:829
 xref: Geonames:H.OVF
 is_a: ENVO:00000000 ! geographic feature
+relationship: RO:0001025 ENVO:00000063 ! water body
 
 [Term]
 id: ENVO:00000013
 name: cave system
 def: "A collection of caves interconnected by enterable passages or linked hydrologically or a cave with an extensive complex of chambers and passages." [web:http\://wasg.iinet.net.au/terminol.html]
 is_a: ENVO:00000191 ! physiographic feature
+relationship: BFO:0000051 ENVO:00000067 ! cave
 
 [Term]
 id: ENVO:00000014
@@ -255,6 +279,7 @@ xref: SWEETRealm:Ocean
 xref: TGN:21102
 xref: Wikipedia:Ocean
 is_a: ENVO:00001999 ! marine water body
+relationship: BFO:0000051 ENVO:00002149 ! sea water
 
 [Term]
 id: ENVO:00000016
@@ -276,6 +301,7 @@ xref: Geonames:H.SEA
 xref: TGN:21103
 xref: Wikipedia:Sea
 is_a: ENVO:00001999 ! marine water body
+relationship: BFO:0000051 ENVO:00002149 ! sea water
 
 [Term]
 id: ENVO:00000017
@@ -289,6 +315,10 @@ name: dry river
 def: "A river that has either permanently or temporally lost its water." [MA:ma]
 is_a: ENVO:00000022 ! river
 is_a: ENVO:00000278 ! dry stream
+intersection_of: ENVO:00000022 ! river
+intersection_of: RO:0000086 PATO:0001824
+relationship: RO:0000086 PATO:0001824
+relationship: RO:0001025 ENVO:0010163 ! dry river valley
 
 [Term]
 id: ENVO:00000019
@@ -312,7 +342,7 @@ xref: TGN:21116
 xref: Wikipedia:Saline_lake
 is_a: ENVO:00000020 ! lake
 is_a: ENVO:01001308 ! hydroform
-relationship: composed_primarily_of ENVO:00002010 ! saline water
+relationship: RO:0002473 ENVO:00002010 ! saline water
 
 [Term]
 id: ENVO:00000020
@@ -355,7 +385,7 @@ synonym: "FreshwaterLake" EXACT [NASA:earthrealm]
 xref: SWEETRealm:FreshwaterLake
 is_a: ENVO:00000020 ! lake
 is_a: ENVO:01001308 ! hydroform
-relationship: composed_primarily_of ENVO:00002011 ! fresh water
+relationship: RO:0002473 ENVO:00002011 ! fresh water
 
 [Term]
 id: ENVO:00000022
@@ -574,7 +604,10 @@ name: dead cave
 def: "A cave without streams or drips of water." [web:http\://wasg.iinet.net.au/terminol.html]
 synonym: "dry cave" EXACT []
 is_a: ENVO:00000067 ! cave
+intersection_of: ENVO:00000067 ! cave
+intersection_of: RO:0000086 PATO:0001824
 disjoint_from: ENVO:00000323 ! live cave
+relationship: RO:0000086 PATO:0001824
 
 [Term]
 id: ENVO:00000031
@@ -693,6 +726,7 @@ xref: SWEETRealm:Torrent
 xref: TGN:21162
 xref: Wikipedia:Rapids
 is_a: ENVO:01001308 ! hydroform
+relationship: BFO:0000050 ENVO:00000023 ! stream
 
 [Term]
 id: ENVO:00000035
@@ -821,6 +855,7 @@ xref: TGN:21161
 xref: TGN:21166
 xref: Wikipedia:Waterfall
 is_a: ENVO:00000000 ! geographic feature
+relationship: BFO:0000050 ENVO:00000023 ! stream
 
 [Term]
 id: ENVO:00000041
@@ -950,6 +985,7 @@ xref: SWEETRealm:Peatland
 xref: TGN:21304
 xref: Wikipedia:Peatland
 is_a: ENVO:00000043 ! wetland
+relationship: BFO:0000051 ENVO:00005774 ! peat soil
 
 [Term]
 id: ENVO:00000045
@@ -1060,6 +1096,9 @@ xref: Geonames:H.LKSC
 xref: TGN:21138
 xref: Wikipedia:Crater_lake
 is_a: ENVO:00000020 ! lake
+intersection_of: ENVO:00000020 ! lake
+intersection_of: RO:0001025 ENVO:00000246 ! volcanic crater
+relationship: RO:0001025 ENVO:00000246 ! volcanic crater
 
 [Term]
 id: ENVO:00000053
@@ -1067,6 +1106,9 @@ name: freshwater marsh
 def: "A marsh associated with water that contains low concentrations of salts." [MA:ma]
 is_a: ENVO:00000035 ! marsh
 is_a: ENVO:00000243 ! freshwater wetland
+intersection_of: ENVO:00000035 ! marsh
+intersection_of: BFO:0000051 ENVO:00002011 ! fresh water
+relationship: BFO:0000051 ENVO:00002011 ! fresh water
 
 [Term]
 id: ENVO:00000054
@@ -1087,6 +1129,9 @@ xref: TGN:21323
 xref: Wikipedia:Saline_marsh
 is_a: ENVO:00000035 ! marsh
 is_a: ENVO:00000240 ! saline wetland
+intersection_of: ENVO:00000035 ! marsh
+intersection_of: BFO:0000051 ENVO:00002010 ! saline water
+relationship: BFO:0000051 ENVO:00002010 ! saline water
 
 [Term]
 id: ENVO:00000055
@@ -1107,6 +1152,7 @@ xref: Geonames:H.PNDN
 xref: Geonames:H.PNDSN
 xref: Wikipedia:Salt_evaporation_pond
 is_a: ENVO:00000033 ! pond
+relationship: BFO:0000051 ENVO:00002010 ! saline water
 
 [Term]
 id: ENVO:00000056
@@ -1370,6 +1416,9 @@ xref: FTT:636
 xref: Geonames:H.STMD
 xref: Wikipedia:Distributary
 is_a: ENVO:00000023 ! stream
+intersection_of: ENVO:00000023 ! stream
+intersection_of: RO:0002377 ENVO:00000012 ! hydrographic feature
+relationship: RO:0002377 ENVO:00000012 ! hydrographic feature
 
 [Term]
 id: ENVO:00000070
@@ -1411,6 +1460,7 @@ xref: LTER:76
 xref: TGN:51011
 xref: Wikipedia:Building
 is_a: ENVO:00000070 ! constructed feature
+relationship: BFO:0000051 ENVO:01000420 ! building part
 
 [Term]
 id: ENVO:00000074
@@ -1568,6 +1618,7 @@ xref: TGN:21431
 xref: TGN:21432
 xref: Wikipedia:Mountain_range
 is_a: ENVO:00000478 ! range of mounts
+relationship: BFO:0000051 ENVO:00000081 ! mountain
 
 [Term]
 id: ENVO:00000081
@@ -1605,6 +1656,7 @@ id: ENVO:00000082
 name: hill range
 def: "A group of hills bordered by lowlands." [MA:ma]
 is_a: ENVO:00000478 ! range of mounts
+relationship: BFO:0000051 ENVO:00000083 ! hill
 
 [Term]
 id: ENVO:00000083
@@ -1666,6 +1718,7 @@ xref: TGN:21436
 xref: TGN:21524
 xref: Wikipedia:Mountain_pass
 is_a: ENVO:00000000 ! geographic feature
+relationship: BFO:0000050 ENVO:00000080 ! mountain range
 
 [Term]
 id: ENVO:00000085
@@ -1731,6 +1784,10 @@ synonym: "coastal cliff" RELATED []
 synonym: "marine cliff" RELATED [USGS:SDTS]
 xref: Wikipedia:Sea_cliff
 is_a: ENVO:00000087 ! cliff
+intersection_of: ENVO:00000087 ! cliff
+intersection_of: RO:0002220 ENVO:00000016 ! sea
+relationship: BFO:0000050 ENVO:00000303 ! coast
+relationship: RO:0002220 ENVO:00000016 ! sea
 
 [Term]
 id: ENVO:00000089
@@ -1764,6 +1821,9 @@ xref: FTT:504
 xref: SWEETRealm:CoastalPlain
 xref: Wikipedia:Coastal_plain
 is_a: ENVO:00000086 ! plain
+intersection_of: ENVO:00000086 ! plain
+intersection_of: RO:0002220 ENVO:00000303 ! coast
+relationship: RO:0002220 ENVO:00000303 ! coast
 
 [Term]
 id: ENVO:00000091
@@ -1788,6 +1848,7 @@ xref: SWEETRealm:Beach
 xref: TGN:21482
 xref: Wikipedia:Beach
 is_a: ENVO:00000191 ! physiographic feature
+relationship: BFO:0000050 ENVO:00000304 ! shore
 
 [Term]
 id: ENVO:00000092
@@ -1796,12 +1857,19 @@ def: "A landform consisting of loose rock particles such as sand, gravel, shingl
 synonym: "strand" EXACT []
 xref: Wikipedia:Strand
 is_a: ENVO:00000091 ! beach
+intersection_of: ENVO:00000091 ! beach
+intersection_of: RO:0002220 ENVO:00000016 ! sea
+relationship: BFO:0000050 ENVO:00000303 ! coast
+relationship: RO:0002220 ENVO:00000016 ! sea
 
 [Term]
 id: ENVO:00000093
 name: lacustrine beach
 def: "A landform consisting of loose rock particles such as sand, gravel, shingle, pebbles, cobble, or even shell fragments along the shoreline of a lake." [MA:ma]
 is_a: ENVO:00000091 ! beach
+intersection_of: ENVO:00000091 ! beach
+intersection_of: RO:0002220 ENVO:00000020 ! lake
+relationship: RO:0002220 ENVO:00000020 ! lake
 
 [Term]
 id: ENVO:00000094
@@ -1858,6 +1926,8 @@ xref: SWEETRealm:Desert
 xref: TGN:21201
 xref: Wikipedia:Desert
 is_a: ENVO:00000191 ! physiographic feature
+intersection_of: ENVO:00000191 ! physiographic feature
+intersection_of: has_condition ENVO:01000230 ! arid
 relationship: has_condition ENVO:01000230 ! arid
 
 [Term]
@@ -1898,6 +1968,7 @@ xref: TGN:21471
 xref: TGN:21475
 xref: Wikipedia:Island
 is_a: ENVO:00000000 ! geographic feature
+relationship: RO:0002219 ENVO:00000063 ! water body
 
 [Term]
 id: ENVO:00000099
@@ -1995,6 +2066,7 @@ name: cave entrance
 synonym: "Cueva de Altamira" EXACT []
 xref: FTT:444
 is_a: ENVO:00000000 ! geographic feature
+relationship: BFO:0000050 ENVO:00000067 ! cave
 
 [Term]
 id: ENVO:00000103
@@ -2162,7 +2234,8 @@ is_a: ENVO:00000012 ! hydrographic feature
 id: ENVO:00000105
 name: lake surface
 is_a: ENVO:00010504 ! surface layer
-relationship: partially_surrounded_by ENVO:00002005 ! air
+relationship: BFO:0000050 ENVO:00000020 ! lake
+relationship: ENVO:01001307 ENVO:00002005 ! partially_surrounded_by air
 
 [Term]
 id: ENVO:00000106
@@ -2540,6 +2613,9 @@ name: dry valley
 def: "A valley that no longer has a surface flow of water. Typically found in either Karst (limestone) or chalk terrain." [Wikipedia:Dry_valley]
 xref: Wikipedia:Dry_valley
 is_a: ENVO:00000100 ! valley
+intersection_of: ENVO:00000100 ! valley
+intersection_of: RO:0000086 PATO:0001824
+relationship: RO:0000086 PATO:0001824
 
 [Term]
 id: ENVO:00000129
@@ -2555,6 +2631,9 @@ xref: FTT:420
 xref: Geonames:H.RVN
 xref: TGN:21427
 is_a: ENVO:00000100 ! valley
+intersection_of: ENVO:00000100 ! valley
+intersection_of: BFO:0000051 ENVO:00000023 ! stream
+relationship: BFO:0000051 ENVO:00000023 ! stream
 
 [Term]
 id: ENVO:00000130
@@ -2656,6 +2735,7 @@ xref: EcoLexicon:permafrost
 xref: LTER:408
 xref: Wikipedia:Permafrost
 is_a: ENVO:00001998 ! soil
+relationship: RO:0000086 PATO:0001985
 
 [Term]
 id: ENVO:00000135
@@ -2691,6 +2771,9 @@ synonym: "coastal inlet" RELATED []
 xref: FTT:463
 xref: TGN:21128
 is_a: ENVO:00000475 ! inlet
+intersection_of: ENVO:00000475 ! inlet
+intersection_of: BFO:0000050 ENVO:00000303 ! coast
+relationship: BFO:0000050 ENVO:00000303 ! coast
 
 [Term]
 id: ENVO:00000138
@@ -2746,6 +2829,7 @@ xref: FTT:195
 xref: SWEETRealm:Bank
 xref: TGN:21466
 is_a: ENVO:00002000 ! slope
+relationship: BFO:0000050 ENVO:00000395 ! channel
 
 [Term]
 id: ENVO:00000142
@@ -2811,8 +2895,8 @@ id: ENVO:00000147
 name: ocean current
 def: "The region occupied by any more or less continuous, directed movement of ocean water that flows in one of the Earth's oceans. Ocean Currents are rivers of hot or cold water within the ocean. The currents are generated from the forces acting upon the water like the earth's rotation, the wind, the temperature and salinity differences and the gravitation of the moon. The depth contours, the shoreline and other movements influence the direction and strength of the movements of water that forms a given current." [BS:bs]
 comment: Definition modified from http://en.wikipedia.org/wiki/Ocean_current.
-synonym: "current" BROAD [ADL:FTT]
 synonym: "current" BROAD [Getty:TGN]
+synonym: "current" BROAD [ADL:FTT]
 synonym: "current" BROAD [Geonames:feature]
 synonym: "ocean current" EXACT [ADL:FTT]
 xref: EcoLexicon:ocean_current
@@ -2824,6 +2908,7 @@ xref: SWEETRealm:OceanCurrent
 xref: TGN:21169
 xref: Wikipedia:Ocean_current
 is_a: ENVO:01000067 ! marine current
+relationship: BFO:0000050 ENVO:00000015 ! ocean
 
 [Term]
 id: ENVO:00000148
@@ -2832,6 +2917,7 @@ def: "A shallow stretch of a river or stream, where the current is above the ave
 xref: EcoLexicon:riffle
 xref: Wikipedia:Riffle
 is_a: ENVO:00000000 ! geographic feature
+relationship: BFO:0000050 ENVO:00000023 ! stream
 
 [Term]
 id: ENVO:00000149
@@ -2908,6 +2994,7 @@ xref: Geonames:H.STMH
 xref: TGN:21181
 xref: Wikipedia:Headwater
 is_a: ENVO:00000000 ! geographic feature
+relationship: BFO:0000050 ENVO:00000023 ! stream
 
 [Term]
 id: ENVO:00000154
@@ -2950,6 +3037,9 @@ xref: Geonames:L.OAS
 xref: TGN:21202
 xref: Wikipedia:Oasis
 is_a: ENVO:01001304 ! oasis
+intersection_of: ENVO:01001304 ! oasis
+intersection_of: BFO:0000050 ENVO:00000097 ! desert
+relationship: BFO:0000050 ENVO:00000097 ! desert
 
 [Term]
 id: ENVO:00000157
@@ -2962,6 +3052,7 @@ synonym: "wetland" BROAD [USGS:SDTS]
 xref: FTT:1060
 xref: Geonames:L.PEAT
 is_a: ENVO:00000000 ! geographic feature
+relationship: BFO:0000050 ENVO:00000044 ! peatland
 
 [Term]
 id: ENVO:00000158
@@ -3150,6 +3241,7 @@ xref: Geonames:T.BLHL
 xref: TGN:21172
 xref: Wikipedia:Blowhole
 is_a: ENVO:00000012 ! hydrographic feature
+relationship: BFO:0000050 ENVO:00000303 ! coast
 
 [Term]
 id: ENVO:00000169
@@ -3218,6 +3310,7 @@ name: river valley
 def: "A valley that contains, and has been formed by, a river." [MA:ma]
 xref: Wikipedia:River_valley
 is_a: ENVO:00000129 ! stream valley
+relationship: BFO:0000051 ENVO:00000022 ! river
 
 [Term]
 id: ENVO:00000172
@@ -3284,6 +3377,7 @@ xref: SWEETRealm:Karst
 xref: TGN:21509
 xref: Wikipedia:Karst
 is_a: ENVO:00000191 ! physiographic feature
+relationship: BFO:0000051 ENVO:01000359 ! limestone cave
 
 [Term]
 id: ENVO:00000176
@@ -3384,6 +3478,9 @@ xref: Geonames:T.NTKS
 xref: TGN:21495
 xref: Wikipedia:Nunatak
 is_a: ENVO:00000480 ! peak
+intersection_of: ENVO:00000480 ! peak
+intersection_of: RO:0002220 ENVO:00000133 ! glacier
+relationship: RO:0002220 ENVO:00000133 ! glacier
 
 [Term]
 id: ENVO:00000182
@@ -3548,6 +3645,11 @@ xref: SWEETRealm:Talus
 xref: TGN:21508
 xref: Wikipedia:Scree
 is_a: ENVO:00010483 ! environmental material
+intersection_of: ENVO:00010483 ! environmental material
+intersection_of: BFO:0000051 ENVO:00000339 ! piece of rock
+intersection_of: RO:0001000 ENVO:00001995 ! rock
+relationship: BFO:0000051 ENVO:00000339 ! piece of rock
+relationship: RO:0001000 ENVO:00001995 ! rock
 
 [Term]
 id: ENVO:00000195
@@ -3589,6 +3691,7 @@ def: "A lake from which there is no outflow of water, either on the surface as r
 xref: EcoLexicon:endorheic_lake
 xref: Wikipedia:Endorheic_lake
 is_a: ENVO:00000020 ! lake
+relationship: RO:0002220 ENVO:00000551 ! endorheic basin
 
 [Term]
 id: ENVO:00000198
@@ -3618,6 +3721,7 @@ name: fjord lake
 def: "A lake in a glacially eroded valley, which has been eroded below sea level." [Wikipedia:Lake#Types_of_lakes]
 xref: Wikipedia:Fjord_lake
 is_a: ENVO:00000020 ! lake
+relationship: RO:0001025 ENVO:00000039 ! fjord
 
 [Term]
 id: ENVO:00000202
@@ -3671,6 +3775,7 @@ def: "The water mass of an ocean that is not above a continental shelf." [Wikipe
 synonym: "OceanLayer" EXACT [NASA:earthrealm]
 xref: EcoLexicon:oceanic_zone
 is_a: ENVO:01000295 ! marine layer
+relationship: BFO:0000050 ENVO:00000015 ! ocean
 
 [Term]
 id: ENVO:00000208
@@ -3803,6 +3908,7 @@ xref: TGN:21470
 xref: TGN:21474
 xref: Wikipedia:Archipelago
 is_a: ENVO:00000000 ! geographic feature
+relationship: BFO:0000051 ENVO:00000098 ! island
 
 [Term]
 id: ENVO:00000221
@@ -3811,6 +3917,9 @@ def: "An island that lies on a continental shelf." [Wikipedia:Island#Continental
 xref: EcoLexicon:continental_island
 xref: Wikipedia:Continental_island
 is_a: ENVO:00000098 ! island
+intersection_of: ENVO:00000098 ! island
+intersection_of: RO:0002220 ENVO:00000223 ! continental shelf
+relationship: RO:0002220 ENVO:00000223 ! continental shelf
 
 [Term]
 id: ENVO:00000222
@@ -3821,6 +3930,7 @@ xref: EcoLexicon:oceanic_island
 xref: Wikipedia:Oceanic_island
 is_a: ENVO:00000098 ! island
 relationship: disconnected_from ENVO:00000223 ! continental shelf
+relationship: RO:0001000 ENVO:00000247 ! volcano
 
 [Term]
 id: ENVO:00000223
@@ -3846,6 +3956,7 @@ xref: Geonames:U.SHFU
 xref: SWEETRealm:ContinentalMargin
 xref: Wikipedia:Continental_shelf
 is_a: ENVO:00002000 ! slope
+relationship: BFO:0000050 ENVO:01000298 ! continental margin
 
 [Term]
 id: ENVO:00000224
@@ -3892,6 +4003,9 @@ name: coastal wetland
 def: "A wetland associated with the part of the land adjoining or near a sea or ocean." [MA:ma]
 xref: Wikipedia:Coastal_wetland
 is_a: ENVO:00000043 ! wetland
+intersection_of: ENVO:00000043 ! wetland
+intersection_of: BFO:0000050 ENVO:00000303 ! coast
+relationship: BFO:0000050 ENVO:00000303 ! coast
 
 [Term]
 id: ENVO:00000231
@@ -3998,6 +4112,9 @@ id: ENVO:00000240
 name: saline wetland
 comment: It would be more correct to say that this has_quality salty or has_part ((soil and water) and has_increased_levels_of salt.
 is_a: ENVO:00000043 ! wetland
+intersection_of: ENVO:00000043 ! wetland
+intersection_of: BFO:0000051 ENVO:00002010 ! saline water
+relationship: BFO:0000051 ENVO:00002010 ! saline water
 
 [Term]
 id: ENVO:00000241
@@ -4027,6 +4144,9 @@ id: ENVO:00000243
 name: freshwater wetland
 def: "A wetland whose water that contains low concentrations of salts." [MA:ma]
 is_a: ENVO:00000043 ! wetland
+intersection_of: ENVO:00000043 ! wetland
+intersection_of: BFO:0000051 ENVO:00002011 ! fresh water
+relationship: BFO:0000051 ENVO:00002011 ! fresh water
 
 [Term]
 id: ENVO:00000244
@@ -4040,6 +4160,7 @@ xref: SPIRE:Abyssal
 xref: TGN:23302
 xref: Wikipedia:Abyssal_plain
 is_a: ENVO:00000086 ! plain
+relationship: RO:0002220 ENVO:00000426 ! ocean floor
 
 [Term]
 id: ENVO:00000245
@@ -4057,6 +4178,9 @@ xref: FTT:219
 xref: TGN:21408
 xref: Wikipedia:Volcanic_crater
 is_a: ENVO:00000514 ! crater
+intersection_of: ENVO:00000514 ! crater
+intersection_of: BFO:0000050 ENVO:00000247 ! volcano
+relationship: BFO:0000050 ENVO:00000247 ! volcano
 
 [Term]
 id: ENVO:00000247
@@ -4151,6 +4275,7 @@ def: "The stream channel and adjacent areas that carry flood flows in a flood pl
 xref: FTT:710
 xref: Wikipedia:Floodway
 is_a: ENVO:00000309 ! depression
+relationship: BFO:0000050 ENVO:00000255 ! flood plain
 
 [Term]
 id: ENVO:00000257
@@ -4158,6 +4283,7 @@ name: flood fringe
 def: "Area of a flood plane covered by the flood, but which does not experience a strong current." [Wikipedia:Flood_plain]
 xref: Wikipedia:Flood_fringe
 is_a: ENVO:01000408 ! environmental zone
+relationship: BFO:0000050 ENVO:00000255 ! flood plain
 
 [Term]
 id: ENVO:00000258
@@ -4342,6 +4468,7 @@ synonym: "lake bottom" EXACT []
 xref: FTT:221
 xref: FTT:804
 is_a: ENVO:00000501 ! bed
+relationship: RO:0002220 ENVO:00000020 ! lake
 
 [Term]
 id: ENVO:00000269
@@ -4389,6 +4516,7 @@ xref: TGN:21160
 xref: TGN:21381
 xref: Wikipedia:Confluence
 is_a: ENVO:00000012 ! hydrographic feature
+relationship: BFO:0000050 ENVO:00000023 ! stream
 
 [Term]
 id: ENVO:00000273
@@ -4398,6 +4526,7 @@ xref: EcoLexicon:continental_slope
 xref: FTT:536
 xref: Wikipedia:Continental_slope
 is_a: ENVO:00002000 ! slope
+relationship: BFO:0000050 ENVO:01000298 ! continental margin
 
 [Term]
 id: ENVO:00000274
@@ -4409,6 +4538,7 @@ xref: Geonames:U.CRSU
 xref: TGN:23110
 xref: Wikipedia:Continental_rise
 is_a: ENVO:00002000 ! slope
+relationship: BFO:0000050 ENVO:01000298 ! continental margin
 
 [Term]
 id: ENVO:00000275
@@ -4436,6 +4566,7 @@ xref: TGN:23462
 xref: TGN:23464
 xref: Wikipedia:Ocean_trench
 is_a: ENVO:00000309 ! depression
+relationship: RO:0002220 ENVO:00000426 ! ocean floor
 
 [Term]
 id: ENVO:00000276
@@ -4474,6 +4605,10 @@ xref: FTT:105
 xref: FTT:651
 xref: Geonames:T.SBED
 is_a: ENVO:00000023 ! stream
+intersection_of: ENVO:00000023 ! stream
+intersection_of: RO:0000086 PATO:0001824
+relationship: RO:0000086 PATO:0001824
+relationship: RO:0001025 ENVO:0010162 ! dry stream valley
 
 [Term]
 id: ENVO:00000279
@@ -4759,7 +4894,7 @@ xref: SWEETRealm:Iceberg
 xref: TGN:21142
 xref: Wikipedia:Iceberg
 is_a: ENVO:01000293 ! ice mass
-relationship: partially_surrounded_by ENVO:00000063 ! water body
+relationship: ENVO:01001307 ENVO:00000063 ! partially_surrounded_by water body
 
 [Term]
 id: ENVO:00000299
@@ -4785,7 +4920,7 @@ xref: FTT:842
 xref: SWEETRealm:IceField
 xref: TGN:21147
 is_a: ENVO:01000352 ! field
-relationship: composed_primarily_of ENVO:01000277 ! water ice
+relationship: RO:0002473 ENVO:01000277 ! water ice
 
 [Term]
 id: ENVO:00000300
@@ -4823,6 +4958,8 @@ synonym: "woodland" RELATED [USGS:SDTS]
 xref: FTT:473
 xref: SPIRE:Chaparral
 is_a: ENVO:00000300 ! scrubland
+intersection_of: ENVO:00000300 ! scrubland
+intersection_of: has_condition ENVO:01000207 ! mediterranean
 relationship: has_condition ENVO:01000207 ! mediterranean
 
 [Term]
@@ -4958,6 +5095,8 @@ xref: FTT:758
 xref: FTT:842
 xref: Wikipedia:Icefall
 is_a: ENVO:01000293 ! ice mass
+relationship: BFO:0000050 ENVO:00000133 ! glacier
+relationship: BFO:0000051 ENVO:00000320 ! crevasse
 
 [Term]
 id: ENVO:00000308
@@ -5013,6 +5152,7 @@ def: "A fluvioglacial landform occurring as the result of blocks of ice calving 
 synonym: "basin" BROAD [USGS:SDTS]
 synonym: "kettle hole" EXACT []
 is_a: ENVO:00000309 ! depression
+relationship: BFO:0000050 ENVO:00000312 ! sandur
 
 [Term]
 id: ENVO:00000312
@@ -5075,6 +5215,7 @@ xref: SPIRE:Intertidal
 xref: SWEETRealm:IntertidalZone
 xref: Wikipedia:Intertidal_zone
 is_a: ENVO:01000408 ! environmental zone
+relationship: BFO:0000050 ENVO:00000304 ! shore
 
 [Term]
 id: ENVO:00000317
@@ -5083,6 +5224,7 @@ def: "Pools formed as a high tide comes in over a rocky shore. Water fills depre
 xref: EcoLexicon:tidal_pool
 xref: Wikipedia:Tidal_pool
 is_a: ENVO:00000063 ! water body
+relationship: BFO:0000050 ENVO:00000316 ! intertidal zone
 
 [Term]
 id: ENVO:00000318
@@ -5090,6 +5232,7 @@ name: high tide zone
 def: "The tide zone that is flooded during high tide only, and is a highly saline environment." [Wikipedia:Intertidal_zone]
 synonym: "upper littoral" RELATED []
 is_a: ENVO:01000408 ! environmental zone
+relationship: BFO:0000050 ENVO:00000316 ! intertidal zone
 
 [Term]
 id: ENVO:00000319
@@ -5097,6 +5240,7 @@ name: low tide zone
 def: "The tidal zone that is mostly submerged, only being exposed at the point of low tide and for a longer period of time during extremely low tides." [Wikipedia:Intertidal_zone]
 synonym: "lower littoral" RELATED []
 is_a: ENVO:01000408 ! environmental zone
+relationship: BFO:0000050 ENVO:00000316 ! intertidal zone
 
 [Term]
 id: ENVO:00000320
@@ -5170,6 +5314,7 @@ xref: EcoLexicon:speleothem
 xref: Wikipedia:Speleothem
 is_a: ENVO:00000339 ! piece of rock
 is_a: ENVO:01000255 ! mineral deposit
+relationship: BFO:0000050 ENVO:00000067 ! cave
 
 [Term]
 id: ENVO:00000328
@@ -5207,6 +5352,7 @@ name: doline
 def: "A closed depression draining underground in karst, of simple but variable form, e.g. cylindrical, conical, bowl- or dish-shaped. From a few to many hundreds of metres in dimensions." [web:http\://wasg.iinet.net.au/terminol.html]
 xref: Wikipedia:Doline
 is_a: ENVO:00000309 ! depression
+relationship: BFO:0000050 ENVO:00000175 ! karst
 
 [Term]
 id: ENVO:00000333
@@ -5231,6 +5377,9 @@ id: ENVO:00000336
 name: doline karst
 def: "Karst dominated by closed depressions, chiefly dolines, perforating a simple surface." [web:http\://wasg.iinet.net.au/terminol.html]
 is_a: ENVO:00000175 ! karst
+intersection_of: ENVO:00000175 ! karst
+intersection_of: BFO:0000051 ENVO:00000332 ! doline
+relationship: BFO:0000051 ENVO:00000332 ! doline
 
 [Term]
 id: ENVO:00000337
@@ -5247,6 +5396,7 @@ name: vomit
 def: "Vomit is a bodily fluid consisting of the expulsed contents of the stomach of an organism disgorged through the mouth or nose." [ENVOC:nm, GEMINA:ls, Wikipedia:Vomit]
 xref: Wikipedia:Vomit
 is_a: ENVO:02000019 ! bodily fluid
+relationship: RO:0002473 UBERON:0000172
 
 [Term]
 id: ENVO:00000339
@@ -5258,6 +5408,7 @@ xref: Geonames:T.RK
 xref: Geonames:T.RKS
 xref: TGN:21444
 is_a: ENVO:01000010 ! abiotic mesoscopic physical object
+relationship: RO:0001000 ENVO:00001995 ! rock
 
 [Term]
 id: ENVO:00000340
@@ -5283,6 +5434,7 @@ xref: FTT:840
 xref: Geonames:H.DOMG
 xref: TGN:21144
 is_a: ENVO:00000176 ! elevation
+relationship: BFO:0000050 ENVO:00000145 ! ice cap
 
 [Term]
 id: ENVO:00000343
@@ -5293,26 +5445,41 @@ is_a: ENVO:00000339 ! piece of rock
 id: ENVO:00000344
 name: grain of desert sand
 is_a: ENVO:00000340 ! grain of sand
+intersection_of: ENVO:00000340 ! grain of sand
+intersection_of: BFO:0000050 ENVO:00005800 ! desert sand
+relationship: BFO:0000050 ENVO:00005800 ! desert sand
 
 [Term]
 id: ENVO:00000345
 name: grain of beach sand
 is_a: ENVO:00000340 ! grain of sand
+intersection_of: ENVO:00000340 ! grain of sand
+intersection_of: BFO:0000050 ENVO:00002138 ! beach sand
+relationship: BFO:0000050 ENVO:00002138 ! beach sand
 
 [Term]
 id: ENVO:00000346
 name: grain of acid dune sand
 is_a: ENVO:00000340 ! grain of sand
+intersection_of: ENVO:00000340 ! grain of sand
+intersection_of: BFO:0000050 ENVO:00005798 ! acid dune sand
+relationship: BFO:0000050 ENVO:00005798 ! acid dune sand
 
 [Term]
 id: ENVO:00000347
 name: grain of sea sand
 is_a: ENVO:00000340 ! grain of sand
+intersection_of: ENVO:00000340 ! grain of sand
+intersection_of: BFO:0000050 ENVO:00002118 ! sea sand
+relationship: BFO:0000050 ENVO:00002118 ! sea sand
 
 [Term]
 id: ENVO:00000348
 name: grain of rocky sand
 is_a: ENVO:00000340 ! grain of sand
+intersection_of: ENVO:00000340 ! grain of sand
+intersection_of: BFO:0000050 ENVO:00005799 ! rocky sand
+relationship: BFO:0000050 ENVO:00005799 ! rocky sand
 
 [Term]
 id: ENVO:00000349
@@ -5359,6 +5526,7 @@ synonym: "volcanic group" RELATED []
 synonym: "volcanic system" RELATED []
 xref: Wikipedia:Volcanic_field
 is_a: ENVO:01000352 ! field
+relationship: BFO:0000051 ENVO:00000247 ! volcano
 
 [Term]
 id: ENVO:00000355
@@ -5471,6 +5639,7 @@ def: "MERGED DEFINITION:\nTARGET DEFINITION: A large area of brine on the ocean 
 synonym: "marine brine pool" EXACT []
 xref: Wikipedia:Brine_pool
 is_a: ENVO:00001999 ! marine water body
+relationship: BFO:0000050 ENVO:00000015 ! ocean
 
 [Term]
 id: ENVO:00000370
@@ -5559,6 +5728,9 @@ def: "That part of the land in immediate contact with a lake." [MA:ma]
 synonym: "lakeshore" RELATED [Getty:TGN]
 xref: TGN:21484
 is_a: ENVO:00000304 ! shore
+intersection_of: ENVO:00000304 ! shore
+intersection_of: BFO:0000050 ENVO:00000020 ! lake
+relationship: BFO:0000050 ENVO:00000020 ! lake
 
 [Term]
 id: ENVO:00000383
@@ -5574,6 +5746,7 @@ xref: Geonames:H.STMB
 xref: TGN:21165
 xref: Wikipedia:Stream_bed
 is_a: ENVO:00000501 ! bed
+relationship: RO:0002220 ENVO:00000023 ! stream
 
 [Term]
 id: ENVO:00000384
@@ -5586,6 +5759,7 @@ xref: SWEETRealm:RiverBed
 xref: TGN:21154
 xref: Wikipedia:River_bed
 is_a: ENVO:00000383 ! stream bed
+relationship: RO:0002220 ENVO:00000022 ! river
 
 [Term]
 id: ENVO:00000385
@@ -5597,6 +5771,9 @@ xref: FTT:105
 xref: FTT:1222
 xref: Geonames:H.STMM
 is_a: ENVO:00000479 ! mouth
+intersection_of: ENVO:00000479 ! mouth
+intersection_of: BFO:0000050 ENVO:00000023 ! stream
+relationship: BFO:0000050 ENVO:00000023 ! stream
 
 [Term]
 id: ENVO:00000386
@@ -5605,6 +5782,9 @@ def: "The end of a stream where it enters a standing water body such as a lake, 
 xref: TGN:21156
 xref: Wikipedia:River_mouth
 is_a: ENVO:00000385 ! stream mouth
+intersection_of: ENVO:00000479 ! mouth
+intersection_of: BFO:0000050 ENVO:00000022 ! river
+relationship: BFO:0000050 ENVO:00000022 ! river
 
 [Term]
 id: ENVO:00000387
@@ -5651,6 +5831,7 @@ xref: FTT:1177
 xref: Geonames:T.SPUR
 xref: TGN:21366
 is_a: ENVO:00000000 ! geographic feature
+relationship: BFO:0000050 ENVO:00000081 ! mountain
 
 [Term]
 id: ENVO:00000391
@@ -5669,6 +5850,7 @@ synonym: "glacier tongue" EXACT []
 xref: TGN:21143
 xref: Wikipedia:Ice_tongue
 is_a: ENVO:01000293 ! ice mass
+relationship: BFO:0000050 ENVO:00000133 ! glacier
 
 [Term]
 id: ENVO:00000393
@@ -5745,6 +5927,8 @@ xref: SWEETRealm:Channel
 xref: TGN:21137
 xref: TGN:23451
 is_a: ENVO:00000309 ! depression
+relationship: BFO:0000051 ENVO:00000141 ! bank
+relationship: BFO:0000051 ENVO:00000501 ! bed
 
 [Term]
 id: ENVO:00000396
@@ -5767,6 +5951,9 @@ xref: FTT:464
 xref: Geonames:H.CHNL
 xref: TGN:21185
 is_a: ENVO:00000395 ! channel
+intersection_of: ENVO:00000395 ! channel
+intersection_of: RO:0001025 ENVO:00000020 ! lake
+relationship: RO:0001025 ENVO:00000020 ! lake
 
 [Term]
 id: ENVO:00000398
@@ -5848,6 +6035,7 @@ xref: EcoLexicon:oceanic_ridge
 xref: TGN:23151
 xref: Wikipedia:Mid-ocean_ridge
 is_a: ENVO:00000550 ! range of seamounts
+relationship: BFO:0000050 ENVO:00000015 ! ocean
 
 [Term]
 id: ENVO:00000407
@@ -5857,6 +6045,7 @@ comment: Something more specific than an adjacent_to relation would be better, e
 synonym: "tuya" RELATED []
 xref: Wikipedia:Subglacial_volcano
 is_a: ENVO:00000247 ! volcano
+relationship: RO:0002220 ENVO:00000133 ! glacier
 
 [Term]
 id: ENVO:00000408
@@ -5922,6 +6111,7 @@ synonym: "mount" BROAD [USGS:SDTS]
 synonym: "pingos" EXACT PLURAL []
 xref: Wikipedia:Pingo
 is_a: ENVO:00000176 ! elevation
+relationship: BFO:0000051 ENVO:01000293 ! ice mass
 
 [Term]
 id: ENVO:00000414
@@ -5951,6 +6141,9 @@ id: ENVO:00000416
 name: coastal dune
 xref: Wikipedia:Coastal_dune
 is_a: ENVO:00000170 ! dune
+intersection_of: ENVO:00000170 ! dune
+intersection_of: RO:0001025 ENVO:00000303 ! coast
+relationship: RO:0001025 ENVO:00000303 ! coast
 
 [Term]
 id: ENVO:00000417
@@ -5976,6 +6169,7 @@ def: "A geological landform consisting of a steep and often vertical column or c
 synonym: "island" BROAD [USGS:SDTS]
 xref: EcoLexicon:stack
 is_a: ENVO:00000176 ! elevation
+relationship: BFO:0000050 ENVO:00000303 ! coast
 
 [Term]
 id: ENVO:00000420
@@ -5987,6 +6181,7 @@ xref: EcoLexicon:tombolo
 xref: SWEETRealm:Tombolo
 xref: Wikipedia:Tombolo
 is_a: ENVO:00000167 ! bar
+relationship: BFO:0000050 ENVO:00000303 ! coast
 
 [Term]
 id: ENVO:00000421
@@ -5996,6 +6191,7 @@ synonym: "marine terrace" RELATED []
 xref: SWEETRealm:WaveCutPlatform
 xref: Wikipedia:Wave-cut_platform
 is_a: ENVO:00000000 ! geographic feature
+relationship: BFO:0000050 ENVO:00000303 ! coast
 
 [Term]
 id: ENVO:00000422
@@ -6014,6 +6210,9 @@ synonym: "fluvial island" RELATED [Getty:TGN]
 xref: EcoLexicon:fluvial_island
 xref: TGN:21428
 is_a: ENVO:00000098 ! island
+intersection_of: ENVO:00000098 ! island
+intersection_of: RO:0001025 ENVO:00000022 ! river
+relationship: RO:0001025 ENVO:00000022 ! river
 
 [Term]
 id: ENVO:00000424
@@ -6021,6 +6220,9 @@ name: lake island
 def: "An island that lies in a lake." [MA:ma]
 xref: Wikipedia:Lake_island
 is_a: ENVO:00000098 ! island
+intersection_of: ENVO:00000098 ! island
+intersection_of: RO:0001025 ENVO:00000020 ! lake
+relationship: RO:0001025 ENVO:00000020 ! lake
 
 [Term]
 id: ENVO:00000426
@@ -6031,6 +6233,7 @@ synonym: "ocean floor feature" RELATED [ADL:FTT]
 xref: FTT:1020
 xref: Wikipedia:Ocean_floor
 is_a: ENVO:00000501 ! bed
+relationship: RO:0002220 ENVO:00000015 ! ocean
 
 [Term]
 id: ENVO:00000427
@@ -6046,6 +6249,7 @@ xref: SWEETRealm:Meandering
 xref: TGN:21153
 xref: Wikipedia:Meander
 is_a: ENVO:00000000 ! geographic feature
+relationship: BFO:0000050 ENVO:00000023 ! stream
 
 [Term]
 id: ENVO:00000428
@@ -6061,6 +6265,7 @@ xref: Wikipedia:Biome
 is_a: ENVO:01000254 ! environmental system
 disjoint_from: ENVO:01000276 ! ecoregion
 disjoint_from: ENVO:01000280 ! ecozone
+relationship: ENVO:2100001 PCO:0000002 ! determined by
 
 [Term]
 id: ENVO:00000429
@@ -6077,6 +6282,7 @@ name: dirt cone
 def: "A feature of a glacier, in which dirt, which has fallen into a hollow in the ice, forms a coating which insulates the ice below. The surrounding ice melts away, leaving the dirt cone." [Wikipedia:Dirt_cone]
 xref: Wikipedia:Dirt_cone
 is_a: ENVO:00000000 ! geographic feature
+relationship: RO:0002220 ENVO:01000293 ! ice mass
 
 [Term]
 id: ENVO:00000431
@@ -6085,6 +6291,7 @@ def: "A cluster of dozens to hundreds of similarly shaped, sized and oriented dr
 synonym: "drumlin swarm" RELATED []
 xref: Wikipedia:Drumlin_field
 is_a: ENVO:00000082 ! hill range
+relationship: BFO:0000051 ENVO:00000276 ! drumlin
 
 [Term]
 id: ENVO:00000432
@@ -6101,6 +6308,9 @@ id: ENVO:00000433
 name: kame terrace
 def: "A terrace associated with a kame." [MA:ma]
 is_a: ENVO:00000508 ! terrace
+intersection_of: ENVO:00000508 ! terrace
+intersection_of: RO:0001025 ENVO:00000542 ! kame
+relationship: RO:0001025 ENVO:00000542 ! kame
 
 [Term]
 id: ENVO:00000434
@@ -6299,6 +6509,9 @@ id: ENVO:00000457
 name: plateau glacier
 def: "A glacier on a plateau or high area, smaller than an ice sheet." [Wikipedia:Tidewater_glacier#Types_of_glaciers]
 is_a: ENVO:00000133 ! glacier
+intersection_of: ENVO:00000133 ! glacier
+intersection_of: RO:0001025 ENVO:00000182 ! plateau
+relationship: RO:0001025 ENVO:00000182 ! plateau
 
 [Term]
 id: ENVO:00000458
@@ -6307,6 +6520,9 @@ def: "A glacier that forms in a mountain valley." [Wikipedia:Tidewater_glacier#T
 xref: EcoLexicon:glacier_valley
 xref: Wikipedia:Valley_glacier
 is_a: ENVO:00000133 ! glacier
+intersection_of: ENVO:00000133 ! glacier
+intersection_of: RO:0001025 ENVO:00000100 ! valley
+relationship: RO:0001025 ENVO:00000100 ! valley
 
 [Term]
 id: ENVO:00000459
@@ -6418,6 +6634,7 @@ synonym: "mine site" RELATED [ADL:FTT]
 xref: FTT:772
 xref: Wikipedia:Gravel_pit
 is_a: ENVO:00000284 ! quarry
+relationship: BFO:0000051 ENVO:01000018 ! gravel
 
 [Term]
 id: ENVO:00000474
@@ -6461,6 +6678,9 @@ id: ENVO:00000476
 name: lake inlet
 def: "An opening of a lake into its shore." [USGS:SDTS]
 is_a: ENVO:00000475 ! inlet
+intersection_of: ENVO:00000475 ! inlet
+intersection_of: BFO:0000050 ENVO:00000020 ! lake
+relationship: BFO:0000050 ENVO:00000020 ! lake
 
 [Term]
 id: ENVO:00000477
@@ -6496,6 +6716,7 @@ name: range of mounts
 synonym: "range (physiographic)" RELATED [ADL:FTT]
 xref: FTT:996
 is_a: ENVO:01000352 ! field
+relationship: BFO:0000051 ENVO:00000477 ! mount
 
 [Term]
 id: ENVO:00000479
@@ -6535,6 +6756,7 @@ xref: SWEETRealm:Peak
 xref: TGN:21490
 xref: Wikipedia:Peak
 is_a: ENVO:00000191 ! physiographic feature
+relationship: BFO:0000050 ENVO:00000176 ! elevation
 
 [Term]
 id: ENVO:00000481
@@ -6564,6 +6786,7 @@ synonym: "SeaFloor" EXACT [NASA:earthrealm]
 xref: EcoLexicon:sea_floor
 xref: Wikipedia:Sea_floor
 is_a: ENVO:00000501 ! bed
+relationship: RO:0002220 ENVO:00000016 ! sea
 
 [Term]
 id: ENVO:00000483
@@ -6572,6 +6795,7 @@ def: "A hollow eroded by the force of the falling water at the base of a waterfa
 synonym: "PLUNGE POOL" EXACT [USGS:SDTS]
 xref: Wikipedia:Plunge_pool
 is_a: ENVO:00000063 ! water body
+relationship: BFO:0000050 ENVO:00000023 ! stream
 
 [Term]
 id: ENVO:00000484
@@ -6590,6 +6814,7 @@ xref: EcoLexicon:polynya
 xref: SWEETRealm:Polynya
 xref: Wikipedia:Polynya
 is_a: ENVO:00000063 ! water body
+relationship: RO:0002219 ENVO:01000293 ! ice mass
 
 [Term]
 id: ENVO:00000485
@@ -6599,6 +6824,9 @@ synonym: "shore" RELATED []
 xref: EcoLexicon:seashore
 xref: FTT:504
 is_a: ENVO:00000304 ! shore
+intersection_of: ENVO:00000304 ! shore
+intersection_of: BFO:0000050 ENVO:00000303 ! coast
+relationship: BFO:0000050 ENVO:00000303 ! coast
 
 [Term]
 id: ENVO:00000486
@@ -6615,6 +6843,7 @@ xref: FTT:503
 xref: TGN:21481
 xref: Wikipedia:Shoreline
 is_a: ENVO:00000000 ! geographic feature
+relationship: BFO:0000050 ENVO:00000304 ! shore
 
 [Term]
 id: ENVO:00000487
@@ -6639,6 +6868,7 @@ synonym: "palsa bog" EXACT []
 synonym: "wetland" RELATED [USGS:SDTS]
 xref: Wikipedia:Palsa
 is_a: ENVO:00000176 ! elevation
+relationship: BFO:0000051 ENVO:01000279 ! ice lens
 
 [Term]
 id: ENVO:00000490
@@ -6693,6 +6923,9 @@ xref: SWEETRealm:Tributary
 xref: TGN:21157
 xref: Wikipedia:Tributary
 is_a: ENVO:00000023 ! stream
+intersection_of: ENVO:00000023 ! stream
+intersection_of: RO:0002376 ENVO:00000012 ! hydrographic feature
+relationship: RO:0002376 ENVO:00000012 ! hydrographic feature
 
 [Term]
 id: ENVO:00000496
@@ -6759,6 +6992,7 @@ xref: FTT:804
 xref: SWEETRealm:Bottom
 xref: Wikipedia:Stream_bed
 is_a: ENVO:00010504 ! surface layer
+relationship: RO:0002220 ENVO:00000063 ! water body
 
 [Term]
 id: ENVO:00000502
@@ -6839,6 +7073,9 @@ xref: FTT:157
 xref: FTT:162
 xref: Geonames:H.WADM
 is_a: ENVO:00000479 ! mouth
+intersection_of: ENVO:00000479 ! mouth
+intersection_of: RO:0001025 ENVO:00000031 ! wadi
+relationship: RO:0001025 ENVO:00000031 ! wadi
 
 [Term]
 id: ENVO:00000508
@@ -6861,6 +7098,7 @@ xref: TGN:21498
 xref: TGN:21513
 xref: Wikipedia:Terrace
 is_a: ENVO:00000191 ! physiographic feature
+relationship: BFO:0000051 ENVO:00002000 ! slope
 
 [Term]
 id: ENVO:00000509
@@ -6883,6 +7121,7 @@ xref: FTT:947
 xref: FTT:96
 xref: Geonames:T.NKM
 is_a: ENVO:00000000 ! geographic feature
+relationship: BFO:0000050 ENVO:00000427 ! meander
 
 [Term]
 id: ENVO:00000511
@@ -6899,6 +7138,7 @@ name: pond bed
 def: "The ground surface that lies beneath a pond." [MA:ma]
 synonym: "pond bottom" EXACT []
 is_a: ENVO:00000501 ! bed
+relationship: RO:0002220 ENVO:00000033 ! pond
 
 [Term]
 id: ENVO:00000513
@@ -6906,6 +7146,7 @@ name: reservoir bed
 def: "The ground surface that lies beneath a reservoir." [MA:ma]
 synonym: "reservoir bottom" EXACT []
 is_a: ENVO:00000501 ! bed
+relationship: RO:0002220 ENVO:00000025 ! reservoir
 
 [Term]
 id: ENVO:00000514
@@ -6928,6 +7169,9 @@ def: "A cut to provide passage for a road." [MA:ma]
 synonym: "road cut" EXACT [Geonames:feature]
 xref: Geonames:R.RDCUT
 is_a: ENVO:00000474 ! cut
+intersection_of: ENVO:00000474 ! cut
+intersection_of: BFO:0000051 ENVO:00000064 ! road
+relationship: BFO:0000051 ENVO:00000064 ! road
 
 [Term]
 id: ENVO:00000516
@@ -6967,6 +7211,9 @@ xref: FTT:129
 xref: FTT:399
 xref: Geonames:H.DTCHM
 is_a: ENVO:00000479 ! mouth
+intersection_of: ENVO:00000479 ! mouth
+intersection_of: BFO:0000050 ENVO:00000037 ! ditch
+relationship: BFO:0000050 ENVO:00000037 ! ditch
 
 [Term]
 id: ENVO:00000519
@@ -7062,6 +7309,7 @@ synonym: "cleft" RELATED [Geonames:feature]
 xref: Geonames:T.CFT
 xref: Wikipedia:Cleft
 is_a: ENVO:00000191 ! physiographic feature
+relationship: BFO:0000050 ENVO:00000087 ! cliff
 
 [Term]
 id: ENVO:00000527
@@ -7085,6 +7333,9 @@ xref: FTT:155
 xref: FTT:844
 xref: Geonames:H.RDGG
 is_a: ENVO:00000283 ! ridge
+intersection_of: ENVO:00000283 ! ridge
+intersection_of: BFO:0000050 ENVO:00000145 ! ice cap
+relationship: BFO:0000050 ENVO:00000145 ! ice cap
 
 [Term]
 id: ENVO:00000529
@@ -7095,6 +7346,9 @@ xref: FTT:236
 xref: Geonames:T.RDGB
 xref: Wikipedia:Beach_ridge
 is_a: ENVO:00000283 ! ridge
+intersection_of: ENVO:00000283 ! ridge
+intersection_of: RO:0002220 ENVO:00000091 ! beach
+relationship: RO:0002220 ENVO:00000091 ! beach
 
 [Term]
 id: ENVO:00000530
@@ -7121,6 +7375,9 @@ xref: FTT:839
 xref: Geonames:H.DPRG
 xref: TGN:21145
 is_a: ENVO:00000309 ! depression
+intersection_of: ENVO:00000309 ! depression
+intersection_of: BFO:0000050 ENVO:00000145 ! ice cap
+relationship: BFO:0000050 ENVO:00000145 ! ice cap
 
 [Term]
 id: ENVO:00000532
@@ -7167,6 +7424,7 @@ def: "An annular depression that may not be continuous, located at the base of m
 synonym: "moatan" EXACT [Geonames:feature]
 xref: Geonames:U.MOTU
 is_a: ENVO:00000309 ! depression
+relationship: RO:0002220 ENVO:00000012 ! hydrographic feature
 
 [Term]
 id: ENVO:00000537
@@ -7177,6 +7435,7 @@ xref: FTT:289
 xref: Geonames:T.BLDR
 xref: TGN:21501
 is_a: ENVO:00000191 ! physiographic feature
+relationship: BFO:0000051 ENVO:01000243 ! boulder
 
 [Term]
 id: ENVO:00000538
@@ -7188,6 +7447,9 @@ synonym: "arrugado" EXACT [ADL:FTT]
 xref: FTT:167
 xref: Geonames:U.ARRU
 is_a: ENVO:00000000 ! geographic feature
+intersection_of: ENVO:00000000 ! geographic feature
+intersection_of: BFO:0000050 ENVO:00000482 ! sea floor
+relationship: BFO:0000050 ENVO:00000482 ! sea floor
 
 [Term]
 id: ENVO:00000539
@@ -7210,7 +7472,7 @@ id: ENVO:00000540
 name: brackish lake
 is_a: ENVO:00000020 ! lake
 is_a: ENVO:01001308 ! hydroform
-relationship: composed_primarily_of ENVO:00002019 ! brackish water
+relationship: RO:0002473 ENVO:00002019 ! brackish water
 
 [Term]
 id: ENVO:00000541
@@ -7257,6 +7519,9 @@ name: lake sediment
 def: "Lake sediment is sediment which covers the bottom of a lake. Lake sediments are comprised mainly of clastic material (sediment of clay, silt, and sand sizes), organic debris, chemical precipitates, or combinations of these." [URL:http\://www.britannica.com/EBchecked/topic/328083/lake/59070/Sediments-and-sedimentation]
 synonym: "SedimentLayer" RELATED [NASA:earthrealm]
 is_a: ENVO:00002007 ! sediment
+intersection_of: ENVO:00002007 ! sediment
+intersection_of: BFO:0000050 ENVO:00000020 ! lake
+relationship: BFO:0000050 ENVO:00000020 ! lake
 
 [Term]
 id: ENVO:00000547
@@ -7303,6 +7568,7 @@ xref: TGN:23131
 xref: TGN:23145
 xref: TGN:23344
 is_a: ENVO:00000080 ! mountain range
+relationship: BFO:0000051 ENVO:00000264 ! seamount
 
 [Term]
 id: ENVO:00000551
@@ -7321,7 +7587,8 @@ def: "An area of unfrozen ground surrounded by permafrost." [MA:ma]
 synonym: "Talik" EXACT [NASA:earthrealm]
 xref: Wikipedia:Talik
 is_a: ENVO:00000000 ! geographic feature
-relationship: partially_surrounded_by ENVO:00000134 ! permafrost
+relationship: BFO:0000050 ENVO:01000324 ! planetary surface
+relationship: ENVO:01001307 ENVO:00000134 ! partially_surrounded_by permafrost
 
 [Term]
 id: ENVO:00000553
@@ -7670,12 +7937,14 @@ xref: TGN:21444
 xref: Wikipedia:Rock
 is_a: ENVO:00010483 ! environmental material
 disjoint_from: ENVO:01000256 ! mineral material
+relationship: RO:0000086 PATO:0001546
 
 [Term]
 id: ENVO:00001996
 name: mine drainage
 def: "The outflow of water from a mine." [MA:ma]
 is_a: ENVO:00000029 ! watercourse
+relationship: BFO:0000050 ENVO:00000076 ! mine
 
 [Term]
 id: ENVO:00001997
@@ -7684,6 +7953,9 @@ def: "A mine drainage with an acidic pH." [MA:ma]
 synonym: "acid rock drainage" RELATED [Wikipedia:Acid_mine_drainage]
 xref: Wikipedia:Acid_mine_drainage
 is_a: ENVO:00001996 ! mine drainage
+intersection_of: ENVO:00001996 ! mine drainage
+intersection_of: RO:0000086 PATO:0001429
+relationship: RO:0000086 PATO:0001429
 
 [Term]
 id: ENVO:00001998
@@ -7704,6 +7976,9 @@ comment: Ideas like "significant" are fuzzy and need to be modelled more accurat
 synonym: "body of marine water" EXACT []
 synonym: "marine waterbody" EXACT []
 is_a: ENVO:00000063 ! water body
+intersection_of: ENVO:00000063 ! water body
+intersection_of: BFO:0000050 ENVO:00000447 ! marine biome
+relationship: BFO:0000050 ENVO:00000447 ! marine biome
 
 [Term]
 id: ENVO:00002000
@@ -7715,6 +7990,8 @@ xref: EcoLexicon:slope
 xref: SWEETRealm:Slope
 xref: Wikipedia:Slope
 is_a: ENVO:00000191 ! physiographic feature
+relationship: BFO:0000050 ENVO:00000176 ! elevation
+relationship: BFO:0000050 ENVO:00000309 ! depression
 
 [Term]
 id: ENVO:00002001
@@ -7735,6 +8012,7 @@ comment: The FAO has the following definition for "food": "Any substance, whethe
 subset: EnvO-Lite-GSC
 xref: Wikipedia:Food
 is_a: ENVO:0010001 ! anthropogenic environmental material
+relationship: RO:0000086 PATO:0002138
 
 [Term]
 id: ENVO:00002003
@@ -7751,6 +8029,7 @@ xref: SPIRE:Dung
 xref: SWEETRealm:Drop
 xref: Wikipedia:Feces
 is_a: ENVO:02000022 ! excreta
+relationship: RO:0002473 UBERON:0001988
 
 [Term]
 id: ENVO:00002004
@@ -7769,6 +8048,8 @@ xref: LTER:18
 xref: SWEETRealm:Air
 xref: Wikipedia:Air
 is_a: ENVO:00010483 ! environmental material
+relationship: BFO:0000051 ENVO:01000266 ! water vapour
+relationship: RO:0000086 PATO:0001547
 
 [Term]
 id: ENVO:00002006
@@ -7778,6 +8059,8 @@ xref: EcoLexicon:water
 xref: LTER:617
 xref: Wikipedia:Water
 is_a: ENVO:00010483 ! environmental material
+relationship: RO:0000086 PATO:0001548
+relationship: RO:0002473 CHEBI:15377
 
 [Term]
 id: ENVO:00002007
@@ -7842,6 +8125,9 @@ xref: EcoLexicon:igneous_rock
 xref: SWEETRealm:IgneousRock
 xref: Wikipedia:Igneous_rock
 is_a: ENVO:00001995 ! rock
+intersection_of: ENVO:00001995 ! rock
+intersection_of: RO:0001000 ENVO:01000231 ! lava
+relationship: RO:0001000 ENVO:01000231 ! lava
 
 [Term]
 id: ENVO:00002014
@@ -7861,6 +8147,9 @@ xref: EcoLexicon:volcanic_rock
 xref: SWEETRealm:VolcanicRock
 xref: Wikipedia:Volcanic_rock
 is_a: ENVO:00001995 ! rock
+intersection_of: ENVO:00001995 ! rock
+intersection_of: RO:0001000 ENVO:00000247 ! volcano
+relationship: RO:0001000 ENVO:00000247 ! volcano
 
 [Term]
 id: ENVO:00002016
@@ -7887,7 +8176,9 @@ def: "Wastewater that is contaminated with feces or urine," [Wikipedia:Wastewate
 xref: SWEETRealm:Sewage
 xref: Wikipedia:Sewage
 is_a: ENVO:00002001 ! waste water
-relationship: composed_primarily_of ENVO:00002276 ! animal waste
+intersection_of: ENVO:00002001 ! waste water
+intersection_of: RO:0002473 ENVO:00002276 ! animal waste
+relationship: RO:0002473 ENVO:00002276 ! animal waste
 
 [Term]
 id: ENVO:00002019
@@ -8062,6 +8353,7 @@ xref: LTER:637
 xref: SWEETRealm:Wood
 xref: Wikipedia:Wood
 is_a: ENVO:01000155 ! organic material
+relationship: RO:0000086 PATO:0001546
 
 [Term]
 id: ENVO:00002041
@@ -8102,6 +8394,9 @@ name: anaerobic sediment
 def: "Sediment characterised by the absence of oxygen." [ORCID:0000-0002-4366-3088]
 synonym: "anoxic sediment" EXACT []
 is_a: ENVO:00002007 ! sediment
+intersection_of: ENVO:00002007 ! sediment
+intersection_of: RO:0000086 PATO:0001456
+relationship: RO:0000086 PATO:0001456
 
 [Term]
 id: ENVO:00002046
@@ -8116,6 +8411,7 @@ name: urine
 def: "Urine is a liquid excreta containing water and waste products made by the kidneys, stored in the bladder, and leaves the body through the urethra." [MA:ma, URL:http\://www.stjude.org/stjude/hospital/med_terms.jsp]
 xref: Wikipedia:Urine
 is_a: ENVO:02000022 ! excreta
+relationship: RO:0002473 UBERON:0001088
 
 [Term]
 id: ENVO:00002048
@@ -8235,6 +8531,9 @@ is_a: ENVO:00002204 ! anthropogenic contamination feature
 id: ENVO:00002112
 name: gold mine drainage
 is_a: ENVO:00001996 ! mine drainage
+intersection_of: ENVO:00001996 ! mine drainage
+intersection_of: RO:0001000 ENVO:00002168 ! gold mine
+relationship: RO:0001000 ENVO:00002168 ! gold mine
 
 [Term]
 id: ENVO:00002113
@@ -8256,6 +8555,9 @@ is_a: ENVO:00002007 ! sediment
 id: ENVO:00002115
 name: petroleum contaminated sediment
 is_a: ENVO:00002180 ! naphthalene contaminated sediment
+intersection_of: ENVO:00002180 ! naphthalene contaminated sediment
+intersection_of: has_increased_levels_of ENVO:00002984 ! petroleum
+relationship: has_increased_levels_of ENVO:00002984 ! petroleum
 
 [Term]
 id: ENVO:00002116
@@ -8268,6 +8570,9 @@ is_a: ENVO:00003082 ! enriched soil
 id: ENVO:00002117
 name: creosote contaminated soil
 is_a: ENVO:00002116 ! contaminated soil
+intersection_of: ENVO:00002116 ! contaminated soil
+intersection_of: has_increased_levels_of ENVO:2000001 ! creosote
+relationship: has_increased_levels_of ENVO:2000001 ! creosote
 
 [Term]
 id: ENVO:00002118
@@ -8279,6 +8584,9 @@ id: ENVO:00002119
 name: alkaline hot spring
 def: "A hot spring whose water has an alkaline pH." [MA:ma]
 is_a: ENVO:00000051 ! hot spring
+intersection_of: ENVO:00000051 ! hot spring
+intersection_of: RO:0000086 PATO:0001430
+relationship: RO:0000086 PATO:0001430
 
 [Term]
 id: ENVO:00002120
@@ -8286,17 +8594,26 @@ name: acid hot spring
 def: "A hot spring whose water has an acidic pH." [MA:ma]
 synonym: "acidic hot spring" EXACT []
 is_a: ENVO:00000051 ! hot spring
+intersection_of: ENVO:00000051 ! hot spring
+intersection_of: RO:0000086 PATO:0001429
+relationship: RO:0000086 PATO:0001429
 
 [Term]
 id: ENVO:00002121
 name: alkaline salt lake
 synonym: "soda lake" RELATED []
 is_a: ENVO:00000019 ! saline lake
+intersection_of: ENVO:00000019 ! saline lake
+intersection_of: RO:0000086 PATO:0001430
+relationship: RO:0000086 PATO:0001430
 
 [Term]
 id: ENVO:00002122
 name: arsenic-rich mud
 is_a: ENVO:01000001 ! mud
+intersection_of: ENVO:01000001 ! mud
+intersection_of: has_increased_levels_of CHEBI:27563
+relationship: has_increased_levels_of CHEBI:27563
 
 [Term]
 id: ENVO:00002123
@@ -8309,6 +8626,9 @@ is_a: ENVO:01000009 ! biotic mesoscopic physical object
 id: ENVO:00002124
 name: anaerobic bioreactor
 is_a: ENVO:00002123 ! bioreactor
+intersection_of: ENVO:00002123 ! bioreactor
+intersection_of: RO:0000086 PATO:0001456
+relationship: RO:0000086 PATO:0001456
 
 [Term]
 id: ENVO:00002125
@@ -8320,12 +8640,18 @@ is_a: ENVO:00002124 ! anaerobic bioreactor
 id: ENVO:00002126
 name: aerobic bioreactor
 is_a: ENVO:00002123 ! bioreactor
+intersection_of: ENVO:00002123 ! bioreactor
+intersection_of: RO:0000086 PATO:0001455
+relationship: RO:0000086 PATO:0001455
 
 [Term]
 id: ENVO:00002127
 name: stream sediment
 comment: Revise adjacent to. Consider sampled stream sediment. Dry stream sediment.
 is_a: ENVO:00002007 ! sediment
+intersection_of: ENVO:00002007 ! sediment
+intersection_of: RO:0002220 ENVO:00000023 ! stream
+relationship: RO:0002220 ENVO:00000023 ! stream
 
 [Term]
 id: ENVO:00002128
@@ -8336,6 +8662,9 @@ is_a: ENVO:00000126 ! sulfur spring
 id: ENVO:00002129
 name: anaerobic sludge
 is_a: ENVO:00002044 ! sludge
+intersection_of: ENVO:00002044 ! sludge
+intersection_of: RO:0000086 PATO:0001456
+relationship: RO:0000086 PATO:0001456
 
 [Term]
 id: ENVO:00002130
@@ -8344,6 +8673,8 @@ def: "The dense, bottom layer of water in a thermally-stratified lake. It is the
 xref: EcoLexicon:hypolimnion
 xref: Wikipedia:Hypolimnion
 is_a: ENVO:01000283 ! lake layer
+relationship: BFO:0000050 ENVO:00000199 ! meromictic lake
+relationship: RO:0002220 ENVO:00002132 ! metalimnion
 
 [Term]
 id: ENVO:00002131
@@ -8352,6 +8683,8 @@ def: "The top-most layer in a thermally stratified lake, occurring above the dee
 xref: EcoLexicon:epilimnion_
 xref: Wikipedia:Epilimnion
 is_a: ENVO:01000283 ! lake layer
+relationship: BFO:0000050 ENVO:00000199 ! meromictic lake
+relationship: RO:0002220 ENVO:00002132 ! metalimnion
 
 [Term]
 id: ENVO:00002132
@@ -8361,18 +8694,25 @@ comment: Especially used in connection with lakes.
 synonym: "thermocline" RELATED []
 xref: Wikipedia:Metalimnion
 is_a: ENVO:00002269 ! thermocline
+relationship: BFO:0000050 ENVO:00000199 ! meromictic lake
 
 [Term]
 id: ENVO:00002133
 name: anaerobic mud
 synonym: "anoxic mud" EXACT []
 is_a: ENVO:01000001 ! mud
+intersection_of: ENVO:01000001 ! mud
+intersection_of: RO:0000086 PATO:0001456
+relationship: RO:0000086 PATO:0001456
 
 [Term]
 id: ENVO:00002134
 name: anaerobic stream sediment
 is_a: ENVO:00002045 ! anaerobic sediment
 is_a: ENVO:00002127 ! stream sediment
+intersection_of: ENVO:00002127 ! stream sediment
+intersection_of: RO:0000086 PATO:0001456
+relationship: RO:0000086 PATO:0001456
 
 [Term]
 id: ENVO:00002135
@@ -8384,6 +8724,9 @@ is_a: ENVO:00002040 ! wood
 id: ENVO:00002136
 name: arsenate treated wood
 is_a: ENVO:00002135 ! treated wood
+intersection_of: ENVO:00002040 ! wood
+intersection_of: has_increased_levels_of CHEBI:29125
+relationship: has_increased_levels_of CHEBI:29125
 
 [Term]
 id: ENVO:00002137
@@ -8394,6 +8737,9 @@ is_a: ENVO:00000045 ! estuary
 id: ENVO:00002138
 name: beach sand
 is_a: ENVO:01000017 ! sand
+intersection_of: ENVO:01000017 ! sand
+intersection_of: BFO:0000050 ENVO:00002199 ! sandy beach
+relationship: BFO:0000050 ENVO:00002199 ! sandy beach
 
 [Term]
 id: ENVO:00002139
@@ -8403,6 +8749,7 @@ xref: EcoLexicon:pebble
 xref: SWEETRealm:Pebble
 xref: Wikipedia:Pebble
 is_a: ENVO:00000339 ! piece of rock
+relationship: BFO:0000050 ENVO:00000545 ! shingle beach
 
 [Term]
 id: ENVO:00002140
@@ -8434,16 +8781,23 @@ is_a: ENVO:00000051 ! hot spring
 id: ENVO:00002144
 name: cave wall
 is_a: ENVO:00000191 ! physiographic feature
+relationship: BFO:0000050 ENVO:00000067 ! cave
 
 [Term]
 id: ENVO:00002145
 name: chromate contaminated soil
 is_a: ENVO:00003081 ! metal contaminated soil
+intersection_of: ENVO:00002116 ! contaminated soil
+intersection_of: has_increased_levels_of CHEBI:35404
+relationship: has_increased_levels_of CHEBI:35404
 
 [Term]
 id: ENVO:00002146
 name: xylene contaminated soil
 is_a: ENVO:00002116 ! contaminated soil
+intersection_of: ENVO:00002116 ! contaminated soil
+intersection_of: has_increased_levels_of CHEBI:27338
+relationship: has_increased_levels_of CHEBI:27338
 
 [Term]
 id: ENVO:00002147
@@ -8478,6 +8832,9 @@ synonym: "coastal oceanic water" EXACT []
 synonym: "coastal seawater" EXACT []
 synonym: "coastal water" BROAD []
 is_a: ENVO:00002149 ! sea water
+intersection_of: ENVO:00002149 ! sea water
+intersection_of: RO:0002220 ENVO:00000303 ! coast
+relationship: RO:0002220 ENVO:00000303 ! coast
 
 [Term]
 id: ENVO:00002151
@@ -8501,6 +8858,9 @@ is_a: ENVO:00002152 ! biofilter
 id: ENVO:00002154
 name: radioactive sediment
 is_a: ENVO:00002114 ! contaminated sediment
+intersection_of: ENVO:00002007 ! sediment
+intersection_of: RO:0000086 PATO:0001741
+relationship: RO:0000086 PATO:0001741
 
 [Term]
 id: ENVO:00002155
@@ -8523,6 +8883,7 @@ is_a: ENVO:01000008 ! microbial mat
 id: ENVO:00002158
 name: ditch water
 is_a: ENVO:00002011 ! fresh water
+relationship: BFO:0000050 ENVO:00000037 ! ditch
 
 [Term]
 id: ENVO:00002159
@@ -8533,6 +8894,9 @@ is_a: ENVO:00002006 ! water
 id: ENVO:00002160
 name: estuarine mud
 is_a: ENVO:01000001 ! mud
+intersection_of: ENVO:01000001 ! mud
+intersection_of: BFO:0000050 ENVO:00000045 ! estuary
+relationship: BFO:0000050 ENVO:00000045 ! estuary
 
 [Term]
 id: ENVO:00002161
@@ -8636,12 +9000,16 @@ is_a: ENVO:00002044 ! sludge
 id: ENVO:00002177
 name: 1,4-dioxane contaminated sludge
 is_a: ENVO:00002176 ! contaminated sludge
+intersection_of: ENVO:00002044 ! sludge
+intersection_of: has_increased_levels_of CHEBI:47032
+relationship: has_increased_levels_of CHEBI:47032
 
 [Term]
 id: ENVO:00002178
 name: iron-reducing zone of petroleum contaminated sediment
 def: "A zone within a portion of petroleum contaminated sediment within which iron-reducing processes occur." []
 is_a: ENVO:01000408 ! environmental zone
+relationship: BFO:0000050 ENVO:00002115 ! petroleum contaminated sediment
 created_by: ORCID:0000-0002-4366-3088
 
 [Term]
@@ -8653,6 +9021,9 @@ is_a: ENVO:00002007 ! sediment
 id: ENVO:00002180
 name: naphthalene contaminated sediment
 is_a: ENVO:00002202 ! organically contaminated sediment
+intersection_of: ENVO:00002007 ! sediment
+intersection_of: has_increased_levels_of CHEBI:16482
+relationship: has_increased_levels_of CHEBI:16482
 
 [Term]
 id: ENVO:00002181
@@ -8664,6 +9035,9 @@ is_a: ENVO:00000051 ! hot spring
 id: ENVO:00002182
 name: nitrobenzene contaminated sediment
 is_a: ENVO:00002202 ! organically contaminated sediment
+intersection_of: ENVO:00002007 ! sediment
+intersection_of: has_increased_levels_of CHEBI:27798
+relationship: has_increased_levels_of CHEBI:27798
 
 [Term]
 id: ENVO:00002183
@@ -8766,6 +9140,9 @@ is_a: ENVO:00002196 ! aquarium
 id: ENVO:00002199
 name: sandy beach
 is_a: ENVO:00000091 ! beach
+intersection_of: ENVO:00000091 ! beach
+intersection_of: BFO:0000051 ENVO:01000017 ! sand
+relationship: BFO:0000051 ENVO:01000017 ! sand
 
 [Term]
 id: ENVO:00002200
@@ -8804,6 +9181,7 @@ id: ENVO:00002206
 name: coal mine waste
 synonym: "coal refuse" RELATED []
 is_a: ENVO:00002267 ! industrial waste
+relationship: BFO:0000050 ENVO:00002169 ! coal mine
 
 [Term]
 id: ENVO:00002207
@@ -8816,6 +9194,9 @@ name: saline lake sediment
 def: "Saline lake sediment is sediment which covers the bottom of a saline lake." []
 synonym: "soda lake sediment" RELATED []
 is_a: ENVO:00000546 ! lake sediment
+intersection_of: ENVO:00000546 ! lake sediment
+intersection_of: BFO:0000050 ENVO:00000019 ! saline lake
+relationship: BFO:0000050 ENVO:00000019 ! saline lake
 
 [Term]
 id: ENVO:00002210
@@ -8933,6 +9314,7 @@ replaced_by: ENVO:01000307
 id: ENVO:00002228
 name: pond water
 is_a: ENVO:00002011 ! fresh water
+relationship: BFO:0000050 ENVO:00000033 ! pond
 
 [Term]
 id: ENVO:00002229
@@ -8987,6 +9369,7 @@ def: "Cryosols comprise mineral soils formed in a permafrost environment. Where 
 synonym: "gelisol" RELATED []
 xref: Wikipedia:Cryosol
 is_a: ENVO:00001998 ! soil
+relationship: BFO:0000050 ENVO:00000134 ! permafrost
 
 [Term]
 id: ENVO:00002237
@@ -9153,11 +9536,15 @@ is_a: ENVO:00001998 ! soil
 id: ENVO:00002260
 name: dune soil
 is_a: ENVO:00001998 ! soil
+relationship: BFO:0000050 ENVO:00000170 ! dune
 
 [Term]
 id: ENVO:00002261
 name: forest soil
 is_a: ENVO:00001998 ! soil
+intersection_of: ENVO:00001998 ! soil
+intersection_of: BFO:0000050 ENVO:00000111 ! forest
+relationship: BFO:0000050 ENVO:00000111 ! forest
 
 [Term]
 id: ENVO:00002262
@@ -9168,6 +9555,9 @@ is_a: ENVO:00001998 ! soil
 id: ENVO:00002263
 name: garden soil
 is_a: ENVO:00001998 ! soil
+intersection_of: ENVO:00001998 ! soil
+intersection_of: BFO:0000050 ENVO:00000011 ! garden
+relationship: BFO:0000050 ENVO:00000011 ! garden
 
 [Term]
 id: ENVO:00002264
@@ -9270,12 +9660,15 @@ xref: SWEETRealm:BackArcBasin
 xref: SWEETRealm:Basin
 xref: Wikipedia:Back-arc_basin
 is_a: ENVO:01000275 ! structural basin
+relationship: RO:0002220 ENVO:00000426 ! ocean floor
+relationship: RO:0002220 ENVO:00000482 ! sea floor
 
 [Term]
 id: ENVO:00002297
 name: environmental feature
 def: "A material entity which determines an environmental system." [DOI:10.1186/2041-1480-4-43, NM:nm, ORCID:0000-0002-4366-3088]
 comment: A material entity determines an environmental system when its removal would cause the collapse of that system. For example, a seamount determines a seamount environment, acting as its 'hub'. This class is currently being aligned to the Basic Formal Ontology. Following this alignment, its definition and the definitions of its subclasses will be revised.
+is_a: BFO:0000040
 
 [Term]
 id: ENVO:00002450
@@ -9285,6 +9678,7 @@ comment: This class is defined in its geological sense:\nWikipedia: Hydrological
 xref: EcoLexicon:ocean_basin
 xref: Wikipedia:Ocean_basin
 is_a: ENVO:01000275 ! structural basin
+relationship: RO:0002220 ENVO:00000015 ! ocean
 
 [Term]
 id: ENVO:00002869
@@ -9298,6 +9692,8 @@ id: ENVO:00002870
 name: adobe
 def: "A natural building material mode from sand, clay, water, and some kind of fibrous or organic material (sticks, straw, and/or manure)." [Wikipedia:Adobe]
 is_a: ENVO:0010001 ! anthropogenic environmental material
+relationship: BFO:0000051 ENVO:00002982 ! clay
+relationship: BFO:0000051 ENVO:01000017 ! sand
 
 [Term]
 id: ENVO:00002871
@@ -9328,12 +9724,16 @@ is_a: ENVO:00003074 ! manufactured product
 id: ENVO:00002875
 name: oil contaminated soil
 is_a: ENVO:00002116 ! contaminated soil
+intersection_of: ENVO:00002116 ! contaminated soil
+intersection_of: has_increased_levels_of ENVO:00002985 ! oil
+relationship: has_increased_levels_of ENVO:00002985 ! oil
 
 [Term]
 id: ENVO:00002926
 name: warm seep
 is_a: ENVO:00001999 ! marine water body
 is_a: ENVO:01000262 ! seep
+relationship: BFO:0000050 ENVO:00000015 ! ocean
 
 [Term]
 id: ENVO:00002982
@@ -9366,6 +9766,7 @@ def: "A viscous liquid state at ambient temperatures or slightly warmer, and is 
 xref: EcoLexicon:oil
 xref: Wikipedia:Oil
 is_a: ENVO:00010483 ! environmental material
+relationship: RO:0000086 PATO:0001548
 
 [Term]
 id: ENVO:00002986
@@ -9933,7 +10334,7 @@ is_a: ENVO:01000010 ! abiotic mesoscopic physical object
 id: ENVO:00003076
 name: glue
 def: "Glue is any substance applied to the surfaces of materials that binds them together and resists separation." [Wikipedia:Glue]
-comment: This sounds more like a role than a material, per se.
+comment: This sounds more like a role than a material, per se. {created_by="ORCID:0000-0002-4366-3088"}
 synonym: "adhesive" EXACT []
 synonym: "mucilage" EXACT []
 synonym: "paste" BROAD []
@@ -9969,6 +10370,9 @@ is_obsolete: true
 id: ENVO:00003081
 name: metal contaminated soil
 is_a: ENVO:00002116 ! contaminated soil
+intersection_of: ENVO:00002116 ! contaminated soil
+intersection_of: has_increased_levels_of CHEBI:33521
+relationship: has_increased_levels_of CHEBI:33521
 
 [Term]
 id: ENVO:00003082
@@ -9976,72 +10380,108 @@ name: enriched soil
 def: "A portion of enriched soil is a portion of soil with elevated levels of some material entity." []
 comment: This could be demoted to an inferred class if issues with double inheritance arise.
 is_a: ENVO:00001998 ! soil
+intersection_of: ENVO:00001998 ! soil
+intersection_of: has_increased_levels_of BFO:0000040
+relationship: has_increased_levels_of BFO:0000040
 
 [Term]
 id: ENVO:00003083
 name: sarcosine enriched soil
 def: "A portion of sarcosine enriched soil is a portion of soil with elevated levels of sarcosine." []
 is_a: ENVO:00003082 ! enriched soil
+intersection_of: ENVO:00003082 ! enriched soil
+intersection_of: has_increased_levels_of CHEBI:15611
+relationship: has_increased_levels_of CHEBI:15611
 
 [Term]
 id: ENVO:00003084
 name: trimethylamine enriched soil
 def: "A portion of trimethylamine enriched soil is a portion of soil with elevated levels of trimethylamine." []
 is_a: ENVO:00003082 ! enriched soil
+intersection_of: ENVO:00003082 ! enriched soil
+intersection_of: has_increased_levels_of CHEBI:18139
+relationship: has_increased_levels_of CHEBI:18139
 
 [Term]
 id: ENVO:00003085
 name: skatole enriched soil
 def: "A portion of skatole enriched soil is a portion of soil with elevated levels of skatole." []
 is_a: ENVO:00003082 ! enriched soil
+intersection_of: ENVO:00003082 ! enriched soil
+intersection_of: has_increased_levels_of CHEBI:9171
+relationship: has_increased_levels_of CHEBI:9171
 
 [Term]
 id: ENVO:00003086
 name: ethanol enriched soil
 def: "A portion of ethanol enriched soil is a portion of soil with elevated levels of ethanol." []
 is_a: ENVO:00003082 ! enriched soil
+intersection_of: ENVO:00003082 ! enriched soil
+intersection_of: has_increased_levels_of CHEBI:16236
+relationship: has_increased_levels_of CHEBI:16236
 
 [Term]
 id: ENVO:00003087
 name: acetamide enriched soil
 def: "A portion of acetamide enriched soil is a portion of soil with elevated levels of acetamide." []
 is_a: ENVO:00003082 ! enriched soil
+intersection_of: ENVO:00003082 ! enriched soil
+intersection_of: has_increased_levels_of CHEBI:27856
+relationship: has_increased_levels_of CHEBI:27856
 
 [Term]
 id: ENVO:00003088
 name: pantothenate enriched soil
 def: "A portion of pantothenate enriched soil is a portion of soil with elevated levels of pantothenate." []
 is_a: ENVO:00003082 ! enriched soil
+intersection_of: ENVO:00003082 ! enriched soil
+intersection_of: has_increased_levels_of CHEBI:16454
+relationship: has_increased_levels_of CHEBI:16454
 
 [Term]
 id: ENVO:00003089
 name: testosterone enriched soil
 def: "A portion of testosterone enriched soil is a portion of soil with elevated levels of testosterone." []
 is_a: ENVO:00003082 ! enriched soil
+intersection_of: ENVO:00003082 ! enriched soil
+intersection_of: has_increased_levels_of CHEBI:17347
+relationship: has_increased_levels_of CHEBI:17347
 
 [Term]
 id: ENVO:00003090
 name: kynurenate enriched soil
 def: "A portion of kynurenate enriched soil is a portion of soil with elevated levels of kynurenate." []
 is_a: ENVO:00003082 ! enriched soil
+intersection_of: ENVO:00003082 ! enriched soil
+intersection_of: has_increased_levels_of CHEBI:58454
+relationship: has_increased_levels_of CHEBI:58454
 
 [Term]
 id: ENVO:00003091
 name: threonine enriched soil
 def: "A portion of threonine enriched soil is a portion of soil with elevated levels of threonine." []
 is_a: ENVO:00003082 ! enriched soil
+intersection_of: ENVO:00003082 ! enriched soil
+intersection_of: has_increased_levels_of CHEBI:26986
+relationship: has_increased_levels_of CHEBI:26986
 
 [Term]
 id: ENVO:00003092
 name: salicylate enriched soil
 def: "A portion of salicylate enriched soil is a portion of soil with elevated levels of salicylate." []
 is_a: ENVO:00003082 ! enriched soil
+intersection_of: ENVO:00003082 ! enriched soil
+intersection_of: has_increased_levels_of CHEBI:30762
+relationship: has_increased_levels_of CHEBI:30762
 
 [Term]
 id: ENVO:00003093
 name: poly-beta-hydroxybutyrate enriched soil
 def: "A portion of poly-beta-hydroxybutyrate enriched soil is a portion of soil with elevated levels of poly-beta-hydroxybutyrate." []
 is_a: ENVO:00003082 ! enriched soil
+intersection_of: ENVO:00003082 ! enriched soil
+intersection_of: has_increased_levels_of CHEBI:53388
+relationship: has_increased_levels_of CHEBI:53388
 
 [Term]
 id: ENVO:00003094
@@ -10054,6 +10494,9 @@ id: ENVO:00003095
 name: quinate enriched soil
 def: "A portion of quinate enriched soil is a portion of soil with elevated levels of quinate." []
 is_a: ENVO:00003082 ! enriched soil
+intersection_of: ENVO:00003082 ! enriched soil
+intersection_of: has_increased_levels_of CHEBI:26490
+relationship: has_increased_levels_of CHEBI:26490
 
 [Term]
 id: ENVO:00003096
@@ -10362,6 +10805,9 @@ is_a: ENVO:0010154 ! processed pork
 id: ENVO:00003914
 name: chalk soil
 is_a: ENVO:00003082 ! enriched soil
+intersection_of: ENVO:00001998 ! soil
+intersection_of: has_increased_levels_of ENVO:00002054 ! chalk
+relationship: has_increased_levels_of ENVO:00002054 ! chalk
 
 [Term]
 id: ENVO:00003915
@@ -10429,14 +10875,16 @@ name: creamery
 def: "A creamery is a part of a dairy where cream is separated from whole milk." []
 xref: Wikipedia:Creamery
 is_a: ENVO:01000420 ! building part
+relationship: BFO:0000050 ENVO:00003862 ! dairy
 
 [Term]
 id: ENVO:00003968
 name: air filter
-def: "An air filter is a device that removes some substance from air." [Wikipedia:Air_filter]
+def: "An air filter is a device that removes some substance from air." [Wikipedia:Air_filter] {created_by="ORCID:0000-0002-4366-3088"}
 comment: This is a general definition derived from the definitions for particulate, chemical, and other air filters. Subclasses should be created if needed.
 xref: Wikipedia:Air_filter
 is_a: ENVO:00003074 ! manufactured product
+relationship: BFO:0000050 ENVO:00002874 ! air conditioning unit
 
 [Term]
 id: ENVO:00003969
@@ -10526,6 +10974,9 @@ synonym: "karst polje" EXACT [Wikipedia:Polje]
 synonym: "polje" EXACT [Wikipedia:Polje]
 xref: Wikipedia:Karst_field
 is_a: ENVO:00000086 ! plain
+intersection_of: ENVO:00000086 ! plain
+intersection_of: RO:0001025 ENVO:00000175 ! karst
+relationship: RO:0001025 ENVO:00000175 ! karst
 
 [Term]
 id: ENVO:00005738
@@ -10539,6 +10990,7 @@ id: ENVO:00005739
 name: sea foam
 xref: Wikipedia:Sea_foam
 is_a: ENVO:00005738 ! foam
+relationship: RO:0001025 ENVO:00000016 ! sea
 
 [Term]
 id: ENVO:00005740
@@ -10561,11 +11013,15 @@ id: ENVO:00005743
 name: roadside soil
 def: "A portion of soil that is part of a roadside area." []
 is_a: ENVO:00001998 ! soil
+relationship: BFO:0000050 ENVO:01000447 ! roadside
 
 [Term]
 id: ENVO:00005744
 name: allotment garden soil
 is_a: ENVO:00002263 ! garden soil
+intersection_of: ENVO:00001998 ! soil
+intersection_of: BFO:0000050 ENVO:00005745 ! allotment garden
+relationship: BFO:0000050 ENVO:00005745 ! allotment garden
 
 [Term]
 id: ENVO:00005745
@@ -10577,26 +11033,41 @@ is_a: ENVO:00000011 ! garden
 id: ENVO:00005746
 name: savanna soil
 is_a: ENVO:00005750 ! grassland soil
+intersection_of: ENVO:00001998 ! soil
+intersection_of: BFO:0000050 ENVO:00000261 ! savanna
+relationship: BFO:0000050 ENVO:00000261 ! savanna
 
 [Term]
 id: ENVO:00005747
 name: compost soil
 is_a: ENVO:00001998 ! soil
+intersection_of: ENVO:00001998 ! soil
+intersection_of: RO:0001000 ENVO:00002170 ! compost
+relationship: RO:0001000 ENVO:00002170 ! compost
 
 [Term]
 id: ENVO:00005748
 name: dry soil
 is_a: ENVO:00001998 ! soil
+intersection_of: ENVO:00001998 ! soil
+intersection_of: RO:0000086 PATO:0001824
+relationship: RO:0000086 PATO:0001824
 
 [Term]
 id: ENVO:00005749
 name: farm soil
 is_a: ENVO:00001998 ! soil
+intersection_of: ENVO:00001998 ! soil
+intersection_of: BFO:0000050 ENVO:00000078 ! farm
+relationship: BFO:0000050 ENVO:00000078 ! farm
 
 [Term]
 id: ENVO:00005750
 name: grassland soil
 is_a: ENVO:00001998 ! soil
+intersection_of: ENVO:00001998 ! soil
+intersection_of: BFO:0000050 ENVO:00000106 ! grassland
+relationship: BFO:0000050 ENVO:00000106 ! grassland
 
 [Term]
 id: ENVO:00005751
@@ -10613,6 +11084,9 @@ id: ENVO:00005753
 name: urea enriched soil
 def: "A portion of urea enriched soil is a portion of soil with elevated levels of urea." []
 is_a: ENVO:00003082 ! enriched soil
+intersection_of: ENVO:00003082 ! enriched soil
+intersection_of: has_increased_levels_of CHEBI:16199
+relationship: has_increased_levels_of CHEBI:16199
 
 [Term]
 id: ENVO:00005754
@@ -10623,6 +11097,9 @@ is_a: ENVO:00001998 ! soil
 id: ENVO:00005755
 name: field soil
 is_a: ENVO:00001998 ! soil
+intersection_of: ENVO:00001998 ! soil
+intersection_of: BFO:0000050 ENVO:00000114 ! agricultural field
+relationship: BFO:0000050 ENVO:00000114 ! agricultural field
 
 [Term]
 id: ENVO:00005756
@@ -10639,6 +11116,9 @@ is_a: ENVO:00003082 ! enriched soil
 id: ENVO:00005758
 name: alluvial swamp soil
 is_a: ENVO:00002871 ! alluvial soil
+intersection_of: ENVO:00002871 ! alluvial soil
+intersection_of: BFO:0000050 ENVO:00000233 ! swamp
+relationship: BFO:0000050 ENVO:00000233 ! swamp
 
 [Term]
 id: ENVO:00005759
@@ -10646,6 +11126,9 @@ name: alluvial paddy field soil
 is_a: ENVO:00002871 ! alluvial soil
 is_a: ENVO:00005740 ! paddy field soil
 is_a: ENVO:00005755 ! field soil
+intersection_of: ENVO:00002871 ! alluvial soil
+intersection_of: BFO:0000050 ENVO:00000297 ! paddy field
+relationship: BFO:0000050 ENVO:00000297 ! paddy field
 
 [Term]
 id: ENVO:00005760
@@ -10657,17 +11140,22 @@ is_a: ENVO:00001998 ! soil
 id: ENVO:00005761
 name: meadow soil
 is_a: ENVO:00005750 ! grassland soil
+relationship: BFO:0000050 ENVO:00000108 ! meadow
 
 [Term]
 id: ENVO:00005762
 name: chloropicrin enriched soil
 def: "A portion of chloropicrin enriched soil is a portion of soil with elevated levels of chloropicrin." []
 is_a: ENVO:00003082 ! enriched soil
+intersection_of: ENVO:00003082 ! enriched soil
+intersection_of: has_increased_levels_of CHEBI:39285
+relationship: has_increased_levels_of CHEBI:39285
 
 [Term]
 id: ENVO:00005763
 name: humus-rich acidic ash soil
 is_a: ENVO:00003082 ! enriched soil
+relationship: has_increased_levels_of ENVO:01000000 ! humus
 
 [Term]
 id: ENVO:00005764
@@ -10678,6 +11166,9 @@ is_a: ENVO:00001998 ! soil
 id: ENVO:00005765
 name: frozen compost soil
 is_a: ENVO:00005747 ! compost soil
+intersection_of: ENVO:00005747 ! compost soil
+intersection_of: RO:0000086 PATO:0001985
+relationship: RO:0000086 PATO:0001985
 
 [Term]
 id: ENVO:00005766
@@ -10713,11 +11204,15 @@ is_a: ENVO:00001998 ! soil
 id: ENVO:00005772
 name: orchard soil
 is_a: ENVO:00001998 ! soil
+intersection_of: ENVO:00001998 ! soil
+intersection_of: BFO:0000050 ENVO:00000115 ! orchard
+relationship: BFO:0000050 ENVO:00000115 ! orchard
 
 [Term]
 id: ENVO:00005773
 name: pasture soil
 is_a: ENVO:00005750 ! grassland soil
+relationship: BFO:0000050 ENVO:00000266 ! pasture
 
 [Term]
 id: ENVO:00005774
@@ -10743,6 +11238,9 @@ is_a: ENVO:00005740 ! paddy field soil
 id: ENVO:00005777
 name: steppe soil
 is_a: ENVO:00005750 ! grassland soil
+intersection_of: ENVO:00001998 ! soil
+intersection_of: BFO:0000050 ENVO:00000262 ! steppe
+relationship: BFO:0000050 ENVO:00000262 ! steppe
 
 [Term]
 id: ENVO:00005778
@@ -10785,11 +11283,17 @@ id: ENVO:00005785
 name: volcanic soil
 xref: Wikipedia:Volcanic_soil
 is_a: ENVO:00001998 ! soil
+intersection_of: ENVO:00001998 ! soil
+intersection_of: BFO:0000050 ENVO:00000247 ! volcano
+relationship: BFO:0000050 ENVO:00000247 ! volcano
 
 [Term]
 id: ENVO:00005786
 name: upland soil
 is_a: ENVO:00001998 ! soil
+intersection_of: ENVO:00001998 ! soil
+intersection_of: BFO:0000050 ENVO:00000182 ! plateau
+relationship: BFO:0000050 ENVO:00000182 ! plateau
 
 [Term]
 id: ENVO:00005787
@@ -10816,6 +11320,9 @@ is_a: ENVO:00001998 ! soil
 id: ENVO:00005791
 name: sterile water
 is_a: ENVO:00002006 ! water
+intersection_of: ENVO:00002006 ! water
+intersection_of: RO:0000086 PATO:0000956
+relationship: RO:0000086 PATO:0000956
 
 [Term]
 id: ENVO:00005792
@@ -10838,6 +11345,9 @@ is_a: ENVO:00003930 ! scum
 id: ENVO:00005795
 name: marine mud
 is_a: ENVO:01000001 ! mud
+intersection_of: ENVO:01000001 ! mud
+intersection_of: BFO:0000050 ENVO:00000447 ! marine biome
+relationship: BFO:0000050 ENVO:00000447 ! marine biome
 
 [Term]
 id: ENVO:00005796
@@ -10848,11 +11358,16 @@ is_a: ENVO:00002044 ! sludge
 id: ENVO:00005797
 name: lake bottom mud
 is_a: ENVO:01000001 ! mud
+intersection_of: ENVO:01000001 ! mud
+intersection_of: BFO:0000050 ENVO:00000268 ! lake bed
+relationship: BFO:0000050 ENVO:00000268 ! lake bed
 
 [Term]
 id: ENVO:00005798
 name: acid dune sand
 is_a: ENVO:01000017 ! sand
+relationship: BFO:0000050 ENVO:00000170 ! dune
+relationship: RO:0000086 PATO:0001429
 
 [Term]
 id: ENVO:00005799
@@ -10863,6 +11378,9 @@ is_a: ENVO:01000017 ! sand
 id: ENVO:00005800
 name: desert sand
 is_a: ENVO:01000017 ! sand
+intersection_of: ENVO:01000017 ! sand
+intersection_of: BFO:0000050 ENVO:00000097 ! desert
+relationship: BFO:0000050 ENVO:00000097 ! desert
 
 [Term]
 id: ENVO:00005801
@@ -10870,7 +11388,8 @@ name: rhizosphere
 def: "The narrow region of soil that is directly influenced by root secretions and associated soil microorganisms." [Wikipedia:Rhizosphere_%28ecology%29]
 xref: LTER:472
 is_a: ENVO:01000408 ! environmental zone
-relationship: determined_by_part_of ENVO:00001998 ! soil
+relationship: ENVO:2100007 ENVO:00001998 ! determined by part of soil
+relationship: ENVO:2100007 PO:0025025 ! determined by part of
 
 [Term]
 id: ENVO:00005802
@@ -10956,6 +11475,7 @@ name: ice rise
 def: "An ice rise is an elevation which is part of an ice shelf, typically dome shared, and formed by the ice shelf overriding an obstruction in the seabed. An ice rise may be adjacent only to an ice shelf, or to an ice shelf and a sea. For some features, properly ice rises, the term island has become established through usage." [web:http\://www.antarctica.ac.uk/apc/genericterms.html, Wikipedia:Ice_rise]
 xref: Wikipedia:Ice_rise
 is_a: ENVO:00000176 ! elevation
+relationship: BFO:0000050 ENVO:00000380 ! ice shelf
 
 [Term]
 id: ENVO:00009725
@@ -10989,6 +11509,7 @@ name: environmental material
 def: "A portion of environmental material is a fiat object which forms the medium or part of the medium of an environmental system." [DOI:10.1186/2041-1480-4-43, MA:ma, ORCID:0000-0002-4366-3088, URL:http\://ontology.buffalo.edu/smith/articles/niches.html]
 comment: Everything under this parent must be a mass noun. All subclasses are to be understood as being composed primarily of the named entity, rather than restricted to that entity. For example, "ENVO:water" is to be understood as "environmental material composed primarly of some CHEBI:water". This class is currently being aligned to the Basic Formal Ontology. Following this alignment, its definition and the definitions of its subclasses will be revised.
 synonym: "portion of environmental material" EXACT []
+is_a: BFO:0000040
 
 [Term]
 id: ENVO:00010504
@@ -11066,6 +11587,8 @@ xref: EcoLexicon:aquifer
 xref: SWEETRealm:Aquifer
 xref: Wikipedia:Aquifer
 is_a: ENVO:01000281 ! layer
+relationship: BFO:0000051 ENVO:00000328 ! vadose zone
+relationship: BFO:0000051 ENVO:00000329 ! phreatic zone
 
 [Term]
 id: ENVO:00012411
@@ -11091,7 +11614,7 @@ is_a: ENVO:0010085 ! plant seed food product
 [Term]
 id: ENVO:0010003
 name: agricultural environmental material
-comment: This is quite odd and it probably should be obsoleted. Any material that is a participant in an agricultural process can be seen as an agricultural material.
+comment: This is quite odd and it probably should be obsoleted. Any material that is a participant in an agricultural process can be seen as an agricultural material. {created_by="ORCID:0000-0002-4366-3088"}
 is_a: ENVO:0010001 ! anthropogenic environmental material
 
 [Term]
@@ -12044,6 +12567,7 @@ xref: EcoLexicon:humus
 xref: SWEETRealm:Humus
 xref: Wikipedia:Humus
 is_a: ENVO:01000155 ! organic material
+relationship: BFO:0000050 ENVO:00001998 ! soil
 
 [Term]
 id: ENVO:01000001
@@ -12087,6 +12611,7 @@ xref: EcoLexicon:upwelling
 xref: SWEETRealm:Upwelling
 xref: Wikipedia:Upwelling
 is_a: ENVO:01000067 ! marine current
+relationship: BFO:0000050 ENVO:00000015 ! ocean
 
 [Term]
 id: ENVO:01000006
@@ -12094,6 +12619,9 @@ name: coastal upwelling
 def: "An upwelling that is near a coast." [ORCID:0000-0002-4366-3088]
 xref: Wikipedia:Coastal_upwelling
 is_a: ENVO:01000005 ! upwelling
+intersection_of: ENVO:01000005 ! upwelling
+intersection_of: RO:0002220 ENVO:00000303 ! coast
+relationship: RO:0002220 ENVO:00000303 ! coast
 
 [Term]
 id: ENVO:01000007
@@ -12170,6 +12698,7 @@ xref: LTER:484
 xref: SWEETRealm:Sand
 xref: Wikipedia:Sand
 is_a: ENVO:00010483 ! environmental material
+relationship: RO:0001000 ENVO:00001995 ! rock
 
 [Term]
 id: ENVO:01000018
@@ -12180,13 +12709,17 @@ xref: EcoLexicon:gravel
 xref: SWEETRealm:Gravel
 xref: Wikipedia:Gravel
 is_a: ENVO:00010483 ! environmental material
-relationship: composed_primarily_of ENVO:00000341 ! piece of gravel
+intersection_of: ENVO:00010483 ! environmental material
+intersection_of: RO:0002473 ENVO:00000341 ! piece of gravel
+relationship: BFO:0000051 ENVO:00000341 ! piece of gravel
+relationship: RO:0002473 ENVO:00000341 ! piece of gravel
 
 [Term]
 id: ENVO:01000019
 name: cave floor
 comment: surface layer with role "walking substrate" or similar. Indicate it is some sort of "bottom"
 is_a: ENVO:00010504 ! surface layer
+relationship: BFO:0000050 ENVO:00000067 ! cave
 
 [Term]
 id: ENVO:01000020
@@ -12219,6 +12752,7 @@ id: ENVO:01000023
 name: marine pelagic biome
 def: "The marine pelagic biome (pelagic meaning open sea) is that of the marine water column, from the surface to the greatest depths." [ISBN:0750633840]
 is_a: ENVO:00000447 ! marine biome
+relationship: BFO:0000051 ENVO:00001999 ! marine water body
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2010-03-15T11:17:06Z
 
@@ -12424,6 +12958,7 @@ id: ENVO:01000048
 name: ocean biome
 def: "The ocean biome comprises major bodies of saline water, principal components of the hydrosphere. Approximately 71% of the Earth's surface is covered by ocean, a continuous body of water that is customarily divided into several principal oceans and smaller seas. More than half of this area is over 3,000 metres (9,800 ft) deep. Average oceanic salinity is around 35 parts per thousand (ppt) (3.5%), and nearly all seawater has a salinity in the range of 30 to 38 ppt." [ORCID:0000-0002-4366-3088, Wikipedia:Ocean]
 is_a: ENVO:00000447 ! marine biome
+relationship: BFO:0000051 ENVO:00000015 ! ocean
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2010-03-15T11:23:23Z
 
@@ -12501,6 +13036,9 @@ def: "A marine algal bloom is a rapid increase or accumulation in the population
 synonym: "red tide" NARROW [Wikipedia:Red_tide]
 xref: EcoLexicon:red_tide
 is_a: ENVO:2000004 ! algal bloom
+intersection_of: ENVO:2000004 ! algal bloom
+intersection_of: RO:0001025 ENVO:00000447 ! marine biome
+relationship: RO:0001025 ENVO:00000447 ! marine biome
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2010-03-16T12:12:30Z
 
@@ -12528,6 +13066,7 @@ name: marine wind mixed layer
 def: "The upper part of the marine water column with generally uniform properties resulting from wind-driven mixing." [ISBN:044482619X, ORCID:0000-0002-4366-3088]
 synonym: "epipelagic mixed layer" EXACT []
 is_a: ENVO:01000295 ! marine layer
+relationship: BFO:0000050 ENVO:00000209 ! photic zone
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2010-03-16T12:16:11Z
 
@@ -12612,6 +13151,9 @@ id: ENVO:01000072
 name: marine Taylor column
 def: "A marine Taylor column is a Taylor column that is formed in a marine body of water. Currents flowing over shoaling topography such as seamounts are accelerated and destabilised, resulting in Taylor columns. Eddies and internal waves are generated downstream of the topological feature and may extend 1000 m or so above them. This may result in a localised increase in primary production where the Taylor column reaches surface waters." [ISBN:044482619X, ORCID:0000-0002-4366-3088, Wikipedia:Taylor_column]
 is_a: ENVO:01000299 ! Taylor column
+intersection_of: ENVO:01000299 ! Taylor column
+intersection_of: RO:0001025 ENVO:00001999 ! marine water body
+relationship: RO:0001025 ENVO:00001999 ! marine water body
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2010-03-16T12:16:11Z
 
@@ -12637,6 +13179,9 @@ id: ENVO:01000075
 name: marine thermocline
 def: "The marine thermocline describes a sharp change in the temperature of seawater (in relation to the temperature gradients of the water mass surrounding it) in the marine water column, which is usually associated with rapid changes in water density and salinity." [ISBN:044482619X, ORCID:0000-0002-4366-3088]
 is_a: ENVO:00002269 ! thermocline
+intersection_of: ENVO:00002269 ! thermocline
+intersection_of: RO:0001025 ENVO:01000023 ! marine pelagic biome
+relationship: RO:0001025 ENVO:01000023 ! marine pelagic biome
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2010-03-16T12:16:11Z
 
@@ -12645,6 +13190,9 @@ id: ENVO:01000076
 name: marine chemocline
 def: "A marine chemocline is a marine cline caused by a strong, vertical chemistry gradient within a body of marine water. Chemoclines most commonly occur where local conditions favor the formations of anoxic bottom water." [ORCID:0000-0002-4366-3088, Wikipedia:Chemocline]
 is_a: ENVO:00002270 ! chemocline
+intersection_of: ENVO:00002270 ! chemocline
+intersection_of: RO:0001025 ENVO:01000023 ! marine pelagic biome
+relationship: RO:0001025 ENVO:01000023 ! marine pelagic biome
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2010-03-16T12:16:11Z
 
@@ -12653,6 +13201,9 @@ id: ENVO:01000077
 name: marine pycnocline
 def: "The marine pycnocline describes a sharp change in the density of seawater (in relation to the gradients of the water mass surrounding it) in the marine water column. Pycnoclines are usually associated with thermo- and haloclines." [ORCID:0000-0002-4366-3088, Wikipedia:Mixed_layer]
 is_a: ENVO:01000259 ! pycnocline
+intersection_of: ENVO:01000259 ! pycnocline
+intersection_of: RO:0001025 ENVO:01000023 ! marine pelagic biome
+relationship: RO:0001025 ENVO:01000023 ! marine pelagic biome
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2010-03-16T12:16:11Z
 
@@ -12661,6 +13212,9 @@ id: ENVO:01000078
 name: marine nutricline
 def: "The marine nutricline describes a sharp change in the nutrient content of seawater (in relation to the gradients of the water mass surrounding it) in the marine water column." [ORCID:0000-0002-4366-3088, Wikipedia:Mixed_layer]
 is_a: ENVO:01000260 ! nutricline
+intersection_of: ENVO:01000260 ! nutricline
+intersection_of: RO:0001025 ENVO:01000023 ! marine pelagic biome
+relationship: RO:0001025 ENVO:01000023 ! marine pelagic biome
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2010-03-16T12:16:11Z
 
@@ -12669,6 +13223,9 @@ id: ENVO:01000079
 name: marine lysocline
 def: "The marine lysocline denotes the depth in the ocean below which the rate of dissolution of calcite increases dramatically. As water column depth and therefore pressure increases, the corresponding calcite saturation of seawater decreases and the calcite begins dissolve." [ORCID:0000-0002-4366-3088, Wikipedia:Lysocline]
 is_a: ENVO:01000261 ! lysocline
+intersection_of: ENVO:01000261 ! lysocline
+intersection_of: RO:0001025 ENVO:01000023 ! marine pelagic biome
+relationship: RO:0001025 ENVO:01000023 ! marine pelagic biome
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2010-03-16T12:16:11Z
 
@@ -12864,6 +13421,9 @@ id: ENVO:01000105
 name: marine benthic feature
 def: "A prominent or distinctive aspect, quality, or characteristic of environments occurring on or along marine benthic environments." [ISBN-10:0618455043, ORCID:0000-0002-4366-3088]
 is_a: ENVO:00000104 ! undersea feature
+intersection_of: ENVO:00002297 ! environmental feature
+intersection_of: RO:0001025 ENVO:01000024 ! marine benthic biome
+relationship: RO:0001025 ENVO:01000024 ! marine benthic biome
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2010-03-16T12:27:00Z
 
@@ -12938,6 +13498,7 @@ id: ENVO:01000114
 name: boulder sediment
 def: "Sediment characterised by an average particle diameter greater than 256 mm." [Wikipedia:Particle_size]
 is_a: ENVO:00002007 ! sediment
+relationship: BFO:0000051 ENVO:01000243 ! boulder
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2010-03-17T01:58:08Z
 
@@ -13002,6 +13563,9 @@ id: ENVO:01000122
 name: marine hydrothermal vent
 def: "A marine hydrothermal vent is a marine benthic feature where heat generated due to tectonic activity, either at divergent plate boundaries or convergent ocean plates where back-arc spreading occurs, is released or 'vented' to the surface. The resultant high temperature water jets are laden with dissolved metals and minerals." [ISBN:044482619X, ORCID:0000-0002-4366-3088]
 is_a: ENVO:00000215 ! hydrothermal vent
+intersection_of: ENVO:00000215 ! hydrothermal vent
+intersection_of: RO:0001025 ENVO:00000447 ! marine biome
+relationship: RO:0001025 ENVO:00000447 ! marine biome
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2010-03-17T02:13:33Z
 
@@ -13023,6 +13587,8 @@ synonym: "spray zone" RELATED [Wikipedia:Littoral_zone]
 synonym: "supralittoral zone" BROAD [Wikipedia:Littoral_zone]
 synonym: "supratidal zone" RELATED [Wikipedia:Littoral_zone]
 is_a: ENVO:01000408 ! environmental zone
+relationship: BFO:0000050 ENVO:01000125 ! marine littoral zone
+relationship: RO:0002220 ENVO:01000410 ! marine eulittoral zone
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2010-03-17T09:01:45Z
 
@@ -13031,6 +13597,7 @@ id: ENVO:01000125
 name: marine littoral zone
 def: "The marine littoral zone is a littoral zone which extends, approximately, from the spray region above the high tide mark to the edge of the coninental shelf." [Wikipedia:Littoral_zone]
 is_a: ENVO:01000407 ! littoral zone
+relationship: BFO:0000051 ENVO:00000316 ! intertidal zone
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2010-03-17T09:01:45Z
 
@@ -13041,6 +13608,8 @@ def: "The marine sublittoral zone is part of the marine littoral zone which is p
 synonym: "marine sublittoral zone" EXACT []
 synonym: "sublittoral zone" BROAD []
 is_a: ENVO:01000408 ! environmental zone
+relationship: BFO:0000050 ENVO:01000125 ! marine littoral zone
+relationship: RO:0002220 ENVO:01000410 ! marine eulittoral zone
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2010-03-17T09:01:45Z
 
@@ -13064,6 +13633,7 @@ creation_date: 2010-03-19T09:32:59Z
 id: ENVO:01000129
 name: marine hydrothermal vent chimney
 is_a: ENVO:00000000 ! geographic feature
+relationship: BFO:0000050 ENVO:01000122 ! marine hydrothermal vent
 creation_date: 2010-03-20T06:23:38Z
 
 [Term]
@@ -13071,6 +13641,7 @@ id: ENVO:01000130
 name: marine hydrothermal plume
 def: "A marine hydrothermal vent plume, part of a marine hydrothermal vent, is a high temperature water jet laden with dissolved metals and minerals that is driven by heat generated due to tectonic activity below the vent." [ISBN:044482619X, ORCID:0000-0002-4366-3088]
 is_a: ENVO:01001308 ! hydroform
+relationship: BFO:0000050 ENVO:01000122 ! marine hydrothermal vent
 creation_date: 2010-03-20T06:23:38Z
 
 [Term]
@@ -13119,6 +13690,7 @@ name: drop stone
 def: "An isolated fragment of rock, which fell vertically through the water column into  finer-grained water-deposited sedimentary rocks. Drop stones range in size from small pebbles to boulders." [Wikipedia:Dropstone]
 synonym: "Dropstone" EXACT [Wikipedia:Dropstone]
 is_a: ENVO:00000339 ! piece of rock
+relationship: BFO:0000050 ENVO:00000501 ! bed
 creation_date: 2010-03-20T06:25:06Z
 
 [Term]
@@ -13126,6 +13698,9 @@ id: ENVO:01000137
 name: organic matter fall
 def: "An accumulation of organic matter that has fallen to the bottom of a body of water." [ORCID:0000-0002-4366-3088]
 is_a: ENVO:01000549 ! mass of biological material
+relationship: RO:0001025 ENVO:00000063 ! water body
+relationship: RO:0002219 ENVO:00002006 ! water
+relationship: RO:0002220 ENVO:00000501 ! bed
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2010-03-20T06:25:30Z
 
@@ -13142,6 +13717,9 @@ id: ENVO:01000139
 name: animal carcass fall
 def: "The carcass of an animal that has fallen to the bottom of a body of water." [ORCID:0000-0002-4366-3088]
 is_a: ENVO:00002033 ! carcass
+relationship: RO:0001025 ENVO:00000063 ! water body
+relationship: RO:0002219 ENVO:00002006 ! water
+relationship: RO:0002220 ENVO:00000501 ! bed
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2010-03-20T06:26:07Z
 
@@ -13173,6 +13751,9 @@ creation_date: 2010-03-20T06:27:01Z
 id: ENVO:01000143
 name: marine reef
 is_a: ENVO:00000130 ! reef
+intersection_of: ENVO:00000130 ! reef
+intersection_of: RO:0001025 ENVO:00001999 ! marine water body
+relationship: RO:0001025 ENVO:00001999 ! marine water body
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2010-03-20T06:43:45Z
 
@@ -13180,6 +13761,7 @@ creation_date: 2010-03-20T06:43:45Z
 id: ENVO:01000144
 name: marine coral reef flat zone
 is_a: ENVO:01000143 ! marine reef
+relationship: BFO:0000050 ENVO:00000150 ! coral reef
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2010-03-20T06:52:40Z
 
@@ -13187,6 +13769,7 @@ creation_date: 2010-03-20T06:52:40Z
 id: ENVO:01000145
 name: marine coral reef back reef
 is_a: ENVO:01000143 ! marine reef
+relationship: BFO:0000050 ENVO:00000150 ! coral reef
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2010-03-20T06:52:40Z
 
@@ -13194,6 +13777,7 @@ creation_date: 2010-03-20T06:52:40Z
 id: ENVO:01000146
 name: marine coral reef crest
 is_a: ENVO:01000143 ! marine reef
+relationship: BFO:0000050 ENVO:00000150 ! coral reef
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2010-03-20T06:52:40Z
 
@@ -13201,6 +13785,7 @@ creation_date: 2010-03-20T06:52:40Z
 id: ENVO:01000147
 name: marine coral reef fore reef
 is_a: ENVO:01000143 ! marine reef
+relationship: BFO:0000050 ENVO:00000150 ! coral reef
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2010-03-20T06:52:40Z
 
@@ -13208,6 +13793,7 @@ creation_date: 2010-03-20T06:52:40Z
 id: ENVO:01000148
 name: marine coral reef buttress zone
 is_a: ENVO:01000143 ! marine reef
+relationship: BFO:0000050 ENVO:00000150 ! coral reef
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2010-03-20T06:52:40Z
 
@@ -13215,6 +13801,7 @@ creation_date: 2010-03-20T06:52:40Z
 id: ENVO:01000149
 name: marine coral reef deep fore reef
 is_a: ENVO:01000143 ! marine reef
+relationship: BFO:0000050 ENVO:00000150 ! coral reef
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2010-03-20T06:52:40Z
 
@@ -13280,6 +13867,9 @@ id: ENVO:01000157
 name: microbial mat material
 def: "Material derived from a microbial mat, a multi-layered sheet of micro-organisms, mainly bacteria and archaea. Microbial mats create a wide range of internal chemical environments." [ORCID:0000-0002-4366-3088, Wikipedia:Microbial_mat]
 is_a: ENVO:01000155 ! organic material
+intersection_of: ENVO:01000155 ! organic material
+intersection_of: RO:0001000 ENVO:01000008 ! microbial mat
+relationship: RO:0001000 ENVO:01000008 ! microbial mat
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2010-03-20T08:51:49Z
 
@@ -13379,6 +13969,7 @@ id: ENVO:01000169
 name: indeterminate root nodule active meristem
 def: "A part of an indeterminate root nodule where new nodule tissue is formed which will later differentiate into the other zones of the nodule." [Wikipedia:Root_nodule]
 is_a: ENVO:01000168 ! indeterminate root nodule
+relationship: BFO:0000050 ENVO:01000168 ! indeterminate root nodule
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2010-03-20T09:38:56Z
 
@@ -13387,6 +13978,7 @@ id: ENVO:01000170
 name: indeterminate root nodule infection zone
 def: "A part of an indeterminate root nodule permeated with infection threads full of bacteria. The plant cells are larger than in the previous zone and cell division is halted." [Wikipedia:Root_nodule]
 is_a: ENVO:01000168 ! indeterminate root nodule
+relationship: BFO:0000050 ENVO:01000168 ! indeterminate root nodule
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2010-03-20T09:38:56Z
 
@@ -13395,6 +13987,7 @@ id: ENVO:01000171
 name: indeterminate root nodule nitrogen fixation zone
 def: "A part of an indeterminate root nodule where each cell contains a large, central vacuole and the cytoplasm is filled with fully differentiated bacteroids which are actively fixing nitrogen. Typically, the plant provides these cells with leghemoglobin, resulting in a distinct pink color." [Wikipedia:Root_nodule]
 is_a: ENVO:01000168 ! indeterminate root nodule
+relationship: BFO:0000050 ENVO:01000168 ! indeterminate root nodule
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2010-03-20T09:38:56Z
 
@@ -13403,6 +13996,7 @@ id: ENVO:01000172
 name: indeterminate root nodule senescent zone
 def: "A part of an indeterminate root nodule where plant cells and their bacteroid contents are being degraded. The breakdown of the heme component of leghemoglobin results in a visible greening at the base of the nodule." [Wikipedia:Root_nodule]
 is_a: ENVO:01000168 ! indeterminate root nodule
+relationship: BFO:0000050 ENVO:01000168 ! indeterminate root nodule
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2010-03-20T09:38:56Z
 
@@ -13422,6 +14016,7 @@ comment: Preliminary definition.
 xref: LTER:212
 xref: SPIRE:Forest
 is_a: ENVO:00000446 ! terrestrial biome
+relationship: BFO:0000051 ENVO:00000111 ! forest
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2013-04-07T14:26:46Z
 
@@ -13431,6 +14026,7 @@ name: woodland biome
 def: "A woodland biome is a terrestrial biome which includes, across its entire spatial extent, woody plants spaced sufficiently far apart to allow light penetration to support communities of herbaceous plants or shrubs living closer to the woodland floor." []
 comment: Preliminary definition.
 is_a: ENVO:00000446 ! terrestrial biome
+relationship: BFO:0000051 ENVO:00000109 ! woodland
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2013-04-07T14:26:46Z
 
@@ -13449,6 +14045,7 @@ name: grassland biome
 def: "A grassland biome is a terrestrial biome which  includes, across its entire spatial extent, an unbroken layer of grasses (Gramineae), sedges (Cyperaceae) or  rushes (Juncaceae)." []
 xref: SPIRE:Savannah_or_grassland
 is_a: ENVO:00000446 ! terrestrial biome
+relationship: BFO:0000051 ENVO:00000106 ! grassland
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2013-04-07T14:26:46Z
 
@@ -13469,6 +14066,7 @@ def: "A desert biome is a terrestrial biome which loses more liquid water by eva
 comment: Preliminary definition.
 xref: SPIRE:Desert_or_dune
 is_a: ENVO:00000446 ! terrestrial biome
+relationship: BFO:0000051 ENVO:00000097 ! desert
 relationship: has_condition ENVO:01000230 ! arid
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2013-04-07T14:26:46Z
@@ -13480,6 +14078,7 @@ def: "A tundra is a terrestrial biome which includes, across its spatial extent,
 comment: Preliminary definition.
 xref: SPIRE:Tundra
 is_a: ENVO:00000446 ! terrestrial biome
+relationship: BFO:0000051 ENVO:00000112 ! tundra
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2013-04-07T14:26:46Z
 
@@ -13696,6 +14295,7 @@ id: ENVO:01000203
 name: environmental condition
 def: "An environmental condition is a range of a determinate quality  or combination of qualities that are present in an environmental system." [DOI:10.1186/2041-1480-4-43]
 comment: Experimental class created in EnvO. A condition defines a restricted range of a given quality or combination of qualities. If an environment class, E, has_condition C, then all qualities listed in C are restricted to the ranges defined in C in E. This is not intended as a logical conditional.
+is_a: PATO:0000001
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2013-04-07T14:35:18Z
 
@@ -13950,6 +14550,7 @@ comment: Some use 'lava' to refer to rock that is formed when lava cools. This i
 xref: EcoLexicon:lava
 xref: SWEETRealm:Lava
 is_a: ENVO:00010483 ! environmental material
+relationship: RO:0000086 PATO:0001548
 created_by: PLB
 creation_date: 2013-05-05T16:52:47Z
 
@@ -13995,6 +14596,9 @@ def: "Basalt is a volcanic rock which is formed by the rapid cooling of basaltic
 xref: EcoLexicon:basalt
 xref: SWEETRealm:Basalt
 is_a: ENVO:00002013 ! igneous rock
+intersection_of: ENVO:00002013 ! igneous rock
+intersection_of: RO:0001000 ENVO:01000234 ! mafic lava
+relationship: RO:0001000 ENVO:01000234 ! mafic lava
 created_by: PLB
 creation_date: 2013-05-05T17:07:15Z
 
@@ -14004,6 +14608,9 @@ name: coastal scrubland
 def: "A coastal scrubland is a scrubland which is part of a coast." [Wikipedia:California_coastal_sage_and_chaparral_ecoregion, Wikipedia:Coastal_sage_scrub]
 synonym: "coastal chaparral" NARROW [Wikipedia:California_chaparral_and_woodlands]
 is_a: ENVO:00000300 ! scrubland
+intersection_of: ENVO:00000300 ! scrubland
+intersection_of: BFO:0000050 ENVO:00000303 ! coast
+relationship: BFO:0000050 ENVO:00000303 ! coast
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2013-05-06T09:47:07Z
 
@@ -14049,7 +14656,11 @@ name: desert scrubland
 def: "A scrubland which is located in a desert." [ORCID:0000-0001-8743-9574]
 synonym: "desert scrub" EXACT [ORCID:0000-0001-8743-9574]
 is_a: ENVO:00000300 ! scrubland
+intersection_of: ENVO:00000300 ! scrubland
+intersection_of: has_condition ENVO:01000230 ! arid
+intersection_of: RO:0001025 ENVO:00000097 ! desert
 relationship: has_condition ENVO:01000230 ! arid
+relationship: RO:0001025 ENVO:00000097 ! desert
 created_by: PLB
 creation_date: 2013-06-06T15:02:30Z
 
@@ -14140,12 +14751,14 @@ creation_date: 2013-09-04T07:08:34Z
 id: ENVO:01000252
 name: freshwater lake biome
 is_a: ENVO:00000873 ! freshwater biome
+relationship: BFO:0000051 ENVO:00000021 ! freshwater lake
 creation_date: 2013-09-19T11:11:01Z
 
 [Term]
 id: ENVO:01000253
 name: freshwater river biome
 is_a: ENVO:00000873 ! freshwater biome
+relationship: BFO:0000051 ENVO:01000297 ! freshwater river
 creation_date: 2013-09-19T11:11:01Z
 
 [Term]
@@ -14174,6 +14787,7 @@ def: "A mineral material is an environmental material which is primarily compose
 comment: Look for "mineral" in a chemical or geochemical ontology to formalise the composed primarily of link.\nFrom Wikipedia: [A mineral] is different from a rock, which can be an aggregate of minerals or non-minerals and does not have a specific chemical composition. The exact definition of a mineral is under debate, especially with respect to the requirement a valid species be abiogenic, and to a lesser extent with regards to it having an ordered atomic structure.
 xref: LTER:341
 is_a: ENVO:00010483 ! environmental material
+relationship: RO:0000086 PATO:0001546
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2013-10-05T12:37:41Z
 
@@ -14208,6 +14822,7 @@ id: ENVO:01000260
 name: nutricline
 def: "A layer within a water body where the nutrient content changes rapidly with depth." [CMECS:1345, Wikipedia:Mixed_layer]
 is_a: ENVO:01000258 ! cline
+relationship: BFO:0000050 ENVO:00000063 ! water body
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2013-10-06T20:16:10Z
 
@@ -14216,6 +14831,7 @@ id: ENVO:01000261
 name: lysocline
 def: "A layer within a marine water body where the rate of calcite dissolution changes rapidly with depth. The increase in the rate of calcite dissolution with depth is largely due to the concomitant fall in calcite saturation." [Wikipedia:Lysocline]
 is_a: ENVO:01000258 ! cline
+relationship: BFO:0000050 ENVO:00001999 ! marine water body
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2013-10-06T20:16:10Z
 
@@ -14235,6 +14851,8 @@ def: "MERGED DEFINITION:\nTARGET DEFINITION: A cold seep is a seep in which meth
 synonym: "hydrocarbon seep" EXACT []
 synonym: "methane seep" EXACT []
 is_a: ENVO:01000262 ! seep
+relationship: RO:0002220 ENVO:00000426 ! ocean floor
+relationship: RO:0002220 ENVO:00000482 ! sea floor
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2013-10-06T21:16:39Z
 
@@ -14265,6 +14883,8 @@ synonym: "aqueous vapor" EXACT [Wikipedia:Water_vapor]
 synonym: "aqueous vapour" EXACT [Wikipedia:Water_vapor]
 synonym: "water vapor" EXACT [Wikipedia:Water_vapor]
 is_a: ENVO:00010483 ! environmental material
+relationship: RO:0000086 PATO:0001547
+relationship: RO:0002473 CHEBI:15377
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2013-10-10T07:58:18Z
 
@@ -14283,6 +14903,9 @@ name: atmospheric water vapour
 def: "Atmospheric water vapour is water vapour that is part of an atmosphere." [Wikipedia:Water_vapor]
 synonym: "atmospheric water vapor" EXACT [Wikipedia:Water_vapor]
 is_a: ENVO:01000266 ! water vapour
+intersection_of: ENVO:01000266 ! water vapour
+intersection_of: BFO:0000050 ENVO:01000267 ! atmosphere
+relationship: BFO:0000050 ENVO:01000267 ! atmosphere
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2013-10-10T08:22:07Z
 
@@ -14291,6 +14914,7 @@ id: ENVO:01000269
 name: siltstone
 def: "A sedimentary rock which is composed mainly of silt. This rock has a grainsize in the silt range, finer than sandstone and coarser than claystones." [Wikipedia:Siltstone]
 is_a: ENVO:01000271 ! clastic sedimentary rock
+relationship: RO:0001000 ENVO:01000016 ! silt
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2013-10-12T14:51:19Z
 
@@ -14299,6 +14923,7 @@ id: ENVO:01000270
 name: claystone
 def: "A clastic sedimentary rock which is composed primarily of clay sized particles." [Wikipedia:Claystone]
 is_a: ENVO:01000271 ! clastic sedimentary rock
+relationship: RO:0001000 ENVO:00002982 ! clay
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2013-10-12T14:51:19Z
 
@@ -14317,6 +14942,7 @@ def: "A mudstone is a clastic sedimentary rock which contains a mixture of at le
 comment: There is debate on the usage of mudstone and mudrock, and some ambiguity is to be expected. Wikipedia: The terminology of "mudstone" is not to be confused with the Dunham classification scheme for limestones. In Dunham's classification, a mudstone is any limestone containing less than ten percent carbonate grains. Note, a siliciclastic mudstone does not deal with carbonate grains. Friedman, Sanders, and Kopaska-Merkel (1992) suggest the use of "lime mudstone" to avoid confusion with siliciclastic rocks.
 is_a: ENVO:01000271 ! clastic sedimentary rock
 disjoint_from: ENVO:01000273 ! lime mudstone
+relationship: RO:0001000 ENVO:01000001 ! mud
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2013-10-12T14:51:19Z
 
@@ -14336,6 +14962,7 @@ id: ENVO:01000274
 name: slate
 def: "Slate is a metamorphic rock which is fine-grained, foliated, homogeneous, Slates are derived from clastic sedimentary rocks." [Wikipedia:Slate]
 is_a: ENVO:00002017 ! metamorphic rock
+relationship: RO:0001000 ENVO:01000271 ! clastic sedimentary rock
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2013-10-12T14:51:19Z
 
@@ -14352,6 +14979,7 @@ id: ENVO:01000276
 name: ecoregion
 def: "A large unit of land or water containing a geographically distinct assemblage of species, natural communities, and environmental conditions." [DOI:10.1641/0006-3568(2001)051[0933\:TEOTWA\]2.0.CO;2, URL:http\://worldwildlife.org/biomes]
 comment: Unlike biomes, ecoregions are geographically defined entities. ENVO's sister project, GAZ, contains terms for instances of ecoregions (e.g. Beringia lowland tundra). Requests for new terms should be directed to GAZ. ENVO will only contain this top-level class. The class' definition is preliminary and will be aligned to BFO.
+is_a: BFO:0000040
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2013-10-12T17:21:09Z
 
@@ -14362,7 +14990,9 @@ def: "Ice is water frozen into a solid state. It can appear transparent or opaqu
 synonym: "ice" RELATED [http://www.eionet.europa.eu/gemet/concept/4131] {def="The dense substance formed by the freezing of water to the solid state; it commonly occurs in the form of hexagonal crystals. (Source: MGH)"}
 xref: LTER:262
 is_a: ENVO:00010483 ! environmental material
-relationship: composed_primarily_of ENVO:00002006 ! water
+relationship: RO:0000086 PATO:0001546
+relationship: RO:0000086 PATO:0001985
+relationship: RO:0002473 ENVO:00002006 ! water
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2013-10-13T12:01:28Z
 
@@ -14371,6 +15001,7 @@ id: ENVO:01000278
 name: pingo scar
 def: "A depression caused by the collapse of a pingo." [DOI:10.1016/0033-5894(76)90039-9]
 is_a: ENVO:00000309 ! depression
+relationship: RO:0001000 ENVO:00000413 ! pingo
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2013-10-13T12:15:55Z
 
@@ -14388,6 +15019,7 @@ id: ENVO:01000280
 name: ecozone
 def: "Ecozones delineate large areas of the Earth's surface within which organisms have been evolving in relative isolation over long periods of time, separated from one another by geographic features, such as oceans, broad deserts, or high mountain ranges, that constitute barriers to migration." [Wikipedia:ecozone]
 comment: ENVO contains this top-level class, but all instances will be in GAZ. The definition is preliminary and will be aligned to BFO.\nWikipedia:  Ecozones correspond to the floristic kingdoms of botany or zoogeographic regions of zoology. Ecozones are characterized by the evolutionary history of the organisms they contain. They are distinct from biomes, also known as major habitat types, which are divisions of the Earth's surface based on life form, or the adaptation of plants and animals to climatic, soil, and other conditions. Biomes are characterized by similar climax vegetation. Each ecozone may include a number of different biomes. A tropical moist broadleaf forest in Central America, for example, may be similar to one in New Guinea in its vegetation type and structure, climate, soils, etc., but these forests are inhabited by plants and animals with very different evolutionary histories.
+is_a: BFO:0000040
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2013-10-13T18:32:46Z
 
@@ -14415,6 +15047,7 @@ name: lake layer
 def: "A layer which is part of a lake." []
 comment: Note that this class does not contain metalimnion as a subclass. The metaliminon is classified as a thermocline.
 is_a: ENVO:01000325 ! aquatic layer
+relationship: BFO:0000050 ENVO:00000020 ! lake
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2013-10-15T16:57:43Z
 
@@ -14500,7 +15133,7 @@ id: ENVO:01000293
 name: ice mass
 def: "A mass of ice." []
 is_a: ENVO:00000000 ! geographic feature
-relationship: composed_primarily_of ENVO:01000277 ! water ice
+relationship: RO:0002473 ENVO:01000277 ! water ice
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2013-10-15T19:49:11Z
 
@@ -14518,6 +15151,7 @@ id: ENVO:01000295
 name: marine layer
 def: "A layer that is part of a marine water body." [ORCID:0000-0002-4366-3088]
 is_a: ENVO:01000325 ! aquatic layer
+relationship: BFO:0000050 ENVO:00001999 ! marine water body
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2013-10-16T11:55:20Z
 
@@ -14526,6 +15160,10 @@ id: ENVO:01000296
 name: dry lake bed
 def: "A lake bed which is dry. That is, the bed of a dry lake." []
 is_a: ENVO:00000268 ! lake bed
+intersection_of: ENVO:00000268 ! lake bed
+intersection_of: RO:0000086 PATO:0001824
+relationship: BFO:0000050 ENVO:00000277 ! dry lake
+relationship: RO:0000086 PATO:0001824
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2013-10-16T12:12:53Z
 
@@ -14535,6 +15173,9 @@ name: freshwater river
 def: "A river where fresh water flows." [ORCID:0000-0002-4366-3088]
 comment: Preliminary definition.
 is_a: ENVO:00000022 ! river
+intersection_of: ENVO:00000022 ! river
+intersection_of: BFO:0000051 ENVO:00002011 ! fresh water
+relationship: BFO:0000051 ENVO:00002011 ! fresh water
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2013-10-16T12:56:48Z
 
@@ -14563,6 +15204,9 @@ name: atmospheric Taylor column
 def: "An atmospheric Taylor column is a Taylor column that is formed in the atmosphere. Atmospheric Taylor columns often form above islands resulting in vortex streets in the atmosphere." [ISBN:044482619X, ORCID:0000-0002-4366-3088, Wikipedia:Taylor_column]
 synonym: "vortex street" RELATED [Wikipedia:Kármán_vortex_street]
 is_a: ENVO:01000299 ! Taylor column
+intersection_of: ENVO:01000299 ! Taylor column
+intersection_of: RO:0001025 ENVO:01000267 ! atmosphere
+relationship: RO:0001025 ENVO:01000267 ! atmosphere
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2013-10-19T11:12:43Z
 
@@ -14571,6 +15215,9 @@ id: ENVO:01000301
 name: estuarine water
 def: "Brackish water which is part of an estuary." [Wikipedia:Estuary]
 is_a: ENVO:00002019 ! brackish water
+intersection_of: ENVO:00002019 ! brackish water
+intersection_of: BFO:0000050 ENVO:00002137 ! brackish estuary
+relationship: BFO:0000050 ENVO:00002137 ! brackish estuary
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2013-10-19T11:30:46Z
 
@@ -14588,31 +15235,44 @@ id: ENVO:01000303
 name: endolithic environment
 def: "An endolithic environment is an environment that exists within solid rock. " []
 is_a: ENVO:01000254 ! environmental system
+intersection_of: ENVO:01000254 ! environmental system
+intersection_of: RO:0002219 ENVO:00001995 ! rock
+relationship: RO:0002219 ENVO:00001995 ! rock
 
 [Term]
 id: ENVO:01000304
 name: high pressure environment
 def: "A high pressure environment is an environment in which all material entities are exposed to a high ratio of force per unit area." []
 is_a: ENVO:01000254 ! environmental system
+intersection_of: ENVO:01000254 ! environmental system
+intersection_of: RO:0000086 PATO:0001576
+relationship: RO:0000086 PATO:0001576
 
 [Term]
 id: ENVO:01000305
 name: high temperature environment
 def: "A high temperature environment is an environment in which material entities are exposed to increased levels of heat radiation or which have molecules or atoms moving randomly with increased levels of average kinietic energy." []
 is_a: ENVO:01000254 ! environmental system
+intersection_of: ENVO:01000254 ! environmental system
+intersection_of: RO:0000086 PATO:0001305
+relationship: RO:0000086 PATO:0001305
 
 [Term]
 id: ENVO:01000306
 name: freshwater environment
 synonym: "fresh water environment" EXACT []
 is_a: ENVO:01000317 ! aquatic environment
-relationship: composed_primarily_of ENVO:00002011 ! fresh water
+intersection_of: ENVO:01000254 ! environmental system
+intersection_of: RO:0002473 ENVO:00002011 ! fresh water
+relationship: RO:0002473 ENVO:00002011 ! fresh water
 
 [Term]
 id: ENVO:01000307
 name: saline water environment
 is_a: ENVO:01000317 ! aquatic environment
-relationship: composed_primarily_of ENVO:00002010 ! saline water
+intersection_of: ENVO:01000254 ! environmental system
+intersection_of: RO:0002473 ENVO:00002010 ! saline water
+relationship: RO:0002473 ENVO:00002010 ! saline water
 
 [Term]
 id: ENVO:01000308
@@ -14674,25 +15334,36 @@ id: ENVO:01000314
 name: high osmolarity environment
 def: "A high osmolarity environment is an environment in which entities are exposed to high concentrations of solutes." []
 is_a: ENVO:01000254 ! environmental system
+intersection_of: ENVO:01000254 ! environmental system
+intersection_of: RO:0000086 PATO:0001657
+relationship: RO:0000086 PATO:0001657
 
 [Term]
 id: ENVO:01000315
 name: acidic environment
 def: "An acidic environment is an environment in which material entities are exposed to a low pH." []
 is_a: ENVO:01000254 ! environmental system
+intersection_of: ENVO:01000254 ! environmental system
+intersection_of: RO:0000086 PATO:0001429
+relationship: RO:0000086 PATO:0001429
 
 [Term]
 id: ENVO:01000316
 name: alkaline environment
 def: "An alkaline environment is an environment in which entities are exposed to high pH, typically greater than a pH of 9." []
 is_a: ENVO:01000254 ! environmental system
+intersection_of: ENVO:01000254 ! environmental system
+intersection_of: RO:0000086 PATO:0001430
+relationship: RO:0000086 PATO:0001430
 
 [Term]
 id: ENVO:01000317
 name: aquatic environment
 def: "An aquatic environment is an environment in which most parts are surrounded by water." []
 is_a: ENVO:01000254 ! environmental system
-relationship: composed_primarily_of ENVO:00002006 ! water
+intersection_of: ENVO:01000254 ! environmental system
+intersection_of: RO:0002473 ENVO:00002006 ! water
+relationship: RO:0002473 ENVO:00002006 ! water
 
 [Term]
 id: ENVO:01000318
@@ -14712,20 +15383,26 @@ id: ENVO:01000320
 name: marine environment
 def: "A marine environment and enviroment which is determined by a marine water body." [NM:nm]
 is_a: ENVO:01000254 ! environmental system
-relationship: determined_by ENVO:00001999 ! marine water body
+intersection_of: ENVO:01000254 ! environmental system
+intersection_of: ENVO:2100001 ENVO:00001999 ! determined by marine water body
+relationship: ENVO:2100001 ENVO:00001999 ! determined by marine water body
 
 [Term]
 id: ENVO:01000321
 name: sea water environment
 synonym: "ocean water environment" EXACT []
 is_a: ENVO:01000307 ! saline water environment
-relationship: composed_primarily_of ENVO:00002149 ! sea water
+intersection_of: ENVO:01000254 ! environmental system
+intersection_of: RO:0002473 ENVO:00002149 ! sea water
+relationship: RO:0002473 ENVO:00002149 ! sea water
 
 [Term]
 id: ENVO:01000322
 name: brackish water environment
 is_a: ENVO:01000307 ! saline water environment
-relationship: composed_primarily_of ENVO:00002019 ! brackish water
+intersection_of: ENVO:01000254 ! environmental system
+intersection_of: RO:0002473 ENVO:00002019 ! brackish water
+relationship: RO:0002473 ENVO:00002019 ! brackish water
 
 [Term]
 id: ENVO:01000323
@@ -14746,12 +15423,14 @@ id: ENVO:01000325
 name: aquatic layer
 is_a: ENVO:01000281 ! layer
 is_a: ENVO:01001308 ! hydroform
-relationship: composed_primarily_of ENVO:00002006 ! water
+intersection_of: ENVO:01000281 ! layer
+intersection_of: RO:0002473 ENVO:00002006 ! water
+relationship: RO:0002473 ENVO:00002006 ! water
 
 [Term]
 id: ENVO:01000326
 name: deep chlorophyll maximum layer
-comment: Logical def is incomplete. Need to express the idea of maximum chlorophyll. This could follow a pattern like:\n\nX has_maximum_levels_of Y relative_to Z, i.e. DCM has_maximum_levels_of chlorophyll relative_to  subsurface_aquatic_layer\n\nMay also be useful to include has_decreased_levels_of light intensity relative_to surface aquatic layer\n\nFurther discussion in Issue 126.
+comment: Logical def is incomplete. Need to express the idea of maximum chlorophyll. This could follow a pattern like:\n\nX has_maximum_levels_of Y relative_to Z, i.e. DCM has_maximum_levels_of chlorophyll relative_to  subsurface_aquatic_layer\n\nMay also be useful to include has_decreased_levels_of light intensity relative_to surface aquatic layer\n\nFurther discussion in Issue 126.\n
 synonym: "subsurface chlorophyll maximum layer" RELATED []
 is_a: ENVO:01000325 ! aquatic layer
 
@@ -14767,6 +15446,9 @@ name: dome swamp
 def: "A dome swamp is a swamp which occurs in a depression where deeper waters at the centre of the swamp allow  trees to grow taller relative to those in shallower regions of the depression. This creates a dome-like shape." []
 comment: The logical def should be improved with the idea of a vegetation unit growing in a depression expressed.
 is_a: ENVO:00000233 ! swamp
+intersection_of: ENVO:00000233 ! swamp
+intersection_of: BFO:0000051 ENVO:00000309 ! depression
+relationship: BFO:0000051 ENVO:00000309 ! depression
 
 [Term]
 id: ENVO:01000329
@@ -14803,6 +15485,9 @@ name: hillside
 def: "A hillside is a slope that is part of a hill." []
 synonym: "brae" RELATED []
 is_a: ENVO:00002000 ! slope
+intersection_of: ENVO:00002000 ! slope
+intersection_of: BFO:0000050 ENVO:00000083 ! hill
+relationship: BFO:0000050 ENVO:00000083 ! hill
 
 [Term]
 id: ENVO:01000334
@@ -14852,15 +15537,17 @@ is_a: ENVO:01000355 ! vegetation layer
 id: ENVO:01000339
 name: polar biome
 def: "A biome which has the environmental condition polar" []
-comment: This class is primarily for inference and, in general, should not be used directly by annotators. If you're an annotator, please consider using a more informative term such as 'tundra biome'.
+comment: This class is primarily for inference and, in general, should not be used directly by annotators. If you're an annotator, please consider using a more informative term such as 'tundra biome'.  
 is_a: ENVO:00000428 ! biome
+intersection_of: ENVO:00000428 ! biome
+intersection_of: has_condition ENVO:01000238 ! polar
 relationship: has_condition ENVO:01000238 ! polar
 
 [Term]
 id: ENVO:01000340
 name: alpine
 def: "An alpine condition is an environmental condition in which the monthly mean temperature is less than 10 degrees Celsius and which occurs at altitudes above the tree line and below the snowline." [Wikipedia:Altitudinal_zonation]
-comment: Requested term with preliminary def. See Issue 29 on the envo tracker.
+comment: Requested term with preliminary def. See Issue 29 on the envo tracker.  
 xref: LTER:26
 is_a: ENVO:01000343 ! altitudinal condition
 created_by: ORCID:0000-0002-4366-3088
@@ -14869,7 +15556,7 @@ created_by: ORCID:0000-0002-4366-3088
 id: ENVO:01000341
 name: subalpline
 def: "A subalpine condition is an environmental condition in which  an altitude range falls immediately below the tree line." []
-comment: Requested in Issue 33 of our tracker. The lower boundry of this condition's range, that is, the lower altitudinal limit of an elevation that is considuered subalpine, is not clear in this definition.
+comment: Requested in Issue 33 of our tracker. The lower boundry of this condition's range, that is, the lower altitudinal limit of an elevation that is considuered subalpine, is not clear in this definition. 
 is_a: ENVO:01000343 ! altitudinal condition
 created_by: ORCID:0000-0002-4366-3088
 
@@ -14935,12 +15622,13 @@ name: root matter
 def: "An organic material primarily composed of a portion of plant root." []
 comment: Requested in Issue 115 as part of the annotation of metagenomic submissions present in the European Nucleotide Archive.
 is_a: ENVO:01000155 ! organic material
+relationship: BFO:0000050 PO:0009005
 
 [Term]
 id: ENVO:01000350
 name: autoclaved sand
 def: "Autoclaved sand is sand that has been sterlised by exposure to high pressure saturated steam at at least 121 degrees Celsius." []
-comment: Requested in Issue 116 as part of the annotation of metagenomic submissions present in the European Nucleotide Archive.
+comment: Requested in Issue 116 as part of the annotation of metagenomic submissions present in the European Nucleotide Archive.\n
 is_a: ENVO:01000017 ! sand
 
 [Term]
@@ -14964,7 +15652,10 @@ id: ENVO:01000353
 name: marine mesoscale eddy field
 def: "A mesoscale eddy field is an expanse of marine water which includes coherent vortices, as well as a rich cascade of other structures such as filaments, squirts and spirals and is characterized by temperature and salinity anomalies with associated flow anomalies that are nearly in geostrophic balance. Although only the surface expression of mesoscale eddies is visible in satellite images of sea surface height or temperature, they are in fact three dimensional structures that reach down into the pycnocline. " [http://www.gfdl.noaa.gov/ocean-mesoscale-eddies]
 is_a: ENVO:01000352 ! field
-relationship: composed_primarily_of ENVO:01000069 ! mesoscale marine eddy
+intersection_of: ENVO:01000352 ! field
+intersection_of: RO:0002473 ENVO:01000069 ! mesoscale marine eddy
+relationship: BFO:0000051 ENVO:01000069 ! mesoscale marine eddy
+relationship: RO:0002473 ENVO:01000069 ! mesoscale marine eddy
 created_by: ORCID:0000-0002-4366-3088
 
 [Term]
@@ -14997,12 +15688,18 @@ id: ENVO:01000357
 name: alkaline water
 def: "A portion of alkaline water is a portion of water with a pH greater than 7." []
 is_a: ENVO:00002006 ! water
+intersection_of: ENVO:00002006 ! water
+intersection_of: RO:0000086 PATO:0001430
+relationship: RO:0000086 PATO:0001430
 
 [Term]
 id: ENVO:01000358
 name: acidic water
 def: "A portion of acidic water is a portion of water with a pH less than 7." []
 is_a: ENVO:00002006 ! water
+intersection_of: ENVO:00002006 ! water
+intersection_of: RO:0000086 PATO:0001429
+relationship: RO:0000086 PATO:0001429
 
 [Term]
 id: ENVO:01000359
@@ -15059,6 +15756,7 @@ id: ENVO:01000367
 name: anchialine cave
 def: "An anchialine cave is a cave which contains an anchialine pool." [Wikipedia:Cave]
 is_a: ENVO:00000067 ! cave
+relationship: BFO:0000051 ENVO:01000368 ! anchialine pool
 
 [Term]
 id: ENVO:01000368
@@ -15072,6 +15770,7 @@ id: ENVO:01000369
 name: vadose cave
 def: "A cave that is part of a vadose zone." [Wikipedia:Mordloch]
 is_a: ENVO:00000067 ! cave
+relationship: BFO:0000050 ENVO:00000328 ! vadose zone
 
 [Term]
 id: ENVO:01000370
@@ -15098,7 +15797,7 @@ id: ENVO:01000373
 name: biological waste
 def: "Biological waste is waste containing mostly natural organic materials (remains of plants, animal excrement, biological sludge from waste-water treatment plants and so forth)." [Glossary of Environment Statistics\, Studies in Methods\, Series F\, No. 67\, United Nations\, New York\, 1997., http://stats.oecd.org/glossary/detail.asp?ID=3097]
 is_a: ENVO:00002264 ! waste
-relationship: composed_primarily_of ENVO:00002873 ! organic waste
+relationship: RO:0002473 ENVO:00002873 ! organic waste
 
 [Term]
 id: ENVO:01000374
@@ -15147,7 +15846,7 @@ created_by: ORCID:0000-0002-4366-3088
 id: ENVO:01000379
 name: highland subtropical
 def: "A highland subtropical condition is a subtropical condition in which increased elevation results in mild summers, cooler winters, and, in some instances,  snowfall associated with montly temperature averages below 22 but above -3 degrees Celsius." [Wikipedia:Subtropics]
-comment: This is an interesting overlap of a latitudinal and altitudinal condition. Some link between this condition and the altitudinal conditions should be considered. This condition corresponds to the Cfb and Cwb categories of Köppen climate classification.
+comment: This is an interesting overlap of a latitudinal and altitudinal condition. Some link between this condition and the altitudinal conditions should be considered. This condition corresponds to the Cfb and Cwb categories of Köppen climate classification. 
 is_a: ENVO:01000205 ! subtropical
 created_by: ORCID:0000-0002-4366-3088
 
@@ -15179,6 +15878,7 @@ name: temperate evergreen needleleaf forest
 comment: This class is one of the forest types as identified by the updated Global Forest Map (GFM 2000).
 synonym: "coniferous forest" BROAD []
 is_a: ENVO:01000433 ! needleleaf forest
+relationship: BFO:0000050 ENVO:01000211 ! temperate coniferous forest biome
 relationship: has_condition ENVO:01000206 ! temperate
 
 [Term]
@@ -15187,6 +15887,7 @@ name: tropical lowland evergreen broadleaf rain forest
 comment: This class is one of the forest types as identified by the updated Global Forest Map (GFM 2000).
 synonym: "ran forest" RELATED [http://www.eionet.europa.eu/gemet/concept/6949]
 is_a: ENVO:01000430 ! broadleaf forest
+relationship: BFO:0000050 ENVO:01000228 ! tropical moist broadleaf forest biome
 relationship: has_condition ENVO:01000204 ! tropical
 
 [Term]
@@ -15194,6 +15895,7 @@ id: ENVO:01000385
 name: temperate deciduous broadleaf forest
 comment: This class is one of the forest types as identified by the updated Global Forest Map (GFM 2000).
 is_a: ENVO:01000430 ! broadleaf forest
+relationship: BFO:0000050 ENVO:01000202 ! temperate broadleaf forest biome
 relationship: has_condition ENVO:01000206 ! temperate
 
 [Term]
@@ -15202,6 +15904,7 @@ name: temperate deciduous needleleaf forest
 comment: This class is one of the forest types as identified by the updated Global Forest Map (GFM 2000).
 synonym: "coniferous forest" BROAD []
 is_a: ENVO:01000433 ! needleleaf forest
+relationship: BFO:0000050 ENVO:01000211 ! temperate coniferous forest biome
 relationship: has_condition ENVO:01000206 ! temperate
 
 [Term]
@@ -15210,6 +15913,7 @@ name: tropical deciduous broadleaf forest
 comment: This class corresponds to  the "Tropical Deciduous / semi-deciduous broadleaf forest" category of the updated Global Forest Map classification (GFM 2000). To reconstruct the original class, an aggregate class with this and the "tropical semi-deciduous broadleaf forest" class can be made.
 synonym: "rain forest" RELATED [http://www.eionet.europa.eu/gemet/concept/6949]
 is_a: ENVO:01000430 ! broadleaf forest
+relationship: BFO:0000050 ENVO:01000200 ! tropical broadleaf forest biome
 relationship: has_condition ENVO:01000204 ! tropical
 
 [Term]
@@ -15218,6 +15922,7 @@ name: tropical semi-deciduous broadleaf forest
 comment: This class corresponds to  the "Tropical Deciduous / semi-deciduous broadleaf forest" category of the updated Global Forest Map classification (GFM 2000). To reconstruct the original class, an aggregate class with this and the "tropical deciduous broadleaf forest" class can be made.
 synonym: "rain forest" RELATED [http://www.eionet.europa.eu/gemet/concept/6949]
 is_a: ENVO:01000430 ! broadleaf forest
+relationship: BFO:0000050 ENVO:01000200 ! tropical broadleaf forest biome
 relationship: has_condition ENVO:01000204 ! tropical
 
 [Term]
@@ -15233,6 +15938,7 @@ name: temperate mixed needleleaf forest
 comment: This class corresponds to  the "Temperate Mixed broadleaf / needleleaf forest" category of the updated Global Forest Map classification (GFM 2000). To reconstruct the original class, an aggregate class with this and the "temperate mixed broadleaf forest" class can be made.
 synonym: "coniferous forest" RELATED []
 is_a: ENVO:01000431 ! mixed forest
+relationship: BFO:0000050 ENVO:01000212 ! temperate mixed forest biome
 relationship: has_condition ENVO:01000206 ! temperate
 
 [Term]
@@ -15241,6 +15947,7 @@ name: tropical semi-evergreen moist broadleaf forest
 comment: This class is one of the forest types as identified by the updated Global Forest Map (GFM 2000).
 synonym: "rain forest" RELATED [http://www.eionet.europa.eu/gemet/concept/6949]
 is_a: ENVO:01000430 ! broadleaf forest
+relationship: BFO:0000050 ENVO:01000228 ! tropical moist broadleaf forest biome
 relationship: has_condition ENVO:01000204 ! tropical
 
 [Term]
@@ -15284,6 +15991,7 @@ id: ENVO:01000397
 name: temperate broadleaf evergreen forest
 comment: This class is one of the forest types as identified by the updated Global Forest Map (GFM 2000).
 is_a: ENVO:01000430 ! broadleaf forest
+relationship: BFO:0000050 ENVO:01000202 ! temperate broadleaf forest biome
 relationship: has_condition ENVO:01000206 ! temperate
 
 [Term]
@@ -15299,6 +16007,7 @@ name: tropical needleleaf forest
 comment: This class is one of the forest types as identified by the updated Global Forest Map (GFM 2000).
 synonym: "coniferous forest" BROAD []
 is_a: ENVO:01000433 ! needleleaf forest
+relationship: BFO:0000050 ENVO:01000210 ! tropical coniferous forest biome
 relationship: has_condition ENVO:01000204 ! tropical
 
 [Term]
@@ -15319,7 +16028,7 @@ relationship: has_condition ENVO:01000204 ! tropical
 [Term]
 id: ENVO:01000402
 name: tropical mixed broadleaf forest
-comment: This class corresponds to  the "Tropical Mixed needleleaf / broadleaf forest" category of the updated Global Forest Map classification (GFM 2000). To reconstruct the original class, an aggregate class with this and the "tropical mixed needleleaf forest" class can be made.
+comment: This class corresponds to  the "Tropical Mixed needleleaf / broadleaf forest" category of the updated Global Forest Map classification (GFM 2000). To reconstruct the original class, an aggregate class with this and the "tropical mixed needleleaf forest" class can be made.\n
 is_a: ENVO:01000431 ! mixed forest
 relationship: has_condition ENVO:01000204 ! tropical
 
@@ -15329,6 +16038,10 @@ name: tropical mangrove
 comment: This class corresponds to  the "Tropical Mixed needleleaf / broadleaf forest" category of the updated Global Forest Map classification (GFM 2000). To reconstruct the original class, an aggregate class with this and the "tropical mixed needleleaf forest" class can be made.\n\nThe relationship between this "forest" class and the mangrove swamp must be clarified.
 synonym: "tropical mangrove forest" EXACT []
 is_a: ENVO:00000111 ! forest
+intersection_of: ENVO:00000111 ! forest
+intersection_of: BFO:0000050 ENVO:01000181 ! mangrove biome
+intersection_of: has_condition ENVO:01000204 ! tropical
+relationship: BFO:0000050 ENVO:01000181 ! mangrove biome
 relationship: has_condition ENVO:01000204 ! tropical
 
 [Term]
@@ -15345,7 +16058,7 @@ name: snow
 def: "Snow is an environmental material which is primarily composed of flakes of crystalline water ice." [Wikipedia:Snow]
 synonym: "snow" RELATED [http://www.eionet.europa.eu/gemet/concept/7769]
 is_a: ENVO:00010483 ! environmental material
-relationship: composed_primarily_of ENVO:01000277 ! water ice
+relationship: RO:0002473 ENVO:01000277 ! water ice
 
 [Term]
 id: ENVO:01000407
@@ -15353,12 +16066,13 @@ name: littoral zone
 def: "The littoral zone is the part of a sea, lake, or river that is close to the shore. The adjacency of water has many consequences including the generation of microclimates and impacts on the biology." [Wikipedia:Littoral_zone]
 comment: This class is intended to capture littoral zones that are associated with marine, freshwater, and any other aquatic environments. Note that there is no single definition of the extent of the "littoral zone", associated with any water body. Here, we use definitions that will be more familiar to marine biologists rather than military organisations, although the latter can be added on request.
 is_a: ENVO:01000408 ! environmental zone
+relationship: BFO:0000050 ENVO:01000317 ! aquatic environment
 
 [Term]
 id: ENVO:01000408
 name: environmental zone
 def: "An environmental zone is an environmental feature whose extent is determined by the presence or influence of one or more material entities or processes. An environmental zone may, itself, assume the role of an environmental feature." []
-comment: For example, a intertidal zone is that part of a coast which is exposed to air and water due to tidal processes. It determines the intertidal zone environment. This class is experimental and not suitable for annotation
+comment: For example, a intertidal zone is that part of a coast which is exposed to air and water due to tidal processes. It determines the intertidal zone environment. This class is experimental and not suitable for annotation! "Zone" is likely to become some form of BFO:site. It is intended to capture entities from both physiography and human geography.
 synonym: "environmental area" RELATED []
 is_a: ENVO:00002297 ! environmental feature
 
@@ -15379,30 +16093,41 @@ synonym: "intertidal zone" RELATED []
 synonym: "mediolittoral zone" RELATED [Wikipedia:Littoral_zone]
 synonym: "midlittoral zone" RELATED [Wikipedia:Littoral_zone]
 is_a: ENVO:01000408 ! environmental zone
+relationship: BFO:0000050 ENVO:01000125 ! marine littoral zone
 
 [Term]
 id: ENVO:01000411
 name: infralittoral zone
 def: "A zone which is part of the sublittoral zone and is dominated by algae. This zone usually extends up to five metres below the low water mark." [Wikipedia:Littoral_zone]
 is_a: ENVO:01000408 ! environmental zone
+relationship: BFO:0000050 ENVO:01000126 ! marine sub-littoral zone
 
 [Term]
 id: ENVO:01000412
 name: circalittoral zone
 def: "A zone which is part of the sublittoral zone and is dominated by sessile animals such as oysters. This zone usually begins at a depth greater than the infralittoral zone." []
 is_a: ENVO:01000408 ! environmental zone
+relationship: BFO:0000050 ENVO:01000126 ! marine sub-littoral zone
 
 [Term]
 id: ENVO:01000413
 name: old plant
 def: "A whole plant which is relatively old" []
 is_a: ENVO:01000009 ! biotic mesoscopic physical object
+is_a: PO:0000003
+intersection_of: PO:0000003
+intersection_of: RO:0000086 PATO:0000308
+relationship: RO:0000086 PATO:0000308
 
 [Term]
 id: ENVO:01000414
 name: young plant
 def: "A whole plant which is relatively young." []
 is_a: ENVO:01000009 ! biotic mesoscopic physical object
+is_a: PO:0000003
+intersection_of: PO:0000003
+intersection_of: RO:0000086 PATO:0000309
+relationship: RO:0000086 PATO:0000309
 
 [Term]
 id: ENVO:01000417
@@ -15429,6 +16154,7 @@ name: building part
 def: "A building part is a construction which is part of a building." []
 comment: Not recommended for annotation. This class is likely to be made into an inferred class as its subclasses are distributed among more meaningful superclasses (i.e. ceiling is_a surface layer). See for example, "building floor". The boundaries between building parts may be bona fide or fiat.
 is_a: ENVO:00000070 ! constructed feature
+relationship: BFO:0000050 ENVO:00000073 ! building
 
 [Term]
 id: ENVO:01000421
@@ -15462,6 +16188,7 @@ id: ENVO:01000424
 name: patio
 def: "A patio is a paved outdoor area, adjacent to a human house, and used for dining or recreation." [Wikipedia:Patio]
 is_a: ENVO:00000070 ! constructed feature
+relationship: RO:0002220 ENVO:01000418 ! human house
 
 [Term]
 id: ENVO:01000425
@@ -15474,6 +16201,7 @@ synonym: "restroom" RELATED []
 synonym: "toilet" BROAD []
 synonym: "toilet room" EXACT []
 is_a: ENVO:01000426 ! room
+relationship: BFO:0000051 ENVO:01000516 ! toilet fixture
 created_by: ORCID:0000-0002-4366-3088
 
 [Term]
@@ -15550,13 +16278,14 @@ synonym: "lava area" EXACT []
 synonym: "lava bed" EXACT [Wikipedia:Lava_field]
 synonym: "lava plain" EXACT [Wikipedia:Lava_field]
 is_a: ENVO:01000352 ! field
+relationship: BFO:0000051 ENVO:01000438 ! lava flow
 
 [Term]
 id: ENVO:01000438
 name: lava flow
 def: "A lava flow is a moving outpouring of lava, which is created during a non-explosive effusive eruption." []
 is_a: ENVO:00000000 ! geographic feature
-relationship: composed_primarily_of ENVO:01000231 ! lava
+relationship: RO:0002473 ENVO:01000231 ! lava
 
 [Term]
 id: ENVO:01000439
@@ -15573,6 +16302,9 @@ id: ENVO:01000441
 name: andesite
 def: "Andesite is an extrusive igneous, volcanic rock, of intermediate composition, with aphanitic to porphyritic texture. In a general sense, it is the intermediate type between basalt and dacite, and ranges from 57 to 63 percent silicon dioxide as illustrated in TAS diagrams. The mineral assemblage is typically dominated by plagioclase plus pyroxene and/or hornblende. Magnetite, zircon, apatite, ilmenite, biotite, and garnet are common accessory minerals. Alkali feldspar may be present in minor amounts." [Wikipedia:Andesite]
 is_a: ENVO:00002013 ! igneous rock
+intersection_of: ENVO:00002013 ! igneous rock
+intersection_of: RO:0001000 ENVO:01000233 ! intermediate lava
+relationship: RO:0001000 ENVO:01000233 ! intermediate lava
 
 [Term]
 id: ENVO:01000442
@@ -15591,6 +16323,7 @@ name: disturbed area
 def: "A disturbed area is an environmental zone which includes an ecosystem which was subject to an ecological disturbance. That is, the ecosystem in the area has undergone a pronounced change in response to a change in environmental conditions or other perturbation." [Wikipedia:Disturbance_(ecology)]
 comment: This is often used by plant collectors when early successional species are observed in an area.
 is_a: ENVO:01000408 ! environmental zone
+relationship: BFO:0000051 ENVO:01000254 ! environmental system
 
 [Term]
 id: ENVO:01000446
@@ -15603,6 +16336,7 @@ id: ENVO:01000447
 name: roadside
 def: "An environmental zone of varying area which is adjacent to a road." []
 is_a: ENVO:01000408 ! environmental zone
+relationship: RO:0002220 ENVO:00000064 ! road
 
 [Term]
 id: ENVO:01000448
@@ -15623,6 +16357,9 @@ name: atmospheric carbon dioxide
 def: "Atmospheric carbon dioxide is an environmental material composed of carbon dioxide in its gaseous form present in the atmosphere." []
 comment: This could also be considered a part of an environmental material like air.
 is_a: ENVO:00010483 ! environmental material
+relationship: BFO:0000050 ENVO:01000267 ! atmosphere
+relationship: RO:0000086 PATO:0001547
+relationship: RO:0002473 CHEBI:16526
 created_by: ORCID:0000-0002-4366-3088
 
 [Term]
@@ -15630,6 +16367,7 @@ id: ENVO:01000452
 name: environmental disposition
 def: "A disposition which is realised by an environmental system or system parts thereof." []
 comment: This class and its subclasses are experimental and are being developed with NCEAS use cases in mind.
+is_a: BFO:0000016
 created_by: ORCID:0000-0002-4366-3088
 
 [Term]
@@ -15658,7 +16396,7 @@ id: ENVO:01000456
 name: concrete masonry unit
 def: "A concrete masonry unit is a large, rectangular masonry unit primarily composed of concrete." [Adapted from Wikipedia:Concrete_masonry_unit]
 is_a: ENVO:01000457 ! masonry unit
-relationship: composed_primarily_of ENVO:01000458 ! concrete
+relationship: RO:0002473 ENVO:01000458 ! concrete
 created_by: ORCID:0000-0002-4366-3088
 
 [Term]
@@ -15674,6 +16412,7 @@ name: concrete
 def: "Concrete is a composite material composed of an aggregate bonded together with a fluid cement which hardens over time." [Adapted from Wikipedia:Concrete]
 comment: Missing the class for "aggregate" - tricky to define what it is, exactly. Again, seems more like some sort of material/disposition hybrid.
 is_a: ENVO:0010001 ! anthropogenic environmental material
+relationship: BFO:0000051 ENVO:01000462 ! masonry cement
 created_by: ORCID:0000-0002-4366-3088
 
 [Term]
@@ -15683,6 +16422,7 @@ def: "Asphaltic concrete is a concrete which uses refined asphalt as a cement." 
 synonym: "asphaltic concrete" EXACT []
 synonym: "road pavement" EXACT []
 is_a: ENVO:01000458 ! concrete
+relationship: BFO:0000051 ENVO:01000461 ! refined asphalt
 created_by: ORCID:0000-0002-4366-3088
 
 [Term]
@@ -15703,6 +16443,7 @@ name: refined asphalt
 def: "Refined asphalt is a sticky, black, and highly viscous liquid or semi-solid with a boiling point above 500 degrees Celsius, obtained from the fractional distillation of crude oil." [Adapted from Wikipedia:Asphalt]
 synonym: "refined bitumen" EXACT []
 is_a: ENVO:0010001 ! anthropogenic environmental material
+relationship: RO:0001000 ENVO:00002984 ! petroleum
 created_by: ORCID:0000-0002-4366-3088
 
 [Term]
@@ -15771,6 +16512,8 @@ name: building envelope
 def: "A building envelope is a building part composed of those building parts which physically separate the interior of a building from its surrounding environment.\nThe building envelope provides resistance to air, water, heat, light, and noise transfer. The three basic elements of a building envelope are a weather barrier, air barrier, and thermal barrier." [Adapted from Wikipedia:Building_envelope]
 synonym: "building enclosure" RELATED []
 is_a: ENVO:01000420 ! building part
+relationship: BFO:0000051 ENVO:01000469 ! exterior wall
+relationship: BFO:0000051 ENVO:01000472 ! building roof
 created_by: ORCID:0000-0002-4366-3088
 
 [Term]
@@ -15778,6 +16521,7 @@ id: ENVO:01000471
 name: ceiling
 synonym: "A ceiling is an overhead interior surface that covers the upper limit of a room. It is not generally considered a structural element, but a finished surface concealing the underside of the floor or roof structure above." RELATED [Wikipedia:Ceiling]
 is_a: ENVO:01000420 ! building part
+relationship: BFO:0000050 ENVO:01000426 ! room
 created_by: ORCID:0000-0002-4366-3088
 
 [Term]
@@ -15787,6 +16531,7 @@ def: "A roof is the covering on the uppermost part of a building which provides 
 comment: This class is meant to represent roofs which are parts of buildings, rather than a roofs of cave and other natural formations.
 synonym: "roof" BROAD []
 is_a: ENVO:01000420 ! building part
+relationship: BFO:0000050 ENVO:01000470 ! building envelope
 created_by: ORCID:0000-0002-4366-3088
 
 [Term]
@@ -15852,6 +16597,7 @@ name: glass
 def: "Glass is an amorphous (non-crystalline) solid which is often transparent." [Adapted from Wikipedia:Glass]
 comment: This class refers to all forms of glass. For the familiar form present in window panes and drinking glasses, consider silica-based glass.
 is_a: ENVO:00010483 ! environmental material
+relationship: RO:0000086 PATO:0001546
 created_by: ORCID:0000-0002-4366-3088
 
 [Term]
@@ -15906,6 +16652,7 @@ name: building floor
 def: "A building floor is a surface layer which is part of a building and used for walking." []
 comment: To be more precise, a subfloor and a floor covering may be specified. Please request these classes and propose definitions if they are needed.
 is_a: ENVO:00010504 ! surface layer
+relationship: BFO:0000050 ENVO:00000073 ! building
 created_by: ORCID:0000-0002-4366-3088
 
 [Term]
@@ -15914,7 +16661,7 @@ name: brick building floor
 def: "A brick building floor is a building floor that is composed primarily of brick material or is built from bricks." []
 synonym: "brick floor" BROAD []
 is_a: ENVO:01000486 ! building floor
-relationship: composed_primarily_of ENVO:01000474 ! brick material
+relationship: RO:0002473 ENVO:01000474 ! brick material
 created_by: ORCID:0000-0002-4366-3088
 
 [Term]
@@ -15924,7 +16671,7 @@ def: "A wooden building floor is a building floor that is composed primarily of 
 synonym: "wooden floor" BROAD []
 synonym: "wooden parquet floor" NARROW []
 is_a: ENVO:01000486 ! building floor
-relationship: composed_primarily_of ENVO:00002040 ! wood
+relationship: RO:0002473 ENVO:00002040 ! wood
 created_by: ORCID:0000-0002-4366-3088
 
 [Term]
@@ -15936,7 +16683,7 @@ synonym: "cement building floor" RELATED []
 synonym: "cement floor" RELATED []
 synonym: "concrete floor" BROAD []
 is_a: ENVO:01000486 ! building floor
-relationship: composed_primarily_of ENVO:01000458 ! concrete
+relationship: RO:0002473 ENVO:01000458 ! concrete
 created_by: ORCID:0000-0002-4366-3088
 
 [Term]
@@ -15946,7 +16693,7 @@ def: "A sandy building floor is a building floor that is composed primarily of s
 synonym: "sand floor" BROAD []
 synonym: "sandy floor" BROAD []
 is_a: ENVO:01000486 ! building floor
-relationship: composed_primarily_of ENVO:01000017 ! sand
+relationship: RO:0002473 ENVO:01000017 ! sand
 created_by: ORCID:0000-0002-4366-3088
 
 [Term]
@@ -15955,7 +16702,7 @@ name: glass building floor
 def: "A glass building floor is a building floor which is composed primarily of glass." []
 synonym: "glass floor" BROAD []
 is_a: ENVO:01000486 ! building floor
-relationship: composed_primarily_of ENVO:01000480 ! glass
+relationship: RO:0002473 ENVO:01000480 ! glass
 created_by: ORCID:0000-0002-4366-3088
 
 [Term]
@@ -15973,7 +16720,7 @@ def: "A stone building floor is a building floor that is composed primarily of r
 synonym: "rock floor" BROAD []
 synonym: "stone floor" BROAD []
 is_a: ENVO:01000486 ! building floor
-relationship: composed_primarily_of ENVO:00001995 ! rock
+relationship: RO:0002473 ENVO:00001995 ! rock
 created_by: ORCID:0000-0002-4366-3088
 
 [Term]
@@ -15984,7 +16731,7 @@ synonym: "thatch exterior wall" EXACT []
 synonym: "thatch wall" BROAD []
 synonym: "thatched wall" BROAD []
 is_a: ENVO:01000469 ! exterior wall
-relationship: composed_primarily_of ENVO:01000473 ! thatch
+relationship: RO:0002473 ENVO:01000473 ! thatch
 created_by: ORCID:0000-0002-4366-3088
 
 [Term]
@@ -15993,7 +16740,7 @@ name: stone exterior wall
 def: "A stone exterior wall is an exterior wall that is composed primarily of rock." []
 synonym: "stone wall" BROAD []
 is_a: ENVO:01000469 ! exterior wall
-relationship: composed_primarily_of ENVO:00001995 ! rock
+relationship: RO:0002473 ENVO:00001995 ! rock
 created_by: ORCID:0000-0002-4366-3088
 
 [Term]
@@ -16002,7 +16749,7 @@ name: straw exterior wall
 def: "A straw exterior wall is an exterior wall that is composed primarily of straw." []
 synonym: "straw wall" BROAD []
 is_a: ENVO:01000469 ! exterior wall
-relationship: composed_primarily_of ENVO:00003869 ! straw
+relationship: RO:0002473 ENVO:00003869 ! straw
 created_by: ORCID:0000-0002-4366-3088
 
 [Term]
@@ -16011,7 +16758,7 @@ name: mud exterior wall
 def: "A mud exterior wall is an exterior wall that is composed primarily of mud." []
 synonym: "mud wall" BROAD []
 is_a: ENVO:01000469 ! exterior wall
-relationship: composed_primarily_of ENVO:01000001 ! mud
+relationship: RO:0002473 ENVO:01000001 ! mud
 created_by: ORCID:0000-0002-4366-3088
 
 [Term]
@@ -16029,6 +16776,7 @@ def: "A pole-reinforced mud exterior wall is a mud exterior wall which is suppor
 synonym: "mud and poles exterior wall" EXACT []
 synonym: "mud and poles wall" BROAD []
 is_a: ENVO:01000497 ! mud exterior wall
+relationship: BFO:0000051 ENVO:01000498 ! pole
 created_by: ORCID:0000-0002-4366-3088
 
 [Term]
@@ -16037,7 +16785,8 @@ name: brick exterior wall
 def: "A brick exterior wall is an exterior wall that is built from bricks." []
 synonym: "brick wall" BROAD []
 is_a: ENVO:01000469 ! exterior wall
-relationship: composed_primarily_of ENVO:01000474 ! brick material
+relationship: BFO:0000051 ENVO:01000475 ! brick
+relationship: RO:0002473 ENVO:01000474 ! brick material
 created_by: ORCID:0000-0002-4366-3088
 
 [Term]
@@ -16061,7 +16810,8 @@ def: "A burnt brick exterior wall is an exterior wall that is built from burnt b
 synonym: "burnt brick exterior wall" EXACT []
 synonym: "burnt-brick wall" BROAD []
 is_a: ENVO:01000500 ! brick exterior wall
-relationship: composed_primarily_of ENVO:01000474 ! brick material
+relationship: BFO:0000051 ENVO:01000501 ! burnt brick
+relationship: RO:0002473 ENVO:01000474 ! brick material
 created_by: ORCID:0000-0002-4366-3088
 
 [Term]
@@ -16071,7 +16821,8 @@ def: "An unburnt brick exterior wall is an exterior wall that is built from unbu
 synonym: "brick wall" BROAD []
 synonym: "unburnt brick exterior wall" EXACT []
 is_a: ENVO:01000500 ! brick exterior wall
-relationship: composed_primarily_of ENVO:01000474 ! brick material
+relationship: BFO:0000051 ENVO:01000502 ! unburnt brick
+relationship: RO:0002473 ENVO:01000474 ! brick material
 created_by: ORCID:0000-0002-4366-3088
 
 [Term]
@@ -16080,7 +16831,8 @@ name: concrete exterior wall
 def: "A stone exterior wall is an exterior wall that is composed primarily of rock." []
 synonym: "concrete wall" BROAD []
 is_a: ENVO:01000469 ! exterior wall
-relationship: composed_primarily_of ENVO:01000458 ! concrete
+relationship: BFO:0000051 ENVO:01000456 ! concrete masonry unit
+relationship: RO:0002473 ENVO:01000458 ! concrete
 created_by: ORCID:0000-0002-4366-3088
 
 [Term]
@@ -16088,6 +16840,7 @@ id: ENVO:01000507
 name: iron sheet
 def: "An iron sheet is a mass of iron which has been forged into a roughly planar form of less than 6 millimetres in thickness." [Adapted from Wikipedia:Sheet_metal]
 is_a: ENVO:00003074 ! manufactured product
+relationship: RO:0002473 CHEBI:18248
 created_by: ORCID:0000-0002-4366-3088
 
 [Term]
@@ -16098,6 +16851,7 @@ synonym: "iron sheet wall" EXACT []
 synonym: "sheet iron wall" BROAD []
 synonym: "sheet-iron wall" BROAD []
 is_a: ENVO:01000469 ! exterior wall
+relationship: BFO:0000051 ENVO:01000507 ! iron sheet
 created_by: ORCID:0000-0002-4366-3088
 
 [Term]
@@ -16108,6 +16862,7 @@ synonym: "iron sheet building roof" EXACT []
 synonym: "sheet iron roof" BROAD []
 synonym: "sheet-iron roof" BROAD []
 is_a: ENVO:01000472 ! building roof
+relationship: BFO:0000051 ENVO:01000507 ! iron sheet
 created_by: ORCID:0000-0002-4366-3088
 
 [Term]
@@ -16117,7 +16872,7 @@ def: "A thatched building roof is a building roof that is built by thatching (or
 synonym: "thatch roof" BROAD []
 synonym: "thatched roof" BROAD []
 is_a: ENVO:01000472 ! building roof
-relationship: composed_primarily_of ENVO:01000473 ! thatch
+relationship: RO:0002473 ENVO:01000473 ! thatch
 created_by: ORCID:0000-0002-4366-3088
 
 [Term]
@@ -16153,6 +16908,7 @@ synonym: "tile building roof" EXACT []
 synonym: "tile roof" BROAD []
 synonym: "tiled roof" BROAD []
 is_a: ENVO:01000472 ! building roof
+relationship: BFO:0000051 ENVO:01000514 ! tile
 created_by: ORCID:0000-0002-4366-3088
 
 [Term]
@@ -16171,6 +16927,7 @@ def: "A pit latrine is a latrine which is constructed by digging a hole in the g
 comment: This class refers to human latrines. Note that some pit latrines can use pour-flush mechanisms. "Infectious diarrhea resulted in about 0.7 million deaths in children under five years old in 2011 and 250 million lost school days.[4][5] Pit latrines are the lowest cost method of separating feces from people.[3]" - Wikipedia:Pit_latrine
 synonym: "pit toilet" EXACT []
 is_a: ENVO:01000519 ! latrine
+relationship: BFO:0000051 ENVO:01000522 ! latrine pit
 created_by: ORCID:0000-0002-4366-3088
 
 [Term]
@@ -16204,6 +16961,7 @@ def: "A pit latrine with a slab floor is a pit latrine which has a latrine slab 
 comment: This class refers to human latrines. "Infectious diarrhea resulted in about 0.7 million deaths in children under five years old in 2011 and 250 million lost school days.[4][5] Pit latrines are the lowest cost method of separating feces from people.[3]" - Wikipedia:Pit_latrine
 synonym: "pit toilet" EXACT []
 is_a: ENVO:01000517 ! pit latrine
+relationship: BFO:0000051 ENVO:01000520 ! latrine slab
 created_by: ORCID:0000-0002-4366-3088
 
 [Term]
@@ -16263,6 +17021,7 @@ def: "A ventilated improved pit latrine is a pit latrine which includes a vent p
 synonym: "ventilated pit latrine" BROAD []
 synonym: "VIP latrine" EXACT []
 is_a: ENVO:01000517 ! pit latrine
+relationship: BFO:0000051 ENVO:01000522 ! latrine pit
 created_by: ORCID:0000-0002-4366-3088
 
 [Term]
@@ -16270,6 +17029,8 @@ id: ENVO:01000531
 name: covered latrine
 def: "A covered latrine is a building which comprises a latrine sheltered by an outhouse." [Adapted from Wikipedia:Latrine]
 is_a: ENVO:00000073 ! building
+relationship: BFO:0000051 ENVO:01000519 ! latrine
+relationship: BFO:0000051 ENVO:01000524 ! outhouse
 created_by: ORCID:0000-0002-4366-3088
 
 [Term]
@@ -16277,6 +17038,7 @@ id: ENVO:01000532
 name: covered pit latrine
 def: "A covered pit latrine is a building which comprises a pit latrine sheltered by an outhouse." [Adapted from Wikipedia:Latrine]
 is_a: ENVO:01000531 ! covered latrine
+relationship: BFO:0000051 ENVO:01000517 ! pit latrine
 created_by: ORCID:0000-0002-4366-3088
 
 [Term]
@@ -16284,6 +17046,7 @@ id: ENVO:01000533
 name: covered pit latrine with slab floor
 def: "A covered pit latrine with slab is a building which comprises a pit latrine with a slab floor sheltered by an outhouse." [Adapted from Wikipedia:Latrine]
 is_a: ENVO:01000532 ! covered pit latrine
+relationship: BFO:0000051 ENVO:01000520 ! latrine slab
 created_by: ORCID:0000-0002-4366-3088
 
 [Term]
@@ -16323,6 +17086,7 @@ id: ENVO:01000536
 name: factory
 def: "A factory (previously manufactory) or manufacturing plant is an industrial site, usually consisting of buildings and machinery, or more commonly a complex having several buildings, where workers manufacture goods or operate machines processing one product into another." [Wikipedia:Factory]
 is_a: ENVO:00000070 ! constructed feature
+relationship: BFO:0000051 ENVO:00003861 ! industrial building
 created_by: ORCID:0000-0002-4366-3088
 
 [Term]
@@ -16331,6 +17095,9 @@ name: atmospheric ozone
 def: "Atmospheric ozone is an environmental material primarily composed of ozone in its gaseous form and present in the atmosphere." []
 synonym: "atmospheric ozone" RELATED [http://www.eionet.europa.eu/gemet/concept/632] {def="A triatomic molecule of oxygen; a natural constituent of the atmosphere, with the highest concentrations in the ozone layer or stratosphere; it is found at a level between 15 and 30 km above the Earth, which prevents harmful ultraviolet B radiation, which causes skin cancer and threatens plant life, from reaching the ground. The fragile shield is being damaged by chemicals released on Earth. The main chemicals that are depleting stratospheric ozone are chlorofluorocarbons (CFCs), which are used in refrigerators, aerosols and as cleaners in many industries and halons, which are used in fire extinguishers. The damage is caused when these chemicals release highly reactive forms of chlorine and bromine. (Source: GILP96 / WRIGHT)"}
 is_a: ENVO:00010483 ! environmental material
+relationship: BFO:0000050 ENVO:01000267 ! atmosphere
+relationship: RO:0000086 PATO:0001547
+relationship: RO:0002473 CHEBI:25812
 created_by: ORCID:0000-0002-4366-3088
 
 [Term]
@@ -16361,6 +17128,8 @@ id: ENVO:01000541
 name: thermosphere
 def: "The thermosphere is a part of the earth's atmosphere that begins at about 50 miles (80 kilometers) above the earth's surface, extends to outer space, and is characterized by steadily increasing temperature with height" [http://www.merriam-webster.com/dictionary/thermosphere]
 is_a: ENVO:01000543 ! atmospheric layer
+relationship: BFO:0000050 ENVO:01000267 ! atmosphere
+relationship: RO:0002220 ENVO:01000539 ! mesosphere
 
 [Term]
 id: ENVO:01000542
@@ -16370,6 +17139,8 @@ comment: "The ozone layer contains less than 10 parts per million of ozone, whil
 synonym: "ozone layer" RELATED [http://www.eionet.europa.eu/gemet/concept/5993]
 synonym: "ozone shield" EXACT [Adapted from Wikipedia:Ozone_layer]
 is_a: ENVO:01000543 ! atmospheric layer
+relationship: BFO:0000050 ENVO:01000538 ! stratosphere
+relationship: has_increased_levels_of CHEBI:25812
 
 [Term]
 id: ENVO:01000543
@@ -16378,6 +17149,7 @@ def: "A layer that is part of the atmosphere." []
 comment: This could be made into an inferred class, rather than having asserted subclasses.
 synonym: "atmospheric layering" RELATED [http://www.eionet.europa.eu/gemet/concept/627]
 is_a: ENVO:01000281 ! layer
+relationship: BFO:0000050 ENVO:01000267 ! atmosphere
 created_by: ORCID:0000-0002-4366-3088
 
 [Term]
@@ -16394,6 +17166,7 @@ name: ionosphere
 def: "The ionosphere is a layer of the Earth's atmosphere which extends from about 60 to 1,000 kilometers above the planetary surface and is ionised by solar radiation. It includes the thermosphere and parts of the mesosphere and exosphere." [Adapted from Wikipedia:Ionosphere]
 synonym: "ionosphere" RELATED [http://www.eionet.europa.eu/gemet/concept/4492]
 is_a: ENVO:01000543 ! atmospheric layer
+relationship: BFO:0000051 ENVO:01000541 ! thermosphere
 created_by: ORCID:0000-0002-4366-3088
 
 [Term]
@@ -16401,6 +17174,7 @@ id: ENVO:01000546
 name: exosphere
 def: "The exosphere is an atmospheric layer where molecules are gravitationally bound to a planetary body, but where their density is too low for them to behave as a gas by colliding with each other. In the case of bodies with substantial atmospheres, such as Earth's atmosphere, the exosphere is the uppermost layer, where the atmosphere thins out and merges with interplanetary space. It is located directly above the thermosphere." [Adapted from Wikipedia:Exosphere]
 is_a: ENVO:01000543 ! atmospheric layer
+relationship: RO:0002220 ENVO:01000541 ! thermosphere
 created_by: ORCID:0000-0002-4366-3088
 
 [Term]
@@ -16411,7 +17185,7 @@ synonym: "glaze" BROAD []
 synonym: "glaze" RELATED []
 synonym: "glaze ice" RELATED [http://www.eionet.europa.eu/gemet/concept/12091]
 is_a: ENVO:01000281 ! layer
-relationship: composed_primarily_of ENVO:01000277 ! water ice
+relationship: RO:0002473 ENVO:01000277 ! water ice
 created_by: ORCID:0000-0002-4366-3088
 
 [Term]
@@ -16420,7 +17194,7 @@ name: eutrophic lake
 def: "A lake which has nutrient-rich water." []
 is_a: ENVO:00000020 ! lake
 is_a: ENVO:01001308 ! hydroform
-relationship: composed_primarily_of ENVO:00002224 ! eutrophic water
+relationship: RO:0002473 ENVO:00002224 ! eutrophic water
 created_by: ORCID:0000-0002-4366-3088
 
 [Term]
@@ -16433,6 +17207,7 @@ id: ENVO:01001303
 name: environmental role
 def: "A role which is may be realised by an environmental system" []
 comment: Experimental class.
+is_a: CHEBI:50906
 created_by: ORCID:0000-0002-4366-3088
 
 [Term]
@@ -16442,6 +17217,7 @@ def: "An oasis is a vegetated area located in a desert, supplied with water from
 synonym: "cienaga" RELATED []
 xref: Wikipedia:Oasis
 is_a: ENVO:01001305 ! vegetated area
+relationship: BFO:0000051 ENVO:00000027 ! spring
 created_by: ORCID:0000-0002-4366-3088
 
 [Term]
@@ -16456,14 +17232,19 @@ id: ENVO:01001306
 name: bone element environment
 def: "An environment which is determined by a bone element." []
 is_a: ENVO:2100000 ! anatomical entity environment
+intersection_of: ENVO:01000254 ! environmental system
+intersection_of: ENVO:2100001 UBERON:0001474 ! determined by
+relationship: ENVO:2100001 UBERON:0001474 ! determined by
 
 [Term]
 id: ENVO:01001308
 name: hydroform
 def: "A hydroform is a geographic feature which is primarily composed of water held in shape by an environmental process." []
-comment: Should create links to envrionmental process with new relation like "sustained_by"
+comment: Should create links to envrionmental process with new relation like "sustained_by" {created_by="ORCID:0000-0002-4366-3088"}
 is_a: ENVO:00000000 ! geographic feature
-relationship: composed_primarily_of ENVO:00002006 ! water
+intersection_of: ENVO:00000000 ! geographic feature
+intersection_of: RO:0002473 ENVO:00002006 ! water
+relationship: RO:0002473 ENVO:00002006 ! water
 
 [Term]
 id: ENVO:02000000
@@ -16490,6 +17271,11 @@ id: ENVO:02000003
 name: pockmark field
 def: "A pockmark field is an undersea feature formed by shallow seabed depressions, typically several tens of metres across and a few metres deep. Generally, they are formed in soft, fine-grained seabed sediments by the escape of fluids (gas or water, but mainly methane) into the water column." [GEMINA:ag, Wikipedia:Pockmark]
 is_a: ENVO:01000352 ! field
+intersection_of: ENVO:01000352 ! field
+intersection_of: BFO:0000050 ENVO:00000482 ! sea floor
+intersection_of: BFO:0000051 ENVO:01000160 ! marine pockmark
+relationship: BFO:0000050 ENVO:00000482 ! sea floor
+relationship: BFO:0000051 ENVO:01000160 ! marine pockmark
 
 [Term]
 id: ENVO:02000004
@@ -16599,6 +17385,7 @@ def: "A natural bodily fluid or secretion such as blood, semen, saliva, blood pl
 comment: This differs from UBERON's treatment of bodily fluids and will probably be revised.
 xref: Wikipedia:Bodily_fluid
 is_a: ENVO:01000155 ! organic material
+relationship: RO:0002473 UBERON:0006314
 
 [Term]
 id: ENVO:02000020
@@ -16606,6 +17393,7 @@ name: blood
 def: "Blood is a bodily fluid composed of blood plasma and blood cells suspended within the plasma that circulates around the organism's body. Blood performs may important functions including the supplying of oxygen and nutrients, removal of waste, circulation of white blood cells, detection of antibodes, coagulation, transportation of antibodies and the regulation of pH and body temperature." [Wikipedia:Blood, Wikipedia:Body_fluid]
 xref: Wikipedia:Blood
 is_a: ENVO:02000019 ! bodily fluid
+relationship: RO:0002473 UBERON:0000178
 
 [Term]
 id: ENVO:02000021
@@ -16613,6 +17401,7 @@ name: amniotic fluid
 def: "Amniotic fluid is a bodily fluid consisting of watery liquid surrounding and cushioning a growing fetus within the amnion. It allows the fetus to move freely without the walls of the uterus being too tight against its body. Buoyancy is also provided." [URL:http\://en.wikipedia.org/wiki/Amniotic_fluid]
 xref: Wikipedia:Amniotic_fluid
 is_a: ENVO:02000019 ! bodily fluid
+relationship: RO:0002473 UBERON:0000173
 
 [Term]
 id: ENVO:02000022
@@ -16620,6 +17409,7 @@ name: excreta
 def: "Excreta are bodily fluids consisting of waste matter, such as sweat or feces, discharged from the body." [URL:http\://medical-dictionary.thefreedictionary.com/excreta]
 xref: Wikipedia:Excreta
 is_a: ENVO:02000019 ! bodily fluid
+relationship: RO:0002473 UBERON:0000174
 
 [Term]
 id: ENVO:02000023
@@ -16628,6 +17418,7 @@ def: "Bile is a bodily fluid consisting of a bitter, yellow or green alkaline fl
 synonym: "gall" RELATED []
 xref: Wikipedia:Bile
 is_a: ENVO:02000019 ! bodily fluid
+relationship: RO:0002473 UBERON:0001970
 
 [Term]
 id: ENVO:02000024
@@ -16635,6 +17426,7 @@ name: aqueous humour
 def: "Aqueous humour is a bodily fluid consisting of a thick watery substance that fills the space between the lens and the cornea." [Wikipedia:Aqueous_humour]
 xref: Wikipedia:Aqueous_humour
 is_a: ENVO:02000019 ! bodily fluid
+relationship: RO:0002473 UBERON:0001796
 
 [Term]
 id: ENVO:02000025
@@ -16650,6 +17442,7 @@ def: "Chyme is a bodily fluid consisting of a liquid substance found in the stom
 synonym: "chymus" EXACT []
 xref: Wikipedia:Chyme
 is_a: ENVO:02000019 ! bodily fluid
+relationship: RO:0002473 UBERON:0000910
 
 [Term]
 id: ENVO:02000027
@@ -16657,6 +17450,7 @@ name: blood plasma
 def: "Blood plasma is a bodily fluid that comprises the liquid component of blood, in which the blood cells are suspended. It makes up about 55% of total blood volume." [Wikipedia:Blood_plasma]
 xref: Wikipedia:Blood_plasma
 is_a: ENVO:02000019 ! bodily fluid
+relationship: RO:0002473 UBERON:0001969
 
 [Term]
 id: ENVO:02000028
@@ -16674,6 +17468,7 @@ synonym: "CSF" EXACT []
 synonym: "Liquor cerebrospinalis" EXACT []
 xref: Wikipedia:Cerebrospinal_fluid
 is_a: ENVO:02000019 ! bodily fluid
+relationship: RO:0002473 UBERON:0001359
 
 [Term]
 id: ENVO:02000030
@@ -16681,6 +17476,7 @@ name: chyle
 def: "Chyle is a bodily fluid consisting of a milky fluid consisting of lymph and emulsified fats; formed in the small intestine during digestion of ingested fats." [URL:http\://wordnet.princeton.edu/perl/webwn?s=chyle, Wikipedia:Chyle]
 xref: Wikipedia:Chyle
 is_a: ENVO:02000019 ! bodily fluid
+relationship: RO:0002473 UBERON:0000911
 
 [Term]
 id: ENVO:02000031
@@ -16688,6 +17484,7 @@ name: breast milk
 def: "Breast milk is a bodily fluid produced that is secreted from two milk-secreting glandular organs on a female's chest." [URL:http\://www.fcs.uga.edu/ext/bbb/info/glossary.htm, Wikipedia:Breast_milk]
 xref: Wikipedia:Breast_milk
 is_a: ENVO:02000019 ! bodily fluid
+relationship: RO:0002473 UBERON:0001913
 
 [Term]
 id: ENVO:02000032
@@ -16697,6 +17494,7 @@ synonym: "vitreous body" EXACT []
 synonym: "vitreous humour" EXACT []
 xref: Wikipedia:Vitreous_humor
 is_a: ENVO:02000019 ! bodily fluid
+relationship: RO:0002473 UBERON:0001797
 
 [Term]
 id: ENVO:02000033
@@ -16704,6 +17502,7 @@ name: pleural effusion
 def: "Pleural effusion is a bodily fluid that is produced in exess and accumulates in the pleural cavity, the fluid-filled space that surrounds the lungs. Excessive amounts of such fluid can impair breathing by limiting the expansion of the lungs during inhalation." [Wikipedia:Pleural_fluid]
 xref: Wikipedia:Pleural_effusion
 is_a: ENVO:02000019 ! bodily fluid
+relationship: RO:0002473 UBERON:0000175
 
 [Term]
 id: ENVO:02000034
@@ -16718,6 +17517,7 @@ id: ENVO:02000035
 name: oronasal secretion
 def: "Oronasal secretion is a bodily fluid secreted from the body via the mouth or nose." [Gemina:ls]
 is_a: ENVO:02000019 ! bodily fluid
+relationship: RO:0002473 UBERON:0000176
 
 [Term]
 id: ENVO:02000036
@@ -16725,6 +17525,7 @@ name: saliva
 def: "Saliva is a slightly alkaline secretion of water, mucin, protein, salts, and often a starch-splitting enzyme (as ptyalin) that is secreted into the mouth by salivary glands, lubricates ingested food, and often begins the breakdown of starches." [URL:http\://medical.merriam-webster.com/medical/saliva]
 xref: Wikipedia:Saliva
 is_a: ENVO:02000019 ! bodily fluid
+relationship: RO:0002473 UBERON:0001836
 
 [Term]
 id: ENVO:02000037
@@ -16732,6 +17533,7 @@ name: sebum
 def: "Sebum is an oily bodily fluid secreted from the sebaceous glads that is made of fat (lipids) and the debris of dead fat-producing cells. In the glands, sebum is produced within specialized cells and is released as these cells burst. Sebum acts to protect and waterproof hair and skin, and keep them from becoming dry, brittle and cracked. It can also inhibit the growth of microorganisms on skin." [Wikipedia:Sebaceous_gland]
 xref: Wikipedia:Sebum
 is_a: ENVO:02000019 ! bodily fluid
+relationship: RO:0002473 UBERON:0001866
 
 [Term]
 id: ENVO:02000038
@@ -16746,6 +17548,7 @@ name: synovial fluid
 def: "Synovial fluid is a bodily fluid secreted by the synovial membrane into the joint cavity to form a thin layer at the surface of cartilage." [Wikipedia:Synovial_fluid]
 xref: Wikipedia:Synovial_fluid
 is_a: ENVO:02000019 ! bodily fluid
+relationship: RO:0002473 UBERON:0001090
 
 [Term]
 id: ENVO:02000040
@@ -16753,6 +17556,7 @@ name: mucus
 def: "Mucus is a bodily fluid consisting of a slippery secretion of the lining of the mucous membranes in the body. It is a viscous colloid containing antiseptic enzymes (such as lysozyme) and immunoglobulins. Mucus is produced by goblet cells in the mucous membranes that cover the surfaces of the membranes. It is made up of mucins and inorganic salts suspended in water." [Wikipedia:Mucus]
 xref: Wikipedia:Mucus
 is_a: ENVO:02000019 ! bodily fluid
+relationship: RO:0002473 UBERON:0000912
 
 [Term]
 id: ENVO:02000041
@@ -16760,6 +17564,7 @@ name: lymph
 def: "Lymph is a bodily fluid consisting of a usually clear coagulable fluid that passes from intercellular spaces of body tissue into the lymphatic vessels, is discharged into the blood by way of the thoracic duct and right lymphatic duct, and resembles blood plasma in containing white blood cells and especially lymphocytes but normally few red blood cells and no platelets." [URL:http\://medical.merriam-webster.com/medical/lymph]
 xref: Wikipedia:Lymph
 is_a: ENVO:02000019 ! bodily fluid
+relationship: RO:0002473 UBERON:0002391
 
 [Term]
 id: ENVO:02000042
@@ -16769,12 +17574,13 @@ synonym: "intercellular fluid" EXACT []
 synonym: "tissue fluid" EXACT []
 xref: Wikipedia:Interstitial_fluid
 is_a: ENVO:02000019 ! bodily fluid
+relationship: RO:0002473 UBERON:0000913
 
 [Term]
 id: ENVO:02000043
 name: biological product
 def: "A biological product is an environmental substrate comprised of any virus, therapeutic serum, toxin, antitoxin, or analogous product available to prevent, treat or cure diseases or injuries in man." [URL:http\://www3.niaid.nih.gov/research/resources/DAIDSClinRsrch/Glossary/]
-comment: This definition should be revised, it is currently too ambiguous.
+comment: This definition should be revised, it is currently too ambiguous. {created_by="ORCID:0000-0002-4366-3088"}
 is_a: ENVO:0010001 ! anthropogenic environmental material
 
 [Term]
@@ -16814,6 +17620,9 @@ id: ENVO:02000049
 name: coastal water body
 def: "Coastal water is a marine water body bordering a coast." [Wikipedia:Coastal]
 is_a: ENVO:00001999 ! marine water body
+intersection_of: ENVO:00001999 ! marine water body
+intersection_of: RO:0002220 ENVO:00000303 ! coast
+relationship: RO:0002220 ENVO:00000303 ! coast
 
 [Term]
 id: ENVO:02000050
@@ -16915,6 +17724,7 @@ is_a: ENVO:0010124 ! pastry
 id: ENVO:02000064
 name: cake icing
 is_a: ENVO:0010092 ! processed food product
+relationship: BFO:0000050 ENVO:02000063 ! cake
 
 [Term]
 id: ENVO:02000065
@@ -17072,12 +17882,17 @@ is_a: ENVO:00003069 ! ovine milk
 [Term]
 id: ENVO:02500000
 name: environmental system process
+is_a: BFO:0000015
+relationship: RO:0002233 ENVO:01000254 ! environmental system
 
 [Term]
 id: ENVO:02500001
 name: desertification
 def: "a type of land degradation in which a relatively dry land region becomes increasingly arid, typically losing its bodies of water as well as vegetation and wildlife." [https://en.wikipedia.org/wiki/Desertification]
 is_a: ENVO:02500000 ! environmental system process
+intersection_of: ENVO:02500000 ! environmental system process
+intersection_of: RO:0002234 ENVO:00000097 ! desert
+relationship: RO:0002234 ENVO:00000097 ! desert
 
 [Term]
 id: ENVO:02500002
@@ -17089,6 +17904,7 @@ is_a: ENVO:02500000 ! environmental system process
 id: ENVO:02500003
 name: atmospheric process
 is_a: ENVO:02500000 ! environmental system process
+relationship: RO:0000057 ENVO:01000267 ! atmosphere
 
 [Term]
 id: ENVO:02500004
@@ -17120,11 +17936,14 @@ is_a: ENVO:02500030 ! biogeochemical process
 id: ENVO:02500010
 name: carbon cycling
 is_a: ENVO:02500009 ! biogeochemical cycling
+relationship: RO:0000057 CHEBI:33582
 
 [Term]
 id: ENVO:02500011
 name: afforestation
 is_a: ENVO:02500000 ! environmental system process
+intersection_of: ENVO:02500000 ! environmental system process
+intersection_of: ENVO:02500006 ENVO:00000111 ! forest
 relationship: ENVO:02500006 ENVO:00000111 ! forest
 
 [Term]
@@ -17142,11 +17961,17 @@ is_a: ENVO:02500000 ! environmental system process
 id: ENVO:02500014
 name: forest process
 is_a: ENVO:02500000 ! environmental system process
+intersection_of: ENVO:02500000 ! environmental system process
+intersection_of: RO:0000057 ENVO:00000111 ! forest
+relationship: RO:0000057 ENVO:00000111 ! forest
 
 [Term]
 id: ENVO:02500015
 name: forest area expansion
 is_a: ENVO:02500000 ! environmental system process
+intersection_of: ENVO:02500000 ! environmental system process
+intersection_of: ENVO:02500016 ENVO:00000111 ! forest
+relationship: BFO:0000051 ENVO:02500011 ! afforestation
 relationship: ENVO:02500016 ENVO:00000111 ! forest
 
 [Term]
@@ -17154,33 +17979,44 @@ id: ENVO:02500017
 name: anthropogenic reforestation
 is_a: ENVO:02500013 ! reforestation
 is_a: ENVO:02500027 ! anthropogenic environmental process
+intersection_of: ENVO:02500013 ! reforestation
+intersection_of: RO:0002218 NCBITaxon:9606
+relationship: RO:0002218 NCBITaxon:9606
 
 [Term]
 id: ENVO:02500018
 name: algal bloom process
 comment: Notes: need to capture that this is an increase in surface area (where boundaries allow) and density. Also need to capture this is a rapid/acute expansion. TODO: import PATO
 is_a: ENVO:02500000 ! environmental system process
+relationship: BFO:0000066 ENVO:01000317 ! aquatic environment
 relationship: ENVO:02500020 ENVO:02500019 ! alga
+relationship: RO:0000057 ENVO:2000004 ! algal bloom
 
 [Term]
 id: ENVO:02500019
 name: alga
 comment: To be ceded to external ontology (e.g. pco)
+is_a: NCBITaxon:131567
 
 [Term]
 id: ENVO:02500021
 name: algal bloom collapse
 is_a: ENVO:02500000 ! environmental system process
+relationship: RO:0002229 ENVO:02500018 ! algal bloom process
 
 [Term]
 id: ENVO:02500022
 name: algal bloom process phase
 is_a: ENVO:02500000 ! environmental system process
+intersection_of: ENVO:02500000 ! environmental system process
+intersection_of: BFO:0000050 ENVO:02500018 ! algal bloom process
+relationship: BFO:0000050 ENVO:02500018 ! algal bloom process
 
 [Term]
 id: ENVO:02500023
 name: algal production
 is_a: ENVO:02500022 ! algal bloom process phase
+relationship: BFO:0000050 ENVO:02500018 ! algal bloom process
 
 [Term]
 id: ENVO:02500024
@@ -17198,11 +18034,16 @@ id: ENVO:02500026
 name: anthropogenic modulatory intervention process
 comment: Relabel the obo foundry unique label to be generic process
 is_a: ENVO:02500027 ! anthropogenic environmental process
+intersection_of: ENVO:02500000 ! environmental system process
+intersection_of: RO:0002218 NCBITaxon:9606 {all_some="true"}
 
 [Term]
 id: ENVO:02500027
 name: anthropogenic environmental process
 is_a: ENVO:02500000 ! environmental system process
+intersection_of: ENVO:02500000 ! environmental system process
+intersection_of: RO:0002218 NCBITaxon:9606
+relationship: RO:0002218 NCBITaxon:9606
 
 [Term]
 id: ENVO:02500028
@@ -17257,23 +18098,34 @@ id: ENVO:02500037
 name: air pollution
 def: "A pollution process that releases particulates into the atmosphere." []
 is_a: ENVO:02500036 ! environmental pollution
+intersection_of: ENVO:02500036 ! environmental pollution
+intersection_of: BFO:0000066 ENVO:00002005 ! air
+relationship: BFO:0000066 ENVO:00002005 ! air
 
 [Term]
 id: ENVO:02500038
 name: soil pollution
 def: "A pollution process that alters the soil environment" [https://en.wikipedia.org/wiki/Soil_pollution]
 is_a: ENVO:02500036 ! environmental pollution
+intersection_of: ENVO:02500036 ! environmental pollution
+intersection_of: BFO:0000066 ENVO:00001998 ! soil
+relationship: BFO:0000066 ENVO:00001998 ! soil
+relationship: RO:0002234 ENVO:00002116 ! contaminated soil
 
 [Term]
 id: ENVO:02500039
 name: water pollution
 is_a: ENVO:02500036 ! environmental pollution
+intersection_of: ENVO:02500036 ! environmental pollution
+intersection_of: BFO:0000066 ENVO:00002006 ! water
+relationship: BFO:0000066 ENVO:00002006 ! water
 
 [Term]
 id: ENVO:02500040
 name: plastic pollution
 def: "A pollution process that results in increased levels of plastic in the environment." [https://en.wikipedia.org/wiki/Plastic_pollution]
 is_a: ENVO:02500036 ! environmental pollution
+relationship: RO:0000057 ENVO:01000404 ! plastic
 
 [Term]
 id: ENVO:02500041
@@ -17287,12 +18139,18 @@ id: ENVO:02500042
 name: pollution control
 synonym: "pollution prevention" NARROW []
 is_a: ENVO:02500026 ! anthropogenic modulatory intervention process
+intersection_of: ENVO:02500026 ! anthropogenic modulatory intervention process
+intersection_of: RO:0002211 ENVO:02500036 ! environmental pollution
+relationship: RO:0002211 ENVO:02500036 ! environmental pollution
 
 [Term]
 id: ENVO:02500043
 name: pollution monitoring
 def: "A monitoring process that assays the level of environmental pollutants to determine the presence of effect of environmental pollution." []
 is_a: ENVO:02500041 ! environmental monitoring
+intersection_of: ENVO:02500041 ! environmental monitoring
+intersection_of: RO:0002233 ENVO:02500036 ! environmental pollution
+relationship: RO:0002233 ENVO:02500036 ! environmental pollution
 
 [Term]
 id: ENVO:02500044
@@ -17304,7 +18162,10 @@ is_a: ENVO:02500036 ! environmental pollution
 id: ENVO:08000001
 name: axilla skin environment
 def: "An environment that is determined by an axilla skin." [GOC:TermGenie]
-is_a: ENVO:2100003 ! skin environment
+is_a: ENVO:2100003 {is_inferred="true"} ! skin environment
+intersection_of: ENVO:01000254 ! environmental system
+intersection_of: ENVO:2100001 UBERON:0015474 ! determined by
+relationship: ENVO:2100001 UBERON:0015474 {is_inferred="true"} ! determined by
 created_by: TermGenie
 creation_date: 2014-12-15T22:32:00Z
 
@@ -17312,7 +18173,10 @@ creation_date: 2014-12-15T22:32:00Z
 id: ENVO:08000002
 name: mouth environment
 def: "An environment that is determined by a mouth." [GOC:TermGenie]
-is_a: ENVO:2100000 ! anatomical entity environment
+is_a: ENVO:2100000 {is_inferred="true"} ! anatomical entity environment
+intersection_of: ENVO:01000254 ! environmental system
+intersection_of: ENVO:2100001 UBERON:0000165 ! determined by
+relationship: ENVO:2100001 UBERON:0000165 {is_inferred="true"} ! determined by
 created_by: TermGenie
 creation_date: 2015-04-10T23:34:03Z
 
@@ -17365,6 +18229,9 @@ id: ENVO:2000005
 name: freshwater algal bloom
 def: "An algal bloom that is located in freshwater. Freshwater algal blooms are the result of an excess of nutrients, particularly some phosphates." [Wikipedia:Algal_bloom#Freshwater_algal_blooms]
 is_a: ENVO:2000004 ! algal bloom
+intersection_of: ENVO:2000004 ! algal bloom
+intersection_of: RO:0001025 ENVO:00000873 ! freshwater biome
+relationship: RO:0001025 ENVO:00000873 ! freshwater biome
 created_by: cjm
 creation_date: 2013-04-27T04:28:27Z
 
@@ -17382,42 +18249,79 @@ id: ENVO:2100000
 name: anatomical entity environment
 def: "An environment which is determined by an anatomical entity." []
 is_a: ENVO:01000254 ! environmental system
+intersection_of: ENVO:01000254 ! environmental system
+intersection_of: ENVO:2100007 UBERON:0001062 ! determined by part of
+relationship: ENVO:2100007 UBERON:0001062 ! determined by part of
 
 [Term]
 id: ENVO:2100002
 name: intestine environment
 is_a: ENVO:2100000 ! anatomical entity environment
+intersection_of: ENVO:01000254 ! environmental system
+intersection_of: ENVO:2100001 UBERON:0000160 ! determined by
+relationship: ENVO:2100001 UBERON:0000160 ! determined by
 
 [Term]
 id: ENVO:2100003
 name: skin environment
 is_a: ENVO:2100000 ! anatomical entity environment
+intersection_of: ENVO:01000254 ! environmental system
+intersection_of: ENVO:2100001 UBERON:0000014 ! determined by
+relationship: ENVO:2100001 UBERON:0000014 ! determined by
 
 [Term]
 id: ENVO:2100004
 name: integumental system environment
 is_a: ENVO:2100000 ! anatomical entity environment
+intersection_of: ENVO:01000254 ! environmental system
+intersection_of: ENVO:2100007 UBERON:0002416 ! determined by part of
+relationship: ENVO:2100007 UBERON:0002416 ! determined by part of
 
 [Term]
 id: ENVO:2100005
 name: face skin environment
 is_a: ENVO:2100003 ! skin environment
+intersection_of: ENVO:01000254 ! environmental system
+intersection_of: ENVO:2100001 UBERON:1000021 ! determined by
+relationship: ENVO:2100001 UBERON:1000021 ! determined by
 
 [Term]
 id: ENVO:2100006
 name: feather environment
 is_a: ENVO:2100000 ! anatomical entity environment
+intersection_of: ENVO:01000254 ! environmental system
+intersection_of: ENVO:2100001 UBERON:0000022 ! determined by
+relationship: ENVO:2100001 UBERON:0000022 ! determined by
+
+[Term]
+id: NCBITaxon:1
+is_a: BFO:0000040
+
+[Term]
+id: PO:0025131
+is_a: BFO:0000040
+
+[Term]
+id: UBERON:0000465
+is_a: BFO:0000040
+
+[Term]
+id: UBERON:0001062
+is_a: BFO:0000004
 
 [Typedef]
-id: determined_by
+id: ENVO:01001307
+name: partially_surrounded_by
+
+[Typedef]
+id: ENVO:2100001
 name: determined by
-xref: ENVO:2100001
-is_a: determined_by_part_of ! determined by part of
+is_a: ENVO:2100007 ! determined by part of
 
 [Typedef]
-id: determined_by_part_of
+id: ENVO:2100007
 name: determined by part of
-xref: ENVO:2100007
+holds_over_chain: ENVO:2100001 BFO:0000050
 
 [Typedef]
 id: disconnected_from
@@ -17432,11 +18336,5 @@ is_class_level: true
 id: has_condition
 name: has_condition
 comment: Experimental relation used in EnvO. A condition defines a restricted range of a given quality or combination of qualities. If an environment class, E, has_condition C, then all qualities listed in C are restricted to the ranges defined in C in E. This is not intended as a logical conditional.
-xref: has_condition
 creation_date: 2013-05-08T07:33:05Z
-
-[Typedef]
-id: partially_surrounded_by
-name: partially_surrounded_by
-xref: ENVO:01001307
 
