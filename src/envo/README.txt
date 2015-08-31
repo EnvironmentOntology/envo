@@ -30,5 +30,11 @@ expectations of ontologies that are broken by the complete version
 appropriate in some contexts.
 
 
+== Identifiers ==
+Each ENVO class has a unique identifier matching the regular expression:
+ENVO:[0-9]{7,8}
+In other words, the string "ENVO:" followed by a numeric identifier either 7 or 8 characters long.
+
+
 
 
