@@ -3,15 +3,26 @@
 
 == Summary ==
 
- src/
-  envo/
-    envo-edit.owl  <-- for use by ENVO editors only
-    envo.obo       <-- release version, COMPLETE - includes MIREOTed ontologies
-    envo-basic.obo <-- release version, BASIC - no MIREOTed ontologies
+This repo contains a number of files intended for either general or editorial use. It's generally a better option to use PURLs to access the version of ENVO you want. Please see environmentontology.org/downloads.
+
+Some interesting files in this repo include:
+
+envo/
+  envo.obo <-- the current release version of ENVO in OBO format 
+  envo.owl <-- the current release version of ENVO in OWL format 
+  subsets/
+   envo-basic.obo <-- the current release version of ENVO in OBO format, with no MIREOTed classes
+   EnvO-Lite-GSC.obo <-- A subset of ENVO generated for GSC use in OBO format 
+   EnvO-Lite-GSC.owl <-- A subset of ENVO generated for GSC use in OWL format 
+  src/
+   envo/
+    envo-edit.owl  <-- for use by ENVO editors only! Pre-release version!
+    reports/
+     envo-edges.csv <-- A CSV representation of ENVO's class hiearchy
 
 == Details ==
 
-Complete Version (envo.obo):
+Complete Version (envo.obo, envo.owl):
 
 The complete version of the ontology includes "MIREOT"ed subsets of
 other ontologies such as CHEBI required in order to complete logical
