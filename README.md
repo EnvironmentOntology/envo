@@ -19,6 +19,11 @@ http://purl.obolibrary.org/obo/envo.obo
 Please note that the files above include all the imported classes from ontologies referenced by ENVO. If you would like a "simple" version with only ENVO classes, please download it from:
 http://purl.obolibrary.org/obo/subsets/envo-basic.obo
 
+###Subsets
+Several subsets of ENVO classes are identified with the "in_subset" annotation property.
+* environmental_hazards: concerned with environmental entities and processes associated with hazards.
+* EnvO-Lite-GSC: a short list of classes used to annotate records of relevance to the Genomic Standards Consortium.
+More subsets can be generated on request (please post such requests on our [issue tracker](https://github.com/EnvironmentOntology/envo/issues).
 
 ###Editors' version
 The editors' version of ENVO, envo-edit.owl, can be downloaded here:
