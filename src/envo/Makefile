@@ -24,7 +24,8 @@ copy-release:
 envo-simple.obo: envo.owl
 
 envo.owl: envo-edit.owl
-	ontology-release-runner --catalog-xml catalog-v001.xml  --skip-format owx --run-obo-basic-dag-check --error-report envo-errors.txt $< --allow-overwrite --asserted --simple
+	ontology-release-runner --catalog-xml catalog-v001.xml  --skip-format owx  --error-report envo-errors.txt $< --allow-overwrite --asserted --simple
+##	ontology-release-runner --catalog-xml catalog-v001.xml  --skip-format owx --run-obo-basic-dag-check --error-report envo-errors.txt $< --allow-overwrite --asserted --simple
 
 #envo.owl: envo-edit.owl
 #	robot reason -s true --input $< --reasoner elk --output $@
