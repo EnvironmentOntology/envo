@@ -14,4 +14,4 @@ $(ONT)-combined-diff.txt: $(ONT)-def-diff.html $(ONT)-obo-diff.html
 	cat $(ONT)-def-diff.txt $(ONT)-obo-diff.txt > $@
 
 $(ONT)-lastbuild.obo: $(SRC)
-	wget $(LAST) -O $@
+	wget --no-check-certificate $(LAST) -O $@
