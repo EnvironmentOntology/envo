@@ -15,7 +15,7 @@ build: envo.owl subsets/envo-basic.obo
 release: build release-diffs copy-release
 
 copy-release:
-	cp -pr envo.obo envo.owl subsets mappings ../..
+	cp -pr catalog-v001.xml envo.obo envo.owl subsets mappings imports ../..
 
 #release: envo-basic.obo release-diffs
 
