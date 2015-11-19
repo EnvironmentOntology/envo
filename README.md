@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/EnvironmentOntology/envo.svg?branch=master)](https://travis-ci.org/EnvironmentOntology/envo)
+[![DOI](https://zenodo.org/badge/13996/EnvironmentOntology/envo.svg)](https://zenodo.org/badge/latestdoi/13996/EnvironmentOntology/envo)
+
 #The Environment Ontology
 
 A description of the Environment Ontology (ENVO) is published in the Journal of Biomedical Semantics in an article by [Buttigieg et al.](http://dx.doi.org/10.1186/2041-1480-4-43).
