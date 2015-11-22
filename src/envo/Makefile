@@ -13,6 +13,7 @@ all: build
 
 #include Makefile-OBO
 
+test: all
 
 build: envo.owl subsets/envo-basic.obo
 
