@@ -11,7 +11,7 @@ USECAT= --catalog-xml catalog-v001.xml
 
 all: build
 
-include Makefile-OBO
+#include Makefile-OBO
 
 
 build: envo.owl subsets/envo-basic.obo
