@@ -26,10 +26,10 @@ copy-release:
 
 # all release files are derived from the editors version.
 # we use the default Oort setup (hermit as reasoner)
-envo-simple.obo: envo.owl
+envo.owl: envo-simple.obo
 
-envo.owl: envo-edit.owl
-	ontology-release-runner --catalog-xml catalog-v001.xml  --skip-format owx --skip-format obo  --error-report envo-errors.txt $< --allow-overwrite --asserted --simple
+envo-simple.obo: envo-edit.owl
+	ontology-release-runner --catalog-xml catalog-v001.xml --reasoner elk  --skip-format owx --skip-format obo  --error-report envo-errors.txt $< --allow-overwrite --asserted --simple
 ##	ontology-release-runner --catalog-xml catalog-v001.xml  --skip-format owx --run-obo-basic-dag-check --error-report envo-errors.txt $< --allow-overwrite --asserted --simple
 
 #envo.owl: envo-edit.owl
