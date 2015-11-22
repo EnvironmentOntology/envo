@@ -1,12 +1,12 @@
 format-version: 1.2
-data-version: releases/2015-09-24
+data-version: releases/2015-10-16
 subsetdef: disposition_slim "Disposition slim"
 subsetdef: mpath_slim "Pathology slim"
 subsetdef: relational_slim "Relational slim: types of quality that require an additional entity in order to exist"
 subsetdef: scalar_slim "Scalar slim"
 subsetdef: value_slim "Value slim"
 default-namespace: ENVO
-remark: This is the editors' version of the ontology - classes and relations seen here may not necessarily be in the release version. For the release version, see: http://purl.obolibrary.org/obo/envo.owl
+remark: ENVO is an ontology which represents knowledge about environments,environmental processes, ecosystems, habitats, and related entities. It interoperates with other ontologies in the OBO Foundry and Library. Please see www.environmentontology.org for more.
 import: http://purl.obolibrary.org/obo/envo/imports/chebi_import.owl
 import: http://purl.obolibrary.org/obo/envo/imports/ncbitaxon_import.owl
 import: http://purl.obolibrary.org/obo/envo/imports/pato_import.owl
@@ -11571,11 +11571,11 @@ is_a: ENVO:01000281 ! layer
 id: ENVO:00010505
 name: aerosol
 def: "Airborne solid particles (also called dust or particulate matter (PM)) or liquid droplets." [Wikipedia:Aerosol]
-comment: Should be moved to PATO as "quality of an aerosol"
+comment: Should connect to PATO as "quality of an aerosol"
 xref: EcoLexicon:aerosol
 xref: SWEETRealm:Aerosol
 xref: Wikipedia:Aerosol
-is_a: ENVO:00010483 ! environmental material
+is_a: ENVO:01000060 ! particulate matter
 
 [Term]
 id: ENVO:00010506
@@ -13115,6 +13115,13 @@ created_by: ORCID:0000-0002-4366-3088
 creation_date: 2010-03-16T12:12:30Z
 
 [Term]
+id: ENVO:01000060
+name: particulate matter
+def: "Particulate material is an environmental material which is composed of microscopic portions of solid or liquid material suspended in another environmental material." []
+is_a: ENVO:00010483 ! environmental material
+property_value: IAO:0000116 "Subclasses should be assigned by inference." xsd:string
+
+[Term]
 id: ENVO:01000061
 name: marine wind mixed layer
 def: "The upper part of the marine water column with generally uniform properties resulting from wind-driven mixing." [ISBN:044482619X, ORCID:0000-0002-4366-3088]
@@ -13131,6 +13138,13 @@ def: "Benthic storms are strong benthic (near bottom) currents transporting sedi
 is_a: ENVO:01000067 ! marine current
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2010-03-16T12:16:11Z
+
+[Term]
+id: ENVO:01000063
+name: planktonic material
+def: "A portion of planktonic material is a portion of environmental material primarily composed of plankton." []
+is_a: ENVO:01000155 ! organic material
+property_value: IAO:0000116 "See Issue #251. Awaiting class creation in PCO to attempt logical definitions." xsd:string
 
 [Term]
 id: ENVO:01000064
@@ -14852,7 +14866,10 @@ def: "A mineral material is an environmental material which is primarily compose
 comment: Look for "mineral" in a chemical or geochemical ontology to formalise the composed primarily of link.\nFrom Wikipedia: [A mineral] is different from a rock, which can be an aggregate of minerals or non-minerals and does not have a specific chemical composition. The exact definition of a mineral is under debate, especially with respect to the requirement a valid species be abiogenic, and to a lesser extent with regards to it having an ordered atomic structure.
 xref: LTER:341
 is_a: ENVO:00010483 ! environmental material
+intersection_of: ENVO:00010483 ! environmental material
+intersection_of: RO:0002473 CHEBI:46662
 relationship: RO:0000086 PATO:0001546
+relationship: RO:0002473 CHEBI:46662
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2013-10-05T12:37:41Z
 
@@ -16128,6 +16145,13 @@ xref: URL:http\://eurovoc.europa.eu/1837
 is_a: ENVO:0010001 ! anthropogenic environmental material
 
 [Term]
+id: ENVO:01000405
+name: respirable suspended particulate matter
+def: "A portion of respirable suspended particulate matter is a form of particulate matter composed primarily of solid particles each with a diameter of 10 micrometers or less." [Wikipedia:Particulates]
+synonym: "PM10" EXACT []
+is_a: ENVO:00010505 ! aerosol
+
+[Term]
 id: ENVO:01000406
 name: snow
 def: "Snow is an environmental material which is primarily composed of flakes of crystalline water ice." [Wikipedia:Snow]
@@ -16204,6 +16228,20 @@ is_a: PO:0000003
 intersection_of: PO:0000003
 intersection_of: RO:0000086 PATO:0000309
 relationship: RO:0000086 PATO:0000309
+
+[Term]
+id: ENVO:01000415
+name: fine respirable suspended particulate matter
+def: "A portion of fine respirable suspended particulate matter is a form of particulate matter composed primarily of solid particles each with a diameter of 2.5 micrometers or less." [Wikipedia:Particulates]
+synonym: "PM2.5" EXACT []
+is_a: ENVO:01000405 ! respirable suspended particulate matter
+
+[Term]
+id: ENVO:01000416
+name: ultrafine respirable suspended particulate matter
+def: "A portion of fine respirable suspended particulate matter is a form of particulate matter composed primarily of solid particles each with a diameter of  100 nanometers or less." [Wikipedia:Particulates, Wikipedia:Ultrafine_particle]
+comment: Regulations do not exist for this size class of ambient air pollution particles, which are far smaller than the regulated PM10 and PM2.5 particle classes and are believed to have several more aggressive health implications than those classes of larger particulates.
+is_a: ENVO:01000415 ! fine respirable suspended particulate matter
 
 [Term]
 id: ENVO:01000417
@@ -17889,10 +17927,12 @@ subset: environmental_hazards
 is_a: ENVO:02500000 ! environmental system process
 relationship: RO:0000057 ENVO:01000638 ! planetary crust
 relationship: RO:0002233 ENVO:01000648 ! magma
+relationship: RO:0002234 CHEBI:16136
 relationship: RO:0002234 CHEBI:16526
 relationship: RO:0002234 CHEBI:17245
 relationship: RO:0002234 CHEBI:17883
 relationship: RO:0002234 CHEBI:18276
+relationship: RO:0002234 CHEBI:18422
 relationship: RO:0002234 ENVO:01000266 ! water vapour
 
 [Term]
@@ -19725,6 +19765,10 @@ intersection_of: ENVO:2100001 UBERON:0000022 ! determined by
 relationship: ENVO:2100001 UBERON:0000022 ! determined by
 
 [Term]
+id: GO:0040011
+is_a: GO:0008150
+
+[Term]
 id: NCBITaxon:1
 is_a: BFO:0000040
 
@@ -19739,6 +19783,10 @@ is_a: BFO:0000040
 [Term]
 id: UBERON:0001062
 is_a: BFO:0000004
+
+[Term]
+id: UBERON:0009198
+is_a: UBERON:0002209
 
 [Typedef]
 id: ENVO:01001307

@@ -69,3 +69,8 @@ earth.obo: earth.rdf
 align-earth-%.tsv: earth.obo
 	blip-findall -i ignore_gemet.pro -i $< -r $* -u metadata_nlp -goal index_entity_pair_label_match "class(X),id_idspace(X,'EARTH'),entity_pair_label_reciprocal_best_intermatch(X,Y,S)" -select "x(X,Y,S)" -label -use_tabs -no_pred > $@.tmp && mv $@.tmp $@
 .PRECIOUS: align-earth-%.tsv
+
+
+# SWEET
+sweet.zip:
+	wget --no-check-certificate https://sweet.jpl.nasa.gov/sites/default/files/2.3.zip -O $@
