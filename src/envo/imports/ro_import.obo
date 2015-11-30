@@ -1,85 +1,6 @@
 format-version: 1.2
 ontology: envo/imports/ro_import
-property_value: http://purl.org/dc/elements/1.1/source http://purl.obolibrary.org/obo/ro/releases/2015-08-08/ro.owl
-
-[Term]
-id: BFO:0000002
-name: continuant
-def: "An entity that exists in full at any time in which it exists at all, persists through time while maintaining its identity and has no temporal parts." []
-
-[Term]
-id: BFO:0000003
-name: occurrent
-def: "An entity that has temporal parts and that happens, unfolds or develops through time." []
-
-[Term]
-id: BFO:0000004
-name: independent continuant
-def: "A continuant that is a bearer of quality and realizable entity entities, in which other entities inhere and which itself cannot inhere in anything." []
-is_a: BFO:0000002 ! continuant
-
-[Term]
-id: BFO:0000015
-name: process
-def: "An occurrent that has temporal proper parts and for some time t, p s-depends_on some material entity at t." []
-is_a: BFO:0000003 ! occurrent
-
-[Term]
-id: BFO:0000016
-name: disposition
-is_a: BFO:0000017 ! realizable entity
-
-[Term]
-id: BFO:0000017
-name: realizable entity
-def: "A specifically dependent continuant  that inheres in continuant  entities and are not exhibited in full at every time in which it inheres in an entity or group of entities. The exhibition or actualization of a realizable entity is a particular manifestation, functioning or process that occurs under certain circumstances." []
-is_a: BFO:0000020 ! specifically dependent continuant
-
-[Term]
-id: BFO:0000019
-name: quality
-is_a: BFO:0000020 ! specifically dependent continuant
-
-[Term]
-id: BFO:0000020
-name: specifically dependent continuant
-def: "A continuant that inheres in or is borne by other entities. Every instance of A requires some specific instance of B which must always be the same." []
-is_a: BFO:0000002 ! continuant
-
-[Term]
-id: BFO:0000034
-name: function
-is_a: BFO:0000016 ! disposition
-
-[Term]
-id: BFO:0000040
-name: material entity
-def: "An independent continuant that is spatially extended whose identity is independent of that of other entities and can be maintained through time." []
-is_a: BFO:0000004 ! independent continuant
-
-[Term]
-id: ENVO:00000428
-name: biome
-is_a: ENVO:01000254 ! environmental system
-
-[Term]
-id: ENVO:00002036
-name: habitat
-is_a: ENVO:01000254 ! environmental system
-
-[Term]
-id: ENVO:01000254
-name: environmental system
-is_a: RO:0002577 ! system
-
-[Term]
-id: RO:0002577
-name: system
-def: "A material entity consisting of multiple components that are causally integrated." []
-is_a: BFO:0000040 ! material entity
-property_value: IAO:0000116 "May be replaced by a BFO class, as discussed in http://www.jbiomedsem.com/content/4/1/43" xsd:string
-property_value: IAO:0000117 "Chris Mungall" xsd:string
-property_value: IAO:0000119 http://www.jbiomedsem.com/content/4/1/43 xsd:string
+property_value: http://purl.org/dc/elements/1.1/source http://purl.obolibrary.org/obo/ro/releases/2015-10-29/ro.owl
 
 [Typedef]
 id: BFO:0000050
@@ -114,4 +35,14 @@ property_value: IAO:0000116 "Parthood requires the part and the whole to have co
 property_value: IAO:0000118 "has_part" xsd:string
 property_value: RO:0001900 RO:0001901
 is_transitive: true
+
+[Typedef]
+id: RO:0002176
+name: connects
+def: "c connects a if and only if there exist some b such that a and b are similar parts of the same system, and c connects b, specifically, c connects a with b. When one structure connects two others it unites some aspect of the function or role they play within the system." []
+property_value: http://xmlns.com/foaf/0.1/page https://github.com/obophenotype/uberon/wiki/Connectivity-Design-Pattern xsd:anyURI
+property_value: http://xmlns.com/foaf/0.1/page https://github.com/obophenotype/uberon/wiki/Modeling-articulations-Design-Pattern xsd:anyURI
+property_value: IAO:0000112 "a 'toe distal phalanx bone' that is connected to a 'toe medial phalanx bone' (an interphalangeal joint *connects* these two bones)." xsd:string
+property_value: IAO:0000112 "The M8 connects Glasgow and Edinburgh" xsd:string
+property_value: IAO:0000119 http://www.ncbi.nlm.nih.gov/pubmed/22293552
 
