@@ -101,6 +101,10 @@ mirror/ro.owl: envo-edit.owl
 	owltools $(OBO)/ro.owl --merge-imports-closure --remove-tbox --remove-dangling -o $@
 .PRECIOUS: mirror/%.owl
 
+mirror/bfo.owl: envo-edit.owl
+	owltools $(OBO)/ro.owl --merge-imports-closure --make-subset-by-properties -f // --remove-external-classes BFO --remove-annotation-assertions -l -s -d  --remove-dangling --set-ontology-id $(OBO)/bfo.owl -o $@
+.PRECIOUS: mirror/%.owl
+
 mirror/uberon.owl: envo-edit.owl
 	owltools $(OBO)/uberon.owl  --remove-axiom-annotations  --make-subset-by-properties -f $(KEEPRELS) --remove-dangling-annotations --remove-annotation-assertions -l -s -d --set-ontology-id $(OBO)/uberon.owl -o $@
 
