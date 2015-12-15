@@ -97,9 +97,17 @@ imports/%_import.obo: imports/%_import.owl
 mirror/%.owl: envo-edit.owl
 	owltools $(OBO)/$*.owl --remove-annotation-assertions -l --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS)  -o $@
 .PRECIOUS: mirror/%.owl
-mirror/ro.owl: envo-edit.owl
+
+#mirror/ro.owl: mirror/ro-relations.owl mirror/ro-classes.owl
+#	owltools $^ --merge-support-ontologies -o $@
+mirror/ro.owl:
+	owltools $(OBO)/ro.owl --merge-imports-closure -o $@
+.PRECIOUS: mirror/ro.owl
+
+mirror/ro-relations.owl: envo-edit.owl
 	owltools $(OBO)/ro.owl --merge-imports-closure --remove-tbox --remove-dangling -o $@
-.PRECIOUS: mirror/%.owl
+mirror/ro-classes.owl: envo-edit.owl
+	owltools $(OBO)/ro.owl --merge-imports-closure --make-subset-by-properties -f // --remove-external-classes -k RO --remove-annotation-assertions -l -s -d  -o $@
 
 mirror/bfo.owl: envo-edit.owl
 	owltools $(OBO)/ro.owl --merge-imports-closure --make-subset-by-properties -f // --remove-external-classes BFO --remove-annotation-assertions -l -s -d  --remove-dangling --set-ontology-id $(OBO)/bfo.owl -o $@
@@ -129,7 +137,7 @@ mirror/pco.owl: imports/pco_basic.obo
 # ----------------------------------------
 # These all depend on envo-basic, which is the whole ontology (ie all classes), minus non-basic axioms (e.g. complex owl axioms, some relations)
 subsets/EnvO-Lite-GSC.owl: subsets/envo-basic.obo
-	owltools $< --extract-ontology-subset --subset EnvO-Lite-GSC --iri $(OBO)/envo/subsets/$@ -o $@
+	owltools $< --extract-ontology-subset --fill-gaps --subset EnvO-Lite-GSC --iri $(OBO)/envo/subsets/$@ -o $@
 subsets/EnvO-Lite-GSC.obo: subsets/EnvO-Lite-GSC.owl
 	obolib-owl2obo $< -o $@
 
