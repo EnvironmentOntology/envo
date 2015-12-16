@@ -3,6 +3,7 @@
 
 #The Environment Ontology
 
+
 A description of the Environment Ontology (ENVO) is published in the Journal of Biomedical Semantics in an article by [Buttigieg et al.](http://dx.doi.org/10.1186/2041-1480-4-43).
 
 More information and guides for using ENVO in annotation exercises are available at www.environmentontology.org
