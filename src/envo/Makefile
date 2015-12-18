@@ -144,6 +144,9 @@ subsets/EnvO-Lite-GSC.obo: subsets/EnvO-Lite-GSC.owl
 # ----------------------------------------
 # Reports
 # ----------------------------------------
+REPORTS=edges basicReport
+all_reports: $(patsubst %, reports/envo-%.csv, $(REPORTS))
+
 reports/envo-%.csv: envo.owl sparql/%.sparql
 	arq --data $< --query sparql/$*.sparql --results csv > $@.tmp && mv $@.tmp $@
 
