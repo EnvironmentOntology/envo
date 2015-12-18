@@ -8,6 +8,8 @@
 
 OBO=http://purl.obolibrary.org/obo
 USECAT= --catalog-xml catalog-v001.xml
+MODS = entity_attribute_location entity_quality_location
+ALL_MODS_OWL = $(patsubst %, modules/%.owl, $(MODS))
 
 all: build
 
@@ -87,7 +89,7 @@ KEEPRELS = BFO:0000050 BFO:0000051 RO:0002202 immediate_transformation_of RO:000
 # Create an import module using the OWLAPI module extraction code via OWLTools.
 # We use the standard catalog, but rewrite the import to X to be a local mirror of ALL of X.
 # After extraction, we further reduce the ontology by creating a "mingraph" (removes all annotations except label) and by 
-imports/%_import.owl: envo-edit.owl mirror/%.owl imports/%_seed.owl
+imports/%_import.owl: envo-edit.owl mirror/%.owl imports/%_seed.owl $(ALL_MODS_OWL)
 	owltools  $(USECAT) --map-ontology-iri $(ENVO_IMPORTS_BASE_URI)/imports/$*_import.owl mirror/$*.owl $< imports/$*_seed.owl --merge-support-ontologies  --extract-module -s $(OBO)/$*.owl -c --remove-axiom-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(ENVO_IMPORTS_BASE_URI)/$@ -o $@
 
 imports/%_import.obo: imports/%_import.owl
@@ -163,10 +165,9 @@ mappings/gold-mapping.txt: envo-simple.obo
 # Modules (from envo-p)
 # ----------------------------------------
 
-MODS = entity_attribute_location entity_quality_location
 
 all_modules: all_modules_owl all_modules_obo 
-all_modules_owl: $(patsubst %, modules/%.owl, $(MODS))
+all_modules_owl: $(ALL_MODS_OWL)
 all_modules_obo: $(patsubst %, modules/%.obo, $(MODS))
 
 modules/%.owl: modules/%.tsv patterns/%.yaml curie_map.yaml
