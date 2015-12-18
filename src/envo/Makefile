@@ -13,7 +13,7 @@ all: build
 
 #include Makefile-OBO
 
-test: clean_modules_owl all_modules all_imports envo.owl
+test: touch envo-edit.owl all_modules all_imports envo.owl
 
 build: envo.owl subsets/envo-basic.obo
 
@@ -165,9 +165,6 @@ MODS = entity_attribute_location entity_quality_location
 all_modules: all_modules_owl all_modules_obo 
 all_modules_owl: $(patsubst %, modules/%.owl, $(MODS))
 all_modules_obo: $(patsubst %, modules/%.obo, $(MODS))
-
-clean_modules_owl:
-	rm $(patsubst %, modules/%.owl, $(MODS))
 
 modules/%.owl: modules/%.tsv patterns/%.yaml curie_map.yaml
 	apply-pattern.py -P curie_map.yaml -b http://purl.obolibrary.org/obo/ -i $< -p patterns/$*.yaml  > modules/$*-orig.owl && owltools modules/$*-orig.owl --set-ontology-id $(OBO)/envo/modules/$*.owl -o $@
