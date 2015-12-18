@@ -30,7 +30,10 @@ copy-release:
 # we use the default Oort setup (hermit as reasoner)
 envo.owl: envo-simple.obo
 
-envo-simple.obo: envo-edit.owl
+envo-edit-module-merge.owl: envo-edit.owl
+	#owltools $(USECAT) $<  $(patsubst %, --remove-import-declaration $(OBO)/envo/modules/%.owl, $(MODS)) $(ALL_MODS_OWL) --merge-support-ontologies -o $@
+	owltools $(USECAT) $<  --merge-imports-closure -o $@
+envo-simple.obo: envo-edit-module-merge.owl
 	ontology-release-runner --catalog-xml catalog-v001.xml --reasoner elk  --skip-format owx --skip-format obo  --error-report envo-errors.txt $< --allow-overwrite --asserted --simple
 ##	ontology-release-runner --catalog-xml catalog-v001.xml  --skip-format owx --run-obo-basic-dag-check --error-report envo-errors.txt $< --allow-overwrite --asserted --simple
 
