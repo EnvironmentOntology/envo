@@ -33,7 +33,7 @@ envo.owl: envo-simple.obo
 envo-edit-module-merge.owl: envo-edit.owl
 	#owltools $(USECAT) $<  $(patsubst %, --remove-import-declaration $(OBO)/envo/modules/%.owl, $(MODS)) $(ALL_MODS_OWL) --merge-support-ontologies -o $@
 	owltools $(USECAT) $<  --merge-imports-closure -o $@
-envo-simple.obo: envo-edit-module-merge.owl
+envo-simple.owl: envo-edit-module-merge.owl
 	ontology-release-runner --catalog-xml catalog-v001.xml --reasoner elk  --skip-format owx --skip-format obo  --error-report envo-errors.txt $< --allow-overwrite --asserted --simple
 ##	ontology-release-runner --catalog-xml catalog-v001.xml  --skip-format owx --run-obo-basic-dag-check --error-report envo-errors.txt $< --allow-overwrite --asserted --simple
 
@@ -47,7 +47,7 @@ envo.obo: envo.owl
 	owltools $(USECAT) $< --merge-imports-closure --add-obo-shorthand-to-properties -o -f obo --no-check $@.tmp && grep -v ^owl-axioms $@.tmp > $@
 
 # TODO - fix IRI
-subsets/envo-basic.obo: envo-simple.obo
+subsets/envo-basic.obo: envo-simple.owl
 	owltools envo-simple.obo imports/ro_import.owl --merge-imports-closure  --add-obo-shorthand-to-properties --set-ontology-id $(OBO)/$@ -o -f obo $@.tmp && grep -v ^owl-axioms $@.tmp > $@
 
 #envo-mireot.obo: envo-edit.owl chebi-lite.obo pato-lite.obo
