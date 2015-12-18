@@ -13,7 +13,7 @@ all: build
 
 #include Makefile-OBO
 
-test: envo.owl
+test: clean_modules_owl all_modules all_imports envo.owl
 
 build: envo.owl subsets/envo-basic.obo
 
@@ -153,3 +153,29 @@ reports/envo-%.csv: envo.owl sparql/%.sparql
 # ----------------------------------------
 mappings/gold-mapping.txt: envo-simple.obo
 	blip-findall -u metadata_nlp_parent_dist2_hook -r obol_av -i sources/gold.obo -i $< -u metadata_nlp -goal index_entity_pair_label_match "entity_pair_label_reciprocal_best_intermatch(X,Y,S)" -use_tabs -label -no_pred > $@.tmp && cut -f1-4 $@.tmp | sort -u > $@
+
+
+
+# ----------------------------------------
+# Modules (from envo-p)
+# ----------------------------------------
+
+MODS = entity_attribute_location entity_quality_location
+
+all_modules: all_modules_owl all_modules_obo 
+all_modules_owl: $(patsubst %, modules/%.owl, $(MODS))
+all_modules_obo: $(patsubst %, modules/%.obo, $(MODS))
+
+clean_modules_owl:
+	rm $(patsubst %, modules/%.owl, $(MODS))
+
+modules/%.owl: modules/%.tsv patterns/%.yaml curie_map.yaml
+	apply-pattern.py -P curie_map.yaml -b http://purl.obolibrary.org/obo/ -i $< -p patterns/$*.yaml  > modules/$*-orig.owl && owltools modules/$*-orig.owl --set-ontology-id $(OBO)/envo/modules/$*.owl -o $@
+
+modules/%.obo: modules/%.owl
+	owltools $< -o -f obo $@.tmp && grep -v ^owl-axioms $@.tmp > $@
+
+# meta
+
+modules/%.tsv:
+	blip-findall -i patterns/spec.obo  -consult pmaker.pro -r envo -r chebi -r pato pattern_$*/3 -no_pred -label -use_tabs > $@

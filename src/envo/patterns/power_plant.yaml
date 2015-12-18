@@ -1,0 +1,30 @@
+## https://github.com/EnvironmentOntology/envo/issues/258
+pattern_name: envo/patterns/power_plant
+
+classes: 
+  process: BFO_0000015
+  power plant: ENVO_00002214 
+
+relations:
+  powered by: RO_nn
+
+vars: 
+  power_plant: "'power plant'"
+  source: "'process'"
+
+name: 
+  text: "%s power plant"
+  vars: 
+    - source
+
+def: 
+  text: "A power plant driven by %s."
+  vars:
+    - source
+
+equivalentTo: 
+  text: "'power plant' that
+    and ('powered by' some %s)"
+
+  vars:
+    - source

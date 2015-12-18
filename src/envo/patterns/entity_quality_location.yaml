@@ -1,0 +1,46 @@
+pattern_name: oba/patterns/entity_quality
+classes: []
+
+relations:
+  part of: BFO_0000050
+  inheres in: RO_0000052
+  inheres in part of: RO_0002314
+    
+vars: 
+  quality: "'Thing'"
+  entity: "'Thing'"
+  location: "'Thing'"
+
+name:
+  text: "%s %s in %s"
+  vars:
+    - quality
+    - entity
+    - location
+
+annotations: 
+  - property: oio:hasExactSynonym
+    text: "%s %s %s"
+    vars:
+      - location
+      - quality
+      - entity
+
+def: 
+  text: "The %s in a %s state when measured in %s."
+  vars:
+    - entity
+    - quality
+    - location
+    
+equivalentTo: 
+  text: "%s and 'inheres in' some (%s and 'part of' some %s)"
+  vars:
+    - quality
+    - entity
+    - location
+
+    
+
+    
+
