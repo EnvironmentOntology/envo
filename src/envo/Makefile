@@ -47,7 +47,7 @@ envo.obo: envo.owl
 
 # TODO - fix IRI
 subsets/envo-basic.obo: envo-simple.owl
-	owltools envo-simple.obo imports/ro_import.owl --merge-imports-closure  --add-obo-shorthand-to-properties --set-ontology-id $(OBO)/$@ -o -f obo $@.tmp && grep -v ^owl-axioms $@.tmp > $@
+	owltools $< imports/ro_import.owl --merge-imports-closure  --add-obo-shorthand-to-properties --set-ontology-id $(OBO)/$@ -o -f obo $@.tmp && grep -v ^owl-axioms $@.tmp > $@
 
 #envo-mireot.obo: envo-edit.owl chebi-lite.obo pato-lite.obo
 #	ontology-release-runner --no-subsets --skip-format owx --run-obo-basic-dag-check --no-reasoner --allow-overwrite --asserted --outdir build $< chebi-lite.obo pato-lite.obo && cp build/envo-merged.obo $@
@@ -158,7 +158,7 @@ reports/envo-%.csv: envo.owl sparql/%.sparql
 # ----------------------------------------
 # Temp
 # ----------------------------------------
-mappings/gold-mapping.txt: envo-simple.obo
+mappings/gold-mapping.txt: envo.owl
 	blip-findall -u metadata_nlp_parent_dist2_hook -r obol_av -i sources/gold.obo -i $< -u metadata_nlp -goal index_entity_pair_label_match "entity_pair_label_reciprocal_best_intermatch(X,Y,S)" -use_tabs -label -no_pred > $@.tmp && cut -f1-4 $@.tmp | sort -u > $@
 
 
