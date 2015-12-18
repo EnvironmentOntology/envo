@@ -174,5 +174,5 @@ modules/%.obo: modules/%.owl
 
 # meta
 
-modules/%.tsv:
-	blip-findall -i patterns/spec.obo  -consult pmaker.pro -r envo -r chebi -r pato pattern_$*/3 -no_pred -label -use_tabs > $@
+#modules/%.tsv:
+#	blip-findall -i patterns/spec.obo  -consult pmaker.pro -r envo -r chebi -r pato pattern_$*/3 -no_pred -label -use_tabs > $@
