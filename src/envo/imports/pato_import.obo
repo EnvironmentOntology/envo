@@ -1,6 +1,6 @@
 format-version: 1.2
 ontology: envo/imports/pato_import
-property_value: http://purl.org/dc/elements/1.1/source http://purl.obolibrary.org/obo/pato/releases/2015-04-09/pato.owl
+property_value: http://purl.org/dc/elements/1.1/source http://purl.obolibrary.org/obo/pato/releases/2015-11-18/pato.owl
 
 [Term]
 id: PATO:0000001
@@ -12,9 +12,54 @@ name: age
 is_a: PATO:0000165 ! time
 
 [Term]
+id: PATO:0000019
+name: color pattern
+is_a: PATO:0000060 ! spatial pattern
+
+[Term]
+id: PATO:0000025
+name: composition
+is_a: PATO:0000141 ! structure
+
+[Term]
 id: PATO:0000033
 name: concentration of
 is_a: PATO:0002182 ! molecular quality
+
+[Term]
+id: PATO:0000044
+name: frequency
+is_a: PATO:0000161 ! rate
+
+[Term]
+id: PATO:0000048
+name: hardness
+is_a: PATO:0001546 ! quality of a solid
+
+[Term]
+id: PATO:0000051
+name: morphology
+is_a: PATO:0001241 ! physical object quality
+
+[Term]
+id: PATO:0000052
+name: shape
+is_a: PATO:0000051 ! morphology
+
+[Term]
+id: PATO:0000057
+name: occurrence
+is_a: PATO:0002323 ! temporal distribution quality
+
+[Term]
+id: PATO:0000058
+name: odor
+is_a: PATO:0001018 ! physical quality
+
+[Term]
+id: PATO:0000060
+name: spatial pattern
+is_a: PATO:0000140 ! position
 
 [Term]
 id: PATO:0000068
@@ -32,9 +77,34 @@ name: sensitivity toward
 is_a: PATO:0001018 ! physical quality
 
 [Term]
+id: PATO:0000117
+name: size
+is_a: PATO:0000051 ! morphology
+
+[Term]
+id: PATO:0000122
+name: length
+is_a: PATO:0001708 ! 1-D extent
+
+[Term]
+id: PATO:0000125
+name: mass
+is_a: PATO:0001018 ! physical quality
+
+[Term]
+id: PATO:0000136
+name: closure
+is_a: PATO:0000051 ! morphology
+
+[Term]
 id: PATO:0000140
 name: position
 is_a: PATO:0001018 ! physical quality
+
+[Term]
+id: PATO:0000141
+name: structure
+is_a: PATO:0000051 ! morphology
 
 [Term]
 id: PATO:0000146
@@ -42,14 +112,19 @@ name: temperature
 is_a: PATO:0001018 ! physical quality
 
 [Term]
+id: PATO:0000161
+name: rate
+is_a: PATO:0002062 ! physical quality of a process
+
+[Term]
 id: PATO:0000165
 name: time
 is_a: PATO:0001018 ! physical quality
 
 [Term]
-id: PATO:0000274
-name: fertility
-is_a: PATO:0001434 ! reproductive quality
+id: PATO:0000169
+name: viability
+is_a: PATO:0001995 ! organismal quality
 
 [Term]
 id: PATO:0000308
@@ -62,9 +137,165 @@ name: young
 is_a: PATO:0000011 ! age
 
 [Term]
-id: PATO:0000956
-name: sterile
-is_a: PATO:0000274 ! fertility
+id: PATO:0000330
+name: irregular spatial pattern
+is_a: PATO:0000060 ! spatial pattern
+
+[Term]
+id: PATO:0000337
+name: colorless
+is_a: PATO:0000019 ! color pattern
+
+[Term]
+id: PATO:0000380
+name: increased frequency
+is_a: PATO:0000044 ! frequency
+is_a: PATO:0000912 ! increased rate
+
+[Term]
+id: PATO:0000381
+name: decreased frequency
+is_a: PATO:0000044 ! frequency
+is_a: PATO:0000911 ! decreased rate
+
+[Term]
+id: PATO:0000386
+name: hard
+is_a: PATO:0000048 ! hardness
+is_a: PATO:0002305 ! increased object quality
+
+[Term]
+id: PATO:0000402
+name: branched
+is_a: PATO:0002009 ! branchiness
+
+[Term]
+id: PATO:0000406
+name: curved
+is_a: PATO:0001591 ! curvature
+
+[Term]
+id: PATO:0000407
+name: flat
+is_a: PATO:0002254 ! flattened
+
+[Term]
+id: PATO:0000428
+name: sporadic
+is_a: PATO:0000057 ! occurrence
+
+[Term]
+id: PATO:0000573
+name: increased length
+is_a: PATO:0000122 ! length
+is_a: PATO:0000586 ! increased size
+
+[Term]
+id: PATO:0000574
+name: decreased length
+is_a: PATO:0000122 ! length
+is_a: PATO:0000587 ! decreased size
+
+[Term]
+id: PATO:0000586
+name: increased size
+is_a: PATO:0000117 ! size
+is_a: PATO:0002305 ! increased object quality
+
+[Term]
+id: PATO:0000587
+name: decreased size
+is_a: PATO:0000117 ! size
+is_a: PATO:0002303 ! decreased object quality
+
+[Term]
+id: PATO:0000595
+name: increased volume
+is_a: PATO:0000586 ! increased size
+is_a: PATO:0000918 ! volume
+
+[Term]
+id: PATO:0000608
+name: closed
+is_a: PATO:0000136 ! closure
+disjoint_from: PATO:0000610 ! open
+
+[Term]
+id: PATO:0000609
+name: closure incomplete
+is_a: PATO:0000610 ! open
+
+[Term]
+id: PATO:0000610
+name: open
+is_a: PATO:0000136 ! closure
+
+[Term]
+id: PATO:0000619
+name: crowded
+is_a: PATO:0000140 ! position
+
+[Term]
+id: PATO:0000622
+name: erect
+is_a: PATO:0000140 ! position
+
+[Term]
+id: PATO:0000911
+name: decreased rate
+is_a: PATO:0000161 ! rate
+is_a: PATO:0002302 ! decreased process quality
+
+[Term]
+id: PATO:0000912
+name: increased rate
+is_a: PATO:0000161 ! rate
+is_a: PATO:0002304 ! increased process quality
+
+[Term]
+id: PATO:0000918
+name: volume
+is_a: PATO:0001710 ! 3-D extent
+
+[Term]
+id: PATO:0000946
+name: oblong
+is_a: PATO:0002006 ! 2-D shape
+
+[Term]
+id: PATO:0000967
+name: undulate
+is_a: PATO:0000052 ! shape
+
+[Term]
+id: PATO:0000970
+name: permeability
+is_a: PATO:0000141 ! structure
+
+[Term]
+id: PATO:0000973
+name: porosity
+is_a: PATO:0000970 ! permeability
+
+[Term]
+id: PATO:0000983
+name: impermeable
+is_a: PATO:0000970 ! permeability
+
+[Term]
+id: PATO:0000984
+name: porous
+is_a: PATO:0000973 ! porosity
+
+[Term]
+id: PATO:0000992
+name: viscosity
+is_a: PATO:0001548 ! quality of a liquid
+
+[Term]
+id: PATO:0000998
+name: viscous
+is_a: PATO:0000992 ! viscosity
 
 [Term]
 id: PATO:0001018
@@ -77,6 +308,52 @@ name: pressure
 is_a: PATO:0001018 ! physical quality
 
 [Term]
+id: PATO:0001029
+name: efficiency
+is_a: PATO:0001018 ! physical quality
+
+[Term]
+id: PATO:0001154
+name: elongated
+is_a: PATO:0000052 ! shape
+
+[Term]
+id: PATO:0001159
+name: concentrated
+is_a: PATO:0000033 ! concentration of
+
+[Term]
+id: PATO:0001163
+name: decreased concentration
+is_a: PATO:0001159 ! concentrated
+is_a: PATO:0002303 ! decreased object quality
+
+[Term]
+id: PATO:0001199
+name: linear
+is_a: PATO:0000052 ! shape
+
+[Term]
+id: PATO:0001201
+name: Y-shaped
+is_a: PATO:0001890 ! tripartite
+
+[Term]
+id: PATO:0001208
+name: odorless
+is_a: PATO:0000058 ! odor
+
+[Term]
+id: PATO:0001230
+name: strength
+is_a: PATO:0001018 ! physical quality
+
+[Term]
+id: PATO:0001236
+name: process quality
+is_a: PATO:0000001 ! quality
+
+[Term]
 id: PATO:0001241
 name: physical object quality
 is_a: PATO:0000001 ! quality
@@ -86,6 +363,21 @@ id: PATO:0001305
 name: increased temperature
 is_a: PATO:0000146 ! temperature
 is_a: PATO:0002305 ! increased object quality
+
+[Term]
+id: PATO:0001323
+name: area
+is_a: PATO:0001709 ! 2-D extent
+
+[Term]
+id: PATO:0001332
+name: amorphous
+is_a: PATO:0000051 ! morphology
+
+[Term]
+id: PATO:0001422
+name: dead
+is_a: PATO:0000169 ! viability
 
 [Term]
 id: PATO:0001428
@@ -103,9 +395,24 @@ name: alkaline
 is_a: PATO:0001428 ! medium acidity
 
 [Term]
-id: PATO:0001434
-name: reproductive quality
-is_a: PATO:0001995 ! organismal quality
+id: PATO:0001432
+name: decayed
+is_a: PATO:0000169 ! viability
+
+[Term]
+id: PATO:0001442
+name: wholeness
+is_a: PATO:0000141 ! structure
+
+[Term]
+id: PATO:0001444
+name: broken
+is_a: PATO:0001442 ! wholeness
+
+[Term]
+id: PATO:0001447
+name: calcified
+is_a: PATO:0000025 ! composition
 
 [Term]
 id: PATO:0001454
@@ -124,6 +431,48 @@ name: anaerobic
 is_a: PATO:0001454 ! sensitivity to oxygen
 
 [Term]
+id: PATO:0001472
+name: decreased depth
+is_a: PATO:0000587 ! decreased size
+is_a: PATO:0001595 ! depth
+
+[Term]
+id: PATO:0001475
+name: increased position
+is_a: PATO:0000140 ! position
+is_a: PATO:0002305 ! increased object quality
+
+[Term]
+id: PATO:0001481
+name: sloped
+is_a: PATO:0000052 ! shape
+
+[Term]
+id: PATO:0001485
+name: condensed
+is_a: PATO:0000141 ! structure
+
+[Term]
+id: PATO:0001509
+name: functionality
+is_a: PATO:0001241 ! physical object quality
+
+[Term]
+id: PATO:0001510
+name: functional
+is_a: PATO:0001509 ! functionality
+
+[Term]
+id: PATO:0001543
+name: flexibility
+is_a: PATO:0001546 ! quality of a solid
+
+[Term]
+id: PATO:0001544
+name: flexible
+is_a: PATO:0001543 ! flexibility
+
+[Term]
 id: PATO:0001546
 name: quality of a solid
 is_a: PATO:0002198 ! quality of a substance
@@ -139,15 +488,69 @@ name: quality of a liquid
 is_a: PATO:0002198 ! quality of a substance
 
 [Term]
+id: PATO:0001562
+name: decreased mass
+is_a: PATO:0000125 ! mass
+is_a: PATO:0002303 ! decreased object quality
+
+[Term]
+id: PATO:0001563
+name: increased mass
+is_a: PATO:0000125 ! mass
+is_a: PATO:0002305 ! increased object quality
+
+[Term]
+id: PATO:0001566
+name: distributed
+is_a: PATO:0000060 ! spatial pattern
+disjoint_from: PATO:0001629 ! aggregated
+
+[Term]
+id: PATO:0001574
+name: flow rate
+is_a: PATO:0001906 ! movement quality
+
+[Term]
 id: PATO:0001576
 name: increased pressure
 is_a: PATO:0001025 ! pressure
 is_a: PATO:0002305 ! increased object quality
 
 [Term]
+id: PATO:0001591
+name: curvature
+is_a: PATO:0000052 ! shape
+
+[Term]
+id: PATO:0001594
+name: arched
+is_a: PATO:0001857 ! concave
+
+[Term]
+id: PATO:0001595
+name: depth
+is_a: PATO:0001708 ! 1-D extent
+
+[Term]
 id: PATO:0001598
 name: protruding
 is_a: PATO:0000140 ! position
+
+[Term]
+id: PATO:0001624
+name: decreased functionality
+is_a: PATO:0001510 ! functional
+is_a: PATO:0002303 ! decreased object quality
+
+[Term]
+id: PATO:0001629
+name: aggregated
+is_a: PATO:0000330 ! irregular spatial pattern
+
+[Term]
+id: PATO:0001645
+name: protruding into
+is_a: PATO:0001598 ! protruding
 
 [Term]
 id: PATO:0001646
@@ -166,6 +569,91 @@ is_a: PATO:0001655 ! osmolarity
 is_a: PATO:0002305 ! increased object quality
 
 [Term]
+id: PATO:0001671
+name: increased distribution
+is_a: PATO:0001475 ! increased position
+is_a: PATO:0001566 ! distributed
+
+[Term]
+id: PATO:0001675
+name: decreased efficiency
+is_a: PATO:0001678 ! efficient
+is_a: PATO:0002303 ! decreased object quality
+
+[Term]
+id: PATO:0001676
+name: increased efficiency
+is_a: PATO:0001678 ! efficient
+is_a: PATO:0002305 ! increased object quality
+
+[Term]
+id: PATO:0001678
+name: efficient
+is_a: PATO:0001029 ! efficiency
+
+[Term]
+id: PATO:0001682
+name: magnetism
+is_a: PATO:0001018 ! physical quality
+
+[Term]
+id: PATO:0001685
+name: magnetic
+is_a: PATO:0001682 ! magnetism
+
+[Term]
+id: PATO:0001687
+name: elevation
+is_a: PATO:0000140 ! position
+
+[Term]
+id: PATO:0001708
+name: 1-D extent
+is_a: PATO:0000117 ! size
+
+[Term]
+id: PATO:0001709
+name: 2-D extent
+is_a: PATO:0000117 ! size
+
+[Term]
+id: PATO:0001710
+name: 3-D extent
+is_a: PATO:0000117 ! size
+
+[Term]
+id: PATO:0001711
+name: perimeter
+is_a: PATO:0000122 ! length
+
+[Term]
+id: PATO:0001712
+name: increased perimeter
+is_a: PATO:0000573 ! increased length
+is_a: PATO:0001711 ! perimeter
+
+[Term]
+id: PATO:0001713
+name: decreased perimeter
+is_a: PATO:0000574 ! decreased length
+is_a: PATO:0001711 ! perimeter
+
+[Term]
+id: PATO:0001729
+name: shedability
+is_a: PATO:0001995 ! organismal quality
+
+[Term]
+id: PATO:0001731
+name: deciduous (plant)
+is_a: PATO:0001729 ! shedability
+
+[Term]
+id: PATO:0001733
+name: evergreen (plant)
+is_a: PATO:0001729 ! shedability
+
+[Term]
 id: PATO:0001739
 name: radiation quality
 is_a: PATO:0001018 ! physical quality
@@ -181,6 +669,27 @@ name: radioactive
 is_a: PATO:0001740 ! activity (of a radionuclide)
 
 [Term]
+id: PATO:0001759
+name: granular
+is_a: PATO:0000025 ! composition
+
+[Term]
+id: PATO:0001779
+name: decreased strength
+is_a: PATO:0001230 ! strength
+is_a: PATO:0002303 ! decreased object quality
+
+[Term]
+id: PATO:0001789
+name: domed
+is_a: PATO:0000406 ! curved
+
+[Term]
+id: PATO:0001799
+name: ruffled
+is_a: PATO:0000052 ! shape
+
+[Term]
 id: PATO:0001822
 name: wetness
 is_a: PATO:0001018 ! physical quality
@@ -191,9 +700,89 @@ name: dry
 is_a: PATO:0001822 ! wetness
 
 [Term]
+id: PATO:0001838
+name: decreased fluid flow
+is_a: PATO:0002243 ! fluid flow rate
+is_a: PATO:0002303 ! decreased object quality
+
+[Term]
+id: PATO:0001839
+name: increased fluid flow
+is_a: PATO:0002243 ! fluid flow rate
+is_a: PATO:0002305 ! increased object quality
+
+[Term]
 id: PATO:0001842
 name: acidity
 is_a: PATO:0000033 ! concentration of
+
+[Term]
+id: PATO:0001844
+name: increased acidity
+is_a: PATO:0001842 ! acidity
+is_a: PATO:0002305 ! increased object quality
+
+[Term]
+id: PATO:0001854
+name: vertical
+is_a: PATO:0000060 ! spatial pattern
+
+[Term]
+id: PATO:0001855
+name: horizontal
+is_a: PATO:0000140 ! position
+
+[Term]
+id: PATO:0001857
+name: concave
+is_a: PATO:0002005 ! concavity
+
+[Term]
+id: PATO:0001873
+name: cylindrical
+is_a: PATO:0002007 ! convex 3-D shape
+
+[Term]
+id: PATO:0001879
+name: U-shaped
+is_a: PATO:0002008 ! concave 3-D shape
+
+[Term]
+id: PATO:0001884
+name: hydrophobicity
+is_a: PATO:0001018 ! physical quality
+disjoint_from: PATO:0001886 ! hydrophilicity
+
+[Term]
+id: PATO:0001885
+name: hydrophobic
+is_a: PATO:0001884 ! hydrophobicity
+
+[Term]
+id: PATO:0001886
+name: hydrophilicity
+is_a: PATO:0001018 ! physical quality
+
+[Term]
+id: PATO:0001887
+name: hydrophilic
+is_a: PATO:0001886 ! hydrophilicity
+
+[Term]
+id: PATO:0001890
+name: tripartite
+is_a: PATO:0000402 ! branched
+is_a: PATO:0002008 ! concave 3-D shape
+
+[Term]
+id: PATO:0001906
+name: movement quality
+is_a: PATO:0001018 ! physical quality
+
+[Term]
+id: PATO:0001977
+name: angular
+is_a: PATO:0000052 ! shape
 
 [Term]
 id: PATO:0001985
@@ -206,9 +795,111 @@ name: organismal quality
 is_a: PATO:0001241 ! physical object quality
 
 [Term]
+id: PATO:0002005
+name: concavity
+is_a: PATO:0000052 ! shape
+
+[Term]
+id: PATO:0002006
+name: 2-D shape
+is_a: PATO:0000052 ! shape
+
+[Term]
+id: PATO:0002007
+name: convex 3-D shape
+is_a: PATO:0002266 ! 3-D shape
+
+[Term]
+id: PATO:0002008
+name: concave 3-D shape
+is_a: PATO:0002266 ! 3-D shape
+
+[Term]
+id: PATO:0002009
+name: branchiness
+is_a: PATO:0000052 ! shape
+
+[Term]
+id: PATO:0002014
+name: structure, cavities
+is_a: PATO:0000141 ! structure
+
+[Term]
+id: PATO:0002021
+name: conical
+is_a: PATO:0002007 ! convex 3-D shape
+
+[Term]
+id: PATO:0002058
+name: decreased area
+is_a: PATO:0000587 ! decreased size
+is_a: PATO:0001323 ! area
+
+[Term]
+id: PATO:0002062
+name: physical quality of a process
+is_a: PATO:0001236 ! process quality
+
+[Term]
+id: PATO:0002063
+name: columnar
+is_a: PATO:0000052 ! shape
+
+[Term]
+id: PATO:0002064
+name: fenestrated
+is_a: PATO:0000052 ! shape
+
+[Term]
+id: PATO:0002067
+name: stratification
+is_a: PATO:0000060 ! spatial pattern
+
+[Term]
+id: PATO:0002068
+name: stratified
+is_a: PATO:0002067 ! stratification
+
+[Term]
+id: PATO:0002078
+name: hollow
+is_a: PATO:0002014 ! structure, cavities
+
+[Term]
+id: PATO:0002080
+name: broken into two pieces
+is_a: PATO:0001444 ! broken
+
+[Term]
+id: PATO:0002124
+name: laminar
+is_a: PATO:0000141 ! structure
+
+[Term]
 id: PATO:0002138
 name: edibility
 is_a: PATO:0001018 ! physical quality
+
+[Term]
+id: PATO:0002139
+name: edible
+is_a: PATO:0002138 ! edibility
+disjoint_from: PATO:0002140 ! inedible
+
+[Term]
+id: PATO:0002140
+name: inedible
+is_a: PATO:0002138 ! edibility
+
+[Term]
+id: PATO:0002143
+name: sloped downward
+is_a: PATO:0001481 ! sloped
+
+[Term]
+id: PATO:0002180
+name: straight
+is_a: PATO:0000052 ! shape
 
 [Term]
 id: PATO:0002182
@@ -221,13 +912,122 @@ name: quality of a substance
 is_a: PATO:0001018 ! physical quality
 
 [Term]
+id: PATO:0002212
+name: slender
+is_a: PATO:0000052 ! shape
+
+[Term]
+id: PATO:0002219
+name: fan-shaped
+is_a: PATO:0002006 ! 2-D shape
+
+[Term]
+id: PATO:0002224
+name: V-shaped
+is_a: PATO:0001977 ! angular
+
+[Term]
+id: PATO:0002243
+name: fluid flow rate
+is_a: PATO:0001574 ! flow rate
+
+[Term]
+id: PATO:0002253
+name: platelike
+is_a: PATO:0000407 ! flat
+
+[Term]
+id: PATO:0002254
+name: flattened
+is_a: PATO:0001591 ! curvature
+
+[Term]
+id: PATO:0002260
+name: semi erect
+is_a: PATO:0000622 ! erect
+
+[Term]
+id: PATO:0002266
+name: 3-D shape
+is_a: PATO:0000052 ! shape
+
+[Term]
+id: PATO:0002269
+name: accumulation
+is_a: PATO:0000141 ! structure
+
+[Term]
+id: PATO:0002270
+name: increased accumulation
+is_a: PATO:0002269 ! accumulation
+
+[Term]
+id: PATO:0002271
+name: decreased accumulation
+is_a: PATO:0002269 ! accumulation
+
+[Term]
+id: PATO:0002299
+name: tubular
+is_a: PATO:0001873 ! cylindrical
+is_a: PATO:0002078 ! hollow
+
+[Term]
 id: PATO:0002300
 name: increased quality
 is_a: PATO:0000069 ! deviation(from_normal)
+
+[Term]
+id: PATO:0002301
+name: decreased quality
+is_a: PATO:0000069 ! deviation(from_normal)
+
+[Term]
+id: PATO:0002302
+name: decreased process quality
+is_a: PATO:0001236 ! process quality
+is_a: PATO:0002301 ! decreased quality
+
+[Term]
+id: PATO:0002303
+name: decreased object quality
+is_a: PATO:0001241 ! physical object quality
+is_a: PATO:0002301 ! decreased quality
+
+[Term]
+id: PATO:0002304
+name: increased process quality
+is_a: PATO:0001236 ! process quality
+is_a: PATO:0002300 ! increased quality
 
 [Term]
 id: PATO:0002305
 name: increased object quality
 is_a: PATO:0001241 ! physical object quality
 is_a: PATO:0002300 ! increased quality
+
+[Term]
+id: PATO:0002323
+name: temporal distribution quality
+is_a: PATO:0002062 ! physical quality of a process
+
+[Term]
+id: PATO:0002359
+name: broad
+is_a: PATO:0000052 ! shape
+
+[Term]
+id: PATO:0002416
+name: sunken
+is_a: PATO:0001687 ! elevation
+
+[Term]
+id: PATO:0002425
+name: exposed
+is_a: PATO:0000140 ! position
+
+[Term]
+id: PATO:0002453
+name: eroding
+is_a: PATO:0000141 ! structure
 
