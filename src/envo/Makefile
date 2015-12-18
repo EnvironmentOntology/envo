@@ -13,7 +13,7 @@ all: build
 
 #include Makefile-OBO
 
-test: touch envo-edit.owl all_modules all_imports envo.owl
+test: envo-edit.owl all_modules all_imports envo.owl
 
 build: envo.owl subsets/envo-basic.obo
 
