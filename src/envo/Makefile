@@ -19,7 +19,7 @@ test: envo-edit.owl all_modules all_imports envo.owl
 
 build: envo.owl subsets/envo-basic.obo
 
-prepare_release: build release-diffs copy-release
+prepare_release: build  copy-release
 
 copy-release:
 	cp -pr catalog-v001.xml envo.obo envo.owl subsets mappings imports ../..
