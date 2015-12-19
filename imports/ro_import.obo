@@ -1,6 +1,7 @@
 format-version: 1.2
 ontology: envo/imports/ro_import
-property_value: http://purl.org/dc/elements/1.1/source http://purl.obolibrary.org/obo/ro/releases/2015-08-08/ro.owl
+property_value: http://purl.org/dc/elements/1.1/source http://purl.obolibrary.org/obo/ro/releases/2015-10-29/ro.owl
+owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\nObjectPropertyRange(<http://purl.obolibrary.org/obo/RO_0002176> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/RO_0002577>))\n)
 
 [Term]
 id: BFO:0000002
@@ -47,15 +48,28 @@ def: "A continuant that inheres in or is borne by other entities. Every instance
 is_a: BFO:0000002 ! continuant
 
 [Term]
-id: BFO:0000034
-name: function
-is_a: BFO:0000016 ! disposition
+id: BFO:0000023
+name: role
+def: "A realizable entity  the manifestation of which brings about some result or end that is not essential to a continuant  in virtue of the kind of thing that it is but that can be served or participated in by that kind of continuant  in some kinds of natural, social or institutional contexts." []
+is_a: BFO:0000017 ! realizable entity
 
 [Term]
 id: BFO:0000040
 name: material entity
 def: "An independent continuant that is spatially extended whose identity is independent of that of other entities and can be maintained through time." []
 is_a: BFO:0000004 ! independent continuant
+
+[Term]
+id: CARO:0000003
+name: anatomical structure
+is_a: CARO:0000006 ! material anatomical entity
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/caro.owl
+
+[Term]
+id: CARO:0000006
+name: material anatomical entity
+is_a: BFO:0000040 ! material entity
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/caro.owl
 
 [Term]
 id: ENVO:00000428
@@ -71,6 +85,48 @@ is_a: ENVO:01000254 ! environmental system
 id: ENVO:01000254
 name: environmental system
 is_a: RO:0002577 ! system
+
+[Term]
+id: GO:0008150
+name: biological_process
+is_a: BFO:0000015 ! process
+
+[Term]
+id: PATO:0000001
+name: quality
+is_a: BFO:0000020 ! specifically dependent continuant
+property_value: IAO:0000589 "quality (PATO)" xsd:string
+
+[Term]
+id: PATO:0000051
+name: morphology
+is_a: BFO:0000019 ! quality
+is_a: PATO:0001241 ! physical object quality
+
+[Term]
+id: PATO:0000052
+name: shape
+is_a: PATO:0000051 ! morphology
+
+[Term]
+id: PATO:0000141
+name: structure
+is_a: PATO:0000051 ! morphology
+
+[Term]
+id: PATO:0001199
+name: linear
+is_a: PATO:0000052 ! shape
+
+[Term]
+id: PATO:0001241
+name: physical object quality
+is_a: PATO:0000001 ! quality
+
+[Term]
+id: PATO:0002124
+name: laminar
+is_a: PATO:0000141 ! structure
 
 [Term]
 id: RO:0002577
@@ -114,4 +170,15 @@ property_value: IAO:0000116 "Parthood requires the part and the whole to have co
 property_value: IAO:0000118 "has_part" xsd:string
 property_value: RO:0001900 RO:0001901
 is_transitive: true
+
+[Typedef]
+id: RO:0002176
+name: connects
+def: "c connects a if and only if there exist some b such that a and b are similar parts of the same system, and c connects b, specifically, c connects a with b. When one structure connects two others it unites some aspect of the function or role they play within the system." []
+property_value: http://xmlns.com/foaf/0.1/page https://github.com/obophenotype/uberon/wiki/Connectivity-Design-Pattern xsd:anyURI
+property_value: http://xmlns.com/foaf/0.1/page https://github.com/obophenotype/uberon/wiki/Modeling-articulations-Design-Pattern xsd:anyURI
+property_value: IAO:0000112 "a 'toe distal phalanx bone' that is connected to a 'toe medial phalanx bone' (an interphalangeal joint *connects* these two bones)." xsd:string
+property_value: IAO:0000112 "The M8 connects Glasgow and Edinburgh" xsd:string
+property_value: IAO:0000119 http://www.ncbi.nlm.nih.gov/pubmed/22293552
+domain: BFO:0000004 ! independent continuant
 
