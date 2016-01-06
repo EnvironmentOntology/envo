@@ -8,8 +8,10 @@
 
 OBO=http://purl.obolibrary.org/obo
 USECAT= --catalog-xml catalog-v001.xml
-MODS = entity_attribute_location entity_quality_location
+MODS = entity_attribute_location entity_quality_location entity_attribute
 ALL_MODS_OWL = $(patsubst %, modules/%.owl, $(MODS))
+ROBOT= robot
+OWLTOOLS= owltools
 
 all: build
 
@@ -17,7 +19,7 @@ all: build
 
 test: envo-edit.owl all_modules all_imports envo.owl
 
-build: envo.owl subsets/envo-basic.obo
+build: envo.owl envo.obo subsets/envo-basic.obo
 
 prepare_release: build  copy-release
 
@@ -97,6 +99,11 @@ imports/%_import.owl: envo-edit.owl mirror/%.owl imports/%_seed.owl $(ALL_MODS_O
 
 imports/%_import.obo: imports/%_import.owl
 	owltools $(USECAT) $< -o -f obo $@
+
+# RO: Use ROBOT, driven entirely by terms lists NOT from source ontology
+imports/ro_import.owl: mirror/ro.owl imports/ro_terms.txt
+	$(ROBOT) extract -i $< -T imports/ro_terms.txt --method BOT -O $(SDG_IMPORTS_BASE_URI)/$@ -o $@
+.PRECIOUS: imports/%_import.owl
 
 # clone remote ontology locally, perfoming some excision of relations and annotations
 mirror/%.owl: envo-edit.owl
