@@ -1,12 +1,17 @@
 format-version: 1.2
-data-version: releases/2015-12-18
+data-version: releases/2016-01-22
 subsetdef: disposition_slim "Disposition slim"
+subsetdef: environmental_hazards "environmental_hazards"
+subsetdef: EnvO-Lite-GSC "EnvO-Lite-GSC"
 subsetdef: mpath_slim "Pathology slim"
 subsetdef: relational_slim "Relational slim: types of quality that require an additional entity in order to exist"
+subsetdef: ro-eco "ro-eco"
 subsetdef: scalar_slim "Scalar slim"
 subsetdef: value_slim "Value slim"
+synonymtypedef: PLURAL "plurals"
 default-namespace: ENVO
 remark: ENVO is an ontology which represents knowledge about environments,environmental processes, ecosystems, habitats, and related entities. It interoperates with other ontologies in the OBO Foundry and Library. Please see www.environmentontology.org for more.
+remark: Includes Ontology(OntologyID(OntologyIRI(<file:/imports/ro_import.owl>))) [Axioms: 1065 Logical Axioms: 258]
 remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/imports/bfo_import.owl>))) [Axioms: 34 Logical Axioms: 7]
 remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/imports/chebi_import.owl>))) [Axioms: 2279 Logical Axioms: 965]
 remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/imports/imports/ncbitaxon_import.owl>))) [Axioms: 261 Logical Axioms: 56]
@@ -14,8 +19,8 @@ remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo
 remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/imports/pato_import.owl>))) [Axioms: 642 Logical Axioms: 240]
 remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/imports/pco_bfo_bridge.owl>))) [Axioms: 3 Logical Axioms: 1]
 remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/imports/pco_import.owl>))) [Axioms: 21 Logical Axioms: 3]
-remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/imports/ro_import.owl>))) [Axioms: 534 Logical Axioms: 28]
 remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/imports/uberon_import.owl>))) [Axioms: 25196 Logical Axioms: 4846]
+remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/modules/entity_attribute.owl>))) [Axioms: 19 Logical Axioms: 2]
 remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/modules/entity_attribute_location.owl>))) [Axioms: 107 Logical Axioms: 18]
 remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/modules/entity_quality_location.owl>))) [Axioms: 45 Logical Axioms: 6]
 ontology: envo
@@ -69,6 +74,11 @@ id: BFO:0000023
 name: role
 def: "A realizable entity  the manifestation of which brings about some result or end that is not essential to a continuant  in virtue of the kind of thing that it is but that can be served or participated in by that kind of continuant  in some kinds of natural, social or institutional contexts." []
 is_a: BFO:0000017 ! realizable entity
+
+[Term]
+id: BFO:0000034
+name: function
+is_a: BFO:0000016 ! disposition
 
 [Term]
 id: BFO:0000040
@@ -3722,8 +3732,8 @@ is_a: ENVO:0010001 ! anthropogenic environmental material
 id: ENVO:00000004
 name: administrative region
 synonym: "administrative area" EXACT [ADL:FTT]
-synonym: "administrative division" RELATED [Getty:TGN]
 synonym: "administrative division" RELATED [ADL:FTT]
+synonym: "administrative division" RELATED [Getty:TGN]
 synonym: "administrative entity" RELATED [Getty:TGN]
 synonym: "boundary region" RELATED [ADL:FTT]
 synonym: "civil area" RELATED [ADL:FTT]
@@ -3873,8 +3883,8 @@ synonym: "eddy" RELATED [ADL:FTT]
 synonym: "fluvial feature" RELATED [ADL:FTT]
 synonym: "marine feature" RELATED [ADL:FTT]
 synonym: "OVERFALLS" RELATED [USGS:SDTS]
-synonym: "overfalls" RELATED [ADL:FTT]
 synonym: "overfalls" RELATED [Geonames:feature]
+synonym: "overfalls" RELATED [ADL:FTT]
 synonym: "tidal ripp" RELATED [USGS:SDTS]
 synonym: "upwelling" RELATED [ADL:FTT]
 xref: FTT:131
@@ -3948,8 +3958,8 @@ synonym: "open sea" NARROW [USGS:SDTS]
 synonym: "open sound" NARROW [USGS:SDTS]
 synonym: "open water" NARROW [USGS:SDTS]
 synonym: "Sea" EXACT [NASA:earthrealm]
-synonym: "sea" EXACT [ADL:FTT]
 synonym: "sea" EXACT [Geonames:feature]
+synonym: "sea" EXACT [ADL:FTT]
 xref: EcoLexicon:sea
 xref: FTT:233
 xref: FTT:830
@@ -3980,8 +3990,8 @@ relationship: located_in ENVO:0010163 ! dry river valley
 id: ENVO:00000019
 name: saline lake
 def: "A lake whose water contains a considerable concentration of dissolved salts." [MA:ma]
-synonym: "lake" BROAD [USGS:SDTS]
 synonym: "lake" BROAD [ADL:FTT]
+synonym: "lake" BROAD [USGS:SDTS]
 synonym: "salina" RELATED [USGS:SDTS]
 synonym: "SalineLake" EXACT [NASA:earthrealm]
 synonym: "salt lake" EXACT [Getty:TGN]
@@ -4067,13 +4077,13 @@ name: stream
 def: "Linear body of water flowing on the Earth's surface." [USGS:http\://mapping.usgs.gov/www/ti/GNIS/gnis_users_guide_appendixc.html]
 synonym: "beck" RELATED [USGS:SDTS]
 synonym: "braided stream" NARROW [USGS:SDTS]
-synonym: "brook" RELATED [ADL:FTT]
 synonym: "brook" RELATED [Getty:TGN]
+synonym: "brook" RELATED [ADL:FTT]
 synonym: "burn (hydrographic)" RELATED [ADL:FTT]
 synonym: "Creek" RELATED [NASA:earthrealm]
+synonym: "creek" RELATED [USGS:SDTS]
 synonym: "creek" RELATED [ADL:FTT]
 synonym: "creek" RELATED [Getty:TGN]
-synonym: "creek" RELATED [USGS:SDTS]
 synonym: "fork (hydrographic" NARROW [ADL:FTT]
 synonym: "glacial stream" NARROW [USGS:SDTS]
 synonym: "lode" NARROW [USGS:SDTS]
@@ -4139,8 +4149,8 @@ id: ENVO:00000026
 name: well
 def: "A cylindrical hole, pit, or tunnel drilled or dug down to a depth from which water, oil, or gas can be pumped or brought to the surface." [Geonames:feature]
 synonym: "brine well" NARROW [USGS:SDTS]
-synonym: "oil well" NARROW [USGS:SDTS]
 synonym: "oil well" NARROW [ADL:FTT]
+synonym: "oil well" NARROW [USGS:SDTS]
 synonym: "water well" NARROW [ADL:FTT]
 synonym: "WELL" EXACT [USGS:SDTS]
 synonym: "well" EXACT [Geonames:feature]
@@ -4202,13 +4212,13 @@ synonym: "gutter" NARROW [USGS:SDTS]
 synonym: "kill" NARROW [USGS:SDTS]
 synonym: "lode" NARROW [USGS:SDTS]
 synonym: "moat" RELATED [USGS:SDTS]
-synonym: "narrows" NARROW [Geonames:feature]
 synonym: "narrows" NARROW [USGS:SDTS]
+synonym: "narrows" NARROW [Geonames:feature]
 synonym: "narrows" RELATED [Getty:TGN]
 synonym: "narrows (hydrographic)" RELATED [ADL:FTT]
 synonym: "overflow channel" NARROW [USGS:SDTS]
-synonym: "passage" NARROW [USGS:SDTS]
 synonym: "passage" NARROW [Getty:TGN]
+synonym: "passage" NARROW [USGS:SDTS]
 synonym: "pup" NARROW [USGS:SDTS]
 synonym: "race" NARROW [USGS:SDTS]
 synonym: "ravine" NARROW [USGS:SDTS]
@@ -4218,8 +4228,8 @@ synonym: "reach" NARROW [USGS:SDTS]
 synonym: "rill" NARROW [USGS:SDTS]
 synonym: "rio" NARROW [USGS:SDTS]
 synonym: "rivulet" NARROW [USGS:SDTS]
-synonym: "run" NARROW [Getty:TGN]
 synonym: "run" NARROW [USGS:SDTS]
+synonym: "run" NARROW [Getty:TGN]
 synonym: "runnel" NARROW [USGS:SDTS]
 synonym: "seachannel" NARROW [USGS:SDTS]
 synonym: "seaway" NARROW [USGS:SDTS]
@@ -4275,8 +4285,8 @@ synonym: "coulee" RELATED [ADL:FTT]
 synonym: "gully" RELATED [ADL:FTT]
 synonym: "nullah" RELATED [USGS:SDTS]
 synonym: "wadi" EXACT [Geonames:feature]
-synonym: "wadi bend" NARROW [Geonames:feature]
 synonym: "wadi bend" NARROW [ADL:FTT]
+synonym: "wadi bend" NARROW [Geonames:feature]
 synonym: "wadi junction" NARROW [ADL:FTT]
 synonym: "wadi mouth" NARROW [ADL:FTT]
 synonym: "wadis" EXACT [Geonames:feature]
@@ -4309,8 +4319,8 @@ name: bay
 def: "An area of water bordered by land on three sides." [Wikipedia:Bay]
 synonym: "bahia" RELATED [ADL:FTT]
 synonym: "bay" RELATED [Geonames:feature]
-synonym: "bight" RELATED [Getty:TGN]
 synonym: "bight" RELATED [Geonames:feature]
+synonym: "bight" RELATED [Getty:TGN]
 synonym: "embayment" RELATED []
 synonym: "firth" RELATED []
 synonym: "geo" RELATED []
@@ -4337,13 +4347,13 @@ is_a: ENVO:00000137 ! coastal inlet
 id: ENVO:00000033
 name: pond
 def: "A body of water, usually of smaller size than a lake." [MA:ma]
-synonym: "lake" BROAD [ADL:FTT]
 synonym: "lake" BROAD [USGS:SDTS]
+synonym: "lake" BROAD [ADL:FTT]
 synonym: "millpond" RELATED [USGS:SDTS]
 synonym: "millpond" RELATED [ADL:FTT]
 synonym: "Pond" EXACT [NASA:earthrealm]
-synonym: "pond" RELATED [ADL:FTT]
 synonym: "pond" RELATED [Geonames:feature]
+synonym: "pond" RELATED [ADL:FTT]
 synonym: "ponds" RELATED [Geonames:feature]
 synonym: "POOL" RELATED [Getty:TGN]
 synonym: "pool" RELATED [USGS:SDTS]
@@ -4391,8 +4401,8 @@ synonym: "Marsh" RELATED [NASA:earthrealm]
 synonym: "marsh" RELATED [Geonames:feature]
 synonym: "quagmire" RELATED [USGS:SDTS]
 synonym: "quagmire" RELATED [ADL:FTT]
-synonym: "wetland" BROAD [USGS:SDTS]
 synonym: "wetland" BROAD [ADL:FTT]
+synonym: "wetland" BROAD [USGS:SDTS]
 xref: EcoLexicon:marsh
 xref: FTT:1118
 xref: FTT:185
@@ -4410,8 +4420,8 @@ id: ENVO:00000036
 name: irrigation canal
 def: "Artificial watercourse with no flow or a controlled flow used irrigation." [MA:ma]
 synonym: "canal" BROAD [Geonames:feature]
-synonym: "irrigation canal" EXACT [ADL:FTT]
 synonym: "irrigation canal" EXACT [Geonames:feature]
+synonym: "irrigation canal" EXACT [ADL:FTT]
 xref: FTT:129
 xref: FTT:405
 xref: Geonames:H.CNLI
@@ -4529,8 +4539,8 @@ id: ENVO:00000042
 name: drainage canal
 def: "Artificial watercourse with no flow or a controlled flow used drainage." [MA:ma]
 synonym: "canal" BROAD [ADL:FTT]
-synonym: "drainage canal" EXACT [Geonames:feature]
 synonym: "drainage canal" EXACT [ADL:FTT]
+synonym: "drainage canal" EXACT [Geonames:feature]
 xref: FTT:129
 xref: FTT:401
 xref: Geonames:H.CNLD
@@ -4546,8 +4556,8 @@ synonym: "backswamp" NARROW [USGS:SDTS]
 synonym: "backwater" NARROW [ADL:FTT]
 synonym: "barrier flat" NARROW [USGS:SDTS]
 synonym: "blanket bog" NARROW [USGS:SDTS]
-synonym: "bog" NARROW [ADL:FTT]
 synonym: "bog" NARROW [Getty:TGN]
+synonym: "bog" NARROW [ADL:FTT]
 synonym: "cienaga" NARROW [ADL:FTT]
 synonym: "dismal" NARROW [USGS:SDTS]
 synonym: "EstuarineWetland" NARROW [NASA:earthrealm]
@@ -4572,8 +4582,8 @@ synonym: "quaking bog" NARROW [USGS:SDTS]
 synonym: "riparian area" NARROW [ADL:FTT]
 synonym: "RiparianWetland" NARROW [NASA:earthrealm]
 synonym: "slash" NARROW [USGS:SDTS]
-synonym: "slough" NARROW [ADL:FTT]
 synonym: "slough" NARROW [USGS:SDTS]
+synonym: "slough" NARROW [ADL:FTT]
 synonym: "slough" NARROW [Getty:TGN]
 synonym: "slue" NARROW [ADL:FTT]
 synonym: "swamp forest" NARROW [USGS:SDTS]
@@ -4617,9 +4627,9 @@ is_a: ENVO:01001305 ! vegetated area
 id: ENVO:00000044
 name: peatland
 def: "A wetland type that accumulates acidic peat, a deposit of dead plant material." [Wikipedia:Bog]
+synonym: "bog" RELATED [Geonames:feature]
 synonym: "bog" RELATED [ADL:FTT]
 synonym: "bog" RELATED [USGS:SDTS]
-synonym: "bog" RELATED [Geonames:feature]
 synonym: "mire" RELATED []
 synonym: "morass" RELATED [USGS:SDTS]
 synonym: "muskeg" RELATED [USGS:SDTS]
@@ -4795,8 +4805,8 @@ def: "A shallow man-made pond designed to produce salt from sea water. The seawa
 synonym: "lake" BROAD [ADL:FTT]
 synonym: "salt evaporation pond" EXACT [Geonames:feature]
 synonym: "salt evaporation pond" EXACT [ADL:FTT]
-synonym: "salt pond" RELATED [Geonames:feature]
 synonym: "salt pond" RELATED [ADL:FTT]
+synonym: "salt pond" RELATED [Geonames:feature]
 synonym: "salt ponds" RELATED [Geonames:feature]
 synonym: "saltern" RELATED []
 xref: FTT:221
@@ -4934,8 +4944,8 @@ synonym: "drove" RELATED [ADL:FTT]
 synonym: "farm lane" RELATED [USGS:SDTS]
 synonym: "freeway" RELATED [USGS:SDTS]
 synonym: "highway" NARROW [ADL:FTT]
-synonym: "highway" NARROW [Getty:TGN]
 synonym: "highway" NARROW [USGS:SDTS]
+synonym: "highway" NARROW [Getty:TGN]
 synonym: "intersection" NARROW [ADL:FTT]
 synonym: "lane" RELATED []
 synonym: "parkway" NARROW [ADL:FTT]
@@ -4945,10 +4955,10 @@ synonym: "road" EXACT [Geonames:feature]
 synonym: "road bend" NARROW [ADL:FTT]
 synonym: "road junction" NARROW [ADL:FTT]
 synonym: "roadway" RELATED [ADL:FTT]
+synonym: "street" RELATED [Geonames:feature]
 synonym: "street" RELATED [Getty:TGN]
 synonym: "street" RELATED [ADL:FTT]
 synonym: "street" RELATED [USGS:SDTS]
-synonym: "street" RELATED [Geonames:feature]
 synonym: "thorofare" RELATED [USGS:SDTS]
 synonym: "thoroughfare" RELATED [USGS:SDTS]
 synonym: "thruway" RELATED [USGS:SDTS]
@@ -4981,8 +4991,8 @@ id: ENVO:00000065
 name: railway
 def: "A permanent way having one or more rails which provides a track for cars." [USGS:SDTS]
 synonym: "railroad" EXACT [USGS:SDTS]
-synonym: "railroad" EXACT [Geonames:feature]
 synonym: "railroad" EXACT [Getty:TGN]
+synonym: "railroad" EXACT [Geonames:feature]
 synonym: "railroad feature" BROAD [ADL:FTT]
 synonym: "RAILWAY" EXACT [USGS:SDTS]
 xref: FTT:1132
@@ -4998,10 +5008,10 @@ id: ENVO:00000066
 name: man-made tunnel
 def: "A tunnel constructed by human means." [MA:ma]
 synonym: "canal tunnel" NARROW [ADL:FTT]
-synonym: "railroad tunnel" NARROW [Geonames:feature]
 synonym: "railroad tunnel" NARROW [ADL:FTT]
-synonym: "road tunnel" NARROW [Geonames:feature]
+synonym: "railroad tunnel" NARROW [Geonames:feature]
 synonym: "road tunnel" NARROW [ADL:FTT]
+synonym: "road tunnel" NARROW [Geonames:feature]
 synonym: "tunnel" BROAD [Geonames:feature]
 synonym: "tunnel" BROAD [ADL:FTT]
 synonym: "tunnels" BROAD [Geonames:feature]
@@ -5027,8 +5037,8 @@ synonym: "Cave" RELATED [NASA:earthrealm]
 synonym: "cave" RELATED [Geonames:feature]
 synonym: "cavern" RELATED [ADL:FTT]
 synonym: "cavern" RELATED [USGS:SDTS]
-synonym: "grotto" RELATED [USGS:SDTS]
 synonym: "grotto" RELATED [ADL:FTT]
+synonym: "grotto" RELATED [USGS:SDTS]
 synonym: "notch" RELATED [USGS:SDTS]
 xref: FTT:1071
 xref: FTT:443
@@ -5048,8 +5058,8 @@ id: ENVO:00000068
 name: tunnel
 def: "An underground or underwater passage." [USGS:SDTS]
 synonym: "cave" RELATED [ADL:FTT]
-synonym: "natural tunnel" RELATED [Getty:TGN]
 synonym: "natural tunnel" RELATED [Geonames:feature]
+synonym: "natural tunnel" RELATED [Getty:TGN]
 synonym: "TUNNEL" EXACT [USGS:SDTS]
 xref: FTT:445
 xref: FTT:448
@@ -5094,9 +5104,9 @@ is_a: ENVO:00000067 ! cave
 id: ENVO:00000072
 name: aquaduct
 def: "Structure designed to transport water from a remote source, usually by gravity." [ADL:FTT]
-synonym: "aqueduct" EXACT [Getty:TGN]
 synonym: "aqueduct" EXACT [USGS:SDTS]
 synonym: "aqueduct" EXACT [Geonames:feature]
+synonym: "aqueduct" EXACT [Getty:TGN]
 synonym: "WATERCOURSE BRIDGE" RELATED [USGS:SDTS]
 xref: FTT:128
 xref: Geonames:H.CNLA
@@ -5158,8 +5168,8 @@ id: ENVO:00000076
 name: mine
 def: "An excavation in the Earth for the purpose of extracting earth materials." [USGS:SDTS]
 synonym: "MINE" EXACT [USGS:SDTS]
-synonym: "mine site" BROAD [Geonames:feature]
 synonym: "mine site" BROAD [ADL:FTT]
+synonym: "mine site" BROAD [Geonames:feature]
 xref: EcoLexicon:mine
 xref: FTT:14
 xref: FTT:968
@@ -5190,8 +5200,8 @@ synonym: "feedlot" NARROW [ADL:FTT]
 synonym: "grange" NARROW [ADL:FTT]
 synonym: "grazing allotment" NARROW [ADL:FTT]
 synonym: "irrigated field" NARROW [ADL:FTT]
-synonym: "nursery" NARROW [ADL:FTT]
 synonym: "nursery" NARROW [Geonames:feature]
+synonym: "nursery" NARROW [ADL:FTT]
 synonym: "pastoral site" NARROW [ADL:FTT]
 synonym: "sheepfold" NARROW [ADL:FTT]
 synonym: "stockyard" NARROW [ADL:FTT]
@@ -5227,9 +5237,9 @@ synonym: "farm" RELATED [Geonames:feature]
 synonym: "farms" RELATED [Geonames:feature]
 synonym: "farmstead" RELATED [ADL:FTT]
 synonym: "nursery" RELATED [USGS:SDTS]
+synonym: "ranch" RELATED [USGS:SDTS]
 synonym: "ranch" RELATED [Getty:TGN]
 synonym: "ranch" RELATED [Geonames:feature]
-synonym: "ranch" RELATED [USGS:SDTS]
 xref: FTT:45
 xref: FTT:58
 xref: FTT:59
@@ -5283,10 +5293,10 @@ name: mountain
 def: "A landform that extends above the surrounding terrain in a limited area. A mountain is generally steeper than a hill, but there is no universally accepted standard definition for the height of a mountain or a hill although a mountain usually has an identifiable summit and a local relief of more than 300m." [Wikipedia:Mountain#United_Kingdom]
 synonym: "cerro" RELATED [ADL:FTT]
 synonym: "cordillera" RELATED [ADL:FTT]
-synonym: "foothill" NARROW [USGS:SDTS]
 synonym: "foothill" NARROW [ADL:FTT]
-synonym: "knoll" RELATED [USGS:SDTS]
+synonym: "foothill" NARROW [USGS:SDTS]
 synonym: "knoll" RELATED [ADL:FTT]
+synonym: "knoll" RELATED [USGS:SDTS]
 synonym: "mound" RELATED [USGS:SDTS]
 synonym: "mount" RELATED [USGS:SDTS]
 synonym: "Mountain" EXACT [NASA:earthrealm]
@@ -5355,9 +5365,9 @@ synonym: "gap" RELATED [Getty:TGN]
 synonym: "notch" RELATED [USGS:SDTS]
 synonym: "pass" EXACT [Geonames:feature]
 synonym: "pass" RELATED [ADL:FTT]
-synonym: "saddle" RELATED [Getty:TGN]
 synonym: "saddle" RELATED [Geonames:feature]
 synonym: "saddle" RELATED [USGS:SDTS]
+synonym: "saddle" RELATED [Getty:TGN]
 synonym: "saddle (physiographic)" RELATED [ADL:FTT]
 synonym: "sill (physiographic)" RELATED [ADL:FTT]
 xref: EcoLexicon:mountain_pass
@@ -5411,8 +5421,8 @@ id: ENVO:00000087
 name: cliff
 def: "A high, steep, or overhanging face of rock." [USGS:SDTS]
 synonym: "beach scarp" RELATED [USGS:SDTS]
-synonym: "bluff" RELATED [ADL:FTT]
 synonym: "bluff" RELATED [USGS:SDTS]
+synonym: "bluff" RELATED [ADL:FTT]
 synonym: "ceja" RELATED [USGS:SDTS]
 synonym: "CLIFF" EXACT [USGS:SDTS]
 synonym: "cliff" EXACT [Geonames:feature]
@@ -5451,8 +5461,8 @@ relationship: part_of ENVO:00000303 ! sea coast
 [Term]
 id: ENVO:00000089
 name: inland cliff
-synonym: "crag" RELATED [USGS:SDTS]
 synonym: "crag" RELATED [ADL:FTT]
+synonym: "crag" RELATED [USGS:SDTS]
 xref: EcoLexicon:crag
 xref: FTT:589
 is_a: ENVO:00000087 ! cliff
@@ -5495,8 +5505,8 @@ synonym: "beaches" RELATED [Geonames:feature]
 synonym: "foreshore flats" RELATED [USGS:SDTS]
 synonym: "lagoon beach" NARROW [USGS:SDTS]
 synonym: "rivage" RELATED [USGS:SDTS]
-synonym: "strand" RELATED [USGS:SDTS]
 synonym: "strand" RELATED [ADL:FTT]
+synonym: "strand" RELATED [USGS:SDTS]
 xref: EcoLexicon:beach
 xref: EcoLexicon:to_beach
 xref: FTT:237
@@ -5546,8 +5556,8 @@ relationship: formed_as_result_of ENVO:01000634 ! volcanic eruption
 id: ENVO:00000095
 name: obsolete lava field
 def: "A feature formed by cooled lava, the molten rock that is expelled by a volcano during an eruption." [MA:ma]
-synonym: "lava area" EXACT [Geonames:feature]
 synonym: "lava area" EXACT [ADL:FTT]
+synonym: "lava area" EXACT [Geonames:feature]
 synonym: "lava flow" RELATED [Getty:TGN]
 synonym: "lava plain" RELATED []
 xref: EcoLexicon:lava_flow
@@ -5600,8 +5610,8 @@ name: island
 def: "Area of dry or relatively dry land surrounded by water or low wetland." [USGS:SDTS]
 synonym: "barrier island" RELATED [USGS:SDTS]
 synonym: "BarrierIsland" NARROW [NASA:earthrealm]
-synonym: "cay" RELATED [ADL:FTT]
 synonym: "cay" RELATED [USGS:SDTS]
+synonym: "cay" RELATED [ADL:FTT]
 synonym: "eyot" RELATED []
 synonym: "holm" RELATED []
 synonym: "hummock" RELATED [USGS:SDTS]
@@ -5612,8 +5622,8 @@ synonym: "IslandArc" RELATED [NASA:earthrealm]
 synonym: "islands" EXACT [Geonames:feature]
 synonym: "isle" RELATED [ADL:FTT]
 synonym: "islet" RELATED [Getty:TGN]
-synonym: "islet" RELATED [ADL:FTT]
 synonym: "islet" RELATED [USGS:SDTS]
+synonym: "islet" RELATED [ADL:FTT]
 synonym: "key" RELATED [USGS:SDTS]
 synonym: "key (island)" RELATED [ADL:FTT]
 xref: EcoLexicon:island
@@ -5655,15 +5665,15 @@ synonym: "coulee" NARROW [USGS:SDTS]
 synonym: "dale" NARROW [USGS:SDTS]
 synonym: "glacial gorge" NARROW [USGS:SDTS]
 synonym: "glacial trough" NARROW [USGS:SDTS]
-synonym: "glen" RELATED [USGS:SDTS]
 synonym: "glen" RELATED [ADL:FTT]
+synonym: "glen" RELATED [USGS:SDTS]
 synonym: "goe" RELATED [USGS:SDTS]
 synonym: "gorge" RELATED [USGS:SDTS]
 synonym: "gorge" RELATED [Geonames:feature]
 synonym: "graben" RELATED [USGS:SDTS]
 synonym: "gulch" NARROW [USGS:SDTS]
-synonym: "gully" NARROW [Getty:TGN]
 synonym: "gully" NARROW [USGS:SDTS]
+synonym: "gully" NARROW [Getty:TGN]
 synonym: "hollow" RELATED [Getty:TGN]
 synonym: "hollow" RELATED [USGS:SDTS]
 synonym: "hollow" RELATED [ADL:FTT]
@@ -5909,13 +5919,13 @@ def: "An area in which grasses (Graminae) are a significant component of the veg
 synonym: "down" RELATED [USGS:SDTS]
 synonym: "downland" RELATED [USGS:SDTS]
 synonym: "downs" RELATED [USGS:SDTS]
-synonym: "glade" RELATED [USGS:SDTS]
 synonym: "glade" RELATED [ADL:FTT]
+synonym: "glade" RELATED [USGS:SDTS]
 synonym: "GRASSLAND" EXACT [USGS:SDTS]
 synonym: "Grassland" RELATED [NASA:earthrealm]
 synonym: "grassland" EXACT [Geonames:feature]
-synonym: "grazing area" RELATED [ADL:FTT]
 synonym: "grazing area" RELATED [Getty:TGN]
+synonym: "grazing area" RELATED [ADL:FTT]
 synonym: "herbaceous area" RELATED [USGS:SDTS]
 synonym: "range" RELATED [USGS:SDTS]
 xref: EcoLexicon:grassland
@@ -5949,8 +5959,8 @@ is_a: ENVO:01001305 ! vegetated area
 id: ENVO:00000108
 name: meadow
 def: "A habitat of rolling or flat terrain where grasses predominate. Typically, what is called a meadow has more biodiversity than a grassland as the former contains not only grasses but a significant variety of annual, biennial and perennial plants." [Wikipedia:Meadow]
-synonym: "grassland" RELATED [USGS:SDTS]
 synonym: "grassland" RELATED [ADL:FTT]
+synonym: "grassland" RELATED [USGS:SDTS]
 synonym: "hay meadow" RELATED [USGS:SDTS]
 synonym: "meadow" EXACT [Geonames:feature]
 xref: FTT:259
@@ -6002,9 +6012,9 @@ synonym: "taiga" RELATED [USGS:SDTS]
 synonym: "thicket" RELATED [USGS:SDTS]
 synonym: "thorn forest" RELATED [USGS:SDTS]
 synonym: "tropical rain forest" RELATED [USGS:SDTS]
-synonym: "wood" RELATED [Getty:TGN]
-synonym: "wood" RELATED [ADL:FTT]
 synonym: "wood" RELATED [USGS:SDTS]
+synonym: "wood" RELATED [ADL:FTT]
+synonym: "wood" RELATED [Getty:TGN]
 synonym: "wooded area" RELATED [USGS:SDTS]
 synonym: "WOODLAND" EXACT [USGS:SDTS]
 xref: EcoLexicon:coniferous_forest
@@ -6087,8 +6097,8 @@ synonym: "agricultural region" RELATED []
 synonym: "CROPLAND" RELATED [USGS:SDTS]
 synonym: "cropland" NARROW [ADL:FTT]
 synonym: "cultivated area" RELATED [USGS:SDTS]
-synonym: "cultivated area" RELATED [ADL:FTT]
 synonym: "cultivated area" RELATED [Geonames:feature]
+synonym: "cultivated area" RELATED [ADL:FTT]
 synonym: "cultivated cropland" RELATED [ADL:FTT]
 synonym: "market garden" RELATED [USGS:SDTS]
 synonym: "range" RELATED [ADL:FTT]
@@ -6211,9 +6221,9 @@ def: "A small road, generally not paved." [MA:ma]
 synonym: "footpath" RELATED [USGS:SDTS]
 synonym: "path" RELATED [USGS:SDTS]
 synonym: "trail" RELATED [USGS:SDTS]
-synonym: "trail" RELATED [ADL:FTT]
-synonym: "trail" RELATED [Getty:TGN]
 synonym: "trail" RELATED [Geonames:feature]
+synonym: "trail" RELATED [Getty:TGN]
+synonym: "trail" RELATED [ADL:FTT]
 xref: EcoLexicon:path
 xref: EcoLexicon:trail
 xref: FTT:1057
@@ -6288,8 +6298,8 @@ id: ENVO:00000129
 name: stream valley
 def: "A valley that contains, and has been formed by, a stream." [MA:ma]
 synonym: "gullie" RELATED []
-synonym: "ravine" RELATED [Geonames:feature]
 synonym: "ravine" RELATED [USGS:SDTS]
+synonym: "ravine" RELATED [Geonames:feature]
 xref: EcoLexicon:gully
 xref: EcoLexicon:ravine
 xref: FTT:159
@@ -6445,8 +6455,8 @@ relationship: part_of ENVO:00000303 ! sea coast
 id: ENVO:00000138
 name: cove
 def: "A circular or round inlet with a narrow entrance." [Wikipedia:Cove]
-synonym: "bayou" RELATED [Getty:TGN]
 synonym: "bayou" RELATED [ADL:FTT]
+synonym: "bayou" RELATED [Getty:TGN]
 synonym: "cove" RELATED [Geonames:feature]
 synonym: "inlet" RELATED [USGS:SDTS]
 xref: EcoLexicon:cove
@@ -6532,8 +6542,8 @@ id: ENVO:00000145
 name: ice cap
 def: "A dome-shaped ice mass that covers less than 50,000 km2 of land area (usually covering a highland area)." [Wikipedia:Ice_cap]
 synonym: "ice field" RELATED [USGS:SDTS]
-synonym: "icecap" EXACT [Geonames:feature]
 synonym: "icecap" EXACT [Getty:TGN]
+synonym: "icecap" EXACT [Geonames:feature]
 xref: FTT:841
 xref: Geonames:H.CAPG
 xref: SPIRE:Ice_cap
@@ -6562,8 +6572,8 @@ name: ocean current
 def: "The region occupied by any more or less continuous, directed movement of ocean water that flows in one of the Earth's oceans. Ocean Currents are rivers of hot or cold water within the ocean. The currents are generated from the forces acting upon the water like the earth's rotation, the wind, the temperature and salinity differences and the gravitation of the moon. The depth contours, the shoreline and other movements influence the direction and strength of the movements of water that forms a given current." [BS:bs]
 comment: Definition modified from http://en.wikipedia.org/wiki/Ocean_current.
 synonym: "current" BROAD [Getty:TGN]
-synonym: "current" BROAD [ADL:FTT]
 synonym: "current" BROAD [Geonames:feature]
+synonym: "current" BROAD [ADL:FTT]
 synonym: "ocean current" EXACT [ADL:FTT]
 xref: EcoLexicon:ocean_current
 xref: FTT:597
@@ -6696,8 +6706,8 @@ id: ENVO:00000156
 name: desert oasis
 def: "A small, isolated, fertile or green area in a desert region, usually having a spring or well." [USGS:SDTS]
 synonym: "OASIS" EXACT [USGS:SDTS]
-synonym: "oasis" EXACT [Getty:TGN]
 synonym: "oasis" EXACT [Geonames:feature]
+synonym: "oasis" EXACT [Getty:TGN]
 xref: EcoLexicon:oasis
 xref: FTT:261
 xref: Geonames:L.OAS
@@ -6713,8 +6723,8 @@ id: ENVO:00000157
 name: peat cut
 def: "An artificial working of peatland to remove the peat." [MA:ma]
 synonym: "peat cutting" EXACT [USGS:SDTS]
-synonym: "peat cutting area" RELATED [ADL:FTT]
 synonym: "peat cutting area" RELATED [Geonames:feature]
+synonym: "peat cutting area" RELATED [ADL:FTT]
 synonym: "wetland" BROAD [USGS:SDTS]
 xref: FTT:1060
 xref: Geonames:L.PEAT
@@ -6858,20 +6868,20 @@ synonym: "sand bar" RELATED [Getty:TGN]
 synonym: "sand hom" RELATED [USGS:SDTS]
 synonym: "sand lobe" RELATED [USGS:SDTS]
 synonym: "sand spit" RELATED [USGS:SDTS]
-synonym: "sandbar" RELATED [USGS:SDTS]
 synonym: "sandbar" RELATED [ADL:FTT]
+synonym: "sandbar" RELATED [USGS:SDTS]
 synonym: "seafloor feature" BROAD [ADL:FTT]
 synonym: "Shoal" RELATED [NASA:earthrealm]
-synonym: "shoal" RELATED [USGS:SDTS]
-synonym: "shoal" RELATED [Geonames:feature]
 synonym: "shoal" RELATED [Getty:TGN]
+synonym: "shoal" RELATED [USGS:SDTS]
 synonym: "shoal" RELATED [ADL:FTT]
+synonym: "shoal" RELATED [Geonames:feature]
 synonym: "shoal patches" RELATED [USGS:SDTS]
 synonym: "shoals" RELATED [Geonames:feature]
 synonym: "spit" RELATED [USGS:SDTS]
 synonym: "spit" RELATED [ADL:FTT]
-synonym: "tongue" RELATED [Geonames:feature]
 synonym: "tongue" RELATED [USGS:SDTS]
+synonym: "tongue" RELATED [Geonames:feature]
 synonym: "tongue (seafloor)" RELATED [ADL:FTT]
 synonym: "transverse bar" RELATED [USGS:SDTS]
 synonym: "undersea shoal" RELATED [Getty:TGN]
@@ -6921,12 +6931,12 @@ synonym: "chasm" RELATED [ADL:FTT]
 synonym: "defile" RELATED [Getty:TGN]
 synonym: "flume (natural)" RELATED [ADL:FTT]
 synonym: "gap" RELATED [ADL:FTT]
-synonym: "gorge" RELATED [ADL:FTT]
 synonym: "gorge" RELATED [Getty:TGN]
+synonym: "gorge" RELATED [ADL:FTT]
 synonym: "gulch" RELATED [ADL:FTT]
 synonym: "quebrada" RELATED [ADL:FTT]
-synonym: "ravine" RELATED [Getty:TGN]
 synonym: "ravine" RELATED [ADL:FTT]
+synonym: "ravine" RELATED [Getty:TGN]
 synonym: "valley" RELATED [USGS:SDTS]
 xref: EcoLexicon:canyon
 xref: FTT:165
@@ -6958,9 +6968,9 @@ synonym: "mount" BROAD [USGS:SDTS]
 synonym: "ridge" BROAD [USGS:SDTS]
 synonym: "sand dune" EXACT [USGS:SDTS]
 synonym: "sand hill" RELATED [USGS:SDTS]
+synonym: "sandy area" BROAD [Getty:TGN]
 synonym: "sandy area" BROAD [ADL:FTT]
 synonym: "sandy area" BROAD [Geonames:feature]
-synonym: "sandy area" BROAD [Getty:TGN]
 xref: EcoLexicon:dune
 xref: FTT:238
 xref: FTT:241
@@ -6988,9 +6998,9 @@ def: "A desert plain characterized by a surface veneer of sand." []
 comment: There should be  relation here to ENVO:sand, but it's more than "primarily composed of" and must call upon the idea of "ground surface" or layer.
 synonym: "desert" BROAD [ADL:FTT]
 synonym: "sand desert" EXACT []
-synonym: "sandy area" BROAD [Getty:TGN]
-synonym: "sandy area" BROAD [Geonames:feature]
 synonym: "sandy area" BROAD [ADL:FTT]
+synonym: "sandy area" BROAD [Geonames:feature]
+synonym: "sandy area" BROAD [Getty:TGN]
 synonym: "sandy desert" EXACT [Geonames:feature]
 xref: EcoLexicon:sandy_area
 xref: FTT:188
@@ -7037,8 +7047,8 @@ id: ENVO:00000175
 name: karst
 def: "A feature shaped by the dissolution of a soluble layer or layers of bedrock, usually carbonate rock such as limestone or dolomite. These landscapes display distinctive surface features and underground drainages, and in some examples there may be little or no surface drainage." [Wikipedia:Karst]
 synonym: "karst" EXACT [Geonames:feature]
-synonym: "karst area" RELATED [ADL:FTT]
 synonym: "karst area" RELATED [Getty:TGN]
+synonym: "karst area" RELATED [ADL:FTT]
 xref: EcoLexicon:karst
 xref: FTT:894
 xref: Geonames:T.KRST
@@ -7078,9 +7088,9 @@ id: ENVO:00000178
 name: levee
 def: "An artificial slope or wall, usually earthen, which parallels the course of a river, built for the purpose of containing the river." [Wikipedia:Levee]
 synonym: "berm" RELATED [ADL:FTT]
-synonym: "dike" RELATED [Getty:TGN]
-synonym: "dike" RELATED [Geonames:feature]
 synonym: "dike" RELATED [USGS:SDTS]
+synonym: "dike" RELATED [Geonames:feature]
+synonym: "dike" RELATED [Getty:TGN]
 synonym: "dike (manmade)" RELATED [ADL:FTT]
 synonym: "dyke" RELATED [USGS:SDTS]
 synonym: "EMBANKMENT" RELATED [USGS:SDTS]
@@ -7167,9 +7177,9 @@ synonym: "tableknoll" RELATED [USGS:SDTS]
 synonym: "tableland" RELATED [USGS:SDTS]
 synonym: "tableland" RELATED [ADL:FTT]
 synonym: "tablemount" RELATED [USGS:SDTS]
+synonym: "upland" RELATED [Geonames:feature]
 synonym: "upland" RELATED [Getty:TGN]
 synonym: "upland" RELATED [ADL:FTT]
-synonym: "upland" RELATED [Geonames:feature]
 xref: EcoLexicon:plateau
 xref: FTT:1080
 xref: FTT:1090
@@ -7328,8 +7338,8 @@ name: sinkhole
 def: "A natural depression or hole in the surface topography caused by the removal of soil or bedrock, often both, by water. Sinkholes may vary in size from less than a meter to several hundred meters both in diameter and depth, and vary in form from soil-lined bowls to bedrock-edged chasms." [Wikipedia:Sinkhole]
 synonym: "basin" BROAD [USGS:SDTS]
 synonym: "cenote" RELATED []
-synonym: "sink" RELATED [USGS:SDTS]
 synonym: "sink" RELATED [Geonames:feature]
+synonym: "sink" RELATED [USGS:SDTS]
 xref: EcoLexicon:sink_hole
 xref: FTT:1073
 xref: FTT:1074
@@ -7398,8 +7408,8 @@ relationship: located_in ENVO:00000039 ! fjord
 id: ENVO:00000202
 name: oxbow lake
 def: "A lake which is formed when a wide meander from a stream or a river is cut off to form a lake. They are called oxbow lakes due to the distinctive curved shape that results from this process." [Wikipedia:Lake#Types_of_lakes]
-synonym: "lake" BROAD [ADL:FTT]
 synonym: "lake" BROAD [USGS:SDTS]
+synonym: "lake" BROAD [ADL:FTT]
 synonym: "oxbow" EXACT [USGS:SDTS]
 synonym: "oxbow lake" EXACT [Geonames:feature]
 xref: EcoLexicon:ox-bow_lake
@@ -7532,7 +7542,7 @@ xref: EcoLexicon:fumarole
 xref: FTT:731
 xref: FTT:732
 xref: Wikipedia:Fumarole
-is_a: ENVO:00000215 ! hydrothermal vent
+is_a: ENVO:01000667 ! geological fracture
 
 [Term]
 id: ENVO:00000217
@@ -7558,8 +7568,8 @@ id: ENVO:00000219
 name: landlocked sea
 def: "A sea that is not connected with an ocean." [MA:ma]
 synonym: "inland sea" RELATED [USGS:SDTS]
-synonym: "lake" BROAD [ADL:FTT]
 synonym: "lake" BROAD [USGS:SDTS]
+synonym: "lake" BROAD [ADL:FTT]
 xref: FTT:221
 xref: FTT:871
 is_a: ENVO:00000016 ! sea
@@ -7715,8 +7725,8 @@ def: "A wetland that features permanent inundation of large areas of land by sha
 synonym: "cienaga" RELATED [ADL:FTT]
 synonym: "Swamp" EXACT [NASA:earthrealm]
 synonym: "swamp" EXACT [Geonames:feature]
-synonym: "wetland" BROAD [USGS:SDTS]
 synonym: "wetland" BROAD [ADL:FTT]
+synonym: "wetland" BROAD [USGS:SDTS]
 xref: EcoLexicon:swamp
 xref: FTT:1226
 xref: FTT:185
@@ -7793,9 +7803,9 @@ id: ENVO:00000241
 name: tidal mudflat
 def: "A level tract lying at a small depth below the surface of water, or alternately covered and left bare by the tide." [USGS:SDTS]
 synonym: "FLAT" EXACT [USGS:SDTS]
-synonym: "tidal flat" EXACT [ADL:FTT]
-synonym: "tidal flat" EXACT [Geonames:feature]
 synonym: "tidal flat" EXACT [USGS:SDTS]
+synonym: "tidal flat" EXACT [Geonames:feature]
+synonym: "tidal flat" EXACT [ADL:FTT]
 synonym: "wetland" BROAD [ADL:FTT]
 xref: EcoLexicon:tidal_flat
 xref: FTT:1230
@@ -7955,7 +7965,7 @@ id: ENVO:00000257
 name: flood fringe
 def: "Area of a flood plane covered by the flood, but which does not experience a strong current." [Wikipedia:Flood_plain]
 xref: Wikipedia:Flood_fringe
-is_a: ENVO:01000408 ! environmental zone
+is_a: ENVO:01000352 ! field
 relationship: part_of ENVO:00000255 ! flood plain
 relationship: partially_surrounded_by ENVO:01000710 ! flood
 
@@ -7981,8 +7991,8 @@ is_a: ENVO:00000086 ! plain
 id: ENVO:00000260
 name: prairie
 def: "An area of land of low topographic relief that historically supported grasses and herbs, with few trees, and having generally a mesic (moderate or temperate) climate. Dominated by tall grasses (contrast steppe)." [Wikipedia:Prairie]
-synonym: "grassland" RELATED [ADL:FTT]
 synonym: "grassland" RELATED [USGS:SDTS]
+synonym: "grassland" RELATED [ADL:FTT]
 synonym: "llanos" RELATED [ADL:FTT]
 synonym: "pampa" RELATED [Getty:TGN]
 synonym: "plain" RELATED [ADL:FTT]
@@ -8000,8 +8010,8 @@ is_a: ENVO:00000106 ! grassland
 id: ENVO:00000261
 name: savanna
 def: "A grassland of the tropics or subtropics with scattered trees." [Wikipedia:Tropical_and_subtropical_grasslands%2C_savannas%2C_and_shrublands]
-synonym: "grassland" RELATED [ADL:FTT]
 synonym: "grassland" RELATED [USGS:SDTS]
+synonym: "grassland" RELATED [ADL:FTT]
 synonym: "Savanna" EXACT [NASA:earthrealm]
 synonym: "savannah" RELATED [ADL:FTT]
 xref: FTT:259
@@ -8051,8 +8061,8 @@ synonym: "range" RELATED [Geonames:feature]
 synonym: "sea mount" EXACT []
 synonym: "sea-mount" EXACT []
 synonym: "seaknoll" EXACT [USGS:SDTS]
-synonym: "seakpeak" RELATED [ADL:FTT]
 synonym: "seakpeak" RELATED [USGS:SDTS]
+synonym: "seakpeak" RELATED [ADL:FTT]
 synonym: "Seamount" EXACT [NASA:earthrealm]
 synonym: "seamount" EXACT [Geonames:feature]
 synonym: "submarine volcano" EXACT []
@@ -8267,8 +8277,8 @@ is_a: ENVO:00000309 ! depression
 id: ENVO:00000278
 name: dry stream
 def: "A stream that has either permanently or temporally lost its water." [MA:ma]
-synonym: "dry stream bed" RELATED [ADL:FTT]
 synonym: "dry stream bed" RELATED [Geonames:feature]
+synonym: "dry stream bed" RELATED [ADL:FTT]
 synonym: "stream" RELATED [ADL:FTT]
 xref: FTT:105
 xref: FTT:651
@@ -8283,8 +8293,8 @@ relationship: located_in ENVO:0010162 ! dry stream valley
 id: ENVO:00000279
 name: saline pan
 def: "A flat expanse of ground covered with salt and other minerals, usually shining white under the sun. A salt pan is formed where water pools. A saline pan would be a lake or a pond if it were located in a climate where the rate of water evaporation were not faster than the rate of water precipitation, i.e., if it were not in a desert. If the water is unable to drain into the ground, it remains on the surface until it evaporates, leaving behind whatever minerals were dissolved. Over thousands of years, the minerals (usually salts) accumulate on the surface." [Wikipedia:Salt_pan_%28geology%29]
-synonym: "salt area" RELATED [Getty:TGN]
 synonym: "salt area" RELATED [Geonames:feature]
+synonym: "salt area" RELATED [Getty:TGN]
 synonym: "salt flat" RELATED [Getty:TGN]
 synonym: "SALT PAN" EXACT [USGS:SDTS]
 synonym: "salt pan" EXACT []
@@ -8301,8 +8311,8 @@ name: escarpment
 def: "A transition zone between different physiogeographic provinces that involves an elevation differential, often involving high cliffs. Most commonly a transition from one series of sedimentary rocks to another series of a different age and composition. In such cases, the escarpment usually represents the line of erosional loss of the newer rock over the older." [Wikipedia:Escarpment]
 synonym: "cliff" RELATED [USGS:SDTS]
 synonym: "cuesta" RELATED [ADL:FTT]
-synonym: "cuesta" RELATED [Geonames:feature]
 synonym: "cuesta" RELATED [Getty:TGN]
+synonym: "cuesta" RELATED [Geonames:feature]
 synonym: "escarpment" EXACT [Geonames:feature]
 synonym: "scarp" EXACT []
 xref: EcoLexicon:scarp
@@ -8339,8 +8349,8 @@ def: "A long and narrow upland with steep sides." [USGS:SDTS]
 synonym: "arete" RELATED [ADL:FTT]
 synonym: "arete" RELATED [USGS:SDTS]
 synonym: "beach cusp" NARROW [USGS:SDTS]
-synonym: "beach ridge" NARROW [USGS:SDTS]
 synonym: "beach ridge" NARROW [ADL:FTT]
+synonym: "beach ridge" NARROW [USGS:SDTS]
 synonym: "crest" RELATED [USGS:SDTS]
 synonym: "cuesta" RELATED [USGS:SDTS]
 synonym: "cuesta" RELATED [ADL:FTT]
@@ -8589,7 +8599,7 @@ xref: FTT:841
 xref: FTT:842
 xref: SWEETRealm:IceField
 xref: TGN:21147
-is_a: ENVO:00000131 ! glacial feature
+is_a: ENVO:01000293 ! ice mass
 is_a: ENVO:01000352 ! field
 relationship: composed_primarily_of ENVO:01000277 ! water ice
 
@@ -8604,8 +8614,8 @@ synonym: "heath" RELATED [ADL:FTT]
 synonym: "moor" RELATED [ADL:FTT]
 synonym: "scrub" RELATED [USGS:SDTS]
 synonym: "scrubland" EXACT [Geonames:feature]
-synonym: "shrubland" RELATED [USGS:SDTS]
 synonym: "shrubland" RELATED [ADL:FTT]
+synonym: "shrubland" RELATED [USGS:SDTS]
 xref: FTT:1191
 xref: FTT:262
 xref: FTT:374
@@ -8655,8 +8665,8 @@ synonym: "coast line" RELATED []
 synonym: "coastal area" RELATED [USGS:SDTS]
 synonym: "coastal plain" RELATED [USGS:SDTS]
 synonym: "CoastalRegion" RELATED [NASA:earthrealm]
-synonym: "coastline" RELATED [Getty:TGN]
 synonym: "coastline" RELATED [USGS:SDTS]
+synonym: "coastline" RELATED [Getty:TGN]
 synonym: "Littoral" RELATED [NASA:earthrealm]
 synonym: "rivage" RELATED [USGS:SDTS]
 synonym: "sea coast" EXACT [USGS:SDTS]
@@ -8704,27 +8714,27 @@ id: ENVO:00000305
 name: peninsula
 def: "A body of land jutting out into and nearly surrounded by water." [USGS:SDTS]
 synonym: "cape" RELATED [ADL:FTT]
-synonym: "cape" RELATED [Geonames:feature]
 synonym: "cape" RELATED [Getty:TGN]
+synonym: "cape" RELATED [Geonames:feature]
 synonym: "foreland" RELATED [USGS:SDTS]
 synonym: "head" RELATED [USGS:SDTS]
-synonym: "headland" RELATED [USGS:SDTS]
-synonym: "headland" RELATED [Geonames:feature]
-synonym: "headland" RELATED [Getty:TGN]
 synonym: "headland" RELATED [ADL:FTT]
+synonym: "headland" RELATED [USGS:SDTS]
+synonym: "headland" RELATED [Getty:TGN]
+synonym: "headland" RELATED [Geonames:feature]
 synonym: "hook" RELATED [USGS:SDTS]
 synonym: "neck" RELATED [USGS:SDTS]
 synonym: "ness" RELATED []
 synonym: "PENINSULA" EXACT [USGS:SDTS]
 synonym: "peninsula" EXACT [Geonames:feature]
+synonym: "point" RELATED [Geonames:feature]
 synonym: "point" RELATED [USGS:SDTS]
 synonym: "point" RELATED [Getty:TGN]
-synonym: "point" RELATED [Geonames:feature]
 synonym: "point (physiographic)" RELATED [ADL:FTT]
 synonym: "points" RELATED [Geonames:feature]
 synonym: "promontgory" RELATED [Geonames:feature]
-synonym: "promontory" RELATED [Getty:TGN]
 synonym: "promontory" RELATED [USGS:SDTS]
+synonym: "promontory" RELATED [Getty:TGN]
 synonym: "tongue" RELATED [USGS:SDTS]
 synonym: "winged headland" RELATED [USGS:SDTS]
 xref: EcoLexicon:peninsula
@@ -8789,13 +8799,13 @@ name: depression
 def: "A landform sunken or depressed below the surrounding area." [Wikipedia:Depression_%28geology%29]
 synonym: "barrier basin" RELATED [USGS:SDTS]
 synonym: "BASIN" RELATED [USGS:SDTS]
-synonym: "basin" RELATED [ADL:FTT]
 synonym: "basin" RELATED [Getty:TGN]
+synonym: "basin" RELATED [ADL:FTT]
 synonym: "cauldron" RELATED [USGS:SDTS]
 synonym: "depression" RELATED [Geonames:feature]
 synonym: "non tidal basin" RELATED [USGS:SDTS]
-synonym: "pan" RELATED [Geonames:feature]
 synonym: "pan" RELATED [Getty:TGN]
+synonym: "pan" RELATED [Geonames:feature]
 synonym: "pan (geologic)" RELATED [ADL:FTT]
 synonym: "pans" RELATED [Geonames:feature]
 synonym: "tidal basin" RELATED [USGS:SDTS]
@@ -9422,8 +9432,8 @@ def: "The channel bottom of a stream; the physical confine of the normal water f
 synonym: "dry stream bed" NARROW [ADL:FTT]
 synonym: "stream bed" EXACT [Geonames:feature]
 synonym: "stream bottom" EXACT []
-synonym: "stream channel" RELATED [USGS:SDTS]
 synonym: "stream channel" RELATED [Getty:TGN]
+synonym: "stream channel" RELATED [USGS:SDTS]
 xref: FTT:651
 xref: Geonames:H.STMB
 xref: TGN:21165
@@ -9569,14 +9579,14 @@ xref: SWEETRealm:Strait
 xref: TGN:21132
 xref: Wikipedia:Strait
 is_a: ENVO:00000395 ! channel
-relationship: connects ENVO:00000063 ! water body
+relationship: RO:0002176 ENVO:00000063 ! water body
 
 [Term]
 id: ENVO:00000395
 name: channel
 def: "The physical confine of a river, slough or ocean strait consisting of a bed and banks." [Wikipedia:Channel_%28geography%29]
-synonym: "channel" RELATED [ADL:FTT]
 synonym: "channel" RELATED [Geonames:feature]
+synonym: "channel" RELATED [ADL:FTT]
 synonym: "chutes (hydrographic)" RELATED [ADL:FTT]
 synonym: "improved channel" RELATED [USGS:SDTS]
 synonym: "inlet (hydrographic)" RELATED [ADL:FTT]
@@ -9643,8 +9653,8 @@ relationship: location_of ENVO:00000020 ! lake
 id: ENVO:00000398
 name: volcanic cone
 def: "Built by fragments (called ejecta) thrown up (ejected) from a volcanic vent, piling up around the vent in the shape of a cone with a central crater." [Wikipedia:Volcanic_cone]
-synonym: "cone" BROAD [Geonames:feature]
 synonym: "cone" BROAD [Getty:TGN]
+synonym: "cone" BROAD [Geonames:feature]
 synonym: "cone (geological)" RELATED [ADL:FTT]
 synonym: "lava cone" EXACT [USGS:SDTS]
 xref: FTT:530
@@ -9744,8 +9754,7 @@ synonym: "fissure vent" RELATED []
 xref: FTT:702
 xref: SWEETRealm:Fissure
 xref: Wikipedia:Volcanic_fissure
-is_a: ENVO:00000094 ! volcanic feature
-is_a: ENVO:01000667 ! geological fracture
+is_a: ENVO:00000247 ! volcano
 relationship: formed_as_result_of ENVO:01000634 ! volcanic eruption
 
 [Term]
@@ -9962,8 +9971,8 @@ relationship: determined_by PCO:0000002 ! ecological community
 id: ENVO:00000429
 name: arete
 def: "A thin, almost knife-like, ridge of rock which is typically formed when two glaciers erode parallel U-shaped valleys. The arte is a thin ridge of rock that is left separating the two valleys. Artes can also form when two glacial cirques erode towards one another, although frequently this results in a saddle-shaped pass, called a col." [Wikipedia:Arete_%28landform%29]
-synonym: "ridge" RELATED [USGS:SDTS]
 synonym: "ridge" RELATED [ADL:FTT]
+synonym: "ridge" RELATED [USGS:SDTS]
 xref: FTT:154
 is_a: ENVO:00000283 ! ridge
 
@@ -10384,8 +10393,8 @@ synonym: "cerro" RELATED [USGS:SDTS]
 synonym: "dome" RELATED [USGS:SDTS]
 synonym: "hill" RELATED [USGS:SDTS]
 synonym: "hillock" RELATED [USGS:SDTS]
-synonym: "hummock" RELATED [USGS:SDTS]
 synonym: "hummock" RELATED [Getty:TGN]
+synonym: "hummock" RELATED [USGS:SDTS]
 synonym: "inselberg" RELATED [USGS:SDTS]
 synonym: "knob" RELATED [USGS:SDTS]
 synonym: "knoll" RELATED [USGS:SDTS]
@@ -10508,7 +10517,7 @@ xref: EcoLexicon:polynya
 xref: SWEETRealm:Polynya
 xref: Wikipedia:Polynya
 is_a: ENVO:01000617 ! lentic water body
-relationship: surrounded_by ENVO:01000293 ! ice mass
+relationship: RO:0002219 ENVO:01000293 ! ice mass
 
 [Term]
 id: ENVO:00000485
@@ -10876,8 +10885,8 @@ id: ENVO:00000517
 name: lost stream
 def: "A surface stream that disappears into an underground channel, or dries up in an arid area." [Geonames:feature]
 synonym: "lost river" BROAD [Geonames:feature]
-synonym: "lost river" NARROW [ADL:FTT]
 synonym: "lost river" NARROW [Geonames:feature]
+synonym: "lost river" NARROW [ADL:FTT]
 synonym: "lost watercourse" BROAD [Geonames:feature]
 synonym: "lost watercourse" BROAD [Getty:TGN]
 synonym: "stream" BROAD [ADL:FTT]
@@ -10892,8 +10901,8 @@ id: ENVO:00000518
 name: ditch mouth
 def: "The exit or point of discharge of a ditch." [MA:ma]
 synonym: "canal" RELATED [ADL:FTT]
-synonym: "ditch mouth" EXACT [Geonames:feature]
 synonym: "ditch mouth" EXACT [ADL:FTT]
+synonym: "ditch mouth" EXACT [Geonames:feature]
 xref: FTT:129
 xref: FTT:399
 xref: Geonames:H.DTCHM
@@ -11129,8 +11138,8 @@ id: ENVO:00000538
 name: arrugado
 def: "An undersea area of subdued corrugations off Baja California." [Geonames:feature]
 comment: Add partially surrounded by marine water or similar
-synonym: "arrugado" EXACT [Geonames:feature]
 synonym: "arrugado" EXACT [ADL:FTT]
+synonym: "arrugado" EXACT [Geonames:feature]
 xref: FTT:167
 xref: Geonames:U.ARRU
 is_a: ENVO:00000000 ! geographic feature
@@ -11143,8 +11152,8 @@ id: ENVO:00000539
 name: sill
 def: "The low part of a gap or saddle separating basins." [Geonames:feature]
 synonym: "gap" RELATED [ADL:FTT]
-synonym: "sill" RELATED [Geonames:feature]
 synonym: "sill" RELATED [USGS:SDTS]
+synonym: "sill" RELATED [Geonames:feature]
 synonym: "sill (physiographic)" RELATED [ADL:FTT]
 xref: EcoLexicon:sill
 xref: FTT:740
@@ -12014,7 +12023,6 @@ is_a: ENVO:01000010 ! abiotic mesoscopic physical object
 
 [Term]
 id: ENVO:00002036
-name: habitat
 name: obsolete habitat
 def: "A spatial region having environmental qualities which may sustain an organism or a community of organisms." [EnvO:EnvO]
 comment: This class is under development and its definition will be revised and its subclasses may be made obsolete. A habitat's specificity to a species or population will differentiate it from other environment classes.
@@ -12023,7 +12031,6 @@ xref: EcoLexicon:habitat
 xref: LTER:238
 xref: SWEETRealm:Habitat
 xref: Wikipedia:Habitat
-is_a: ENVO:01000254 ! environmental system
 is_obsolete: true
 replaced_by: ENVO:01000739
 
@@ -12850,9 +12857,11 @@ relationship: has_part ENVO:01000017 ! sand
 [Term]
 id: ENVO:00002200
 name: sea ice
+def: "A frozen portion of sea water." []
 xref: SWEETRealm:SeaIce
 xref: Wikipedia:Sea_ice
-is_a: ENVO:01000293 ! ice mass
+is_a: ENVO:01000277 ! water ice
+relationship: composed_primarily_of ENVO:00002149 ! sea water
 
 [Term]
 id: ENVO:00002201
@@ -12946,8 +12955,10 @@ is_a: ENVO:00002214 ! power plant
 [Term]
 id: ENVO:00002216
 name: plant food product
+def: "A food product derived from or produced by a plant." []
 xref: Wikipedia:Vegetable
 is_a: ENVO:00002002 ! food product
+property_value: IAO:0000116 "Currently, this is limited to the Viridiplantae. This may be changed." xsd:string
 
 [Term]
 id: ENVO:00002217
@@ -15313,6 +15324,7 @@ relationship: located_in ENVO:00000175 ! karst
 [Term]
 id: ENVO:0010000
 name: animal food product
+def: "A food product which is derived from or produced by an animal." []
 is_a: ENVO:00002002 ! food product
 
 [Term]
@@ -15877,97 +15889,99 @@ is_a: ENVO:0010002 ! cereal food product
 id: ENVO:0010106
 name: dry peas product
 def: "A product of the  dry seeds of plants of the genus Pisum." [web:http\://en.wikipedia.org/wiki/Pulse_%28legume%29]
-is_a: ENVO:0010121 ! pulses
+is_a: ENVO:0010121 ! pulse
 
 [Term]
 id: ENVO:0010107
 name: lentil product
 def: "A product of the  dry seeds of Lens culinaris." [web:http\://en.wikipedia.org/wiki/Pulse_%28legume%29]
-is_a: ENVO:0010121 ! pulses
+is_a: ENVO:0010121 ! pulse
 
 [Term]
 id: ENVO:0010108
 name: pigeon pea product
 def: "A product of the dry seeds of Cajanus cajan." [web:http\://en.wikipedia.org/wiki/Pulse_%28legume%29]
-is_a: ENVO:0010121 ! pulses
+is_a: ENVO:0010121 ! pulse
 
 [Term]
 id: ENVO:0010109
 name: bambara groundnut product
 def: "A product of the  dry seeds of Vigna subterranea." [web:http\://en.wikipedia.org/wiki/Pulse_%28legume%29]
-is_a: ENVO:0010121 ! pulses
+is_a: ENVO:0010121 ! pulse
 
 [Term]
 id: ENVO:0010110
 name: dry broad beans product
 def: "A product of the  dry seeds of plants of then genus Vicia." [web:http\://en.wikipedia.org/wiki/Pulse_%28legume%29]
-is_a: ENVO:0010121 ! pulses
+is_a: ENVO:0010121 ! pulse
 
 [Term]
 id: ENVO:0010111
 name: chickpea product
 def: "A product of the  dry seeds of Cicer arietinum." [web:http\://en.wikipedia.org/wiki/Pulse_%28legume%29]
-is_a: ENVO:0010121 ! pulses
+is_a: ENVO:0010121 ! pulse
 
 [Term]
 id: ENVO:0010112
 name: cowpea product
 def: "A product of the  dry seeds of Vigna unguiculata." [web:http\://en.wikipedia.org/wiki/Pulse_%28legume%29]
-is_a: ENVO:0010121 ! pulses
+is_a: ENVO:0010121 ! pulse
 
 [Term]
 id: ENVO:0010113
 name: dry beans product
 def: "A product of the  dry seeds of plants of the genera Phaseola and Vigna." [web:http\://en.wikipedia.org/wiki/Pulse_%28legume%29]
-is_a: ENVO:0010121 ! pulses
+is_a: ENVO:0010121 ! pulse
 
 [Term]
 id: ENVO:0010114
 name: winged bean product
 def: "A product of the  dry seeds of Psophocarpus teragonolobus." [web:http\://en.wikipedia.org/wiki/Pulse_%28legume%29]
-is_a: ENVO:0010121 ! pulses
+is_a: ENVO:0010121 ! pulse
 
 [Term]
 id: ENVO:0010115
 name: vetch seed product
 def: "A product of the  dry seeds of Vicia sativa." [web:http\://en.wikipedia.org/wiki/Pulse_%28legume%29]
-is_a: ENVO:0010121 ! pulses
+is_a: ENVO:0010121 ! pulse
 
 [Term]
 id: ENVO:0010116
 name: yam bean product
 def: "A product of the  dry seeds of Pachyrrizus erosus." [web:http\://en.wikipedia.org/wiki/Pulse_%28legume%29]
-is_a: ENVO:0010121 ! pulses
+is_a: ENVO:0010121 ! pulse
 
 [Term]
 id: ENVO:0010117
 name: velvet bean product
 def: "A product of the  dry seeds of Mucuna pruriens var. utilis." [web:http\://en.wikipedia.org/wiki/Pulse_%28legume%29]
-is_a: ENVO:0010121 ! pulses
+is_a: ENVO:0010121 ! pulse
 
 [Term]
 id: ENVO:0010118
 name: lupin seed product
 def: "A product of the  dry seeds of Lupinus spp." [web:http\://en.wikipedia.org/wiki/Pulse_%28legume%29]
-is_a: ENVO:0010121 ! pulses
+is_a: ENVO:0010121 ! pulse
 
 [Term]
 id: ENVO:0010119
 name: jack bean product
 def: "A product of the  dry seeds of Canavalia gladiata." [web:http\://en.wikipedia.org/wiki/Pulse_%28legume%29]
-is_a: ENVO:0010121 ! pulses
+is_a: ENVO:0010121 ! pulse
 
 [Term]
 id: ENVO:0010120
 name: hyacinth bean product
 def: "A product of the  dry seeds of Lablab purpureus." [web:http\://en.wikipedia.org/wiki/Pulse_%28legume%29]
-is_a: ENVO:0010121 ! pulses
+is_a: ENVO:0010121 ! pulse
 
 [Term]
 id: ENVO:0010121
-name: pulses
-def: "The seeds of leguminous crops harvested solely for dry grain." [web:http\://www.fao.org/WAICENT/faoinfo/economic/faodef/fdef04e.htm#4.02]
+name: pulse
+def: "The seed of a leguminous crop harvested solely for dry grain." [http://www.fao.org/WAICENT/faoinfo/economic/faodef/fdef04e.htm#4.02]
+comment: According to the FAO: 'The term "pulses" is limited to crops harvested solely for dry grain, thereby excludingcrops harvested green for food (green peas, green beans, etc.) which are classified as vegetable crops. Also excluded are those crops used mainly for oil extraction (e.g.soybeand and groundnuts) and leguminous crops (e.g. seeds of clover and alfalfa) that are used exclusively for sowing purposes.' {xref="http://www.fao.org/WAICENT/faoinfo/economic/faodef/fdef04e.htm#4.02"}
 is_a: ENVO:0010080 ! leguminous food product
+property_value: IAO:0000116 "This has to be reconciled with \"legume\". Seems to be a subclass." xsd:string
 
 [Term]
 id: ENVO:0010122
@@ -16735,7 +16749,6 @@ id: ENVO:01000055
 name: marine bulk water
 is_obsolete: true
 consider: ENVO:00002149
-consider: ENVO:00002151
 consider: ENVO:01000061
 consider: ENVO:01000295
 created_by: ORCID:0000-0002-4366-3088
@@ -16775,8 +16788,11 @@ creation_date: 2010-03-16T12:12:30Z
 [Term]
 id: ENVO:01000059
 name: sea grass bed
-def: "Seagrass beds are highly diverse and productive ecosystems, and can harbour hundreds of associated species from all phyla. They partly create their own habitat: the leaves slow down water-currents increasing sedimentation, and the seagrass roots and rhizomes stabilize the seabed." [ISBN:0195141725, ORCID:0000-0002-4366-3088, Wikipedia:Seagrass]
-is_a: ENVO:01000105 ! marine benthic feature
+def: "A bed of a marine, saline water body which is covered by one or more speices of seagrass typically belonging to the families Posidoniaceae, Zosteraceae, Hydrocharitaceae, or Cymodoceaceae." [Adapted from Wikipedia:Seagrass, ISBN:0195141725]
+comment: "Seagrass beds are highly diverse and productive ecosystems, and can harbor hundreds of associated species from all phyla, for example juvenile and adult fish, epiphytic and free-living macroalgae and microalgae, mollusks, bristle worms, and nematodes. Few species were originally considered to feed directly on seagrass leaves (partly because of their low nutritional content), but scientific reviews and improved working methods have shown that seagrass herbivory is a highly important link in the food chain, with hundreds of species feeding on seagrasses worldwide, including green turtles, dugongs, manatees, fish, geese, swans, sea urchins and crabs." Wikipedia:Seagrass 2016-01-18
+synonym: "seagrass bed" EXACT []
+synonym: "seagrass meadow" EXACT []
+is_a: ENVO:01001305 ! vegetated area
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2010-03-16T12:12:30Z
 
@@ -17445,7 +17461,7 @@ def: "An accumulation of organic matter that has fallen to the bottom of a body 
 is_a: ENVO:01000549 ! mass of biological material
 relationship: adjacent_to ENVO:00000501 ! bed
 relationship: located_in ENVO:00000063 ! water body
-relationship: surrounded_by ENVO:00002006 ! water
+relationship: RO:0002219 ENVO:00002006 ! water
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2010-03-20T06:25:30Z
 
@@ -17464,7 +17480,7 @@ def: "The carcass of an animal that has fallen to the bottom of a body of water.
 is_a: ENVO:00002033 ! carcass
 relationship: adjacent_to ENVO:00000501 ! bed
 relationship: located_in ENVO:00000063 ! water body
-relationship: surrounded_by ENVO:00002006 ! water
+relationship: RO:0002219 ENVO:00002006 ! water
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2010-03-20T06:26:07Z
 
@@ -18513,7 +18529,6 @@ def: "A system which has the disposition to environ one or more material entitie
 comment: In ENVO's alignment with the Basic Formal Ontology, this class is being considered as a subclass of a proposed BFO class "system". The relation "environed_by" is also under development. Roughly, a system which includes a material entity (at least partially) within its site and causally influences that entity may be considered to environ it. Following the completion of this alignment, this class' definition and the definitions of its subclasses will be revised.
 synonym: "environment" EXACT []
 xref: EcoLexicon:environment
-is_a: RO:0002577 ! system
 creation_date: 2013-09-23T16:04:08Z
 
 [Term]
@@ -18887,7 +18902,10 @@ name: ice mass
 def: "A mass of ice." []
 is_a: ENVO:00000000 ! geographic feature
 is_a: ENVO:00000131 ! glacial feature
+intersection_of: ENVO:00002297 ! environmental feature
+intersection_of: composed_primarily_of ENVO:01000277 ! water ice
 relationship: composed_primarily_of ENVO:01000277 ! water ice
+property_value: IAO:0000116 "Class should be populated by inference and asserted subclasses redistributed." xsd:string
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2013-10-15T19:49:11Z
 
@@ -18992,8 +19010,8 @@ name: endolithic environment
 def: "An endolithic environment is an environment that exists within solid rock. " []
 is_a: ENVO:01000254 ! environmental system
 intersection_of: ENVO:01000254 ! environmental system
-intersection_of: surrounded_by ENVO:00001995 ! rock
-relationship: surrounded_by ENVO:00001995 ! rock
+intersection_of: RO:0002219 ENVO:00001995 ! rock
+relationship: RO:0002219 ENVO:00001995 ! rock
 
 [Term]
 id: ENVO:01000304
@@ -19180,6 +19198,8 @@ is_a: ENVO:00010504 ! surface layer
 [Term]
 id: ENVO:01000325
 name: aquatic layer
+def: "A layer in a water mass, itself composed primarily of water." []
+comment: This class will eventually be populated by inference, and its asserted subclasses removed.
 is_a: ENVO:01000281 ! layer
 intersection_of: ENVO:01000281 ! layer
 intersection_of: composed_primarily_of ENVO:00002006 ! water
@@ -19188,9 +19208,14 @@ relationship: composed_primarily_of ENVO:00002006 ! water
 [Term]
 id: ENVO:01000326
 name: deep chlorophyll maximum layer
-comment: Logical def is incomplete. Need to express the idea of maximum chlorophyll. This could follow a pattern like:\n\nX has_maximum_levels_of Y relative_to Z, i.e. DCM has_maximum_levels_of chlorophyll relative_to  subsurface_aquatic_layer\n\nMay also be useful to include has_decreased_levels_of light intensity relative_to surface aquatic layer\n\nFurther discussion in Issue 126.\n
+def: "A subsurface layer in a water body, typically an ocean or lake, in which chlorophyll concentrations reach their maximum." [Adapted from Wikipedia:Deep_chlorophyll_maximum]
+comment: The DCM may or may not indicate greater abundance of photosynthetic, chlorophyll-bearing cells, as shade-adapted cells may have a greater chlorophyll to biomass ration than surface variants. Further, some DCMs may be formed by the sinking of cells from surface zones or the subduction of surface waters, rather than through biotic, community-level processess. {xref="Adapted from Wikipedia:Deep_chlorophyll_maximum"}
+synonym: "DCM" EXACT []
 synonym: "subsurface chlorophyll maximum layer" RELATED []
 is_a: ENVO:01000325 ! aquatic layer
+relationship: has_increased_levels_of CHEBI:28966 ! chlorophyll
+property_value: IAO:0000116 "Logical def is incomplete. Need to express the idea of maximum chlorophyll. This could follow a pattern like:\n\nX has_maximum_levels_of Y relative_to Z, i.e. DCM has_maximum_levels_of chlorophyll relative_to  subsurface_aquatic_layer\n\nMay also be useful to include has_decreased_levels_of light intensity relative_to surface aquatic layer\n\nFurther discussion in Issue #126." xsd:string
+created_by: ORCID:0000-0002-4366-3088
 
 [Term]
 id: ENVO:01000327
@@ -21044,8 +21069,8 @@ def: "A glaze ice layer is a smooth, transparent and homogeneous ice layer which
 synonym: "glaze" BROAD []
 synonym: "glaze" RELATED []
 synonym: "glaze ice" RELATED [http://www.eionet.europa.eu/gemet/concept/12091]
-is_a: ENVO:00000131 ! glacial feature
 is_a: ENVO:01000281 ! layer
+is_a: ENVO:01000293 ! ice mass
 relationship: composed_primarily_of ENVO:01000277 ! water ice
 created_by: ORCID:0000-0002-4366-3088
 
@@ -21335,7 +21360,7 @@ is_a: ENVO:01000587 ! piece of furniture
 id: ENVO:01000587
 name: piece of furniture
 def: "A piece of furniture is a movable object intended to support various human activities such as seating (e.g., chairs, stools and sofas) and sleeping (e.g., beds)." [Adapted from Wikipedia:Furniture]
-comment: The assumption is that furniture is manufactured, which is arguable. Further, according to Black's Law Dictionary (http://thelawdictionary.org/furniture/) many classes can be subclasses of 'piece of furntiure': "This term includes that which furnishes, or with which anything is furnished or supplied; whatever must be supplied to a house, a room, or the like, to make it habitable, convenient, or agreeable; goods, vessels, utensils, and other appendages necessary or convenient for housekeeping; whatever is added to the interior of a house or apartment, for use or convenience. Bell v. Holding, 27 Ind. 173.The term “furniture” embraces everything about the house that has been usually enjoyed there, including plate, linen, china, and pictures. 1 Endicott v. Endicott, 41N. J. Eq. 96, 3 Atl. 157.The word “furniture” made use of in the disposition of the law. or in the conventions or acts of persons, comprehends only such furniture as is intended for use and ornament of apartments, but not libraries which happen to be there, nor plate. Civ.Code La. art. 477." However, this would eventually be absurd and limit other groupings. Perhaps some sort of 'furnishing' BFO:function would be a better way to handle this.
+comment: The assumption is that furniture is manufactured, which is arguable. Further, according to Black's Law Dictionary (http://thelawdictionary.org/furniture/) many classes can be subclasses of 'piece of furntiure': "This term includes that which furnishes, or with which anything is furnished or supplied; whatever must be supplied to a house, a room, or the like, to make it habitable, convenient, or agreeable; goods, vessels, utensils, and other appendages necessary or convenient for housekeeping; whatever is added to the interior of a house or apartment, for use or convenience. Bell v. Holding, 27 Ind. 173.The term “furniture�? embraces everything about the house that has been usually enjoyed there, including plate, linen, china, and pictures. 1 Endicott v. Endicott, 41N. J. Eq. 96, 3 Atl. 157.The word “furniture�? made use of in the disposition of the law. or in the conventions or acts of persons, comprehends only such furniture as is intended for use and ornament of apartments, but not libraries which happen to be there, nor plate. Civ.Code La. art. 477." However, this would eventually be absurd and limit other groupings. Perhaps some sort of 'furnishing' BFO:function would be a better way to handle this.
 is_a: ENVO:00003074 ! manufactured product
 
 [Term]
@@ -21586,7 +21611,7 @@ name: vaporisation
 def: "Vaporisation of an element or compound is process whereby that element or compound undergoes a phase transition from the liquid to vapor." []
 comment: Note that a vapor describes an element or compound in the gas phase at a temperature lower than its critical point,
 synonym: "vaporization" EXACT []
-is_a: ENVO:02500031 ! hydrological process
+is_a: ENVO:02500000 ! environmental system process
 
 [Term]
 id: ENVO:01000623
@@ -21663,8 +21688,10 @@ is_a: ENVO:01000525 ! intrusion
 
 [Term]
 id: ENVO:01000633
-name: 'ecosystem level aerobic respiration'
-is_a: ENVO:02500008 ! ecosystem level respiration
+name: ecosystem-wide aerobic respiration
+def: "A process which consists of all aerobic respiration processes instantiated in an ecosystem." []
+is_a: ENVO:02500008 ! ecosystem-wide respiration
+property_value: IAO:0000116 "See issue #275" xsd:string
 
 [Term]
 id: ENVO:01000634
@@ -21824,8 +21851,8 @@ relationship: part_of ENVO:01000249 ! urban biome
 id: ENVO:01000654
 name: undersea trough
 def: "An undersea trough is a trough which is below a marine water body." [Wikipedia:Trough_%28geology%29]
-synonym: "deep" RELATED [ADL:FTT]
 synonym: "deep" RELATED [USGS:SDTS]
+synonym: "deep" RELATED [ADL:FTT]
 synonym: "deep" RELATED [Geonames:feature]
 synonym: "foredeep" RELATED [USGS:SDTS]
 synonym: "swale" RELATED [USGS:SDTS]
@@ -22215,7 +22242,7 @@ name: hydrological precipitation process
 def: "Hydrological precipitation is a process during which any product of the condensation of atmospheric water vapour is pulled to the planetary surface by gravity." [Adapted from Wikipedia:Precipitation]
 comment: "process" is included in the label to make it clear that we are not referring to the precipitated material (e.g. snow, rain, sleet)
 synonym: "precipitation" BROAD []
-is_a: ENVO:02500031 ! hydrological process
+is_a: ENVO:02500000 ! environmental system process
 
 [Term]
 id: ENVO:01000704
@@ -22372,32 +22399,32 @@ id: ENVO:01000723
 name: melting
 def: "Melting is a physical process that results in the phase transition of a substance from a solid to a liquid." [Adapted from Wikipedia:Melting]
 synonym: "fusion" RELATED []
-is_a: ENVO:02500031 ! hydrological process
+is_a: ENVO:02500000 ! environmental system process
 
 [Term]
 id: ENVO:01000724
 name: condensation process
 def: "Condensation is a process in which a gas undergoes a phase transition into a liquid." [Adapted from Wikipedia:Condensation]
-is_a: ENVO:02500031 ! hydrological process
+is_a: ENVO:02500000 ! environmental system process
 
 [Term]
 id: ENVO:01000725
 name: chemical precipitation process
 def: "Chemical precipitation is a process in which a portion of some solid substance segregates from a material in which that substance or its precursors were dissolved in and settles due to a force such as gravity or centrifugal force. Segregation may occur due to the solubility limits of the precipitating substance being exceeded or due to a chemical reaction that forms a solid product from aqueous reagents." [Adapted from Wikipedia:Precipitation_(chemistry)]
-is_a: ENVO:02500031 ! hydrological process
+is_a: ENVO:02500000 ! environmental system process
 
 [Term]
 id: ENVO:01000726
 name: desublimation process
 def: "Desublimation is a process in which a portion of some gas undergoes a phase transition into a portion of some solid." [Adapted from Wikipedia:Deposition_(phase_transition)]
 synonym: "deposition" BROAD []
-is_a: ENVO:02500031 ! hydrological process
+is_a: ENVO:02500000 ! environmental system process
 
 [Term]
 id: ENVO:01000727
 name: sublimation process
 def: "Sublimation is a process in which a portion of some solid undergoes a phase transition into a portion of some gas." [Adapted from Wikipedia:Sublimation_(phase_transition)]
-is_a: ENVO:02500031 ! hydrological process
+is_a: ENVO:02500000 ! environmental system process
 
 [Term]
 id: ENVO:01000728
@@ -22521,6 +22548,63 @@ property_value: IAO:0000116 "See https://github.com/EnvironmentOntology/envo/iss
 property_value: IAO:0000116 "Subclasses will be added by inference." xsd:string
 
 [Term]
+id: ENVO:01000753
+name: air temperature
+def: "A temperature that inheres in some portion of air." [URL:https\://github.com/EnvironmentOntology/envo/issues/278]
+is_a: ENVO:09200001 ! temperature of air
+relationship: inheres_in ENVO:00002005 ! air
+property_value: IAO:0000116 "Draft class. In discussion in Issue #278." xsd:string
+
+[Term]
+id: ENVO:01000754
+name: fumarole-derived ice tower
+def: "A hollow tower of ice formed by the freezing of steam escaping a fumarole." []
+synonym: "ice chimney" RELATED []
+synonym: "ice tower" RELATED []
+is_a: ENVO:00000176 ! elevation
+is_a: ENVO:01000293 ! ice mass
+relationship: adjacent_to ENVO:01000365 ! ice cave
+relationship: composed_primarily_of ENVO:01000277 ! water ice
+
+[Term]
+id: ENVO:01000755
+name: aeroform
+def: "An aeroform is a geographic feature which is primarily composed of air held in shape by one or more environmental processes." []
+comment: Similar, in spirit, to landform.
+is_a: ENVO:00000000 ! geographic feature
+intersection_of: ENVO:00000000 ! geographic feature
+intersection_of: composed_primarily_of ENVO:00002005 {all_some="true"} ! air
+property_value: IAO:0000116 "This may not need to be in the atmosphere." xsd:string
+
+[Term]
+id: ENVO:01000756
+name: vegetable
+def: "Any plant food product which, typically, is constituted by intact parts from one or more annual plants cultivated as field and garden crops in the open and under glass, and used almost exclusively for food." [http://www.fao.org/es/faodef/fdef07e.htm#7.01]
+comment: According to the FAO definition, vegetables grown principally for animal feed or seed should be separated from those grown for human consumption. They both, however, fall under the label "vegetable".
+is_a: ENVO:00002216 ! plant food product
+property_value: IAO:0000116 "This class represents a somewhat arbitrary grouping of plant products which varies along various axes (socio-political, economic, cultural, etc). It's likely we'll need to create more informative subclasses and use synonomy to tie them together." xsd:string
+
+[Term]
+id: ENVO:01000757
+name: fruit
+def: "Mature ovary of a plant, with a fleshy part of the carpel that develops with the seed to attract animals for aid in dispersal. Botanically, nuts are considered fruits." [http://eurovoc.europa.eu/drupal/?q=request&uri=http\://eurovoc.europa.eu/1115, http://oek1.fao.org/skosmos/agrovoc/en/page/c_3119, http://www.fao.org/pollination/resources/glossary/en/, https://en.wikipedia.org/wiki/Fruit]
+is_a: ENVO:00002216 ! plant food product
+property_value: IAO:0000116 "This class represents a somewhat arbitrary grouping of plant products which varies along various axes (socio-political, economic, cultural, etc). It's likely we'll need to create more informative subclasses and use synonomy to tie them together." xsd:string
+
+[Term]
+id: ENVO:01000758
+name: nut
+def: "A nut is a fruit composed of a hard shell and a seed, which is generally edible. In a general context, however, a wide variety of dried seeds are called nuts, but in a botanical context, there is an additional requirement that the shell does not open to release the seed (indehiscent). The translation of \"nut\" in certain languages frequently requires paraphrases, as the word is ambiguous." [https://en.wikipedia.org/wiki/Nut_%28fruit%29]
+is_a: ENVO:01000757 ! fruit
+property_value: IAO:0000116 "This class represents a somewhat arbitrary grouping of plant products which varies along various axes (socio-political, economic, cultural, etc). It's likely we'll need to create more informative subclasses and use synonomy to tie them together. The definition, too, requires greater refinement." xsd:string
+
+[Term]
+id: ENVO:01000759
+name: legume
+def: "A one-celled fruit (pod) usually dehiscing down both sutures, and having the seed attached along a ventral suture. (Roubik 1995)" [http://www.fao.org/pollination/resources/glossary/en/]
+is_a: ENVO:01000757 ! fruit
+
+[Term]
 id: ENVO:01001303
 name: environmental role
 def: "A role which is may be realised by an environmental system" []
@@ -22557,11 +22641,12 @@ relationship: determined_by UBERON:0001474 ! bone element
 [Term]
 id: ENVO:01001308
 name: hydroform
-def: "A hydroform is a geographic feature which is primarily composed of water held in shape by an environmental process." []
-comment: Should create links to envrionmental process with new relation like "sustained_by" {created_by="ORCID:0000-0002-4366-3088"}
+def: "A hydroform is a geographic feature which is primarily composed of liquid water held in shape by an environmental process." []
+comment: Similar, in spirit, to landform.
 is_a: ENVO:00000000 ! geographic feature
 intersection_of: ENVO:00000000 ! geographic feature
-intersection_of: composed_primarily_of ENVO:00002006 {all_some="true"} ! water
+intersection_of: composed_primarily_of CHEBI:15377 {all_some="true"} ! water
+property_value: IAO:0000116 "Should create links to envrionmental process with new relation like \"sustained_by\"" xsd:string {created_by="ORCID:0000-0002-4366-3088"}
 
 [Term]
 id: ENVO:02000000
@@ -23243,14 +23328,18 @@ property_value: IAO:0000116 "An SDGIO request. Likely to be refined and revised.
 
 [Term]
 id: ENVO:02500007
-name: ecosystem level photosynthesis
+name: ecosystem-wide photosynthesis
+def: "A process which consists of all photosynthesis processes instantiated in an ecosystem." []
 is_a: ENVO:02500000 ! environmental system process
+property_value: IAO:0000116 "See issue #275" xsd:string
 
 [Term]
 id: ENVO:02500008
-name: ecosystem level respiration
+name: ecosystem-wide respiration
+def: "A process which consists of all respiration processes instantiated in an ecosystem." []
 is_a: ENVO:02500000 ! environmental system process
 relationship: has_output CHEBI:15422 ! ATP
+property_value: IAO:0000116 "See issue #275" xsd:string
 
 [Term]
 id: ENVO:02500009
@@ -23331,7 +23420,7 @@ is_a: NCBITaxon:131567 ! cellular organisms
 [Term]
 id: ENVO:02500021
 name: algal bloom collapse
-is_a: ENVO:02500000 ! environmental system process
+is_a: ENVO:02500022 ! algal bloom process phase
 relationship: ends ENVO:02500018 ! algal bloom process
 
 [Term]
@@ -23409,7 +23498,7 @@ relationship: has_output ENVO:01001305 ! vegetated area
 id: ENVO:02500033
 name: evapotranspiration
 def: "Evapotranspiration is the sum of evaporation and plant transpiration from the Earth's land and ocean surface to the atmosphere." [Adapted from Wikipedia:Evapotranspiration]
-is_a: ENVO:02500031 ! hydrological process
+is_a: ENVO:02500000 ! environmental system process
 
 [Term]
 id: ENVO:02500034
@@ -23422,7 +23511,7 @@ id: ENVO:02500035
 name: transpiration
 def: "Transpiration is the process of water movement through a plant and its evaporation from aerial parts of that plant, such as from leaves but also from stems and flowers." []
 comment: Needs a process part "water transport" or similar and some link to plants to be complete.
-is_a: ENVO:02500031 ! hydrological process
+is_a: ENVO:02500000 ! environmental system process
 relationship: has_part ENVO:02500034 ! evaporation
 
 [Term]
@@ -23485,8 +23574,8 @@ name: pollution control
 synonym: "pollution prevention" NARROW []
 is_a: ENVO:02500026 ! anthropogenic modulatory intervention process
 intersection_of: ENVO:02500026 ! anthropogenic modulatory intervention process
-intersection_of: regulates ENVO:02500036 ! environmental pollution
-relationship: regulates ENVO:02500036 ! environmental pollution
+intersection_of: RO:0002211 ENVO:02500036 ! environmental pollution
+relationship: RO:0002211 ENVO:02500036 ! environmental pollution
 
 [Term]
 id: ENVO:02500043
@@ -23700,6 +23789,79 @@ def: "The nitrogen atom in a dissolved state when measured in water." []
 synonym: "water dissolved nitrogen atom" EXACT []
 is_a: ENVO:09000012 ! solubility of nitrogen atom in water
 is_a: ENVO:09100004 ! dissolved nitrogen atom in environmental material
+
+[Term]
+id: ENVO:09200000
+name: temperature of environmental material
+def: "The temperature of a environmental material." []
+synonym: "environmental material temperature" EXACT []
+is_a: PATO:0000146 ! temperature
+intersection_of: PATO:0000146 ! temperature
+intersection_of: inheres_in ENVO:00010483 ! environmental material
+relationship: inheres_in ENVO:00010483 ! environmental material
+
+[Term]
+id: ENVO:09200001
+name: temperature of air
+def: "The temperature of a air." []
+synonym: "air temperature" EXACT []
+is_a: ENVO:09200000 ! temperature of environmental material
+intersection_of: PATO:0000146 ! temperature
+intersection_of: inheres_in ENVO:00002005 ! air
+relationship: inheres_in ENVO:00002005 ! air
+
+[Term]
+id: ENVO:1000745
+name: drought
+def: "A hydrological precipitation process with a reduced rate relative to some historical average, typically resulting in ecosystemic perturbations." []
+subset: environmental_hazards
+is_a: ENVO:01000703 ! hydrological precipitation process
+property_value: IAO:0000116 "Drought is often defined  as a temporal period of below-average precipitation, however, representing it as a temporal entity seems insufficient." xsd:string
+
+[Term]
+id: ENVO:1000746
+name: marine mucilage
+def: "A gelatinous material primarily composed of exopolymeric compounds with colloidal properties, formed through the aggregation of marine snow particles, often found in large sheets,  flocs, and clouds." [DOI:10.1371/journal.pone.0007006]
+comment: The formation of marine mucilage is often associated with conditions which stress marine microorganisms such as diatoms.
+synonym: "sea snot" BROAD []
+is_a: ENVO:01000155 ! organic material
+property_value: IAO:0000116 "See issue #276. \nThis class is complex as marine mucilage is quite complex. It will also requre new class creation in GO process for deeper semantics." xsd:string
+
+[Term]
+id: ENVO:1000747
+name: exudation of carbohydrates
+def: "A process in which carbohydrates are transported from the interior of an organism to its surroundings." []
+is_a: ENVO:02500000 ! environmental system process
+property_value: IAO:0000116 "Class for testing with marine mucilage." xsd:string
+
+[Term]
+id: ENVO:1000748
+name: island formation process
+def: "A process which results in the formation of an island." []
+is_a: ENVO:02500000 ! environmental system process
+intersection_of: ENVO:02500000 ! environmental system process
+intersection_of: has_output ENVO:00000098 ! island
+relationship: has_output ENVO:00000098 ! island
+property_value: IAO:0000116 "Addressing Issue #268. This top-level class may be converted to an inferred class." xsd:string
+
+[Term]
+id: ENVO:1000749
+name: microcontinental island
+def: "An island created when a continent is rifted." [Wikipedia:Island]
+comment: "Examples are Madagascar and Socotra off Africa, the Kerguelen Islands, New Caledonia, New Zealand, and some of the Seychelles." Wikipedia:Island
+is_a: ENVO:00000221 ! continental island
+
+[Term]
+id: ENVO:1000750
+name: depositional island
+def: "An island formed by deposition of solid material such as sand or small rocks where a water current loses some of its carrying capacity." [Adapted from Wikipedia:Island]
+is_a: ENVO:00000098 ! island
+
+[Term]
+id: ENVO:1000751
+name: barrier island
+def: "An island formed by the accumulation of sand deposited by sea currents on a continental shelves" [Adapted from Wikipedia:Island]
+is_a: ENVO:1000750 ! depositional island
 
 [Term]
 id: ENVO:2000000
@@ -25256,7 +25418,7 @@ id: PCO:0000001
 name: population
 def: "A collection of organisms, all of the same species, that live in the same place." []
 is_a: PCO:0000018 ! collection of organisms of the same species
-relationship: has_habitat ENVO:01000739 ! habitat
+relationship: RO:0002303 ENVO:01000739 ! habitat
 
 [Term]
 id: PCO:0000002
@@ -25296,7 +25458,7 @@ synonym: "suffrutices" NARROW []
 synonym: "tree" NARROW []
 synonym: "vine" NARROW []
 synonym: "woody clump" NARROW []
-synonym: "植物体全体 (Japanese)" EXACT []
+synonym: "????? (Japanese)" EXACT []
 is_a: PO:0009011 ! plant structure
 
 [Term]
@@ -25308,7 +25470,7 @@ synonym: "climbing root" NARROW []
 synonym: "ra&#237z (Spanish)" EXACT []
 synonym: "radices" EXACT []
 synonym: "radix" EXACT []
-synonym: "根 (Japanese)" EXACT []
+synonym: "? (Japanese)" EXACT []
 is_a: PO:0025004 ! plant axis
 
 [Term]
@@ -25319,7 +25481,7 @@ synonym: "&#243rgano vegetal (Spanish)" EXACT []
 synonym: "compound plant organ" RELATED []
 synonym: "organ" BROAD []
 synonym: "simple plant organ" RELATED []
-synonym: "植物 器官 (Japanese)" EXACT []
+synonym: "?? ?? (Japanese)" EXACT []
 is_a: PO:0025496 ! multi-tissue plant structure
 
 [Term]
@@ -25327,7 +25489,7 @@ id: PO:0009011
 name: plant structure
 def: "An anatomical structure that is or was part of a plant, or was derived from a part of a plant." []
 synonym: "estructura vegetal (Spanish)" EXACT []
-synonym: "植物 構造 (Japanese)" EXACT []
+synonym: "?? ?? (Japanese)" EXACT []
 is_a: PO:0025131 ! plant anatomical entity
 
 [Term]
@@ -25336,7 +25498,7 @@ name: plant axis
 def: "An axial plant organ (PO:0009008)." []
 synonym: "eje de la planta (Spanish)" EXACT []
 synonym: "plant axes" EXACT []
-synonym: "植物軸（軸柱） (Japanese)" EXACT []
+synonym: "??????? (Japanese)" EXACT []
 is_a: PO:0009008 ! plant organ
 
 [Term]
@@ -25344,7 +25506,7 @@ id: PO:0025007
 name: collective plant organ structure
 def: "A collective plant structure (PO:0025497) that is a proper part of a whole plant (PO:0000003), and is composed of two or more adjacent plant organs (PO:0009008) and the associated portions of plant tissue (PO:0009007)." []
 synonym: "estructura vegetal colectiva de &#243rgano (Spanish)" EXACT []
-synonym: "集合植物器官構造 (Japanese)" EXACT []
+synonym: "???????? (Japanese)" EXACT []
 is_a: PO:0025497 ! collective plant structure
 
 [Term]
@@ -25353,7 +25515,7 @@ name: root system
 def: "A collective plant organ structure (PO:0025007) that produces root apical meristems (PO:0020147) and the plant structures that arise from them." []
 synonym: "root" BROAD []
 synonym: "sistema de ra&#237z (Spanish)" EXACT []
-synonym: "根系 (Japanese)" EXACT []
+synonym: "?? (Japanese)" EXACT []
 is_a: PO:0025007 ! collective plant organ structure
 
 [Term]
@@ -25361,7 +25523,7 @@ id: PO:0025131
 name: plant anatomical entity
 def: "An anatomical entity that is or was part of a plant." []
 synonym: "entidad anat&#243mica vegetal (Spanish)" EXACT []
-synonym: "植物 解剖学（形態）的実体 (Japanese)" EXACT []
+synonym: "?? ?????????? (Japanese)" EXACT []
 is_a: BFO:0000040 ! material entity
 
 [Term]
@@ -25369,7 +25531,7 @@ id: PO:0025496
 name: multi-tissue plant structure
 def: "A plant structure (PO:0009011) that has as parts two or more portions of plant tissue (PO:0009007) of at least two different types and which through specific morphogenetic processes forms a single structural unit demarcated by primarily bona-fide boundaries from other structural units of different types." []
 synonym: "estructura vegetal con m&#250ltiples tejidos (Spanish)" EXACT []
-synonym: "複数の組織からなる植物構造 (Japanese)" EXACT []
+synonym: "????????????? (Japanese)" EXACT []
 is_a: PO:0009011 ! plant structure
 
 [Term]
@@ -25377,7 +25539,7 @@ id: PO:0025497
 name: collective plant structure
 def: "A plant structure (PO:0009011) that is a proper part of a whole plant (PO:0000003) and includes two or more adjacent plant organs (PO:0009008) or adjacent cardinal organ parts (PO:0025001), along with any associated portions of plant tissue (PO:0009007)." []
 synonym: "estructura vegetal colectiva (Spanish)" EXACT []
-synonym: "集合的植物構造 (Japanese)" EXACT []
+synonym: "??????? (Japanese)" EXACT []
 is_a: PO:0009011 ! plant structure
 
 [Term]
@@ -25594,7 +25756,7 @@ is_a: UBERON:0013703 ! integumentary projection
 [Term]
 id: UBERON:0000022
 name: feather
-def: "one of the epidermal growths that form the distinctive outer covering, or plumage, on birds. Feathers are formed in tiny follicles in the epidermis, or outer skin layer, that produce keratin proteins. The beta-keratins in feathers, beaks and claws — and the claws, scales and shells of reptiles — are composed of protein strands hydrogen-bonded into beta-pleated sheets, which are then further twisted and crosslinked by disulfide bridges into structures even tougher than the α-keratins of mammalian hair, horns and hoof. The exact signals that induce the growth of feathers on the skin are not known but it has been found that the transcription factor cDermo-1 induces the growth of feathers on skin and scales on the leg." []
+def: "one of the epidermal growths that form the distinctive outer covering, or plumage, on birds. Feathers are formed in tiny follicles in the epidermis, or outer skin layer, that produce keratin proteins. The beta-keratins in feathers, beaks and claws � and the claws, scales and shells of reptiles � are composed of protein strands hydrogen-bonded into beta-pleated sheets, which are then further twisted and crosslinked by disulfide bridges into structures even tougher than the ?-keratins of mammalian hair, horns and hoof. The exact signals that induce the growth of feathers on the skin are not known but it has been found that the transcription factor cDermo-1 induces the growth of feathers on skin and scales on the leg." []
 is_a: UBERON:0000021 ! cutaneous appendage
 is_a: UBERON:0004121 ! ectoderm-derived structure
 
@@ -27606,8 +27768,8 @@ synonym: "vesiculae seminales" RELATED []
 synonym: "vesicular gland" RELATED []
 synonym: "vesicular glands" RELATED []
 synonym: "vesicular seminalis" RELATED []
-synonym: "vesiculÃ¦ seminales" RELATED []
 synonym: "vesiculæ seminales" RELATED []
+synonym: "vesicul� seminales" RELATED []
 is_a: UBERON:0006868 ! seminal fluid secreting gland
 
 [Term]
@@ -30454,7 +30616,7 @@ is_a: UBERON:0007521 ! smooth muscle sphincter
 [Term]
 id: UBERON:0001608
 name: dilatator pupillae
-def: "The iris dilator muscle (pupil dilator muscle, pupillary dilator, radial muscle of iris, radiating fibers), is a smooth muscle of the eye, running radially in the iris and therefore fit as a dilator. It is innervated by the sympathetic system, which acts by releasing noradrenaline, which acts on α1-receptors. Thus, when presented with a threatening stimuli that activates the fight-or-flight response, this innervation dilates the iris, thus temporarily letting more light reach the retina. [WP,unvetted]." []
+def: "The iris dilator muscle (pupil dilator muscle, pupillary dilator, radial muscle of iris, radiating fibers), is a smooth muscle of the eye, running radially in the iris and therefore fit as a dilator. It is innervated by the sympathetic system, which acts by releasing noradrenaline, which acts on ?1-receptors. Thus, when presented with a threatening stimuli that activates the fight-or-flight response, this innervation dilates the iris, thus temporarily letting more light reach the retina. [WP,unvetted]." []
 synonym: "dilator muscle of pupil" EXACT []
 synonym: "dilator of pupil" EXACT []
 synonym: "dilator pupillae" EXACT []
@@ -30929,7 +31091,7 @@ synonym: "endothelium corneale" RELATED []
 synonym: "epithelial tissue of cornea" EXACT []
 synonym: "epithelium anterius (cornea)" EXACT []
 synonym: "epithelium anterius corneae" EXACT []
-synonym: "epithelium corneæ anterior layer" EXACT []
+synonym: "epithelium corne� anterior layer" EXACT []
 synonym: "epithelium of cornea" EXACT []
 synonym: "epithelium posterius corneae" RELATED []
 synonym: "external epithelium of cornea" EXACT []
@@ -32094,8 +32256,8 @@ id: UBERON:0001983
 name: crypt of Lieberkuhn
 def: "the tubular intestinal glands found in the mucosal membranes" []
 synonym: "crypt of lieberkuhn" EXACT []
-synonym: "crypt of Lieberkühn" EXACT []
-synonym: "crypts of Lieberkühn" EXACT []
+synonym: "crypt of Lieberk�hn" EXACT []
+synonym: "crypts of Lieberk�hn" EXACT []
 synonym: "follicles of lieberkuhn" EXACT []
 synonym: "intestinal crypt" EXACT []
 synonym: "intestinal crypts" EXACT []
@@ -32164,12 +32326,12 @@ synonym: "fecal matter" EXACT []
 synonym: "fewmet" NARROW []
 synonym: "frass" NARROW []
 synonym: "guano" NARROW []
-synonym: "matières fécales@fr" EXACT []
+synonym: "mati�res f�cales@fr" EXACT []
 synonym: "merde@fr" EXACT []
 synonym: "ordure" RELATED []
 synonym: "partie de la merde@fr" EXACT []
 synonym: "piece of shit" EXACT []
-synonym: "porción de mierda@en" EXACT []
+synonym: "porci�n de mierda@en" EXACT []
 synonym: "portion of dung" NARROW []
 synonym: "portion of excrement" EXACT []
 synonym: "portion of faeces" EXACT []
@@ -32183,7 +32345,7 @@ synonym: "scat" NARROW []
 synonym: "spoor" RELATED []
 synonym: "spraint" NARROW []
 synonym: "stool" EXACT []
-synonym: "teil der fäkalien@de" EXACT []
+synonym: "teil der f�kalien@de" EXACT []
 is_a: UBERON:0000174 ! excreta
 
 [Term]
@@ -33604,7 +33766,7 @@ is_a: UBERON:0002616 ! regional part of brain
 [Term]
 id: UBERON:0002276
 name: lamina of spiral limbus
-def: "The osseous spiral lamina consists of two plates of bone, and between these are the canals for the transmission of the filaments of the acoustic nerve. On the upper plate of that part of the lamina which is outside the vestibular membrane, the periosteum is thickened to form the limbus spiralis (or limbus laminæ spiralis), this ends externally in a concavity, the sulcus spiralis internus, which represents, on section, the form of the letter C. [WP,unvetted]." []
+def: "The osseous spiral lamina consists of two plates of bone, and between these are the canals for the transmission of the filaments of the acoustic nerve. On the upper plate of that part of the lamina which is outside the vestibular membrane, the periosteum is thickened to form the limbus spiralis (or limbus lamin� spiralis), this ends externally in a concavity, the sulcus spiralis internus, which represents, on section, the form of the letter C. [WP,unvetted]." []
 synonym: "limbus lamina spiralis" EXACT []
 synonym: "limbus laminae spiralis" EXACT []
 synonym: "limbus laminae spiralis osseae" EXACT []
@@ -33941,7 +34103,7 @@ is_a: UBERON:0004121 ! ectoderm-derived structure
 [Term]
 id: UBERON:0002329
 name: somite
-def: "Somites are spheres of epithelial cells that form sequentially along the anterior–posterior axis of the embryo through mesenchymal to epithelial transition of the presomitic mesoderm." []
+def: "Somites are spheres of epithelial cells that form sequentially along the anterior�posterior axis of the embryo through mesenchymal to epithelial transition of the presomitic mesoderm." []
 synonym: "epimere" RELATED []
 synonym: "epimere mesoderm" RELATED []
 synonym: "epithelial somite" RELATED []
@@ -39785,7 +39947,7 @@ def: "paired ducts of the embryo that run down the lateral sides of the urogenit
 synonym: "ductus paramesonephricus" EXACT []
 synonym: "early paramesonephric duct" NARROW []
 synonym: "Muellerian duct" EXACT []
-synonym: "Müllerian duct" EXACT []
+synonym: "M�llerian duct" EXACT []
 synonym: "paramesonephric duct" EXACT []
 is_a: UBERON:0000025 ! tube
 is_a: UBERON:0002050 ! embryonic structure
@@ -47032,7 +47194,7 @@ synonym: "DA" EXACT []
 synonym: "dorsal aorta root" RELATED []
 synonym: "dorsal aortae" RELATED []
 synonym: "dorsal aortic root" RELATED []
-synonym: "dorsal aortæ" RELATED []
+synonym: "dorsal aort�" RELATED []
 is_a: UBERON:0000947 ! aorta
 is_a: UBERON:0003513 ! trunk blood vessel
 
@@ -47173,7 +47335,7 @@ id: UBERON:0005884
 name: hyoid arch skeleton
 def: "A subdivision of skeleton that supports pharyngeal arch 2." []
 synonym: "hyal@fr" EXACT []
-synonym: "hyocïde@fr" EXACT []
+synonym: "hyoc�de@fr" EXACT []
 synonym: "hyoid arch" RELATED []
 synonym: "hyoid arch skeleton" EXACT []
 synonym: "hyoid bars" NARROW []
@@ -50084,7 +50246,7 @@ disjoint_from: UBERON:0011156 ! facial skeleton
 id: UBERON:0008904
 name: neuromast
 def: "Volcano-shaped lateral line sensory organ located in characteristic positions within the skin epithelium and containing hair cells and their support elements." []
-synonym: "cyatocïde@fr" EXACT []
+synonym: "cyatoc�de@fr" EXACT []
 synonym: "lateral line neuromast" EXACT []
 synonym: "lateral line organ" BROAD []
 synonym: "neuromast organ" EXACT []
@@ -51591,7 +51753,7 @@ is_a: UBERON:0010359 ! pharyngeal arch mesenchyme from neural crest
 [Term]
 id: UBERON:0010260
 name: umbilical blood vessel
-def: "One of the three blood vessels, usually one large umbilical vein and two small umbilical arteries, buried within Wharton’s jelly, that transport blood to and from the placenta, where exchange between the mother and fetus takes place; the umbilical vein carries oxygenated, nutrient-rich blood from the placenta to the fetus, and the umbilical arteries carry deoxygenated, nutrient-depleted blood from the fetus to the placenta." []
+def: "One of the three blood vessels, usually one large umbilical vein and two small umbilical arteries, buried within Wharton�s jelly, that transport blood to and from the placenta, where exchange between the mother and fetus takes place; the umbilical vein carries oxygenated, nutrient-rich blood from the placenta to the fetus, and the umbilical arteries carry deoxygenated, nutrient-depleted blood from the fetus to the placenta." []
 synonym: "allantoic vessel" EXACT []
 synonym: "umbilical cord blood vessel" EXACT []
 synonym: "umbilical cord blood vessels" RELATED []
@@ -52776,7 +52938,7 @@ is_a: UBERON:0015063 ! autopod endochondral element
 [Term]
 id: UBERON:0011252
 name: scent gland
-def: "Scent glands are exocrine glands found in most mammals. They produce semi-viscous secretions which contain pheromones and other semiochemical compounds. These odor-messengers indicate information such as status, territory marking, mood, and sexual power. The odor may be subliminal—not consciously detectable. Though it is not their primary function, the salivary glands may also function as scent glands in some animals." []
+def: "Scent glands are exocrine glands found in most mammals. They produce semi-viscous secretions which contain pheromones and other semiochemical compounds. These odor-messengers indicate information such as status, territory marking, mood, and sexual power. The odor may be subliminal�not consciously detectable. Though it is not their primary function, the salivary glands may also function as scent glands in some animals." []
 is_a: UBERON:0002365 ! exocrine gland
 
 [Term]
@@ -53965,7 +54127,7 @@ is_a: UBERON:0005156 ! reproductive structure
 [Term]
 id: UBERON:0013228
 name: sweat gland of eyelid
-def: "Glands of Moll, also known as ciliary glands, are modified apocrine sweat glands that are found on the margin of the eyelid. They are next to the base of the eyelashes, and anterior to the Meibomian glands within the distal eyelid margin. These glands are relatively large and tubular-shaped. The glands of Moll are named after Dutch oculist Jacob Anton Moll (1832–1914). Glands of Moll empty into the adjacent lashes. Glands of Moll and Zeis secrete lipid that adds to the superficial layer of the tear film, retarding evaporation. The glands of Moll are prone to infection and blockage of its duct with sebum and cell debris. Blockage of the gland's duct causes swelling which can manifest itself as a stye." []
+def: "Glands of Moll, also known as ciliary glands, are modified apocrine sweat glands that are found on the margin of the eyelid. They are next to the base of the eyelashes, and anterior to the Meibomian glands within the distal eyelid margin. These glands are relatively large and tubular-shaped. The glands of Moll are named after Dutch oculist Jacob Anton Moll (1832�1914). Glands of Moll empty into the adjacent lashes. Glands of Moll and Zeis secrete lipid that adds to the superficial layer of the tear film, retarding evaporation. The glands of Moll are prone to infection and blockage of its duct with sebum and cell debris. Blockage of the gland's duct causes swelling which can manifest itself as a stye." []
 synonym: "ciliary gland" EXACT []
 synonym: "ciliary gland of moll" EXACT []
 synonym: "ciliary sweat gland of eyelid" EXACT []
@@ -54083,7 +54245,7 @@ is_a: UBERON:0001241 ! crypt of Lieberkuhn of small intestine
 [Term]
 id: UBERON:0013485
 name: crypt of Lieberkuhn of colon
-def: "An intestinal crypt that is located in the colon. The colonic crypts of Lieberkühn are straight and unbranched and lined largely with goblet cells." []
+def: "An intestinal crypt that is located in the colon. The colonic crypts of Lieberk�hn are straight and unbranched and lined largely with goblet cells." []
 synonym: "colonic crypt" EXACT []
 synonym: "colonic crypt of lieberkuhn" EXACT []
 is_a: UBERON:0001984 ! crypt of Lieberkuhn of large intestine
@@ -55235,10 +55397,10 @@ is_a: UBERON:0007037 ! mechanosensory system
 id: UBERON:0016491
 name: vertebral centrum element
 def: "Skeletal element that functionally replaces the notochord[VSAP,modified]." []
-synonym: "centre vertébral@fr" EXACT []
+synonym: "centre vert�bral@fr" EXACT []
 synonym: "centrum" BROAD []
 synonym: "centrum of vertebra" EXACT []
-synonym: "périchorde@fr" EXACT []
+synonym: "p�richorde@fr" EXACT []
 is_a: UBERON:0004120 ! mesoderm-derived structure
 is_a: UBERON:0004765 ! skeletal element
 
@@ -56478,6 +56640,42 @@ is_a: UBERON:0004120 ! mesoderm-derived structure
 is_a: UBERON:0010712 ! limb skeleton subdivision
 
 [Typedef]
+id: RO:0002176
+xref: RO:0002176
+
+[Typedef]
+id: RO:0002211
+xref: RO:0002211
+
+[Typedef]
+id: RO:0002219
+xref: RO:0002219
+
+[Typedef]
+id: RO:0002303
+xref: RO:0002303
+
+[Typedef]
+id: acquires_nutrients_from
+name: acquires nutrients from
+subset: ro-eco
+xref: RO:0002457
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000232 "Intended to be used when the target of the relation is not itself consumed, and does not have integral parts consumed, but provided nutrients in some other fashion." xsd:string
+is_a: trophically_interacts_with ! trophically interacts with
+
+[Typedef]
+id: actively_participates_in
+name: actively participates in
+def: "x actively participates in y if and only if x participates in y and x realizes some active role" []
+xref: RO:0002217
+property_value: IAO:0000114 IAO:0000125
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000118 "agent in" xsd:string
+is_a: participates_in ! participates in
+inverse_of: has_active_participant ! has active participant
+
+[Typedef]
 id: adjacent_to
 name: adjacent to
 def: "x adjacent to y if and only if x and y share a boundary" []
@@ -56486,18 +56684,248 @@ property_value: IAO:0000114 IAO:0000125
 property_value: IAO:0000116 "This relation acts as a join point with BSPO" xsd:string
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: RO:0001900 RO:0001901
+domain: BFO:0000004 ! independent continuant
+range: BFO:0000004 ! independent continuant
+is_a: spatially_disjoint_from ! spatially disjoint from
 
 [Typedef]
-id: connects
-name: connects
-def: "c connects a if and only if there exist some b such that a and b are similar parts of the same system, and c connects b, specifically, c connects a with b. When one structure connects two others it unites some aspect of the function or role they play within the system." []
-xref: RO:0002176
+id: attached_to
+name: attached to
+def: "a is attached to b if and only if a and b are discrete objects or object parts, and there are physical connections between a and b such that a force pulling a will move b, or a force pulling b will move a" []
+subset: ro-eco
+xref: RO:0002371
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+is_symmetric: true
+is_a: attached_to_part_of ! attached to part of
+is_a: connected_to ! connected to
+
+[Typedef]
+id: attached_to_part_of
+name: attached to part of
+def: "a is attached to part of b if a is attached to b, or a is attached to some p, where p is part of b." []
+xref: RO:0002177
+domain: BFO:0000040 ! material entity
+range: BFO:0000040 ! material entity
+holds_over_chain: attached_to part_of {http://purl.obolibrary.org/obo/RO_0002582="true"}
+is_a: biomechanically_related_to ! biomechanically related to
+is_a: mereotopologically_related_to ! mereotopologically related to
+
+[Typedef]
+id: bearer_of
+name: bearer of
+def: "a relation between an independent continuant (the bearer) and a specifically dependent continuant (the dependent), in which the dependent specifically depends on the bearer for its existence" []
+xref: RO:0000053
+property_value: IAO:0000111 "bearer of" xsd:string
+property_value: IAO:0000112 "this apple is bearer of this red color" xsd:string
+property_value: IAO:0000112 "this vase is bearer of this fragility" xsd:string
+property_value: IAO:0000116 "A bearer can have many dependents, and its dependents can exist for different periods of time, but none of its dependents can exist when the bearer does not exist." xsd:string
+property_value: IAO:0000118 "bearer_of" xsd:string
+property_value: IAO:0000118 "is bearer of" xsd:string
+property_value: RO:0001900 RO:0001901
+range: BFO:0000020 ! specifically dependent continuant
+inverse_of: inheres_in ! inheres in
+
+[Typedef]
+id: biomechanically_related_to
+name: biomechanically related to
+def: "A relation that holds between elements of a musculoskeletal system or its analogs." []
+xref: RO:0002567
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000232 "Do not use this relation directly. It is ended as a grouping for a diverse set of relations, all involving the biomechanical processes." xsd:string
+is_a: functionally_related_to ! functionally related to
+
+[Typedef]
+id: biotically_interacts_with
+name: biotically interacts with
+def: "An interaction relationship in which at least one of the partners is an organism and the other is either an organism or an abiotic entity with which the organism interacts." []
+subset: ro-eco
+xref: RO:0002437
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000118 "interacts with on organism level" xsd:string
+property_value: seeAlso http://dx.doi.org/10.1016/j.ecoinf.2014.08.005
+property_value: seeAlso http://eol.org/schema/terms/interactsWith xsd:string
+domain: BFO:0000040 ! material entity
+range: BFO:0000040 ! material entity
+is_symmetric: true
+is_a: ecologically_related_to ! ecologically related to
+is_a: interacts_with ! interacts with
+
+[Typedef]
+id: bounding_layer_of
+name: bounding layer of
+def: "X outer_layer_of Y iff:\n. X :continuant that bearer_of some PATO:laminar\n. X part_of Y\n. exists Z :surface\n. X has_boundary Z\n. Z boundary_of Y\n\nhas_boundary: http://purl.obolibrary.org/obo/RO_0002002\nboundary_of: http://purl.obolibrary.org/obo/RO_0002000" []
+comment: A relationship that applies between a continuant and its outer, bounding layer.  Examples include the relationship between a multicellular organism and its integument, between an animal cell and its plasma membrane, and between a membrane bound organelle and its outer/bounding membrane.
+subset: ro-eco
+xref: RO:0002007
+property_value: IAO:0000117 "David Osumi-Sutherland" xsd:string
+range: BFO:0000040 ! material entity
+is_a: part_of ! part of
+
+[Typedef]
+id: capable_of
+name: capable of
+def: "A relation between a material entity (such as a cell) and a process, in which the material entity has the ability to carry out the process. " []
+subset: ro-eco
+xref: RO:0002215
+property_value: IAO:0000112 "mechanosensory neuron capable of detection of mechanical stimulus involved in sensory perception (GO:0050974)" xsd:string
+property_value: IAO:0000112 "osteoclast SubClassOf 'capable of' some 'bone resorption'" xsd:string
+property_value: IAO:0000114 IAO:0000125
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000118 "has function realized in" xsd:string
+property_value: IAO:0000119 http://www.ncbi.nlm.nih.gov/pubmed/20123131
+property_value: IAO:0000119 http://www.ncbi.nlm.nih.gov/pubmed/21208450
+property_value: IAO:0000232 "For compatibility with BFO, this relation has a shortcut definition in which the expression \"capable of some P\" expands to \"bearer_of (some realized_by only P)\"." xsd:string
+domain: BFO:0000004 ! independent continuant
+range: BFO:0000015 ! process
+is_a: capable_of_part_of ! capable of part of
+expand_expression_to: "RO_0000053 some (RO_0000054 only ?Y)" []
+
+[Typedef]
+id: capable_of_part_of
+name: capable of part of
+def: "c stands in this relationship to p if and only if there exists some p' such that c is capable_of p', and p' is part_of p." []
+xref: RO:0002216
+property_value: IAO:0000114 IAO:0000125
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000118 "has function in" xsd:string
+holds_over_chain: capable_of part_of {http://purl.obolibrary.org/obo/RO_0002582="true"}
+is_a: causal_agent_in ! causal agent in
+is_a: functionally_related_to ! functionally related to
+expand_expression_to: "RO_0000053 some (RO_0000054 only (BFO_0000050 some ?Y))" []
+
+[Typedef]
+id: causal_agent_in
+name: causal agent in
+def: "A relationship between a material entity and a process where the material entity has some causal role that influences the process" []
+xref: RO:0002500
+property_value: IAO:0000119 http://purl.obolibrary.org/obo/ro/docs/causal-relations
+is_a: causal_relation_between_material_entity_and_a_process ! causal relation between material entity and a process
+
+[Typedef]
+id: causal_relation_between_material_entity_and_a_process
+name: causal relation between material entity and a process
+def: "A relationship that holds between a material entity and a process in which causality is involved, with either the material entity or some part of the material entity exerting some influence over the process, or the process influencing some aspect of the material entity." []
+xref: RO:0002595
+property_value: IAO:0000116 "Do not use this relation directly. It is intended as a grouping for a diverse set of relations, all involving cause and effect." xsd:string
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000119 http://purl.obolibrary.org/obo/ro/docs/causal-relations
+domain: BFO:0000040 ! material entity
+range: BFO:0000015 ! process
+is_a: causally_related_to ! causally related to
+
+[Typedef]
+id: causally_related_to
+name: causally related to
+def: "This relation groups causal relations between material entities and causal relations between processes" []
+xref: RO:0002410
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000116 "This branch of the ontology deals with causal relations between entities. It is divided into two branches: causal relations between occurrents/processes, and causal relations between material entities. We take an 'activity flow-centric approach', with the former as primary, and define causal relations between material entities in terms of causal relations between occurrents.\n\nTo define causal relations in an activity-flow type network, we make use of 3 primitives:\n\n * Temporal: how do the intervals of the two occurrents relate? \n * Is the causal relation regulatory?\n * Is the influence positive or negative\n\nThe first of these can be formalized in terms of the Allen Interval Algebra. Informally, the 3 bins we care about are 'direct', 'indirect' or overlapping. Note that all causal relations should be classified under a RO temporal relation (see the branch under 'temporally related to'). Note that all causal relations are temporal, but not all temporal relations are causal. Two occurrents can be related in time without being causally connected. We take causal influence to be primitive, elucidated as being such that has the upstream changed, some qualities of the donwstream would necessarily be modified.\n\nFor the second, we consider a relationship to be regulatory if the system in which the activities occur is capable of altering the relationship to achieve some objective. This could include changing the rate of production of a molecule.\n\nFor the third, we consider the effect of the upstream process on the output(s) of the downstream process. If the level of output is increased, or the rate of production of the output is increased, then the direction is increased. Direction can be positive, negative or neutral or capable of either direction. Two positives in succession yield a positive, two negatives in succession yield a positive, otherwise the default assumption is that the net effect is canceled and the influence is neutral.\n\nEach of these 3 primitives can be composed to yield a cross-product of different relation types." xsd:string
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000232 "Do not use this relation directly. It is intended as a grouping for a diverse set of relations, all involving cause and effect." xsd:string
+is_a: related_via_dependence_to ! related via dependence to
+
+[Typedef]
+id: coincident_with
+name: coincident with
+def: "A relation that holds between two linear structures that are approximately parallel to each other for their entire length and where either the two structures are adjacent to each other or one is part of the other." []
+comment: Example: if we define region of chromosome as any subdivision of a chromosome along its long axis, then we can define a region of chromosome that contains only gene x as 'chromosome region' that coincident_with some 'gene x', where the term gene X corresponds to a genomic sequence.
+subset: ro-eco
+xref: RO:0002008
+property_value: IAO:0000116 "Note from NCEAS meeting: consider changing primary label" xsd:string
+property_value: IAO:0000117 "David Osumi-Sutherland" xsd:string
+is_a: mereotopologically_related_to ! mereotopologically related to
+
+[Typedef]
+id: composed_primarily_of
+name: composed primarily of
+def: "x composed_primarily_of y if and only if more than half of the mass of x is made from y or units of the same type as y." []
+subset: ro-eco
+xref: RO:0002473
+property_value: IAO:0000112 "'otolith organ' SubClassOf 'composed primarily of' some 'calcium carbonate'" xsd:string
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000119 http://www.ncbi.nlm.nih.gov/pubmed/22293552
+property_value: RO:0001900 RO:0001901
+is_a: has_part ! has part
+
+[Typedef]
+id: connected_to
+name: connected to
+def: "a is connected to b if and only if a and b are discrete structure, and there exists some connecting structure c, such that c connects a and b" []
+xref: RO:0002170
 property_value: http://xmlns.com/foaf/0.1/page https://github.com/obophenotype/uberon/wiki/Connectivity-Design-Pattern xsd:anyURI
 property_value: http://xmlns.com/foaf/0.1/page https://github.com/obophenotype/uberon/wiki/Modeling-articulations-Design-Pattern xsd:anyURI
 property_value: IAO:0000112 "a 'toe distal phalanx bone' that is connected to a 'toe medial phalanx bone' (an interphalangeal joint *connects* these two bones)." xsd:string
-property_value: IAO:0000112 "The M8 connects Glasgow and Edinburgh" xsd:string
 property_value: IAO:0000119 http://www.ncbi.nlm.nih.gov/pubmed/22293552
+is_a: mereotopologically_related_to ! mereotopologically related to
+
+[Typedef]
+id: contained_in
+name: contained in
+subset: ro-eco
+xref: RO:0001018
+property_value: IAO:0000111 "contained in" xsd:string
+property_value: IAO:0000116 "Containment is location not involving parthood, and arises only where some immaterial continuant is involved." xsd:string
+property_value: IAO:0000116 "Containment obtains in each case between material and immaterial continuants, for instance: lung contained_in thoracic cavity; bladder contained_in pelvic cavity. Hence containment is not a transitive relation.    If c part_of c1 at t then we have also, by our definition and by the axioms of mereology applied to spatial regions, c located_in c1 at t. Thus, many examples of instance-level location relations for continuants are in fact cases of instance-level parthood. For material continuants location and parthood coincide. Containment is location not involving parthood, and arises only where some immaterial continuant is involved. To understand this relation, we first define overlap for continuants as follows:    c1 overlap c2 at t =def for some c, c part_of c1 at t and c part_of c2 at t. The containment relation on the instance level can then be defined (see definition):" xsd:string
+property_value: IAO:0000116 "Intended meaning:\ndomain: material entity\nrange: spatial region or site (immaterial continuant)\n        " xsd:string
+property_value: IAO:0000118 "contained_in" xsd:string
+property_value: RO:0001900 RO:0001901
+domain: BFO:0000040 ! material entity
+range: BFO:0000004 ! independent continuant
+holds_over_chain: located_in part_of
+inverse_of: contains ! contains
+
+[Typedef]
+id: contains
+name: contains
+subset: ro-eco
+xref: RO:0001019
+property_value: IAO:0000111 "contains" xsd:string
+property_value: RO:0001900 RO:0001901
+
+[Typedef]
+id: contains_process
+name: contains process
+def: "[copied from inverse property 'occurs in'] b occurs_in c =def b is a process and c is a material entity or immaterial entity& there exists a spatiotemporal region r and b occupies_spatiotemporal_region r.& forall(t) if b exists_at t then c exists_at t & there exist spatial regions s and s� where & b spatially_projects_onto s at t& c is occupies_spatial_region s� at t& s is a proper_continuant_part_of s� at t" []
+comment: Paraphrase of definition: a relation between an independent continuant and a process, in which the process takes place entirely within the independent continuant
+xref: BFO:0000067
+property_value: IAO:0000111 "site of" xsd:string
+property_value: isDefinedBy http://purl.obolibrary.org/obo/bfo.owl
+
+[Typedef]
+id: continuous_with
+name: continuous with
+def: "X continuous_with Y if and only if X and Y share a fiat boundary." []
+xref: RO:0002150
+property_value: IAO:0000114 IAO:0000125
+property_value: IAO:0000117 "David Osumi-Sutherland" xsd:string
+property_value: IAO:0000118 "connected to" xsd:string
+property_value: IAO:0000232 "The label for this relation was previously connected to. I relabeled this to \"continuous with\". The standard notion of connectedness does not imply shared boundaries - e.g. Glasgow connected_to Edinburgh via M8; my patella connected_to my femur (via patellar-femoral joint)" xsd:string {http://purl.org/dc/elements/1.1/source="RO:cjm"}
+property_value: RO:0001900 RO:0001901
+property_value: seeAlso FMA:85972 xsd:string
 domain: BFO:0000004 ! independent continuant
+range: BFO:0000004 ! independent continuant
+is_a: mereotopologically_related_to ! mereotopologically related to
+
+[Typedef]
+id: contributes_to
+name: contributes to
+xref: RO:0002326
+property_value: IAO:0000112 "ATP citrate lyase (ACL) in Arabidopsis: it is a heterooctamer, composed of two types of subunits, ACLA and ACLB in a A(4)B(4) stoichiometry. Neither of the subunits expressed alone give ACL activity, but co-expression results in ACL activity. Both subunits contribute_to the ATP citrate lyase activity." xsd:string
+property_value: IAO:0000112 "eIF2: has three subunits (alpha, beta, gamma); one binds GTP; one binds RNA; the whole complex binds the ribosome (all three subunits are required for ribosome binding). So one subunit is annotated to GTP binding and one to RNA binding without qualifiers, and all three stand in the contributes_to relationship to \"ribosome binding\". And all three are part_of an eIF2 complex" xsd:string
+property_value: IAO:0000112 "Subunits of nuclear RNA polymerases: none of the individual subunits have RNA polymerase activity, yet all of these subunits contribute_to DNA-dependent RNA polymerase activity." xsd:string
+property_value: IAO:0000116 "We would like to say\n\nif and only if\n exists c', p'\n  c part_of c' and c' capable_of p\n   and\n  c capable_of p' and p' part_of p\nthen\n c contributes_to p\n\nHowever, this is not possible in OWL. We instead make this relation a sub-relation of the two chains, which gives us the inference in the one direction." xsd:string
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000119 http://www.geneontology.org/GO.annotation.conventions.shtml#contributes_to xsd:string
+property_value: IAO:0000232 "In the context of the Gene Ontology, contributes_to may be used only with classes from the molecular function ontology. " xsd:string
+is_a: capable_of_part_of ! capable of part of
+is_a: part_of_structure_that_is_capable_of ! part of structure that is capable of
+
+[Typedef]
+id: depends_on
+name: depends on
+xref: RO:0002502
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: seeAlso BFO:0000169
 
 [Typedef]
 id: derives_from
@@ -56513,6 +56941,19 @@ property_value: IAO:0000118 "derives_from" xsd:string
 property_value: IAO:0000232 "This relation is taken from the RO2005 version of RO. It may be obsoleted and replaced by relations with different definitions. See also the 'develops from' family of relations." xsd:string
 
 [Typedef]
+id: derives_into
+name: derives into
+def: "a relation between two distinct material entities, the old entity and the new entity, in which the new entity begins to exist when the old entity ceases to exist, and the new entity inherits the significant portion of the matter of the old entity" []
+subset: ro-eco
+xref: RO:0001001
+property_value: IAO:0000112 "this parent cell derives into this cell (cell division)" xsd:string
+property_value: IAO:0000112 "this parent nucleus derives into this nucleus (nuclear division)" xsd:string
+property_value: IAO:0000114 IAO:0000125
+property_value: IAO:0000116 "This is a very general relation. More specific relations are preferred when applicable, such as 'directly develops into'. To avoid making statements about a future that may not come to pass, it is often better to use the backward-looking 'derives from' rather than the forward-looking 'derives into'." xsd:string
+property_value: IAO:0000118 "derives_into" xsd:string
+inverse_of: derives_from ! derives from
+
+[Typedef]
 id: determined_by
 name: determined by
 xref: ENVO:2100001
@@ -56523,6 +56964,77 @@ id: determined_by_part_of
 name: determined by part of
 xref: ENVO:2100007
 holds_over_chain: determined_by part_of
+
+[Typedef]
+id: developmentally_contributes_to
+name: developmentally contributes to
+xref: RO:0002255
+property_value: IAO:0000114 IAO:0000125
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+holds_over_chain: develops_into part_of
+is_a: developmentally_succeeded_by ! developmentally succeeded by
+is_a: has_potential_to_developmentally_contribute_to ! has potential to developmentally contribute to
+inverse_of: has_developmental_contribution_from ! has developmental contribution from
+
+[Typedef]
+id: developmentally_preceded_by
+name: developmentally preceded by
+def: "Candidate definition: x developmentally related to y if and only if there exists some developmental process (GO:0032502) p such that x and y both participates in p, and x is the output of p and y is the input of p" []
+comment: This relation groups together various other developmental relations. It is fairly generic, encompassing induction, developmental contribution and direct and transitive develops from
+xref: RO:0002258
+property_value: IAO:0000114 IAO:0000125
+property_value: IAO:0000116 "false" xsd:boolean
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000232 "In general you should not use this relation to make assertions - use one of the more specific relations below this one" xsd:string
+is_a: developmentally_related_to ! developmentally related to
+
+[Typedef]
+id: developmentally_related_to
+name: developmentally related to
+def: "A relationship that holds between entities participating in some developmental process (GO:0032502)" []
+xref: RO:0002324
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000232 "Do not use this relation directly. It is ended as a grouping for a diverse set of relations, all involving organismal development" xsd:string
+
+[Typedef]
+id: developmentally_succeeded_by
+name: developmentally succeeded by
+def: "Inverse of developmentally preceded by" []
+xref: RO:0002286
+property_value: IAO:0000114 IAO:0000125
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+is_a: has_developmental_potential_involving ! has developmental potential involving
+inverse_of: developmentally_preceded_by ! developmentally preceded by
+
+[Typedef]
+id: develops_from
+name: develops from
+def: "x develops from y if and only if either (a) x directly develops from y or (b) there exists some z such that x directly develops from z and z develops from y" []
+comment: This is the transitive form of the develops from relation
+xref: RO:0002202
+property_value: IAO:0000114 IAO:0000125
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000117 "David Osumi-Sutherland" xsd:string
+property_value: IAO:0000117 "Melissa Haendel" xsd:string
+property_value: IAO:0000117 "Terry Meehan" xsd:string
+domain: BFO:0000004 ! independent continuant
+range: BFO:0000004 ! independent continuant
+is_transitive: true
+is_a: developmentally_preceded_by ! developmentally preceded by
+
+[Typedef]
+id: develops_into
+name: develops into
+xref: RO:0002203
+property_value: IAO:0000114 IAO:0000125
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000117 "David Osumi-Sutherland" xsd:string
+property_value: IAO:0000117 "Terry Meehan" xsd:string
+is_transitive: true
+is_a: developmentally_succeeded_by ! developmentally succeeded by
+is_a: has_potential_to_develop_into ! has potential to develop into
+is_a: has_potential_to_directly_develop_into ! has potential to directly develop into
+inverse_of: develops_from ! develops from
 
 [Typedef]
 id: disconnected_from
@@ -56539,12 +57051,62 @@ name: distributary of
 def: "x distributary_of y if and only if x is capable of channeling the flow of a substance to y, where y channels less of the substance than x" []
 subset: ro-eco
 xref: RO:0002377
-property_value: IAO:0000112 "Deschutes River distributary_of Little Lava Lake" xsd:string
+property_value: IAO:0000112 "Deschutes River distributary_of Little Lava Lake" xsd:string {http://purl.org/dc/elements/1.1/source="GAZ"}
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: IAO:0000118 "branch of" xsd:string
 property_value: IAO:0000118 "distributary channel of" xsd:string
 property_value: IAO:0000119 http://en.wikipedia.org/wiki/Distributary xsd:string
+is_a: in_branching_relationship_with ! in branching relationship with
+
+[Typedef]
+id: drains
+name: drains
+def: "Relation between an collecting structure and another structure, where the collecting structure acts as a conduit channeling fluid, substance or energy away from the other structure." []
+xref: RO:0002179
+property_value: IAO:0000116 "Individual ontologies should provide their own constraints on this abstract relation. For example, in the realm of anatomy this should hold between a vein and an anatomical structure" xsd:string
+property_value: IAO:0000119 http://www.ncbi.nlm.nih.gov/pubmed/20064205
+is_a: connected_to ! connected to
+
+[Typedef]
+id: during_which_ends
+name: during which ends
+comment: Previously had ID  http://purl.obolibrary.org/obo/RO_0002122 in test files in sandpit - but this seems to have been dropped from ro-edit.owl at some point.  No re-use under this ID AFAIK, but leaving note here in case we run in to clashes down the line.  Official ID now chosen from DOS ID range.
+subset: ro-eco
+xref: RO:0002084
+property_value: IAO:0000117 "David Osumi-Sutherland" xsd:string
+is_a: temporally_related_to ! temporally related to
+inverse_of: ends_during ! ends during
+
+[Typedef]
+id: during_which_starts
+name: during which starts
+comment: Previously had ID  http://purl.obolibrary.org/obo/RO_0002123 in test files in sandpit - but this seems to have been dropped from ro-edit.owl at some point.  No re-use under this ID AFAIK, but leaving note here in case we run in to clashes down the line.  Official ID now chosen from DOS ID range.
+subset: ro-eco
+xref: RO:0002088
+property_value: IAO:0000117 "David Osumi-Sutherland" xsd:string
+is_a: temporally_related_to ! temporally related to
+inverse_of: starts_during ! starts during
+
+[Typedef]
+id: ecologically_related_to
+name: ecologically related to
+def: "A relationship that is mediated in some way by the environment or environmental feature (ENVO:00002297)" []
+subset: ro-eco
+xref: RO:0002321
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000232 "Do not use this relation directly. It is intended as a grouping for a diverse set of relations, all involving ecological interactions" xsd:string
+
+[Typedef]
+id: encompasses
+name: encompasses
+comment: Previously had ID  http://purl.obolibrary.org/obo/RO_0002124 in test files in sandpit - but this seems to have been dropped from ro-edit.owl at some point.  No re-use under this ID AFAIK, but leaving note here in case we run in to clashes down the line.  Official ID now chosen from DOS ID range.
+xref: RO:0002085
+property_value: IAO:0000117 "David Osumi-Sutherland" xsd:string
+property_value: IAO:0000118 "di" xsd:string
+is_transitive: true
+is_a: during_which_starts ! during which starts
+inverse_of: happens_during ! happens during
 
 [Typedef]
 id: ends
@@ -56554,6 +57116,71 @@ subset: ro-eco
 xref: RO:0002229
 property_value: IAO:0000114 IAO:0000125
 property_value: IAO:0000117 "Chris Mungall" xsd:string
+is_a: part_of ! part of
+is_a: temporally_related_to ! temporally related to
+inverse_of: ends_with ! ends with
+
+[Typedef]
+id: ends_after
+name: ends after
+comment: X ends_after Y iff: end(Y) before_or_simultaneous_with end(X)
+subset: ro-eco
+xref: RO:0002086
+property_value: IAO:0000117 "David Osumi-Sutherland" xsd:string
+holds_over_chain: ends_during preceded_by
+is_transitive: true
+is_a: temporally_related_to ! temporally related to
+
+[Typedef]
+id: ends_during
+name: ends during
+comment: X ends_during Y iff: ((start(Y) before_or_simultaneous_with end(X)) AND end(X) before_or_simultaneous_with end(Y). 
+subset: ro-eco
+xref: RO:0002093
+property_value: IAO:0000117 "David Osumi-Sutherland" xsd:string
+property_value: IAO:0000118 "o" xsd:string
+property_value: IAO:0000118 "overlaps" xsd:string
+is_a: temporally_related_to ! temporally related to
+
+[Typedef]
+id: ends_with
+name: ends with
+def: "x ends with y if and only if x has part y and the time point at which x ends is equivalent to the time point at which y ends. Formally: ?(y) > ?(x) ? ?(y) = ?(x), where ? is a function that maps a process to a start point, and ? is a function that maps a process to an end point." []
+subset: ro-eco
+xref: RO:0002230
+property_value: IAO:0000114 IAO:0000125
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000118 "finished by" xsd:string
+is_transitive: true
+is_a: has_part ! has part
+is_a: temporally_related_to ! temporally related to
+
+[Typedef]
+id: formed_as_result_of
+name: formed as result of
+xref: RO:0002354
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+is_a: output_of ! output of
+inverse_of: results_in_formation_of ! results in formation of
+
+[Typedef]
+id: functionally_related_to
+name: functionally related to
+xref: RO:0002328
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000232 "This is a grouping relation that collects relations used for the purpose of connecting structure and function" xsd:string
+
+[Typedef]
+id: happens_during
+name: happens during
+comment: X happens_during Y iff: (start(Y) before_or_simultaneous_with start(X)) AND (end(X) before_or_simultaneous_with end(Y))
+subset: ro-eco
+xref: RO:0002092
+property_value: IAO:0000117 "David Osumi-Sutherland" xsd:string
+property_value: IAO:0000118 "d" xsd:string
+property_value: IAO:0000118 "during" xsd:string
+is_transitive: true
+is_a: ends_during ! ends during
 
 [Typedef]
 id: has_active_participant
@@ -56566,6 +57193,16 @@ property_value: IAO:0000114 IAO:0000125
 property_value: IAO:0000116 "This may be obsoleted and replaced by the original 'has agent' relation" xsd:string
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: IAO:0000118 "has agent" xsd:string
+is_a: has_participant ! has participant
+
+[Typedef]
+id: has_causal_agent
+name: has causal agent
+def: "Inverse of 'causal agent in'" []
+xref: RO:0002608
+property_value: IAO:0000119 http://purl.obolibrary.org/obo/ro/docs/causal-relations
+is_a: causally_related_to ! causally related to
+inverse_of: causal_agent_in ! causal agent in
 
 [Typedef]
 id: has_condition
@@ -56573,6 +57210,42 @@ name: has_condition
 comment: Experimental relation used in EnvO. A condition defines a restricted range of a given quality or combination of qualities. If an environment class, E, has_condition C, then all qualities listed in C are restricted to the ranges defined in C in E. This is not intended as a logical conditional.
 xref: has_condition
 creation_date: 2013-05-08T07:33:05Z
+
+[Typedef]
+id: has_developmental_contribution_from
+name: has developmental contribution from
+def: "x has developmental contribution from y iff x has some part z such that z develops from y" []
+xref: RO:0002254
+property_value: IAO:0000112 "Mammalian thymus has developmental contribution from some pharyngeal pouch 3; Mammalian thymus has developmental contribution from some pharyngeal pouch 4 [Kardong]" xsd:string
+property_value: IAO:0000114 IAO:0000125
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+domain: CARO:0000003 ! anatomical structure
+range: CARO:0000003 ! anatomical structure
+holds_over_chain: has_part develops_from
+is_a: developmentally_preceded_by ! developmentally preceded by
+
+[Typedef]
+id: has_developmental_potential_involving
+name: has developmental potential involving
+def: "x has developmental potential involving y iff x is capable of a developmental process with output y. y may be the successor of x, or may be a different structure in the vicinity (as for example in the case of developmental induction)." []
+xref: RO:0002384
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+is_a: developmentally_related_to ! developmentally related to
+
+[Typedef]
+id: has_end_location
+name: has end location
+def: "x 'has end location' y if and only if there exists some process z such that x 'ends with' z and z 'occurs in' y" []
+subset: ro-eco
+xref: RO:0002232
+property_value: IAO:0000114 IAO:0000125
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000118 "ends with process that occurs in" xsd:string
+domain: BFO:0000015 ! process
+range: BFO:0000004 ! independent continuant
+holds_over_chain: ends_with occurs_in
+is_a: has_part_that_occurs_in ! has part that occurs in
 
 [Typedef]
 id: has_increased_levels_of
@@ -56587,6 +57260,17 @@ xref: RO:0002233
 property_value: IAO:0000114 IAO:0000125
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: IAO:0000118 "consumes" xsd:string
+holds_over_chain: starts_with has_input
+is_a: has_participant ! has participant
+
+[Typedef]
+id: has_member
+name: has member
+def: "has member is a mereological relation between a collection and an item." []
+xref: RO:0002351
+property_value: IAO:0000119 "SIO" xsd:string
+property_value: RO:0001900 RO:0001901
+is_a: has_part ! has part
 
 [Typedef]
 id: has_output
@@ -56597,6 +57281,8 @@ xref: RO:0002234
 property_value: IAO:0000114 IAO:0000125
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: IAO:0000118 "produces" xsd:string
+holds_over_chain: ends_with has_output
+is_a: has_participant ! has participant
 
 [Typedef]
 id: has_part
@@ -56613,6 +57299,29 @@ property_value: IAO:0000116 "Parthood requires the part and the whole to have co
 property_value: IAO:0000118 "has_part" xsd:string
 property_value: RO:0001900 RO:0001901
 is_transitive: true
+is_a: overlaps ! overlaps
+
+[Typedef]
+id: has_part_structure_that_is_capable_of
+name: has part structure that is capable of
+def: "s 'has part structure that is capable of' p if and only if there exists some part x such that s 'has part' x and x 'capable of' p" []
+xref: RO:0002584
+property_value: IAO:0000112 "gland SubClassOf 'has part structure that is capable of' some 'secretion by cell'" xsd:string
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+holds_over_chain: has_part capable_of
+is_a: causal_relation_between_material_entity_and_a_process ! causal relation between material entity and a process
+is_a: functionally_related_to ! functionally related to
+
+[Typedef]
+id: has_part_that_occurs_in
+name: has part that occurs in
+def: "p has part that occurs in c if and only if there exists some p1, such that p has_part p1, and p1 occurs in c." []
+subset: ro-eco
+xref: RO:0002479
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+domain: BFO:0000003 ! occurrent
+range: BFO:0000004 ! independent continuant
+holds_over_chain: has_part occurs_in {http://purl.obolibrary.org/obo/RO_0002581="true"}
 
 [Typedef]
 id: has_participant
@@ -56626,6 +57335,37 @@ property_value: IAO:0000112 "this investigation has participant this investigato
 property_value: IAO:0000112 "this process has participant this input material (or this output material)" xsd:string
 property_value: IAO:0000116 "Has_participant is a primitive instance-level relation between a process, a continuant, and a time at which the continuant participates in some way in the process. The relation obtains, for example, when this particular process of oxygen exchange across this particular alveolar membrane has_participant this particular sample of hemoglobin at this particular time." xsd:string
 property_value: IAO:0000118 "has_participant" xsd:string
+domain: BFO:0000003 ! occurrent
+range: BFO:0000002 ! continuant
+holds_over_chain: has_part has_participant
+inverse_of: participates_in ! participates in
+
+[Typedef]
+id: has_potential_to_develop_into
+name: has potential to develop into
+def: "x has the potential to develop into y iff x develops into y or if x is capable of developing into y" []
+xref: RO:0002387
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+is_a: has_developmental_potential_involving ! has developmental potential involving
+
+[Typedef]
+id: has_potential_to_developmentally_contribute_to
+name: has potential to developmentally contribute to
+def: "x has potential to developmentrally contribute to y iff x developmentally contributes to y or x is capable of developmentally contributing to y" []
+xref: RO:0002385
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+is_a: has_developmental_potential_involving ! has developmental potential involving
+
+[Typedef]
+id: has_potential_to_directly_develop_into
+name: has potential to directly develop into
+def: "x has potential to directly develop into y iff x directly develops into y or x is capable of directly developing into y" []
+xref: RO:0002388
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+is_a: has_potential_to_develop_into ! has potential to develop into
 
 [Typedef]
 id: has_quality
@@ -56635,6 +57375,72 @@ xref: RO:0000086
 property_value: IAO:0000112 "this apple has quality this red color" xsd:string
 property_value: IAO:0000116 "A bearer can have many qualities, and its qualities can exist for different periods of time, but none of its qualities can exist when the bearer does not exist." xsd:string
 property_value: IAO:0000118 "has_quality" xsd:string
+range: BFO:0000019 ! quality
+is_a: bearer_of ! bearer of
+
+[Typedef]
+id: has_role
+name: has role
+def: "a relation between an independent continuant (the bearer) and a role, in which the role specifically depends on the bearer for its existence" []
+xref: RO:0000087
+property_value: IAO:0000112 "this person has role this investigator role (more colloquially: this person has this role of investigator)" xsd:string
+property_value: IAO:0000116 "A bearer can have many roles, and its roles can exist for different periods of time, but none of its roles can exist when the bearer does not exist. A role need not be realized at all the times that the role exists." xsd:string
+property_value: IAO:0000118 "has_role" xsd:string
+domain: BFO:0000004 ! independent continuant
+range: BFO:0000023 ! role
+is_a: bearer_of ! bearer of
+inverse_of: role_of ! role of
+
+[Typedef]
+id: has_start_location
+name: has start location
+def: "x 'has starts location' y if and only if there exists some process z such that x 'starts with' z and z 'occurs in' y" []
+subset: ro-eco
+xref: RO:0002231
+property_value: IAO:0000114 IAO:0000125
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000118 "starts with process that occurs in" xsd:string
+domain: BFO:0000015 ! process
+range: BFO:0000004 ! independent continuant
+holds_over_chain: starts_with occurs_in
+is_a: has_part_that_occurs_in ! has part that occurs in
+
+[Typedef]
+id: immediately_preceded_by
+name: immediately preceded by
+comment: X immediately_preceded_by Y iff: end(X) simultaneous_with start(Y)
+xref: RO:0002087
+property_value: IAO:0000117 "David Osumi-Sutherland" xsd:string
+property_value: IAO:0000118 "starts_at_end_of" xsd:string
+holds_over_chain: starts_with ends_with
+is_a: preceded_by ! preceded by
+inverse_of: immediately_precedes ! immediately precedes
+
+[Typedef]
+id: immediately_precedes
+name: immediately precedes
+comment: X immediately_precedes_Y iff: end(X) simultaneous_with start(Y)
+subset: ro-eco
+xref: RO:0002090
+property_value: IAO:0000117 "David Osumi-Sutherland" xsd:string
+property_value: IAO:0000118 "ends_at_start_of" xsd:string
+property_value: IAO:0000118 "meets" xsd:string
+property_value: RO:0002575 BFO:0000063
+holds_over_chain: ends_with starts_with
+is_a: precedes ! precedes
+
+[Typedef]
+id: in_branching_relationship_with
+name: in branching relationship with
+xref: RO:0002375
+property_value: http://xmlns.com/foaf/0.1/page https://github.com/obophenotype/uberon/issues/170 xsd:anyURI
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000232 "This relation can be used for geographic features (e.g. rivers) as well as anatomical structures (plant branches and roots, leaf veins, animal veins, arteries, nerves)" xsd:string
+domain: BFO:0000040 ! material entity
+range: BFO:0000040 ! material entity
+is_a: mereotopologically_related_to ! mereotopologically related to
+is_a: part_of ! part of
 
 [Typedef]
 id: inheres_in
@@ -56647,6 +57453,7 @@ property_value: IAO:0000112 "this red color inheres in this apple" xsd:string
 property_value: IAO:0000116 "A dependent inheres in its bearer at all times for which the dependent exists." xsd:string
 property_value: IAO:0000118 "inheres_in" xsd:string
 property_value: RO:0001900 RO:0001901
+is_a: inheres_in_part_of ! inheres in part of
 
 [Typedef]
 id: inheres_in_part_of
@@ -56657,6 +57464,57 @@ property_value: IAO:0000116 "Because part_of is transitive, inheres in is a sub-
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: IAO:0000119 http://www.ncbi.nlm.nih.gov/pubmed/20064205
 property_value: RO:0001900 RO:0001901
+holds_over_chain: inheres_in part_of {http://purl.obolibrary.org/obo/RO_0002582="true"}
+is_a: depends_on ! depends on
+transitive_over: part_of ! part of
+
+[Typedef]
+id: input_of
+name: input of
+subset: ro-eco
+xref: RO:0002352
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+is_a: functionally_related_to ! functionally related to
+is_a: participates_in ! participates in
+inverse_of: has_input ! has input
+
+[Typedef]
+id: interacts_with
+name: interacts with
+def: "A relationship that holds between two entities in which the processes executed by the two entities are causally connected." []
+subset: ro-eco
+synonym: "in pairwise interaction with" EXACT []
+xref: RO:0002434
+property_value: http://xmlns.com/foaf/0.1/page https://github.com/oborel/obo-relations/wiki/InteractionRelations xsd:anyURI
+property_value: IAO:0000116 "Considering relabeling as 'pairwise interacts with'" xsd:anyURI
+property_value: IAO:0000116 "This relation and all sub-relations can be applied to either (1) pairs of entities that are interacting at any moment of time (2) populations or species of entity whose members have the disposition to interact (3) classes whose members have the disposition to interact." xsd:string
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000232 "Note that this relationship type, and sub-relationship types may be redundant with process terms from other ontologies. For example, the symbiotic relationship hierarchy parallels GO. The relations are provided as a convenient shortcut. Consider using the more expressive processual form to capture your data. In the future, these relations will be linked to their cognate processes through rules." xsd:string
+property_value: seeAlso http://purl.obolibrary.org/obo/MI_0914 xsd:anyURI
+domain: BFO:0000040 ! material entity
+range: BFO:0000040 ! material entity
+is_symmetric: true
+
+[Typedef]
+id: involved_in
+name: involved in
+def: "c involved_in p if and only if c enables some process p', and p' is part of p" []
+xref: RO:0002331
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000118 "actively involved in" xsd:string
+property_value: IAO:0000118 "enables part of" xsd:string
+is_a: involved_in_or_regulates ! involved in or regulates
+transitive_over: part_of ! part of
+
+[Typedef]
+id: involved_in_or_regulates
+name: involved in or regulates
+def: "c involved in or regulates p if and only if either (i) c is involved in p or (ii) c is involved in regulation of p" []
+xref: RO:0002431
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000118 "involved in or involved in regulation of" xsd:string
+is_a: causal_agent_in ! causal agent in
+is_a: functionally_related_to ! functionally related to
 
 [Typedef]
 id: located_in
@@ -56671,11 +57529,48 @@ property_value: IAO:0000116 "Location as a relation between instances: The primi
 property_value: IAO:0000116 "Most location relations will only hold at certain times, but this is difficult to specify in OWL. See https://code.google.com/p/obo-relations/wiki/ROAndTime" xsd:string
 property_value: IAO:0000118 "located_in" xsd:string
 property_value: RO:0001900 RO:0001901
+is_transitive: true
+inverse_of: location_of ! location of
+
+[Typedef]
+id: location_of
+name: location of
+def: "a relation between two independent continuants, the location and the target, in which the target is entirely within the location" []
+xref: RO:0001015
+property_value: IAO:0000111 "is location of" xsd:string
+property_value: IAO:0000112 "my head is the location of my brain" xsd:string
+property_value: IAO:0000112 "this cage is the location of this rat" xsd:string
+property_value: IAO:0000116 "Most location relations will only hold at certain times, but this is difficult to specify in OWL. See https://code.google.com/p/obo-relations/wiki/ROAndTime" xsd:string
+property_value: IAO:0000118 "location_of" xsd:string
+property_value: RO:0001900 RO:0001901
+is_transitive: true
+
+[Typedef]
+id: member_of
+name: member of
+def: "is member of is a mereological relation between a item and a collection." []
+xref: RO:0002350
+property_value: IAO:0000112 "An organism that is a member of a population of organisms" xsd:string
+property_value: IAO:0000118 "is member of" xsd:string
+property_value: IAO:0000118 "member part of" xsd:string
+property_value: IAO:0000119 "SIO" xsd:string
+property_value: RO:0001900 RO:0001901
+is_a: part_of ! part of
+inverse_of: has_member ! has member
+
+[Typedef]
+id: mereotopologically_related_to
+name: mereotopologically related to
+def: "A mereological relationship or a topological relationship" []
+xref: RO:0002323
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000232 "Do not use this relation directly. It is ended as a grouping for a diverse set of relations, all involving parthood or connectivity relationships" xsd:string
+property_value: RO:0001900 RO:0001901
 
 [Typedef]
 id: occurs_in
 name: occurs in
-def: "b occurs_in c =def b is a process and c is a material entity or immaterial entity& there exists a spatiotemporal region r and b occupies_spatiotemporal_region r.& forall(t) if b exists_at t then c exists_at t & there exist spatial regions s and s’ where & b spatially_projects_onto s at t& c is occupies_spatial_region s’ at t& s is a proper_continuant_part_of s’ at t" []
+def: "b occurs_in c =def b is a process and c is a material entity or immaterial entity& there exists a spatiotemporal region r and b occupies_spatiotemporal_region r.& forall(t) if b exists_at t then c exists_at t & there exist spatial regions s and s� where & b spatially_projects_onto s at t& c is occupies_spatial_region s� at t& s is a proper_continuant_part_of s� at t" []
 comment: Paraphrase of definition: a relation between a process and an independent continuant, in which the process takes place entirely within the independent continuant
 xref: BFO:0000066
 property_value: IAO:0000111 "occurs in" xsd:string
@@ -56683,6 +57578,35 @@ property_value: IAO:0000118 "occurs_in" xsd:string
 property_value: IAO:0000118 "unfolds in" xsd:string
 property_value: IAO:0000118 "unfolds_in" xsd:string
 property_value: isDefinedBy http://purl.obolibrary.org/obo/bfo.owl
+domain: BFO:0000003 ! occurrent
+range: BFO:0000004 ! independent continuant
+holds_over_chain: part_of occurs_in
+inverse_of: contains_process ! contains process
+transitive_over: part_of ! part of
+
+[Typedef]
+id: output_of
+name: output of
+subset: ro-eco
+xref: RO:0002353
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+is_a: functionally_related_to ! functionally related to
+is_a: participates_in ! participates in
+inverse_of: has_output ! has output
+
+[Typedef]
+id: overlaps
+name: overlaps
+def: "x overlaps y if and only if there exists some z such that x has part z and z part of y" []
+subset: ro-eco
+xref: RO:0002131
+property_value: IAO:0000114 IAO:0000125
+property_value: RO:0001900 RO:0001901
+holds_over_chain: has_part overlaps
+holds_over_chain: has_part part_of {http://purl.obolibrary.org/obo/RO_0002582="true"}
+holds_over_chain: part_of part_of
+is_a: mereotopologically_related_to ! mereotopologically related to
+expand_expression_to: "http://purl.obolibrary.org/obo/BFO_0000051 some (http://purl.obolibrary.org/obo/BFO_0000050 some ?Y)" []
 
 [Typedef]
 id: part_of
@@ -56702,7 +57626,31 @@ property_value: seeAlso http://ontologydesignpatterns.org/wiki/Community:Parts_a
 property_value: seeAlso http://ontologydesignpatterns.org/wiki/Submissions:PartOf
 property_value: seeAlso http://www.obofoundry.org/ro/#OBO_REL:part_of xsd:string
 is_transitive: true
+is_a: overlaps ! overlaps
 inverse_of: has_part ! has part
+
+[Typedef]
+id: part_of_structure_that_is_capable_of
+name: part of structure that is capable of
+def: "this relation holds between c and p when c is part of some c', and c' is capable of p." []
+xref: RO:0002329
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000118 "false" xsd:boolean
+holds_over_chain: part_of capable_of {http://purl.obolibrary.org/obo/RO_0002581="true"}
+is_a: functionally_related_to ! functionally related to
+
+[Typedef]
+id: partially_overlaps
+name: partially overlaps
+def: "x partially overlaps y iff there exists some z such that z is part of x and z is part of y, and it is also the case that neither x is part of y or y is part of x" []
+subset: ro-eco
+xref: RO:0002151
+property_value: IAO:0000114 IAO:0000125
+property_value: IAO:0000116 "We would like to include disjointness axioms with part_of and has_part, however this is not possible in OWL2 as these are non-simple properties and hence cannot appear in a disjointness axiom" xsd:string
+property_value: IAO:0000118 "proper overlaps" xsd:string
+property_value: IAO:0000426 "(forall (?x ?y) \n	(iff \n		(proper_overlaps ?x ?y)\n		(and \n			(overlaps ?x ?y)\n			(not (part_of ?x ?y)) \n			(not (part_of ?y ?x)))))" xsd:string
+property_value: RO:0001900 RO:0001901
+is_a: overlaps ! overlaps
 
 [Typedef]
 id: partially_surrounded_by
@@ -56713,28 +57661,268 @@ xref: ENVO:01001307
 property_value: IAO:0000112 "A duck swimming in a pond is partially surrounded by air and partially surrounded by water." xsd:string
 
 [Typedef]
-id: regulates
-name: regulates
-def: "x regulates y if and only if the x is the realization of a function to exert an effect on the frequency, rate or extent of y" []
-xref: RO:0002211
-property_value: IAO:0000114 IAO:0000125
-property_value: IAO:0000116 "We use 'regulates' here to specifically imply control. However, many colloquial usages of the term correctly correspond to the weaker relation of 'causally upstream of or within' (aka influences). Consider relabeling to make things more explicit" xsd:string
-property_value: IAO:0000117 "Chris Mungall" xsd:string
-property_value: IAO:0000117 "David Hill" xsd:string
-property_value: IAO:0000117 "Tanya Berardini" xsd:string
-property_value: IAO:0000119 "GO" xsd:string
-property_value: IAO:0000232 "Regulation does not preclude parthood; the regulatory process may be upstream, or may be within the regulated process." xsd:string
-property_value: IAO:0000589 "regulates (processual)" xsd:string
-property_value: IAO:0000600 "false" xsd:boolean
+id: participates_in
+name: participates in
+def: "a relation between a continuant and a process, in which the continuant is somehow involved in the process" []
+xref: RO:0000056
+property_value: IAO:0000111 "participates in" xsd:string
+property_value: IAO:0000112 "this blood clot participates in this blood coagulation" xsd:string
+property_value: IAO:0000112 "this input material (or this output material) participates in this process" xsd:string
+property_value: IAO:0000112 "this investigator participates in this investigation" xsd:string
+property_value: IAO:0000118 "participates_in" xsd:string
+domain: BFO:0000002 ! continuant
+range: BFO:0000003 ! occurrent
 
 [Typedef]
-id: surrounded_by
-name: surrounded by
-def: "x surrounded_by y if and only if (1) x is adjacent to y and for every region r that is adjacent to x, r overlaps y (2) the shared boundary between x and y occupies the majority of the outermost boundary of x" []
-xref: RO:0002219
+id: participates_in_a_biotic-biotic_interaction_with
+name: participates in a biotic-biotic interaction with
+subset: ro-eco
+xref: RO:0002574
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: seeAlso http://dx.doi.org/10.1016/j.ecoinf.2014.08.005
+is_a: biotically_interacts_with ! biotically interacts with
+
+[Typedef]
+id: preceded_by
+name: preceded by
+def: "x is preceded by y if and only if the time point at which y ends is before or equivalent to the time point at which x starts. Formally: x preceded by y iff ?(y) <= ?(x), where ? is a function that maps a process to a start point, and ? is a function that maps a process to an end point." []
+subset: ro-eco
+xref: BFO:0000062
+property_value: http://purl.org/dc/elements/1.1/source http://www.obofoundry.org/ro/#OBO_REL:preceded_by xsd:string
+property_value: IAO:0000111 "preceded by" xsd:string
+property_value: IAO:0000116 "An example is: translation preceded_by transcription; aging preceded_by development (not however death preceded_by aging). Where derives_from links classes of continuants, preceded_by links classes of processes. Clearly, however, these two relations are not independent of each other. Thus if cells of type C1 derive_from cells of type C, then any cell division involving an instance of C1 in a given lineage is preceded_by cellular processes involving an instance of C.    The assertion P preceded_by P1 tells us something about Ps in general: that is, it tells us something about what happened earlier, given what we know about what happened later. Thus it does not provide information pointing in the opposite direction, concerning instances of P1 in general; that is, that each is such as to be succeeded by some instance of P. Note that an assertion to the effect that P preceded_by P1 is rather weak; it tells us little about the relations between the underlying instances in virtue of which the preceded_by relation obtains. Typically we will be interested in stronger relations, for example in the relation immediately_preceded_by, or in relations which combine preceded_by with a condition to the effect that the corresponding instances of P and P1 share participants, or that their participants are connected by relations of derivation, or (as a first step along the road to a treatment of causality) that the one process in some way affects (for example, initiates or regulates) the other." xsd:string
+property_value: IAO:0000118 "is preceded by" xsd:string
+property_value: IAO:0000118 "preceded_by" xsd:string
+domain: BFO:0000003 ! occurrent
+range: BFO:0000003 ! occurrent
+holds_over_chain: happens_during preceded_by
+holds_over_chain: part_of preceded_by
+holds_over_chain: starts_during preceded_by
+is_transitive: true
+is_a: ends_after ! ends after
+inverse_of: precedes ! precedes
+
+[Typedef]
+id: precedes
+name: precedes
+def: "x precedes y if and only if the time point at which x ends is before or equivalent to the time point at which y starts. Formally: x precedes y iff ?(x) <= ?(y), where ? is a function that maps a process to a start point, and ? is a function that maps a process to an end point." []
+subset: ro-eco
+xref: BFO:0000063
+property_value: IAO:0000111 "precedes" xsd:string
+domain: BFO:0000003 ! occurrent
+range: BFO:0000003 ! occurrent
+holds_over_chain: happens_during precedes
+holds_over_chain: part_of precedes
+is_transitive: true
+is_a: temporally_related_to ! temporally related to
+
+[Typedef]
+id: produced_by
+name: produced by
+def: "a produced_by b iff some process that occurs_in b has_output a." []
+subset: ro-eco
+xref: RO:0003001
+property_value: IAO:0000114 IAO:0000125
+property_value: IAO:0000117 "Melissa Haendel" xsd:string
+domain: BFO:0000040 ! material entity
+range: BFO:0000040 ! material entity
+
+[Typedef]
+id: produces
+name: produces
+def: "a produces b if some process that occurs_in a has_output b, where a and b are material entities. Examples: hybridoma cell line produces monoclonal antibody reagent; chondroblast produces avascular GAG-rich matrix." []
+comment: Note that this definition doesn't quite distinguish the output of a transformation process from a production process, which is related to the identity/granularity issue.
+subset: ro-eco
+xref: RO:0003000
+property_value: IAO:0000114 IAO:0000125
+property_value: IAO:0000117 "Melissa Haendel" xsd:string
+domain: BFO:0000040 ! material entity
+range: BFO:0000040 ! material entity
+inverse_of: produced_by ! produced by
+
+[Typedef]
+id: provides_nutrients_for
+name: provides nutrients for
+subset: ro-eco
+xref: RO:0002469
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+is_a: trophically_interacts_with ! trophically interacts with
+inverse_of: acquires_nutrients_from ! acquires nutrients from
+
+[Typedef]
+id: quality_of
+name: quality of
+def: "a relation between a quality and an independent continuant (the bearer), in which the quality specifically depends on the bearer for its existence" []
+xref: RO:0000080
+property_value: IAO:0000112 "this red color is a quality of this apple" xsd:string
+property_value: IAO:0000116 "A quality inheres in its bearer at all times for which the quality exists." xsd:string
+property_value: IAO:0000118 "is quality of" xsd:string
+property_value: IAO:0000118 "quality_of" xsd:string
+is_a: inheres_in ! inheres in
+inverse_of: has_quality ! has quality
+
+[Typedef]
+id: realized_in
+name: realized in
+comment: Paraphrase of elucidation: a relation between a realizable entity and a process, where there is some material entity that is bearer of the realizable entity and participates in the process, and the realizable entity comes to be realized in the course of the process
+xref: BFO:0000054
+property_value: IAO:0000111 "realized in" xsd:string
+property_value: IAO:0000112 "this disease is realized in this disease course" xsd:string
+property_value: IAO:0000112 "this fragility is realized in this shattering" xsd:string
+property_value: IAO:0000112 "this investigator role is realized in this investigation" xsd:string
+property_value: IAO:0000118 "is realized by" xsd:string
+property_value: IAO:0000118 "realized_in" xsd:string
+property_value: IAO:0000600 "[copied from inverse property 'realizes'] to say that b realizes c at t is to assert that there is some material entity d & b is a process which has participant d at t & c is a disposition or role of which d is bearer_of at t& the type instantiated by b is correlated with the type instantiated by c. (axiom label in BFO2 Reference: [059-003])" xsd:string
+property_value: isDefinedBy http://purl.obolibrary.org/obo/bfo.owl
+domain: BFO:0000017 ! realizable entity
+range: BFO:0000015 ! process
+
+[Typedef]
+id: realizes
+name: realizes
+comment: Paraphrase of elucidation: a relation between a process and a realizable entity, where there is some material entity that is bearer of the realizable entity and participates in the process, and the realizable entity comes to be realized in the course of the process
+xref: BFO:0000055
+property_value: IAO:0000111 "realizes" xsd:string
+property_value: IAO:0000112 "this disease course realizes this disease" xsd:string
+property_value: IAO:0000112 "this investigation realizes this investigator role" xsd:string
+property_value: IAO:0000112 "this shattering realizes this fragility" xsd:string
+property_value: IAO:0000600 "to say that b realizes c at t is to assert that there is some material entity d & b is a process which has participant d at t & c is a disposition or role of which d is bearer_of at t& the type instantiated by b is correlated with the type instantiated by c. (axiom label in BFO2 Reference: [059-003])" xsd:string
+property_value: isDefinedBy http://purl.obolibrary.org/obo/iao.owl
+domain: BFO:0000015 ! process
+range: BFO:0000017 ! realizable entity
+inverse_of: realized_in ! realized in
+
+[Typedef]
+id: related_via_dependence_to
+name: related via dependence to
+def: "A relationship that holds between two entities, where the relationship holds based on the presence or absence of statistical dependence relationship. The entities may be statistical variables, or they may be other kinds of entities such as diseases, chemical entities or processes." []
+xref: RO:0002609
+property_value: IAO:0000232 "Do not use this relation directly. It is intended as a grouping for a diverse set of relations, all involving cause and effect." xsd:string
+
+[Typedef]
+id: results_in_developmental_progression_of
+name: results in developmental progression of
+def: "p results in the developmental progression of s iff p is a developmental process and s is an anatomical structure and p causes s to undergo a change in state at some point along its natural developmental cycle (this cycle starts with its formation, through the mature structure, and ends with its loss)." []
+xref: RO:0002295
+property_value: IAO:0000114 IAO:0000125
+property_value: IAO:0000116 "This property and its subproperties are being used primarily for the definition of GO developmental processes. The property hierarchy mirrors the core GO hierarchy. In future we may be able to make do with a more minimal set of properties, but due to the way GO is currently structured we require highly specific relations to avoid incorrect entailments. To avoid this, the corresponding genus terms in GO should be declared mutually disjoint." xsd:string
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: seeAlso Ontology:extensions
+domain: GO:0008150 ! biological_process
+range: CARO:0000003 ! anatomical structure
+is_a: developmentally_related_to ! developmentally related to
+
+[Typedef]
+id: results_in_formation_of
+name: results in formation of
+xref: RO:0002297
+property_value: IAO:0000112 "an annotation of gene X to anatomical structure formation with results_in_formation_of UBERON:0000007 (pituitary gland) means that at the beginning of the process a pituitary gland does not exist and at the end of the process a pituitary gland exists." xsd:string
+property_value: IAO:0000112 "every \"endocardial cushion formation\" (GO:0003272) results_in_formation_of some \"endocardial cushion\" (UBERON:0002062)" xsd:string
 property_value: IAO:0000114 IAO:0000125
 property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000119 GOC:mtg_berkeley_2013 xsd:string
+is_a: has_output ! has output
+is_a: results_in_developmental_progression_of ! results in developmental progression of
+
+[Typedef]
+id: role_of
+name: role of
+def: "a relation between a role and an independent continuant (the bearer), in which the role specifically depends on the bearer for its existence" []
+xref: RO:0000081
+property_value: IAO:0000112 "this investigator role is a role of this person" xsd:string
+property_value: IAO:0000116 "A role inheres in its bearer at all times for which the role exists, however the role need not be realized at all the times that the role exists." xsd:string
+property_value: IAO:0000118 "is role of" xsd:string
+property_value: IAO:0000118 "role_of" xsd:string
+is_a: inheres_in ! inheres in
+
+[Typedef]
+id: spatially_coextensive_with
+name: spatially coextensive with
+def: "x spatially_coextensive_with y if and inly if x and y have the same location" []
+xref: RO:0002379
+property_value: IAO:0000112 "A lump of clay and a statue" xsd:string
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000232 "This relation is added for formal completeness. It is unlikely to be used in many practical scenarios" xsd:string
+is_a: overlaps ! overlaps
+
+[Typedef]
+id: spatially_disjoint_from
+name: spatially disjoint from
+def: "A is spatially_disjoint_from B if and only if they have no parts in common" []
+subset: ro-eco
+xref: RO:0002163
+property_value: http://xmlns.com/foaf/0.1/page https://github.com/obophenotype/uberon/wiki/Part-disjointness-Design-Pattern xsd:anyURI
+property_value: IAO:0000114 IAO:0000125
+property_value: IAO:0000116 "There are two ways to encode this as a shortcut relation. The other possibility to use an annotation assertion between two classes, and expand this to a disjointness axiom. " xsd:string
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000119 http://www.ncbi.nlm.nih.gov/pubmed/22293552
+property_value: IAO:0000232 "Note that it would be possible to use the relation to label the relationship between a near infinite number of structures - between the rings of saturn and my left earlobe. The intent is that this is used for parsiomoniously for disambiguation purposes - for example, between siblings in a jointly exhaustive pairwise disjointness hierarchy" xsd:string
 property_value: RO:0001900 RO:0001901
+is_a: mereotopologically_related_to ! mereotopologically related to
+expand_expression_to: "BFO_0000051 exactly 0 (BFO_0000050 some ?Y)" []
+
+[Typedef]
+id: starts
+name: starts
+def: "inverse of starts with" []
+subset: ro-eco
+xref: RO:0002223
+property_value: IAO:0000114 IAO:0000125
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000119 "Allen" xsd:string
+is_a: part_of ! part of
+is_a: temporally_related_to ! temporally related to
+
+[Typedef]
+id: starts_during
+name: starts during
+comment: X starts_during Y iff: (start(Y) before_or_simultaneous_with start(X)) AND (start(X) before_or_simultaneous_with end(Y))
+subset: ro-eco
+xref: RO:0002091
+property_value: IAO:0000117 "David Osumi-Sutherland" xsd:string
+property_value: IAO:0000118 "io" xsd:string
+domain: BFO:0000003 ! occurrent
+range: BFO:0000003 ! occurrent
+is_a: temporally_related_to ! temporally related to
+
+[Typedef]
+id: starts_with
+name: starts with
+def: "x starts with y if and only if x has part y and the time point at which x starts is equivalent to the time point at which y starts. Formally: ?(y) = ?(x) ? ?(y) < ?(x), where ? is a function that maps a process to a start point, and ? is a function that maps a process to an end point." []
+subset: ro-eco
+xref: RO:0002224
+property_value: IAO:0000112 "Every insulin receptor signaling pathway starts with the binding of a ligand to the insulin receptor" xsd:string
+property_value: IAO:0000114 IAO:0000125
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000118 "started by" xsd:string
+is_transitive: true
+is_a: has_part ! has part
+is_a: temporally_related_to ! temporally related to
+inverse_of: starts ! starts
+
+[Typedef]
+id: temporally_related_to
+name: temporally related to
+comment: A relation that holds between two occurrents. This is a grouping relation that collects together all the Allen relations.
+subset: ro-eco
+xref: RO:0002222
+property_value: http://purl.org/dc/elements/1.1/source https://docs.google.com/document/d/1kBv1ep_9g3sTR-SD3jqzFqhuwo9TPNF-l-9fUDbO6rM/edit?pli=1 xsd:anyURI
+property_value: IAO:0000114 IAO:0000125
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000119 https://en.wikipedia.org/wiki/Allen%27s_interval_algebra
+property_value: IAO:0000232 "Do not use this relation directly. It is ended as a grouping for relations between occurrents involving the relative timing of their starts and ends." xsd:string
+domain: BFO:0000003 ! occurrent
+range: BFO:0000003 ! occurrent
+
+[Typedef]
+id: towards
+name: towards
+def: "q towards e2 if and only if q is a relational quality such that q inheres-in some e, and e != e2 and q is dependent on e2" []
+xref: RO:0002503
+property_value: IAO:0000116 "This relation is provided in order to support the use of relational qualities such as 'concentration of'; for example, the concentration of C in V is a quality that inheres in V, but pertains to C." xsd:string
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000119 http://www.ncbi.nlm.nih.gov/pubmed/20064205
+is_a: depends_on ! depends on
 
 [Typedef]
 id: tributary_of
@@ -56742,16 +57930,27 @@ name: tributary of
 def: "x tributary_of y if and only if x a channel for the flow of a substance into y, where y is larger than x. If x and y are hydrographic features, then y is the main stem of a river, or a lake or bay, but not the sea or ocean. If x and y are anatomical, then y is a vein." []
 subset: ro-eco
 xref: RO:0002376
-property_value: IAO:0000112 "Deschutes River tributary_of Columbia River" xsd:string
-property_value: IAO:0000112 "inferior epigastric vein tributary_of external iliac vein" xsd:string
+property_value: IAO:0000112 "Deschutes River tributary_of Columbia River" xsd:string {http://purl.org/dc/elements/1.1/source="GAZ"}
+property_value: IAO:0000112 "inferior epigastric vein tributary_of external iliac vein" xsd:string {http://purl.org/dc/elements/1.1/source="FMA"}
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: IAO:0000118 "drains into" xsd:string
-property_value: IAO:0000118 "drains to" xsd:string
+property_value: IAO:0000118 "drains to" xsd:string {http://purl.org/dc/elements/1.1/source="http://dbpedia.org/ontology/drainsTo"}
 property_value: IAO:0000118 "tributary channel of" xsd:string
 property_value: IAO:0000119 http://en.wikipedia.org/wiki/Tributary xsd:string
 property_value: IAO:0000119 http://www.medindia.net/glossary/venous_tributary.htm xsd:string
 property_value: IAO:0000232 "This relation can be used for geographic features (e.g. rivers) as well as anatomical structures (veins, arteries)" xsd:anyURI
 property_value: seeAlso http://dbpedia.org/ontology/drainsTo
 property_value: seeAlso http://en.wikipedia.org/wiki/Tributary xsd:anyURI
+is_a: in_branching_relationship_with ! in branching relationship with
+
+[Typedef]
+id: trophically_interacts_with
+name: trophically interacts with
+def: "An interaction relationship in which the partners are related via a feeding relationship." []
+subset: ro-eco
+xref: RO:0002438
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: seeAlso http://dx.doi.org/10.1016/j.ecoinf.2014.08.005
+is_a: participates_in_a_biotic-biotic_interaction_with ! participates in a biotic-biotic interaction with
 
