@@ -19,7 +19,7 @@ all: build
 
 test: envo-edit.owl all_modules all_imports envo.owl
 
-build: envo.owl envo.obo subsets/envo-basic.obo
+build: envo.owl envo.obo envo.check-obo subsets/envo-basic.obo subsets/EnvO-Lite-GSC.obo subsets/EnvO-Lite-GSC.check-obo
 
 prepare_release: build  copy-release
 
@@ -144,7 +144,13 @@ mirror/ncbitaxon.owl: ncbitaxon.obo
 mirror/pco.owl: imports/pco_basic.obo
 	OWLTOOLS_MEMORY=12G owltools $< --set-ontology-id $(OBO)/pco.owl -o $@
 
-
+# ----------------------------------------
+# OBO CHECKS
+# ----------------------------------------
+# Check OE can parse the file.
+# This requires installing oboedit, which comes with a cmd line app called obo2obo
+%.check-obo: %.obo
+	obo2obo -o $@ $<
 
 # ----------------------------------------
 # SLIMS
