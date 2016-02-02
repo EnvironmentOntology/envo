@@ -145,12 +145,26 @@ mirror/pco.owl: imports/pco_basic.obo
 	OWLTOOLS_MEMORY=12G owltools $< --set-ontology-id $(OBO)/pco.owl -o $@
 
 # ----------------------------------------
+# STYLE CHECKS
+# ----------------------------------------
+is_utf: envo-edit.owl
+	iconv -f UTF-8 -t ISO-8859-15 $< > $@
+
+# ----------------------------------------
 # OBO CHECKS
 # ----------------------------------------
 # Check OE can parse the file.
 # This requires installing oboedit, which comes with a cmd line app called obo2obo
 %.check-obo: %.obo
 	obo2obo -o $@ $<
+
+DISABLE= multiply-labeled-edge valid-id-space isa-incomplete ascii-check has-definition bad-pmid ontology-declaration-check referenced-id-syntax-check owl-axiom-check
+%.obo-gocheck: %.obo GO.xrf_abbs
+	iconv -f UTF-8 -t ISO-8859-15 $< > $@-iconv && \
+	check-obo-for-standard-release.pl --xref-abbs GO.xrf_abbs $(patsubst %,--disable-%,$(DISABLE)) $< > $@.tmp && mv $@.tmp $@
+
+GO.xrf_abbs: envo-edit.owl
+	wget http://geneontology.org/doc/GO.xrf_abbs -O $@ && touch $@
 
 # ----------------------------------------
 # SLIMS
