@@ -9,7 +9,7 @@ subsetdef: scalar_slim "Scalar slim"
 subsetdef: value_slim "Value slim"
 synonymtypedef: PLURAL "plurals"
 default-namespace: ENVO
-remark: ENVO is an ontology which represents knowledge about environments,environmental processes, ecosystems, habitats, and related entities. It interoperates with other ontologies in the OBO Foundry and Library. Please see www.environmentontology.org for more.
+remark: ENVO is an ontology which represents knowledge about environments,environmental processes, ecosystems, habitats, and related entities. It interoperates with other ontologies in the OBO Foundry and Library. Please see www.environmentontology.org for more info.
 remark: Includes Ontology(OntologyID(OntologyIRI(<file:/imports/ro_import.owl>))) [Axioms: 1065 Logical Axioms: 258]
 remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/imports/bfo_import.owl>))) [Axioms: 34 Logical Axioms: 7]
 remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/imports/chebi_import.owl>))) [Axioms: 2279 Logical Axioms: 965]
@@ -1215,7 +1215,7 @@ synonym: "place" BROAD [USGS:SDTS]
 synonym: "populated locality" RELATED []
 synonym: "populated place" EXACT [Geonames:feature]
 synonym: "populated places" EXACT [Geonames:feature]
-synonym: "settlement" RELATED [USGS:SDTS]
+synonym: "settlement" EXACT [USGS:SDTS]
 xref: FTT:1097
 xref: FTT:33
 xref: Geonames:P.PPL
@@ -14181,8 +14181,10 @@ creation_date: 2013-04-07T14:40:32Z
 [Term]
 id: ENVO:01000219
 name: anthropogenic terrestrial biome
-def: "An anthropogenic terrestrial biome is a terrestrial biome which has community structures determined by human activity." []
+def: "An anthropogenic terrestrial biome is a terrestrial biome which has community structures determined by human activity." [http://www.eoearth.org/view/article/150128/]
 comment: Preliminary definition.
+synonym: "anthrome" EXACT []
+synonym: "human biome" EXACT []
 is_a: ENVO:00000446 ! terrestrial biome
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2013-04-07T14:45:22Z
@@ -14425,6 +14427,7 @@ creation_date: 2013-06-14T11:45:47Z
 id: ENVO:01000246
 name: village biome
 def: "A village biome is an anthropogenic terrestrial biome which contains settlements such as villages, towns, and/or small cities and which is primarily used for agricultural activity." [DOI:10.1111/j.1466-8238.2010.00540.x, DOI:10.1890/070062]
+comment: Villages are also described as agricultural settlements with greater than 100 persons per square kilometre; however, no upper limit is defined.
 is_a: ENVO:01000219 ! anthropogenic terrestrial biome
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2013-06-14T11:45:47Z
@@ -14533,7 +14536,7 @@ creation_date: 2013-10-06T19:57:22Z
 id: ENVO:01000258
 name: cline
 def: "A cline is a comparatively thin, typically horizontal layer within a fluid, in which a property of the fluid varies greatly over a relatively short vertical distance." [Wikipedia:Cline_(hydrology)]
-comment: A similar term exists in linguistics and mathematics. An ecocline, or biological cline, is a related concept; however, may be better placed as a child of a class like "ecotone".
+comment: A similar term exists in linguistics and mathematics. An ecocline, or biological cline, is a related concept; however, may be better placed as a child of a class like "ecotone". Further, some definitions of "layer" require a layer's constiuent materials to have consistent properties, thus "cline" would not qualify as a subclass. The term "gradient" has been proposed as a more suitable superclass. Discussion in Issue #286)
 is_a: ENVO:01000281 ! layer
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2013-10-06T20:10:13Z
@@ -17555,6 +17558,7 @@ subset: environmental_hazards
 is_a: ENVO:02500000 ! environmental system process
 relationship: has_input ENVO:01000648 ! magma
 relationship: has_output ENVO:01000266 ! water vapour
+relationship: has_participant ENVO:00000247 ! volcano
 relationship: has_participant ENVO:01000638 ! planetary crust
 
 [Term]
@@ -18399,9 +18403,10 @@ relationship: composed_primarily_of ENVO:01000277 ! water ice
 [Term]
 id: ENVO:01000755
 name: aeroform
-def: "An aeroform is a geographic feature which is primarily composed of air held in shape by one or more environmental processes." []
-comment: Similar, in spirit, to landform.
+def: "An aeroform is a geographic feature which is primarily composed of a continuous volume of gaseous or aerosolised material held in shape by one or more environmental processes." []
+comment: Similar, in spirit, to landform. This class may need to be split into aerosols and 'pure' volumes of gas.
 is_a: ENVO:00000000 ! geographic feature
+relationship: located_in ENVO:01000267 ! atmosphere
 property_value: IAO:0000116 "This may not need to be in the atmosphere." xsd:string
 
 [Term]
@@ -18431,6 +18436,112 @@ id: ENVO:01000759
 name: legume
 def: "A one-celled fruit (pod) usually dehiscing down both sutures, and having the seed attached along a ventral suture. (Roubik 1995)" [http://www.fao.org/pollination/resources/glossary/en/]
 is_a: ENVO:01000757 ! fruit
+
+[Term]
+id: ENVO:01000760
+name: cloud
+def: "A cloud is a visible mass of aerosolised liquid droplets or frozen crystals suspended in an atmosphere above the surface of a planetary body. On Earth clouds are formed by the saturation of air in the homosphere when air cools or gains water vapor." [https://en.wikipedia.org/wiki/Cloud]
+comment: Note that this class describes clouds as countable objects, rather than 'cloud material'.
+synonym: "cloud mass" EXACT []
+is_a: ENVO:01000755 ! aeroform
+
+[Term]
+id: ENVO:01000761
+name: polar stratospheric cloud
+def: "Polar stratospheric clouds are clouds which form in the winter polar stratosphere at altitudes of 15,000â€“25,000 metres and which support chemical reactions that produce active chlorine and remove gaseous nitric acid, catalysing ozone destruction." [https://en.wikipedia.org/wiki/Polar_stratospheric_cloud]
+synonym: "nacreous cloud" EXACT []
+synonym: "PSC" RELATED []
+is_a: ENVO:01000760 ! cloud
+property_value: IAO:0000116 "This class should be linked to ozone layer depletion processes." xsd:string
+
+[Term]
+id: ENVO:01000762
+name: sparsely populated settlement
+def: "A settlement with a low density of buildings and inhabitants." []
+comment: The thresholds for what makes a settlment "sparsely populated" can be determined as needed. These are usually "sparse" in relation to urban environments. If there is a specific threshold that should be added to ENVO, please make a new class request.
+is_a: ENVO:00000062 ! populated place
+
+[Term]
+id: ENVO:01000763
+name: rural settlement
+def: "A settlement which has lower population density than a town, city, or other urban environment and is primarily used for agricultural or pastoral activity." [http://www.fao.org/docrep/015/am085e/am085e.pdf, https://en.wikipedia.org/wiki/Rural_area]
+comment: A class created fro SDGIO. The definition of rural is highly varied, dealing with areas, settlements, and populations interchangeably. The 'rural' classes in ENVO aim to clarify these differing definitions. See issue #272.
+is_a: ENVO:01000762 ! sparsely populated settlement
+relationship: located_in ENVO:01000772 ! rural area
+
+[Term]
+id: ENVO:01000764
+name: formal settlement
+def: "A settlement which has been established and is managed through officially sanctioned processes and is recognised as legal by a competent authority." []
+is_a: ENVO:00000062 ! populated place
+property_value: IAO:0000116 "This is merely a defined class and should not have too many subclasses." xsd:string
+
+[Term]
+id: ENVO:01000765
+name: informal settlement
+def: "A settlement which is not associated with or directed by official planning processes and which typically lacks municipal services and infrastructure such as sanitation, water services, and waste management services." []
+comment: Informal settlements need not be illegal.
+is_a: ENVO:00000062 ! populated place
+property_value: IAO:0000116 "Can a formerly formal settlement become an informal settlement?" xsd:string
+property_value: IAO:0000116 "This is merely a defined class and should not have too many subclasses." xsd:string
+
+[Term]
+id: ENVO:01000766
+name: legal settlement
+def: "A settlement on land that the inhabitants have a legal claim to." []
+is_a: ENVO:00000062 ! populated place
+property_value: IAO:0000116 "This is merely a defined class and should not have too many subclasses." xsd:string
+
+[Term]
+id: ENVO:01000767
+name: illegal settlement
+def: "A settlement on land that the inhabitants have no legal claim to or occupy illegally." [http://stats.oecd.org/glossary/detail.asp?ID=1351]
+is_a: ENVO:00000062 ! populated place
+property_value: IAO:0000116 "This is merely a defined class and should not have too many subclasses." xsd:string
+
+[Term]
+id: ENVO:01000768
+name: primary forest
+def: "Forest which originally covered a region before changes in the environment brought about by people. (Source: PHC)" [http://www.eionet.europa.eu/gemet/concept?cp=6622]
+is_a: ENVO:00000111 ! forest
+
+[Term]
+id: ENVO:01000769
+name: carbon dioxide emission process
+def: "A carbon emission process is any environmental process which releases carbon dioxide gas into the atmosphere." []
+comment: Requested for SDGIO. This class may be revised in future once the offical definitions become more clear.
+is_a: ENVO:01000742 ! carbon-bearing gas emission process
+
+[Term]
+id: ENVO:01000770
+name: cabon dioxide emission
+def: "A volume of carbon dioxide gas emitted by a carbon dioxide emission process." []
+comment: This is a working definition for #280. Which processes will ultimately be included in the axioms is still open.
+is_a: ENVO:00010483 ! environmental material
+relationship: output_of ENVO:01000769 ! carbon dioxide emission process
+
+[Term]
+id: ENVO:01000771
+name: all season road
+def: "A road which is usable across all seasons." [http://www.nationsencyclopedia.com/WorldStats/ADI-access-season-road-definition.html]
+comment: Created for SDGIO, indicator 9.1.1. See #272.
+synonym: "all-season road" EXACT []
+synonym: "permanent road" RELATED []
+is_a: ENVO:00000064 ! road
+
+[Term]
+id: ENVO:01000772
+name: rural area
+def: "An area which is outside of a town, city, or urban area. Rural areas are primarily used for agriculture or pastoralism and may contain rural settlements." [http://www.fao.org/docrep/015/am085e/am085e.pdf]
+comment: A class created fro SDGIO. The definition of rural is highly varied, dealing with areas, settlements, and populations interchangeably. The 'rural' classes in ENVO aim to clarify these differing definitions. See issue #272.
+is_a: ENVO:01000408 ! environmental zone
+
+[Term]
+id: ENVO:01000773
+name: village
+def: "A village is a clustered human settlement or community, larger than a hamlet but smaller than a town, with a population ranging from a few hundred to a few thousand. Though often located in rural areas, the term urban village is also applied to certain urban neighbourhoods. Villages are normally permanent, with fixed dwellings; however, transient villages can occur. Further, the dwellings of a village are fairly close to one another, not scattered broadly over the landscape, as a dispersed settlement." [https://en.wikipedia.org/wiki/Village]
+is_a: ENVO:00000062 ! populated place
+property_value: IAO:0000116 "This class may be split. \"urban village\" doesn't sit well and prevents relations to village biomes." xsd:string
 
 [Term]
 id: ENVO:01001303
@@ -18465,9 +18576,10 @@ is_a: ENVO:2100000 ! anatomical entity environment
 [Term]
 id: ENVO:01001308
 name: hydroform
-def: "A hydroform is a geographic feature which is primarily composed of liquid water held in shape by an environmental process." []
+def: "A hydroform is a geographic feature which is primarily composed of a continuous volume of liquid water held in shape by an environmental process." []
 comment: Similar, in spirit, to landform.
 is_a: ENVO:00000000 ! geographic feature
+relationship: located_in ENVO:00000063 ! water body
 property_value: IAO:0000116 "Should create links to envrionmental process with new relation like \"sustained_by\"" xsd:string
 
 [Term]
@@ -19114,7 +19226,7 @@ is_a: ENVO:02500003 ! atmospheric process
 [Term]
 id: ENVO:02500005
 name: land degradation
-def: "A process which diminishes the functioning of an ecosystem located on land." [] {comment="Adapted from WHO URL:http://www.who.int/globalchange/ecosystems/desert/en/", comment="Adapted from Wikipedia:Land_degradation"}
+def: "A process which diminishes the functioning of an ecosystem located on land." [http://www.who.int/globalchange/ecosystems/desert/en/, https://en.wikipedia.org/wiki/Land_degradation]
 comment: This could include, for example, reducing soil health, pollinator activity, or an ecosystem's ability  to sequester carbon.
 is_a: ENVO:02500000 ! environmental system process
 relationship: has_participant ENVO:01000635 ! land
@@ -19155,6 +19267,9 @@ relationship: results_in_transformation_into ENVO:00000111 ! forest
 [Term]
 id: ENVO:02500012
 name: deforestation
+def: "The removal of forest and undergrowth to, for example, increase the surface of arable land or to use the timber for construction or industrial purposes." [http://www.eionet.europa.eu/gemet/concept?cp=2036]
+synonym: "clearance" BROAD []
+synonym: "clearing" BROAD []
 is_a: ENVO:02500000 ! environmental system process
 
 [Term]
@@ -20800,6 +20915,13 @@ property_value: seeAlso Ontology:extensions
 is_a: developmentally_related_to ! developmentally related to
 
 [Typedef]
+id: results_in_expansion_of
+name: results in expansion of
+def: "A process, p, results in the expansion of a material entity, m, if the spatial extent of m is increased as a result of participating in p." []
+xref: ENVO:02500016
+property_value: IAO:0000112 "Afforestation results in the expansion of a forest." xsd:string
+
+[Typedef]
 id: results_in_formation_of
 name: results in formation of
 xref: RO:0002297
@@ -20810,6 +20932,11 @@ property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: IAO:0000119 GOC:mtg_berkeley_2013 xsd:string
 is_a: has_output ! has output
 is_a: results_in_developmental_progression_of ! results in developmental progression of
+
+[Typedef]
+id: results_in_transformation_into
+name: results in transformation into
+xref: ENVO:02500006
 
 [Typedef]
 id: role_of
