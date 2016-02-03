@@ -173,7 +173,7 @@ GO.xrf_abbs: envo-edit.owl
 subsets/EnvO-Lite-GSC.owl: subsets/envo-basic.obo
 	owltools $< --extract-ontology-subset --fill-gaps --subset EnvO-Lite-GSC --iri $(OBO)/envo/subsets/$@ -o $@
 subsets/EnvO-Lite-GSC.obo: subsets/EnvO-Lite-GSC.owl
-	obolib-owl2obo $< -o $@
+	owltools $< -o -f obo $@
 
 # ----------------------------------------
 # Reports
