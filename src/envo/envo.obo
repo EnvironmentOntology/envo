@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: releases/2016-02-03
+data-version: releases/2016-02-05
 subsetdef: disposition_slim "Disposition slim"
 subsetdef: environmental_hazards "environmental_hazards"
 subsetdef: EnvO-Lite-GSC "EnvO-Lite-GSC"
@@ -22722,6 +22722,56 @@ name: village
 def: "A village is a clustered human settlement or community, larger than a hamlet but smaller than a town, with a population ranging from a few hundred to a few thousand. Though often located in rural areas, the term urban village is also applied to certain urban neighbourhoods. Villages are normally permanent, with fixed dwellings; however, transient villages can occur. Further, the dwellings of a village are fairly close to one another, not scattered broadly over the landscape, as a dispersed settlement." [https://en.wikipedia.org/wiki/Village]
 is_a: ENVO:00000062 ! populated place
 property_value: IAO:0000116 "This class may be split. \"urban village\" doesn't sit well and prevents relations to village biomes." xsd:string
+
+[Term]
+id: ENVO:01000774
+name: oligotrophic lake
+def: "A lake which has nutrient-poor water." [https://en.wikipedia.org/wiki/Trophic_state_index]
+is_a: ENVO:00000020 ! lake
+relationship: composed_primarily_of ENVO:00002223 ! oligotrophic water
+property_value: IAO:0000116 "See issue #282" xsd:string
+
+[Term]
+id: ENVO:01000775
+name: mesotrophic lake
+def: "A lake with medium nutrient levels, which allow moderate productivity." []
+comment: What constitutes a "medium" nutrient level is subject to debate. The thresholds should be set either on a data level or through new subclasses.
+is_a: ENVO:00000020 ! lake
+relationship: composed_primarily_of ENVO:00002225 ! mesotrophic water
+property_value: IAO:0000116 "See Issue #281." xsd:string
+
+[Term]
+id: ENVO:01000776
+name: piece of plastic
+def: "An abiotic mesoscopic physical object which is primarily composed of plastic." []
+is_a: ENVO:01000010 ! abiotic mesoscopic physical object
+relationship: composed_primarily_of ENVO:01000404 ! plastic
+
+[Term]
+id: ENVO:01000777
+name: nurdle
+def: "A cylindrical shaped pre-production plastic pellet used in manufacturing and packaging." [https://en.wiktionary.org/wiki/nurdle]
+is_a: ENVO:01000776 ! piece of plastic
+property_value: IAO:0000116 "See Issue #289." xsd:string
+
+[Term]
+id: ENVO:01000778
+name: important site
+def: "An environmental zone which contains, as determined by an officially mandated selection process, one or more ecosystems which include, as parts, ecological communities of global significance for conservation due to their vulnerability and irreplaceability." [http://www.iucn.org/about/union/secretariat/offices/iucnmed/iucn_med_programme/species/key_biodiversity_areas/, https://en.wikipedia.org/wiki/Key_Biodiversity_Area]
+comment: The selection process which determines the whether an area is an important site must follow the best practice specifications and guidelines developed by the International Union for Conservation of Nature (IUCN), using globally standardised criteria and thresholds. Note that the label 'important site' is chosen to align with SDGIO. The definition is that of "key biodiversity area".
+synonym: "Alliance for Zero Extinction Sites" NARROW []
+synonym: "Ecologically and Biologically Significant Area" NARROW []
+synonym: "Important Bird Area" NARROW []
+synonym: "Important Mammal Area" NARROW []
+synonym: "Important Plant Area" NARROW []
+synonym: "Important Site for Freshwater Biodiversity" NARROW []
+synonym: "IUCN Important Site for Freshwater Biodiversity" NARROW []
+synonym: "key biodiversity area" EXACT []
+synonym: "Prime Butterfly Area" NARROW []
+synonym: "Ramsar Sites" NARROW []
+is_a: ENVO:01000408 ! environmental zone
+is_a: PCO:0000002 ! ecological community
+property_value: IAO:0000116 "The narrow synonyms will be made into subclasses in their own right." xsd:string
 
 [Term]
 id: ENVO:01001303
