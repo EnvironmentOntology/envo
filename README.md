@@ -18,10 +18,13 @@ ENVO currently deals with 'environmental systems' (i.e. environments) particular
 ###Stable release versions
 ENVO's latest release version can be downloaded in OWL and OBO format from the following links:
 http://purl.obolibrary.org/obo/envo.owl
+
 http://purl.obolibrary.org/obo/envo.obo
 
 Please note that the files above include all the imported classes from ontologies referenced by ENVO. If you would like a "simple" version with only ENVO classes, please download it from:
 http://purl.obolibrary.org/obo/subsets/envo-basic.obo
+
+Please note that the OBO files are now created from the OWL file. Due to limitations in the OBO format, envo.obo will not offer as much expressibility as envo.owl. Further, **to open envo.obo in OBOEdit 2**, please ensure that dangling axioms are allowed using the advanced view of the "Load Ontology" window.
 
 ###Subsets
 Several subsets of ENVO classes are identified with the "in_subset" annotation property.
