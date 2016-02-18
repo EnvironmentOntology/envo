@@ -17,7 +17,11 @@ all: build
 
 #include Makefile-OBO
 
-test: envo-edit.owl all_modules all_imports envo.owl
+test: test_python envo-edit.owl all_modules all_imports envo.owl
+
+# temp test for travis
+test_python:
+	python3 --version
 
 build: envo.owl envo.obo envo.check-obo subsets/envo-basic.obo subsets/EnvO-Lite-GSC.obo subsets/EnvO-Lite-GSC.check-obo
 
