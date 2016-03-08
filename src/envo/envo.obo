@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: releases/2016-02-05
+data-version: releases/2016-02-18
 subsetdef: disposition_slim "Disposition slim"
 subsetdef: environmental_hazards "environmental_hazards"
 subsetdef: EnvO-Lite-GSC "EnvO-Lite-GSC"
@@ -22525,7 +22525,7 @@ relationship: determined_by PCO:0000001 ! population
 [Term]
 id: ENVO:01000741
 name: recycling process
-def: "A process in which has inputs which bear waste roles and outputs which bear resource roles." []
+def: "A process in which some input bearing a waste role is consumed to produce an output which bears a resource role." [https://stats.oecd.org/glossary/detail.asp?ID=2260]
 comment: This has been created for SDGIO. Revision is likely, but the general meaning should be stable. The frame of reference for determining what is 'waste' and what is a  'resource' is unclear.
 is_a: ENVO:02500000 ! environmental system process
 
@@ -22773,6 +22773,61 @@ is_a: ENVO:01000408 ! environmental zone
 relationship: has_part ENVO:01000254 ! environmental system
 relationship: has_part PCO:0000002 ! ecological community
 property_value: IAO:0000116 "The narrow synonyms will be made into subclasses in their own right." xsd:string
+
+[Term]
+id: ENVO:01000779
+name: public infrastructure
+def: "The system of public works in a country, state or region, including roads, utility lines and public buildings." [https://stats.oecd.org/glossary/detail.asp?ID=4511]
+comment: We label this as 'public infrastructure', as the OECD definition refers specifically to public constructed features. The parts of public infrastructure are not exhaustive and should be extended as needed.
+synonym: "infrastructure" BROAD []
+is_a: ENVO:00000070 ! constructed feature
+
+[Term]
+id: ENVO:01000780
+name: public road
+def: "A road which is publically accessible." []
+is_a: ENVO:00000064 ! road
+relationship: part_of ENVO:01000779 ! public infrastructure
+property_value: IAO:0000116 "This class is created for the SDGIO and the 'public infrastructure' class. The publically accessible attribute could be axiomatised." xsd:string
+
+[Term]
+id: ENVO:01000781
+name: public building
+def: "A building which is publically accessible." []
+is_a: ENVO:00000073 ! building
+relationship: part_of ENVO:01000779 ! public infrastructure
+property_value: IAO:0000116 "Created for SDGIO, we treat \"public\" as \"publically accessible\" where the semantics of access are dealt with in SDGIO." xsd:string
+
+[Term]
+id: ENVO:01000782
+name: utility line
+def: "A cable used to trasmit electricity from its point of production to its point of consumption." []
+is_a: ENVO:00000070 ! constructed feature
+
+[Term]
+id: ENVO:01000783
+name: public utility line
+def: "A utility line which services the public power grid." []
+comment: Created for SDGIO, we treat "public" as "publically accessible" where the semantics of access are dealt with in SDGIO.
+is_a: ENVO:01000782 ! utility line
+relationship: part_of ENVO:01000779 ! public infrastructure
+
+[Term]
+id: ENVO:01000784
+name: illegal informal settlement
+def: "A populated place where groups of housing units have been constructed on land that the occupants have no legal claim to, or occupy illegally, or where dwellings are not in compliance with current planning and building regulations." [unstats.un.org/unsd/publication/SeriesF/SeriesF_67E.pdf]
+comment: Informal settlements may be urban or rural.
+synonym: "informal settlement" BROAD []
+is_a: ENVO:01000765 ! informal settlement
+
+[Term]
+id: ENVO:01000785
+name: material extraction process
+def: "A planned process during which a portion of environmental material is removed from a material entity." []
+comment: Created for SDGIO and intended to be a more general form of resource extraction process.
+is_a: ENVO:02500000 ! environmental system process
+relationship: has_participant ENVO:00010483 ! environmental material
+property_value: IAO:0000116 "This should be an OBI planned process. Pending import." xsd:string
 
 [Term]
 id: ENVO:01001303
