@@ -116,6 +116,11 @@ mirror/%.owl: envo-edit.owl
 	owltools $(OBO)/$*.owl --remove-annotation-assertions -l --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS)  -o $@
 .PRECIOUS: mirror/%.owl
 
+# chebi.owl is large and the owlapi often times out when reading it; use the obo instead
+mirror/chebi.owl: envo-edit.owl
+	owltools $(OBO)/chebi.obo --remove-annotation-assertions -l --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS)  -o $@
+.PRECIOUS: mirror/%.owl
+
 #mirror/ro.owl: mirror/ro-relations.owl mirror/ro-classes.owl
 #	owltools $^ --merge-support-ontologies -o $@
 mirror/ro.owl:
