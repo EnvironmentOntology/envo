@@ -20,13 +20,13 @@ all: build
 test: envo-edit.owl all_modules all_imports envo.owl
 travis_test: test_python envo-edit.owl all_modules envo.owl
 
-full_test: test envo.check-obo
+full_test: test envo.check-obo subsets/EnvO-Lite-GSC.check-obo
 
 # temp test for travis
 test_python:
 	python3 --version
 
-build: envo.owl envo.obo subsets/envo-basic.obo subsets/EnvO-Lite-GSC.obo subsets/EnvO-Lite-GSC.check-obo
+build: envo.owl envo.obo subsets/envo-basic.obo subsets/EnvO-Lite-GSC.obo 
 
 prepare_release: build  copy-release
 
