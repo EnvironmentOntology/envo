@@ -117,8 +117,10 @@ mirror/%.owl: envo-edit.owl
 .PRECIOUS: mirror/%.owl
 
 # chebi.owl is large and the owlapi often times out when reading it; use the obo instead
-mirror/chebi.owl: envo-edit.owl
-	owltools $(OBO)/chebi.obo --remove-annotation-assertions -l --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS)  -o $@
+mirror/chebi-local.owl: envo-edit.owl
+	wget --no-check-certificate $(OBO)/chebi.owl -O $@ && touch $@
+mirror/chebi.owl: mirror/chebi-local.owl
+	owltools --no-debug $< --log-debug --remove-annotation-assertions -l --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS)  -o $@
 .PRECIOUS: mirror/%.owl
 
 #mirror/ro.owl: mirror/ro-relations.owl mirror/ro-classes.owl
