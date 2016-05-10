@@ -81,6 +81,9 @@ align-earth-%.tsv: earth.obo
 sweet.zip:
 	wget --no-check-certificate https://sweet.jpl.nasa.gov/sites/default/files/2.3.zip -O $@
 
+sweet/%.obo: sweet/%.owl
+	owltools $< -o -f obo $@
+
 geonames.obo: geonames-orig.obo
 	./fix-geonames.pl $< > $@
 
