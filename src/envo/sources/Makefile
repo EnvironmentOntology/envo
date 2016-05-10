@@ -5,7 +5,7 @@ align-lter-chebi.tsv: lter.obo
 	blip-findall -i $< -r chebi -u metadata_nlp -goal index_entity_pair_label_match "class(X),id_idspace(X,'LTER'),entity_pair_label_reciprocal_best_intermatch(X,Y,S),id_idspace(Y,'CHEBI'),\+entity_xref_idspace(Y,Z,'LTER')" -select "x(X,Y,S)" -label -use_tabs -no_pred > $@.tmp && mv $@.tmp $@
 
 align-%.tsv: %.obo
-	blip-findall -i $< -i ../envo.obo -u metadata_nlp -goal index_entity_pair_label_match "class(X),id_idspace(X,'SPIRE'),entity_pair_label_reciprocal_best_intermatch(Y,X,S),id_idspace(Y,'ENVO'),\+((entity_xref(Y,Z),id_idspace(Z,'SPIRE')))" -select "x(X,Y,S)" -label -use_tabs -no_pred > $@.tmp && mv $@.tmp $@
+	blip-findall -i $< -i ../envo.obo -u metadata_nlp -goal index_entity_pair_label_match "entity_pair_label_reciprocal_best_intermatch(Y,X,S),id_idspace(X,'ENVO')" -select "x(X,Y,S)" -label -use_tabs -no_pred | grep -i $* > $@.tmp && mv $@.tmp $@
 
 # TODO
 no-align-%.txt: %.obo
@@ -52,6 +52,12 @@ align-gemet-%.tsv: gemet.obo
 xrefs-%.obo: align-%.tsv
 	cut -f1-4 $< | sort -u | tbl2obolinks.pl --rel xref - > $@
 
+align-%.pro: align-%.tsv
+	cut -f1-4 $< | tbl2p -p m > $@
+
+unmapped-%.tsv: align-%.pro %.obo
+	blip-findall -i $< -i $*.obo "class(X),\+m(_,_,X,_)" -select X -label > $@
+
 summary-xrefs-%.txt:
 	grep -c ^id: xrefs-$*-*.obo
 
@@ -74,3 +80,9 @@ align-earth-%.tsv: earth.obo
 # SWEET
 sweet.zip:
 	wget --no-check-certificate https://sweet.jpl.nasa.gov/sites/default/files/2.3.zip -O $@
+
+geonames.obo: geonames-orig.obo
+	./fix-geonames.pl $< > $@
+
+featureCodes_en.txt:
+	http://download.geonames.org/export/dump/featureCodes_en.txt
