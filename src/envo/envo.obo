@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: releases/2016-02-18
+data-version: releases/2016-05-17
 subsetdef: disposition_slim "Disposition slim"
 subsetdef: environmental_hazards "environmental_hazards"
 subsetdef: EnvO-Lite-GSC "EnvO-Lite-GSC"
@@ -16,7 +16,7 @@ remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo
 remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/imports/chebi_import.owl>))) [Axioms: 2279 Logical Axioms: 965]
 remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/imports/imports/ncbitaxon_import.owl>))) [Axioms: 261 Logical Axioms: 56]
 remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/imports/imports/po_import.owl>))) [Axioms: 94 Logical Axioms: 9]
-remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/imports/pato_import.owl>))) [Axioms: 642 Logical Axioms: 240]
+remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/imports/pato_import.owl>))) [Axioms: 679 Logical Axioms: 257]
 remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/imports/pco_bfo_bridge.owl>))) [Axioms: 3 Logical Axioms: 1]
 remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/imports/pco_import.owl>))) [Axioms: 21 Logical Axioms: 3]
 remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/imports/uberon_import.owl>))) [Axioms: 25196 Logical Axioms: 4846]
@@ -4475,8 +4475,8 @@ is_a: ENVO:00000230 ! coastal wetland
 id: ENVO:00000039
 name: fjord
 def: "A long and narrow sea inlet with high steeply sloped walled sides. A fjord is a landform created during a period of glaciation." [Wikipedia:Fjord]
-synonym: "fiord" EXACT [NASA:earthrealm]
 synonym: "fiord" EXACT [ADL:FTT]
+synonym: "fiord" EXACT [NASA:earthrealm]
 synonym: "Fjord" EXACT [NASA:earthrealm]
 synonym: "fjord" EXACT [Geonames:feature]
 synonym: "fjords" EXACT [Geonames:feature]
@@ -4926,6 +4926,8 @@ xref: TGN:21100
 xref: TGN:21101
 xref: Wikipedia:Water_body
 is_a: ENVO:00000000 ! geographic feature
+relationship: composed_primarily_of CHEBI:15377 ! water
+relationship: part_of ENVO:01000819 ! hydrosphere
 
 [Term]
 id: ENVO:00000064
@@ -5012,8 +5014,8 @@ synonym: "railroad tunnel" NARROW [ADL:FTT]
 synonym: "railroad tunnel" NARROW [Geonames:feature]
 synonym: "road tunnel" NARROW [ADL:FTT]
 synonym: "road tunnel" NARROW [Geonames:feature]
-synonym: "tunnel" BROAD [Geonames:feature]
 synonym: "tunnel" BROAD [ADL:FTT]
+synonym: "tunnel" BROAD [Geonames:feature]
 synonym: "tunnels" BROAD [Geonames:feature]
 synonym: "underpass" NARROW [USGS:SDTS]
 xref: FTT:1136
@@ -7369,6 +7371,7 @@ is_a: ENVO:01000296 ! dry lake bed
 id: ENVO:00000197
 name: endorheic lake
 def: "A lake from which there is no outflow of water, either on the surface as rivers, or underground by flow or diffusion through rock or permeable material." [Wikipedia:Endorheic]
+synonym: "closed lake" EXACT []
 xref: EcoLexicon:endorheic_lake
 xref: Wikipedia:Endorheic_lake
 is_a: ENVO:00000020 ! lake
@@ -7479,6 +7482,7 @@ xref: SPIRE:Epipelagic_zone
 xref: SWEETRealm:PhoticZone
 xref: Wikipedia:Photic_zone
 is_a: ENVO:01000295 ! marine layer
+relationship: part_of ENVO:01000822 ! planetary photic zone
 
 [Term]
 id: ENVO:00000210
@@ -9966,6 +9970,7 @@ is_a: ENVO:01000254 ! environmental system
 disjoint_from: ENVO:01000276 ! ecoregion
 disjoint_from: ENVO:01000280 ! ecozone
 relationship: determined_by PCO:0000002 ! ecological community
+relationship: part_of ENVO:01000817 ! biosphere
 
 [Term]
 id: ENVO:00000429
@@ -10769,6 +10774,7 @@ xref: FTT:157
 xref: FTT:162
 xref: Geonames:H.WADM
 is_a: ENVO:00000479 ! mouth
+is_a: ENVO:01001308 ! hydroform
 intersection_of: ENVO:00000479 ! mouth
 intersection_of: located_in ENVO:00000031 ! wadi
 relationship: located_in ENVO:00000031 ! wadi
@@ -10936,6 +10942,7 @@ xref: SWEETRealm:Landslide
 xref: TGN:21507
 xref: Wikipedia:Landslide
 is_a: ENVO:00000191 ! physiographic feature
+relationship: formed_as_result_of ENVO:01000692 ! landslide process
 
 [Term]
 id: ENVO:00000521
@@ -11631,7 +11638,7 @@ xref: Geonames:T.RKS
 xref: SWEETRealm:Rock
 xref: TGN:21444
 xref: Wikipedia:Rock
-is_a: ENVO:00010483 ! environmental material
+is_a: ENVO:01000814 ! solid environmental material
 disjoint_from: ENVO:01000256 ! mineral material
 relationship: has_quality PATO:0000386 ! hard
 relationship: has_quality PATO:0001546 ! quality of a solid
@@ -11752,7 +11759,11 @@ xref: EcoLexicon:air
 xref: LTER:18
 xref: SWEETRealm:Air
 xref: Wikipedia:Air
-is_a: ENVO:00010483 ! environmental material
+is_a: ENVO:01000797 ! gaseous environmental material
+relationship: composed_primarily_of CHEBI:17997 ! dinitrogen
+relationship: has_part CHEBI:15379 ! dioxygen
+relationship: has_part CHEBI:16526 ! carbon dioxide
+relationship: has_part CHEBI:36908 ! argon molecular entity
 relationship: has_part ENVO:01000266 ! water vapour
 relationship: has_quality PATO:0001547 ! quality of a gas
 
@@ -11763,7 +11774,7 @@ def: "An environmental material primarily composed of dihydrogen oxide in its li
 xref: EcoLexicon:water
 xref: LTER:617
 xref: Wikipedia:Water
-is_a: ENVO:00010483 ! environmental material
+is_a: ENVO:01000815 ! liquid environmental material
 relationship: composed_primarily_of CHEBI:15377 ! water
 relationship: has_quality PATO:0001548 ! quality of a liquid
 
@@ -11789,7 +11800,7 @@ def: "Minute solid particles with diameters less than 500 micrometers. Occurs in
 xref: EcoLexicon:dust
 xref: SWEETRealm:Dust
 xref: Wikipedia:Dust
-is_a: ENVO:00010483 ! environmental material
+is_a: ENVO:01000814 ! solid environmental material
 relationship: has_quality PATO:0001546 ! quality of a solid
 
 [Term]
@@ -12065,6 +12076,7 @@ xref: LTER:637
 xref: SWEETRealm:Wood
 xref: Wikipedia:Wood
 is_a: ENVO:01000155 ! organic material
+is_a: ENVO:01000814 ! solid environmental material
 relationship: has_quality PATO:0001546 ! quality of a solid
 
 [Term]
@@ -13488,7 +13500,7 @@ name: oil
 def: "A viscous liquid state at ambient temperatures or slightly warmer, and is both hydrophobic and lipophilic." [Wikipedia:Oil]
 xref: EcoLexicon:oil
 xref: Wikipedia:Oil
-is_a: ENVO:00010483 ! environmental material
+is_a: ENVO:01000815 ! liquid environmental material
 relationship: has_quality PATO:0001548 ! quality of a liquid
 relationship: has_quality PATO:0001885 ! hydrophobic
 
@@ -18551,7 +18563,7 @@ name: mineral material
 def: "A mineral material is an environmental material which is primarily composed of some substance that is naturally occurring, solid and stable at room temperature, representable by a chemical formula, usually abiogenic, and that has an ordered atomic structure." [Wikipedia:Mineral]
 comment: Look for "mineral" in a chemical or geochemical ontology to formalise the composed primarily of link.\nFrom Wikipedia: [A mineral] is different from a rock, which can be an aggregate of minerals or non-minerals and does not have a specific chemical composition. The exact definition of a mineral is under debate, especially with respect to the requirement a valid species be abiogenic, and to a lesser extent with regards to it having an ordered atomic structure.
 xref: LTER:341
-is_a: ENVO:00010483 ! environmental material
+is_a: ENVO:01000814 ! solid environmental material
 intersection_of: ENVO:00010483 ! environmental material
 intersection_of: composed_primarily_of CHEBI:46662 ! mineral
 relationship: composed_primarily_of CHEBI:46662 ! mineral
@@ -18651,7 +18663,7 @@ comment: Perhaps a better relation between water vapour and water can be found i
 synonym: "aqueous vapor" EXACT [Wikipedia:Water_vapor]
 synonym: "aqueous vapour" EXACT [Wikipedia:Water_vapor]
 synonym: "water vapor" EXACT [Wikipedia:Water_vapor]
-is_a: ENVO:00010483 ! environmental material
+is_a: ENVO:01000797 ! gaseous environmental material
 relationship: composed_primarily_of CHEBI:15377 ! water
 relationship: has_quality PATO:0001547 ! quality of a gas
 created_by: ORCID:0000-0002-4366-3088
@@ -18760,7 +18772,7 @@ name: water ice
 def: "Ice is water frozen into a solid state. It can appear transparent or opaque bluish-white color, depending on the presence of impurities or air inclusions. The addition of other materials such as soil may further alter its appearance." [Wikipedia:Ice]
 synonym: "ice" RELATED [http://www.eionet.europa.eu/gemet/concept/4131] {def="The dense substance formed by the freezing of water to the solid state; it commonly occurs in the form of hexagonal crystals. (Source: MGH)"}
 xref: LTER:262
-is_a: ENVO:00010483 ! environmental material
+is_a: ENVO:01000814 ! solid environmental material
 relationship: composed_primarily_of ENVO:00002006 ! water
 relationship: has_quality PATO:0001546 ! quality of a solid
 relationship: has_quality PATO:0001985 ! frozen
@@ -18791,6 +18803,7 @@ name: ecozone
 def: "Ecozones delineate large areas of the Earth's surface within which organisms have been evolving in relative isolation over long periods of time, separated from one another by geographic features, such as oceans, broad deserts, or high mountain ranges, that constitute barriers to migration." [Wikipedia:ecozone]
 comment: ENVO contains this top-level class, but all instances will be in GAZ. The definition is preliminary and will be aligned to BFO.\nWikipedia:  Ecozones correspond to the floristic kingdoms of botany or zoogeographic regions of zoology. Ecozones are characterized by the evolutionary history of the organisms they contain. They are distinct from biomes, also known as major habitat types, which are divisions of the Earth's surface based on life form, or the adaptation of plants and animals to climatic, soil, and other conditions. Biomes are characterized by similar climax vegetation. Each ecozone may include a number of different biomes. A tropical moist broadleaf forest in Central America, for example, may be similar to one in New Guinea in its vegetation type and structure, climate, soils, etc., but these forests are inhabited by plants and animals with very different evolutionary histories.
 is_a: BFO:0000040 ! material entity
+relationship: located_in ENVO:01000817 ! biosphere
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2013-10-13T18:32:46Z
 
@@ -18910,6 +18923,7 @@ is_a: ENVO:00000131 ! glacial feature
 intersection_of: ENVO:00002297 ! environmental feature
 intersection_of: composed_primarily_of ENVO:01000277 ! water ice
 relationship: composed_primarily_of ENVO:01000277 ! water ice
+relationship: part_of ENVO:01000818 ! cryosphere
 property_value: IAO:0000116 "Class should be populated by inference and asserted subclasses redistributed." xsd:string
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2013-10-15T19:49:11Z
@@ -19199,6 +19213,7 @@ name: planetary surface
 def: "A planetary surface is a surface layer where the solid or liquid material of a planet comes into contact with atmosphere or outer space." []
 comment: a useful class: this can be used to define sub-terrestrial and sub-marine
 is_a: ENVO:00010504 ! surface layer
+relationship: part_of ENVO:01000800 ! planet
 
 [Term]
 id: ENVO:01000325
@@ -20200,7 +20215,7 @@ id: ENVO:01000451
 name: atmospheric carbon dioxide
 def: "Atmospheric carbon dioxide is an environmental material composed of carbon dioxide in its gaseous form present in the atmosphere." []
 comment: This could also be considered a part of an environmental material like air.
-is_a: ENVO:00010483 ! environmental material
+is_a: ENVO:01000797 ! gaseous environmental material
 relationship: composed_primarily_of CHEBI:16526 ! carbon dioxide
 relationship: has_quality PATO:0001547 ! quality of a gas
 relationship: part_of ENVO:01000267 ! atmosphere
@@ -20440,7 +20455,7 @@ id: ENVO:01000480
 name: glass
 def: "Glass is an amorphous (non-crystalline) solid which is often transparent." [Adapted from Wikipedia:Glass]
 comment: This class refers to all forms of glass. For the familiar form present in window panes and drinking glasses, consider silica-based glass.
-is_a: ENVO:00010483 ! environmental material
+is_a: ENVO:01000814 ! solid environmental material
 relationship: has_quality PATO:0001546 ! quality of a solid
 created_by: ORCID:0000-0002-4366-3088
 
@@ -20984,7 +20999,7 @@ id: ENVO:01000537
 name: atmospheric ozone
 def: "Atmospheric ozone is an environmental material primarily composed of ozone in its gaseous form and present in the atmosphere." []
 synonym: "atmospheric ozone" RELATED [http://www.eionet.europa.eu/gemet/concept/632] {def="A triatomic molecule of oxygen; a natural constituent of the atmosphere, with the highest concentrations in the ozone layer or stratosphere; it is found at a level between 15 and 30 km above the Earth, which prevents harmful ultraviolet B radiation, which causes skin cancer and threatens plant life, from reaching the ground. The fragile shield is being damaged by chemicals released on Earth. The main chemicals that are depleting stratospheric ozone are chlorofluorocarbons (CFCs), which are used in refrigerators, aerosols and as cleaners in many industries and halons, which are used in fire extinguishers. The damage is caused when these chemicals release highly reactive forms of chlorine and bromine. (Source: GILP96 / WRIGHT)"}
-is_a: ENVO:00010483 ! environmental material
+is_a: ENVO:01000797 ! gaseous environmental material
 relationship: composed_primarily_of CHEBI:25812 ! ozone
 relationship: has_quality PATO:0001547 ! quality of a gas
 relationship: part_of ENVO:01000267 ! atmosphere
@@ -21112,7 +21127,6 @@ name: natural gas
 def: "Natural gas is a hydrocarbon gas mixture consisting primarily of methane, but commonly includes varying amounts of other higher alkanes and sometimes a usually lesser percentage of carbon dioxide, nitrogen, and/or hydrogen sulfide. Natural gas is a fossil fuel formed when layers of buried plants and gases are exposed to intense heat and pressure over thousands of years." [Adapted from Wikipedia:Natural_gas]
 is_a: ENVO:01000554 ! hydrocarbon gas
 relationship: composed_primarily_of CHEBI:16183 ! methane
-relationship: has_quality PATO:0001547 ! quality of a gas
 
 [Term]
 id: ENVO:01000553
@@ -21128,8 +21142,9 @@ is_a: ENVO:01000558 ! liquefied hydrocarbon gas
 id: ENVO:01000554
 name: hydrocarbon gas
 def: "A gas that is primarily composed of hydrocarbon molecules." []
-is_a: ENVO:00010483 ! environmental material
+is_a: ENVO:01000797 ! gaseous environmental material
 relationship: composed_primarily_of CHEBI:24632 ! hydrocarbon
+relationship: has_quality PATO:0001547 ! quality of a gas
 
 [Term]
 id: ENVO:01000555
@@ -21156,7 +21171,7 @@ is_a: ENVO:01000558 ! liquefied hydrocarbon gas
 [Term]
 id: ENVO:01000558
 name: liquefied hydrocarbon gas
-is_a: ENVO:00010483 ! environmental material
+is_a: ENVO:01000815 ! liquid environmental material
 relationship: composed_primarily_of CHEBI:24632 ! hydrocarbon
 relationship: has_quality PATO:0001485 ! condensed
 relationship: has_quality PATO:0001548 ! quality of a liquid
@@ -21175,6 +21190,7 @@ id: ENVO:01000560
 name: charcoal
 def: "Charcoal is a light, black residue, consisting of carbon and any remaining ash, obtained by removing water and other volatile constituents from animal and vegetation substances. Charcoal is usually produced by slow pyrolysis, the heating of wood or other substances in the absence of oxygen." [Adapted from Wikipedia:Charcoal]
 is_a: ENVO:01000155 ! organic material
+is_a: ENVO:01000814 ! solid environmental material
 relationship: has_quality PATO:0001546 ! quality of a solid
 
 [Term]
@@ -21631,6 +21647,7 @@ def: "Hydrological condensation is a process in which atmospheric water vapour u
 comment: "process" is included in the label to make it clear that we are not referring to the condensed material (e.g. water droplets, window fog)
 synonym: "condensation" BROAD []
 is_a: ENVO:01000724 ! condensation process
+is_a: ENVO:02500031 ! hydrological process
 relationship: has_input ENVO:01000268 ! atmospheric water vapour
 relationship: has_output ENVO:00002006 ! water
 
@@ -21696,6 +21713,7 @@ id: ENVO:01000633
 name: ecosystem-wide aerobic respiration
 def: "A process which consists of all aerobic respiration processes instantiated in an ecosystem." []
 is_a: ENVO:02500008 ! ecosystem-wide respiration
+is_a: ENVO:02500031 ! hydrological process
 property_value: IAO:0000116 "See issue #275" xsd:string
 
 [Term]
@@ -21703,7 +21721,7 @@ id: ENVO:01000634
 name: volcanic eruption
 def: "A volcanic process is a process during which lava, tephra (ash, lapilli, volcanic bombs and blocks), and assorted gases are expelled from a volcanic vent or fissure." [Adapted from Wikipedia:Types_of_volcanic_eruptions]
 subset: environmental_hazards
-is_a: ENVO:02500000 ! environmental system process
+is_a: ENVO:02500031 ! hydrological process
 relationship: has_input ENVO:01000648 ! magma
 relationship: has_output CHEBI:16136 ! hydrogen sulfide
 relationship: has_output CHEBI:16526 ! carbon dioxide
@@ -21752,6 +21770,7 @@ name: planetary structural layer
 def: "A planetary structural layer is laminar part of a terrestrial planet or other rocky body large enough to have differentiation by density. Planetary layers have differing physicochemical properties and composition." []
 comment: Terrible label, needs revision.
 is_a: ENVO:01000281 ! layer
+relationship: part_of ENVO:01000800 ! planet
 
 [Term]
 id: ENVO:01000640
@@ -21800,12 +21819,14 @@ name: lithosphere
 def: "A lithosphere is the outermost shell of a terrestrial-type planet or natural satellite that is defined by its rigid mechanical properties." [Adapted from Wikipedia:Lithosphere]
 comment: Earth's lithosphere includes the crust and uppermost mantle.
 is_a: ENVO:01000639 ! planetary structural layer
+relationship: has_quality PATO:0001545 ! inflexible
 
 [Term]
 id: ENVO:01000647
 name: asthenosphere
-def: "An asthenosphere is a layer of a terrestrial-type planet or natural satellite which is highly viscous, mechanically weak, and ductilely deforming." []
+def: "An asthenosphere is a layer of a terrestrial-type planet or natural satellite which is highly viscous, mechanically weak, and ductilely deforming." [https://en.wikipedia.org/wiki/Asthenosphere]
 is_a: ENVO:01000639 ! planetary structural layer
+relationship: adjacent_to ENVO:01000646 ! lithosphere
 relationship: has_quality PATO:0000998 ! viscous
 relationship: has_quality PATO:0001779 ! decreased strength
 
@@ -22254,6 +22275,7 @@ is_a: ENVO:02500000 ! environmental system process
 id: ENVO:01000704
 name: hydrological evaporation
 def: "Hydrological evaporation is the evaporation of water, generally as part of a planetary water cycle." []
+is_a: ENVO:02500031 ! hydrological process
 is_a: ENVO:02500034 ! evaporation
 relationship: has_input ENVO:00002006 ! water
 
@@ -22383,6 +22405,7 @@ property_value: IAO:0000116 "The assertion that the output is freshwater seems r
 id: ENVO:01000720
 name: hydrological melting process
 is_a: ENVO:01000723 ! melting
+is_a: ENVO:02500031 ! hydrological process
 
 [Term]
 id: ENVO:01000721
@@ -22521,6 +22544,7 @@ xref: SWEETRealm:Habitat
 xref: Wikipedia:Habitat
 is_a: ENVO:01000254 ! environmental system
 relationship: determined_by PCO:0000001 ! population
+relationship: part_of ENVO:01000817 ! biosphere
 
 [Term]
 id: ENVO:01000741
@@ -22536,9 +22560,6 @@ def: "A carbon emission process is any environmental process which outputs a car
 comment: Requested for SDGIO. Likely to be revised.
 synonym: "carbon emission process" BROAD []
 is_a: ENVO:02500000 ! environmental system process
-relationship: has_output ENVO:00010483 ! environmental material
-relationship: has_part CHEBI:27594 ! carbon atom
-relationship: has_quality PATO:0001547 ! quality of a gas
 
 [Term]
 id: ENVO:01000743
@@ -22619,6 +22640,7 @@ def: "A cloud is a visible mass of aerosolised liquid droplets or frozen crystal
 comment: Note that this class describes clouds as countable objects, rather than 'cloud material'.
 synonym: "cloud mass" EXACT []
 is_a: ENVO:01000755 ! aeroform
+relationship: composed_primarily_of ENVO:01000835 ! cloud droplet
 
 [Term]
 id: ENVO:01000761
@@ -22686,16 +22708,13 @@ name: carbon dioxide emission process
 def: "A carbon emission process is any environmental process which releases carbon dioxide gas into the atmosphere." []
 comment: Requested for SDGIO. This class may be revised in future once the offical definitions become more clear.
 is_a: ENVO:01000742 ! carbon-bearing gas emission process
-relationship: has_output ENVO:00010483 ! environmental material
-relationship: has_part CHEBI:16526 ! carbon dioxide
-relationship: has_quality PATO:0001547 ! quality of a gas
 
 [Term]
 id: ENVO:01000770
-name: cabon dioxide emission
+name: carbon dioxide emission
 def: "A volume of carbon dioxide gas emitted by a carbon dioxide emission process." []
 comment: This is a working definition for #280. Which processes will ultimately be included in the axioms is still open.
-is_a: ENVO:00010483 ! environmental material
+is_a: ENVO:01000797 ! gaseous environmental material
 relationship: composed_primarily_of CHEBI:16526 ! carbon dioxide
 relationship: has_quality PATO:0001547 ! quality of a gas
 relationship: output_of ENVO:01000769 ! carbon dioxide emission process
@@ -22715,6 +22734,7 @@ name: rural area
 def: "An area which is outside of a town, city, or urban area. Rural areas are primarily used for agriculture or pastoralism and may contain rural settlements." [http://www.fao.org/docrep/015/am085e/am085e.pdf]
 comment: A class created fro SDGIO. The definition of rural is highly varied, dealing with areas, settlements, and populations interchangeably. The 'rural' classes in ENVO aim to clarify these differing definitions. See issue #272.
 is_a: ENVO:01000408 ! environmental zone
+relationship: overlaps ENVO:01001305 ! vegetated area
 
 [Term]
 id: ENVO:01000773
@@ -22828,6 +22848,405 @@ comment: Created for SDGIO and intended to be a more general form of resource ex
 is_a: ENVO:02500000 ! environmental system process
 relationship: has_participant ENVO:00010483 ! environmental material
 property_value: IAO:0000116 "This should be an OBI planned process. Pending import." xsd:string
+
+[Term]
+id: ENVO:01000786
+name: fire
+def: "A fire is a process whereby rapid and exothermic oxidation of a material through a combustion process releases heat, light, and other products." [http://www.eionet.europa.eu/gemet/concept?cp=3212, https://en.wikipedia.org/wiki/Fire]
+comment: Not to be confused with a flame - the visible portion of gas released by a fire . Oxidation processes such as rusting or biological digestion are not subsumed here.
+is_a: ENVO:02500000 ! environmental system process
+
+[Term]
+id: ENVO:01000787
+name: wildfire
+def: "A conflagration which is uncontrolled and combusts material in a vegetated area, be it rural or wild." []
+comment: The definition of "wildland" or "wild" is ambiguous.
+synonym: "wildland fire" EXACT []
+is_a: ENVO:01000788 ! conflagration
+relationship: has_output ENVO:01000790 ! hydrocarbon flame
+relationship: occurs_in ENVO:00000446 ! terrestrial biome
+
+[Term]
+id: ENVO:01000788
+name: conflagration
+def: "A fire which occurs in a large spatial area poses a risk to human life, animal life, health, and/or property." [https://en.wikipedia.org/wiki/Conflagration]
+synonym: "blaze" RELATED []
+synonym: "large fire" RELATED []
+is_a: ENVO:01000786 ! fire
+
+[Term]
+id: ENVO:01000789
+name: flame
+def: "A portion of gas which is emitted by a fire or other exothermic reaction, is of increased temperature, and typically emits light in the visible range." [https://en.wikipedia.org/wiki/Flame]
+is_a: ENVO:01000797 ! gaseous environmental material
+relationship: has_quality PATO:0001305 ! increased temperature
+relationship: has_quality PATO:0001547 ! quality of a gas
+
+[Term]
+id: ENVO:01000790
+name: hydrocarbon flame
+def: "A flame which is produced by the combustion of hydrocarbon fuel." []
+is_a: ENVO:01000789 ! flame
+
+[Term]
+id: ENVO:01000791
+name: forest fire
+def: "A wildfire which occurs in a forest, primarily consuming vegetation as fuel." []
+is_a: ENVO:01000787 ! wildfire
+relationship: has_output ENVO:01000790 ! hydrocarbon flame
+relationship: occurs_in ENVO:00000111 ! forest
+
+[Term]
+id: ENVO:01000792
+name: mass gaseous flow
+def: "A process whereby a large volume of gas moves due to a disequilibrium of physical forces." [https://en.wikipedia.org/wiki/Wind]
+comment: This class refers to all forms of "wind": from the familiar movement of air in the Earth's atmosphere to the solar wind. Use a subclass to be more precise.
+synonym: "wind" RELATED []
+is_a: ENVO:02500000 ! environmental system process
+relationship: has_participant ENVO:01000797 ! gaseous environmental material
+
+[Term]
+id: ENVO:01000793
+name: atmospheric wind
+synonym: "A mass gaseous flow which occurrs in a planet's atmosphere due to internal pressure disequilibria." RELATED [https://en.wikipedia.org/wiki/Wind]
+is_a: ENVO:01000792 ! mass gaseous flow
+relationship: occurs_in ENVO:01000267 ! atmosphere
+
+[Term]
+id: ENVO:01000794
+name: stellar wind
+def: "A stream of plasma primarily composed of electrons, protons, and alpha particles ejected from the upper atmosphere of a star." [https://en.wikipedia.org/wiki/Solar_wind, https://en.wikipedia.org/wiki/Wind]
+synonym: "Solar wind" RELATED []
+is_a: ENVO:01000796 ! mass plasma flow
+
+[Term]
+id: ENVO:01000795
+name: planetary wind
+synonym: "A mass gaseous flow in which planetary atmospheric gases flow into outer space." RELATED []
+synonym: "atmospheric escape" RELATED []
+is_a: ENVO:01000792 ! mass gaseous flow
+relationship: has_participant ENVO:01000637 ! outer space
+relationship: has_participant ENVO:01000800 ! planet
+
+[Term]
+id: ENVO:01000796
+name: mass plasma flow
+is_a: ENVO:02500000 ! environmental system process
+relationship: has_participant ENVO:01000798 ! plasma
+
+[Term]
+id: ENVO:01000797
+name: gaseous environmental material
+def: "A material entity which is composed of one or more chemical entities and has neither independent shape nor volume but tends to expand indefinitely." [http://www.merriam-webster.com/dictionary/gas]
+synonym: "gas" NARROW []
+is_a: ENVO:00010483 ! environmental material
+intersection_of: ENVO:00010483 ! environmental material
+intersection_of: has_quality PATO:0001547 ! quality of a gas
+relationship: has_quality PATO:0001547 ! quality of a gas
+property_value: IAO:0000116 "This class is to be populated by inference." xsd:string
+
+[Term]
+id: ENVO:01000798
+name: plasma
+def: "A material entity which is composed of a volume of unbound positive and negative particles in roughly equal numbers, conducts electricity, and possesses internal magnetic fields." [http://www.merriam-webster.com/dictionary/plasma, https://en.wikipedia.org/wiki/Plasma_%28physics%29]
+is_a: ENVO:01000797 ! gaseous environmental material
+relationship: has_quality PATO:0001547 ! quality of a gas
+property_value: IAO:0000116 "An NTR for `quality of a plasma` has been posted on the PATO tracker: https://github.com/pato-ontology/pato/issues/88" xsd:string
+
+[Term]
+id: ENVO:01000799
+name: astronomical body
+def: "An object which is naturally occuring, bound together by gravitational or electromagnetic forces, and surrounded by space." [https://en.wikipedia.org/wiki/Astronomical_object]
+comment: Astronomical bodies are usually cohesive, thus the use of the term 'object' sensu BFO 'object'.
+synonym: "celestial body" RELATED []
+is_a: ENVO:00002297 ! environmental feature
+
+[Term]
+id: ENVO:01000800
+name: planet
+def: "A planet is an astronomical body orbiting a star or stellar remnant that is massive enough to be rounded by its own gravity, is not massive enough to cause thermonuclear fusion, and has cleared its neighbouring region of planetesimals." [http://solarsystem.nasa.gov/planets/whatisaplanet, https://en.wikipedia.org/wiki/Planet]
+comment: Considerable debate on the definition of planet exists.
+is_a: ENVO:01000799 ! astronomical body
+
+[Term]
+id: ENVO:01000801
+name: star
+def: "An astronomical object which is composed primarily of luminous plasma held in a spherical form by gravitational forces." [https://en.wikipedia.org/wiki/Star]
+is_a: ENVO:01000799 ! astronomical body
+relationship: composed_primarily_of ENVO:01000798 ! plasma
+property_value: IAO:0000116 "Add qualities such as spherical. Request NTRs if not available in PATO." xsd:string
+
+[Term]
+id: ENVO:01000802
+name: planetary moon
+def: "An astronomical body which orbits a planet of comparatively greater mass." [http://solarsystem.nasa.gov/planets/solarsystem/sats, https://en.wikipedia.org/wiki/Natural_satellite]
+comment: At times, a moon is equated to a natural satellite, however, the latter class includes a broader range of entities. Here, we currently separate moons from other satellites. We can create a logical definition of satellite using an orbital process class.
+synonym: "moon" BROAD []
+synonym: "natural satellite" RELATED []
+is_a: ENVO:01000799 ! astronomical body
+
+[Term]
+id: ENVO:01000803
+name: asteroid
+comment: This class is hard to define and is sometimes treated as equivalent to 'minor planet'.
+is_a: ENVO:01000809 ! minor planet
+
+[Term]
+id: ENVO:01000804
+name: astronomical object
+def: "An object which is composed of one or more gravitationally bound structures that are associated with a position in space." [https://en.wikipedia.org/wiki/Astronomical_object]
+comment: If there is only one astronomical body involved, this class is equivalent to ENVO:01000799. This may be problematic with reasoning, but it seems to be true to the rather fuzzy definitions found thus far.
+synonym: "celestial object" RELATED []
+is_a: ENVO:00002297 ! environmental feature
+relationship: has_part ENVO:01000799 {minCardinality="1"} ! astronomical body
+relationship: located_in ENVO:01000637 ! outer space
+
+[Term]
+id: ENVO:01000805
+name: globular star cluster
+def: "A group of gravitationally bound stars." [https://en.wikipedia.org/wiki/Star_cluster]
+comment: There is a need to account for open star clusters which are not gravitationally bound. This would need a superclass other than 'astronomical object', as currently defined.
+is_a: ENVO:01000804 ! astronomical object
+
+[Term]
+id: ENVO:01000806
+name: nebula
+def: "An interstellar cloud of dust, hydrogen, helium and other ionized gases" [https://en.wikipedia.org/wiki/Nebula]
+is_a: ENVO:01000804 ! astronomical object
+
+[Term]
+id: ENVO:01000807
+name: galaxy
+def: "A galaxy is a gravitationally bound system of stars, stellar remnants, interstellar gas, dust, and dark matter." [https://en.wikipedia.org/wiki/Galaxy]
+is_a: ENVO:01000804 ! astronomical object
+
+[Term]
+id: ENVO:01000808
+name: dwarf planet
+def: "An astronomical body which is in direct orbit of a star and is massive enough for its own gravity to compress it into a shape preserved by hydrostatic equilibrium (usually a spheroid), but which shares its orbit with other bodies, such as asteroids or comets." [http://solarsystem.nasa.gov/planets/Dwarf, https://en.wikipedia.org/wiki/Dwarf_planet]
+comment: Considerable debate on this definition exists.
+is_a: ENVO:01000809 ! minor planet
+
+[Term]
+id: ENVO:01000809
+name: minor planet
+def: "A minor planet is an astronomical object in direct orbit around the Sun that is neither a planet nor exclusively classified as a comet. Minor planets can be dwarf planets, asteroids, trojans, centaurs, Kuiper belt objects, and other trans-Neptunian objects." [https://en.wikipedia.org/wiki/Minor_planet]
+comment: "Before 2006, the IAU had officially used the term minor planet. During its 2006 meeting, the IAU reclassified minor planets and comets into dwarf planets and small Solar System bodies (SSSB). Objects are called dwarf planets if their self-gravity is sufficient to achieve hydrostatic equilibrium and form an ellipsoidal shape. All other minor planets and comets are called small Solar System bodies. The IAU stated that the term minor planet may still be used, but the term small Solar System body will be preferred. However, for purposes of numbering and naming, the traditional distinction between minor planet and comet is still used." {xref="https://en.wikipedia.org/wiki/Minor_planet"}
+is_a: ENVO:01000799 ! astronomical body
+property_value: IAO:0000116 "This definition is in need of revision - it relies on negation and seems to straddle class and instance level. The definitional space here is contested and quite inhomogeneous." xsd:string
+
+[Term]
+id: ENVO:01000810
+name: planetary atmosphere
+def: "An atmosphere which surrounds a planet." []
+is_a: ENVO:01000267 ! atmosphere
+relationship: partially_surrounded_by ENVO:01000324 ! planetary surface
+
+[Term]
+id: ENVO:01000811
+name: nitrogen-oxygen planetary atmosphere
+def: "A planetary atmosphere which is composted primarily of dinitrogen and dioxygen gas." []
+comment: An instance of this class would be Earth's atmosphere.
+is_a: ENVO:01000810 ! planetary atmosphere
+
+[Term]
+id: ENVO:01000813
+name: astronomical body part
+def: "A material part of an astronomical body." []
+is_a: ENVO:00002297 ! environmental feature
+relationship: part_of ENVO:01000799 ! astronomical body
+
+[Term]
+id: ENVO:01000814
+name: solid environmental material
+def: "An environmental material which is in a gaseous state." []
+comment: This is a defined class: its subclasses will not be asserted, but filled by inference.
+is_a: ENVO:00010483 ! environmental material
+intersection_of: ENVO:00010483 ! environmental material
+intersection_of: has_quality PATO:0001546 ! quality of a solid
+relationship: has_quality PATO:0001546 ! quality of a solid
+
+[Term]
+id: ENVO:01000815
+name: liquid environmental material
+def: "An environmental material which is in a liquid state." []
+comment: This is a defined class: its subclasses will not be asserted, but filled by inference.
+is_a: ENVO:00010483 ! environmental material
+intersection_of: ENVO:00010483 ! environmental material
+intersection_of: has_quality PATO:0001548 ! quality of a liquid
+relationship: has_quality PATO:0001548 ! quality of a liquid
+
+[Term]
+id: ENVO:01000817
+name: biosphere
+def: "A biosphere is an environmental system which includes, as parts, all the living entities within the gravitational sphere of influence of an astronomical body, and the non-living and dead entities which they interact with." [http://www.biology-online.org/dictionary/Biosphere, https://en.wikipedia.org/wiki/Biosphere]
+comment: The gravitational sphere of influence referenced in this class' definition is the Hill sphere: a region in which an object dominates the attraction of satellites despite gravitational perturbations.
+is_a: ENVO:01000813 ! astronomical body part
+relationship: has_part PCO:0000000 ! collection of organisms
+property_value: IAO:0000116 "Whether this class should be grouped with classes such as \"hydrosphere\" and \"cryosphere\" requires some discussion." xsd:string
+
+[Term]
+id: ENVO:01000818
+name: cryosphere
+def: "A cryosphere is that part of a planet which is primarily composed of water is in solid form." [https://en.wikipedia.org/wiki/Cryosphere]
+comment: This is a very broad and, in practice, poorly defined term. Please consider using or requesting a more specific class.
+is_a: ENVO:01000293 ! ice mass
+is_a: ENVO:01000813 ! astronomical body part
+relationship: composed_primarily_of ENVO:01000277 ! water ice
+
+[Term]
+id: ENVO:01000819
+name: hydrosphere
+def: "An astronomical body part which is composed of the combined mass of water found on, under, and over the surface of a planet." [https://en.wikipedia.org/wiki/Hydrosphere]
+comment: This is a very broad and, in practice, poorly defined term. Please consider using or requesting a more specific class.
+is_a: ENVO:01000813 ! astronomical body part
+relationship: composed_primarily_of ENVO:00002006 ! water
+
+[Term]
+id: ENVO:01000820
+name: pedosphere
+def: "An astronomical body part which is composed of soil, subject to soil formation processes, and found on the surface of a lithosphere." [https://en.wikipedia.org/wiki/Pedosphere]
+comment: This is a very broad and, in practice, poorly defined term. Please consider using or requesting a more specific class.
+is_a: ENVO:01000813 ! astronomical body part
+relationship: composed_primarily_of ENVO:00001998 ! soil
+relationship: overlaps ENVO:01000267 ! atmosphere
+relationship: overlaps ENVO:01000646 ! lithosphere
+relationship: overlaps ENVO:01000817 ! biosphere
+relationship: overlaps ENVO:01000819 ! hydrosphere
+
+[Term]
+id: ENVO:01000821
+name: photosphere
+def: "An astronomical body part which is composed of those parts of a star, distal from the star's core, from which light is radiated into space." [https://en.wikipedia.org/wiki/Photosphere]
+is_a: ENVO:01000813 ! astronomical body part
+relationship: part_of ENVO:01000801 ! star
+
+[Term]
+id: ENVO:01000822
+name: planetary photic zone
+def: "A planetary part which is exposed, at least periodically, to light." [http://dx.doi.org/10.1126/science.1155495]
+comment: In some literature, the term photosphere is used; however, this is more correctly reserved for a part of a star.
+synonym: "photosphere" RELATED []
+is_a: ENVO:01000813 ! astronomical body part
+
+[Term]
+id: ENVO:01000823
+name: illuminated biosphere part
+def: "An astronomical body part which includes those parts of a biosphere that are, at least periodically, illuminated and in which photosynthesis may occur." [http://dx.doi.org/10.1126/science.1155495]
+is_a: ENVO:01000813 ! astronomical body part
+relationship: part_of ENVO:01000817 ! biosphere
+property_value: IAO:0000116 "Somewhat awkward at the moment, see #314." xsd:string
+
+[Term]
+id: ENVO:01000824
+name: exorheic lake
+def: "A lake from which water constantly flows out of under almost all climatic circumstances, maintaining low concentrations of dissolved solid relative to endorheic lakes." [https://en.wikipedia.org/wiki/Open_and_closed_lakes]
+synonym: "open lake" EXACT []
+is_a: ENVO:00000020 ! lake
+relationship: composed_primarily_of ENVO:00002011 ! fresh water
+
+[Term]
+id: ENVO:01000825
+name: eaves
+synonym: "A part of a building roof which overhangs the face of a wall and, normally, projects beyond the side of a building." NARROW [https://en.wikipedia.org/wiki/Eaves]
+is_a: ENVO:01000420 ! building part
+
+[Term]
+id: ENVO:01000826
+name: open eaves
+def: "Overhanging eaves where the rafters and underside of the roof are visible from below." [Open eaves. (n.d.) McGraw-Hill Dictionary of Architecture and Construction. (2003). Retrieved May 16 2016 from http://encyclopedia2.thefreedictionary.com/Open+eaves]
+is_a: ENVO:01000825 ! eaves
+
+[Term]
+id: ENVO:01000827
+name: closed eaves
+def: "Eaves in which projecting roof members are not visible, being closed from view by boarding." [closed eaves. (n.d.) McGraw-Hill Dictionary of Architecture and Construction. (2003). Retrieved May 16 2016 from http://encyclopedia2.thefreedictionary.com/closed+eaves]
+is_a: ENVO:01000825 ! eaves
+
+[Term]
+id: ENVO:01000828
+name: humid air
+def: "Air which has increased levels of water vapour." []
+is_a: ENVO:00002005 ! air
+relationship: has_increased_levels_of ENVO:01000266 ! water vapour
+
+[Term]
+id: ENVO:01000829
+name: water vapour saturated air
+def: "Air which has a partial pressure of water vapour equal or near equal to its equilibrium vapor pressure at a given temperature." []
+comment: "Near equal" is meant to reflect that there will be fluctuations around the equilibrium point.
+synonym: "water-vapour-saturated air" EXACT []
+synonym: "wet air" RELATED []
+is_a: ENVO:01000828 ! humid air
+
+[Term]
+id: ENVO:01000830
+name: water-based rainfall
+def: "A hydrological precipitation process in which atmospheric water vapour condenses to form droplets of liquid water massive enough to fall to a planetary surface due to the planet's gravity." [https://en.wikipedia.org/wiki/Rain]
+comment: This is the process which typically happens on Earth. Other planets may have different liquids involved in the process.
+synonym: "rain" RELATED []
+synonym: "rainfall" BROAD []
+is_a: ENVO:01000703 ! hydrological precipitation process
+relationship: has_participant ENVO:01000829 ! water vapour saturated air
+relationship: has_participant ENVO:01000832 ! raindrop
+
+[Term]
+id: ENVO:01000831
+name: droplet
+def: "A droplet is a small column of liquid, bounded completely or almost completely by free surfaces which maintains its shape due to the surface tension of the liquid." [https://en.wikipedia.org/wiki/Drop_%28liquid%29]
+comment: No attempt is made to differentiate between drops and droplets. This may be added, if requested.
+synonym: "drop" RELATED []
+is_a: ENVO:01000010 ! abiotic mesoscopic physical object
+relationship: composed_primarily_of ENVO:01000815 ! liquid environmental material
+
+[Term]
+id: ENVO:01000832
+name: raindrop
+def: "A droplet formed by condensation of vapour in an atmosphere and which is sufficiently massive to overcome atmospheric resistance and fall to a planetary surface due to gravity." []
+is_a: ENVO:01000831 ! droplet
+relationship: formed_as_result_of ENVO:01000724 ! condensation process
+
+[Term]
+id: ENVO:01000833
+name: water droplet
+def: "A droplet of water" []
+is_a: ENVO:01000831 ! droplet
+intersection_of: ENVO:01000831 ! droplet
+intersection_of: composed_primarily_of ENVO:00002006 ! water
+relationship: composed_primarily_of ENVO:00002006 ! water
+property_value: IAO:0000116 "A defined class which should be filled by inference." xsd:string
+
+[Term]
+id: ENVO:01000834
+name: water raindrop
+comment: This is the class intended for use when describing raindrops on Earth. These typically have a diamter of  0.1 to 9 millimetres.
+synonym: "raindrop" BROAD []
+is_a: ENVO:01000832 ! raindrop
+is_a: ENVO:01000833 ! water droplet
+relationship: composed_primarily_of ENVO:00002006 ! water
+
+[Term]
+id: ENVO:01000835
+name: cloud droplet
+def: "A droplet which is spherical in shape and suspended in an atmosphere, being of too small a mass to be pulled to a planetary surface by gravity." [https://en.wikipedia.org/wiki/Rain]
+is_a: ENVO:01000831 ! droplet
+
+[Term]
+id: ENVO:01000836
+name: water-based cloud droplet
+def: "A cloud droplet composed primarily of water." []
+synonym: "cloud drop" BROAD []
+synonym: "cloud droplet" BROAD []
+synonym: "water based cloud droplet" EXACT []
+is_a: ENVO:01000833 ! water droplet
+is_a: ENVO:01000835 ! cloud droplet
+relationship: composed_primarily_of ENVO:00002006 ! water
+
+[Term]
+id: ENVO:01000837
+name: virga
+synonym: "A process in which precipitation falls from a cloud but evaporates or sublimes before making contact with a planetary surface." BROAD [https://en.wikipedia.org/wiki/Rain]
+is_a: ENVO:01000703 ! hydrological precipitation process
 
 [Term]
 id: ENVO:01001303
@@ -23558,7 +23977,7 @@ property_value: IAO:0000116 "An SDGIO request. Likely to be refined and revised.
 id: ENVO:02500007
 name: ecosystem-wide photosynthesis
 def: "A process which consists of all photosynthesis processes instantiated in an ecosystem." []
-is_a: ENVO:02500000 ! environmental system process
+is_a: ENVO:02500031 ! hydrological process
 property_value: IAO:0000116 "See issue #275" xsd:string
 
 [Term]
@@ -23720,7 +24139,6 @@ id: ENVO:02500031
 name: hydrological process
 comment: This classes asserted subclasses will be moved away as it should be an inferred class.
 is_a: ENVO:02500000 ! environmental system process
-relationship: has_participant ENVO:00002006 ! water
 
 [Term]
 id: ENVO:02500032
@@ -23732,7 +24150,7 @@ relationship: has_output ENVO:01001305 ! vegetated area
 id: ENVO:02500033
 name: evapotranspiration
 def: "Evapotranspiration is the sum of evaporation and plant transpiration from the Earth's land and ocean surface to the atmosphere." [Adapted from Wikipedia:Evapotranspiration]
-is_a: ENVO:02500000 ! environmental system process
+is_a: ENVO:02500031 ! hydrological process
 
 [Term]
 id: ENVO:02500034
@@ -24815,6 +25233,12 @@ is_a: PATO:0000586 ! increased size
 is_a: PATO:0000918 ! volume
 
 [Term]
+id: PATO:0000596
+name: decreased volume
+is_a: PATO:0000587 ! decreased size
+is_a: PATO:0000918 ! volume
+
+[Term]
 id: PATO:0000608
 name: closed
 is_a: PATO:0000136 ! closure
@@ -25043,6 +25467,12 @@ is_a: PATO:0000140 ! position
 is_a: PATO:0002305 ! increased object quality
 
 [Term]
+id: PATO:0001476
+name: decreased position
+is_a: PATO:0000140 ! position
+is_a: PATO:0002303 ! decreased object quality
+
+[Term]
 id: PATO:0001481
 name: sloped
 is_a: PATO:0000052 ! shape
@@ -25078,6 +25508,11 @@ name: flexible
 is_a: PATO:0001543 ! flexibility
 
 [Term]
+id: PATO:0001545
+name: inflexible
+is_a: PATO:0001543 ! flexibility
+
+[Term]
 id: PATO:0001546
 name: quality of a solid
 is_a: PATO:0002198 ! quality of a substance
@@ -25091,6 +25526,12 @@ is_a: PATO:0002198 ! quality of a substance
 id: PATO:0001548
 name: quality of a liquid
 is_a: PATO:0002198 ! quality of a substance
+
+[Term]
+id: PATO:0001559
+name: having extra function
+is_a: PATO:0001509 ! functionality
+is_a: PATO:0002305 ! increased object quality
 
 [Term]
 id: PATO:0001562
@@ -25148,6 +25589,12 @@ is_a: PATO:0001510 ! functional
 is_a: PATO:0002303 ! decreased object quality
 
 [Term]
+id: PATO:0001625
+name: increased functionality
+is_a: PATO:0001510 ! functional
+is_a: PATO:0001559 ! having extra function
+
+[Term]
 id: PATO:0001629
 name: aggregated
 is_a: PATO:0000330 ! irregular spatial pattern
@@ -25161,6 +25608,11 @@ is_a: PATO:0001598 ! protruding
 id: PATO:0001646
 name: protruding out of
 is_a: PATO:0001598 ! protruding
+
+[Term]
+id: PATO:0001648
+name: circumference
+is_a: PATO:0001711 ! perimeter
 
 [Term]
 id: PATO:0001655
@@ -25177,6 +25629,12 @@ is_a: PATO:0002305 ! increased object quality
 id: PATO:0001671
 name: increased distribution
 is_a: PATO:0001475 ! increased position
+is_a: PATO:0001566 ! distributed
+
+[Term]
+id: PATO:0001672
+name: decreased distribution
+is_a: PATO:0001476 ! decreased position
 is_a: PATO:0001566 ! distributed
 
 [Term]
@@ -25300,6 +25758,12 @@ name: wetness
 is_a: PATO:0001018 ! physical quality
 
 [Term]
+id: PATO:0001823
+name: wet
+is_a: PATO:0001822 ! wetness
+disjoint_from: PATO:0001824 ! dry
+
+[Term]
 id: PATO:0001824
 name: dry
 is_a: PATO:0001822 ! wetness
@@ -25378,6 +25842,12 @@ id: PATO:0001890
 name: tripartite
 is_a: PATO:0000402 ! branched
 is_a: PATO:0002008 ! concave 3-D shape
+
+[Term]
+id: PATO:0001899
+name: decreased circumference
+is_a: PATO:0001648 ! circumference
+is_a: PATO:0001713 ! decreased perimeter
 
 [Term]
 id: PATO:0001906
@@ -25575,6 +26045,11 @@ is_a: PATO:0002269 ! accumulation
 id: PATO:0002271
 name: decreased accumulation
 is_a: PATO:0002269 ! accumulation
+
+[Term]
+id: PATO:0002292
+name: transient
+is_a: PATO:0000141 ! structure
 
 [Term]
 id: PATO:0002299

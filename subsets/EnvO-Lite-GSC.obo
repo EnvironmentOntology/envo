@@ -74,6 +74,7 @@ xref: TGN:21100
 xref: TGN:21101
 xref: Wikipedia:Water_body
 is_a: ENVO:00000000 ! geographic feature
+relationship: part_of ENVO:01000819 ! hydrosphere
 
 [Term]
 id: ENVO:00000113
@@ -149,7 +150,7 @@ xref: Geonames:T.RKS
 xref: SWEETRealm:Rock
 xref: TGN:21444
 xref: Wikipedia:Rock
-is_a: ENVO:00010483 ! environmental material
+is_a: ENVO:01000814 ! solid environmental material
 disjoint_from: ENVO:01000256 ! mineral material
 
 [Term]
@@ -212,7 +213,7 @@ xref: EcoLexicon:air
 xref: LTER:18
 xref: SWEETRealm:Air
 xref: Wikipedia:Air
-is_a: ENVO:00010483 ! environmental material
+is_a: ENVO:01000797 ! gaseous environmental material
 relationship: has_part ENVO:01000266 ! water vapour
 
 [Term]
@@ -223,7 +224,7 @@ def: "An environmental material primarily composed of dihydrogen oxide in its li
 xref: EcoLexicon:water
 xref: LTER:617
 xref: Wikipedia:Water
-is_a: ENVO:00010483 ! environmental material
+is_a: ENVO:01000815 ! liquid environmental material
 
 [Term]
 id: ENVO:00002007
@@ -449,7 +450,7 @@ namespace: ENVO
 def: "A mineral material is an environmental material which is primarily composed of some substance that is naturally occurring, solid and stable at room temperature, representable by a chemical formula, usually abiogenic, and that has an ordered atomic structure." [Wikipedia:Mineral]
 comment: Look for "mineral" in a chemical or geochemical ontology to formalise the composed primarily of link.\nFrom Wikipedia: [A mineral] is different from a rock, which can be an aggregate of minerals or non-minerals and does not have a specific chemical composition. The exact definition of a mineral is under debate, especially with respect to the requirement a valid species be abiogenic, and to a lesser extent with regards to it having an ordered atomic structure.
 xref: LTER:341
-is_a: ENVO:00010483 ! environmental material
+is_a: ENVO:01000814 ! solid environmental material
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2013-10-05T12:37:41Z
 
@@ -462,7 +463,7 @@ comment: Perhaps a better relation between water vapour and water can be found i
 synonym: "aqueous vapor" EXACT [Wikipedia:Water_vapor]
 synonym: "aqueous vapour" EXACT [Wikipedia:Water_vapor]
 synonym: "water vapor" EXACT [Wikipedia:Water_vapor]
-is_a: ENVO:00010483 ! environmental material
+is_a: ENVO:01000797 ! gaseous environmental material
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2013-10-10T07:58:18Z
 
@@ -478,6 +479,57 @@ name: lotic water body
 namespace: ENVO
 def: "A lotic water body is a water body in which the accumulated water, in its totality, is flowing." []
 is_a: ENVO:00000063 ! water body
+
+[Term]
+id: ENVO:01000797
+name: gaseous environmental material
+namespace: ENVO
+def: "A material entity which is composed of one or more chemical entities and has neither independent shape nor volume but tends to expand indefinitely." [http://www.merriam-webster.com/dictionary/gas]
+synonym: "gas" NARROW []
+is_a: ENVO:00010483 ! environmental material
+property_value: IAO:0000116 "This class is to be populated by inference." xsd:string
+
+[Term]
+id: ENVO:01000799
+name: astronomical body
+namespace: ENVO
+def: "An object which is naturally occuring, bound together by gravitational or electromagnetic forces, and surrounded by space." [https://en.wikipedia.org/wiki/Astronomical_object]
+comment: Astronomical bodies are usually cohesive, thus the use of the term 'object' sensu BFO 'object'.
+synonym: "celestial body" RELATED []
+is_a: ENVO:00002297 ! environmental feature
+
+[Term]
+id: ENVO:01000813
+name: astronomical body part
+namespace: ENVO
+def: "A material part of an astronomical body." []
+is_a: ENVO:00002297 ! environmental feature
+relationship: part_of ENVO:01000799 ! astronomical body
+
+[Term]
+id: ENVO:01000814
+name: solid environmental material
+namespace: ENVO
+def: "An environmental material which is in a gaseous state." []
+comment: This is a defined class: its subclasses will not be asserted, but filled by inference.
+is_a: ENVO:00010483 ! environmental material
+
+[Term]
+id: ENVO:01000815
+name: liquid environmental material
+namespace: ENVO
+def: "An environmental material which is in a liquid state." []
+comment: This is a defined class: its subclasses will not be asserted, but filled by inference.
+is_a: ENVO:00010483 ! environmental material
+
+[Term]
+id: ENVO:01000819
+name: hydrosphere
+namespace: ENVO
+def: "An astronomical body part which is composed of the combined mass of water found on, under, and over the surface of a planet." [https://en.wikipedia.org/wiki/Hydrosphere]
+comment: This is a very broad and, in practice, poorly defined term. Please consider using or requesting a more specific class.
+is_a: ENVO:01000813 ! astronomical body part
+relationship: composed_primarily_of ENVO:00002006 ! water
 
 [Term]
 id: ENVO:02000006
