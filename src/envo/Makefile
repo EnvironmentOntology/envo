@@ -26,7 +26,7 @@ full_test: test envo.check-obo subsets/EnvO-Lite-GSC.check-obo
 test_python:
 	python3 --version
 
-build: envo.owl envo.obo subsets/envo-basic.obo subsets/EnvO-Lite-GSC.obo 
+build: all_modules all_imports envo.owl envo.obo subsets/envo-basic.obo subsets/EnvO-Lite-GSC.obo 
 
 prepare_release: build  copy-release
 
@@ -216,8 +216,8 @@ all_modules: all_modules_owl all_modules_obo
 all_modules_owl: $(ALL_MODS_OWL)
 all_modules_obo: $(patsubst %, modules/%.obo, $(MODS))
 
-modules/%.owl: modules/%.tsv patterns/%.yaml curie_map.yaml
-	apply-pattern.py -P curie_map.yaml -b http://purl.obolibrary.org/obo/ -i $< -p patterns/$*.yaml  > modules/$*-orig.owl && owltools modules/$*-orig.owl --set-ontology-id $(OBO)/envo/modules/$*.owl -o $@
+modules/%.owl: modules/%.csv patterns/%.yaml curie_map.yaml
+	apply-pattern.py -P curie_map.yaml -b http://purl.obolibrary.org/obo/ -i $< -p patterns/$*.yaml  > modules/$*.omn && owltools modules/$*.omn --set-ontology-id $(OBO)/envo/modules/$*.owl -o $@
 
 modules/%.obo: modules/%.owl
 	owltools $< -o -f obo $@.tmp && grep -v ^owl-axioms $@.tmp > $@
