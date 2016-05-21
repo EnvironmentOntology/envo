@@ -225,7 +225,7 @@ modules/%.obo: modules/%.owl
 
 
 envo-edit.csv: envo-edit.owl
-	owltools $(USECAT) $< --merge-support-ontologies --export-table $@.tmp && cut -f1 $@.tmp > $@
+	owltools $(USECAT) $< --merge-support-ontologies --export-table $@.tmp && cut -f1 $@.tmp | grep ENVO_ | perl -npe 's@https@http@' > $@
 
 fill: envo-edit.csv
 	fill-col1-ids.pl $(MODS_CSV) $<
