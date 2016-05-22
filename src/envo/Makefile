@@ -8,7 +8,7 @@
 
 OBO=http://purl.obolibrary.org/obo
 USECAT= --catalog-xml catalog-v001.xml
-MODS = entity_attribute_location entity_quality_location entity_attribute
+MODS = entity_attribute_location entity_quality_location entity_attribute process_attribute
 ALL_MODS_OWL = $(patsubst %, modules/%.owl, $(MODS))
 ALL_MODS_CSV = $(patsubst %, modules/%.csv, $(MODS))
 ROBOT= robot
@@ -228,7 +228,7 @@ envo-edit.csv: envo-edit.owl
 	owltools $(USECAT) $< --merge-support-ontologies --export-table $@.tmp && cut -f1 $@.tmp | grep ENVO_ | perl -npe 's@https@http@' > $@
 
 fill: envo-edit.csv
-	fill-col1-ids.pl $(MODS_CSV) $<
+	fill-col1-ids.pl --min 9000000 -m 10000000  $(ALL_MODS_CSV) $<
 
 # meta
 
