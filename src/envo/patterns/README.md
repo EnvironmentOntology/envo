@@ -8,6 +8,6 @@ Consult each yaml file for details on the specific pattern.
 
 # Implementation
 
-The design patterns act as templates, with template values coming from the TSVs in the [src/ontology/modules](../modules) directory. [pattern2owl](https://github.com/cmungall/pattern2owl) is used to translate the TSVs to OWL. See the [Makefile](../Makefile) for more details
+The design patterns act as templates, with template values coming from the CSVs in the [src/ontology/modules](../modules) directory. [pattern2owl](https://github.com/cmungall/pattern2owl) is used to translate the CSVs to OWL. See the [Makefile](../Makefile) for more details
 
 

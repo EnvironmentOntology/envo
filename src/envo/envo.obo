@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: releases/2016-05-17
+data-version: releases/2016-05-21
 subsetdef: disposition_slim "Disposition slim"
 subsetdef: environmental_hazards "environmental_hazards"
 subsetdef: EnvO-Lite-GSC "EnvO-Lite-GSC"
@@ -16,7 +16,7 @@ remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo
 remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/imports/chebi_import.owl>))) [Axioms: 2279 Logical Axioms: 965]
 remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/imports/imports/ncbitaxon_import.owl>))) [Axioms: 261 Logical Axioms: 56]
 remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/imports/imports/po_import.owl>))) [Axioms: 94 Logical Axioms: 9]
-remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/imports/pato_import.owl>))) [Axioms: 679 Logical Axioms: 257]
+remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/imports/pato_import.owl>))) [Axioms: 693 Logical Axioms: 263]
 remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/imports/pco_bfo_bridge.owl>))) [Axioms: 3 Logical Axioms: 1]
 remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/imports/pco_import.owl>))) [Axioms: 21 Logical Axioms: 3]
 remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/imports/uberon_import.owl>))) [Axioms: 25196 Logical Axioms: 4846]
@@ -9583,7 +9583,7 @@ xref: SWEETRealm:Strait
 xref: TGN:21132
 xref: Wikipedia:Strait
 is_a: ENVO:00000395 ! channel
-relationship: RO:0002176 ENVO:00000063 ! water body
+relationship: connects ENVO:00000063 ! water body
 
 [Term]
 id: ENVO:00000395
@@ -10522,7 +10522,7 @@ xref: EcoLexicon:polynya
 xref: SWEETRealm:Polynya
 xref: Wikipedia:Polynya
 is_a: ENVO:01000617 ! lentic water body
-relationship: RO:0002219 ENVO:01000293 ! ice mass
+relationship: surrounded_by ENVO:01000293 ! ice mass
 
 [Term]
 id: ENVO:00000485
@@ -17473,7 +17473,7 @@ def: "An accumulation of organic matter that has fallen to the bottom of a body 
 is_a: ENVO:01000549 ! mass of biological material
 relationship: adjacent_to ENVO:00000501 ! bed
 relationship: located_in ENVO:00000063 ! water body
-relationship: RO:0002219 ENVO:00002006 ! water
+relationship: surrounded_by ENVO:00002006 ! water
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2010-03-20T06:25:30Z
 
@@ -17492,7 +17492,7 @@ def: "The carcass of an animal that has fallen to the bottom of a body of water.
 is_a: ENVO:00002033 ! carcass
 relationship: adjacent_to ENVO:00000501 ! bed
 relationship: located_in ENVO:00000063 ! water body
-relationship: RO:0002219 ENVO:00002006 ! water
+relationship: surrounded_by ENVO:00002006 ! water
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2010-03-20T06:26:07Z
 
@@ -18324,8 +18324,9 @@ def: "Lava is magma which has extruded beyond a planetary crust." [Adapted from 
 comment: Some use 'lava' to refer to rock that is formed when lava cools. This is not the intended meaning of this class. See 'igneous rock' or similar.
 xref: EcoLexicon:lava
 xref: SWEETRealm:Lava
-is_a: ENVO:00010483 ! environmental material
+is_a: ENVO:01000815 ! liquid environmental material
 relationship: has_quality PATO:0001305 ! increased temperature
+relationship: has_quality PATO:0001548 ! quality of a liquid
 created_by: PLB
 creation_date: 2013-05-05T16:52:47Z
 
@@ -19029,8 +19030,8 @@ name: endolithic environment
 def: "An endolithic environment is an environment that exists within solid rock. " []
 is_a: ENVO:01000254 ! environmental system
 intersection_of: ENVO:01000254 ! environmental system
-intersection_of: RO:0002219 ENVO:00001995 ! rock
-relationship: RO:0002219 ENVO:00001995 ! rock
+intersection_of: surrounded_by ENVO:00001995 ! rock
+relationship: surrounded_by ENVO:00001995 ! rock
 
 [Term]
 id: ENVO:01000304
@@ -21381,7 +21382,7 @@ is_a: ENVO:01000587 ! piece of furniture
 id: ENVO:01000587
 name: piece of furniture
 def: "A piece of furniture is a movable object intended to support various human activities such as seating (e.g., chairs, stools and sofas) and sleeping (e.g., beds)." [Adapted from Wikipedia:Furniture]
-comment: The assumption is that furniture is manufactured, which is arguable. Further, according to Black's Law Dictionary (http://thelawdictionary.org/furniture/) many classes can be subclasses of 'piece of furntiure': "This term includes that which furnishes, or with which anything is furnished or supplied; whatever must be supplied to a house, a room, or the like, to make it habitable, convenient, or agreeable; goods, vessels, utensils, and other appendages necessary or convenient for housekeeping; whatever is added to the interior of a house or apartment, for use or convenience. Bell v. Holding, 27 Ind. 173.The term “furniture�? embraces everything about the house that has been usually enjoyed there, including plate, linen, china, and pictures. 1 Endicott v. Endicott, 41N. J. Eq. 96, 3 Atl. 157.The word “furniture�? made use of in the disposition of the law. or in the conventions or acts of persons, comprehends only such furniture as is intended for use and ornament of apartments, but not libraries which happen to be there, nor plate. Civ.Code La. art. 477." However, this would eventually be absurd and limit other groupings. Perhaps some sort of 'furnishing' BFO:function would be a better way to handle this.
+comment: The assumption is that furniture is manufactured, which is arguable. Further, according to Black's Law Dictionary (http://thelawdictionary.org/furniture/) many classes can be subclasses of 'piece of furntiure': "This term includes that which furnishes, or with which anything is furnished or supplied; whatever must be supplied to a house, a room, or the like, to make it habitable, convenient, or agreeable; goods, vessels, utensils, and other appendages necessary or convenient for housekeeping; whatever is added to the interior of a house or apartment, for use or convenience. Bell v. Holding, 27 Ind. 173.The term “furniture” embraces everything about the house that has been usually enjoyed there, including plate, linen, china, and pictures. 1 Endicott v. Endicott, 41N. J. Eq. 96, 3 Atl. 157.The word “furniture” made use of in the disposition of the law. or in the conventions or acts of persons, comprehends only such furniture as is intended for use and ornament of apartments, but not libraries which happen to be there, nor plate. Civ.Code La. art. 477." However, this would eventually be absurd and limit other groupings. Perhaps some sort of 'furnishing' BFO:function would be a better way to handle this.
 is_a: ENVO:00003074 ! manufactured product
 
 [Term]
@@ -22637,10 +22638,10 @@ is_a: ENVO:01000757 ! fruit
 id: ENVO:01000760
 name: cloud
 def: "A cloud is a visible mass of aerosolised liquid droplets or frozen crystals suspended in an atmosphere above the surface of a planetary body. On Earth clouds are formed by the saturation of air in the homosphere when air cools or gains water vapor." [https://en.wikipedia.org/wiki/Cloud]
-comment: Note that this class describes clouds as countable objects, rather than 'cloud material'.
+comment: Note that this class describes clouds as countable objects, rather than 'cloud material'. It also refers to water-based clouds.
 synonym: "cloud mass" EXACT []
 is_a: ENVO:01000755 ! aeroform
-relationship: composed_primarily_of ENVO:01000835 ! cloud droplet
+relationship: composed_primarily_of ENVO:01000836 ! water-based cloud droplet
 
 [Term]
 id: ENVO:01000761
@@ -22854,7 +22855,7 @@ id: ENVO:01000786
 name: fire
 def: "A fire is a process whereby rapid and exothermic oxidation of a material through a combustion process releases heat, light, and other products." [http://www.eionet.europa.eu/gemet/concept?cp=3212, https://en.wikipedia.org/wiki/Fire]
 comment: Not to be confused with a flame - the visible portion of gas released by a fire . Oxidation processes such as rusting or biological digestion are not subsumed here.
-is_a: ENVO:02500000 ! environmental system process
+is_a: ENVO:01000839 ! combustion process
 
 [Term]
 id: ENVO:01000787
@@ -23247,6 +23248,117 @@ id: ENVO:01000837
 name: virga
 synonym: "A process in which precipitation falls from a cloud but evaporates or sublimes before making contact with a planetary surface." BROAD [https://en.wikipedia.org/wiki/Rain]
 is_a: ENVO:01000703 ! hydrological precipitation process
+
+[Term]
+id: ENVO:01000838
+name: smoke
+comment: Smoke is a collection of airborne solid and liquid particulates and gases emitted when a material undergoes combustion or pyrolysis, together with the quantity of gas that is entrained or otherwise mixed into the mass {xref="https://en.wikipedia.org/wiki/Smoke"}
+is_a: ENVO:00010483 ! environmental material
+relationship: formed_as_result_of ENVO:01000839 ! combustion process
+relationship: has_part ENVO:01000060 ! particulate matter
+relationship: has_part ENVO:01000797 ! gaseous environmental material
+relationship: has_quality PATO:0001332 ! amorphous
+
+[Term]
+id: ENVO:01000839
+name: combustion process
+def: "Combustion or burning is a high-temperature exothermic redox chemical reaction between a fuel and an oxidant that produces oxidized, often gaseous products, in a mixture termed as smoke." [https://en.wikipedia.org/wiki/Combustion]
+comment: Unlike the "combustion" class in the Chemical Methods Ontology, this class is not necessarily a planned process. http://purl.obolibrary.org/obo/CHMO_0001473
+is_a: ENVO:01000840 ! thermolysis
+relationship: has_output ENVO:01000838 ! smoke
+
+[Term]
+id: ENVO:01000840
+name: thermolysis
+is_a: ENVO:02500000 ! environmental system process
+
+[Term]
+id: ENVO:01000841
+name: pyrolysis
+def: "A thermolysis process in which organic material is decomposed in the absence of oxygen." []
+is_a: ENVO:01000840 ! thermolysis
+relationship: has_output ENVO:01000838 ! smoke
+relationship: has_participant ENVO:01000155 ! organic material
+
+[Term]
+id: ENVO:01000842
+name: smog
+def: "A fog which is intermixed with smoke or other combustion products and their derivatives." []
+is_a: ENVO:00010483 ! environmental material
+relationship: has_quality PATO:0001332 ! amorphous
+relationship: has_role CHEBI:78298 ! environmental contaminant
+
+[Term]
+id: ENVO:01000844
+name: fog
+def: "A visible mass of cloud water droplets or ice crystals suspended in the air at or near a planetary surface." [https://en.wikipedia.org/wiki/Fog]
+comment: This class refers only to fog formed by materials primarily composed of water. "Fog can be considered a type of low-lying cloud and is heavily influenced by nearby bodies of water, topography, and wind conditions. In turn, fog has affected many human activities, such as shipping, travel, and warfare." https://en.wikipedia.org/wiki/Fog
+is_a: ENVO:00010483 ! environmental material
+relationship: has_quality PATO:0001332 ! amorphous
+
+[Term]
+id: ENVO:01000845
+name: crystal
+def: "A solid material whose constituents, such as atoms, molecules or ions, are arranged in a highly ordered microscopic structure, forming a crystal lattice that extends in all directions." [https://en.wikipedia.org/wiki/Crystal]
+comment: This class refers to a portion of crystal and not an individual crystal.
+is_a: ENVO:01000814 ! solid environmental material
+relationship: has_quality PATO:0001411 ! structured
+relationship: has_quality PATO:0001546 ! quality of a solid
+
+[Term]
+id: ENVO:01000846
+name: water ice crystal
+def: "A crystal which is primarily composed of water ice." []
+synonym: "ice crystal" BROAD []
+is_a: ENVO:01000845 ! crystal
+relationship: composed_primarily_of ENVO:01000277 ! water ice
+
+[Term]
+id: ENVO:01000847
+name: hair ice
+def: "A type of water ice that forms on dead wood with the assistance of the fungus Exidiopsis effusa and takes the shape of fine, silky hair." [https://en.wikipedia.org/wiki/Hair_ice]
+synonym: "frost beard" EXACT []
+synonym: "ice wool" EXACT []
+is_a: ENVO:01000277 ! water ice
+relationship: located_in ENVO:01000197 ! broadleaf forest biome
+
+[Term]
+id: ENVO:01000848
+name: flower strip
+def: "A vegetated area which includes a community of flowering plants that provide food for local pollinators." [http://dx.doi.org/10.1111/1365-2664.12605]
+comment: Flower strips are often the last refuge organsims whose habitats have been replaced by croplands, urban areas, and othe anthropogenic environments. This has considerable consequences for pollination and other ecosystem services. {xref="https://jappliedecologyblog.wordpress.com/2016/02/09/flower-strips-support-ecosystem-services-only-when-they-have-the-right-flowers/?platform=hootsuite"}
+is_a: ENVO:01001305 ! vegetated area
+property_value: IAO:0000116 "This may or may not be an anthropogenic environment, but its boundaries are maintained by human activity." xsd:string
+
+[Term]
+id: ENVO:01000849
+name: 'flower-rich field margin strip'
+def: "A flower strip which is present at the margins of cultivated fields." [http://dx.doi.org/10.1111/1365-2664.12605]
+comment: Flower strips are often the last refuge organsims whose habitats have been replaced by croplands, urban areas, and othe anthropogenic environments. This has considerable consequences for pollination and other ecosystem services. {xref="https://jappliedecologyblog.wordpress.com/2016/02/09/flower-strips-support-ecosystem-services-only-when-they-have-the-right-flowers/?platform=hootsuite"}
+is_a: ENVO:01000848 ! flower strip
+relationship: adjacent_to ENVO:00000114 ! agricultural field
+
+[Term]
+id: ENVO:01000850
+name: clathrate material
+def: "A material which is primarily composed of a substance arranged as a lattice which can trap or contain other molecules." [https://en.wikipedia.org/wiki/Clathrate_compound]
+comment: This class is not to be confused with CHEBI's "clathrate". The latter refers to the pure substance, while this class refers to clathrates found in nature.\n"Traditionally, clathrate compounds are polymeric and completely envelop the guest molecule, but in modern usage clathrates also include host-guest complexes and inclusion compounds." https://en.wikipedia.org/wiki/Clathrate_compound
+synonym: "clathrate compound material" EXACT []
+synonym: "clathrate crystal material" EXACT []
+is_a: ENVO:01000845 ! crystal
+property_value: IAO:0000116 "Not sure if this should be a subclass of crystal. If it is removed, remember to assert that it is a solid." xsd:string
+
+[Term]
+id: ENVO:01000851
+name: methane clathrate
+def: "A clathrate material in which a large amount of methane is trapped within a crystal structure of water, forming a solid similar to ice." [https://en.wikipedia.org/wiki/Methane_clathrate]
+synonym: "fire ice" EXACT []
+synonym: "gas hydrate" EXACT []
+synonym: "hydromethane" EXACT []
+synonym: "methane hydrate" EXACT []
+synonym: "methane ice" EXACT []
+synonym: "natural gas hydrate" EXACT []
+is_a: ENVO:01000850 ! clathrate material
 
 [Term]
 id: ENVO:01001303
@@ -24105,9 +24217,9 @@ comment: Relabel the obo foundry unique label to be generic process
 is_a: ENVO:02500027 ! anthropogenic environmental process
 intersection_of: ENVO:02500000 ! environmental system process
 intersection_of: has_active_participant NCBITaxon:9606 ! Homo sapiens
-intersection_of: RO:0002211 ENVO:02500000 ! environmental system process
+intersection_of: regulates_(processual) ENVO:02500000 ! environmental system process
 relationship: has_active_participant NCBITaxon:9606 ! Homo sapiens
-relationship: RO:0002211 ENVO:02500000 ! environmental system process
+relationship: regulates_(processual) ENVO:02500000 ! environmental system process
 
 [Term]
 id: ENVO:02500027
@@ -24226,8 +24338,8 @@ name: pollution control
 synonym: "pollution prevention" NARROW []
 is_a: ENVO:02500026 ! anthropogenic modulatory intervention process
 intersection_of: ENVO:02500026 ! anthropogenic modulatory intervention process
-intersection_of: RO:0002211 ENVO:02500036 ! environmental pollution
-relationship: RO:0002211 ENVO:02500036 ! environmental pollution
+intersection_of: regulates_(processual) ENVO:02500036 ! environmental pollution
+relationship: regulates_(processual) ENVO:02500036 ! environmental pollution
 
 [Term]
 id: ENVO:02500043
@@ -25302,6 +25414,12 @@ name: porosity
 is_a: PATO:0000970 ! permeability
 
 [Term]
+id: PATO:0000982
+name: permeable
+is_a: PATO:0000970 ! permeability
+disjoint_from: PATO:0000983 ! impermeable
+
+[Term]
 id: PATO:0000983
 name: impermeable
 is_a: PATO:0000970 ! permeability
@@ -25309,6 +25427,12 @@ is_a: PATO:0000970 ! permeability
 [Term]
 id: PATO:0000984
 name: porous
+is_a: PATO:0000973 ! porosity
+disjoint_from: PATO:0000985 ! non-porous
+
+[Term]
+id: PATO:0000985
+name: non-porous
 is_a: PATO:0000973 ! porosity
 
 [Term]
@@ -25397,6 +25521,16 @@ is_a: PATO:0001709 ! 2-D extent
 id: PATO:0001332
 name: amorphous
 is_a: PATO:0000051 ! morphology
+
+[Term]
+id: PATO:0001411
+name: structured
+is_a: PATO:0000141 ! structure
+
+[Term]
+id: PATO:0001412
+name: unstructured
+is_a: PATO:0000141 ! structure
 
 [Term]
 id: PATO:0001422
@@ -26127,7 +26261,7 @@ id: PCO:0000001
 name: population
 def: "A collection of organisms, all of the same species, that live in the same place." []
 is_a: PCO:0000018 ! collection of organisms of the same species
-relationship: RO:0002303 ENVO:01000739 ! habitat
+relationship: has_habitat ENVO:01000739 ! habitat
 
 [Term]
 id: PCO:0000002
@@ -26167,7 +26301,7 @@ synonym: "suffrutices" NARROW []
 synonym: "tree" NARROW []
 synonym: "vine" NARROW []
 synonym: "woody clump" NARROW []
-synonym: "????? (Japanese)" EXACT []
+synonym: "植物体全体 (Japanese)" EXACT []
 is_a: PO:0009011 ! plant structure
 
 [Term]
@@ -26179,7 +26313,7 @@ synonym: "climbing root" NARROW []
 synonym: "ra&#237z (Spanish)" EXACT []
 synonym: "radices" EXACT []
 synonym: "radix" EXACT []
-synonym: "? (Japanese)" EXACT []
+synonym: "根 (Japanese)" EXACT []
 is_a: PO:0025004 ! plant axis
 
 [Term]
@@ -26190,7 +26324,7 @@ synonym: "&#243rgano vegetal (Spanish)" EXACT []
 synonym: "compound plant organ" RELATED []
 synonym: "organ" BROAD []
 synonym: "simple plant organ" RELATED []
-synonym: "?? ?? (Japanese)" EXACT []
+synonym: "植物 器官 (Japanese)" EXACT []
 is_a: PO:0025496 ! multi-tissue plant structure
 
 [Term]
@@ -26198,7 +26332,7 @@ id: PO:0009011
 name: plant structure
 def: "An anatomical structure that is or was part of a plant, or was derived from a part of a plant." []
 synonym: "estructura vegetal (Spanish)" EXACT []
-synonym: "?? ?? (Japanese)" EXACT []
+synonym: "植物 構造 (Japanese)" EXACT []
 is_a: PO:0025131 ! plant anatomical entity
 
 [Term]
@@ -26207,7 +26341,7 @@ name: plant axis
 def: "An axial plant organ (PO:0009008)." []
 synonym: "eje de la planta (Spanish)" EXACT []
 synonym: "plant axes" EXACT []
-synonym: "??????? (Japanese)" EXACT []
+synonym: "植物軸（軸柱） (Japanese)" EXACT []
 is_a: PO:0009008 ! plant organ
 
 [Term]
@@ -26215,7 +26349,7 @@ id: PO:0025007
 name: collective plant organ structure
 def: "A collective plant structure (PO:0025497) that is a proper part of a whole plant (PO:0000003), and is composed of two or more adjacent plant organs (PO:0009008) and the associated portions of plant tissue (PO:0009007)." []
 synonym: "estructura vegetal colectiva de &#243rgano (Spanish)" EXACT []
-synonym: "???????? (Japanese)" EXACT []
+synonym: "集合植物器官構造 (Japanese)" EXACT []
 is_a: PO:0025497 ! collective plant structure
 
 [Term]
@@ -26224,7 +26358,7 @@ name: root system
 def: "A collective plant organ structure (PO:0025007) that produces root apical meristems (PO:0020147) and the plant structures that arise from them." []
 synonym: "root" BROAD []
 synonym: "sistema de ra&#237z (Spanish)" EXACT []
-synonym: "?? (Japanese)" EXACT []
+synonym: "根系 (Japanese)" EXACT []
 is_a: PO:0025007 ! collective plant organ structure
 
 [Term]
@@ -26232,7 +26366,7 @@ id: PO:0025131
 name: plant anatomical entity
 def: "An anatomical entity that is or was part of a plant." []
 synonym: "entidad anat&#243mica vegetal (Spanish)" EXACT []
-synonym: "?? ?????????? (Japanese)" EXACT []
+synonym: "植物 解剖学（形態）的実体 (Japanese)" EXACT []
 is_a: BFO:0000040 ! material entity
 
 [Term]
@@ -26240,7 +26374,7 @@ id: PO:0025496
 name: multi-tissue plant structure
 def: "A plant structure (PO:0009011) that has as parts two or more portions of plant tissue (PO:0009007) of at least two different types and which through specific morphogenetic processes forms a single structural unit demarcated by primarily bona-fide boundaries from other structural units of different types." []
 synonym: "estructura vegetal con m&#250ltiples tejidos (Spanish)" EXACT []
-synonym: "????????????? (Japanese)" EXACT []
+synonym: "複数の組織からなる植物構造 (Japanese)" EXACT []
 is_a: PO:0009011 ! plant structure
 
 [Term]
@@ -26248,7 +26382,7 @@ id: PO:0025497
 name: collective plant structure
 def: "A plant structure (PO:0009011) that is a proper part of a whole plant (PO:0000003) and includes two or more adjacent plant organs (PO:0009008) or adjacent cardinal organ parts (PO:0025001), along with any associated portions of plant tissue (PO:0009007)." []
 synonym: "estructura vegetal colectiva (Spanish)" EXACT []
-synonym: "??????? (Japanese)" EXACT []
+synonym: "集合的植物構造 (Japanese)" EXACT []
 is_a: PO:0009011 ! plant structure
 
 [Term]
@@ -26465,7 +26599,7 @@ is_a: UBERON:0013703 ! integumentary projection
 [Term]
 id: UBERON:0000022
 name: feather
-def: "one of the epidermal growths that form the distinctive outer covering, or plumage, on birds. Feathers are formed in tiny follicles in the epidermis, or outer skin layer, that produce keratin proteins. The beta-keratins in feathers, beaks and claws � and the claws, scales and shells of reptiles � are composed of protein strands hydrogen-bonded into beta-pleated sheets, which are then further twisted and crosslinked by disulfide bridges into structures even tougher than the ?-keratins of mammalian hair, horns and hoof. The exact signals that induce the growth of feathers on the skin are not known but it has been found that the transcription factor cDermo-1 induces the growth of feathers on skin and scales on the leg." []
+def: "one of the epidermal growths that form the distinctive outer covering, or plumage, on birds. Feathers are formed in tiny follicles in the epidermis, or outer skin layer, that produce keratin proteins. The beta-keratins in feathers, beaks and claws — and the claws, scales and shells of reptiles — are composed of protein strands hydrogen-bonded into beta-pleated sheets, which are then further twisted and crosslinked by disulfide bridges into structures even tougher than the α-keratins of mammalian hair, horns and hoof. The exact signals that induce the growth of feathers on the skin are not known but it has been found that the transcription factor cDermo-1 induces the growth of feathers on skin and scales on the leg." []
 is_a: UBERON:0000021 ! cutaneous appendage
 is_a: UBERON:0004121 ! ectoderm-derived structure
 
@@ -28477,8 +28611,8 @@ synonym: "vesiculae seminales" RELATED []
 synonym: "vesicular gland" RELATED []
 synonym: "vesicular glands" RELATED []
 synonym: "vesicular seminalis" RELATED []
+synonym: "vesiculÃ¦ seminales" RELATED []
 synonym: "vesiculæ seminales" RELATED []
-synonym: "vesicul� seminales" RELATED []
 is_a: UBERON:0006868 ! seminal fluid secreting gland
 
 [Term]
@@ -31325,7 +31459,7 @@ is_a: UBERON:0007521 ! smooth muscle sphincter
 [Term]
 id: UBERON:0001608
 name: dilatator pupillae
-def: "The iris dilator muscle (pupil dilator muscle, pupillary dilator, radial muscle of iris, radiating fibers), is a smooth muscle of the eye, running radially in the iris and therefore fit as a dilator. It is innervated by the sympathetic system, which acts by releasing noradrenaline, which acts on ?1-receptors. Thus, when presented with a threatening stimuli that activates the fight-or-flight response, this innervation dilates the iris, thus temporarily letting more light reach the retina. [WP,unvetted]." []
+def: "The iris dilator muscle (pupil dilator muscle, pupillary dilator, radial muscle of iris, radiating fibers), is a smooth muscle of the eye, running radially in the iris and therefore fit as a dilator. It is innervated by the sympathetic system, which acts by releasing noradrenaline, which acts on α1-receptors. Thus, when presented with a threatening stimuli that activates the fight-or-flight response, this innervation dilates the iris, thus temporarily letting more light reach the retina. [WP,unvetted]." []
 synonym: "dilator muscle of pupil" EXACT []
 synonym: "dilator of pupil" EXACT []
 synonym: "dilator pupillae" EXACT []
@@ -31800,7 +31934,7 @@ synonym: "endothelium corneale" RELATED []
 synonym: "epithelial tissue of cornea" EXACT []
 synonym: "epithelium anterius (cornea)" EXACT []
 synonym: "epithelium anterius corneae" EXACT []
-synonym: "epithelium corne� anterior layer" EXACT []
+synonym: "epithelium corneæ anterior layer" EXACT []
 synonym: "epithelium of cornea" EXACT []
 synonym: "epithelium posterius corneae" RELATED []
 synonym: "external epithelium of cornea" EXACT []
@@ -32965,8 +33099,8 @@ id: UBERON:0001983
 name: crypt of Lieberkuhn
 def: "the tubular intestinal glands found in the mucosal membranes" []
 synonym: "crypt of lieberkuhn" EXACT []
-synonym: "crypt of Lieberk�hn" EXACT []
-synonym: "crypts of Lieberk�hn" EXACT []
+synonym: "crypt of Lieberkühn" EXACT []
+synonym: "crypts of Lieberkühn" EXACT []
 synonym: "follicles of lieberkuhn" EXACT []
 synonym: "intestinal crypt" EXACT []
 synonym: "intestinal crypts" EXACT []
@@ -33035,12 +33169,12 @@ synonym: "fecal matter" EXACT []
 synonym: "fewmet" NARROW []
 synonym: "frass" NARROW []
 synonym: "guano" NARROW []
-synonym: "mati�res f�cales@fr" EXACT []
+synonym: "matières fécales@fr" EXACT []
 synonym: "merde@fr" EXACT []
 synonym: "ordure" RELATED []
 synonym: "partie de la merde@fr" EXACT []
 synonym: "piece of shit" EXACT []
-synonym: "porci�n de mierda@en" EXACT []
+synonym: "porción de mierda@en" EXACT []
 synonym: "portion of dung" NARROW []
 synonym: "portion of excrement" EXACT []
 synonym: "portion of faeces" EXACT []
@@ -33054,7 +33188,7 @@ synonym: "scat" NARROW []
 synonym: "spoor" RELATED []
 synonym: "spraint" NARROW []
 synonym: "stool" EXACT []
-synonym: "teil der f�kalien@de" EXACT []
+synonym: "teil der fäkalien@de" EXACT []
 is_a: UBERON:0000174 ! excreta
 
 [Term]
@@ -34475,7 +34609,7 @@ is_a: UBERON:0002616 ! regional part of brain
 [Term]
 id: UBERON:0002276
 name: lamina of spiral limbus
-def: "The osseous spiral lamina consists of two plates of bone, and between these are the canals for the transmission of the filaments of the acoustic nerve. On the upper plate of that part of the lamina which is outside the vestibular membrane, the periosteum is thickened to form the limbus spiralis (or limbus lamin� spiralis), this ends externally in a concavity, the sulcus spiralis internus, which represents, on section, the form of the letter C. [WP,unvetted]." []
+def: "The osseous spiral lamina consists of two plates of bone, and between these are the canals for the transmission of the filaments of the acoustic nerve. On the upper plate of that part of the lamina which is outside the vestibular membrane, the periosteum is thickened to form the limbus spiralis (or limbus laminæ spiralis), this ends externally in a concavity, the sulcus spiralis internus, which represents, on section, the form of the letter C. [WP,unvetted]." []
 synonym: "limbus lamina spiralis" EXACT []
 synonym: "limbus laminae spiralis" EXACT []
 synonym: "limbus laminae spiralis osseae" EXACT []
@@ -34812,7 +34946,7 @@ is_a: UBERON:0004121 ! ectoderm-derived structure
 [Term]
 id: UBERON:0002329
 name: somite
-def: "Somites are spheres of epithelial cells that form sequentially along the anterior�posterior axis of the embryo through mesenchymal to epithelial transition of the presomitic mesoderm." []
+def: "Somites are spheres of epithelial cells that form sequentially along the anterior–posterior axis of the embryo through mesenchymal to epithelial transition of the presomitic mesoderm." []
 synonym: "epimere" RELATED []
 synonym: "epimere mesoderm" RELATED []
 synonym: "epithelial somite" RELATED []
@@ -40656,7 +40790,7 @@ def: "paired ducts of the embryo that run down the lateral sides of the urogenit
 synonym: "ductus paramesonephricus" EXACT []
 synonym: "early paramesonephric duct" NARROW []
 synonym: "Muellerian duct" EXACT []
-synonym: "M�llerian duct" EXACT []
+synonym: "Müllerian duct" EXACT []
 synonym: "paramesonephric duct" EXACT []
 is_a: UBERON:0000025 ! tube
 is_a: UBERON:0002050 ! embryonic structure
@@ -47903,7 +48037,7 @@ synonym: "DA" EXACT []
 synonym: "dorsal aorta root" RELATED []
 synonym: "dorsal aortae" RELATED []
 synonym: "dorsal aortic root" RELATED []
-synonym: "dorsal aort�" RELATED []
+synonym: "dorsal aortæ" RELATED []
 is_a: UBERON:0000947 ! aorta
 is_a: UBERON:0003513 ! trunk blood vessel
 
@@ -48044,7 +48178,7 @@ id: UBERON:0005884
 name: hyoid arch skeleton
 def: "A subdivision of skeleton that supports pharyngeal arch 2." []
 synonym: "hyal@fr" EXACT []
-synonym: "hyoc�de@fr" EXACT []
+synonym: "hyocïde@fr" EXACT []
 synonym: "hyoid arch" RELATED []
 synonym: "hyoid arch skeleton" EXACT []
 synonym: "hyoid bars" NARROW []
@@ -50955,7 +51089,7 @@ disjoint_from: UBERON:0011156 ! facial skeleton
 id: UBERON:0008904
 name: neuromast
 def: "Volcano-shaped lateral line sensory organ located in characteristic positions within the skin epithelium and containing hair cells and their support elements." []
-synonym: "cyatoc�de@fr" EXACT []
+synonym: "cyatocïde@fr" EXACT []
 synonym: "lateral line neuromast" EXACT []
 synonym: "lateral line organ" BROAD []
 synonym: "neuromast organ" EXACT []
@@ -52462,7 +52596,7 @@ is_a: UBERON:0010359 ! pharyngeal arch mesenchyme from neural crest
 [Term]
 id: UBERON:0010260
 name: umbilical blood vessel
-def: "One of the three blood vessels, usually one large umbilical vein and two small umbilical arteries, buried within Wharton�s jelly, that transport blood to and from the placenta, where exchange between the mother and fetus takes place; the umbilical vein carries oxygenated, nutrient-rich blood from the placenta to the fetus, and the umbilical arteries carry deoxygenated, nutrient-depleted blood from the fetus to the placenta." []
+def: "One of the three blood vessels, usually one large umbilical vein and two small umbilical arteries, buried within Wharton’s jelly, that transport blood to and from the placenta, where exchange between the mother and fetus takes place; the umbilical vein carries oxygenated, nutrient-rich blood from the placenta to the fetus, and the umbilical arteries carry deoxygenated, nutrient-depleted blood from the fetus to the placenta." []
 synonym: "allantoic vessel" EXACT []
 synonym: "umbilical cord blood vessel" EXACT []
 synonym: "umbilical cord blood vessels" RELATED []
@@ -53647,7 +53781,7 @@ is_a: UBERON:0015063 ! autopod endochondral element
 [Term]
 id: UBERON:0011252
 name: scent gland
-def: "Scent glands are exocrine glands found in most mammals. They produce semi-viscous secretions which contain pheromones and other semiochemical compounds. These odor-messengers indicate information such as status, territory marking, mood, and sexual power. The odor may be subliminal�not consciously detectable. Though it is not their primary function, the salivary glands may also function as scent glands in some animals." []
+def: "Scent glands are exocrine glands found in most mammals. They produce semi-viscous secretions which contain pheromones and other semiochemical compounds. These odor-messengers indicate information such as status, territory marking, mood, and sexual power. The odor may be subliminal—not consciously detectable. Though it is not their primary function, the salivary glands may also function as scent glands in some animals." []
 is_a: UBERON:0002365 ! exocrine gland
 
 [Term]
@@ -54836,7 +54970,7 @@ is_a: UBERON:0005156 ! reproductive structure
 [Term]
 id: UBERON:0013228
 name: sweat gland of eyelid
-def: "Glands of Moll, also known as ciliary glands, are modified apocrine sweat glands that are found on the margin of the eyelid. They are next to the base of the eyelashes, and anterior to the Meibomian glands within the distal eyelid margin. These glands are relatively large and tubular-shaped. The glands of Moll are named after Dutch oculist Jacob Anton Moll (1832�1914). Glands of Moll empty into the adjacent lashes. Glands of Moll and Zeis secrete lipid that adds to the superficial layer of the tear film, retarding evaporation. The glands of Moll are prone to infection and blockage of its duct with sebum and cell debris. Blockage of the gland's duct causes swelling which can manifest itself as a stye." []
+def: "Glands of Moll, also known as ciliary glands, are modified apocrine sweat glands that are found on the margin of the eyelid. They are next to the base of the eyelashes, and anterior to the Meibomian glands within the distal eyelid margin. These glands are relatively large and tubular-shaped. The glands of Moll are named after Dutch oculist Jacob Anton Moll (1832–1914). Glands of Moll empty into the adjacent lashes. Glands of Moll and Zeis secrete lipid that adds to the superficial layer of the tear film, retarding evaporation. The glands of Moll are prone to infection and blockage of its duct with sebum and cell debris. Blockage of the gland's duct causes swelling which can manifest itself as a stye." []
 synonym: "ciliary gland" EXACT []
 synonym: "ciliary gland of moll" EXACT []
 synonym: "ciliary sweat gland of eyelid" EXACT []
@@ -54954,7 +55088,7 @@ is_a: UBERON:0001241 ! crypt of Lieberkuhn of small intestine
 [Term]
 id: UBERON:0013485
 name: crypt of Lieberkuhn of colon
-def: "An intestinal crypt that is located in the colon. The colonic crypts of Lieberk�hn are straight and unbranched and lined largely with goblet cells." []
+def: "An intestinal crypt that is located in the colon. The colonic crypts of Lieberkühn are straight and unbranched and lined largely with goblet cells." []
 synonym: "colonic crypt" EXACT []
 synonym: "colonic crypt of lieberkuhn" EXACT []
 is_a: UBERON:0001984 ! crypt of Lieberkuhn of large intestine
@@ -56106,10 +56240,10 @@ is_a: UBERON:0007037 ! mechanosensory system
 id: UBERON:0016491
 name: vertebral centrum element
 def: "Skeletal element that functionally replaces the notochord[VSAP,modified]." []
-synonym: "centre vert�bral@fr" EXACT []
+synonym: "centre vertébral@fr" EXACT []
 synonym: "centrum" BROAD []
 synonym: "centrum of vertebra" EXACT []
-synonym: "p�richorde@fr" EXACT []
+synonym: "périchorde@fr" EXACT []
 is_a: UBERON:0004120 ! mesoderm-derived structure
 is_a: UBERON:0004765 ! skeletal element
 
@@ -57349,22 +57483,6 @@ is_a: UBERON:0004120 ! mesoderm-derived structure
 is_a: UBERON:0010712 ! limb skeleton subdivision
 
 [Typedef]
-id: RO:0002176
-xref: RO:0002176
-
-[Typedef]
-id: RO:0002211
-xref: RO:0002211
-
-[Typedef]
-id: RO:0002219
-xref: RO:0002219
-
-[Typedef]
-id: RO:0002303
-xref: RO:0002303
-
-[Typedef]
 id: acquires_nutrients_from
 name: acquires nutrients from
 subset: ro-eco
@@ -57594,7 +57712,7 @@ property_value: RO:0001900 RO:0001901
 [Typedef]
 id: contains_process
 name: contains process
-def: "[copied from inverse property 'occurs in'] b occurs_in c =def b is a process and c is a material entity or immaterial entity& there exists a spatiotemporal region r and b occupies_spatiotemporal_region r.& forall(t) if b exists_at t then c exists_at t & there exist spatial regions s and s� where & b spatially_projects_onto s at t& c is occupies_spatial_region s� at t& s is a proper_continuant_part_of s� at t" []
+def: "[copied from inverse property 'occurs in'] b occurs_in c =def b is a process and c is a material entity or immaterial entity& there exists a spatiotemporal region r and b occupies_spatiotemporal_region r.& forall(t) if b exists_at t then c exists_at t & there exist spatial regions s and s’ where & b spatially_projects_onto s at t& c is occupies_spatial_region s’ at t& s is a proper_continuant_part_of s’ at t" []
 comment: Paraphrase of definition: a relation between an independent continuant and a process, in which the process takes place entirely within the independent continuant
 xref: BFO:0000067
 property_value: IAO:0000111 "site of" xsd:string
@@ -57854,7 +57972,7 @@ is_a: temporally_related_to ! temporally related to
 [Typedef]
 id: ends_with
 name: ends with
-def: "x ends with y if and only if x has part y and the time point at which x ends is equivalent to the time point at which y ends. Formally: ?(y) > ?(x) ? ?(y) = ?(x), where ? is a function that maps a process to a start point, and ? is a function that maps a process to an end point." []
+def: "x ends with y if and only if x has part y and the time point at which x ends is equivalent to the time point at which y ends. Formally: α(y) > α(x) ∧ ω(y) = ω(x), where α is a function that maps a process to a start point, and ω is a function that maps a process to an end point." []
 subset: ro-eco
 xref: RO:0002230
 property_value: IAO:0000114 IAO:0000125
@@ -58279,7 +58397,7 @@ property_value: RO:0001900 RO:0001901
 [Typedef]
 id: occurs_in
 name: occurs in
-def: "b occurs_in c =def b is a process and c is a material entity or immaterial entity& there exists a spatiotemporal region r and b occupies_spatiotemporal_region r.& forall(t) if b exists_at t then c exists_at t & there exist spatial regions s and s� where & b spatially_projects_onto s at t& c is occupies_spatial_region s� at t& s is a proper_continuant_part_of s� at t" []
+def: "b occurs_in c =def b is a process and c is a material entity or immaterial entity& there exists a spatiotemporal region r and b occupies_spatiotemporal_region r.& forall(t) if b exists_at t then c exists_at t & there exist spatial regions s and s’ where & b spatially_projects_onto s at t& c is occupies_spatial_region s’ at t& s is a proper_continuant_part_of s’ at t" []
 comment: Paraphrase of definition: a relation between a process and an independent continuant, in which the process takes place entirely within the independent continuant
 xref: BFO:0000066
 property_value: IAO:0000111 "occurs in" xsd:string
@@ -58394,7 +58512,7 @@ is_a: biotically_interacts_with ! biotically interacts with
 [Typedef]
 id: preceded_by
 name: preceded by
-def: "x is preceded by y if and only if the time point at which y ends is before or equivalent to the time point at which x starts. Formally: x preceded by y iff ?(y) <= ?(x), where ? is a function that maps a process to a start point, and ? is a function that maps a process to an end point." []
+def: "x is preceded by y if and only if the time point at which y ends is before or equivalent to the time point at which x starts. Formally: x preceded by y iff ω(y) <= α(x), where α is a function that maps a process to a start point, and ω is a function that maps a process to an end point." []
 subset: ro-eco
 xref: BFO:0000062
 property_value: http://purl.org/dc/elements/1.1/source http://www.obofoundry.org/ro/#OBO_REL:preceded_by xsd:string
@@ -58414,7 +58532,7 @@ inverse_of: precedes ! precedes
 [Typedef]
 id: precedes
 name: precedes
-def: "x precedes y if and only if the time point at which x ends is before or equivalent to the time point at which y starts. Formally: x precedes y iff ?(x) <= ?(y), where ? is a function that maps a process to a start point, and ? is a function that maps a process to an end point." []
+def: "x precedes y if and only if the time point at which x ends is before or equivalent to the time point at which y starts. Formally: x precedes y iff ω(x) <= α(y), where α is a function that maps a process to a start point, and ω is a function that maps a process to an end point." []
 subset: ro-eco
 xref: BFO:0000063
 property_value: IAO:0000111 "precedes" xsd:string
@@ -58500,6 +58618,11 @@ property_value: isDefinedBy http://purl.obolibrary.org/obo/iao.owl
 domain: BFO:0000015 ! process
 range: BFO:0000017 ! realizable entity
 inverse_of: realized_in ! realized in
+
+[Typedef]
+id: regulates_(processual)
+name: regulates (processual)
+xref: RO:0002211
 
 [Typedef]
 id: related_via_dependence_to
@@ -58609,7 +58732,7 @@ is_a: temporally_related_to ! temporally related to
 [Typedef]
 id: starts_with
 name: starts with
-def: "x starts with y if and only if x has part y and the time point at which x starts is equivalent to the time point at which y starts. Formally: ?(y) = ?(x) ? ?(y) < ?(x), where ? is a function that maps a process to a start point, and ? is a function that maps a process to an end point." []
+def: "x starts with y if and only if x has part y and the time point at which x starts is equivalent to the time point at which y starts. Formally: α(y) = α(x) ∧ ω(y) < ω(x), where α is a function that maps a process to a start point, and ω is a function that maps a process to an end point." []
 subset: ro-eco
 xref: RO:0002224
 property_value: IAO:0000112 "Every insulin receptor signaling pathway starts with the binding of a ligand to the insulin receptor" xsd:string
@@ -58620,6 +58743,11 @@ is_transitive: true
 is_a: has_part ! has part
 is_a: temporally_related_to ! temporally related to
 inverse_of: starts ! starts
+
+[Typedef]
+id: surrounded_by
+name: surrounded by
+xref: RO:0002219
 
 [Typedef]
 id: temporally_related_to
