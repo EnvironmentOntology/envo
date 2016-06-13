@@ -1,9 +1,13 @@
-matrix:
-  include:
-    - language: java
-      jdk: "oraclejdk8"
-    - language: python
-      python: "3.4"
+sudo: true
+language: python
+python:
+  - "3.4"
+
+## http://superuser.com/questions/993718/can-i-install-java-8-on-travis-ci-for-a-python-project
+addons:
+  apt:
+    packages:
+      - oracle-java8-installer
 
 install:
   - "pip install pyyaml"
@@ -20,10 +24,6 @@ before_script:
   - wget https://raw.githubusercontent.com/cmungall/pattern2owl/master/apply-pattern.py -O bin/apply-pattern.py
   - chmod +x bin/*
 
-before_install:
-  - sudo apt-get update
-  - sudo apt-get install oracle-java8-installer
-  - sudo update-java-alternatives -s java-8-oracle   
    
    
 # command to run tests
