@@ -20,6 +20,12 @@ before_script:
   - wget https://raw.githubusercontent.com/cmungall/pattern2owl/master/apply-pattern.py -O bin/apply-pattern.py
   - chmod +x bin/*
 
+before_install:
+  - sudo apt-get update
+  - sudo apt-get install oracle-java8-installer
+  - sudo update-java-alternatives -s java-8-oracle   
+   
+   
 # command to run tests
 script: cd src/envo && make travis_test
 
