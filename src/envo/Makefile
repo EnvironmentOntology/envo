@@ -110,8 +110,14 @@ imports/%_import.obo: imports/%_import.owl
 
 # RO: Use ROBOT, driven entirely by terms lists NOT from source ontology
 imports/ro_import.owl: mirror/ro.owl imports/ro_terms.txt
-	$(ROBOT) extract -i $< -T imports/ro_terms.txt --method BOT -O $(SDG_IMPORTS_BASE_URI)/$@ -o $@
+	$(ROBOT) extract -i $< -T imports/ro_terms.txt --method BOT -O $(ENVO_IMPORTS_BASE_URI)/$@ -o $@
 .PRECIOUS: imports/%_import.owl
+
+# GO: Use ROBOT, driven entirely by terms lists NOT from source ontology
+imports/go_import.owl: mirror/go.owl imports/go_terms.txt
+	$(ROBOT) extract -i $< -T imports/go_terms.txt --method BOT -O $(ENVO_IMPORTS_BASE_URI)/$@ -o $@
+.PRECIOUS: imports/%_import.owl
+
 
 # clone remote ontology locally, perfoming some excision of relations and annotations
 mirror/%.owl: envo-edit.owl
@@ -146,6 +152,10 @@ mirror/uberon.owl: envo-edit.owl
 
 mirror/po.owl: envo-edit.owl
 	owltools $(OBO)/po.owl --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/po.owl -o $@
+.PRECIOUS: mirror/%.owl
+
+mirror/go.owl: envo-edit.owl
+	owltools $(OBO)/go.owl --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/go.owl -o $@
 .PRECIOUS: mirror/%.owl
 
 ncbitaxon.obo:
