@@ -1,0 +1,29 @@
+## https://github.com/EnvironmentOntology/envo/issues/
+pattern_name: envo/patterns/mine
+
+classes: 
+  material extraction process: ENVO:01000785
+  mine: ENVO:00000076
+
+relations:
+  has output: RO:0002234 
+  capable of: RO:0002215
+
+vars: 
+  output: "'material entity'"
+
+name: 
+  text: "%s mine"
+  vars: 
+    - output
+
+def: 
+  text: "A mine that produces %s through a material extraction process."
+  vars:
+    - output
+
+equivalentTo: 
+  text: "'mine' that ('capable of' some 'material extraction process' and 'has output' some %s)"
+
+  vars:
+    - source
