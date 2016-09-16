@@ -1,0 +1,28 @@
+## https://github.com/EnvironmentOntology/envo/issues/378
+pattern_name: envo/patterns/ore
+
+classes: 
+  ore: ENVO:02000094
+  molecular entity: CHEBI:23367
+
+relations:
+  hap part: BFO:0000051
+
+vars: 
+  component: "'molecular entity'"
+
+name: 
+  text: "%s ore"
+  vars: 
+    - component
+
+def: 
+  text: "A ore that has %s as its primary mineral component."
+  vars:
+    - component
+
+equivalentTo: 
+  text: "'ore' that ('has part' some %s)"
+
+  vars:
+    - component
