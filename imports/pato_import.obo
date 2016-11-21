@@ -1,6 +1,6 @@
 format-version: 1.2
 ontology: envo/imports/pato_import
-property_value: http://purl.org/dc/elements/1.1/source http://purl.obolibrary.org/obo/pato/releases/2015-11-18/pato.owl
+property_value: http://purl.org/dc/elements/1.1/source http://purl.obolibrary.org/obo/pato/releases/2016-09-15/pato.owl
 
 [Term]
 id: PATO:0000001
@@ -69,6 +69,11 @@ is_a: PATO:0000001 ! quality
 [Term]
 id: PATO:0000069
 name: deviation(from_normal)
+is_a: PATO:0000068 ! qualitative
+
+[Term]
+id: PATO:0000070
+name: amount
 is_a: PATO:0000068 ! qualitative
 
 [Term]
@@ -215,6 +220,12 @@ is_a: PATO:0000586 ! increased size
 is_a: PATO:0000918 ! volume
 
 [Term]
+id: PATO:0000596
+name: decreased volume
+is_a: PATO:0000587 ! decreased size
+is_a: PATO:0000918 ! volume
+
+[Term]
 id: PATO:0000608
 name: closed
 is_a: PATO:0000136 ! closure
@@ -278,6 +289,12 @@ name: porosity
 is_a: PATO:0000970 ! permeability
 
 [Term]
+id: PATO:0000982
+name: permeable
+is_a: PATO:0000970 ! permeability
+disjoint_from: PATO:0000983 ! impermeable
+
+[Term]
 id: PATO:0000983
 name: impermeable
 is_a: PATO:0000970 ! permeability
@@ -285,6 +302,12 @@ is_a: PATO:0000970 ! permeability
 [Term]
 id: PATO:0000984
 name: porous
+is_a: PATO:0000973 ! porosity
+disjoint_from: PATO:0000985 ! non-porous
+
+[Term]
+id: PATO:0000985
+name: non-porous
 is_a: PATO:0000973 ! porosity
 
 [Term]
@@ -375,6 +398,16 @@ name: amorphous
 is_a: PATO:0000051 ! morphology
 
 [Term]
+id: PATO:0001411
+name: structured
+is_a: PATO:0000141 ! structure
+
+[Term]
+id: PATO:0001412
+name: unstructured
+is_a: PATO:0000141 ! structure
+
+[Term]
 id: PATO:0001422
 name: dead
 is_a: PATO:0000169 ! viability
@@ -443,6 +476,12 @@ is_a: PATO:0000140 ! position
 is_a: PATO:0002305 ! increased object quality
 
 [Term]
+id: PATO:0001476
+name: decreased position
+is_a: PATO:0000140 ! position
+is_a: PATO:0002303 ! decreased object quality
+
+[Term]
 id: PATO:0001481
 name: sloped
 is_a: PATO:0000052 ! shape
@@ -463,6 +502,11 @@ name: functional
 is_a: PATO:0001509 ! functionality
 
 [Term]
+id: PATO:0001536
+name: solubility
+is_a: PATO:0002182 ! molecular quality
+
+[Term]
 id: PATO:0001543
 name: flexibility
 is_a: PATO:0001546 ! quality of a solid
@@ -470,6 +514,11 @@ is_a: PATO:0001546 ! quality of a solid
 [Term]
 id: PATO:0001544
 name: flexible
+is_a: PATO:0001543 ! flexibility
+
+[Term]
+id: PATO:0001545
+name: inflexible
 is_a: PATO:0001543 ! flexibility
 
 [Term]
@@ -486,6 +535,12 @@ is_a: PATO:0002198 ! quality of a substance
 id: PATO:0001548
 name: quality of a liquid
 is_a: PATO:0002198 ! quality of a substance
+
+[Term]
+id: PATO:0001559
+name: having extra function
+is_a: PATO:0001509 ! functionality
+is_a: PATO:0002305 ! increased object quality
 
 [Term]
 id: PATO:0001562
@@ -543,6 +598,12 @@ is_a: PATO:0001510 ! functional
 is_a: PATO:0002303 ! decreased object quality
 
 [Term]
+id: PATO:0001625
+name: increased functionality
+is_a: PATO:0001510 ! functional
+is_a: PATO:0001559 ! having extra function
+
+[Term]
 id: PATO:0001629
 name: aggregated
 is_a: PATO:0000330 ! irregular spatial pattern
@@ -556,6 +617,11 @@ is_a: PATO:0001598 ! protruding
 id: PATO:0001646
 name: protruding out of
 is_a: PATO:0001598 ! protruding
+
+[Term]
+id: PATO:0001648
+name: circumference
+is_a: PATO:0001711 ! perimeter
 
 [Term]
 id: PATO:0001655
@@ -572,6 +638,12 @@ is_a: PATO:0002305 ! increased object quality
 id: PATO:0001671
 name: increased distribution
 is_a: PATO:0001475 ! increased position
+is_a: PATO:0001566 ! distributed
+
+[Term]
+id: PATO:0001672
+name: decreased distribution
+is_a: PATO:0001476 ! decreased position
 is_a: PATO:0001566 ! distributed
 
 [Term]
@@ -695,6 +767,12 @@ name: wetness
 is_a: PATO:0001018 ! physical quality
 
 [Term]
+id: PATO:0001823
+name: wet
+is_a: PATO:0001822 ! wetness
+disjoint_from: PATO:0001824 ! dry
+
+[Term]
 id: PATO:0001824
 name: dry
 is_a: PATO:0001822 ! wetness
@@ -775,6 +853,12 @@ is_a: PATO:0000402 ! branched
 is_a: PATO:0002008 ! concave 3-D shape
 
 [Term]
+id: PATO:0001899
+name: decreased circumference
+is_a: PATO:0001648 ! circumference
+is_a: PATO:0001713 ! decreased perimeter
+
+[Term]
 id: PATO:0001906
 name: movement quality
 is_a: PATO:0001018 ! physical quality
@@ -788,6 +872,11 @@ is_a: PATO:0000052 ! shape
 id: PATO:0001985
 name: frozen
 is_a: PATO:0000146 ! temperature
+
+[Term]
+id: PATO:0001986
+name: dissolved
+is_a: PATO:0001536 ! solubility
 
 [Term]
 id: PATO:0001995
@@ -967,6 +1056,11 @@ name: decreased accumulation
 is_a: PATO:0002269 ! accumulation
 
 [Term]
+id: PATO:0002292
+name: transient
+is_a: PATO:0000141 ! structure
+
+[Term]
 id: PATO:0002299
 name: tubular
 is_a: PATO:0001873 ! cylindrical
@@ -1030,4 +1124,15 @@ is_a: PATO:0000140 ! position
 id: PATO:0002453
 name: eroding
 is_a: PATO:0000141 ! structure
+
+[Term]
+id: PATO:0015021
+name: combustibility
+is_a: PATO:0001018 ! physical quality
+
+[Term]
+id: PATO:0015022
+name: increased combustibility
+is_a: PATO:0002305 ! increased object quality
+is_a: PATO:0015021 ! combustibility
 
