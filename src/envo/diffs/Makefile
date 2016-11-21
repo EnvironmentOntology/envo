@@ -24,3 +24,9 @@ $(ONT)-lastbuild.owl: $(SRC)
 
 $(ONT)-diff.md: $(ONT)-lastbuild.owl $(OWLSRC)
 	owljs-diff -o $@ $< $(OWLSRC) 
+
+basic-lastbuild.obo: $(SRC)
+	wget --no-check-certificate $(OBO)/envo/subsets/envo-basic.obo -O $@
+
+basic-diff.md: basic-lastbuild.obo ../subsets/envo-basic.obo
+	owljs-diff -o $@ $^
