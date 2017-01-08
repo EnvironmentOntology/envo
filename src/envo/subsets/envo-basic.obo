@@ -15,11 +15,11 @@ remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo
 remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/imports/go_import.owl>) VersionIRI(<null>))) [Axioms: 85 Logical Axioms: 18]
 remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/imports/imports/ncbitaxon_import.owl>) VersionIRI(<null>))) [Axioms: 261 Logical Axioms: 56]
 remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/imports/imports/po_import.owl>) VersionIRI(<null>))) [Axioms: 94 Logical Axioms: 9]
-remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/imports/pato_import.owl>) VersionIRI(<null>))) [Axioms: 700 Logical Axioms: 266]
+remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/imports/pato_import.owl>) VersionIRI(<null>))) [Axioms: 703 Logical Axioms: 267]
 remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/imports/pco_bfo_bridge.owl>) VersionIRI(<null>))) [Axioms: 3 Logical Axioms: 1]
 remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/imports/pco_import.owl>) VersionIRI(<null>))) [Axioms: 21 Logical Axioms: 3]
-remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/imports/ro_import.owl>) VersionIRI(<null>))) [Axioms: 1065 Logical Axioms: 258]
-remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/imports/uberon_import.owl>) VersionIRI(<null>))) [Axioms: 24747 Logical Axioms: 4879]
+remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/imports/ro_import.owl>) VersionIRI(<null>))) [Axioms: 1092 Logical Axioms: 264]
+remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/imports/uberon_import.owl>) VersionIRI(<null>))) [Axioms: 24168 Logical Axioms: 4726]
 remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/modules/entity_attribute.owl>) VersionIRI(<null>))) [Axioms: 50 Logical Axioms: 7]
 remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/modules/entity_attribute_location.owl>) VersionIRI(<null>))) [Axioms: 119 Logical Axioms: 20]
 remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/modules/entity_quality_location.owl>) VersionIRI(<null>))) [Axioms: 45 Logical Axioms: 6]
@@ -7796,7 +7796,6 @@ name: feces
 def: "Feces is an excreta consisting of waste products expelled from an animal's digestive tract through the anus (or cloaca) during defecation." [https://en.wikipedia.org/wiki/Feces]
 comment: This is distinct from classes such as http://purl.obolibrary.org/obo/UBERON_0001988 in that it refers to the environmental material composed primarily of feces rather than 'just' feces.
 synonym: "droppings" RELATED []
-synonym: "dung" EXACT []
 synonym: "faeces" EXACT []
 synonym: "frass" RELATED []
 synonym: "pellet" RELATED []
@@ -8745,7 +8744,8 @@ is_a: ENVO:00002202 ! organically contaminated sediment
 [Term]
 id: ENVO:00002183
 name: oil tank
-xref: https://en.wikipedia.org/wiki/Oil_tank
+def: "A manufactured container within which oil or other petrochemical products are stored and which these products are usually transported to end users or further storage facilities." [https://en.wikipedia.org/wiki/Oil_terminal]
+comment: Consider using http://purl.obolibrary.org/obo/OBI_0000967 as a super-class
 is_a: ENVO:00003074 ! manufactured product
 
 [Term]
@@ -9460,7 +9460,7 @@ relationship: part_of ENVO:00000015 ! ocean
 [Term]
 id: ENVO:00002982
 name: clay
-def: "A group of hydrous aluminium phyllosilicate (phyllosilicates being a subgroup of silicate minerals) minerals (see clay minerals), that are typically less than 2micrometres in diameter. Clay consists of a variety of phyllosilicate minerals rich in silicon and aluminium oxides and hydroxides which include variable amounts of structural water." [https://en.wikipedia.org/wiki/Clay]
+def: "A group of hydrous aluminium phyllosilicate (phyllosilicates being a subgroup of silicate minerals) minerals (see clay minerals), that are typically less than 2 micrometres in diameter. Clay consists of a variety of phyllosilicate minerals rich in silicon and aluminium oxides and hydroxides which include variable amounts of structural water." [https://en.wikipedia.org/wiki/Clay]
 xref: EcoLexicon:clay
 xref: https://en.wikipedia.org/wiki/Clay
 xref: SWEETRealm:Clay
@@ -9784,8 +9784,7 @@ is_a: ENVO:0010003 ! agricultural environmental material
 id: ENVO:00003031
 name: animal manure
 comment: This is interesting in that the "role" aspect of "waste" is (or can be) replaced by another role "fertilizer". Thus, the positioning of "manure" under waste may not be totally correct.
-is_a: ENVO:00002264 ! waste material
-relationship: has_role ENVO:01000665 ! waste role
+is_a: ENVO:00010483 ! environmental material
 
 [Term]
 id: ENVO:00003032
@@ -11200,7 +11199,7 @@ is_a: ENVO:00003074 ! manufactured product
 [Term]
 id: ENVO:00010622
 name: vivarium
-def: "A vivarium is an enclosure for keeping and raising animals or plants for observation or research. Often, a portion of the ecosystem for a particular species is simulated on a smaller scale, with controls for environmental conditions." [https://en.wikipedia.org/wiki/Vivarium]
+def: "A vivarium is an enclosure for keeping and raising organisms for observation or research. Often, a portion of the ecosystem for a particular species is simulated on a smaller scale, with controls for environmental conditions." [https://en.wikipedia.org/wiki/Vivarium]
 xref: https://en.wikipedia.org/wiki/Vivarium
 is_a: ENVO:00003074 ! manufactured product
 
@@ -15133,6 +15132,8 @@ relationship: composed_primarily_of ENVO:00002149 ! sea water
 [Term]
 id: ENVO:01000322
 name: brackish water environment
+def: "An environment determined by the presence of brackish water." []
+comment: This may refer to environments submerged in brackish water or those that are determined by its presence, such as a brackish water pond environment.
 is_a: ENVO:01000307 ! saline water environment
 relationship: composed_primarily_of ENVO:00002019 ! brackish water
 
@@ -19276,6 +19277,62 @@ synonym: "overfall" BROAD []
 is_a: ENVO:00000479 ! mouth
 
 [Term]
+id: ENVO:01000865
+name: electric power system
+def: "An electric power system is a network of electrical components used to supply, transfer and use electric power." [https://en.wikipedia.org/wiki/Electric_power_system]
+is_a: ENVO:00003074 ! manufactured product
+
+[Term]
+id: ENVO:01000866
+name: photovoltaic system
+def: "A photovoltaic system is a power system designed to supply usable solar power by means of photovoltaics. It consists of an arrangement of several components, including solar panels to absorb and convert sunlight into electricity, a solar inverter to change the electric current from DC to AC, as well as mounting, cabling and other electrical accessories to set up a working system." [https://en.wikipedia.org/wiki/Photovoltaic_system]
+is_a: ENVO:01000865 ! electric power system
+relationship: has_part ENVO:01000867 ! solar panel array
+
+[Term]
+id: ENVO:01000867
+name: solar panel array
+def: "A group of solar panels, typically belonging to the same photovoltaic system, arranged to maximise interception of solar radiation." [https://en.wikipedia.org/wiki/Photovoltaic_system]
+synonym: "photovoltaic panel array" EXACT []
+is_a: ENVO:00003074 ! manufactured product
+
+[Term]
+id: ENVO:01000868
+name: domestic solar panel array
+def: "A solar panel array that is integrated into the power system of a human dwelling." []
+synonym: "domestic photovoltaic panel array" EXACT []
+is_a: ENVO:01000867 ! solar panel array
+relationship: part_of ENVO:01000744 ! human dwelling
+
+[Term]
+id: ENVO:01000870
+name: ground deformation process
+def: "A process in which a solid planetary surface is deformed." []
+comment: This is a class to be filled by inference.
+is_a: ENVO:02500000 ! environmental system process
+relationship: has_input ENVO:01000635 ! land
+
+[Term]
+id: ENVO:01000871
+name: puddle of water
+def: "A puddle is a small accumulation of water, on a surface. It can form either by pooling in a depression on the surface, or by surface tension upon a flat surface." [https://en.wikipedia.org/wiki/Puddle]
+comment: This class refers only to puddles of water, see https://github.com/EnvironmentOntology/envo/issues/337
+is_a: ENVO:00000549 ! intermittent water body
+
+[Term]
+id: ENVO:01000872
+name: balast water
+def: "Ballast water is water contained in the ballast tanks of sea-going vessels." [http://www.nature.com/news/four-routes-to-better-maritime-governance-1.21051?WT.mc_id=TWT_NatureNews, https://en.wikipedia.org/wiki/Ballast_water_discharge_and_the_environment, https://en.wikipedia.org/wiki/Sailing_ballast#Water_ballast]
+is_a: ENVO:00002006 ! water
+
+[Term]
+id: ENVO:01000873
+name: ballast tank
+def: "A ballast tank is a compartment within a boat, ship or other floating structure that holds water, which is used as ballast to provide stability for a vessel." [https://en.wikipedia.org/wiki/Ballast_tank]
+comment: Consider using http://purl.obolibrary.org/obo/OBI_0000967 as a super-class
+is_a: ENVO:00003074 ! manufactured product
+
+[Term]
 id: ENVO:01001303
 name: environmental role
 def: "A role which is may be realised by an environmental system" []
@@ -19470,7 +19527,9 @@ id: ENVO:02000022
 name: excreta
 def: "Excreta are bodily fluids consisting of waste matter, such as sweat or feces, discharged from the body." [URL:http\://medical-dictionary.thefreedictionary.com/excreta]
 xref: https://en.wikipedia.org/wiki/Excreta
+is_a: ENVO:00002264 ! waste material
 is_a: ENVO:02000019 ! bodily fluid
+relationship: has_role ENVO:01000665 ! waste role
 
 [Term]
 id: ENVO:02000023
@@ -20881,10 +20940,22 @@ is_a: participates_in ! participates in
 inverse_of: has_active_participant ! has active participant
 
 [Typedef]
+id: acts_upstream_of_or_within
+name: acts upstream of or within
+def: "c acts upstream of or within p if c is enables 'p' and p' causally upstream of or within p" []
+synonym: "affects" RELATED []
+xref: RO:0002264
+is_a: causal_agent_in ! causal agent in
+
+[Typedef]
 id: adjacent_to
 name: adjacent to
-def: "x adjacent to y if and only if x and y share a boundary" []
+def: "x adjacent to y if and only if x and y share a boundary." []
 xref: RO:0002220
+property_value: IAO:0000112 "A caterpillar walking on the surface of a leaf is adjacent_to the leaf, if one of the caterpillar appendages is touching the leaf. In contrast, a butterfly flying close to a flower is not considered adjacent, unless there are any touching parts." xsd:string
+property_value: IAO:0000112 "The epidermis layer of a vertebrate is adjacent to the dermis." xsd:string
+property_value: IAO:0000112 "The plasma membrane of a cell is adjacent to the cytoplasm, and also to the cell lumen which the cytoplasm occupies." xsd:string
+property_value: IAO:0000112 "The skin of the forelimb is adjacent to the skin of the torso if these are considered anatomical subdivisions with a defined border. Otherwise a relation such as continuous_with would be used." xsd:string
 property_value: IAO:0000114 IAO:0000125
 property_value: IAO:0000116 "This relation acts as a join point with BSPO" xsd:string
 property_value: IAO:0000117 "Chris Mungall" xsd:string
@@ -21162,6 +21233,8 @@ holds_over_chain: determined_by part_of
 [Typedef]
 id: developmentally_contributes_to
 name: developmentally contributes to
+def: "inverse of has developmental contribution from" []
+subset: RO:0002259
 xref: RO:0002255
 property_value: IAO:0000114 IAO:0000125
 property_value: IAO:0000117 "Chris Mungall" xsd:string
@@ -21217,6 +21290,8 @@ inverse_of: develops_into ! develops into
 [Typedef]
 id: develops_into
 name: develops into
+def: "inverse of develops from" []
+subset: RO:0002259
 xref: RO:0002203
 property_value: IAO:0000114 IAO:0000125
 property_value: IAO:0000117 "Chris Mungall" xsd:string
@@ -21240,6 +21315,7 @@ is_class_level: true
 id: distributary_of
 name: distributary of
 def: "x distributary_of y if and only if x is capable of channeling the flow of a substance to y, where y channels less of the substance than x" []
+comment: This is both a mereotopological relationship and a relationship defined in connection to processes. It concerns both the connecting structure, and how this structure is disposed to causally affect flow processes
 subset: ro-eco
 xref: RO:0002377
 property_value: IAO:0000112 "Deschutes River distributary_of Little Lava Lake" xsd:string
@@ -21610,11 +21686,14 @@ is_a: precedes ! precedes
 [Typedef]
 id: in_branching_relationship_with
 name: in branching relationship with
+def: "A relationship that holds between two material entities in a system of connected structures, where the branching relationship holds based on properties of the connecting network." []
 xref: RO:0002375
 property_value: http://xmlns.com/foaf/0.1/page https://github.com/obophenotype/uberon/issues/170 xsd:anyURI
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000232 "Do not use this relation directly. It is ended as a grouping for a diverse set of relations, all involving branching relationships" xsd:string
 property_value: IAO:0000232 "This relation can be used for geographic features (e.g. rivers) as well as anatomical structures (plant branches and roots, leaf veins, animal veins, arteries, nerves)" xsd:string
+property_value: seeAlso http://purl.obolibrary.org/obo/ro/docs/branching_part_of.png
 is_a: mereotopologically_related_to ! mereotopologically related to
 is_a: part_of ! part of
 
@@ -21648,7 +21727,9 @@ transitive_over: part_of ! part of
 [Typedef]
 id: input_of
 name: input of
+def: "inverse of has input" []
 subset: ro-eco
+subset: RO:0002259
 xref: RO:0002352
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 is_a: functionally_related_to ! functionally related to
@@ -21677,16 +21758,17 @@ xref: RO:0002331
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: IAO:0000118 "actively involved in" xsd:string
 property_value: IAO:0000118 "enables part of" xsd:string
-is_a: involved_in_or_regulates ! involved in or regulates
+is_a: involved_in_or_involved_in_regulation_of ! involved in or involved in regulation of
 transitive_over: part_of ! part of
 
 [Typedef]
-id: involved_in_or_regulates
-name: involved in or regulates
+id: involved_in_or_involved_in_regulation_of
+name: involved in or involved in regulation of
 def: "c involved in or regulates p if and only if either (i) c is involved in p or (ii) c is involved in regulation of p" []
 xref: RO:0002431
 property_value: IAO:0000117 "Chris Mungall" xsd:string
-property_value: IAO:0000118 "involved in or involved in regulation of" xsd:string
+property_value: IAO:0000118 "involved in or reguates" xsd:string
+is_a: acts_upstream_of_or_within ! acts upstream of or within
 is_a: causal_agent_in ! causal agent in
 is_a: functionally_related_to ! functionally related to
 
@@ -21759,7 +21841,9 @@ transitive_over: part_of ! part of
 [Typedef]
 id: output_of
 name: output of
+def: "inverse of has output" []
 subset: ro-eco
+subset: RO:0002259
 xref: RO:0002353
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 is_a: functionally_related_to ! functionally related to

@@ -27,12 +27,16 @@ full_test: test envo.check-obo subsets/EnvO-Lite-GSC.check-obo
 test_python:
 	python3 --version
 
-build: all_modules all_imports envo.owl envo.obo subsets/envo-basic.obo subsets/EnvO-Lite-GSC.obo 
+build: all_modules all_imports envo.owl envo.obo envo.json subsets/envo-basic.obo subsets/envo-basic.json subsets/EnvO-Lite-GSC.obo 
 
 prepare_release: build  copy-release
 
 copy-release:
-	cp -pr catalog-v001.xml envo.obo envo.owl subsets mappings imports ../..
+	cp -pr catalog-v001.xml envo.obo envo.owl envo.json subsets mappings imports ../..
+
+# generic conversion for OGs
+%.json: %.owl
+	owltools $(USECAT) $<  -o -f json  $@.tmp && mv $@.tmp $@
 
 #release: envo-basic.obo release-diffs
 
@@ -56,7 +60,11 @@ envo.owl envo-simple.owl: envo-edit-module-merge.owl
 envo.obo: envo.owl
 	owltools $(USECAT) $< --merge-imports-closure --add-obo-shorthand-to-properties -o -f obo --no-check $@.tmp && grep -v ^owl-axioms $@.tmp > $@
 
+
 # TODO - fix IRI
+subsets/envo-basic.owl: envo-simple.owl
+	owltools $< imports/ro_import.owl --merge-imports-closure --set-ontology-id $(OBO)/$@ -o $@.tmp && mv $@.tmp $@
+
 subsets/envo-basic.obo: envo-simple.owl
 	owltools $< imports/ro_import.owl --merge-imports-closure  --add-obo-shorthand-to-properties --set-ontology-id $(OBO)/$@ -o -f obo $@.tmp && grep -v ^owl-axioms $@.tmp > $@
 
@@ -147,7 +155,7 @@ mirror/bfo.owl: envo-edit.owl
 .PRECIOUS: mirror/%.owl
 
 mirror/uberon.owl: envo-edit.owl
-	owltools $(OBO)/uberon.owl  --remove-axiom-annotations  --make-subset-by-properties -f $(KEEPRELS) --remove-dangling-annotations --remove-annotation-assertions -l -s -d --set-ontology-id $(OBO)/uberon.owl -o $@
+	owltools $(OBO)/uberon.obo  --remove-axiom-annotations  --make-subset-by-properties -f $(KEEPRELS) --remove-external-classes UBERON --remove-dangling-annotations --remove-annotation-assertions -l -s -d --set-ontology-id $(OBO)/uberon.owl -o $@
 .PRECIOUS: mirror/%.owl
 
 mirror/po.owl: envo-edit.owl

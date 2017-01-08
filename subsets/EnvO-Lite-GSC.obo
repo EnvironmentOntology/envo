@@ -353,7 +353,7 @@ comment: A material entity determines an environmental system when its removal w
 id: ENVO:00002982
 name: clay
 namespace: ENVO
-def: "A group of hydrous aluminium phyllosilicate (phyllosilicates being a subgroup of silicate minerals) minerals (see clay minerals), that are typically less than 2micrometres in diameter. Clay consists of a variety of phyllosilicate minerals rich in silicon and aluminium oxides and hydroxides which include variable amounts of structural water." [https://en.wikipedia.org/wiki/Clay]
+def: "A group of hydrous aluminium phyllosilicate (phyllosilicates being a subgroup of silicate minerals) minerals (see clay minerals), that are typically less than 2 micrometres in diameter. Clay consists of a variety of phyllosilicate minerals rich in silicon and aluminium oxides and hydroxides which include variable amounts of structural water." [https://en.wikipedia.org/wiki/Clay]
 xref: EcoLexicon:clay
 xref: https://en.wikipedia.org/wiki/Clay
 xref: SWEETRealm:Clay
@@ -574,11 +574,24 @@ is_a: participates_in ! participates in
 inverse_of: has_active_participant ! has active participant
 
 [Typedef]
+id: acts_upstream_of_or_within
+name: acts upstream of or within
+namespace: ENVO
+def: "c acts upstream of or within p if c is enables 'p' and p' causally upstream of or within p" []
+synonym: "affects" RELATED []
+xref: RO:0002264
+is_a: causal_agent_in ! causal agent in
+
+[Typedef]
 id: adjacent_to
 name: adjacent to
 namespace: ENVO
-def: "x adjacent to y if and only if x and y share a boundary" []
+def: "x adjacent to y if and only if x and y share a boundary." []
 xref: RO:0002220
+property_value: IAO:0000112 "A caterpillar walking on the surface of a leaf is adjacent_to the leaf, if one of the caterpillar appendages is touching the leaf. In contrast, a butterfly flying close to a flower is not considered adjacent, unless there are any touching parts." xsd:string
+property_value: IAO:0000112 "The epidermis layer of a vertebrate is adjacent to the dermis." xsd:string
+property_value: IAO:0000112 "The plasma membrane of a cell is adjacent to the cytoplasm, and also to the cell lumen which the cytoplasm occupies." xsd:string
+property_value: IAO:0000112 "The skin of the forelimb is adjacent to the skin of the torso if these are considered anatomical subdivisions with a defined border. Otherwise a relation such as continuous_with would be used." xsd:string
 property_value: IAO:0000114 IAO:0000125
 property_value: IAO:0000116 "This relation acts as a join point with BSPO" xsd:string
 property_value: IAO:0000117 "Chris Mungall" xsd:string
@@ -882,6 +895,8 @@ holds_over_chain: determined_by part_of
 id: developmentally_contributes_to
 name: developmentally contributes to
 namespace: ENVO
+def: "inverse of has developmental contribution from" []
+subset: RO:0002259
 xref: RO:0002255
 property_value: IAO:0000114 IAO:0000125
 property_value: IAO:0000117 "Chris Mungall" xsd:string
@@ -942,6 +957,8 @@ inverse_of: develops_into ! develops into
 id: develops_into
 name: develops into
 namespace: ENVO
+def: "inverse of develops from" []
+subset: RO:0002259
 xref: RO:0002203
 property_value: IAO:0000114 IAO:0000125
 property_value: IAO:0000117 "Chris Mungall" xsd:string
@@ -967,6 +984,7 @@ id: distributary_of
 name: distributary of
 namespace: ENVO
 def: "x distributary_of y if and only if x is capable of channeling the flow of a substance to y, where y channels less of the substance than x" []
+comment: This is both a mereotopological relationship and a relationship defined in connection to processes. It concerns both the connecting structure, and how this structure is disposed to causally affect flow processes
 subset: ro-eco
 xref: RO:0002377
 property_value: IAO:0000112 "Deschutes River distributary_of Little Lava Lake" xsd:string
@@ -1372,11 +1390,14 @@ is_a: precedes ! precedes
 id: in_branching_relationship_with
 name: in branching relationship with
 namespace: ENVO
+def: "A relationship that holds between two material entities in a system of connected structures, where the branching relationship holds based on properties of the connecting network." []
 xref: RO:0002375
 property_value: http://xmlns.com/foaf/0.1/page https://github.com/obophenotype/uberon/issues/170 xsd:anyURI
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000232 "Do not use this relation directly. It is ended as a grouping for a diverse set of relations, all involving branching relationships" xsd:string
 property_value: IAO:0000232 "This relation can be used for geographic features (e.g. rivers) as well as anatomical structures (plant branches and roots, leaf veins, animal veins, arteries, nerves)" xsd:string
+property_value: seeAlso http://purl.obolibrary.org/obo/ro/docs/branching_part_of.png
 is_a: mereotopologically_related_to ! mereotopologically related to
 is_a: part_of ! part of
 
@@ -1413,7 +1434,9 @@ transitive_over: part_of ! part of
 id: input_of
 name: input of
 namespace: ENVO
+def: "inverse of has input" []
 subset: ro-eco
+subset: RO:0002259
 xref: RO:0002352
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 is_a: functionally_related_to ! functionally related to
@@ -1444,17 +1467,18 @@ xref: RO:0002331
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: IAO:0000118 "actively involved in" xsd:string
 property_value: IAO:0000118 "enables part of" xsd:string
-is_a: involved_in_or_regulates ! involved in or regulates
+is_a: involved_in_or_involved_in_regulation_of ! involved in or involved in regulation of
 transitive_over: part_of ! part of
 
 [Typedef]
-id: involved_in_or_regulates
-name: involved in or regulates
+id: involved_in_or_involved_in_regulation_of
+name: involved in or involved in regulation of
 namespace: ENVO
 def: "c involved in or regulates p if and only if either (i) c is involved in p or (ii) c is involved in regulation of p" []
 xref: RO:0002431
 property_value: IAO:0000117 "Chris Mungall" xsd:string
-property_value: IAO:0000118 "involved in or involved in regulation of" xsd:string
+property_value: IAO:0000118 "involved in or reguates" xsd:string
+is_a: acts_upstream_of_or_within ! acts upstream of or within
 is_a: causal_agent_in ! causal agent in
 is_a: functionally_related_to ! functionally related to
 
@@ -1533,7 +1557,9 @@ transitive_over: part_of ! part of
 id: output_of
 name: output of
 namespace: ENVO
+def: "inverse of has output" []
 subset: ro-eco
+subset: RO:0002259
 xref: RO:0002353
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 is_a: functionally_related_to ! functionally related to
