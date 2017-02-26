@@ -77,34 +77,6 @@ is_a: ENVO:00000000 ! geographic feature
 relationship: part_of ENVO:01000819 ! hydrosphere
 
 [Term]
-id: ENVO:00000113
-name: cultivated habitat
-namespace: ENVO
-def: "A geographical feature modified by humans by the preparation of the land, usually for the purposes of growing crops." [MA:ma]
-synonym: "agricultural region" RELATED []
-synonym: "CROPLAND" RELATED [USGS:SDTS]
-synonym: "cropland" NARROW [ADL:FTT]
-synonym: "cultivated area" RELATED [ADL:FTT]
-synonym: "cultivated area" RELATED [USGS:SDTS]
-synonym: "cultivated area" RELATED [Geonames:feature]
-synonym: "cultivated cropland" RELATED [ADL:FTT]
-synonym: "market garden" RELATED [USGS:SDTS]
-synonym: "range" RELATED [ADL:FTT]
-synonym: "truck farm" RELATED [USGS:SDTS]
-synonym: "truck garden" RELATED [USGS:SDTS]
-xref: EcoLexicon:agriculture
-xref: FTT:1248
-xref: FTT:54
-xref: FTT:55
-xref: FTT:56
-xref: Geonames:V.CULT
-xref: SPIRE:Agricultural
-xref: SWEETRealm:Range
-is_a: ENVO:00002031 ! anthropogenic habitat
-is_obsolete: true
-replaced_by: ENVO:01000311
-
-[Term]
 id: ENVO:00000144
 name: aquatic habitat
 namespace: ENVO
@@ -132,7 +104,6 @@ name: marine habitat
 namespace: ENVO
 def: "A habitat that is in or on a sea or ocean containing high concentrations of dissolved salts and other total dissolved solids (typically >35 grams dissolved salts per litre)." [NM:nm]
 subset: EnvO-Lite-GSC
-is_a: ENVO:00002227 ! saline water habitat
 is_obsolete: true
 replaced_by: ENVO:01000321
 
@@ -258,13 +229,6 @@ subset: EnvO-Lite-GSC
 is_obsolete: true
 
 [Term]
-id: ENVO:00002031
-name: anthropogenic habitat
-namespace: ENVO
-def: "A habitat that is in or on an environmental feature or material derived from human activity." [NM:nm]
-is_obsolete: true
-
-[Term]
 id: ENVO:00002032
 name: organism-associated habitat
 namespace: ENVO
@@ -321,16 +285,6 @@ xref: https://en.wikipedia.org/wiki/Contaminated_water
 is_a: ENVO:00002006 ! water
 
 [Term]
-id: ENVO:00002227
-name: saline water habitat
-namespace: ENVO
-def: "A habitat that is in or on a body of water containing medium to high concentrations of dissolved salts and other total dissolved solids (>=0.5 grams dissolved salts per litre)." [NM:nm]
-synonym: "salt water habitat" EXACT []
-is_a: ENVO:00000144 ! aquatic habitat
-is_obsolete: true
-replaced_by: ENVO:01000307
-
-[Term]
 id: ENVO:00002264
 name: waste material
 namespace: ENVO
@@ -348,6 +302,7 @@ name: environmental feature
 namespace: ENVO
 def: "A material entity which determines an environmental system." [DOI:10.1186/2041-1480-4-43, NM:nm, ORCID:0000-0002-4366-3088]
 comment: A material entity determines an environmental system when its removal would cause the collapse of that system. For example, a seamount determines a seamount environment, acting as its 'hub'. This class is currently being aligned to the Basic Formal Ontology. Following this alignment, its definition and the definitions of its subclasses will be revised.
+relationship: determines ENVO:01000254 ! environmental system
 
 [Term]
 id: ENVO:00002982
@@ -367,7 +322,6 @@ namespace: ENVO
 def: "A habitat that is in or on a living animal. Here \"animal\" denotes an individual of a species that is a sub-taxon of NCBITaxon:33208." [PATOC:cjm]
 subset: EnvO-Lite-GSC
 synonym: "metazoan-associated habitat" EXACT []
-is_a: ENVO:00002032 ! organism-associated habitat
 is_obsolete: true
 
 [Term]
@@ -376,7 +330,6 @@ name: plant-associated habitat
 namespace: ENVO
 def: "A habitat that is in or on a living plant. Here \"plant\" denotes an individual of a species that is a sub-taxon of NCBITaxon:33090 (viridiplantae)." [PATOC:cjm]
 subset: EnvO-Lite-GSC
-is_a: ENVO:00002032 ! organism-associated habitat
 is_obsolete: true
 
 [Term]
@@ -444,6 +397,16 @@ xref: EcoLexicon:organic_material
 is_a: ENVO:00010483 ! environmental material
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2010-03-20T08:40:04Z
+
+[Term]
+id: ENVO:01000254
+name: environmental system
+namespace: ENVO
+def: "A system which has the disposition to environ one or more material entities." [DOI:10.1186/2041-1480-4-43]
+comment: In ENVO's alignment with the Basic Formal Ontology, this class is being considered as a subclass of a proposed BFO class "system". The relation "environed_by" is also under development. Roughly, a system which includes a material entity (at least partially) within its site and causally influences that entity may be considered to environ it. Following the completion of this alignment, this class' definition and the definitions of its subclasses will be revised.
+synonym: "environment" EXACT []
+xref: EcoLexicon:environment
+creation_date: 2013-09-23T16:04:08Z
 
 [Term]
 id: ENVO:01000256
@@ -546,7 +509,6 @@ name: cultured habitat
 namespace: ENVO
 def: "Cultured habitat is an controlled habitat created by humans through laboratory techniques usually for the purposes of preparing cell, organ, tissue and plant tissue cultures." [https://en.wikipedia.org/wiki/Cell_culture]
 subset: EnvO-Lite-GSC
-is_a: ENVO:00000113 ! cultivated habitat
 is_obsolete: true
 replaced_by: ENVO:01000312
 
@@ -574,24 +536,11 @@ is_a: participates_in ! participates in
 inverse_of: has_active_participant ! has active participant
 
 [Typedef]
-id: acts_upstream_of_or_within
-name: acts upstream of or within
-namespace: ENVO
-def: "c acts upstream of or within p if c is enables 'p' and p' causally upstream of or within p" []
-synonym: "affects" RELATED []
-xref: RO:0002264
-is_a: causal_agent_in ! causal agent in
-
-[Typedef]
 id: adjacent_to
 name: adjacent to
 namespace: ENVO
-def: "x adjacent to y if and only if x and y share a boundary." []
+def: "x adjacent to y if and only if x and y share a boundary" []
 xref: RO:0002220
-property_value: IAO:0000112 "A caterpillar walking on the surface of a leaf is adjacent_to the leaf, if one of the caterpillar appendages is touching the leaf. In contrast, a butterfly flying close to a flower is not considered adjacent, unless there are any touching parts." xsd:string
-property_value: IAO:0000112 "The epidermis layer of a vertebrate is adjacent to the dermis." xsd:string
-property_value: IAO:0000112 "The plasma membrane of a cell is adjacent to the cytoplasm, and also to the cell lumen which the cytoplasm occupies." xsd:string
-property_value: IAO:0000112 "The skin of the forelimb is adjacent to the skin of the torso if these are considered anatomical subdivisions with a defined border. Otherwise a relation such as continuous_with would be used." xsd:string
 property_value: IAO:0000114 IAO:0000125
 property_value: IAO:0000116 "This relation acts as a join point with BSPO" xsd:string
 property_value: IAO:0000117 "Chris Mungall" xsd:string
@@ -713,6 +662,17 @@ is_a: causal_relation_between_material_entity_and_a_process ! causal relation be
 inverse_of: has_causal_agent ! has causal agent
 
 [Typedef]
+id: causal_relation_between_material_entities
+name: causal relation between material entities
+namespace: ENVO
+xref: RO:0002506
+property_value: IAO:0000116 "The intent is that the process branch of the causal property hierarchy is primary (causal relations hold between occurrents/processes), and that the material branch is defined in terms of the process branch" xsd:string
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000119 http://purl.obolibrary.org/obo/ro/docs/causal-relations
+property_value: IAO:0000232 "Do not use this relation directly. It is intended as a grouping for a diverse set of relations, all involving cause and effect." xsd:string
+is_a: causally_related_to ! causally related to
+
+[Typedef]
 id: causal_relation_between_material_entity_and_a_process
 name: causal relation between material entity and a process
 namespace: ENVO
@@ -722,6 +682,49 @@ property_value: IAO:0000116 "Do not use this relation directly. It is intended a
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: IAO:0000119 http://purl.obolibrary.org/obo/ro/docs/causal-relations
 is_a: causally_related_to ! causally related to
+
+[Typedef]
+id: causal_relation_between_processes
+name: causal relation between processes
+namespace: ENVO
+def: "p is causally related to q if and only if p or any part of p and q or any part of q are linked by a chain of events where each event pair is one of direct activation or direct inhibition. p may be upstream, downstream, part of or a container of q." []
+xref: RO:0002501
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000119 http://purl.obolibrary.org/obo/ro/docs/causal-relations
+property_value: IAO:0000232 "Do not use this relation directly. It is intended as a grouping for a diverse set of relations, all involving cause and effect." xsd:string
+is_a: causally_related_to ! causally related to
+
+[Typedef]
+id: causally_downstream_of_or_within
+name: causally downstream of or within
+namespace: ENVO
+xref: RO:0002427
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000119 http://purl.obolibrary.org/obo/ro/docs/causal-relations
+is_transitive: true
+is_a: causal_relation_between_processes ! causal relation between processes
+
+[Typedef]
+id: causally_influenced_by
+name: causally influenced by
+namespace: ENVO
+xref: RO:0002559
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000119 http://purl.obolibrary.org/obo/ro/docs/causal-relations
+property_value: IAO:0000589 "causally influenced by (material entity to material entity)" xsd:string
+is_a: causal_relation_between_material_entities ! causal relation between material entities
+inverse_of: causally_influences ! causally influences
+
+[Typedef]
+id: causally_influences
+name: causally influences
+namespace: ENVO
+def: "Holds between materal entities a and b if the activity of a is causally upstream of the activity of b, or causally upstream of a an activity that modifies b" []
+xref: RO:0002566
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000119 http://purl.obolibrary.org/obo/ro/docs/causal-relations
+property_value: IAO:0000589 "causally influences (material entity to material entity)" xsd:string
+is_a: causal_relation_between_material_entities ! causal relation between material entities
 
 [Typedef]
 id: causally_related_to
@@ -734,6 +737,19 @@ property_value: IAO:0000116 "This branch of the ontology deals with causal relat
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: IAO:0000232 "Do not use this relation directly. It is intended as a grouping for a diverse set of relations, all involving cause and effect." xsd:string
 is_a: related_via_dependence_to ! related via dependence to
+
+[Typedef]
+id: causally_upstream_of_or_within
+name: causally upstream of or within
+namespace: ENVO
+def: "p 'causally upstream or within' q iff (1) the end of p is before the end of q and (2) the execution of p exerts some causal influence over the outputs of q; i.e. if p was abolished or the outputs of p were to be modified, this would necessarily affect q." []
+xref: RO:0002418
+property_value: IAO:0000116 "We would like to make this disjoint with 'preceded by', but this is prohibited in OWL2" xsd:string
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000118 "influences (processual)" xsd:string
+is_transitive: true
+is_a: causal_relation_between_processes ! causal relation between processes
+inverse_of: causally_downstream_of_or_within ! causally downstream of or within
 
 [Typedef]
 id: coincident_with
@@ -881,22 +897,49 @@ property_value: IAO:0000118 "derives_into" xsd:string
 id: determined_by
 name: determined by
 namespace: ENVO
+def: "s determined by f if and only if s is a type of system, and f is a material entity that is part of s, such that f exerts a strong causal influence on the functioning of s, and the removal of f would cause the collapse of s." []
+subset: ro-eco
 xref: ENVO:2100001
+xref: RO:0002507
+property_value: http://purl.org/dc/elements/1.1/creator "Chris Mungall" xsd:string
+property_value: http://purl.org/dc/elements/1.1/creator "Pier Buttigieg" xsd:string
+property_value: IAO:0000112 "A coral reef environment is determined by a particular coral reef" xsd:string
+property_value: IAO:0000116 "The label for this relation is probably too general for its restricted use, where the domain is a system. It may be relabeled in future" xsd:string
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000119 http://www.ncbi.nlm.nih.gov/pubmed/24330602
+property_value: IAO:0000589 "determined by (system to material entity)" xsd:string
+is_a: causally_influenced_by ! causally influenced by
 is_a: determined_by_part_of ! determined by part of
+is_a: part_of ! part of
+inverse_of: determines ! determines
 
 [Typedef]
 id: determined_by_part_of
 name: determined by part of
 namespace: ENVO
+def: "s 'determined by part of' w if and only if there exists some f such that (1) s 'determined by' f and (2) f part_of w, or f=w." []
+subset: ro-eco
 xref: ENVO:2100007
+xref: RO:0002509
+property_value: IAO:0000117 "Chris Mungall" xsd:string
 holds_over_chain: determined_by part_of
+is_a: causal_relation_between_material_entities ! causal relation between material entities
+is_a: overlaps ! overlaps
+
+[Typedef]
+id: determines
+name: determines
+namespace: ENVO
+subset: ro-eco
+xref: RO:0002508
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000589 "determines (material entity to system)" xsd:string
+is_a: causally_influences ! causally influences
 
 [Typedef]
 id: developmentally_contributes_to
 name: developmentally contributes to
 namespace: ENVO
-def: "inverse of has developmental contribution from" []
-subset: RO:0002259
 xref: RO:0002255
 property_value: IAO:0000114 IAO:0000125
 property_value: IAO:0000117 "Chris Mungall" xsd:string
@@ -957,8 +1000,6 @@ inverse_of: develops_into ! develops into
 id: develops_into
 name: develops into
 namespace: ENVO
-def: "inverse of develops from" []
-subset: RO:0002259
 xref: RO:0002203
 property_value: IAO:0000114 IAO:0000125
 property_value: IAO:0000117 "Chris Mungall" xsd:string
@@ -984,7 +1025,6 @@ id: distributary_of
 name: distributary of
 namespace: ENVO
 def: "x distributary_of y if and only if x is capable of channeling the flow of a substance to y, where y channels less of the substance than x" []
-comment: This is both a mereotopological relationship and a relationship defined in connection to processes. It concerns both the connecting structure, and how this structure is disposed to causally affect flow processes
 subset: ro-eco
 xref: RO:0002377
 property_value: IAO:0000112 "Deschutes River distributary_of Little Lava Lake" xsd:string
@@ -1390,14 +1430,11 @@ is_a: precedes ! precedes
 id: in_branching_relationship_with
 name: in branching relationship with
 namespace: ENVO
-def: "A relationship that holds between two material entities in a system of connected structures, where the branching relationship holds based on properties of the connecting network." []
 xref: RO:0002375
 property_value: http://xmlns.com/foaf/0.1/page https://github.com/obophenotype/uberon/issues/170 xsd:anyURI
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000117 "Chris Mungall" xsd:string
-property_value: IAO:0000232 "Do not use this relation directly. It is ended as a grouping for a diverse set of relations, all involving branching relationships" xsd:string
 property_value: IAO:0000232 "This relation can be used for geographic features (e.g. rivers) as well as anatomical structures (plant branches and roots, leaf veins, animal veins, arteries, nerves)" xsd:string
-property_value: seeAlso http://purl.obolibrary.org/obo/ro/docs/branching_part_of.png
 is_a: mereotopologically_related_to ! mereotopologically related to
 is_a: part_of ! part of
 
@@ -1434,9 +1471,7 @@ transitive_over: part_of ! part of
 id: input_of
 name: input of
 namespace: ENVO
-def: "inverse of has input" []
 subset: ro-eco
-subset: RO:0002259
 xref: RO:0002352
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 is_a: functionally_related_to ! functionally related to
@@ -1467,18 +1502,17 @@ xref: RO:0002331
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: IAO:0000118 "actively involved in" xsd:string
 property_value: IAO:0000118 "enables part of" xsd:string
-is_a: involved_in_or_involved_in_regulation_of ! involved in or involved in regulation of
+is_a: involved_in_or_regulates ! involved in or regulates
 transitive_over: part_of ! part of
 
 [Typedef]
-id: involved_in_or_involved_in_regulation_of
-name: involved in or involved in regulation of
+id: involved_in_or_regulates
+name: involved in or regulates
 namespace: ENVO
 def: "c involved in or regulates p if and only if either (i) c is involved in p or (ii) c is involved in regulation of p" []
 xref: RO:0002431
 property_value: IAO:0000117 "Chris Mungall" xsd:string
-property_value: IAO:0000118 "involved in or reguates" xsd:string
-is_a: acts_upstream_of_or_within ! acts upstream of or within
+property_value: IAO:0000118 "involved in or involved in regulation of" xsd:string
 is_a: causal_agent_in ! causal agent in
 is_a: functionally_related_to ! functionally related to
 
@@ -1557,9 +1591,7 @@ transitive_over: part_of ! part of
 id: output_of
 name: output of
 namespace: ENVO
-def: "inverse of has output" []
 subset: ro-eco
-subset: RO:0002259
 xref: RO:0002353
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 is_a: functionally_related_to ! functionally related to

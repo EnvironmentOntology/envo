@@ -207,6 +207,23 @@ subsets/EnvO-Lite-GSC.owl: subsets/envo-basic.obo
 	owltools $< --extract-ontology-subset --fill-gaps --subset EnvO-Lite-GSC --iri $(OBO)/envo/subsets/$@ -o $@
 subsets/EnvO-Lite-GSC.obo: subsets/EnvO-Lite-GSC.owl
 	owltools $< -o -f obo $@
+	
+subsets/environmental_hazards.owl: subsets/envo-basic.obo
+	owltools $< --extract-ontology-subset --fill-gaps --subset environmental_hazards --iri $(OBO)/envo/subsets/$@ -o $@
+subsets/environmental_hazards.obo: subsets/environmental_hazards.owl
+	owltools $< -o -f obo $@
+	
+subsets/wwfBiome.owl: subsets/envo-basic.obo
+	owltools $< --extract-ontology-subset --fill-gaps --subset wwfBiome --iri $(OBO)/envo/subsets/$@ -o $@
+subsets/wwfBiome.obo: subsets/wwfBiome.owl
+	owltools $< -o -f obo $@
+	
+subsets/nlcd2011.owl: subsets/envo-basic.obo
+	owltools $< --extract-ontology-subset --fill-gaps --subset nlcd2011 --iri $(OBO)/envo/subsets/$@ -o $@
+subsets/nlcd2011.obo: subsets/nlcd2011.owl
+	owltools $< -o -f obo $@
+	
+	
 
 # ----------------------------------------
 # Reports
