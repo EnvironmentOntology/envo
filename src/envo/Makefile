@@ -88,7 +88,7 @@ release-diffs:
 # Type 'make imports/X_import.owl' whenever you wish to refresh the import for an ontology X. This is when:
 #
 #  1. X has changed and we want to include these changes
-#  2. We have added onr or more new IRI from X into envo-edit.owl
+#  2. We have added one or more new IRIs from X into envo-edit.owl
 #  3. We have removed references to one or more IRIs in X from envo-edit.owl
 #
 # You should NOT edit these files directly, changes will be overwritten.
@@ -124,6 +124,11 @@ imports/ro_import.owl: mirror/ro.owl imports/ro_terms.txt
 # GO: Use ROBOT, driven entirely by terms lists NOT from source ontology
 imports/go_import.owl: mirror/go.owl imports/go_terms.txt
 	$(ROBOT) extract -i $< -T imports/go_terms.txt --method BOT -O $(ENVO_IMPORTS_BASE_URI)/$@ -o $@
+.PRECIOUS: imports/%_import.owl
+
+# NCBITAXON: Use ROBOT, driven entirely by terms lists NOT from source ontology
+imports/ncbitaxon_import.owl: mirror/ncbitaxon.owl imports/ncbitaxon_terms.txt
+	$(ROBOT) extract -i $< -T imports/ncbitaxon_terms.txt --method BOT -O $(ENVO_IMPORTS_BASE_URI)/$@ -o $@
 .PRECIOUS: imports/%_import.owl
 
 
