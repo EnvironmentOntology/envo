@@ -11,7 +11,7 @@ synonymtypedef: PLURAL "plurals"
 default-namespace: ENVO
 remark: ENVO is an ontology which represents knowledge about environments,environmental processes, ecosystems, habitats, and related entities. It interoperates with other ontologies in the OBO Foundry and Library. Please see www.environmentontology.org for more info.
 remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/imports/bfo_import.owl>))) [Axioms: 37 Logical Axioms: 10]
-remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/imports/chebi_import.owl>))) [Axioms: 2366 Logical Axioms: 996]
+remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/imports/chebi_import.owl>))) [Axioms: 2384 Logical Axioms: 1014]
 remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/imports/go_import.owl>))) [Axioms: 85 Logical Axioms: 18]
 remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/imports/imports/ncbitaxon_import.owl>))) [Axioms: 261 Logical Axioms: 56]
 remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/imports/imports/po_import.owl>))) [Axioms: 94 Logical Axioms: 9]
@@ -20,7 +20,7 @@ remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo
 remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/imports/pco_import.owl>))) [Axioms: 21 Logical Axioms: 3]
 remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/imports/ro_import.owl>))) [Axioms: 1147 Logical Axioms: 285]
 remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/imports/uberon_import.owl>))) [Axioms: 24061 Logical Axioms: 4664]
-remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/modules/entity_attribute.owl>))) [Axioms: 57 Logical Axioms: 8]
+remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/modules/entity_attribute.owl>))) [Axioms: 67 Logical Axioms: 10]
 remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/modules/entity_attribute_location.owl>))) [Axioms: 119 Logical Axioms: 20]
 remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/modules/entity_quality_location.owl>))) [Axioms: 45 Logical Axioms: 6]
 remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/modules/process_attribute.owl>))) [Axioms: 20 Logical Axioms: 2]
@@ -369,8 +369,6 @@ def: "Natural freshwater surface streams of considerable volume and a permanent 
 synonym: "braided river" NARROW [USGS:SDTS]
 synonym: "rio" EXACT [USGS:SDTS]
 synonym: "rio" EXACT [ADL:FTT]
-synonym: "River" EXACT [NASA:earthrealm]
-synonym: "watercourse" BROAD [USGS:SDTS]
 xref: EcoLexicon:river
 xref: FTT:1179
 xref: FTT:251
@@ -14303,11 +14301,12 @@ creation_date: 2013-04-24T13:28:18Z
 [Term]
 id: ENVO:01000231
 name: lava
-def: "Lava is magma which has extruded beyond a planetary crust." [https://en.wikipedia.org/wiki/Lava]
+def: "Lava is a mixture of molten or semi-molten rock, volatiles, and solids which has extruded beyond a planetary crust." [https://en.wikipedia.org/wiki/Lava]
 comment: Some use 'lava' to refer to rock that is formed when lava cools. This is not the intended meaning of this class. See 'igneous rock' or similar.
 xref: EcoLexicon:lava
 xref: SWEETRealm:Lava
-is_a: ENVO:01000815 ! liquid environmental material
+is_a: ENVO:00010483 ! environmental material
+relationship: derives_from ENVO:01000648 ! magma
 created_by: PLB
 creation_date: 2013-05-05T16:52:47Z
 
@@ -18870,6 +18869,7 @@ name: stellar wind
 def: "A stream of plasma primarily composed of electrons, protons, and alpha particles ejected from the upper atmosphere of a star." [https://en.wikipedia.org/wiki/Solar_wind, https://en.wikipedia.org/wiki/Wind]
 synonym: "Solar wind" RELATED []
 is_a: ENVO:01000796 ! mass plasma flow
+relationship: has_participant ENVO:01000801 ! star
 
 [Term]
 id: ENVO:01000795
@@ -18883,6 +18883,7 @@ relationship: has_participant ENVO:01000800 ! planet
 [Term]
 id: ENVO:01000796
 name: mass plasma flow
+def: "A process whereby a large volume of plasma moves due to a disequilibrium of physical forces." []
 is_a: ENVO:02500000 ! environmental system process
 relationship: has_participant ENVO:01000798 ! plasma
 
@@ -19405,7 +19406,7 @@ relationship: has_condition ENVO:01000206 ! temperate
 id: ENVO:01000861
 name: area of dwarf scrub
 alt_id: NLCD:51
-def: "An area of a planet's surface which is primarily covered by shrubs with ground-hugging stems or low growth habit, in contact with an atmospheric column extending from the planetary boundary layer to the planet's exosphere with little to no physical obstruction." [https://en.wikipedia.org/wiki/Exosphere, https://en.wikipedia.org/wiki/Planetary_surface, https://en.wikipedia.org/wiki/Subshrub, https://www.mrlc.gov/nlcd11_leg.php]
+def: "An area of a planet's surface which is partly covered by shrubs with ground-hugging stems or low growth habit, in contact with an atmospheric column extending from the planetary boundary layer to the planet's exosphere with little to no physical obstruction." [https://en.wikipedia.org/wiki/Exosphere, https://en.wikipedia.org/wiki/Planetary_surface, https://en.wikipedia.org/wiki/Subshrub, https://www.mrlc.gov/nlcd11_leg.php]
 comment: According to the NLCD 2011, areas of dwarf scrub are dominated by shrubs less than 20 centimeters tall with shrub canopy typically greater than 20% of total vegetation. This type is often co-associated with grasses, sedges, herbs, and non-vascular vegetation. The NLCD 2011 notes that this is intended as an Alaska only land cover. Such thresholds - which are themselves fuzzy - are not asserted in this definition.
 subset: nlcd2011
 synonym: "area of subshrub" EXACT []
@@ -19502,7 +19503,9 @@ is_a: ENVO:00000549 ! intermittent water body
 id: ENVO:01000872
 name: balast water
 def: "Ballast water is water contained in the ballast tanks of sea-going vessels." [http://www.nature.com/news/four-routes-to-better-maritime-governance-1.21051?WT.mc_id=TWT_NatureNews, https://en.wikipedia.org/wiki/Ballast_water_discharge_and_the_environment, https://en.wikipedia.org/wiki/Sailing_ballast#Water_ballast]
+comment: This definition could be improved, as ballast water is often used in more general ways, beyond the water contained in a ballast tank at any given time. For example, water which has just been released from a ballast tank is often still refered to as ballast water.
 is_a: ENVO:00002006 ! water
+relationship: contained_in ENVO:01000873 ! ballast tank
 
 [Term]
 id: ENVO:01000873
@@ -19530,7 +19533,7 @@ is_a: ENVO:02500000 ! environmental system process
 [Term]
 id: ENVO:01000876
 name: storm
-def: "A storm is an environmental process in which an environmental system and the processes it participates in are strongly perturbed." []
+def: "A storm is an environmental process in which an environmental system and the processes it participates in are strongly perturbed by external forcings. These forcings typically increase the rates of processes unfolding in the system, relative to their normal rates." []
 comment: The threshold of what constitutes "strong" perturbation is not defined here due to considerable semantic variation. If a specific threshold is required, please request a new term.
 subset: environmental_hazards
 is_a: ENVO:02500000 ! environmental system process
@@ -19824,6 +19827,7 @@ name: lightning flash
 def: "A lightning process during which electrostatic discharge occurs within a single cloud or between multiple clouds." []
 subset: environmental_hazards
 is_a: ENVO:01000898 ! atmospheric lightning
+relationship: has_participant ENVO:01000760 {minCardinality="1"} ! cloud
 
 [Term]
 id: ENVO:01000903
@@ -19840,6 +19844,92 @@ def: "A ground blizzard is a storm during which snow which has settled on a plan
 comment: This form of blizzard does not involve snowfall as the snow which is blown by the winds is already present on the ground. To qualify a snowstorm as a blizzard, some sources require the windspeed to be at least 56 km/h and the duration of the storm to be at least three hours. We set no such hard boundaries in this definition, as this should be done with reference to local standards. {comment="https://en.wikipedia.org/wiki/Blizzard"}
 subset: environmental_hazards
 is_a: ENVO:01000877 ! atmospheric storm
+
+[Term]
+id: ENVO:01000905
+name: shrimp pond
+def: "A pond or lake used for the artificial culture of shrimp." [http://orcid.org/0000-0002-8260-7097, http://www.fao.org/3/contents/76b2641d-29e4-51b0-b9e5-6ca46beb0d9f/AC210E02.htm, http://www.fao.org/docrep/003/x6941e/x6941e04.htm#bm04, https://en.wikipedia.org/wiki/Shrimp_farming]
+comment: "Shrimp" is a common language term that may refer to multiple crustacean species, typically in the groups Caridea or Dendrobranchiatamarine. These may be marine or freshwater organisms.
+is_a: ENVO:01000617 ! lentic water body
+property_value: IAO:0000116 "There are multiple subclasses possible for this term, including ponds managed by the traditional (extensive), improved traditional (semi-intensive), and intensive methods of cultivation." xsd:string
+
+[Term]
+id: ENVO:01000906
+name: aquaculture process
+def: "A process in which humans rear animals or plants in bodies of water for harvest and consumption." [] {comment="http://www.fao.org/docrep/003/x6941e/x6941e04.htm#bm04"}
+comment: In 1988, the FAO introduced a definition of aquaculture which reduces its confusion with capture fisheries: Aquaculture is the farming of aquatic organisms, including fish, molluscs, crustaceans and aquatic plants. Farming implies some form of intervention in the rearing process to enhance production, such as regular stocking, feeding, protection from predators, etc. Farming also implies individual or corporate ownership of the stock being cultivated. For statistical purposes, aquatic organisms which are harvested by an individual or corporate body which has owned them throughout their rearing period contribute to aquaculture, while aquatic organisms which are exploitable by the public as a common property resources, with or without appropriate licences, are the harvest of fisheries.
+is_a: ENVO:02500027 ! anthropogenic environmental process
+property_value: IAO:0000116 "Expand the sites of occurrence listed as axioms as new terms emerge." xsd:string
+
+[Term]
+id: ENVO:01000907
+name: feasting pit site
+def: "An archeological site which contains holes humans had dug in the ground, or their remnants, for the purpose of storing and distributing food, drink, and both functional or ritualistic implements during communal eating and drinking." [Pappa\, M.\, Halstead\, P.\, Kotsakis\, K.\, & Urem-Kotsou\, D. (2004). Evidence for large-scale feasting at Late Neolithic Makriyalos\, N Greece. Food\, cuisine and society in prehistoric Greece\, 5\, 16., Romero\, D.\, & Lauzon\, A. (2015). The Art of Feasting: Style and Identity in a Ritual Area at the Harris Site. In. In L. Ludeman (Ed.)\, Collected Papers from the 18th Biennial Mogollon Archaeology Conference (pp. 43-50). Las Cruces\, New Mexico\: Privately published by Lonnie Ludeman.]
+comment: Feasting pits had a wide variety of social functions throughout time, which extended in scope from the single family group to multiple tribes or villages.
+is_a: ENVO:00000564 ! archeological site
+
+[Term]
+id: ENVO:01000908
+name: geothermally heated river
+def: "A river which is heated by geothermal processes such as heat exchange with lava or hydrothermal percolation." [http://www.atlasobscura.com/places/the-boiling-river-of-the-amazon]
+comment: A key example is the Boiling River, or Shanay-timpishka, of the Peruvian Amazon. This river is of high cultural significance and is protected by the shaman of the small town Mayantuyacu, a secluded healing center. {xref="http://www.atlasobscura.com/places/the-boiling-river-of-the-amazon"}
+synonym: "boiling river" RELATED []
+is_a: ENVO:00000022 ! river
+
+[Term]
+id: ENVO:01000909
+name: biocrust
+def: "A surface layer of a solid environmental material which is formed by the presence and activity of photosynthetic microbial assemblages colonising it." [http://dx.doi.org/10.1038/ncomms10373, https://en.wikipedia.org/wiki/Biological_soil_crust]
+synonym: "biological crust" EXACT []
+is_a: ENVO:00010504 ! surface layer
+
+[Term]
+id: ENVO:01000910
+name: soil biocrust
+def: "A biocrust which is formed by photosynthetic microbial assemblages colonising the surface layer of a portion of arid soil. Through their successional dynamics, these communities reduce the soil surface's albedo, impart it with stability against erosion, modify its hydrology, and promote its fertility." [http://dx.doi.org/10.1038/ncomms10373] {comment="https://en.wikipedia.org/wiki/Biological_soil_crust"}
+comment: Couradeau et al. (2016) assert that any albedo reductions associated with biocrust development are due largely to the accumulation of the microbial sunscreen, scytonemin. {xref="http://dx.doi.org/10.1038/ncomms10373"}
+synonym: "biological soil crust" EXACT []
+synonym: "cryptobiotic soil" EXACT []
+synonym: "cryptogamic soil" EXACT []
+synonym: "microbiotic soil" EXACT []
+synonym: "microphytic soil" EXACT []
+synonym: "soil biological crust" EXACT []
+is_a: ENVO:01000909 ! biocrust
+relationship: has_part ENVO:00001998 ! soil
+
+[Term]
+id: ENVO:01000911
+name: automated teller machine
+def: "An electronic telecommunications device that enables the customers of a financial institution to perform financial transactions, particularly cash withdrawal, without the need for a human cashier, clerk or bank teller." [http://dx.doi.org/10.1128/mSphere.00226-16, https://en.wikipedia.org/wiki/Automated_teller_machine]
+synonym: "automated banking machine" EXACT []
+synonym: "automatic teller machine" EXACT []
+synonym: "automatic telling machine" EXACT []
+synonym: "bankomat" EXACT []
+synonym: "cash machine" EXACT []
+synonym: "cashline" EXACT []
+synonym: "cashpoint" EXACT []
+synonym: "minibank" EXACT []
+is_a: ENVO:00003074 ! manufactured product
+
+[Term]
+id: ENVO:01000912
+name: cloud condensation nucleus
+def: "A solid or liquid particle, usually 0.2 micrometers in diameter, on which water vapour condenses, seeding cloud formation." [https://en.wikipedia.org/wiki/Cloud_condensation_nuclei]
+synonym: "CCN" EXACT []
+synonym: "cloud seed" EXACT []
+is_a: ENVO:00002297 ! environmental feature
+relationship: part_of ENVO:00010505 ! aerosol
+relationship: participates_in ENVO:01000913 ! nucleation of cloud condensation
+
+[Term]
+id: ENVO:01000913
+name: nucleation of cloud condensation
+def: "A process during which a solid particle or liquid droplet catalyses the condensation of water vapour in an atmosphere." [https://en.wikipedia.org/wiki/Cloud_condensation_nuclei]
+synonym: "cloud seeding process" EXACT []
+is_a: ENVO:02500003 ! atmospheric process
+is_a: ENVO:02500031 ! hydrological process
+relationship: has_participant ENVO:01000266 ! water vapour
+relationship: occurs_in ENVO:01000267 ! atmosphere
 
 [Term]
 id: ENVO:01001303
@@ -20851,7 +20941,7 @@ is_a: ENVO:02500027 ! anthropogenic environmental process
 [Term]
 id: ENVO:02500018
 name: algal bloom process
-comment: Notes: need to capture that this is an increase in surface area (where boundaries allow) and density. Also need to capture this is a rapid/acute expansion. TODO: import PATO
+comment: This class is under development, not recommended for annotation. Notes: need to capture that this is an increase in surface area (where boundaries allow) and density. Also need to capture this is a rapid/acute expansion. TODO: import PATO
 is_a: ENVO:02500000 ! environmental system process
 relationship: has_participant ENVO:2000004 ! algal bloom
 relationship: occurs_in ENVO:01000317 ! aquatic environment
@@ -21208,14 +21298,14 @@ is_a: ENVO:09100004 ! dissolved nitrogen atom in environmental material
 [Term]
 id: ENVO:09200000
 name: temperature of environmental material
-def: "The temperature of a environmental material." []
+def: "The temperature of some environmental material." []
 synonym: "environmental material temperature" EXACT []
 relationship: inheres_in ENVO:00010483 ! environmental material
 
 [Term]
 id: ENVO:09200001
 name: temperature of air
-def: "The temperature of a air." []
+def: "The temperature of some air." []
 synonym: "air temperature" EXACT []
 is_a: ENVO:09200000 ! temperature of environmental material
 relationship: inheres_in ENVO:00002005 ! air
@@ -21237,7 +21327,7 @@ relationship: inheres_in ENVO:01000793 ! atmospheric wind
 [Term]
 id: ENVO:09200004
 name: porosity of soil
-def: "The porosity of a soil." []
+def: "The porosity of some soil." []
 synonym: "soil porosity" EXACT []
 is_a: ENVO:09200009 ! structure of soil
 relationship: inheres_in ENVO:00001998 ! soil
@@ -21245,7 +21335,7 @@ relationship: inheres_in ENVO:00001998 ! soil
 [Term]
 id: ENVO:09200005
 name: mass density of soil
-def: "The mass density of a soil." []
+def: "The mass density of some soil." []
 synonym: "soil mass density" EXACT []
 relationship: inheres_in ENVO:00001998 ! soil
 
@@ -21264,7 +21354,7 @@ synonym: "soil nitrate concentration of" EXACT []
 [Term]
 id: ENVO:09200008
 name: composition of soil
-def: "The composition of a soil." []
+def: "The composition of some soil." []
 synonym: "soil composition" EXACT []
 is_a: ENVO:09200009 ! structure of soil
 relationship: inheres_in ENVO:00001998 ! soil
@@ -21272,23 +21362,38 @@ relationship: inheres_in ENVO:00001998 ! soil
 [Term]
 id: ENVO:09200009
 name: structure of soil
-def: "The structure of a soil." []
+def: "The structure of some soil." []
 synonym: "soil structure" EXACT []
 relationship: inheres_in ENVO:00001998 ! soil
 
 [Term]
 id: ENVO:09200010
 name: acidity of soil
-def: "The acidity of a soil." []
+def: "The acidity of some soil." []
 synonym: "soil acidity" EXACT []
 relationship: inheres_in ENVO:00001998 ! soil
 
 [Term]
 id: ENVO:09200011
 name: pressure of air
-def: "The pressure of a air." []
+def: "The pressure of some air." []
 synonym: "air pressure" EXACT []
 relationship: inheres_in ENVO:00002005 ! air
+
+[Term]
+id: ENVO:09200012
+name: temperature of soil
+def: "The temperature of some soil." []
+synonym: "soil temperature" EXACT []
+is_a: ENVO:09200000 ! temperature of environmental material
+relationship: inheres_in ENVO:00001998 ! soil
+
+[Term]
+id: ENVO:09200013
+name: wetness of soil
+def: "The wetness of some soil." []
+synonym: "soil wetness" EXACT []
+relationship: inheres_in ENVO:00001998 ! soil
 
 [Term]
 id: ENVO:1000745
