@@ -42,4 +42,4 @@ If you would like to send a more general comment or question to the EnvO mailing
 
 
 ## History
-The repository was moved to this location from https://code.google.com/p/envo/ in March 2015. The ENVO PURL will continue to point to the Google Code repository until the next release, at which point this message will be updated. 
+The repository was moved to this location from https://code.google.com/p/envo/ in March 2015. The legacy issues were automatically migrated. The PURL targets have been updated accordingly.
