@@ -100,7 +100,7 @@ ENVO_IMPORTS_BASE_URI = $(OBO)/envo
 
 # Ontology dependencies
 # We don't include clo, as this is currently not working
-IMPORTS = pato uberon chebi ro
+IMPORTS = pato uberon chebi ro pco foodon go ncbitaxon
 
 # Make this target to regenerate ALL
 all_imports: $(patsubst %, imports/%_import.owl,$(IMPORTS)) $(patsubst %, imports/%_import.obo,$(IMPORTS))
@@ -116,6 +116,11 @@ imports/%_import.owl: envo-edit.owl mirror/%.owl imports/%_seed.owl $(ALL_MODS_O
 imports/%_import.obo: imports/%_import.owl
 	owltools $(USECAT) $< -o -f obo $@
 
+# FOODON: Use ROBOT, driven entirely by terms lists NOT from source ontology
+imports/foodon_import.owl: mirror/foodon.owl imports/foodon_terms.txt
+	$(ROBOT) extract -i $< -T imports/foodon_terms.txt --method BOT -O $(ENVO_IMPORTS_BASE_URI)/$@ -o $@
+.PRECIOUS: imports/%_import.owl
+	
 # RO: Use ROBOT, driven entirely by terms lists NOT from source ontology
 imports/ro_import.owl: mirror/ro.owl imports/ro_terms.txt
 	$(ROBOT) extract -i $< -T imports/ro_terms.txt --method BOT -O $(ENVO_IMPORTS_BASE_URI)/$@ -o $@
@@ -135,6 +140,10 @@ imports/ncbitaxon_import.owl: mirror/ncbitaxon.owl imports/ncbitaxon_terms.txt
 # clone remote ontology locally, perfoming some excision of relations and annotations
 mirror/%.owl: envo-edit.owl
 	owltools $(OBO)/$*.owl --remove-annotation-assertions -l --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS)  -o $@
+.PRECIOUS: mirror/%.owl
+
+mirror/foodon.owl: envo-edit.owl
+	owltools $(OBO)/foodon.owl --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/foodon.owl -o $@
 .PRECIOUS: mirror/%.owl
 
 # chebi.owl is large and the owlapi often times out when reading it; use the obo instead
