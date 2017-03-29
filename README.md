@@ -27,7 +27,7 @@ http://purl.obolibrary.org/obo/subsets/envo-basic.obo
 Please note that the OBO files are now created from the OWL file. Due to limitations in the OBO format, envo.obo will not offer as much expressibility as envo.owl. Further, **to open envo.obo in OBOEdit 2**, please ensure that dangling axioms are allowed using the advanced view of the "Load Ontology" window.
 
 ### Subsets
-A subset is a trimmed down version of ENVO. We create subsets for users who want just a few terms for their work. Read more about subsets on [this wiki page](https://github.com/EnvironmentOntology/envo/blob/v2017-02-26/README.md). Several subsets of ENVO classes are identified with the "in_subset" annotation property.
+A subset is a trimmed down version of ENVO. We create subsets for users who want just a few terms for their work. Read more about subsets on [this wiki page](https://github.com/EnvironmentOntology/envo/wiki/Subsets). Several subsets of ENVO classes are identified with the "in_subset" annotation property.
 More subsets can be generated on request (please post such requests on our [issue tracker](https://github.com/EnvironmentOntology/envo/issues).
 
 ### Editors' version
