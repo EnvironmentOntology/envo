@@ -2473,6 +2473,7 @@ Declaration(Class(<http://purl.obolibrary.org/obo/ENVO_03000047>))
 Declaration(Class(<http://purl.obolibrary.org/obo/ENVO_03000048>))
 Declaration(Class(<http://purl.obolibrary.org/obo/ENVO_03000050>))
 Declaration(Class(<http://purl.obolibrary.org/obo/ENVO_03000051>))
+Declaration(Class(<http://purl.obolibrary.org/obo/ENVO_03000053>))
 Declaration(Class(<http://purl.obolibrary.org/obo/ENVO_08000001>))
 Declaration(Class(<http://purl.obolibrary.org/obo/ENVO_08000002>))
 Declaration(Class(<http://purl.obolibrary.org/obo/ENVO_1000745>))
@@ -28173,7 +28174,7 @@ AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#has
 AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000117> <http://purl.obolibrary.org/obo/ENVO_03000035> "http://orcid.org/0000-0002-3410-4655")
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/ENVO_03000035> "supraglacial lake"@en)
 SubClassOf(<http://purl.obolibrary.org/obo/ENVO_03000035> <http://purl.obolibrary.org/obo/ENVO_00000020>)
-SubClassOf(<http://purl.obolibrary.org/obo/ENVO_03000035> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0001025> <http://purl.obolibrary.org/obo/ENVO_00000133>))
+SubClassOf(<http://purl.obolibrary.org/obo/ENVO_03000035> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002220> <http://purl.obolibrary.org/obo/ENVO_00000133>))
 
 # Class: <http://purl.obolibrary.org/obo/ENVO_03000036> (sedimentation in a water body)
 
@@ -28221,7 +28222,7 @@ SubClassOf(<http://purl.obolibrary.org/obo/ENVO_03000039> ObjectSomeValuesFrom(<
 
 # Class: <http://purl.obolibrary.org/obo/ENVO_03000040> (melt pond)
 
-AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "https://en.wikipedia.org/wiki/Melt_pond") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/ENVO_03000040> "A water body which forms as a result of localised melting taking place on the surface of a glacier or a mass of sea ice and is typically contained in the cavity formed by that melting.")
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "https://en.wikipedia.org/wiki/Melt_pond") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/ENVO_03000040> "A water body which forms as a result of localised melting taking place on the surface of a glacier or a mass of sea ice and is contained in the cavity formed by such melting.")
 AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000117> <http://purl.obolibrary.org/obo/ENVO_03000040> "http://orcid.org/0000-0002-3410-4655")
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/ENVO_03000040> "melt pond"@en)
 SubClassOf(<http://purl.obolibrary.org/obo/ENVO_03000040> <http://purl.obolibrary.org/obo/ENVO_00000063>)
@@ -28301,31 +28302,42 @@ SubClassOf(<http://purl.obolibrary.org/obo/ENVO_03000047> ObjectSomeValuesFrom(<
 
 # Class: <http://purl.obolibrary.org/obo/ENVO_03000048> (thaw hole)
 
-AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "https://nsidc.org/cryosphere/glossary-terms/sea-ice") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/ENVO_03000048> "vertical hole in floating ice formed when a puddle melts through to the underlying water.")
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "https://nsidc.org/cryosphere/glossary-terms/sea-ice") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/ENVO_03000048> "A vertical meltpond hole which has formed through an ice mass floating on a water body, bridging the atmosphere to the underlying water.")
 AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000116> <http://purl.obolibrary.org/obo/ENVO_03000048> "Will need to be moved once the defintion for channel is revised. See https://github.com/EnvironmentOntology/envo/issues/147")
 AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000117> <http://purl.obolibrary.org/obo/ENVO_03000048> "http://orcid.org/0000-0002-3410-4655")
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/ENVO_03000048> "thaw hole"@en)
-SubClassOf(<http://purl.obolibrary.org/obo/ENVO_03000048> <http://purl.obolibrary.org/obo/ENVO_00000395>)
+SubClassOf(<http://purl.obolibrary.org/obo/ENVO_03000048> <http://purl.obolibrary.org/obo/ENVO_03000040>)
 
-# Class: <http://purl.obolibrary.org/obo/ENVO_03000050> (open melt pond)
+# Class: <http://purl.obolibrary.org/obo/ENVO_03000050> (atmosphere-exposed meltpond)
 
-AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "https://en.wikipedia.org/wiki/Melt_pond") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/ENVO_03000050> "An open, atmosphere exposed, water body which forms as a result of localised melting taking place on the surface of a glacier or a mass of sea ice, contained in the open cavity formed by that melting.")
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "https://en.wikipedia.org/wiki/Melt_pond") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/ENVO_03000050> "A meltpond which is located toward the surface of an ice mass, exposed to the atmosphere but closed to the bottom of the ice mass or to any underlying water.")
 AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000117> <http://purl.obolibrary.org/obo/ENVO_03000050> "http://orcid.org/0000-0002-3410-4655")
-AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/ENVO_03000050> "open melt pond"@en)
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/ENVO_03000050> "atmosphere-exposed meltpond"@en)
 SubClassOf(<http://purl.obolibrary.org/obo/ENVO_03000050> <http://purl.obolibrary.org/obo/ENVO_03000040>)
 SubClassOf(<http://purl.obolibrary.org/obo/ENVO_03000050> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000051> <http://purl.obolibrary.org/obo/ENVO_01000722>))
 SubClassOf(<http://purl.obolibrary.org/obo/ENVO_03000050> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002220> <http://purl.obolibrary.org/obo/ENVO_01000293>))
 SubClassOf(<http://purl.obolibrary.org/obo/ENVO_03000050> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002353> <http://purl.obolibrary.org/obo/ENVO_01000723>))
 
-# Class: <http://purl.obolibrary.org/obo/ENVO_03000051> (closed melt pond)
+# Class: <http://purl.obolibrary.org/obo/ENVO_03000051> (ice-encased meltpond)
 
-AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "https://phys.org/news/2017-01-arctic-ponds-meltwater-clogs-ice.html") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/ENVO_03000051> "An enclosed, non-atmosphere exposed, water body which forms as a result of localised melting taking place within a glacier or a mass of sea ice, contained in the cavity formed by that melting.")
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "https://phys.org/news/2017-01-arctic-ponds-meltwater-clogs-ice.html") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/ENVO_03000051> "A melt pond which is completely encased in ice and thus not directly exposed to the atmosphere or underlying water.")
 AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000117> <http://purl.obolibrary.org/obo/ENVO_03000051> "http://orcid.org/0000-0002-3410-4655")
-AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/ENVO_03000051> "closed melt pond"@en)
+AnnotationAssertion(rdfs:comment <http://purl.obolibrary.org/obo/ENVO_03000051> "In practice, there may be some openings which are small relative to the surface footprint of the meltpond.")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/ENVO_03000051> "ice-encased meltpond"@en)
 SubClassOf(<http://purl.obolibrary.org/obo/ENVO_03000051> <http://purl.obolibrary.org/obo/ENVO_03000040>)
 SubClassOf(<http://purl.obolibrary.org/obo/ENVO_03000051> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000051> <http://purl.obolibrary.org/obo/ENVO_01000722>))
 SubClassOf(<http://purl.obolibrary.org/obo/ENVO_03000051> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0001025> <http://purl.obolibrary.org/obo/ENVO_01000293>))
 SubClassOf(<http://purl.obolibrary.org/obo/ENVO_03000051> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002353> <http://purl.obolibrary.org/obo/ENVO_01000723>))
+
+# Class: <http://purl.obolibrary.org/obo/ENVO_03000053> (intraglacial lake)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "https://www.researchgate.net/publication/258663667_Detection_of_a_subglacial_lake_in_Glacier_de_Tete_Rousse_Mont_Blanc_area_France") Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "https://www.researchgate.net/publication/313281555_Antarctic_subglacial_lakes_drain_through_sediment-floored_canals_Theory_and_model_testing_on_real_and_idealized_domains") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/ENVO_03000053> "A lake which is comprised of meltwater located underneath or within a glacier.")
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000116> <http://purl.obolibrary.org/obo/ENVO_03000053> "Add axioms to show that this is on the larger side in a size continuum between ice-encased meltponds and intraglacial lakes.")
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000117> <http://purl.obolibrary.org/obo/ENVO_03000053> "http://orcid.org/0000-0002-3410-4655")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/ENVO_03000053> "intraglacial lake"@en)
+SubClassOf(<http://purl.obolibrary.org/obo/ENVO_03000053> <http://purl.obolibrary.org/obo/ENVO_00000020>)
+SubClassOf(<http://purl.obolibrary.org/obo/ENVO_03000053> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000051> <http://purl.obolibrary.org/obo/ENVO_01000722>))
+SubClassOf(<http://purl.obolibrary.org/obo/ENVO_03000053> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0001025> <http://purl.obolibrary.org/obo/ENVO_00000133>))
 
 # Class: <http://purl.obolibrary.org/obo/ENVO_08000001> (axilla skin environment)
 
