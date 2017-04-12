@@ -136,6 +136,11 @@ imports/ncbitaxon_import.owl: mirror/ncbitaxon.owl imports/ncbitaxon_terms.txt
 	$(ROBOT) extract -i $< -T imports/ncbitaxon_terms.txt --method BOT -O $(ENVO_IMPORTS_BASE_URI)/$@ -o $@
 .PRECIOUS: imports/%_import.owl
 
+# IAO: Use ROBOT, driven entirely by terms lists NOT from source ontology
+imports/iao_import.owl: mirror/iao.owl imports/iao_terms.txt
+	$(ROBOT) extract -i $< -T imports/iao_terms.txt --method BOT -O $(ENVO_IMPORTS_BASE_URI)/$@ -o $@
+.PRECIOUS: imports/%_import.owl
+
 
 # clone remote ontology locally, perfoming some excision of relations and annotations
 mirror/%.owl: envo-edit.owl
@@ -190,6 +195,10 @@ mirror/ncbitaxon.owl: ncbitaxon.obo
 
 mirror/pco.owl: imports/pco_basic.obo
 	OWLTOOLS_MEMORY=12G owltools $< --set-ontology-id $(OBO)/pco.owl -o $@
+	
+mirror/iao.owl: envo-edit.owl
+	owltools $(OBO)/iao.owl --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/iao.owl -o $@
+.PRECIOUS: mirror/%.owl
 
 # ----------------------------------------
 # STYLE CHECKS
