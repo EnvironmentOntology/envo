@@ -246,6 +246,10 @@ subsets/nlcd2011.owl: subsets/envo-basic.obo
 subsets/nlcd2011.obo: subsets/nlcd2011.owl
 	owltools $< -o -f obo $@
 	
+subsets/envoPolar.owl: subsets/envo-basic.obo
+	owltools $< --extract-ontology-subset --fill-gaps --subset envoPolar --iri $(OBO)/envo/subsets/$@ -o $@
+subsets/envoPolar.obo: subsets/envoPolar.owl
+	owltools $< -o -f obo $@
 	
 
 # ----------------------------------------

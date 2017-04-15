@@ -15,6 +15,7 @@ id: ENVO:00000000
 name: geographic feature
 namespace: ENVO
 comment: May appear on a map.
+subset: envoPolar
 synonym: "macroscopic spatial feature" EXACT []
 xref: https://en.wikipedia.org/wiki/Geographic_feature
 is_a: ENVO:00002297 ! environmental feature
@@ -181,6 +182,7 @@ name: air
 namespace: ENVO
 def: "The mixture of gases (roughly (by molar content/volume: 78% nitrogen, 20.95% oxygen, 0.93% argon, 0.038% carbon dioxide, trace amounts of other gases, and a variable amount (average around 1%) of water vapor) that surrounds the planet Earth." [https://en.wikipedia.org/wiki/Air]
 subset: EnvO-Lite-GSC
+subset: envoPolar
 xref: EcoLexicon:air
 xref: https://en.wikipedia.org/wiki/Air
 xref: LTER:18
@@ -203,7 +205,9 @@ id: ENVO:00002007
 name: sediment
 namespace: ENVO
 def: "Sediment is an environmental substance comprised of any particulate matter that can be transported by fluid flow and which eventually is deposited as a layer of solid particles on the bedor bottom of a body of water or other liquid." [https://en.wikipedia.org/wiki/Sediment]
+comment: It is recommended to use a combination of sediment terms to describe a more specific sediment type.
 subset: EnvO-Lite-GSC
+subset: envoPolar
 xref: EcoLexicon:sediment
 xref: EcoLexicon:sedimentation
 xref: https://en.wikipedia.org/wiki/Sediment
@@ -475,6 +479,7 @@ id: ENVO:01000813
 name: astronomical body part
 namespace: ENVO
 def: "A material part of an astronomical body." []
+subset: envoPolar
 is_a: ENVO:00002297 ! environmental feature
 relationship: part_of ENVO:01000799 ! astronomical body
 
@@ -492,6 +497,7 @@ name: liquid environmental material
 namespace: ENVO
 def: "An environmental material which is in a liquid state." []
 comment: This is a defined class: its subclasses will not be asserted, but filled by inference.
+subset: envoPolar
 is_a: ENVO:00010483 ! environmental material
 
 [Term]
@@ -500,6 +506,7 @@ name: hydrosphere
 namespace: ENVO
 def: "An astronomical body part which is composed of the combined mass of water found on, under, and over the surface of a planet." [https://en.wikipedia.org/wiki/Hydrosphere]
 comment: This is a very broad and, in practice, poorly defined term. Please consider using or requesting a more specific class.
+subset: envoPolar
 is_a: ENVO:01000813 ! astronomical body part
 relationship: composed_primarily_of ENVO:00002006 ! water
 
@@ -695,6 +702,18 @@ property_value: IAO:0000232 "Do not use this relation directly. It is intended a
 is_a: causally_related_to ! causally related to
 
 [Typedef]
+id: causally_downstream_of
+name: causally downstream of
+namespace: ENVO
+def: "inverse of upstream of" []
+xref: RO:0002404
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+is_a: causally_downstream_of_or_within ! causally downstream of or within
+is_a: preceded_by ! preceded by
+inverse_of: causally_upstream_of ! causally upstream of
+
+[Typedef]
 id: causally_downstream_of_or_within
 name: causally downstream of or within
 namespace: ENVO
@@ -737,6 +756,18 @@ property_value: IAO:0000116 "This branch of the ontology deals with causal relat
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: IAO:0000232 "Do not use this relation directly. It is intended as a grouping for a diverse set of relations, all involving cause and effect." xsd:string
 is_a: related_via_dependence_to ! related via dependence to
+
+[Typedef]
+id: causally_upstream_of
+name: causally upstream of
+namespace: ENVO
+def: "p is causally upstream of q if and only if p precedes q and p and q are linked in a causal chain" []
+xref: RO:0002411
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+is_transitive: true
+is_a: causally_upstream_of_or_within ! causally upstream of or within
+is_a: precedes ! precedes
 
 [Typedef]
 id: causally_upstream_of_or_within

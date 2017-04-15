@@ -1067,6 +1067,16 @@ property_value: IAO:0000117 "Chris Mungall" xsd:string
 is_a: RO:0002387 ! has potential to develop into
 
 [Typedef]
+id: RO:0002404
+name: causally downstream of
+def: "inverse of upstream of" []
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+is_a: BFO:0000062 ! preceded by
+is_a: RO:0002427 ! causally downstream of or within
+inverse_of: RO:0002411 ! causally upstream of
+
+[Typedef]
 id: RO:0002410
 name: causally related to
 def: "This relation groups causal relations between material entities and causal relations between processes" []
@@ -1075,6 +1085,16 @@ property_value: IAO:0000116 "This branch of the ontology deals with causal relat
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: IAO:0000232 "Do not use this relation directly. It is intended as a grouping for a diverse set of relations, all involving cause and effect." xsd:string
 is_a: RO:0002609 ! related via dependence to
+
+[Typedef]
+id: RO:0002411
+name: causally upstream of
+def: "p is causally upstream of q if and only if p precedes q and p and q are linked in a causal chain" []
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+is_transitive: true
+is_a: BFO:0000063 ! precedes
+is_a: RO:0002418 ! causally upstream of or within
 
 [Typedef]
 id: RO:0002418
