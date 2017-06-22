@@ -105,7 +105,7 @@ IMPORTS = pato uberon chebi ro pco foodon go ncbitaxon
 # Make this target to regenerate ALL
 all_imports: $(patsubst %, imports/%_import.owl,$(IMPORTS)) $(patsubst %, imports/%_import.obo,$(IMPORTS))
 
-KEEPRELS = BFO:0000050 BFO:0000051 RO:0002202 immediate_transformation_of RO:0002176
+KEEPRELS = BFO:0000050 BFO:0000051 RO:0002202 immediate_transformation_of RO:0002176 IAO:0000136
 
 # Create an import module using the OWLAPI module extraction code via OWLTools.
 # We use the standard catalog, but rewrite the import to X to be a local mirror of ALL of X.
@@ -246,6 +246,10 @@ subsets/nlcd2011.owl: subsets/envo-basic.obo
 subsets/nlcd2011.obo: subsets/nlcd2011.owl
 	owltools $< -o -f obo $@
 	
+subsets/envoPolar.owl: subsets/envo-basic.obo
+	owltools $< --extract-ontology-subset --fill-gaps --subset envoPolar --iri $(OBO)/envo/subsets/$@ -o $@
+subsets/envoPolar.obo: subsets/envoPolar.owl
+	owltools $< -o -f obo $@
 	
 
 # ----------------------------------------
