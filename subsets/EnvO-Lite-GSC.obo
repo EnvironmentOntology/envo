@@ -18,7 +18,7 @@ comment: May appear on a map.
 subset: envoPolar
 synonym: "macroscopic spatial feature" EXACT []
 xref: https://en.wikipedia.org/wiki/Geographic_feature
-is_a: ENVO:00002297 ! environmental feature
+is_a: ENVO:01000813 ! astronomical body part
 
 [Term]
 id: ENVO:00000027
@@ -450,6 +450,14 @@ def: "A lotic water body is a water body in which the accumulated water, in its 
 is_a: ENVO:00000063 ! water body
 
 [Term]
+id: ENVO:01000637
+name: outer space
+namespace: ENVO
+def: "Outer space is a hard vacuum containing a low density of particles, predominantly a plasma of hydrogen and helium as well as electromagnetic radiation, magnetic fields, neutrinos, dust and cosmic rays that exists between celestial bodies." [https://en.wikipedia.org/wiki/Outer_space]
+synonym: "space" BROAD []
+is_a: ENVO:00002297 ! environmental feature
+
+[Term]
 id: ENVO:01000665
 name: waste role
 namespace: ENVO
@@ -472,7 +480,18 @@ namespace: ENVO
 def: "An object which is naturally occuring, bound together by gravitational or electromagnetic forces, and surrounded by space." [https://en.wikipedia.org/wiki/Astronomical_object]
 comment: Astronomical bodies are usually cohesive, thus the use of the term 'object' sensu BFO 'object'.
 synonym: "celestial body" RELATED []
+is_a: ENVO:01000804 ! astronomical object
+
+[Term]
+id: ENVO:01000804
+name: astronomical object
+namespace: ENVO
+def: "An object which is composed of one or more gravitationally bound structures that are associated with a position in space." [https://en.wikipedia.org/wiki/Astronomical_object]
+comment: If there is only one astronomical body involved, this class is equivalent to ENVO:01000799. This may be problematic with reasoning, but it seems to be true to the rather fuzzy definitions found thus far.
+synonym: "celestial object" RELATED []
 is_a: ENVO:00002297 ! environmental feature
+relationship: has_part ENVO:01000799 {minCardinality="1"} ! astronomical body
+relationship: surrounded_by ENVO:01000637 ! outer space
 
 [Term]
 id: ENVO:01000813
