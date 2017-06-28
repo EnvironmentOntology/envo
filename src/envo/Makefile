@@ -251,6 +251,11 @@ subsets/envoPolar.owl: subsets/envo-basic.obo
 subsets/envoPolar.obo: subsets/envoPolar.owl
 	owltools $< -o -f obo $@
 	
+subsets/envoCesab.owl: subsets/envo-basic.obo
+	owltools $< --extract-ontology-subset --fill-gaps --subset envoCesab --iri $(OBO)/envo/subsets/$@ -o $@
+subsets/envoCesab.obo: subsets/envoCesab.owl
+	owltools $< -o -f obo $@
+	
 
 # ----------------------------------------
 # Reports
