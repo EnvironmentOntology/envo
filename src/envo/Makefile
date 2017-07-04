@@ -66,7 +66,7 @@ subsets/envo-basic.owl: envo-simple.owl
 	owltools $< imports/ro_import.owl --merge-imports-closure --set-ontology-id $(OBO)/$@ -o $@.tmp && mv $@.tmp $@
 
 subsets/envo-basic.obo: envo-simple.owl
-	owltools $< imports/ro_import.owl --merge-imports-closure  --add-obo-shorthand-to-properties --set-ontology-id $(OBO)/$@ -o -f obo $@.tmp && grep -v ^owl-axioms $@.tmp > $@
+	owltools $< imports/ro_import.owl --merge-imports-closure  --add-obo-shorthand-to-properties --set-ontology-id $(OBO)/$@ -o -f obo --no-check $@.tmp && grep -v ^owl-axioms $@.tmp > $@
 
 #envo-mireot.obo: envo-edit.owl chebi-lite.obo pato-lite.obo
 #	ontology-release-runner --no-subsets --skip-format owx --run-obo-basic-dag-check --no-reasoner --allow-overwrite --asserted --outdir build $< chebi-lite.obo pato-lite.obo && cp build/envo-merged.obo $@
@@ -105,13 +105,22 @@ IMPORTS = pato uberon chebi ro pco foodon go ncbitaxon
 # Make this target to regenerate ALL
 all_imports: $(patsubst %, imports/%_import.owl,$(IMPORTS)) $(patsubst %, imports/%_import.obo,$(IMPORTS))
 
+SEEDS= $(patsubst %, imports/%_terms.txt,$(IMPORTS))
+
+
 KEEPRELS = BFO:0000050 BFO:0000051 RO:0002202 immediate_transformation_of RO:0002176 IAO:0000136
+
+imports/seed.tsv: envo-edit.owl $(ALL_MODS_OWL)
+	owltools $(USECAT) $< --merge-imports-closure --export-table $@.tmp && sort -u $@.tmp > $@
+
+imports/%_combined_seed.tsv: imports/%_terms.txt imports/seed.tsv
+	cut -f1 $^ | sort -u > $@
 
 # Create an import module using the OWLAPI module extraction code via OWLTools.
 # We use the standard catalog, but rewrite the import to X to be a local mirror of ALL of X.
 # After extraction, we further reduce the ontology by creating a "mingraph" (removes all annotations except label) and by 
-imports/%_import.owl: envo-edit.owl mirror/%.owl imports/%_seed.owl $(ALL_MODS_OWL)
-	owltools  $(USECAT) --map-ontology-iri $(ENVO_IMPORTS_BASE_URI)/imports/$*_import.owl mirror/$*.owl $< imports/$*_seed.owl --merge-support-ontologies  --extract-module -s $(OBO)/$*.owl -c --remove-axiom-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(ENVO_IMPORTS_BASE_URI)/$@ -o $@
+imports/%_import.owl: mirror/%.owl envo-edit.owl imports/%_combined_seed.tsv
+	robot extract -i $< -T imports/$*_combined_seed.tsv -m BOT -O $(ENVO_IMPORTS_BASE_URI)/$@ -o $@.tmp.owl && mv $@.tmp.owl $@
 
 imports/%_import.obo: imports/%_import.owl
 	owltools $(USECAT) $< -o -f obo $@
@@ -120,7 +129,7 @@ imports/%_import.obo: imports/%_import.owl
 imports/foodon_import.owl: mirror/foodon.owl imports/foodon_terms.txt
 	$(ROBOT) extract -i $< -T imports/foodon_terms.txt --method BOT -O $(ENVO_IMPORTS_BASE_URI)/$@ -o $@
 .PRECIOUS: imports/%_import.owl
-	
+
 # RO: Use ROBOT, driven entirely by terms lists NOT from source ontology
 imports/ro_import.owl: mirror/ro.owl imports/ro_terms.txt
 	$(ROBOT) extract -i $< -T imports/ro_terms.txt --method BOT -O $(ENVO_IMPORTS_BASE_URI)/$@ -o $@
@@ -143,8 +152,12 @@ imports/iao_import.owl: mirror/iao.owl imports/iao_terms.txt
 
 
 # clone remote ontology locally, perfoming some excision of relations and annotations
-mirror/%.owl: envo-edit.owl
-	owltools $(OBO)/$*.owl --remove-annotation-assertions -l --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS)  -o $@
+mirror/%-local.owl:
+	wget --no-check-certificate $(OBO)/$*.owl -O $@
+.PRECIOUS: mirror/%-local.owl
+
+mirror/%.owl: mirror/%-local.owl
+	owltools $< --remove-annotation-assertions -l --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS)  -o $@
 .PRECIOUS: mirror/%.owl
 
 mirror/foodon.owl: envo-edit.owl
@@ -181,10 +194,6 @@ mirror/po.owl: envo-edit.owl
 	owltools $(OBO)/po.owl --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/po.owl -o $@
 .PRECIOUS: mirror/%.owl
 
-mirror/go.owl: envo-edit.owl
-	owltools $(OBO)/go.owl --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/go.owl -o $@
-.PRECIOUS: mirror/%.owl
-
 ncbitaxon.obo:
 	wget -N $(OBO)/ncbitaxon.obo
 .PRECIOUS: ncbitaxon.obo
@@ -195,7 +204,7 @@ mirror/ncbitaxon.owl: ncbitaxon.obo
 
 mirror/pco.owl: imports/pco_basic.obo
 	OWLTOOLS_MEMORY=12G owltools $< --set-ontology-id $(OBO)/pco.owl -o $@
-	
+
 mirror/iao.owl: envo-edit.owl
 	owltools $(OBO)/iao.owl --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/iao.owl -o $@
 .PRECIOUS: mirror/%.owl
@@ -230,32 +239,32 @@ subsets/EnvO-Lite-GSC.owl: subsets/envo-basic.obo
 	owltools $< --extract-ontology-subset --fill-gaps --subset EnvO-Lite-GSC --iri $(OBO)/envo/subsets/$@ -o $@
 subsets/EnvO-Lite-GSC.obo: subsets/EnvO-Lite-GSC.owl
 	owltools $< -o -f obo $@
-	
+
 subsets/environmental_hazards.owl: subsets/envo-basic.obo
 	owltools $< --extract-ontology-subset --fill-gaps --subset environmental_hazards --iri $(OBO)/envo/subsets/$@ -o $@
 subsets/environmental_hazards.obo: subsets/environmental_hazards.owl
 	owltools $< -o -f obo $@
-	
+
 subsets/wwfBiome.owl: subsets/envo-basic.obo
 	owltools $< --extract-ontology-subset --fill-gaps --subset wwfBiome --iri $(OBO)/envo/subsets/$@ -o $@
 subsets/wwfBiome.obo: subsets/wwfBiome.owl
 	owltools $< -o -f obo $@
-	
+
 subsets/nlcd2011.owl: subsets/envo-basic.obo
 	owltools $< --extract-ontology-subset --fill-gaps --subset nlcd2011 --iri $(OBO)/envo/subsets/$@ -o $@
 subsets/nlcd2011.obo: subsets/nlcd2011.owl
 	owltools $< -o -f obo $@
-	
+
 subsets/envoPolar.owl: subsets/envo-basic.obo
 	owltools $< --extract-ontology-subset --fill-gaps --subset envoPolar --iri $(OBO)/envo/subsets/$@ -o $@
 subsets/envoPolar.obo: subsets/envoPolar.owl
 	owltools $< -o -f obo $@
-	
+
 subsets/envoCesab.owl: subsets/envo-basic.obo
 	owltools $< --extract-ontology-subset --fill-gaps --subset envoCesab --iri $(OBO)/envo/subsets/$@ -o $@
 subsets/envoCesab.obo: subsets/envoCesab.owl
 	owltools $< -o -f obo $@
-	
+
 
 # ----------------------------------------
 # Reports
