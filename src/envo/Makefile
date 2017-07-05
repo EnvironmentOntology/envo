@@ -110,8 +110,9 @@ SEEDS= $(patsubst %, imports/%_terms.txt,$(IMPORTS))
 
 KEEPRELS = BFO:0000050 BFO:0000051 RO:0002202 immediate_transformation_of RO:0002176 IAO:0000136
 
+# See https://github.com/EnvironmentOntology/envo/issues/521
 imports/seed.tsv: envo-edit.owl $(ALL_MODS_OWL)
-	owltools $(USECAT) $< --merge-imports-closure --export-table $@.tmp && sort -u $@.tmp > $@
+	owltools $(USECAT) $< --merge-imports-closure --export-table $@.tmp && cut -f1 $@.tmp | grep purl.obolib | sort -u > $@
 
 imports/%_combined_seed.tsv: imports/%_terms.txt imports/seed.tsv
 	cut -f1 $^ | sort -u > $@
