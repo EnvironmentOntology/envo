@@ -184,7 +184,7 @@ mirror/ro-classes.owl: envo-edit.owl
 	owltools $(OBO)/ro.owl --merge-imports-closure --make-subset-by-properties -f // --remove-external-classes -k RO --remove-annotation-assertions -l -s -d  -o $@
 
 mirror/bfo.owl: envo-edit.owl
-	owltools $(OBO)/ro.owl --merge-imports-closure --make-subset-by-properties -f // --remove-external-classes BFO --remove-annotation-assertions -l -s -d  --remove-dangling --set-ontology-id $(OBO)/bfo.owl -o $@
+	owltools $(OBO)/bfo.owl --merge-imports-closure --make-subset-by-properties -f // --remove-external-classes BFO --remove-annotation-assertions -l -s -d  --remove-dangling --set-ontology-id $(OBO)/bfo.owl -o $@
 .PRECIOUS: mirror/%.owl
 
 mirror/uberon.owl: envo-edit.owl
