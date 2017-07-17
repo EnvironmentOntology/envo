@@ -3,12 +3,53 @@
      xml:base="http://purl.obolibrary.org/obo/envo/imports/pato_import.owl"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:dc="http://purl.org/dc/elements/1.1/">
-    <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/envo/imports/pato_import.owl">
-        <dc:source rdf:resource="http://purl.obolibrary.org/obo/pato/releases/2017-03-22/pato.owl"/>
-    </owl:Ontology>
+     xmlns:obo="http://purl.obolibrary.org/obo/">
+    <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/envo/imports/pato_import.owl"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000115 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000115"/>
+    
+
+
+    <!-- http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym -->
+
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym"/>
+    
+
+
+    <!-- http://www.geneontology.org/formats/oboInOwl#hasExactSynonym -->
+
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+    
+
+
+    <!-- http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym -->
+
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym"/>
+    
+
+
+    <!-- http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym -->
+
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
     
 
 
@@ -26,6 +67,8 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0000001 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000001">
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A dependent entity that inheres in a bearer by virtue of how the bearer is related to other entities</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">trait</oboInOwl:hasExactSynonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">quality</rdfs:label>
     </owl:Class>
     
@@ -34,8 +77,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0000011 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000011">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">age</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000165"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A time quality inhering in a bearer by virtue of how long the bearer has existed.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">age</rdfs:label>
     </owl:Class>
     
 
@@ -43,8 +87,11 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0000014 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000014">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">color</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001300"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A composite chromatic quality composed of hue, saturation and intensity parts.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">colour</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">relative color</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">color</rdfs:label>
     </owl:Class>
     
 
@@ -52,8 +99,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0000019 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000019">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">color pattern</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000060"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A chromatic property that is the relative position of different hues or degrees of saturation.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">color pattern</rdfs:label>
     </owl:Class>
     
 
@@ -61,8 +109,13 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0000025 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000025">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">composition</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000141"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A single physical entity inhering in an bearer by virtue of the bearer&apos;s quantities or relative ratios of subparts.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">composed of</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">compositionality</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">content</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">structure, composition</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">composition</rdfs:label>
     </owl:Class>
     
 
@@ -70,8 +123,10 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0000033 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000033">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">concentration of</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002182"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A quality inhering in a substance by virtue of the amount of the bearer&apos;s there is mixed with another substance.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">concentration</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">concentration of</rdfs:label>
     </owl:Class>
     
 
@@ -79,8 +134,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0000044 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000044">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">frequency</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000161"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A physical quality which inheres in a bearer by virtue of the number of the bearer&apos;s repetitive actions in a particular time.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">frequency</rdfs:label>
     </owl:Class>
     
 
@@ -88,8 +144,11 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0000048 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000048">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hardness</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001546"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A physical quality inhering in a bearer by virtue of the bearer&apos;s resistance to pressure, being broken, or pierced</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">impenetrability</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">toughness</oboInOwl:hasRelatedSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hardness</rdfs:label>
     </owl:Class>
     
 
@@ -97,8 +156,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0000051 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000051">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">morphology</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001241"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A quality of a single physical entity inhering in the bearer by virtue of the bearer&apos;s size or shape or structure.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">morphology</rdfs:label>
     </owl:Class>
     
 
@@ -106,8 +166,10 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0000052 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000052">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">shape</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000051"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A morphological quality inhering in a bearer by virtue of the bearer&apos;s ratios of distances between its features (points, edges, surfaces and also holes etc).</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">relational shape quality</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">shape</rdfs:label>
     </owl:Class>
     
 
@@ -115,8 +177,11 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0000057 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000057">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">occurrence</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002323"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A quality of a single process inhering in a bearer by virtue of the bearer&apos;s occurrence.</obo:IAO_0000115>
+        <oboInOwl:hasBroadSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">temporal</oboInOwl:hasBroadSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">incidence</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">occurrence</rdfs:label>
     </owl:Class>
     
 
@@ -124,8 +189,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0000058 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000058">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">odor</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001018"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A physical quality inhering in a bearer by virtue of the bearer&apos;s molecules being are aerially dispersed and perceived by an odorant receptor.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">odor</rdfs:label>
     </owl:Class>
     
 
@@ -133,8 +199,11 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0000060 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000060">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">spatial pattern</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000140"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A spatial quality inhering in a bearer by virtue of the bearer&apos;s exhibiting repetition of placement of its parts.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">distribution</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pattern</oboInOwl:hasRelatedSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">spatial pattern</rdfs:label>
     </owl:Class>
     
 
@@ -142,8 +211,8 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0000068 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000068">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">qualitative</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000001"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">qualitative</rdfs:label>
     </owl:Class>
     
 
@@ -151,8 +220,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0000069 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000069">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">deviation(from_normal)</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000068"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A quality inhering in a bearer by virtue of the whether the bearer differs from normal or average.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">deviation(from_normal)</rdfs:label>
     </owl:Class>
     
 
@@ -160,8 +230,15 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0000070 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000070">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">amount</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000068"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The number of entities of this type that are part of the whole organism.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">count</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">presence or absence in organism</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">quantitative</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">count in organism</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">number</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">presence</oboInOwl:hasRelatedSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">amount</rdfs:label>
     </owl:Class>
     
 
@@ -169,8 +246,10 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0000085 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000085">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sensitivity toward</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001018"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A quality inhering in a bearer by virtue of the bearer&apos;s disposition to detect or perceive external stimulation.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sensitivity</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sensitivity toward</rdfs:label>
     </owl:Class>
     
 
@@ -178,8 +257,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0000117 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000117">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">size</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000051"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A morphology quality inhering in a bearer by virtue of the bearer&apos;s physical magnitude.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">size</rdfs:label>
     </owl:Class>
     
 
@@ -187,8 +267,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0000122 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000122">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">length</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001708"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A 1-D extent quality which is equal to the distance between two points.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">length</rdfs:label>
     </owl:Class>
     
 
@@ -196,8 +277,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0000125 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000125">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mass</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001018"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A physical quality that inheres in a bearer by virtue of the proportion of the bearer&apos;s amount of matter.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mass</rdfs:label>
     </owl:Class>
     
 
@@ -205,8 +287,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0000136 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000136">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">closure</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000051"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A morphological quality pertaining to the degree to which an object contains an opening, aperture, orifice or vent.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">closure</rdfs:label>
     </owl:Class>
     
 
@@ -214,8 +297,12 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0000140 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000140">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">position</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001018"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A spatial quality inhering in a bearer by virtue of the bearer&apos;s spatial location relative to other objects in the vicinity.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">location</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">placement</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">relational spatial quality</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">position</rdfs:label>
     </owl:Class>
     
 
@@ -223,8 +310,11 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0000141 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000141">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">structure</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000051"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A morphology quality inhering in a bearer by virtue of the bearer&apos;s relative position, shape, arrangements and connectivity of an organism&apos;s various parts; the pattern underlying its form.</obo:IAO_0000115>
+        <oboInOwl:hasBroadSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">conformation</oboInOwl:hasBroadSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">relational structural quality</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">structure</rdfs:label>
     </owl:Class>
     
 
@@ -232,8 +322,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0000146 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000146">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">temperature</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001018"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A physical quality of the thermal energy of a system.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">temperature</rdfs:label>
     </owl:Class>
     
 
@@ -241,8 +332,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0000161 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000161">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rate</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002062"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A quality of a single process inhering in a bearer by virtue of the bearer&apos;s occurrence per unit time.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rate</rdfs:label>
     </owl:Class>
     
 
@@ -250,8 +342,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0000165 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000165">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">time</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001018"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A quality in which events occur in sequence.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">time</rdfs:label>
     </owl:Class>
     
 
@@ -259,8 +352,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0000169 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000169">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">viability</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001995"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An organismal quality inhering in a bearer or a population by virtue of the bearer&apos;s disposition to survive and develop normally or the number of surviving individuals in a given population.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">viability</rdfs:label>
     </owl:Class>
     
 
@@ -268,8 +362,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0000308 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000308">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">old</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000011"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An age which is relatively high.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">old</rdfs:label>
     </owl:Class>
     
 
@@ -277,8 +372,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0000309 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000309">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">young</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000011"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An age which is relatively low.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">young</rdfs:label>
     </owl:Class>
     
 
@@ -286,8 +382,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0000318 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000318">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">blue</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000014"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A color hue with low wavelength of that portion of the visible spectrum lying between green and indigo, evoked in the human observer by radiant energy with wavelengths of approximately 420 to 490 nanometers.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">blue</rdfs:label>
     </owl:Class>
     
 
@@ -295,8 +392,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0000330 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000330">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">irregular spatial pattern</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000060"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A spatial pattern inhering in a bearer by virtue of the bearer&apos;s magnitude of or the relationships between its repeated parts lack consistency.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">irregular spatial pattern</rdfs:label>
     </owl:Class>
     
 
@@ -304,8 +402,10 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0000337 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000337">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">colorless</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000019"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A color quality inhering in a bearer by virtue of the bearer&apos;s lacking color.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">unpigmented</oboInOwl:hasRelatedSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">colorless</rdfs:label>
     </owl:Class>
     
 
@@ -313,9 +413,12 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0000380 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000380">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">increased frequency</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000044"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000912"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A frequency which is relatively high.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">high frequency</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">frequent</oboInOwl:hasRelatedSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">increased frequency</rdfs:label>
     </owl:Class>
     
 
@@ -323,9 +426,12 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0000381 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000381">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decreased frequency</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000044"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000911"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A frequency which is relatively low.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">low frequency</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">infrequent</oboInOwl:hasRelatedSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decreased frequency</rdfs:label>
     </owl:Class>
     
 
@@ -333,9 +439,13 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0000386 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000386">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hard</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000048"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002305"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A hardness quality of being rigid and resistant to pressure.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">firm</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">impenetrable</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tough</oboInOwl:hasRelatedSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hard</rdfs:label>
     </owl:Class>
     
 
@@ -343,8 +453,11 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0000402 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000402">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">branched</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002009"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A branchiness quality inhering in a bearer by virtue of the bearer&apos;s having branches.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ramified</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ramiform</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">branched</rdfs:label>
     </owl:Class>
     
 
@@ -352,8 +465,11 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0000406 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000406">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">curved</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001591"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A curvature quality inhering in a bearer by virtue of the bearer&apos;s having or being marked by a curve or smoothly rounded bend.</obo:IAO_0000115>
+        <oboInOwl:hasNarrowSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">bowing</oboInOwl:hasNarrowSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">curled</oboInOwl:hasRelatedSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">curved</rdfs:label>
     </owl:Class>
     
 
@@ -361,8 +477,10 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0000407 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000407">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">flat</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002254"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A quality inhering in a bearer by virtue of the bearer&apos;s having a horizontal surface without a slope, tilt, or curvature.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">plate-like</oboInOwl:hasRelatedSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">flat</rdfs:label>
     </owl:Class>
     
 
@@ -370,8 +488,11 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0000411 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000411">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">circular</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000947"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A shape quality inhering in a bearer by virtue of the bearer&apos;s being such that every part of the surface or the circumference is equidistant from the center.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">round</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rounded</oboInOwl:hasRelatedSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">circular</rdfs:label>
     </owl:Class>
     
 
@@ -379,8 +500,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0000428 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000428">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sporadic</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000057"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A quality of a single process inhering in a bearer by virtue of the bearer&apos;s once or in or a few unpredictable instances.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sporadic</rdfs:label>
     </owl:Class>
     
 
@@ -388,9 +510,11 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0000573 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000573">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">increased length</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000122"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000586"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A length quality which is relatively large.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">long</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">increased length</rdfs:label>
     </owl:Class>
     
 
@@ -398,9 +522,13 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0000574 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000574">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decreased length</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000122"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000587"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A length quality which is relatively small.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">short</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">shortened</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">stubby</oboInOwl:hasRelatedSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decreased length</rdfs:label>
     </owl:Class>
     
 
@@ -408,9 +536,15 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0000586 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000586">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">increased size</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000117"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002305"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A size quality which is relatively high.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">big</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">enlarged</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">expanded</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">great</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">large</oboInOwl:hasRelatedSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">increased size</rdfs:label>
     </owl:Class>
     
 
@@ -418,9 +552,15 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0000587 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000587">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decreased size</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000117"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002303"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A size quality which is relatively low.</obo:IAO_0000115>
+        <oboInOwl:hasNarrowSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hypoplasia</oboInOwl:hasNarrowSynonym>
+        <oboInOwl:hasNarrowSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">underdeveloped</oboInOwl:hasNarrowSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">reduced</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">small</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tiny</oboInOwl:hasRelatedSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decreased size</rdfs:label>
     </owl:Class>
     
 
@@ -428,9 +568,14 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0000591 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000591">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">increased thickness</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000586"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000915"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A thickness which is relatively high.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">high thickness</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">stout</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">thickened</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">thick</oboInOwl:hasRelatedSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">increased thickness</rdfs:label>
     </owl:Class>
     
 
@@ -438,9 +583,13 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0000592 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000592">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decreased thickness</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000587"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000915"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A thickness which is relatively low.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">low thickness</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">slender</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">thin</oboInOwl:hasRelatedSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decreased thickness</rdfs:label>
     </owl:Class>
     
 
@@ -448,9 +597,12 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0000595 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000595">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">increased volume</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000586"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000918"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A volume which is relatively high.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">high volume</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">large volume</oboInOwl:hasRelatedSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">increased volume</rdfs:label>
     </owl:Class>
     
 
@@ -458,9 +610,12 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0000596 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000596">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decreased volume</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000587"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000918"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A volume which is relatively low.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">low volume</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">small volume</oboInOwl:hasRelatedSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decreased volume</rdfs:label>
     </owl:Class>
     
 
@@ -468,9 +623,11 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0000608 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000608">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">closed</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000136"/>
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/PATO_0000610"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A morphological quality inhering in a bearer by virtue of the bearer&apos;s affording blocked passage or view.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">blocked</oboInOwl:hasRelatedSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">closed</rdfs:label>
     </owl:Class>
     
 
@@ -478,8 +635,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0000609 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000609">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">closure incomplete</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000610"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A morphological quality inhering in a bearer by virtue of the bearer&apos;s affording not completed blocked passage or view.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">closure incomplete</rdfs:label>
     </owl:Class>
     
 
@@ -487,8 +645,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0000610 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000610">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">open</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000136"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A morphological quality inhering in a bearer by virtue of the bearer&apos;s affording unobstructed passage or view.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">open</rdfs:label>
     </owl:Class>
     
 
@@ -496,8 +655,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0000619 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000619">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">crowded</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000140"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A positional quality inhering in a bearer by virtue of the bearer&apos;s being overfilled.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">crowded</rdfs:label>
     </owl:Class>
     
 
@@ -505,8 +665,10 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0000622 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000622">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">erect</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000140"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A positional quality inhering in a bearer by virtue of the bearer&apos;s being upright in position or posture.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">upright</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">erect</rdfs:label>
     </owl:Class>
     
 
@@ -514,8 +676,10 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0000689 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000689">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">continuous</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000057"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A quality of a single process inhering in a bearer by virtue of the bearer&apos;s being uninterrupted in time, sequence, substance, or extent.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uninterrupted</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">continuous</rdfs:label>
     </owl:Class>
     
 
@@ -523,8 +687,11 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0000690 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000690">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">discontinuous</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000057"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A quality of a single process inhering in a bearer by virtue of the bearer&apos;s being marked by breaks or interruptions.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">interrupted</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">intermittent</oboInOwl:hasRelatedSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">discontinuous</rdfs:label>
     </owl:Class>
     
 
@@ -532,9 +699,11 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0000911 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000911">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decreased rate</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000161"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002302"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A rate which is relatively low.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">slow rate</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decreased rate</rdfs:label>
     </owl:Class>
     
 
@@ -542,9 +711,12 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0000912 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000912">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">increased rate</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000161"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002304"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A rate which is relatively high.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">fast rate</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">high rate</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">increased rate</rdfs:label>
     </owl:Class>
     
 
@@ -552,8 +724,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0000915 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000915">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">thickness</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001708"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A 1-D extent quality which is equal to the dimension through an object as opposed to its length or width.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">thickness</rdfs:label>
     </owl:Class>
     
 
@@ -561,8 +734,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0000918 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000918">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">volume</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001710"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A 3-D extent quality inhering in a bearer by virtue of the bearer&apos;s amount of 3-dimensional space it occupies.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">volume</rdfs:label>
     </owl:Class>
     
 
@@ -570,8 +744,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0000946 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000946">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">oblong</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002006"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A shape quality inhering in a bearer by virtue of the bearer&apos;s having a somewhat elongated form with approximately parallel sides.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">oblong</rdfs:label>
     </owl:Class>
     
 
@@ -579,8 +754,14 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0000947 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000947">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">elliptic</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002318"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A spheroid quality inhering in a bearer by virtue of the bearer&apos;s being oval with two axes of symmetry, as produced by a conical section.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ellipse-shaped</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ellipsoid</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">elliptical</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">oval</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ovoid</oboInOwl:hasRelatedSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">elliptic</rdfs:label>
     </owl:Class>
     
 
@@ -588,8 +769,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0000957 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000957">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">opacity</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001300"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An optical quality which obtains by virtue of the ability of the bearer to absorb visible light.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">opacity</rdfs:label>
     </owl:Class>
     
 
@@ -597,8 +779,12 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0000963 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000963">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">opaque</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000957"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A optical quality inhering in a bearer by virtue of the bearer&apos;s not being clear; not transmitting or reflecting light or radiant energy.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">non-transparent</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">clouding</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cloudy</oboInOwl:hasRelatedSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">opaque</rdfs:label>
     </owl:Class>
     
 
@@ -606,8 +792,10 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0000964 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000964">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">transparent</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000957"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A optical quality inhering in a bearer by virtue of the bearer&apos;s lacking opacity.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">clear</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">transparent</rdfs:label>
     </owl:Class>
     
 
@@ -615,8 +803,15 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0000967 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000967">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">undulate</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000052"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A shape quality inhering in a bearer by virtue of the bearer&apos;s having a sinuate margin and rippled surface.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">undulated</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">undulating</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">waved</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">wavy</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rippled</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sinuate</oboInOwl:hasRelatedSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">undulate</rdfs:label>
     </owl:Class>
     
 
@@ -624,8 +819,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0000970 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000970">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">permeability</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000141"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A structural quality inhering in a bearer by virtue of the bearer&apos;s disposition to being permeated or pervaded by a gas or liquid (as by osmosis or diffusion).</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">permeability</rdfs:label>
     </owl:Class>
     
 
@@ -633,8 +829,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0000973 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000973">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">porosity</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000970"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A permeability quality inhering in a bearer by virtue of the bearer&apos;s disposition to admit the passage of gas or liquid through pores or interstices.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">porosity</rdfs:label>
     </owl:Class>
     
 
@@ -642,9 +839,11 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0000982 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000982">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">permeable</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000970"/>
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/PATO_0000983"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A permeability quality inhering in a bearer by virtue of the bearer&apos;s being capable to be permeated or pervaded by a gas or liquid (as by osmosis or diffusion).</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">porous</oboInOwl:hasRelatedSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">permeable</rdfs:label>
     </owl:Class>
     
 
@@ -652,8 +851,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0000983 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000983">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">impermeable</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000970"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A permeability quality inhering in a bearer by virtue of the bearer&apos;s being incapable of being permeated or pervaded by a gas or liquid (as by osmosis or diffusion).</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">impermeable</rdfs:label>
     </owl:Class>
     
 
@@ -661,9 +861,10 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0000984 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000984">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">porous</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000973"/>
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/PATO_0000985"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A porosity quality inhering in a bearer by virtue of the bearer&apos;s being capable of admitting the passage of gas or liquid through pores or interstices.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">porous</rdfs:label>
     </owl:Class>
     
 
@@ -671,8 +872,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0000985 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000985">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">non-porous</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000973"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A porosity quality inhering in a bearer by virtue of the bearer&apos;s being incapable of admitting the passage of gas or liquid through pores or interstices.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">non-porous</rdfs:label>
     </owl:Class>
     
 
@@ -680,8 +882,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0000992 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000992">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">viscosity</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001548"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A physical quality of a liquid inhering in a bearer by virtue of the bearer&apos;s disposition to internal resistance to flow.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">viscosity</rdfs:label>
     </owl:Class>
     
 
@@ -689,8 +892,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0000998 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000998">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">viscous</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000992"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A viscosity quality inhering in a bearer by virtue of the bearer&apos;s having viscosity.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">viscous</rdfs:label>
     </owl:Class>
     
 
@@ -698,17 +902,10 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001018 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001018">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">physical quality</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001241"/>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/PATO_0001025 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001025">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pressure</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001018"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A quality of a physical entity that exists through action of continuants at the physical level of organisation in relation to other entities.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">relational physical quality</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">physical quality</rdfs:label>
     </owl:Class>
     
 
@@ -716,8 +913,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001029 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001029">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">efficiency</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001018"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A physical quality inhering in a bearer by virtue of ratio of the bearer&apos;s output to the bearer&apos;s input.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">efficiency</rdfs:label>
     </owl:Class>
     
 
@@ -725,8 +923,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001031 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001031">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">elasticity</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001018"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A physical quality inhering in a bearer by virtue of the bearer&apos;s disposition to recover its size and shape after deformation in any way.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">elasticity</rdfs:label>
     </owl:Class>
     
 
@@ -734,8 +933,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001154 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001154">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">elongated</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000052"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A quality inhering in a bearer by virtue of the bearer&apos;s length being notably higher than its width.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">elongated</rdfs:label>
     </owl:Class>
     
 
@@ -743,8 +943,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001159 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001159">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">concentrated</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000033"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A concentration quality inhering in a bearer by virtue of the bearer&apos;s exhibiting concentration.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">concentrated</rdfs:label>
     </owl:Class>
     
 
@@ -752,9 +953,11 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001163 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001163">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decreased concentration</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001159"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002303"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A concentration which is lower relative to the normal or average.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">low concentration</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decreased concentration</rdfs:label>
     </owl:Class>
     
 
@@ -762,9 +965,10 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001171 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001171">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">elastic</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001031"/>
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/PATO_0001172"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An elasticity quality inhering in a bearer by virtue of the bearer&apos;s ability to recover its size and shape after deformation in any way.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">elastic</rdfs:label>
     </owl:Class>
     
 
@@ -772,8 +976,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001172 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001172">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">inelastic</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001031"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An elasticity quality inhering in a bearer by virtue of the bearer&apos;s inability to recover its size and shape after deformation in any way.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">inelastic</rdfs:label>
     </owl:Class>
     
 
@@ -781,8 +986,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001199 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001199">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">linear</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000052"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A shape quality inhering in a bearer by virtue of the bearer&apos;s being narrow, with the two opposite margins parallel.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">linear</rdfs:label>
     </owl:Class>
     
 
@@ -790,8 +996,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001201 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001201">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Y-shaped</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001890"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A concave 3-D shape quality inhering in a bearer by virtue of the bearer&apos;s being shaped in the form of the letter Y.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Y-shaped</rdfs:label>
     </owl:Class>
     
 
@@ -799,8 +1006,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001208 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001208">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">odorless</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000058"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An odor quality inhering in a bearer by virtue of the bearer&apos;s lacking odour.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">odorless</rdfs:label>
     </owl:Class>
     
 
@@ -808,8 +1016,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001230 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001230">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">strength</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001018"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A quality inhering in a bearer by virtue of the bearer&apos;s power or force.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">strength</rdfs:label>
     </owl:Class>
     
 
@@ -817,8 +1026,13 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001236 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001236">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">process quality</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000001"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A quality which inheres in an process.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">quality of a process</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">quality of occurrent</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">quality of process</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">relational quality of occurrent</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">process quality</rdfs:label>
     </owl:Class>
     
 
@@ -826,8 +1040,17 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001241 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001241">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">physical object quality</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000001"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A quality which inheres in a continuant.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">monadic quality of a continuant</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">multiply inhering quality of a physical entity</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">quality of a continuant</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">quality of a single physical entity</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">quality of an object</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">quality of continuant</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasNarrowSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">monadic quality of an object</oboInOwl:hasNarrowSynonym>
+        <oboInOwl:hasNarrowSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">monadic quality of continuant</oboInOwl:hasNarrowSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">physical object quality</rdfs:label>
     </owl:Class>
     
 
@@ -835,8 +1058,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001291 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001291">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">electromagnetic (EM) radiation quality</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001739"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A physical quality that inheres in an bearer by virtue of how that bearer interacts with electromagnetic radiation.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">electromagnetic (EM) radiation quality</rdfs:label>
     </owl:Class>
     
 
@@ -844,8 +1068,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001300 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001300">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">optical quality</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001291"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An EM radiation quality in which the EM radiation is within the fiat range of the spectrum visible deemed to be light.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">optical quality</rdfs:label>
     </owl:Class>
     
 
@@ -853,9 +1078,25 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001305 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001305">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">increased temperature</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000146"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002305"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A temperature which is relatively high.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">high temperature</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hot</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">increased temperature</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0001306 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001306">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000146"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002303"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A temperature which is relatively low.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cold</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">low temperature</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decreased temperature</rdfs:label>
     </owl:Class>
     
 
@@ -863,8 +1104,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001323 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001323">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">area</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001709"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A 2-D extent quality inhering in a bearer by virtue of the bearer&apos;s two dimensional extent.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">area</rdfs:label>
     </owl:Class>
     
 
@@ -872,8 +1114,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001332 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001332">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">amorphous</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000051"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A morphology quality inhering in a bearer by virtue of the bearer&apos;s lack of distinct morphology.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">amorphous</rdfs:label>
     </owl:Class>
     
 
@@ -881,8 +1124,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001354 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001354">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">translucent</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000957"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A optical quality inhering in a bearer by virtue of the bearer&apos;s exhibiting low opacity.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">translucent</rdfs:label>
     </owl:Class>
     
 
@@ -890,8 +1134,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001411 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001411">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">structured</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000141"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A structural quality inhering in a bearer by virtue of the bearer&apos;s having distinct structure.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">structured</rdfs:label>
     </owl:Class>
     
 
@@ -899,8 +1144,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001412 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001412">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">unstructured</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000141"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A structural quality inhering in a bearer by virtue of the bearer&apos;s lacking distinct structure.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">unstructured</rdfs:label>
     </owl:Class>
     
 
@@ -908,8 +1154,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001422 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001422">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dead</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000169"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A viability quality inhering in a bearer by virtue of the cessation of the bearer&apos;s life.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dead</rdfs:label>
     </owl:Class>
     
 
@@ -917,8 +1164,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001428 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001428">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">medium acidity</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001842"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A concentration quality inhering in a medium by virtue of the bearer&apos;s tendency to hydronate a specific reference base.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">medium acidity</rdfs:label>
     </owl:Class>
     
 
@@ -926,8 +1174,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001429 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001429">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">acidic</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001428"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An medium acidity quality inhering in a solution by virtue of the bearer&apos;s a high concentration of H+ ions.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">acidic</rdfs:label>
     </owl:Class>
     
 
@@ -935,8 +1184,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001430 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001430">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">alkaline</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001428"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An medium acidity quality inhering in a solution by virtue of the bearer&apos;s a low concentration of H+ ions.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">alkaline</rdfs:label>
     </owl:Class>
     
 
@@ -944,8 +1194,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001432 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001432">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decayed</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000169"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A quality inhering in a bearer by virtue of the bearer&apos;s decomposition into component parts.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decayed</rdfs:label>
     </owl:Class>
     
 
@@ -953,8 +1204,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001442 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001442">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">wholeness</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000141"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A structural quality inhering in a bearer by virtue of whether the bearer includes all its components.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">wholeness</rdfs:label>
     </owl:Class>
     
 
@@ -962,8 +1214,17 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001444 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001444">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">broken</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001442"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A broken quality inhering in a bearer by virtue of the bearer&apos;s being broken open.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">burst</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">fractured</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">fragmented</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ruptured</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cracked</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hemorrhaged</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">split</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">torn</oboInOwl:hasRelatedSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">broken</rdfs:label>
     </owl:Class>
     
 
@@ -971,8 +1232,11 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001447 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001447">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">calcified</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000025"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A composition quality inhering in an bearer by virtue of the bearer&apos;s being encrusted or impregnated with calcium carbonate (CHEBI:3311).</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">calcareous</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasNarrowSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">calcification</oboInOwl:hasNarrowSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">calcified</rdfs:label>
     </owl:Class>
     
 
@@ -980,8 +1244,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001454 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001454">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sensitivity to oxygen</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000085"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sensitivity quality inhering in a bearer by virtue of the bearer&apos;s dependence on oxygen.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sensitivity to oxygen</rdfs:label>
     </owl:Class>
     
 
@@ -989,9 +1254,10 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001455 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001455">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">aerobic</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001454"/>
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/PATO_0001456"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A quality inhering in a bearer by virtue of the bearer&apos;s dependence on oxygen.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">aerobic</rdfs:label>
     </owl:Class>
     
 
@@ -999,8 +1265,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001456 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001456">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">anaerobic</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001454"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A quality inhering in a bearer by virtue of the bearer&apos;s independence on oxygen.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">anaerobic</rdfs:label>
     </owl:Class>
     
 
@@ -1008,9 +1275,12 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001472 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001472">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decreased depth</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000587"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001595"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A depth which is relatively low.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">low depth</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">shallow</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decreased depth</rdfs:label>
     </owl:Class>
     
 
@@ -1018,9 +1288,11 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001475 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001475">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">increased position</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000140"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002305"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A position which is relatively high.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">high position</oboInOwl:hasRelatedSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">increased position</rdfs:label>
     </owl:Class>
     
 
@@ -1028,9 +1300,11 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001476 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001476">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decreased position</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000140"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002303"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A positional which is relatively low.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">low position</oboInOwl:hasRelatedSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decreased position</rdfs:label>
     </owl:Class>
     
 
@@ -1038,8 +1312,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001481 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001481">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sloped</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000052"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A shape quality inhering in a bearer by virtue of the bearer&apos;s having an oblique or slanted direction.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sloped</rdfs:label>
     </owl:Class>
     
 
@@ -1047,8 +1322,13 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001485 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001485">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">condensed</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000141"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A structural quality inhering in a bearer by virtue of the bearer&apos;s being thicker or more closely packed together; pressed tightly together.</obo:IAO_0000115>
+        <oboInOwl:hasBroadSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">compact</oboInOwl:hasBroadSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">compressed</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">squashed</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dense</oboInOwl:hasRelatedSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">condensed</rdfs:label>
     </owl:Class>
     
 
@@ -1056,8 +1336,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001509 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001509">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">functionality</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001241"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A quality of a single physical entity that arises by virtue of whether the bearer exhibits the ability to perform a regular function(s).</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">functionality</rdfs:label>
     </owl:Class>
     
 
@@ -1065,8 +1346,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001510 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001510">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">functional</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001509"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A functionality quality held by the bearer when the latter is able to perform a regular function(s).</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">functional</rdfs:label>
     </owl:Class>
     
 
@@ -1074,8 +1356,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001536 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001536">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">solubility</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002182"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A molecular quality that inheres in a molecular entity by virtue of the bearer&apos;s disposition to dissolve in a liquid.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">solubility</rdfs:label>
     </owl:Class>
     
 
@@ -1083,8 +1366,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001543 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001543">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">flexibility</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001546"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A physical quality inhering in a bearer by virtue of the bearer&apos;s disposition to being turned, bowed, or twisted without breaking.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">flexibility</rdfs:label>
     </owl:Class>
     
 
@@ -1092,8 +1376,10 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001544 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001544">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">flexible</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001543"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A physical quality inhering in a bearer by virtue of the bearer&apos;s ability of being turned, bowed, or twisted without breaking.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">bendy</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">flexible</rdfs:label>
     </owl:Class>
     
 
@@ -1101,8 +1387,11 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001545 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001545">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">inflexible</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001543"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A physical quality inhering in a bearer by virtue of the bearer&apos;s inability of being turned, bowed, or twisted without breaking.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">stiff</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">stiffness</oboInOwl:hasRelatedSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">inflexible</rdfs:label>
     </owl:Class>
     
 
@@ -1110,8 +1399,10 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001546 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001546">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">quality of a solid</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002198"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A physical quality inhering in a bearer by virtue of the bearer&apos;s exhibiting the physical characteristics of an entity characterized by particles arranged such that their shape and volume are relatively stable.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">solidity</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">quality of a solid</rdfs:label>
     </owl:Class>
     
 
@@ -1119,8 +1410,10 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001547 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001547">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">quality of a gas</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002198"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A physical quality inhering in a bearer by virtue of the bearer&apos;s exhibiting the physical characteristics of an entity consisting of particles that have neither a defined volume nor defined shape.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">gaseous</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">quality of a gas</rdfs:label>
     </owl:Class>
     
 
@@ -1128,8 +1421,10 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001548 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001548">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">quality of a liquid</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002198"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A physical quality inhering in an entity exhibiting the physical characteristics of an amorphous (non-crystalline) form of matter between a gas and a solid that has a definite volume, but no definite shape.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">liquidity</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">quality of a liquid</rdfs:label>
     </owl:Class>
     
 
@@ -1137,9 +1432,11 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001559 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001559">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">having extra function</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001509"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002305"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A functionality quality which is held by the bearer when the latter is able to perform additional or different function(s).</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">having supernumerary functions</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">having extra function</rdfs:label>
     </owl:Class>
     
 
@@ -1147,9 +1444,12 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001562 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001562">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decreased mass</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000125"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002303"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A mass which is lower than normal or average.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">low mass</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">small mass</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decreased mass</rdfs:label>
     </owl:Class>
     
 
@@ -1157,9 +1457,12 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001563 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001563">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">increased mass</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000125"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002305"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A mass which is higher than normal or average.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">high mass</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">large mass</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">increased mass</rdfs:label>
     </owl:Class>
     
 
@@ -1167,9 +1470,12 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001566 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001566">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">distributed</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000060"/>
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/PATO_0001629"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A spatial pattern inhering in a bearer by virtue of the bearer&apos;s being spread out or scattered about or divided up.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">diffuse</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">scattered</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">distributed</rdfs:label>
     </owl:Class>
     
 
@@ -1177,18 +1483,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001574 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001574">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">flow rate</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001906"/>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/PATO_0001576 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001576">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">increased pressure</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001025"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002305"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A physical quality inhering in a bearer by virtue of the bearer&apos;s motion characteristic.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">flow rate</rdfs:label>
     </owl:Class>
     
 
@@ -1196,8 +1493,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001591 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001591">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">curvature</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000052"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A surface shape quality inhering in a bearer by virtue of the bearer&apos;s exhibiting a degree of bending.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">curvature</rdfs:label>
     </owl:Class>
     
 
@@ -1205,8 +1503,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001594 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001594">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">arched</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001857"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A concave quality inhering in a bearer by virtue of the bearer&apos;s forming or resembling an arch.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">arched</rdfs:label>
     </owl:Class>
     
 
@@ -1214,8 +1513,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001595 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001595">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">depth</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001708"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A 1-D extent quality inhering in a bearer by virtue of the bearer&apos;s downward or backward or inward dimenision.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">depth</rdfs:label>
     </owl:Class>
     
 
@@ -1223,8 +1523,11 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001598 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001598">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">protruding</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000140"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A quality inhering in a bearer by virtue of the bearer&apos;s extending out above or beyond a surface or boundary.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">protruding</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">relational protruding quality</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">protruding</rdfs:label>
     </owl:Class>
     
 
@@ -1232,8 +1535,11 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001617 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001617">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">deformed</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000051"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A morphological quality inhering in a bearer by virtue of the bearer&apos;s being distorted in form.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">disfigured</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">distorted</oboInOwl:hasRelatedSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">deformed</rdfs:label>
     </owl:Class>
     
 
@@ -1241,9 +1547,17 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001624 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001624">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decreased functionality</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001510"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002303"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A functionality quality held by the bearer when the latter exhibits decreased ability to perform a regular function(s).</obo:IAO_0000115>
+        <oboInOwl:hasBroadSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dysfunction</oboInOwl:hasBroadSynonym>
+        <oboInOwl:hasBroadSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dysfunctional</oboInOwl:hasBroadSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">having decreased function</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lacks function of type</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">low functionality</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">partial functionality</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">impaired</oboInOwl:hasRelatedSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decreased functionality</rdfs:label>
     </owl:Class>
     
 
@@ -1251,9 +1565,11 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001625 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001625">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">increased functionality</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001510"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001559"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A functional quality held by the bearer when the latter exhibits increased ability to perform a regular function(s).</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">high functionality</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">increased functionality</rdfs:label>
     </owl:Class>
     
 
@@ -1261,8 +1577,11 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001629 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001629">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">aggregated</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000330"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A spatial pattern inhering in a bearer by virtue of the bearer&apos;s being gathered or tending to gather into a mass or whole.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">clumped</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">clustered</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">aggregated</rdfs:label>
     </owl:Class>
     
 
@@ -1270,8 +1589,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001645 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001645">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">protruding into</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001598"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A quality inhering into a bearer by virtue of the bearer&apos;s extending out above or beyond its surface or boundary into the surface or boundary of another entity.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">protruding into</rdfs:label>
     </owl:Class>
     
 
@@ -1279,8 +1599,12 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001646 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001646">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">protruding out of</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001598"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A quality inhering into a bearer by virtue of the bearer&apos;s extending out above or beyond its surface or boundary and outwards in relation to the physical space occupied by another entity.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">extruding from</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">exits through</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">exposed</oboInOwl:hasRelatedSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">protruding out of</rdfs:label>
     </owl:Class>
     
 
@@ -1288,27 +1612,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001648 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001648">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">circumference</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001711"/>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/PATO_0001655 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001655">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">osmolarity</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000033"/>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/PATO_0001657 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001657">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">increased osmolarity</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001655"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002305"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An 1-D extent quality which is equal to the length of the closed curve of a circle.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">circumference</rdfs:label>
     </owl:Class>
     
 
@@ -1316,9 +1622,11 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001671 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001671">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">increased distribution</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001475"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001566"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A distribution which is relatively high.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">high distribution</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">increased distribution</rdfs:label>
     </owl:Class>
     
 
@@ -1326,9 +1634,11 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001672 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001672">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decreased distribution</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001476"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001566"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A distribution which is relatively low.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">low distribution</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decreased distribution</rdfs:label>
     </owl:Class>
     
 
@@ -1336,9 +1646,11 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001675 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001675">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decreased efficiency</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001678"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002303"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An efficiency which is relatively low.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">low efficiency</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decreased efficiency</rdfs:label>
     </owl:Class>
     
 
@@ -1346,9 +1658,11 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001676 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001676">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">increased efficiency</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001678"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002305"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An efficiency which is relatively high.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">high efficiency</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">increased efficiency</rdfs:label>
     </owl:Class>
     
 
@@ -1356,8 +1670,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001678 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001678">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">efficient</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001029"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An efficiency quality inhering in a bearer by virtue of the bearer&apos;s having efficiency.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">efficient</rdfs:label>
     </owl:Class>
     
 
@@ -1365,8 +1680,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001682 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001682">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">magnetism</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001018"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A physical quality inhering in a bearer by virtue of the bearer&apos;s disposition to exert an attractive or repulsive force on other entities.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">magnetism</rdfs:label>
     </owl:Class>
     
 
@@ -1374,8 +1690,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001685 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001685">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">magnetic</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001682"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A magnetic quality inhering in a bearer by virtue of the bearer&apos;s ability to exert magnitism.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">magnetic</rdfs:label>
     </owl:Class>
     
 
@@ -1383,8 +1700,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001687 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001687">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">elevation</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000140"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A positional quality inhering in a bearer by virtue of the bearer&apos;s vertical distance of a point above or below a reference surface.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">elevation</rdfs:label>
     </owl:Class>
     
 
@@ -1392,9 +1710,12 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001688 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001688">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">increased elevation</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001475"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001687"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An elevation which is relatively high.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">high elevation</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">elevated</oboInOwl:hasRelatedSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">increased elevation</rdfs:label>
     </owl:Class>
     
 
@@ -1402,9 +1723,11 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001689 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001689">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decreased elevation</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001476"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001687"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An elevation which is relatively low.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">low elevation</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decreased elevation</rdfs:label>
     </owl:Class>
     
 
@@ -1412,8 +1735,10 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001708 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001708">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1-D extent</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000117"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A size quality inhering in an bearer by virtue of the bearer&apos;s extension in one dimension.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1-D size</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1-D extent</rdfs:label>
     </owl:Class>
     
 
@@ -1421,8 +1746,10 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001709 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001709">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2-D extent</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000117"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A size quality inhering in an bearer by virtue of the bearer&apos;s extension in two dimensions.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2-D size</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2-D extent</rdfs:label>
     </owl:Class>
     
 
@@ -1430,8 +1757,10 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001710 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001710">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3-D extent</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000117"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A size quality inhering in an bearer by virtue of the bearer&apos;s extension in three dimensions.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3D size</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3-D extent</rdfs:label>
     </owl:Class>
     
 
@@ -1439,8 +1768,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001711 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001711">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">perimeter</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000122"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An 1-D extent quality inhering in two-dimensional bearer by virtue of being equal to the distance around it.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">perimeter</rdfs:label>
     </owl:Class>
     
 
@@ -1448,9 +1778,10 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001712 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001712">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">increased perimeter</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000573"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001711"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A perimeter which is relatively high.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">increased perimeter</rdfs:label>
     </owl:Class>
     
 
@@ -1458,9 +1789,10 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001713 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001713">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decreased perimeter</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000574"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001711"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A perimeter which is relatively low.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decreased perimeter</rdfs:label>
     </owl:Class>
     
 
@@ -1468,8 +1800,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001729 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001729">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">shedability</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001995"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An organismal quality inhering in a bearer by virtue of the bearer&apos;s disposition to lose an entitity by natural process.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">shedability</rdfs:label>
     </owl:Class>
     
 
@@ -1477,8 +1810,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001731 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001731">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">deciduous (plant)</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001729"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A quality inhering in a plant by virtue of the bearer&apos;s disposition to shed foliage.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">deciduous (plant)</rdfs:label>
     </owl:Class>
     
 
@@ -1486,8 +1820,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001733 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001733">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">evergreen (plant)</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001729"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A quality inhering in a plant by virtue of the bearer&apos;s disposition to retain foliage.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">evergreen (plant)</rdfs:label>
     </owl:Class>
     
 
@@ -1495,8 +1830,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001739 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001739">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">radiation quality</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001018"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A quality that inheres in an bearer by virtue of how that bearer interacts with radiation.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">radiation quality</rdfs:label>
     </owl:Class>
     
 
@@ -1504,8 +1840,10 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001740 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001740">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">activity (of a radionuclide)</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001739"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A radiation quality inhering in a radioactive substance by virtue of its transformation (disintegration) rate.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">radioactivity</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">activity (of a radionuclide)</rdfs:label>
     </owl:Class>
     
 
@@ -1513,8 +1851,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001741 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001741">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">radioactive</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001740"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A radiation quality inhering in bearer by virtue of the bearer&apos;s exhibiting or being caused by radioactivity.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">radioactive</rdfs:label>
     </owl:Class>
     
 
@@ -1522,8 +1861,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001759 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001759">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">granular</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000025"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A composition quality inhering in a bearer by virtue of the bearer&apos;s containing granules.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">granular</rdfs:label>
     </owl:Class>
     
 
@@ -1531,9 +1871,11 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001779 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001779">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decreased strength</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001230"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002303"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A strength which is relatively low.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">weak</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decreased strength</rdfs:label>
     </owl:Class>
     
 
@@ -1541,8 +1883,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001781 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001781">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">irregular thickness</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000915"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A thickness quality which lacks pattern.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">irregular thickness</rdfs:label>
     </owl:Class>
     
 
@@ -1550,8 +1893,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001789 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001789">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">domed</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000406"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A curvature quality inhering in a bearer by virtue of the bearer&apos;s having a shape resembling a dome.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">domed</rdfs:label>
     </owl:Class>
     
 
@@ -1559,8 +1903,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001799 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001799">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ruffled</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000052"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A shape quality inhering in a bearer by virtue of the bearer&apos;s exhibiting disturbance of its smoothness or regularity.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ruffled</rdfs:label>
     </owl:Class>
     
 
@@ -1568,8 +1913,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001822 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001822">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">wetness</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001018"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A quality inhering in a bearer by virtue of whether the bearer&apos;s being covered by a liquid.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">wetness</rdfs:label>
     </owl:Class>
     
 
@@ -1577,9 +1923,10 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001823 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001823">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">wet</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001822"/>
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/PATO_0001824"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A wetness quality inhering in a bearer by virtue of the bearer&apos;s being covered by a liquid.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">wet</rdfs:label>
     </owl:Class>
     
 
@@ -1587,8 +1934,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001824 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001824">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dry</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001822"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A wetness quality inhering in a bearer by virtue of the bearer&apos;s not being covered by a liquid.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dry</rdfs:label>
     </owl:Class>
     
 
@@ -1596,9 +1944,11 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001838 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001838">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decreased fluid flow</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002243"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002303"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A flow that is relatively low.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">low flow</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decreased fluid flow</rdfs:label>
     </owl:Class>
     
 
@@ -1606,9 +1956,11 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001839 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001839">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">increased fluid flow</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002243"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002305"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A fluid flow that is relatively high.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">high flow</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">increased fluid flow</rdfs:label>
     </owl:Class>
     
 
@@ -1616,8 +1968,10 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001842 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001842">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">acidity</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000033"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A concentration quality inhering in a bearer by virtue of the bearer&apos;s containing acid (hydrogen ions).</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pH</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">acidity</rdfs:label>
     </owl:Class>
     
 
@@ -1625,9 +1979,11 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001844 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001844">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">increased acidity</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001842"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002305"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An acidity which is relatively high.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">high acidity</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">increased acidity</rdfs:label>
     </owl:Class>
     
 
@@ -1635,8 +1991,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001854 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001854">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">vertical</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000060"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A spatial pattern inhering in a bearer by virtue of the bearer&apos;s being situated at right angles to the horizon.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">vertical</rdfs:label>
     </owl:Class>
     
 
@@ -1644,8 +2001,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001855 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001855">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">horizontal</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000140"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A positional quality inhering in a bearer by virtue of the bearer&apos;s being in the plane of the horizon.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">horizontal</rdfs:label>
     </owl:Class>
     
 
@@ -1653,8 +2011,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001857 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001857">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">concave</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002005"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A shape quality in a bearer by virtue of the bearer&apos;s curving inward.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">concave</rdfs:label>
     </owl:Class>
     
 
@@ -1662,8 +2021,12 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001873 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001873">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cylindrical</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002007"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A convex 3-D shape quality inhering in a bearer by virtue of the bearer&apos;s exhibiting a consistently-sized round cross section.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rod-like</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rod-shaped</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasNarrowSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tubulate</oboInOwl:hasNarrowSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cylindrical</rdfs:label>
     </owl:Class>
     
 
@@ -1671,8 +2034,11 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001879 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001879">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">U-shaped</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002008"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A concave 3-D shape quality inhering in a bearer by virtue of the bearer&apos;s being shaped in the form of the letter U.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">horseshoe shaped</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasNarrowSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">horseshoe</oboInOwl:hasNarrowSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">U-shaped</rdfs:label>
     </owl:Class>
     
 
@@ -1680,9 +2046,10 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001884 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001884">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hydrophobicity</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001018"/>
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/PATO_0001886"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A physical quality inhering in a bearer by virtue the bearer&apos;s disposition to being water-repellent; tending to repel and not absorb water.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hydrophobicity</rdfs:label>
     </owl:Class>
     
 
@@ -1690,8 +2057,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001885 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001885">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hydrophobic</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001884"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A quality inhering in a bearer by virtue of the bearer&apos;s lacking affinity for water; tending to repel and not absorb water; tending not to dissolve in or mix with or be wetted by water.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hydrophobic</rdfs:label>
     </owl:Class>
     
 
@@ -1699,8 +2067,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001886 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001886">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hydrophilicity</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001018"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A physical quality inhering in a bearer by virtue the bearer&apos;s disposition to having an affinity for water; it is readily absorbing or dissolving in water.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hydrophilicity</rdfs:label>
     </owl:Class>
     
 
@@ -1708,8 +2077,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001887 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001887">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hydrophilic</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001886"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A quality inhering in a bearer by virtue of the bearer&apos;s disposition to having a strong affinity for water; tending to dissolve in, mix with, or be wetted by water.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hydrophilic</rdfs:label>
     </owl:Class>
     
 
@@ -1717,9 +2087,11 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001890 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001890">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tripartite</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000402"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002008"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A concave 3-D shape quality inhering in a bearer by virtue of the bearer&apos;s being divided into three branches.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">trifurcate</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tripartite</rdfs:label>
     </owl:Class>
     
 
@@ -1727,9 +2099,10 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001899 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001899">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decreased circumference</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001648"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001713"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A circumference which is relatively low.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decreased circumference</rdfs:label>
     </owl:Class>
     
 
@@ -1737,8 +2110,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001906 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001906">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">movement quality</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001018"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A physical quality inhering in a bearer by virtue of the bearer&apos;s participation in movement.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">movement quality</rdfs:label>
     </owl:Class>
     
 
@@ -1746,8 +2120,10 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001977 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001977">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">angular</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000052"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A shape quality inhering in a bearer by virtue of the bearer&apos;s having at least one salient angle on the margin.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">angulate</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">angular</rdfs:label>
     </owl:Class>
     
 
@@ -1755,8 +2131,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001985 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001985">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">frozen</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000146"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A quality inhering in a bearer by virtue of the bearer&apos;s being kept below its freezing point.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">frozen</rdfs:label>
     </owl:Class>
     
 
@@ -1764,8 +2141,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001986 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001986">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dissolved</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001536"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A quality inhering in a bearer by virtue of the bearer&apos;s passing into solution.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dissolved</rdfs:label>
     </owl:Class>
     
 
@@ -1773,8 +2151,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001995 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001995">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">organismal quality</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001241"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A quality that inheres in an entire organism or part of an organism.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">organismal quality</rdfs:label>
     </owl:Class>
     
 
@@ -1782,8 +2161,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0002005 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002005">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">concavity</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000052"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Surface shape that refers to the inward or outward curvature of the surface.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">concavity</rdfs:label>
     </owl:Class>
     
 
@@ -1791,8 +2171,11 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0002006 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002006">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2-D shape</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000052"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A shape that inheres in a 2 dimensional entity, such as a cross section or projection of a 3 dimensional entity.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2-D projection</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cross-sectional</oboInOwl:hasRelatedSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2-D shape</rdfs:label>
     </owl:Class>
     
 
@@ -1800,8 +2183,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0002007 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002007">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">convex 3-D shape</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002266"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A complete three dimensional shape in which for every line connecting pair of points on the object is within the object. Or: a shape lacking cavities. Contrast: concave.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">convex 3-D shape</rdfs:label>
     </owl:Class>
     
 
@@ -1809,8 +2193,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0002008 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002008">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">concave 3-D shape</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002266"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A complete three dimensional shape in which there is a line connecting pair of points on the object that lies outside the object. Or: a shape with cavities. Contrast: concave.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">concave 3-D shape</rdfs:label>
     </owl:Class>
     
 
@@ -1818,8 +2203,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0002009 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002009">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">branchiness</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000052"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A shape quality inhering in a bearer by virtue of the degree to which there are subdivisions or offshoots in a bearer entity.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">branchiness</rdfs:label>
     </owl:Class>
     
 
@@ -1827,8 +2213,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0002014 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002014">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">structure, cavities</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000141"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A structural quality that inheres in a bearer by virtue of the bearer&apos;s containing hollow areas.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">structure, cavities</rdfs:label>
     </owl:Class>
     
 
@@ -1836,8 +2223,10 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0002021 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002021">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">conical</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002007"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A convex 3-D shape quality inhering in a bearer by virtue of the bearer&apos;s resembling a cone (a 3-D shape with a round cross section that tapers).</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cone-shaped</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">conical</rdfs:label>
     </owl:Class>
     
 
@@ -1845,9 +2234,10 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0002058 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002058">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decreased area</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000587"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001323"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An area which is relatively low.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decreased area</rdfs:label>
     </owl:Class>
     
 
@@ -1855,8 +2245,8 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0002062 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002062">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">physical quality of a process</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001236"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">physical quality of a process</rdfs:label>
     </owl:Class>
     
 
@@ -1864,8 +2254,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0002063 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002063">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">columnar</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000052"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A shape inhering in a bearer by virtue of the bearer&apos;s being elongated and cylindrical.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">columnar</rdfs:label>
     </owl:Class>
     
 
@@ -1873,8 +2264,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0002064 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002064">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">fenestrated</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000052"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A shape quality inhering in a bearer by virtue of the bearer&apos;s delimited by a surface with holes.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">fenestrated</rdfs:label>
     </owl:Class>
     
 
@@ -1882,8 +2274,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0002067 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002067">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">stratification</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000060"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A spatial pattern inhering in a bearer by virtue of the bearer&apos;s layered configuration.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">stratification</rdfs:label>
     </owl:Class>
     
 
@@ -1891,8 +2284,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0002068 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002068">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">stratified</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002067"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A spatial pattern inhering in a bearer by virtue of the bearer&apos;s exhibiting a layered configuration.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">stratified</rdfs:label>
     </owl:Class>
     
 
@@ -1900,8 +2294,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0002078 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002078">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hollow</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002014"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A quality inhering in a bearer by virtue of the bearer&apos;s having an empty space or cavity within.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hollow</rdfs:label>
     </owl:Class>
     
 
@@ -1909,8 +2304,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0002080 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002080">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">broken into two pieces</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001444"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A broken quality inhering in a bearer by virtue of the bearer&apos;s being seperated into two contiguous wholes.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">broken into two pieces</rdfs:label>
     </owl:Class>
     
 
@@ -1918,8 +2314,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0002124 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002124">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">laminar</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000141"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A quality inhering in a bearer by virtue of the bearer&apos;s processing the form of a thin plate sheet or layer.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">laminar</rdfs:label>
     </owl:Class>
     
 
@@ -1927,8 +2324,10 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0002138 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002138">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">edibility</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001018"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A physical quality inhering in a bearer by virtue of the bearer&apos;s disposition to being fit to be eaten.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">edibleness</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">edibility</rdfs:label>
     </owl:Class>
     
 
@@ -1936,9 +2335,10 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0002139 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002139">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">edible</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002138"/>
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/PATO_0002140"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A physical quality inhering in a bearer by virtue of the bearer being suitable for use as food.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">edible</rdfs:label>
     </owl:Class>
     
 
@@ -1946,8 +2346,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0002140 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002140">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">inedible</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002138"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A physical quality inhering in a bearer by virtue of the bearer not being suitable for use as food.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">inedible</rdfs:label>
     </owl:Class>
     
 
@@ -1955,8 +2356,8 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0002143 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002143">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sloped downward</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001481"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sloped downward</rdfs:label>
     </owl:Class>
     
 
@@ -1964,8 +2365,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0002180 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002180">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">straight</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000052"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A shape quality inhering in a bearer by virtue of the bearer&apos;s being free of curves, bends, or angles.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">straight</rdfs:label>
     </owl:Class>
     
 
@@ -1973,8 +2375,10 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0002182 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002182">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">molecular quality</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001241"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A quality which inheres in a molecular entity, a single molecule, atom, ion, radical etc.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">relational molecular quality</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">molecular quality</rdfs:label>
     </owl:Class>
     
 
@@ -1982,8 +2386,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0002198 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002198">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">quality of a substance</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001018"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A quality inhering in a bearer by virtue of its constitution.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">quality of a substance</rdfs:label>
     </owl:Class>
     
 
@@ -1991,8 +2396,10 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0002212 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002212">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">slender</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000052"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A shape quality inhering in a bearer by virtue of the bearer&apos;s being small or narrow in circumference or width in proportion to length or height.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">gracile</oboInOwl:hasRelatedSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">slender</rdfs:label>
     </owl:Class>
     
 
@@ -2000,8 +2407,10 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0002219 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002219">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">fan-shaped</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002006"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A quality inhering in a bearer that is shaped in the form of a fan.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">fan-like</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">fan-shaped</rdfs:label>
     </owl:Class>
     
 
@@ -2009,8 +2418,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0002224 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002224">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">V-shaped</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001977"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An angular shape quality inhering in a bearer by virtue of the bearer&apos;s having a single angle in its length giving the bearer the form of the letter V.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">V-shaped</rdfs:label>
     </owl:Class>
     
 
@@ -2018,8 +2428,11 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0002243 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002243">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">fluid flow rate</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001574"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A physical quality inhering in a fluid (liquid or gas) by virtue of the amount of fluid which passes through a given surface per unit time.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">volume flow rate</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">volumetric flow rate</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">fluid flow rate</rdfs:label>
     </owl:Class>
     
 
@@ -2027,8 +2440,10 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0002253 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002253">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">platelike</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000407"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A quality inhering in a bearer by virtue of the bearer&apos;s being roundish, flattish shape, possibly with a slightly angled edge.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">plate-like</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">platelike</rdfs:label>
     </owl:Class>
     
 
@@ -2036,8 +2451,10 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0002254 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002254">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">flattened</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001591"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A quality inhering in a bearer by virtue of the bearer&apos;s surface becoming more extended in a plane.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">compressed</oboInOwl:hasRelatedSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">flattened</rdfs:label>
     </owl:Class>
     
 
@@ -2045,8 +2462,10 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0002260 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002260">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">semi erect</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000622"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A quality inhering in a bearer by virtue of the bearer&apos;s being partially upright in position or posture.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">semi upright</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">semi erect</rdfs:label>
     </owl:Class>
     
 
@@ -2054,8 +2473,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0002266 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002266">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3-D shape</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000052"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A shape that inheres in a 3 dimensional entity.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3-D shape</rdfs:label>
     </owl:Class>
     
 
@@ -2063,8 +2483,10 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0002269 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002269">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">accumulation</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000141"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A structural quality of the collection or massing of one physical object within another physical object.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pooled</oboInOwl:hasRelatedSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">accumulation</rdfs:label>
     </owl:Class>
     
 
@@ -2072,8 +2494,10 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0002270 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002270">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">increased accumulation</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002269"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An increased number of physical objects that are accumulated within another physical object usually as a result of a failure to break down or remove objects in a timely manner.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">accumulated</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">increased accumulation</rdfs:label>
     </owl:Class>
     
 
@@ -2081,8 +2505,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0002271 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002271">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decreased accumulation</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002269"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An accumulation which is relative low.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decreased accumulation</rdfs:label>
     </owl:Class>
     
 
@@ -2090,8 +2515,10 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0002292 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002292">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">transient</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000141"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A structural quality inhering in a bearer by virtue of the bearer&apos;s underlying structure being capable of change.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">transient structure</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">transient</rdfs:label>
     </owl:Class>
     
 
@@ -2099,9 +2526,13 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0002299 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002299">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tubular</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001873"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002078"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A cylindrical shape that is hollow.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tube like</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tube-shaped</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tubulate</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tubular</rdfs:label>
     </owl:Class>
     
 
@@ -2109,8 +2540,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0002300 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002300">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">increased quality</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000069"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A quality that has a value that is increased compared to normal or average.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">increased quality</rdfs:label>
     </owl:Class>
     
 
@@ -2118,8 +2550,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0002301 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002301">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decreased quality</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000069"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A quality that has a value that is decreased compared to normal or average.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decreased quality</rdfs:label>
     </owl:Class>
     
 
@@ -2127,9 +2560,10 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0002302 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002302">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decreased process quality</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001236"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002301"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A quality of a process that has a value that is decreased compared to normal or average.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decreased process quality</rdfs:label>
     </owl:Class>
     
 
@@ -2137,9 +2571,10 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0002303 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002303">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decreased object quality</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001241"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002301"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A quality of an object that has a value that is decreased compared to normal or average.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decreased object quality</rdfs:label>
     </owl:Class>
     
 
@@ -2147,9 +2582,10 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0002304 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002304">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">increased process quality</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001236"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002300"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A quality of a process that has a value that is increased compared to normal or average.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">increased process quality</rdfs:label>
     </owl:Class>
     
 
@@ -2157,9 +2593,10 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0002305 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002305">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">increased object quality</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001241"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002300"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A quality of an object that has a value that is increased compared to normal or average.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">increased object quality</rdfs:label>
     </owl:Class>
     
 
@@ -2167,8 +2604,10 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0002318 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002318">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">superelliptic</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002006"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A shape constituting a transition between a rectangle and a circle; a closed curve, of which the circle and ellipse are special cases, whose parametric equation is x = a.cos2/rt, y = b.cos2/rt</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lamé curve</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">superelliptic</rdfs:label>
     </owl:Class>
     
 
@@ -2176,8 +2615,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0002323 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002323">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">temporal distribution quality</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002062"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A temporal distribution pattern of process occurrences within a regulation/reference process.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">temporal distribution quality</rdfs:label>
     </owl:Class>
     
 
@@ -2185,8 +2625,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0002359 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002359">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">broad</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000052"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A quality inhering in a bearer by virtue of the bearer&apos;s width being notably higher than its length.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">broad</rdfs:label>
     </owl:Class>
     
 
@@ -2194,8 +2635,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0002416 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002416">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sunken</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001687"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Flattened from above downward; below the normal level or the level of the surrounding parts.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sunken</rdfs:label>
     </owl:Class>
     
 
@@ -2203,8 +2645,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0002425 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002425">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">exposed</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000140"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Open to view or not covered by another entity.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">exposed</rdfs:label>
     </owl:Class>
     
 
@@ -2212,8 +2655,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0002453 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002453">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">eroding</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000141"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A structural quality inhering in a bearer by virtue of the bearer bring gradually worn away.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">eroding</rdfs:label>
     </owl:Class>
     
 
@@ -2221,8 +2665,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0005011 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0005011">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">continuous with</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000140"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A positional quality inhering in a bearer by virtue of the bearer possessing an uninterrupted or unbroken connection or spatial distribution relative to the position of another entity.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">continuous with</rdfs:label>
     </owl:Class>
     
 
@@ -2230,8 +2675,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0015009 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0015009">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">humidity</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001547"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A quality inhering in air by virtue of the partial pressure exerted by the bearer&apos;s water vapour content.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">humidity</rdfs:label>
     </owl:Class>
     
 
@@ -2239,9 +2685,11 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0015010 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0015010">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">increased humidity</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002305"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0015009"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An increase in humidity.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">humid</oboInOwl:hasRelatedSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">increased humidity</rdfs:label>
     </owl:Class>
     
 
@@ -2249,9 +2697,10 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0015011 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0015011">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decreased humidity</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002303"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0015009"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An decrease in humidity.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decreased humidity</rdfs:label>
     </owl:Class>
     
 
@@ -2259,8 +2708,9 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0015021 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0015021">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">combustibility</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001018"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The propensity of a material to undergo combustion. Combustion encompasses smouldering and flaming combustion. Combustibility is usually applied to solids.</obo:IAO_0000115>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">combustibility</rdfs:label>
     </owl:Class>
     
 
@@ -2268,13 +2718,15 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0015022 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0015022">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">increased combustibility</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002305"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0015021"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An increase in combustibility.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">combustible</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">increased combustibility</rdfs:label>
     </owl:Class>
 </rdf:RDF>
 
 
 
-<!-- Generated by the OWL API (version 0.2.2-SNAPSHOT) http://owlapi.sourceforge.net -->
+<!-- Generated by the OWL API (version 0.0.1+91bea50) https://github.com/owlcs/owlapi -->
 

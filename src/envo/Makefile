@@ -131,6 +131,11 @@ imports/foodon_import.owl: mirror/foodon.owl imports/foodon_terms.txt
 	$(ROBOT) extract -i $< -T imports/foodon_terms.txt --method BOT -O $(ENVO_IMPORTS_BASE_URI)/$@ -o $@
 .PRECIOUS: imports/%_import.owl
 
+# PATO: Use ROBOT, driven entirely by terms lists NOT from source ontology
+imports/pato_import.owl: mirror/pato.owl imports/pato_terms.txt
+	$(ROBOT) extract -i $< -T imports/pato_terms.txt --method BOT -O $(ENVO_IMPORTS_BASE_URI)/$@ -o $@
+.PRECIOUS: imports/%_import.owl
+
 # RO: Use ROBOT, driven entirely by terms lists NOT from source ontology
 imports/ro_import.owl: mirror/ro.owl imports/ro_terms.txt
 	$(ROBOT) extract -i $< -T imports/ro_terms.txt --method BOT -O $(ENVO_IMPORTS_BASE_URI)/$@ -o $@
@@ -208,6 +213,10 @@ mirror/pco.owl: imports/pco_basic.obo
 
 mirror/iao.owl: envo-edit.owl
 	owltools $(OBO)/iao.owl --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/iao.owl -o $@
+.PRECIOUS: mirror/%.owl
+
+mirror/pato.owl: envo-edit.owl
+	owltools $(OBO)/pato.owl --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/pato.owl -o $@
 .PRECIOUS: mirror/%.owl
 
 # ----------------------------------------
