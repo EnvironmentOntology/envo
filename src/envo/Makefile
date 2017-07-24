@@ -156,6 +156,11 @@ imports/iao_import.owl: mirror/iao.owl imports/iao_terms.txt
 	$(ROBOT) extract -i $< -T imports/iao_terms.txt --method BOT -O $(ENVO_IMPORTS_BASE_URI)/$@ -o $@
 .PRECIOUS: imports/%_import.owl
 
+# PO: Use ROBOT, driven entirely by terms lists NOT from source ontology
+imports/po_import.owl: mirror/po.owl imports/po_terms.txt
+	$(ROBOT) extract -i $< -T imports/po_terms.txt --method BOT -O $(ENVO_IMPORTS_BASE_URI)/$@ -o $@
+.PRECIOUS: imports/%_import.owl
+
 
 # clone remote ontology locally, perfoming some excision of relations and annotations
 mirror/%-local.owl:
