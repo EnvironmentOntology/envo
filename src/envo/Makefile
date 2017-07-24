@@ -161,6 +161,12 @@ imports/po_import.owl: mirror/po.owl imports/po_terms.txt
 	$(ROBOT) extract -i $< -T imports/po_terms.txt --method BOT -O $(ENVO_IMPORTS_BASE_URI)/$@ -o $@
 .PRECIOUS: imports/%_import.owl
 
+# FAO: Use ROBOT, driven entirely by terms lists NOT from source ontology
+imports/fao_import.owl: mirror/fao.owl imports/fao_terms.txt
+	$(ROBOT) extract -i $< -T imports/fao_terms.txt --method BOT -O $(ENVO_IMPORTS_BASE_URI)/$@ -o $@
+.PRECIOUS: imports/%_import.owl
+
+
 
 # clone remote ontology locally, perfoming some excision of relations and annotations
 mirror/%-local.owl:
@@ -203,6 +209,10 @@ mirror/uberon.owl: envo-edit.owl
 
 mirror/po.owl: envo-edit.owl
 	owltools $(OBO)/po.owl --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/po.owl -o $@
+.PRECIOUS: mirror/%.owl
+
+mirror/fao.owl: envo-edit.owl
+	owltools $(OBO)/fao.owl --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/fao.owl -o $@
 .PRECIOUS: mirror/%.owl
 
 ncbitaxon.obo:
