@@ -166,6 +166,12 @@ imports/fao_import.owl: mirror/fao.owl imports/fao_terms.txt
 	$(ROBOT) extract -i $< -T imports/fao_terms.txt --method BOT -O $(ENVO_IMPORTS_BASE_URI)/$@ -o $@
 .PRECIOUS: imports/%_import.owl
 
+# OMP: Use ROBOT, driven entirely by terms lists NOT from source ontology
+imports/omp_import.owl: mirror/omp.owl imports/omp_terms.txt
+	$(ROBOT) extract -i $< -T imports/omp_terms.txt --method BOT -O $(ENVO_IMPORTS_BASE_URI)/$@ -o $@
+.PRECIOUS: imports/%_import.owl
+
+
 
 
 # clone remote ontology locally, perfoming some excision of relations and annotations
@@ -228,6 +234,10 @@ mirror/pco.owl: imports/pco_basic.obo
 
 mirror/iao.owl: envo-edit.owl
 	owltools $(OBO)/iao.owl --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/iao.owl -o $@
+.PRECIOUS: mirror/%.owl
+
+mirror/omp.owl: envo-edit.owl
+	owltools $(OBO)/omp.owl --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/omp.owl -o $@
 .PRECIOUS: mirror/%.owl
 
 mirror/pato.owl: envo-edit.owl
