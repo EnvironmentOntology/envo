@@ -171,7 +171,10 @@ imports/omp_import.owl: mirror/omp.owl imports/omp_terms.txt
 	$(ROBOT) extract -i $< -T imports/omp_terms.txt --method BOT -O $(ENVO_IMPORTS_BASE_URI)/$@ -o $@
 .PRECIOUS: imports/%_import.owl
 
-
+# FLOPO: Use ROBOT, driven entirely by terms lists NOT from source ontology
+imports/flop_import.owl: mirror/flopo.owl imports/flopo_terms.txt
+	$(ROBOT) extract -i $< -T imports/flopo_terms.txt --method BOT -O $(ENVO_IMPORTS_BASE_URI)/$@ -o $@
+.PRECIOUS: imports/%_import.owl
 
 
 # clone remote ontology locally, perfoming some excision of relations and annotations
@@ -242,6 +245,10 @@ mirror/omp.owl: envo-edit.owl
 
 mirror/pato.owl: envo-edit.owl
 	owltools $(OBO)/pato.owl --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/pato.owl -o $@
+.PRECIOUS: mirror/%.owl
+
+mirror/flopo.owl: envo-edit.owl
+	owltools $(OBO)/flopo.owl --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/flopo.owl -o $@
 .PRECIOUS: mirror/%.owl
 
 # ----------------------------------------
