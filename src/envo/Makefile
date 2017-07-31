@@ -277,6 +277,17 @@ GO.xrf_abbs: envo-edit.owl
 # SLIMS
 # ----------------------------------------
 # These all depend on envo-basic, which is the whole ontology (ie all classes), minus non-basic axioms (e.g. complex owl axioms, some relations)
+
+subsets/envoEmpo.owl: subsets/envo-basic.obo
+	owltools $< --extract-ontology-subset --fill-gaps --subset envoEmpo --iri $(OBO)/envo/subsets/$@ -o $@
+subsets/envoEmpo.obo: subsets/envoEmpo.owl
+	owltools $< -o -f obo $@
+
+subsets/envoOmics.owl: subsets/envo-basic.obo
+	owltools $< --extract-ontology-subset --fill-gaps --subset envoOmics --iri $(OBO)/envo/subsets/$@ -o $@
+subsets/envoOmics.obo: subsets/envoOmics.owl
+	owltools $< -o -f obo $@
+
 subsets/EnvO-Lite-GSC.owl: subsets/envo-basic.obo
 	owltools $< --extract-ontology-subset --fill-gaps --subset EnvO-Lite-GSC --iri $(OBO)/envo/subsets/$@ -o $@
 subsets/EnvO-Lite-GSC.obo: subsets/EnvO-Lite-GSC.owl
