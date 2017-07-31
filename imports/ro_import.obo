@@ -302,6 +302,18 @@ range: BFO:0000002 ! continuant
 holds_over_chain: BFO:0000051 RO:0000057
 
 [Typedef]
+id: RO:0000079
+name: function of
+def: "a relation between a function and an independent continuant (the bearer), in which the function specifically depends on the bearer for its existence" []
+property_value: IAO:0000112 "this catalysis function is a function of this enzyme" xsd:string
+property_value: IAO:0000116 "A function inheres in its bearer at all times for which the function exists, however the function need not be realized at all the times that the function exists." xsd:string
+property_value: IAO:0000118 "function_of" xsd:string
+property_value: IAO:0000118 "is function of" xsd:string
+domain: BFO:0000034 ! function
+is_a: RO:0000052 ! inheres in
+inverse_of: RO:0000085 ! has function
+
+[Typedef]
 id: RO:0000080
 name: quality of
 def: "a relation between a quality and an independent continuant (the bearer), in which the quality specifically depends on the bearer for its existence" []
@@ -322,6 +334,17 @@ property_value: IAO:0000118 "is role of" xsd:string
 property_value: IAO:0000118 "role_of" xsd:string
 is_a: RO:0000052 ! inheres in
 inverse_of: RO:0000087 ! has role
+
+[Typedef]
+id: RO:0000085
+name: has function
+def: "a relation between an independent continuant (the bearer) and a function, in which the function specifically depends on the bearer for its existence" []
+property_value: IAO:0000112 "this enzyme has function this catalysis function (more colloquially: this enzyme has this catalysis function)" xsd:string
+property_value: IAO:0000116 "A bearer can have many functions, and its functions can exist for different periods of time, but none of its functions can exist when the bearer does not exist. A function need not be realized at all the times that the function exists." xsd:string
+property_value: IAO:0000118 "has_function" xsd:string
+domain: BFO:0000004 ! independent continuant
+range: BFO:0000034 ! function
+is_a: RO:0000053 ! bearer of
 
 [Typedef]
 id: RO:0000086

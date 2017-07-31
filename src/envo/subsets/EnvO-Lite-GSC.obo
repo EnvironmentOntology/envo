@@ -239,6 +239,7 @@ namespace: ENVO
 def: "A habitat that is in or on a living thing." [NM:nm]
 subset: EnvO-Lite-GSC
 is_obsolete: true
+replaced_by: ENVO:01001000
 
 [Term]
 id: ENVO:00002034
@@ -417,9 +418,9 @@ id: ENVO:01000256
 name: mineral material
 namespace: ENVO
 def: "A mineral material is an environmental material which is primarily composed of some substance that is naturally occurring, solid and stable at room temperature, representable by a chemical formula, usually abiogenic, and that has an ordered atomic structure." [https://en.wikipedia.org/wiki/Mineral]
-comment: Look for "mineral" in a chemical or geochemical ontology to formalise the composed primarily of link.\nFrom https://en.wikipedia.org/wiki/ [A mineral] is different from a rock, which can be an aggregate of minerals or non-minerals and does not have a specific chemical composition. The exact definition of a mineral is under debate, especially with respect to the requirement a valid species be abiogenic, and to a lesser extent with regards to it having an ordered atomic structure.
 xref: LTER:341
 is_a: ENVO:01000814 ! solid environmental material
+property_value: IAO:0000116 "Look for \"mineral\" in a chemical or geochemical ontology to formalise the composed primarily of link.\nFrom https://en.wikipedia.org/wiki/ [A mineral] is different from a rock, which can be an aggregate of minerals or non-minerals and does not have a specific chemical composition. The exact definition of a mineral is under debate, especially with respect to the requirement a valid species be abiogenic, and to a lesser extent with regards to it having an ordered atomic structure." xsd:string
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2013-10-05T12:37:41Z
 
@@ -435,6 +436,17 @@ synonym: "water vapor" EXACT [https://en.wikipedia.org/wiki/Water_vapor]
 is_a: ENVO:01000797 ! gaseous environmental material
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2013-10-10T07:58:18Z
+
+[Term]
+id: ENVO:01000281
+name: layer
+namespace: ENVO
+def: "A layer is a quantity of some material which has comparable thickness and usually covers some surface." [Wiktionary:layer]
+comment: Preliminary definition.
+subset: envoPolar
+is_a: ENVO:00000000 ! geographic feature
+created_by: ORCID:0000-0002-4366-3088
+creation_date: 2013-10-15T16:42:02Z
 
 [Term]
 id: ENVO:01000549
@@ -456,6 +468,23 @@ namespace: ENVO
 def: "Outer space is a hard vacuum containing a low density of particles, predominantly a plasma of hydrogen and helium as well as electromagnetic radiation, magnetic fields, neutrinos, dust and cosmic rays that exists between celestial bodies." [https://en.wikipedia.org/wiki/Outer_space]
 synonym: "space" BROAD []
 is_a: ENVO:00002297 ! environmental feature
+
+[Term]
+id: ENVO:01000639
+name: planetary structural layer
+namespace: ENVO
+def: "A planetary structural layer is laminar part of a terrestrial planet or other rocky body large enough to have differentiation by density. Planetary layers have differing physicochemical properties and composition." []
+is_a: ENVO:01000281 ! layer
+relationship: part_of ENVO:01000800 ! planet
+property_value: IAO:0000116 "Label should be improved to match definition." xsd:string
+
+[Term]
+id: ENVO:01000648
+name: magma
+namespace: ENVO
+def: "Magma is a mixture of molten or semi-molten rock, volatiles, and solids that is found beneath the uppermost solid layer of a planetary body. Besides molten rock, magma may also contain suspended crystals, dissolved gas and sometimes gas bubbles." [https://en.wikipedia.org/wiki/Magma]
+is_a: ENVO:00010483 ! environmental material
+relationship: located_in ENVO:01000639 ! planetary structural layer
 
 [Term]
 id: ENVO:01000665
@@ -481,6 +510,15 @@ def: "An object which is naturally occuring, bound together by gravitational or 
 comment: Astronomical bodies are usually cohesive, thus the use of the term 'object' sensu BFO 'object'.
 synonym: "celestial body" RELATED []
 is_a: ENVO:01000804 ! astronomical object
+
+[Term]
+id: ENVO:01000800
+name: planet
+namespace: ENVO
+def: "A planet is an astronomical body orbiting a star or stellar remnant that is massive enough to be rounded by its own gravity, is not massive enough to cause thermonuclear fusion, and has cleared its neighbouring region of planetesimals." [http://solarsystem.nasa.gov/planets/whatisaplanet, https://en.wikipedia.org/wiki/Planet]
+comment: Considerable debate on the definition of planet exists.
+subset: envoPolar
+is_a: ENVO:01000799 ! astronomical body
 
 [Term]
 id: ENVO:01000804
@@ -517,7 +555,7 @@ namespace: ENVO
 def: "An environmental material which is in a liquid state." []
 comment: This is a defined class: its subclasses will not be asserted, but filled by inference.
 subset: envoPolar
-is_a: ENVO:00010483 ! environmental material
+is_a: ENVO:01000648 ! magma
 
 [Term]
 id: ENVO:01000819
@@ -872,7 +910,7 @@ property_value: RO:0001900 RO:0001901
 id: contains_process
 name: contains process
 namespace: ENVO
-def: "[copied from inverse property 'occurs in'] b occurs_in c =def b is a process and c is a material entity or immaterial entity& there exists a spatiotemporal region r and b occupies_spatiotemporal_region r.& forall(t) if b exists_at t then c exists_at t & there exist spatial regions s and s’ where & b spatially_projects_onto s at t& c is occupies_spatial_region s’ at t& s is a proper_continuant_part_of s’ at t" []
+def: "[copied from inverse property 'occurs in'] b occurs_in c =def b is a process and c is a material entity or immaterial entity& there exists a spatiotemporal region r and b occupies_spatiotemporal_region r.& forall(t) if b exists_at t then c exists_at t & there exist spatial regions s and s� where & b spatially_projects_onto s at t& c is occupies_spatial_region s� at t& s is a proper_continuant_part_of s� at t" []
 comment: Paraphrase of definition: a relation between an independent continuant and a process, in which the process takes place entirely within the independent continuant
 xref: BFO:0000067
 property_value: IAO:0000111 "site of" xsd:string
@@ -1180,7 +1218,7 @@ is_a: temporally_related_to ! temporally related to
 id: ends_with
 name: ends with
 namespace: ENVO
-def: "x ends with y if and only if x has part y and the time point at which x ends is equivalent to the time point at which y ends. Formally: α(y) > α(x) ∧ ω(y) = ω(x), where α is a function that maps a process to a start point, and ω is a function that maps a process to an end point." []
+def: "x ends with y if and only if x has part y and the time point at which x ends is equivalent to the time point at which y ends. Formally: ?(y) > ?(x) ? ?(y) = ?(x), where ? is a function that maps a process to a start point, and ? is a function that maps a process to an end point." []
 subset: ro-eco
 xref: RO:0002230
 property_value: IAO:0000114 IAO:0000125
@@ -1197,6 +1235,19 @@ namespace: ENVO
 xref: RO:0002354
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 is_a: output_of ! output of
+
+[Typedef]
+id: function_of
+name: function of
+namespace: ENVO
+def: "a relation between a function and an independent continuant (the bearer), in which the function specifically depends on the bearer for its existence" []
+xref: RO:0000079
+property_value: IAO:0000112 "this catalysis function is a function of this enzyme" xsd:string
+property_value: IAO:0000116 "A function inheres in its bearer at all times for which the function exists, however the function need not be realized at all the times that the function exists." xsd:string
+property_value: IAO:0000118 "function_of" xsd:string
+property_value: IAO:0000118 "is function of" xsd:string
+is_a: inheres_in ! inheres in
+inverse_of: has_function ! has function
 
 [Typedef]
 id: functionally_related_to
@@ -1285,6 +1336,17 @@ property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: IAO:0000118 "ends with process that occurs in" xsd:string
 holds_over_chain: ends_with occurs_in
 is_a: has_part_that_occurs_in ! has part that occurs in
+
+[Typedef]
+id: has_function
+name: has function
+namespace: ENVO
+def: "a relation between an independent continuant (the bearer) and a function, in which the function specifically depends on the bearer for its existence" []
+xref: RO:0000085
+property_value: IAO:0000112 "this enzyme has function this catalysis function (more colloquially: this enzyme has this catalysis function)" xsd:string
+property_value: IAO:0000116 "A bearer can have many functions, and its functions can exist for different periods of time, but none of its functions can exist when the bearer does not exist. A function need not be realized at all the times that the function exists." xsd:string
+property_value: IAO:0000118 "has_function" xsd:string
+is_a: bearer_of ! bearer of
 
 [Typedef]
 id: has_habitat
@@ -1625,7 +1687,7 @@ property_value: RO:0001900 RO:0001901
 id: occurs_in
 name: occurs in
 namespace: ENVO
-def: "b occurs_in c =def b is a process and c is a material entity or immaterial entity& there exists a spatiotemporal region r and b occupies_spatiotemporal_region r.& forall(t) if b exists_at t then c exists_at t & there exist spatial regions s and s’ where & b spatially_projects_onto s at t& c is occupies_spatial_region s’ at t& s is a proper_continuant_part_of s’ at t" []
+def: "b occurs_in c =def b is a process and c is a material entity or immaterial entity& there exists a spatiotemporal region r and b occupies_spatiotemporal_region r.& forall(t) if b exists_at t then c exists_at t & there exist spatial regions s and s� where & b spatially_projects_onto s at t& c is occupies_spatial_region s� at t& s is a proper_continuant_part_of s� at t" []
 comment: Paraphrase of definition: a relation between a process and an independent continuant, in which the process takes place entirely within the independent continuant
 xref: BFO:0000066
 property_value: IAO:0000111 "occurs in" xsd:string
@@ -1745,7 +1807,7 @@ is_a: biotically_interacts_with ! biotically interacts with
 id: preceded_by
 name: preceded by
 namespace: ENVO
-def: "x is preceded by y if and only if the time point at which y ends is before or equivalent to the time point at which x starts. Formally: x preceded by y iff ω(y) <= α(x), where α is a function that maps a process to a start point, and ω is a function that maps a process to an end point." []
+def: "x is preceded by y if and only if the time point at which y ends is before or equivalent to the time point at which x starts. Formally: x preceded by y iff ?(y) <= ?(x), where ? is a function that maps a process to a start point, and ? is a function that maps a process to an end point." []
 subset: ro-eco
 xref: BFO:0000062
 property_value: http://purl.org/dc/elements/1.1/source http://www.obofoundry.org/ro/#OBO_REL:preceded_by xsd:string
@@ -1764,7 +1826,7 @@ inverse_of: precedes ! precedes
 id: precedes
 name: precedes
 namespace: ENVO
-def: "x precedes y if and only if the time point at which x ends is before or equivalent to the time point at which y starts. Formally: x precedes y iff ω(x) <= α(y), where α is a function that maps a process to a start point, and ω is a function that maps a process to an end point." []
+def: "x precedes y if and only if the time point at which x ends is before or equivalent to the time point at which y starts. Formally: x precedes y iff ?(x) <= ?(y), where ? is a function that maps a process to a start point, and ? is a function that maps a process to an end point." []
 subset: ro-eco
 xref: BFO:0000063
 property_value: IAO:0000111 "precedes" xsd:string
@@ -1977,7 +2039,7 @@ is_a: temporally_related_to ! temporally related to
 id: starts_with
 name: starts with
 namespace: ENVO
-def: "x starts with y if and only if x has part y and the time point at which x starts is equivalent to the time point at which y starts. Formally: α(y) = α(x) ∧ ω(y) < ω(x), where α is a function that maps a process to a start point, and ω is a function that maps a process to an end point." []
+def: "x starts with y if and only if x has part y and the time point at which x starts is equivalent to the time point at which y starts. Formally: ?(y) = ?(x) ? ?(y) < ?(x), where ? is a function that maps a process to a start point, and ? is a function that maps a process to an end point." []
 subset: ro-eco
 xref: RO:0002224
 property_value: IAO:0000112 "Every insulin receptor signaling pathway starts with the binding of a ligand to the insulin receptor" xsd:string
