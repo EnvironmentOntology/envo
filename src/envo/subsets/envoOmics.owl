@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="http://purl.obolibrary.org/obo/envo/subsets/environmental_hazards.owl#"
-     xml:base="http://purl.obolibrary.org/obo/envo/subsets/environmental_hazards.owl"
+<rdf:RDF xmlns="http://purl.obolibrary.org/obo/envo/subsets/envoOmics.owl#"
+     xml:base="http://purl.obolibrary.org/obo/envo/subsets/envoOmics.owl"
      xmlns:entity_attribute2="http://purl.obolibrary.org/obo/oba/patterns/entity_attribute/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
@@ -15,8 +15,8 @@
      xmlns:process_attribute="http://purl.obolibrary.org/obo/envo-p/patterns/process_attribute/"
      xmlns:foaf="http://xmlns.com/foaf/0.1/"
      xmlns:dc="http://purl.org/dc/elements/1.1/">
-    <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/envo/subsets/environmental_hazards.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/envo/2017-07-31/subsets/environmental_hazards.owl"/>
+    <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/envo/subsets/envoOmics.owl">
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/envo/2017-07-31/subsets/envoOmics.owl"/>
     </owl:Ontology>
     
 
@@ -682,15 +682,15 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002086"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ro/subsets#ro-eco"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002091"/>
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000062"/>
-        </owl:propertyChainAxiom>
-        <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000050"/>
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000062"/>
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002092"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000062"/>
+        </owl:propertyChainAxiom>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002091"/>
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000062"/>
         </owl:propertyChainAxiom>
     </owl:ObjectProperty>
@@ -1253,7 +1253,7 @@ boundary_of: http://purl.obolibrary.org/obo/RO_0002000</obo:IAO_0000115>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ro/subsets#ro-eco"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000051"/>
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002131"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000050"/>
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000050"/>
@@ -1261,7 +1261,7 @@ boundary_of: http://purl.obolibrary.org/obo/RO_0002000</obo:IAO_0000115>
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000051"/>
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000050"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002131"/>
         </owl:propertyChainAxiom>
     </owl:ObjectProperty>
     <owl:Axiom>
@@ -1805,11 +1805,11 @@ boundary_of: http://purl.obolibrary.org/obo/RO_0002000</obo:IAO_0000115>
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002502"/>
         <obo:IAO_0000119 rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/20064205"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002314"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0000052"/>
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000050"/>
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0000052"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002314"/>
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000050"/>
         </owl:propertyChainAxiom>
     </owl:ObjectProperty>
@@ -2644,1131 +2644,656 @@ Each of these 3 primitives can be composed to yield a cross-product of different
     
 
 
-    <!-- http://purl.obolibrary.org/obo/ENVO_01000438 -->
+    <!-- http://purl.obolibrary.org/obo/ENVO_01000306 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000438">
-        <rdfs:label>lava flow</rdfs:label>
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000306">
+        <rdfs:label>freshwater environment</rdfs:label>
+        <obo:IAO_0000118>Water (non-saline)</obo:IAO_0000118>
+        <oboInOwl:inSubset>envoOmics</oboInOwl:inSubset>
+        <oboInOwl:inSubset>envoPolar</oboInOwl:inSubset>
+        <obo:IAO_0000115>An aquatic environment which is determined by freshwater.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>fresh water environment</oboInOwl:hasExactSynonym>
+        <oboInOwl:inSubset>envoEmpo</oboInOwl:inSubset>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedTarget>Water (non-saline)</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/</oboInOwl:hasDbXref>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000306"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000118"/>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ENVO_01000307 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000307">
+        <rdfs:label>saline water environment</rdfs:label>
+        <obo:IAO_0000115>An environmental system which has its properties and dynamics determined by saline water.</obo:IAO_0000115>
+        <oboInOwl:inSubset>envoPolar</oboInOwl:inSubset>
+        <oboInOwl:inSubset>envoEmpo</oboInOwl:inSubset>
+        <obo:IAO_0000118>Water (saline)</obo:IAO_0000118>
+        <oboInOwl:inSubset>envoOmics</oboInOwl:inSubset>
+    </owl:Class>
+    <owl:Axiom>
+        <oboInOwl:hasDbXref>http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/</oboInOwl:hasDbXref>
+        <owl:annotatedTarget>Water (saline)</owl:annotatedTarget>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000307"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000118"/>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ENVO_01000999 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000999">
+        <rdfs:label xml:lang="en">rhizosphere environment</rdfs:label>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002354"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000656"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002131"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001001"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A lava flow is a moving outpouring of lava, which is created during a non-explosive effusive eruption.</obo:IAO_0000115>
-        <oboInOwl:inSubset>environmental_hazards</oboInOwl:inSubset>
+        <obo:IAO_0000115>An environmental system determined by the presence of a plant rhizosphere.</obo:IAO_0000115>
+        <oboInOwl:inSubset>envoOmics</oboInOwl:inSubset>
+        <oboInOwl:inSubset>envoEmpo</oboInOwl:inSubset>
+        <obo:IAO_0000118>Plant rhizosphere</obo:IAO_0000118>
     </owl:Class>
     <owl:Axiom>
-        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A lava flow is a moving outpouring of lava, which is created during a non-explosive effusive eruption.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Lava</oboInOwl:hasDbXref>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000438"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <rdfs:comment>http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/</rdfs:comment>
+        <owl:annotatedTarget>Plant rhizosphere</owl:annotatedTarget>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000999"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000118"/>
     </owl:Axiom>
     
 
 
-    <!-- http://purl.obolibrary.org/obo/ENVO_01000634 -->
+    <!-- http://purl.obolibrary.org/obo/ENVO_01001000 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000634">
-        <rdfs:label xml:lang="en">volcanic eruption</rdfs:label>
-        <oboInOwl:inSubset>environmental_hazards</oboInOwl:inSubset>
-        <obo:IAO_0000115>A volcanic process is a process during which lava, tephra (ash, lapilli, volcanic bombs and blocks), and assorted gases are expelled from a volcanic vent or fissure.</obo:IAO_0000115>
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01001000">
+        <rdfs:label xml:lang="en">environmental system determined by an organism</rdfs:label>
+        <obo:IAO_0000115>An environmental system which is determined by a living organism.</obo:IAO_0000115>
+        <oboInOwl:inSubset>envoEmpo</oboInOwl:inSubset>
+        <oboInOwl:inSubset>envoOmics</oboInOwl:inSubset>
+        <oboInOwl:hasRelatedSynonym>host-associated environment</oboInOwl:hasRelatedSynonym>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ENVO_01001001 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01001001">
+        <rdfs:label xml:lang="en">plant-associated environment</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001000"/>
+        <obo:IAO_0000118>Plant</obo:IAO_0000118>
+        <obo:IAO_0000115>An environmental system determined by a green plant.</obo:IAO_0000115>
+        <oboInOwl:hasBroadSynonym>plant environment</oboInOwl:hasBroadSynonym>
+        <oboInOwl:inSubset>envoEmpo</oboInOwl:inSubset>
+        <oboInOwl:inSubset>envoOmics</oboInOwl:inSubset>
+        <oboInOwl:hasExactSynonym>Viridiplantae-associated environment</oboInOwl:hasExactSynonym>
     </owl:Class>
     <owl:Axiom>
-        <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Types_of_volcanic_eruptions</oboInOwl:hasDbXref>
-        <owl:annotatedTarget>A volcanic process is a process during which lava, tephra (ash, lapilli, volcanic bombs and blocks), and assorted gases are expelled from a volcanic vent or fissure.</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000634"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <oboInOwl:hasDbXref>http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/</oboInOwl:hasDbXref>
+        <owl:annotatedTarget>Plant</owl:annotatedTarget>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001001"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000118"/>
     </owl:Axiom>
     
 
 
-    <!-- http://purl.obolibrary.org/obo/ENVO_01000655 -->
+    <!-- http://purl.obolibrary.org/obo/ENVO_01001002 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000655">
-        <rdfs:label xml:lang="en">explosive eruption</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000634"/>
-        <obo:IAO_0000115>An explosive eruption is a volcanic process in which pressurised magma is violently expelled and froths into volcanic ash. Explosive eruptions can eject a cloud of rocks, dust, gas, and pyroclastic material  which may then collapse, creating a pyroclastic flow of hot volcanic matter.</obo:IAO_0000115>
-        <oboInOwl:inSubset>environmental_hazards</oboInOwl:inSubset>
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01001002">
+        <rdfs:label xml:lang="en">animal-associated environment</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001000"/>
+        <obo:IAO_0000115>An environmental system determined by an animal.</obo:IAO_0000115>
+        <oboInOwl:inSubset>envoOmics</oboInOwl:inSubset>
+        <oboInOwl:inSubset>envoEmpo</oboInOwl:inSubset>
+        <oboInOwl:hasBroadSynonym>animal environment</oboInOwl:hasBroadSynonym>
+        <oboInOwl:hasExactSynonym>Metazoan-associated environment</oboInOwl:hasExactSynonym>
+        <obo:IAO_0000118>Animal</obo:IAO_0000118>
     </owl:Class>
     <owl:Axiom>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://en.wikipedia.org/wiki/Explosive_eruption</oboInOwl:hasDbXref>
-        <owl:annotatedTarget>An explosive eruption is a volcanic process in which pressurised magma is violently expelled and froths into volcanic ash. Explosive eruptions can eject a cloud of rocks, dust, gas, and pyroclastic material  which may then collapse, creating a pyroclastic flow of hot volcanic matter.</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000655"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <oboInOwl:hasDbXref>http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/</oboInOwl:hasDbXref>
+        <owl:annotatedTarget>Animal</owl:annotatedTarget>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001002"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000118"/>
     </owl:Axiom>
     
 
 
-    <!-- http://purl.obolibrary.org/obo/ENVO_01000656 -->
+    <!-- http://purl.obolibrary.org/obo/ENVO_01001028 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000656">
-        <rdfs:label xml:lang="en">effusive eruption</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000634"/>
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01001028">
+        <rdfs:label xml:lang="en">sediment permeated by freshwater</rdfs:label>
+        <oboInOwl:inSubset>envoEmpo</oboInOwl:inSubset>
+        <obo:IAO_0000115>Sediment which is permeated by freshwater.</obo:IAO_0000115>
+        <oboInOwl:inSubset>envoOmics</oboInOwl:inSubset>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ENVO_01001029 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01001029">
+        <rdfs:label xml:lang="en">fecal environment</rdfs:label>
+        <obo:IAO_0000115>An environmental system which has its properties and dynamics determined by feces.</obo:IAO_0000115>
+        <oboInOwl:inSubset>envoOmics</oboInOwl:inSubset>
+        <obo:IAO_0000118>Animal distal gut</obo:IAO_0000118>
+        <oboInOwl:inSubset>envoEmpo</oboInOwl:inSubset>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedTarget>Animal distal gut</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/</oboInOwl:hasDbXref>
+        <rdfs:comment>The label of this EMPO class is ambiguous, but pers. comm. with L Thompson (http://orcid.org/0000-0002-3911-1280) reveals that this is essentially limited to fecal samples.</rdfs:comment>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001029"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000118"/>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ENVO_01001030 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01001030">
+        <rdfs:label xml:lang="en">environment determined by a metazoan secretion</rdfs:label>
+        <oboInOwl:inSubset>envoOmics</oboInOwl:inSubset>
+        <oboInOwl:inSubset>envoEmpo</oboInOwl:inSubset>
+        <obo:IAO_0000118>Animal secretion</obo:IAO_0000118>
+        <obo:IAO_0000115>An environmental system which has its properties and dynamics determined by a bodily secretion of a metazoan.</obo:IAO_0000115>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedTarget>Animal secretion</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/</oboInOwl:hasDbXref>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001030"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000118"/>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ENVO_01001031 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01001031">
+        <rdfs:label xml:lang="en">environment determined by a plant substance</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001057"/>
+        <obo:IAO_0000118>Plant secretion</obo:IAO_0000118>
+        <oboInOwl:inSubset>envoOmics</oboInOwl:inSubset>
+        <obo:IAO_0000115>An environmental system which has its properties and dynamics determined by a substance produced by a plant.</obo:IAO_0000115>
+        <oboInOwl:inSubset>envoEmpo</oboInOwl:inSubset>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedTarget>Plant secretion</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/</oboInOwl:hasDbXref>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001031"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000118"/>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ENVO_01001032 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01001032">
+        <rdfs:label xml:lang="en">environment determined by a biofilm on a plant surface</rdfs:label>
+        <obo:IAO_0000118>Plant surface</obo:IAO_0000118>
+        <oboInOwl:inSubset>envoEmpo</oboInOwl:inSubset>
+        <obo:IAO_0000115>An environmental system which has its properties and dynamics determined by a biofilm on the surface of a plant.</obo:IAO_0000115>
+        <oboInOwl:inSubset>envoOmics</oboInOwl:inSubset>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedTarget>Plant surface</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/</oboInOwl:hasDbXref>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001032"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000118"/>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ENVO_01001033 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01001033">
+        <rdfs:label xml:lang="en">digestive tract environment</rdfs:label>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000730"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001000"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <oboInOwl:inSubset>environmental_hazards</oboInOwl:inSubset>
-        <obo:IAO_0000115>An effusive eruption is a volcanic eruption during which lava flows onto the ground.</obo:IAO_0000115>
+        <obo:IAO_0000115>An environmental system which has its properties and dynamics determined by a digestive tract.</obo:IAO_0000115>
+        <oboInOwl:inSubset>envoOmics</oboInOwl:inSubset>
+        <oboInOwl:inSubset>envoEmpo</oboInOwl:inSubset>
+        <obo:IAO_0000118>Animal proximal gut</obo:IAO_0000118>
     </owl:Class>
     <owl:Axiom>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://en.wikipedia.org/wiki/Effusive_eruption</oboInOwl:hasDbXref>
-        <owl:annotatedTarget>An effusive eruption is a volcanic eruption during which lava flows onto the ground.</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000656"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>Animal proximal gut</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/</oboInOwl:hasDbXref>
+        <rdfs:comment>This EMPO class includes examples of microbial environments determined by the &quot;gut intestine, gizzard, crop, lumen, [and] mucosa&quot;.</rdfs:comment>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001033"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000118"/>
     </owl:Axiom>
     
 
 
-    <!-- http://purl.obolibrary.org/obo/ENVO_01000669 -->
+    <!-- http://purl.obolibrary.org/obo/ENVO_01001034 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000669">
-        <rdfs:label xml:lang="en">active geological fault</rdfs:label>
-        <oboInOwl:inSubset>environmental_hazards</oboInOwl:inSubset>
-        <obo:IAO_0000115>An active fault is a fault that is likely to become the source of another earthquake sometime in the future. Geologists commonly consider faults to be active if there has been movement observed or evidence of seismic activity during the last 10,000 years.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym>active fault</oboInOwl:hasExactSynonym>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/ENVO_01000677 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000677">
-        <rdfs:label xml:lang="en">earthquake</rdfs:label>
-        <obo:IAO_0000115>An earthquake is a process whereby part of the surface of a planet shakes due to the passage of seismic waves through rocks. Seismic waves are produced when some form of energy stored in a planet&apos;s crust is suddenly released. Elastic strain, gravity, chemical reactions, or even the motion of massive bodies can produce earthquakes.</obo:IAO_0000115>
-        <oboInOwl:inSubset>environmental_hazards</oboInOwl:inSubset>
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01001034">
+        <rdfs:label xml:lang="en">environment determined by a biofilm on an animal surface</rdfs:label>
+        <obo:IAO_0000118>Animal surface</obo:IAO_0000118>
+        <oboInOwl:inSubset>envoEmpo</oboInOwl:inSubset>
+        <oboInOwl:inSubset>envoOmics</oboInOwl:inSubset>
+        <obo:IAO_0000115>An environmental system which has its properties and dynamics determined by a biofilm on the surface of a animal.</obo:IAO_0000115>
     </owl:Class>
     <owl:Axiom>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Adapted from URL:http://www.britannica.com/science/earthquake-geology</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://en.wikipedia.org/wiki/Earthquake</oboInOwl:hasDbXref>
-        <owl:annotatedTarget>An earthquake is a process whereby part of the surface of a planet shakes due to the passage of seismic waves through rocks. Seismic waves are produced when some form of energy stored in a planet&apos;s crust is suddenly released. Elastic strain, gravity, chemical reactions, or even the motion of massive bodies can produce earthquakes.</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000677"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <oboInOwl:hasDbXref>http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/</oboInOwl:hasDbXref>
+        <owl:annotatedTarget>Animal surface</owl:annotatedTarget>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001034"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000118"/>
     </owl:Axiom>
     
 
 
-    <!-- http://purl.obolibrary.org/obo/ENVO_01000678 -->
+    <!-- http://purl.obolibrary.org/obo/ENVO_01001035 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000678">
-        <rdfs:label xml:lang="en">tectonic earthquake</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000677"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000057"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000669"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000115>A tectonic earthquake is an earthquake caused by the release of elastic strain. A tectonic earthquake occurs when strains in rock masses have accumulated to a point where the resulting stresses exceed the strength of the rocks, and sudden fracturing results.</obo:IAO_0000115>
-        <oboInOwl:inSubset>environmental_hazards</oboInOwl:inSubset>
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01001035">
+        <rdfs:label xml:lang="en">environment determined by a biofilm on a fungal surface</rdfs:label>
+        <oboInOwl:inSubset>envoOmics</oboInOwl:inSubset>
+        <obo:IAO_0000115>An environmental system which has its properties and dynamics determined by a biofilm on the surface of a fungus.</obo:IAO_0000115>
+        <obo:IAO_0000118>Fungus surface</obo:IAO_0000118>
+        <oboInOwl:inSubset>envoEmpo</oboInOwl:inSubset>
     </owl:Class>
     <owl:Axiom>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">URL:http://www.britannica.com/science/earthquake-geology</oboInOwl:hasDbXref>
-        <owl:annotatedTarget>A tectonic earthquake is an earthquake caused by the release of elastic strain. A tectonic earthquake occurs when strains in rock masses have accumulated to a point where the resulting stresses exceed the strength of the rocks, and sudden fracturing results.</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000678"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <oboInOwl:hasDbXref>http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/</oboInOwl:hasDbXref>
+        <owl:annotatedTarget>Fungus surface</owl:annotatedTarget>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001035"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000118"/>
     </owl:Axiom>
     
 
 
-    <!-- http://purl.obolibrary.org/obo/ENVO_01000679 -->
+    <!-- http://purl.obolibrary.org/obo/ENVO_01001036 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000679">
-        <rdfs:label xml:lang="en">megathrust earthquake</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000678"/>
-        <obo:IAO_0000115>A megathrust earthquake is a tectonic earthquake which occurs at subduction zones at destructive plate boundaries (convergent boundaries). These interplate earthquakes are the planet&apos;s most powerful, with moment magnitudes that can exceed 9.0.</obo:IAO_0000115>
-        <oboInOwl:inSubset>environmental_hazards</oboInOwl:inSubset>
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01001036">
+        <rdfs:label xml:lang="en">sediment permeated by saline water</rdfs:label>
+        <oboInOwl:inSubset>envoEmpo</oboInOwl:inSubset>
+        <oboInOwl:inSubset>envoOmics</oboInOwl:inSubset>
+        <obo:IAO_0000115>Sediment which is permeated by saline water.</obo:IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ENVO_01001041 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01001041">
+        <rdfs:label xml:lang="en">fungi-associated environment</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001000"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001058"/>
+        <oboInOwl:hasBroadSynonym>fungus environment</oboInOwl:hasBroadSynonym>
+        <oboInOwl:inSubset>envoOmics</oboInOwl:inSubset>
+        <obo:IAO_0000115>An environmental system determined by a fungal structure.</obo:IAO_0000115>
+        <oboInOwl:inSubset>envoEmpo</oboInOwl:inSubset>
+        <obo:IAO_0000118>Fungus</obo:IAO_0000118>
+        <oboInOwl:hasExactSynonym>fungus-associated environment</oboInOwl:hasExactSynonym>
     </owl:Class>
     <owl:Axiom>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Adapted from URL:http://www.britannica.com/science/earthquake-geology</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://en.wikipedia.org/wiki/Earthquake</oboInOwl:hasDbXref>
-        <owl:annotatedTarget>A megathrust earthquake is a tectonic earthquake which occurs at subduction zones at destructive plate boundaries (convergent boundaries). These interplate earthquakes are the planet&apos;s most powerful, with moment magnitudes that can exceed 9.0.</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000679"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <oboInOwl:hasDbXref>http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/</oboInOwl:hasDbXref>
+        <owl:annotatedTarget>Fungus</owl:annotatedTarget>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001041"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000118"/>
     </owl:Axiom>
     
 
 
-    <!-- http://purl.obolibrary.org/obo/ENVO_01000680 -->
+    <!-- http://purl.obolibrary.org/obo/ENVO_01001042 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000680">
-        <rdfs:label xml:lang="en">polluted lake</rdfs:label>
-        <oboInOwl:inSubset>environmental_hazards</oboInOwl:inSubset>
-        <obo:IAO_0000115>A lake which has concentrations of environmental contaminants high enough to harm the ecosystems associated with it.</obo:IAO_0000115>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/ENVO_01000689 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000689">
-        <rdfs:label xml:lang="en">tsunami</rdfs:label>
-        <oboInOwl:inSubset>environmental_hazards</oboInOwl:inSubset>
-        <oboInOwl:hasExactSynonym>tidal wave</oboInOwl:hasExactSynonym>
-        <obo:IAO_0000115>A tsunami is a process during which a series of waves is generated in a water body, typically an ocean or large lake, by the displacement of a large volume of water. Earthquakes, volcanic eruptions and other underwater explosions (including detonations of underwater nuclear devices), landslides, glacier calvings, meteorite impacts and other disturbances above or below water all have the potential to generate a tsunami.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym>seismic sea wave</oboInOwl:hasExactSynonym>
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01001042">
+        <rdfs:label xml:lang="en">sterile water environment</rdfs:label>
+        <oboInOwl:inSubset>envoOmics</oboInOwl:inSubset>
+        <rdfs:comment>This term can be understood as a negative experimental control primarily composed of sterile water. The quantity of sterile water used may be contaminated; to express pure sterile water, please use http://purl.obolibrary.org/obo/ENVO_00005791</rdfs:comment>
+        <obo:IAO_0000115>An environmental system which has its properties and dynamics determined by sterile water.</obo:IAO_0000115>
+        <oboInOwl:inSubset>envoEmpo</oboInOwl:inSubset>
+        <obo:IAO_0000118>Negative</obo:IAO_0000118>
     </owl:Class>
     <owl:Axiom>
-        <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Tsunami</oboInOwl:hasDbXref>
-        <owl:annotatedTarget>A tsunami is a process during which a series of waves is generated in a water body, typically an ocean or large lake, by the displacement of a large volume of water. Earthquakes, volcanic eruptions and other underwater explosions (including detonations of underwater nuclear devices), landslides, glacier calvings, meteorite impacts and other disturbances above or below water all have the potential to generate a tsunami.</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000689"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>Negative</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/</oboInOwl:hasDbXref>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001042"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000118"/>
     </owl:Axiom>
     
 
 
-    <!-- http://purl.obolibrary.org/obo/ENVO_01000690 -->
+    <!-- http://purl.obolibrary.org/obo/ENVO_01001043 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000690">
-        <rdfs:label xml:lang="en">mass wasting</rdfs:label>
-        <oboInOwl:hasExactSynonym>slope movement</oboInOwl:hasExactSynonym>
-        <oboInOwl:inSubset>environmental_hazards</oboInOwl:inSubset>
-        <rdfs:comment>Of interest for future development: Some causes of mass wasting earthquakes, increased overburden from structures, increased soil moisture, reduction of roots holding the soil to bedrock, undercutting of the slope by excavation or erosion, weathering by frost heave, bioturbation, volcanic edifice over-steepening. Some processes that reduce mass wasting: Afforestation, Reforestation, Terracing steps on slopes (reduce angle of slope). https://en.wikipedia.org/wiki/Mass_wasting.</rdfs:comment>
-        <oboInOwl:hasBroadSynonym>mass movement</oboInOwl:hasBroadSynonym>
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01001043">
+        <rdfs:label xml:lang="en">hypersaline water environment</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000307"/>
+        <obo:IAO_0000115>An environmental system which has its properties and dynamics determined by hypersaline water.</obo:IAO_0000115>
+        <oboInOwl:inSubset>envoEmpo</oboInOwl:inSubset>
         <oboInOwl:inSubset>envoPolar</oboInOwl:inSubset>
-        <obo:IAO_0000115>Mass wasting is the geomorphic process by which solid environmental material such as soil, sand, regolith, and/or rock move downslope typically as a mass, largely under the force of gravity, but frequently affected by water and water content as in submarine environments and mudslides.</obo:IAO_0000115>
+        <obo:IAO_0000118>Hypersaline (saline)</obo:IAO_0000118>
+        <oboInOwl:inSubset>envoOmics</oboInOwl:inSubset>
     </owl:Class>
     <owl:Axiom>
-        <owl:annotatedTarget>Mass wasting is the geomorphic process by which solid environmental material such as soil, sand, regolith, and/or rock move downslope typically as a mass, largely under the force of gravity, but frequently affected by water and water content as in submarine environments and mudslides.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Mass_wasting</oboInOwl:hasDbXref>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000690"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>Hypersaline (saline)</owl:annotatedTarget>
+        <rdfs:comment>Examples inlcude water from hypersaline samples or brines (&gt;50 psu)</rdfs:comment>
+        <oboInOwl:hasDbXref>http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/</oboInOwl:hasDbXref>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001043"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000118"/>
     </owl:Axiom>
     
 
 
-    <!-- http://purl.obolibrary.org/obo/ENVO_01000691 -->
+    <!-- http://purl.obolibrary.org/obo/ENVO_01001044 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000691">
-        <rdfs:label xml:lang="en">avalanche</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000696"/>
-        <oboInOwl:hasExactSynonym>snowslip</oboInOwl:hasExactSynonym>
-        <oboInOwl:inSubset>envoPolar</oboInOwl:inSubset>
-        <oboInOwl:inSubset>environmental_hazards</oboInOwl:inSubset>
-        <obo:IAO_0000115>An avalanche is a rapid flow of snow down a sloping surface.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym>snowslide</oboInOwl:hasExactSynonym>
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01001044">
+        <rdfs:label xml:lang="en">soil environment</rdfs:label>
+        <obo:IAO_0000115>An environmental system which has its properties and dynamics determined by soil.</obo:IAO_0000115>
+        <oboInOwl:inSubset>envoOmics</oboInOwl:inSubset>
+        <obo:IAO_0000118>Soil (non-saline)</obo:IAO_0000118>
+        <oboInOwl:inSubset>envoEmpo</oboInOwl:inSubset>
     </owl:Class>
     <owl:Axiom>
-        <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Mass_wasting</oboInOwl:hasDbXref>
-        <owl:annotatedTarget>An avalanche is a rapid flow of snow down a sloping surface.</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000691"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>Soil (non-saline)</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/</oboInOwl:hasDbXref>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001044"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000118"/>
     </owl:Axiom>
     
 
 
-    <!-- http://purl.obolibrary.org/obo/ENVO_01000692 -->
+    <!-- http://purl.obolibrary.org/obo/ENVO_01001046 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000692">
-        <rdfs:label xml:lang="en">landslide process</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000690"/>
-        <oboInOwl:hasExactSynonym>landslip</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasDbXref>GEMET:http://www.eionet.europa.eu/gemet/concept/4668</oboInOwl:hasDbXref>
-        <obo:IAO_0000115>A landslide is a process whereby a large mass of earth and rocks moves down a hill or a mountainside.</obo:IAO_0000115>
-        <oboInOwl:inSubset>environmental_hazards</oboInOwl:inSubset>
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01001046">
+        <rdfs:label xml:lang="en">planetary subsurface environment</rdfs:label>
+        <oboInOwl:inSubset>envoOmics</oboInOwl:inSubset>
+        <oboInOwl:inSubset>envoEmpo</oboInOwl:inSubset>
+        <obo:IAO_0000115>An environmental system which has its properties and dynamics determined by the subsurface zone of a planet.</obo:IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ENVO_01001047 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01001047">
+        <rdfs:label xml:lang="en">non-saline planetary subsurface environment</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001046"/>
+        <oboInOwl:inSubset>envoEmpo</oboInOwl:inSubset>
+        <oboInOwl:inSubset>envoOmics</oboInOwl:inSubset>
+        <obo:IAO_0000118>Subsurface (non-saline)</obo:IAO_0000118>
+        <obo:IAO_0000115>An environmental system which has its properties and dynamics determined by those parts of a planetary subsurface zone which are not saline.</obo:IAO_0000115>
     </owl:Class>
     <owl:Axiom>
-        <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Mass_wasting</oboInOwl:hasDbXref>
-        <owl:annotatedTarget>A landslide is a process whereby a large mass of earth and rocks moves down a hill or a mountainside.</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000692"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <oboInOwl:hasDbXref>http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/</oboInOwl:hasDbXref>
+        <owl:annotatedTarget>Subsurface (non-saline)</owl:annotatedTarget>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001047"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000118"/>
     </owl:Axiom>
     
 
 
-    <!-- http://purl.obolibrary.org/obo/ENVO_01000693 -->
+    <!-- http://purl.obolibrary.org/obo/ENVO_01001048 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000693">
-        <rdfs:label xml:lang="en">rockfall</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000690"/>
-        <oboInOwl:inSubset>environmental_hazards</oboInOwl:inSubset>
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01001048">
+        <rdfs:label xml:lang="en">sediment environment</rdfs:label>
+        <oboInOwl:inSubset>envoOmics</oboInOwl:inSubset>
+        <obo:IAO_0000115>An environmental system which has its properties and dynamics determined by sediment.</obo:IAO_0000115>
+        <oboInOwl:inSubset>envoEmpo</oboInOwl:inSubset>
     </owl:Class>
     
 
 
-    <!-- http://purl.obolibrary.org/obo/ENVO_01000694 -->
+    <!-- http://purl.obolibrary.org/obo/ENVO_01001049 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000694">
-        <rdfs:label xml:lang="en">geological subsidence</rdfs:label>
-        <obo:IAO_0000115>A subsidence process is a geomorphologic process in which a surface shifts downward relative to a datum such as sea-level.</obo:IAO_0000115>
-        <oboInOwl:hasBroadSynonym>subsidence</oboInOwl:hasBroadSynonym>
-        <oboInOwl:inSubset>environmental_hazards</oboInOwl:inSubset>
-    </owl:Class>
-    <owl:Axiom>
-        <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Subsidence</oboInOwl:hasDbXref>
-        <owl:annotatedTarget>A subsidence process is a geomorphologic process in which a surface shifts downward relative to a datum such as sea-level.</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000694"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/ENVO_01000695 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000695">
-        <rdfs:label xml:lang="en">mudslide</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000690"/>
-        <oboInOwl:inSubset>environmental_hazards</oboInOwl:inSubset>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/ENVO_01000696 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000696">
-        <rdfs:label xml:lang="en">mass wasting flow</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000690"/>
-        <oboInOwl:inSubset>envoPolar</oboInOwl:inSubset>
-        <obo:IAO_0000115>A mass wasting flow is a form of mass wasting during which the moving materials behave similarly to a flowing fluid. Water, air and ice are often involved in enabling fluidlike motion of the material.</obo:IAO_0000115>
-        <oboInOwl:inSubset>environmental_hazards</oboInOwl:inSubset>
-        <oboInOwl:hasBroadSynonym>flow</oboInOwl:hasBroadSynonym>
-    </owl:Class>
-    <owl:Axiom>
-        <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Mass_wasting</oboInOwl:hasDbXref>
-        <owl:annotatedTarget>A mass wasting flow is a form of mass wasting during which the moving materials behave similarly to a flowing fluid. Water, air and ice are often involved in enabling fluidlike motion of the material.</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000696"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/ENVO_01000697 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000697">
-        <rdfs:label xml:lang="en">mudflow</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000696"/>
-        <oboInOwl:inSubset>environmental_hazards</oboInOwl:inSubset>
-        <rdfs:comment>&quot;Mudflows are often called mudslides, a term applied indiscriminately by the mass media to a variety of mass wasting events. Mudflows often start as slides, becoming flows as water is entrained along the flow path; such events are often called flow slides.&quot; https://en.wikipedia.org/wiki/Mudflow</rdfs:comment>
-        <obo:IAO_0000115>A mudflow is a form of mass wasting which involves very rapid to extremely rapid surging flow of debris that has become partially or fully liquified by the addition of significant amounts of water to clay-rich source material.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym>mud flow</oboInOwl:hasExactSynonym>
-    </owl:Class>
-    <owl:Axiom>
-        <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Mudflow</oboInOwl:hasDbXref>
-        <owl:annotatedTarget>A mudflow is a form of mass wasting which involves very rapid to extremely rapid surging flow of debris that has become partially or fully liquified by the addition of significant amounts of water to clay-rich source material.</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000697"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/ENVO_01000698 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000698">
-        <rdfs:label xml:lang="en">debris flow</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000696"/>
-        <oboInOwl:inSubset>environmental_hazards</oboInOwl:inSubset>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/ENVO_01000699 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000699">
-        <rdfs:label xml:lang="en">lahar</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000697"/>
-        <obo:IAO_0000115>A lahar is a type of mudflow or debris flow composed of a slurry of pyroclastic material, rocky debris, and water. The material flows down from a volcano, typically along a river valley.</obo:IAO_0000115>
-        <oboInOwl:inSubset>environmental_hazards</oboInOwl:inSubset>
-    </owl:Class>
-    <owl:Axiom>
-        <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Lahar</oboInOwl:hasDbXref>
-        <owl:annotatedTarget>A lahar is a type of mudflow or debris flow composed of a slurry of pyroclastic material, rocky debris, and water. The material flows down from a volcano, typically along a river valley.</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000699"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/ENVO_01000702 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000702">
-        <rdfs:label xml:lang="en">ash fall process</rdfs:label>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000062"/>
-                <owl:someValuesFrom>
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01001049">
+        <rdfs:label xml:lang="en">non-saline sediment environment</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/ENVO_01001048"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000634"/>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002507"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001028"/>
                     </owl:Restriction>
-                </owl:someValuesFrom>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <oboInOwl:inSubset>environmental_hazards</oboInOwl:inSubset>
-        <obo:IAO_0000115>An ash fall process is a process in which volcanic ash formed during an explosive volcanic eruption, phreatomagmatic eruption, or during material transport in pyroclastic density currents is pulled towards the planetary surface by gravity.</obo:IAO_0000115>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedTarget>An ash fall process is a process in which volcanic ash formed during an explosive volcanic eruption, phreatomagmatic eruption, or during material transport in pyroclastic density currents is pulled towards the planetary surface by gravity.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Volcanic_ash</oboInOwl:hasDbXref>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000702"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/ENVO_01000707 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000707">
-        <rdfs:label xml:lang="en">coastal flooding</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_02500002"/>
-        <oboInOwl:inSubset>environmental_hazards</oboInOwl:inSubset>
-        <obo:IAO_0000115>Coastal flooding is a process in which normally dry, low-lying land near a coast is flooded by sea water.</obo:IAO_0000115>
-    </owl:Class>
-    <owl:Axiom>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://en.wikipedia.org/wiki/Coastal_flood</oboInOwl:hasDbXref>
-        <owl:annotatedTarget>Coastal flooding is a process in which normally dry, low-lying land near a coast is flooded by sea water.</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000707"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/ENVO_01000708 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000708">
-        <rdfs:label xml:lang="en">riverine flooding</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_02500002"/>
-        <obo:IAO_0000116>A disposition class such as &apos;flooding disposition&apos; may be interesting, especially when attached to things like meanders and bends.</obo:IAO_0000116>
-        <obo:IAO_0000115>Riverine flooding is a process in which the flow rate of river water exceeds the capacity of its channel, thus flooding neighbouring land. Bends and meanders in a river channel are particularly disposed to such flooding.</obo:IAO_0000115>
-        <oboInOwl:inSubset>environmental_hazards</oboInOwl:inSubset>
-    </owl:Class>
-    <owl:Axiom>
-        <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Flood#Riverine</oboInOwl:hasDbXref>
-        <owl:annotatedTarget>Riverine flooding is a process in which the flow rate of river water exceeds the capacity of its channel, thus flooding neighbouring land. Bends and meanders in a river channel are particularly disposed to such flooding.</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000708"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/ENVO_01000709 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000709">
-        <rdfs:label xml:lang="en">flash flooding</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_02500002"/>
-        <oboInOwl:inSubset>environmental_hazards</oboInOwl:inSubset>
-        <obo:IAO_0000115>Flash flooding is a process in which low-lying land is inundated with water for a short period of time and are usually the result of precipitation or a breach in the container of a water body.</obo:IAO_0000115>
-        <rdfs:comment>Flash floods generally last no more than six hours. http://www.srh.noaa.gov/mrx/hydro/flooddef.php</rdfs:comment>
-    </owl:Class>
-    <owl:Axiom>
-        <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Flash_flood</oboInOwl:hasDbXref>
-        <owl:annotatedTarget>Flash flooding is a process in which low-lying land is inundated with water for a short period of time and are usually the result of precipitation or a breach in the container of a water body.</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000709"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/ENVO_01000710 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000710">
-        <rdfs:label xml:lang="en">flood</rdfs:label>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001048"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002354"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_02500002"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002507"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001028"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <oboInOwl:inSubset>environmental_hazards</oboInOwl:inSubset>
-        <obo:IAO_0000115>An unusual accumulation of water above the ground caused by high tide, heavy rain, melting snow or rapid runoff from paved areas.</obo:IAO_0000115>
+        <obo:IAO_0000115>An environmental system which has its properties and dynamics determined by sediment permeated by non-saline water.</obo:IAO_0000115>
+        <oboInOwl:inSubset>envoEmpo</oboInOwl:inSubset>
+        <obo:IAO_0000118>Sediment (non-saline)</obo:IAO_0000118>
+        <oboInOwl:inSubset>envoOmics</oboInOwl:inSubset>
     </owl:Class>
     <owl:Axiom>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GEMET:http://www.eionet.europa.eu/gemet/concept/3298</oboInOwl:hasDbXref>
-        <owl:annotatedTarget>An unusual accumulation of water above the ground caused by high tide, heavy rain, melting snow or rapid runoff from paved areas.</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000710"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>Sediment (non-saline)</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/</oboInOwl:hasDbXref>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001049"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000118"/>
     </owl:Axiom>
     
 
 
-    <!-- http://purl.obolibrary.org/obo/ENVO_01000711 -->
+    <!-- http://purl.obolibrary.org/obo/ENVO_01001050 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000711">
-        <rdfs:label xml:lang="en">coastal flood</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000710"/>
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01001050">
+        <rdfs:label xml:lang="en">saline sediment environment</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/ENVO_01001048"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002507"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001036"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001048"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002354"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000707"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002507"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001036"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115>A coastal flood is a flood which is formed as a result of large amounts of water from marine water bodies or large lakes being transported to usually dry land by displacement processes such as high winds or seismic activity.</obo:IAO_0000115>
-        <oboInOwl:inSubset>environmental_hazards</oboInOwl:inSubset>
+        <oboInOwl:inSubset>envoOmics</oboInOwl:inSubset>
+        <oboInOwl:inSubset>envoEmpo</oboInOwl:inSubset>
+        <obo:IAO_0000115>An environmental system which has its properties and dynamics determined by sediment permeated by saline water.</obo:IAO_0000115>
+        <obo:IAO_0000118>Sediment (saline)</obo:IAO_0000118>
     </owl:Class>
     <owl:Axiom>
-        <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Flood#Estuarine_and_coastal</oboInOwl:hasDbXref>
-        <owl:annotatedTarget>A coastal flood is a flood which is formed as a result of large amounts of water from marine water bodies or large lakes being transported to usually dry land by displacement processes such as high winds or seismic activity.</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000711"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <oboInOwl:hasDbXref>http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/</oboInOwl:hasDbXref>
+        <owl:annotatedTarget>Sediment (saline)</owl:annotatedTarget>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001050"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000118"/>
     </owl:Axiom>
     
 
 
-    <!-- http://purl.obolibrary.org/obo/ENVO_01000712 -->
+    <!-- http://purl.obolibrary.org/obo/ENVO_01001051 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000712">
-        <rdfs:label xml:lang="en">riverine flood</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000710"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002354"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000708"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <oboInOwl:inSubset>environmental_hazards</oboInOwl:inSubset>
-        <obo:IAO_0000115>A riverine flood is a flood which is formed as a result of a river&apos;s flow rate exceeding the capacity of its channel.</obo:IAO_0000115>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/ENVO_01000713 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000713">
-        <rdfs:label xml:lang="en">flash flood</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000710"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002354"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000709"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <oboInOwl:inSubset>environmental_hazards</oboInOwl:inSubset>
-        <obo:IAO_0000115>A flash flood is a flood formed by the rapid flooding of geomorphic low-lying areas. It may be caused by heavy rain associated with a severe thunderstorm, hurricane, tropical storm, or meltwater from ice or snow flowing over ice sheets or snowfields. Flash floods may also occur after the collapse of a natural ice or debris dam, or a human structure such as a man-made dam. Flash floods are distinguished from a regular flood by a timescale of less than six hours.</obo:IAO_0000115>
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01001051">
+        <rdfs:label xml:lang="en">environment determined by a biofilm on a non-saline surface</rdfs:label>
+        <obo:IAO_0000118>Surface (non-saline)</obo:IAO_0000118>
+        <oboInOwl:inSubset>envoEmpo</oboInOwl:inSubset>
+        <obo:IAO_0000115>An environmental system which has its properties and dynamics determined by a biofilm on a surface which is exposed to non-saline materials.</obo:IAO_0000115>
+        <oboInOwl:inSubset>envoOmics</oboInOwl:inSubset>
     </owl:Class>
     <owl:Axiom>
-        <owl:annotatedTarget>A flash flood is a flood formed by the rapid flooding of geomorphic low-lying areas. It may be caused by heavy rain associated with a severe thunderstorm, hurricane, tropical storm, or meltwater from ice or snow flowing over ice sheets or snowfields. Flash floods may also occur after the collapse of a natural ice or debris dam, or a human structure such as a man-made dam. Flash floods are distinguished from a regular flood by a timescale of less than six hours.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Flash_flood</oboInOwl:hasDbXref>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000713"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <oboInOwl:hasDbXref>http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/</oboInOwl:hasDbXref>
+        <owl:annotatedTarget>Surface (non-saline)</owl:annotatedTarget>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001051"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000118"/>
     </owl:Axiom>
     
 
 
-    <!-- http://purl.obolibrary.org/obo/ENVO_01000714 -->
+    <!-- http://purl.obolibrary.org/obo/ENVO_01001052 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000714">
-        <rdfs:label xml:lang="en">storm surge</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000711"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002354"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000716"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000115>A storm surge is a coastal flood which is caused by low-pressure weather systems such as tropical cyclones and strong extratropical cyclones, the severity of which is affected by the shallowness and orientation of the water body relative to storm path, and the timing of tides.</obo:IAO_0000115>
-        <obo:IAO_0000116>Needs links to weather when these phenomena are added.</obo:IAO_0000116>
-        <oboInOwl:inSubset>environmental_hazards</oboInOwl:inSubset>
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01001052">
+        <rdfs:label xml:lang="en">aerosol environment</rdfs:label>
+        <oboInOwl:inSubset>envoOmics</oboInOwl:inSubset>
+        <oboInOwl:inSubset>envoEmpo</oboInOwl:inSubset>
+        <obo:IAO_0000115>An environmental system which has its properties and dynamics determined by an aerosol.</obo:IAO_0000115>
+        <obo:IAO_0000118>Aerosol (saline)</obo:IAO_0000118>
     </owl:Class>
     <owl:Axiom>
-        <owl:annotatedTarget>A storm surge is a coastal flood which is caused by low-pressure weather systems such as tropical cyclones and strong extratropical cyclones, the severity of which is affected by the shallowness and orientation of the water body relative to storm path, and the timing of tides.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Storm_surge</oboInOwl:hasDbXref>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000714"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>Aerosol (saline)</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/</oboInOwl:hasDbXref>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001052"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000118"/>
     </owl:Axiom>
     
 
 
-    <!-- http://purl.obolibrary.org/obo/ENVO_01000715 -->
+    <!-- http://purl.obolibrary.org/obo/ENVO_01001053 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000715">
-        <rdfs:label xml:lang="en">metotsunami</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000689"/>
-        <obo:IAO_0000116>Ambiguity as to whether this label refers to the process or the material entities (the waves). The material entities are a type of severe storm surge.</obo:IAO_0000116>
-        <oboInOwl:inSubset>environmental_hazards</oboInOwl:inSubset>
-        <obo:IAO_0000115>A meteotsunami is a tsunami caused by atmospheric processes and differences in air pressure.</obo:IAO_0000115>
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01001053">
+        <rdfs:label xml:lang="en">saline aerosol environment</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001052"/>
+        <oboInOwl:inSubset>envoOmics</oboInOwl:inSubset>
+        <obo:IAO_0000118>Aerosol (saline)</obo:IAO_0000118>
+        <oboInOwl:inSubset>envoEmpo</oboInOwl:inSubset>
+        <obo:IAO_0000115>An environmental system which has its properties and dynamics determined by a saline aerosol.</obo:IAO_0000115>
     </owl:Class>
     <owl:Axiom>
-        <owl:annotatedTarget>A meteotsunami is a tsunami caused by atmospheric processes and differences in air pressure.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Meteotsunami</oboInOwl:hasDbXref>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000715"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>Aerosol (saline)</owl:annotatedTarget>
+        <rdfs:comment>seaspray or other aerosolized saline material (&gt;5 psu)</rdfs:comment>
+        <oboInOwl:hasDbXref>http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/</oboInOwl:hasDbXref>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001053"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000118"/>
     </owl:Axiom>
     
 
 
-    <!-- http://purl.obolibrary.org/obo/ENVO_01000716 -->
+    <!-- http://purl.obolibrary.org/obo/ENVO_01001054 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000716">
-        <rdfs:label xml:lang="en">storm surge process</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000707"/>
-        <obo:IAO_0000115>A storm surge process is a coastal flooding process which is caused by low pressure weather systems such as tropical cyclones and strong extratropical cyclones, the severity of which is affected by the shallowness and orientation of the water body relative to storm path, and the timing of tides.</obo:IAO_0000115>
-        <obo:IAO_0000116>Should be linked to the relevant weather classes when these are created.</obo:IAO_0000116>
-        <oboInOwl:inSubset>environmental_hazards</oboInOwl:inSubset>
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01001054">
+        <rdfs:label xml:lang="en">non-saline aerosol environment</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001052"/>
+        <oboInOwl:inSubset>envoEmpo</oboInOwl:inSubset>
+        <obo:IAO_0000118>Aerosol (non-saline)</obo:IAO_0000118>
+        <oboInOwl:inSubset>envoOmics</oboInOwl:inSubset>
+        <obo:IAO_0000115>An environmental system which has its properties and dynamics determined by an aerosol with a low concentration of dissolved solutes.</obo:IAO_0000115>
     </owl:Class>
     <owl:Axiom>
-        <owl:annotatedTarget>A storm surge process is a coastal flooding process which is caused by low pressure weather systems such as tropical cyclones and strong extratropical cyclones, the severity of which is affected by the shallowness and orientation of the water body relative to storm path, and the timing of tides.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Storm_surge</oboInOwl:hasDbXref>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000716"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>Aerosol (non-saline)</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/</oboInOwl:hasDbXref>
+        <rdfs:comment>aerosolized dust or liquid</rdfs:comment>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001054"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000118"/>
     </owl:Axiom>
     
 
 
-    <!-- http://purl.obolibrary.org/obo/ENVO_01000717 -->
+    <!-- http://purl.obolibrary.org/obo/ENVO_01001055 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000717">
-        <rdfs:label xml:lang="en">areal flooding</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_02500002"/>
-        <oboInOwl:inSubset>environmental_hazards</oboInOwl:inSubset>
-        <obo:IAO_0000115>Areal flooding is a flooding process in which flat or low-lying areas become inundated with water due to water input exceeding infiltration, evaporation, or run off.</obo:IAO_0000115>
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01001055">
+        <rdfs:label xml:lang="en">environment associated with an animal part or small animal</rdfs:label>
+        <oboInOwl:inSubset>envoOmics</oboInOwl:inSubset>
+        <obo:IAO_0000115>An environmental system determined by part of a living or dead animal, or a whole small animal.</obo:IAO_0000115>
+        <obo:IAO_0000118>Animal corpus</obo:IAO_0000118>
+        <oboInOwl:inSubset>envoEmpo</oboInOwl:inSubset>
     </owl:Class>
     <owl:Axiom>
-        <owl:annotatedTarget>Areal flooding is a flooding process in which flat or low-lying areas become inundated with water due to water input exceeding infiltration, evaporation, or run off.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Flood#Areal</oboInOwl:hasDbXref>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000717"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>Animal corpus</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/</oboInOwl:hasDbXref>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001055"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000118"/>
     </owl:Axiom>
     
 
 
-    <!-- http://purl.obolibrary.org/obo/ENVO_01000718 -->
+    <!-- http://purl.obolibrary.org/obo/ENVO_01001056 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000718">
-        <rdfs:label xml:lang="en">urban flooding</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_02500002"/>
-        <oboInOwl:inSubset>environmental_hazards</oboInOwl:inSubset>
-        <obo:IAO_0000116>Relevant to built environments and can be linked to urban flows. Also relevant to water and sanitation SDGs.</obo:IAO_0000116>
-        <obo:IAO_0000115>Urban flooding is a flooding process in which land or property in a built environment, particularly in more densely populated areas, is inundated due to the rate of water input exceeding that of water drainage provided by the environment&apos;s drainage systems.</obo:IAO_0000115>
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01001056">
+        <rdfs:label xml:lang="en">environment determined by a biofilm on a saline surface</rdfs:label>
+        <oboInOwl:inSubset>envoEmpo</oboInOwl:inSubset>
+        <obo:IAO_0000115>An environmental system which has its properties and dynamics determined by a biofilm on a surface which is exposed to saline materials.</obo:IAO_0000115>
+        <oboInOwl:inSubset>envoOmics</oboInOwl:inSubset>
+        <obo:IAO_0000118>Surface (saline)</obo:IAO_0000118>
     </owl:Class>
     <owl:Axiom>
-        <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Flood#Urban_flooding</oboInOwl:hasDbXref>
-        <owl:annotatedTarget>Urban flooding is a flooding process in which land or property in a built environment, particularly in more densely populated areas, is inundated due to the rate of water input exceeding that of water drainage provided by the environment&apos;s drainage systems.</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000718"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>Surface (saline)</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/</oboInOwl:hasDbXref>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001056"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000118"/>
     </owl:Axiom>
     
 
 
-    <!-- http://purl.obolibrary.org/obo/ENVO_01000730 -->
+    <!-- http://purl.obolibrary.org/obo/ENVO_01001057 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000730">
-        <rdfs:label xml:lang="en">lava flow process</rdfs:label>
-        <oboInOwl:inSubset>environmental_hazards</oboInOwl:inSubset>
-        <obo:IAO_0000115>A process in which a volume of lava emitted during an effusive eruption moves along a solid surface.</obo:IAO_0000115>
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01001057">
+        <rdfs:label xml:lang="en">environment associated with a plant part or small plant</rdfs:label>
+        <obo:IAO_0000118>Plant corpus</obo:IAO_0000118>
+        <oboInOwl:inSubset>envoOmics</oboInOwl:inSubset>
+        <obo:IAO_0000115>An environmental system determined by part of a living or dead plant, or a whole small plant.</obo:IAO_0000115>
+        <oboInOwl:inSubset>envoEmpo</oboInOwl:inSubset>
     </owl:Class>
     <owl:Axiom>
-        <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Lava</oboInOwl:hasDbXref>
-        <owl:annotatedTarget>A process in which a volume of lava emitted during an effusive eruption moves along a solid surface.</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000730"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <oboInOwl:hasDbXref>http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/</oboInOwl:hasDbXref>
+        <owl:annotatedTarget>Plant corpus</owl:annotatedTarget>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001057"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000118"/>
     </owl:Axiom>
     
 
 
-    <!-- http://purl.obolibrary.org/obo/ENVO_01000787 -->
+    <!-- http://purl.obolibrary.org/obo/ENVO_01001058 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000787">
-        <rdfs:label xml:lang="en">wildfire</rdfs:label>
-        <obo:IAO_0000115>A conflagration which is uncontrolled and combusts material in a vegetated area, be it rural or wild.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym>wildland fire</oboInOwl:hasExactSynonym>
-        <rdfs:comment>The definition of &quot;wildland&quot; or &quot;wild&quot; is ambiguous.</rdfs:comment>
-        <oboInOwl:inSubset>environmental_hazards</oboInOwl:inSubset>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/ENVO_01000874 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000874">
-        <rdfs:label xml:lang="en">hailfall</rdfs:label>
-        <oboInOwl:inSubset>environmental_hazards</oboInOwl:inSubset>
-        <oboInOwl:hasExactSynonym>hail fall</oboInOwl:hasExactSynonym>
-        <oboInOwl:inSubset>envoPolar</oboInOwl:inSubset>
-        <obo:IAO_0000115>Hailfall is a hydrological process in which balls or irregular lumps of water ice formed in thunderstorm or cumulonimbus clouds fall to a planetary surface.</obo:IAO_0000115>
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01001058">
+        <rdfs:label xml:lang="en">&apos;environment associated with a fungal tissue</rdfs:label>
+        <oboInOwl:inSubset>envoEmpo</oboInOwl:inSubset>
+        <obo:IAO_0000118>Fungus corpus</obo:IAO_0000118>
+        <obo:IAO_0000115>An environmental system determined by part of a living or dead fungus.</obo:IAO_0000115>
+        <oboInOwl:inSubset>envoOmics</oboInOwl:inSubset>
     </owl:Class>
     <owl:Axiom>
-        <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Hail</oboInOwl:hasDbXref>
-        <owl:annotatedTarget>Hailfall is a hydrological process in which balls or irregular lumps of water ice formed in thunderstorm or cumulonimbus clouds fall to a planetary surface.</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000874"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <oboInOwl:hasDbXref>http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/</oboInOwl:hasDbXref>
+        <owl:annotatedTarget>Fungus corpus</owl:annotatedTarget>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001058"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000118"/>
     </owl:Axiom>
     
 
 
-    <!-- http://purl.obolibrary.org/obo/ENVO_01000876 -->
+    <!-- http://purl.obolibrary.org/obo/ENVO_01001059 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000876">
-        <rdfs:label xml:lang="en">storm</rdfs:label>
-        <rdfs:comment>The threshold of what constitutes &quot;strong&quot; perturbation is not defined here due to considerable semantic variation. If a specific threshold is required, please request a new term.</rdfs:comment>
-        <obo:IAO_0000115>A storm is an environmental process in which an environmental system and the processes it participates in are strongly perturbed by external forcings. These forcings typically increase the rates of processes unfolding in the system, relative to their normal rates.</obo:IAO_0000115>
-        <oboInOwl:inSubset>environmental_hazards</oboInOwl:inSubset>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/ENVO_01000877 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000877">
-        <rdfs:label xml:lang="en">atmospheric storm</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000876"/>
-        <oboInOwl:inSubset>environmental_hazards</oboInOwl:inSubset>
-        <obo:IAO_0000115>An atmospheric storm is a process in which a portion of an astronomical body&apos;s atmosphere is strongly perturbed from its prevaling weather.</obo:IAO_0000115>
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01001059">
+        <rdfs:label xml:lang="en">mock community</rdfs:label>
+        <obo:IAO_0000118>Mock community</obo:IAO_0000118>
+        <oboInOwl:inSubset>envoOmics</oboInOwl:inSubset>
+        <obo:IAO_0000116>Axiomatise with PCO:&apos;microbial community&apos; once released.</obo:IAO_0000116>
+        <rdfs:comment>Mock communities are typically used as positive controls in experiments.</rdfs:comment>
+        <obo:IAO_0000115>A cell culture which is composed of a microbial community of known composition.</obo:IAO_0000115>
+        <oboInOwl:inSubset>envoEmpo</oboInOwl:inSubset>
     </owl:Class>
     <owl:Axiom>
-        <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Storm</oboInOwl:hasDbXref>
-        <owl:annotatedTarget>An atmospheric storm is a process in which a portion of an astronomical body&apos;s atmosphere is strongly perturbed from its prevaling weather.</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000877"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <oboInOwl:hasDbXref>http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/</oboInOwl:hasDbXref>
+        <owl:annotatedTarget>Mock community</owl:annotatedTarget>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001059"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000118"/>
     </owl:Axiom>
     
 
 
-    <!-- http://purl.obolibrary.org/obo/ENVO_01000878 -->
+    <!-- http://purl.obolibrary.org/obo/ENVO_01001060 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000878">
-        <rdfs:label xml:lang="en">thunderstorm</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000877"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000898"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <oboInOwl:hasExactSynonym>lightning storm</oboInOwl:hasExactSynonym>
-        <obo:IAO_0000115>An atmospheric storm which occurs in cumulonimbus clouds and during which lightning and thunder occur.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym>electrical storm</oboInOwl:hasExactSynonym>
-        <oboInOwl:inSubset>environmental_hazards</oboInOwl:inSubset>
-        <rdfs:comment>Thunderstorms may or may not involve processes which result in strong winds, heavy rain, snow, sleet, hail, or other forms of precipitation.</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/ENVO_01000879 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000879">
-        <rdfs:label xml:lang="en">rainstorm</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000877"/>
-        <oboInOwl:inSubset>environmental_hazards</oboInOwl:inSubset>
-        <obo:IAO_0000115>An atmospheric storm during which intense rainfall occurs.</obo:IAO_0000115>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/ENVO_01000880 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000880">
-        <rdfs:label xml:lang="en">hailstorm</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000882"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000874"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000115>An atmospheric storm which intense hailfall occurs.</obo:IAO_0000115>
-        <oboInOwl:inSubset>environmental_hazards</oboInOwl:inSubset>
-        <oboInOwl:inSubset>envoPolar</oboInOwl:inSubset>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/ENVO_01000881 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000881">
-        <rdfs:label xml:lang="en">snowstorm</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000877"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000895"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <oboInOwl:inSubset>envoPolar</oboInOwl:inSubset>
-        <oboInOwl:inSubset>environmental_hazards</oboInOwl:inSubset>
-        <obo:IAO_0000115>An atmospheric storm during which intense snowfall occurs.</obo:IAO_0000115>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/ENVO_01000882 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000882">
-        <rdfs:label xml:lang="en">icestorm</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000877"/>
-        <oboInOwl:inSubset>envoPolar</oboInOwl:inSubset>
-        <oboInOwl:hasExactSynonym>glaze event</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym>silver thaw</oboInOwl:hasExactSynonym>
-        <obo:IAO_0000115>An atmospheric storm during which freezing rain falls and accumulates as ice on exposed surfaces.</obo:IAO_0000115>
-        <oboInOwl:inSubset>environmental_hazards</oboInOwl:inSubset>
-        <rdfs:comment>The U.S. National Weather Service defines an ice storm as a storm which results in the accumulation of at least 0.25-inch (6.4 mm) of ice on exposed surfaces.</rdfs:comment>
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01001060">
+        <rdfs:label xml:lang="en">single strain cell culture</rdfs:label>
+        <oboInOwl:inSubset>envoEmpo</oboInOwl:inSubset>
+        <obo:IAO_0000118>Single strain</obo:IAO_0000118>
+        <obo:IAO_0000115>A cell culture which is composed of a single population of bacterial or archaeal cells.</obo:IAO_0000115>
+        <oboInOwl:inSubset>envoOmics</oboInOwl:inSubset>
     </owl:Class>
     <owl:Axiom>
-        <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Ice_storm</oboInOwl:hasDbXref>
-        <owl:annotatedTarget>An atmospheric storm during which freezing rain falls and accumulates as ice on exposed surfaces.</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000882"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>Single strain</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/</oboInOwl:hasDbXref>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001060"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000118"/>
     </owl:Axiom>
-    <owl:Axiom>
-        <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Ice_storm</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>Hauer RJ, Dawson JO, Werner LP (2006) Trees and Ice Storms - The Development of Ice Storm-Resistant Urban Tree Populations (2 ed.). College of Natural Resources, University of Wisconsinâ€“Stevens Point, and the Department of Natural Resources and Environmental Sciences and the Office of Continuing Education, University of Illinois at Urbana-Champaign. http://web.extension.uiuc.edu/forestry/publications/pdf/urban_community_forestry/trees_and_ice_storms_2006.pdf</oboInOwl:hasDbXref>
-        <owl:annotatedTarget>The U.S. National Weather Service defines an ice storm as a storm which results in the accumulation of at least 0.25-inch (6.4 mm) of ice on exposed surfaces.</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000882"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#comment"/>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/ENVO_01000895 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000895">
-        <rdfs:label xml:lang="en">snowfall</rdfs:label>
-        <obo:IAO_0000115>A hydrological process in which irregular aggregates of snow fall to a planetary surface.</obo:IAO_0000115>
-        <oboInOwl:inSubset>envoPolar</oboInOwl:inSubset>
-        <oboInOwl:hasExactSynonym>snow fall</oboInOwl:hasExactSynonym>
-        <oboInOwl:inSubset>environmental_hazards</oboInOwl:inSubset>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/ENVO_01000896 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000896">
-        <rdfs:label xml:lang="en">freezing rainfall</rdfs:label>
-        <oboInOwl:inSubset>environmental_hazards</oboInOwl:inSubset>
-        <oboInOwl:hasBroadSynonym>freezing rain</oboInOwl:hasBroadSynonym>
-        <oboInOwl:hasAlternativeId>METAR:FZRA</oboInOwl:hasAlternativeId>
-        <obo:IAO_0000115>Rainfall which occurs when the temperature of a planetary surface and its surrounding atmosphere are below the freezing point of water, resulting in supercooled raindrops which freeze upon impact with solid surfaces.</obo:IAO_0000115>
-        <oboInOwl:inSubset>envoPolar</oboInOwl:inSubset>
-        <oboInOwl:hasBroadSynonym>freezing rain fall</oboInOwl:hasBroadSynonym>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedTarget>Rainfall which occurs when the temperature of a planetary surface and its surrounding atmosphere are below the freezing point of water, resulting in supercooled raindrops which freeze upon impact with solid surfaces.</owl:annotatedTarget>
-        <rdfs:comment>https://en.wikipedia.org/wiki/Freezing_rain</rdfs:comment>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000896"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/ENVO_01000898 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000898">
-        <rdfs:label xml:lang="en">atmospheric lightning</rdfs:label>
-        <obo:IAO_0000115>A sudden electrostatic discharge which occurs during an electrical storm as differentially charged atmospheric entities equalise their charge.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym>lightning</oboInOwl:hasExactSynonym>
-        <oboInOwl:inSubset>environmental_hazards</oboInOwl:inSubset>
-    </owl:Class>
-    <owl:Axiom>
-        <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Lightning</oboInOwl:hasDbXref>
-        <owl:annotatedTarget>A sudden electrostatic discharge which occurs during an electrical storm as differentially charged atmospheric entities equalise their charge.</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000898"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/ENVO_01000899 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000899">
-        <rdfs:label xml:lang="en">intercloud lightning</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000902"/>
-        <oboInOwl:inSubset>environmental_hazards</oboInOwl:inSubset>
-        <obo:IAO_0000115>A lightning process during which electrostatic discharge occurs between at least two clouds.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym>CC lightning</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym>cloud-cloud lightning</oboInOwl:hasExactSynonym>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/ENVO_01000900 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000900">
-        <rdfs:label xml:lang="en">intracloud lightning</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000902"/>
-        <obo:IAO_0000115>A lightning process during which electrostatic discharge occurs within a single cloud.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym>IC lightning</oboInOwl:hasExactSynonym>
-        <oboInOwl:inSubset>environmental_hazards</oboInOwl:inSubset>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/ENVO_01000901 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000901">
-        <rdfs:label xml:lang="en">lightning strike</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000898"/>
-        <oboInOwl:hasExactSynonym>cloud-ground lightning</oboInOwl:hasExactSynonym>
-        <oboInOwl:inSubset>environmental_hazards</oboInOwl:inSubset>
-        <oboInOwl:hasExactSynonym>CG lightning</oboInOwl:hasExactSynonym>
-        <obo:IAO_0000115>A lightning process during which electrostatic discharge occurs between a cloud and an object on a planetary surface, or a planetary surface itself.</obo:IAO_0000115>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/ENVO_01000902 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000902">
-        <rdfs:label xml:lang="en">lightning flash</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000898"/>
-        <obo:IAO_0000115>A lightning process during which electrostatic discharge occurs within a single cloud or between multiple clouds.</obo:IAO_0000115>
-        <oboInOwl:inSubset>environmental_hazards</oboInOwl:inSubset>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/ENVO_01000903 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000903">
-        <rdfs:label xml:lang="en">blizzard</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000881"/>
-        <oboInOwl:inSubset>environmental_hazards</oboInOwl:inSubset>
-        <rdfs:comment>To qualify a snowstorm as a blizzard, some sources require the windspeed to be at least 56 km/h and the duration of the storm to be at least three hours. We set no such hard boundaries in this definition, as this should be done with reference to local standards.</rdfs:comment>
-        <obo:IAO_0000115>A blizzard is a severe snowstorm during which snowfall is transported by strong winds, sustained for several hours.</obo:IAO_0000115>
-        <oboInOwl:inSubset>envoPolar</oboInOwl:inSubset>
-    </owl:Class>
-    <owl:Axiom>
-        <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Blizzard</oboInOwl:hasDbXref>
-        <owl:annotatedTarget>A blizzard is a severe snowstorm during which snowfall is transported by strong winds, sustained for several hours.</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000903"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedTarget>To qualify a snowstorm as a blizzard, some sources require the windspeed to be at least 56 km/h and the duration of the storm to be at least three hours. We set no such hard boundaries in this definition, as this should be done with reference to local standards.</owl:annotatedTarget>
-        <rdfs:comment>https://en.wikipedia.org/wiki/Blizzard</rdfs:comment>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000903"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#comment"/>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/ENVO_01000904 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000904">
-        <rdfs:label xml:lang="en">ground blizzard</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000877"/>
-        <rdfs:comment>This form of blizzard does not involve snowfall as the snow which is blown by the winds is already present on the ground. To qualify a snowstorm as a blizzard, some sources require the windspeed to be at least 56 km/h and the duration of the storm to be at least three hours. We set no such hard boundaries in this definition, as this should be done with reference to local standards.</rdfs:comment>
-        <oboInOwl:inSubset>environmental_hazards</oboInOwl:inSubset>
-        <obo:IAO_0000115>A ground blizzard is a storm during which snow which has settled on a planetary surface is resuspended in and transported through its atmosphere by strong winds, sustained for several hours.</obo:IAO_0000115>
-    </owl:Class>
-    <owl:Axiom>
-        <rdfs:comment>https://en.wikipedia.org/wiki/Blizzard</rdfs:comment>
-        <owl:annotatedTarget>This form of blizzard does not involve snowfall as the snow which is blown by the winds is already present on the ground. To qualify a snowstorm as a blizzard, some sources require the windspeed to be at least 56 km/h and the duration of the storm to be at least three hours. We set no such hard boundaries in this definition, as this should be done with reference to local standards.</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000904"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#comment"/>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedTarget>A ground blizzard is a storm during which snow which has settled on a planetary surface is resuspended in and transported through its atmosphere by strong winds, sustained for several hours.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Blizzard</oboInOwl:hasDbXref>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000904"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/ENVO_01000916 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000916">
-        <rdfs:label xml:lang="en">rubbish landslide</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000690"/>
-        <obo:IAO_0000116>Of interest to sustainable development goals, linking production and consumption to human health and environmental impacts.</obo:IAO_0000116>
-        <oboInOwl:hasExactSynonym>refuse landslide</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym>trash landslide</oboInOwl:hasExactSynonym>
-        <obo:IAO_0000115>A mass wasting process during which refuse from human activities, usually accumulated at a dumping site, falls down a slope under the force of gravity.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym>garbage landslide</oboInOwl:hasExactSynonym>
-        <rdfs:comment>&quot;At least 48 people have been killed in a landslide at a vast rubbish dump on the outskirts of Ethiopia&apos;s capital Addis Ababa, officials say...Hundreds of people attempt to make a living by scavenging at the landfill site, sifting through the rubbish for items they can sell, the BBC&apos;s Emmanuel Igunza in Addis Ababa reports&quot; BBC Africa reports</rdfs:comment>
-        <oboInOwl:inSubset>environmental_hazards</oboInOwl:inSubset>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedTarget>A mass wasting process during which refuse from human activities, usually accumulated at a dumping site, falls down a slope under the force of gravity.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>http://www.bbc.com/news/world-africa-39247381</oboInOwl:hasDbXref>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000916"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/ENVO_01000982 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000982">
-        <rdfs:label xml:lang="en">water flow process</rdfs:label>
-        <obo:IAO_0000115>A process during which a volume of water is transported due to a disequilibria in physical forces.</obo:IAO_0000115>
-        <oboInOwl:inSubset>environmental_hazards</oboInOwl:inSubset>
-    </owl:Class>
-    <owl:Axiom>
-        <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Lava</oboInOwl:hasDbXref>
-        <owl:annotatedTarget>A process during which a volume of water is transported due to a disequilibria in physical forces.</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000982"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/ENVO_02500002 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_02500002">
-        <rdfs:label xml:lang="en">flooding</rdfs:label>
-        <oboInOwl:inSubset>environmental_hazards</oboInOwl:inSubset>
-        <obo:IAO_0000115>A general and temporary condition of partial or complete inundation of normally dry land areas from the overflow of inland and/or tidal waters, and/or the unusual and rapid accumulation or runoff of surface waters from any source. A great flow along a watercourse or a flow causing inundation of lands not normally covered by water.</obo:IAO_0000115>
-    </owl:Class>
-    <owl:Axiom>
-        <oboInOwl:hasDbXref>GEMET: http://www.eionet.europa.eu/gemet/concept/3301</oboInOwl:hasDbXref>
-        <owl:annotatedTarget>A general and temporary condition of partial or complete inundation of normally dry land areas from the overflow of inland and/or tidal waters, and/or the unusual and rapid accumulation or runoff of surface waters from any source. A great flow along a watercourse or a flow causing inundation of lands not normally covered by water.</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_02500002"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/ENVO_02500036 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_02500036">
-        <rdfs:label>environmental pollution</rdfs:label>
-        <oboInOwl:hasExactSynonym>pollution</oboInOwl:hasExactSynonym>
-        <oboInOwl:inSubset>environmental_hazards</oboInOwl:inSubset>
-        <obo:IAO_0000115>An environmental system process that results in the introduction of contaminants into an environment.</obo:IAO_0000115>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedTarget>An environmental system process that results in the introduction of contaminants into an environment.</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_02500036"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <oboInOwl:hasDbXref rdf:resource="https://en.wikipedia.org/wiki/Pollution"/>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/ENVO_02500037 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_02500037">
-        <rdfs:label>air pollution</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_02500036"/>
-        <oboInOwl:inSubset>envoPolar</oboInOwl:inSubset>
-        <oboInOwl:inSubset>environmental_hazards</oboInOwl:inSubset>
-        <obo:IAO_0000115>A pollution process during which particulates or other contaminants are released into a portion of air.</obo:IAO_0000115>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/ENVO_02500038 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_02500038">
-        <rdfs:label>soil pollution</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_02500036"/>
-        <oboInOwl:inSubset>environmental_hazards</oboInOwl:inSubset>
-        <oboInOwl:inSubset>envoPolar</oboInOwl:inSubset>
-        <obo:IAO_0000115>A pollution process during which contaminants are released into soil.</obo:IAO_0000115>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedTarget>A pollution process during which contaminants are released into soil.</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_02500038"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <oboInOwl:hasDbXref rdf:resource="https://en.wikipedia.org/wiki/Soil_pollution"/>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/ENVO_02500039 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_02500039">
-        <rdfs:label>water pollution</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_02500036"/>
-        <obo:IAO_0000115>A pollution process during which contaminants are released into water.</obo:IAO_0000115>
-        <oboInOwl:inSubset>envoPolar</oboInOwl:inSubset>
-        <oboInOwl:inSubset>environmental_hazards</oboInOwl:inSubset>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/ENVO_02500040 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_02500040">
-        <rdfs:label>plastic pollution</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_02500036"/>
-        <obo:IAO_0000115>A pollution process during which plastic contaminants are released into an environmental material.</obo:IAO_0000115>
-        <oboInOwl:inSubset>environmental_hazards</oboInOwl:inSubset>
-        <oboInOwl:inSubset>envoPolar</oboInOwl:inSubset>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedTarget>A pollution process during which plastic contaminants are released into an environmental material.</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_02500040"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <oboInOwl:hasDbXref rdf:resource="https://en.wikipedia.org/wiki/Plastic_pollution"/>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/ENVO_02500044 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_02500044">
-        <rdfs:label>urban pollution</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_02500036"/>
-        <oboInOwl:inSubset>environmental_hazards</oboInOwl:inSubset>
-        <obo:IAO_0000115>A pollution process that results in increased levels of pollutants in an urban environment.</obo:IAO_0000115>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/ENVO_03000105 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_03000105">
-        <rdfs:label xml:lang="en">slab avalanche</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000690"/>
-        <oboInOwl:inSubset>environmental_hazards</oboInOwl:inSubset>
-        <rdfs:comment>Slab avalanches account for most back-country fatalities.</rdfs:comment>
-        <oboInOwl:inSubset>envoPolar</oboInOwl:inSubset>
-        <obo:IAO_0000117>http://orcid.org/0000-0002-3410-4655</obo:IAO_0000117>
-        <obo:IAO_0000117>http://orcid.org/0000-0002-4366-3088</obo:IAO_0000117>
-        <obo:IAO_0000115>A mass wasting process during which slab snow rapidly moves down a sloping surface.</obo:IAO_0000115>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedTarget>A mass wasting process during which slab snow rapidly moves down a sloping surface.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Snow#Avalanche</oboInOwl:hasDbXref>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_03000105"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/ENVO_03000106 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_03000106">
-        <rdfs:label xml:lang="en">powdery snow avalanche</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000691"/>
-        <oboInOwl:inSubset>envoPolar</oboInOwl:inSubset>
-        <obo:IAO_0000117>http://orcid.org/0000-0002-3410-4655</obo:IAO_0000117>
-        <obo:IAO_0000117>http://orcid.org/0000-0002-4366-3088</obo:IAO_0000117>
-        <oboInOwl:inSubset>environmental_hazards</oboInOwl:inSubset>
-        <obo:IAO_0000115>An avalanche is a rapid flow of snow down a sloping surface.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym>powder snow avalanche</oboInOwl:hasExactSynonym>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedTarget>An avalanche is a rapid flow of snow down a sloping surface.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Snow#Avalanche</oboInOwl:hasDbXref>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_03000106"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/ENVO_03000107 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_03000107">
-        <rdfs:label xml:lang="en">wet snow avalanche</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000691"/>
-        <oboInOwl:inSubset>envoPolar</oboInOwl:inSubset>
-        <obo:IAO_0000117>http://orcid.org/0000-0002-3410-4655</obo:IAO_0000117>
-        <obo:IAO_0000115>An avalanche during which a suspension of water and snow flows down a sloping surface.</obo:IAO_0000115>
-        <oboInOwl:inSubset>environmental_hazards</oboInOwl:inSubset>
-        <obo:IAO_0000117>http://orcid.org/0000-0002-4366-3088</obo:IAO_0000117>
-        <rdfs:comment>Wet snow avalanches travel at a lower velocity than other types of avalanches.</rdfs:comment>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedTarget>An avalanche during which a suspension of water and snow flows down a sloping surface.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Snow#Avalanche</oboInOwl:hasDbXref>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_03000107"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/ENVO_1000745 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_1000745">
-        <rdfs:label xml:lang="en">drought</rdfs:label>
-        <oboInOwl:inSubset>environmental_hazards</oboInOwl:inSubset>
-        <obo:IAO_0000115>A hydrological precipitation process with a reduced rate relative to some historical average, typically resulting in ecosystemic perturbations.</obo:IAO_0000115>
-        <obo:IAO_0000116>Drought is often defined  as a temporal period of below-average precipitation, however, representing it as a temporal entity seems insufficient.</obo:IAO_0000116>
-    </owl:Class>
 </rdf:RDF>
 
 
