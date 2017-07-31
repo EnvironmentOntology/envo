@@ -126,9 +126,19 @@ imports/%_import.owl: mirror/%.owl envo-edit.owl imports/%_combined_seed.tsv
 imports/%_import.obo: imports/%_import.owl
 	owltools $(USECAT) $< -o -f obo $@
 
+# CLO: Use ROBOT, driven entirely by terms lists NOT from source ontology
+imports/clo_import.owl: mirror/clo.owl imports/clo_terms.txt
+	$(ROBOT) extract -i $< -T imports/clo_terms.txt --method BOT -O $(ENVO_IMPORTS_BASE_URI)/$@ -o $@
+.PRECIOUS: imports/%_import.owl
+	
 # FOODON: Use ROBOT, driven entirely by terms lists NOT from source ontology
 imports/foodon_import.owl: mirror/foodon.owl imports/foodon_terms.txt
 	$(ROBOT) extract -i $< -T imports/foodon_terms.txt --method BOT -O $(ENVO_IMPORTS_BASE_URI)/$@ -o $@
+.PRECIOUS: imports/%_import.owl
+
+# OBI: Use ROBOT, driven entirely by terms lists NOT from source ontology
+imports/obi_import.owl: mirror/obi.owl imports/obi_terms.txt
+	$(ROBOT) extract -i $< -T imports/obi_terms.txt --method BOT -O $(ENVO_IMPORTS_BASE_URI)/$@ -o $@
 .PRECIOUS: imports/%_import.owl
 
 # PATO: Use ROBOT, driven entirely by terms lists NOT from source ontology
@@ -185,6 +195,15 @@ mirror/%-local.owl:
 mirror/%.owl: mirror/%-local.owl
 	owltools $< --remove-annotation-assertions -l --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS)  -o $@
 .PRECIOUS: mirror/%.owl
+
+mirror/clo.owl: envo-edit.owl
+	owltools $(OBO)/clo.owl --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/clo.owl -o $@
+.PRECIOUS: mirror/%.owl
+
+mirror/obi.owl: envo-edit.owl
+	owltools $(OBO)/obi.owl --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/obi.owl -o $@
+.PRECIOUS: mirror/%.owl
+
 
 mirror/foodon.owl: envo-edit.owl
 	owltools $(OBO)/foodon.owl --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/foodon.owl -o $@
