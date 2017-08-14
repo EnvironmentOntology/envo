@@ -182,7 +182,7 @@ imports/omp_import.owl: mirror/omp.owl imports/omp_terms.txt
 .PRECIOUS: imports/%_import.owl
 
 # FLOPO: Use ROBOT, driven entirely by terms lists NOT from source ontology
-imports/flop_import.owl: mirror/flopo.owl imports/flopo_terms.txt
+imports/flopo_import.owl: mirror/flopo.owl imports/flopo_terms.txt
 	$(ROBOT) extract -i $< -T imports/flopo_terms.txt --method BOT -O $(ENVO_IMPORTS_BASE_URI)/$@ -o $@
 .PRECIOUS: imports/%_import.owl
 
