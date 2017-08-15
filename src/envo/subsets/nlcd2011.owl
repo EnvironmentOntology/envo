@@ -16,7 +16,7 @@
      xmlns:foaf="http://xmlns.com/foaf/0.1/"
      xmlns:dc="http://purl.org/dc/elements/1.1/">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/envo/subsets/nlcd2011.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/envo/2017-07-31/subsets/nlcd2011.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/envo/2017-08-15/subsets/nlcd2011.owl"/>
     </owl:Ontology>
     
 
@@ -682,15 +682,15 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002086"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ro/subsets#ro-eco"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002091"/>
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000062"/>
-        </owl:propertyChainAxiom>
-        <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000050"/>
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000062"/>
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002092"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000062"/>
+        </owl:propertyChainAxiom>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002091"/>
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000062"/>
         </owl:propertyChainAxiom>
     </owl:ObjectProperty>
@@ -707,11 +707,11 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002222"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ro/subsets#ro-eco"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000050"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002092"/>
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000063"/>
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002092"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000050"/>
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000063"/>
         </owl:propertyChainAxiom>
     </owl:ObjectProperty>
@@ -875,12 +875,12 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <obo:IAO_0000112 xml:lang="en">this process has participant this input material (or this output material)</obo:IAO_0000112>
         <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000051"/>
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0000057"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000055"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0000052"/>
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000051"/>
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000055"/>
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0000052"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0000057"/>
         </owl:propertyChainAxiom>
     </owl:ObjectProperty>
     
@@ -966,6 +966,26 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <obo:IAO_0000118 xml:lang="en">has_role</obo:IAO_0000118>
         <obo:IAO_0000112 xml:lang="en">this person has role this investigator role (more colloquially: this person has this role of investigator)</obo:IAO_0000112>
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000053"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0000091 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0000091">
+        <rdfs:label xml:lang="en">has disposition</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">a relation between an independent continuant (the bearer) and a disposition, in which the disposition specifically depends on the bearer for its existence</obo:IAO_0000115>
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000053"/>
+        <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000092"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0000092 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0000092">
+        <rdfs:label xml:lang="en">disposition of</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000052"/>
     </owl:ObjectProperty>
     
 
@@ -1252,16 +1272,16 @@ boundary_of: http://purl.obolibrary.org/obo/RO_0002000</obo:IAO_0000115>
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002323"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ro/subsets#ro-eco"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000051"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000050"/>
+        </owl:propertyChainAxiom>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000050"/>
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000050"/>
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000051"/>
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002131"/>
-        </owl:propertyChainAxiom>
-        <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000051"/>
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000050"/>
         </owl:propertyChainAxiom>
     </owl:ObjectProperty>
     <owl:Axiom>
@@ -1805,11 +1825,11 @@ boundary_of: http://purl.obolibrary.org/obo/RO_0002000</obo:IAO_0000115>
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002502"/>
         <obo:IAO_0000119 rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/20064205"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002314"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0000052"/>
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000050"/>
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0000052"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002314"/>
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000050"/>
         </owl:propertyChainAxiom>
     </owl:ObjectProperty>
@@ -2051,12 +2071,6 @@ However, this is not possible in OWL. We instead make this relation a sub-relati
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ro/subsets#ro-eco"/>
     </owl:ObjectProperty>
     <owl:Axiom>
-        <dc:source>GAZ</dc:source>
-        <owl:annotatedTarget>Deschutes River tributary_of Columbia River</owl:annotatedTarget>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000112"/>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/RO_0002376"/>
-    </owl:Axiom>
-    <owl:Axiom>
         <owl:annotatedTarget>drains to</owl:annotatedTarget>
         <dc:source rdf:resource="http://dbpedia.org/ontology/drainsTo"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000118"/>
@@ -2065,6 +2079,12 @@ However, this is not possible in OWL. We instead make this relation a sub-relati
     <owl:Axiom>
         <dc:source>FMA</dc:source>
         <owl:annotatedTarget>inferior epigastric vein tributary_of external iliac vein</owl:annotatedTarget>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000112"/>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/RO_0002376"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <dc:source>GAZ</dc:source>
+        <owl:annotatedTarget>Deschutes River tributary_of Columbia River</owl:annotatedTarget>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000112"/>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/RO_0002376"/>
     </owl:Axiom>
@@ -2656,10 +2676,10 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <obo:IAO_0000118>open water</obo:IAO_0000118>
     </owl:Class>
     <owl:Axiom>
+        <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Exosphere</oboInOwl:hasDbXref>
+        <owl:annotatedTarget>An area of a planet&apos;s surface which is primarily composed of water in contact with an atmospheric column extending from the planetary boundary layer to the planet&apos;s exosphere with little to no physical obstruction.</owl:annotatedTarget>
         <oboInOwl:hasDbXref>https://www.mrlc.gov/nlcd11_leg.php</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Planetary_surface</oboInOwl:hasDbXref>
-        <owl:annotatedTarget>An area of a planet&apos;s surface which is primarily composed of water in contact with an atmospheric column extending from the planetary boundary layer to the planet&apos;s exosphere with little to no physical obstruction.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Exosphere</oboInOwl:hasDbXref>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000666"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
     </owl:Axiom>
@@ -2706,8 +2726,8 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <rdfs:comment>This class covers part of the NLCD &quot;Perennial Ice/Snow&quot; class.</rdfs:comment>
     </owl:Class>
     <owl:Axiom>
-        <oboInOwl:hasDbXref>https://www.mrlc.gov/nlcd11_leg.php</oboInOwl:hasDbXref>
         <owl:annotatedTarget>An area of a planet&apos;s surface which is primarily composed of snow, present throughout multiple years, in contact with an atmospheric column extending from the planetary boundary layer to the planet&apos;s exosphere with little to no physical obstruction.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>https://www.mrlc.gov/nlcd11_leg.php</oboInOwl:hasDbXref>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000745"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
     </owl:Axiom>
@@ -2726,10 +2746,10 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <oboInOwl:hasAlternativeId>NLCD:12</oboInOwl:hasAlternativeId>
     </owl:Class>
     <owl:Axiom>
-        <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Exosphere</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Planetary_surface</oboInOwl:hasDbXref>
-        <owl:annotatedTarget>An area of a planet&apos;s surface which is primarily composed of snow or water ice, present throughout multiple years, in contact with an atmospheric column extending from the planetary boundary layer to the planet&apos;s exosphere with little to no physical obstruction.</owl:annotatedTarget>
         <oboInOwl:hasDbXref>https://www.mrlc.gov/nlcd11_leg.php</oboInOwl:hasDbXref>
+        <owl:annotatedTarget>An area of a planet&apos;s surface which is primarily composed of snow or water ice, present throughout multiple years, in contact with an atmospheric column extending from the planetary boundary layer to the planet&apos;s exosphere with little to no physical obstruction.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Planetary_surface</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Exosphere</oboInOwl:hasDbXref>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000746"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
     </owl:Axiom>
@@ -2749,10 +2769,10 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <obo:IAO_0000116>The range of entities that are considered &quot;barren land&quot; are not exhaustive, making axiomatisation risky at this stage.</obo:IAO_0000116>
     </owl:Class>
     <owl:Axiom>
+        <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Planetary_surface</oboInOwl:hasDbXref>
+        <owl:annotatedTarget>An area of a planet&apos;s surface which is primarily composed of bedrock, desert pavement, scarp rock, talus, material exposed by slides, volcanic material, glacial debris, sand, material exposed during strip mining, gravel, and other accumulations of earthen material in contact with an atmospheric column extending from the planetary boundary layer to the planet&apos;s exosphere with little to no physical obstruction.</owl:annotatedTarget>
         <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Exosphere</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>https://www.mrlc.gov/nlcd11_leg.php</oboInOwl:hasDbXref>
-        <owl:annotatedTarget>An area of a planet&apos;s surface which is primarily composed of bedrock, desert pavement, scarp rock, talus, material exposed by slides, volcanic material, glacial debris, sand, material exposed during strip mining, gravel, and other accumulations of earthen material in contact with an atmospheric column extending from the planetary boundary layer to the planet&apos;s exosphere with little to no physical obstruction.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Planetary_surface</oboInOwl:hasDbXref>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000752"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
     </owl:Axiom>
@@ -2770,10 +2790,10 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <obo:IAO_0000115>An area of a planet&apos;s surface which is primarily covered by a forest in which the majority of trees shed foliage simultaneously in response to seasonal change. The surfaces of this area (including the surface of the forest canopy) are in contact with an atmospheric column extending from the planetary boundary layer to the planet&apos;s exosphere with little to no physical obstruction.</obo:IAO_0000115>
     </owl:Class>
     <owl:Axiom>
-        <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Exosphere</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>https://www.mrlc.gov/nlcd11_leg.php</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Planetary_surface</oboInOwl:hasDbXref>
         <owl:annotatedTarget>An area of a planet&apos;s surface which is primarily covered by a forest in which the majority of trees shed foliage simultaneously in response to seasonal change. The surfaces of this area (including the surface of the forest canopy) are in contact with an atmospheric column extending from the planetary boundary layer to the planet&apos;s exosphere with little to no physical obstruction.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Exosphere</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Planetary_surface</oboInOwl:hasDbXref>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000816"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
     </owl:Axiom>
@@ -2792,9 +2812,9 @@ Each of these 3 primitives can be composed to yield a cross-product of different
     </owl:Class>
     <owl:Axiom>
         <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Planetary_surface</oboInOwl:hasDbXref>
-        <owl:annotatedTarget>An area of a planet&apos;s surface which is primarily covered by a forest in which the majority of trees maintain their foliage despite seasonal change. The surfaces of this area (including the surface of the forest canopy) are in contact with an atmospheric column extending from the planetary boundary layer to the planet&apos;s exosphere with little to no physical obstruction.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>https://www.mrlc.gov/nlcd11_leg.php</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Exosphere</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>https://www.mrlc.gov/nlcd11_leg.php</oboInOwl:hasDbXref>
+        <owl:annotatedTarget>An area of a planet&apos;s surface which is primarily covered by a forest in which the majority of trees maintain their foliage despite seasonal change. The surfaces of this area (including the surface of the forest canopy) are in contact with an atmospheric column extending from the planetary boundary layer to the planet&apos;s exosphere with little to no physical obstruction.</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000843"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
     </owl:Axiom>
@@ -2812,10 +2832,10 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <rdfs:comment>According to the NLCD 2011, areas of mixed forest are dominated by trees generally greater than 5 meters tall, and making up more than 20% of total vegetation cover. The NLCD 2011 continues to state that neither deciduous or evergreen trees make up more than 75% of the total tree cover. Such thresholds - which are themselves fuzzy - are not asserted in this definition.</rdfs:comment>
     </owl:Class>
     <owl:Axiom>
-        <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Exosphere</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Planetary_surface</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>https://www.mrlc.gov/nlcd11_leg.php</oboInOwl:hasDbXref>
         <owl:annotatedTarget>An area of a planet&apos;s surface which is primarily covered by a forest in which the majority of trees maintain their foliage despite seasonal change. The surfaces of this area (including the surface of the forest canopy) are in contact with an atmospheric column extending from the planetary boundary layer to the planet&apos;s exosphere with little to no physical obstruction.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Planetary_surface</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Exosphere</oboInOwl:hasDbXref>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000855"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
     </owl:Axiom>
@@ -2841,10 +2861,10 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000116"/>
     </owl:Axiom>
     <owl:Axiom>
+        <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Planetary_surface</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>https://www.mrlc.gov/nlcd11_leg.php</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Subshrub</oboInOwl:hasDbXref>
         <owl:annotatedTarget>An area of a planet&apos;s surface which is partly covered by shrubs with ground-hugging stems or low growth habit, in contact with an atmospheric column extending from the planetary boundary layer to the planet&apos;s exosphere with little to no physical obstruction.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>https://www.mrlc.gov/nlcd11_leg.php</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Planetary_surface</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Exosphere</oboInOwl:hasDbXref>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000861"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
@@ -2871,12 +2891,12 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000116"/>
     </owl:Axiom>
     <owl:Axiom>
+        <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Planetary_surface</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Exosphere</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Subshrub</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>https://www.mrlc.gov/nlcd11_leg.php</oboInOwl:hasDbXref>
         <owl:annotatedTarget></owl:annotatedTarget>
-        <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Planetary_surface</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>http://dx.doi.org/10.1016/j.rse.2015.07.014</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Exosphere</oboInOwl:hasDbXref>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000869"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
     </owl:Axiom>
@@ -2895,10 +2915,10 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <obo:IAO_0000115>An area of a planet&apos;s surface which is primarily covered by cultivated or anthropically maintained vegetation planted for recreation, erosion control, or aesthetic purposes interspersed by constructed or manufactured objects and materials. This area is in contact with an atmospheric column extending from the planetary boundary layer to the planet&apos;s exosphere with little to no physical obstruction.</obo:IAO_0000115>
     </owl:Class>
     <owl:Axiom>
-        <owl:annotatedTarget>An area of a planet&apos;s surface which is primarily covered by cultivated or anthropically maintained vegetation planted for recreation, erosion control, or aesthetic purposes interspersed by constructed or manufactured objects and materials. This area is in contact with an atmospheric column extending from the planetary boundary layer to the planet&apos;s exosphere with little to no physical obstruction.</owl:annotatedTarget>
         <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Exosphere</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>https://www.mrlc.gov/nlcd11_leg.php</oboInOwl:hasDbXref>
+        <owl:annotatedTarget>An area of a planet&apos;s surface which is primarily covered by cultivated or anthropically maintained vegetation planted for recreation, erosion control, or aesthetic purposes interspersed by constructed or manufactured objects and materials. This area is in contact with an atmospheric column extending from the planetary boundary layer to the planet&apos;s exosphere with little to no physical obstruction.</owl:annotatedTarget>
         <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Planetary_surface</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>https://www.mrlc.gov/nlcd11_leg.php</oboInOwl:hasDbXref>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000883"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
     </owl:Axiom>
@@ -2917,10 +2937,10 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <oboInOwl:inSubset>nlcd2011</oboInOwl:inSubset>
     </owl:Class>
     <owl:Axiom>
-        <oboInOwl:hasDbXref>https://www.mrlc.gov/nlcd11_leg.php</oboInOwl:hasDbXref>
-        <owl:annotatedTarget>An area of a planet&apos;s surface which is primarily covered by cultivated or anthropically maintained vegetation and by constructed or manufactured objects and materials covering up to approximately half its extent. Such areas are used for low intensity purposes such as accommodating collections of single-family residential units. This area is in contact with an atmospheric column extending from the planetary boundary layer to the planet&apos;s exosphere with little to no physical obstruction.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Planetary_surface</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Exosphere</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>https://www.mrlc.gov/nlcd11_leg.php</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Planetary_surface</oboInOwl:hasDbXref>
+        <owl:annotatedTarget>An area of a planet&apos;s surface which is primarily covered by cultivated or anthropically maintained vegetation and by constructed or manufactured objects and materials covering up to approximately half its extent. Such areas are used for low intensity purposes such as accommodating collections of single-family residential units. This area is in contact with an atmospheric column extending from the planetary boundary layer to the planet&apos;s exosphere with little to no physical obstruction.</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000884"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
     </owl:Axiom>
@@ -2939,10 +2959,10 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <obo:IAO_0000115>An area of a planet&apos;s surface which is primarily covered by constructed or manufactured objects and materials covering from half to three-forths of its extent and by cultivated or anthropically maintained vegetation. Such areas are used for medium intensity purposes such as accommodating dense collections of single-family residential units. This area is in contact with an atmospheric column extending from the planetary boundary layer to the planet&apos;s exosphere with little to no physical obstruction.</obo:IAO_0000115>
     </owl:Class>
     <owl:Axiom>
-        <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Planetary_surface</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>https://www.mrlc.gov/nlcd11_leg.php</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Exosphere</oboInOwl:hasDbXref>
         <owl:annotatedTarget>An area of a planet&apos;s surface which is primarily covered by constructed or manufactured objects and materials covering from half to three-forths of its extent and by cultivated or anthropically maintained vegetation. Such areas are used for medium intensity purposes such as accommodating dense collections of single-family residential units. This area is in contact with an atmospheric column extending from the planetary boundary layer to the planet&apos;s exosphere with little to no physical obstruction.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Exosphere</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Planetary_surface</oboInOwl:hasDbXref>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000885"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
     </owl:Axiom>
@@ -2962,9 +2982,9 @@ Each of these 3 primitives can be composed to yield a cross-product of different
     </owl:Class>
     <owl:Axiom>
         <oboInOwl:hasDbXref>https://www.mrlc.gov/nlcd11_leg.php</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Exosphere</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Planetary_surface</oboInOwl:hasDbXref>
         <owl:annotatedTarget>An area of a planet&apos;s surface which is primarily covered by constructed or manufactured objects and materials, possibly interspersed with cultivated or anthropically maintained vegetation. Such areas are used for hgih intensity purposes such as accommodating dense and multi-occupant residential, commercial, and industrial units. This area is in contact with an atmospheric column extending from the planetary boundary layer to the planet&apos;s exosphere with little to no physical obstruction.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Planetary_surface</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Exosphere</oboInOwl:hasDbXref>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000886"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
     </owl:Axiom>
@@ -2983,10 +3003,10 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <obo:IAO_0000115>An area of a planet&apos;s surface which is primarily covered by sedges or forbs, possibly interpersed with grasses or grass-like plants. This area is in contact with an atmospheric column extending from the planetary boundary layer to the planet&apos;s exosphere with little to no physical obstruction.</obo:IAO_0000115>
     </owl:Class>
     <owl:Axiom>
-        <owl:annotatedTarget>An area of a planet&apos;s surface which is primarily covered by sedges or forbs, possibly interpersed with grasses or grass-like plants. This area is in contact with an atmospheric column extending from the planetary boundary layer to the planet&apos;s exosphere with little to no physical obstruction.</owl:annotatedTarget>
         <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Planetary_surface</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>https://www.mrlc.gov/nlcd11_leg.php</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Exosphere</oboInOwl:hasDbXref>
+        <owl:annotatedTarget>An area of a planet&apos;s surface which is primarily covered by sedges or forbs, possibly interpersed with grasses or grass-like plants. This area is in contact with an atmospheric column extending from the planetary boundary layer to the planet&apos;s exosphere with little to no physical obstruction.</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000887"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
     </owl:Axiom>
@@ -3005,10 +3025,10 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <oboInOwl:inSubset>nlcd2011</oboInOwl:inSubset>
     </owl:Class>
     <owl:Axiom>
+        <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Exosphere</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>https://www.mrlc.gov/nlcd11_leg.php</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Planetary_surface</oboInOwl:hasDbXref>
         <owl:annotatedTarget>An area of a planet&apos;s surface which is primarily covered by gramanoid or herbaceous vegetation and which is not subject to intensive management by humans. This area is in contact with an atmospheric column extending from the planetary boundary layer to the planet&apos;s exosphere with little to no physical obstruction.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>https://www.mrlc.gov/nlcd11_leg.php</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Exosphere</oboInOwl:hasDbXref>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000888"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
     </owl:Axiom>
@@ -3028,10 +3048,10 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <oboInOwl:hasAlternativeId>NLCD:73</oboInOwl:hasAlternativeId>
     </owl:Class>
     <owl:Axiom>
-        <owl:annotatedTarget>An area of a planet&apos;s surface which is primarily covered by fruticose or foliose lichens and which is in contact with an atmospheric column extending from the planetary boundary layer to the planet&apos;s exosphere with little to no physical obstruction.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Planetary_surface</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>https://www.mrlc.gov/nlcd11_leg.php</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Exosphere</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>https://www.mrlc.gov/nlcd11_leg.php</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Planetary_surface</oboInOwl:hasDbXref>
+        <owl:annotatedTarget>An area of a planet&apos;s surface which is primarily covered by fruticose or foliose lichens and which is in contact with an atmospheric column extending from the planetary boundary layer to the planet&apos;s exosphere with little to no physical obstruction.</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000889"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
     </owl:Axiom>
@@ -3050,10 +3070,10 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <oboInOwl:inSubset>nlcd2011</oboInOwl:inSubset>
     </owl:Class>
     <owl:Axiom>
-        <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Planetary_surface</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Exosphere</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>https://www.mrlc.gov/nlcd11_leg.php</oboInOwl:hasDbXref>
         <owl:annotatedTarget>An area of a planet&apos;s surface which is primarily covered by mosses and which is in contact with an atmospheric column extending from the planetary boundary layer to the planet&apos;s exosphere with little to no physical obstruction.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Planetary_surface</oboInOwl:hasDbXref>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000890"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
     </owl:Axiom>
@@ -3072,10 +3092,10 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <rdfs:comment>According to the NLCD 2011, at least 20% of these areas are covered by pasturelands or hayfields.  Such thresholds - which are themselves fuzzy - are not strictly asserted in this definition. The NLCD also notes that the crops are grown on a perennial cycle in these areas.</rdfs:comment>
     </owl:Class>
     <owl:Axiom>
-        <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Exosphere</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>https://www.mrlc.gov/nlcd11_leg.php</oboInOwl:hasDbXref>
-        <owl:annotatedTarget>An area of a planet&apos;s surface which is partly covered by planted grasses, legumes, or mixtures of grass and legumes and used for livestock grazing or the production of seed or hay crops. This area is in contact with an atmospheric column extending from the planetary boundary layer to the planet&apos;s exosphere with little to no physical obstruction.</owl:annotatedTarget>
         <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Planetary_surface</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>https://www.mrlc.gov/nlcd11_leg.php</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Exosphere</oboInOwl:hasDbXref>
+        <owl:annotatedTarget>An area of a planet&apos;s surface which is partly covered by planted grasses, legumes, or mixtures of grass and legumes and used for livestock grazing or the production of seed or hay crops. This area is in contact with an atmospheric column extending from the planetary boundary layer to the planet&apos;s exosphere with little to no physical obstruction.</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000891"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
     </owl:Axiom>
@@ -3095,8 +3115,8 @@ Each of these 3 primitives can be composed to yield a cross-product of different
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedTarget>An area of a planet&apos;s surface which is partly covered either by annual crops and perennial woody crops or by actively tilled land. This area is in contact with an atmospheric column extending from the planetary boundary layer to the planet&apos;s exosphere with little to no physical obstruction.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Exosphere</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Planetary_surface</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Exosphere</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>https://www.mrlc.gov/nlcd11_leg.php</oboInOwl:hasDbXref>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000892"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
@@ -3116,10 +3136,10 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <obo:IAO_0000115>An area of a planet&apos;s surface which is partly covered by forest or shrubland vegetation and where the underlying soil or substrate is periodically saturated with or covered by water. This area is in contact with an atmospheric column extending from the planetary boundary layer to the planet&apos;s exosphere with little to no physical obstruction.</obo:IAO_0000115>
     </owl:Class>
     <owl:Axiom>
+        <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Planetary_surface</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Exosphere</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>https://www.mrlc.gov/nlcd11_leg.php</oboInOwl:hasDbXref>
         <owl:annotatedTarget>An area of a planet&apos;s surface which is partly covered by forest or shrubland vegetation and where the underlying soil or substrate is periodically saturated with or covered by water. This area is in contact with an atmospheric column extending from the planetary boundary layer to the planet&apos;s exosphere with little to no physical obstruction.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Exosphere</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Planetary_surface</oboInOwl:hasDbXref>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000893"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
     </owl:Axiom>
@@ -3138,10 +3158,10 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <rdfs:comment>According to the NLCD 2011, at least 80% of these areas are covered by herbaceous vegetation.  Such thresholds - which are themselves fuzzy - are not strictly asserted in this definition.</rdfs:comment>
     </owl:Class>
     <owl:Axiom>
-        <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Planetary_surface</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>https://www.mrlc.gov/nlcd11_leg.php</oboInOwl:hasDbXref>
-        <owl:annotatedTarget>An area of a planet&apos;s surface which is primarily covered by perennial herbaceous vegetation and where the underlying soil or substrate is periodically saturated with or covered by water. This area is in contact with an atmospheric column extending from the planetary boundary layer to the planet&apos;s exosphere with little to no physical obstruction.</owl:annotatedTarget>
         <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Exosphere</oboInOwl:hasDbXref>
+        <owl:annotatedTarget>An area of a planet&apos;s surface which is primarily covered by perennial herbaceous vegetation and where the underlying soil or substrate is periodically saturated with or covered by water. This area is in contact with an atmospheric column extending from the planetary boundary layer to the planet&apos;s exosphere with little to no physical obstruction.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>https://www.mrlc.gov/nlcd11_leg.php</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Planetary_surface</oboInOwl:hasDbXref>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000894"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
     </owl:Axiom>
