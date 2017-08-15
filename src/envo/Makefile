@@ -36,7 +36,8 @@ copy-release:
 
 # generic conversion for OGs
 %.json: %.owl
-	owltools $(USECAT) $<  -o -f json  $@.tmp && mv $@.tmp $@
+	robot convert -input $< -o $@
+
 
 #release: envo-basic.obo release-diffs
 
