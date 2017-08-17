@@ -4,11 +4,12 @@ PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX oio: <http://www.geneontology.org/formats/oboInOwl#>  
 PREFIX obo: <http://purl.obolibrary.org/obo/> 
         
-SELECT ?label ?definition (group_concat(distinct ?exact ; separator = "|") AS ?exactSynonym) (group_concat(distinct ?broad ; separator = "|") AS ?broadSynonym) (group_concat(distinct ?narrow ; separator = "|") AS ?narrowSynonym) (group_concat(distinct ?related ; separator = "|") AS ?relatedSynonym) (group_concat(distinct ?subset ; separator = "|") AS ?subsetType) ?envo 
+SELECT ?label ?definition (group_concat(distinct ?exact ; separator = "|") AS ?exactSynonym) (group_concat(distinct ?broad ; separator = "|") AS ?broadSynonym) (group_concat(distinct ?narrow ; separator = "|") AS ?narrowSynonym) (group_concat(distinct ?related ; separator = "|") AS ?relatedSynonym) (group_concat(distinct ?subset ; separator = "|") AS ?subsetType) ?uri 
 WHERE {
     { ?envo rdfs:label ?l 
      FILTER (regex(str(?envo), "ENVO"))
-     BIND (STR(?l)  AS ?label)  
+     BIND (STR(?l)  AS ?label) 
+     BIND (STR(?envo)  AS ?uri)
     }
     OPTIONAL{ 
         ?envo obo:IAO_0000115 ?d 
@@ -38,5 +39,5 @@ WHERE {
     }
     
 }
-group by ?label ?definition ?envo
+group by ?label ?definition ?uri
 order by ASC(?label)
