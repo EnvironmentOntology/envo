@@ -342,7 +342,7 @@ subsets/envoCesab.obo: subsets/envoCesab.owl
 # ----------------------------------------
 # Reports
 # ----------------------------------------
-REPORTS=edges basicReport termTable tags subsets stats
+REPORTS=edges basicReport termTable tags stats subsetTable
 all_reports: $(patsubst %, reports/envo-%.tsv, $(REPORTS))
 
 reports/envo-%.tsv: envo.owl sparql/%.sparql
