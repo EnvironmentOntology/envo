@@ -4,11 +4,12 @@ PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX oio: <http://www.geneontology.org/formats/oboInOwl#>  
 PREFIX obo: <http://purl.obolibrary.org/obo/> 
         
-SELECT ?label ?exact ?broad ?narrow ?related ?subset ?envo 
+SELECT ?label ?exact ?broad ?narrow ?related ?subset ?uri 
 WHERE {
     { ?envo rdfs:label ?l 
      FILTER (regex(str(?envo), "ENVO"))
      BIND (STR(?l)  AS ?label)  
+     BIND (STR(?envo)  AS ?uri)  
     }
     OPTIONAL{ 
         ?envo oio:hasExactSynonym ?e 
