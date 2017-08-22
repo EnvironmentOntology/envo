@@ -9,7 +9,7 @@ subsetdef: scalar_slim "Scalar slim"
 subsetdef: value_slim "Value slim"
 synonymtypedef: PLURAL "plurals"
 default-namespace: ENVO
-remark: ENVO is an ontology which represents knowledge about environments,environmental processes, ecosystems, habitats, and related entities. It interoperates with other ontologies in the OBO Foundry and Library. Please see www.environmentontology.org for more info.
+remark: ENVO is an ontology which represents knowledge about environments,environmental processes, ecosystems, habitats, and related entities. It interoperates with other ontologies in the OBO Foundry and Library. \n\nNew terms or revisions can be requested at https://github.com/EnvironmentOntology/envo/issues/ \n\n\nPlease see www.environmentontology.org for more information and citations.
 remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/imports/bfo_import.owl>))) [Axioms: 92 Logical Axioms: 35]
 remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/imports/chebi_import.owl>))) [Axioms: 2434 Logical Axioms: 1036]
 remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/imports/clo_import.owl>))) [Axioms: 34 Logical Axioms: 8]
@@ -20,16 +20,15 @@ remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo
 remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/imports/ncbitaxon_import.owl>))) [Axioms: 542 Logical Axioms: 123]
 remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/imports/obi_import.owl>))) [Axioms: 50 Logical Axioms: 12]
 remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/imports/omp_import.owl>))) [Axioms: 47 Logical Axioms: 11]
-remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/imports/pato_import.owl>))) [Axioms: 1238 Logical Axioms: 300]
-remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/imports/pco_bfo_bridge.owl>))) [Axioms: 3 Logical Axioms: 1]
+remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/imports/pato_import.owl>))) [Axioms: 1362 Logical Axioms: 337]
 remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/imports/pco_import.owl>))) [Axioms: 21 Logical Axioms: 3]
 remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/imports/po_import.owl>))) [Axioms: 151 Logical Axioms: 18]
-remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/imports/ro_import.owl>))) [Axioms: 1182 Logical Axioms: 297]
+remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/imports/ro_import.owl>))) [Axioms: 1192 Logical Axioms: 302]
 remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/imports/uberon_import.owl>))) [Axioms: 24081 Logical Axioms: 4670]
 remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/modules/entity_attribute.owl>))) [Axioms: 79 Logical Axioms: 12]
 remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/modules/entity_attribute_location.owl>))) [Axioms: 131 Logical Axioms: 22]
 remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/modules/entity_quality_location.owl>))) [Axioms: 45 Logical Axioms: 6]
-remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/modules/process_attribute.owl>))) [Axioms: 20 Logical Axioms: 2]
+remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/modules/process_attribute.owl>))) [Axioms: 21 Logical Axioms: 2]
 ontology: subsets/envo-basic.obo
 
 [Term]
@@ -361,6 +360,7 @@ xref: SWEETRealm:Lake
 xref: TGN:21114
 xref: TGN:21115
 is_a: ENVO:01000617 ! lentic water body
+relationship: partially_surrounded_by ENVO:01000635 ! land
 
 [Term]
 id: ENVO:00000021
@@ -1036,16 +1036,15 @@ is_a: ENVO:00000027 ! spring
 
 [Term]
 id: ENVO:00000052
-name: crater lake
-def: "A lake contained within a volcanic crater." [MA:ma]
-synonym: "caldera lake" EXACT []
+name: volcanic crater lake
+def: "A lake contained within a volcanic crater." [https://en.wikipedia.org/wiki/Crater_lake, MA:ma]
 xref: FTT:384
 xref: FTT:590
 xref: Geonames:H.LKC
 xref: Geonames:H.LKSC
 xref: https://en.wikipedia.org/wiki/Crater_lake
 xref: TGN:21138
-is_a: ENVO:00000020 ! lake
+is_a: ENVO:01001062 ! crater lake
 relationship: located_in ENVO:00000246 ! volcanic crater
 
 [Term]
@@ -1332,8 +1331,8 @@ id: ENVO:00000068
 name: tunnel
 def: "An underground or underwater passage." [USGS:SDTS]
 synonym: "cave" RELATED [ADL:FTT]
-synonym: "natural tunnel" RELATED [Geonames:feature]
 synonym: "natural tunnel" RELATED [Getty:TGN]
+synonym: "natural tunnel" RELATED [Geonames:feature]
 synonym: "TUNNEL" EXACT [USGS:SDTS]
 xref: FTT:445
 xref: FTT:448
@@ -1843,7 +1842,7 @@ xref: Geonames:T.CLDA
 xref: https://en.wikipedia.org/wiki/Caldera
 xref: TGN:21409
 is_a: ENVO:00000094 ! volcanic feature
-is_a: ENVO:00000309 ! depression
+is_a: ENVO:00000514 ! crater
 disjoint_from: ENVO:00000246 ! volcanic crater
 relationship: formed_as_result_of ENVO:01000634 ! volcanic eruption
 
@@ -2226,11 +2225,7 @@ is_a: ENVO:00000106 ! grassland
 id: ENVO:00000109
 name: woodland
 def: "Land having a cover of trees, shrubs, or both." [USGS:SDTS]
-synonym: "bamboo" NARROW [USGS:SDTS]
-synonym: "break" RELATED [USGS:SDTS]
 synonym: "brigalow" NARROW [USGS:SDTS]
-synonym: "brush" RELATED [USGS:SDTS]
-synonym: "bush" RELATED [USGS:SDTS]
 synonym: "caatinga" RELATED [USGS:SDTS]
 synonym: "chanaral" RELATED [USGS:SDTS]
 synonym: "coniferous forest" RELATED [USGS:SDTS]
@@ -2268,9 +2263,6 @@ synonym: "wood" RELATED [ADL:FTT]
 synonym: "wood" RELATED [Getty:TGN]
 synonym: "wooded area" RELATED [USGS:SDTS]
 synonym: "WOODLAND" EXACT [USGS:SDTS]
-xref: EcoLexicon:coniferous_forest
-xref: EcoLexicon:shrub
-xref: EcoLexicon:taiga
 xref: FTT:1083
 xref: FTT:505
 xref: FTT:506
@@ -2299,13 +2291,8 @@ id: ENVO:00000111
 name: forest
 def: "An area with a high density of trees. A small forest may be called a wood." [https://en.wikipedia.org/wiki/Forest]
 comment: The definitions of forest can vary greatly, and different classes will be needed to support the major categories. Tree cover alone is not enough to distinguish between forests and plantations. The international definition proposed by the 2010 FAO Forestry Resource Assessment: "land spanning more than 0.5 ha with trees higher than 5 metres and canopy cover of more than 10 percent, or trees able to reach these thresholds in situ . It does not include land that is predominantly under agricultural or urban land use." - FAO.  2010. Global forest resources assessment 2010, Main report, FAO Forestry Paper 163. Rome.
-synonym: "copse" NARROW []
 synonym: "forest" RELATED [Geonames:feature]
-synonym: "forest reserve" NARROW [ADL:FTT]
-synonym: "grove" NARROW [Getty:TGN]
-synonym: "national forest" NARROW [ADL:FTT]
-synonym: "wood" NARROW [Getty:TGN]
-synonym: "woodland" BROAD [USGS:SDTS]
+synonym: "wood" RELATED [Getty:TGN]
 xref: EcoLexicon:forest
 xref: FTT:258
 xref: FTT:506
@@ -2318,7 +2305,7 @@ xref: SWEETRealm:Forest
 xref: TGN:21641
 xref: TGN:21642
 xref: TGN:21645
-is_a: ENVO:01001305 ! vegetated area
+is_a: ENVO:00000109 ! woodland
 
 [Term]
 id: ENVO:00000112
@@ -2664,6 +2651,7 @@ xref: EcoLexicon:permafrost
 xref: https://en.wikipedia.org/wiki/Permafrost
 xref: LTER:408
 is_a: ENVO:00001998 ! soil
+is_a: ENVO:01001125 ! ice
 
 [Term]
 id: ENVO:00000135
@@ -3220,6 +3208,7 @@ xref: SWEETRealm:Dune
 xref: TGN:21419
 xref: TGN:21505
 is_a: ENVO:00000083 ! hill
+relationship: formed_as_result_of ENVO:03000020 ! aeolian transport process
 
 [Term]
 id: ENVO:00000171
@@ -3663,9 +3652,9 @@ is_a: ENVO:00000020 ! lake
 [Term]
 id: ENVO:00000203
 name: rift lake
-def: "A lake which forms as a result of subsidence along a geological fault in the Earth's tectonic plates." [https://en.wikipedia.org/wiki/Lake#Types_of_lakes]
-xref: https://en.wikipedia.org/wiki/Rift_lake
-is_a: ENVO:00000020 ! lake
+def: "A lake which fills a depression that has formed as a result of subsidence along a a rift zone, an area of extensional tectonics in the continental crust." [https://en.wikipedia.org/wiki/Lake#Types_of_lakes] {comment="https://en.wikipedia.org/wiki/Rift_lake"}
+is_a: ENVO:01001092 ! tectonic lake
+relationship: formed_as_result_of ENVO:01001095 ! divergent tectonic movement
 
 [Term]
 id: ENVO:00000204
@@ -3936,11 +3925,7 @@ relationship: part_of ENVO:00000303 ! sea coast
 id: ENVO:00000231
 name: moor
 def: "A wetland found in upland areas, characterised by acidic soils." [https://en.wikipedia.org/wiki/Moorland]
-synonym: "grassland" BROAD [USGS:SDTS]
 synonym: "moor" BROAD [Geonames:feature]
-synonym: "shrubland" RELATED [ADL:FTT]
-synonym: "wetland" BROAD [USGS:SDTS]
-synonym: "woodland" BROAD [USGS:SDTS]
 xref: EcoLexicon:moor
 xref: FTT:1191
 xref: FTT:991
@@ -4010,7 +3995,6 @@ is_a: ENVO:00000232 ! fen
 id: ENVO:00000236
 name: dambo
 def: "A class of complex shallow wetlands in central, southern and eastern Africa, particularly in Zambia and Zimbabwe. They are generally found in higher rainfall flat plateau areas, and have river-like branching forms which may be nowhere very large, but common enough to add up to a large area." [https://en.wikipedia.org/wiki/Dambos]
-xref: https://en.wikipedia.org/wiki/Dambo
 is_a: ENVO:00000243 ! freshwater wetland
 
 [Term]
@@ -4029,7 +4013,6 @@ is_a: ENVO:00000236 ! dambo
 id: ENVO:00000239
 name: pocasin
 def: "A palustrine wetland with deep, acidic, sandy, peat soils. Groundwater saturates the soil except during brief seasonal dry spells and during prolonged droughts. Pocosin soils are nutrient deficient (oligotrophic), especially in phosphorus." [https://en.wikipedia.org/wiki/Pocosin]
-synonym: "wetland" BROAD [USGS:SDTS]
 is_a: ENVO:00000243 ! freshwater wetland
 
 [Term]
@@ -4087,7 +4070,6 @@ relationship: continuous_with ENVO:00000426 ! ocean floor
 id: ENVO:00000245
 name: maar
 def: "A broad, low relief crater that results from a phreatic eruption or explosion caused by groundwater contact with hot lava or magma. The maar typically fills with water to form a relatively shallow crater lake." [https://en.wikipedia.org/wiki/Maar]
-xref: https://en.wikipedia.org/wiki/Maar
 is_a: ENVO:00000514 ! crater
 
 [Term]
@@ -4838,8 +4820,9 @@ xref: FTT:841
 xref: FTT:842
 xref: SWEETRealm:IceField
 xref: TGN:21147
+is_a: ENVO:00000131 ! glacial feature
 is_a: ENVO:01000352 ! field
-is_a: ENVO:01000818 ! cryosphere
+is_a: ENVO:03000110 ! cryoform
 relationship: composed_primarily_of ENVO:01000277 ! water ice
 
 [Term]
@@ -4850,7 +4833,6 @@ synonym: "bush" RELATED [ADL:FTT]
 synonym: "bush" RELATED [Getty:TGN]
 synonym: "chaparal area" RELATED [ADL:FTT]
 synonym: "heath" RELATED [ADL:FTT]
-synonym: "moor" RELATED [ADL:FTT]
 synonym: "scrub" RELATED [USGS:SDTS]
 synonym: "scrubland" EXACT [Geonames:feature]
 synonym: "shrubland" RELATED [ADL:FTT]
@@ -4883,14 +4865,13 @@ relationship: has_condition ENVO:01000207 ! mediterranean
 [Term]
 id: ENVO:00000302
 name: rift valley
-def: "A valley created by the formation of a rift, i.e. place where the Earth's crust and lithosphere are being pulled apart by tectonic forces." [https://en.wikipedia.org/wiki/Rift_valley]
+def: "A valley created by the formation of a rift, i.e. place where a planet's lithosphere is being pulled apart by tectonic forces." [https://en.wikipedia.org/wiki/Rift_valley]
 synonym: "rift zone" RELATED [ADL:FTT]
 synonym: "RiftValley" RELATED [NASA:earthrealm]
-synonym: "valley" RELATED [USGS:SDTS]
 xref: FTT:684
-xref: https://en.wikipedia.org/wiki/Rift_valley
 xref: SWEETRealm:RiftValley
 is_a: ENVO:00000100 ! valley
+relationship: formed_as_result_of ENVO:01001095 ! divergent tectonic movement
 
 [Term]
 id: ENVO:00000303
@@ -5051,11 +5032,16 @@ property_value: IAO:0000116 "Clarify that this pertains to the planetary crust a
 
 [Term]
 id: ENVO:00000310
-name: impact crater
-def: "A crater caused by the impact of a meteor." [MA:ma]
+name: meteor impact crater
+def: "A crater caused by the impact of a meteor." [https://en.wikipedia.org/wiki/Impact_crater, MA:ma]
+comment: For the moment, no distinction is made between meteroids, lithometeors, or meteorites in this class. These can be added if needed.
+synonym: "meteorite crater" EXACT []
+synonym: "meteorite impact crater" EXACT []
+synonym: "meteoroid impact crater" EXACT []
 xref: https://en.wikipedia.org/wiki/Impact_crater
 xref: SWEETRealm:ImpactCrater
-is_a: ENVO:00000514 ! crater
+is_a: ENVO:01001071 ! impact crater
+relationship: formed_as_result_of ENVO:01001067 ! meterorite impact
 
 [Term]
 id: ENVO:00000311
@@ -5714,12 +5700,12 @@ id: ENVO:00000389
 name: intermittent wetland
 def: "An area that is sometimes inundated or saturated by surface or ground water sufficient to support, and that under normal circumstances do support, a prevalence of vegetation typically adapted for life in saturated soil conditions." [MA:ma]
 synonym: "intermittent wetland" EXACT [Geonames:feature]
-synonym: "wetland" BROAD [ADL:FTT]
 xref: FTT:85
 xref: FTT:883
 xref: Geonames:H.WTLDI
 xref: TGN:21306
 is_a: ENVO:00000043 ! wetland
+property_value: IAO:0000116 "In a strict sense, this class cannot always satisfy the subclass axiom of wetland, requiring soil to always have a wet quality. Perhaps this should be treated more like channel of an intermittent stream." xsd:string
 
 [Term]
 id: ENVO:00000390
@@ -5909,11 +5895,11 @@ id: ENVO:00000406
 name: mid-ocean ridge
 def: "An underwater mountain range, formed by plate tectonics. This uplifting of the ocean floor occurs when convection currents rise in the mantle beneath the oceanic crust and create magma where two tectonic plates meet at a divergent boundary. The mid-ocean ridges of the world are connected and form a single global mid-oceanic ridge system that is part of every ocean." [https://en.wikipedia.org/wiki/Mid-ocean_ridge]
 synonym: "OceanRidge" RELATED [NASA:earthrealm]
-synonym: "undersea ridge" RELATED [Getty:TGN]
 xref: EcoLexicon:oceanic_ridge
 xref: https://en.wikipedia.org/wiki/Mid-ocean_ridge
 xref: TGN:23151
 is_a: ENVO:00000550 ! range of seamounts
+relationship: formed_as_result_of ENVO:01001095 ! divergent tectonic movement
 relationship: part_of ENVO:00000015 ! ocean
 
 [Term]
@@ -6136,7 +6122,7 @@ synonym: "EcosytemType" RELATED [NASA:earthrealm]
 synonym: "major habitat type" EXACT [WWF:Biome]
 xref: EcoLexicon:biome
 xref: LTER:173
-is_a: ENVO:01000254 ! environmental system
+is_a: ENVO:01001110 ! ecosystem
 disjoint_from: ENVO:01000276 ! ecoregion
 disjoint_from: ENVO:01000280 ! ecozone
 relationship: part_of ENVO:01000817 ! biosphere
@@ -7021,7 +7007,6 @@ id: ENVO:00000514
 name: crater
 def: "A generally circular saucer or bowl-shaped depression caused by volcanic or meteorite explosive action." [Geonames:feature]
 synonym: "caldera" NARROW [USGS:SDTS]
-synonym: "carter" EXACT [Geonames:feature]
 synonym: "CRATER" EXACT [USGS:SDTS]
 xref: FTT:219
 xref: Geonames:T.CRTR
@@ -7088,7 +7073,7 @@ is_a: ENVO:00000508 ! terrace
 [Term]
 id: ENVO:00000520
 name: landslide
-def: "A mound of earth material, at the base of a slope and the associated scoured area." [Geonames:feature]
+def: "A mound of earth material, at the base of a slope and the associated scoured area." []
 synonym: "landslip" RELATED []
 synonym: "physiographic feature" BROAD [ADL:FTT]
 synonym: "slide" RELATED [Getty:TGN]
@@ -7108,8 +7093,7 @@ relationship: formed_as_result_of ENVO:01000692 ! landslide process
 [Term]
 id: ENVO:00000521
 name: rockfall
-def: "An irregular mass of fallen rock at the base of a cliff or steep slope." [Geonames:feature]
-synonym: "physiographic feature" BROAD [ADL:FTT]
+def: "An irregular mass of fallen rock at the base of a cliff or steep slope." []
 synonym: "rockfall" EXACT [Geonames:feature]
 xref: EcoLexicon:rockfall
 xref: FTT:1072
@@ -7118,6 +7102,8 @@ xref: Geonames:T.RKFL
 xref: https://en.wikipedia.org/wiki/Rockfall
 xref: TGN:21504
 is_a: ENVO:00000520 ! landslide
+relationship: composed_primarily_of ENVO:00001995 ! rock
+relationship: formed_as_result_of ENVO:01001108 ! rockslide process
 
 [Term]
 id: ENVO:00000522
@@ -7330,6 +7316,7 @@ is_a: ENVO:00000176 ! elevation
 [Term]
 id: ENVO:00000540
 name: brackish lake
+def: "A lake which is primarily composed of brackish water, having a higher salinity than fresh water but a lower salinity than marine water." []
 is_a: ENVO:00000019 ! saline lake
 relationship: composed_primarily_of ENVO:00002019 ! brackish water
 
@@ -8466,6 +8453,7 @@ is_a: ENVO:00000019 ! saline lake
 [Term]
 id: ENVO:00002122
 name: arsenic-rich mud
+def: "Mud which has elevated concentrations of arsenic." []
 is_a: ENVO:01000001 ! mud
 
 [Term]
@@ -8513,7 +8501,6 @@ id: ENVO:00002130
 name: hypolimnion
 def: "The dense, bottom layer of water in a thermally-stratified lake. It is the layer that lies below the thermocline." [https://en.wikipedia.org/wiki/Hypolimnion]
 xref: EcoLexicon:hypolimnion
-xref: https://en.wikipedia.org/wiki/Hypolimnion
 is_a: ENVO:01000283 ! lake layer
 relationship: adjacent_to ENVO:00002132 ! metalimnion
 relationship: part_of ENVO:00000199 ! meromictic lake
@@ -8540,6 +8527,7 @@ relationship: part_of ENVO:00000199 ! meromictic lake
 [Term]
 id: ENVO:00002133
 name: anaerobic mud
+def: "Mud which has no or neglible concentrations of dissolved oxygen." []
 synonym: "anoxic mud" EXACT []
 is_a: ENVO:01000001 ! mud
 
@@ -8714,6 +8702,7 @@ is_a: ENVO:00002006 ! water
 [Term]
 id: ENVO:00002160
 name: estuarine mud
+def: "Mud which is part of an estuary." []
 is_a: ENVO:01000001 ! mud
 relationship: part_of ENVO:00000045 ! estuary
 
@@ -10348,6 +10337,7 @@ is_a: ENVO:00003031 ! animal manure
 [Term]
 id: ENVO:00003860
 name: pig manure
+def: "Manure which is primarily composed of pig feces." []
 is_a: ENVO:00003031 ! animal manure
 
 [Term]
@@ -10969,6 +10959,7 @@ is_a: ENVO:00001998 ! soil
 id: ENVO:00005765
 name: frozen compost soil
 is_a: ENVO:00005747 ! compost soil
+is_a: ENVO:01001125 ! ice
 
 [Term]
 id: ENVO:00005766
@@ -11138,6 +11129,7 @@ is_a: ENVO:00003930 ! scum
 [Term]
 id: ENVO:00005795
 name: marine mud
+def: "Mud which is part of a marine ecosystem." []
 subset: envoPolar
 is_a: ENVO:01000001 ! mud
 relationship: part_of ENVO:00000447 ! marine biome
@@ -11150,6 +11142,7 @@ is_a: ENVO:00002044 ! sludge
 [Term]
 id: ENVO:00005797
 name: lake bottom mud
+def: "Mud which constitutes the bed of a lake." []
 is_a: ENVO:01000001 ! mud
 relationship: part_of ENVO:00000268 ! lake bed
 
@@ -11313,6 +11306,7 @@ comment: Should connect to PATO as "quality of an aerosol"
 xref: EcoLexicon:aerosol
 xref: SWEETRealm:Aerosol
 is_a: ENVO:01000060 ! particulate matter
+relationship: surrounded_by ENVO:00002005 ! air
 
 [Term]
 id: ENVO:00010506
@@ -12446,6 +12440,10 @@ xref: https://en.wikipedia.org/wiki/Mud
 xref: LTER:356
 xref: SWEETRealm:Mud
 is_a: ENVO:00010483 ! environmental material
+relationship: has_part ENVO:00001998 ! soil
+relationship: has_part ENVO:00002006 ! water
+relationship: has_part ENVO:00002982 ! clay
+relationship: has_part ENVO:01000016 ! silt
 
 [Term]
 id: ENVO:01000002
@@ -13787,7 +13785,7 @@ name: marine snow
 def: "Marine snow is a continuous shower of mostly organic detritus falling from the upper layers of the water column. Its origin lies in activities within the productive photic zone." [https://en.wikipedia.org/wiki/Marine_snow, ORCID:0000-0002-4366-3088]
 subset: envoPolar
 xref: EcoLexicon:marine_snow
-is_a: ENVO:01000155 ! organic material
+is_a: ENVO:01001103 ! detritus
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2010-03-20T08:51:49Z
 
@@ -13914,6 +13912,8 @@ creation_date: 2010-03-20T09:38:56Z
 id: ENVO:01000173
 name: anoxic water
 def: "Water depleted of dissolved oxygen." [ORCID:0000-0002-4366-3088]
+synonym: "anaerobic water" EXACT []
+synonym: "reducing water" RELATED []
 is_a: ENVO:00002006 ! water
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2010-03-21T06:05:53Z
@@ -14003,6 +14003,7 @@ comment: Preliminary definition. Depending on whether mangrove trees or shrubs a
 subset: wwfBiome
 xref: LTER:322
 is_a: ENVO:00000446 ! terrestrial biome
+relationship: has_part ENVO:00000057 ! mangrove swamp
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2013-04-07T14:26:46Z
 
@@ -14217,8 +14218,8 @@ creation_date: 2013-04-07T14:32:28Z
 [Term]
 id: ENVO:01000203
 name: environmental condition
-def: "An environmental condition is a range of a determinate quality  or combination of qualities that are present in an environmental system." [DOI:10.1186/2041-1480-4-43]
-comment: Experimental class created in EnvO. A condition defines a restricted range of a given quality or combination of qualities. If an environment class, E, has_condition C, then all qualities listed in C are restricted to the ranges defined in C in E. This is not intended as a logical conditional.
+def: "An environmental condition is a range of a determinate quality or combination of qualities that are present in an environmental system." [DOI:10.1186/2041-1480-4-43]
+comment: A condition defines a restricted range of a given quality or combination of qualities. If an environment class, E, has_condition C, then all qualities listed in C are restricted to the ranges defined in C in E. This is not intended as a logical conditional.
 subset: envoPolar
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2013-04-07T14:35:18Z
@@ -14247,7 +14248,7 @@ id: ENVO:01000206
 name: temperate
 def: "A temperate condition is an environmental condition in which an environmental system receives less solar irradiance than those with subpolar conditions, but greater than those with subtropical conditions." [https://en.wikipedia.org/wiki/Temperate_climate]
 comment: This class' definition is less satisfactory than the other latitudinal conditoins.
-synonym: "tepid" EXACT [https://en.wikipedia.org/wiki/Temperate_climate]
+synonym: "tepid climate" EXACT [https://en.wikipedia.org/wiki/Temperate_climate]
 xref: SPIRE:Temperate
 is_a: ENVO:01000203 ! environmental condition
 created_by: ORCID:0000-0002-4366-3088
@@ -14476,7 +14477,7 @@ creation_date: 2013-04-24T12:20:42Z
 [Term]
 id: ENVO:01000230
 name: arid
-def: "An arid condition is an environmental condition in which annual precipitation is less than half of annual potential evapotranspiration." []
+def: "An environmental condition in which annual precipitation is less than half of annual potential evapotranspiration." []
 subset: envoPolar
 xref: EcoLexicon:aridity
 is_a: ENVO:01000203 ! environmental condition
@@ -14554,10 +14555,10 @@ creation_date: 2013-05-06T09:47:07Z
 [Term]
 id: ENVO:01000238
 name: polar
-def: "A polar condition is an environmental condition in which an environmental system receives low, yearly solar irradiance per unit area, resulting in colder climatic conditions. On Earth, polar conditions are such that every month has average temperature lower than 10 degrees Celsius." [https://en.wikipedia.org/wiki/Polar_climate]
-comment: Note that  this class refers to a climatic rather than a positional condition.
+def: "A polar condition is an environmental condition in which an environmental system receives low, yearly solar irradiance per unit area, resulting in colder climatic conditions." [https://en.wikipedia.org/wiki/Polar_climate]
+comment: On Earth, polar conditions are such that every month has average temperature lower than 10 degrees Celsius. Note that  this class refers to a climatic rather than a positional condition.
 subset: envoPolar
-synonym: "frigid" EXACT [https://en.wikipedia.org/wiki/Polar_climate]
+synonym: "frigid" RELATED [https://en.wikipedia.org/wiki/Polar_climate]
 xref: SPIRE:Polar
 xref: SWEETRealm:Polarization
 is_a: ENVO:01000203 ! environmental condition
@@ -14569,7 +14570,6 @@ id: ENVO:01000239
 name: oak woodland
 def: "An oak woodland is a woodland which has a tree community primarily composed of oak trees." [ORCID:0000-0001-8743-9574]
 is_a: ENVO:00000109 ! woodland
-created_by: PLB
 creation_date: 2013-06-04T22:33:52Z
 
 [Term]
@@ -14577,7 +14577,6 @@ id: ENVO:01000240
 name: conifer woodland
 def: "A conifer woodland is a woodland which has a tree community primarily composed of coniferous trees, from the Division Pinophyta, also known as Coniferophyta or Coniferae." [https://en.wikipedia.org/wiki/Conifer, ORCID:0000-0001-8743-9574]
 is_a: ENVO:00000109 ! woodland
-created_by: PLB
 creation_date: 2013-06-06T14:39:17Z
 
 [Term]
@@ -14927,7 +14926,7 @@ def: "Ice is water frozen into a solid state. It can appear transparent or opaqu
 subset: envoPolar
 synonym: "ice" RELATED [http://www.eionet.europa.eu/gemet/concept/4131]
 xref: LTER:262
-is_a: ENVO:01000814 ! solid environmental material
+is_a: ENVO:01001125 ! ice
 relationship: composed_primarily_of ENVO:00002006 ! water
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2013-10-13T12:01:28Z
@@ -14954,10 +14953,11 @@ creation_date: 2013-10-13T12:20:34Z
 [Term]
 id: ENVO:01000280
 name: ecozone
-def: "Ecozones delineate large areas of the Earth's surface within which organisms have been evolving in relative isolation over long periods of time, separated from one another by geographic features, such as oceans, broad deserts, or high mountain ranges, that constitute barriers to migration." [https://en.wikipedia.org/wiki/ecozone]
+def: "Ecozones delineate large areas of a planetary surface within which organisms have been evolving in relative isolation over long periods of time, separated from one another by geographic features, such as oceans, broad deserts, or high mountain ranges, that constitute barriers to migration." [https://en.wikipedia.org/wiki/ecozone]
 comment: ENVO contains this top-level class, but all instances will be in GAZ. The definition is preliminary and will be aligned to BFO.\nhttps://en.wikipedia.org/wiki/  Ecozones correspond to the floristic kingdoms of botany or zoogeographic regions of zoology. Ecozones are characterized by the evolutionary history of the organisms they contain. They are distinct from biomes, also known as major habitat types, which are divisions of the Earth's surface based on life form, or the adaptation of plants and animals to climatic, soil, and other conditions. Biomes are characterized by similar climax vegetation. Each ecozone may include a number of different biomes. A tropical moist broadleaf forest in Central America, for example, may be similar to one in New Guinea in its vegetation type and structure, climate, soils, etc., but these forests are inhabited by plants and animals with very different evolutionary histories.
 subset: envoPolar
 is_a: ENVO:01000408 ! environmental zone
+relationship: has_part ENVO:01001110 ! ecosystem
 relationship: located_in ENVO:01000817 ! biosphere
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2013-10-13T18:32:46Z
@@ -15075,7 +15075,8 @@ id: ENVO:01000293
 name: ice mass
 def: "A mass of ice." []
 subset: envoPolar
-is_a: ENVO:01000818 ! cryosphere
+is_a: ENVO:00000131 ! glacial feature
+is_a: ENVO:03000110 ! cryoform
 relationship: composed_primarily_of ENVO:01000277 ! water ice
 relationship: part_of ENVO:01000818 ! cryosphere
 property_value: IAO:0000116 "Class should be populated by inference and asserted subclasses redistributed." xsd:string
@@ -15754,6 +15755,7 @@ name: dry woodland
 def: "A dry woodland is a woodland which occurs in areas of rain shadow in a tropical marine climate,  receives very little rainfall,  typically has rapidly draining soils and trees which have adaptations to dry climates such as thick bark, small leaves, and the disposition to shed their leaves." [https://en.wikipedia.org/wiki/Tropical_marine_climate]
 synonym: "xerophytic ecosystem" EXACT []
 is_a: ENVO:00000109 ! woodland
+relationship: has_condition ENVO:01000375 ! tropical marine condition
 
 [Term]
 id: ENVO:01000375
@@ -15835,7 +15837,7 @@ relationship: part_of ENVO:01000211 ! temperate coniferous forest biome
 id: ENVO:01000384
 name: tropical lowland evergreen broadleaf rain forest
 comment: This class is one of the forest types as identified by the updated Global Forest Map (GFM 2000).
-synonym: "ran forest" RELATED [http://www.eionet.europa.eu/gemet/concept/6949]
+synonym: "rain forest" RELATED [http://www.eionet.europa.eu/gemet/concept/6949]
 is_a: ENVO:01000430 ! broadleaf forest
 relationship: has_condition ENVO:01000204 ! tropical
 relationship: part_of ENVO:01000228 ! tropical moist broadleaf forest biome
@@ -16005,7 +16007,7 @@ id: ENVO:01000405
 name: respirable suspended particulate matter
 def: "A portion of respirable suspended particulate matter is a form of particulate matter composed primarily of solid particles each with a diameter of 10 micrometers or less." [https://en.wikipedia.org/wiki/Particulates]
 synonym: "PM10" EXACT []
-is_a: ENVO:00010505 ! aerosol
+is_a: ENVO:01001089 ! solid aerosol
 
 [Term]
 id: ENVO:01000406
@@ -16013,8 +16015,9 @@ name: snow
 def: "Snow is an environmental material which is primarily composed of flakes of crystalline water ice." [https://en.wikipedia.org/wiki/Snow]
 subset: envoPolar
 synonym: "snow" RELATED [http://www.eionet.europa.eu/gemet/concept/7769]
+is_a: ENVO:00000131 ! glacial feature
 is_a: ENVO:00010483 ! environmental material
-is_a: ENVO:01000818 ! cryosphere
+is_a: ENVO:03000110 ! cryoform
 relationship: composed_primarily_of ENVO:01000277 ! water ice
 relationship: has_part ENVO:00002005 ! air
 relationship: output_of ENVO:01000703 ! hydrological precipitation process
@@ -16241,6 +16244,8 @@ id: ENVO:01000436
 name: waterborne particulate matter
 def: "Waterborne particulate matter is a form of particulate matter in which small, solid portions of solid material are surrounded by water." []
 is_a: ENVO:01000060 ! particulate matter
+relationship: composed_primarily_of ENVO:01000814 ! solid environmental material
+relationship: surrounded_by ENVO:00002006 ! water
 property_value: IAO:0000116 "This class should be populated by inference, relying on 'composed primarily of', many 'pieces of solid material' and 'surrounded by' some 'water'." xsd:string
 
 [Term]
@@ -16852,7 +16857,7 @@ created_by: ORCID:0000-0002-4366-3088
 
 [Term]
 id: ENVO:01000510
-name: 'sheet-iron building roof'
+name: sheet-iron building roof
 def: "A sheet-iron building roof is a building roof that is built from sheets of iron." []
 synonym: "iron sheet building roof" EXACT []
 synonym: "sheet iron roof" BROAD []
@@ -17210,8 +17215,9 @@ def: "A glaze ice layer is a smooth, transparent and homogeneous ice layer which
 synonym: "glaze" BROAD []
 synonym: "glaze" RELATED []
 synonym: "glaze ice" RELATED [http://www.eionet.europa.eu/gemet/concept/12091]
+is_a: ENVO:00000131 ! glacial feature
 is_a: ENVO:01000281 ! layer
-is_a: ENVO:01000818 ! cryosphere
+is_a: ENVO:03000110 ! cryoform
 relationship: composed_primarily_of ENVO:01000277 ! water ice
 created_by: ORCID:0000-0002-4366-3088
 
@@ -17860,6 +17866,7 @@ is_a: ENVO:01000324 ! planetary surface
 id: ENVO:01000637
 name: outer space
 def: "Outer space is a hard vacuum containing a low density of particles, predominantly a plasma of hydrogen and helium as well as electromagnetic radiation, magnetic fields, neutrinos, dust and cosmic rays that exists between celestial bodies." [https://en.wikipedia.org/wiki/Outer_space]
+subset: envoAstro
 synonym: "space" BROAD []
 is_a: ENVO:00002297 ! environmental feature
 
@@ -17926,6 +17933,7 @@ name: lithosphere
 def: "A lithosphere is the outermost shell of a terrestrial-type planet or natural satellite that is defined by its rigid mechanical properties." [https://en.wikipedia.org/wiki/Lithosphere]
 comment: Earth's lithosphere includes the crust and uppermost mantle.
 is_a: ENVO:01000639 ! planetary structural layer
+relationship: composed_primarily_of ENVO:01000814 ! solid environmental material
 relationship: has_part ENVO:01000638 ! planetary crust
 
 [Term]
@@ -18108,6 +18116,7 @@ is_a: ENVO:00000191 ! physiographic feature
 id: ENVO:01000668
 name: geological fault
 def: "A geological fault is a planar fracture or discontinuity in a volume of rock, across which there has been significant displacement as a result of rock mass movement." []
+comment: The relationship between faults and active plate boundaries must be further developed, as there is some overlap.
 synonym: "fault" BROAD []
 is_a: ENVO:01000667 ! geological fracture
 
@@ -18118,6 +18127,7 @@ def: "An active fault is a fault that is likely to become the source of another 
 subset: environmental_hazards
 synonym: "active fault" EXACT []
 is_a: ENVO:01000668 ! geological fault
+relationship: participates_in ENVO:01001093 ! tectonic movement
 
 [Term]
 id: ENVO:01000670
@@ -18177,6 +18187,8 @@ name: earthquake
 def: "An earthquake is a process whereby part of the surface of a planet shakes due to the passage of seismic waves through rocks. Seismic waves are produced when some form of energy stored in a planet's crust is suddenly released. Elastic strain, gravity, chemical reactions, or even the motion of massive bodies can produce earthquakes." [Adapted from URL:http\://www.britannica.com/science/earthquake-geology, https://en.wikipedia.org/wiki/Earthquake]
 subset: environmental_hazards
 is_a: ENVO:02500000 ! environmental system process
+relationship: has_participant ENVO:01000638 ! planetary crust
+relationship: has_participant ENVO:01001097 ! tectonic plate
 
 [Term]
 id: ENVO:01000678
@@ -18184,6 +18196,7 @@ name: tectonic earthquake
 def: "A tectonic earthquake is an earthquake caused by the release of elastic strain. A tectonic earthquake occurs when strains in rock masses have accumulated to a point where the resulting stresses exceed the strength of the rocks, and sudden fracturing results." [URL:http\://www.britannica.com/science/earthquake-geology]
 subset: environmental_hazards
 is_a: ENVO:01000677 ! earthquake
+relationship: causally_downstream_of_or_within ENVO:01001093 ! tectonic movement
 relationship: has_participant ENVO:01000669 ! active geological fault
 
 [Term]
@@ -18192,6 +18205,7 @@ name: megathrust earthquake
 def: "A megathrust earthquake is a tectonic earthquake which occurs at subduction zones at destructive plate boundaries (convergent boundaries). These interplate earthquakes are the planet's most powerful, with moment magnitudes that can exceed 9.0." [Adapted from URL:http\://www.britannica.com/science/earthquake-geology, https://en.wikipedia.org/wiki/Earthquake]
 subset: environmental_hazards
 is_a: ENVO:01000678 ! tectonic earthquake
+relationship: has_participant ENVO:01001100 ! convergent plate boundary
 
 [Term]
 id: ENVO:01000680
@@ -18593,7 +18607,7 @@ is_a: ENVO:03000043 ! material transformation process
 id: ENVO:01000728
 name: tectonic uplift process
 def: "A tectonic uplift process is a geomorphologic process in which a geological surface shifts upward relative to a datum such as sea-level due to forces other than isostatic responses to unloading." [https://en.wikipedia.org/wiki/Tectonic_uplift]
-is_a: ENVO:03000010 ! material transport process
+is_a: ENVO:01001093 ! tectonic movement
 
 [Term]
 id: ENVO:01000729
@@ -18676,7 +18690,7 @@ xref: EcoLexicon:habitat
 xref: https://en.wikipedia.org/wiki/Habitat
 xref: LTER:238
 xref: SWEETRealm:Habitat
-is_a: ENVO:01000254 ! environmental system
+is_a: ENVO:01001110 ! ecosystem
 relationship: part_of ENVO:01000817 ! biosphere
 
 [Term]
@@ -18686,8 +18700,9 @@ def: "An area of a planet's surface which is primarily composed of water ice, pr
 comment: This class covers part of the NLCD "Perennial Ice/Snow" class.
 subset: envoPolar
 subset: nlcd2011
+is_a: ENVO:00000131 ! glacial feature
 is_a: ENVO:01000408 ! environmental zone
-is_a: ENVO:01000818 ! cryosphere
+is_a: ENVO:03000110 ! cryoform
 relationship: adjacent_to ENVO:01000323 ! atmospheric boundary layer
 relationship: composed_primarily_of ENVO:01000277 ! water ice
 relationship: part_of ENVO:01000324 ! planetary surface
@@ -18824,8 +18839,9 @@ def: "A hollow tower of ice formed by the freezing of steam escaping a fumarole.
 subset: envoPolar
 synonym: "ice chimney" RELATED []
 synonym: "ice tower" RELATED []
+is_a: ENVO:00000131 ! glacial feature
 is_a: ENVO:00000176 ! elevation
-is_a: ENVO:01000818 ! cryosphere
+is_a: ENVO:03000110 ! cryoform
 relationship: adjacent_to ENVO:01000365 ! ice cave
 relationship: composed_primarily_of ENVO:01000277 ! water ice
 
@@ -19026,6 +19042,7 @@ synonym: "key biodiversity area" EXACT []
 synonym: "Prime Butterfly Area" NARROW []
 synonym: "Ramsar Sites" NARROW []
 is_a: ENVO:01000408 ! environmental zone
+is_a: ENVO:01001110 ! ecosystem
 relationship: has_part ENVO:01000254 ! environmental system
 property_value: IAO:0000116 "The narrow synonyms will be made into subclasses in their own right." xsd:string
 
@@ -19164,8 +19181,6 @@ subset: envoPolar
 synonym: "A mass gaseous flow in which planetary atmospheric gases flow into outer space." RELATED []
 synonym: "atmospheric escape" RELATED []
 is_a: ENVO:01000792 ! mass gaseous flow
-relationship: has_participant ENVO:01000637 ! outer space
-relationship: has_participant ENVO:01000800 ! planet
 
 [Term]
 id: ENVO:01000796
@@ -19194,6 +19209,7 @@ id: ENVO:01000799
 name: astronomical body
 def: "An object which is naturally occuring, bound together by gravitational or electromagnetic forces, and surrounded by space." [https://en.wikipedia.org/wiki/Astronomical_object]
 comment: Astronomical bodies are usually cohesive, thus the use of the term 'object' sensu BFO 'object'.
+subset: envoAstro
 synonym: "celestial body" RELATED []
 is_a: ENVO:01000804 ! astronomical object
 
@@ -19202,6 +19218,7 @@ id: ENVO:01000800
 name: planet
 def: "A planet is an astronomical body orbiting a star or stellar remnant that is massive enough to be rounded by its own gravity, is not massive enough to cause thermonuclear fusion, and has cleared its neighbouring region of planetesimals." [http://solarsystem.nasa.gov/planets/whatisaplanet, https://en.wikipedia.org/wiki/Planet]
 comment: Considerable debate on the definition of planet exists.
+subset: envoAstro
 subset: envoPolar
 is_a: ENVO:01000799 ! astronomical body
 
@@ -19209,6 +19226,7 @@ is_a: ENVO:01000799 ! astronomical body
 id: ENVO:01000801
 name: star
 def: "An astronomical object which is composed primarily of luminous plasma held in a spherical form by gravitational forces." [https://en.wikipedia.org/wiki/Star]
+subset: envoAstro
 subset: envoPolar
 is_a: ENVO:01000799 ! astronomical body
 relationship: composed_primarily_of ENVO:01000798 ! plasma
@@ -19219,6 +19237,7 @@ id: ENVO:01000802
 name: planetary moon
 def: "An astronomical body which orbits a planet of comparatively greater mass." [http://solarsystem.nasa.gov/planets/solarsystem/sats, https://en.wikipedia.org/wiki/Natural_satellite]
 comment: At times, a moon is equated to a natural satellite, however, the latter class includes a broader range of entities. Here, we currently separate moons from other satellites. We can create a logical definition of satellite using an orbital process class.
+subset: envoAstro
 synonym: "moon" BROAD []
 synonym: "natural satellite" RELATED []
 is_a: ENVO:01000799 ! astronomical body
@@ -19227,6 +19246,7 @@ is_a: ENVO:01000799 ! astronomical body
 id: ENVO:01000803
 name: asteroid
 comment: This class is hard to define and is sometimes treated as equivalent to 'minor planet'.
+subset: envoAstro
 is_a: ENVO:01000809 ! minor planet
 
 [Term]
@@ -19234,6 +19254,7 @@ id: ENVO:01000804
 name: astronomical object
 def: "An object which is composed of one or more gravitationally bound structures that are associated with a position in space." [https://en.wikipedia.org/wiki/Astronomical_object]
 comment: If there is only one astronomical body involved, this class is equivalent to ENVO:01000799. This may be problematic with reasoning, but it seems to be true to the rather fuzzy definitions found thus far.
+subset: envoAstro
 synonym: "celestial object" RELATED []
 is_a: ENVO:00002297 ! environmental feature
 relationship: has_part ENVO:01000799 {minCardinality="1"} ! astronomical body
@@ -19244,18 +19265,21 @@ id: ENVO:01000805
 name: globular star cluster
 def: "A group of gravitationally bound stars." [https://en.wikipedia.org/wiki/Star_cluster]
 comment: There is a need to account for open star clusters which are not gravitationally bound. This would need a superclass other than 'astronomical object', as currently defined.
+subset: envoAstro
 is_a: ENVO:01000804 ! astronomical object
 
 [Term]
 id: ENVO:01000806
 name: nebula
 def: "An interstellar cloud of dust, hydrogen, helium and other ionized gases" [https://en.wikipedia.org/wiki/Nebula]
+subset: envoAstro
 is_a: ENVO:01000804 ! astronomical object
 
 [Term]
 id: ENVO:01000807
 name: galaxy
 def: "A galaxy is a gravitationally bound system of stars, stellar remnants, interstellar gas, dust, and dark matter." [https://en.wikipedia.org/wiki/Galaxy]
+subset: envoAstro
 is_a: ENVO:01000804 ! astronomical object
 
 [Term]
@@ -19263,6 +19287,7 @@ id: ENVO:01000808
 name: dwarf planet
 def: "An astronomical body which is in direct orbit of a star and is massive enough for its own gravity to compress it into a shape preserved by hydrostatic equilibrium (usually a spheroid), but which shares its orbit with other bodies, such as asteroids or comets." [http://solarsystem.nasa.gov/planets/Dwarf, https://en.wikipedia.org/wiki/Dwarf_planet]
 comment: Considerable debate on this definition exists.
+subset: envoAstro
 is_a: ENVO:01000809 ! minor planet
 
 [Term]
@@ -19270,6 +19295,7 @@ id: ENVO:01000809
 name: minor planet
 def: "A minor planet is an astronomical object in direct orbit around the Sun that is neither a planet nor exclusively classified as a comet. Minor planets can be dwarf planets, asteroids, trojans, centaurs, Kuiper belt objects, and other trans-Neptunian objects." [https://en.wikipedia.org/wiki/Minor_planet]
 comment: "Before 2006, the IAU had officially used the term minor planet. During its 2006 meeting, the IAU reclassified minor planets and comets into dwarf planets and small Solar System bodies (SSSB). Objects are called dwarf planets if their self-gravity is sufficient to achieve hydrostatic equilibrium and form an ellipsoidal shape. All other minor planets and comets are called small Solar System bodies. The IAU stated that the term minor planet may still be used, but the term small Solar System body will be preferred. However, for purposes of numbering and naming, the traditional distinction between minor planet and comet is still used." {xref="https://en.wikipedia.org/wiki/Minor_planet"}
+subset: envoAstro
 is_a: ENVO:01000799 ! astronomical body
 property_value: IAO:0000116 "This definition is in need of revision - it relies on negation and seems to straddle class and instance level. The definitional space here is contested and quite inhomogeneous." xsd:string
 
@@ -19304,6 +19330,7 @@ relationship: part_of ENVO:00000097 ! desert
 id: ENVO:01000813
 name: astronomical body part
 def: "A material part of an astronomical body." []
+subset: envoAstro
 subset: envoPolar
 is_a: ENVO:00002297 ! environmental feature
 relationship: part_of ENVO:01000799 ! astronomical body
@@ -19313,7 +19340,7 @@ id: ENVO:01000814
 name: solid environmental material
 def: "An environmental material which is in a solid state." []
 comment: This is a defined class: its subclasses will not be asserted, but filled by inference.
-is_a: ENVO:00010483 ! environmental material
+is_a: ENVO:01001125 ! ice
 
 [Term]
 id: ENVO:01000815
@@ -19340,8 +19367,10 @@ id: ENVO:01000817
 name: biosphere
 def: "A biosphere is an environmental system which includes, as parts, all the living entities within the gravitational sphere of influence of an astronomical body, and the non-living and dead entities which they interact with." [http://www.biology-online.org/dictionary/Biosphere, https://en.wikipedia.org/wiki/Biosphere]
 comment: The gravitational sphere of influence referenced in this class' definition is the Hill sphere: a region in which an object dominates the attraction of satellites despite gravitational perturbations.
+subset: envoAstro
 subset: envoPolar
 is_a: ENVO:01000813 ! astronomical body part
+is_a: ENVO:01001110 ! ecosystem
 property_value: IAO:0000116 "Whether this class should be grouped with classes such as \"hydrosphere\" and \"cryosphere\" requires some discussion." xsd:string
 
 [Term]
@@ -19349,6 +19378,7 @@ id: ENVO:01000818
 name: cryosphere
 def: "A cryosphere is that part of a planet which is primarily composed of water is in solid form." [https://en.wikipedia.org/wiki/Cryosphere]
 comment: This is a very broad and, in practice, poorly defined term. Please consider using or requesting a more specific class.
+subset: envoAstro
 subset: envoPolar
 is_a: ENVO:00000131 ! glacial feature
 is_a: ENVO:03000110 ! cryoform
@@ -19359,6 +19389,7 @@ id: ENVO:01000819
 name: hydrosphere
 def: "An astronomical body part which is composed of the combined mass of water found on, under, and over the surface of a planet." [https://en.wikipedia.org/wiki/Hydrosphere]
 comment: This is a very broad and, in practice, poorly defined term. Please consider using or requesting a more specific class.
+subset: envoAstro
 subset: envoPolar
 is_a: ENVO:01000813 ! astronomical body part
 relationship: composed_primarily_of ENVO:00002006 ! water
@@ -19368,6 +19399,7 @@ id: ENVO:01000820
 name: pedosphere
 def: "An astronomical body part which is composed of soil, subject to soil formation processes, and found on the surface of a lithosphere." [https://en.wikipedia.org/wiki/Pedosphere]
 comment: This is a very broad and, in practice, poorly defined term. Please consider using or requesting a more specific class.
+subset: envoAstro
 is_a: ENVO:01000813 ! astronomical body part
 relationship: composed_primarily_of ENVO:00001998 ! soil
 relationship: overlaps ENVO:01000267 ! atmosphere
@@ -19379,6 +19411,7 @@ relationship: overlaps ENVO:01000819 ! hydrosphere
 id: ENVO:01000821
 name: photosphere
 def: "An astronomical body part which is composed of those parts of a star, distal from the star's core, from which light is radiated into space." [https://en.wikipedia.org/wiki/Photosphere]
+subset: envoAstro
 is_a: ENVO:01000813 ! astronomical body part
 relationship: part_of ENVO:01000801 ! star
 
@@ -19580,8 +19613,9 @@ name: water ice crystal
 def: "A crystal which is primarily composed of water ice." []
 subset: envoPolar
 synonym: "ice crystal" BROAD []
-is_a: ENVO:01000818 ! cryosphere
+is_a: ENVO:00000131 ! glacial feature
 is_a: ENVO:01000845 ! crystal
+is_a: ENVO:03000110 ! cryoform
 relationship: composed_primarily_of ENVO:01000277 ! water ice
 
 [Term]
@@ -20196,6 +20230,7 @@ name: biocrust
 def: "A surface layer of a solid environmental material which is formed by the presence and activity of photosynthetic microbial assemblages colonising it." [http://dx.doi.org/10.1038/ncomms10373, https://en.wikipedia.org/wiki/Biological_soil_crust]
 synonym: "biological crust" EXACT []
 is_a: ENVO:00010504 ! surface layer
+is_a: ENVO:01001110 ! ecosystem
 
 [Term]
 id: ENVO:01000910
@@ -20243,6 +20278,7 @@ def: "A process during which a solid particle or liquid droplet catalyses the co
 synonym: "cloud seeding process" EXACT []
 is_a: ENVO:02500003 ! atmospheric process
 is_a: ENVO:02500031 ! hydrological process
+relationship: causally_upstream_of_or_within ENVO:01001083 ! cloud formation process
 relationship: has_participant ENVO:01000266 ! water vapour
 relationship: occurs_in ENVO:01000267 ! atmosphere
 
@@ -20251,8 +20287,9 @@ id: ENVO:01000914
 name: ablation zone
 def: "An environmental zone which is primarily composed of water ice, present as a glacier or an ice sheet, and in which ice loss exceeds ice gain." [https://en.wikipedia.org/wiki/Ablation_zone]
 subset: envoPolar
+is_a: ENVO:00000131 ! glacial feature
 is_a: ENVO:01000408 ! environmental zone
-is_a: ENVO:01000818 ! cryosphere
+is_a: ENVO:03000110 ! cryoform
 relationship: composed_primarily_of ENVO:01000277 ! water ice
 property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
 property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088 xsd:string
@@ -20535,7 +20572,7 @@ id: ENVO:01000947
 name: ecotone
 def: "An envirommental system which bridges two or more biomes and which includes ecological communities which blend these biomes' phylogenetic and phenotypic compositions." [https://en.wikipedia.org/wiki/Ecotone, https://github.com/EnvironmentOntology/envo/issues/501, https://www.merriam-webster.com/dictionary/ecotone, ISBN:0030584140 9780030584145]
 comment: There are many subtypes of ecotone, some with sharp transitions and others with gradual, patchy transitions between communities. From Wikipedia:Ecotone - The word ecotone was coined from a combination of eco(logy) plus -tone, from the Greek tonos or tension – in other words, a place where ecologies are in tension.
-is_a: ENVO:01000254 ! environmental system
+is_a: ENVO:01001110 ! ecosystem
 relationship: overlaps ENVO:00000428 {minCardinality="2"} ! biome
 
 [Term]
@@ -20637,6 +20674,7 @@ is_a: ENVO:01000953 ! tree line ecotone
 id: ENVO:01000958
 name: terrestrial planet
 def: "A planet that is composed primarily of silicate rocks or metals." [https://en.wikipedia.org/wiki/Terrestrial_planet]
+subset: envoAstro
 synonym: "Earth-like planet" RELATED []
 synonym: "rocky planet" EXACT []
 synonym: "telluric planet" EXACT []
@@ -20844,6 +20882,7 @@ id: ENVO:01000983
 name: technosphere
 def: "An environmental system which includes, as parts, all the entities which have been constructed or manufactured by humans or their technology within the gravitational sphere of influence of an astronomical body." [http://dx.doi.org/10.1177/2053019616677743, http://www.yourdictionary.com/technosphere, https://www.sciencedaily.com/releases/2016/11/161130085021.htm]
 comment: The gravitational sphere of influence referenced in this class' definition is the Hill sphere: a region in which an object dominates the attraction of satellites despite gravitational perturbations.
+subset: envoAstro
 is_a: ENVO:01000813 ! astronomical body part
 relationship: has_part ENVO:00000070 ! construction
 relationship: has_part ENVO:00003074 ! manufactured product
@@ -20995,7 +21034,7 @@ def: "An environmental system which is determined by a living organism." []
 subset: envoEmpo
 subset: envoOmics
 synonym: "host-associated environment" RELATED []
-is_a: ENVO:01000254 ! environmental system
+is_a: ENVO:01001110 ! ecosystem
 
 [Term]
 id: ENVO:01001001
@@ -21097,6 +21136,7 @@ name: lithometeor
 def: "A meteor which is primarily composed of rock." []
 is_a: ENVO:01001008 ! meteor
 relationship: composed_primarily_of ENVO:00001995 ! rock
+relationship: derives_from ENVO:01001068 ! meteoroid
 
 [Term]
 id: ENVO:01001013
@@ -21174,6 +21214,7 @@ property_value: IAO:0000116 "This class is to be filled by inference." xsd:strin
 id: ENVO:01001023
 name: radiation
 def: "A process during which energy is emitted or transmitted in the form of waves or particles through space or a material medium." [https://en.wikipedia.org/wiki/Radiation]
+subset: envoAstro
 is_a: ENVO:02500000 ! environmental system process
 relationship: has_participant ENVO:00010483 ! environmental material
 property_value: IAO:0000116 "Requires addition of waves for full axiomatisation. This should be linked to \"subatomic particle\" with an \"or\". Note that ENVO represents space as an environmental material (a hard vacuum with sparse material inclusions)." xsd:string
@@ -21182,18 +21223,21 @@ property_value: IAO:0000116 "Requires addition of waves for full axiomatisation.
 id: ENVO:01001024
 name: particle radiation
 def: "A radiation process during which energy is transmitted or emitted by means of fast-moving subatomic particles." [https://en.wikipedia.org/wiki/Particle_radiation]
+subset: envoAstro
 is_a: ENVO:01001023 ! radiation
 
 [Term]
 id: ENVO:01001025
 name: particle beam radiation
 def: "A particle radiation process during which subatomic particles move in the same direction." [https://en.wikipedia.org/wiki/Particle_radiation]
+subset: envoAstro
 is_a: ENVO:01001024 ! particle radiation
 
 [Term]
 id: ENVO:01001026
 name: electromagnetic radiation
 def: "A radiation process during which waves (or their quanta, photons) of the electromagnetic field propagate (radiate) through space carrying electromagnetic energy." [https://en.wikipedia.org/wiki/Electromagnetic_radiation]
+subset: envoAstro
 is_a: ENVO:01001023 ! radiation
 
 [Term]
@@ -21201,6 +21245,7 @@ id: ENVO:01001027
 name: acoustic radiation
 def: "A radiation process during which mechanical waves generated by oscillations radiate through an environmental material." [https://en.wikipedia.org/wiki/Acoustics] {comment="https://en.wikipedia.org/wiki/Mechanical_wave", comment="https://en.wikipedia.org/wiki/Vibration"}
 comment: The mechanical waves generated by this process are also referred to as pressure waves.
+subset: envoAstro
 is_a: ENVO:01001023 ! radiation
 
 [Term]
@@ -21228,7 +21273,7 @@ name: environment determined by a metazoan secretion
 def: "An environmental system which has its properties and dynamics determined by a bodily secretion of a metazoan." []
 subset: envoEmpo
 subset: envoOmics
-is_a: ENVO:01000254 ! environmental system
+is_a: ENVO:01001110 ! ecosystem
 property_value: IAO:0000118 "Animal secretion" xsd:string {xref="http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/"}
 
 [Term]
@@ -21238,6 +21283,7 @@ def: "An environmental system which has its properties and dynamics determined b
 subset: envoEmpo
 subset: envoOmics
 is_a: ENVO:01001057 ! environment associated with a plant part or small plant
+is_a: ENVO:01001110 ! ecosystem
 property_value: IAO:0000118 "Plant secretion" xsd:string {xref="http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/"}
 
 [Term]
@@ -21255,6 +21301,7 @@ name: digestive tract environment
 def: "An environmental system which has its properties and dynamics determined by a digestive tract." []
 subset: envoEmpo
 subset: envoOmics
+is_a: ENVO:01001110 ! ecosystem
 is_a: ENVO:2100000 ! anatomical entity environment
 property_value: IAO:0000118 "Animal proximal gut" xsd:string {comment="This EMPO class includes examples of microbial environments determined by the \"gut intestine, gizzard, crop, lumen, [and] mucosa\".", xref="http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/"}
 
@@ -21340,7 +21387,7 @@ subset: envoOmics
 synonym: "fungus environment" BROAD []
 synonym: "fungus-associated environment" EXACT []
 is_a: ENVO:01001000 ! environmental system determined by an organism
-is_a: ENVO:01001058 ! 'environment associated with a fungal tissue
+is_a: ENVO:01001058 ! environment associated with a fungal tissue
 property_value: IAO:0000118 "Fungus" xsd:string {xref="http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/"}
 
 [Term]
@@ -21501,7 +21548,7 @@ property_value: IAO:0000118 "Plant corpus" xsd:string {xref="http://press.igsb.a
 
 [Term]
 id: ENVO:01001058
-name: 'environment associated with a fungal tissue
+name: environment associated with a fungal tissue
 def: "An environmental system determined by part of a living or dead fungus." []
 subset: envoEmpo
 subset: envoOmics
@@ -21527,6 +21574,820 @@ subset: envoEmpo
 subset: envoOmics
 is_a: ENVO:02000008 ! cell culture
 property_value: IAO:0000118 "Single strain" xsd:string {xref="http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/"}
+
+[Term]
+id: ENVO:01001061
+name: caldera lake
+def: "A lake which is contained within a caldera." [https://en.wikipedia.org/wiki/Crater_lake]
+is_a: ENVO:00000052 ! volcanic crater lake
+relationship: located_in ENVO:00000096 ! caldera
+
+[Term]
+id: ENVO:01001062
+name: crater lake
+def: "A lake contained within a crater." [https://en.wikipedia.org/wiki/Crater_lake, MA:ma]
+comment: Note that this class does not commit to what kind of crater contains the lake in question. Please see the subclasses for more specificity.
+is_a: ENVO:00000020 ! lake
+relationship: located_in ENVO:00000514 ! crater
+
+[Term]
+id: ENVO:01001063
+name: oxic water
+def: "Water which has an appreciable concentration of dissolved oxygen." [https://en.wikipedia.org/wiki/Hypoxia_(environmental), ORCID:0000-0002-4366-3088]
+comment: The threshold dissolved oxygen concentration past which water is considered oxic is variable. Typically, this is understood as the concentration at and beyond which organisms inhabiting that water can sustain aerobic metabolism and good health. For most systems, this is above 80% oxygen saturation. Input is welcome here https://github.com/EnvironmentOntology/envo/issues/536
+is_a: ENVO:00002006 ! water
+created_by: ORCID:0000-0002-4366-3088
+creation_date: 2010-03-21T06:05:53Z
+
+[Term]
+id: ENVO:01001064
+name: hypoxic water
+def: "Water depleted of dissolved oxygen." [https://en.wikipedia.org/wiki/Hypoxia_(environmental), ORCID:0000-0002-4366-3088]
+comment: As with oxic and anoxic water, the thresholds for hypoxia are variable. Typically, a hypoxic state is asserted when dissolved oxygen levels decrease to a level where they have detrimental effects on aerobic aquatic organisms, typically below 30% oxygen saturation.
+is_a: ENVO:00002006 ! water
+created_by: ORCID:0000-0002-4366-3088
+creation_date: 2010-03-21T06:05:53Z
+
+[Term]
+id: ENVO:01001065
+name: meteorite lake
+def: "A lake which is contained in a crater formed by a meteorite impact." [https://en.wikipedia.org/wiki/Lake#Meteorite_.28extraterrestrial_impact.2F_crater.29_lakes]
+synonym: "meteorite crater lake" EXACT []
+synonym: "meteorite impact crater lake" EXACT []
+is_a: ENVO:01001070 ! impact crater lake
+relationship: located_in ENVO:00000310 ! meteor impact crater
+
+[Term]
+id: ENVO:01001066
+name: impact event
+def: "An impact event is a collision between astronomical objects resulting in changes in one or both of those objects." [https://en.wikipedia.org/wiki/Impact_event]
+is_a: ENVO:02500000 ! environmental system process
+relationship: has_participant ENVO:01000799 {minCardinality="2"} ! astronomical body
+
+[Term]
+id: ENVO:01001067
+name: meterorite impact
+def: "An impact event during which a meteoroid collides with another astronomical body." [https://en.wikipedia.org/wiki/Impact_event]
+is_a: ENVO:01001066 ! impact event
+
+[Term]
+id: ENVO:01001068
+name: meteoroid
+def: "An astronomical body which is composed of rocky or metallic materials and is considerably smaller than asteroids." [https://en.wikipedia.org/wiki/Meteoroid]
+subset: envoAstro
+is_a: ENVO:01000799 ! astronomical body
+
+[Term]
+id: ENVO:01001069
+name: metallic material
+def: "A material which is composed primarily of one or more pure metals and which shows their properties." [] {comment="https://en.wikipedia.org/wiki/Metal"}
+comment: While this class allows for some degree of contamination by non-metal substances, the material represented should show at least some of the typical features of a pure metal: hardness (except for liquid metals), opacity, lustre, malleability, fusibility, ductile  and good electrical and thermal conductivity.
+synonym: "metal" RELATED []
+is_a: ENVO:00010483 ! environmental material
+property_value: IAO:0000116 "Far more axiomatisation can be done should the qualities of metals be added to PATO or a similar quality ontology. However, note that there are many exceptions to the typical qualities of the majority of metals." xsd:string
+
+[Term]
+id: ENVO:01001070
+name: impact crater lake
+def: "A lake which is contained in a crater formed by an impact event." [https://en.wikipedia.org/wiki/Lake#Meteorite_.28extraterrestrial_impact.2F_crater.29_lakes]
+is_a: ENVO:01001062 ! crater lake
+relationship: located_in ENVO:01001071 ! impact crater
+
+[Term]
+id: ENVO:01001071
+name: impact crater
+def: "A crater which was formed as a result of the impact of one astronomical body on another." [https://en.wikipedia.org/wiki/Impact_crater, MA:ma]
+xref: SWEETRealm:ImpactCrater
+is_a: ENVO:00000514 ! crater
+relationship: formed_as_result_of ENVO:01001066 ! impact event
+
+[Term]
+id: ENVO:01001072
+name: anoxic lake
+def: "A lake which is primarily composed of anoxic water." []
+synonym: "anaerobic lake" EXACT []
+is_a: ENVO:00000020 ! lake
+relationship: composed_primarily_of ENVO:01000173 ! anoxic water
+
+[Term]
+id: ENVO:01001073
+name: lake with an anoxic hypolimnion
+def: "A lake which has a hypolimnion composed primarily of anoxic water." [http://dx.doi.org/10.4319/lo.1984.29.1.0111]
+synonym: "anoxic lake" RELATED []
+is_a: ENVO:00000020 ! lake
+
+[Term]
+id: ENVO:01001074
+name: lake with a hypoxic hypolimnion
+def: "A lake which has a hypolimnion composed primarily of anoxic water." [http://dx.doi.org/10.4319/lo.1984.29.1.0111]
+synonym: "anoxic lake" RELATED []
+is_a: ENVO:00000020 ! lake
+
+[Term]
+id: ENVO:01001075
+name: hypoxic lake
+def: "A lake which is primarily composed of anoxic water." []
+synonym: "oxygen-depleted lake" RELATED []
+synonym: "oxygen-poor lake" EXACT []
+is_a: ENVO:00000020 ! lake
+relationship: composed_primarily_of ENVO:01001064 ! hypoxic water
+
+[Term]
+id: ENVO:01001076
+name: oxic lake
+def: "A lake which is primarily composed of oxic water." []
+synonym: "aerobic lake" RELATED []
+synonym: "oxygenated lake" EXACT []
+is_a: ENVO:00000020 ! lake
+relationship: composed_primarily_of ENVO:01001063 ! oxic water
+
+[Term]
+id: ENVO:01001077
+name: lake with an oxic hypolimnion
+def: "A lake which has a hypolimnion composed primarily of oxic water." [http://dx.doi.org/10.4319/lo.1984.29.1.0111]
+synonym: "aerobic lake" RELATED []
+synonym: "oxic lake" RELATED []
+is_a: ENVO:00000020 ! lake
+
+[Term]
+id: ENVO:01001078
+name: weather
+def: "Environmental variability which inheres in an astronomical body part or in outer space." [https://en.wikipedia.org/wiki/Space_weather, https://en.wikipedia.org/wiki/Weather]
+comment: This class refers to all weather, including atmospheric and space weather. Please use a subclass for more specificity.
+is_a: ENVO:01001081 ! environmental variability
+
+[Term]
+id: ENVO:01001079
+name: atmospheric weather
+def: "Weather which inheres in an atmosphere." [https://en.wikipedia.org/wiki/Weather]
+comment: This class refers to the common usage of "weather", referencing the state of a (part of) an astronomical body's atmosphere.
+is_a: ENVO:01001078 ! weather
+relationship: inheres_in ENVO:01000267 ! atmosphere
+
+[Term]
+id: ENVO:01001080
+name: space weather
+def: "Weather which inheres in outer space." [https://en.wikipedia.org/wiki/Space_weather]
+is_a: ENVO:01001078 ! weather
+relationship: inheres_in ENVO:01000637 ! outer space
+
+[Term]
+id: ENVO:01001081
+name: environmental variability
+def: "A condition which inheres in an environmental system by virtue of that system undergoing variation in its composition, the distribution of the qualities its components bear, and/or in the processes which occur within it and which it participates in." []
+comment: This class is very general, but the nature of environmental variability is indeed quite variable. This class may be refined once we have more subclasses to consider.
+is_a: ENVO:01000203 ! environmental condition
+
+[Term]
+id: ENVO:01001082
+name: climate
+def: "The disposition of an environmental system, particularly those influencing atmospheres, to manifest a cyclic pattern of weather over time." [https://en.wikipedia.org/wiki/Climate]
+comment: Climate is commonly defined as the weather averaged, or otherwise summarised, over a period of time much longer than the duration of any phenomenon that constitutes weather. The standard averaging period is 30 years, but other periods may be used depending on the purpose. {xref="https://en.wikipedia.org/wiki/Climate"}
+is_a: ENVO:01000452 ! environmental disposition
+property_value: IAO:0000116 "The current alignment of \"climate\" under BFO:disposition is drawing from its very useful etymology (Ancient Greek klima, meaning inclination). The climatic conditions currently used to axiomatise biomes (polar, tropical, etc) may be better placed under this class." xsd:string
+
+[Term]
+id: ENVO:01001083
+name: cloud formation process
+def: "A process during which water vapour condensing in the atmosphere aggregates into clouds." [https://en.wikipedia.org/wiki/Cloud_condensation_nuclei]
+synonym: "cloud formation" EXACT []
+is_a: ENVO:02500003 ! atmospheric process
+is_a: ENVO:02500031 ! hydrological process
+relationship: causally_downstream_of_or_within ENVO:01000913 ! nucleation of cloud condensation
+relationship: has_output ENVO:01000760 ! cloud
+relationship: has_participant ENVO:01000266 ! water vapour
+relationship: occurs_in ENVO:01000267 ! atmosphere
+
+[Term]
+id: ENVO:01001084
+name: particle formation process
+def: "A process during which microscopic solid or liquid objects are formed." [https://en.wikipedia.org/wiki/Particulates]
+synonym: "particle formation" EXACT []
+is_a: ENVO:02500000 ! environmental system process
+relationship: has_output ENVO:01000060 ! particulate matter
+
+[Term]
+id: ENVO:01001085
+name: formation of particles in an atmosphere
+def: "A process during which microscopic solid or liquid objects are formed in an atmosphere." [https://en.wikipedia.org/wiki/Particulates]
+synonym: "atmospheric particle formation" EXACT []
+is_a: ENVO:01001084 ! particle formation process
+is_a: ENVO:02500003 ! atmospheric process
+relationship: has_output ENVO:00010505 ! aerosol
+relationship: occurs_in ENVO:01000267 ! atmosphere
+
+[Term]
+id: ENVO:01001086
+name: formation of solid particles in an atmosphere
+def: "A process during which microscopic solid particulates are formed in an atmosphere." [https://en.wikipedia.org/wiki/Particulates]
+is_a: ENVO:01001085 ! formation of particles in an atmosphere
+relationship: has_output ENVO:01001089 ! solid aerosol
+relationship: occurs_in ENVO:01000267 ! atmosphere
+
+[Term]
+id: ENVO:01001087
+name: formation of liquid droplets in an atmosphere
+def: "A process during which microscopic droplets of liquid are formed in an atmosphere." [https://en.wikipedia.org/wiki/Particulates]
+synonym: "formation of liquid particles in an atmosphere" EXACT []
+is_a: ENVO:01001085 ! formation of particles in an atmosphere
+relationship: has_output ENVO:01001088 ! liquid aerosol
+relationship: occurs_in ENVO:01000267 ! atmosphere
+
+[Term]
+id: ENVO:01001088
+name: liquid aerosol
+def: "An aerosol which is primarily composed of liquid droplets." [https://en.wikipedia.org/wiki/Aerosol]
+xref: SWEETRealm:Aerosol
+is_a: ENVO:00010505 ! aerosol
+is_a: ENVO:01000815 ! liquid environmental material
+relationship: surrounded_by ENVO:00002005 ! air
+
+[Term]
+id: ENVO:01001089
+name: solid aerosol
+def: "An aerosol which is primarily composed of solid particles." [https://en.wikipedia.org/wiki/Aerosol]
+xref: SWEETRealm:Aerosol
+is_a: ENVO:00010505 ! aerosol
+is_a: ENVO:01000814 ! solid environmental material
+relationship: surrounded_by ENVO:00002005 ! air
+
+[Term]
+id: ENVO:01001090
+name: formation of solid particles from gaseous material in an atmosphere
+def: "A process during which microscopic solid particulates are formed from gaseous materials in an atmosphere." [https://en.wikipedia.org/wiki/Particulates]
+synonym: "atmospheric formation of a solid aerosol" EXACT []
+synonym: "formation of a solid aerosol in an atmosphere" EXACT []
+synonym: "formation of a solid aerosol in the atmosphere" EXACT []
+is_a: ENVO:01001086 ! formation of solid particles in an atmosphere
+
+[Term]
+id: ENVO:01001091
+name: formation of liquid droplets from gaseous material in an atmosphere
+def: "A process during which microscopic liquid droplets are formed from gaseous materials in an atmosphere." [https://en.wikipedia.org/wiki/Particulates]
+synonym: "atmospheric formation of a liquid aerosol" EXACT []
+synonym: "formation of a liquid aerosol in an atmosphere" EXACT []
+synonym: "formation of a liquid aerosol in the atmosphere" EXACT []
+synonym: "formation of liquid particles from gaseous material in an atmosphere" EXACT []
+is_a: ENVO:01001087 ! formation of liquid droplets in an atmosphere
+
+[Term]
+id: ENVO:01001092
+name: tectonic lake
+def: "A lake which is contained in a depression formed by the deformation and resulting lateral and vertical movements of a lithosphere." [https://en.wikipedia.org/wiki/Lake#Tectonic_lakes]
+is_a: ENVO:00000020 ! lake
+relationship: contained_in ENVO:00000309 ! depression
+relationship: formed_as_result_of ENVO:01001093 ! tectonic movement
+
+[Term]
+id: ENVO:01001093
+name: tectonic movement
+def: "A process during which pieces of a planetary crust and uppermost mantle move." [https://en.wikipedia.org/wiki/Plate_tectonics] {comment="https://en.wikipedia.org/wiki/List_of_tectonic_plates"}
+is_a: ENVO:03000010 ! material transport process
+relationship: has_participant ENVO:01001097 ! tectonic plate
+
+[Term]
+id: ENVO:01001094
+name: convergent tectonic movement
+def: "A process during which pieces of a planetary crust and uppermost mantle move towards one another." [https://en.wikipedia.org/wiki/Convergent_boundary, https://en.wikipedia.org/wiki/List_of_tectonic_plates, https://en.wikipedia.org/wiki/Plate_tectonics]
+is_a: ENVO:01001093 ! tectonic movement
+relationship: has_part_that_occurs_in ENVO:01001100 ! convergent plate boundary
+relationship: has_participant ENVO:01001097 {minCardinality="2"} ! tectonic plate
+
+[Term]
+id: ENVO:01001095
+name: divergent tectonic movement
+def: "A process during which pieces of a planetary crust and uppermost mantle move away from one another." [https://en.wikipedia.org/wiki/Divergent_boundary, https://en.wikipedia.org/wiki/List_of_tectonic_plates, https://en.wikipedia.org/wiki/Plate_tectonics]
+synonym: "constructive tectonic movement" EXACT []
+synonym: "extensional tectonic movement" EXACT []
+is_a: ENVO:01001093 ! tectonic movement
+relationship: has_part_that_occurs_in ENVO:01001099 ! divergent plate boundary
+relationship: has_participant ENVO:01001097 {minCardinality="2"} ! tectonic plate
+
+[Term]
+id: ENVO:01001096
+name: transform tectonic movement
+def: "A process during which pieces of a planetary crust and uppermost mantle move along each other in a predominantly horizontal manner, either in a sinistral (left lateral) or dextral (right lateral) direction." [https://en.wikipedia.org/wiki/List_of_tectonic_plates, https://en.wikipedia.org/wiki/Plate_tectonics, https://en.wikipedia.org/wiki/Transform_fault]
+synonym: "conservative tectonic movement" EXACT []
+is_a: ENVO:01001093 ! tectonic movement
+relationship: has_part_that_occurs_in ENVO:01001101 ! transform plate boundary
+relationship: has_participant ENVO:01001097 {minCardinality="2"} ! tectonic plate
+
+[Term]
+id: ENVO:01001097
+name: tectonic plate
+def: "A part of a lithosphere which is separated by other such parts by geographic faults or similar geomorphological discontinuities." [https://en.wikipedia.org/wiki/List_of_tectonic_plates]
+is_a: ENVO:00000000 ! geographic feature
+relationship: overlaps ENVO:01001098 ! tectonic plate boundary
+relationship: part_of ENVO:01000646 ! lithosphere
+
+[Term]
+id: ENVO:01001098
+name: tectonic plate boundary
+def: "A geomorphological feature which is formed where two or more tectonic plates move towards, away from, or along one another, resulting in deformation of the lithosphere." [https://en.wikipedia.org/wiki/Plate_tectonics]
+is_a: ENVO:01000408 ! environmental zone
+relationship: formed_as_result_of ENVO:01001093 ! tectonic movement
+relationship: overlaps ENVO:01001097 {minCardinality="2"} ! tectonic plate
+
+[Term]
+id: ENVO:01001099
+name: divergent plate boundary
+def: "A geomorphological feature which is formed where two or more tectonic plates are actively moving away from one another, resulting in deformation of the lithosphere that forms rifts or ridges." [https://en.wikipedia.org/wiki/Convergent_boundary, https://en.wikipedia.org/wiki/Plate_tectonics]
+synonym: "constructive boundary" EXACT []
+synonym: "constructive plate boundary" EXACT []
+synonym: "divergent boundary" EXACT []
+synonym: "extensional boundary" EXACT []
+synonym: "extensional plate boundary" EXACT []
+is_a: ENVO:01001098 ! tectonic plate boundary
+
+[Term]
+id: ENVO:01001100
+name: convergent plate boundary
+def: "A geomorphological feature which is formed where two or more tectonic plates are actively moving towards one another, resulting in deformation of the lithosphere that forces one plate below the other where it melts in the mantle." [https://en.wikipedia.org/wiki/Convergent_boundary, https://en.wikipedia.org/wiki/Plate_tectonics]
+synonym: "convergent boundary" EXACT []
+synonym: "destructive boundary" EXACT []
+synonym: "destructive plate boundary" EXACT []
+is_a: ENVO:01001098 ! tectonic plate boundary
+
+[Term]
+id: ENVO:01001101
+name: transform plate boundary
+def: "A geomorphological feature which is formed where two or more tectonic plates are actively moving along one another in either a sinistral (left lateral) or dextral (right lateral) horizontal direction." [https://en.wikipedia.org/wiki/Convergent_boundary, https://en.wikipedia.org/wiki/Plate_tectonics]
+synonym: "transform boundary" EXACT []
+synonym: "transform fault" RELATED []
+is_a: ENVO:01001098 ! tectonic plate boundary
+property_value: IAO:0000116 "This class overlaps with the semantics of geographic faults and further work needs to be done to disentangle them." xsd:string
+
+[Term]
+id: ENVO:01001102
+name: tectonic plate subduction
+def: "A convergent tectonic movement process during which one plate moves under another and is forced or sinks due to gravity into a mantle." [https://en.wikipedia.org/wiki/Convergent_boundary, https://en.wikipedia.org/wiki/List_of_tectonic_plates, https://en.wikipedia.org/wiki/Plate_tectonics, https://en.wikipedia.org/wiki/Subduction]
+synonym: "subduction" EXACT []
+is_a: ENVO:01001094 ! convergent tectonic movement
+
+[Term]
+id: ENVO:01001103
+name: detritus
+def: "An organic material which is primarily composed of dead particulate matter." [https://en.wikipedia.org/wiki/Detritus]
+is_a: ENVO:01000155 ! organic material
+
+[Term]
+id: ENVO:01001104
+name: rift zone
+def: "An environmental zone in which extensional tectonic processes occur and where the lithosphere is being pulled apart." [https://en.wikipedia.org/wiki/Rift]
+subset: envoPolar
+synonym: "rift" EXACT []
+is_a: ENVO:01000408 ! environmental zone
+relationship: contains_process ENVO:01001095 ! divergent tectonic movement
+property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088 xsd:string
+
+[Term]
+id: ENVO:01001105
+name: aeolian lake
+def: "A lake which fills a basin that has been dammed by wind-blown sand,  formed between sand dunes oriented by winds; or formed by wind action under previously arid paleoenvironments." [https://en.wikipedia.org/wiki/Lake#Aeolian_lakes]
+is_a: ENVO:00000020 ! lake
+relationship: formed_as_result_of ENVO:03000020 ! aeolian transport process
+
+[Term]
+id: ENVO:01001106
+name: landslide lake
+def: "A lake which fills a depression where drainage is blocked by solid material transported by a landslide." [https://en.wikipedia.org/wiki/Lake#Landslide_lakes]
+is_a: ENVO:00000020 ! lake
+relationship: adjacent_to ENVO:00000520 ! landslide
+relationship: formed_as_result_of ENVO:01000692 ! landslide process
+
+[Term]
+id: ENVO:01001107
+name: rockslide lake
+def: "A lake which fills a depression where drainage is blocked by solid material transported by a rockslide." [https://en.wikipedia.org/wiki/Lake#Landslide_lakes]
+is_a: ENVO:01001106 ! landslide lake
+relationship: adjacent_to ENVO:00000521 ! rockfall
+relationship: formed_as_result_of ENVO:01001108 ! rockslide process
+
+[Term]
+id: ENVO:01001108
+name: rockslide process
+def: "A rockslide is a process whereby a large mass of rock moves down a hill or a mountainside." [https://en.wikipedia.org/wiki/Mass_wasting]
+subset: environmental_hazards
+synonym: "rockslip" EXACT []
+is_a: ENVO:01000692 ! landslide process
+
+[Term]
+id: ENVO:01001109
+name: Karman vortex street
+def: "A succession of swirling vortices caused by the unsteady separation of flow of a fluid around one or more blunt bodies." [https://en.wikipedia.org/wiki/K%C3%A1rm%C3%A1n_vortex_street]
+comment: These vortices are responsible for such phenomena as the "singing" of suspended telephone or power lines, and the vibration of a car antenna at certain speeds.
+synonym: "Kármán vortex street" EXACT []
+synonym: "von Kármán vortex street" EXACT []
+is_a: ENVO:00000000 ! geographic feature
+
+[Term]
+id: ENVO:01001110
+name: ecosystem
+def: "An environmental system which includes both living and non-living components." [https://en.wikipedia.org/wiki/Ecosystem]
+comment: This class will be primarily filled by inference, any environmental system which necessarily includes living parts should be autoclassified here.
+is_a: ENVO:01000254 ! environmental system
+
+[Term]
+id: ENVO:01001111
+name: fossil worm burrow
+def: "A channel which was formed as a result of an annelid burrowing through soil, where organic residues lining the burrow have subsequently initiated fossilization." [https://doi.org/10.1371/journal.pone.0070920]
+is_a: ENVO:03000117 ! channel
+relationship: formed_as_result_of ENVO:01001112 ! fossilization of organic material
+
+[Term]
+id: ENVO:01001112
+name: fossilization of organic material
+def: "A process during which organic substances are replaced with mineral substrances, maintaining part of their anatomical organisation." [https://en.wikipedia.org/wiki/Fossil#Fossilization_processes]
+synonym: "fossilization" BROAD []
+is_a: ENVO:02500000 ! environmental system process
+relationship: has_input ENVO:01000155 ! organic material
+relationship: has_output ENVO:01000256 ! mineral material
+
+[Term]
+id: ENVO:01001113
+name: forage material
+def: "Material which is primarily conposed of the vegetation present in tended pastures: mainly grasses, with an interspersion of legumes and other forbs." [https://en.wikipedia.org/wiki/Pasture]
+synonym: "forage" BROAD []
+is_a: ENVO:0010003 ! agricultural environmental material
+relationship: composed_primarily_of ENVO:01001121 ! plant matter
+
+[Term]
+id: ENVO:01001114
+name: feed storage space
+def: "A physical space, which may or may not be in a construction, which is used to store animal feed for agricultural purposes." [http://orcid.org/0000-0002-8844-9165]
+synonym: "feed storage" RELATED []
+is_a: ENVO:00000077 ! agricultural feature
+property_value: IAO:0000116 "This should be moved to \"zone\", and inference should be used to link to agricultural feature." xsd:string
+
+[Term]
+id: ENVO:01001115
+name: manure storage space
+def: "A physical space, which may or may not be in a construction, which is used to store animal manure for agricultural purposes." [http://orcid.org/0000-0002-8844-9165]
+synonym: "manure storage" RELATED []
+is_a: ENVO:00000077 ! agricultural feature
+property_value: IAO:0000116 "This should be moved to \"zone\", and inference should be used to link to agricultural feature." xsd:string
+
+[Term]
+id: ENVO:01001116
+name: bovine dairy liquid manure
+def: "Manure which has been collected directly or indirectly from dairy cattle, as from flushing of manure from concrete feed lanes, free stalls, and milking facilities." [http://manuremanagement.ucdavis.edu/files/134369.pdf, http://orcid.org/0000-0002-8844-9165]
+is_a: ENVO:00003031 ! animal manure
+
+[Term]
+id: ENVO:01001117
+name: poultry manure
+def: "Manure which is composed primarily of the feces of poultry." [http://orcid.org/0000-0002-8844-9165]
+is_a: ENVO:00003031 ! animal manure
+
+[Term]
+id: ENVO:01001118
+name: heat-treated animal manure
+def: "Manure which has been subjected to heat treatment for solidification and/or sterilization purposes." [http://orcid.org/0000-0002-8844-9165]
+is_a: ENVO:00003031 ! animal manure
+
+[Term]
+id: ENVO:01001119
+name: composted animal manure
+def: "Manure which has been subjected to a natural process of 'rotting' or decomposition of its organic matter content by microorganisms under controlled conditions." [http://orcid.org/0000-0002-8844-9165]
+is_a: ENVO:00003031 ! animal manure
+
+[Term]
+id: ENVO:01001120
+name: animal manure product
+def: "A product which is composed primarily of animal manure that has been heat treated and packaged as a product for commercial or consumer use." [http://orcid.org/0000-0002-8844-9165]
+is_a: ENVO:00003074 ! manufactured product
+relationship: composed_primarily_of ENVO:00003031 ! animal manure
+
+[Term]
+id: ENVO:01001121
+name: plant matter
+def: "Organic material which is primarily composed of plant structures, living or dead." []
+is_a: ENVO:01000155 ! organic material
+
+[Term]
+id: ENVO:01001122
+name: gas planet
+def: "A planet which is primarily composed of hydrogen and helium." [http://solarsystem.nasa.gov/planets/whatisaplanet, https://en.wikipedia.org/wiki/List_of_planet_types, https://en.wikipedia.org/wiki/Planet]
+comment: Gas giants are composed of about 90% hydrogen and helium. Jupiter and Saturn are examples of gas giants.
+subset: envoAstro
+is_a: ENVO:01000800 ! planet
+relationship: composed_primarily_of ENVO:01001155 ! astrogeological gas
+
+[Term]
+id: ENVO:01001123
+name: dwarf gas planet
+def: "A gas planet which 1) is considerably smaller than a gas giant and 2) has a rocky core around which a thick envelope primarily composed of hydrogen, helium, and smaller proportions of volatiles." [http://solarsystem.nasa.gov/planets/whatisaplanet, https://en.wikipedia.org/wiki/Gas_dwarf, https://en.wikipedia.org/wiki/List_of_planet_types, https://en.wikipedia.org/wiki/Planet]
+comment: The physical make-up of gas dwarfs limit their size, which gravitate towards a total radius between 1.7 and 3.9 Earth-radii. {xref="https://en.wikipedia.org/wiki/Gas_dwarf"}
+subset: envoAstro
+is_a: ENVO:01001122 ! gas planet
+
+[Term]
+id: ENVO:01001124
+name: giant gas planet
+def: "A gas planet which has mass and size comparable to Jupiter and Saturn." [http://solarsystem.nasa.gov/planets/whatisaplanet, https://en.wikipedia.org/wiki/Gas_giant, https://en.wikipedia.org/wiki/List_of_planet_types, https://en.wikipedia.org/wiki/Planet]
+subset: envoAstro
+synonym: "gas giant" EXACT []
+is_a: ENVO:01001122 ! gas planet
+property_value: IAO:0000116 "The definition should be revised to avoid relativisation to instances." xsd:string
+
+[Term]
+id: ENVO:01001125
+name: ice
+def: "An ice is an environmental material which is either frozen or which is maintained in a solid state by gravitational forces or pressure." []
+comment: This class is defined logically - any material that is frozen is considered a subclass. Note that ice may be formed at very high temperatures, due to gravitational effects and/or pressure.
+is_a: ENVO:00010483 ! environmental material
+
+[Term]
+id: ENVO:01001126
+name: astrogeological ice
+def: "An astrogeological volatile which is composed primarily of chemical compounds with freezing points above an approximate threshold of 100 Kelvin." [https://en.wikipedia.org/wiki/Ice_giant]
+comment: This is a term native to the fields of planetary science and astrophysics.  Water, ammonia, and methane are considered "ices" with freezing points of 273 K, 195 K, and 91 K, respectively.
+subset: envoAstro
+synonym: "ice" RELATED []
+is_a: ENVO:01001154 ! volatile astrogeological material
+
+[Term]
+id: ENVO:01001127
+name: ice giant
+def: "A giant planet which is primarily composed of elements heavier than hydrogen and helium, volatile chemical compounds with freezing points above about 100 Kelvin." [http://solarsystem.nasa.gov/planets/whatisaplanet, https://en.wikipedia.org/wiki/Ice_giant, https://en.wikipedia.org/wiki/List_of_planet_types, https://en.wikipedia.org/wiki/Planet]
+comment: Uranus and Neptune are considered ice giants, a separate class relative to the gas giants, Jupiter and Saturn. Ice giants consist of only about 20% hydrogen and helium in mass.  A large portion of the mass in an ice giant was incorporated by the capture of ice (as defined in planetary science) or as gas trapped in water ice.
+subset: envoAstro
+is_a: ENVO:01000800 ! planet
+relationship: composed_primarily_of ENVO:01001126 ! astrogeological ice
+
+[Term]
+id: ENVO:01001128
+name: mini-Neptune
+def: "A gas planet which has an atmosphere composed of hydrogen and helium  - probably with deep layers of ice, rock or liquid oceans (made of water, ammonia, a mixture of both, or heavier volatiles) - and a small core made of low-density volatiles." [https://en.wikipedia.org/wiki/Gas_dwarf, https://en.wikipedia.org/wiki/Mini-Neptune]
+comment: These planets have a mass up to 10 Earth masses, notably smaller than Uranus or Neptune, which are about 14.5 and 17 Earth masses, respectively.
+subset: envoAstro
+synonym: "transitional planet" RELATED []
+is_a: ENVO:01001122 ! gas planet
+
+[Term]
+id: ENVO:01001129
+name: super-Jupiter
+def: "An astronomical object which is more massive than the planet Jupiter." [https://en.wikipedia.org/wiki/Super-Jupiter]
+comment: Due to their immense size, super-Jupiter class objects straddle the space between planets and other objects such as brown dwarfs. While they may be more massive than Jupiter, super-Jupiters tend to be the same approximate size, with increasing density as their mass increases up to about 80 Jupiter masses.
+subset: envoAstro
+is_a: ENVO:01000799 ! astronomical body
+
+[Term]
+id: ENVO:01001130
+name: gravitational motion
+def: "A process during which one or more entities move along geodesics in a region of spacetime that has been sufficiently curved towards an entity with sufficient mass and/or energy." [https://en.wikipedia.org/wiki/Gravity]
+subset: envoAstro
+is_a: ENVO:02500000 ! environmental system process
+
+[Term]
+id: ENVO:01001131
+name: hot Jupiter
+def: "A giant gas planet which has a jovian-scale mass (0.36–11.8 Jupiter masses), a short orbital period (1.3–111 Earth days), and which is close to the star it orbits, resulting in extreme and exotic atmospheric properties." []
+comment: It is assumed that the mass of a hot Jupiter cannot be greater than approximately 13.6 Jupiter masses, beyond which the planet would start burning deuterium and become a brown dwarf. {xref="https://en.wikipedia.org/wiki/Hot_Jupiter"}
+subset: envoAstro
+synonym: "epistellar jovian" EXACT []
+synonym: "pegasean planet" EXACT []
+synonym: "pegasid" EXACT []
+synonym: "roaster planet" EXACT []
+is_a: ENVO:01001124 ! giant gas planet
+property_value: IAO:0000116 "" xsd:string
+
+[Term]
+id: ENVO:01001132
+name: hot Neptune
+def: "A gas planet which has a mass similar to that of Neptune or Uranus and which closely orbits its star (normally at a distance less than 1 Astronomical Unit)." [https://en.wikipedia.org/wiki/Hot_Neptune]
+subset: envoAstro
+synonym: "hoptune" EXACT []
+is_a: ENVO:01001122 ! gas planet
+property_value: IAO:0000116 "Whether this should be classified as a gas planet or an ice giant must be explored." xsd:string
+
+[Term]
+id: ENVO:01001133
+name: mega-Earth
+def: "A terrestrial exoplanet which is at least ten times the mass of Earth." [https://en.wikipedia.org/wiki/Mega-Earth]
+subset: envoAstro
+is_a: ENVO:01000958 ! terrestrial planet
+
+[Term]
+id: ENVO:01001134
+name: super-Earth
+def: "A terrestrial planet which has a mass higher than Earth's, but substantially below the masses of Uranus and Neptune (15 and 17 Earth masses, respectively)." [https://en.wikipedia.org/wiki/Super-Earth]
+comment: The upper bound of a super-Earth's mass is generally agreed on as 10 Earth masses. In general, super-Earths are defined exclusively by their masses, and the term does not imply temperatures, compositions, orbital properties, habitability, or environments.
+subset: envoAstro
+is_a: ENVO:01000958 ! terrestrial planet
+
+[Term]
+id: ENVO:01001135
+name: desert planet
+def: "A terrestrial planet which has a surface dominated by hot deserts." []
+comment: This class of planet is still mostly theoretical.
+subset: envoAstro
+synonym: "dry planet" EXACT []
+is_a: ENVO:01000958 ! terrestrial planet
+
+[Term]
+id: ENVO:01001136
+name: ocean planet
+def: "A planet which has a surface layer that nearly completely or completely covered by water, and which has a substantial portion of its mass composed of water." [https://en.wikipedia.org/wiki/Ocean_planet]
+comment: While this planetary form is still mostly theoretical, strong candidates exist such as the extrasolar planet GJ 1214 b and ocean planet candidate Kepler-22b.
+subset: envoAstro
+synonym: "aquaplanet" EXACT []
+synonym: "panthalassic planet" EXACT []
+synonym: "water world" EXACT []
+is_a: ENVO:01000800 ! planet
+property_value: IAO:0000116 "An axiom to express that the planet has a 'substantial' proportion of its mass in the form of water wound enhance this class." xsd:string
+
+[Term]
+id: ENVO:01001137
+name: ice planet
+def: "A planet which has a surface layer that nearly completely or completely covered by ice, and which has a substantial portion of its mass composed of ice." [https://en.wikipedia.org/wiki/Ice_planet]
+comment: While this planetary form is still mostly theoretical, strong candidates exist such as OGLE-2005-BLG-390Lb, OGLE-2013-BLG-0341L b and MOA-2007-BLG-192Lb. Pluto was considered an ice planet until its reclassification in 2006 CE.  Surface temperatures of ice planets would have to be below 260 K (−13°C) if composed primarily of water, below 180 K (−93°C) if primarily composed of CO2 and ammonia, and below 80 K (−193°C) if composed primarily of methane. {xref="https://en.wikipedia.org/wiki/Ice_planet"}
+subset: envoAstro
+synonym: "cryoplanet" EXACT []
+is_a: ENVO:01000800 ! planet
+
+[Term]
+id: ENVO:01001138
+name: carbon dioxide ice
+def: "Ice which is primarily composed of carbon dioxide." [https://en.wikipedia.org/wiki/Ice]
+subset: envoAstro
+synonym: "dry ice" RELATED []
+is_a: ENVO:01001125 ! ice
+
+[Term]
+id: ENVO:01001139
+name: methane ice
+def: "Ice which is primarily composed of methane." [https://en.wikipedia.org/wiki/Ice]
+subset: envoAstro
+is_a: ENVO:01001125 ! ice
+
+[Term]
+id: ENVO:01001140
+name: ammonia ice
+def: "Ice which is primarily composed of ammonia." [https://en.wikipedia.org/wiki/Ice]
+subset: envoAstro
+is_a: ENVO:01001125 ! ice
+
+[Term]
+id: ENVO:01001141
+name: carbon monoxide ice
+def: "Ice which is primarily composed of carbon monoxide." [https://en.wikipedia.org/wiki/Ice]
+subset: envoAstro
+is_a: ENVO:01001125 ! ice
+
+[Term]
+id: ENVO:01001142
+name: iron planet
+def: "A planet which in primarily composed of an iron-rich core with little to no mantle" [https://en.wikipedia.org/wiki/Iron_planet]
+comment: Mercury is the largest iron planet in the Solar System, the other terrestrial planets being composed of silicate rocks. Some extrasolar planet candidates that may be composed mainly of iron are KOI-1843 b,[5] Kepler-70b and Kepler-10b. {xref="https://en.wikipedia.org/wiki/Iron_planet"}
+subset: envoAstro
+synonym: "cannonball planet" EXACT []
+is_a: ENVO:01000958 ! terrestrial planet
+
+[Term]
+id: ENVO:01001143
+name: lava planet
+def: "A planet which has a surface layer that nearly completely or completely covered by lava, and which has a substantial portion of its mass composed of lava." [https://en.wikipedia.org/wiki/Lava_planet]
+comment: This class of planets is still mostly theoretical, however, lava planets are thought plausible shortly after a terrestrial planet is formed, soon after a terrestrial planet has suffered a large collision event, or if a terrestrial planet is orbiting very close to its star, causing intense irradiation and tidal forces.  Likely lava exoplanets include COROT-7b, Kepler-10b, Alpha Centauri Bb, and Kepler-78b. {xref="https://en.wikipedia.org/wiki/Lava_planet"}
+subset: envoAstro
+is_a: ENVO:01000800 ! planet
+
+[Term]
+id: ENVO:01001144
+name: sub-Earth
+def: "A terrestrial planet which has a mass smaller than Earth's, such that 1) it lacks a magnetic field strong enough to shield its atmosphere from erosion by stellar wind and 2) it has comparatively short periods of geological activity unless it is subject to gravitational tidal forces from a much more massive object." [https://en.wikipedia.org/wiki/Sub-Earth]
+comment: The first sub-Earths were discovered by the Kepler Orbiting Observatory space telescope on 2012-01-10, orbiting the star Kepler-42. As of June 2014, Kepler has 45 confirmed planets that are smaller than Earth, with 17 of them being smaller than 0.8 Earth radii. In addition, there are over 310 planet candidates with an estimated radius of less than 1 Earth radius, with 135 of them being smaller than 0.8 Earth radii. {xref="https://en.wikipedia.org/wiki/Sub-Earth"}
+subset: envoAstro
+is_a: ENVO:01000958 ! terrestrial planet
+
+[Term]
+id: ENVO:01001145
+name: chthonian planet
+def: "A planet which is formed as a result of a gas giant's hydrogen and helium atmosphere, as well as its outer layers, being stripped away by a stellar wind through hydrodynamic escape." [https://en.wikipedia.org/wiki/Chthonian_planet]
+comment: This class is largely theoretical, however, some likely candidates exist. HD 209458 b and Gliese 436b are examples of a gas giants that are in the process of having their atmospheres stripped away. COROT-7b is the first exoplanet found that might be chthonian. {xref="https://en.wikipedia.org/wiki/Chthonian_planet"}
+subset: envoAstro
+synonym: "cthonian planet" EXACT []
+is_a: ENVO:01000800 ! planet
+relationship: derives_from ENVO:01001124 ! giant gas planet
+property_value: IAO:0000116 "" xsd:string
+
+[Term]
+id: ENVO:01001146
+name: photoevaporation
+def: "A process during which energetic radiation ionises gas and causes it to disperse away from the ionising source." [arXiv:1604.05220, https://en.wikipedia.org/wiki/Chthonian_planet#cite_note-4, https://en.wikipedia.org/wiki/Photoevaporation]
+comment: This process is responsible for the stripping away of gases from the atmosphere of planets and related bodies by acceleration on interaction with high energy photons and other electromagnetic radiation.
+subset: envoAstro
+is_a: ENVO:03000010 ! material transport process
+relationship: has_part ENVO:01001026 ! electromagnetic radiation
+relationship: has_participant ENVO:01000797 ! gaseous environmental material
+
+[Term]
+id: ENVO:01001147
+name: helium planet
+def: "A gas planet which has an atmosphere composed primarily of helium." [https://en.wikipedia.org/wiki/Helium_planet]
+comment: A helium planet might form via hydrogen evaporation from a gaseous planet orbiting close to a star. Low-mass white dwarfs may transition into objects which are essentially helium planets by hydrogen depletion through mass transfer to a massive object such as a neutron star.  Gliese 436 b is a candidate helium planet. {xref="https://en.wikipedia.org/wiki/Helium_planet"}
+subset: envoAstro
+is_a: ENVO:01001122 ! gas planet
+property_value: IAO:0000116 "The placement of this class assumes that some traces of hydrogen are left in the atmosphere. If this is not the case, the axiom on gas planet must be updated." xsd:string
+
+[Term]
+id: ENVO:01001148
+name: planetesimal
+def: "An astronomical body which 1) is held together by its own gravity, 2)  can attract other, similar bodies through mutual gravitational influence, and 3) has orbital dynamics that are not significantly affected by gas drag." [https://en.wikipedia.org/wiki/Planetesimal]
+comment: In the Solar nebula, planetesimals are usually larger than approximately 1 kilometer. {xref="https://en.wikipedia.org/wiki/Planetesimal"}
+subset: envoAstro
+is_a: ENVO:01000799 ! astronomical body
+
+[Term]
+id: ENVO:01001149
+name: protoplanet
+def: "An astronomical object that forms within a protoplanetary disc when planetesimals and other solid debris aggregate and, due to gravitational forces,  fuse and initiate internal melting to produce a differentiated interior." [https://en.wikipedia.org/wiki/Protoplanet]
+comment: Protoplanets are thought to form out of kilometer-sized planetesimals that gravitationally perturb each other's orbits and collide, gradually coalescing into the dominant planets. The exact sequence of events which lead to planetary formation from protoplanets is not fully understood. {xref="https://en.wikipedia.org/wiki/Protoplanet"}
+subset: envoAstro
+synonym: "planetary embryo" EXACT []
+is_a: ENVO:01000799 ! astronomical body
+property_value: IAO:0000116 "State that this is derived from a collection of planetesimals." xsd:string
+
+[Term]
+id: ENVO:01001150
+name: protoplanetary disk
+def: "An astronomical object which is composed of dense gas and dust rotating around a young newly formed star, a T Tauri star, or a Herbig Ae/Be star in a disk-shaped configuration." [https://en.wikipedia.org/wiki/Protoplanetary_disk]
+subset: envoAstro
+is_a: ENVO:01000804 ! astronomical object
+relationship: has_part ENVO:01000799 {minCardinality="1"} ! astronomical body
+relationship: surrounded_by ENVO:01000637 ! outer space
+
+[Term]
+id: ENVO:01001151
+name: proplyd
+def: "A protoplanetary disk which is externally illuminated and undergoing photoevaporation." [https://en.wikipedia.org/wiki/Proplyd, https://en.wikipedia.org/wiki/Protoplanetary_disk]
+subset: envoAstro
+synonym: "ionized protoplanetary disk" EXACT []
+is_a: ENVO:01001150 ! protoplanetary disk
+relationship: has_part ENVO:01000799 {minCardinality="1"} ! astronomical body
+relationship: surrounded_by ENVO:01000637 ! outer space
+
+[Term]
+id: ENVO:01001152
+name: mesoplanet
+def: "A planet which is smaller than Mercury but larger than Ceres." [https://en.wikipedia.org/wiki/Mesoplanet]
+subset: envoAstro
+is_a: ENVO:01000800 ! planet
+
+[Term]
+id: ENVO:01001153
+name: circumbinary planet
+def: "A planet which orbits two stars." [https://en.wikipedia.org/wiki/Circumbinary_planet]
+comment: Because of the short orbits of some binary stars, the only way for planets to form is by forming outside the orbit of the two stars. {xref="https://en.wikipedia.org/wiki/Circumbinary_planet"}
+subset: envoAstro
+is_a: ENVO:01000800 ! planet
+
+[Term]
+id: ENVO:01001154
+name: volatile astrogeological material
+def: "A material which is composed primarily of chemical elements and compounds with relatively low boiling points, equilibrium condensation temperatures below 1300 Kelvin, and which are part of the crust or atmosphere of a moon or planet." [https://en.wikipedia.org/wiki/Volatiles]
+comment: Examples include nitrogen, water, carbon dioxide, ammonia, hydrogen, methane and sulfur dioxide. In astrogeology, these compounds, in their solid state, often comprise large proportions of the crusts of moons and dwarf planets. {xref="https://en.wikipedia.org/wiki/Volatiles"}
+subset: envoAstro
+synonym: "volatile" RELATED []
+is_a: ENVO:00010483 ! environmental material
+property_value: IAO:0000116 "Add and axiomatise with moon and lunar crust" xsd:string
+
+[Term]
+id: ENVO:01001155
+name: astrogeological gas
+def: "An astrogeological volatile which is composed primarily of chemical compounds with boiling points around those of hydrogen and helium." [https://en.wikipedia.org/wiki/Volatiles]
+comment: This is a term native to the fields of planetary science and astrophysics.  Hydrogen has a boiling point of 20.271 Kelvin and a melting point of 13.99 Kelvin. Helium has a boiling point of 4.222 Kelvin and a melting point of 0.95 Kelvin.
+subset: envoAstro
+synonym: "gas" RELATED []
+is_a: ENVO:01001154 ! volatile astrogeological material
+
+[Term]
+id: ENVO:01001156
+name: refractory astrogeological material
+def: "A material which is composed primarily of chemical elements and compounds which have equilibrium condensation temperatures above approximately 1300 Kelvin and which are part of the crust or atmosphere of a moon or planet." [https://en.wikipedia.org/wiki/Refractory_(planetary_science)]
+comment: The refractory group includes elements and compounds like metals and silicates (commonly termed rocks) which make up the bulk of the mass of the terrestrial planets and asteroids in the inner belt. {xref="https://en.wikipedia.org/wiki/Refractory_(planetary_science)"}
+subset: envoAstro
+synonym: "refractory material" RELATED []
+is_a: ENVO:00010483 ! environmental material
+property_value: IAO:0000116 "Add and axiomatise with moon and lunar crust" xsd:string
+
+[Term]
+id: ENVO:01001157
+name: atmospheric escape
+def: "A process during which gases that constitute a planetary atmosphere escape that planet's gravitational field and move away into outer space." [https://en.wikipedia.org/wiki/Atmospheric_escape]
+subset: envoAstro
+is_a: ENVO:03000010 ! material transport process
+relationship: has_part ENVO:01001026 ! electromagnetic radiation
+relationship: has_participant ENVO:01000797 ! gaseous environmental material
+
+[Term]
+id: ENVO:01001158
+name: hydrodynamic escape
+def: "An atmospheric escape process during which atoms that are parts of a planetary atmosphere escape into outer space through numerous collisions with lighter atoms in that atmosphere." [https://en.wikipedia.org/wiki/Atmospheric_escape]
+subset: envoAstro
+is_a: ENVO:01001157 ! atmospheric escape
+relationship: has_part ENVO:01001026 ! electromagnetic radiation
+relationship: has_participant ENVO:01000797 ! gaseous environmental material
 
 [Term]
 id: ENVO:01001303
@@ -21558,6 +22419,7 @@ created_by: ORCID:0000-0002-4366-3088
 id: ENVO:01001306
 name: bone element environment
 def: "An environment which is determined by a bone element." []
+is_a: ENVO:01001110 ! ecosystem
 is_a: ENVO:2100000 ! anatomical entity environment
 
 [Term]
@@ -22257,6 +23119,7 @@ property_value: http://purl.org/dc/elements/1.1/creator "cjm" xsd:string
 id: ENVO:02000100
 name: mineral dust
 is_a: ENVO:00002008 ! dust
+relationship: derives_from ENVO:01000256 ! mineral material
 property_value: http://purl.org/dc/elements/1.1/creator "cjm" xsd:string
 
 [Term]
@@ -22275,6 +23138,8 @@ property_value: http://purl.org/dc/elements/1.1/creator "cjm" xsd:string
 id: ENVO:02000103
 name: metallic dust
 is_a: ENVO:00002008 ! dust
+relationship: composed_primarily_of ENVO:01001069 ! metallic material
+relationship: derives_from ENVO:01001069 ! metallic material
 property_value: http://purl.org/dc/elements/1.1/creator "cjm" xsd:string
 
 [Term]
@@ -22431,7 +23296,8 @@ property_value: http://purl.org/dc/elements/1.1/creator "cjm" xsd:string
 [Term]
 id: ENVO:02500000
 name: environmental system process
-comment: Should environmental feature become something more towards a disposition, the assert would be updated to something like "has participant (environmental system or (material entity and has disposition some environmental feature))". There are several issues surrounding the reconcilliation of environmental feature and environmental system, both theoretical and practical.
+def: "A process in which includes the components of an environmental system as participants." []
+comment: This is a convenience class for organisation and should not be used for annotation.
 
 [Term]
 id: ENVO:02500001
@@ -22452,6 +23318,8 @@ relationship: has_participant ENVO:01000635 ! land
 [Term]
 id: ENVO:02500003
 name: atmospheric process
+def: "A process which occurs within an atmosphere." []
+comment: This class will be populated by inference and is primarily organisational.
 is_a: ENVO:02500000 ! environmental system process
 relationship: has_participant ENVO:01000267 ! atmosphere
 relationship: occurs_in ENVO:01000267 ! atmosphere
@@ -22546,7 +23414,8 @@ replaced_by: ENVO:02500013
 [Term]
 id: ENVO:02500018
 name: algal bloom process
-comment: This class is under development, not recommended for annotation. Notes: need to capture that this is an increase in surface area (where boundaries allow) and density. Also need to capture this is a rapid/acute expansion. TODO: import PATO
+def: "A process during which the populations in a community of algae in a marine or freshwater ecosystem undergo rapid growth, resulting in high concentrations of algal cells that occur only periodically and briefly in that ecosystem, relative to their concentrations through the majority of the planetary orbital period." [https://en.wikipedia.org/wiki/Algal_bloom]
+comment: This class is under development. Note that cyanobacterial blooms are often confused with algal blooms. There is no globally recognised threshold beyond which community density enters a bloom state. {xref="https://en.wikipedia.org/wiki/Algal_bloom"}
 subset: envoPolar
 is_a: ENVO:02500000 ! environmental system process
 relationship: has_participant ENVO:2000004 ! algal bloom
@@ -22561,6 +23430,7 @@ comment: To be ceded to external ontology (e.g. pco)
 [Term]
 id: ENVO:02500021
 name: algal bloom collapse
+def: "A process during which the rapid growth of algal populations that result in an algal bloom ceases, and cell densities begin to fall due to death, predation, and transport." [https://en.wikipedia.org/wiki/Algal_bloom]
 is_a: ENVO:02500022 ! algal bloom process phase
 relationship: ends ENVO:02500018 ! algal bloom process
 
@@ -22573,6 +23443,7 @@ relationship: part_of ENVO:02500018 ! algal bloom process
 [Term]
 id: ENVO:02500023
 name: algal production
+def: "A process during which the algal cells constituting an algal bloom produce biomass from abiotic components during photosynthesis." []
 is_a: ENVO:02500022 ! algal bloom process phase
 relationship: part_of ENVO:02500018 ! algal bloom process
 
@@ -23117,7 +23988,8 @@ name: brine channel
 def: "A channel through which brine flows." [https://askabiologist.asu.edu/brine-channels]
 subset: envoPolar
 synonym: "brine channels" EXACT []
-is_a: ENVO:01000818 ! cryosphere
+is_a: ENVO:00000131 ! glacial feature
+is_a: ENVO:03000110 ! cryoform
 is_a: ENVO:03000117 ! channel
 relationship: composed_primarily_of ENVO:01000277 ! water ice
 relationship: formed_as_result_of ENVO:03000042 ! brine channel formation process
@@ -23370,8 +24242,9 @@ comment: Ice floes can exist in sea ice, in rivers or lakes.
 subset: envoPolar
 synonym: "ice floes" EXACT []
 is_a: ENVO:00000012 ! hydrographic feature
+is_a: ENVO:00000131 ! glacial feature
 is_a: ENVO:01000277 ! water ice
-is_a: ENVO:01000818 ! cryosphere
+is_a: ENVO:03000110 ! cryoform
 relationship: adjacent_to ENVO:00000063 ! water body
 relationship: composed_primarily_of ENVO:01000277 ! water ice
 property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
@@ -23419,6 +24292,7 @@ id: ENVO:03000069
 name: young ice
 def: "A sea ice floe which is inflexible and thicker than nilas." [https://en.wikipedia.org/wiki/Sea_ice#New_ice.2C_nilas_and_young_ice]
 subset: envoPolar
+is_a: ENVO:01000814 ! solid environmental material
 is_a: ENVO:03000066 ! sea ice floe
 relationship: adjacent_to ENVO:00001999 ! marine water body
 relationship: composed_primarily_of ENVO:01000277 ! water ice
@@ -23680,6 +24554,7 @@ property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088 xsd:string
 id: ENVO:03000096
 name: season
 def: "A one-dimensional temporal region which is delimited by the occurrence of processes which serve as its delimiters." []
+subset: envoAstro
 subset: envoPolar
 property_value: IAO:0000116 "Season could be implemented as a subclass of one-dimensional temporal region, however, this will need further thought and discussion with BFO editors." xsd:string
 property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
@@ -23959,6 +24834,7 @@ creation_date: 2014-12-15T22:32:00Z
 id: ENVO:08000002
 name: mouth environment
 def: "An environment that is determined by a mouth." [GOC:TermGenie]
+is_a: ENVO:01001110 ! ecosystem
 is_a: ENVO:2100000 ! anatomical entity environment
 created_by: TermGenie
 creation_date: 2015-04-10T23:34:03Z
@@ -24162,7 +25038,6 @@ id: ENVO:09200003
 name: atmospheric wind intensity
 def: "The intensity of a atmospheric wind." []
 synonym: "intensity of atmospheric wind" EXACT []
-is_a: ENVO:09200002 ! environmental system process quality
 relationship: inheres_in ENVO:01000793 ! atmospheric wind
 
 [Term]
@@ -24389,6 +25264,7 @@ is_a: ENVO:01001033 ! digestive tract environment
 id: ENVO:2100003
 name: skin environment
 def: "An environment determined by an area or zone of skin tissue." []
+is_a: ENVO:01001110 ! ecosystem
 is_a: ENVO:2100000 ! anatomical entity environment
 
 [Term]
@@ -24404,6 +25280,7 @@ is_a: ENVO:2100003 ! skin environment
 [Term]
 id: ENVO:2100006
 name: feather environment
+is_a: ENVO:01001110 ! ecosystem
 is_a: ENVO:2100000 ! anatomical entity environment
 
 [Typedef]
@@ -24897,6 +25774,12 @@ is_metadata_tag: true
 is_class_level: true
 
 [Typedef]
+id: disposition_of
+name: disposition of
+xref: RO:0000092
+is_a: inheres_in ! inheres in
+
+[Typedef]
 id: distributary_of
 name: distributary of
 def: "x distributary_of y if and only if x is capable of channeling the flow of a substance to y, where y channels less of the substance than x" []
@@ -25092,6 +25975,14 @@ xref: RO:0002384
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 is_a: developmentally_related_to ! developmentally related to
+
+[Typedef]
+id: has_disposition
+name: has disposition
+def: "a relation between an independent continuant (the bearer) and a disposition, in which the disposition specifically depends on the bearer for its existence" []
+xref: RO:0000091
+is_a: bearer_of ! bearer of
+inverse_of: disposition_of ! disposition of
 
 [Typedef]
 id: has_end_location

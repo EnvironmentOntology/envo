@@ -1,0 +1,21 @@
+prefix oio: <http://www.geneontology.org/formats/oboInOwl#>
+prefix def: <http://purl.obolibrary.org/obo/IAO_0000115>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix sub: <http://www.geneontology.org/formats/oboInOwl#inSubset>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT  ?label ?subset ?definition ?URI
+
+WHERE 
+{
+  ?cls a owl:Class .
+    BIND(STR(?cls) as ?URI) .
+  ?cls sub: ?s .
+    BIND(STR(?s) as ?subset) .
+  ?cls rdfs:label ?l
+    BIND(STR(?l) as ?label) .
+  OPTIONAL { ?cls def: ?d
+   BIND(STR(?d) as ?definition)
+  } 
+}
+GROUP BY ?URI ?definition ?subset ?label

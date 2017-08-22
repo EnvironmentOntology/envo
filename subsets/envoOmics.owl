@@ -16,7 +16,7 @@
      xmlns:foaf="http://xmlns.com/foaf/0.1/"
      xmlns:dc="http://purl.org/dc/elements/1.1/">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/envo/subsets/envoOmics.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/envo/2017-07-31/subsets/envoOmics.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/envo/2017-08-22/subsets/envoOmics.owl"/>
     </owl:Ontology>
     
 
@@ -686,11 +686,11 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000062"/>
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002092"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002091"/>
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000062"/>
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002091"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002092"/>
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000062"/>
         </owl:propertyChainAxiom>
     </owl:ObjectProperty>
@@ -966,6 +966,26 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <obo:IAO_0000118 xml:lang="en">has_role</obo:IAO_0000118>
         <obo:IAO_0000112 xml:lang="en">this person has role this investigator role (more colloquially: this person has this role of investigator)</obo:IAO_0000112>
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000053"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0000091 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0000091">
+        <rdfs:label xml:lang="en">has disposition</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">a relation between an independent continuant (the bearer) and a disposition, in which the disposition specifically depends on the bearer for its existence</obo:IAO_0000115>
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000053"/>
+        <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000092"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0000092 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0000092">
+        <rdfs:label xml:lang="en">disposition of</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000052"/>
     </owl:ObjectProperty>
     
 
@@ -1253,15 +1273,15 @@ boundary_of: http://purl.obolibrary.org/obo/RO_0002000</obo:IAO_0000115>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ro/subsets#ro-eco"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000051"/>
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000050"/>
-        </owl:propertyChainAxiom>
-        <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000050"/>
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000050"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002131"/>
         </owl:propertyChainAxiom>
         <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000051"/>
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002131"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000050"/>
+        </owl:propertyChainAxiom>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000050"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000050"/>
         </owl:propertyChainAxiom>
     </owl:ObjectProperty>
     <owl:Axiom>
@@ -2051,12 +2071,6 @@ However, this is not possible in OWL. We instead make this relation a sub-relati
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ro/subsets#ro-eco"/>
     </owl:ObjectProperty>
     <owl:Axiom>
-        <dc:source>GAZ</dc:source>
-        <owl:annotatedTarget>Deschutes River tributary_of Columbia River</owl:annotatedTarget>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000112"/>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/RO_0002376"/>
-    </owl:Axiom>
-    <owl:Axiom>
         <owl:annotatedTarget>drains to</owl:annotatedTarget>
         <dc:source rdf:resource="http://dbpedia.org/ontology/drainsTo"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000118"/>
@@ -2065,6 +2079,12 @@ However, this is not possible in OWL. We instead make this relation a sub-relati
     <owl:Axiom>
         <dc:source>FMA</dc:source>
         <owl:annotatedTarget>inferior epigastric vein tributary_of external iliac vein</owl:annotatedTarget>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000112"/>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/RO_0002376"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <dc:source>GAZ</dc:source>
+        <owl:annotatedTarget>Deschutes River tributary_of Columbia River</owl:annotatedTarget>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000112"/>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/RO_0002376"/>
     </owl:Axiom>
@@ -2732,8 +2752,8 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <oboInOwl:hasExactSynonym>Viridiplantae-associated environment</oboInOwl:hasExactSynonym>
     </owl:Class>
     <owl:Axiom>
-        <oboInOwl:hasDbXref>http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/</oboInOwl:hasDbXref>
         <owl:annotatedTarget>Plant</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/</oboInOwl:hasDbXref>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001001"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000118"/>
     </owl:Axiom>
@@ -2782,9 +2802,9 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <oboInOwl:inSubset>envoEmpo</oboInOwl:inSubset>
     </owl:Class>
     <owl:Axiom>
-        <owl:annotatedTarget>Animal distal gut</owl:annotatedTarget>
         <oboInOwl:hasDbXref>http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/</oboInOwl:hasDbXref>
         <rdfs:comment>The label of this EMPO class is ambiguous, but pers. comm. with L Thompson (http://orcid.org/0000-0002-3911-1280) reveals that this is essentially limited to fecal samples.</rdfs:comment>
+        <owl:annotatedTarget>Animal distal gut</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001029"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000118"/>
     </owl:Axiom>
@@ -2801,8 +2821,8 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <obo:IAO_0000115>An environmental system which has its properties and dynamics determined by a bodily secretion of a metazoan.</obo:IAO_0000115>
     </owl:Class>
     <owl:Axiom>
-        <owl:annotatedTarget>Animal secretion</owl:annotatedTarget>
         <oboInOwl:hasDbXref>http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/</oboInOwl:hasDbXref>
+        <owl:annotatedTarget>Animal secretion</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001030"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000118"/>
     </owl:Axiom>
@@ -2862,9 +2882,9 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <obo:IAO_0000118>Animal proximal gut</obo:IAO_0000118>
     </owl:Class>
     <owl:Axiom>
-        <owl:annotatedTarget>Animal proximal gut</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/</oboInOwl:hasDbXref>
         <rdfs:comment>This EMPO class includes examples of microbial environments determined by the &quot;gut intestine, gizzard, crop, lumen, [and] mucosa&quot;.</rdfs:comment>
+        <oboInOwl:hasDbXref>http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/</oboInOwl:hasDbXref>
+        <owl:annotatedTarget>Animal proximal gut</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001033"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000118"/>
     </owl:Axiom>
@@ -2881,8 +2901,8 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <obo:IAO_0000115>An environmental system which has its properties and dynamics determined by a biofilm on the surface of a animal.</obo:IAO_0000115>
     </owl:Class>
     <owl:Axiom>
-        <oboInOwl:hasDbXref>http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/</oboInOwl:hasDbXref>
         <owl:annotatedTarget>Animal surface</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/</oboInOwl:hasDbXref>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001034"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000118"/>
     </owl:Axiom>
@@ -2899,8 +2919,8 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <oboInOwl:inSubset>envoEmpo</oboInOwl:inSubset>
     </owl:Class>
     <owl:Axiom>
-        <oboInOwl:hasDbXref>http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/</oboInOwl:hasDbXref>
         <owl:annotatedTarget>Fungus surface</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/</oboInOwl:hasDbXref>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001035"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000118"/>
     </owl:Axiom>
@@ -2972,8 +2992,8 @@ Each of these 3 primitives can be composed to yield a cross-product of different
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedTarget>Hypersaline (saline)</owl:annotatedTarget>
-        <rdfs:comment>Examples inlcude water from hypersaline samples or brines (&gt;50 psu)</rdfs:comment>
         <oboInOwl:hasDbXref>http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/</oboInOwl:hasDbXref>
+        <rdfs:comment>Examples inlcude water from hypersaline samples or brines (&gt;50 psu)</rdfs:comment>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001043"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000118"/>
     </owl:Axiom>
@@ -2990,8 +3010,8 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <oboInOwl:inSubset>envoEmpo</oboInOwl:inSubset>
     </owl:Class>
     <owl:Axiom>
-        <owl:annotatedTarget>Soil (non-saline)</owl:annotatedTarget>
         <oboInOwl:hasDbXref>http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/</oboInOwl:hasDbXref>
+        <owl:annotatedTarget>Soil (non-saline)</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001044"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000118"/>
     </owl:Axiom>
@@ -3020,8 +3040,8 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <obo:IAO_0000115>An environmental system which has its properties and dynamics determined by those parts of a planetary subsurface zone which are not saline.</obo:IAO_0000115>
     </owl:Class>
     <owl:Axiom>
-        <oboInOwl:hasDbXref>http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/</oboInOwl:hasDbXref>
         <owl:annotatedTarget>Subsurface (non-saline)</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/</oboInOwl:hasDbXref>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001047"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000118"/>
     </owl:Axiom>
@@ -3067,8 +3087,8 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <oboInOwl:inSubset>envoOmics</oboInOwl:inSubset>
     </owl:Class>
     <owl:Axiom>
-        <owl:annotatedTarget>Sediment (non-saline)</owl:annotatedTarget>
         <oboInOwl:hasDbXref>http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/</oboInOwl:hasDbXref>
+        <owl:annotatedTarget>Sediment (non-saline)</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001049"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000118"/>
     </owl:Axiom>
@@ -3103,8 +3123,8 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <obo:IAO_0000118>Sediment (saline)</obo:IAO_0000118>
     </owl:Class>
     <owl:Axiom>
-        <oboInOwl:hasDbXref>http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/</oboInOwl:hasDbXref>
         <owl:annotatedTarget>Sediment (saline)</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/</oboInOwl:hasDbXref>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001050"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000118"/>
     </owl:Axiom>
@@ -3139,8 +3159,8 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <obo:IAO_0000118>Aerosol (saline)</obo:IAO_0000118>
     </owl:Class>
     <owl:Axiom>
-        <owl:annotatedTarget>Aerosol (saline)</owl:annotatedTarget>
         <oboInOwl:hasDbXref>http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/</oboInOwl:hasDbXref>
+        <owl:annotatedTarget>Aerosol (saline)</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001052"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000118"/>
     </owl:Axiom>
@@ -3215,8 +3235,8 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <obo:IAO_0000118>Surface (saline)</obo:IAO_0000118>
     </owl:Class>
     <owl:Axiom>
-        <owl:annotatedTarget>Surface (saline)</owl:annotatedTarget>
         <oboInOwl:hasDbXref>http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/</oboInOwl:hasDbXref>
+        <owl:annotatedTarget>Surface (saline)</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001056"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000118"/>
     </owl:Axiom>
@@ -3233,8 +3253,8 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <oboInOwl:inSubset>envoEmpo</oboInOwl:inSubset>
     </owl:Class>
     <owl:Axiom>
-        <oboInOwl:hasDbXref>http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/</oboInOwl:hasDbXref>
         <owl:annotatedTarget>Plant corpus</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/</oboInOwl:hasDbXref>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001057"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000118"/>
     </owl:Axiom>
@@ -3244,15 +3264,15 @@ Each of these 3 primitives can be composed to yield a cross-product of different
     <!-- http://purl.obolibrary.org/obo/ENVO_01001058 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01001058">
-        <rdfs:label xml:lang="en">&apos;environment associated with a fungal tissue</rdfs:label>
+        <rdfs:label xml:lang="en">environment associated with a fungal tissue</rdfs:label>
         <oboInOwl:inSubset>envoEmpo</oboInOwl:inSubset>
         <obo:IAO_0000118>Fungus corpus</obo:IAO_0000118>
         <obo:IAO_0000115>An environmental system determined by part of a living or dead fungus.</obo:IAO_0000115>
         <oboInOwl:inSubset>envoOmics</oboInOwl:inSubset>
     </owl:Class>
     <owl:Axiom>
-        <oboInOwl:hasDbXref>http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/</oboInOwl:hasDbXref>
         <owl:annotatedTarget>Fungus corpus</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/</oboInOwl:hasDbXref>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001058"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000118"/>
     </owl:Axiom>

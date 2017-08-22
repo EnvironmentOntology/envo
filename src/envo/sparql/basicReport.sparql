@@ -2,10 +2,16 @@ prefix oio: <http://www.geneontology.org/formats/oboInOwl#>
 prefix def: <http://purl.obolibrary.org/obo/IAO_0000115>
 prefix owl: <http://www.w3.org/2002/07/owl#>
 
-SELECT ?cls ?def (group_concat(?xref) as ?xrefs) WHERE 
-{
+SELECT ?class ?definition (group_concat(?reference) as ?references) WHERE {
   ?cls a owl:Class .
-  OPTIONAL { ?cls oio:hasDbXref ?xref } .
-  OPTIONAL { ?cls def: ?def } 
+    BIND(STR(?cls) as ?class) .
+  OPTIONAL { 
+	?cls oio:hasDbXref ?xref
+	BIND(STR(?xref) as ?reference)
+  } .
+  OPTIONAL { 
+	?cls def: ?def 
+	BIND(STR(?def) as ?definition)
+  } 
 }
-GROUP BY ?cls ?def
+GROUP BY ?class ?definition

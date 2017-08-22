@@ -285,6 +285,14 @@ def: "A quality of a single process inhering in a bearer by virtue of the bearer
 is_a: PATO:0000057 ! occurrence
 
 [Term]
+id: PATO:0000438
+name: invariant
+def: "A variability quality inhering in a bearer by virtue of the bearer's lacking or not exhibiting variation." []
+synonym: "constant" RELATED []
+synonym: "uniform" EXACT []
+is_a: PATO:0001303 ! variability
+
+[Term]
 id: PATO:0000573
 name: increased length
 def: "A length quality which is relatively large." []
@@ -552,6 +560,13 @@ synonym: "relational physical quality" EXACT []
 is_a: PATO:0001241 ! physical object quality
 
 [Term]
+id: PATO:0001019
+name: mass density
+def: "A physical quality which inheres in a bearer by virtue of some influence is exerted by the bearer's mass per unit size." []
+synonym: "density" RELATED []
+is_a: PATO:0001018 ! physical quality
+
+[Term]
 id: PATO:0001029
 name: efficiency
 def: "A physical quality inhering in a bearer by virtue of ratio of the bearer's output to the bearer's input." []
@@ -576,12 +591,32 @@ def: "A concentration quality inhering in a bearer by virtue of the bearer's exh
 is_a: PATO:0000033 ! concentration of
 
 [Term]
+id: PATO:0001161
+name: diluted
+def: "A concentration which relatively low." []
+is_a: PATO:0000033 ! concentration of
+
+[Term]
+id: PATO:0001162
+name: increased concentration
+def: "A concentration which is higher relative to the normal or average." []
+synonym: "high concentration" EXACT []
+is_a: PATO:0001159 ! concentrated
+is_a: PATO:0002305 ! increased object quality
+
+[Term]
 id: PATO:0001163
 name: decreased concentration
 def: "A concentration which is lower relative to the normal or average." []
 synonym: "low concentration" EXACT []
 is_a: PATO:0001159 ! concentrated
 is_a: PATO:0002303 ! decreased object quality
+
+[Term]
+id: PATO:0001164
+name: dense
+def: "A physical quality which inheres in a bearer by virtue of the bearer's exhibiting density." []
+is_a: PATO:0001019 ! mass density
 
 [Term]
 id: PATO:0001171
@@ -613,6 +648,13 @@ id: PATO:0001208
 name: odorless
 def: "An odor quality inhering in a bearer by virtue of the bearer's lacking odour." []
 is_a: PATO:0000058 ! odor
+
+[Term]
+id: PATO:0001227
+name: variant
+def: "A variability quality inhering in a bearer by virtue of whether the bearer exhibits variation or change." []
+synonym: "variable" EXACT []
+is_a: PATO:0001303 ! variability
 
 [Term]
 id: PATO:0001230
@@ -657,6 +699,13 @@ def: "An EM radiation quality in which the EM radiation is within the fiat range
 is_a: PATO:0001291 ! electromagnetic (EM) radiation quality
 
 [Term]
+id: PATO:0001303
+name: variability
+def: "A quality inhering in a bearer by virtue of the bearer's disposition to varying or changing." []
+synonym: "variability of a physical quality" RELATED []
+is_a: PATO:0001236 ! process quality
+
+[Term]
 id: PATO:0001305
 name: increased temperature
 def: "A temperature which is relatively high." []
@@ -685,6 +734,18 @@ id: PATO:0001332
 name: amorphous
 def: "A morphology quality inhering in a bearer by virtue of the bearer's lack of distinct morphology." []
 is_a: PATO:0000051 ! morphology
+
+[Term]
+id: PATO:0001351
+name: area density
+def: "A density quality which inheres in a bearer by virtue of some influence exerted by the bearer's mass on a given area." []
+is_a: PATO:0001019 ! mass density
+
+[Term]
+id: PATO:0001353
+name: volumetric density
+def: "A density quality which inheres in a bearer by virtue of some influence exerted by the bearer's mass on a given volume." []
+is_a: PATO:0001019 ! mass density
 
 [Term]
 id: PATO:0001354
@@ -922,6 +983,30 @@ id: PATO:0001574
 name: flow rate
 def: "A physical quality inhering in a bearer by virtue of the bearer's motion characteristic." []
 is_a: PATO:0001906 ! movement quality
+
+[Term]
+id: PATO:0001583
+name: decreased variability
+def: "A variability which is relatively low." []
+synonym: "low variability" EXACT []
+is_a: PATO:0001227 ! variant
+is_a: PATO:0002302 ! decreased process quality
+is_a: PATO:0002303 ! decreased object quality
+
+[Term]
+id: PATO:0001584
+name: increased variability
+def: "A variability which is relatively high." []
+synonym: "high variability" EXACT []
+is_a: PATO:0001227 ! variant
+is_a: PATO:0002304 ! increased process quality
+is_a: PATO:0002305 ! increased object quality
+
+[Term]
+id: PATO:0001585
+name: conductivity
+def: "A physical quality inhering in a bearer by virtue of the bearer's disposition to transmit of an entity through a medium." []
+is_a: PATO:0001018 ! physical quality
 
 [Term]
 id: PATO:0001591
@@ -1178,6 +1263,19 @@ def: "A radiation quality inhering in bearer by virtue of the bearer's exhibitin
 is_a: PATO:0001740 ! activity (of a radionuclide)
 
 [Term]
+id: PATO:0001756
+name: heat conductivity
+def: "A conductivity quality inhering in a bearer by virtue of the bearer's disposition to spontaneous transfer of thermal energy from a region of higher temperature to a region of lower temperature." []
+synonym: "thermal conduction" EXACT []
+is_a: PATO:0001585 ! conductivity
+
+[Term]
+id: PATO:0001757
+name: electrical conductivity
+def: "A conductivity quality inhering in a bearer by virtue of the bearer's ability to convey electricity." []
+is_a: PATO:0001585 ! conductivity
+
+[Term]
 id: PATO:0001759
 name: granular
 def: "A composition quality inhering in a bearer by virtue of the bearer's containing granules." []
@@ -1198,10 +1296,26 @@ def: "A thickness quality which lacks pattern." []
 is_a: PATO:0000915 ! thickness
 
 [Term]
+id: PATO:0001788
+name: increased mass density
+def: "A density which is higher relative to the normal or average." []
+synonym: "high density" EXACT []
+is_a: PATO:0001164 ! dense
+is_a: PATO:0002305 ! increased object quality
+
+[Term]
 id: PATO:0001789
 name: domed
 def: "A curvature quality inhering in a bearer by virtue of the bearer's having a shape resembling a dome." []
 is_a: PATO:0000406 ! curved
+
+[Term]
+id: PATO:0001790
+name: decreased mass density
+def: "A density which is lower relative to the normal or average." []
+synonym: "low density" EXACT []
+is_a: PATO:0001164 ! dense
+is_a: PATO:0002303 ! decreased object quality
 
 [Term]
 id: PATO:0001799
@@ -1227,6 +1341,21 @@ id: PATO:0001824
 name: dry
 def: "A wetness quality inhering in a bearer by virtue of the bearer's not being covered by a liquid." []
 is_a: PATO:0001822 ! wetness
+
+[Term]
+id: PATO:0001825
+name: increased wetness
+def: "A wetness quality that is relatively high." []
+is_a: PATO:0001823 ! wet
+is_a: PATO:0002305 ! increased object quality
+
+[Term]
+id: PATO:0001826
+name: decreased wetness
+def: "A wetness quality that is relatively low." []
+synonym: "low wetness" EXACT []
+is_a: PATO:0001823 ! wet
+is_a: PATO:0002303 ! decreased object quality
 
 [Term]
 id: PATO:0001838
@@ -1339,6 +1468,30 @@ id: PATO:0001906
 name: movement quality
 def: "A physical quality inhering in a bearer by virtue of the bearer's participation in movement." []
 is_a: PATO:0001018 ! physical quality
+
+[Term]
+id: PATO:0001956
+name: variability of size
+def: "A variability quality inhering in a bearer by virtue of whether the bearer exhibits size variation or change." []
+is_a: PATO:0001303 ! variability
+
+[Term]
+id: PATO:0001957
+name: decreased variability of size
+def: "A variability of size which is relatively low." []
+synonym: "low variability of size" EXACT []
+is_a: PATO:0001956 ! variability of size
+is_a: PATO:0002302 ! decreased process quality
+is_a: PATO:0002303 ! decreased object quality
+
+[Term]
+id: PATO:0001958
+name: increased variability of size
+def: "A variability of size which is relatively high." []
+synonym: "high variability of size" EXACT []
+is_a: PATO:0001956 ! variability of size
+is_a: PATO:0002304 ! increased process quality
+is_a: PATO:0002305 ! increased object quality
 
 [Term]
 id: PATO:0001977
@@ -1483,6 +1636,12 @@ id: PATO:0002140
 name: inedible
 def: "A physical quality inhering in a bearer by virtue of the bearer not being suitable for use as food." []
 is_a: PATO:0002138 ! edibility
+
+[Term]
+id: PATO:0002141
+name: irregular density
+def: "A density quality which lacks pattern." []
+is_a: PATO:0001019 ! mass density
 
 [Term]
 id: PATO:0002143
@@ -1666,6 +1825,12 @@ def: "A quality inhering in a bearer by virtue of the bearer's width being notab
 is_a: PATO:0000052 ! shape
 
 [Term]
+id: PATO:0002374
+name: fluctuating
+def: "Recurrent and often more or less cyclic alteration." []
+is_a: PATO:0001227 ! variant
+
+[Term]
 id: PATO:0002416
 name: sunken
 def: "Flattened from above downward; below the normal level or the level of the surrounding parts." []
@@ -1682,6 +1847,13 @@ id: PATO:0002453
 name: eroding
 def: "A structural quality inhering in a bearer by virtue of the bearer bring gradually worn away." []
 is_a: PATO:0000141 ! structure
+
+[Term]
+id: PATO:0005001
+name: variability of count
+def: "A variability quality inhering in the bearer by virtue of the bearer having a variable number or count of an entity." []
+synonym: "variable number" RELATED []
+is_a: PATO:0001303 ! variability
 
 [Term]
 id: PATO:0005011
