@@ -48,5 +48,5 @@ A spreadsheet-friendly representation of ENVO's labels, synonyms, and URIs.
 
 ?label | ?definition |	?exactSynonym |	?broadSynonym |	?narrowSynonym |	?relatedSynonym |	?subsetType |	?uri
 --|--|--|--|--|--|--|--
-The label is the preferred name of the class |  A pipe (|) separated list of exact synonyms | A pipe (|) separated list of broad synonyms | A pipe (|) separated list of narrow synonyms | A pipe (|) separated list of related synonyms | The class' webresolvable URI
+The label is the preferred name of the class | the class' textual definition |   A pipe (\|) separated list of exact synonyms | A pipe (\|) separated list of broad synonyms | A pipe (\|) separated list of narrow synonyms | A pipe (\|) separated list of related synonyms | The class' webresolvable URI
 
