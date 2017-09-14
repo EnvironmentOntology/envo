@@ -18,6 +18,7 @@ Import(<http://purl.obolibrary.org/obo/envo/imports/foodon_import.owl>)
 Import(<http://purl.obolibrary.org/obo/envo/imports/po_import.owl>)
 Import(<http://purl.obolibrary.org/obo/envo/imports/pato_import.owl>)
 Import(<http://purl.obolibrary.org/obo/envo/imports/obi_import.owl>)
+Import(<http://purl.obolibrary.org/obo/envo/imports/agro_import.owl>)
 Import(<http://purl.obolibrary.org/obo/envo/modules/process_attribute.owl>)
 Import(<http://purl.obolibrary.org/obo/envo/imports/bfo_import.owl>)
 Import(<http://purl.obolibrary.org/obo/envo/modules/entity_attribute.owl>)
@@ -2507,9 +2508,17 @@ Declaration(Class(<http://purl.obolibrary.org/obo/ENVO_01001172>))
 Declaration(Class(<http://purl.obolibrary.org/obo/ENVO_01001173>))
 Declaration(Class(<http://purl.obolibrary.org/obo/ENVO_01001174>))
 Declaration(Class(<http://purl.obolibrary.org/obo/ENVO_01001175>))
+Declaration(Class(<http://purl.obolibrary.org/obo/ENVO_01001176>))
+Declaration(Class(<http://purl.obolibrary.org/obo/ENVO_01001177>))
+Declaration(Class(<http://purl.obolibrary.org/obo/ENVO_01001178>))
 Declaration(Class(<http://purl.obolibrary.org/obo/ENVO_01001179>))
 Declaration(Class(<http://purl.obolibrary.org/obo/ENVO_01001180>))
 Declaration(Class(<http://purl.obolibrary.org/obo/ENVO_01001181>))
+Declaration(Class(<http://purl.obolibrary.org/obo/ENVO_01001182>))
+Declaration(Class(<http://purl.obolibrary.org/obo/ENVO_01001183>))
+Declaration(Class(<http://purl.obolibrary.org/obo/ENVO_01001184>))
+Declaration(Class(<http://purl.obolibrary.org/obo/ENVO_01001185>))
+Declaration(Class(<http://purl.obolibrary.org/obo/ENVO_01001186>))
 Declaration(Class(<http://purl.obolibrary.org/obo/ENVO_01001303>))
 Declaration(Class(<http://purl.obolibrary.org/obo/ENVO_01001304>))
 Declaration(Class(<http://purl.obolibrary.org/obo/ENVO_01001305>))
@@ -2892,6 +2901,10 @@ Declaration(AnnotationProperty(owl:deprecated))
 # Annotation Property: <http://purl.obolibrary.org/obo/IAO_0000112> (example of usage)
 
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/IAO_0000112> "example of usage")
+
+# Annotation Property: <http://purl.obolibrary.org/obo/IAO_0000114> (has curation status)
+
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/IAO_0000114> "has curation status")
 
 # Annotation Property: <http://purl.obolibrary.org/obo/IAO_0000115> (definition)
 
@@ -5056,9 +5069,7 @@ SubClassOf(<http://purl.obolibrary.org/obo/ENVO_00000093> <http://purl.obolibrar
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "https://en.wikipedia.org/wiki/Volcano"^^xsd:string) <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/ENVO_00000094> "A feature associated with a volcano, an opening, or rupture, in the Earth's surface or crust, which allows hot, molten rock, ash and gases to escape from deep below the surface."^^xsd:string)
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/ENVO_00000094> "FTT:591"^^xsd:string)
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/ENVO_00000094> "TGN:21407"^^xsd:string)
-AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/ENVO_00000094> "ENVO"^^xsd:string)
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "Getty:TGN"^^xsd:string) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <http://purl.obolibrary.org/obo/ENVO_00000094> "volcanic landform"^^xsd:string)
-AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/ENVO_00000094> "ENVO:00000094"^^xsd:string)
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/ENVO_00000094> "volcanic feature"^^xsd:string)
 EquivalentClasses(<http://purl.obolibrary.org/obo/ENVO_00000094> ObjectIntersectionOf(<http://purl.obolibrary.org/obo/ENVO_01000813> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002354> <http://purl.obolibrary.org/obo/ENVO_01000634>)))
 SubClassOf(<http://purl.obolibrary.org/obo/ENVO_00000094> <http://purl.obolibrary.org/obo/ENVO_00002297>)
@@ -5984,7 +5995,7 @@ AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://pu
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/ENVO_00000135> "buffer zone"^^xsd:string)
 SubClassOf(<http://purl.obolibrary.org/obo/ENVO_00000135> <http://purl.obolibrary.org/obo/ENVO_00000004>)
 
-# Class: <http://purl.obolibrary.org/obo/ENVO_00000136> (demilitiarized zone)
+# Class: <http://purl.obolibrary.org/obo/ENVO_00000136> (demilitarized zone)
 
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "https://en.wikipedia.org/wiki/Demilitarized_zone"^^xsd:string) <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/ENVO_00000136> "A geographical area, usually the frontier or boundary between two or more military powers (or alliances), where military activity is not permitted, usually by peace treaty, armistice or other bilateral or multilateral agreement."^^xsd:string)
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "ADL:FTT"^^xsd:string) <http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym> <http://purl.obolibrary.org/obo/ENVO_00000136> "adminstrative area"^^xsd:string)
@@ -5995,10 +6006,8 @@ AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#has
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/ENVO_00000136> "DMZ"^^xsd:string)
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "ADL:FTT"^^xsd:string) <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/ENVO_00000136> "neutral zone"^^xsd:string)
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "USGS:SDTS"^^xsd:string) <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/ENVO_00000136> "neutral zone"^^xsd:string)
-AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/ENVO_00000136> "ENVO"^^xsd:string)
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "USGS:SDTS"^^xsd:string) <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <http://purl.obolibrary.org/obo/ENVO_00000136> "boundary"^^xsd:string)
-AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/ENVO_00000136> "ENVO:00000136"^^xsd:string)
-AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/ENVO_00000136> "demilitiarized zone"^^xsd:string)
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/ENVO_00000136> "demilitarized zone"^^xsd:string)
 SubClassOf(<http://purl.obolibrary.org/obo/ENVO_00000136> <http://purl.obolibrary.org/obo/ENVO_00000135>)
 
 # Class: <http://purl.obolibrary.org/obo/ENVO_00000137> (coastal inlet)
@@ -7169,8 +7178,6 @@ AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> <ht
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/ENVO_00000209> "https://en.wikipedia.org/wiki/Photic_zone"^^xsd:string)
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "NASA:earthrealm"^^xsd:string) <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/ENVO_00000209> "PhoticZone"^^xsd:string)
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/ENVO_00000209> "epipelagic zone"^^xsd:string)
-AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/ENVO_00000209> "ENVO"^^xsd:string)
-AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/ENVO_00000209> "ENVO:00000209"^^xsd:string)
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/ENVO_00000209> "envoPolar")
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/ENVO_00000209> "marine photic zone"^^xsd:string)
 SubClassOf(<http://purl.obolibrary.org/obo/ENVO_00000209> <http://purl.obolibrary.org/obo/ENVO_01000295>)
@@ -7183,8 +7190,6 @@ AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> <ht
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/ENVO_00000210> "SWEETRealm:AphoticZone"^^xsd:string)
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/ENVO_00000210> "https://en.wikipedia.org/wiki/Aphotic_zone"^^xsd:string)
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "NASA:earthrealm"^^xsd:string) <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/ENVO_00000210> "AphoticZone"^^xsd:string)
-AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/ENVO_00000210> "ENVO"^^xsd:string)
-AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/ENVO_00000210> "ENVO:00000210"^^xsd:string)
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/ENVO_00000210> "envoPolar")
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/ENVO_00000210> "marine aphotic zone"^^xsd:string)
 SubClassOf(<http://purl.obolibrary.org/obo/ENVO_00000210> <http://purl.obolibrary.org/obo/ENVO_01000295>)
@@ -11896,8 +11901,6 @@ SubClassOf(<http://purl.obolibrary.org/obo/ENVO_00000892> <http://purl.obolibrar
 
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "https://www.worldwildlife.org/biomes/xeric-basin-ecosystems") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/ENVO_00000893> "A biome which has little permanent surface water and a low relative abundance of springs.")
 AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000116> <http://purl.obolibrary.org/obo/ENVO_00000893> "The WWF definition is somewhat ambiguous, but workable.")
-AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/ENVO_00000893> "ENVO"^^xsd:string)
-AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/ENVO_00000893> "ENVO:00000893"^^xsd:string)
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/ENVO_00000893> "wwfBiome")
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/ENVO_00000893> "xeric basin biome"^^xsd:string)
 SubClassOf(<http://purl.obolibrary.org/obo/ENVO_00000893> <http://purl.obolibrary.org/obo/ENVO_00000873>)
@@ -11996,8 +11999,6 @@ AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> <ht
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/ENVO_00001998> "SPIRE:Soil"^^xsd:string)
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/ENVO_00001998> "SWEETRealm:Soil"^^xsd:string)
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/ENVO_00001998> "https://en.wikipedia.org/wiki/Soil"^^xsd:string)
-AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/ENVO_00001998> "ENVO"^^xsd:string)
-AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/ENVO_00001998> "ENVO:00001998"^^xsd:string)
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/ENVO_00001998> <http://purl.obolibrary.org/obo/envo#EnvO-Lite-GSC>)
 AnnotationAssertion(rdfs:comment <http://purl.obolibrary.org/obo/ENVO_00001998> "'In engineering terms, soil is referred to as regolith, or loose rock material that lies above the 'solid geology'. Soil is commonly referred to as \"earth\" or \"dirt\"; technically, the term \"dirt\" should be restricted to displaced soil.' https://en.wikipedia.org/wiki/Soil
 
@@ -13743,8 +13744,6 @@ SubClassOf(<http://purl.obolibrary.org/obo/ENVO_00002234> <http://purl.obolibrar
 # Class: <http://purl.obolibrary.org/obo/ENVO_00002235> (cambisol)
 
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "FAO:http://fao.org/ag/agl/agll/wrb/doc/wrb2006final.pdf"^^xsd:string) <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/ENVO_00002235> "Cambisols combine soils with at least an incipient subsurface soil formation. Transformation of parent material is evident from structure formation and mostly brownish discoloration, increasing clay percentage, and/or carbonate removal."^^xsd:string)
-AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/ENVO_00002235> "ENVO"^^xsd:string)
-AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/ENVO_00002235> "ENVO:00002235"^^xsd:string)
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/ENVO_00002235> "cambisol"^^xsd:string)
 SubClassOf(<http://purl.obolibrary.org/obo/ENVO_00002235> <http://purl.obolibrary.org/obo/ENVO_00001998>)
 
@@ -15873,8 +15872,7 @@ SubClassOf(<http://purl.obolibrary.org/obo/ENVO_00005741> <http://purl.obolibrar
 
 # Class: <http://purl.obolibrary.org/obo/ENVO_00005742> (arable soil)
 
-AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/ENVO_00005742> "ENVO"^^xsd:string)
-AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/ENVO_00005742> "ENVO:00005742"^^xsd:string)
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/ENVO_00005742> "envoMeo")
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/ENVO_00005742> "arable soil"^^xsd:string)
 SubClassOf(<http://purl.obolibrary.org/obo/ENVO_00005742> <http://purl.obolibrary.org/obo/ENVO_00001998>)
 
@@ -20159,6 +20157,7 @@ SubClassOf(<http://purl.obolibrary.org/obo/ENVO_01000202> ObjectSomeValuesFrom(<
 
 # Class: <http://purl.obolibrary.org/obo/ENVO_01000203> (environmental condition)
 
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/ENVO_01000203> <http://purl.obolibrary.org/obo/IAO_0000121>)
 AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "DOI:10.1186/2041-1480-4-43"^^xsd:string) <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/ENVO_01000203> "An environmental condition is a range of a determinate quality or combination of qualities that are present in an environmental system."^^xsd:string)
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#created_by> <http://purl.obolibrary.org/obo/ENVO_01000203> "ORCID:0000-0002-4366-3088"^^xsd:string)
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#creation_date> <http://purl.obolibrary.org/obo/ENVO_01000203> "2013-04-07T14:35:18Z"^^xsd:string)
@@ -28914,6 +28913,34 @@ AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#has
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/ENVO_01001175> "habitat fragmentation process"@en)
 SubClassOf(<http://purl.obolibrary.org/obo/ENVO_01001175> <http://purl.obolibrary.org/obo/ENVO_01001168>)
 
+# Class: <http://purl.obolibrary.org/obo/ENVO_01001176> (environment associated with an aquatic invertebrate)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/ENVO_01001176> "An environment which has its properties and composition largely determined by the presence of a metazoan which lacks a vetebral column and which has a habitat that is found in an aquatic environmental system.")
+AnnotationAssertion(Annotation(rdfs:comment "Not currently live, may need to be switched to alternative PURLs.") <http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/ENVO_01001176> "http://purl.jp/bio/11/meo/MEO_0000871")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/ENVO_01001176> "envoMeo")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/ENVO_01001176> "envoOmics")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/ENVO_01001176> "environment associated with an aquatic invertebrate"@en)
+EquivalentClasses(<http://purl.obolibrary.org/obo/ENVO_01001176> ObjectIntersectionOf(<http://purl.obolibrary.org/obo/ENVO_01000254> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002507> ObjectIntersectionOf(ObjectIntersectionOf(<http://purl.obolibrary.org/obo/NCBITaxon_33208> ObjectComplementOf(<http://purl.obolibrary.org/obo/NCBITaxon_7742>)) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002303> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002131> <http://purl.obolibrary.org/obo/ENVO_01000317>))))))
+SubClassOf(<http://purl.obolibrary.org/obo/ENVO_01001176> <http://purl.obolibrary.org/obo/ENVO_01000254>)
+
+# Class: <http://purl.obolibrary.org/obo/ENVO_01001177> (arable land)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/ENVO_01001177> <http://purl.obolibrary.org/obo/IAO_0000428>)
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "http://ec.europa.eu/eurostat/statistics-explained/index.php/Glossary:Arable_land") Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "https://en.wikipedia.org/wiki/Arable_land") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/ENVO_01001177> "Land which is regularly manipulated by human activities, such as plowing or tilling, in order to grow crops.")
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000116> <http://purl.obolibrary.org/obo/ENVO_01001177> "Consider moving axioms to the quality 'arable' directly. The discontinuous quality on tillage can likely be improved or refined. Also, add axioms for ploughing once it is added to AgrO: https://github.com/AgriculturalSemantics/agro/issues/34")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/ENVO_01001177> "arable land"@en)
+SubClassOf(<http://purl.obolibrary.org/obo/ENVO_01001177> <http://purl.obolibrary.org/obo/ENVO_01000635>)
+SubClassOf(<http://purl.obolibrary.org/obo/ENVO_01001177> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000067> ObjectIntersectionOf(<http://purl.obolibrary.org/obo/AGRO_00000002> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0000086> <http://purl.obolibrary.org/obo/PATO_0000690>))))
+SubClassOf(<http://purl.obolibrary.org/obo/ENVO_01001177> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0000086> <http://purl.obolibrary.org/obo/ENVO_01001184>))
+
+# Class: <http://purl.obolibrary.org/obo/ENVO_01001178> (pasturable land)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/ENVO_01001178> <http://purl.obolibrary.org/obo/IAO_0000123>)
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "https://en.wikipedia.org/wiki/Pasture") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/ENVO_01001178> "Land which hosts a community of herbaceous plants - such as grasses and forbs - upon which animals may graze.")
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000116> <http://purl.obolibrary.org/obo/ENVO_01001178> "See this issue for requests regarding surrounding semantics of grazing: https://github.com/AgriculturalSemantics/agro/issues/32")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/ENVO_01001178> "pasturable land"@en)
+SubClassOf(<http://purl.obolibrary.org/obo/ENVO_01001178> <http://purl.obolibrary.org/obo/ENVO_01000635>)
+
 # Class: <http://purl.obolibrary.org/obo/ENVO_01001179> (cnidarian-associated environment)
 
 AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/ENVO_01001179> "An environmental system determined by a cnidarian or part of a cnidarian.")
@@ -28934,6 +28961,43 @@ AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#has
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/ENVO_01001181> "rhizoplane"@en)
 SubClassOf(<http://purl.obolibrary.org/obo/ENVO_01001181> <http://purl.obolibrary.org/obo/ENVO_00010504>)
 SubClassOf(<http://purl.obolibrary.org/obo/ENVO_01001181> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/ENVO_00005801>))
+
+# Class: <http://purl.obolibrary.org/obo/ENVO_01001182> (tended pasturable land)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "https://en.wikipedia.org/wiki/Pasture") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/ENVO_01001182> "Pasturable land which is maintained by human activities in order to provide grazing oppoturnities for livestock.")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/ENVO_01001182> "tended pasturable land"@en)
+SubClassOf(<http://purl.obolibrary.org/obo/ENVO_01001182> <http://purl.obolibrary.org/obo/ENVO_01001178>)
+
+# Class: <http://purl.obolibrary.org/obo/ENVO_01001183> (arable or pasturable land)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/ENVO_01001183> "Land which either hosts plant communities upon which animals may graze has been manipulated by tilling, ploughing, or other human activity for the purposes of seed sowing or planting crops.")
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000116> <http://purl.obolibrary.org/obo/ENVO_01001183> "Add semantics to support \"land under market and kitchen gardens and land temporarily fallow (less than five years). The abandoned land resulting from shifting cultivation is not included in this category.\"")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/ENVO_01001183> "http://aims.fao.org/aos/agrovoc/c_18948.html")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/ENVO_01001183> "http://eurovoc.europa.eu/drupal/?q=request&uri=http://eurovoc.europa.eu/4448")
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "https://en.wikipedia.org/wiki/Arable_land") rdfs:comment <http://purl.obolibrary.org/obo/ENVO_01001183> "This class does not refer to the land that is potenitally cultivable, only referencing land that is being managed for cultivation. This class has been created to support the FAO definition of arable lands in FAOSTAT.")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/ENVO_01001183> "arable or pasturable land"@en)
+EquivalentClasses(<http://purl.obolibrary.org/obo/ENVO_01001183> ObjectIntersectionOf(<http://purl.obolibrary.org/obo/ENVO_01000635> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000051> ObjectUnionOf(<http://purl.obolibrary.org/obo/ENVO_01001177> <http://purl.obolibrary.org/obo/ENVO_01001178>))))
+SubClassOf(<http://purl.obolibrary.org/obo/ENVO_01001183> <http://purl.obolibrary.org/obo/ENVO_01000635>)
+
+# Class: <http://purl.obolibrary.org/obo/ENVO_01001184> (arable)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "https://en.wikipedia.org/wiki/Arable_land") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/ENVO_01001184> "A quality inhereing in a bearer by virtue of the bearer being periodically and mechanically manipulated to loosen and mix any soil which it has as a part.")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/ENVO_01001184> "arable"@en)
+SubClassOf(<http://purl.obolibrary.org/obo/ENVO_01001184> <http://purl.obolibrary.org/obo/ENVO_01000203>)
+
+# Class: <http://purl.obolibrary.org/obo/ENVO_01001185> (acidic soil)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "https://en.wikipedia.org/wiki/Acid") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/ENVO_01001185> "Soil which has increased levels of molecules or ions capable of donating a hydron (proton or hydrogen ion) to other chemical entities, or, alternatively, capable of forming covalent bonds with other chemicals via the acceptance of an electron pair, resulting in a bulk pH measurement of less than 7.")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/ENVO_01001185> "acidic soil"@en)
+EquivalentClasses(<http://purl.obolibrary.org/obo/ENVO_01001185> ObjectIntersectionOf(<http://purl.obolibrary.org/obo/ENVO_00001998> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0000086> <http://purl.obolibrary.org/obo/PATO_0001429>)))
+SubClassOf(<http://purl.obolibrary.org/obo/ENVO_01001185> <http://purl.obolibrary.org/obo/ENVO_00001998>)
+
+# Class: <http://purl.obolibrary.org/obo/ENVO_01001186> (acidic volcanic ash)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/ENVO_01001186> "Volcanic ash which has increased levels of molecules or ions capable of donating a hydron (proton or hydrogen ion) to other chemical entities, or, alternatively, capable of forming covalent bonds with other chemicals via the acceptance of an electron pair, resulting in a bulk pH measurement of less than 7.")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/ENVO_01001186> "acidic volcanic ash"@en)
+EquivalentClasses(<http://purl.obolibrary.org/obo/ENVO_01001186> ObjectIntersectionOf(<http://purl.obolibrary.org/obo/ENVO_01000701> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0000086> <http://purl.obolibrary.org/obo/PATO_0001429>)))
+SubClassOf(<http://purl.obolibrary.org/obo/ENVO_01001186> <http://purl.obolibrary.org/obo/ENVO_01000701>)
 
 # Class: <http://purl.obolibrary.org/obo/ENVO_01001303> (environmental role)
 
@@ -31903,7 +31967,6 @@ AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#inSubset> <htt
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/GO_0019412> "envoPolar")
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/GO_0019414> "envoPolar")
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/IAO_0000111> "editor preferred term~editor preferred label")
-AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/IAO_0000114> "has curation status")
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/IAO_0000119> "definition source")
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/IAO_0000412> "imported from")
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/IAO_0000424> "expand expression to")

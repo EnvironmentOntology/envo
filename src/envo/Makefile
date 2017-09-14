@@ -187,6 +187,11 @@ imports/flopo_import.owl: mirror/flopo.owl imports/flopo_terms.txt
 	$(ROBOT) extract -i $< -T imports/flopo_terms.txt --method BOT -O $(ENVO_IMPORTS_BASE_URI)/$@ -o $@
 .PRECIOUS: imports/%_import.owl
 
+# AGRO: Use ROBOT, driven entirely by terms lists NOT from source ontology
+imports/agro_import.owl: mirror/agro.owl imports/agro_terms.txt
+	$(ROBOT) extract -i $< -T imports/agro_terms.txt --method BOT -O $(ENVO_IMPORTS_BASE_URI)/$@ -o $@
+.PRECIOUS: imports/%_import.owl
+
 
 # clone remote ontology locally, perfoming some excision of relations and annotations
 mirror/%-local.owl:
@@ -199,6 +204,10 @@ mirror/%.owl: mirror/%-local.owl
 
 mirror/clo.owl: envo-edit.owl
 	owltools $(OBO)/clo.owl --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/clo.owl -o $@
+.PRECIOUS: mirror/%.owl
+
+mirror/agro.owl: envo-edit.owl
+	owltools $(OBO)/agro.owl --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/agro.owl -o $@
 .PRECIOUS: mirror/%.owl
 
 mirror/obi.owl: envo-edit.owl
