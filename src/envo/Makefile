@@ -1,4 +1,3 @@
-
 # This Makefile is for use by the ENVO Release Manager (currently cjm)
 # Also used by Jenkins: http://build.berkeleybop.org/job/build-envo
 # 
@@ -307,6 +306,12 @@ GO.xrf_abbs: envo-edit.owl
 # SLIMS
 # ----------------------------------------
 # These all depend on envo-basic, which is the whole ontology (ie all classes), minus non-basic axioms (e.g. complex owl axioms, some relations)
+
+# Update to use full ENVO graph, as other ontology terms may be included
+subsets/envoMeo.owl: subsets/envo-basic.obo
+	owltools $< --extract-ontology-subset --fill-gaps --subset envoMeo --iri $(OBO)/envo/$@ -o $@
+subsets/envoMeo.obo: subsets/envoMeo.owl
+	owltools $< -o -f obo $@
 
 subsets/envoEmpo.owl: subsets/envo-basic.obo
 	owltools $< --extract-ontology-subset --fill-gaps --subset envoEmpo --iri $(OBO)/envo/$@ -o $@
