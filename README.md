@@ -10,6 +10,8 @@ Our latest releases are described [here](https://github.com/EnvironmentOntology/
 
 More information and guides for using ENVO in annotation exercises are available at www.environmentontology.org
 
+Please note: ENVO is not an "authority" in itself, but we do try to provide a semantic/ontological expression of existing authoritative classifications alongside project-based or individual knowledge. We aim to create a FAIR compliant space where expressions of this knowledge can co-exist and interoperate. 
+
 ## Aim and Scope
 
 ENVO is a domain ontology concerned with "environments" of all kinds and aims to promote standardisation and interoperability of diverse data sets through the concise, controlled description of environment types across several levels of granularity. It is primarily concerned with environments as encountered in ecological applications, but is able to accommodate alternative needs.
