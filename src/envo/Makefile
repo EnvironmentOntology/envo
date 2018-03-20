@@ -130,6 +130,11 @@ imports/%_import.obo: imports/%_import.owl
 imports/clo_import.owl: mirror/clo.owl imports/clo_terms.txt
 	$(ROBOT) extract -i $< -T imports/clo_terms.txt --method BOT -O $(ENVO_IMPORTS_BASE_URI)/$@ -o $@
 .PRECIOUS: imports/%_import.owl
+
+# CHEBI: Use ROBOT, driven entirely by terms lists NOT from source ontology
+imports/chebi_import.owl: mirror/chebi.owl imports/chebi_terms.txt
+	$(ROBOT) extract -i $< -T imports/chebi_terms.txt --method BOT -O $(ENVO_IMPORTS_BASE_URI)/$@ -o $@
+.PRECIOUS: imports/%_import.owl
 	
 # FOODON: Use ROBOT, driven entirely by terms lists NOT from source ontology
 imports/foodon_import.owl: mirror/foodon.owl imports/foodon_terms.txt
