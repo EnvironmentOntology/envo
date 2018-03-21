@@ -100,7 +100,7 @@ ENVO_IMPORTS_BASE_URI = $(OBO)/envo
 
 # Ontology dependencies
 # We don't include clo, as this is currently not working
-IMPORTS = pato uberon chebi ro pco foodon go ncbitaxon
+IMPORTS = pato uberon chebi ro pco foodon go ncbitaxon sdgio
 
 # Make this target to regenerate ALL
 all_imports: $(patsubst %, imports/%_import.owl,$(IMPORTS)) $(patsubst %, imports/%_import.obo,$(IMPORTS))
@@ -130,6 +130,13 @@ imports/%_import.obo: imports/%_import.owl
 imports/clo_import.owl: mirror/clo.owl imports/clo_terms.txt
 	$(ROBOT) extract -i $< -T imports/clo_terms.txt --method BOT -O $(ENVO_IMPORTS_BASE_URI)/$@ -o $@
 .PRECIOUS: imports/%_import.owl
+
+
+# SDGIO: Use ROBOT, driven entirely by terms lists NOT from source ontology
+imports/sdgio_import.owl: mirror/sdgio.owl imports/sdgio_terms.txt
+	$(ROBOT) extract -i $< -T imports/sdgio_terms.txt --method BOT -O $(ENVO_IMPORTS_BASE_URI)/$@ -o $@
+.PRECIOUS: imports/%_import.owl
+
 
 # CHEBI: Use ROBOT, driven entirely by terms lists NOT from source ontology
 imports/chebi_import.owl: mirror/chebi.owl imports/chebi_terms.txt
@@ -212,6 +219,10 @@ mirror/clo.owl: envo-edit.owl
 
 mirror/agro.owl: envo-edit.owl
 	owltools $(OBO)/agro.owl --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/agro.owl -o $@
+.PRECIOUS: mirror/%.owl
+
+mirror/sdgio.owl: envo-edit.owl
+	owltools http://purl.unep.org/sdg/sdgio.owl --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id http://purl.unep.org/sdg/sdgio.owl -o $@
 .PRECIOUS: mirror/%.owl
 
 mirror/obi.owl: envo-edit.owl
