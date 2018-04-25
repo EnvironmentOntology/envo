@@ -287,6 +287,29 @@
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENEPIO_0001605 -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.obolibrary.org/obo/GENEPIO_0001605">
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
+        <obo:IAO_0000115 xml:lang="en">This relation indicates the type of datum an entity can have for a value</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">Damion Dooley</obo:IAO_0000117>
+        <rdfs:comment xml:lang="en">This could be replaced by an OntoDt term?</rdfs:comment>
+        <rdfs:label xml:lang="en">has primitive data type</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
     // Classes
     //
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -2307,6 +2330,8 @@
             </owl:Restriction>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411140"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411283"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03414460"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
         <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
         <oboInOwl:hasDbXref rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_3654"/>
@@ -3424,7 +3449,7 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001252"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03315150"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An opague white dairy product produced by the mammary glands of female mammals.</obo:IAO_0000115>
-        <rdfs:label xml:lang="en">milk beverage</rdfs:label>
+        <rdfs:label xml:lang="en">mammilian milk beverage</rdfs:label>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001217"/>
@@ -4763,6 +4788,26 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/FOODON_00001654 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00001654">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/FOODON_00001783"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001000"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411100"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001783"/>
+        <rdfs:label xml:lang="en">blackeyed pea vegetable food product</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/FOODON_00001665 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00001665">
@@ -4964,6 +5009,14 @@
     <!-- http://purl.obolibrary.org/obo/FOODON_00001878 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00001878">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/FOODON_00001800"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/FOODON_00001879"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001800"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001879"/>
         <rdfs:label xml:lang="en">frozen dairy dessert</rdfs:label>
@@ -6284,30 +6337,10 @@
     <!-- http://purl.obolibrary.org/obo/FOODON_03306744 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03306744">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001771"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001000"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411201"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002350"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/FOODON_03400148"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
         <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
         <oboInOwl:hasDbXref>SUBSET_SIREN:F6744</oboInOwl:hasDbXref>
         <oboInOwl:inSubset>subset_siren</oboInOwl:inSubset>
-        <rdfs:comment xml:lang="en">SIREN DB annotation:
-* has quality &apos;liquid, low viscosity, with no visible particles&apos; (http://purl.obolibrary.org/obo/FOODON_03430123)
-* has quality &apos;partially heat-treated&apos; (http://purl.obolibrary.org/obo/FOODON_03440018)
-* derives from &apos;milk (mammary secretion)&apos; (http://purl.obolibrary.org/obo/UBERON_0001913)
-* formed as a result of &apos;pasteurization by heating&apos; (http://purl.obolibrary.org/obo/FOODON_03470135)
-        </rdfs:comment>
-        <rdfs:label xml:lang="en">cow milk (food product)</rdfs:label>
+        <rdfs:label xml:lang="en">liquid cow milk (food product)</rdfs:label>
     </owl:Class>
     
 
@@ -6399,6 +6432,71 @@
 * formed as a result of &apos;curing or aging process&apos; (http://purl.obolibrary.org/obo/FOODON_03460253)
         </rdfs:comment>
         <rdfs:label xml:lang="en">fermented bean product</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FOODON_03310082 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03310082">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/FOODON_00002050"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/FOODON_03307539"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00002050"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002350"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/FOODON_03400152"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
+        <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
+        <oboInOwl:hasDbXref>SUBSET_SIREN:F10082</oboInOwl:hasDbXref>
+        <oboInOwl:inSubset>subset_siren</oboInOwl:inSubset>
+        <rdfs:comment xml:lang="en">SIREN DB annotation:
+* has quality &apos;solid&apos; (http://purl.obolibrary.org/obo/FOODON_03430151)
+* derives from &apos;whole plant or most parts used&apos; (http://purl.obolibrary.org/obo/FOODON_03420150)
+* formed as a result of &apos;water removal process&apos; (http://purl.obolibrary.org/obo/FOODON_03460138)
+* formed as a result of &apos;preservation by dehydration or drying&apos; (http://purl.obolibrary.org/obo/FOODON_03470116)
+        </rdfs:comment>
+        <rdfs:label xml:lang="en">mushroom (dried)</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FOODON_03310320 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03310320">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/FOODON_00002050"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/FOODON_03302148"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00002050"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002350"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/FOODON_03400152"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
+        <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
+        <oboInOwl:hasDbXref>SUBSET_SIREN:F10320</oboInOwl:hasDbXref>
+        <oboInOwl:inSubset>subset_siren</oboInOwl:inSubset>
+        <rdfs:comment xml:lang="en">SIREN DB annotation:
+* has quality &apos;solid&apos; (http://purl.obolibrary.org/obo/FOODON_03430151)
+* derives from &apos;whole plant or most parts used&apos; (http://purl.obolibrary.org/obo/FOODON_03420150)
+* formed as a result of &apos;preservation by freezing&apos; (http://purl.obolibrary.org/obo/FOODON_03470136)
+        </rdfs:comment>
+        <rdfs:label xml:lang="en">mushroom (frozen)</rdfs:label>
     </owl:Class>
     
 
@@ -6637,12 +6735,6 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001257"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001000"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411297"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002350"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/FOODON_03400148"/>
             </owl:Restriction>
@@ -6654,7 +6746,7 @@
         <rdfs:comment xml:lang="en">SIREN DB annotation:
 * derives from &apos;milk (mammary secretion)&apos; (http://purl.obolibrary.org/obo/UBERON_0001913)
         </rdfs:comment>
-        <rdfs:label xml:lang="en">milk product</rdfs:label>
+        <rdfs:label xml:lang="en">mammlian milk product</rdfs:label>
     </owl:Class>
     
 
@@ -7590,6 +7682,7 @@
     <!-- http://purl.obolibrary.org/obo/FOODON_03400361 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03400361">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENEPIO_0001655"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
         <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
         <oboInOwl:hasDbXref>LANGUAL:A0361</oboInOwl:hasDbXref>
@@ -7790,7 +7883,8 @@ The dry pulses are consumed after processing or household cooking.</obo:IAO_0000
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03400874">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03400352"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
-        <obo:IAO_0000115 xml:lang="en">The Global System 1 (GS1) Global Product Classification (GPC) is a system that gives buyers and sellers a common language for grouping products in the same way, everywhere in the world [http://gpcbrowser.gs1.org/].</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="en">The Global System 1 (GS1) Global Product Classification (GPC) is a system that gives buyers and sellers a common language for grouping products in the same way, everywhere in the world.$br/$
+The GS1 GPC classification in facet A is currently updated based on June 2017 release of GS1 GPC Standard for Food/Beverage/Tobacco, except for codes pertaining to tobacco. See the GS1 site for details [https://www.gs1.org/standards/gpc].</obo:IAO_0000115>
         <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
         <oboInOwl:hasDbXref>LANGUAL:A0874</oboInOwl:hasDbXref>
         <rdfs:label xml:lang="en">global product classification (gs1 gpc)</rdfs:label>
@@ -7951,7 +8045,7 @@ The dry pulses are consumed after processing or household cooking.</obo:IAO_0000
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
         <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
         <oboInOwl:hasDbXref>LANGUAL:B1018</oboInOwl:hasDbXref>
-        <rdfs:label xml:lang="en">vegetable-producing plant, root, tuber or bulb used (food source)</rdfs:label>
+        <rdfs:label xml:lang="en">vegetable-producing plant, root, tuber or bulb (food source)</rdfs:label>
     </owl:Class>
     
 
@@ -7987,7 +8081,7 @@ The dry pulses are consumed after processing or household cooking.</obo:IAO_0000
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
         <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
         <oboInOwl:hasDbXref>LANGUAL:B1057</oboInOwl:hasDbXref>
-        <rdfs:label xml:lang="en">vegetable-producing plant, above-ground parts used (food source)</rdfs:label>
+        <rdfs:label xml:lang="en">vegetable-producing plant, above-ground parts (food source)</rdfs:label>
     </owl:Class>
     
 
@@ -8026,6 +8120,46 @@ The dry pulses are consumed after processing or household cooking.</obo:IAO_0000
         <oboInOwl:hasNarrowSynonym>Lycopersicon esculentum var. esculentum P. Mill.</oboInOwl:hasNarrowSynonym>
         <oboInOwl:hasNarrowSynonym>Solanum lycopersicum L.</oboInOwl:hasNarrowSynonym>
         <rdfs:label xml:lang="en">globe tomato plant (food source)</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FOODON_03411100 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03411100">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001303"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_3917"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001303"/>
+                        <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_3917"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411200"/>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
+        <obo:IAO_0000115 xml:lang="en">The black-eyed pea, black-eyed bean or goat pea, a legume, is a subspecies of the cowpea, grown around the world for its medium-sized, edible bean.[https://en.wikipedia.org/wiki/Black-eyed_pea]</obo:IAO_0000115>
+        <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
+        <oboInOwl:hasDbXref rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_3917"/>
+        <oboInOwl:hasDbXref>DPNL 2003:13842</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>GRIN:41647</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>ITIS:27018</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>LANGUAL:B1100</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PLANTS:VIUN</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>http://eol.org/pages/655178</oboInOwl:hasDbXref>
+        <oboInOwl:hasNarrowSynonym>Vigna unguiculata (L.) Walp.</oboInOwl:hasNarrowSynonym>
+        <oboInOwl:hasNarrowSynonym>Vigna unguiculata (L.) Walp. subsp. unguiculata</oboInOwl:hasNarrowSynonym>
+        <oboInOwl:hasSynonym xml:lang="en">black-eyed bean</oboInOwl:hasSynonym>
+        <oboInOwl:hasSynonym xml:lang="en">blackeyed bean</oboInOwl:hasSynonym>
+        <oboInOwl:hasSynonym xml:lang="en">goat pea</oboInOwl:hasSynonym>
+        <oboInOwl:hasSynonym xml:lang="en">southern pea</oboInOwl:hasSynonym>
+        <oboInOwl:hasSynonym xml:lang="en">vigna unguiculata unguiculata</oboInOwl:hasSynonym>
+        <rdfs:label xml:lang="en">blackeyed pea plant (food source)</rdfs:label>
     </owl:Class>
     
 
@@ -8113,8 +8247,12 @@ Citrus is a common term and genus (*Citrus*) of flowering plants in the rue fami
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03411156">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411057"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
+        <obo:IAO_0000115 xml:lang="en">A legume  is a plant or its fruit or seed in the family *Fabaceae* (or *Leguminosae*). Legumes are grown agriculturally, primarily for their grain seed called pulse, for livestock forage and silage, and as soil-enhancing green manure. Well-known legumes include alfalfa, clover, peas, beans, chickpeas, lentils, lupin bean, mesquite, carob, soybeans, peanuts and tamarind. [https://en.wikipedia.org/wiki/Legume]</obo:IAO_0000115>
         <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
         <oboInOwl:hasDbXref>LANGUAL:B1156</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>http://eol.org/pages/4277</oboInOwl:hasDbXref>
+        <oboInOwl:hasSynonym xml:lang="en">fabaceae</oboInOwl:hasSynonym>
+        <oboInOwl:hasSynonym xml:lang="en">legumes</oboInOwl:hasSynonym>
         <rdfs:label xml:lang="en">pod or seed vegetable (food source)</rdfs:label>
     </owl:Class>
     
@@ -8123,15 +8261,34 @@ Citrus is a common term and genus (*Citrus*) of flowering plants in the rue fami
     <!-- http://purl.obolibrary.org/obo/FOODON_03411161 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03411161">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001303"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9913"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001303"/>
+                        <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9913"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03414374"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
-        <obo:IAO_0000115 xml:lang="en">Cattle (colloquially cows) are the most common type of large domesticated ungulates. They are a prominent modern member of the subfamily *Bovinae*, are the most widespread species of the genus *Bos*, and are most commonly classified collectively as *Bos primigenius*.</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="en">Cattle (colloquially cows) are the most common type of large domesticated ungulates. They are a prominent modern member of the subfamily *Bovinae*, are the most widespread species of the genus *Bos*, and are most commonly classified collectively as *Bos taurus*... with three subspecies: *Bos taurus primigenius, Bos taurus indicus, Bos taurus taurus*. [https://en.wikipedia.org/wiki/Cattle]</obo:IAO_0000115>
         <obo:IAO_0000119>WIKIPEDIA:Domestic_cattle</obo:IAO_0000119>
         <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
+        <oboInOwl:hasDbXref rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9913"/>
+        <oboInOwl:hasDbXref>ITIS:183838</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>LANGUAL:B1161</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>http://eol.org/pages/2851454</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>MSW3:14200687</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>http://eol.org/pages/328699</oboInOwl:hasDbXref>
+        <oboInOwl:hasNarrowSynonym>Bos taurus Linnaeus, 1758</oboInOwl:hasNarrowSynonym>
         <oboInOwl:hasSynonym xml:lang="en">auroch</oboInOwl:hasSynonym>
         <oboInOwl:hasSynonym xml:lang="en">bos spp.</oboInOwl:hasSynonym>
+        <oboInOwl:hasSynonym xml:lang="en">bos taurus</oboInOwl:hasSynonym>
         <rdfs:label xml:lang="en">cattle (food source)</rdfs:label>
     </owl:Class>
     
@@ -8140,13 +8297,33 @@ Citrus is a common term and genus (*Citrus*) of flowering plants in the rue fami
     <!-- http://purl.obolibrary.org/obo/FOODON_03411172 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03411172">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001303"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_3827"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001303"/>
+                        <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_3827"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411567"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
+        <obo:IAO_0000115 xml:lang="en">The chickpea or chick pea (*Cicer arietinum*) is a legume of the family *Fabaceae*, subfamily *Faboideae*. Its different types are variously known as gram, or Bengal gram, garbanzo or garbanzo bean, as well as the Egyptian pea. Its seeds are high in protein. It is one of the earliest cultivated legumes: 7,500-year-old remains have been found in the Middle East.[https://en.wikipedia.org/wiki/Chickpea]</obo:IAO_0000115>
         <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
+        <oboInOwl:hasDbXref rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_3827"/>
+        <oboInOwl:hasDbXref>DPNL 2003:8647</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>GRIN:10535</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>ITIS:26537</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>LANGUAL:B1172</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>MANSFELD:30808</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>NETTOX:</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PLANTS:CIAR5</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>http://eol.org/pages/685208</oboInOwl:hasDbXref>
         <oboInOwl:hasNarrowSynonym>Cicer arietinum L.</oboInOwl:hasNarrowSynonym>
         <oboInOwl:hasSynonym xml:lang="en">bengal gram bean</oboInOwl:hasSynonym>
         <oboInOwl:hasSynonym xml:lang="en">chick bean</oboInOwl:hasSynonym>
@@ -8184,16 +8361,73 @@ Citrus is a common term and genus (*Citrus*) of flowering plants in the rue fami
     
 
 
+    <!-- http://purl.obolibrary.org/obo/FOODON_03411196 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03411196">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001303"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_3917"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001303"/>
+                        <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_3917"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411200"/>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
+        <obo:IAO_0000115 xml:lang="en">Cultivated cowpeas are known by the common names black-eyed pea, southern pea, yardlong bean, catjang, and crowder pea. [https://en.wikipedia.org/wiki/Cowpea]</obo:IAO_0000115>
+        <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
+        <oboInOwl:hasDbXref rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_3917"/>
+        <oboInOwl:hasDbXref>GRIN:300675</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>ITIS:27018</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>LANGUAL:B1196</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PLANTS:VIUN</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>http://eol.org/pages/655178</oboInOwl:hasDbXref>
+        <oboInOwl:hasNarrowSynonym>Vigna unguiculata (L.) Walp.</oboInOwl:hasNarrowSynonym>
+        <oboInOwl:hasNarrowSynonym>Vigna unguiculata subsp. unguiculata</oboInOwl:hasNarrowSynonym>
+        <oboInOwl:hasSynonym xml:lang="en">vigna unguiculata</oboInOwl:hasSynonym>
+        <rdfs:label xml:lang="en">crowder pea plant (food source)</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/FOODON_03411200 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03411200">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001303"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_3917"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001303"/>
+                        <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_3917"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411156"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03414742"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
+        <obo:IAO_0000115 xml:lang="en">The cowpea (*Vigna unguiculata*) is an annual herbaceous legume from the genus *Vigna. Due to its tolerance for sandy soil and low rainfall it is an important crop in the semi-arid regions across Africa and other countries. It requires very few inputs, as the plants root nodules are able to fix atmospheric nitrogen, making it a valuable crop for resource poor farmers and well-suited to intercropping with other crops. The whole plant is used as forage for animals, with its use as cattle feed likely responsible for its name. Four subspecies of cowpea are recognised, of which three are cultivated. Cultivated cowpeas are known by the common names black-eyed pea, southern pea, yardlong bean, catjang, and crowder pea.[https://en.wikipedia.org/wiki/Cowpea]</obo:IAO_0000115>
         <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
+        <oboInOwl:hasDbXref rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_3917"/>
         <oboInOwl:hasDbXref>GRIN:300675</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>GRIN:41647</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>ITIS:27018</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>LANGUAL:B1200</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>MANSFELD:27303</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>NETTOX:</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PLANTS:VIUN</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>http://eol.org/pages/655178</oboInOwl:hasDbXref>
+        <oboInOwl:hasNarrowSynonym>Vigna unguiculata (L.) Walp.</oboInOwl:hasNarrowSynonym>
         <oboInOwl:hasNarrowSynonym>Vigna unguiculata (L.) Walp. ssp. unguiculata</oboInOwl:hasNarrowSynonym>
         <oboInOwl:hasSynonym xml:lang="en">vigna sinensis</oboInOwl:hasSynonym>
         <oboInOwl:hasSynonym xml:lang="en">vigna unguiculata</oboInOwl:hasSynonym>
@@ -8235,6 +8469,17 @@ Citrus is a common term and genus (*Citrus*) of flowering plants in the rue fami
     
 
 
+    <!-- http://purl.obolibrary.org/obo/FOODON_03411215 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03411215">
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
+        <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
+        <oboInOwl:hasDbXref>LANGUAL:B1215</oboInOwl:hasDbXref>
+        <rdfs:label xml:lang="en">algae, bacteria or fungus (food source)</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/FOODON_03411218 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03411218">
@@ -8254,6 +8499,7 @@ Citrus is a common term and genus (*Citrus*) of flowering plants in the rue fami
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411016"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411018"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03415104"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
         <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
         <oboInOwl:hasDbXref rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_4113"/>
@@ -8276,6 +8522,7 @@ Citrus is a common term and genus (*Citrus*) of flowering plants in the rue fami
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03411220">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00002452"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03414899"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
         <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
         <oboInOwl:hasDbXref>LANGUAL:B1220</oboInOwl:hasDbXref>
@@ -8291,6 +8538,7 @@ Citrus is a common term and genus (*Citrus*) of flowering plants in the rue fami
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03411222">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411297"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
+        <obo:IAO_0000115 xml:lang="en">Fish are the gill-bearing aquatic craniate animals that lack limbs with digits. Most fish are ectothermic (&quot;cold-blooded&quot;), allowing their body temperatures to vary as ambient temperatures change, though some of the large active swimmers like white shark and tuna can hold a higher core temperature [https://en.wikipedia.org/wiki/Fish]</obo:IAO_0000115>
         <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
         <oboInOwl:hasDbXref>LANGUAL:B1222</oboInOwl:hasDbXref>
         <rdfs:label xml:lang="en">fish (food source)</rdfs:label>
@@ -8303,12 +8551,15 @@ Citrus is a common term and genus (*Citrus*) of flowering plants in the rue fami
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03411224">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03412113"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
+        <obo:IAO_0000115 xml:lang="en">Oyster is the common name for a number of different families of salt-water bivalve molluscs that live in marine or brackish habitats. In some species the valves are highly calcified, and many are somewhat irregular in shape. 
+True oysters are members of the family *Ostreidae*. This family includes the edible oysters, which mainly belong to the genera *Ostrea, Crassostrea, Ostreola, Magallana, Saccostrea*.  Pearl oysters are not closely related to true oysters, being members of a distinct family, the feathered oysters (*Pteriidae*). [https://en.wikipedia.org/wiki/Oyster]</obo:IAO_0000115>
         <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
         <oboInOwl:hasDbXref>LANGUAL:B1224</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>http://eol.org/pages/2248</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>http://eol.org/pages/2267</oboInOwl:hasDbXref>
         <oboInOwl:hasSynonym xml:lang="en">crassostrea spp.</oboInOwl:hasSynonym>
         <oboInOwl:hasSynonym xml:lang="en">ostrea spp.</oboInOwl:hasSynonym>
         <oboInOwl:hasSynonym xml:lang="en">ostreidae</oboInOwl:hasSynonym>
+        <oboInOwl:hasSynonym xml:lang="en">pteriidae</oboInOwl:hasSynonym>
         <rdfs:label xml:lang="en">oyster (food source)</rdfs:label>
     </owl:Class>
     
@@ -8354,6 +8605,8 @@ Citrus is a common term and genus (*Citrus*) of flowering plants in the rue fami
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03411231">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411140"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
+        <obo:IAO_0000115 xml:lang="en">A berry is a small, pulpy, and often edible fruit. Berries are typically juicy, rounded, brightly colored, sweet or sour, and do not have a stone or pit, although many pips or seeds may be present. Common examples are strawberries, raspberries, blueberries, red currants, and blackcurrants. 
+ The scientific usage of the term &quot;berry&quot; differs from common usage. In scientific terminology, a berry is a fruit produced from the ovary of a single flower in which the outer layer of the ovary wall develops into an edible fleshy portion (pericarp). The definition includes many fruits that are not commonly known as berries, such as grapes, tomatoes, cucumbers, eggplants (aubergines) and bananas. Fruits excluded by the botanical definition include strawberries, raspberries, and blackberries, which are aggregate fruits, and mulberries, which are multiple fruits. [https://en.wikipedia.org/wiki/Berry]</obo:IAO_0000115>
         <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
         <oboInOwl:hasDbXref>LANGUAL:B1231</oboInOwl:hasDbXref>
         <rdfs:label xml:lang="en">berry plant</rdfs:label>
@@ -8419,7 +8672,7 @@ Citrus is a common term and genus (*Citrus*) of flowering plants in the rue fami
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03411245">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411599"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
-        <obo:IAO_0000115 xml:lang="en">An apple tree (Malus pumila species in genus Malus), is cultivated worldwide as a fruit tree, providing sweet, edible fruit.</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="en">An apple tree (Malus pumila species in genus Malus), is cultivated worldwide as a fruit tree, providing sweet, edible fruit.  Malus pumila encompasses over 7,500 apple cultivars (https://en.wikipedia.org/wiki/List_of_apple_cultivars).</obo:IAO_0000115>
         <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
         <oboInOwl:hasDbXref>DPNL 2003:11049</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>GRIN:104681</oboInOwl:hasDbXref>
@@ -8438,10 +8691,13 @@ Citrus is a common term and genus (*Citrus*) of flowering plants in the rue fami
     <!-- http://purl.obolibrary.org/obo/FOODON_03411261 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03411261">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411564"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411215"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
+        <obo:IAO_0000115 xml:lang="en">A fungus (plural: fungi or funguses) is any member of the group of eukaryotic organisms that includes unicellular microorganisms such as yeasts and molds, as well as multicellular fungi that produce familiar fruiting forms known as mushrooms. These organisms are classified as a kingdom, *Fungi*, which is separate from the other eukaryotic life kingdoms of plants and animals.[https://en.wikipedia.org/wiki/Fungus]</obo:IAO_0000115>
         <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
         <oboInOwl:hasDbXref>LANGUAL:B1261</oboInOwl:hasDbXref>
+        <oboInOwl:hasSynonym xml:lang="en">fungi</oboInOwl:hasSynonym>
+        <oboInOwl:hasSynonym xml:lang="en">funguses</oboInOwl:hasSynonym>
         <rdfs:label xml:lang="en">fungus (food source)</rdfs:label>
     </owl:Class>
     
@@ -8482,8 +8738,9 @@ Citrus is a common term and genus (*Citrus*) of flowering plants in the rue fami
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411006"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03415104"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
-        <obo:IAO_0000115 xml:lang="en">The word &quot;tomato&quot; may refer to the plant (Solanum lycopersicum) or the edible, typically red, fruit that it bears. Originating in South America, the tomato was spread around the world following the Spanish colonization of the Americas, and its many varieties are now widely grown, often in greenhouses in cooler climates.See also the list of tomato cultivars .</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="en">The word &quot;tomato&quot; may refer to the plant (*Solanum lycopersicum*) or the edible, typically red, fruit that it bears. Originating in South America, the tomato was spread around the world following the Spanish colonization of the Americas, and its many varieties are now widely grown, often in greenhouses in cooler climates.See also the list of tomato cultivars</obo:IAO_0000115>
         <obo:IAO_0000119>WIKIPEDIA:List_of_tomato_cultivars</obo:IAO_0000119>
         <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
         <oboInOwl:hasDbXref rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_4081"/>
@@ -8527,7 +8784,7 @@ Citrus is a common term and genus (*Citrus*) of flowering plants in the rue fami
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411136"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
-        <obo:IAO_0000115 xml:lang="en">A male hog castrated before sexual maturity.[Webster´s]</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="en">A male hog castrated before sexual maturity. [Webster´s]</obo:IAO_0000115>
         <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
         <oboInOwl:hasDbXref rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9823"/>
         <oboInOwl:hasDbXref>ITIS:180722</oboInOwl:hasDbXref>
@@ -8584,8 +8841,9 @@ Citrus is a common term and genus (*Citrus*) of flowering plants in the rue fami
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03411283">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411140"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03414459"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
-        <obo:IAO_0000115 xml:lang="en">Melon is a name given to various members of the plant family Cucurbitaceae with sweet flavored, fleshy fruit e.g. gourds or cucurbits. Melon can be referred as a plant or a fruit. Many different cultivars have been produced, particularly of muskmelons.</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="en">Melon is a name given to various members of the plant family *Cucurbitaceae* with sweet flavored, fleshy fruit e.g. gourds or cucurbits. Melon can be referred as a plant or a fruit. Many different cultivars have been produced, particularly of muskmelons.</obo:IAO_0000115>
         <obo:IAO_0000119>WIKIPEDIA:Melon</obo:IAO_0000119>
         <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
         <oboInOwl:hasDbXref>LANGUAL:B1283</oboInOwl:hasDbXref>
@@ -8616,12 +8874,14 @@ Citrus is a common term and genus (*Citrus*) of flowering plants in the rue fami
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411018"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03414302"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
+        <obo:IAO_0000115 xml:lang="en">The onion (*Allium cepa *L), also known as the bulb onion or common onion, is a vegetable that is the most widely cultivated species of the genus *Allium*. Its close relatives include the garlic, shallot, leek, chive,[2] and Chinese onion. 
+ This genus also contains several other species variously referred to as onions and cultivated for food, such as the Japanese bunching onion (*Allium fistulosum*), the tree onion (*A. ×proliferum*), and the Canada onion (*Allium canadense*). The name &quot;wild onion&quot; is applied to a number of *Allium* species, but *A. cepa* is exclusively known from cultivation. [https://en.wikipedia.org/wiki/Onion]</obo:IAO_0000115>
         <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
         <oboInOwl:hasDbXref>DPNL 2003:7304</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>GRIN:300022</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>LANGUAL:B1300</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>PLANTS:ALLIU</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>http://eol.org/pages/4174</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>http://eol.org/pages/8187</oboInOwl:hasDbXref>
         <oboInOwl:hasNarrowSynonym>Allium</oboInOwl:hasNarrowSynonym>
         <oboInOwl:hasNarrowSynonym>Allium L.</oboInOwl:hasNarrowSynonym>
         <oboInOwl:hasNarrowSynonym>Allium sp.</oboInOwl:hasNarrowSynonym>
@@ -8637,7 +8897,7 @@ Citrus is a common term and genus (*Citrus*) of flowering plants in the rue fami
     <!-- http://purl.obolibrary.org/obo/FOODON_03411301 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03411301">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411564"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411215"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
         <obo:IAO_0000115 xml:lang="en">Unicellular and multicellular algae.</obo:IAO_0000115>
         <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
@@ -8701,6 +8961,8 @@ Citrus is a common term and genus (*Citrus*) of flowering plants in the rue fami
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411324"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
+        <obo:IAO_0000115 xml:lang="en">*Oryza sativa*, commonly known as Asian rice, is the plant species most commonly referred to in English as rice.  *Oryza sativa* contains two major subspecies: the sticky, short-grained *japonica* or *sinica* variety, and the nonsticky, long-grained *indica* variety. 
+ Rice occurs in a variety of colors, including white, brown, black, purple, and red rices. Black rice (also known as purple rice) is a range of rice types, some of which are glutinous rice. Varieties include Indonesian black rice and Thai jasmine black rice. [https://en.wikipedia.org/wiki/Oryza_sativa]</obo:IAO_0000115>
         <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
         <oboInOwl:hasDbXref rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_4530"/>
         <oboInOwl:hasDbXref>DPNL 2003:11528</oboInOwl:hasDbXref>
@@ -8738,6 +9000,7 @@ Citrus is a common term and genus (*Citrus*) of flowering plants in the rue fami
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411017"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411231"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
+        <obo:IAO_0000115 xml:lang="en">*Vitis* (grapevines) is a genus of 79 accepted species of vining plants in the flowering plant family *Vitaceae*. The genus is made up of species predominantly from the Northern hemisphere. It is economically important as the source of grapes, both for direct consumption of the fruit and for fermentation to produce wine. [https://en.wikipedia.org/wiki/Vitis]</obo:IAO_0000115>
         <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
         <oboInOwl:hasDbXref>DPNL 2003:13866</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>LANGUAL:B1329</oboInOwl:hasDbXref>
@@ -8787,6 +9050,7 @@ Citrus is a common term and genus (*Citrus*) of flowering plants in the rue fami
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03411339">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411139"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
+        <obo:IAO_0000115 xml:lang="en">*Citrus × sinensis*, also known as the *Citrus aurantium* Sweet Orange Group, includes the commonly cultivated sweet orange, blood oranges, and navel oranges. [https://en.wikipedia.org/wiki/Citrus_×_sinensis]</obo:IAO_0000115>
         <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
         <oboInOwl:hasDbXref>DPNL 2003:8703</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>GRIN:10782</oboInOwl:hasDbXref>
@@ -8813,7 +9077,7 @@ Citrus is a common term and genus (*Citrus*) of flowering plants in the rue fami
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03411345">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03412034"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
-        <obo:IAO_0000115 xml:lang="en">Yeasts are eukaryotic micro-organisms classified in the kingdom Fungi, with 1,500 species currently described estimated to be only 1% of all fungal species.</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="en">Yeasts are eukaryotic micro-organisms classified in the kingdom *Fungi*, with 1,500 species currently described estimated to be only 1% of all fungal species.</obo:IAO_0000115>
         <obo:IAO_0000119>WIKIPEDIA:Yeast</obo:IAO_0000119>
         <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
         <oboInOwl:hasDbXref>LANGUAL:B1345</oboInOwl:hasDbXref>
@@ -8857,7 +9121,7 @@ Citrus is a common term and genus (*Citrus*) of flowering plants in the rue fami
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
         <obo:IAO_0000115 xml:lang="en">GRIN Nomen 300661 Vicia faba L. (broad bean, bell-bean, fava-bean, faba-bean); however ITIS Id. 26339 Vicia faba L. (horsebean). 
 
-Vicia faba, the Broad Bean, Fava Bean, Field Bean, Bell Bean or Tic Bean, is a species of bean (Fabaceae) native to north Africa and southwest Asia, and extensively cultivated elsewhere. A variety is provisionally recognized: Vicia faba var. equina Pers. - Horse Bean.  Although usually classified in the same genus Vicia as the vetches, some botanists treat it in a separate monotypic genus Faba. The term fava bean (from the Italian fava, meaning &quot;broad bean&quot;) is usually used in English speaking countries such as the US, however the term broad bean is the most common name in the UK.</obo:IAO_0000115>
+*Vicia faba*, the Broad Bean, Fava Bean, Field Bean, Bell Bean or Tic Bean, is a species of bean (*Fabaceae*) native to north Africa and southwest Asia, and extensively cultivated elsewhere. A variety is provisionally recognized: Vicia faba var. equina Pers. - Horse Bean.  Although usually classified in the same genus Vicia as the vetches, some botanists treat it in a separate monotypic genus *Faba*. The term fava bean (from the Italian fava, meaning &quot;broad bean&quot;) is usually used in English speaking countries such as the US, however the term broad bean is the most common name in the UK.</obo:IAO_0000115>
         <obo:IAO_0000119>WIKIPEDIA:Vicia_faba</obo:IAO_0000119>
         <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
         <oboInOwl:hasDbXref rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_3906"/>
@@ -8867,7 +9131,7 @@ Vicia faba, the Broad Bean, Fava Bean, Field Bean, Bell Bean or Tic Bean, is a s
         <oboInOwl:hasDbXref>LANGUAL:B1367</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>MANSFELD:30416</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>PLANTS:VIFA</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>http://eol.org/pages/703202</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>http://eol.org/pages/4277</oboInOwl:hasDbXref>
         <oboInOwl:hasNarrowSynonym>Vicia faba L.</oboInOwl:hasNarrowSynonym>
         <oboInOwl:hasNarrowSynonym>Vicia faba L. (varieties for human consumption)</oboInOwl:hasNarrowSynonym>
         <oboInOwl:hasSynonym xml:lang="en">faba bean</oboInOwl:hasSynonym>
@@ -8884,6 +9148,7 @@ Vicia faba, the Broad Bean, Fava Bean, Field Bean, Bell Bean or Tic Bean, is a s
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03411374">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00002452"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
+        <obo:IAO_0000115 xml:lang="en">Crustaceans form a large, diverse arthropod taxon which includes such familiar animals as crabs, lobsters, crayfish, shrimp, krill, woodlice, and barnacles. [https://en.wikipedia.org/wiki/Crustacean]</obo:IAO_0000115>
         <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
         <oboInOwl:hasDbXref>LANGUAL:B1374</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>http://eol.org/pages/2598871</oboInOwl:hasDbXref>
@@ -8912,7 +9177,7 @@ Vicia faba, the Broad Bean, Fava Bean, Field Bean, Bell Bean or Tic Bean, is a s
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411232"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
-        <obo:IAO_0000115 xml:lang="en">Sweet corn (Zea mays convar. saccharata var. rugosa; also called Indian corn, sugar corn, and pole corn) is a variety of maize with a high sugar content. Sweet corn is the result of a naturally occurring recessive mutation in the genes which control conversion of sugar to starch inside the endosperm of the corn kernel. Unlike field corn varieties, which are harvested when the kernels are dry and mature (dent stage), sweet corn is picked when immature (milk stage) and prepared and eaten as a vegetable, rather than a grain. Since the process of maturation involves converting sugar to starch, sweet corn stores poorly and must be eaten fresh, canned, or frozen, before the kernels become tough and starchy.</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="en">Sweet corn (*Zea mays* convar. *saccharata* var. *rugosa*; also called Indian corn, sugar corn, and pole corn) is a variety of maize with a high sugar content. Sweet corn is the result of a naturally occurring recessive mutation in the genes which control conversion of sugar to starch inside the endosperm of the corn kernel. Unlike field corn varieties, which are harvested when the kernels are dry and mature (dent stage), sweet corn is picked when immature (milk stage) and prepared and eaten as a vegetable, rather than a grain. Since the process of maturation involves converting sugar to starch, sweet corn stores poorly and must be eaten fresh, canned, or frozen, before the kernels become tough and starchy.</obo:IAO_0000115>
         <obo:IAO_0000119>WIKIPEDIA:Sweet_corn</obo:IAO_0000119>
         <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
         <oboInOwl:hasDbXref rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_4577"/>
@@ -8973,6 +9238,7 @@ Vicia faba, the Broad Bean, Fava Bean, Field Bean, Bell Bean or Tic Bean, is a s
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03411433">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00002452"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
+        <obo:IAO_0000115 xml:lang="en">The term shellfish is used both broadly and specifically. For regulatory purposes it is often narrowly defined as filter-feeding molluscs such as clams, mussels, and oyster to the exclusion of crustaceans and all else. Although their shells may differ, all shellfish are invertebrates. [https://en.wikipedia.org/wiki/Shellfish]</obo:IAO_0000115>
         <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
         <oboInOwl:hasDbXref>LANGUAL:B1433</oboInOwl:hasDbXref>
         <rdfs:label xml:lang="en">shellfish (food source)</rdfs:label>
@@ -9115,6 +9381,7 @@ Vicia faba, the Broad Bean, Fava Bean, Field Bean, Bell Bean or Tic Bean, is a s
     <!-- http://purl.obolibrary.org/obo/FOODON_03411564 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03411564">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENEPIO_0001655"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
         <obo:IAO_0000115 xml:lang="en">Individual plant or animal from which the food product or its major ingredient is derived; also a chemical food source [FDA CFSAN 1995].</obo:IAO_0000115>
         <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
@@ -9143,7 +9410,8 @@ Vicia faba, the Broad Bean, Fava Bean, Field Bean, Bell Bean or Tic Bean, is a s
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
         <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
         <oboInOwl:hasDbXref>LANGUAL:B1567</oboInOwl:hasDbXref>
-        <oboInOwl:hasSynonym xml:lang="en">bean</oboInOwl:hasSynonym>
+        <oboInOwl:hasSynonym xml:lang="en">beans, species/variety unknown</oboInOwl:hasSynonym>
+        <oboInOwl:hasSynonym xml:lang="en">marrow bean</oboInOwl:hasSynonym>
         <rdfs:label xml:lang="en">bean (vegetable) (food source)</rdfs:label>
     </owl:Class>
     
@@ -9166,7 +9434,7 @@ Vicia faba, the Broad Bean, Fava Bean, Field Bean, Bell Bean or Tic Bean, is a s
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03411599">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411140"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
-        <obo:IAO_0000115 xml:lang="en">In botany, a pome (after the Latin word for fruit: pomum) is a type of fruit produced by flowering plants in the subfamily Maloideae of the family Rosaceae.</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="en">In botany, a pome (after the Latin word for fruit: pomum) is a type of fruit produced by flowering plants in the subfamily *Maloideae* of the family *Rosaceae*.</obo:IAO_0000115>
         <obo:IAO_0000119>WIKIPEDIA:Pome</obo:IAO_0000119>
         <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
         <oboInOwl:hasDbXref>LANGUAL:B1599</oboInOwl:hasDbXref>
@@ -9244,7 +9512,7 @@ Vicia faba, the Broad Bean, Fava Bean, Field Bean, Bell Bean or Tic Bean, is a s
         <oboInOwl:hasDbXref>ITIS:26339</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>LANGUAL:B1663</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>PLANTS:VIFA</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>http://eol.org/pages/703202</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>http://eol.org/pages/4277</oboInOwl:hasDbXref>
         <oboInOwl:hasNarrowSynonym>Vicia faba L.</oboInOwl:hasNarrowSynonym>
         <oboInOwl:hasNarrowSynonym>Vicia faba L. (varieties for fodder)</oboInOwl:hasNarrowSynonym>
         <oboInOwl:hasNarrowSynonym>Vicia faba var. equina Pers.</oboInOwl:hasNarrowSynonym>
@@ -9263,11 +9531,13 @@ Vicia faba, the Broad Bean, Fava Bean, Field Bean, Bell Bean or Tic Bean, is a s
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411156"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411567"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
+        <obo:IAO_0000115 xml:lang="en">*Lupinus*, commonly known as lupin or lupine (North America), is a genus of flowering plants in the legume family, *Fabaceae*. The genus includes over 200 species, with centers of diversity in North and South America.[https://en.wikipedia.org/wiki/Lupinus]</obo:IAO_0000115>
         <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
         <oboInOwl:hasDbXref>GRIN:22802</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>LANGUAL:B1701</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>MANSFELD:31557</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>NETTOX:</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>http://eol.org/pages/27789</oboInOwl:hasDbXref>
         <oboInOwl:hasNarrowSynonym>Lupinus albus L.</oboInOwl:hasNarrowSynonym>
         <oboInOwl:hasSynonym xml:lang="en">lupnius spp.</oboInOwl:hasSynonym>
         <rdfs:label xml:lang="en">lupine bean plant (food source)</rdfs:label>
@@ -9289,9 +9559,58 @@ Vicia faba, the Broad Bean, Fava Bean, Field Bean, Bell Bean or Tic Bean, is a s
     
 
 
+    <!-- http://purl.obolibrary.org/obo/FOODON_03411724 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03411724">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001303"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_3917"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001303"/>
+                        <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_3917"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411200"/>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
+        <obo:IAO_0000115 xml:lang="en">*Vigna unguiculata* subsp. *sesquipedalis* is a legume cultivated to be eaten as green pods. It is known as the yardlong bean, bora, bodi, long-podded cowpea, asparagus bean, pea bean, snake bean, or Chinese long bean. Despite the common name, the pods are actually only about half a yard long; the subspecies name sesquipedalis (one-and-a-half-foot-long) is a rather accurate approximation of the pods&apos; length.[https://en.wikipedia.org/wiki/Asparagus_bean]</obo:IAO_0000115>
+        <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
+        <oboInOwl:hasDbXref rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_3917"/>
+        <oboInOwl:hasDbXref>DPNL 2003:13841</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>GRIN:41646</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>ITIS:27018</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>LANGUAL:B1724</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PLANTS:VIUNS2</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>http://eol.org/pages/655178</oboInOwl:hasDbXref>
+        <oboInOwl:hasNarrowSynonym>Vigna unguiculata (L.) Walp.</oboInOwl:hasNarrowSynonym>
+        <oboInOwl:hasNarrowSynonym>Vigna unguiculata (L.) Walp. ssp. sesquipedalis (L.) Verdc.</oboInOwl:hasNarrowSynonym>
+        <oboInOwl:hasNarrowSynonym>Vigna unguiculata (L.) Walp. subsp. sesquipedalis (L.) Verdc.</oboInOwl:hasNarrowSynonym>
+        <oboInOwl:hasNarrowSynonym>Vigna unguiculata subsp. sesquipedalis (L.) Verdc.</oboInOwl:hasNarrowSynonym>
+        <oboInOwl:hasSynonym xml:lang="en">asparagus bean</oboInOwl:hasSynonym>
+        <oboInOwl:hasSynonym xml:lang="en">bodi</oboInOwl:hasSynonym>
+        <oboInOwl:hasSynonym xml:lang="en">bora</oboInOwl:hasSynonym>
+        <oboInOwl:hasSynonym xml:lang="en">chinese long bean</oboInOwl:hasSynonym>
+        <oboInOwl:hasSynonym xml:lang="en">dolichos sesquipedalis</oboInOwl:hasSynonym>
+        <oboInOwl:hasSynonym xml:lang="en">long-podded cowpea</oboInOwl:hasSynonym>
+        <oboInOwl:hasSynonym xml:lang="en">pea bean</oboInOwl:hasSynonym>
+        <oboInOwl:hasSynonym xml:lang="en">snake bean</oboInOwl:hasSynonym>
+        <oboInOwl:hasSynonym xml:lang="en">tau kok</oboInOwl:hasSynonym>
+        <oboInOwl:hasSynonym xml:lang="en">vigna sesquipedalis</oboInOwl:hasSynonym>
+        <oboInOwl:hasSynonym xml:lang="en">vigna unguiculata var. sesquipedalis</oboInOwl:hasSynonym>
+        <rdfs:label xml:lang="en">yardlong bean plant (food source)</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/FOODON_03411725 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03411725">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411567"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03412330"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
         <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
@@ -9311,11 +9630,37 @@ Vicia faba, the Broad Bean, Fava Bean, Field Bean, Bell Bean or Tic Bean, is a s
     <!-- http://purl.obolibrary.org/obo/FOODON_03411726 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03411726">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001303"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_3891"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001303"/>
+                        <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_3891"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411567"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
+        <obo:IAO_0000115 xml:lang="en">The winged bean (*Psophocarpus tetragonolobus*), also known as the Goa bean, four-angled bean, four-cornered bean, Manila bean, Dragon bean, is a tropical legume plant native to New Guinea.[https://en.wikipedia.org/wiki/Winged_bean]</obo:IAO_0000115>
         <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
+        <oboInOwl:hasDbXref rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_3891"/>
+        <oboInOwl:hasDbXref>DPNL 2003:12340</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>GRIN:30222</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>ITIS:506265</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>LANGUAL:B1726</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PLANTS:PSTE10</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>http://eol.org/pages/645581</oboInOwl:hasDbXref>
+        <oboInOwl:hasNarrowSynonym>Psophocarpus tetragonolobus (L.) DC.</oboInOwl:hasNarrowSynonym>
         <oboInOwl:hasSynonym xml:lang="en">asparagus pea</oboInOwl:hasSynonym>
+        <oboInOwl:hasSynonym xml:lang="en">dragon bean</oboInOwl:hasSynonym>
+        <oboInOwl:hasSynonym xml:lang="en">four-angled bean</oboInOwl:hasSynonym>
+        <oboInOwl:hasSynonym xml:lang="en">four-cornered bean</oboInOwl:hasSynonym>
+        <oboInOwl:hasSynonym xml:lang="en">manila bean</oboInOwl:hasSynonym>
         <oboInOwl:hasSynonym xml:lang="en">psophocarpus tetragonolobus</oboInOwl:hasSynonym>
         <oboInOwl:hasSynonym xml:lang="en">winged bean</oboInOwl:hasSynonym>
         <rdfs:label xml:lang="en">goa bean plant (food source)</rdfs:label>
@@ -9407,7 +9752,7 @@ The *ascomycetes* are a monophyletic group, i.e., all of its members trace back 
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03412505"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
-        <obo:IAO_0000115 xml:lang="en">White fonio (D. exilis) is the most important of a diverse group of wild and domesticated Digitaria species that are harvested in the savannas of west Africa. Fonio is the smallest of all species of millet. It is one of the primary cereals of southern Sudan and Ethiopia in Africa. []</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="en">White fonio (*D. exilis*) is the most important of a diverse group of wild and domesticated *Digitaria* species that are harvested in the savannas of west Africa. Fonio is the smallest of all species of millet. It is one of the primary cereals of southern Sudan and Ethiopia in Africa. []</obo:IAO_0000115>
         <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
         <oboInOwl:hasDbXref rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1010633"/>
         <oboInOwl:hasDbXref>GRIN:14016</oboInOwl:hasDbXref>
@@ -9444,7 +9789,7 @@ The *ascomycetes* are a monophyletic group, i.e., all of its members trace back 
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411283"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
-        <obo:IAO_0000115 xml:lang="en">Muskmelon (Cucumis melo) is a species of melon that has been developed into many cultivated varieties. These include smooth skinned varieties such as honeydew, crenshaw and casaba, and different netted cultivars (cantaloupe, Persian melon and Santa Claus or Christmas melon).</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="en">Muskmelon (*Cucumis melo*) is a species of melon that has been developed into many cultivated varieties. These include smooth skinned varieties such as honeydew, crenshaw and casaba, and different netted cultivars (cantaloupe, Persian melon and Santa Claus or Christmas melon).</obo:IAO_0000115>
         <obo:IAO_0000119>WIKIPEDIA:Muskmelon</obo:IAO_0000119>
         <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
         <oboInOwl:hasDbXref rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_3656"/>
@@ -9543,9 +9888,13 @@ The *ascomycetes* are a monophyletic group, i.e., all of its members trace back 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03412112">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411433"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
+        <obo:IAO_0000115 xml:lang="en">*Mollusca* is a large phylum of invertebrate animals whose members are known as molluscs or mollusks. Molluscs are the largest marine phylum, comprising about 23% of all the named marine organisms. Numerous molluscs also live in freshwater and terrestrial habitats. [https://en.wikipedia.org/wiki/Mollusca]</obo:IAO_0000115>
         <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
+        <oboInOwl:hasDbXref>EC:No 216/2009 MOL</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>FAO ASFIS:MOL</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>LANGUAL:B2112</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>http://eol.org/pages/2195</oboInOwl:hasDbXref>
+        <oboInOwl:hasNarrowSynonym>Mollusca</oboInOwl:hasNarrowSynonym>
         <oboInOwl:hasSynonym xml:lang="en">mollusca</oboInOwl:hasSynonym>
         <rdfs:label xml:lang="en">molluscs (food source)</rdfs:label>
     </owl:Class>
@@ -9557,10 +9906,12 @@ The *ascomycetes* are a monophyletic group, i.e., all of its members trace back 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03412113">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03412112"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
+        <obo:IAO_0000115 xml:lang="en">*Bivalvia*, in previous centuries referred to as the *Lamellibranchiata* and *Pelecypoda*, is a class of marine and freshwater molluscs that have laterally compressed bodies enclosed by a shell consisting of two hinged parts. Bivalves as a group have no head and they lack some usual molluscan organs like the radula and the odontophore. They include the clams, oysters, cockles, mussels, scallops, and numerous other families that live in saltwater, as well as a number of families that live in freshwater.[https://en.wikipedia.org/wiki/Bivalvia]</obo:IAO_0000115>
         <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
         <oboInOwl:hasDbXref>LANGUAL:B2113</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>http://eol.org/pages/2215</oboInOwl:hasDbXref>
         <oboInOwl:hasSynonym xml:lang="en">bivalvia</oboInOwl:hasSynonym>
+        <oboInOwl:hasSynonym xml:lang="en">lamellibranchiata</oboInOwl:hasSynonym>
         <oboInOwl:hasSynonym xml:lang="en">pelecypod</oboInOwl:hasSynonym>
         <oboInOwl:hasSynonym xml:lang="en">pelecypoda</oboInOwl:hasSynonym>
         <rdfs:label xml:lang="en">bivalve (food source)</rdfs:label>
@@ -9618,8 +9969,10 @@ The *ascomycetes* are a monophyletic group, i.e., all of its members trace back 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03412330">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411567"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
+        <obo:IAO_0000115 xml:lang="en">*Dolichos* is a genus of flowering plants in the legume family, *Fabaceae*, and the subfamily  *Faboideae*. It is distributed in Africa and Asia. The lablab bean (*Lablab purpureus*) was formerly included in *Dolichos*.[https://en.wikipedia.org/wiki/Dolichos_(plant)]</obo:IAO_0000115>
         <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
         <oboInOwl:hasDbXref>LANGUAL:B2330</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>http://eol.org/pages/28202</oboInOwl:hasDbXref>
         <rdfs:label xml:lang="en">dolichos plant (food source)</rdfs:label>
     </owl:Class>
     
@@ -9695,6 +10048,7 @@ The *ascomycetes* are a monophyletic group, i.e., all of its members trace back 
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411179"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411281"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03413372"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
         <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
@@ -9909,7 +10263,7 @@ The *ascomycetes* are a monophyletic group, i.e., all of its members trace back 
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411161"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
-        <obo:IAO_0000115 xml:lang="en">Zebus (Bos taurus indicus), sometimes known as &apos;nothing cattle&apos;, are better-adapted to tropical environments than other domestic cattle. Their scientific name was originally Bos indicus, but this name is now deemed invalid by ITIS, who classify the zebu under Bos taurus along with all other domestic cattle, and their aurochs ancestors, domesticated in India about 10,000 years ago. The ancient species of Bos nomadicus cattle or even gaur may have contributed to the development of the zebus. There are some 75 known breeds, split about evenly between African breeds and South Asian ones. The major Zebu cattle breeds of the world include Gyr, Guzerat, Indu-Brazilian, Nellore, Ongole and Brahman. Zebu have humps, large dewlaps and ears. They have more sweat glands than European cattle (Bos taurus). They handle hot, humid climates well and have pest resistances not seen in European cattle. (</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="en">Zebus (*Bos taurus indicus*), sometimes known as &apos;nothing cattle&apos;, are better-adapted to tropical environments than other domestic cattle. Their scientific name was originally *Bos indicus*, but this name is now deemed invalid by ITIS, who classify the zebu under *Bos taurus* along with all other domestic cattle, and their aurochs ancestors, domesticated in India about 10,000 years ago. The ancient species of *Bos nomadicus* cattle or even gaur may have contributed to the development of the zebus. There are some 75 known breeds, split about evenly between African breeds and South Asian ones. The major Zebu cattle breeds of the world include Gyr, Guzerat, Indu-Brazilian, Nellore, Ongole and Brahman. Zebu have humps, large dewlaps and ears. They have more sweat glands than European cattle (*Bos taurus*). They handle hot, humid climates well and have pest resistances not seen in European cattle. (</obo:IAO_0000115>
         <obo:IAO_0000119>WIKIPEDIA:Zebu)</obo:IAO_0000119>
         <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
         <oboInOwl:hasDbXref rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9913"/>
@@ -10031,14 +10385,39 @@ The *ascomycetes* are a monophyletic group, i.e., all of its members trace back 
     <!-- http://purl.obolibrary.org/obo/FOODON_03413400 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03413400">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001303"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_3823"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001303"/>
+                        <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_3823"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411567"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
+        <obo:IAO_0000115 xml:lang="en">*Canavalia ensiformis*, or (common) jack bean, is a legume which is used for animal fodder and human nutrition, especially in Brazil where it is called feijão-de-porco (&quot;pig bean&quot;). It is also the source of concanavalin A.[https://en.wikipedia.org/wiki/Canavalia_ensiformis]</obo:IAO_0000115>
         <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
+        <oboInOwl:hasDbXref rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_3823"/>
         <oboInOwl:hasDbXref>CCPR:</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>DPNL 2003:8316</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>GRIN:8827</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>ITIS:501179</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>LANGUAL:B3400</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PLANTS:CAEN4</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>http://eol.org/pages/655303</oboInOwl:hasDbXref>
         <oboInOwl:hasNarrowSynonym>Canavalia ensiformis (L.) DC.</oboInOwl:hasNarrowSynonym>
         <oboInOwl:hasSynonym xml:lang="en">giant stock-bean</oboInOwl:hasSynonym>
+        <oboInOwl:hasSynonym xml:lang="en">gotani bean</oboInOwl:hasSynonym>
+        <oboInOwl:hasSynonym xml:lang="en">jack bean</oboInOwl:hasSynonym>
+        <oboInOwl:hasSynonym xml:lang="en">seaside-bean</oboInOwl:hasSynonym>
+        <oboInOwl:hasSynonym xml:lang="en">sword bean</oboInOwl:hasSynonym>
+        <oboInOwl:hasSynonym xml:lang="en">wonder bean</oboInOwl:hasSynonym>
         <rdfs:label xml:lang="en">jack-bean plant (food source)</rdfs:label>
     </owl:Class>
     
@@ -10053,6 +10432,7 @@ The *ascomycetes* are a monophyletic group, i.e., all of its members trace back 
         <oboInOwl:hasDbXref>CCPR:</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>GRIN:24652</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>LANGUAL:B3403</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>http://eol.org/pages/4277</oboInOwl:hasDbXref>
         <oboInOwl:hasNarrowSynonym>Mucuna deeringiana (Bort.) Merr.; Stizolobium deeringianum Bort.; other Stizolobium spp.</oboInOwl:hasNarrowSynonym>
         <rdfs:label xml:lang="en">velvet bean plant (food source)</rdfs:label>
     </owl:Class>
@@ -10077,7 +10457,9 @@ The *ascomycetes* are a monophyletic group, i.e., all of its members trace back 
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411156"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03414742"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
+        <obo:IAO_0000115 xml:lang="en">*Vigna subterranea* (also known by its common names: Bambara nut, Boro (Yoruba), Bambara groundnut, Bambara-bean, Congo goober, earth pea, ground-bean, or hog-peanut) is a member of the family *Fabaceae*. The plant originated in West Africa. Vigna subterranea ripens its pods underground, much like the peanut (also called a groundnut). They can be eaten fresh or boiled after drying.[]</obo:IAO_0000115>
         <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
         <oboInOwl:hasDbXref rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_115715"/>
         <oboInOwl:hasDbXref>CCPR:</oboInOwl:hasDbXref>
@@ -10086,11 +10468,15 @@ The *ascomycetes* are a monophyletic group, i.e., all of its members trace back 
         <oboInOwl:hasDbXref>ITIS:506274</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>LANGUAL:B3418</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>PLANTS:VISU7</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>http://eol.org/pages/655134</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>http://eol.org/pages/4277</oboInOwl:hasDbXref>
         <oboInOwl:hasNarrowSynonym>Vigna subterranea (L.) Verdc.</oboInOwl:hasNarrowSynonym>
         <oboInOwl:hasNarrowSynonym>Voandzeia subterranea (L.) Thou.</oboInOwl:hasNarrowSynonym>
         <oboInOwl:hasSynonym xml:lang="en">bambara bean</oboInOwl:hasSynonym>
+        <oboInOwl:hasSynonym xml:lang="en">bambara nut</oboInOwl:hasSynonym>
+        <oboInOwl:hasSynonym xml:lang="en">bambara-bean</oboInOwl:hasSynonym>
+        <oboInOwl:hasSynonym xml:lang="en">boro (yoruba)</oboInOwl:hasSynonym>
         <oboInOwl:hasSynonym xml:lang="en">congo goober</oboInOwl:hasSynonym>
+        <oboInOwl:hasSynonym xml:lang="en">earth pea</oboInOwl:hasSynonym>
         <oboInOwl:hasSynonym xml:lang="en">ground-bean</oboInOwl:hasSynonym>
         <oboInOwl:hasSynonym xml:lang="en">hog-peanut</oboInOwl:hasSynonym>
         <oboInOwl:hasSynonym xml:lang="en">vigna subterranea</oboInOwl:hasSynonym>
@@ -10234,11 +10620,11 @@ The *ascomycetes* are a monophyletic group, i.e., all of its members trace back 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03414254">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411018"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
-        <obo:IAO_0000115 xml:lang="en">Pachyrhizus is a small genus of five or six species of tropical and subtropical plants growing from large, often edible taproots.</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="en">*Pachyrhizus* is a small genus of five or six species of tropical and subtropical plants growing from large, often edible taproots.</obo:IAO_0000115>
         <obo:IAO_0000119>WIKIPEDIA:Pachyrhizus</obo:IAO_0000119>
         <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
         <oboInOwl:hasDbXref>LANGUAL:B4254</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>http://eol.org/pages/29378</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>http://eol.org/pages/4277</oboInOwl:hasDbXref>
         <oboInOwl:hasSynonym xml:lang="en">pachyrhizus spp.</oboInOwl:hasSynonym>
         <rdfs:label xml:lang="en">yam bean plant (food source)</rdfs:label>
     </owl:Class>
@@ -10250,10 +10636,13 @@ The *ascomycetes* are a monophyletic group, i.e., all of its members trace back 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03414302">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03413357"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
+        <obo:IAO_0000115 xml:lang="en">*Allium* is a genus of monocotyledonous flowering plants that includes hundreds of species, including the cultivated onion, garlic, scallion, shallot, leek, and chives. [https://en.wikipedia.org/wiki/Allium]</obo:IAO_0000115>
         <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
         <oboInOwl:hasDbXref>LANGUAL:B4302</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>http://eol.org/pages/17858</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>http://eol.org/pages/8187</oboInOwl:hasDbXref>
         <oboInOwl:hasSynonym xml:lang="en">allium</oboInOwl:hasSynonym>
+        <oboInOwl:hasSynonym xml:lang="en">onion</oboInOwl:hasSynonym>
+        <oboInOwl:hasSynonym xml:lang="en">wild onion</oboInOwl:hasSynonym>
         <rdfs:label xml:lang="en">allium species (food source)</rdfs:label>
     </owl:Class>
     
@@ -10303,7 +10692,7 @@ The *ascomycetes* are a monophyletic group, i.e., all of its members trace back 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03414374">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03414381"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
-        <obo:IAO_0000115 xml:lang="en">The biological subfamily Bovinae includes a diverse group of 10 genera of medium- to large-sized ungulates, including domestic cattle, the bison, African buffalo, the water buffalo, the yak, and the four-horned and spiral-horned antelopes. The evolutionary relationship between the members of the group is obscure, and their classification into loose tribes rather than formal subgroups reflects this uncertainty. General characteristics include cloven hoofs and usually at least one of the sexes of a species having true horns.</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="en">The biological subfamily *Bovinae* includes a diverse group of 10 genera of medium- to large-sized ungulates, including domestic cattle, the bison, African buffalo, the water buffalo, the yak, and the four-horned and spiral-horned antelopes. The evolutionary relationship between the members of the group is obscure, and their classification into loose tribes rather than formal subgroups reflects this uncertainty. General characteristics include cloven hoofs and usually at least one of the sexes of a species having true horns.</obo:IAO_0000115>
         <obo:IAO_0000119>WIKIPEDIA:Bovinae</obo:IAO_0000119>
         <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
         <oboInOwl:hasDbXref>LANGUAL:B4374</oboInOwl:hasDbXref>
@@ -10328,6 +10717,107 @@ The family is widespread, being native to Asia, Africa, Europe and North America
         <oboInOwl:hasDbXref>http://eol.org/pages/7687</oboInOwl:hasDbXref>
         <oboInOwl:hasSynonym xml:lang="en">bovidae</oboInOwl:hasSynonym>
         <rdfs:label xml:lang="en">bovid (food source)</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FOODON_03414459 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03414459">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03414460"/>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
+        <obo:IAO_0000115 xml:lang="en">*Cucumis* is a genus of twining, tendril-bearing plants in the *Cucurbitaceae* family which includes the cucumber (*Cucumis sativus*), muskmelons (*Cucumis melo*, including cantaloupe and honeydew), the horned melon (*Cucumis metuliferus*), and the West Indian gherkin (*Cucumis anguria*). [https://en.wikipedia.org/wiki/Cucumis]</obo:IAO_0000115>
+        <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
+        <oboInOwl:hasDbXref>LANGUAL:B4459</oboInOwl:hasDbXref>
+        <rdfs:label xml:lang="en">cucumis species (food source)</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FOODON_03414460 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03414460">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03413357"/>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
+        <obo:IAO_0000115 xml:lang="en">The *Cucurbitaceae*, also called cucurbits and the gourd family, are a plant family consisting of about 965 species in around 95 genera, the most important of which are: 
+  *Cucurbita* - squash, pumpkin, zucchini, some gourds; 
+  *Lagenaria* - calabash, and others that are inedible; 
+  *Citrullus* - watermelon (*C. lanatus, C. colocynthis*) and others; 
+  *Cucumis* - cucumber (*C. sativus*), various melons; 
+  *Luffa* - luffa, loofah [https://en.wikipedia.org/wiki/Cucurbitaceae]</obo:IAO_0000115>
+        <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
+        <oboInOwl:hasDbXref>LANGUAL:B4460</oboInOwl:hasDbXref>
+        <oboInOwl:hasSynonym xml:lang="en">cucurbitaceae</oboInOwl:hasSynonym>
+        <oboInOwl:hasSynonym xml:lang="en">gourd/squash family</oboInOwl:hasSynonym>
+        <rdfs:label xml:lang="en">gourd/squash family (food source)</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FOODON_03414742 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03414742">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03413357"/>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
+        <obo:IAO_0000115 xml:lang="en">*Vigna* is a genus of flowering plants in the legume family, *Fabaceae*, with a pantropical distribution. [https://en.wikipedia.org/wiki/Vigna]</obo:IAO_0000115>
+        <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
+        <oboInOwl:hasDbXref>LANGUAL:B4742</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>http://eol.org/pages/28229</oboInOwl:hasDbXref>
+        <oboInOwl:hasSynonym xml:lang="en">vigna spp.</oboInOwl:hasSynonym>
+        <rdfs:label xml:lang="en">cowpea family as food source</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FOODON_03414899 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03414899">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411297"/>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
+        <obo:IAO_0000115 xml:lang="en">Invertebrates are animals that neither possess nor develop a vertebral column (commonly known as a backbone or spine), derived from the notochord. This includes all animals apart from the subphylum *Vertebrata*. Familiar examples of invertebrates include insects; crabs, lobsters and their kin; snails, clams, octopuses and their kin; starfish, sea-urchins and their kin; jellyfish, and worms. [https://en.wikipedia.org/wiki/Invertebrate] 
+ Terrestrial invertebrates include ants, flies, crickets, grasshoppers and spiders. [https://en.wikipedia.org/wiki/Terrestrial_animal]</obo:IAO_0000115>
+        <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
+        <oboInOwl:hasDbXref>LANGUAL:B4899</oboInOwl:hasDbXref>
+        <oboInOwl:hasSynonym xml:lang="en">insect</oboInOwl:hasSynonym>
+        <oboInOwl:hasSynonym xml:lang="en">invertebrate, land</oboInOwl:hasSynonym>
+        <oboInOwl:hasSynonym xml:lang="en">land snail</oboInOwl:hasSynonym>
+        <rdfs:label xml:lang="en">terrestrial invertebrate as food source</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FOODON_03414934 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03414934">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03413357"/>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
+        <obo:IAO_0000115 xml:lang="en">The *Solanaceae*, or nightshades, are an economically important family of flowering plants. Many members of the family contain potent alkaloids, and some are highly toxic, but many, including tomatoes, potatoes, eggplant, bell/chili peppers, and tobacco are widely used. The *Solanaceae* consists of about 98 genera and some 2,700 species, with a great diversity of habitats, morphology and ecology. [https://en.wikipedia.org/wiki/Solanaceae]</obo:IAO_0000115>
+        <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
+        <oboInOwl:hasDbXref>LANGUAL:B4934</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>http://eol.org/pages/4437</oboInOwl:hasDbXref>
+        <oboInOwl:hasSynonym xml:lang="en">nightshade family</oboInOwl:hasSynonym>
+        <rdfs:label xml:lang="en">solanaceae plant as food source</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FOODON_03415104 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03415104">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03414934"/>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
+        <obo:IAO_0000115 xml:lang="en">*Solanum* is a large and diverse genus of flowering plants, which include two food crops of high economic importance, the potato and the tomato. It also contains the nightshades and horse nettles, as well as numerous plants cultivated for their ornamental flowers and fruit. 
+ *Solanum* species show a wide range of growing habits, such as annual and perennials, vines, subshrubs, shrubs, and small trees. Many formerly independent genera like *Lycopersicon* (the tomatoes) and *Cyphomandra* are now included in *Solanum* as subgenera or sections. Thus, the genus today contains roughly 1,500-2,000 species. [https://en.wikipedia.org/wiki/Solanum]</obo:IAO_0000115>
+        <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
+        <oboInOwl:hasDbXref>DPNL 2003:13160</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>GRIN:300568</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>LANGUAL:B5104</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PLANTS:SOLAN</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>http://eol.org/pages/4437</oboInOwl:hasDbXref>
+        <oboInOwl:hasNarrowSynonym>Solanum</oboInOwl:hasNarrowSynonym>
+        <oboInOwl:hasNarrowSynonym>Solanum L.</oboInOwl:hasNarrowSynonym>
+        <oboInOwl:hasNarrowSynonym>Solanum spp.</oboInOwl:hasNarrowSynonym>
+        <rdfs:label xml:lang="en">solanum plant as food source</rdfs:label>
     </owl:Class>
     
 
@@ -10531,7 +11021,7 @@ The family is widespread, being native to Asia, Africa, Europe and North America
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03420194">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03420164"/>
         <obo:IAO_0000115 xml:lang="en">Poultry, game bird or turtle eggs.</obo:IAO_0000115>
-        <rdfs:label xml:lang="en">egg</rdfs:label>
+        <rdfs:label xml:lang="en">egg or egg part</rdfs:label>
     </owl:Class>
     
 
@@ -10597,6 +11087,7 @@ The family is widespread, being native to Asia, Africa, Europe and North America
     <!-- http://purl.obolibrary.org/obo/FOODON_03430113 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03430113">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENEPIO_0001655"/>
         <obo:IAO_0000115 xml:lang="en">The physical state of the food product (liquid, semiliquid, semisolid, or solid). Solid food products are further subdivided by shape or form. Terms are provided for products that have both liquid and solid components or that incorporate air or other gases. [FDA CFSAN 1995]</obo:IAO_0000115>
         <rdfs:label xml:lang="en">food physical quality</rdfs:label>
     </owl:Class>
@@ -10634,6 +11125,7 @@ The family is widespread, being native to Asia, Africa, Europe and North America
     <!-- http://purl.obolibrary.org/obo/FOODON_03440011 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03440011">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENEPIO_0001655"/>
         <obo:IAO_0000115 xml:lang="en">Used to broadly characterize a food product based on the extent of heat applied. Heat treatment affects the flavor and textural characteristics of a food and thus consumer preparation time. Heat treatment causes chemical changes and/or reduction of enzyme and of microbial activity and thus affects food safety and shelflife. Specifics of preparation are covered by *G. COOKING METHOD* and *H. TREATMENT APPLIED*. [FDA CFSAN 1995]</obo:IAO_0000115>
         <rdfs:label xml:lang="en">extent of food heat treatment</rdfs:label>
     </owl:Class>
@@ -10643,6 +11135,7 @@ The family is widespread, being native to Asia, Africa, Europe and North America
     <!-- http://purl.obolibrary.org/obo/FOODON_03450002 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03450002">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENEPIO_0001655"/>
         <rdfs:label xml:lang="en">food cooking process</rdfs:label>
     </owl:Class>
     
@@ -10680,6 +11173,7 @@ The family is widespread, being native to Asia, Africa, Europe and North America
     <!-- http://purl.obolibrary.org/obo/FOODON_03460111 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03460111">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENEPIO_0001655"/>
         <obo:IAO_0000115 xml:lang="en">Used to specifically characterize a food product based on the treatment or processes applied to the product or any indexed ingredient. The processes include adding, substituting or removing components or modifying the food or component, e.g., through fermentation. Multiple values can be assigned.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">food treatment process</rdfs:label>
     </owl:Class>
@@ -10818,6 +11312,7 @@ The family is widespread, being native to Asia, Africa, Europe and North America
     <!-- http://purl.obolibrary.org/obo/FOODON_03470107 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03470107">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENEPIO_0001655"/>
         <obo:IAO_0000115 xml:lang="en">The methods contributing to the prevention or retardation of microbial, enzymatic or oxidative spoilage and thus to the extension of shelf life. Index all methods for which information is available, even if a corresponding descriptor has already been used in *H. TREATMENT APPLIED*. Preservation descriptors refer to the finished food as a whole with these exceptions: (1) if the components of a multi-component food, such as cream pie, are preservation by different methods, index all methods; (2)  if chemical preservatives are declared on the label, always index them even if it is known that the preservative was introduced through or is only present in a component or ingredient of the food; and (3) if the preservation method for an ingredient is declared on the label (such as brie cheese made from pasteurized milk) index it. Also use *INGREDIENT preservation by THERMAL PROCESSING* or *INGREDIENT preservation by IRRADIATION* when ingredients have been pasteurized, ultrapasteurized, sterilized or irradiated.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">food preservation process</rdfs:label>
     </owl:Class>
@@ -10917,6 +11412,7 @@ The family is widespread, being native to Asia, Africa, Europe and North America
     <!-- http://purl.obolibrary.org/obo/FOODON_03490100 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03490100">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENEPIO_0001655"/>
         <obo:IAO_0000115 xml:lang="en">Type of container or wrapping defined by the main container material, the container form, and the material of the liner lids or ends. Also type of container or wrapping by form; prefer description by material first, then by form.  [FDA CFSAN 1995]</obo:IAO_0000115>
         <rdfs:label xml:lang="en">food container or wrapping</rdfs:label>
     </owl:Class>
@@ -11008,6 +11504,7 @@ The family is widespread, being native to Asia, Africa, Europe and North America
     <!-- http://purl.obolibrary.org/obo/FOODON_03530005 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03530005">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GENEPIO_0001655"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
         <obo:IAO_0000115 xml:lang="en">Additional groups of descriptors of a miscellaneous nature. [FDA CFSAN 1995]</obo:IAO_0000115>
         <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
@@ -11055,6 +11552,41 @@ Use the appropriate narrower term only if ripeness is stated in the food name or
         <oboInOwl:hasDbXref>LANGUAL:Z0268</oboInOwl:hasDbXref>
         <rdfs:comment xml:lang="en">LanguaL curation note: This term is for CLASSIFICATION ONLY; DO NOT USE term in indexing. Use a more precise narrower term.</rdfs:comment>
         <rdfs:label xml:lang="en">adjunct characteristics of plants</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GENEPIO_0001655 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GENEPIO_0001655">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001933"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/GENEPIO_0001605"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
+        <obo:IAO_0000115 xml:lang="en">A categorical tree specification datum is a categorical value specification which takes its value from the ontology URI identifier of any one of its subclass items; these may be organized in a hierarchy.</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">Damion Dooley</obo:IAO_0000117>
+        <rdfs:comment xml:lang="en">A categorical tree specification datum may have its own URI identifier as its value. This could be interpreted to mean that the datum was recorded but that no particular categorical subclass distinction was observed. This in effect makes the datum act as a boolean variable.</rdfs:comment>
+        <rdfs:label xml:lang="en">categorical tree specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000030 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/IAO_0000030">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000001"/>
+        <obo:IAO_0000111 xml:lang="en">information content entity</obo:IAO_0000111>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
+        <obo:IAO_0000115 xml:lang="en">A generically dependent continuant that is about some thing.</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">PERSON: Chris Stoeckert</obo:IAO_0000117>
+        <obo:IAO_0000119 xml:lang="en">OBI_0000142</obo:IAO_0000119>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+        <rdfs:label xml:lang="en">information content entity</rdfs:label>
     </owl:Class>
     
 
@@ -11527,6 +12059,7 @@ Use the appropriate narrower term only if ripeness is stated in the food name or
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_3712">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_3705"/>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon.owl"/>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">wild cabbage</oboInOwl:hasExactSynonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Brassica oleracea</rdfs:label>
     </owl:Class>
     
@@ -11535,7 +12068,7 @@ Use the appropriate narrower term only if ripeness is stated in the food name or
     <!-- http://purl.obolibrary.org/obo/NCBITaxon_3803 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_3803">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_91835"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_72025"/>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon.owl"/>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pea family</oboInOwl:hasExactSynonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fabaceae</rdfs:label>
@@ -11553,12 +12086,61 @@ Use the appropriate narrower term only if ripeness is stated in the food name or
     
 
 
+    <!-- http://purl.obolibrary.org/obo/NCBITaxon_3822 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_3822">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_163735"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon.owl"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Canavalia</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCBITaxon_3823 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_3823">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_3822"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon.owl"/>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">horse bean</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">jack bean</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Canavalia ensiformis</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCBITaxon_3827 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_3827">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_3814"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon.owl"/>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">chickpea</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">garbanzo</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cicer arietinum</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/NCBITaxon_38820 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_38820">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_4734"/>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon.owl"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Poales</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCBITaxon_3891 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_3891">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_163735"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon.owl"/>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Goa bean</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">asparagus bean</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">asparagus pea</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">winged bean</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">winged beans</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Psophocarpus tetragonolobus</rdfs:label>
     </owl:Class>
     
 
@@ -11592,6 +12174,17 @@ Use the appropriate narrower term only if ripeness is stated in the food name or
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_163735"/>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon.owl"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vigna</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCBITaxon_3917 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_3917">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_3913"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon.owl"/>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cowpea</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vigna unguiculata</rdfs:label>
     </owl:Class>
     
 
@@ -11812,10 +12405,21 @@ Use the appropriate narrower term only if ripeness is stated in the food name or
     
 
 
+    <!-- http://purl.obolibrary.org/obo/NCBITaxon_58023 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_58023">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_33090"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon.owl"/>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">vascular plants</oboInOwl:hasExactSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tracheophyta</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/NCBITaxon_58024 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_58024">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_33090"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_78536"/>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon.owl"/>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">seed plants</oboInOwl:hasExactSynonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Spermatophyta</rdfs:label>
@@ -11864,6 +12468,16 @@ Use the appropriate narrower term only if ripeness is stated in the food name or
     
 
 
+    <!-- http://purl.obolibrary.org/obo/NCBITaxon_72025 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_72025">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_91835"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon.owl"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fabales</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/NCBITaxon_7711 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_7711">
@@ -11895,6 +12509,16 @@ Use the appropriate narrower term only if ripeness is stated in the food name or
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gnathostomata</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">jawed vertebrates</oboInOwl:hasExactSynonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gnathostomata &lt;vertebrate&gt;</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCBITaxon_78536 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_78536">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_58023"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon.owl"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Euphyllophyta</rdfs:label>
     </owl:Class>
     
 
@@ -12097,6 +12721,19 @@ Use the appropriate narrower term only if ripeness is stated in the food name or
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">domestic cattle</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">domestic cow</oboInOwl:hasExactSynonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bos taurus</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0001933 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0001933">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000030"/>
+        <obo:IAO_0000111>value specification</obo:IAO_0000111>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
+        <obo:IAO_0000115>An information content entity that specifies a value within a classification scheme or on a quantitative scale.</obo:IAO_0000115>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+        <rdfs:label>value specification</rdfs:label>
     </owl:Class>
     
 
