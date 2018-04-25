@@ -1,6 +1,8 @@
 [![Build Status](https://travis-ci.org/EnvironmentOntology/envo.svg?branch=master)](https://travis-ci.org/EnvironmentOntology/envo)
 [![DOI](https://zenodo.org/badge/13996/EnvironmentOntology/envo.svg)](https://zenodo.org/badge/latestdoi/13996/EnvironmentOntology/envo)
 
+**Release pending: We're currently fixing errors caused by an imported ontology. See https://github.com/FoodOntology/foodon/issues/42**
+
 # The Environment Ontology
 
 
