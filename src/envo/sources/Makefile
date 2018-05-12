@@ -89,3 +89,8 @@ geonames.obo: geonames-orig.obo
 
 featureCodes_en.txt:
 	http://download.geonames.org/export/dump/featureCodes_en.txt
+
+
+# https://github.com/EnvironmentOntology/envo/issues/333
+soil.ttl:
+	wget --no-check-certificate https://github.com/EnvironmentOntology/envo/files/1779245/orders.ttl.txt -O $@

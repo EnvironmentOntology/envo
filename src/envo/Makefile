@@ -40,15 +40,19 @@ copy-release:
 
 #release: envo-basic.obo release-diffs
 
-# all release files are derived from the editors version.
-# we use the default Oort setup (hermit as reasoner)
-
+# Merge in all module files, whilst removing the corresponding import
 envo-edit-module-merge.owl: envo-edit.owl
-	owltools $(USECAT) $<  --merge-imports-closure -o $@
-	#owltools $(USECAT) $<  $(patsubst %, --remove-import-declaration $(OBO)/envo/modules/%.owl, $(MODS)) $(ALL_MODS_OWL) --merge-support-ontologies -o $@
+	owltools $(USECAT) $<  $(patsubst %, --remove-import-declaration $(OBO)/envo/modules/%.owl, $(MODS)) -o $@.tmp
+	owltools $(USECAT) $@.tmp  $(ALL_MODS_OWL) --merge-support-ontologies -o $@
 
-envo.owl envo-simple.owl: envo-edit-module-merge.owl
-	ontology-release-runner --catalog-xml catalog-v001.xml --reasoner elk  --skip-format owx --skip-format obo  --error-report envo-errors.txt $< --allow-overwrite --asserted --simple
+envo.owl: envo-edit-module-merge.owl
+	robot reason -i $< -r ELK relax reduce -o $@
+
+envo-simple.owl: envo.owl
+	owltools --use-catalog $< --remove-imports-declarations --remove-dangling-annotations -f -o $@
+
+
+###	ontology-release-runner --catalog-xml catalog-v001.xml --reasoner elk  --skip-format owx --skip-format obo  --error-report envo-errors.txt $< --allow-overwrite --asserted --simple
 ##	ontology-release-runner --catalog-xml catalog-v001.xml  --skip-format owx --run-obo-basic-dag-check --error-report envo-errors.txt $< --allow-overwrite --asserted --simple
 
 #envo.owl: envo-edit.owl
