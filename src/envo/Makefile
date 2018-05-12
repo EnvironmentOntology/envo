@@ -100,7 +100,7 @@ ENVO_IMPORTS_BASE_URI = $(OBO)/envo
 
 # Ontology dependencies
 # We don't include clo, as this is currently not working
-IMPORTS = pato uberon chebi ro pco foodon go ncbitaxon sdgio
+IMPORTS = pato uberon chebi ro pco foodon go ncbitaxon sdgio clo obi po iao fao omp flopo agro
 
 # Make this target to regenerate ALL
 all_imports: $(patsubst %, imports/%_import.owl,$(IMPORTS)) $(patsubst %, imports/%_import.obo,$(IMPORTS))
@@ -126,82 +126,6 @@ imports/%_import.owl: mirror/%.owl envo-edit.owl imports/%_combined_seed.tsv
 imports/%_import.obo: imports/%_import.owl
 	owltools $(USECAT) $< -o -f obo $@
 
-# CLO: Use ROBOT, driven entirely by terms lists NOT from source ontology
-imports/clo_import.owl: mirror/clo.owl imports/clo_terms.txt
-	$(ROBOT) extract -i $< -T imports/clo_terms.txt --method BOT -O $(ENVO_IMPORTS_BASE_URI)/$@ -o $@
-.PRECIOUS: imports/%_import.owl
-
-
-# SDGIO: Use ROBOT, driven entirely by terms lists NOT from source ontology
-imports/sdgio_import.owl: mirror/sdgio.owl imports/sdgio_terms.txt
-	$(ROBOT) extract -i $< -T imports/sdgio_terms.txt --method BOT -O $(ENVO_IMPORTS_BASE_URI)/$@ -o $@
-.PRECIOUS: imports/%_import.owl
-
-
-# CHEBI: Use ROBOT, driven entirely by terms lists NOT from source ontology
-imports/chebi_import.owl: mirror/chebi.owl imports/chebi_terms.txt
-	$(ROBOT) extract -i $< -T imports/chebi_terms.txt --method BOT -O $(ENVO_IMPORTS_BASE_URI)/$@ -o $@
-.PRECIOUS: imports/%_import.owl
-	
-# FOODON: Use ROBOT, driven entirely by terms lists NOT from source ontology
-imports/foodon_import.owl: mirror/foodon.owl imports/foodon_terms.txt
-	$(ROBOT) extract -i $< -T imports/foodon_terms.txt --method BOT -O $(ENVO_IMPORTS_BASE_URI)/$@ -o $@
-.PRECIOUS: imports/%_import.owl
-
-# OBI: Use ROBOT, driven entirely by terms lists NOT from source ontology
-imports/obi_import.owl: mirror/obi.owl imports/obi_terms.txt
-	$(ROBOT) extract -i $< -T imports/obi_terms.txt --method BOT -O $(ENVO_IMPORTS_BASE_URI)/$@ -o $@
-.PRECIOUS: imports/%_import.owl
-
-# PATO: Use ROBOT, driven entirely by terms lists NOT from source ontology
-imports/pato_import.owl: mirror/pato.owl imports/pato_terms.txt
-	$(ROBOT) extract -i $< -T imports/pato_terms.txt --method BOT -O $(ENVO_IMPORTS_BASE_URI)/$@ -o $@
-.PRECIOUS: imports/%_import.owl
-
-# RO: Use ROBOT, driven entirely by terms lists NOT from source ontology
-imports/ro_import.owl: mirror/ro.owl imports/ro_terms.txt
-	$(ROBOT) extract -i $< -T imports/ro_terms.txt --method BOT -O $(ENVO_IMPORTS_BASE_URI)/$@ -o $@
-.PRECIOUS: imports/%_import.owl
-
-# GO: Use ROBOT, driven entirely by terms lists NOT from source ontology
-imports/go_import.owl: mirror/go.owl imports/go_terms.txt
-	$(ROBOT) extract -i $< -T imports/go_terms.txt --method BOT -O $(ENVO_IMPORTS_BASE_URI)/$@ -o $@
-.PRECIOUS: imports/%_import.owl
-
-# NCBITAXON: Use ROBOT, driven entirely by terms lists NOT from source ontology
-imports/ncbitaxon_import.owl: mirror/ncbitaxon.owl imports/ncbitaxon_terms.txt
-	$(ROBOT) extract -i $< -T imports/ncbitaxon_terms.txt --method BOT -O $(ENVO_IMPORTS_BASE_URI)/$@ -o $@
-.PRECIOUS: imports/%_import.owl
-
-# IAO: Use ROBOT, driven entirely by terms lists NOT from source ontology
-imports/iao_import.owl: mirror/iao.owl imports/iao_terms.txt
-	$(ROBOT) extract -i $< -T imports/iao_terms.txt --method BOT -O $(ENVO_IMPORTS_BASE_URI)/$@ -o $@
-.PRECIOUS: imports/%_import.owl
-
-# PO: Use ROBOT, driven entirely by terms lists NOT from source ontology
-imports/po_import.owl: mirror/po.owl imports/po_terms.txt
-	$(ROBOT) extract -i $< -T imports/po_terms.txt --method BOT -O $(ENVO_IMPORTS_BASE_URI)/$@ -o $@
-.PRECIOUS: imports/%_import.owl
-
-# FAO: Use ROBOT, driven entirely by terms lists NOT from source ontology
-imports/fao_import.owl: mirror/fao.owl imports/fao_terms.txt
-	$(ROBOT) extract -i $< -T imports/fao_terms.txt --method BOT -O $(ENVO_IMPORTS_BASE_URI)/$@ -o $@
-.PRECIOUS: imports/%_import.owl
-
-# OMP: Use ROBOT, driven entirely by terms lists NOT from source ontology
-imports/omp_import.owl: mirror/omp.owl imports/omp_terms.txt
-	$(ROBOT) extract -i $< -T imports/omp_terms.txt --method BOT -O $(ENVO_IMPORTS_BASE_URI)/$@ -o $@
-.PRECIOUS: imports/%_import.owl
-
-# FLOPO: Use ROBOT, driven entirely by terms lists NOT from source ontology
-imports/flopo_import.owl: mirror/flopo.owl imports/flopo_terms.txt
-	$(ROBOT) extract -i $< -T imports/flopo_terms.txt --method BOT -O $(ENVO_IMPORTS_BASE_URI)/$@ -o $@
-.PRECIOUS: imports/%_import.owl
-
-# AGRO: Use ROBOT, driven entirely by terms lists NOT from source ontology
-imports/agro_import.owl: mirror/agro.owl imports/agro_terms.txt
-	$(ROBOT) extract -i $< -T imports/agro_terms.txt --method BOT -O $(ENVO_IMPORTS_BASE_URI)/$@ -o $@
-.PRECIOUS: imports/%_import.owl
 
 
 # clone remote ontology locally, perfoming some excision of relations and annotations

@@ -1389,7 +1389,6 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
     <!-- http://purl.obolibrary.org/obo/ENVO_01000815 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000815">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000648"/>
         <obo:IAO_0000115>An environmental material which is in a liquid state.</obo:IAO_0000115>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/envo.owl"/>
         <rdfs:label xml:lang="en">liquid environmental material</rdfs:label>
@@ -3550,6 +3549,10 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/FOODON_00002381"/>
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/FOODON_00002403"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001000"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/FOODON_00002452"/>
+                    </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
@@ -6507,7 +6510,7 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
     <!-- http://purl.obolibrary.org/obo/FOODON_00002452 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00002452">
-        <rdfs:label xml:lang="en">invertebrate food source</rdfs:label>
+        <rdfs:label xml:lang="en">invertebrate (food source)</rdfs:label>
     </owl:Class>
     
 
@@ -6898,32 +6901,6 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
 * has substance added  &apos;sugar or sugar syrup added&apos; (http://purl.obolibrary.org/obo/FOODON_03460136)
                 </rdfs:comment>
         <rdfs:label xml:lang="en">dessert (food product)</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/FOODON_03305105 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03305105">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/FOODON_00002454"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000086"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PATO_0001548"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
-        <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
-        <oboInOwl:hasDbXref>SUBSET_SIREN:F5105</oboInOwl:hasDbXref>
-        <oboInOwl:inSubset>subset_siren</oboInOwl:inSubset>
-        <rdfs:comment xml:lang="en">SIREN DB annotation:
-* has quality &apos;liquid&apos; (http://purl.obolibrary.org/obo/FOODON_03430130)
-                </rdfs:comment>
-        <rdfs:label xml:lang="en">food (liquid)</rdfs:label>
     </owl:Class>
     
 
@@ -11503,9 +11480,23 @@ The family is widespread, being native to Asia, Africa, Europe and North America
     <!-- http://purl.obolibrary.org/obo/FOODON_03430130 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03430130">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03430113"/>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/FOODON_00002454"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000086"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PATO_0001548"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <obo:IAO_0000115 xml:lang="en">A state of matter between a solid and a gas, in which a substance has the capacity to flow and conforms to the shape of the container. Liquids range from water to honey, corresponding to a range in viscosity (or apparent viscosity) from 1 to 500 centipoise (viscosity is a measure of a liquid&apos;s resistance to flow). Products that are pourable but have a higher viscosity are *SEMILIQUID*.</obo:IAO_0000115>
-        <rdfs:label xml:lang="en">liquid</rdfs:label>
+        <oboInOwl:hasDbXref>SUBSET_SIREN:F5105</oboInOwl:hasDbXref>
+        <rdfs:comment xml:lang="en">SIREN DB annotation:
+* has quality &apos;liquid&apos; (http://purl.obolibrary.org/obo/FOODON_03430130)
+                </rdfs:comment>
+        <rdfs:label xml:lang="en">food (liquid)</rdfs:label>
     </owl:Class>
     
 
@@ -11857,10 +11848,10 @@ Use the appropriate narrower term only if ripeness is stated in the food name or
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03530268">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03430113"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
+        <obo:IAO_0000118 xml:lang="en">adjunct characteristics of plants</obo:IAO_0000118>
         <obo:IAO_0000412>http://langual.org</obo:IAO_0000412>
         <oboInOwl:hasDbXref>LANGUAL:Z0268</oboInOwl:hasDbXref>
         <rdfs:comment xml:lang="en">LanguaL curation note: This term is for CLASSIFICATION ONLY; DO NOT USE term in indexing. Use a more precise narrower term.</rdfs:comment>
-        <rdfs:label xml:lang="en">adjunct characteristics of plants</rdfs:label>
     </owl:Class>
     
 
@@ -13298,5 +13289,5 @@ This issue is outside the scope of OBI.</obo:IAO_0000116>
 
 
 
-<!-- Generated by the OWL API (version 4.2.6) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
 
