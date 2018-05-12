@@ -155,7 +155,7 @@ mirror/obi.owl: envo-edit.owl
 
 
 mirror/foodon.owl: envo-edit.owl
-	owltools $(OBO)/foodon.owl --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/foodon.owl -o $@
+	owltools $(OBO)/foodon.owl --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -n $(KEEPRELS) --set-ontology-id $(OBO)/foodon.owl -o $@
 .PRECIOUS: mirror/%.owl
 
 # chebi.owl is large and the owlapi often times out when reading it; use the obo instead
@@ -292,7 +292,7 @@ subsets/envoCesab.owl: subsets/envo-basic.obo
 	owltools $< --extract-ontology-subset --fill-gaps --subset envoCesab --iri $(OBO)/envo/$@ -o $@
 subsets/envoCesab.obo: subsets/envoCesab.owl
 	owltools $< -o -f obo $@
-	
+
 subsets/envoAstro.owl: subsets/envo-basic.obo
 	owltools $< --extract-ontology-subset --fill-gaps --subset envoAstro --iri $(OBO)/envo/$@ -o $@
 subsets/envoAstro.obo: subsets/envoAstro.owl
