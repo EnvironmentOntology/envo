@@ -37,6 +37,8 @@ copy-release:
 %.json: %.owl
 	robot convert -input $< -o $@
 
+debug.owl: envo-edit.owl
+	owltools --use-catalog  $< --merge-support-ontologies --run-reasoner -r elk -u -m $@
 
 #release: envo-basic.obo release-diffs
 
