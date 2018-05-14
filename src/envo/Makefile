@@ -37,18 +37,24 @@ copy-release:
 %.json: %.owl
 	robot convert -input $< -o $@
 
+debug.owl: envo-edit.owl
+	owltools --use-catalog  $< --merge-support-ontologies --run-reasoner -r elk -u -m $@
 
 #release: envo-basic.obo release-diffs
 
-# all release files are derived from the editors version.
-# we use the default Oort setup (hermit as reasoner)
-
+# Merge in all module files, whilst removing the corresponding import
 envo-edit-module-merge.owl: envo-edit.owl
-	owltools $(USECAT) $<  --merge-imports-closure -o $@
-	#owltools $(USECAT) $<  $(patsubst %, --remove-import-declaration $(OBO)/envo/modules/%.owl, $(MODS)) $(ALL_MODS_OWL) --merge-support-ontologies -o $@
+	owltools $(USECAT) $<  $(patsubst %, --remove-import-declaration $(OBO)/envo/modules/%.owl, $(MODS)) -o $@.tmp
+	owltools $(USECAT) $@.tmp  $(ALL_MODS_OWL) --merge-support-ontologies -o $@
 
-envo.owl envo-simple.owl: envo-edit-module-merge.owl
-	ontology-release-runner --catalog-xml catalog-v001.xml --reasoner elk  --skip-format owx --skip-format obo  --error-report envo-errors.txt $< --allow-overwrite --asserted --simple
+envo.owl: envo-edit-module-merge.owl
+	robot reason -i $< -r ELK relax reduce -o $@
+
+envo-simple.owl: envo.owl
+	owltools --use-catalog $< --remove-imports-declarations --remove-dangling-annotations -f -o $@
+
+
+###	ontology-release-runner --catalog-xml catalog-v001.xml --reasoner elk  --skip-format owx --skip-format obo  --error-report envo-errors.txt $< --allow-overwrite --asserted --simple
 ##	ontology-release-runner --catalog-xml catalog-v001.xml  --skip-format owx --run-obo-basic-dag-check --error-report envo-errors.txt $< --allow-overwrite --asserted --simple
 
 #envo.owl: envo-edit.owl
@@ -155,7 +161,7 @@ mirror/obi.owl: envo-edit.owl
 
 
 mirror/foodon.owl: envo-edit.owl
-	owltools $(OBO)/foodon.owl --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/foodon.owl -o $@
+	owltools $(OBO)/foodon.owl --remove-classes-in-idspace ENVO --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -n $(KEEPRELS) --set-ontology-id $(OBO)/foodon.owl -o $@
 .PRECIOUS: mirror/%.owl
 
 # chebi.owl is large and the owlapi often times out when reading it; use the obo instead
@@ -292,7 +298,7 @@ subsets/envoCesab.owl: subsets/envo-basic.obo
 	owltools $< --extract-ontology-subset --fill-gaps --subset envoCesab --iri $(OBO)/envo/$@ -o $@
 subsets/envoCesab.obo: subsets/envoCesab.owl
 	owltools $< -o -f obo $@
-	
+
 subsets/envoAstro.owl: subsets/envo-basic.obo
 	owltools $< --extract-ontology-subset --fill-gaps --subset envoAstro --iri $(OBO)/envo/$@ -o $@
 subsets/envoAstro.obo: subsets/envoAstro.owl
