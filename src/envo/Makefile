@@ -107,7 +107,7 @@ ENVO_IMPORTS_BASE_URI = $(OBO)/envo
 # owltools command for removing self-reference
 # this is a temp fix until all upstreams implement Jim's solution
 # See also https://github.com/EnvironmentOntology/envo/issues/610
-REMOVE_SELF_REF= --remove-classes-in-idspace ENVO
+REMOVE_SELF_REF= --remove-classes-in-idspace -d ENVO
 
 # Ontology dependencies
 # We don't include clo, as this is currently not working
@@ -166,7 +166,7 @@ mirror/obi.owl: envo-edit.owl
 
 
 mirror/foodon.owl: envo-edit.owl
-	owltools $(OBO)/foodon.owl --remove-classes-in-idspace ENVO --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -n $(KEEPRELS) --set-ontology-id $(OBO)/foodon.owl -o $@
+	owltools $(OBO)/foodon.owl --merge-imports-closure $(REMOVE_SELF_REF) --remove-annotation-assertions -l -s -d --remove-axiom-annotations  --set-ontology-id $(OBO)/foodon.owl -o $@
 .PRECIOUS: mirror/%.owl
 
 # chebi.owl is large and the owlapi often times out when reading it; use the obo instead

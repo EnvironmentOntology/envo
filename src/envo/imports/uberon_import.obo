@@ -485,6 +485,7 @@ synonym: "anatomical unit" RELATED []
 synonym: "body organ" RELATED []
 synonym: "element" RELATED []
 is_a: UBERON:0010000 ! multicellular anatomical structure
+disjoint_from: UBERON:0002095 ! mesentery
 disjoint_from: UBERON:0034921 ! multi organ part structure
 relationship: BFO:0000050 UBERON:0000467 ! anatomical system
 
@@ -1005,6 +1006,7 @@ synonym: "set of lungs" EXACT []
 is_a: UBERON:0034925 ! anatomical collection
 relationship: BFO:0000050 UBERON:0001558 ! lower respiratory tract
 relationship: BFO:0000051 UBERON:0002167 ! right lung
+relationship: BFO:0000051 UBERON:0002168 ! left lung
 
 [Term]
 id: UBERON:0000171
@@ -1143,7 +1145,7 @@ relationship: RO:0002202 UBERON:0007010 ! cleaving embryo
 [Term]
 id: UBERON:0000310
 name: breast
-def: "The upper ventral region of an animal's torso." []
+def: "The upper ventral region of the torso of an organism." []
 synonym: "mamma" RELATED []
 synonym: "mammary part of chest" EXACT []
 synonym: "mammary region" EXACT []
@@ -5500,7 +5502,7 @@ name: sesamoid bone
 def: "A sesamoid element that is composed of bone tissue." []
 synonym: "ossa sesamoidea" EXACT []
 synonym: "sesamoid" BROAD []
-is_a: UBERON:0001474 ! bone element
+is_a: UBERON:0013630 ! short bone
 is_a: UBERON:0013631 ! sesamoid element
 
 [Term]
@@ -9040,6 +9042,13 @@ relationship: BFO:0000050 UBERON:0002081 ! cardiac atrium
 id: UBERON:0002167
 name: right lung
 def: "Lung which consists of the right upper lobe, middle lobe and right lower lobe.[FMA]" []
+is_a: UBERON:0002048 ! lung
+relationship: BFO:0000050 UBERON:0000170 ! pair of lungs
+
+[Term]
+id: UBERON:0002168
+name: left lung
+def: "Lung which consists of the left upper lobe and left lower lobe.[FMA]" []
 is_a: UBERON:0002048 ! lung
 relationship: BFO:0000050 UBERON:0000170 ! pair of lungs
 
@@ -13541,6 +13550,18 @@ intersection_of: BFO:0000050 UBERON:0002167 ! right lung
 relationship: BFO:0000050 UBERON:0002167 ! right lung
 
 [Term]
+id: UBERON:0003365
+name: epithelium of left lung
+def: "An epithelium that is part of a left lung [Automatically generated definition]." []
+synonym: "epithelial tissue of left lung" EXACT []
+synonym: "left lung epithelial tissue" EXACT []
+synonym: "left lung epithelium" EXACT []
+is_a: UBERON:0000115 ! lung epithelium
+intersection_of: UBERON:0000483 ! epithelium
+intersection_of: BFO:0000050 UBERON:0002168 ! left lung
+relationship: BFO:0000050 UBERON:0002168 ! left lung
+
+[Term]
 id: UBERON:0003367
 name: epithelium of vomeronasal organ
 def: "An epithelium that is part of a vomeronasal organ [Automatically generated definition]." []
@@ -14984,6 +15005,18 @@ intersection_of: BFO:0000050 UBERON:0002167 ! right lung
 relationship: BFO:0000050 UBERON:0002167 ! right lung
 
 [Term]
+id: UBERON:0003539
+name: left lung bronchiole
+def: "A bronchiole that is part of a left lung [Automatically generated definition]." []
+synonym: "bronchiole of left lung" EXACT []
+synonym: "left lung lobular bronchiole" EXACT []
+synonym: "lobular bronchiole of left lung" EXACT []
+is_a: UBERON:0002186 ! bronchiole
+intersection_of: UBERON:0002186 ! bronchiole
+intersection_of: BFO:0000050 UBERON:0002168 ! left lung
+relationship: BFO:0000050 UBERON:0002168 ! left lung
+
+[Term]
 id: UBERON:0003540
 name: right lung terminal bronchiole
 def: "A terminal bronchiole that is part of a right lung [Automatically generated definition]." []
@@ -14996,6 +15029,18 @@ intersection_of: UBERON:0002187 ! terminal bronchiole
 intersection_of: BFO:0000050 UBERON:0002167 ! right lung
 
 [Term]
+id: UBERON:0003541
+name: left lung terminal bronchiole
+def: "A terminal bronchiole that is part of a left lung [Automatically generated definition]." []
+synonym: "bronchiolus terminalis of left lung" EXACT []
+synonym: "left lung bronchiolus terminalis" EXACT []
+synonym: "terminal bronchiole of left lung" EXACT []
+is_a: UBERON:0002187 ! terminal bronchiole
+is_a: UBERON:0003539 ! left lung bronchiole
+intersection_of: UBERON:0002187 ! terminal bronchiole
+intersection_of: BFO:0000050 UBERON:0002168 ! left lung
+
+[Term]
 id: UBERON:0003542
 name: right lung respiratory bronchiole
 def: "A respiratory bronchiole that is part of a right lung [Automatically generated definition]." []
@@ -15006,6 +15051,18 @@ is_a: UBERON:0002188 ! respiratory bronchiole
 is_a: UBERON:0003538 ! right lung bronchiole
 intersection_of: UBERON:0002188 ! respiratory bronchiole
 intersection_of: BFO:0000050 UBERON:0002167 ! right lung
+
+[Term]
+id: UBERON:0003543
+name: left lung respiratory bronchiole
+def: "A respiratory bronchiole that is part of a left lung [Automatically generated definition]." []
+synonym: "bronchiolus respiratorius of left lung" EXACT []
+synonym: "left lung bronchiolus respiratorius" EXACT []
+synonym: "respiratory bronchiole of left lung" EXACT []
+is_a: UBERON:0002188 ! respiratory bronchiole
+is_a: UBERON:0003539 ! left lung bronchiole
+intersection_of: UBERON:0002188 ! respiratory bronchiole
+intersection_of: BFO:0000050 UBERON:0002168 ! left lung
 
 [Term]
 id: UBERON:0003544
@@ -21453,6 +21510,17 @@ intersection_of: BFO:0000050 UBERON:0002167 ! right lung
 relationship: BFO:0000050 UBERON:0006526 ! right lung alveolar system
 
 [Term]
+id: UBERON:0004862
+name: left lung alveolus
+def: "An alveolus that is part of a left lung [Automatically generated definition]." []
+synonym: "alveolus of left lung" EXACT []
+synonym: "alveolus of lobe of left lung" EXACT []
+is_a: UBERON:0002299 ! alveolus of lung
+intersection_of: UBERON:0003215 ! alveolus
+intersection_of: BFO:0000050 UBERON:0002168 ! left lung
+relationship: BFO:0000050 UBERON:0006525 ! left lung alveolar system
+
+[Term]
 id: UBERON:0004863
 name: thoracic sympathetic nerve trunk
 def: "A sympathetic nerve trunk that is part of a thorax [Automatically generated definition]." []
@@ -25024,6 +25092,16 @@ intersection_of: UBERON:0001986 ! endothelium
 intersection_of: BFO:0000050 UBERON:0002167 ! right lung
 
 [Term]
+id: UBERON:0005673
+name: left lung endothelium
+def: "An endothelium that is part of a left lung." []
+is_a: UBERON:0000077 ! mixed endoderm/mesoderm-derived structure
+is_a: UBERON:0001986 ! endothelium
+is_a: UBERON:0003365 ! epithelium of left lung
+intersection_of: UBERON:0001986 ! endothelium
+intersection_of: BFO:0000050 UBERON:0002168 ! left lung
+
+[Term]
 id: UBERON:0005677
 name: caecum mesentery
 def: "A mesentery that is part of a caecum." []
@@ -26500,6 +26578,14 @@ is_a: UBERON:0011216 ! organ system subdivision
 relationship: BFO:0000050 UBERON:0002048 ! lung
 
 [Term]
+id: UBERON:0006525
+name: left lung alveolar system
+is_a: UBERON:0004119 ! endoderm-derived structure
+is_a: UBERON:0011216 ! organ system subdivision
+relationship: BFO:0000050 UBERON:0002168 ! left lung
+relationship: BFO:0000050 UBERON:0006524 ! alveolar system
+
+[Term]
 id: UBERON:0006526
 name: right lung alveolar system
 is_a: UBERON:0004119 ! endoderm-derived structure
@@ -26692,6 +26778,16 @@ name: presumptive mesoderm
 def: "Presumptive structure of the blastula that will develop into mesoderm." []
 is_a: UBERON:0006598 ! presumptive structure
 relationship: BFO:0000050 UBERON:0000307 ! blastula
+
+[Term]
+id: UBERON:0006611
+name: exoskeleton
+def: "Exoskeleton or shell, including those of mollusks, turtles, insects and crustaceans." []
+synonym: "lorica" NARROW []
+synonym: "shell" RELATED []
+synonym: "test" NARROW []
+is_a: UBERON:0000477 ! anatomical cluster
+relationship: BFO:0000050 UBERON:0002416 ! integumental system
 
 [Term]
 id: UBERON:0006615
@@ -28351,7 +28447,7 @@ is_a: UBERON:0006658 ! interphalangeal joint
 intersection_of: UBERON:0006658 ! interphalangeal joint
 intersection_of: BFO:0000050 UBERON:0001466 ! pedal digit
 relationship: BFO:0000050 UBERON:0001466 ! pedal digit
-relationship: RO:0002176 UBERON:0001449 {minCardinality="2", maxCardinality="2"} ! phalanx of pes
+relationship: RO:0002176 UBERON:0001449 ! phalanx of pes
 
 [Term]
 id: UBERON:0007722
@@ -28370,7 +28466,7 @@ is_a: UBERON:0006658 ! interphalangeal joint
 intersection_of: UBERON:0006658 ! interphalangeal joint
 intersection_of: BFO:0000050 UBERON:0002389 ! manual digit
 relationship: BFO:0000050 UBERON:0002389 ! manual digit
-relationship: RO:0002176 UBERON:0001436 {minCardinality="2", maxCardinality="2"} ! phalanx of manus
+relationship: RO:0002176 UBERON:0001436 ! phalanx of manus
 
 [Term]
 id: UBERON:0007771
@@ -29181,7 +29277,6 @@ synonym: "pre-bone" EXACT []
 synonym: "prebone" EXACT []
 synonym: "prebone tissue" EXACT []
 is_a: UBERON:0002481 ! bone tissue
-is_a: UBERON:0007475 ! matrix-based tissue
 
 [Term]
 id: UBERON:0008886
@@ -29730,6 +29825,16 @@ relationship: BFO:0000050 UBERON:0006875 ! embryonic handplate
 relationship: RO:0002202 UBERON:0003413 ! pectoral appendage bud mesenchyme
 
 [Term]
+id: UBERON:0009536
+name: vascular element of left lung
+def: "A vascular plexus that is part of a left lung." []
+is_a: UBERON:0000102 ! lung vasculature
+is_a: UBERON:0005629 ! vascular plexus
+intersection_of: UBERON:0005629 ! vascular plexus
+intersection_of: BFO:0000050 UBERON:0002168 ! left lung
+relationship: BFO:0000050 UBERON:0002168 ! left lung
+
+[Term]
 id: UBERON:0009537
 name: vascular element of right lung
 def: "A vascular plexus that is part of a right lung." []
@@ -29809,6 +29914,16 @@ is_a: UBERON:0010042 ! 1st arch mesenchyme
 intersection_of: UBERON:0003104 ! mesenchyme
 intersection_of: BFO:0000050 UBERON:0007237 ! 1st arch mandibular component
 relationship: BFO:0000050 UBERON:0007237 ! 1st arch mandibular component
+
+[Term]
+id: UBERON:0009602
+name: left lung associated mesenchyme
+def: "Mesenchyme that is part of a developing left lung." []
+synonym: "left lung mesenchyme" EXACT []
+is_a: UBERON:0004883 ! lung mesenchyme
+intersection_of: UBERON:0003104 ! mesenchyme
+intersection_of: BFO:0000050 UBERON:0002168 ! left lung
+relationship: BFO:0000050 UBERON:0002168 ! left lung
 
 [Term]
 id: UBERON:0009603
@@ -34384,6 +34499,12 @@ is_a: UBERON:0002553 ! anatomical cavity
 is_a: UBERON:0007473 ! lumen of epithelial sac
 relationship: BFO:0000050 UBERON:0003051 ! ear vesicle
 relationship: RO:0002202 UBERON:0006273 ! otic pit
+
+[Term]
+id: UBERON:0013630
+name: short bone
+def: "Short bones are designated as those bones that are as wide as they are long. Their primary function is to provide support and stability with little to no movement. They are one of five types of bones: long, short, flat, irregular and sesamoid. Examples of these bones include the tarsals in the foot and the carpals in the hand." []
+is_a: UBERON:0001474 ! bone element
 
 [Term]
 id: UBERON:0013631

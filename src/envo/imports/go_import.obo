@@ -4,98 +4,84 @@ ontology: envo/imports/go_import
 [Term]
 id: GO:0003008
 name: system process
-def: "A multicellular organismal process carried out by any of the organs or tissues in an organ system. An organ system is a regularly interacting or interdependent group of organs or tissues that work together to carry out a biological objective." []
-synonym: "organ system process" EXACT []
 is_a: GO:0032501 ! multicellular organismal process
 
 [Term]
 id: GO:0003674
 name: molecular_function
-def: "Elemental activities, such as catalysis or binding, describing the actions of a gene product at the molecular level. A given gene product may exhibit one or more molecular functions." []
-synonym: "molecular function" EXACT []
+
+[Term]
+id: GO:0004872
+name: receptor activity
+is_a: GO:0060089 ! molecular transducer activity
+
+[Term]
+id: GO:0005102
+name: receptor binding
+is_a: GO:0005515 ! protein binding
+
+[Term]
+id: GO:0005488
+name: binding
+is_a: GO:0003674 ! molecular_function
+
+[Term]
+id: GO:0005515
+name: protein binding
+is_a: GO:0005488 ! binding
 
 [Term]
 id: GO:0006091
 name: generation of precursor metabolites and energy
-def: "The chemical reactions and pathways resulting in the formation of precursor metabolites, substances from which energy is derived, and any process involved in the liberation of energy from these substances." []
-synonym: "energy pathways" BROAD []
-synonym: "intermediary metabolism" RELATED []
-synonym: "metabolic energy generation" RELATED []
 is_a: GO:0044237 ! cellular metabolic process
 
 [Term]
 id: GO:0006807
 name: nitrogen compound metabolic process
-def: "The chemical reactions and pathways involving organic or inorganic compounds that contain nitrogen, including (but not limited to) nitrogen fixation, nitrification, denitrification, assimilatory/dissimilatory nitrate reduction and the interconversion of nitrogenous organic matter and ammonium." []
-synonym: "nitrogen compound metabolism" EXACT []
 is_a: GO:0008152 ! metabolic process
 
 [Term]
 id: GO:0007588
 name: excretion
-def: "The elimination by an organism of the waste products that arise as a result of metabolic activity. These products include water, carbon dioxide (CO2), and nitrogenous compounds." []
 is_a: GO:0003008 ! system process
 
 [Term]
 id: GO:0008150
 name: biological_process
-def: "Any process specifically pertinent to the functioning of integrated living units: cells, tissues, organs, and organisms. A process is a collection of molecular events with a defined beginning and end." []
-synonym: "biological process" EXACT []
-synonym: "physiological process" EXACT []
 
 [Term]
 id: GO:0008152
 name: metabolic process
-def: "The chemical reactions and pathways, including anabolism and catabolism, by which living organisms transform chemical substances. Metabolic processes typically transform small molecules, but also include macromolecular processes such as DNA repair and replication, and protein synthesis and degradation." []
-synonym: "metabolic process resulting in cell growth" NARROW []
-synonym: "metabolism" EXACT []
-synonym: "metabolism resulting in cell growth" NARROW []
 is_a: GO:0008150 ! biological_process
 
 [Term]
 id: GO:0009058
 name: biosynthetic process
-def: "The chemical reactions and pathways resulting in the formation of substances; typically the energy-requiring part of metabolism in which simpler substances are transformed into more complex ones." []
-synonym: "anabolism" EXACT []
-synonym: "biosynthesis" EXACT []
-synonym: "formation" EXACT []
-synonym: "synthesis" EXACT []
 is_a: GO:0008152 ! metabolic process
 
 [Term]
 id: GO:0009060
 name: aerobic respiration
-def: "The enzymatic release of energy from inorganic and organic compounds (especially carbohydrates and fats) which requires oxygen as the terminal electron acceptor." []
 is_a: GO:0045333 ! cellular respiration
 
 [Term]
 id: GO:0009061
 name: anaerobic respiration
-def: "The enzymatic release of energy from inorganic and organic compounds (especially carbohydrates and fats) which uses compounds other than oxygen (e.g. nitrate, sulfate) as the terminal electron acceptor." []
 is_a: GO:0045333 ! cellular respiration
 
 [Term]
 id: GO:0009987
 name: cellular process
-def: "Any process that is carried out at the cellular level, but not necessarily restricted to a single cell. For example, cell communication occurs among more than one cell, but occurs at the cellular level." []
-synonym: "cell growth and/or maintenance" NARROW []
-synonym: "cell physiology" EXACT []
-synonym: "cellular physiological process" EXACT []
 is_a: GO:0008150 ! biological_process
 
 [Term]
 id: GO:0015947
 name: methane metabolic process
-def: "The chemical reactions and pathways involving methane, a colorless, odorless, flammable gas with the formula CH4. It is the simplest of the alkanes." []
-synonym: "methane metabolism" EXACT []
 is_a: GO:0043446 ! cellular alkane metabolic process
 
 [Term]
 id: GO:0015948
 name: methanogenesis
-def: "The chemical reactions and pathways resulting in the formation of methane, a colorless, odorless, flammable gas with the formula CH4. It is the simplest of the alkanes." []
-synonym: "methane biosynthesis" EXACT []
-synonym: "methane biosynthetic process" EXACT []
 is_a: GO:0009061 ! anaerobic respiration
 is_a: GO:0015947 ! methane metabolic process
 is_a: GO:0015975 ! energy derivation by oxidation of reduced inorganic compounds
@@ -104,33 +90,23 @@ is_a: GO:0043447 ! alkane biosynthetic process
 [Term]
 id: GO:0015975
 name: energy derivation by oxidation of reduced inorganic compounds
-def: "The chemical reactions and pathways by which a cell derives energy from inorganic compounds; results in the oxidation of the compounds from which energy is released." []
-synonym: "chemolithotrophie" EXACT []
-synonym: "chemolithotrophy" EXACT []
-synonym: "lithotrophy" EXACT []
 is_a: GO:0006091 ! generation of precursor metabolites and energy
-is_a: GO:0044763 ! single-organism cellular process
 is_a: GO:0055114 ! oxidation-reduction process
 
 [Term]
 id: GO:0015979
 name: photosynthesis
-def: "The synthesis by organisms of organic chemical compounds, especially carbohydrates, from carbon dioxide (CO2) using energy obtained from light rather than from the oxidation of chemical compounds." []
 is_a: GO:0044237 ! cellular metabolic process
 
 [Term]
 id: GO:0015980
 name: energy derivation by oxidation of organic compounds
-def: "The chemical reactions and pathways by which a cell derives energy from organic compounds; results in the oxidation of the compounds from which energy is released." []
-synonym: "chemoorganotrophy" EXACT []
 is_a: GO:0006091 ! generation of precursor metabolites and energy
-is_a: GO:0044763 ! single-organism cellular process
 is_a: GO:0055114 ! oxidation-reduction process
 
 [Term]
 id: GO:0019329
 name: ammonia oxidation
-def: "The chemical reactions and pathways by which ammonia or ammonium is converted to molecular nitrogen or another nitrogen compound, with accompanying loss of electrons." []
 is_a: GO:0006807 ! nitrogen compound metabolic process
 is_a: GO:0044281 ! small molecule metabolic process
 is_a: GO:0055114 ! oxidation-reduction process
@@ -138,9 +114,6 @@ is_a: GO:0055114 ! oxidation-reduction process
 [Term]
 id: GO:0019331
 name: anaerobic respiration, using ammonium as electron donor
-def: "The oxidation of ammonium (NH4) to nitrogen (N2) in the absence of oxygen, using nitrite (NO2) as the electron acceptor. It is suggested that hydroxylamine and ammonium are combined to yield hydrazine, which is subsequently oxidized to N2." []
-synonym: "anaerobic ammonium oxidation" BROAD []
-synonym: "anammox" EXACT []
 is_a: GO:0009061 ! anaerobic respiration
 is_a: GO:0015975 ! energy derivation by oxidation of reduced inorganic compounds
 is_a: GO:0019329 ! ammonia oxidation
@@ -149,8 +122,6 @@ is_a: GO:0034641 ! cellular nitrogen compound metabolic process
 [Term]
 id: GO:0019332
 name: aerobic respiration, using nitrite as electron donor
-def: "The oxidation of nitrite (NO2) to nitrate (NO3), using oxygen (O2) as the electron acceptor. Nitrite oxidation is the final step in nitrification, the oxidation of ammonia to nitrate, and nitrite oxidoreductase (NOR) is the key enzyme complex that catalyzes the conversion of nitrite to nitrate in nitrite oxidizing species." []
-synonym: "nitrite oxidation" BROAD []
 is_a: GO:0009060 ! aerobic respiration
 is_a: GO:0015975 ! energy derivation by oxidation of reduced inorganic compounds
 is_a: GO:0034641 ! cellular nitrogen compound metabolic process
@@ -158,8 +129,6 @@ is_a: GO:0034641 ! cellular nitrogen compound metabolic process
 [Term]
 id: GO:0019409
 name: aerobic respiration, using ammonia as electron donor
-def: "The metabolic process in which ammonia (NH3) is oxidized to nitrite (NO2) in the presence of oxygen; enzymatic reactions convert ammonia to hydrazine, and hydrazine to nitrite." []
-synonym: "aerobic ammonia oxidation to nitrite via hydrazine" EXACT []
 is_a: GO:0009060 ! aerobic respiration
 is_a: GO:0015975 ! energy derivation by oxidation of reduced inorganic compounds
 is_a: GO:0019329 ! ammonia oxidation
@@ -168,211 +137,152 @@ is_a: GO:0034641 ! cellular nitrogen compound metabolic process
 [Term]
 id: GO:0019410
 name: aerobic respiration, using carbon monoxide as electron donor
-def: "The metabolic process in which carbon monoxide (CO) is oxidized to carbon dioxide (CO2) to generate energy. Conservation of energy in this process likely uses sodium ion gradients for ATP synthesis and is coupled to quantitative sulfide methylation." []
 is_a: GO:0009060 ! aerobic respiration
 is_a: GO:0015975 ! energy derivation by oxidation of reduced inorganic compounds
 
 [Term]
 id: GO:0019411
 name: aerobic respiration, using ferrous ions as electron donor
-def: "The metabolic process in which ferrous ions (Fe2+) are oxidized to ferric ions (Fe3+) to generate energy, coupled to the reduction of carbon dioxide." []
 is_a: GO:0009060 ! aerobic respiration
 is_a: GO:0015975 ! energy derivation by oxidation of reduced inorganic compounds
 
 [Term]
 id: GO:0019412
 name: aerobic respiration, using hydrogen as electron donor
-def: "The oxidation of hydrogen (H2) to water (H2O), using oxygen (O2) as the electron acceptor. A hydrogenase enzyme binds H2 and the hydrogen atoms are passed through an electron transfer chain to O2 to form water." []
-synonym: "hydrogen oxidation" BROAD []
 is_a: GO:0009060 ! aerobic respiration
 is_a: GO:0015975 ! energy derivation by oxidation of reduced inorganic compounds
 
 [Term]
 id: GO:0019414
 name: aerobic respiration, using sulfur or sulfate as electron donor
-def: "An aerobic respiration process in which a sulfur-containing molecule (hydrogen sulfide, sulfur, sulfite, thiosulfate, and various polythionates) is oxidized." []
-synonym: "aerobic respiration, using sulphur or sulphate as electron donor" EXACT []
 is_a: GO:0009060 ! aerobic respiration
 is_a: GO:0015975 ! energy derivation by oxidation of reduced inorganic compounds
 
 [Term]
 id: GO:0019646
 name: aerobic electron transport chain
-def: "A process in which a series of electron carriers operate together to transfer electrons from donors such as NADH and FADH2 to oxygen to generate a transmembrane electrochemical gradient." []
-synonym: "NADH-O2 electron transport" NARROW []
-synonym: "succinate-O2 electron transport" NARROW []
-synonym: "ubiquinone-8-O2 electron transport" NARROW []
 is_a: GO:0009060 ! aerobic respiration
 is_a: GO:0022904 ! respiratory electron transport chain
 
 [Term]
 id: GO:0022900
 name: electron transport chain
-def: "A process in which a series of electron carriers operate together to transfer electrons from donors to any of several different terminal electron acceptors to generate a transmembrane electrochemical gradient." []
 is_a: GO:0006091 ! generation of precursor metabolites and energy
-is_a: GO:0044763 ! single-organism cellular process
 is_a: GO:0055114 ! oxidation-reduction process
 
 [Term]
 id: GO:0022904
 name: respiratory electron transport chain
-def: "A process in which a series of electron carriers operate together to transfer electrons from donors such as NADH and FADH2 to any of several different terminal electron acceptors to generate a transmembrane electrochemical gradient." []
-synonym: "6-phosphofructokinase reduction" RELATED []
-synonym: "dihydrobiopterin reduction" RELATED []
-synonym: "dihydrolipoamide reduction" RELATED []
-synonym: "dihydrolipoylprotein reduction" RELATED []
-synonym: "dihydropteridine reduction" RELATED []
-synonym: "electron transfer" EXACT []
-synonym: "other pathways of electron transport" RELATED []
-synonym: "oxidized glutathione reduction" RELATED []
-synonym: "protein-disulfide reduction" RELATED []
 is_a: GO:0022900 ! electron transport chain
+
+[Term]
+id: GO:0030545
+name: receptor regulator activity
+is_a: GO:0098772 ! molecular function regulator
 
 [Term]
 id: GO:0032501
 name: multicellular organismal process
-def: "Any biological process, occurring at the level of a multicellular organism, pertinent to its function." []
-synonym: "organismal physiological process" EXACT []
 is_a: GO:0008150 ! biological_process
 
 [Term]
 id: GO:0034641
 name: cellular nitrogen compound metabolic process
-def: "The chemical reactions and pathways involving various organic and inorganic nitrogenous compounds, as carried out by individual cells." []
-synonym: "cellular nitrogen compound metabolism" EXACT []
 is_a: GO:0006807 ! nitrogen compound metabolic process
 is_a: GO:0044237 ! cellular metabolic process
 
 [Term]
 id: GO:0040011
 name: locomotion
-def: "Self-propelled movement of a cell or organism from one location to another." []
 is_a: GO:0008150 ! biological_process
 
 [Term]
 id: GO:0043446
 name: cellular alkane metabolic process
-def: "The chemical reactions and pathways involving an alkane, any acyclic branched or unbranched hydrocarbon having the general formula CnH2n+2, as carried out by individual cells." []
-synonym: "alkane metabolism" EXACT []
 is_a: GO:0044237 ! cellular metabolic process
-is_a: GO:0044710 ! single-organism metabolic process
-is_a: GO:0044763 ! single-organism cellular process
 is_a: GO:0071704 ! organic substance metabolic process
 
 [Term]
 id: GO:0043447
 name: alkane biosynthetic process
-def: "The chemical reactions and pathways resulting in the formation of an alkane, any acyclic branched or unbranched hydrocarbon having the general formula CnH2n+2." []
-synonym: "alkane anabolism" EXACT []
-synonym: "alkane biosynthesis" EXACT []
-synonym: "alkane formation" EXACT []
-synonym: "alkane synthesis" EXACT []
 is_a: GO:0043446 ! cellular alkane metabolic process
 is_a: GO:0044249 ! cellular biosynthetic process
-is_a: GO:0044711 ! single-organism biosynthetic process
 is_a: GO:1901576 ! organic substance biosynthetic process
 
 [Term]
 id: GO:0043554
 name: aerobic respiration, using arsenite as electron donor
-def: "The oxidation of arsenite to arsenate, using oxygen (O2) as the electron acceptor. Arsenite oxidase provides electrons to an electron carrier which transfers them to oxygen utilizing respiratory systems." []
 is_a: GO:0009060 ! aerobic respiration
 is_a: GO:0015975 ! energy derivation by oxidation of reduced inorganic compounds
 
 [Term]
 id: GO:0044237
 name: cellular metabolic process
-def: "The chemical reactions and pathways by which individual cells transform chemical substances." []
-synonym: "cellular metabolism" EXACT []
-synonym: "intermediary metabolism" RELATED []
 is_a: GO:0008152 ! metabolic process
 is_a: GO:0009987 ! cellular process
 
 [Term]
 id: GO:0044249
 name: cellular biosynthetic process
-def: "The chemical reactions and pathways resulting in the formation of substances, carried out by individual cells." []
-synonym: "cellular anabolism" EXACT []
-synonym: "cellular biosynthesis" EXACT []
-synonym: "cellular formation" EXACT []
-synonym: "cellular synthesis" EXACT []
 is_a: GO:0009058 ! biosynthetic process
 is_a: GO:0044237 ! cellular metabolic process
 
 [Term]
 id: GO:0044281
 name: small molecule metabolic process
-def: "The chemical reactions and pathways involving small molecules, any low molecular weight, monomeric, non-encoded molecule." []
-synonym: "small molecule metabolism" EXACT []
-is_a: GO:0044710 ! single-organism metabolic process
+is_a: GO:0008152 ! metabolic process
 
 [Term]
 id: GO:0044699
-name: single-organism process
-def: "A biological process that involves only one organism." []
-synonym: "single organism process" EXACT []
-is_a: GO:0008150 ! biological_process
+is_obsolete: true
 
 [Term]
 id: GO:0044710
-name: single-organism metabolic process
-def: "A metabolic process - chemical reactions and pathways, including anabolism and catabolism, by which living organisms transform chemical substances - which involves a single organism." []
-is_a: GO:0008152 ! metabolic process
-is_a: GO:0044699 ! single-organism process
+is_obsolete: true
 
 [Term]
 id: GO:0044711
-name: single-organism biosynthetic process
-def: "A biosynthetic process - chemical reactions and pathways resulting in the formation of substances - involving a single organism." []
-is_a: GO:0009058 ! biosynthetic process
-is_a: GO:0044710 ! single-organism metabolic process
+name: obsolete single-organism biosynthetic process
+is_obsolete: true
 
 [Term]
 id: GO:0044763
-name: single-organism cellular process
-def: "Any process that is carried out at the cellular level, occurring within a single organism." []
-is_a: GO:0009987 ! cellular process
-is_a: GO:0044699 ! single-organism process
+is_obsolete: true
 
 [Term]
 id: GO:0045333
 name: cellular respiration
-def: "The enzymatic release of energy from inorganic and organic compounds (especially carbohydrates and fats) which either requires oxygen (aerobic respiration) or does not (anaerobic respiration)." []
-synonym: "oxidative metabolic process" EXACT []
-synonym: "oxidative metabolism" EXACT []
-synonym: "respiration" BROAD []
 is_a: GO:0015980 ! energy derivation by oxidation of organic compounds
+
+[Term]
+id: GO:0048018
+name: receptor ligand activity
+is_a: GO:0005102 ! receptor binding
+is_a: GO:0030545 ! receptor regulator activity
 
 [Term]
 id: GO:0055114
 name: oxidation-reduction process
-def: "A metabolic process that results in the removal or addition of one or more electrons to or from a substance, with or without the concomitant removal or addition of a proton or protons." []
-synonym: "oxidation reduction" EXACT []
-synonym: "oxidoreductase process" EXACT []
-is_a: GO:0044710 ! single-organism metabolic process
+is_a: GO:0008152 ! metabolic process
+
+[Term]
+id: GO:0060089
+name: molecular transducer activity
+is_a: GO:0003674 ! molecular_function
 
 [Term]
 id: GO:0071704
 name: organic substance metabolic process
-def: "The chemical reactions and pathways involving an organic substance, any molecular entity containing carbon." []
-synonym: "organic molecular entity metabolic process" EXACT []
-synonym: "organic molecular entity metabolism" EXACT []
-synonym: "organic substance metabolism" EXACT []
 is_a: GO:0008152 ! metabolic process
+
+[Term]
+id: GO:0098772
+name: molecular function regulator
+is_a: GO:0003674 ! molecular_function
 
 [Term]
 id: GO:1901576
 name: organic substance biosynthetic process
-def: "The chemical reactions and pathways resulting in the formation of an organic substance, any molecular entity containing carbon." []
-synonym: "organic molecular entity anabolism" EXACT []
-synonym: "organic molecular entity biosynthesis" EXACT []
-synonym: "organic molecular entity biosynthetic process" EXACT []
-synonym: "organic molecular entity formation" EXACT []
-synonym: "organic molecular entity synthesis" EXACT []
-synonym: "organic substance anabolism" EXACT []
-synonym: "organic substance biosynthesis" EXACT []
-synonym: "organic substance formation" EXACT []
-synonym: "organic substance synthesis" EXACT []
 is_a: GO:0009058 ! biosynthetic process
 is_a: GO:0071704 ! organic substance metabolic process
 
