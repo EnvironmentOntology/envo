@@ -104,6 +104,11 @@ release-diffs:
 # Base URI for local subset imports
 ENVO_IMPORTS_BASE_URI = $(OBO)/envo
 
+# owltools command for removing self-reference
+# this is a temp fix until all upstreams implement Jim's solution
+# See also https://github.com/EnvironmentOntology/envo/issues/610
+REMOVE_SELF_REF= --remove-classes-in-idspace ENVO
+
 # Ontology dependencies
 # We don't include clo, as this is currently not working
 IMPORTS = pato uberon chebi ro pco foodon go ncbitaxon sdgio clo obi po iao fao omp flopo agro
@@ -130,7 +135,7 @@ imports/%_import.owl: mirror/%.owl envo-edit.owl imports/%_combined_seed.tsv
 	robot extract -i $< -T imports/$*_combined_seed.tsv -m BOT -O $(ENVO_IMPORTS_BASE_URI)/$@ -o $@.tmp.owl && mv $@.tmp.owl $@
 
 imports/%_import.obo: imports/%_import.owl
-	owltools $(USECAT) $< -o -f obo $@
+	owltools $(USECAT) $< -o -f obo --no-check $@
 
 
 
@@ -148,11 +153,11 @@ mirror/clo.owl: envo-edit.owl
 .PRECIOUS: mirror/%.owl
 
 mirror/agro.owl: envo-edit.owl
-	owltools $(OBO)/agro.owl --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/agro.owl -o $@
+	owltools $(OBO)/agro.owl $(REMOVE_SELF_REF) --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/agro.owl -o $@
 .PRECIOUS: mirror/%.owl
 
 mirror/sdgio.owl: envo-edit.owl
-	owltools http://purl.unep.org/sdg/sdgio.owl --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id http://purl.unep.org/sdg/sdgio.owl -o $@
+	owltools http://purl.unep.org/sdg/sdgio.owl $(REMOVE_SELF_REF)  --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id http://purl.unep.org/sdg/sdgio.owl -o $@
 .PRECIOUS: mirror/%.owl
 
 mirror/obi.owl: envo-edit.owl
