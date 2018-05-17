@@ -37,18 +37,24 @@ copy-release:
 %.json: %.owl
 	robot convert -input $< -o $@
 
+debug.owl: envo-edit.owl
+	owltools --use-catalog  $< --merge-support-ontologies --run-reasoner -r elk -u -m $@
 
 #release: envo-basic.obo release-diffs
 
-# all release files are derived from the editors version.
-# we use the default Oort setup (hermit as reasoner)
-
+# Merge in all module files, whilst removing the corresponding import
 envo-edit-module-merge.owl: envo-edit.owl
-	owltools $(USECAT) $<  --merge-imports-closure -o $@
-	#owltools $(USECAT) $<  $(patsubst %, --remove-import-declaration $(OBO)/envo/modules/%.owl, $(MODS)) $(ALL_MODS_OWL) --merge-support-ontologies -o $@
+	owltools $(USECAT) $<  $(patsubst %, --remove-import-declaration $(OBO)/envo/modules/%.owl, $(MODS)) -o $@.tmp
+	owltools $(USECAT) $@.tmp  $(ALL_MODS_OWL) --merge-support-ontologies -o $@
 
-envo.owl envo-simple.owl: envo-edit-module-merge.owl
-	ontology-release-runner --catalog-xml catalog-v001.xml --reasoner elk  --skip-format owx --skip-format obo  --error-report envo-errors.txt $< --allow-overwrite --asserted --simple
+envo.owl: envo-edit-module-merge.owl
+	robot reason -i $< -r ELK relax reduce -o $@
+
+envo-simple.owl: envo.owl
+	owltools --use-catalog $< --remove-imports-declarations --remove-dangling-annotations -o $@
+
+
+###	ontology-release-runner --catalog-xml catalog-v001.xml --reasoner elk  --skip-format owx --skip-format obo  --error-report envo-errors.txt $< --allow-overwrite --asserted --simple
 ##	ontology-release-runner --catalog-xml catalog-v001.xml  --skip-format owx --run-obo-basic-dag-check --error-report envo-errors.txt $< --allow-overwrite --asserted --simple
 
 #envo.owl: envo-edit.owl
@@ -98,9 +104,14 @@ release-diffs:
 # Base URI for local subset imports
 ENVO_IMPORTS_BASE_URI = $(OBO)/envo
 
+# owltools command for removing self-reference
+# this is a temp fix until all upstreams implement Jim's solution
+# See also https://github.com/EnvironmentOntology/envo/issues/610
+REMOVE_SELF_REF= --remove-classes-in-idspace -d ENVO
+
 # Ontology dependencies
 # We don't include clo, as this is currently not working
-IMPORTS = pato uberon chebi ro pco foodon go ncbitaxon sdgio clo obi po iao fao omp flopo agro
+IMPORTS = pato uberon chebi ro pco foodon go ncbitaxon  obi po iao fao agro
 
 # Make this target to regenerate ALL
 all_imports: $(patsubst %, imports/%_import.owl,$(IMPORTS)) $(patsubst %, imports/%_import.obo,$(IMPORTS))
@@ -124,7 +135,7 @@ imports/%_import.owl: mirror/%.owl envo-edit.owl imports/%_combined_seed.tsv
 	robot extract -i $< -T imports/$*_combined_seed.tsv -m BOT -O $(ENVO_IMPORTS_BASE_URI)/$@ -o $@.tmp.owl && mv $@.tmp.owl $@
 
 imports/%_import.obo: imports/%_import.owl
-	owltools $(USECAT) $< -o -f obo $@
+	owltools $(USECAT) $< -o -f obo --no-check $@
 
 
 
@@ -142,20 +153,20 @@ mirror/clo.owl: envo-edit.owl
 .PRECIOUS: mirror/%.owl
 
 mirror/agro.owl: envo-edit.owl
-	owltools $(OBO)/agro.owl --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/agro.owl -o $@
+	owltools $(OBO)/agro.owl $(REMOVE_SELF_REF) --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/agro.owl -o $@
 .PRECIOUS: mirror/%.owl
 
 mirror/sdgio.owl: envo-edit.owl
-	owltools http://purl.unep.org/sdg/sdgio.owl --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id http://purl.unep.org/sdg/sdgio.owl -o $@
+	owltools http://purl.unep.org/sdg/sdgio.owl $(REMOVE_SELF_REF)  --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id http://purl.unep.org/sdg/sdgio.owl -o $@
 .PRECIOUS: mirror/%.owl
 
 mirror/obi.owl: envo-edit.owl
-	owltools $(OBO)/obi.owl --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/obi.owl -o $@
+	owltools $(OBO)/obi.owl --remove-classes-in-idspace GO --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/obi.owl -o $@
 .PRECIOUS: mirror/%.owl
 
 
 mirror/foodon.owl: envo-edit.owl
-	owltools $(OBO)/foodon.owl --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/foodon.owl -o $@
+	owltools $(OBO)/foodon.owl --merge-imports-closure $(REMOVE_SELF_REF) --remove-annotation-assertions -l -s -d --remove-axiom-annotations  --set-ontology-id $(OBO)/foodon.owl -o $@
 .PRECIOUS: mirror/%.owl
 
 # chebi.owl is large and the owlapi often times out when reading it; use the obo instead
@@ -292,7 +303,7 @@ subsets/envoCesab.owl: subsets/envo-basic.obo
 	owltools $< --extract-ontology-subset --fill-gaps --subset envoCesab --iri $(OBO)/envo/$@ -o $@
 subsets/envoCesab.obo: subsets/envoCesab.owl
 	owltools $< -o -f obo $@
-	
+
 subsets/envoAstro.owl: subsets/envo-basic.obo
 	owltools $< --extract-ontology-subset --fill-gaps --subset envoAstro --iri $(OBO)/envo/$@ -o $@
 subsets/envoAstro.obo: subsets/envoAstro.owl
