@@ -51,7 +51,7 @@ envo.owl: envo-edit-module-merge.owl
 	robot reason -i $< -r ELK relax reduce -o $@
 
 envo-simple.owl: envo.owl
-	owltools --use-catalog $< --remove-imports-declarations --remove-dangling-annotations -f -o $@
+	owltools --use-catalog $< --remove-imports-declarations --remove-dangling-annotations -o $@
 
 
 ###	ontology-release-runner --catalog-xml catalog-v001.xml --reasoner elk  --skip-format owx --skip-format obo  --error-report envo-errors.txt $< --allow-overwrite --asserted --simple
@@ -111,7 +111,7 @@ REMOVE_SELF_REF= --remove-classes-in-idspace -d ENVO
 
 # Ontology dependencies
 # We don't include clo, as this is currently not working
-IMPORTS = pato uberon chebi ro pco foodon go ncbitaxon sdgio clo obi po iao fao omp flopo agro
+IMPORTS = pato uberon chebi ro pco foodon go ncbitaxon  obi po iao fao agro
 
 # Make this target to regenerate ALL
 all_imports: $(patsubst %, imports/%_import.owl,$(IMPORTS)) $(patsubst %, imports/%_import.obo,$(IMPORTS))
@@ -161,7 +161,7 @@ mirror/sdgio.owl: envo-edit.owl
 .PRECIOUS: mirror/%.owl
 
 mirror/obi.owl: envo-edit.owl
-	owltools $(OBO)/obi.owl --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/obi.owl -o $@
+	owltools $(OBO)/obi.owl --remove-classes-in-idspace GO --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/obi.owl -o $@
 .PRECIOUS: mirror/%.owl
 
 
