@@ -1,55 +1,103 @@
 format-version: 1.2
 ontology: envo/imports/bfo_import
-property_value: http://purl.org/dc/elements/1.1/source http://purl.obolibrary.org/obo/bfo.owl
+
+[Term]
+id: BFO:0000001
+name: entity
 
 [Term]
 id: BFO:0000002
 name: continuant
-def: "An entity that exists in full at any time in which it exists at all, persists through time while maintaining its identity and has no temporal parts." []
+is_a: BFO:0000001 ! entity
+disjoint_from: BFO:0000003 ! occurrent
 
 [Term]
 id: BFO:0000003
 name: occurrent
-def: "An entity that has temporal parts and that happens, unfolds or develops through time." []
+is_a: BFO:0000001 ! entity
 
 [Term]
 id: BFO:0000004
 name: independent continuant
-def: "A continuant that is a bearer of quality and realizable entity entities, in which other entities inhere and which itself cannot inhere in anything." []
+def: "b is an independent continuant = Def. b is a continuant which is such that there is no c and no t such that b s-depends_on c at t. (axiom label in BFO2 Reference: [017-002])" [] {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/017-002"}
 is_a: BFO:0000002 ! continuant
+disjoint_from: BFO:0000020 ! specifically dependent continuant
+
+[Term]
+id: BFO:0000006
+name: spatial region
+is_a: BFO:0000141 ! immaterial entity
+disjoint_from: BFO:0000140 ! continuant fiat boundary
 
 [Term]
 id: BFO:0000015
 name: process
-def: "An occurrent that has temporal proper parts and for some time t, p s-depends_on some material entity at t." []
+def: "p is a process = Def. p is an occurrent that has temporal proper parts and for some time t, p s-depends_on some material entity at t. (axiom label in BFO2 Reference: [083-003])" [] {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/083-003"}
 is_a: BFO:0000003 ! occurrent
 
 [Term]
 id: BFO:0000016
 name: disposition
 is_a: BFO:0000017 ! realizable entity
+disjoint_from: BFO:0000023 ! role
 
 [Term]
 id: BFO:0000017
 name: realizable entity
-def: "A specifically dependent continuant  that inheres in continuant  entities and are not exhibited in full at every time in which it inheres in an entity or group of entities. The exhibition or actualization of a realizable entity is a particular manifestation, functioning or process that occurs under certain circumstances." []
+is_a: BFO:0000020 ! specifically dependent continuant
+disjoint_from: BFO:0000019 ! quality
+
+[Term]
+id: BFO:0000019
+name: quality
 is_a: BFO:0000020 ! specifically dependent continuant
 
 [Term]
 id: BFO:0000020
 name: specifically dependent continuant
-def: "A continuant that inheres in or is borne by other entities. Every instance of A requires some specific instance of B which must always be the same." []
+def: "b is a specifically dependent continuant = Def. b is a continuant & there is some independent continuant c which is not a spatial region and which is such that b s-depends_on c at every time t during the course of b’s existence. (axiom label in BFO2 Reference: [050-003])" [] {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/050-003"}
 is_a: BFO:0000002 ! continuant
 
 [Term]
 id: BFO:0000023
 name: role
-def: "A realizable entity  the manifestation of which brings about some result or end that is not essential to a continuant  in virtue of the kind of thing that it is but that can be served or participated in by that kind of continuant  in some kinds of natural, social or institutional contexts." []
 is_a: BFO:0000017 ! realizable entity
+
+[Term]
+id: BFO:0000024
+name: fiat object part
+is_a: BFO:0000040 ! material entity
+
+[Term]
+id: BFO:0000034
+name: function
+is_a: BFO:0000016 ! disposition
 
 [Term]
 id: BFO:0000040
 name: material entity
-def: "An independent continuant that is spatially extended whose identity is independent of that of other entities and can be maintained through time." []
 is_a: BFO:0000004 ! independent continuant
+disjoint_from: BFO:0000141 ! immaterial entity
+
+[Term]
+id: BFO:0000140
+name: continuant fiat boundary
+def: "b is a continuant fiat boundary = Def. b is an immaterial entity that is of zero, one or two dimensions and does not include a spatial region as part. (axiom label in BFO2 Reference: [029-001])" [] {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/029-001"}
+is_a: BFO:0000141 ! immaterial entity
+
+[Term]
+id: BFO:0000141
+name: immaterial entity
+is_a: BFO:0000004 ! independent continuant
+
+[Term]
+id: BFO:0000142
+name: one-dimensional continuant fiat boundary
+is_a: BFO:0000140 ! continuant fiat boundary
+disjoint_from: BFO:0000146 ! two-dimensional continuant fiat boundary
+
+[Term]
+id: BFO:0000146
+name: two-dimensional continuant fiat boundary
+is_a: BFO:0000140 ! continuant fiat boundary
 
