@@ -164,9 +164,10 @@ mirror/obi.owl: envo-edit.owl
 	owltools $(OBO)/obi.owl --remove-classes-in-idspace GO --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/obi.owl -o $@
 .PRECIOUS: mirror/%.owl
 
-
-mirror/foodon.owl: envo-edit.owl
+mirror/foodon-local.owl:
 	owltools $(OBO)/foodon.owl --merge-imports-closure $(REMOVE_SELF_REF) --remove-annotation-assertions -l -s -d --remove-axiom-annotations  --set-ontology-id $(OBO)/foodon.owl -o $@
+mirror/foodon.owl: mirror/foodon-local.owl
+	robot relax -i $< reduce -o $@
 .PRECIOUS: mirror/%.owl
 
 # chebi.owl is large and the owlapi often times out when reading it; use the obo instead
