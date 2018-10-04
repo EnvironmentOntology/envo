@@ -33,6 +33,9 @@ Please note that the OBO files are now created from the OWL file. Due to limitat
 
 ### Subsets
 A subset is a trimmed down version of ENVO. We create subsets for users who want just a few terms for their work. Read more about subsets on [this wiki page](https://github.com/EnvironmentOntology/envo/wiki/Subsets). Several subsets of ENVO classes are identified with the "in_subset" annotation property.
+
+A simple TSV of the subsets (including their labels, definitions, and URIs) is available [here](https://github.com/EnvironmentOntology/envo/blob/master/src/envo/reports/envo-subsetTable.tsv)
+
 More subsets can be generated on request (please post such requests on our [issue tracker](https://github.com/EnvironmentOntology/envo/issues).
 
 ### Editors' version
