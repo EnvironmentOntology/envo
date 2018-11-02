@@ -26,12 +26,14 @@ full_test: test envo.check-obo subsets/EnvO-Lite-GSC.check-obo
 test_python:
 	python3 --version
 
-build: all_modules all_imports envo.owl envo.obo envo.json subsets/envo-basic.obo subsets/envo-basic.json subsets/EnvO-Lite-GSC.obo 
+build: base all_modules all_imports envo.owl envo.obo envo.json subsets/envo-basic.obo subsets/envo-basic.json subsets/EnvO-Lite-GSC.obo 
 
 prepare_release: build  copy-release
 
 copy-release:
-	cp -pr catalog-v001.xml envo.obo envo.owl envo.json subsets mappings imports ../..
+	cp -pr catalog-v001.xml envo.obo envo.owl envo.json envo-base.owl subsets mappings imports ../..
+
+base: envo-base.owl
 
 # generic conversion for OGs
 %.json: %.owl
@@ -41,6 +43,11 @@ debug.owl: envo-edit.owl
 	owltools --use-catalog  $< --merge-support-ontologies --run-reasoner -r elk -u -m $@
 
 #release: envo-basic.obo release-diffs
+
+envo-base.owl: envo-edit.owl
+	owltools $(USECAT) $< --remove-imports-declarations -o $@.tmp
+	owltools $(USECAT) $@.tmp  $(ALL_MODS_OWL) --merge-support-ontologies -o $@
+
 
 # Merge in all module files, whilst removing the corresponding import
 envo-edit-module-merge.owl: envo-edit.owl
