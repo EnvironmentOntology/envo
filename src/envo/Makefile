@@ -334,6 +334,9 @@ all_reports: $(patsubst %, reports/envo-%.tsv, $(REPORTS))
 reports/envo-%.tsv: envo.owl sparql/%.sparql
 	arq --data $< --query sparql/$*.sparql --results tsv > $@.tmp && mv $@.tmp $@
 
+imports/skos.ttl: envo-edit.owl
+	robot query --format ttl -c sparql/construct-skos-from-xrefs.sparql $@ -i $<
+
 
 # ----------------------------------------
 # Temp
