@@ -97,3 +97,9 @@ featureCodes_en.txt:
 # https://github.com/EnvironmentOntology/envo/issues/333
 soil.ttl:
 	wget --no-check-certificate https://github.com/EnvironmentOntology/envo/files/1779245/orders.ttl.txt -O $@
+
+
+## NEW
+
+envo-meo.tsv:
+	rdfmatch -c ../../plq/envo_queries.pro -p ENVO -l -X tmp -i ../imports/skos.ttl  -f tsv -v -i ../envo.owl -i meo09.ttl unique_match  > $@
