@@ -1,30 +1,45 @@
-# This Makefile is for use by the ENVO Release Manager (currently cjm)
-# Also used by Jenkins: http://build.berkeleybop.org/job/build-envo
-# 
-# requirements: Oort (http://code.google.com/p/owltools/wiki/OortIntro)
-#
-# To make a release, type 'make release' in this directory
+# ----------------------------------------
+# Makefile for envo
+# Generated using ontology-starter-kit
+# ----------------------------------------
+# <do not edit above this line>
+
+# ----------------------------------------
+# Standard Constants
+# ----------------------------------------
+# these can be overwritten on the command line
 
 OBO=http://purl.obolibrary.org/obo
+ONT=envo
+BASE=$(OBO)/$(ONT)
+SRC=$(ONT)-edit.owl
+RELEASEDIR=../..
+ROBOT= robot
+OWLTOOLS= owltools
+USECAT= --use-catalog
+SPARQLDIR = ../sparql
+DOSDP_SCHEMA=http:// # change to PURL when ready.
+PATTERN_TESTER=simple_pattern_tester.py
+DOSDPT=dosdp-tools
+
+# envo-specific
 USECAT= --catalog-xml catalog-v001.xml
 MODS = entity_attribute_location entity_quality_location entity_attribute process_attribute
 ALL_MODS_OWL = $(patsubst %, modules/%.owl, $(MODS))
 ALL_MODS_CSV = $(patsubst %, modules/%.csv, $(MODS))
-ROBOT= robot
 OWLTOOLS= owltools
 
-all: build
+# ----------------------------------------
+# Top-level targets
+# ----------------------------------------
 
-#include Makefile-OBO
+all: build
 
 test: envo-edit.owl all_modules all_imports envo.owl
 travis_test: test_python envo-edit.owl all_modules envo.owl
 
 full_test: test envo.check-obo subsets/EnvO-Lite-GSC.check-obo
 
-# temp test for travis
-test_python:
-	python3 --version
 
 build: base all_modules all_imports envo.owl envo.obo envo.json subsets/envo-basic.obo subsets/envo-basic.json subsets/EnvO-Lite-GSC.obo 
 
