@@ -19,6 +19,6 @@ WHERE {
          sh:namespace ?ns .
          
    bind( strafter(?x, ":") as ?suffix)
-   bind( concat(?ns, ?suffix) AS ?xuri)
+   bind( uri(concat(?ns, ?suffix)) AS ?xuri)
 }
 
