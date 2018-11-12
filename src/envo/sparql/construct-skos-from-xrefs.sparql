@@ -1,0 +1,24 @@
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix skos: <http://www.w3.org/2004/02/skos/core#>
+prefix oio: <http://www.geneontology.org/formats/oboInOwl#>  
+
+prefix sh:   <http://www.w3.org/ns/shacl#> 
+
+CONSTRUCT {
+  ?c skos:exactMatch ?xuri
+}
+WHERE {
+   ?ax owl:annotatedSource ?c ;
+       owl:annotatedTarget ?x ;
+       owl:annotatedProperty oio:hasDbXref ;
+       oio:source "ENVO:equivalentTo" .
+
+   bind( strbefore(?x, ":") as ?prefix)
+
+   ?decl sh:prefix ?prefix ;
+         sh:namespace ?ns .
+         
+   bind( strafter(?x, ":") as ?suffix)
+   bind( concat(?ns, ?suffix) AS ?xuri)
+}
+

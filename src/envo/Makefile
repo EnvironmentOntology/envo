@@ -121,7 +121,7 @@ REMOVE_SELF_REF= --remove-classes-in-idspace -d ENVO
 IMPORTS = pato uberon chebi ro pco foodon go ncbitaxon  obi po iao fao agro
 
 # Make this target to regenerate ALL
-all_imports: $(patsubst %, imports/%_import.owl,$(IMPORTS)) $(patsubst %, imports/%_import.obo,$(IMPORTS))
+all_imports: $(patsubst %, imports/%_import.owl,$(IMPORTS)) $(patsubst %, imports/%_import.obo,$(IMPORTS)) imports/skos-mappings.owl
 
 SEEDS= $(patsubst %, imports/%_terms.txt,$(IMPORTS))
 
@@ -334,8 +334,11 @@ all_reports: $(patsubst %, reports/envo-%.tsv, $(REPORTS))
 reports/envo-%.tsv: envo.owl sparql/%.sparql
 	arq --data $< --query sparql/$*.sparql --results tsv > $@.tmp && mv $@.tmp $@
 
-imports/skos.ttl: envo-edit.owl
-	robot query --format ttl -c sparql/construct-skos-from-xrefs.sparql $@ -i $<
+envo-edit-plus-prefixes.owl: envo-base.owl imports/prefixes.ttl
+	owltools --use-catalog $^ --remove-imports-declarations --merge-support-ontologies -o $@
+
+imports/skos-mappings.owl: envo-edit-plus-prefixes.owl
+	robot query -c sparql/construct-skos-from-xrefs.sparql $@ -i $<
 
 
 # ----------------------------------------

@@ -101,5 +101,19 @@ soil.ttl:
 
 ## NEW
 
+edit.ttl: ../envo-edit.owl
+	owltools --catalog-xml ../catalog-v001.xml $< -o -f ttl $@
+
+obo-%.owl:
+	wget --no-check-certificate $(OBO)/$*.owl -o $@
+.PRECIOUS: obo-%.owl
+
 envo-meo.tsv:
 	rdfmatch -c ../../plq/envo_queries.pro -p ENVO -l -X tmp -i ../imports/skos.ttl  -f tsv -v -i ../envo.owl -i meo09.ttl unique_match  > $@
+other-%-meo.tsv: obo-%.owl
+	rdfmatch -c ../../plq/envo_queries.pro -p ENVO -l -X tmp -i ../imports/skos.ttl  -f tsv -v -i $< -i meo09.ttl unique_match  > $@
+
+lexrules-%.pro: edit.ttl
+	test -d tmp-$* || mkdir -p tmp-$*
+	rdfmatch --ontA ENVO --ontB $(shell echo $* | tr a-z A-Z) -l -c  ../../plq/envo_queries.pro  -X tmp-$* -f tsv -v -i $< -i ../imports/skos.ttl  -i $*.owl  learn > $@
+.PRECIOUS: lexrules-%.pro
