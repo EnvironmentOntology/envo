@@ -337,8 +337,10 @@ reports/envo-%.tsv: envo.owl sparql/%.sparql
 envo-edit-plus-prefixes.owl: envo-base.owl imports/prefixes.ttl
 	owltools --use-catalog $^ --remove-imports-declarations --merge-support-ontologies -o $@
 
-imports/skos-mappings.owl: envo-edit-plus-prefixes.owl
-	robot query -c sparql/construct-skos-from-xrefs.sparql $@ -i $<
+imports/skos-mappings.ttl: envo-edit-plus-prefixes.owl
+	robot query -f ttl -c sparql/construct-skos-from-xrefs.sparql $@ -i $<
+imports/skos-mappings.owl: imports/skos-mappings.ttl
+	robot convert -i $< -o $@
 
 
 # ----------------------------------------
