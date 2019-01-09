@@ -8,7 +8,7 @@ before_install:
    
    
 # command to run tests
-script: cd src/envo && ./run.sh make travis_test
+script: docker run -m 4g -v $PWD:/work -w /work --rm -ti obolibrary/odkfull /bin/bash -c "cd src/envo &&  make travis_test"
 
 #after_success:
 #  coveralls
