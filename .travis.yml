@@ -4,11 +4,14 @@ services:
   - docker
 
 before_install:
+  - mkdir -p bin
+  - wget https://raw.githubusercontent.com/cmungall/pattern2owl/master/apply-pattern.py -O bin/apply-pattern.py
+  - chmod +x bin/*
   - docker pull obolibrary/odkfull
    
    
 # command to run tests
-script: docker run -m 4g -v $PWD:/work -w /work --rm -ti obolibrary/odkfull /bin/bash -c "cd src/envo &&  make travis_test"
+script: docker run -m 4g -v $PWD:/work -w /work --rm -ti obolibrary/odkfull /bin/bash -c 'export PATH=$PATH:$PWD/bin; cd src/envo &&  make travis_test"
 
 #after_success:
 #  coveralls
