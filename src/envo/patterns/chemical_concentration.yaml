@@ -1,0 +1,40 @@
+pattern_name: envo-p/patterns/chemical_concentration
+classes: 
+  chemical entity: CHEBI_24431
+  concentration of: PATO_0000033
+
+relations:
+  part of: BFO_0000050
+  inheres in: RO_0000052
+    
+vars: 
+  attribute: "'concentration of'"
+  entity: "'chemical entity'"
+
+name:
+  text: "%s of %s"
+  vars:
+    - attribute
+    - entity
+
+annotations: 
+  - property: oio:hasExactSynonym
+    text: "%s %s concentration"
+    vars:
+      - entity
+      - attribute
+
+def: 
+  text: "The concentration of %s when measured in %s."
+  vars:
+    - attribute
+    - entity
+    
+equivalentTo: 
+  text: "'concentration of' and 'inheres in' some (%s and 'part of' some %s)"
+  vars:
+    - attribute
+    - entity
+
+    
+
