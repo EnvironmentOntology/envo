@@ -348,7 +348,7 @@ all_modules_obo: $(patsubst %, modules/%.obo, $(MODS))
 
 modules/%.owl: modules/%.csv patterns/%.yaml curie_map.yaml
 	./run.sh dosdp-tools --table-format=csv --template=./patterns/$*.yaml --outfile=modules/$*.tmp.owl --obo-prefixes=true generate --infile=modules/$*.csv
-	./run.sh robot annotate --input modules/$*.tmp.owl -O http://purl.obolibrary.org/obo/envo/modules/entity_attribute_location.owl --output modules/$*.owl && rm modules/$*.tmp.owl
+	./run.sh robot annotate --input modules/$*.tmp.owl -O http://purl.obolibrary.org/obo/envo/modules/$*.owl --output modules/$*.owl && rm modules/$*.tmp.owl
 
 modules/%.obo: modules/%.owl
 	owltools $< -o -f obo $@.tmp && grep -v ^owl-axioms $@.tmp > $@
