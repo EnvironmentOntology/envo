@@ -1,6 +1,6 @@
 # This Makefile is for use by the ENVO Release Manager (currently cjm)
 # Also used by Jenkins: http://build.berkeleybop.org/job/build-envo
-# 
+#
 # requirements: Oort (http://code.google.com/p/owltools/wiki/OortIntro)
 #
 # To make a release, type 'make release' in this directory
@@ -26,7 +26,7 @@ full_test: test envo.check-obo subsets/EnvO-Lite-GSC.check-obo
 test_python:
 	python3 --version
 
-build: base all_modules all_imports envo.owl envo.obo envo.json subsets/envo-basic.obo subsets/envo-basic.json subsets/EnvO-Lite-GSC.obo 
+build: base all_modules all_imports envo.owl envo.obo envo.json subsets/envo-basic.obo subsets/envo-basic.json subsets/EnvO-Lite-GSC.obo
 
 prepare_release: build  copy-release
 
@@ -84,9 +84,9 @@ subsets/envo-basic.obo: envo-simple.owl
 #envo-mireot.obo: envo-edit.owl chebi-lite.obo pato-lite.obo
 #	ontology-release-runner --no-subsets --skip-format owx --run-obo-basic-dag-check --no-reasoner --allow-overwrite --asserted --outdir build $< chebi-lite.obo pato-lite.obo && cp build/envo-merged.obo $@
 
-#chebi-lite.obo: 
+#chebi-lite.obo:
 #	owltools $(OBO)/chebi.obo --make-subset-by-properties -o -f obo $@
-#pato-lite.obo: 
+#pato-lite.obo:
 #	owltools $(OBO)/pato.obo --make-subset-by-properties -o -f obo $@
 
 release-diffs:
@@ -137,7 +137,7 @@ imports/%_combined_seed.tsv: imports/%_terms.txt imports/seed.tsv
 
 # Create an import module using the OWLAPI module extraction code via OWLTools.
 # We use the standard catalog, but rewrite the import to X to be a local mirror of ALL of X.
-# After extraction, we further reduce the ontology by creating a "mingraph" (removes all annotations except label) and by 
+# After extraction, we further reduce the ontology by creating a "mingraph" (removes all annotations except label) and by
 imports/%_import.owl: mirror/%.owl envo-edit.owl imports/%_combined_seed.tsv
 	robot extract -i $< -T imports/$*_combined_seed.tsv -m BOT -O $(ENVO_IMPORTS_BASE_URI)/$@ -o $@.tmp.owl && mv $@.tmp.owl $@
 
@@ -342,12 +342,12 @@ mappings/gold-mapping.txt: envo.owl
 # ----------------------------------------
 
 
-all_modules: all_modules_owl all_modules_obo 
+all_modules: all_modules_owl all_modules_obo
 all_modules_owl: $(ALL_MODS_OWL)
 all_modules_obo: $(patsubst %, modules/%.obo, $(MODS))
 
 modules/%.owl: modules/%.csv patterns/%.yaml curie_map.yaml
-	apply-pattern.py -P curie_map.yaml -b http://purl.obolibrary.org/obo/ -i $< -p patterns/$*.yaml  > modules/$*.omn && owltools modules/$*.omn --set-ontology-id $(OBO)/envo/modules/$*.owl -o $@
+	./run.sh dosdp-tools --table-format=csv --template=./patterns/$*.yaml --outfile=modules/$*.owl --obo-prefixes=true generate --infile=modules/$*.csv
 
 modules/%.obo: modules/%.owl
 	owltools $< -o -f obo $@.tmp && grep -v ^owl-axioms $@.tmp > $@
