@@ -352,6 +352,8 @@ modules/%.owl: modules/%.csv patterns/%.yaml curie_map.yaml
 modules/%.obo: modules/%.owl
 	owltools $< -o -f obo $@.tmp && grep -v ^owl-axioms $@.tmp > $@
 
+modules/ebi_biomes.owl: modules/ebi_biomes.csv
+	robot template --template $< -i imports/ro_import.owl -o $@.tmp.owl && mv $@.tmp.owl $@
 
 envo-edit.csv: envo-edit.owl
 	owltools $(USECAT) $< --merge-support-ontologies --export-table $@.tmp && cut -f1 $@.tmp | grep ENVO_ | perl -npe 's@https@http@' > $@
