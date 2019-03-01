@@ -1,11 +1,12 @@
 pattern_name: envo-p/patterns/chemical_concentration
+
 classes: 
-  chemical entity: CHEBI_24431
-  concentration of: PATO_0000033
+  chemical entity: CHEBI:24431
+  concentration of: PATO:0000033
 
 relations:
-  part of: BFO_0000050
-  inheres in: RO_0000052
+  part of: BFO:0000050
+  inheres in: RO:0000052
     
 vars: 
   attribute: "'concentration of'"
@@ -17,8 +18,11 @@ name:
     - attribute
     - entity
 
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+
 annotations: 
-  - property: oio:hasExactSynonym
+  - annotationProperty: exact_synonym
     text: "%s %s concentration"
     vars:
       - entity
