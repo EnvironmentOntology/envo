@@ -7,7 +7,7 @@
 
 OBO=http://purl.obolibrary.org/obo
 USECAT= --catalog-xml catalog-v001.xml
-MODS = entity_attribute_location entity_quality_location entity_attribute process_attribute
+MODS = entity_attribute_location entity_quality_location entity_attribute process_attribute chemical_concentration
 ALL_MODS_OWL = $(patsubst %, modules/%.owl, $(MODS))
 ALL_MODS_CSV = $(patsubst %, modules/%.csv, $(MODS))
 ROBOT= robot
@@ -347,8 +347,8 @@ all_modules_owl: $(ALL_MODS_OWL)
 all_modules_obo: $(patsubst %, modules/%.obo, $(MODS))
 
 modules/%.owl: modules/%.csv patterns/%.yaml curie_map.yaml
-	./run.sh dosdp-tools --table-format=csv --template=./patterns/$*.yaml --outfile=modules/$*.tmp.owl --obo-prefixes=true generate --infile=modules/$*.csv
-	./run.sh robot annotate --input modules/$*.tmp.owl -O http://purl.obolibrary.org/obo/envo/modules/$*.owl --output modules/$*.owl && rm modules/$*.tmp.owl
+	dosdp-tools --table-format=csv --template=./patterns/$*.yaml --outfile=modules/$*.tmp.owl --obo-prefixes=true generate --infile=modules/$*.csv
+	robot annotate --input modules/$*.tmp.owl -O http://purl.obolibrary.org/obo/envo/modules/$*.owl --output modules/$*.owl && rm modules/$*.tmp.owl
 
 modules/%.obo: modules/%.owl
 	owltools $< -o -f obo $@.tmp && grep -v ^owl-axioms $@.tmp > $@
