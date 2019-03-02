@@ -24,6 +24,17 @@ These are stored in the file
  * [envo-idranges.owl](envo-idranges.owl)
 
 ** ONLY USE IDs WITHIN YOUR RANGE!! **
+** NOTE THAT ENVO USES 8 DIGITS, NOT 7 LIKE OTHER ONTOLOGIES **
+
+## Editing Template CSVs
+
+We use both robot and dosdp templates.
+
+Both use the CSVs in the [modules](modules/) directory.
+
+** REMEMBER TO SAVE CSVs USING LF (NOT CRLF) AS NEWLINES **
+If you forget you should be able to convert using dos2unix.
+Pier uses Notepad++ which can save as either
  
 ## Git Quick Guide
 
