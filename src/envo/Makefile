@@ -212,7 +212,7 @@ mirror/fao.owl: envo-edit.owl
 .PRECIOUS: mirror/%.owl
 
 ncbitaxon.obo:
-	wget -N $(OBO)/ncbitaxon.obo
+	wget $(OBO)/ncbitaxon.obo -O $@.tmp && mv $@.tmp $@
 .PRECIOUS: ncbitaxon.obo
 
 mirror/ncbitaxon.owl: ncbitaxon.obo
