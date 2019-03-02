@@ -1,35 +1,13 @@
-sudo: true
-language: python
-python:
-  - "3.4"
+sudo: required
 
-## http://superuser.com/questions/993718/can-i-install-java-8-on-travis-ci-for-a-python-project
+services:
+  - docker
 
-# other answer:      
 before_install:
-  - sudo apt-get update
-  - sudo apt-get install oracle-java8-installer
-  - sudo update-java-alternatives -s java-8-oracle   
+  - docker pull obolibrary/odkfull
 
-install:
-  - "pip install pyyaml"
-
-before_script:
-  - mkdir -p bin
-  - export PATH=$PATH:$PWD/bin
-  - wget http://build.berkeleybop.org/userContent/owltools/owltools -O bin/owltools
-  - wget http://build.berkeleybop.org/userContent/owltools/ontology-release-runner -O bin/ontology-release-runner
-  - wget http://build.berkeleybop.org/userContent/owltools/owltools-runner-all.jar -O bin/owltools-runner-all.jar
-  - wget http://build.berkeleybop.org/userContent/owltools/owltools-oort-all.jar -O bin/owltools-oort-all.jar
-  - wget https://raw.githubusercontent.com/ontodev/robot/master/bin/robot -O bin/robot
-  - wget https://github.com/ontodev/robot/releases/download/v1.2.0/robot.jar -O bin/robot.jar
-  - wget https://raw.githubusercontent.com/cmungall/pattern2owl/master/apply-pattern.py -O bin/apply-pattern.py
-  - chmod +x bin/*
-
-   
-   
 # command to run tests
-script: cd src/envo && make travis_test
+script: cd src/ontology && sh run.sh make travis_test
 
 #after_success:
 #  coveralls
@@ -38,8 +16,10 @@ script: cd src/envo && make travis_test
 branches:
   only:
     - master
+    - test-travis
 
+### Add your own lists here
+### See https://github.com/INCATools/ontology-development-kit/issues/35
 notifications:
   email:
-    - cjmungall@lbl.gov
-
+    - obo-ci-reports-all@groups.io
