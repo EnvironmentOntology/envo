@@ -267,6 +267,12 @@ GO.xrf_abbs: envo-edit.owl
 # These all depend on envo-basic, which is the whole ontology (ie all classes), minus non-basic axioms (e.g. complex owl axioms, some relations)
 
 # Update to use full ENVO graph, as other ontology terms may be included
+
+subsets/envoNceas.owl: subsets/envo-basic.obo
+	owltools $< --extract-ontology-subset --fill-gaps --subset envoNceas --iri $(OBO)/envo/$@ -o $@
+subsets/envoNceas.obo: subsets/envoNceas.owl
+	owltools $< -o -f obo $@
+
 subsets/envoMeo.owl: subsets/envo-basic.obo
 	owltools $< --extract-ontology-subset --fill-gaps --subset envoMeo --iri $(OBO)/envo/$@ -o $@
 subsets/envoMeo.obo: subsets/envoMeo.owl
