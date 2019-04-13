@@ -37,57 +37,57 @@ base: envo-base.owl
 
 # generic conversion for OGs
 %.json: %.owl
-	robot convert -input $< -o $@
+	$(ROBOT) convert -input $< -o $@
 
 debug.owl: envo-edit.owl
-	owltools --use-catalog  $< --merge-support-ontologies --run-reasoner -r elk -u -m $@
+	$(OWLTOOLS) --use-catalog  $< --merge-support-ontologies --run-reasoner -r elk -u -m $@
 
 #release: envo-basic.obo release-diffs
 
 envo-base.owl: envo-edit.owl
-	owltools $(USECAT) $< --remove-imports-declarations -o $@.tmp
-	owltools $(USECAT) $@.tmp  $(ALL_MODS_OWL) --merge-support-ontologies -o $@
+	$(OWLTOOLS) $(USECAT) $< --remove-imports-declarations -o $@.tmp
+	$(OWLTOOLS) $(USECAT) $@.tmp  $(ALL_MODS_OWL) --merge-support-ontologies -o $@
 
 
 # Merge in all module files, whilst removing the corresponding import
 envo-edit-module-merge.owl: envo-edit.owl
-	owltools $(USECAT) $<  $(patsubst %, --remove-import-declaration $(OBO)/envo/modules/%.owl, $(MODS)) -o $@.tmp
-	owltools $(USECAT) $@.tmp  $(ALL_MODS_OWL) --merge-support-ontologies -o $@
+	$(OWLTOOLS) $(USECAT) $<  $(patsubst %, --remove-import-declaration $(OBO)/envo/modules/%.owl, $(MODS)) -o $@.tmp
+	$(OWLTOOLS) $(USECAT) $@.tmp  $(ALL_MODS_OWL) --merge-support-ontologies -o $@
 
 envo.owl: envo-edit-module-merge.owl
-	robot reason -i $< -r ELK relax reduce -o $@
+	$(ROBOT) reason -i $< -r ELK relax reduce -o $@
 
 envo-simple.owl: envo.owl
-	owltools --use-catalog $< --remove-imports-declarations --remove-dangling-annotations -o $@
+	$(OWLTOOLS) --use-catalog $< --remove-imports-declarations --remove-dangling-annotations -o $@
 
 
 ###	ontology-release-runner --catalog-xml catalog-v001.xml --reasoner elk  --skip-format owx --skip-format obo  --error-report envo-errors.txt $< --allow-overwrite --asserted --simple
 ##	ontology-release-runner --catalog-xml catalog-v001.xml  --skip-format owx --run-obo-basic-dag-check --error-report envo-errors.txt $< --allow-overwrite --asserted --simple
 
 #envo.owl: envo-edit.owl
-#	robot reason -s true --input $< --reasoner elk --output $@
+#	$(ROBOT) reason -s true --input $< --reasoner elk --output $@
 
 
 .PRECIOUS: envo.obo
 
 envo.obo: envo.owl
-	owltools $(USECAT) $< --merge-imports-closure --add-obo-shorthand-to-properties -o -f obo --no-check $@.tmp && grep -v ^owl-axioms $@.tmp > $@
+	$(OWLTOOLS) $(USECAT) $< --merge-imports-closure --add-obo-shorthand-to-properties -o -f obo --no-check $@.tmp && grep -v ^owl-axioms $@.tmp > $@
 
 
 # TODO - fix IRI
 subsets/envo-basic.owl: envo-simple.owl
-	owltools $< imports/ro_import.owl --merge-imports-closure --set-ontology-id $(OBO)/$@ -o $@.tmp && mv $@.tmp $@
+	$(OWLTOOLS) $< imports/ro_import.owl --merge-imports-closure --set-ontology-id $(OBO)/$@ -o $@.tmp && mv $@.tmp $@
 
 subsets/envo-basic.obo: envo-simple.owl
-	owltools $< imports/ro_import.owl --merge-imports-closure  --add-obo-shorthand-to-properties --set-ontology-id $(OBO)/$@ -o -f obo --no-check $@.tmp && grep -v ^owl-axioms $@.tmp > $@
+	$(OWLTOOLS) $< imports/ro_import.owl --merge-imports-closure  --add-obo-shorthand-to-properties --set-ontology-id $(OBO)/$@ -o -f obo --no-check $@.tmp && grep -v ^owl-axioms $@.tmp > $@
 
 #envo-mireot.obo: envo-edit.owl chebi-lite.obo pato-lite.obo
 #	ontology-release-runner --no-subsets --skip-format owx --run-obo-basic-dag-check --no-reasoner --allow-overwrite --asserted --outdir build $< chebi-lite.obo pato-lite.obo && cp build/envo-merged.obo $@
 
 #chebi-lite.obo:
-#	owltools $(OBO)/chebi.obo --make-subset-by-properties -o -f obo $@
+#	$(OWLTOOLS) $(OBO)/chebi.obo --make-subset-by-properties -o -f obo $@
 #pato-lite.obo:
-#	owltools $(OBO)/pato.obo --make-subset-by-properties -o -f obo $@
+#	$(OWLTOOLS) $(OBO)/pato.obo --make-subset-by-properties -o -f obo $@
 
 release-diffs:
 	cd diffs && make
@@ -130,7 +130,7 @@ KEEPRELS = BFO:0000050 BFO:0000051 RO:0002202 immediate_transformation_of RO:000
 
 # See https://github.com/EnvironmentOntology/envo/issues/521
 imports/seed.tsv: envo-edit.owl $(ALL_MODS_OWL)
-	owltools $(USECAT) $< --merge-imports-closure --export-table $@.tmp && cut -f1 $@.tmp | grep purl.obolib | sort -u > $@
+	$(OWLTOOLS) $(USECAT) $< --merge-imports-closure --export-table $@.tmp && cut -f1 $@.tmp | grep purl.obolib | sort -u > $@
 
 imports/%_combined_seed.tsv: imports/%_terms.txt imports/seed.tsv
 	cut -f1 $^ | sort -u > $@
@@ -139,10 +139,10 @@ imports/%_combined_seed.tsv: imports/%_terms.txt imports/seed.tsv
 # We use the standard catalog, but rewrite the import to X to be a local mirror of ALL of X.
 # After extraction, we further reduce the ontology by creating a "mingraph" (removes all annotations except label) and by
 imports/%_import.owl: mirror/%.owl envo-edit.owl imports/%_combined_seed.tsv
-	robot extract -i $< -T imports/$*_combined_seed.tsv -m BOT -O $(ENVO_IMPORTS_BASE_URI)/$@ -o $@.tmp.owl && mv $@.tmp.owl $@
+	$(ROBOT) extract -i $< -T imports/$*_combined_seed.tsv -m BOT -O $(ENVO_IMPORTS_BASE_URI)/$@ -o $@.tmp.owl && mv $@.tmp.owl $@
 
 imports/%_import.obo: imports/%_import.owl
-	owltools $(USECAT) $< -o -f obo --no-check $@
+	$(OWLTOOLS) $(USECAT) $< -o -f obo --no-check $@
 
 
 
@@ -152,63 +152,63 @@ mirror/%-local.owl:
 .PRECIOUS: mirror/%-local.owl
 
 mirror/%.owl: mirror/%-local.owl
-	owltools $< --remove-annotation-assertions -l --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS)  -o $@
+	$(OWLTOOLS) $< --remove-annotation-assertions -l --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS)  -o $@
 .PRECIOUS: mirror/%.owl
 
 mirror/clo.owl: envo-edit.owl
-	owltools $(OBO)/clo.owl --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/clo.owl -o $@
+	$(OWLTOOLS) $(OBO)/clo.owl --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/clo.owl -o $@
 .PRECIOUS: mirror/%.owl
 
 mirror/agro.owl: envo-edit.owl
-	owltools $(OBO)/agro.owl $(REMOVE_SELF_REF) --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/agro.owl -o $@
+	$(OWLTOOLS) $(OBO)/agro.owl $(REMOVE_SELF_REF) --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/agro.owl -o $@
 .PRECIOUS: mirror/%.owl
 
 mirror/sdgio.owl: envo-edit.owl
-	owltools http://purl.unep.org/sdg/sdgio.owl $(REMOVE_SELF_REF)  --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id http://purl.unep.org/sdg/sdgio.owl -o $@
+	$(OWLTOOLS) http://purl.unep.org/sdg/sdgio.owl $(REMOVE_SELF_REF)  --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id http://purl.unep.org/sdg/sdgio.owl -o $@
 .PRECIOUS: mirror/%.owl
 
 mirror/obi.owl: envo-edit.owl
-	owltools $(OBO)/obi.owl --remove-classes-in-idspace GO --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/obi.owl -o $@
+	$(OWLTOOLS) $(OBO)/obi.owl --remove-classes-in-idspace GO --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/obi.owl -o $@
 .PRECIOUS: mirror/%.owl
 
 mirror/foodon-local.owl:
-	owltools $(OBO)/foodon.owl --merge-imports-closure $(REMOVE_SELF_REF) --remove-annotation-assertions -l -s -d --remove-axiom-annotations  --set-ontology-id $(OBO)/foodon.owl -o $@
+	$(OWLTOOLS) $(OBO)/foodon.owl --merge-imports-closure $(REMOVE_SELF_REF) --remove-annotation-assertions -l -s -d --remove-axiom-annotations  --set-ontology-id $(OBO)/foodon.owl -o $@
 mirror/foodon.owl: mirror/foodon-local.owl
-	robot relax -i $< reduce -o $@
+	$(ROBOT) relax -i $< reduce -o $@
 .PRECIOUS: mirror/%.owl
 
 # chebi.owl is large and the owlapi often times out when reading it; use the obo instead
 mirror/chebi-local.owl: envo-edit.owl
 	wget --no-check-certificate $(OBO)/chebi.owl -O $@ && touch $@
 mirror/chebi.owl: mirror/chebi-local.owl
-	owltools --no-debug $< --log-debug --remove-annotation-assertions -l --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS)  -o $@
+	$(OWLTOOLS) --no-debug $< --log-debug --remove-annotation-assertions -l --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS)  -o $@
 .PRECIOUS: mirror/%.owl
 
 #mirror/ro.owl: mirror/ro-relations.owl mirror/ro-classes.owl
-#	owltools $^ --merge-support-ontologies -o $@
+#	$(OWLTOOLS) $^ --merge-support-ontologies -o $@
 mirror/ro.owl:
-	owltools $(OBO)/ro.owl --merge-imports-closure -o $@
+	$(OWLTOOLS) $(OBO)/ro.owl --merge-imports-closure -o $@
 .PRECIOUS: mirror/ro.owl
 
 mirror/ro-relations.owl: envo-edit.owl
-	owltools $(OBO)/ro.owl --merge-imports-closure --remove-tbox --remove-dangling -o $@
+	$(OWLTOOLS) $(OBO)/ro.owl --merge-imports-closure --remove-tbox --remove-dangling -o $@
 mirror/ro-classes.owl: envo-edit.owl
-	owltools $(OBO)/ro.owl --merge-imports-closure --make-subset-by-properties -f // --remove-external-classes -k RO --remove-annotation-assertions -l -s -d  -o $@
+	$(OWLTOOLS) $(OBO)/ro.owl --merge-imports-closure --make-subset-by-properties -f // --remove-external-classes -k RO --remove-annotation-assertions -l -s -d  -o $@
 
 mirror/bfo.owl: envo-edit.owl
-	owltools $(OBO)/bfo.owl --merge-imports-closure --make-subset-by-properties -f // --remove-external-classes BFO --remove-annotation-assertions -l -s -d  --remove-dangling --set-ontology-id $(OBO)/bfo.owl -o $@
+	$(OWLTOOLS) $(OBO)/bfo.owl --merge-imports-closure --make-subset-by-properties -f // --remove-external-classes BFO --remove-annotation-assertions -l -s -d  --remove-dangling --set-ontology-id $(OBO)/bfo.owl -o $@
 .PRECIOUS: mirror/%.owl
 
 mirror/uberon.owl: envo-edit.owl
-	owltools $(OBO)/uberon.obo  --remove-axiom-annotations  --make-subset-by-properties -f $(KEEPRELS) --remove-external-classes UBERON --remove-dangling-annotations --remove-annotation-assertions -l -s -d --set-ontology-id $(OBO)/uberon.owl -o $@
+	$(OWLTOOLS) $(OBO)/uberon.obo  --remove-axiom-annotations  --make-subset-by-properties -f $(KEEPRELS) --remove-external-classes UBERON --remove-dangling-annotations --remove-annotation-assertions -l -s -d --set-ontology-id $(OBO)/uberon.owl -o $@
 .PRECIOUS: mirror/%.owl
 
 mirror/po.owl: envo-edit.owl
-	owltools $(OBO)/po.owl --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/po.owl -o $@
+	$(OWLTOOLS) $(OBO)/po.owl --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/po.owl -o $@
 .PRECIOUS: mirror/%.owl
 
 mirror/fao.owl: envo-edit.owl
-	owltools $(OBO)/fao.owl --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/fao.owl -o $@
+	$(OWLTOOLS) $(OBO)/fao.owl --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/fao.owl -o $@
 .PRECIOUS: mirror/%.owl
 
 ncbitaxon.obo:
@@ -216,27 +216,27 @@ ncbitaxon.obo:
 .PRECIOUS: ncbitaxon.obo
 
 mirror/ncbitaxon.owl: ncbitaxon.obo
-	OWLTOOLS_MEMORY=12G owltools $< --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations  --set-ontology-id $(OBO)/ncbitaxon.owl -o $@
+	OWLTOOLS_MEMORY=12G $(OWLTOOLS) $< --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations  --set-ontology-id $(OBO)/ncbitaxon.owl -o $@
 .PRECIOUS: mirror/ncbitaxon.owl
 
 mirror/pco.owl: envo-edit.owl
-		owltools $(OBO)/pco.owl --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/pco.owl -o $@
+	$(OWLTOOLS) $(OBO)/pco.owl --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/pco.owl -o $@
 .PRECIOUS: mirror/%.owl
 
 mirror/iao.owl: envo-edit.owl
-	owltools $(OBO)/iao.owl --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/iao.owl -o $@
+	$(OWLTOOLS) $(OBO)/iao.owl --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/iao.owl -o $@
 .PRECIOUS: mirror/%.owl
 
 mirror/omp.owl: envo-edit.owl
-	owltools $(OBO)/omp.owl --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/omp.owl -o $@
+	$(OWLTOOLS) $(OBO)/omp.owl --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/omp.owl -o $@
 .PRECIOUS: mirror/%.owl
 
 mirror/pato.owl: envo-edit.owl
-	owltools $(OBO)/pato.owl --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/pato.owl -o $@
+	$(OWLTOOLS) $(OBO)/pato.owl --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/pato.owl -o $@
 .PRECIOUS: mirror/%.owl
 
 mirror/flopo.owl: envo-edit.owl
-	owltools $(OBO)/flopo.owl --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/flopo.owl -o $@
+	$(OWLTOOLS) $(OBO)/flopo.owl --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/flopo.owl -o $@
 .PRECIOUS: mirror/%.owl
 
 # ----------------------------------------
@@ -269,59 +269,59 @@ GO.xrf_abbs: envo-edit.owl
 # Update to use full ENVO graph, as other ontology terms may be included
 
 subsets/envoNceas.owl: subsets/envo-basic.obo
-	owltools $< --extract-ontology-subset --fill-gaps --subset envoNceas --iri $(OBO)/envo/$@ -o $@
+	$(OWLTOOLS) $< --extract-ontology-subset --fill-gaps --subset envoNceas --iri $(OBO)/envo/$@ -o $@
 subsets/envoNceas.obo: subsets/envoNceas.owl
-	owltools $< -o -f obo $@
+	$(OWLTOOLS) $< -o -f obo $@
 
 subsets/envoMeo.owl: subsets/envo-basic.obo
-	owltools $< --extract-ontology-subset --fill-gaps --subset envoMeo --iri $(OBO)/envo/$@ -o $@
+	$(OWLTOOLS) $< --extract-ontology-subset --fill-gaps --subset envoMeo --iri $(OBO)/envo/$@ -o $@
 subsets/envoMeo.obo: subsets/envoMeo.owl
-	owltools $< -o -f obo $@
+	$(OWLTOOLS) $< -o -f obo $@
 
 subsets/envoEmpo.owl: subsets/envo-basic.obo
-	owltools $< --extract-ontology-subset --fill-gaps --subset envoEmpo --iri $(OBO)/envo/$@ -o $@
+	$(OWLTOOLS) $< --extract-ontology-subset --fill-gaps --subset envoEmpo --iri $(OBO)/envo/$@ -o $@
 subsets/envoEmpo.obo: subsets/envoEmpo.owl
-	owltools $< -o -f obo $@
+	$(OWLTOOLS) $< -o -f obo $@
 
 subsets/envoOmics.owl: subsets/envo-basic.obo
-	owltools $< --extract-ontology-subset --fill-gaps --subset envoOmics --iri $(OBO)/envo/$@ -o $@
+	$(OWLTOOLS) $< --extract-ontology-subset --fill-gaps --subset envoOmics --iri $(OBO)/envo/$@ -o $@
 subsets/envoOmics.obo: subsets/envoOmics.owl
-	owltools $< -o -f obo $@
+	$(OWLTOOLS) $< -o -f obo $@
 
 subsets/EnvO-Lite-GSC.owl: subsets/envo-basic.obo
-	owltools $< --extract-ontology-subset --fill-gaps --subset EnvO-Lite-GSC --iri $(OBO)/envo/$@ -o $@
+	$(OWLTOOLS) $< --extract-ontology-subset --fill-gaps --subset EnvO-Lite-GSC --iri $(OBO)/envo/$@ -o $@
 subsets/EnvO-Lite-GSC.obo: subsets/EnvO-Lite-GSC.owl
-	owltools $< -o -f obo $@
+	$(OWLTOOLS) $< -o -f obo $@
 
 subsets/environmental_hazards.owl: subsets/envo-basic.obo
-	owltools $< --extract-ontology-subset --fill-gaps --subset environmental_hazards --iri $(OBO)/envo/$@ -o $@
+	$(OWLTOOLS) $< --extract-ontology-subset --fill-gaps --subset environmental_hazards --iri $(OBO)/envo/$@ -o $@
 subsets/environmental_hazards.obo: subsets/environmental_hazards.owl
-	owltools $< -o -f obo $@
+	$(OWLTOOLS) $< -o -f obo $@
 
 subsets/wwfBiome.owl: subsets/envo-basic.obo
-	owltools $< --extract-ontology-subset --fill-gaps --subset wwfBiome --iri $(OBO)/envo/$@ -o $@
+	$(OWLTOOLS) $< --extract-ontology-subset --fill-gaps --subset wwfBiome --iri $(OBO)/envo/$@ -o $@
 subsets/wwfBiome.obo: subsets/wwfBiome.owl
-	owltools $< -o -f obo $@
+	$(OWLTOOLS) $< -o -f obo $@
 
 subsets/nlcd2011.owl: subsets/envo-basic.obo
-	owltools $< --extract-ontology-subset --fill-gaps --subset nlcd2011 --iri $(OBO)/envo/$@ -o $@
+	$(OWLTOOLS) $< --extract-ontology-subset --fill-gaps --subset nlcd2011 --iri $(OBO)/envo/$@ -o $@
 subsets/nlcd2011.obo: subsets/nlcd2011.owl
-	owltools $< -o -f obo $@
+	$(OWLTOOLS) $< -o -f obo $@
 
 subsets/envoPolar.owl: subsets/envo-basic.obo
-	owltools $< --extract-ontology-subset --fill-gaps --subset envoPolar --iri $(OBO)/envo/$@ -o $@
+	$(OWLTOOLS) $< --extract-ontology-subset --fill-gaps --subset envoPolar --iri $(OBO)/envo/$@ -o $@
 subsets/envoPolar.obo: subsets/envoPolar.owl
-	owltools $< -o -f obo $@
+	$(OWLTOOLS) $< -o -f obo $@
 
 subsets/envoCesab.owl: subsets/envo-basic.obo
-	owltools $< --extract-ontology-subset --fill-gaps --subset envoCesab --iri $(OBO)/envo/$@ -o $@
+	$(OWLTOOLS) $< --extract-ontology-subset --fill-gaps --subset envoCesab --iri $(OBO)/envo/$@ -o $@
 subsets/envoCesab.obo: subsets/envoCesab.owl
-	owltools $< -o -f obo $@
+	$(OWLTOOLS) $< -o -f obo $@
 
 subsets/envoAstro.owl: subsets/envo-basic.obo
-	owltools $< --extract-ontology-subset --fill-gaps --subset envoAstro --iri $(OBO)/envo/$@ -o $@
+	$(OWLTOOLS) $< --extract-ontology-subset --fill-gaps --subset envoAstro --iri $(OBO)/envo/$@ -o $@
 subsets/envoAstro.obo: subsets/envoAstro.owl
-	owltools $< -o -f obo $@
+	$(OWLTOOLS) $< -o -f obo $@
 
 
 
@@ -354,16 +354,16 @@ all_modules_obo: $(patsubst %, modules/%.obo, $(MODS))
 
 modules/%.owl: modules/%.csv patterns/%.yaml curie_map.yaml
 	dosdp-tools --table-format=csv --template=./patterns/$*.yaml --outfile=modules/$*.tmp.owl --obo-prefixes=true generate --infile=modules/$*.csv
-	robot annotate --input modules/$*.tmp.owl -O http://purl.obolibrary.org/obo/envo/modules/$*.owl --output modules/$*.owl && rm modules/$*.tmp.owl
+	$(ROBOT) annotate --input modules/$*.tmp.owl -O http://purl.obolibrary.org/obo/envo/modules/$*.owl --output modules/$*.owl && rm modules/$*.tmp.owl
 
 modules/%.obo: modules/%.owl
-	owltools $< -o -f obo $@.tmp && grep -v ^owl-axioms $@.tmp > $@
+	$(OWLTOOLS) $< -o -f obo $@.tmp && grep -v ^owl-axioms $@.tmp > $@
 
 modules/ebi_biomes.owl: modules/ebi_biomes.csv
-	robot template --template $< -i imports/ro_import.owl -o $@.tmp.owl && mv $@.tmp.owl $@
+	$(ROBOT) template --template $< -i imports/ro_import.owl -o $@.tmp.owl && mv $@.tmp.owl $@
 
 envo-edit.csv: envo-edit.owl
-	owltools $(USECAT) $< --merge-support-ontologies --export-table $@.tmp && cut -f1 $@.tmp | grep ENVO_ | perl -npe 's@https@http@' > $@
+	$(OWLTOOLS) $(USECAT) $< --merge-support-ontologies --export-table $@.tmp && cut -f1 $@.tmp | grep ENVO_ | perl -npe 's@https@http@' > $@
 
 fill: envo-edit.csv
 	fill-col1-ids.pl --min 9000000 -m 10000000  $(ALL_MODS_CSV) $<
