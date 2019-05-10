@@ -1,3 +1,6 @@
+align-igsn.tsv: igsn.txt
+	rdfmatch -i prefixes.ttl -f tsv -l -A ~/repos/onto-mirror/void.ttl -t $< -i envo exact > $@.tmp && mv $@.tmp $@
+
 align-lter.tsv: lter.obo
 	blip-findall -i $< -i ../envo.obo -u metadata_nlp -goal index_entity_pair_label_match "class(X),id_idspace(X,'LTER'),entity_pair_label_reciprocal_best_intermatch(X,Y,S),id_idspace(Y,'ENVO'),\+entity_xref_idspace(Y,Z,'LTER')" -select "x(X,Y,S)" -label -use_tabs -no_pred > $@.tmp && mv $@.tmp $@
 
