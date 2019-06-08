@@ -1,0 +1,38 @@
+pattern_name: material_entity_formed_as_result_of
+pattern_iri: http://purl.obolibrary.org/obo/envo/material_entity_formed_as_result_of
+
+description: >-
+
+  Examples: [frost heave](http://purl.obolibrary.org/obo/ENVO_01001568), [volcanic rock](http://purl.obolibrary.org/obo/ENVO_00002015)
+
+classes: 
+  environmental system process: "http://purl.obolibrary.org/obo/ENVO_02500000"
+  environmental material: ENVO:00010483
+
+
+relations: 
+  formed as result of: "RO:0002354"
+
+
+vars:
+  material: "'environmental material'"
+  process: "'environmental system process'"
+
+name:
+  text: "%s from %s"
+  vars:
+    - material
+    - process
+
+def:
+  text: "Any %s that is formed as result of a %s"
+  vars:
+    - material
+    - process
+
+
+equivalentTo:
+  text: "%s and ('formed as result of' some %s)"
+  vars:
+    - material
+    - process
