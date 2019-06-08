@@ -1,0 +1,47 @@
+pattern_name: formation of material entity
+pattern_iri: http://purl.obolibrary.org/obo/envo/formation_of_material
+
+description: >-
+
+  A pattern for classes that represent a material transformation process, in which
+  only the output is specified. 
+
+  A related pattern is formation_of_material_entity_from_input, in which the
+  input is specified.
+
+  Example: [cloud formation process](http://purl.obolibrary.org/obo/ENVO_01001083)
+
+  For discussion, see https://github.com/EnvironmentOntology/envo/issues/794
+
+classes: 
+  material transformation process: ENVO:03000043
+  environmental material: ENVO:00010483
+
+
+relations: 
+  results in formation of: "RO:0002297"
+
+
+vars:
+  output: "'material entity'"
+
+name:
+  text: "%s formation"
+  vars:
+    - output
+
+annotations:
+  - annotationProperty: oio:hasExactSynonym
+    text: "formation of %s"
+    vars:
+    - output
+    
+def:
+  text: "A material transformation process that results in the formation of %s."
+  vars:
+    - output
+
+equivalentTo: 
+  text: "'material transformation process' and ('results in formation of' some %s)"
+  vars:
+    - output
