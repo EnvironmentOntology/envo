@@ -1,0 +1,42 @@
+pattern_name: atomospheric_material_subtype
+pattern_iri: http://purl.obolibrary.org/obo/envo/atmospheric_material_subtype
+
+description: >-
+
+  A pattern for classes that represent the atmospheric subtype of a more general environmental material,
+  i.e. a specific subclass of that material that part of an atmosphere.
+
+  Example: [atmospheric water vapour](http://purl.obolibrary.org/obo/ENVO_01000268)
+
+classes:
+  environmental material: ENVO:00010483
+  atmosphere: ENVO:01000267
+
+
+relations: 
+  part of: "BFO:0000050"
+
+
+vars:
+  material: "'environmental material'"
+
+name:
+  text: "atmospheric %s"
+  vars:
+    - material
+
+annotations:
+  - annotationProperty: oio:hasExactSynonym
+    text: "%s in atmosphere"
+    vars:
+    - material
+    
+def:
+  text: "Any %s which part of a planet's atmosphere."
+  vars:
+    - material
+
+equivalentTo: 
+  text: "%s and 'part of' some 'atmosphere'"
+  vars:
+    - material
