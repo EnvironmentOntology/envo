@@ -1,0 +1,37 @@
+pattern_name: coastal_subtype_of_feature
+pattern_iri: http://purl.obolibrary.org/obo/envo/coastal_subtype_of_feature
+
+description: >-
+
+  Pattern for classes representing a coast-specific subtype of an environmental feature
+
+  Examples: [coastal water body](http://purl.obolibrary.org/obo/ENVO_02000049), [coastal sea water](http://purl.obolibrary.org/obo/ENVO_00002150), [coastal upwelling](http://purl.obolibrary.org/obo/ENVO_01000006) (3 total)
+
+  TBD: given that coast has indeterminate boundaries, is adjacent to the correct relation here? Sometimes the text defs say "near".
+
+classes: 
+  environmental feature: "ENVO:03000042"
+  sea coast: "ENVO:00000303"
+
+
+relations: 
+  adjacent to: "RO:0002220"
+
+
+vars:
+  feature: "'environmental feature'"
+
+name:
+  text: "coastal %s"
+  vars:
+    - feature
+
+def:
+  text: "An %s that is near a coast."
+  vars:
+    - feature
+
+equivalentTo:
+  text: "%s and ('adjacent to' some 'sea coast')"
+  vars:
+    - feature
