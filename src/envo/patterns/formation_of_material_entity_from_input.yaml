@@ -1,0 +1,55 @@
+pattern_name: formation of material entity from input
+pattern_iri: http://purl.obolibrary.org/obo/envo/formation_of_material_entity_from_input
+
+description: >-
+
+  A pattern for classes that represent a material transformation process, in which
+  both an input and an output are specified. 
+
+  A related pattern is formation_of_material_entity, in which the
+  input is left unspecified.
+
+  Examples: [lithification](http://purl.obolibrary.org/obo/ENVO_01001205)
+
+  For discussion, see https://github.com/EnvironmentOntology/envo/issues/794
+
+classes: 
+  material transformation process: ENVO:03000043
+  environmental material: ENVO:00010483
+
+
+relations: 
+  has input: "RO:0002233"
+  results in formation of: "RO:0002297"
+
+
+vars:
+  input: "'material entity'"
+  output: "'material entity'"
+
+name:
+  text: "%s formation from %s"
+  vars:
+    - output
+    - input
+
+annotations:
+  - annotationProperty: oio:hasExactSynonym
+    text: "formation of (a/an) %s from (a/an) %s"
+    vars:
+    - output
+    - input
+    
+    
+def:
+  # Could not induce def, using default
+  text: "A material transformation process that converts (a/an) %s into (a/an) %s."
+  vars:
+    - input
+    - output
+
+equivalentTo: 
+  text: "'material transformation process' and ('has input' some %s) and ('results in formation of' some %s)"
+  vars:
+    - input
+    - output

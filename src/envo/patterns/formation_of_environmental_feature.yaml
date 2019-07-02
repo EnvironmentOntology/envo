@@ -1,0 +1,47 @@
+pattern_name: formation of environmental feature
+pattern_iri: http://purl.obolibrary.org/obo/envo/formation_of_material
+
+description: >-
+
+  A pattern for classes that represent a material transformation process, in which
+  only the output is specified. 
+
+  A related pattern is formation_of_material_entity_from_input, in which the
+  input is specified.
+
+  Example: [brine channel formation process](http://purl.obolibrary.org/obo/ENVO_03000042)
+
+  For discussion, see https://github.com/EnvironmentOntology/envo/issues/794
+
+classes: 
+  environmental system process: ENVO:02500000
+  environmental feature: ENVO:03000042
+
+
+relations: 
+  results in formation of: "RO:0002297"
+
+
+vars:
+  output: "'environmental feature'"
+
+name:
+  text: "%s formation"
+  vars:
+    - output
+
+annotations:
+  - annotationProperty: oio:hasExactSynonym
+    text: "formation of a(n) %s"
+    vars:
+    - output
+    
+def:
+  text: "An environmental system process that results in the formation of a(n) %s."
+  vars:
+    - output
+
+equivalentTo: 
+  text: "'environmental system process' and ('results in formation of' some %s)"
+  vars:
+    - output
