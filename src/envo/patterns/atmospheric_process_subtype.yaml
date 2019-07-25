@@ -1,0 +1,44 @@
+pattern_name: atomospheric_process_subtype
+pattern_iri: http://purl.obolibrary.org/obo/envo/atmospheric_process_subtype
+
+description: >-
+
+  A pattern for classes that represent the atmospheric subtype of a more general process,
+  i.e. a specific subclass of that process that occurs in an atmosphere.
+
+  Example: [atmospheric wind](http://purl.obolibrary.org/obo/ENVO_01000793)
+
+  Note that everything here should classify under [atmospheric process](http://purl.obolibrary.org/obo/ENVO_02500003)
+
+classes:
+  environmental system process: ENVO:02500000
+  atmosphere: ENVO:01000267
+
+
+relations: 
+  occurs in: "BFO:0000066"
+
+
+vars:
+  process: "'environmental system process'"
+
+name:
+  text: "atmospheric %s"
+  vars:
+    - process
+
+annotations:
+  - annotationProperty: oio:hasExactSynonym
+    text: "%s in atmosphere"
+    vars:
+    - process
+    
+def:
+  text: "Any %s which occurs in the atmosphere of an astronomical body."
+  vars:
+    - process
+
+equivalentTo: 
+  text: "%s and 'occurs in' some 'atmosphere'"
+  vars:
+    - process

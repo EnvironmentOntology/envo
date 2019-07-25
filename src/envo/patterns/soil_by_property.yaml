@@ -1,0 +1,38 @@
+pattern_name: soil_by_property
+pattern_iri: http://purl.obolibrary.org/obo/envo/soil_by_property
+
+description: >-
+
+  A pattern for classes that represent soil grouping classes that are distinguished by a soil property
+  
+  Examples: [acidic soil](http://purl.obolibrary.org/obo/ENVO_01001185), [dry soil](http://purl.obolibrary.org/obo/ENVO_00005748), [frozen soil](http://purl.obolibrary.org/obo/ENVO_01001526) (3 total)
+
+  TBD: consider changing has-quality to parent relation
+
+classes: 
+  soil: "ENVO:00001998"
+  physical object quality: "PATO:0001241"
+
+
+relations: 
+  has quality: "RO:0000086"
+
+
+vars:
+  property: "'physical object quality'"
+
+name:
+  text: "%s soil"
+  vars:
+    - property
+
+def:
+  text: "Any soil that is %s"
+  vars:
+    - property
+
+
+equivalentTo:
+  text: "'soil' and ('has quality' some %s)"
+  vars:
+    - property
