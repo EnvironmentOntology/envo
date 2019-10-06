@@ -3,6 +3,10 @@ These notes are for the EDITORS of envo
 For more details on ontology management, please see the OBO tutorial:
 
  * https://github.com/jamesaoverton/obo-tutorial
+ 
+## Editing software
+
+Currently, we edit envo-edit.owl with Protege 5.5.0 - please make sure you're synced!
 
 ## Editors Version
 
