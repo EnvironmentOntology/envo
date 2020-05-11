@@ -41,7 +41,9 @@ ODK_VERSION =               "Unknown"
 TODAY ?= $(shell date +%Y-%m-%d)
 OBODATE ?= $(shell date +'%d:%m:%Y %H:%M')
 
-RELEASE_ARTEFACTS = base full
+FORMATS = owl obo json
+FORMATS_INCL_TSV = $(sort $(FORMATS) tsv)
+
 
 # ----------------------------------------
 # Top-level targets
@@ -166,6 +168,24 @@ $(ONT)-full.owl: $(SRC) $(OTHER_SRC)
 # Subsets
 # ----------------------------------------
 
+## -- subset targets --
+##
+## By default this is the cross-product of SUBSETS x FORMATS
+## Note we also include TSV as a format
+
+
+SUBSETS =  EnvO-Lite-GSC envoEmpo envoAstro envoPolar envoEmpo envoOmics envoCesab
+
+SUBSET_ROOTS = $(patsubst %, subsets/%, $(SUBSETS))
+SUBSET_FILES = $(foreach n,$(SUBSET_ROOTS), $(foreach f,$(FORMATS_INCL_TSV), $(n).$(f)))
+
+all_subsets: $(SUBSET_FILES)
+
+subsets/%.tsv: subsets/%.owl
+	$(ROBOT) query -f tsv -i $< -s ./sparql/labels.sparql $@
+
+envo-simple.owl: envo-base.owl
+	$(OWLTOOLS) --use-catalog $< --remove-imports-declarations --remove-dangling-annotations -o $@
 
 # TODO - fix IRI
 subsets/envo-basic.owl: envo-simple.owl
