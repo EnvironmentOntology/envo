@@ -1,21 +1,54 @@
-# This Makefile is for use by the ENVO Release Manager (currently cjm)
-# Also used by Jenkins: http://build.berkeleybop.org/job/build-envo
+# ----------------------------------------
+# Makefile for envo
+# Generated using ontology-starter-kit
+# ODK Version: "Unknown"
+# ----------------------------------------
+# <do not edit above this line>
 #
-# requirements: Oort (http://code.google.com/p/owltools/wiki/OortIntro)
+# This Makefile is for use by the ENVO Release Manager (currently cjm)
+# Also used for unit tests executed by travis
+#
+# See README-editors.md for more details on release process
 #
 # To make a release, type 'make release' in this directory
 
+# ----------------------------------------
+# Standard Constants
+# ----------------------------------------
+# these can be overwritten on the command line
+
 OBO=http://purl.obolibrary.org/obo
-USECAT= --catalog-xml catalog-v001.xml
-MODS = entity_attribute_location entity_quality_location entity_attribute process_attribute chemical_concentration
-ALL_MODS_OWL = $(patsubst %, modules/%.owl, $(MODS))
-ALL_MODS_CSV = $(patsubst %, modules/%.csv, $(MODS))
-ROBOT= robot
-OWLTOOLS= owltools
+URIBASE=                    $(OBO)
+ONT=                        envo
+ONTBASE=                    $(URIBASE)/$(ONT)
+EDIT_FORMAT=                owl
+PRE_SRC =                   $(ONT)-edit.$(EDIT_FORMAT)
+SRC =                       $(ONT)-edit-module-merged.$(EDIT_FORMAT)
+CATALOG=                    catalog-v001.xml
+USECAT=                     --catalog-xml $(CATALOG)
+ROBOT=                      robot --catalog $(CATALOG)
+OWLTOOLS=                   owltools
+RELEASEDIR=                 ../..
+REPORTDIR=                  reports
+TMPDIR=                     tmp
+SPARQLDIR =                 sparql
+REPORT_FAIL_ON =            NONE
+OBO_FORMAT_OPTIONS =        
+SPARQL_VALIDATION_CHECKS =  equivalent-classes trailing-whitespace owldef-self-reference xref-syntax nolabels
+SPARQL_EXPORTS =            basic-report class-count-by-prefix edges xrefs obsoletes synonyms
+ODK_VERSION =               "Unknown"
 
-all: build
+TODAY ?= $(shell date +%Y-%m-%d)
+OBODATE ?= $(shell date +'%d:%m:%Y %H:%M')
 
-#include Makefile-OBO
+RELEASE_ARTEFACTS = base full
+
+# ----------------------------------------
+# Top-level targets
+# ----------------------------------------
+
+.PHONY: .FORCE
+all: all_imports all_main all_subsets sparql_test all_reports all_assets
 
 test: envo-edit.owl all_modules all_imports envo.owl
 travis_test: test_python envo-edit.owl all_modules envo.owl
@@ -26,40 +59,102 @@ full_test: test envo.check-obo subsets/EnvO-Lite-GSC.check-obo
 test_python:
 	python3 --version
 
-build: base all_modules all_imports envo.owl envo.obo envo.json subsets/envo-basic.obo subsets/envo-basic.json subsets/EnvO-Lite-GSC.obo
+## -- main targets --
+##
+## By default this is the cross-product of {ont, ont-base} x FORMATS
 
-prepare_release: build  copy-release
+MAIN_PRODUCTS = $(sort $(foreach r,$(RELEASE_ARTEFACTS), $(ONT)-$(r)) $(ONT))
+MAIN_GZIPPED = 
+MAIN_FILES = $(foreach n,$(MAIN_PRODUCTS), $(foreach f,$(FORMATS), $(n).$(f))) $(MAIN_GZIPPED)
 
+all_main: $(MAIN_FILES)
+
+# release products
+#build: base all_modules all_imports envo.owl envo.obo envo.json subsets/envo-basic.obo subsets/envo-basic.json subsets/EnvO-Lite-GSC.obo
+
+release: build copy-release
+
+# stages release in top level folder
 copy-release:
-	cp -pr catalog-v001.xml envo.obo envo.owl envo.json envo-base.owl subsets mappings imports ../..
+	cp -pr catalog-v001.xml envo.obo envo.owl envo.json envo-base.owl subsets mappings imports $(RELEASEDIR)
 
 base: envo-base.owl
 
-# generic conversion for OGs
+# generic conversion to make obographjson from OWL files
 %.json: %.owl
 	$(ROBOT) convert -input $< -o $@
 
+# consider replacing with robot reason -D
 debug.owl: envo-edit.owl
 	$(OWLTOOLS) --use-catalog  $< --merge-support-ontologies --run-reasoner -r elk -u -m $@
 
-#release: envo-basic.obo release-diffs
-
-envo-base.owl: envo-edit.owl
-	$(OWLTOOLS) $(USECAT) $< --remove-imports-declarations -o $@.tmp
-	$(OWLTOOLS) $(USECAT) $@.tmp  $(ALL_MODS_OWL) --merge-support-ontologies -o $@
-
+MODS = entity_attribute_location entity_quality_location entity_attribute process_attribute chemical_concentration
+ALL_MODS_OWL = $(patsubst %, modules/%.owl, $(MODS))
+ALL_MODS_CSV = $(patsubst %, modules/%.csv, $(MODS))
 
 # Merge in all module files, whilst removing the corresponding import
-envo-edit-module-merge.owl: envo-edit.owl
+$(SRC): envo-edit.owl
 	$(OWLTOOLS) $(USECAT) $<  $(patsubst %, --remove-import-declaration $(OBO)/envo/modules/%.owl, $(MODS)) -o $@.tmp
 	$(OWLTOOLS) $(USECAT) $@.tmp  $(ALL_MODS_OWL) --merge-support-ontologies -o $@
 
-envo.owl: envo-edit-module-merge.owl
-	$(ROBOT) reason -i $< -r ELK relax reduce -o $@
+# ----------------------------------------
+# Export formats
+# ----------------------------------------
 
-envo-simple.owl: envo.owl
-	$(OWLTOOLS) --use-catalog $< --remove-imports-declarations --remove-dangling-annotations -o $@
 
+$(ONT)-full.obo: $(ONT)-full.owl
+	$(ROBOT) convert --input $< --check false -f obo $(OBO_FORMAT_OPTIONS) -o $@.tmp.obo && grep -v ^owl-axioms $@.tmp.obo > $@ && rm $@.tmp.obo
+$(ONT)-full.json: $(ONT)-full.owl
+	$(ROBOT) annotate --input $< --ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ \
+		convert --check false -f json -o $@.tmp.json && mv $@.tmp.json $@
+$(ONT)-base.obo: $(ONT)-base.owl
+	$(ROBOT) convert --input $< --check false -f obo $(OBO_FORMAT_OPTIONS) -o $@.tmp.obo && grep -v ^owl-axioms $@.tmp.obo > $@ && rm $@.tmp.obo
+$(ONT)-base.json: $(ONT)-base.owl
+	$(ROBOT) annotate --input $< --ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ \
+		convert --check false -f json -o $@.tmp.json && mv $@.tmp.json $@
+# Main release artefacts
+$(ONT).owl: $(ONT)-full.owl
+	$(ROBOT) annotate --input $< --ontology-iri $(URIBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ \
+		convert -o $@.tmp.owl && mv $@.tmp.owl $@
+
+$(ONT).obo: $(ONT).owl
+	$(ROBOT) convert --input $< --check false -f obo $(OBO_FORMAT_OPTIONS) -o $@.tmp.obo && grep -v ^owl-axioms $@.tmp.obo > $@ && rm $@.tmp.obo
+$(ONT).json: $(ONT)-full.owl
+	$(ROBOT) annotate --input $< --ontology-iri $(URIBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ \
+		convert --check false -f json -o $@.tmp.json && mv $@.tmp.json $@
+
+# ----------------------------------------
+# Initiating Step: Reason over source
+# ----------------------------------------
+
+ANNOTATE_VERSION_IRI = annotate -V $(ONTBASE)/releases/$(TODAY)/$@.owl
+
+# by default we use ELK to perform a reason-relax-reduce chain
+# after that we annotate the ontology with the release versionInfo
+
+OTHER_SRC = 
+
+
+$(ONTOLOGYTERMS): $(SRC) $(OTHER_SRC)
+	touch $(ONTOLOGYTERMS) && \
+	$(ROBOT) query --use-graphs true -f csv -i $< --query ../sparql/envo_terms.sparql $@
+
+
+# base: OTHER sources of interest, such as definitions owl
+$(ONT)-base.owl: $(SRC) $(OTHER_SRC)
+	$(ROBOT) remove --input $< --select imports --trim false \
+		merge $(patsubst %, -i %, $(OTHER_SRC)) \
+		annotate --annotation http://purl.org/dc/elements/1.1/type http://purl.obolibrary.org/obo/IAO_8000001 \
+		--ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ \
+		--output $@.tmp.owl && mv $@.tmp.owl $@
+
+# Full: The full artefacts with imports merged, reasoned
+$(ONT)-full.owl: $(SRC) $(OTHER_SRC)
+	$(ROBOT) merge --input $< \
+		reason --reasoner ELK --equivalent-classes-allowed all --exclude-tautologies structural \
+		relax \
+		reduce -r ELK \
+		annotate --ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ --output $@.tmp.owl && mv $@.tmp.owl $@
 
 ###	ontology-release-runner --catalog-xml catalog-v001.xml --reasoner elk  --skip-format owx --skip-format obo  --error-report envo-errors.txt $< --allow-overwrite --asserted --simple
 ##	ontology-release-runner --catalog-xml catalog-v001.xml  --skip-format owx --run-obo-basic-dag-check --error-report envo-errors.txt $< --allow-overwrite --asserted --simple
@@ -67,11 +162,9 @@ envo-simple.owl: envo.owl
 #envo.owl: envo-edit.owl
 #	$(ROBOT) reason -s true --input $< --reasoner elk --output $@
 
-
-.PRECIOUS: envo.obo
-
-envo.obo: envo.owl
-	$(OWLTOOLS) $(USECAT) $< --merge-imports-closure --add-obo-shorthand-to-properties -o -f obo --no-check $@.tmp && grep -v ^owl-axioms $@.tmp > $@
+# ----------------------------------------
+# Subsets
+# ----------------------------------------
 
 
 # TODO - fix IRI
@@ -91,6 +184,19 @@ subsets/envo-basic.obo: envo-simple.owl
 
 release-diffs:
 	cd diffs && make
+
+
+## -- import targets --
+##
+## By default this is the cross-product of IMPORT_MODULES x FORMATS
+
+IMPORTS = pato uberon chebi ro pco foodon go ncbitaxon  obi po iao fao agro
+
+IMPORT_ROOTS = $(patsubst %, imports/%_import, $(IMPORTS))
+IMPORT_OWL_FILES = $(foreach n,$(IMPORT_ROOTS), $(n).owl)
+IMPORT_FILES = $(IMPORT_OWL_FILES)
+
+all_imports: $(IMPORT_FILES)
 
 
 # ----------------------------------------
@@ -116,9 +222,6 @@ ENVO_IMPORTS_BASE_URI = $(OBO)/envo
 # See also https://github.com/EnvironmentOntology/envo/issues/610
 REMOVE_SELF_REF= --remove-classes-in-idspace -d ENVO
 
-# Ontology dependencies
-# We don't include clo, as this is currently not working
-IMPORTS = pato uberon chebi ro pco foodon go ncbitaxon  obi po iao fao agro
 
 # Make this target to regenerate ALL
 all_imports: $(patsubst %, imports/%_import.owl,$(IMPORTS)) $(patsubst %, imports/%_import.obo,$(IMPORTS))
@@ -155,10 +258,6 @@ mirror/%.owl: mirror/%-local.owl
 	$(OWLTOOLS) $< --remove-annotation-assertions -l --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS)  -o $@
 .PRECIOUS: mirror/%.owl
 
-mirror/clo.owl: envo-edit.owl
-	$(OWLTOOLS) $(OBO)/clo.owl --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/clo.owl -o $@
-.PRECIOUS: mirror/%.owl
-
 mirror/agro.owl: envo-edit.owl
 	$(OWLTOOLS) $(OBO)/agro.owl $(REMOVE_SELF_REF) --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/agro.owl -o $@
 .PRECIOUS: mirror/%.owl
@@ -168,7 +267,7 @@ mirror/sdgio.owl: envo-edit.owl
 .PRECIOUS: mirror/%.owl
 
 mirror/obi.owl: envo-edit.owl
-	$(OWLTOOLS) $(OBO)/obi.owl --remove-classes-in-idspace GO --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/obi.owl -o $@
+	$(OWLTOOLS) $(OBO)/obi.owl --remove-classes-in-idspace GO --remove-classes-in-idspace ENVO --remove-classes-in-idspace CHEBI --remove-classes-in-idspace UBERON --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/obi.owl -o $@
 .PRECIOUS: mirror/%.owl
 
 mirror/foodon-local.owl:
@@ -233,10 +332,6 @@ mirror/omp.owl: envo-edit.owl
 
 mirror/pato.owl: envo-edit.owl
 	$(OWLTOOLS) $(OBO)/pato.owl --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/pato.owl -o $@
-.PRECIOUS: mirror/%.owl
-
-mirror/flopo.owl: envo-edit.owl
-	$(OWLTOOLS) $(OBO)/flopo.owl --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/flopo.owl -o $@
 .PRECIOUS: mirror/%.owl
 
 # ----------------------------------------
