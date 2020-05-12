@@ -23,7 +23,7 @@ ONT=                        envo
 ONTBASE=                    $(URIBASE)/$(ONT)
 EDIT_FORMAT=                owl
 PRE_SRC =                   $(ONT)-edit.$(EDIT_FORMAT)
-SRC =                       $(ONT)-edit-module-merged.$(EDIT_FORMAT)
+SRC =                       $(ONT)-edit-module-merged.owl
 CATALOG=                    catalog-v001.xml
 USECAT=                     --catalog-xml $(CATALOG)
 ROBOT=                      robot --catalog $(CATALOG)
@@ -101,7 +101,7 @@ ALL_MODS_OWL = $(patsubst %, modules/%.owl, $(MODS))
 ALL_MODS_CSV = $(patsubst %, modules/%.csv, $(MODS))
 
 # Merge in all module files, whilst removing the corresponding import
-$(SRC): envo-edit.owl
+$(SRC): $(PRE_SRC)
 	$(OWLTOOLS) $(USECAT) $<  $(patsubst %, --remove-import-declaration $(OBO)/envo/modules/%.owl, $(MODS)) -o $@.tmp
 	$(OWLTOOLS) $(USECAT) $@.tmp  $(ALL_MODS_OWL) --merge-support-ontologies -o $@
 
@@ -113,22 +113,22 @@ $(SRC): envo-edit.owl
 $(ONT)-full.obo: $(ONT)-full.owl
 	$(ROBOT) convert --input $< --check false -f obo $(OBO_FORMAT_OPTIONS) -o $@.tmp.obo && grep -v ^owl-axioms $@.tmp.obo > $@ && rm $@.tmp.obo
 $(ONT)-full.json: $(ONT)-full.owl
-	$(ROBOT) annotate --input $< --ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ \
+	$(ROBOT) annotate --input $< --ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@  -a owl:versionInfo $(TODAY) \
 		convert --check false -f json -o $@.tmp.json && mv $@.tmp.json $@
 $(ONT)-base.obo: $(ONT)-base.owl
 	$(ROBOT) convert --input $< --check false -f obo $(OBO_FORMAT_OPTIONS) -o $@.tmp.obo && grep -v ^owl-axioms $@.tmp.obo > $@ && rm $@.tmp.obo
 $(ONT)-base.json: $(ONT)-base.owl
-	$(ROBOT) annotate --input $< --ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ \
+	$(ROBOT) annotate --input $< --ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@  -a owl:versionInfo $(TODAY) \
 		convert --check false -f json -o $@.tmp.json && mv $@.tmp.json $@
 # Main release artefacts
 $(ONT).owl: $(ONT)-full.owl
-	$(ROBOT) annotate --input $< --ontology-iri $(URIBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ \
+	$(ROBOT) annotate --input $< --ontology-iri $(URIBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@  -a owl:versionInfo $(TODAY) \
 		convert -o $@.tmp.owl && mv $@.tmp.owl $@
 
 $(ONT).obo: $(ONT).owl
 	$(ROBOT) convert --input $< --check false -f obo $(OBO_FORMAT_OPTIONS) -o $@.tmp.obo && grep -v ^owl-axioms $@.tmp.obo > $@ && rm $@.tmp.obo
 $(ONT).json: $(ONT)-full.owl
-	$(ROBOT) annotate --input $< --ontology-iri $(URIBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ \
+	$(ROBOT) annotate --input $< --ontology-iri $(URIBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@  -a owl:versionInfo $(TODAY) \
 		convert --check false -f json -o $@.tmp.json && mv $@.tmp.json $@
 
 # ----------------------------------------
@@ -161,7 +161,8 @@ $(ONT)-full.owl: $(SRC) $(OTHER_SRC)
 		reason --reasoner ELK --equivalent-classes-allowed all --exclude-tautologies structural \
 		relax \
 		reduce -r ELK \
-		annotate --ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ --output $@.tmp.owl && mv $@.tmp.owl $@
+		annotate --ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@  -a owl:versionInfo $(TODAY)\
+                --output $@.tmp.owl && mv $@.tmp.owl $@
 
 ###	ontology-release-runner --catalog-xml catalog-v001.xml --reasoner elk  --skip-format owx --skip-format obo  --error-report envo-errors.txt $< --allow-overwrite --asserted --simple
 ##	ontology-release-runner --catalog-xml catalog-v001.xml  --skip-format owx --run-obo-basic-dag-check --error-report envo-errors.txt $< --allow-overwrite --asserted --simple
@@ -179,7 +180,7 @@ $(ONT)-full.owl: $(SRC) $(OTHER_SRC)
 ## Note we also include TSV as a format
 
 
-SUBSETS =  EnvO-Lite-GSC envoEmpo envoAstro envoPolar envoEmpo envoOmics envoCesab
+SUBSETS = envo-basic EnvO-Lite-GSC envoEmpo envoAstro envoPolar envoEmpo envoOmics envoCesab environmental_hazards
 
 SUBSET_ROOTS = $(patsubst %, subsets/%, $(SUBSETS))
 SUBSET_FILES = $(foreach n,$(SUBSET_ROOTS), $(foreach f,$(FORMATS_INCL_TSV), $(n).$(f)))
@@ -188,7 +189,8 @@ SUBSET_FILES = $(foreach n,$(SUBSET_ROOTS), $(foreach f,$(FORMATS_INCL_TSV), $(n
 all_subsets: $(SUBSET_FILES)
 
 subsets/%.tsv: subsets/%.owl
-	$(ROBOT) query -f tsv -i $< -s ./sparql/labels.sparql $@
+	$(ROBOT) export -i $< -c "ID|label|definition" -e $@
+#	$(ROBOT) query -f tsv -i $< -s ./sparql/labels.sparql $@
 
 envo-simple.owl: envo-base.owl
 	$(OWLTOOLS) --use-catalog $< --remove-imports-declarations --remove-dangling-annotations -o $@
@@ -402,60 +404,14 @@ GO.xrf_abbs: envo-edit.owl
 
 # Update to use full ENVO graph, as other ontology terms may be included
 
-subsets/envoNceas.owl: subsets/envo-basic.obo
-	$(OWLTOOLS) $< --extract-ontology-subset --fill-gaps --subset envoNceas --iri $(OBO)/envo/$@ -o $@
-subsets/envoNceas.obo: subsets/envoNceas.owl
-	$(OWLTOOLS) $< -o -f obo --no-check $@
 
-subsets/envoMeo.owl: subsets/envo-basic.obo
-	$(OWLTOOLS) $< --extract-ontology-subset --fill-gaps --subset envoMeo --iri $(OBO)/envo/$@ -o $@
-subsets/envoMeo.obo: subsets/envoMeo.owl
-	$(OWLTOOLS) $< -o -f obo --no-check $@
-
-subsets/envoEmpo.owl: subsets/envo-basic.obo
-	$(OWLTOOLS) $< --extract-ontology-subset --fill-gaps --subset envoEmpo --iri $(OBO)/envo/$@ -o $@
-subsets/envoEmpo.obo: subsets/envoEmpo.owl
-	$(OWLTOOLS) $< -o -f obo --no-check $@
-
-subsets/envoOmics.owl: subsets/envo-basic.obo
-	$(OWLTOOLS) $< --extract-ontology-subset --fill-gaps --subset envoOmics --iri $(OBO)/envo/$@ -o $@
-subsets/envoOmics.obo: subsets/envoOmics.owl
-	$(OWLTOOLS) $< -o -f obo --no-check $@
-
-subsets/EnvO-Lite-GSC.owl: subsets/envo-basic.obo
-	$(OWLTOOLS) $< --extract-ontology-subset --fill-gaps --subset EnvO-Lite-GSC --iri $(OBO)/envo/$@ -o $@
-subsets/EnvO-Lite-GSC.obo: subsets/EnvO-Lite-GSC.owl
-	$(OWLTOOLS) $< -o -f obo --no-check $@
-
-subsets/environmental_hazards.owl: subsets/envo-basic.obo
-	$(OWLTOOLS) $< --extract-ontology-subset --fill-gaps --subset environmental_hazards --iri $(OBO)/envo/$@ -o $@
-subsets/environmental_hazards.obo: subsets/environmental_hazards.owl
-	$(OWLTOOLS) $< -o -f obo --no-check $@
-
-subsets/wwfBiome.owl: subsets/envo-basic.obo
-	$(OWLTOOLS) $< --extract-ontology-subset --fill-gaps --subset wwfBiome --iri $(OBO)/envo/$@ -o $@
-subsets/wwfBiome.obo: subsets/wwfBiome.owl
-	$(OWLTOOLS) $< -o -f obo --no-check $@
-
-subsets/nlcd2011.owl: subsets/envo-basic.obo
-	$(OWLTOOLS) $< --extract-ontology-subset --fill-gaps --subset nlcd2011 --iri $(OBO)/envo/$@ -o $@
-subsets/nlcd2011.obo: subsets/nlcd2011.owl
-	$(OWLTOOLS) $< -o -f obo --no-check $@
-
-subsets/envoPolar.owl: subsets/envo-basic.obo
-	$(OWLTOOLS) $< --extract-ontology-subset --fill-gaps --subset envoPolar --iri $(OBO)/envo/$@ -o $@
-subsets/envoPolar.obo: subsets/envoPolar.owl
-	$(OWLTOOLS) $< -o -f obo --no-check $@
-
-subsets/envoCesab.owl: subsets/envo-basic.obo
-	$(OWLTOOLS) $< --extract-ontology-subset --fill-gaps --subset envoCesab --iri $(OBO)/envo/$@ -o $@
-subsets/envoCesab.obo: subsets/envoCesab.owl
-	$(OWLTOOLS) $< -o -f obo --no-check $@
-
-subsets/envoAstro.owl: subsets/envo-basic.obo
-	$(OWLTOOLS) $< --extract-ontology-subset --fill-gaps --subset envoAstro --iri $(OBO)/envo/$@ -o $@
-subsets/envoAstro.obo: subsets/envoAstro.owl
-	$(OWLTOOLS) $< -o -f obo --no-check $@
+subsets/%.owl: subsets/envo-basic.obo
+	$(OWLTOOLS) $< --extract-ontology-subset --fill-gaps --subset $* -o $@.tmp && \
+	$(ROBOT) annotate -i $@.tmp --ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@  -a owl:versionInfo $(TODAY) \
+	  --output $@
+.PRECIOUS: subsets/%.owl
+subsets/%.obo: subsets/%.owl
+	$(OWLTOOLS) $< -o -f obo --no-check $@.tmp && grep -v ^owl-axioms: $@.tmp > $@
 
 
 
