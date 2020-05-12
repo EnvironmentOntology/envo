@@ -347,7 +347,8 @@ mirror/ncbitaxon.owl: ncbitaxon.obo
 .PRECIOUS: mirror/ncbitaxon.owl
 
 mirror/pco.owl: envo-edit.owl
-	$(OWLTOOLS) $(OBO)/pco.owl --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/pco.owl -o $@
+	$(ROBOT) reason -r HERMIT -I $(OBO)/pco.owl relax -o $@.tmp.owl
+	$(OWLTOOLS) $@.tmp.owl --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/pco.owl -o $@
 .PRECIOUS: mirror/%.owl
 
 mirror/iao.owl: envo-edit.owl
