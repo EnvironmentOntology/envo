@@ -23,6 +23,9 @@ lter-controlled-vocabulary.rdf:
 lter.obo: lter-controlled-vocabulary.rdf
 	xmlstarlet fo $<  | ./skos2obo.pl > $@
 
+gcmd.rdf:
+	curl -L -s 'https://gcmdservices.gsfc.nasa.gov/kms/concepts/concept_scheme/sciencekeywords/?format=rdf' > $@
+
 GEMETS = backbone definitions groups
 GEMETFS = $(patsubst %,gemet-%.rdf,$(GEMETS))
 

@@ -1002,6 +1002,8 @@ synonym: "pulmones" EXACT []
 synonym: "set of lungs" EXACT []
 is_a: UBERON:0034925 ! anatomical collection
 relationship: BFO:0000050 UBERON:0001558 ! lower respiratory tract
+relationship: BFO:0000051 UBERON:0002167 ! right lung
+relationship: BFO:0000051 UBERON:0002168 ! left lung
 
 [Term]
 id: UBERON:0000171
@@ -3300,7 +3302,7 @@ disjoint_from: UBERON:0002036 ! striated muscle tissue
 [Term]
 id: UBERON:0001136
 name: mesothelium
-def: "Simple squamous epithelium of mesodermal origin which lines serous membranes. Examples: mesothelium of pleura, mesothelium of peritoneum[FMA]. http://en.wikipedia.org/wiki/ The mesothelium is a membrane that forms the lining of several body cavities: the pleura (thoracal cavity), peritoneum (abdominal cavity including the mesentery) and pericardium (heart sac). Mesothelial tissue also surrounds the male internal reproductive organs (the tunica vaginalis testis) and covers the internal reproductive organs of women (the tunica serosa uteri)." []
+def: "Simple squamous epithelium of mesodermal origin which lines serous membranes. Examples: mesothelium of pleura, mesothelium of peritoneum[FMA]. Wikipedia: The mesothelium is a membrane that forms the lining of several body cavities: the pleura (thoracal cavity), peritoneum (abdominal cavity including the mesentery) and pericardium (heart sac). Mesothelial tissue also surrounds the male internal reproductive organs (the tunica vaginalis testis) and covers the internal reproductive organs of women (the tunica serosa uteri)." []
 is_a: UBERON:0000487 ! simple squamous epithelium
 is_a: UBERON:0012275 ! meso-epithelium
 intersection_of: UBERON:0000487 ! simple squamous epithelium
@@ -5443,7 +5445,7 @@ synonym: "joint of vertebral body" EXACT []
 synonym: "vertebral joint" BROAD []
 is_a: UBERON:0002216 ! symphysis
 intersection_of: UBERON:0000982 ! skeletal joint
-intersection_of: RO:0002176 UBERON:0001075 ! bony vertebral centrum
+intersection_of: RO:0002176 UBERON:0001075 {minCardinality="2", maxCardinality="2"} ! bony vertebral centrum
 relationship: BFO:0000050 UBERON:0001130 ! vertebral column
 relationship: RO:0002176 UBERON:0001075 ! bony vertebral centrum
 
@@ -6078,10 +6080,8 @@ id: UBERON:0001678
 name: temporal bone
 def: "the large, irregular bone located at the base and side of the skull; consists of three parts at birth: squamous, tympanic, and petrous" []
 synonym: "os temporale" RELATED []
-is_a: UBERON:0003462 ! facial bone
 is_a: UBERON:0008193 ! pneumatized bone
-is_a: UBERON:0015212 ! lateral structure
-relationship: BFO:0000050 UBERON:0011156 ! facial skeleton
+is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
 
 [Term]
 id: UBERON:0001690
@@ -6119,7 +6119,6 @@ synonym: "petrosal bone" RELATED []
 synonym: "petrous bone" RELATED []
 synonym: "temporal bone petrous part" EXACT []
 is_a: UBERON:0005913 ! zone of bone organ
-is_a: UBERON:0010313 ! neural crest-derived structure
 relationship: BFO:0000050 UBERON:0001678 ! temporal bone
 relationship: BFO:0000050 UBERON:0002517 ! basicranium
 
@@ -7001,7 +7000,8 @@ def: "A system of fluid passages in the inner ear, including both the cochlea, w
 synonym: "labyrinthus osseus" RELATED []
 synonym: "osseous labyrinth" EXACT []
 synonym: "osseus labyrinth" RELATED []
-is_a: UBERON:0010313 ! neural crest-derived structure
+is_a: UBERON:0004121 ! ectoderm-derived structure
+is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
 is_a: UBERON:0034921 ! multi organ part structure
 relationship: BFO:0000050 UBERON:0001694 ! petrous part of temporal bone
 relationship: BFO:0000050 UBERON:0001846 ! internal ear
@@ -7032,7 +7032,8 @@ synonym: "cochlear organ" RELATED []
 synonym: "cochlear part of bony labyrinth" EXACT []
 synonym: "lagena" EXACT []
 synonym: "lagenas" RELATED []
-is_a: UBERON:0010313 ! neural crest-derived structure
+is_a: UBERON:0004121 ! ectoderm-derived structure
+is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
 is_a: UBERON:0034921 ! multi organ part structure
 relationship: BFO:0000050 UBERON:0001839 ! bony labyrinth
 
@@ -7504,7 +7505,7 @@ relationship: BFO:0000050 UBERON:0002271 ! periventricular zone of hypothalamus
 [Term]
 id: UBERON:0001943
 name: midbrain tegmentum
-def: "Ventral part of the midbrain, separated from the hindbrain by the isthmus[ISBN10:0471888893]. Subdivision of the midbrain lying anterior to the tectum and posterior to the substantia nigra and cerebral peduncle[FMA] The part of the midbrain extending from the substantia nigra to the cerebral aqueduct in a horizontal section of the midbrain. It forms the floor of the midbrain that surrounds the cerebral aqueduct[WP]." []
+def: "Ventral part of the midbrain, separated from the hindbrain by the isthmus[ISBN:0471888893]. Subdivision of the midbrain lying anterior to the tectum and posterior to the substantia nigra and cerebral peduncle[FMA] The part of the midbrain extending from the substantia nigra to the cerebral aqueduct in a horizontal section of the midbrain. It forms the floor of the midbrain that surrounds the cerebral aqueduct[WP]." []
 synonym: "mesencephalic tegmentum" RELATED []
 synonym: "MTg" BROAD []
 synonym: "tegmentum" BROAD []
@@ -11538,6 +11539,8 @@ def: "A regional part of brain that is part of a medullary reticular formation [
 synonym: "medullary reticular formation segment" EXACT []
 synonym: "segment of medullary reticular formation" EXACT []
 is_obsolete: true
+consider: BIRNLEX:1060
+consider: FMA:73730
 
 [Term]
 id: UBERON:0002600
@@ -11581,6 +11584,11 @@ synonym: "neocortex region" EXACT []
 synonym: "region of cerebral cortex" EXACT []
 synonym: "segment of cerebral cortex" NARROW []
 is_obsolete: true
+consider: BIRNLEX:1173
+consider: EMAPA:35589
+consider: FMA:242193
+consider: MA:0000187
+consider: SCTID:119408004
 
 [Term]
 id: UBERON:0002635
@@ -11589,6 +11597,8 @@ def: "A multi-tissue structure that is part of a midbrain tegmentum." []
 synonym: "midbrain tegmentum segment" EXACT []
 synonym: "segment of midbrain tegmentum" EXACT []
 is_obsolete: true
+consider: BIRNLEX:1227
+consider: FMA:62399
 
 [Term]
 id: UBERON:0002639
@@ -11614,6 +11624,9 @@ def: "A regional part of brain that is part of a medulla oblongata [Automaticall
 synonym: "medullary oblongata segment" EXACT []
 synonym: "segment of medulla oblongata" EXACT []
 is_obsolete: true
+consider: BIRNLEX:1355
+consider: FMA:71011
+consider: SCTID:119241003
 
 [Term]
 id: UBERON:0002680
@@ -11622,6 +11635,8 @@ def: "A regional part of brain that is part of a metencephalon [Automatically ge
 synonym: "metencephalon subdivision" EXACT []
 synonym: "segment of metencephalon" EXACT []
 is_obsolete: true
+consider: BIRNLEX:1361
+consider: FMA:67942
 
 [Term]
 id: UBERON:0002743
@@ -11651,6 +11666,8 @@ def: "A regional part of brain that is part of a forebrain [Automatically genera
 synonym: "forebrain segment" EXACT []
 synonym: "segment of forebrain" EXACT []
 is_obsolete: true
+consider: BIRNLEX:1677
+consider: FMA:61996
 
 [Term]
 id: UBERON:0002784
@@ -11658,6 +11675,9 @@ name: obsolete regional part of diencephalon
 def: "A regional part of brain that is part of a diencephalon [Automatically generated definition]." []
 synonym: "diencephalon segment" EXACT []
 is_obsolete: true
+consider: BIRNLEX:1685
+consider: FMA:62005
+consider: SCTID:119264001
 
 [Term]
 id: UBERON:0002791
@@ -11666,6 +11686,8 @@ def: "A regional part of brain that is part of a telencephalon [Automatically ge
 synonym: "segment of telencephalon" EXACT []
 synonym: "telencephalon segment" EXACT []
 is_obsolete: true
+consider: BIRNLEX:1700
+consider: FMA:62374
 
 [Term]
 id: UBERON:0002824
@@ -11741,6 +11763,10 @@ name: obsolete regional part of cerebellum
 synonym: "segment of cerebellum" EXACT []
 synonym: "subdivision of cerebellum" RELATED []
 is_obsolete: true
+replaced_by: UBERON:0002037
+consider: BIRNLEX:748
+consider: FMA:256150
+consider: SCTID:119242005
 
 [Term]
 id: UBERON:0002950
@@ -11749,6 +11775,9 @@ def: "A regional part of brain that is part of a midbrain [Automatically generat
 synonym: "midbrain segment" EXACT []
 synonym: "segment of midbrain" EXACT []
 is_obsolete: true
+consider: BIRNLEX:763
+consider: FMA:61997
+consider: SCTID:119239004
 
 [Term]
 id: UBERON:0003037
@@ -11777,6 +11806,9 @@ def: "A regional part of brain that is part of a hypothalamus [Automatically gen
 synonym: "hypothalamus segment" EXACT []
 synonym: "segment of hypothalamus" EXACT []
 is_obsolete: true
+consider: BIRNLEX:995
+consider: FMA:67706
+consider: SCTID:360454003
 
 [Term]
 id: UBERON:0003050
@@ -12432,6 +12464,15 @@ intersection_of: BFO:0000050 UBERON:0000992 ! ovary
 relationship: BFO:0000050 UBERON:0000992 ! ovary
 
 [Term]
+id: UBERON:0003219
+name: shell septum
+def: "Septum that divides the internal chambers (camerae) of the shell of a cephalopod, namely nautiloids or ammonoids." []
+is_a: UBERON:0003037 ! septum
+intersection_of: UBERON:0003037 ! septum
+intersection_of: BFO:0000050 UBERON:0006612 ! shell
+relationship: BFO:0000050 UBERON:0006612 ! shell
+
+[Term]
 id: UBERON:0003220
 name: metanephric mesenchyme
 def: "one of the two embryological structures that give rise to the kidney (the other is the ureteric bud). The metanephric blastema mostly develops into nephrons, but can also form parts of the collecting duct system.[WP]. Metanephric mesenchyme is the tissue made up of loosely connected mesenchymal cells in the metanephros[GO]" []
@@ -12771,6 +12812,7 @@ relationship: BFO:0000050 UBERON:0000019 ! camera-type eye
 id: UBERON:0003273
 name: obsolete skeletal muscle tissue of tongue
 is_obsolete: true
+replaced_by: UBERON:0000378
 
 [Term]
 id: UBERON:0003276
@@ -12796,6 +12838,7 @@ synonym: "skeleton of developmental tissue" EXACT []
 synonym: "skeleton system of developmental tissue" EXACT []
 synonym: "skeleton system of embryo" EXACT []
 is_obsolete: true
+consider: UBERON:0004288
 
 [Term]
 id: UBERON:0003278
@@ -17402,6 +17445,7 @@ id: UBERON:0004130
 name: cerebellar layer
 def: "A cortical cell layer of the cerebellum. Examples: the granular (inner+outer) layer, molecular layer, Purkinje cell layer, and the ventricular layer of the embryo." []
 synonym: "cell layer of cerebellar cortex" EXACT []
+synonym: "cytoarchitectural part of the cerebellar cortex" EXACT []
 synonym: "gray matter layer of cerebellum" EXACT []
 synonym: "layer of cerebellar cortex" EXACT []
 synonym: "layer of cerebellum" EXACT []
@@ -19355,12 +19399,14 @@ is_a: UBERON:0000467 ! anatomical system
 id: UBERON:0004457
 name: obsolete cavity lining
 is_obsolete: true
+replaced_by: UBERON:0000042
 
 [Term]
 id: UBERON:0004458
 name: obsolete body cavity or lining
 def: "Either a cavity lining or the space it encloses." []
 is_obsolete: true
+replaced_by: UBERON:0005906
 
 [Term]
 id: UBERON:0004461
@@ -19488,6 +19534,8 @@ synonym: "chest musculature" RELATED []
 synonym: "musculature of chest" EXACT []
 synonym: "set of muscles of chest" RELATED []
 is_obsolete: true
+consider: FMA:74779
+consider: UBERON:0004464
 
 [Term]
 id: UBERON:0004473
@@ -19525,6 +19573,7 @@ synonym: "muscles of tongue" EXACT []
 synonym: "musculi linguae" EXACT []
 synonym: "set of muscles of tongue" EXACT []
 is_obsolete: true
+consider: FMA:71289
 
 [Term]
 id: UBERON:0004479
@@ -24989,6 +25038,12 @@ relationship: BFO:0000050 UBERON:0001766 ! anterior chamber of eyeball
 id: UBERON:0005641
 name: obsolete otocyst epithelium
 is_obsolete: true
+consider: EHDAA2:0001344
+consider: EMAPA:16671
+consider: EMAPA:16996
+consider: EMAPA:16999
+consider: UBERON:0003051
+consider: VHOG:0000986
 
 [Term]
 id: UBERON:0005656
@@ -25659,6 +25714,7 @@ id: UBERON:0005910
 name: obsolete transitional epithelium
 def: "See urothelium." []
 is_obsolete: true
+replaced_by: UBERON:0000365
 
 [Term]
 id: UBERON:0005911
@@ -25987,8 +26043,9 @@ synonym: "cochlear canal" EXACT []
 synonym: "spiral canal of cochlea" EXACT []
 synonym: "spiral vessel" RELATED []
 synonym: "wall of cochlea" EXACT []
+is_a: UBERON:0004121 ! ectoderm-derived structure
 is_a: UBERON:0005913 ! zone of bone organ
-is_a: UBERON:0010313 ! neural crest-derived structure
+is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
 relationship: BFO:0000050 UBERON:0001844 ! cochlea
 
 [Term]
@@ -26458,7 +26515,7 @@ name: communicating artery
 def: "An artery that connects two larger arteries." []
 is_a: UBERON:0001637 ! artery
 intersection_of: UBERON:0001637 ! artery
-intersection_of: RO:0002176 UBERON:0001637 ! artery
+intersection_of: RO:0002176 UBERON:0001637 {minCardinality="2", maxCardinality="2"} ! artery
 relationship: RO:0002176 UBERON:0001637 ! artery
 
 [Term]
@@ -26722,6 +26779,13 @@ is_a: UBERON:0000477 ! anatomical cluster
 relationship: BFO:0000050 UBERON:0002416 ! integumental system
 
 [Term]
+id: UBERON:0006612
+name: shell
+def: "A rigid covering that envelops an object." []
+is_a: UBERON:0000477 ! anatomical cluster
+relationship: BFO:0000050 UBERON:0002416 ! integumental system
+
+[Term]
 id: UBERON:0006615
 name: venous sinus
 def: "A large vein or channel for the circulation of venous blood" []
@@ -26808,7 +26872,7 @@ synonym: "inter-phalanx joint" EXACT []
 is_a: UBERON:0003841 ! autopod joint
 is_a: UBERON:0011139 ! synovial limb joint
 intersection_of: UBERON:0000982 ! skeletal joint
-intersection_of: RO:0002176 UBERON:0003221 ! phalanx
+intersection_of: RO:0002176 UBERON:0003221 {minCardinality="2", maxCardinality="2"} ! phalanx
 relationship: BFO:0000050 UBERON:0002544 ! digit
 relationship: RO:0002176 UBERON:0003221 ! phalanx
 
@@ -28108,6 +28172,7 @@ id: UBERON:0007497
 name: obsolete developing epithelial placode
 def: "OBSOLETE: A domain of columnar epithelium in an embryo that represents the early stage of the development of the epithelial component of a new anatomical structure." []
 is_obsolete: true
+replaced_by: UBERON:0005085
 
 [Term]
 id: UBERON:0007499
@@ -28380,6 +28445,7 @@ intersection_of: UBERON:0006658 ! interphalangeal joint
 intersection_of: BFO:0000050 UBERON:0001466 ! pedal digit
 relationship: BFO:0000050 UBERON:0001466 ! pedal digit
 relationship: RO:0002176 UBERON:0001449 ! phalanx of pes
+relationship: RO:0002176 UBERON:0001449 {minCardinality="2", maxCardinality="2"} ! phalanx of pes
 
 [Term]
 id: UBERON:0007722
@@ -28398,6 +28464,7 @@ is_a: UBERON:0006658 ! interphalangeal joint
 intersection_of: UBERON:0006658 ! interphalangeal joint
 intersection_of: BFO:0000050 UBERON:0002389 ! manual digit
 relationship: BFO:0000050 UBERON:0002389 ! manual digit
+relationship: RO:0002176 UBERON:0001436 ! phalanx of manus
 relationship: RO:0002176 UBERON:0001436 {minCardinality="2", maxCardinality="2"} ! phalanx of manus
 
 [Term]
@@ -29505,7 +29572,7 @@ synonym: "articulation of skull bones" RELATED []
 synonym: "joint of the skull bones" EXACT []
 is_a: UBERON:0002209 ! fibrous joint
 intersection_of: UBERON:0002209 ! fibrous joint
-intersection_of: RO:0002176 UBERON:0003457 ! head bone
+intersection_of: RO:0002176 UBERON:0003457 {minCardinality="2"} ! head bone
 relationship: BFO:0000050 UBERON:0010323 ! cranial skeletal system
 relationship: RO:0002176 UBERON:0003457 ! head bone
 
@@ -29516,7 +29583,7 @@ def: "Any suture between facial bones." []
 is_a: UBERON:0009198 ! craniofacial suture
 is_a: UBERON:0010313 ! neural crest-derived structure
 intersection_of: UBERON:0009198 ! craniofacial suture
-intersection_of: RO:0002176 UBERON:0003462 ! facial bone
+intersection_of: RO:0002176 UBERON:0003462 {minCardinality="2"} ! facial bone
 relationship: BFO:0000050 UBERON:0011156 ! facial skeleton
 relationship: RO:0002176 UBERON:0003462 ! facial bone
 
@@ -30942,7 +31009,7 @@ relationship: BFO:0000050 UBERON:0001334 ! female urethra
 id: UBERON:0010188
 name: protuberance
 def: "A roughly circular bulge in a surface." []
-is_a: UBERON:0003102 ! surface structure
+is_a: UBERON:0034944 ! zone of organ
 
 [Term]
 id: UBERON:0010191
@@ -35576,6 +35643,7 @@ relationship: BFO:0000050 UBERON:0001691 ! external ear
 id: UBERON:0015827
 name: obsolete brainstem reticular formation
 is_obsolete: true
+replaced_by: UBERON:0002275
 
 [Term]
 id: UBERON:0015833
