@@ -34,7 +34,8 @@ TMPDIR=                     tmp
 SPARQLDIR =                 sparql
 REPORT_FAIL_ON =            NONE
 OBO_FORMAT_OPTIONS =        
-SPARQL_VALIDATION_CHECKS =  equivalent-classes trailing-whitespace owldef-self-reference xref-syntax nolabels
+###SPARQL_VALIDATION_CHECKS =  equivalent-classes trailing-whitespace owldef-self-reference xref-syntax nolabels
+SPARQL_VALIDATION_CHECKS =  equivalent-classes trailing-whitespace owldef-self-reference nolabels
 SPARQL_EXPORTS =            basic-report class-count-by-prefix edges xrefs obsoletes synonyms
 ODK_VERSION =               "Unknown"
 
@@ -89,6 +90,10 @@ base: envo-base.owl
 # consider replacing with robot reason -D
 debug.owl: envo-edit.owl
 	$(OWLTOOLS) --use-catalog  $< --merge-support-ontologies --run-reasoner -r elk -u -m $@
+
+# currently fails
+obo-check: envo-edit.owl
+	$(OWLTOOLS) --use-catalog  $< -o -f obo $@.tmp && $(OWLTOOLS) --use-catalog  $@.tmp -o -f obo $@
 
 MODS = entity_attribute_location entity_quality_location entity_attribute process_attribute chemical_concentration
 ALL_MODS_OWL = $(patsubst %, modules/%.owl, $(MODS))
@@ -178,6 +183,7 @@ SUBSETS =  EnvO-Lite-GSC envoEmpo envoAstro envoPolar envoEmpo envoOmics envoCes
 
 SUBSET_ROOTS = $(patsubst %, subsets/%, $(SUBSETS))
 SUBSET_FILES = $(foreach n,$(SUBSET_ROOTS), $(foreach f,$(FORMATS_INCL_TSV), $(n).$(f)))
+
 
 all_subsets: $(SUBSET_FILES)
 
@@ -297,7 +303,7 @@ mirror/foodon.owl: mirror/foodon-local.owl
 .PRECIOUS: mirror/%.owl
 
 # chebi.owl is large and the owlapi often times out when reading it; use the obo instead
-mirror/chebi-local.owl: envo-edit.owl
+mirror/chebi-local.owl: 
 	wget --no-check-certificate $(OBO)/chebi.owl -O $@ && touch $@
 mirror/chebi.owl: mirror/chebi-local.owl
 	$(OWLTOOLS) --no-debug $< --log-debug --remove-annotation-assertions -l --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS)  -o $@
@@ -318,7 +324,7 @@ mirror/bfo.owl: envo-edit.owl
 	$(OWLTOOLS) $(OBO)/bfo.owl --merge-imports-closure --make-subset-by-properties -f // --remove-external-classes BFO --remove-annotation-assertions -l -s -d  --remove-dangling --set-ontology-id $(OBO)/bfo.owl -o $@
 .PRECIOUS: mirror/%.owl
 
-mirror/uberon.owl: envo-edit.owl
+mirror/uberon.owl: 
 	$(OWLTOOLS) $(OBO)/uberon.obo  --remove-axiom-annotations  --make-subset-by-properties -f $(KEEPRELS) --remove-external-classes UBERON --remove-dangling-annotations --remove-annotation-assertions -l -s -d --set-ontology-id $(OBO)/uberon.owl -o $@
 .PRECIOUS: mirror/%.owl
 
@@ -355,6 +361,23 @@ mirror/pato.owl: envo-edit.owl
 .PRECIOUS: mirror/%.owl
 
 # ----------------------------------------
+# ALL ASSETS
+# ----------------------------------------
+## -- all files/assets --
+
+ASSETS = \
+  $(IMPORT_FILES) \
+  $(MAIN_FILES) \
+  $(REPORT_FILES) \
+  $(SUBSET_FILES)
+
+all_assets: $(ASSETS)
+
+show_assets:
+	echo $(ASSETS)
+	du -sh $(ASSETS)
+
+# ----------------------------------------
 # STYLE CHECKS
 # ----------------------------------------
 is_utf: envo-edit.owl
@@ -363,10 +386,6 @@ is_utf: envo-edit.owl
 # ----------------------------------------
 # OBO CHECKS
 # ----------------------------------------
-# Check OE can parse the file.
-# This requires installing oboedit, which comes with a cmd line app called obo2obo
-%.check-obo: %.obo
-	obo2obo -o $@ $<
 
 DISABLE= multiply-labeled-edge valid-id-space isa-incomplete ascii-check has-definition bad-pmid ontology-declaration-check referenced-id-syntax-check owl-axiom-check
 %.obo-gocheck: %.obo GO.xrf_abbs
@@ -386,57 +405,57 @@ GO.xrf_abbs: envo-edit.owl
 subsets/envoNceas.owl: subsets/envo-basic.obo
 	$(OWLTOOLS) $< --extract-ontology-subset --fill-gaps --subset envoNceas --iri $(OBO)/envo/$@ -o $@
 subsets/envoNceas.obo: subsets/envoNceas.owl
-	$(OWLTOOLS) $< -o -f obo $@
+	$(OWLTOOLS) $< -o -f obo --no-check $@
 
 subsets/envoMeo.owl: subsets/envo-basic.obo
 	$(OWLTOOLS) $< --extract-ontology-subset --fill-gaps --subset envoMeo --iri $(OBO)/envo/$@ -o $@
 subsets/envoMeo.obo: subsets/envoMeo.owl
-	$(OWLTOOLS) $< -o -f obo $@
+	$(OWLTOOLS) $< -o -f obo --no-check $@
 
 subsets/envoEmpo.owl: subsets/envo-basic.obo
 	$(OWLTOOLS) $< --extract-ontology-subset --fill-gaps --subset envoEmpo --iri $(OBO)/envo/$@ -o $@
 subsets/envoEmpo.obo: subsets/envoEmpo.owl
-	$(OWLTOOLS) $< -o -f obo $@
+	$(OWLTOOLS) $< -o -f obo --no-check $@
 
 subsets/envoOmics.owl: subsets/envo-basic.obo
 	$(OWLTOOLS) $< --extract-ontology-subset --fill-gaps --subset envoOmics --iri $(OBO)/envo/$@ -o $@
 subsets/envoOmics.obo: subsets/envoOmics.owl
-	$(OWLTOOLS) $< -o -f obo $@
+	$(OWLTOOLS) $< -o -f obo --no-check $@
 
 subsets/EnvO-Lite-GSC.owl: subsets/envo-basic.obo
 	$(OWLTOOLS) $< --extract-ontology-subset --fill-gaps --subset EnvO-Lite-GSC --iri $(OBO)/envo/$@ -o $@
 subsets/EnvO-Lite-GSC.obo: subsets/EnvO-Lite-GSC.owl
-	$(OWLTOOLS) $< -o -f obo $@
+	$(OWLTOOLS) $< -o -f obo --no-check $@
 
 subsets/environmental_hazards.owl: subsets/envo-basic.obo
 	$(OWLTOOLS) $< --extract-ontology-subset --fill-gaps --subset environmental_hazards --iri $(OBO)/envo/$@ -o $@
 subsets/environmental_hazards.obo: subsets/environmental_hazards.owl
-	$(OWLTOOLS) $< -o -f obo $@
+	$(OWLTOOLS) $< -o -f obo --no-check $@
 
 subsets/wwfBiome.owl: subsets/envo-basic.obo
 	$(OWLTOOLS) $< --extract-ontology-subset --fill-gaps --subset wwfBiome --iri $(OBO)/envo/$@ -o $@
 subsets/wwfBiome.obo: subsets/wwfBiome.owl
-	$(OWLTOOLS) $< -o -f obo $@
+	$(OWLTOOLS) $< -o -f obo --no-check $@
 
 subsets/nlcd2011.owl: subsets/envo-basic.obo
 	$(OWLTOOLS) $< --extract-ontology-subset --fill-gaps --subset nlcd2011 --iri $(OBO)/envo/$@ -o $@
 subsets/nlcd2011.obo: subsets/nlcd2011.owl
-	$(OWLTOOLS) $< -o -f obo $@
+	$(OWLTOOLS) $< -o -f obo --no-check $@
 
 subsets/envoPolar.owl: subsets/envo-basic.obo
 	$(OWLTOOLS) $< --extract-ontology-subset --fill-gaps --subset envoPolar --iri $(OBO)/envo/$@ -o $@
 subsets/envoPolar.obo: subsets/envoPolar.owl
-	$(OWLTOOLS) $< -o -f obo $@
+	$(OWLTOOLS) $< -o -f obo --no-check $@
 
 subsets/envoCesab.owl: subsets/envo-basic.obo
 	$(OWLTOOLS) $< --extract-ontology-subset --fill-gaps --subset envoCesab --iri $(OBO)/envo/$@ -o $@
 subsets/envoCesab.obo: subsets/envoCesab.owl
-	$(OWLTOOLS) $< -o -f obo $@
+	$(OWLTOOLS) $< -o -f obo --no-check $@
 
 subsets/envoAstro.owl: subsets/envo-basic.obo
 	$(OWLTOOLS) $< --extract-ontology-subset --fill-gaps --subset envoAstro --iri $(OBO)/envo/$@ -o $@
 subsets/envoAstro.obo: subsets/envoAstro.owl
-	$(OWLTOOLS) $< -o -f obo $@
+	$(OWLTOOLS) $< -o -f obo --no-check $@
 
 
 
@@ -448,6 +467,20 @@ all_reports: $(patsubst %, reports/envo-%.tsv, $(REPORTS))
 
 reports/envo-%.tsv: envo.owl sparql/%.sparql
 	arq --data $< --query sparql/$*.sparql --results tsv > $@.tmp && mv $@.tmp $@
+
+
+# ----------------------------------------
+# Sparql queries: Q/C
+# ----------------------------------------
+
+# these live in the ../sparql directory, and have suffix -violation.sparql
+# adding the name here will make the violation check live.
+# NOTE: these will soon be phased out and replaced by robot-report
+
+#  run all violation checks
+SPARQL_VALIDATION_QUERIES = $(foreach V,$(SPARQL_VALIDATION_CHECKS),$(SPARQLDIR)/$V-violation.sparql)
+sparql_test: $(SRC)
+	$(ROBOT) verify  --catalog catalog-v001.xml -i $< --queries $(SPARQL_VALIDATION_QUERIES) -O reports/
 
 
 # ----------------------------------------
