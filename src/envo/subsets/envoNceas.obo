@@ -1,0 +1,1673 @@
+format-version: 1.2
+data-version: envo/releases/2020-05-11/subsets/envoNceas.owl
+subsetdef: disposition_slim "Disposition slim"
+subsetdef: environmental_hazards "environmental_hazards"
+subsetdef: EnvO-Lite-GSC "EnvO-Lite-GSC"
+subsetdef: envoAstro "envoAstro"
+subsetdef: envoAtmo "envoAtmo"
+subsetdef: envoCesab "envoCesab"
+subsetdef: envoCmecs "envoCmecs"
+subsetdef: envoEmpo "envoEmpo"
+subsetdef: envoEOVs "envoEOVs"
+subsetdef: envoMarine "envoMarine"
+subsetdef: envoMeo "envoMeo"
+subsetdef: envoNceas "envoNceas"
+subsetdef: envoOmics "envoOmics"
+subsetdef: envoPolar "envoPolar"
+subsetdef: mpath_slim "Pathology slim"
+subsetdef: nlcd2011 "nlcd2011"
+subsetdef: relational_slim "Relational slim: types of quality that require an additional entity in order to exist"
+subsetdef: ro-eco "ro-eco"
+subsetdef: scalar_slim "Scalar slim"
+subsetdef: value_slim "Value slim"
+subsetdef: wwfBiome "wwfBiome"
+synonymtypedef: PLURAL "plurals"
+ontology: envo/subsets/envoNceas
+property_value: owl:versionInfo "2020-05-11" xsd:string
+
+[Term]
+id: CHEBI:24431
+namespace: ENVO
+
+[Term]
+id: ENVO:00000015
+name: ocean
+namespace: ENVO
+alt_id: LTER:695 {xref="https://vocab.lternet.edu/vocab/vocab/index.php?tema=695&/oceans"}
+def: "A marine water body which is constitutes the majority of an astronomical body's hydrosphere." []
+subset: envoMarine
+subset: envoPolar
+synonym: "Ocean" EXACT [NASA:earthrealm]
+synonym: "ocean" EXACT [Geonames:feature]
+synonym: "ocean region" RELATED [ADL:FTT]
+xref: EcoLexicon:ocean
+xref: FTT:1019
+xref: FTT:943
+xref: Geonames:H.OCN
+xref: https://en.wikipedia.org/wiki/Ocean
+xref: SWEETRealm:Ocean
+xref: TGN:21102
+is_a: ENVO:00001999 ! marine water body
+relationship: composed_primarily_of ENVO:00002149 ! sea water
+
+[Term]
+id: ENVO:00000020
+name: lake
+namespace: ENVO
+alt_id: LTER:278 {xref="https://vocab.lternet.edu/vocab/vocab/index.php?tema=278&/lakes"}
+def: "A body of water or other liquid of considerable size contained in a depression on a landmass." [https://en.wikipedia.org/wiki/Lake]
+subset: envoPolar
+synonym: "broad" RELATED []
+synonym: "catch basin" NARROW [USGS:SDTS]
+synonym: "llyn" RELATED []
+synonym: "loch" RELATED []
+synonym: "lochan" RELATED [ADL:FTT]
+synonym: "lough" RELATED []
+synonym: "mere" RELATED []
+synonym: "mortlake" RELATED [USGS:SDTS]
+synonym: "open water" NARROW [USGS:SDTS]
+synonym: "pasteuer lake" RELATED [USGS:SDTS]
+synonym: "tarn" NARROW [ADL:FTT]
+xref: EcoLexicon:lake
+xref: FTT:221
+xref: FTT:704
+xref: FTT:909
+xref: Geonames:H.LK
+xref: Geonames:H.LKS
+xref: SPIRE:Lake_or_pond
+xref: SWEETRealm:Lake
+xref: TGN:21114
+xref: TGN:21115
+relationship: part_of ENVO:01000819 ! hydrosphere
+
+[Term]
+id: ENVO:00000063
+name: water body
+namespace: ENVO
+def: "An accumulation of water of varying size." [https://en.wikipedia.org/wiki/Body_of_water]
+comment: https://en.wikipedia.org/wiki/ The term body of water most often refers to large accumulations of water, such as oceans, seas, and lakes, but it includes smaller pools of water such as ponds, wetlands, or more rarely, puddles. A body of water does not have to be still or contained; Rivers, streams, canals, and other geographical features where water moves from one place to another are also considered bodies of water.
+synonym: "aquatic feature" EXACT []
+synonym: "bodies of water" EXACT [Getty:TGN]
+synonym: "body of water" EXACT [ADL:FTT]
+synonym: "body of water" EXACT [Getty:TGN]
+synonym: "hydrographic feature" BROAD [ADL:FTT]
+synonym: "waterbody" EXACT []
+xref: EcoLexicon:waterbody
+xref: FTT:131
+xref: FTT:280
+xref: FTT:827
+xref: https://en.wikipedia.org/wiki/Water_body
+xref: SWEETRealm:BodyOfWater
+xref: TGN:21100
+xref: TGN:21101
+is_a: ENVO:01000685 ! water mass
+relationship: part_of ENVO:01000819 ! hydrosphere
+
+[Term]
+id: ENVO:00000134
+name: permafrost
+namespace: ENVO
+def: "Soil or rock and included ice or organic material at or below the freezing point of water (0 degrees Celsius or 32 degrees Fahrenheit) for two or more years." [https://en.wikipedia.org/wiki/Permafrost, https://orcid.org/0000-0003-4808-4736]
+comment: Ice is not always present, as may be in the case of nonporous bedrock, but it frequently occurs and it may be in amounts exceeding the potential hydraulic saturation of the ground material.
+subset: envoPolar
+synonym: "Permafrost" EXACT [NASA:earthrealm]
+xref: EcoLexicon:permafrost
+xref: http://sweetontology.net/realmSoil/Permafrost
+xref: https://en.wikipedia.org/wiki/Permafrost
+xref: LTER:408
+is_a: ENVO:00010483 ! environmental material
+
+[Term]
+id: ENVO:00000176
+name: elevation
+namespace: ENVO
+def: "A landform elevated above the surrounding area." [MA:ma]
+xref: https://en.wikipedia.org/wiki/Elevation
+xref: LTER:177
+xref: SWEETRealm:Elevation
+is_a: ENVO:00000191 ! solid astronomical body part
+relationship: has_part ENVO:00002000 ! slope
+
+[Term]
+id: ENVO:00000191
+name: solid astronomical body part
+namespace: ENVO
+def: "A part of an astronomical body which is primarily composed of a continuous volume of solid material, shaped by one or more environmental processes." [https://en.wikipedia.org/wiki/Landform]
+synonym: "geological feature" RELATED [ADL:FTT]
+synonym: "physiographic feature" RELATED []
+xref: EcoLexicon:landform
+xref: EcoLexicon:landforms
+xref: FTT:754
+xref: FTT:96
+xref: SWEETRealm:Landform
+xref: TGN:21400
+xref: TGN:21401
+is_a: ENVO:01000813 ! astronomical body part
+intersection_of: ENVO:01000813 ! astronomical body part
+intersection_of: composed_primarily_of ENVO:01000814 ! solid environmental material
+
+[Term]
+id: ENVO:00000369
+alt_id: ENVO:01000060
+
+[Term]
+id: ENVO:00000428
+namespace: ENVO
+alt_id: LTER:809 {xref="https://vocab.lternet.edu/vocab/vocab/index.php?tema=809&/biomes"}
+def: "A biome is an ecosystem to which resident ecological communities have evolved adaptations." [DOI:10.1186/2041-1480-4-43, https://en.wikipedia.org/wiki/Biome]
+comment: There has been some concern raised (see Issue #143) about the usefulness of the assertion that organisms have evolved within a given biome. They may have evolved adaptations elsewhere and demonstrating one or the other is often not feasible. Consider relabelling to "environmental system determined by an ecological community" or similar.
+synonym: "EcosytemType" RELATED [NASA:earthrealm]
+synonym: "major habitat type" EXACT [WWF:Biome]
+xref: EcoLexicon:biome
+is_a: ENVO:01001110 ! ecosystem
+relationship: determined_by PCO:0000002
+relationship: has_part ENVO:01000739 {minCardinality="2"} ! habitat
+relationship: part_of ENVO:01000817 ! biosphere
+
+[Term]
+id: ENVO:00000447
+name: marine biome
+namespace: ENVO
+def: "An aquatic biome which is determined by a marine water body." [https://en.wikipedia.org/wiki/Ocean, https://orcid.org/0000-0002-4366-3088, ISBN:978-0-618-45504-1, MA:ma]
+comment: This biome includes open-ocean and unprotected coastal ecosystems, characterized by exposure to wave action, tidal fluctuation, and ocean currents as well as systems that largely resemble these. Water in the marine biome is generally within the salinity range of seawater: 30 to 38 ppt.
+subset: envoPolar
+synonym: "marine realm" RELATED []
+xref: SPIRE:Marine
+is_a: ENVO:00002030 ! aquatic biome
+intersection_of: ENVO:00002030 ! aquatic biome
+intersection_of: determined_by ENVO:00001999 ! marine water body
+
+[Term]
+id: ENVO:00001995
+name: rock
+namespace: ENVO
+def: "A rock is a naturally occurring solid aggregate of one or more minerals or mineraloids." [https://en.wikipedia.org/wiki/Rock_(geology), MA:ma]
+comment: From https://en.wikipedia.org/wiki/ [A mineral] is different from a rock, which can be an aggregate of minerals or non-minerals and does not have a specific chemical composition. The exact definition of a mineral is under debate, especially with respect to the requirement a valid species be abiogenic, and to a lesser extent with regards to it having an ordered atomic structure.
+xref: EcoLexicon:rock
+xref: FTT:1010
+xref: FTT:145
+xref: Geonames:T.RK
+xref: Geonames:T.RKS
+xref: https://en.wikipedia.org/wiki/Rock
+xref: SWEETRealm:Rock
+xref: TGN:21444
+is_a: ENVO:01000814 ! solid environmental material
+disjoint_from: ENVO:01000256 ! mineral material
+
+[Term]
+id: ENVO:00001998
+name: soil
+namespace: ENVO
+def: "Soil is an environmental material which is primarily composed of minerals, varying proportions of sand, silt, and clay, organic material such as humus, gases, liquids, and a broad range of resident micro- and macroorganisms." [https://en.wikipedia.org/wiki/Soil]
+comment: 'In engineering terms, soil is referred to as regolith, or loose rock material that lies above the 'solid geology'. Soil is commonly referred to as "earth" or "dirt"; technically, the term "dirt" should be restricted to displaced soil.' https://en.wikipedia.org/wiki/Soil\n\n" The upper limit of soil is the boundary between soil and air, shallow water, live plants, or plant materials that have not begun to decompose. Areas are not considered to have soil if the surface is permanently covered by water too deep (typically more than 2.5 meters) for the growth of rooted plants.\n\nThe lower boundary that separates soil from the nonsoil underneath is most difficult to define. Soil consists of horizons near the Earth's surface that, in contrast to the underlying parent material, have been altered by the interactions of climate, relief, and living organisms over time. Commonly, soil grades at its lower boundary to hard rock or to earthy materials virtually devoid of animals, roots, or other marks of biological activity. For purposes of classification, the lower boundary of soil is arbitrarily set at 200 cm."  Soil taxonomy, 2nd Ed., quoted in http://www.nrcs.usda.gov/wps/portal/nrcs/detail/soils/edu/?cid=nrcs142p2_054280
+subset: EnvO-Lite-GSC
+synonym: "regolith" BROAD []
+xref: https://en.wikipedia.org/wiki/Soil
+xref: LTER:535
+xref: SPIRE:Soil
+xref: SWEETRealm:Soil
+is_a: ENVO:00010483 ! environmental material
+relationship: has_part ENVO:00002982 ! clay
+relationship: has_part ENVO:01000016 ! silt
+relationship: has_part ENVO:01000017 ! sand
+relationship: has_part ENVO:01000155 ! organic material
+relationship: has_part ENVO:01000256 ! mineral material
+relationship: part_of ENVO:01000820 ! pedosphere
+property_value: IAO:0000116 "The various 'has part' and 'has quality' relations may not hold true for all soils; however, I have yet to find counter examples. Require input from a pedologist or similar. [pbuttigieg]" xsd:string
+
+[Term]
+id: ENVO:00001999
+name: marine water body
+namespace: ENVO
+def: "A significant accumulation of water which is part of a marine biome." []
+comment: Ideas like "significant" are fuzzy and need to be modelled more accurately. The definition is a candidate for review.
+synonym: "body of marine water" EXACT []
+synonym: "marine waterbody" EXACT []
+is_a: ENVO:01000617 ! lentic water body
+relationship: part_of ENVO:00000447 ! marine biome
+relationship: part_of ENVO:01000320 ! marine environment
+relationship: part_of ENVO:01000819 ! hydrosphere
+
+[Term]
+id: ENVO:00002000
+name: slope
+namespace: ENVO
+def: "A solid astronomical body part which is part of the planetary surface between the peak of an elevation or the bottom of a depression and  relatively flat surrounding land." [MA:ma]
+synonym: "flank" RELATED []
+synonym: "side" RELATED []
+xref: EcoLexicon:slope
+xref: https://en.wikipedia.org/wiki/Slope
+xref: SWEETRealm:Slope
+is_a: ENVO:00000191 ! solid astronomical body part
+relationship: part_of ENVO:01000799 ! astronomical body
+
+[Term]
+id: ENVO:00002006
+name: liquid water
+namespace: ENVO
+def: "An environmental material primarily composed of dihydrogen oxide in its liquid form." [MA:ma]
+synonym: "water" BROAD []
+xref: EcoLexicon:water
+xref: https://en.wikipedia.org/wiki/Water
+xref: LTER:617
+is_a: ENVO:01000815 ! liquid environmental material
+
+[Term]
+id: ENVO:00002010
+name: saline water
+namespace: ENVO
+def: "Water which contains a significant concentration of dissolved salts." []
+comment: The threshold salt concentration for classifying water as saline varies, but typically begins at about 1,000 to 3,000 parts salt per million parts water or 0.1–0.3% salt by weight.
+synonym: "salt water" EXACT []
+xref: EcoLexicon:saltwater
+xref: https://en.wikipedia.org/wiki/Saline_water
+xref: SWEETRealm:SalineWater
+xref: SWEETRealm:SaltWater
+is_a: ENVO:00002006 ! liquid water
+
+[Term]
+id: ENVO:00002030
+name: aquatic biome
+namespace: ENVO
+def: "A biome which is determined by a water body and which has ecological climax communities adapted to life in or on water." []
+xref: LTER:41
+is_a: ENVO:00000428
+intersection_of: ENVO:00000428
+intersection_of: determined_by ENVO:00000063 ! water body
+
+[Term]
+id: ENVO:00002149
+name: sea water
+namespace: ENVO
+def: "Water which has physicochemical properties that have been determined by the processes occuring in a sea or ocean." []
+comment: This definition refers to water that is actually in a sea or ocean. This water may have a wide range of salinity levels.
+synonym: "ocean water" EXACT []
+synonym: "seawater" EXACT []
+xref: EcoLexicon:sea_water
+xref: https://en.wikipedia.org/wiki/Sea_water
+xref: LTER:701
+xref: SWEETRealm:SeaWater
+is_a: ENVO:00002010 ! saline water
+property_value: IAO:0000116 "When we have more classes representing the various processes which make seawater seawater, we can further axiomatise this class." xsd:string
+
+[Term]
+id: ENVO:00002184
+name: underground physiographic feature
+namespace: ENVO
+is_a: ENVO:00000191 ! solid astronomical body part
+
+[Term]
+id: ENVO:00002982
+name: clay
+namespace: ENVO
+def: "A group of hydrous aluminium phyllosilicate (phyllosilicates being a subgroup of silicate minerals) minerals (see clay minerals), that are typically less than 2 micrometres in diameter. Clay consists of a variety of phyllosilicate minerals rich in silicon and aluminium oxides and hydroxides which include variable amounts of structural water." [https://en.wikipedia.org/wiki/Clay]
+xref: EcoLexicon:clay
+xref: https://en.wikipedia.org/wiki/Clay
+xref: SWEETRealm:Clay
+is_a: ENVO:00010483 ! environmental material
+disjoint_from: ENVO:01000016 ! silt
+
+[Term]
+id: ENVO:00010483
+name: environmental material
+namespace: ENVO
+def: "A portion of environmental material is a fiat object part which forms the medium or part of the medium of an environmental system." [DOI:10.1186/2041-1480-4-43, MA:ma, ORCID:0000-0002-4366-3088, URL:http\://ontology.buffalo.edu/smith/articles/niches.html]
+comment: Everything under this parent must be a mass noun. All subclasses are to be understood as being composed primarily of the named entity, rather than restricted to that entity. For example, "ENVO:water" is to be understood as "environmental material composed primarly of some CHEBI:water". This class is currently being aligned to the Basic Formal Ontology. Following this alignment, its definition and the definitions of its subclasses will be revised.
+synonym: "portion of environmental material" EXACT []
+
+[Term]
+id: ENVO:00010504
+name: surface layer
+namespace: ENVO
+def: "A layer of some material entity which is adjacent to one or more of its external boundaries and directly interacts with its immediate surroundings." [URL:http\://www.merriam-webster.com/dictionary/surface]
+comment: This class is distinct from a geometric surface, which is two-dimensional. The idea of "uppermost" may be problematic. Further, the definition of layer (the superclass of surface in rev 133) references surface. This may be another issue. Perhaps this can be made into an inferred class using 'bounding layer of' some material entity, note that 'bounding layer' implies containment, which may not be valid here.
+xref: EcoLexicon:surface
+xref: http://sweetontology.net/reprSpaceGeometry/Surface
+xref: https://en.wikipedia.org/wiki/Surface
+is_a: ENVO:01001684 ! interface layer
+
+[Term]
+id: ENVO:01000016
+name: silt
+namespace: ENVO
+def: "Silt is granular material of a size somewhere between sand and clay whose mineral origin is quartz and feldspar." [https://en.wikipedia.org/wiki/Silt]
+comment: https://en.wikipedia.org/wiki/ In the Udden-Wentworth scale (due to Krumbein), silt particles range between 0.0039 to 0.0625 mm, larger than clay but smaller than sand particles. ISO 14688 grades silts between 0.002 mm and 0.063 mm. In actuality, silt is chemically distinct from clay, and unlike clay, grains of silt are approximately the same size in all dimensions; furthermore, their size ranges overlap. Clays are formed from thin plate-shaped particles held together by electrostatic forces, so present a cohesion. According to the U.S. Department of Agriculture Soil Texture Classification system, the sand-silt distinction is made at the 0.05 mm particle size. The USDA system has been adopted by the Food and Agriculture Organization (FAO). In the Unified Soil Classification System (USCS) and the AASHTO Soil Classification system, the sand-silt distinction is made at the 0.075 mm particle size (i.e., material passing the #200 sieve). Silts and clays are distinguished mechanically by their plasticity.
+xref: EcoLexicon:silt
+xref: https://en.wikipedia.org/wiki/Silt
+xref: SWEETRealm:Silt
+is_a: ENVO:00010483 ! environmental material
+disjoint_from: ENVO:01000017 ! sand
+
+[Term]
+id: ENVO:01000017
+name: sand
+namespace: ENVO
+def: "A naturally occurring granular material composed of finely divided rock and mineral particles." [https://en.wikipedia.org/wiki/Sand]
+xref: EcoLexicon:sand
+xref: https://en.wikipedia.org/wiki/Sand
+xref: LTER:484
+xref: SWEETRealm:Sand
+is_a: ENVO:00010483 ! environmental material
+relationship: derives_from ENVO:00001995 ! rock
+
+[Term]
+id: ENVO:01000060
+is_a: ENVO:00010483 ! environmental material
+
+[Term]
+id: ENVO:01000155
+name: organic material
+namespace: ENVO
+def: "Environmental material derived from living organisms and composed primarily of one or more biomacromolecules." [ISBN:978-0-618-45504-1, ORCID:0000-0002-4366-3088]
+synonym: "biomass" EXACT []
+xref: EcoLexicon:organic_material
+is_a: ENVO:00010483 ! environmental material
+created_by: ORCID:0000-0002-4366-3088
+creation_date: 2010-03-20T08:40:04Z
+
+[Term]
+id: ENVO:01000254
+name: environmental system
+namespace: ENVO
+def: "A system which has the disposition to environ one or more material entities." [DOI:10.1186/2041-1480-4-43]
+comment: In ENVO's alignment with the Basic Formal Ontology, this class is being considered as a subclass of a proposed BFO class "system". The relation "environed_by" is also under development. Roughly, a system which includes a material entity (at least partially) within its site and causally influences that entity may be considered to environ it. Following the completion of this alignment, this class' definition and the definitions of its subclasses will be revised.
+synonym: "environment" EXACT []
+xref: EcoLexicon:environment
+creation_date: 2013-09-23T16:04:08Z
+
+[Term]
+id: ENVO:01000256
+name: mineral material
+namespace: ENVO
+def: "A mineral material is an environmental material which is primarily composed of some substance that is naturally occurring, solid and stable at room temperature, representable by a chemical formula, usually abiogenic, and that has an ordered atomic structure." [https://en.wikipedia.org/wiki/Mineral]
+xref: LTER:341
+is_a: ENVO:00010483 ! environmental material
+property_value: IAO:0000116 "Look for \"mineral\" in a chemical or geochemical ontology to formalise the composed primarily of link.\nFrom https://en.wikipedia.org/wiki/ [A mineral] is different from a rock, which can be an aggregate of minerals or non-minerals and does not have a specific chemical composition. The exact definition of a mineral is under debate, especially with respect to the requirement a valid species be abiogenic, and to a lesser extent with regards to it having an ordered atomic structure." xsd:string
+created_by: ORCID:0000-0002-4366-3088
+creation_date: 2013-10-05T12:37:41Z
+
+[Term]
+id: ENVO:01000267
+name: atmosphere
+namespace: ENVO
+def: "An atmosphere is a layer of gases surrounding a material body of sufficient mass that is held in place by the gravity of the body." [https://en.wikipedia.org/wiki/Atmosphere, https://en.wikipedia.org/wiki/Physical_geography]
+xref: LTER:48
+is_a: ENVO:01001678 ! fluid layer
+relationship: adjacent_to ENVO:01000799 ! astronomical body
+created_by: ORCID:0000-0002-4366-3088
+creation_date: 2013-10-10T08:14:50Z
+
+[Term]
+id: ENVO:01000281
+name: layer
+namespace: ENVO
+def: "A layer is a quantity of some material which is spatially continuous, has comparable thickness, and usually covers some surface." [Wiktionary:layer]
+comment: Preliminary definition.
+subset: envoPolar
+created_by: ORCID:0000-0002-4366-3088
+creation_date: 2013-10-15T16:42:02Z
+
+[Term]
+id: ENVO:01000320
+name: marine environment
+namespace: ENVO
+def: "A marine environment and enviroment which is determined by a marine water body." [NM:nm]
+subset: envoPolar
+intersection_of: ENVO:01000254 ! environmental system
+intersection_of: determined_by ENVO:00001999 ! marine water body
+
+[Term]
+id: ENVO:01000324
+name: planetary surface
+namespace: ENVO
+def: "A planetary surface is a surface layer where the solid or liquid material of a planet comes into contact with an atmosphere or outer space." []
+comment: a useful class: this can be used to define sub-terrestrial and sub-marine entities
+is_a: ENVO:01001483 ! surface of an astronomical body
+intersection_of: ENVO:01001483 ! surface of an astronomical body
+intersection_of: part_of ENVO:01000800 ! planet
+relationship: part_of ENVO:01000800 ! planet
+
+[Term]
+id: ENVO:01000451
+name: atmospheric carbon dioxide
+namespace: ENVO
+def: "Atmospheric carbon dioxide is an environmental material composed of carbon dioxide in its gaseous form present in an atmosphere." []
+comment: This could also be considered a part of an environmental material like air.
+subset: envoPolar
+is_a: ENVO:01000797 ! gaseous environmental material
+relationship: part_of ENVO:01000267 ! atmosphere
+created_by: ORCID:0000-0002-4366-3088
+
+[Term]
+id: ENVO:01000540
+name: troposphere
+namespace: ENVO
+def: "The lowest of the concentric layers of the atmosphere, occurring between the Earth's surface and the tropopause. It is the zone where atmospheric turbulence is at its greatest and where the bulk of the Earth's weather is generated. It contains almost all the water vapour and aerosols and three-quarters of the total gaseous mass of the atmosphere. Throughout the troposphere temperature decreases with height at a mean rate of 6.5°C/km and the whole zone is capped by either an inversion of temperature or an isothermal layer at the tropopause. (Source: WHIT)" [GEMET:http\://www.eionet.europa.eu/gemet/concept/8695]
+comment: Definition from GEMET - will be refined.
+is_a: ENVO:01000543 ! atmospheric layer
+created_by: ORCID:0000-0002-4366-3088
+
+[Term]
+id: ENVO:01000543
+name: atmospheric layer
+namespace: ENVO
+def: "A layer that is part of the atmosphere." []
+comment: This could be made into an inferred class, rather than having asserted subclasses.
+subset: envoPolar
+synonym: "atmospheric layering" RELATED [GEMET:http\://www.eionet.europa.eu/gemet/concept/627]
+intersection_of: ENVO:01001678 ! fluid layer
+intersection_of: part_of ENVO:01000267 ! atmosphere
+relationship: composed_primarily_of ENVO:01000797 ! gaseous environmental material
+relationship: part_of ENVO:01000267 ! atmosphere
+created_by: ORCID:0000-0002-4366-3088
+
+[Term]
+id: ENVO:01000617
+name: lentic water body
+namespace: ENVO
+def: "A lentic water body is a water body in which the accumulated water, in its totality, has very little to no directed flow." []
+is_a: ENVO:00000063 ! water body
+
+[Term]
+id: ENVO:01000630
+name: acidification of an aquatic environment
+namespace: ENVO
+def: "Acidification of an aquatic environment is a process whereby the pH of an aquatic environment, biome, or water body is lowered." []
+is_a: ENVO:02500000 ! environmental system process
+
+[Term]
+id: ENVO:01000631
+name: ocean acidification
+namespace: ENVO
+alt_id: LTER:962 {xref="https://vocab.lternet.edu/vocab/vocab/index.php?tema=962&/ocean-acidification"}
+def: "Ocean acidification is a process during which the pH of a sea or ocean is lowered." []
+comment: On Earth, the major cause of ocean acidification is the update of carbon dioxide from the atmosphere.
+subset: envoPolar
+xref: LTER:962
+is_a: ENVO:01000630 ! acidification of an aquatic environment
+
+[Term]
+id: ENVO:01000637
+name: outer space
+namespace: ENVO
+def: "Outer space is a hard vacuum containing a low density of particles, predominantly a plasma of hydrogen and helium as well as electromagnetic radiation, magnetic fields, neutrinos, dust and cosmic rays that exists between celestial bodies." [https://en.wikipedia.org/wiki/Outer_space]
+subset: envoAstro
+synonym: "space" BROAD []
+is_a: ENVO:00010483 ! environmental material
+
+[Term]
+id: ENVO:01000638
+name: planetary crust
+namespace: ENVO
+def: "A planetary crust is the outermost solid shell of a rocky planet or natural satellite, which is chemically distinct from the underlying mantle." [https://en.wikipedia.org/wiki/Crust_(geology)]
+comment: This class is meant to be applicable accross planets. Earth's crust would be an instance.
+synonym: "crust" BROAD []
+is_a: ENVO:01000639 ! planetary structural layer
+
+[Term]
+id: ENVO:01000639
+name: planetary structural layer
+namespace: ENVO
+def: "A planetary structural layer is laminar part of a terrestrial planet or other rocky body large enough to have differentiation by density. Planetary layers have differing physicochemical properties and composition." []
+is_a: ENVO:01000281 ! layer
+relationship: part_of ENVO:01000800 ! planet
+property_value: IAO:0000116 "Label should be improved to match definition." xsd:string
+
+[Term]
+id: ENVO:01000646
+name: lithosphere
+namespace: ENVO
+def: "A lithosphere is the outermost shell of a terrestrial-type planet or natural satellite that is defined by its rigid mechanical properties." [https://en.wikipedia.org/wiki/Lithosphere]
+comment: Earth's lithosphere includes the crust and uppermost mantle.
+is_a: ENVO:01000639 ! planetary structural layer
+relationship: composed_primarily_of ENVO:01000814 ! solid environmental material
+relationship: has_part ENVO:01000638 ! planetary crust
+
+[Term]
+id: ENVO:01000685
+name: water mass
+namespace: ENVO
+def: "A mass of water." []
+is_a: ENVO:01001476 ! body of liquid
+relationship: composed_primarily_of ENVO:00002006 ! liquid water
+
+[Term]
+id: ENVO:01000739
+name: habitat
+namespace: ENVO
+def: "An environmental system which can sustain and allow the growth of an ecological population." [EnvO:EnvO]
+comment: A habitat's specificity to an ecological population differentiates it from other environment classes.
+xref: EcoLexicon:habitat
+xref: https://en.wikipedia.org/wiki/Habitat
+xref: LTER:238
+xref: SWEETRealm:Habitat
+is_a: ENVO:01001110 ! ecosystem
+relationship: determined_by PCO:0000001
+relationship: part_of ENVO:01000817 ! biosphere
+
+[Term]
+id: ENVO:01000797
+name: gaseous environmental material
+namespace: ENVO
+def: "A material entity which is composed of one or more chemical entities and has neither independent shape nor volume but tends to expand indefinitely." [http://www.merriam-webster.com/dictionary/gas]
+synonym: "gas" NARROW []
+property_value: IAO:0000116 "This class is to be populated by inference." xsd:string
+
+[Term]
+id: ENVO:01000799
+name: astronomical body
+namespace: ENVO
+def: "An object which is naturally occuring, bound together by gravitational or electromagnetic forces, and surrounded by space." [https://en.wikipedia.org/wiki/Astronomical_object]
+comment: Astronomical bodies are usually cohesive, thus the use of the term 'object' sensu BFO 'object'.
+subset: envoAstro
+synonym: "celestial body" RELATED []
+is_a: ENVO:01000804 ! astronomical object
+
+[Term]
+id: ENVO:01000800
+name: planet
+namespace: ENVO
+def: "A planet is an astronomical body orbiting a star or stellar remnant that is massive enough to be rounded by its own gravity, is not massive enough to cause thermonuclear fusion, and has cleared its neighbouring region of planetesimals." [http://solarsystem.nasa.gov/planets/whatisaplanet, https://en.wikipedia.org/wiki/Planet]
+comment: Considerable debate on the definition of planet exists.
+subset: envoAstro
+subset: envoPolar
+is_a: ENVO:01000799 ! astronomical body
+
+[Term]
+id: ENVO:01000804
+name: astronomical object
+namespace: ENVO
+def: "An object which is composed of one or more gravitationally bound structures that are associated with a position in space." [https://en.wikipedia.org/wiki/Astronomical_object]
+comment: If there is only one astronomical body involved, this class is equivalent to ENVO:01000799. This may be problematic with reasoning, but it seems to be true to the rather fuzzy definitions found thus far.
+subset: envoAstro
+synonym: "celestial object" RELATED []
+relationship: has_part ENVO:01000799 {minCardinality="1"} ! astronomical body
+relationship: has_quality ENVO:01001164 ! geodiversity
+relationship: surrounded_by ENVO:01000637 ! outer space
+
+[Term]
+id: ENVO:01000813
+name: astronomical body part
+namespace: ENVO
+def: "A material part of an astronomical body." []
+subset: envoAstro
+subset: envoPolar
+relationship: part_of ENVO:01000799 ! astronomical body
+
+[Term]
+id: ENVO:01000814
+name: solid environmental material
+namespace: ENVO
+def: "An environmental material which is in a solid state." []
+comment: This is a defined class: its subclasses will not be asserted, but filled by inference.
+is_a: ENVO:00010483 ! environmental material
+
+[Term]
+id: ENVO:01000815
+name: liquid environmental material
+namespace: ENVO
+def: "An environmental material which is in a liquid state." []
+comment: This is a defined class: its subclasses will not be asserted, but filled by inference.
+subset: envoPolar
+is_a: ENVO:00010483 ! environmental material
+
+[Term]
+id: ENVO:01000817
+name: biosphere
+namespace: ENVO
+def: "A biosphere is a part of an astronomical body which includes, as parts, all the living entities within the gravitational sphere of influence of that body, as well as the non-living and dead entities with which they interact." [http://www.biology-online.org/dictionary/Biosphere, https://en.wikipedia.org/wiki/Biosphere]
+comment: The gravitational sphere of influence referenced in this class' definition is the Hill sphere: a region in which an object dominates the attraction of satellites despite gravitational perturbations.
+subset: envoAstro
+subset: envoPolar
+is_a: ENVO:01001784 ! compound astronomical body part
+property_value: IAO:0000116 "Whether this class should be grouped with classes such as \"hydrosphere\" and \"cryosphere\" requires some discussion." xsd:string
+
+[Term]
+id: ENVO:01000819
+name: hydrosphere
+namespace: ENVO
+def: "An astronomical body part which is composed of the combined mass of water found on, under, and over the surface of a planet." [https://en.wikipedia.org/wiki/Hydrosphere]
+comment: This is a very broad and, in practice, poorly defined term. Please consider using or requesting a more specific class.
+subset: envoAstro
+subset: envoPolar
+is_a: ENVO:01001477 ! liquid astronomical body part
+relationship: composed_primarily_of ENVO:00002006 ! liquid water
+
+[Term]
+id: ENVO:01000820
+name: pedosphere
+namespace: ENVO
+def: "An astronomical body part which is composed of soil, subject to soil formation processes, and found on the surface of a lithosphere." [https://en.wikipedia.org/wiki/Pedosphere]
+comment: This is a very broad and, in practice, poorly defined term. Please consider using or requesting a more specific class.
+subset: envoAstro
+is_a: ENVO:01001784 ! compound astronomical body part
+relationship: composed_primarily_of ENVO:00001998 ! soil
+relationship: overlaps ENVO:01000267 ! atmosphere
+relationship: overlaps ENVO:01000646 ! lithosphere
+relationship: overlaps ENVO:01000817 ! biosphere
+relationship: overlaps ENVO:01000819 ! hydrosphere
+
+[Term]
+id: ENVO:01000951
+name: natural environment
+namespace: ENVO
+def: "An environmental system in which minimal to no anthropisation has occurred and non-human agents are the primary determinants of the system's dynamics and composition." [https://en.wikipedia.org/wiki/Anthropization, https://en.wikipedia.org/wiki/Natural_environment]
+comment: In most contexts, 'natural' is defined by the lack of intervention or influence by humans and their activities. On Earth, most environments fall on a scale between completely natural and anthropised.
+is_a: ENVO:01000254 ! environmental system
+property_value: IAO:0000118 "non-anthropised environment" xsd:string
+property_value: IAO:0000118 "non-anthropized environment" xsd:string
+
+[Term]
+id: ENVO:01001110
+name: ecosystem
+namespace: ENVO
+alt_id: LTER:173 {xref="https://vocab.lternet.edu/vocab/vocab/index.php?tema=173&/ecosystems"}
+def: "An environmental system which includes both living and non-living components." [https://en.wikipedia.org/wiki/Ecosystem]
+comment: This class will be primarily filled by inference, any environmental system which necessarily includes living parts should be autoclassified here.
+is_a: ENVO:01000254 ! environmental system
+
+[Term]
+id: ENVO:01001125
+name: ice
+namespace: ENVO
+def: "An ice is an environmental material which is either frozen or which is maintained in a solid state by gravitational forces or pressure." []
+comment: This class is defined logically - any material that is frozen is considered a subclass. Note that ice may be formed at very high temperatures, due to gravitational effects and/or pressure.
+is_a: ENVO:00010483 ! environmental material
+
+[Term]
+id: ENVO:01001164
+name: geodiversity
+namespace: ENVO
+def: "A quality which inheres in a astronomical body or astronomical body part by virtue of the variation in its material composition, participation in geological processes, and the variation in is land- and hydroforms." [https://en.wikipedia.org/wiki/Geodiversity]
+comment: Materials which are usually assessed when appraising geodiversity include minerals, rocks, sediments, fossils, soils and water. Landforms factored into geodiversity metrics typically include folds, faults, and other expressions of morphology or relations between units of earth material. Natural processes that are included in measures of geodiversity are those which either maintain or change materials or geoforms, including tectonics, sediment transport, and pedogenesis. Geodiversity does not usually factor in anthropogenic entities. {xref=""}
+
+[Term]
+id: ENVO:01001191
+name: water surface
+namespace: ENVO
+def: "The surface layer of a volume of water." []
+synonym: "surface of a body of water" EXACT []
+synonym: "water body surface" EXACT []
+xref: EcoLexicon:surface_water
+xref: https://en.wikipedia.org/wiki/Surface_water
+xref: SWEETRealm:SurfaceWater
+is_a: ENVO:01001310 ! liquid surface layer
+intersection_of: ENVO:01001310 ! liquid surface layer
+intersection_of: part_of ENVO:00002006 ! liquid water
+relationship: composed_primarily_of ENVO:00002006 ! liquid water
+
+[Term]
+id: ENVO:01001310
+name: liquid surface layer
+namespace: ENVO
+def: "A surface layer which is composed primarily of some liquid." []
+is_a: ENVO:01001673 ! fluid surface layer
+intersection_of: ENVO:01001673 ! fluid surface layer
+intersection_of: composed_primarily_of ENVO:01000815 ! liquid environmental material
+
+[Term]
+id: ENVO:01001476
+name: body of liquid
+namespace: ENVO
+is_a: ENVO:01001477 ! liquid astronomical body part
+created_by: http://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:01001477
+name: liquid astronomical body part
+namespace: ENVO
+def: "A part of an astronomical body which is primarily composed of a continuous volume of liquid material, shaped by one or more environmental processes." [https://en.wikipedia.org/wiki/Landform]
+is_a: ENVO:01001479 ! fluid astronomical body part
+intersection_of: ENVO:01001479 ! fluid astronomical body part
+intersection_of: composed_primarily_of ENVO:01000815 ! liquid environmental material
+created_by: http://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:01001479
+name: fluid astronomical body part
+namespace: ENVO
+def: "A part of an astronomical body which is primarily composed of a continuous volume of liquid or gaseous material, shaped by one or more environmental processes." [https://en.wikipedia.org/wiki/Landform]
+is_a: ENVO:01000813 ! astronomical body part
+created_by: http://orcid.org/0000-0002-4366-3088
+creation_date: 2018-10-04T13:59:22Z
+
+[Term]
+id: ENVO:01001483
+name: surface of an astronomical body
+namespace: ENVO
+def: "A surface layer where the solid or liquid material of an astronomical body comes into contact with an atmosphere or outer space." []
+comment: a useful class: this can be used to define sub-terrestrial and sub-marine entities
+is_a: ENVO:00010504 ! surface layer
+intersection_of: ENVO:00010504 ! surface layer
+intersection_of: part_of ENVO:01000799 ! astronomical body
+created_by: http://orcid.org/0000-0002-4366-3088
+creation_date: 2018-10-04T16:55:57Z
+
+[Term]
+id: ENVO:01001497
+name: carbonate system of ocean water
+namespace: ENVO
+def: "A system which is composed of carbon-based chemical entities dissolved in or otherwise part of an ocean or sea and the atmosphere adjacent to it, undergoing constant exchange through biogeochemical cycling." []
+comment: To measure the state and dynamics of the ocean's carbonate system, at least two of the following qualities must be measured: Dissolved Inorganic Carbon (DIC), Total Alkalinity (TA), Partial pressure of carbon dioxide (pCO2), and pH.
+subset: envoEOVs
+subset: envoMarine
+synonym: "carbonate system of the sea" EXACT []
+synonym: "marine carbonate system" EXACT []
+relationship: has_part ENVO:01000267 ! atmosphere
+relationship: participates_in ENVO:01000631 ! ocean acidification
+relationship: participates_in ENVO:02500010 ! carbon cycling
+created_by: http://orcid.org/0000-0002-4366-3088
+creation_date: 2018-11-11T00:03:08Z
+
+[Term]
+id: ENVO:01001510
+name: material congelation process
+namespace: ENVO
+def: "A material transformation process during which a material's viscosity increase either through a reduction in temperature, through chemical reactions, or other physical effects." [https://en.wikipedia.org/wiki/Congelation]
+comment: Sometimes the increase in viscosity is great enough to crystallize or solidify the substance in question. {xref="https://en.wikipedia.org/wiki/Congelation"}
+synonym: "congelation" EXACT []
+synonym: "congelation process" EXACT []
+is_a: ENVO:03000043 ! material transformation process
+created_by: http://orcid.org/0000-0002-4366-3088
+creation_date: 2019-01-14T18:47:32Z
+
+[Term]
+id: ENVO:01001548
+name: freezing
+namespace: ENVO
+def: "A material congelation process during which a liquid turns into a solid when its temperature is lowered below its melting point." [https://en.wikipedia.org/wiki/Freezing]
+is_a: ENVO:01001510 ! material congelation process
+created_by: http://orcid.org/0000-0002-4366-3088
+creation_date: 2019-01-31T21:13:16Z
+
+[Term]
+id: ENVO:01001549
+name: freezing of water into water ice
+namespace: ENVO
+def: "A freezing process during which liquid water is transformed into water ice." []
+is_a: ENVO:01001548 ! freezing
+created_by: http://orcid.org/0000-0002-4366-3088
+creation_date: 2019-01-31T21:16:46Z
+
+[Term]
+id: ENVO:01001554
+name: surface layer of a water body
+namespace: ENVO
+def: "A water surface that is part of a water body." []
+is_a: ENVO:01001191 ! water surface
+intersection_of: ENVO:01001191 ! water surface
+intersection_of: part_of ENVO:00000063 ! water body
+relationship: part_of ENVO:00000063 ! water body
+created_by: http://orcid.org/0000-0002-4366-3088
+creation_date: 2019-02-27T21:22:13Z
+
+[Term]
+id: ENVO:01001559
+name: cryopeg
+namespace: ENVO
+def: "A layer which is composed of ground that 1) remains unfrozen due to increased solute concentration and 2) is present within a mass of permafrost." [https://nsidc.org/cryosphere/glossary?keys=cryopeg]
+subset: envoNceas
+subset: envoPolar
+is_a: ENVO:01001609 ! cryospheric layer
+relationship: part_of ENVO:00000134 ! permafrost
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0003-1264-1166
+property_value: http://purl.org/dc/elements/1.1/date 2019-03-01T23:23:15Z xsd:dateTime
+
+[Term]
+id: ENVO:01001568
+name: frost heave
+namespace: ENVO
+def: "An elevation which is formed as an ice mass forms under soil, resulting in upwards deformation of the land surface." [https://en.wikipedia.org/wiki/Frost_heaving]
+subset: envoNceas
+subset: envoPolar
+synonym: "frost heaving" EXACT []
+is_a: ENVO:00000176 ! elevation
+intersection_of: ENVO:00000176 ! elevation
+intersection_of: formed_as_result_of ENVO:04000001 ! frost heaving process
+created_by: http://orcid.org/0000-0002-4366-3088
+creation_date: 2019-03-04T23:07:57Z
+
+[Term]
+id: ENVO:01001581
+name: sea surface layer
+namespace: ENVO
+def: "A surface layer of a water body which is part of an ocean or sea." []
+comment: At this level, the depth of this layer is ambiguous. Some methods (telemetry) measure only the first few centimeters of the sea or ocean surface. In situ methods often sample the first few meters. Subclasses can be created for such cases.
+subset: envoMarine
+is_a: ENVO:01001554 ! surface layer of a water body
+created_by: http://orcid.org/0000-0002-4366-3088
+creation_date: 2019-03-06T01:22:01Z
+
+[Term]
+id: ENVO:01001609
+name: cryospheric layer
+namespace: ENVO
+def: "A layer which is part of a cryosphere." []
+subset: envoPolar
+is_a: ENVO:01000281 ! layer
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+creation_date: 2019-04-09T13:05:25Z
+
+[Term]
+id: ENVO:01001610
+name: active layer in a cryosphere
+namespace: ENVO
+def: "A layer of environmental material which is subject to freeze-thaw cycles." []
+subset: envoPolar
+synonym: "active layer" BROAD []
+is_a: ENVO:01001609 ! cryospheric layer
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+creation_date: 2019-04-09T13:08:48Z
+
+[Term]
+id: ENVO:01001611
+name: thawing process
+namespace: ENVO
+def: "A warming process during which the thermal energy in a portion of environmental material is sufficient to melt water-based ice or snow." [https://en.wiktionary.org/wiki/thaw, https://wikidiff.com/melt/thaw]
+comment: Note that ice or snow need not be present in the material in order for it to undergo thawing. The semantics of 'thaw' vs 'melt' are debated in fields such as permafrost geology/physics. This module is thus likely to be dynamic.
+synonym: "thawing" BROAD []
+is_a: ENVO:01001612 ! material warming process
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+creation_date: 2019-04-09T13:17:56Z
+
+[Term]
+id: ENVO:01001612
+name: material warming process
+namespace: ENVO
+def: "A process during which the temperature of a portion of environmental material is increased, along with the kinetic energy of its constituent molecules." [] {comment="https://en.wiktionary.org/wiki/warming"}
+comment: Note that melting need not involve warming (e.g. due to extreme gravitational effects). See the melting hierarchy for more terms.
+is_a: ENVO:03000043 ! material transformation process
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+creation_date: 2019-04-09T13:26:10Z
+
+[Term]
+id: ENVO:01001613
+name: permafrost thawing process
+namespace: ENVO
+def: "A thawing process during which permafrost is warmed beyond the melting point of water-based ice, snow, or other forms of solid water." [https://en.wikipedia.org/wiki/Permafrost]
+subset: envoPolar
+is_a: ENVO:01001611 ! thawing process
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+creation_date: 2019-04-09T13:41:52Z
+
+[Term]
+id: ENVO:01001616
+name: bare soil
+namespace: ENVO
+def: "Soil which is directly exposed to the atmosphere - with no intervening layer of plant life or other cover - and thus the effects of weathering and erosion." []
+is_a: ENVO:00001998 ! soil
+relationship: adjacent_to ENVO:01000540 ! troposphere
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+creation_date: 2019-04-15T10:15:14Z
+
+[Term]
+id: ENVO:01001660
+name: frost action process
+namespace: ENVO
+def: "A material transport process during which alternate freezing and thawing of moisture in soil, rock and other materials results  modifications of those materials and in the formation of structures on, or in, the ground." [https://orcid.org/0000-0003-4808-4736]
+comment: Frost action in soils describes the processes of Frost Heave that occurs in the ground during the freezing period, and Thaw Weakening that occurs as the seasonally Frozen Ground thaws. Although it normally refers to seasonal freezing and thawing processes and effects, the term Frost action has also been used to describe the long-term heaving that occurs when soils are subjected continuously to a freezing temperature over a long period of time (years). Frost action contributes to the mechanical weathering (disintegration or breakdown) of soil and rock materials, by frost wedging, Cryoturbation activity, and to the development of cryotexture and cryogenic fabric in soils. {xref="https://orcid.org/0000-0003-4808-4736"}
+is_a: ENVO:03000010 ! material transport process
+relationship: has_part ENVO:01001549 ! freezing of water into water ice
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-06-24T17:43:00Z xsd:dateTime
+
+[Term]
+id: ENVO:01001664
+name: cryoturbation of soil
+namespace: ENVO
+def: "A frost action process during which soil is displaced." [https://orcid.org/0000-0003-4808-4736]
+comment: The processes that form irregular structures in earth materials characterized by folded, broken and dislocated beds, and lenses of unconsolidated deposits, including organic horizons and even bedrock.  These processes include deep frost penetration, frost action, frost heaving, thaw settlement and all differential movements, including expansion and contraction due to temperature changes and the growth and disappearance of ground ice bodies, whether perennial or seasonal.  Low temperatures alone are not enough to produce cryoturbation; the water-ice phase change is necessary.  Cryoturbation is an important process in the development of patterned ground.
+is_a: ENVO:01001660 ! frost action process
+relationship: has_output ENVO:01001665 ! soil cryoturbate
+relationship: has_participant ENVO:00001998 ! soil
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-06-24T17:44:01Z xsd:dateTime
+
+[Term]
+id: ENVO:01001665
+name: soil cryoturbate
+namespace: ENVO
+def: "A mass of soil moved or disturbed by frost action." [https://orcid.org/0000-0003-4808-4736]
+is_a: ENVO:00000191 ! solid astronomical body part
+relationship: output_of ENVO:01001664 ! cryoturbation of soil
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-06-24T17:56:32Z xsd:dateTime
+
+[Term]
+id: ENVO:01001673
+name: fluid surface layer
+namespace: ENVO
+def: "A surface layer which is composed primarily of some liquid or gas." []
+is_a: ENVO:00010504 ! surface layer
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-08-20T08:28:42Z xsd:dateTime
+
+[Term]
+id: ENVO:01001678
+name: fluid layer
+namespace: ENVO
+def: "A layer which is composed primarily of some fluid." []
+is_a: ENVO:01000281 ! layer
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-07-22T17:35:08Z xsd:dateTime
+
+[Term]
+id: ENVO:01001684
+name: interface layer
+namespace: ENVO
+def: "A layer which separates two portions of environmental material which possess 1) differing compositions, 2) a discontinuity of some property, or 3) some derivative of some property in a direction normal to the interface." []
+is_a: ENVO:01000281 ! layer
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-08-20T09:28:10Z xsd:dateTime
+
+[Term]
+id: ENVO:01001784
+name: compound astronomical body part
+namespace: ENVO
+def: "A part of an astronomical body which is primarily composed of a continuous medium bearing liquid, gaseous, and solid material in varying quantities." [https://en.wikipedia.org/wiki/Landform]
+is_a: ENVO:01000813 ! astronomical body part
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-10-17T08:36:00Z xsd:dateTime
+
+[Term]
+id: ENVO:02500000
+name: environmental system process
+namespace: ENVO
+def: "A process in which includes the components of an environmental system as participants." []
+comment: This is a convenience class for organisation and should not be used for annotation.
+relationship: RO:0002218 ENVO:01001110 ! ecosystem
+
+[Term]
+id: ENVO:02500009
+name: biogeochemical cycling
+namespace: ENVO
+def: "A biogeochemical process during which one or more chemical compounds are sequentially converted into a series of related compounds in a regularly repeating, periodic fashion." []
+subset: envoPolar
+is_a: ENVO:02500030 ! biogeochemical process
+
+[Term]
+id: ENVO:02500010
+name: carbon cycling
+namespace: ENVO
+def: "A biogeochemical cycle which has carbon-bearing chemical entities as participants." []
+subset: envoPolar
+synonym: "carbon cycle" RELATED []
+is_a: ENVO:02500009 ! biogeochemical cycling
+
+[Term]
+id: ENVO:02500030
+name: biogeochemical process
+namespace: ENVO
+def: "A process during which chemicals that are involved in natural ecosystem processes are transported or transformed, and which impact the activity of biological entities" [https://en.wikipedia.org/wiki/Biogeochemistry]
+subset: envoPolar
+is_a: ENVO:02500000 ! environmental system process
+relationship: has_participant CHEBI:24431 {minCardinality="1"}
+relationship: has_participant ENVO:01000951 ! natural environment
+
+[Term]
+id: ENVO:03000009
+name: material accumulation process
+namespace: ENVO
+def: "A process during which the mass of one or more materials, present within a given site, increases." []
+comment: Experimental class for structural purposes not recommended for annotation. A material accumulation process ends a material transport process.
+subset: envoPolar
+is_a: ENVO:02500000 ! environmental system process
+property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
+property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:03000010
+name: material transport process
+namespace: ENVO
+def: "A process during which material is displaced from its original location and transported either to a new location or back to the original location." []
+comment: Experimental class for structural purposes not recommended for annotation.
+subset: envoPolar
+is_a: ENVO:02500000 ! environmental system process
+property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
+property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:03000043
+name: material transformation process
+namespace: ENVO
+def: "A process during which a portion of some environmental material is converted into a different material or a collection of materials." []
+comment: Experimental class for structural purposes not recommended for annotation. A material transformation process only refers to ENVO:environmental material classes (e.g. bulk and typically impure substances), rather than transformations converting a specific chemical into another.
+subset: envoPolar
+is_a: ENVO:02500000 ! environmental system process
+relationship: has_input ENVO:00010483 ! environmental material
+relationship: has_output ENVO:00010483 ! environmental material
+property_value: IAO:0000116 "A different material transformation process class (or similarly named class) pertaining to the conversion of a specific chemical into another belongs in CHEBI and or REX ontologies." xsd:string
+property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
+property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:04000000
+name: adfreezing
+namespace: ENVO
+def: "Adfreezing is a freezing process during which two objects adhere to each other via ice." [https://www.merriam-webster.com/dictionary/adfreezing]
+subset: envoNceas
+subset: envoPolar
+is_a: ENVO:01001548 ! freezing
+relationship: has_output ENVO:01001125 ! ice
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0003-1264-1166
+property_value: http://purl.org/dc/elements/1.1/date 2019-03-04T18:47:34Z xsd:dateTime
+
+[Term]
+id: ENVO:04000001
+name: frost heaving process
+namespace: ENVO
+def: "Frost heaving is a process during which an upwards swelling of soil occurs due to freezing conditions caused by an increasing presence of ice as it grows towards the surface." [https://en.wikipedia.org/wiki/Frost_heaving, https://orcid.org/0000-0003-4808-4736]
+subset: envoNceas
+subset: envoPolar
+is_a: ENVO:01001664 ! cryoturbation of soil
+relationship: has_part ENVO:01001549 ! freezing of water into water ice
+relationship: has_participant ENVO:01000324 ! planetary surface
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0003-1264-1166
+property_value: http://purl.org/dc/elements/1.1/date 2019-03-04T20:17:35Z xsd:dateTime
+
+[Term]
+id: ENVO:04000002
+name: temperature of sea surface
+namespace: ENVO
+def: "A water temperature which inheres in water close to the surface of an ocean or sea." [http://www.goosocean.org/components/com_oe/oe.php?task=download&id=34498&version=1.0&lang=1&format=1, https://en.wikipedia.org/wiki/Sea_surface_temperature]
+comment: The exact meaning of surface varies according to the measurement method used, but it is between 1 millimetre (0.04 in) and 20 metres (70 ft) below the sea surface.
+subset: envoEOVs
+subset: envoMarine
+subset: envoNceas
+synonym: "ocean surface temperature" EXACT []
+synonym: "sea surface temperature" EXACT []
+synonym: "temperature of the ocean surface" EXACT []
+is_a: ENVO:09200014 ! temperature of water
+relationship: inheres_in ENVO:01001581 ! sea surface layer
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0003-1264-1166
+property_value: http://purl.org/dc/elements/1.1/date 2019-03-06T00:50:17Z xsd:dateTime
+
+[Term]
+id: ENVO:04000003
+name: concentration of carbon dioxide in soil
+namespace: ENVO
+def: "The concentration of carbon dioxide when measured in soil." []
+subset: envoNceas
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0003-1264-1166
+property_value: http://purl.org/dc/elements/1.1/date 2019-03-14T21:13:30Z xsd:dateTime
+
+[Term]
+id: ENVO:04000004
+name: concentration of carbon dioxide in air
+namespace: ENVO
+def: "The concentration of carbon dioxide when measured in air." []
+subset: envoNceas
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0003-1264-1166
+property_value: http://purl.org/dc/elements/1.1/date 2019-03-14T21:24:04Z xsd:dateTime
+
+[Term]
+id: ENVO:04000005
+name: concentration of carbon dioxide in freshwater
+namespace: ENVO
+def: "The concentration of carbon dioxide when measured in freshwater." []
+subset: envoNceas
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0003-1264-1166
+property_value: http://purl.org/dc/elements/1.1/date 2019-03-14T21:29:50Z xsd:dateTime
+
+[Term]
+id: ENVO:04000006
+name: concentration of carbon dioxide in seawater
+namespace: ENVO
+def: "The concentration of carbon dioxide when measured in seawater." []
+subset: envoNceas
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0003-1264-1166
+property_value: http://purl.org/dc/elements/1.1/date 2019-03-14T21:35:30Z xsd:dateTime
+
+[Term]
+id: ENVO:04000007
+name: lake water
+namespace: ENVO
+def: "Water which is part of a lake." []
+subset: envoNceas
+is_a: ENVO:00002006 ! liquid water
+relationship: part_of ENVO:00000020 ! lake
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0003-1264-1166
+property_value: http://purl.org/dc/elements/1.1/date 2019-03-20T20:15:54Z xsd:dateTime
+
+[Term]
+id: ENVO:04000008
+name: soil organic matter
+namespace: ENVO
+def: "Organic material in soil, which consists of plant and animal residues at various stages of decomposition, cells and tissues of soil organisms, and substances synthesized by soil organisms." [https://en.wikipedia.org/wiki/Soil_organic_matter]
+subset: envoNceas
+is_a: ENVO:01000155 ! organic material
+relationship: part_of ENVO:00001998 ! soil
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0003-1264-1166
+property_value: http://purl.org/dc/elements/1.1/date 2019-04-05T00:53:06Z xsd:dateTime
+
+[Term]
+id: ENVO:04000009
+name: active permafrost layer
+namespace: ENVO
+def: "A layer which is composed of ground that is 1) subject to annual thawing and freezing and 2) present in areas underlain by permafrost." [https://nsidc.org/cryosphere/glossary/term/active-layer]
+subset: envoNceas
+subset: envoPolar
+synonym: "active layer of permafrost" EXACT []
+is_a: ENVO:01001610 ! active layer in a cryosphere
+relationship: adjacent_to ENVO:00000134 ! permafrost
+relationship: participates_in ENVO:01001613 ! permafrost thawing process
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0003-1264-1166
+property_value: http://purl.org/dc/elements/1.1/date 2019-04-08T05:22:28Z xsd:dateTime
+property_value: IAO:0000116 "Potential synonyms are seasonal frost, frost zone, and mollisol. See issue #741 in GitHub for additional details.  These synonyms should be validated in a cryohackathon." xsd:string
+
+[Term]
+id: ENVO:04000010
+name: soil surface layer
+namespace: ENVO
+def: "A surface layer which is composed primarily of soil." []
+subset: envoNceas
+relationship: part_of ENVO:01000820 ! pedosphere
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0003-1264-1166
+property_value: http://purl.org/dc/elements/1.1/date 2019-04-12T17:35:13Z xsd:dateTime
+
+[Term]
+id: ENVO:04000011
+name: bare soil surface layer
+namespace: ENVO
+def: "A soil surface which is exposed to the troposphere, with no appreciable cover from vegetation or other material." [https://www.nrcs.usda.gov/wps/portal/nrcs/detail/tx/home/?cid=stelprdb1254158]
+subset: envoNceas
+is_a: ENVO:04000010 ! soil surface layer
+relationship: composed_primarily_of ENVO:01001616 ! bare soil
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0003-1264-1166
+property_value: http://purl.org/dc/elements/1.1/date 2019-04-12T17:57:08Z xsd:dateTime
+
+[Term]
+id: ENVO:04000012
+name: particulate organic matter
+namespace: ENVO
+def: "Particulate matter which is composed primarily of organic material." [https://en.wikipedia.org/wiki/Particulate_organic_matter]
+subset: envoNceas
+is_a: ENVO:01000060
+relationship: composed_primarily_of ENVO:01000155 ! organic material
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0003-1264-1166
+property_value: http://purl.org/dc/elements/1.1/date 2019-04-30T18:33:18Z xsd:dateTime
+
+[Term]
+id: ENVO:04000013
+name: particulate organic carbon
+namespace: ENVO
+def: "Particulate organic matter which is composed primarily of carbon." [https://serc.carleton.edu/microbelife/research_methods/biogeochemical/organic_carbon.html]
+subset: envoNceas
+is_a: ENVO:04000012 ! particulate organic matter
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0003-1264-1166
+property_value: http://purl.org/dc/elements/1.1/date 2019-04-30T18:33:35Z xsd:dateTime
+
+[Term]
+id: ENVO:04000014
+name: particulate organic nitrogen
+namespace: ENVO
+def: "Particulate organic matter which is composed primarily of nitrogen." []
+subset: envoNceas
+is_a: ENVO:04000012 ! particulate organic matter
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0003-1264-1166
+property_value: http://purl.org/dc/elements/1.1/date 2019-04-30T18:33:45Z xsd:dateTime
+
+[Term]
+id: ENVO:04000015
+name: carbon sequestration process
+namespace: ENVO
+def: "A material accumulation process during which atmospheric carbon dioxide is captured and stored." [https://www.usgs.gov/faqs/what-carbon-sequestration?qt-news_science_products=0#qt-news_science_products]
+subset: envoNceas
+is_a: ENVO:03000009 ! material accumulation process
+intersection_of: ENVO:03000009 ! material accumulation process
+intersection_of: has_participant ENVO:01000451 ! atmospheric carbon dioxide
+relationship: has_participant ENVO:01000451 ! atmospheric carbon dioxide
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0003-1264-1166
+property_value: http://purl.org/dc/elements/1.1/date 2019-06-07T23:28:29Z xsd:dateTime
+
+[Term]
+id: ENVO:04000016
+name: biotic carbon sequestration
+namespace: ENVO
+def: "A carbon sequestration process during which atmospheric carbon dioxide is captured and stored by biological processes." [https://en.wikipedia.org/wiki/Biosequestration]
+subset: envoNceas
+is_a: ENVO:04000015 ! carbon sequestration process
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0003-1264-1166
+property_value: http://purl.org/dc/elements/1.1/date 2019-06-07T23:33:27Z xsd:dateTime
+
+[Term]
+id: ENVO:04000017
+name: geological carbon sequestration
+namespace: ENVO
+def: "A carbon sequestration process during which carbon dioxide is stored in underground geological formations." [https://www.usgs.gov/faqs/what-s-difference-between-geologic-and-biologic-carbon-sequestration?qt-news_science_products=0#qt-news_science_products]
+subset: envoNceas
+synonym: "abiotic carbon sequestration" RELATED []
+is_a: ENVO:04000015 ! carbon sequestration process
+relationship: has_participant ENVO:00002184 ! underground physiographic feature
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0003-1264-1166
+property_value: http://purl.org/dc/elements/1.1/date 2019-06-07T23:33:38Z xsd:dateTime
+
+[Term]
+id: ENVO:04000018
+name: carbon sequestration by the ocean carbonate system
+namespace: ENVO
+def: "A carbon sequestration process during which carbon dioxide is stored in the carbonate system of an ocean." [https://en.wikipedia.org/wiki/Ocean_storage_of_carbon_dioxide]
+subset: envoNceas
+xref: SDGIO:00010072
+is_a: ENVO:04000015 ! carbon sequestration process
+relationship: has_participant ENVO:01001497 ! carbonate system of ocean water
+relationship: occurs_in ENVO:00000015 ! ocean
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0003-1264-1166
+property_value: http://purl.org/dc/elements/1.1/date 2019-06-11T20:49:49Z xsd:dateTime
+
+[Term]
+id: ENVO:09200014
+name: temperature of water
+namespace: ENVO
+def: "The temperature of some water." []
+synonym: "water temperature" EXACT []
+
+[Term]
+id: PCO:0000001
+namespace: ENVO
+relationship: has_habitat ENVO:01000739 ! habitat
+
+[Term]
+id: PCO:0000002
+namespace: ENVO
+subset: envoPolar
+
+[Typedef]
+id: RO:0002218
+namespace: ENVO
+xref: RO:0002218
+
+[Typedef]
+id: adjacent_to
+namespace: ENVO
+xref: RO:0002220
+is_functional: true
+
+[Typedef]
+id: attached_to
+namespace: ENVO
+xref: RO:0002371
+
+[Typedef]
+id: bearer_of
+namespace: ENVO
+xref: RO:0000053
+
+[Typedef]
+id: bounding_layer_of
+namespace: ENVO
+xref: RO:0002007
+
+[Typedef]
+id: capable_of
+namespace: ENVO
+xref: RO:0002215
+
+[Typedef]
+id: causal_agent_in_process
+namespace: ENVO
+xref: RO:0002500
+
+[Typedef]
+id: causally_downstream_of_or_within
+namespace: ENVO
+xref: RO:0002427
+
+[Typedef]
+id: causally_upstream_of
+namespace: ENVO
+xref: RO:0002411
+
+[Typedef]
+id: causally_upstream_of_or_within
+namespace: ENVO
+xref: RO:0002418
+
+[Typedef]
+id: composed_primarily_of
+namespace: ENVO
+xref: RO:0002473
+
+[Typedef]
+id: connected_to
+namespace: ENVO
+xref: RO:0002170
+
+[Typedef]
+id: connects
+name: connects
+namespace: ENVO
+xref: RO:0002176
+
+[Typedef]
+id: contained_in
+namespace: ENVO
+xref: RO:0001018
+
+[Typedef]
+id: contains
+namespace: ENVO
+xref: RO:0001019
+
+[Typedef]
+id: contains_process
+namespace: ENVO
+xref: BFO:0000067
+
+[Typedef]
+id: continuous_with
+namespace: ENVO
+xref: RO:0002150
+
+[Typedef]
+id: derives_from
+namespace: ENVO
+xref: RO:0001000
+
+[Typedef]
+id: derives_into
+namespace: ENVO
+xref: RO:0001001
+
+[Typedef]
+id: determined_by
+namespace: ENVO
+xref: RO:0002507
+
+[Typedef]
+id: determined_by_part_of
+namespace: ENVO
+xref: RO:0002509
+holds_over_chain: determined_by part_of
+
+[Typedef]
+id: determines
+namespace: ENVO
+xref: RO:0002508
+
+[Typedef]
+id: disconnected_from
+name: disconnected_from
+namespace: ENVO
+def: "A is disconnected_from B if they have no parts in common." [SO:cjm]
+synonym: "non_overlapping_with" EXACT []
+expand_assertion_to: "Class: <http://www.w3.org/2002/07/owl#Nothing> EquivalentTo: (BFO_0000050 some ?X) and (BFO_0000050 some ?Y)" []
+is_metadata_tag: true
+is_class_level: true
+
+[Typedef]
+id: distributary_of
+namespace: ENVO
+xref: RO:0002377
+
+[Typedef]
+id: during_which_ends
+namespace: ENVO
+xref: RO:0002084
+
+[Typedef]
+id: during_which_starts
+namespace: ENVO
+xref: RO:0002088
+
+[Typedef]
+id: ends
+namespace: ENVO
+xref: RO:0002229
+
+[Typedef]
+id: formed_as_result_of
+namespace: ENVO
+xref: RO:0002354
+
+[Typedef]
+id: generates
+name: generates
+namespace: ENVO
+def: "A relation between a process and a disposition such that the existence of the disposition is caused by the execution of the process." []
+xref: ENVO:2000036
+property_value: IAO:0000116 "Consider ceding to RO" xsd:string
+created_by: cjm
+creation_date: 2018-11-03T20:58:13Z
+
+[Typedef]
+id: has_condition
+name: has_condition
+namespace: ENVO
+comment: Experimental relation used in EnvO. A condition defines a restricted range of a given quality or combination of qualities. If an environment class, E, has_condition C, then all qualities listed in C are restricted to the ranges defined in C in E. This is not intended as a logical conditional.
+xref: has_condition
+is_inverse_functional: true
+creation_date: 2013-05-08T07:33:05Z
+
+[Typedef]
+id: has_disposition
+namespace: ENVO
+xref: RO:0000091
+
+[Typedef]
+id: has_end_location
+namespace: ENVO
+xref: RO:0002232
+
+[Typedef]
+id: has_function
+namespace: ENVO
+xref: RO:0000085
+
+[Typedef]
+id: has_habitat
+name: has habitat
+namespace: ENVO
+xref: RO:0002303
+
+[Typedef]
+id: has_increased_levels_of
+namespace: ENVO
+xref: has_increased_levels_of
+
+[Typedef]
+id: has_input
+namespace: ENVO
+xref: RO:0002233
+
+[Typedef]
+id: has_member
+namespace: ENVO
+xref: RO:0002351
+
+[Typedef]
+id: has_output
+namespace: ENVO
+xref: RO:0002234
+
+[Typedef]
+id: has_part
+namespace: ENVO
+xref: BFO:0000051
+
+[Typedef]
+id: has_part_that_occurs_in
+namespace: ENVO
+xref: RO:0002479
+
+[Typedef]
+id: has_participant
+namespace: ENVO
+xref: RO:0000057
+
+[Typedef]
+id: has_quality
+namespace: ENVO
+xref: RO:0000086
+
+[Typedef]
+id: has_role
+namespace: ENVO
+xref: RO:0000087
+
+[Typedef]
+id: inheres_in
+namespace: ENVO
+xref: RO:0000052
+
+[Typedef]
+id: input_of
+namespace: ENVO
+xref: RO:0002352
+
+[Typedef]
+id: involved_in_negative_regulation_of
+namespace: ENVO
+xref: RO:0002430
+
+[Typedef]
+id: located_in
+namespace: ENVO
+xref: RO:0001025
+
+[Typedef]
+id: location_of
+namespace: ENVO
+xref: RO:0001015
+
+[Typedef]
+id: member_of
+namespace: ENVO
+xref: RO:0002350
+
+[Typedef]
+id: negatively_regulates
+namespace: ENVO
+xref: RO:0002212
+
+[Typedef]
+id: obsolete_determined_by
+name: obsolete determined by
+namespace: ENVO
+xref: ENVO:2100001
+is_obsolete: true
+
+[Typedef]
+id: obsolete_determined_by_part_of
+name: obsolete determined by part of
+namespace: ENVO
+xref: ENVO:2100007
+is_obsolete: true
+
+[Typedef]
+id: occurs_in
+namespace: ENVO
+xref: BFO:0000066
+
+[Typedef]
+id: output_of
+namespace: ENVO
+xref: RO:0002353
+
+[Typedef]
+id: overlaps
+namespace: ENVO
+xref: RO:0002131
+
+[Typedef]
+id: part_of
+namespace: ENVO
+xref: BFO:0000050
+
+[Typedef]
+id: partially_overlaps
+namespace: ENVO
+xref: RO:0002151
+
+[Typedef]
+id: partially_surrounded_by
+name: partially_surrounded_by
+namespace: ENVO
+def: "x partially_surrounded_by y if and only if (1) x is adjacent to y and for the region r that is adjacent to x, r partially overlaps y (2) the shared boundary between x and y occupies  a non-trivial proportion of the outermost boundary of x" []
+comment: Definition modified from 'surrounded by'.
+xref: ENVO:01001307
+property_value: IAO:0000112 "A duck swimming in a pond is partially surrounded by air and partially surrounded by water." xsd:string
+
+[Typedef]
+id: participates_in
+namespace: ENVO
+xref: RO:0000056
+
+[Typedef]
+id: preceded_by
+namespace: ENVO
+xref: BFO:0000062
+
+[Typedef]
+id: precedes
+namespace: ENVO
+xref: BFO:0000063
+
+[Typedef]
+id: process_has_causal_agent
+namespace: ENVO
+xref: RO:0002608
+
+[Typedef]
+id: realized_in
+namespace: ENVO
+xref: BFO:0000054
+
+[Typedef]
+id: realizes
+namespace: ENVO
+xref: BFO:0000055
+
+[Typedef]
+id: regulates_(processual)
+name: regulates (processual)
+namespace: ENVO
+xref: RO:0002211
+
+[Typedef]
+id: results_in_expansion_of
+name: results in expansion of
+namespace: ENVO
+def: "A process, p, results in the expansion of a material entity, m, if the spatial extent of m is increased as a result of participating in p." []
+xref: ENVO:02500016
+property_value: IAO:0000112 "Afforestation results in the expansion of a forest." xsd:string
+
+[Typedef]
+id: results_in_formation_of
+namespace: ENVO
+xref: RO:0002297
+
+[Typedef]
+id: results_in_proliferation_of
+name: results in proliferation of
+namespace: ENVO
+comment: To be ceded to RO
+xref: ENVO:02500020
+
+[Typedef]
+id: results_in_transformation_into
+name: results in transformation into
+namespace: ENVO
+xref: ENVO:02500006
+
+[Typedef]
+id: starts_during
+namespace: ENVO
+xref: RO:0002091
+
+[Typedef]
+id: surrounded_by
+name: surrounded by
+namespace: ENVO
+xref: RO:0002219
+
+[Typedef]
+id: towards
+namespace: ENVO
+xref: RO:0002503
+
+[Typedef]
+id: tributary_of
+namespace: ENVO
+xref: RO:0002376
+
