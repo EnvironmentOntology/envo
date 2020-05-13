@@ -2,10 +2,107 @@ format-version: 1.2
 ontology: envo/imports/pato_import
 
 [Term]
+id: BFO:0000002
+name: continuant
+def: "An entity that exists in full at any time in which it exists at all, persists through time while maintaining its identity and has no temporal parts." []
+disjoint_from: BFO:0000003 ! occurrent
+
+[Term]
+id: BFO:0000003
+name: occurrent
+def: "An entity that has temporal parts and that happens, unfolds or develops through time." []
+
+[Term]
+id: BFO:0000004
+name: independent continuant
+def: "A continuant that is a bearer of quality and realizable entity entities, in which other entities inhere and which itself cannot inhere in anything." []
+is_a: BFO:0000002 ! continuant
+disjoint_from: BFO:0000020 ! specifically dependent continuant
+
+[Term]
+id: BFO:0000015
+name: process
+def: "An occurrent that has temporal proper parts and for some time t, p s-depends_on some material entity at t." []
+is_a: BFO:0000003 ! occurrent
+
+[Term]
+id: BFO:0000019
+name: quality
+is_a: BFO:0000020 ! specifically dependent continuant
+
+[Term]
+id: BFO:0000020
+name: specifically dependent continuant
+def: "A continuant that inheres in or is borne by other entities. Every instance of A requires some specific instance of B which must always be the same." []
+is_a: BFO:0000002 ! continuant
+
+[Term]
+id: BFO:0000040
+name: material entity
+def: "An independent continuant that is spatially extended whose identity is independent of that of other entities and can be maintained through time." []
+is_a: BFO:0000004 ! independent continuant
+
+[Term]
+id: CARO:0000000
+name: anatomical entity
+is_a: CARO:0030000 ! biological entity
+
+[Term]
+id: CARO:0000003
+name: connected anatomical structure
+is_a: CARO:0000006 ! material anatomical entity
+
+[Term]
+id: CARO:0000006
+name: material anatomical entity
+is_a: BFO:0000040 ! material entity
+is_a: CARO:0000000 ! anatomical entity
+
+[Term]
+id: CARO:0030000
+name: biological entity
+is_a: BFO:0000004 ! independent continuant
+
+[Term]
+id: GO:0003674
+name: molecular_function
+is_a: BFO:0000015 ! process
+
+[Term]
+id: GO:0003824
+name: catalytic activity
+is_a: GO:0003674 ! molecular_function
+
+[Term]
+id: GO:0008150
+name: biological_process
+def: "A biological process represents a specific objective that the organism is genetically programmed to achieve. Biological processes are often described by their outcome or ending state, e.g., the biological process of cell division results in the creation of two daughter cells (a divided cell) from a single parent cell. A biological process is accomplished by a particular set of molecular functions carried out by specific gene products (or macromolecular complexes), often in a highly regulated manner and in a particular temporal sequence." []
+synonym: "biological process" EXACT []
+synonym: "physiological process" EXACT []
+synonym: "single organism process" RELATED []
+synonym: "single-organism process" RELATED []
+is_a: BFO:0000015 ! process
+
+[Term]
+id: GO:0016301
+name: kinase activity
+is_a: GO:0016772 ! transferase activity, transferring phosphorus-containing groups
+
+[Term]
+id: GO:0016740
+name: transferase activity
+is_a: GO:0003824 ! catalytic activity
+
+[Term]
+id: GO:0016772
+name: transferase activity, transferring phosphorus-containing groups
+is_a: GO:0016740 ! transferase activity
+
+[Term]
 id: PATO:0000001
 name: quality
 def: "A dependent entity that inheres in a bearer by virtue of how the bearer is related to other entities" []
-synonym: "trait" EXACT []
+is_a: BFO:0000020 ! specifically dependent continuant
 
 [Term]
 id: PATO:0000008
@@ -26,6 +123,7 @@ name: color
 def: "A composite chromatic quality composed of hue, saturation and intensity parts." []
 synonym: "colour" EXACT []
 synonym: "relative color" EXACT []
+is_a: PATO:0000051 ! morphology
 is_a: PATO:0001300 ! optical quality
 
 [Term]
@@ -67,7 +165,7 @@ is_a: PATO:0001018 ! physical quality
 id: PATO:0000044
 name: frequency
 def: "A physical quality which inheres in a bearer by virtue of the number of the bearer's repetitive actions in a particular time." []
-is_a: PATO:0000161 ! rate
+is_a: PATO:0050000 ! rate of occurence
 
 [Term]
 id: PATO:0000048
@@ -87,6 +185,7 @@ is_a: PATO:0000068 ! qualitative
 id: PATO:0000051
 name: morphology
 def: "A quality of a single physical entity inhering in the bearer by virtue of the bearer's size or shape or structure." []
+is_a: BFO:0000019 ! quality
 is_a: PATO:0001241 ! physical object quality
 
 [Term]
@@ -116,7 +215,7 @@ name: spatial pattern
 def: "A spatial quality inhering in a bearer by virtue of the bearer's exhibiting repetition of placement of its parts." []
 synonym: "distribution" EXACT []
 synonym: "pattern" RELATED []
-is_a: PATO:0000140 ! position
+is_a: PATO:0000051 ! morphology
 
 [Term]
 id: PATO:0000068
@@ -125,7 +224,7 @@ is_a: PATO:0000001 ! quality
 
 [Term]
 id: PATO:0000069
-name: deviation(from_normal)
+name: deviation (from_normal)
 def: "A quality inhering in a bearer by virtue of the whether the bearer differs from normal or average." []
 is_a: PATO:0000068 ! qualitative
 
@@ -133,7 +232,6 @@ is_a: PATO:0000068 ! qualitative
 id: PATO:0000070
 name: amount
 def: "The number of entities of this type that are part of the whole organism." []
-synonym: "count" EXACT []
 synonym: "count in organism" RELATED []
 synonym: "number" RELATED []
 synonym: "presence" RELATED []
@@ -389,7 +487,7 @@ id: PATO:0000461
 name: normal
 def: "A quality inhering in a bearer by virtue of the bearer's exhibiting no deviation from normal or average." []
 synonym: "average" RELATED []
-is_a: PATO:0000069 ! deviation(from_normal)
+is_a: PATO:0000068 ! qualitative
 
 [Term]
 id: PATO:0000467
@@ -654,6 +752,7 @@ id: PATO:0000964
 name: transparent
 def: "A optical quality inhering in a bearer by virtue of the bearer's lacking opacity." []
 synonym: "clear" EXACT []
+synonym: "hyaline" EXACT []
 is_a: PATO:0000957 ! opacity
 
 [Term]
@@ -677,8 +776,8 @@ is_a: PATO:0000141 ! structure
 [Term]
 id: PATO:0000973
 name: porosity
-def: "A permeability quality inhering in a bearer by virtue of the bearer's disposition to admit the passage of gas or liquid through pores or interstices." []
-is_a: PATO:0000970 ! permeability
+def: "A structure quality inhering in a bearer by virtue of the bearer's disposition to admit the passage of gas or liquid through pores or interstices." []
+is_a: PATO:0000141 ! structure
 
 [Term]
 id: PATO:0000982
@@ -888,14 +987,17 @@ synonym: "quality of occurrent" EXACT []
 synonym: "quality of process" EXACT []
 synonym: "relational quality of occurrent" EXACT []
 is_a: PATO:0000001 ! quality
+disjoint_from: PATO:0001241 ! physical object quality
 
 [Term]
 id: PATO:0001237
 is_obsolete: true
+replaced_by: PATO:0001241
 
 [Term]
 id: PATO:0001238
 is_obsolete: true
+replaced_by: PATO:0001241
 
 [Term]
 id: PATO:0001241
@@ -934,7 +1036,7 @@ id: PATO:0001303
 name: variability
 def: "A quality inhering in a bearer by virtue of the bearer's disposition to varying or changing." []
 synonym: "variability of a physical quality" RELATED []
-is_a: PATO:0001236 ! process quality
+is_a: PATO:0000001 ! quality
 
 [Term]
 id: PATO:0001305
@@ -1050,7 +1152,7 @@ name: broken
 def: "A broken quality inhering in a bearer by virtue of the bearer's being broken open." []
 synonym: "burst" EXACT []
 synonym: "cracked" RELATED []
-synonym: "fractured" EXACT []
+synonym: "fractured" NARROW []
 synonym: "fragmented" EXACT []
 synonym: "hemorrhaged" RELATED []
 synonym: "ruptured" EXACT []
@@ -1283,8 +1385,7 @@ name: decreased variability
 def: "A variability which is relatively low." []
 synonym: "low variability" EXACT []
 is_a: PATO:0001227 ! variant
-is_a: PATO:0002302 ! decreased process quality
-is_a: PATO:0002303 ! decreased object quality
+is_a: PATO:0002301 ! decreased quality
 
 [Term]
 id: PATO:0001584
@@ -1292,8 +1393,7 @@ name: increased variability
 def: "A variability which is relatively high." []
 synonym: "high variability" EXACT []
 is_a: PATO:0001227 ! variant
-is_a: PATO:0002304 ! increased process quality
-is_a: PATO:0002305 ! increased object quality
+is_a: PATO:0002300 ! increased quality
 
 [Term]
 id: PATO:0001585
@@ -1396,6 +1496,7 @@ is_a: PATO:0000140 ! position
 [Term]
 id: PATO:0001631
 is_obsolete: true
+replaced_by: PATO:0000140
 
 [Term]
 id: PATO:0001632
@@ -1600,7 +1701,7 @@ is_a: PATO:0000117 ! size
 id: PATO:0001711
 name: perimeter
 def: "An 1-D extent quality inhering in two-dimensional bearer by virtue of being equal to the distance around it." []
-is_a: PATO:0000122 ! length
+is_a: PATO:0001708 ! 1-D extent
 
 [Term]
 id: PATO:0001712
@@ -2025,8 +2126,7 @@ name: decreased variability of size
 def: "A variability of size which is relatively low." []
 synonym: "low variability of size" EXACT []
 is_a: PATO:0001956 ! variability of size
-is_a: PATO:0002302 ! decreased process quality
-is_a: PATO:0002303 ! decreased object quality
+is_a: PATO:0002301 ! decreased quality
 
 [Term]
 id: PATO:0001958
@@ -2034,8 +2134,7 @@ name: increased variability of size
 def: "A variability of size which is relatively high." []
 synonym: "high variability of size" EXACT []
 is_a: PATO:0001956 ! variability of size
-is_a: PATO:0002304 ! increased process quality
-is_a: PATO:0002305 ! increased object quality
+is_a: PATO:0002300 ! increased quality
 
 [Term]
 id: PATO:0001977
@@ -2437,13 +2536,13 @@ is_a: PATO:0002078 ! hollow
 id: PATO:0002300
 name: increased quality
 def: "A quality that has a value that is increased compared to normal or average." []
-is_a: PATO:0000069 ! deviation(from_normal)
+is_a: PATO:0000069 ! deviation (from_normal)
 
 [Term]
 id: PATO:0002301
 name: decreased quality
 def: "A quality that has a value that is decreased compared to normal or average." []
-is_a: PATO:0000069 ! deviation(from_normal)
+is_a: PATO:0000069 ! deviation (from_normal)
 
 [Term]
 id: PATO:0002302
@@ -2895,16 +2994,12 @@ id: PATO:0045074
 name: normal variability
 def: "A variability which is relatively normal or average" []
 is_a: PATO:0001227 ! variant
-is_a: PATO:0045001 ! normal object quality
-is_a: PATO:0045073 ! normal process quality
 
 [Term]
 id: PATO:0045077
 name: normal variability of size
 def: "A variability of size which is relatively normal or average" []
 is_a: PATO:0001956 ! variability of size
-is_a: PATO:0045001 ! normal object quality
-is_a: PATO:0045073 ! normal process quality
 
 [Term]
 id: PATO:0045079
@@ -2970,4 +3065,10 @@ id: PATO:0045094
 name: west
 def: "West is one of the four cardinal directions or points of the compass. It is the opposite direction from east." []
 is_a: PATO:0045090 ! cardinal direction
+
+[Term]
+id: PATO:0050000
+name: rate of occurence
+def: "The number of repeated events per unit time, occurring in a repeating series. (e.g. the number of heart beats occurring over 1 minute)" []
+is_a: PATO:0000161 ! rate
 

@@ -1,0 +1,3054 @@
+format-version: 1.2
+data-version: envo/releases/2020-05-11/subsets/environmental_hazards.owl
+subsetdef: disposition_slim "Disposition slim"
+subsetdef: environmental_hazards "environmental_hazards"
+subsetdef: EnvO-Lite-GSC "EnvO-Lite-GSC"
+subsetdef: envoAstro "envoAstro"
+subsetdef: envoAtmo "envoAtmo"
+subsetdef: envoCesab "envoCesab"
+subsetdef: envoCmecs "envoCmecs"
+subsetdef: envoEmpo "envoEmpo"
+subsetdef: envoEOVs "envoEOVs"
+subsetdef: envoMarine "envoMarine"
+subsetdef: envoMeo "envoMeo"
+subsetdef: envoNceas "envoNceas"
+subsetdef: envoOmics "envoOmics"
+subsetdef: envoPolar "envoPolar"
+subsetdef: mpath_slim "Pathology slim"
+subsetdef: nlcd2011 "nlcd2011"
+subsetdef: relational_slim "Relational slim: types of quality that require an additional entity in order to exist"
+subsetdef: ro-eco "ro-eco"
+subsetdef: scalar_slim "Scalar slim"
+subsetdef: value_slim "Value slim"
+subsetdef: wwfBiome "wwfBiome"
+synonymtypedef: PLURAL "plurals"
+ontology: envo/subsets/environmental_hazards
+property_value: owl:versionInfo "2020-05-11" xsd:string
+
+[Term]
+id: CHEBI:36342
+namespace: ENVO
+
+[Term]
+id: ENVO:00000020
+name: lake
+namespace: ENVO
+alt_id: LTER:278 {xref="https://vocab.lternet.edu/vocab/vocab/index.php?tema=278&/lakes"}
+def: "A body of water or other liquid of considerable size contained in a depression on a landmass." [https://en.wikipedia.org/wiki/Lake]
+subset: envoPolar
+synonym: "broad" RELATED []
+synonym: "catch basin" NARROW [USGS:SDTS]
+synonym: "llyn" RELATED []
+synonym: "loch" RELATED []
+synonym: "lochan" RELATED [ADL:FTT]
+synonym: "lough" RELATED []
+synonym: "mere" RELATED []
+synonym: "mortlake" RELATED [USGS:SDTS]
+synonym: "open water" NARROW [USGS:SDTS]
+synonym: "pasteuer lake" RELATED [USGS:SDTS]
+synonym: "tarn" NARROW [ADL:FTT]
+xref: EcoLexicon:lake
+xref: FTT:221
+xref: FTT:704
+xref: FTT:909
+xref: Geonames:H.LK
+xref: Geonames:H.LKS
+xref: SPIRE:Lake_or_pond
+xref: SWEETRealm:Lake
+xref: TGN:21114
+xref: TGN:21115
+relationship: part_of ENVO:01000819 ! hydrosphere
+
+[Term]
+id: ENVO:00000022
+name: river
+namespace: ENVO
+alt_id: LTER:474 {xref="https://vocab.lternet.edu/vocab/vocab/index.php?tema=474&/rivers"}
+def: "A stream which, through permanent or seasonal flow processes, moves from elevated land towards lower elevations through a definite channel and empties either into a sea, lake, or another river or ends on land as bed seepage and evapotranspiration exceed water supply." [ADL:FTT, http://orcid.org/0000-0002-4366-3088] {comment="https://en.wikipedia.org/wiki/River"}
+comment: "There are no official definitions for the generic term river as applied to geographic features, although in some countries or communities a stream is defined by its size. Many names for small rivers are specific to geographic location; examples are "run" in some parts of the United States, "burn" in Scotland and northeast England, and "beck" in northern England. Sometimes a river is defined as being larger than a creek, but not always: the language is vague." {comment="https://en.wikipedia.org/wiki/River"}
+synonym: "braided river" NARROW [USGS:SDTS]
+synonym: "rio" EXACT [USGS:SDTS]
+synonym: "rio" EXACT [ADL:FTT]
+xref: EcoLexicon:river
+xref: FTT:1179
+xref: FTT:251
+xref: SPIRE:River
+xref: SWEETRealm:River
+xref: TGN:21105
+is_a: ENVO:00000023 ! stream
+relationship: adjacent_to ENVO:00000143 ! river bank
+relationship: continuous_with ENVO:01000652 ! river channel
+
+[Term]
+id: ENVO:00000023
+name: stream
+namespace: ENVO
+alt_id: LTER:562 {xref="https://vocab.lternet.edu/vocab/vocab/index.php?tema=562&/streams"}
+def: "A watercourse which is linear and flows across the solid portion of a planetary surface." [USGS:http\://mapping.usgs.gov/www/ti/GNIS/gnis_users_guide_appendixc.html]
+synonym: "beck" RELATED [USGS:SDTS]
+synonym: "braided stream" NARROW [USGS:SDTS]
+synonym: "brook" RELATED [ADL:FTT]
+synonym: "brook" RELATED [Getty:TGN]
+synonym: "burn (hydrographic)" RELATED [ADL:FTT]
+synonym: "Creek" RELATED [NASA:earthrealm]
+synonym: "creek" RELATED [Getty:TGN]
+synonym: "creek" RELATED [USGS:SDTS]
+synonym: "creek" RELATED [ADL:FTT]
+synonym: "fork (hydrographic" NARROW [ADL:FTT]
+synonym: "lode" NARROW [USGS:SDTS]
+synonym: "millstream" NARROW []
+synonym: "rivulet" RELATED [USGS:SDTS]
+synonym: "Stream" EXACT [NASA:earthrealm]
+synonym: "stream" EXACT [Geonames:feature]
+synonym: "stream bend" NARROW [ADL:FTT]
+synonym: "streams" EXACT [Geonames:feature]
+synonym: "watercourse" BROAD [ADL:FTT]
+synonym: "watercourse" BROAD [USGS:SDTS]
+xref: EcoLexicon:stream
+xref: FTT:105
+xref: FTT:1221
+xref: FTT:1225
+xref: FTT:1261
+xref: FTT:303
+xref: FTT:371
+xref: FTT:593
+xref: FTT:721
+xref: Geonames:H.STM
+xref: Geonames:H.STMS
+xref: https://en.wikipedia.org/wiki/Stream
+xref: SWEETRealm:Stream
+xref: TGN:21106
+xref: TGN:21107
+xref: TGN:21108
+xref: TGN:21109
+is_a: ENVO:00000029 ! watercourse
+relationship: continuous_with ENVO:01000650 ! stream channel
+
+[Term]
+id: ENVO:00000029
+name: watercourse
+namespace: ENVO
+def: "A flowing body of water." [https://en.wikipedia.org/wiki/Watercourse]
+synonym: "awawa" RELATED [USGS:SDTS]
+synonym: "barranca" RELATED [USGS:SDTS]
+synonym: "beck" RELATED [USGS:SDTS]
+synonym: "branch" RELATED [USGS:SDTS]
+synonym: "brook" RELATED [USGS:SDTS]
+synonym: "course" RELATED [USGS:SDTS]
+synonym: "culvert" NARROW [USGS:SDTS]
+synonym: "draw" RELATED [USGS:SDTS]
+synonym: "dredged channel" NARROW [USGS:SDTS]
+synonym: "fork" NARROW [USGS:SDTS]
+synonym: "gulch" NARROW [USGS:SDTS]
+synonym: "gully" NARROW [USGS:SDTS]
+synonym: "gut" NARROW [USGS:SDTS]
+synonym: "gut" NARROW [Getty:TGN]
+synonym: "gutter" NARROW [USGS:SDTS]
+synonym: "kill" NARROW [USGS:SDTS]
+synonym: "lode" NARROW [USGS:SDTS]
+synonym: "moat" RELATED [USGS:SDTS]
+synonym: "narrows" NARROW [USGS:SDTS]
+synonym: "narrows" NARROW [Geonames:feature]
+synonym: "narrows" RELATED [Getty:TGN]
+synonym: "narrows (hydrographic)" RELATED [ADL:FTT]
+synonym: "overflow channel" NARROW [USGS:SDTS]
+synonym: "passage" NARROW [USGS:SDTS]
+synonym: "passage" NARROW [Getty:TGN]
+synonym: "pup" NARROW [USGS:SDTS]
+synonym: "race" NARROW [USGS:SDTS]
+synonym: "ravine" NARROW [USGS:SDTS]
+synonym: "reach" NARROW [Getty:TGN]
+synonym: "reach" NARROW [USGS:SDTS]
+synonym: "reach" NARROW [Geonames:feature]
+synonym: "rill" NARROW [USGS:SDTS]
+synonym: "rivulet" NARROW [USGS:SDTS]
+synonym: "run" NARROW [Getty:TGN]
+synonym: "run" NARROW [USGS:SDTS]
+synonym: "runnel" NARROW [USGS:SDTS]
+synonym: "seachannel" NARROW [USGS:SDTS]
+synonym: "seaway" NARROW [USGS:SDTS]
+synonym: "spillway" NARROW [Geonames:feature]
+synonym: "spillway" NARROW [USGS:SDTS]
+synonym: "stream" NARROW [ADL:FTT]
+synonym: "tideway" NARROW [USGS:SDTS]
+synonym: "wash" NARROW [USGS:SDTS]
+synonym: "water gap" NARROW [USGS:SDTS]
+xref: EcoLexicon:brook
+xref: EcoLexicon:course
+xref: EcoLexicon:culvert
+xref: EcoLexicon:gully
+xref: EcoLexicon:ravine
+xref: EcoLexicon:spillway
+xref: EcoLexicon:waterway
+xref: FTT:105
+xref: Geonames:H.NRWS
+xref: Geonames:H.RCH
+xref: Geonames:H.WTRC
+xref: Geonames:S.SPLY
+xref: https://en.wikipedia.org/wiki/Watercourse
+xref: TGN:21110
+xref: TGN:21131
+xref: TGN:21133
+xref: TGN:21137
+xref: TGN:21163
+xref: TGN:21499
+is_a: ENVO:01000618 ! lotic water body
+relationship: continuous_with ENVO:00000395 ! channel of a watercourse
+
+[Term]
+id: ENVO:00000063
+name: water body
+namespace: ENVO
+def: "An accumulation of water of varying size." [https://en.wikipedia.org/wiki/Body_of_water]
+comment: https://en.wikipedia.org/wiki/ The term body of water most often refers to large accumulations of water, such as oceans, seas, and lakes, but it includes smaller pools of water such as ponds, wetlands, or more rarely, puddles. A body of water does not have to be still or contained; Rivers, streams, canals, and other geographical features where water moves from one place to another are also considered bodies of water.
+synonym: "aquatic feature" EXACT []
+synonym: "bodies of water" EXACT [Getty:TGN]
+synonym: "body of water" EXACT [ADL:FTT]
+synonym: "body of water" EXACT [Getty:TGN]
+synonym: "hydrographic feature" BROAD [ADL:FTT]
+synonym: "waterbody" EXACT []
+xref: EcoLexicon:waterbody
+xref: FTT:131
+xref: FTT:280
+xref: FTT:827
+xref: https://en.wikipedia.org/wiki/Water_body
+xref: SWEETRealm:BodyOfWater
+xref: TGN:21100
+xref: TGN:21101
+is_a: ENVO:01000685 ! water mass
+relationship: part_of ENVO:01000819 ! hydrosphere
+
+[Term]
+id: ENVO:00000106
+name: grassland area
+namespace: ENVO
+def: "An area in which grasses (Graminae) are a significant component of the vegetation." [https://en.wikipedia.org/wiki/Grassland]
+synonym: "grazing area" RELATED [Getty:TGN]
+synonym: "herbaceous area" RELATED [USGS:SDTS]
+is_a: ENVO:01001305 ! vegetated area
+relationship: overlaps ENVO:01001206 ! grassland ecosystem
+
+[Term]
+id: ENVO:00000109
+name: woodland area
+namespace: ENVO
+def: "Land having a cover of trees, shrubs, or both." [USGS:SDTS]
+synonym: "brigalow" NARROW [USGS:SDTS]
+synonym: "caatinga" RELATED [USGS:SDTS]
+synonym: "chanaral" RELATED [USGS:SDTS]
+synonym: "coniferous forest" RELATED [USGS:SDTS]
+synonym: "copse" RELATED [USGS:SDTS]
+synonym: "deciduous forest" RELATED [USGS:SDTS]
+synonym: "equatorial forest" RELATED [USGS:SDTS]
+synonym: "equatorial rain forest" RELATED [USGS:SDTS]
+synonym: "garique" RELATED [USGS:SDTS]
+synonym: "grove" RELATED [USGS:SDTS]
+synonym: "grove" RELATED [ADL:FTT]
+synonym: "jungle" RELATED [Getty:TGN]
+synonym: "jungle" RELATED [USGS:SDTS]
+synonym: "mallee scrub" RELATED [USGS:SDTS]
+synonym: "monsoon forest" RELATED [USGS:SDTS]
+synonym: "moor" RELATED [USGS:SDTS]
+synonym: "mott" RELATED []
+synonym: "motte" RELATED [USGS:SDTS]
+synonym: "mulga" RELATED [USGS:SDTS]
+synonym: "mulga scrub" RELATED [USGS:SDTS]
+synonym: "pine grove" NARROW [Geonames:feature]
+synonym: "rain forest" RELATED [Getty:TGN]
+synonym: "rain forest" RELATED [ADL:FTT]
+synonym: "reforested area" RELATED [USGS:SDTS]
+synonym: "sagebrush" RELATED [USGS:SDTS]
+synonym: "scrub" RELATED [USGS:SDTS]
+synonym: "shrub" RELATED [USGS:SDTS]
+synonym: "silva" RELATED [USGS:SDTS]
+synonym: "stand" RELATED [USGS:SDTS]
+synonym: "taiga" RELATED [USGS:SDTS]
+synonym: "thicket" RELATED [USGS:SDTS]
+synonym: "thorn forest" RELATED [USGS:SDTS]
+synonym: "tropical rain forest" RELATED [USGS:SDTS]
+synonym: "wood" RELATED [Getty:TGN]
+synonym: "wood" RELATED [USGS:SDTS]
+synonym: "wood" RELATED [ADL:FTT]
+synonym: "wooded area" RELATED [USGS:SDTS]
+xref: FTT:1083
+xref: FTT:505
+xref: FTT:506
+xref: FTT:719
+xref: FTT:774
+xref: Geonames:V.GRVPN
+xref: https://en.wikipedia.org/wiki/Woodland
+xref: LTER:503
+xref: SWEETRealm:Break
+xref: SWEETRealm:Scrub
+xref: TGN:21631
+xref: TGN:21632
+xref: TGN:21641
+is_a: ENVO:01001305 ! vegetated area
+
+[Term]
+id: ENVO:00000111
+name: forested area
+namespace: ENVO
+def: "An area with a high density of trees. A small forest may be called a wood." [https://en.wikipedia.org/wiki/Forest]
+comment: The definitions of forest can vary greatly, and different classes will be needed to support the major categories. Tree cover alone is not enough to distinguish between forests and plantations. The international definition proposed by the 2010 FAO Forestry Resource Assessment: "land spanning more than 0.5 ha with trees higher than 5 metres and canopy cover of more than 10 percent, or trees able to reach these thresholds in situ . It does not include land that is predominantly under agricultural or urban land use." - FAO.  2010. Global forest resources assessment 2010, Main report, FAO Forestry Paper 163. Rome.
+synonym: "forest" RELATED [Geonames:feature]
+synonym: "wood" RELATED [Getty:TGN]
+xref: EcoLexicon:forest
+xref: FTT:258
+xref: FTT:506
+xref: FTT:715
+xref: FTT:717
+xref: Geonames:V.FRST
+xref: https://en.wikipedia.org/wiki/Forest
+xref: LTER:2
+xref: SWEETRealm:Forest
+xref: TGN:21641
+xref: TGN:21642
+xref: TGN:21645
+is_a: ENVO:00000109 ! woodland area
+intersection_of: ENVO:00000109 ! woodland area
+intersection_of: overlaps ENVO:01001243 ! forest ecosystem
+
+[Term]
+id: ENVO:00000134
+name: permafrost
+namespace: ENVO
+def: "Soil or rock and included ice or organic material at or below the freezing point of water (0 degrees Celsius or 32 degrees Fahrenheit) for two or more years." [https://en.wikipedia.org/wiki/Permafrost, https://orcid.org/0000-0003-4808-4736]
+comment: Ice is not always present, as may be in the case of nonporous bedrock, but it frequently occurs and it may be in amounts exceeding the potential hydraulic saturation of the ground material.
+subset: envoPolar
+synonym: "Permafrost" EXACT [NASA:earthrealm]
+xref: EcoLexicon:permafrost
+xref: http://sweetontology.net/realmSoil/Permafrost
+xref: https://en.wikipedia.org/wiki/Permafrost
+xref: LTER:408
+is_a: ENVO:00010483 ! environmental material
+
+[Term]
+id: ENVO:00000141
+name: bank
+namespace: ENVO
+def: "The sloping margin of a watercourse, serving to confine it to its natural channel." [MA:ma]
+synonym: "mount" BROAD [USGS:SDTS]
+synonym: "shore" RELATED [USGS:SDTS]
+xref: EcoLexicon:bank
+xref: FTT:195
+xref: SWEETRealm:Bank
+xref: TGN:21466
+is_a: ENVO:00002000 ! slope
+relationship: part_of ENVO:00000395 ! channel of a watercourse
+
+[Term]
+id: ENVO:00000142
+name: stream bank
+namespace: ENVO
+def: "The sloping margin of a stream, serving to confine it to its natural channel." [MA:ma]
+synonym: "bank (hydrographic)" RELATED [ADL:FTT]
+synonym: "stream bank" EXACT [Geonames:feature]
+xref: FTT:195
+xref: FTT:196
+xref: Geonames:H.BNKR
+xref: https://en.wikipedia.org/wiki/Stream_bank
+is_a: ENVO:00000141 ! bank
+
+[Term]
+id: ENVO:00000143
+name: river bank
+namespace: ENVO
+def: "The sloping margin of a river, serving to confine it to its natural channel." [MA:ma]
+synonym: "riverbank" EXACT [Getty:TGN]
+xref: https://en.wikipedia.org/wiki/River_bank
+xref: TGN:21155
+is_a: ENVO:00000142 ! stream bank
+
+[Term]
+id: ENVO:00000191
+name: solid astronomical body part
+namespace: ENVO
+def: "A part of an astronomical body which is primarily composed of a continuous volume of solid material, shaped by one or more environmental processes." [https://en.wikipedia.org/wiki/Landform]
+synonym: "geological feature" RELATED [ADL:FTT]
+synonym: "physiographic feature" RELATED []
+xref: EcoLexicon:landform
+xref: EcoLexicon:landforms
+xref: FTT:754
+xref: FTT:96
+xref: SWEETRealm:Landform
+xref: TGN:21400
+xref: TGN:21401
+is_a: ENVO:01000813 ! astronomical body part
+intersection_of: ENVO:01000813 ! astronomical body part
+intersection_of: composed_primarily_of ENVO:01000814 ! solid environmental material
+
+[Term]
+id: ENVO:00000247
+name: volcano
+namespace: ENVO
+def: "An opening, or rupture, in the Earth's surface or crust, which allows hot, molten rock, ash and gases to escape from deep below the surface." [https://en.wikipedia.org/wiki/Volcano]
+synonym: "mount" BROAD [USGS:SDTS]
+synonym: "Volcano" EXACT [NASA:earthrealm]
+synonym: "volcano" EXACT [Geonames:feature]
+xref: EcoLexicon:volcano
+xref: FTT:592
+xref: Geonames:T.VLC
+xref: https://en.wikipedia.org/wiki/Volcano
+xref: TGN:21406
+is_a: ENVO:01000667 ! geological fracture
+relationship: formed_as_result_of ENVO:01000634 ! volcanic eruption
+
+[Term]
+id: ENVO:00000309
+name: depression
+namespace: ENVO
+def: "A landform sunken or depressed below the surrounding area." [https://en.wikipedia.org/wiki/Depression_%28geology%29]
+synonym: "barrier basin" RELATED [USGS:SDTS]
+synonym: "depression" RELATED [Geonames:feature]
+synonym: "non tidal basin" RELATED [USGS:SDTS]
+synonym: "pan" RELATED [Geonames:feature]
+synonym: "pan" RELATED [Getty:TGN]
+synonym: "pan (geologic)" RELATED [ADL:FTT]
+synonym: "pans" RELATED [Geonames:feature]
+synonym: "tidal basin" RELATED [USGS:SDTS]
+xref: EcoLexicon:depression
+xref: FTT:175
+xref: FTT:215
+xref: FTT:216
+xref: Geonames:T.DPR
+xref: Geonames:T.PAN
+xref: Geonames:T.PANS
+xref: SWEETRealm:Depression
+xref: TGN:21454
+xref: TGN:21497
+xref: TGN:21521
+is_a: ENVO:00000191 ! solid astronomical body part
+relationship: has_part ENVO:00002000 ! slope
+property_value: IAO:0000116 "Clarify that this pertains to the planetary crust and create superclass for general topological depressions. https://github.com/EnvironmentOntology/envo/issues/486" xsd:string
+
+[Term]
+id: ENVO:00000395
+name: channel of a watercourse
+namespace: ENVO
+def: "The physical confine of a river, slough or ocean strait consisting of a bed and banks." [https://en.wikipedia.org/wiki/Channel_%28geography%29]
+xref: EcoLexicon:channel
+xref: EcoLexicon:sea_channel
+xref: FTT:1192
+xref: FTT:233
+xref: FTT:461
+xref: FTT:462
+xref: FTT:463
+xref: FTT:464
+xref: FTT:465
+xref: FTT:466
+xref: FTT:468
+xref: FTT:469
+xref: FTT:470
+xref: Geonames:H.CHN
+xref: Geonames:U.SCNU
+xref: Geonames:U.SCSU
+xref: SWEETRealm:Channel
+xref: TGN:21137
+xref: TGN:23451
+is_a: ENVO:00000309 ! depression
+relationship: has_part ENVO:00000141 ! bank
+relationship: has_part ENVO:00000501 ! submerged bed
+property_value: IAO:0000116 "We need a more general channel definition, the current is only for water course channels. We need to refactor the semantics of channels, tunnels and conduits, in a similar way to uberon anatomical channels http://purl.obolibrary.org/obo/UBERON_0004111. See https://github.com/EnvironmentOntology/envo/issues/147" xsd:string
+
+[Term]
+id: ENVO:00000428
+namespace: ENVO
+alt_id: LTER:809 {xref="https://vocab.lternet.edu/vocab/vocab/index.php?tema=809&/biomes"}
+def: "A biome is an ecosystem to which resident ecological communities have evolved adaptations." [DOI:10.1186/2041-1480-4-43, https://en.wikipedia.org/wiki/Biome]
+comment: There has been some concern raised (see Issue #143) about the usefulness of the assertion that organisms have evolved within a given biome. They may have evolved adaptations elsewhere and demonstrating one or the other is often not feasible. Consider relabelling to "environmental system determined by an ecological community" or similar.
+synonym: "EcosytemType" RELATED [NASA:earthrealm]
+synonym: "major habitat type" EXACT [WWF:Biome]
+xref: EcoLexicon:biome
+is_a: ENVO:01001110 ! ecosystem
+relationship: determined_by PCO:0000002
+relationship: has_part ENVO:01000739 {minCardinality="2"} ! habitat
+relationship: part_of ENVO:01000817 ! biosphere
+
+[Term]
+id: ENVO:00000446
+name: terrestrial biome
+namespace: ENVO
+def: "A biome which is  primarily or completely situated on a landmass." [https://en.wikipedia.org/wiki/Biome#Terrestrial_biomes]
+synonym: "terrestrial realm" RELATED []
+xref: LTER:798
+xref: SPIRE:Terrestrial
+is_a: ENVO:00000428
+
+[Term]
+id: ENVO:00000501
+name: submerged bed
+namespace: ENVO
+def: "The portion of the ground surface which lies below water." [USGS:SDTS]
+synonym: "BOTTOM" BROAD [USGS:SDTS]
+xref: EcoLexicon:bed
+xref: FTT:804
+xref: https://en.wikipedia.org/wiki/Stream_bed
+xref: SWEETRealm:Bottom
+is_a: ENVO:01001311 ! solid surface layer
+relationship: adjacent_to ENVO:00000063 ! water body
+relationship: part_of ENVO:00000309 ! depression
+
+[Term]
+id: ENVO:00001995
+name: rock
+namespace: ENVO
+def: "A rock is a naturally occurring solid aggregate of one or more minerals or mineraloids." [https://en.wikipedia.org/wiki/Rock_(geology), MA:ma]
+comment: From https://en.wikipedia.org/wiki/ [A mineral] is different from a rock, which can be an aggregate of minerals or non-minerals and does not have a specific chemical composition. The exact definition of a mineral is under debate, especially with respect to the requirement a valid species be abiogenic, and to a lesser extent with regards to it having an ordered atomic structure.
+xref: EcoLexicon:rock
+xref: FTT:1010
+xref: FTT:145
+xref: Geonames:T.RK
+xref: Geonames:T.RKS
+xref: https://en.wikipedia.org/wiki/Rock
+xref: SWEETRealm:Rock
+xref: TGN:21444
+is_a: ENVO:01000814 ! solid environmental material
+disjoint_from: ENVO:01000256 ! mineral material
+
+[Term]
+id: ENVO:00001998
+name: soil
+namespace: ENVO
+def: "Soil is an environmental material which is primarily composed of minerals, varying proportions of sand, silt, and clay, organic material such as humus, gases, liquids, and a broad range of resident micro- and macroorganisms." [https://en.wikipedia.org/wiki/Soil]
+comment: 'In engineering terms, soil is referred to as regolith, or loose rock material that lies above the 'solid geology'. Soil is commonly referred to as "earth" or "dirt"; technically, the term "dirt" should be restricted to displaced soil.' https://en.wikipedia.org/wiki/Soil\n\n" The upper limit of soil is the boundary between soil and air, shallow water, live plants, or plant materials that have not begun to decompose. Areas are not considered to have soil if the surface is permanently covered by water too deep (typically more than 2.5 meters) for the growth of rooted plants.\n\nThe lower boundary that separates soil from the nonsoil underneath is most difficult to define. Soil consists of horizons near the Earth's surface that, in contrast to the underlying parent material, have been altered by the interactions of climate, relief, and living organisms over time. Commonly, soil grades at its lower boundary to hard rock or to earthy materials virtually devoid of animals, roots, or other marks of biological activity. For purposes of classification, the lower boundary of soil is arbitrarily set at 200 cm."  Soil taxonomy, 2nd Ed., quoted in http://www.nrcs.usda.gov/wps/portal/nrcs/detail/soils/edu/?cid=nrcs142p2_054280
+subset: EnvO-Lite-GSC
+synonym: "regolith" BROAD []
+xref: https://en.wikipedia.org/wiki/Soil
+xref: LTER:535
+xref: SPIRE:Soil
+xref: SWEETRealm:Soil
+is_a: ENVO:00010483 ! environmental material
+relationship: has_part ENVO:00002982 ! clay
+relationship: has_part ENVO:01000016 ! silt
+relationship: has_part ENVO:01000017 ! sand
+relationship: has_part ENVO:01000155 ! organic material
+relationship: has_part ENVO:01000256 ! mineral material
+relationship: part_of ENVO:01000820 ! pedosphere
+property_value: IAO:0000116 "The various 'has part' and 'has quality' relations may not hold true for all soils; however, I have yet to find counter examples. Require input from a pedologist or similar. [pbuttigieg]" xsd:string
+
+[Term]
+id: ENVO:00002000
+name: slope
+namespace: ENVO
+def: "A solid astronomical body part which is part of the planetary surface between the peak of an elevation or the bottom of a depression and  relatively flat surrounding land." [MA:ma]
+synonym: "flank" RELATED []
+synonym: "side" RELATED []
+xref: EcoLexicon:slope
+xref: https://en.wikipedia.org/wiki/Slope
+xref: SWEETRealm:Slope
+is_a: ENVO:00000191 ! solid astronomical body part
+relationship: part_of ENVO:01000799 ! astronomical body
+
+[Term]
+id: ENVO:00002005
+name: air
+namespace: ENVO
+def: "The mixture of gases (roughly (by molar content/volume: 78% nitrogen, 20.95% oxygen, 0.93% argon, 0.038% carbon dioxide, trace amounts of other gases, and a variable amount (average around 1%) of water vapor) that surrounds the planet Earth." [https://en.wikipedia.org/wiki/Air]
+subset: EnvO-Lite-GSC
+subset: envoPolar
+xref: EcoLexicon:air
+xref: https://en.wikipedia.org/wiki/Air
+xref: LTER:18
+xref: SWEETRealm:Air
+is_a: ENVO:01000797 ! gaseous environmental material
+relationship: has_part ENVO:01000266 ! water vapour
+
+[Term]
+id: ENVO:00002006
+name: liquid water
+namespace: ENVO
+def: "An environmental material primarily composed of dihydrogen oxide in its liquid form." [MA:ma]
+synonym: "water" BROAD []
+xref: EcoLexicon:water
+xref: https://en.wikipedia.org/wiki/Water
+xref: LTER:617
+is_a: ENVO:01000815 ! liquid environmental material
+
+[Term]
+id: ENVO:00002116
+name: contaminated soil
+namespace: ENVO
+def: "A portion of contaminated soil is a portion of soil with elevated levels of some contaminant." []
+comment: "contaminant" is more of a disposition - any material entity can be a contaminant in particular circumstances.
+is_a: ENVO:00003082 ! enriched soil
+
+[Term]
+id: ENVO:00002982
+name: clay
+namespace: ENVO
+def: "A group of hydrous aluminium phyllosilicate (phyllosilicates being a subgroup of silicate minerals) minerals (see clay minerals), that are typically less than 2 micrometres in diameter. Clay consists of a variety of phyllosilicate minerals rich in silicon and aluminium oxides and hydroxides which include variable amounts of structural water." [https://en.wikipedia.org/wiki/Clay]
+xref: EcoLexicon:clay
+xref: https://en.wikipedia.org/wiki/Clay
+xref: SWEETRealm:Clay
+is_a: ENVO:00010483 ! environmental material
+disjoint_from: ENVO:01000016 ! silt
+
+[Term]
+id: ENVO:00003082
+name: enriched soil
+namespace: ENVO
+def: "A portion of enriched soil is a portion of soil with elevated levels of some material entity." []
+comment: This could be demoted to an inferred class if issues with double inheritance arise.
+is_a: ENVO:00001998 ! soil
+
+[Term]
+id: ENVO:00010483
+name: environmental material
+namespace: ENVO
+def: "A portion of environmental material is a fiat object part which forms the medium or part of the medium of an environmental system." [DOI:10.1186/2041-1480-4-43, MA:ma, ORCID:0000-0002-4366-3088, URL:http\://ontology.buffalo.edu/smith/articles/niches.html]
+comment: Everything under this parent must be a mass noun. All subclasses are to be understood as being composed primarily of the named entity, rather than restricted to that entity. For example, "ENVO:water" is to be understood as "environmental material composed primarly of some CHEBI:water". This class is currently being aligned to the Basic Formal Ontology. Following this alignment, its definition and the definitions of its subclasses will be revised.
+synonym: "portion of environmental material" EXACT []
+
+[Term]
+id: ENVO:00010504
+name: surface layer
+namespace: ENVO
+def: "A layer of some material entity which is adjacent to one or more of its external boundaries and directly interacts with its immediate surroundings." [URL:http\://www.merriam-webster.com/dictionary/surface]
+comment: This class is distinct from a geometric surface, which is two-dimensional. The idea of "uppermost" may be problematic. Further, the definition of layer (the superclass of surface in rev 133) references surface. This may be another issue. Perhaps this can be made into an inferred class using 'bounding layer of' some material entity, note that 'bounding layer' implies containment, which may not be valid here.
+xref: EcoLexicon:surface
+xref: http://sweetontology.net/reprSpaceGeometry/Surface
+xref: https://en.wikipedia.org/wiki/Surface
+is_a: ENVO:01001684 ! interface layer
+
+[Term]
+id: ENVO:00010505
+name: aerosol
+namespace: ENVO
+def: "Airborne solid particles (also called dust or particulate matter (PM)) or liquid droplets." [https://en.wikipedia.org/wiki/Aerosol]
+comment: Should connect to PATO as "quality of an aerosol"
+subset: envoAtmo
+xref: EcoLexicon:aerosol
+xref: http://purl.obolibrary.org/obo/envo.owl
+xref: SWEETRealm:Aerosol
+is_a: ENVO:00010483 ! environmental material
+relationship: has_part ENVO:01000797 ! gaseous environmental material
+
+[Term]
+id: ENVO:01000016
+name: silt
+namespace: ENVO
+def: "Silt is granular material of a size somewhere between sand and clay whose mineral origin is quartz and feldspar." [https://en.wikipedia.org/wiki/Silt]
+comment: https://en.wikipedia.org/wiki/ In the Udden-Wentworth scale (due to Krumbein), silt particles range between 0.0039 to 0.0625 mm, larger than clay but smaller than sand particles. ISO 14688 grades silts between 0.002 mm and 0.063 mm. In actuality, silt is chemically distinct from clay, and unlike clay, grains of silt are approximately the same size in all dimensions; furthermore, their size ranges overlap. Clays are formed from thin plate-shaped particles held together by electrostatic forces, so present a cohesion. According to the U.S. Department of Agriculture Soil Texture Classification system, the sand-silt distinction is made at the 0.05 mm particle size. The USDA system has been adopted by the Food and Agriculture Organization (FAO). In the Unified Soil Classification System (USCS) and the AASHTO Soil Classification system, the sand-silt distinction is made at the 0.075 mm particle size (i.e., material passing the #200 sieve). Silts and clays are distinguished mechanically by their plasticity.
+xref: EcoLexicon:silt
+xref: https://en.wikipedia.org/wiki/Silt
+xref: SWEETRealm:Silt
+is_a: ENVO:00010483 ! environmental material
+disjoint_from: ENVO:01000017 ! sand
+
+[Term]
+id: ENVO:01000017
+name: sand
+namespace: ENVO
+def: "A naturally occurring granular material composed of finely divided rock and mineral particles." [https://en.wikipedia.org/wiki/Sand]
+xref: EcoLexicon:sand
+xref: https://en.wikipedia.org/wiki/Sand
+xref: LTER:484
+xref: SWEETRealm:Sand
+is_a: ENVO:00010483 ! environmental material
+relationship: derives_from ENVO:00001995 ! rock
+
+[Term]
+id: ENVO:01000155
+name: organic material
+namespace: ENVO
+def: "Environmental material derived from living organisms and composed primarily of one or more biomacromolecules." [ISBN:978-0-618-45504-1, ORCID:0000-0002-4366-3088]
+synonym: "biomass" EXACT []
+xref: EcoLexicon:organic_material
+is_a: ENVO:00010483 ! environmental material
+created_by: ORCID:0000-0002-4366-3088
+creation_date: 2010-03-20T08:40:04Z
+
+[Term]
+id: ENVO:01000219
+name: anthropogenic terrestrial biome
+namespace: ENVO
+def: "An anthropogenic terrestrial biome is a terrestrial biome which has community structures determined by human activity." [http://www.eoearth.org/view/article/150128/]
+comment: Preliminary definition.
+synonym: "anthrome" EXACT []
+synonym: "human biome" EXACT []
+is_a: ENVO:00000446 ! terrestrial biome
+created_by: ORCID:0000-0002-4366-3088
+creation_date: 2013-04-07T14:45:22Z
+
+[Term]
+id: ENVO:01000231
+name: lava
+namespace: ENVO
+def: "Lava is a mixture of molten or semi-molten rock, volatiles, and solids which has extruded beyond a planetary crust." [https://en.wikipedia.org/wiki/Lava]
+comment: Some use 'lava' to refer to rock that is formed when lava cools. This is not the intended meaning of this class. See 'igneous rock' or similar.
+xref: EcoLexicon:lava
+xref: SWEETRealm:Lava
+is_a: ENVO:00010483 ! environmental material
+relationship: derives_from ENVO:01000648 ! magma
+created_by: PLB
+creation_date: 2013-05-05T16:52:47Z
+
+[Term]
+id: ENVO:01000248
+name: dense settlement biome
+namespace: ENVO
+def: "A dense settlement biome is an anthropogenic terrestrial biome which is primarily used for human habitation, recreation, and industry within built structures with little other land use." [DOI:10.1111/j.1466-8238.2010.00540.x, DOI:10.1890/070062]
+is_a: ENVO:01000219 ! anthropogenic terrestrial biome
+created_by: ORCID:0000-0002-4366-3088
+creation_date: 2013-06-14T11:45:47Z
+
+[Term]
+id: ENVO:01000249
+name: urban biome
+namespace: ENVO
+def: "An urban biome is a dense settlement biome which has been urbanised." [DOI:10.1111/j.1466-8238.2010.00540.x, DOI:10.1890/070062]
+xref: SPIRE:Urban
+is_a: ENVO:01000248 ! dense settlement biome
+created_by: ORCID:0000-0002-4366-3088
+creation_date: 2013-06-14T11:45:47Z
+
+[Term]
+id: ENVO:01000254
+name: environmental system
+namespace: ENVO
+def: "A system which has the disposition to environ one or more material entities." [DOI:10.1186/2041-1480-4-43]
+comment: In ENVO's alignment with the Basic Formal Ontology, this class is being considered as a subclass of a proposed BFO class "system". The relation "environed_by" is also under development. Roughly, a system which includes a material entity (at least partially) within its site and causally influences that entity may be considered to environ it. Following the completion of this alignment, this class' definition and the definitions of its subclasses will be revised.
+synonym: "environment" EXACT []
+xref: EcoLexicon:environment
+creation_date: 2013-09-23T16:04:08Z
+
+[Term]
+id: ENVO:01000256
+name: mineral material
+namespace: ENVO
+def: "A mineral material is an environmental material which is primarily composed of some substance that is naturally occurring, solid and stable at room temperature, representable by a chemical formula, usually abiogenic, and that has an ordered atomic structure." [https://en.wikipedia.org/wiki/Mineral]
+xref: LTER:341
+is_a: ENVO:00010483 ! environmental material
+property_value: IAO:0000116 "Look for \"mineral\" in a chemical or geochemical ontology to formalise the composed primarily of link.\nFrom https://en.wikipedia.org/wiki/ [A mineral] is different from a rock, which can be an aggregate of minerals or non-minerals and does not have a specific chemical composition. The exact definition of a mineral is under debate, especially with respect to the requirement a valid species be abiogenic, and to a lesser extent with regards to it having an ordered atomic structure." xsd:string
+created_by: ORCID:0000-0002-4366-3088
+creation_date: 2013-10-05T12:37:41Z
+
+[Term]
+id: ENVO:01000266
+name: water vapour
+namespace: ENVO
+def: "Water vapour is a vapour which is the gas phase of water." [https://en.wikipedia.org/wiki/Water_vapor]
+comment: Perhaps a better relation between water vapour and water can be found in or added to RO?
+synonym: "aqueous vapor" EXACT [https://en.wikipedia.org/wiki/Water_vapor]
+synonym: "aqueous vapour" EXACT [https://en.wikipedia.org/wiki/Water_vapor]
+synonym: "water vapor" EXACT [https://en.wikipedia.org/wiki/Water_vapor]
+is_a: ENVO:00010483 ! environmental material
+created_by: ORCID:0000-0002-4366-3088
+creation_date: 2013-10-10T07:58:18Z
+
+[Term]
+id: ENVO:01000267
+name: atmosphere
+namespace: ENVO
+def: "An atmosphere is a layer of gases surrounding a material body of sufficient mass that is held in place by the gravity of the body." [https://en.wikipedia.org/wiki/Atmosphere, https://en.wikipedia.org/wiki/Physical_geography]
+xref: LTER:48
+is_a: ENVO:01001678 ! fluid layer
+relationship: adjacent_to ENVO:01000799 ! astronomical body
+created_by: ORCID:0000-0002-4366-3088
+creation_date: 2013-10-10T08:14:50Z
+
+[Term]
+id: ENVO:01000277
+name: water ice
+namespace: ENVO
+def: "Ice is water frozen into a solid state. It can appear transparent or opaque bluish-white color, depending on the presence of impurities or air inclusions. The addition of other materials such as soil may further alter its appearance." [https://en.wikipedia.org/wiki/Ice]
+subset: envoPolar
+synonym: "ice" RELATED [http://www.eionet.europa.eu/gemet/concept/4131]
+xref: LTER:262
+is_a: ENVO:01001125 ! ice
+relationship: composed_primarily_of ENVO:00002006 ! liquid water
+created_by: ORCID:0000-0002-4366-3088
+creation_date: 2013-10-13T12:01:28Z
+
+[Term]
+id: ENVO:01000281
+name: layer
+namespace: ENVO
+def: "A layer is a quantity of some material which is spatially continuous, has comparable thickness, and usually covers some surface." [Wiktionary:layer]
+comment: Preliminary definition.
+subset: envoPolar
+created_by: ORCID:0000-0002-4366-3088
+creation_date: 2013-10-15T16:42:02Z
+
+[Term]
+id: ENVO:01000324
+name: planetary surface
+namespace: ENVO
+def: "A planetary surface is a surface layer where the solid or liquid material of a planet comes into contact with an atmosphere or outer space." []
+comment: a useful class: this can be used to define sub-terrestrial and sub-marine entities
+is_a: ENVO:01001483 ! surface of an astronomical body
+intersection_of: ENVO:01001483 ! surface of an astronomical body
+intersection_of: part_of ENVO:01000800 ! planet
+relationship: part_of ENVO:01000800 ! planet
+
+[Term]
+id: ENVO:01000355
+name: vegetation layer
+namespace: ENVO
+def: "A layer which is determined by a form of vegetation." []
+comment: Usually found in woodlands and forests.
+synonym: "forest layer" RELATED []
+synonym: "forest stratum" RELATED []
+synonym: "woodland layer" RELATED []
+synonym: "woodland stratum" RELATED []
+is_a: ENVO:01000281 ! layer
+
+[Term]
+id: ENVO:01000406
+name: snow
+namespace: ENVO
+def: "Snow is an environmental material which is primarily composed of flakes of crystalline water ice." [http://www.eionet.europa.eu/gemet/concept/7769, https://en.wikipedia.org/wiki/Snow]
+subset: envoPolar
+is_a: ENVO:00010483 ! environmental material
+relationship: composed_primarily_of ENVO:01000277 ! water ice
+relationship: has_part ENVO:00002005 ! air
+relationship: output_of ENVO:01000895 ! snowfall
+
+[Term]
+id: ENVO:01000408
+name: environmental zone
+namespace: ENVO
+def: "A site which has its extent determined by the presence or influence of one or more components of an environmental system or the processes occurring therein." []
+comment: Formerly, this class was an experimental class and a subclass of "environmental feature". It is now aligned to BFO. The class was not obsoleted as the core semantics maintained their stability through its transition.
+subset: envoPolar
+synonym: "environmental area" RELATED []
+relationship: part_of ENVO:01000254 ! environmental system
+
+[Term]
+id: ENVO:01000438
+name: lava flow
+namespace: ENVO
+def: "A lava flow is a moving outpouring of lava, which is created during a non-explosive effusive eruption." [https://en.wikipedia.org/wiki/Lava]
+subset: environmental_hazards
+is_a: ENVO:01001476 ! body of liquid
+relationship: composed_primarily_of ENVO:01000231 ! lava
+relationship: formed_as_result_of ENVO:01000656 ! effusive eruption
+
+[Term]
+id: ENVO:01000618
+name: lotic water body
+namespace: ENVO
+def: "A lotic water body is a water body in which the accumulated water, in its totality, is flowing." []
+is_a: ENVO:00000063 ! water body
+
+[Term]
+id: ENVO:01000634
+name: volcanic eruption
+namespace: ENVO
+def: "A volcanic eruption is a process during which lava, tephra (ash, lapilli, volcanic bombs and blocks), and assorted gases are expelled from a volcanic vent or fissure." [https://en.wikipedia.org/wiki/Types_of_volcanic_eruptions]
+subset: environmental_hazards
+is_a: ENVO:03000010 ! material transport process
+relationship: has_input ENVO:01000648 ! magma
+relationship: has_output ENVO:01000266 ! water vapour
+relationship: has_participant ENVO:00000247 ! volcano
+relationship: has_participant ENVO:01000638 ! planetary crust
+
+[Term]
+id: ENVO:01000635
+name: planetary landmass
+namespace: ENVO
+def: "A landmass which is part of a planet." [Adpated from https://en.wikipedia.org/wiki/Planetary_surface]
+synonym: "ground" RELATED []
+synonym: "land" BROAD []
+is_a: ENVO:01001782 ! landmass
+relationship: composed_primarily_of ENVO:01000814 ! solid environmental material
+relationship: part_of ENVO:01000800 ! planet
+
+[Term]
+id: ENVO:01000637
+name: outer space
+namespace: ENVO
+def: "Outer space is a hard vacuum containing a low density of particles, predominantly a plasma of hydrogen and helium as well as electromagnetic radiation, magnetic fields, neutrinos, dust and cosmic rays that exists between celestial bodies." [https://en.wikipedia.org/wiki/Outer_space]
+subset: envoAstro
+synonym: "space" BROAD []
+is_a: ENVO:00010483 ! environmental material
+
+[Term]
+id: ENVO:01000638
+name: planetary crust
+namespace: ENVO
+def: "A planetary crust is the outermost solid shell of a rocky planet or natural satellite, which is chemically distinct from the underlying mantle." [https://en.wikipedia.org/wiki/Crust_(geology)]
+comment: This class is meant to be applicable accross planets. Earth's crust would be an instance.
+synonym: "crust" BROAD []
+is_a: ENVO:01000639 ! planetary structural layer
+
+[Term]
+id: ENVO:01000639
+name: planetary structural layer
+namespace: ENVO
+def: "A planetary structural layer is laminar part of a terrestrial planet or other rocky body large enough to have differentiation by density. Planetary layers have differing physicochemical properties and composition." []
+is_a: ENVO:01000281 ! layer
+relationship: part_of ENVO:01000800 ! planet
+property_value: IAO:0000116 "Label should be improved to match definition." xsd:string
+
+[Term]
+id: ENVO:01000646
+name: lithosphere
+namespace: ENVO
+def: "A lithosphere is the outermost shell of a terrestrial-type planet or natural satellite that is defined by its rigid mechanical properties." [https://en.wikipedia.org/wiki/Lithosphere]
+comment: Earth's lithosphere includes the crust and uppermost mantle.
+is_a: ENVO:01000639 ! planetary structural layer
+relationship: composed_primarily_of ENVO:01000814 ! solid environmental material
+relationship: has_part ENVO:01000638 ! planetary crust
+
+[Term]
+id: ENVO:01000648
+name: magma
+namespace: ENVO
+def: "Magma is a mixture of molten or semi-molten rock, volatiles, and solids that is found beneath the uppermost solid layer of a planetary body. Besides molten rock, magma may also contain suspended crystals, dissolved gas and sometimes gas bubbles." [https://en.wikipedia.org/wiki/Magma]
+is_a: ENVO:00010483 ! environmental material
+relationship: located_in ENVO:01000639 ! planetary structural layer
+
+[Term]
+id: ENVO:01000650
+name: stream channel
+namespace: ENVO
+is_a: ENVO:00000395 ! channel of a watercourse
+intersection_of: ENVO:00000395 ! channel of a watercourse
+intersection_of: location_of ENVO:00000023 ! stream
+
+[Term]
+id: ENVO:01000652
+name: river channel
+namespace: ENVO
+is_a: ENVO:01000650 ! stream channel
+relationship: location_of ENVO:00000022 ! river
+
+[Term]
+id: ENVO:01000655
+name: explosive eruption
+namespace: ENVO
+def: "An explosive eruption is a volcanic process in which pressurised magma is violently expelled and froths into volcanic ash. Explosive eruptions can eject a cloud of rocks, dust, gas, and pyroclastic material  which may then collapse, creating a pyroclastic flow of hot volcanic matter." [https://en.wikipedia.org/wiki/Explosive_eruption]
+subset: environmental_hazards
+is_a: ENVO:01000634 ! volcanic eruption
+
+[Term]
+id: ENVO:01000656
+name: effusive eruption
+namespace: ENVO
+def: "An effusive eruption is a volcanic eruption during which lava flows onto the ground." [https://en.wikipedia.org/wiki/Effusive_eruption]
+subset: environmental_hazards
+is_a: ENVO:01000634 ! volcanic eruption
+relationship: has_input ENVO:01000648 ! magma
+relationship: has_output ENVO:01000231 ! lava
+relationship: has_part ENVO:01000730 ! lava flow process
+
+[Term]
+id: ENVO:01000660
+name: tephra
+namespace: ENVO
+def: "Tephra is fragmental material produced by a volcanic eruption regardless of composition, fragment size or emplacement mechanism." [https://en.wikipedia.org/wiki/Tephra]
+is_a: ENVO:00010483 ! environmental material
+relationship: output_of ENVO:01000655 ! explosive eruption
+
+[Term]
+id: ENVO:01000667
+name: geological fracture
+namespace: ENVO
+def: "A geological fracture is any separation in a geologic formation, such as a joint or a fault that divides a mass of rock into two or more pieces." [https://en.wikipedia.org/wiki/Fracture_(geology)]
+synonym: "fissure" RELATED [Genomes:fissure]
+synonym: "fracture" BROAD []
+xref: SWEETRealm:Fissure
+is_a: ENVO:00000191 ! solid astronomical body part
+
+[Term]
+id: ENVO:01000668
+name: geological fault
+namespace: ENVO
+def: "A geological fault is a planar fracture or discontinuity in a volume of rock, across which there has been significant displacement as a result of rock mass movement." []
+comment: The relationship between faults and active plate boundaries must be further developed, as there is some overlap.
+synonym: "fault" BROAD []
+is_a: ENVO:01000667 ! geological fracture
+
+[Term]
+id: ENVO:01000669
+name: active geological fault
+namespace: ENVO
+def: "An active fault is a fault that is likely to become the source of another earthquake sometime in the future. Geologists commonly consider faults to be active if there has been movement observed or evidence of seismic activity during the last 10,000 years." []
+subset: environmental_hazards
+synonym: "active fault" EXACT []
+is_a: ENVO:01000668 ! geological fault
+relationship: participates_in ENVO:01001093 ! tectonic movement
+
+[Term]
+id: ENVO:01000677
+name: earthquake
+namespace: ENVO
+def: "An earthquake is a process during which energy is released in an astronomical body's crust, causing the displacement of crustal parts and the generation of seismic waves." [Adapted from URL:http\://www.britannica.com/science/earthquake-geology, https://en.wikipedia.org/wiki/Earthquake]
+comment: Elastic strain, gravity, chemical reactions, or even the motion of massive bodies can produce earthquakes.
+subset: environmental_hazards
+synonym: "quake" EXACT []
+synonym: "temblor" RELATED []
+synonym: "tremor" RELATED []
+is_a: ENVO:03000010 ! material transport process
+
+[Term]
+id: ENVO:01000678
+name: tectonic earthquake
+namespace: ENVO
+def: "An earthquake caused by the sudden release of energy accumulated in an astronomical body's crust, as the elastic strain placed on constituent rock masses causes them to fracture." [URL:http\://www.britannica.com/science/earthquake-geology]
+subset: environmental_hazards
+is_a: ENVO:01000677 ! earthquake
+relationship: causally_downstream_of_or_within ENVO:01001093 ! tectonic movement
+relationship: has_part ENVO:01001767 ! structural collapse process
+relationship: has_participant ENVO:01000669 ! active geological fault
+
+[Term]
+id: ENVO:01000679
+name: megathrust earthquake
+namespace: ENVO
+def: "A megathrust earthquake is a tectonic earthquake which occurs at subduction zones at destructive plate boundaries (convergent boundaries). These interplate earthquakes are the planet's most powerful, with moment magnitudes that can exceed 9.0." [Adapted from URL:http\://www.britannica.com/science/earthquake-geology, https://en.wikipedia.org/wiki/Earthquake]
+subset: environmental_hazards
+is_a: ENVO:01000678 ! tectonic earthquake
+relationship: has_participant ENVO:01001100 ! convergent plate boundary
+
+[Term]
+id: ENVO:01000680
+name: polluted lake
+namespace: ENVO
+def: "A lake which has concentrations of environmental contaminants high enough to harm the ecosystems associated with it." []
+subset: environmental_hazards
+is_a: ENVO:00000020 ! lake
+
+[Term]
+id: ENVO:01000685
+name: water mass
+namespace: ENVO
+def: "A mass of water." []
+is_a: ENVO:01001476 ! body of liquid
+relationship: composed_primarily_of ENVO:00002006 ! liquid water
+
+[Term]
+id: ENVO:01000687
+name: coast
+namespace: ENVO
+def: "A coast is the area where land meets the sea, ocean, or lake." [https://en.wikipedia.org/wiki/Coast]
+comment: Used for both marine and lake coasts. The boundary of the coast is fuzzy and it overlaps both the water body and land in quesiton. Compared to 'shore'
+relationship: overlaps ENVO:01000635 ! planetary landmass
+
+[Term]
+id: ENVO:01000689
+name: tsunami
+namespace: ENVO
+def: "A tsunami is a process during which a series of waves is generated in a water body, typically an ocean or large lake, by the displacement of a large volume of water. Earthquakes, volcanic eruptions and other underwater explosions (including detonations of underwater nuclear devices), landslides, glacier calvings, meteorite impacts and other disturbances above or below water all have the potential to generate a tsunami." [https://en.wikipedia.org/wiki/Tsunami]
+subset: environmental_hazards
+synonym: "seismic sea wave" EXACT []
+synonym: "tidal wave" EXACT []
+is_a: ENVO:01000981 ! mass liquid flow
+
+[Term]
+id: ENVO:01000690
+name: mass wasting
+namespace: ENVO
+def: "Mass wasting is the geomorphic process by which solid environmental material such as soil, sand, regolith, and/or rock move downslope typically as a mass, largely under the force of gravity, but frequently affected by water and water content as in submarine environments and mudslides." [https://en.wikipedia.org/wiki/Mass_wasting]
+comment: Of interest for future development: Some causes of mass wasting earthquakes, increased overburden from structures, increased soil moisture, reduction of roots holding the soil to bedrock, undercutting of the slope by excavation or erosion, weathering by frost heave, bioturbation, volcanic edifice over-steepening. Some processes that reduce mass wasting: Afforestation, Reforestation, Terracing steps on slopes (reduce angle of slope). https://en.wikipedia.org/wiki/Mass_wasting.
+subset: environmental_hazards
+subset: envoPolar
+synonym: "mass movement" BROAD []
+synonym: "slope movement" EXACT []
+is_a: ENVO:03000010 ! material transport process
+relationship: has_part ENVO:03000009 ! material accumulation process
+relationship: has_part ENVO:03000016 ! material decumulation process
+relationship: has_participant ENVO:00002000 ! slope
+
+[Term]
+id: ENVO:01000691
+name: avalanche
+namespace: ENVO
+def: "A mass wasting flow during which snow rapidly flows down a sloping surface." [https://en.wikipedia.org/wiki/Mass_wasting]
+subset: environmental_hazards
+subset: envoPolar
+synonym: "snowslide" EXACT []
+synonym: "snowslip" EXACT []
+is_a: ENVO:01000696 ! mass wasting flow
+
+[Term]
+id: ENVO:01000692
+name: landslide process
+namespace: ENVO
+def: "A landslide is a process whereby a large mass of earth and rocks moves down a hill or a mountainside." [https://en.wikipedia.org/wiki/Mass_wasting]
+subset: environmental_hazards
+synonym: "landslip" EXACT []
+xref: GEMET:http\://www.eionet.europa.eu/gemet/concept/4668
+is_a: ENVO:01000690 ! mass wasting
+
+[Term]
+id: ENVO:01000693
+name: rockfall
+namespace: ENVO
+subset: environmental_hazards
+is_a: ENVO:01000690 ! mass wasting
+
+[Term]
+id: ENVO:01000694
+name: geological subsidence
+namespace: ENVO
+def: "A material transport process during which a geological surface shifts downward relative to a datum such as sea-level." [https://en.wikipedia.org/wiki/Subsidence]
+subset: environmental_hazards
+synonym: "subsidence" BROAD []
+is_a: ENVO:03000010 ! material transport process
+
+[Term]
+id: ENVO:01000695
+name: mudslide
+namespace: ENVO
+subset: environmental_hazards
+is_a: ENVO:01000690 ! mass wasting
+
+[Term]
+id: ENVO:01000696
+name: mass wasting flow
+namespace: ENVO
+def: "A mass wasting flow is a form of mass wasting during which the moving materials behave similarly to a flowing fluid. Water, air and ice are often involved in enabling fluidlike motion of the material." [https://en.wikipedia.org/wiki/Mass_wasting]
+subset: environmental_hazards
+subset: envoPolar
+synonym: "flow" BROAD []
+is_a: ENVO:01000690 ! mass wasting
+
+[Term]
+id: ENVO:01000697
+name: mudflow
+namespace: ENVO
+def: "A mudflow is a form of mass wasting which involves very rapid to extremely rapid surging flow of debris that has become partially or fully liquified by the addition of significant amounts of water to clay-rich source material." [https://en.wikipedia.org/wiki/Mudflow]
+comment: "Mudflows are often called mudslides, a term applied indiscriminately by the mass media to a variety of mass wasting events. Mudflows often start as slides, becoming flows as water is entrained along the flow path; such events are often called flow slides." https://en.wikipedia.org/wiki/Mudflow
+subset: environmental_hazards
+synonym: "mud flow" EXACT []
+is_a: ENVO:01000696 ! mass wasting flow
+
+[Term]
+id: ENVO:01000698
+name: debris flow
+namespace: ENVO
+subset: environmental_hazards
+is_a: ENVO:01000696 ! mass wasting flow
+
+[Term]
+id: ENVO:01000699
+name: lahar
+namespace: ENVO
+def: "A lahar is a type of mudflow or debris flow composed of a slurry of pyroclastic material, rocky debris, and water. The material flows down from a volcano, typically along a river valley." [https://en.wikipedia.org/wiki/Lahar]
+subset: environmental_hazards
+is_a: ENVO:01000697 ! mudflow
+
+[Term]
+id: ENVO:01000701
+name: volcanic ash
+namespace: ENVO
+def: "Volcanic ash is an environmental material which consists of fragments of pulverized rock, minerals, and volcanic glass, created during volcanic eruptions and measuring less than 2 millimetres in diameter. Volcanic ash is formed during explosive volcanic eruptions, phreatomagmatic eruptions and during transport in pyroclastic density currents." [https://en.wikipedia.org/wiki/Volcanic_ash]
+is_a: ENVO:00010483 ! environmental material
+relationship: output_of ENVO:01000634 ! volcanic eruption
+
+[Term]
+id: ENVO:01000702
+name: ash fall process
+namespace: ENVO
+def: "An ash fall process is a process in which volcanic ash formed during an explosive volcanic eruption, phreatomagmatic eruption, or during material transport in pyroclastic density currents is pulled towards the planetary surface by gravity." [https://en.wikipedia.org/wiki/Volcanic_ash]
+subset: environmental_hazards
+is_a: ENVO:01000875 ! precipitation process
+relationship: has_participant ENVO:01000324 ! planetary surface
+relationship: has_participant ENVO:01000660 ! tephra
+relationship: has_participant ENVO:01000701 ! volcanic ash
+
+[Term]
+id: ENVO:01000703
+name: hydrological precipitation process
+namespace: ENVO
+def: "Hydrological precipitation is a process during which any product of the condensation of atmospheric water vapour is pulled to the planetary surface by gravity." [https://en.wikipedia.org/wiki/Precipitation]
+comment: "process" is included in the label to make it clear that we are not referring to the precipitated material (e.g. snow, rain, sleet)
+synonym: "precipitation" BROAD []
+is_a: ENVO:01000875 ! precipitation process
+
+[Term]
+id: ENVO:01000707
+name: coastal flooding
+namespace: ENVO
+def: "Coastal flooding is a process in which normally dry, low-lying land near a coast is flooded by sea water." [https://en.wikipedia.org/wiki/Coastal_flood]
+subset: environmental_hazards
+is_a: ENVO:02500002 ! flooding
+relationship: has_participant ENVO:01000687 ! coast
+
+[Term]
+id: ENVO:01000708
+name: riverine flooding
+namespace: ENVO
+def: "Riverine flooding is a process in which the flow rate of river water exceeds the capacity of its channel, thus flooding neighbouring land. Bends and meanders in a river channel are particularly disposed to such flooding." [https://en.wikipedia.org/wiki/Flood#Riverine]
+subset: environmental_hazards
+is_a: ENVO:02500002 ! flooding
+property_value: IAO:0000116 "A disposition class such as 'flooding disposition' may be interesting, especially when attached to things like meanders and bends." xsd:string
+
+[Term]
+id: ENVO:01000709
+name: flash flooding
+namespace: ENVO
+def: "Flash flooding is a process in which low-lying land is inundated with water for a short period of time and are usually the result of precipitation or a breach in the container of a water body." [https://en.wikipedia.org/wiki/Flash_flood]
+comment: Flash floods generally last no more than six hours. http://www.srh.noaa.gov/mrx/hydro/flooddef.php
+subset: environmental_hazards
+is_a: ENVO:02500002 ! flooding
+relationship: has_participant ENVO:00000309 ! depression
+
+[Term]
+id: ENVO:01000710
+name: flood
+namespace: ENVO
+def: "An unusual accumulation of water above the ground caused by high tide, heavy rain, melting snow or rapid runoff from paved areas." [GEMET:http\://www.eionet.europa.eu/gemet/concept/3298]
+subset: environmental_hazards
+is_a: ENVO:00000063 ! water body
+relationship: formed_as_result_of ENVO:02500002 ! flooding
+
+[Term]
+id: ENVO:01000711
+name: coastal flood
+namespace: ENVO
+def: "A coastal flood is a flood which is formed as a result of large amounts of water from marine water bodies or large lakes being transported to usually dry land by displacement processes such as high winds or seismic activity." [https://en.wikipedia.org/wiki/Flood#Estuarine_and_coastal]
+subset: environmental_hazards
+is_a: ENVO:01000710 ! flood
+relationship: formed_as_result_of ENVO:01000707 ! coastal flooding
+relationship: overlaps ENVO:01000687 ! coast
+
+[Term]
+id: ENVO:01000712
+name: riverine flood
+namespace: ENVO
+def: "A riverine flood is a flood which is formed as a result of a river's flow rate exceeding the capacity of its channel." []
+subset: environmental_hazards
+is_a: ENVO:01000710 ! flood
+relationship: continuous_with ENVO:00000022 ! river
+relationship: formed_as_result_of ENVO:01000708 ! riverine flooding
+
+[Term]
+id: ENVO:01000713
+name: flash flood
+namespace: ENVO
+def: "A flash flood is a flood formed by the rapid flooding of geomorphic low-lying areas. It may be caused by heavy rain associated with a severe thunderstorm, hurricane, tropical storm, or meltwater from ice or snow flowing over ice sheets or snowfields. Flash floods may also occur after the collapse of a natural ice or debris dam, or a human structure such as a man-made dam. Flash floods are distinguished from a regular flood by a timescale of less than six hours." [https://en.wikipedia.org/wiki/Flash_flood]
+subset: environmental_hazards
+is_a: ENVO:01000710 ! flood
+relationship: formed_as_result_of ENVO:01000709 ! flash flooding
+
+[Term]
+id: ENVO:01000714
+name: storm surge
+namespace: ENVO
+def: "A storm surge is a coastal flood which is caused by low-pressure weather systems such as tropical cyclones and strong extratropical cyclones, the severity of which is affected by the shallowness and orientation of the water body relative to storm path, and the timing of tides." [https://en.wikipedia.org/wiki/Storm_surge]
+subset: environmental_hazards
+is_a: ENVO:01000711 ! coastal flood
+relationship: formed_as_result_of ENVO:01000716 ! storm surge process
+property_value: IAO:0000116 "Needs links to weather when these phenomena are added." xsd:string
+
+[Term]
+id: ENVO:01000715
+name: meteotsunami
+namespace: ENVO
+def: "A meteotsunami is a tsunami caused by atmospheric processes and differences in air pressure." [https://en.wikipedia.org/wiki/Meteotsunami]
+subset: environmental_hazards
+synonym: "rissaga" EXACT [] {comment="Language: Catalan"}
+is_a: ENVO:01000689 ! tsunami
+property_value: IAO:0000116 "Ambiguity as to whether this label refers to the process or the material entities (the waves). The material entities are a type of severe storm surge." xsd:string
+
+[Term]
+id: ENVO:01000716
+name: storm surge process
+namespace: ENVO
+def: "A storm surge process is a coastal flooding process which is caused by low pressure weather systems such as tropical cyclones and strong extratropical cyclones, the severity of which is affected by the shallowness and orientation of the water body relative to storm path, and the timing of tides." [https://en.wikipedia.org/wiki/Storm_surge]
+subset: environmental_hazards
+is_a: ENVO:01000707 ! coastal flooding
+property_value: IAO:0000116 "Should be linked to the relevant weather classes when these are created." xsd:string
+
+[Term]
+id: ENVO:01000717
+name: areal flooding
+namespace: ENVO
+def: "Areal flooding is a flooding process in which flat or low-lying areas become inundated with water due to water input exceeding infiltration, evaporation, or run off." [https://en.wikipedia.org/wiki/Flood#Areal]
+subset: environmental_hazards
+is_a: ENVO:02500002 ! flooding
+
+[Term]
+id: ENVO:01000718
+name: urban flooding
+namespace: ENVO
+def: "Urban flooding is a flooding process in which land or property in a built environment, particularly in more densely populated areas, is inundated due to the rate of water input exceeding that of water drainage provided by the environment's drainage systems." [https://en.wikipedia.org/wiki/Flood#Urban_flooding]
+subset: environmental_hazards
+is_a: ENVO:02500002 ! flooding
+property_value: IAO:0000116 "Relevant to built environments and can be linked to urban flows. Also relevant to water and sanitation SDGs." xsd:string
+
+[Term]
+id: ENVO:01000724
+name: condensation process
+namespace: ENVO
+def: "Condensation is a process during which a gas undergoes a phase transition into a liquid." [https://en.wikipedia.org/wiki/Condensation]
+is_a: ENVO:01001510 ! material congelation process
+
+[Term]
+id: ENVO:01000730
+name: lava flow process
+namespace: ENVO
+def: "A process in which a volume of lava emitted during an effusive eruption moves along a solid surface." [https://en.wikipedia.org/wiki/Lava]
+subset: environmental_hazards
+is_a: ENVO:01000981 ! mass liquid flow
+relationship: has_participant ENVO:01000231 ! lava
+relationship: has_participant ENVO:01000635 ! planetary landmass
+
+[Term]
+id: ENVO:01000739
+name: habitat
+namespace: ENVO
+def: "An environmental system which can sustain and allow the growth of an ecological population." [EnvO:EnvO]
+comment: A habitat's specificity to an ecological population differentiates it from other environment classes.
+xref: EcoLexicon:habitat
+xref: https://en.wikipedia.org/wiki/Habitat
+xref: LTER:238
+xref: SWEETRealm:Habitat
+is_a: ENVO:01001110 ! ecosystem
+relationship: determined_by PCO:0000001
+relationship: part_of ENVO:01000817 ! biosphere
+
+[Term]
+id: ENVO:01000760
+name: cloud
+namespace: ENVO
+def: "A cloud is a visible mass of aerosolised liquid droplets or frozen crystals suspended in an atmosphere above the surface of a planetary body." [https://cloudatlas.wmo.int/introduction-and-principles-of-cloud-classification.html, https://en.wikipedia.org/wiki/Cloud]
+comment: On Earth clouds are formed by the saturation of air in the homosphere when air cools or gains water vapor. Please use the "water-based cloud" class and its subclasses for Earth's clouds. Note that this class describes clouds as countable objects, rather than 'cloud material'. It also refers only to clouds made up of a water-based material.
+subset: envoAtmo
+synonym: "cloud mass" EXACT []
+is_a: ENVO:01001008 ! meteor
+
+[Term]
+id: ENVO:01000786
+name: fire
+namespace: ENVO
+def: "A fire is a process whereby rapid and exothermic oxidation of a material through a combustion process releases heat, light, and other products." [http://www.eionet.europa.eu/gemet/concept?cp=3212, https://en.wikipedia.org/wiki/Fire]
+comment: Not to be confused with a flame - the visible portion of gas released by a fire . Oxidation processes such as rusting or biological digestion are not subsumed here.
+is_a: ENVO:01000839 ! combustion process
+
+[Term]
+id: ENVO:01000787
+name: wildfire
+namespace: ENVO
+def: "A conflagration which is uncontrolled and combusts material in a vegetated area, be it rural or wild." []
+comment: The definition of "wildland" or "wild" is ambiguous.
+subset: environmental_hazards
+synonym: "wildland fire" EXACT []
+is_a: ENVO:01000788 ! conflagration
+relationship: has_output ENVO:01000790 ! hydrocarbon flame
+relationship: occurs_in ENVO:00000446 ! terrestrial biome
+
+[Term]
+id: ENVO:01000788
+name: conflagration
+namespace: ENVO
+def: "A fire which occurs in a large spatial area poses a risk to human life, animal life, health, and/or property." [https://en.wikipedia.org/wiki/Conflagration]
+synonym: "blaze" RELATED []
+synonym: "large fire" RELATED []
+is_a: ENVO:01000786 ! fire
+
+[Term]
+id: ENVO:01000789
+name: flame
+namespace: ENVO
+def: "A portion of gas which is emitted by a fire or other exothermic reaction, is of increased temperature, and typically emits light in the visible range." [https://en.wikipedia.org/wiki/Flame]
+is_a: ENVO:00010483 ! environmental material
+
+[Term]
+id: ENVO:01000790
+name: hydrocarbon flame
+namespace: ENVO
+def: "A flame which is produced by the combustion of hydrocarbon fuel." []
+is_a: ENVO:01000789 ! flame
+
+[Term]
+id: ENVO:01000791
+name: forest fire
+namespace: ENVO
+def: "A wildfire which occurs in a forest, primarily consuming vegetation as fuel." [http://www.emdat.be/Glossary]
+subset: environmental_hazards
+is_a: ENVO:01001292 ! land fire
+relationship: has_participant ENVO:01001243 ! forest ecosystem
+relationship: occurs_in ENVO:00000111 ! forested area
+
+[Term]
+id: ENVO:01000792
+name: mass gaseous flow
+namespace: ENVO
+def: "A process whereby a large volume of gas moves due to a disequilibrium of physical forces." [https://en.wikipedia.org/wiki/Wind]
+comment: This class refers to all forms of "wind": from the familiar movement of air in the Earth's atmosphere to the solar wind. Use a subclass to be more precise.
+subset: envoAtmo
+subset: envoPolar
+synonym: "wind" RELATED []
+is_a: ENVO:01001747 ! mass fluid flow
+relationship: has_participant ENVO:01000797 ! gaseous environmental material
+
+[Term]
+id: ENVO:01000793
+name: atmospheric wind
+namespace: ENVO
+subset: envoAtmo
+subset: envoPolar
+synonym: "A mass gaseous flow which occurrs in a planet's atmosphere due to internal pressure disequilibria." RELATED [https://en.wikipedia.org/wiki/Wind]
+synonym: "wind" BROAD []
+is_a: ENVO:01000792 ! mass gaseous flow
+relationship: occurs_in ENVO:01000267 ! atmosphere
+
+[Term]
+id: ENVO:01000797
+name: gaseous environmental material
+namespace: ENVO
+def: "A material entity which is composed of one or more chemical entities and has neither independent shape nor volume but tends to expand indefinitely." [http://www.merriam-webster.com/dictionary/gas]
+synonym: "gas" NARROW []
+property_value: IAO:0000116 "This class is to be populated by inference." xsd:string
+
+[Term]
+id: ENVO:01000798
+name: plasma
+namespace: ENVO
+def: "A material entity which is composed of a volume of unbound positive and negative particles in roughly equal numbers, conducts electricity, and possesses internal magnetic fields." [http://www.merriam-webster.com/dictionary/plasma, https://en.wikipedia.org/wiki/Plasma_%28physics%29]
+is_a: ENVO:00010483 ! environmental material
+property_value: IAO:0000116 "An NTR for `quality of a plasma` has been posted on the PATO tracker: https://github.com/pato-ontology/pato/issues/88" xsd:string
+
+[Term]
+id: ENVO:01000799
+name: astronomical body
+namespace: ENVO
+def: "An object which is naturally occuring, bound together by gravitational or electromagnetic forces, and surrounded by space." [https://en.wikipedia.org/wiki/Astronomical_object]
+comment: Astronomical bodies are usually cohesive, thus the use of the term 'object' sensu BFO 'object'.
+subset: envoAstro
+synonym: "celestial body" RELATED []
+is_a: ENVO:01000804 ! astronomical object
+
+[Term]
+id: ENVO:01000800
+name: planet
+namespace: ENVO
+def: "A planet is an astronomical body orbiting a star or stellar remnant that is massive enough to be rounded by its own gravity, is not massive enough to cause thermonuclear fusion, and has cleared its neighbouring region of planetesimals." [http://solarsystem.nasa.gov/planets/whatisaplanet, https://en.wikipedia.org/wiki/Planet]
+comment: Considerable debate on the definition of planet exists.
+subset: envoAstro
+subset: envoPolar
+is_a: ENVO:01000799 ! astronomical body
+
+[Term]
+id: ENVO:01000804
+name: astronomical object
+namespace: ENVO
+def: "An object which is composed of one or more gravitationally bound structures that are associated with a position in space." [https://en.wikipedia.org/wiki/Astronomical_object]
+comment: If there is only one astronomical body involved, this class is equivalent to ENVO:01000799. This may be problematic with reasoning, but it seems to be true to the rather fuzzy definitions found thus far.
+subset: envoAstro
+synonym: "celestial object" RELATED []
+relationship: has_part ENVO:01000799 {minCardinality="1"} ! astronomical body
+relationship: has_quality ENVO:01001164 ! geodiversity
+relationship: surrounded_by ENVO:01000637 ! outer space
+
+[Term]
+id: ENVO:01000813
+name: astronomical body part
+namespace: ENVO
+def: "A material part of an astronomical body." []
+subset: envoAstro
+subset: envoPolar
+relationship: part_of ENVO:01000799 ! astronomical body
+
+[Term]
+id: ENVO:01000814
+name: solid environmental material
+namespace: ENVO
+def: "An environmental material which is in a solid state." []
+comment: This is a defined class: its subclasses will not be asserted, but filled by inference.
+is_a: ENVO:00010483 ! environmental material
+
+[Term]
+id: ENVO:01000815
+name: liquid environmental material
+namespace: ENVO
+def: "An environmental material which is in a liquid state." []
+comment: This is a defined class: its subclasses will not be asserted, but filled by inference.
+subset: envoPolar
+is_a: ENVO:00010483 ! environmental material
+
+[Term]
+id: ENVO:01000817
+name: biosphere
+namespace: ENVO
+def: "A biosphere is a part of an astronomical body which includes, as parts, all the living entities within the gravitational sphere of influence of that body, as well as the non-living and dead entities with which they interact." [http://www.biology-online.org/dictionary/Biosphere, https://en.wikipedia.org/wiki/Biosphere]
+comment: The gravitational sphere of influence referenced in this class' definition is the Hill sphere: a region in which an object dominates the attraction of satellites despite gravitational perturbations.
+subset: envoAstro
+subset: envoPolar
+is_a: ENVO:01001784 ! compound astronomical body part
+property_value: IAO:0000116 "Whether this class should be grouped with classes such as \"hydrosphere\" and \"cryosphere\" requires some discussion." xsd:string
+
+[Term]
+id: ENVO:01000819
+name: hydrosphere
+namespace: ENVO
+def: "An astronomical body part which is composed of the combined mass of water found on, under, and over the surface of a planet." [https://en.wikipedia.org/wiki/Hydrosphere]
+comment: This is a very broad and, in practice, poorly defined term. Please consider using or requesting a more specific class.
+subset: envoAstro
+subset: envoPolar
+is_a: ENVO:01001477 ! liquid astronomical body part
+relationship: composed_primarily_of ENVO:00002006 ! liquid water
+
+[Term]
+id: ENVO:01000820
+name: pedosphere
+namespace: ENVO
+def: "An astronomical body part which is composed of soil, subject to soil formation processes, and found on the surface of a lithosphere." [https://en.wikipedia.org/wiki/Pedosphere]
+comment: This is a very broad and, in practice, poorly defined term. Please consider using or requesting a more specific class.
+subset: envoAstro
+is_a: ENVO:01001784 ! compound astronomical body part
+relationship: composed_primarily_of ENVO:00001998 ! soil
+relationship: overlaps ENVO:01000267 ! atmosphere
+relationship: overlaps ENVO:01000646 ! lithosphere
+relationship: overlaps ENVO:01000817 ! biosphere
+relationship: overlaps ENVO:01000819 ! hydrosphere
+
+[Term]
+id: ENVO:01000828
+name: humid air
+namespace: ENVO
+def: "Air which has increased levels of water vapour." []
+is_a: ENVO:00002005 ! air
+relationship: has_increased_levels_of ENVO:01000266 ! water vapour
+
+[Term]
+id: ENVO:01000829
+name: water vapour saturated air
+namespace: ENVO
+def: "Air which has a partial pressure of water vapour equal or near equal to its equilibrium vapor pressure at a given temperature." []
+comment: "Near equal" is meant to reflect that there will be fluctuations around the equilibrium point.
+synonym: "water-vapour-saturated air" EXACT []
+synonym: "wet air" RELATED []
+is_a: ENVO:01000828 ! humid air
+
+[Term]
+id: ENVO:01000830
+name: water-based rainfall
+namespace: ENVO
+def: "A hydrological precipitation process in which atmospheric water vapour condenses to form droplets of liquid water massive enough to fall to a planetary surface due to the planet's gravity." [https://en.wikipedia.org/wiki/Rain]
+comment: This is the process which typically happens on Earth. Other planets may have different liquids involved in the process.
+subset: envoPolar
+synonym: "rain" RELATED []
+synonym: "rain fall" BROAD []
+synonym: "rainfall" BROAD []
+is_a: ENVO:01000703 ! hydrological precipitation process
+relationship: has_participant ENVO:01000829 ! water vapour saturated air
+relationship: has_participant ENVO:01000832 ! raindrop
+
+[Term]
+id: ENVO:01000831
+name: droplet
+namespace: ENVO
+def: "A droplet is a small column of liquid, bounded completely or almost completely by free surfaces which maintains its shape due to the surface tension of the liquid." [https://en.wikipedia.org/wiki/Drop_%28liquid%29]
+comment: No attempt is made to differentiate between drops and droplets. This may be added, if requested.
+synonym: "drop" RELATED []
+is_a: ENVO:01001690 ! mass of liquid
+
+[Term]
+id: ENVO:01000832
+name: raindrop
+namespace: ENVO
+def: "A droplet formed by condensation of vapour in an atmosphere and which is sufficiently massive to overcome atmospheric resistance and fall to a planetary surface due to gravity." []
+is_a: ENVO:01000831 ! droplet
+relationship: formed_as_result_of ENVO:01000724 ! condensation process
+
+[Term]
+id: ENVO:01000838
+name: smoke
+namespace: ENVO
+comment: Smoke is a collection of airborne solid and liquid particulates and gases emitted when a material undergoes combustion or pyrolysis, together with the quantity of gas that is entrained or otherwise mixed into the mass {xref="https://en.wikipedia.org/wiki/Smoke"}
+is_a: ENVO:00010505 ! aerosol
+relationship: formed_as_result_of ENVO:01000839 ! combustion process
+
+[Term]
+id: ENVO:01000839
+name: combustion process
+namespace: ENVO
+def: "Combustion or burning is a high-temperature exothermic redox chemical reaction between a fuel and an oxidant that produces oxidized, often gaseous products, in a mixture termed as smoke." [https://en.wikipedia.org/wiki/Combustion]
+comment: Unlike the "combustion" class in the Chemical Methods Ontology, this class is not necessarily a planned process. http://purl.obolibrary.org/obo/CHMO_0001473
+is_a: ENVO:01000840 ! thermolysis
+relationship: has_output ENVO:01000838 ! smoke
+property_value: IAO:0000116 "This class may be surrendered to REX." xsd:string
+
+[Term]
+id: ENVO:01000840
+name: thermolysis
+namespace: ENVO
+def: "A chemical decomposition (the separation of a single chemical compound into its two or more elemental parts or to simpler compounds) caused by heat." []
+synonym: "thermal decomposition" EXACT []
+is_a: ENVO:03000043 ! material transformation process
+
+[Term]
+id: ENVO:01000874
+name: hailfall
+namespace: ENVO
+def: "Hailfall is a hydrological process in which balls or irregular lumps of water ice formed in thunderstorm or cumulonimbus clouds fall to a planetary surface." [https://en.wikipedia.org/wiki/Hail]
+subset: environmental_hazards
+subset: envoPolar
+synonym: "hail fall" EXACT []
+is_a: ENVO:01000703 ! hydrological precipitation process
+relationship: has_participant ENVO:01000277 ! water ice
+
+[Term]
+id: ENVO:01000875
+name: precipitation process
+namespace: ENVO
+def: "A precipitation process is a process in which a portion of some substance segregates from a material in which that substance or its precursors were dissolved or suspended in and settles due to a force such as gravity or centrifugal force." [https://en.wikipedia.org/wiki/Precipitation_%28chemistry%29] {comment="https://en.wikipedia.org/wiki/Precipitation"}
+is_a: ENVO:03000010 ! material transport process
+
+[Term]
+id: ENVO:01000876
+name: storm
+namespace: ENVO
+def: "A storm is an environmental process in which an environmental system and the processes it participates in are strongly perturbed by external forcings. These forcings typically increase the rates of processes unfolding in the system, relative to their normal rates." []
+comment: The threshold of what constitutes "strong" perturbation is not defined here due to considerable semantic variation. If a specific threshold is required, please request a new term.
+subset: environmental_hazards
+is_a: ENVO:02500000 ! environmental system process
+
+[Term]
+id: ENVO:01000877
+name: atmospheric storm
+namespace: ENVO
+def: "An atmospheric storm is a process in which a portion of an astronomical body's atmosphere is strongly perturbed from its prevaling weather." [https://en.wikipedia.org/wiki/Storm]
+subset: environmental_hazards
+is_a: ENVO:01000876 ! storm
+relationship: occurs_in ENVO:01000267 ! atmosphere
+
+[Term]
+id: ENVO:01000878
+name: thunderstorm
+namespace: ENVO
+def: "An atmospheric storm which occurs in cumulonimbus clouds and during which lightning and thunder occur." []
+comment: Thunderstorms may or may not involve processes which result in strong winds, heavy rain, snow, sleet, hail, or other forms of precipitation.
+subset: environmental_hazards
+synonym: "electrical storm" EXACT []
+synonym: "lightning storm" EXACT []
+is_a: ENVO:01001294 ! convective storm
+relationship: has_part ENVO:01000898 ! atmospheric lightning
+
+[Term]
+id: ENVO:01000879
+name: rainstorm
+namespace: ENVO
+def: "An atmospheric storm during which intense rainfall occurs." []
+subset: environmental_hazards
+subset: envoAtmo
+is_a: ENVO:01000877 ! atmospheric storm
+
+[Term]
+id: ENVO:01000880
+name: hailstorm
+namespace: ENVO
+def: "An atmospheric storm which intense hailfall occurs." []
+subset: environmental_hazards
+subset: envoAtmo
+subset: envoPolar
+is_a: ENVO:01000882 ! icestorm
+
+[Term]
+id: ENVO:01000881
+name: snowstorm
+namespace: ENVO
+def: "An atmospheric storm during which intense snowfall occurs." []
+subset: environmental_hazards
+subset: envoAtmo
+subset: envoPolar
+is_a: ENVO:01000877 ! atmospheric storm
+
+[Term]
+id: ENVO:01000882
+name: icestorm
+namespace: ENVO
+def: "An atmospheric storm during which freezing rain falls and accumulates as ice on exposed surfaces." [https://en.wikipedia.org/wiki/Ice_storm]
+comment: The U.S. National Weather Service defines an ice storm as a storm which results in the accumulation of at least 0.25-inch (6.4 mm) of ice on exposed surfaces. {xref="https://en.wikipedia.org/wiki/Ice_storm", xref="Hauer RJ, Dawson JO, Werner LP (2006) Trees and Ice Storms - The Development of Ice Storm-Resistant Urban Tree Populations (2 ed.). College of Natural Resources, University of Wisconsin–Stevens Point, and the Department of Natural Resources and Environmental Sciences and the Office of Continuing Education, University of Illinois at Urbana-Champaign. http://web.extension.uiuc.edu/forestry/publications/pdf/urban_community_forestry/trees_and_ice_storms_2006.pdf"}
+subset: environmental_hazards
+subset: envoAtmo
+subset: envoPolar
+synonym: "glaze event" EXACT []
+synonym: "silver thaw" EXACT []
+is_a: ENVO:01000877 ! atmospheric storm
+
+[Term]
+id: ENVO:01000895
+name: snowfall
+namespace: ENVO
+def: "A hydrological process in which irregular aggregates of snow fall to a planetary surface." []
+subset: environmental_hazards
+subset: envoPolar
+synonym: "snow fall" EXACT []
+is_a: ENVO:01000703 ! hydrological precipitation process
+relationship: has_participant ENVO:01000406 ! snow
+
+[Term]
+id: ENVO:01000896
+name: freezing rainfall
+namespace: ENVO
+alt_id: METAR:FZRA
+def: "Rainfall which occurs when the temperature of a planetary surface and its surrounding atmosphere are below the freezing point of water, resulting in supercooled raindrops which freeze upon impact with solid surfaces." [] {comment="https://en.wikipedia.org/wiki/Freezing_rain"}
+subset: environmental_hazards
+subset: envoPolar
+synonym: "freezing rain" BROAD []
+synonym: "freezing rain fall" BROAD []
+is_a: ENVO:01000830 ! water-based rainfall
+
+[Term]
+id: ENVO:01000897
+name: electrostatic discharge process
+namespace: ENVO
+def: "A process during which a sudden flow of electricity occurs, often accompanied by a visible release of photons, between two electrically charged objects due to contact, an electrical short, or dielectric breakdown." [https://en.wikipedia.org/wiki/Electrostatic_discharge]
+is_a: ENVO:02500000 ! environmental system process
+property_value: IAO:0000116 "This should probably be moved to an ontology of physical processes when one is created, and be imported back into ENVO." xsd:string
+
+[Term]
+id: ENVO:01000898
+name: atmospheric lightning
+namespace: ENVO
+def: "A sudden electrostatic discharge which occurs during an electrical storm as differentially charged atmospheric entities equalise their charge." [https://en.wikipedia.org/wiki/Lightning]
+subset: environmental_hazards
+synonym: "lightning" EXACT []
+is_a: ENVO:01000897 ! electrostatic discharge process
+relationship: has_output ENVO:01000798 ! plasma
+relationship: has_participant ENVO:01000760 {minCardinality="1"} ! cloud
+relationship: occurs_in ENVO:01000267 ! atmosphere
+
+[Term]
+id: ENVO:01000899
+name: intercloud lightning
+namespace: ENVO
+def: "A lightning process during which electrostatic discharge occurs between at least two clouds." []
+subset: environmental_hazards
+synonym: "CC lightning" EXACT []
+synonym: "cloud-cloud lightning" EXACT []
+is_a: ENVO:01000902 ! lightning flash
+relationship: has_participant ENVO:01000760 {minCardinality="2"} ! cloud
+
+[Term]
+id: ENVO:01000900
+name: intracloud lightning
+namespace: ENVO
+def: "A lightning process during which electrostatic discharge occurs within a single cloud." []
+subset: environmental_hazards
+synonym: "IC lightning" EXACT []
+is_a: ENVO:01000902 ! lightning flash
+relationship: has_participant ENVO:01000760 {maxCardinality="1"} ! cloud
+
+[Term]
+id: ENVO:01000901
+name: lightning strike
+namespace: ENVO
+def: "A lightning process during which electrostatic discharge occurs between a cloud and an object on a planetary surface, or a planetary surface itself." []
+subset: environmental_hazards
+synonym: "CG lightning" EXACT []
+synonym: "cloud-ground lightning" EXACT []
+is_a: ENVO:01000898 ! atmospheric lightning
+
+[Term]
+id: ENVO:01000902
+name: lightning flash
+namespace: ENVO
+def: "A lightning process during which electrostatic discharge occurs within a single cloud or between multiple clouds." []
+subset: environmental_hazards
+is_a: ENVO:01000898 ! atmospheric lightning
+relationship: has_participant ENVO:01000760 {minCardinality="1"} ! cloud
+
+[Term]
+id: ENVO:01000903
+name: blizzard
+namespace: ENVO
+def: "A blizzard is a severe snowstorm during which snowfall is transported by strong winds, sustained for several hours." [https://en.wikipedia.org/wiki/Blizzard]
+comment: To qualify a snowstorm as a blizzard, some sources require the windspeed to be at least 56 km/h and the duration of the storm to be at least three hours. We set no such hard boundaries in this definition, as this should be done with reference to local standards. {comment="https://en.wikipedia.org/wiki/Blizzard"}
+subset: environmental_hazards
+subset: envoAtmo
+subset: envoPolar
+is_a: ENVO:01000881 ! snowstorm
+relationship: has_part ENVO:03000103 ! aeolian transport of snow
+
+[Term]
+id: ENVO:01000904
+name: ground blizzard
+namespace: ENVO
+def: "A ground blizzard is a storm during which snow which has settled on a planetary surface is resuspended in and transported through its atmosphere by strong winds, sustained for several hours." [https://en.wikipedia.org/wiki/Blizzard]
+comment: This form of blizzard does not involve snowfall as the snow which is blown by the winds is already present on the ground. To qualify a snowstorm as a blizzard, some sources require the windspeed to be at least 56 km/h and the duration of the storm to be at least three hours. We set no such hard boundaries in this definition, as this should be done with reference to local standards. {comment="https://en.wikipedia.org/wiki/Blizzard"}
+subset: environmental_hazards
+subset: envoAtmo
+is_a: ENVO:01000877 ! atmospheric storm
+
+[Term]
+id: ENVO:01000916
+name: rubbish landslide
+namespace: ENVO
+def: "A mass wasting process during which refuse from human activities, usually accumulated at a dumping site, falls down a slope under the force of gravity." [http://www.bbc.com/news/world-africa-39247381]
+comment: "At least 48 people have been killed in a landslide at a vast rubbish dump on the outskirts of Ethiopia's capital Addis Ababa, officials say...Hundreds of people attempt to make a living by scavenging at the landfill site, sifting through the rubbish for items they can sell, the BBC's Emmanuel Igunza in Addis Ababa reports" BBC Africa reports
+subset: environmental_hazards
+synonym: "garbage landslide" EXACT []
+synonym: "refuse landslide" EXACT []
+synonym: "trash landslide" EXACT []
+is_a: ENVO:01000690 ! mass wasting
+property_value: IAO:0000116 "Of interest to sustainable development goals, linking production and consumption to human health and environmental impacts." xsd:string
+
+[Term]
+id: ENVO:01000981
+name: mass liquid flow
+namespace: ENVO
+def: "A process whereby a volume of liquid moves due to a disequilibrium of physical forces." [https://en.wikipedia.org/wiki/Wind]
+comment: This class can refer to the flow of any material in a liquid phase.
+subset: envoPolar
+is_a: ENVO:01001747 ! mass fluid flow
+relationship: has_participant ENVO:01000815 ! liquid environmental material
+
+[Term]
+id: ENVO:01000982
+name: water flow process
+namespace: ENVO
+def: "A process during which a volume of water is transported due to a disequilibria in physical forces." []
+subset: environmental_hazards
+is_a: ENVO:01000981 ! mass liquid flow
+relationship: has_participant ENVO:00002006 ! liquid water
+
+[Term]
+id: ENVO:01001008
+name: meteor
+namespace: ENVO
+def: "A meteor is any matter- or energy-based entity which is located in the atmosphere of an astronomical body." [https://cloudatlas.wmo.int/other-meteors.html]
+subset: envoAtmo
+
+[Term]
+id: ENVO:01001023
+name: radiation
+namespace: ENVO
+def: "A process during which energy is emitted or transmitted in the form of waves or particles through space or a material medium." [https://en.wikipedia.org/wiki/Radiation]
+subset: environmental_hazards
+subset: envoAstro
+is_a: ENVO:01001852 ! energy transfer process
+relationship: has_participant CHEBI:36342
+relationship: has_participant ENVO:00010483 ! environmental material
+property_value: IAO:0000116 "Requires addition of waves for full axiomatisation. This should be linked to \"subatomic particle\" with an \"or\". Note that ENVO represents space as an environmental material (a hard vacuum with sparse material inclusions)." xsd:string
+
+[Term]
+id: ENVO:01001024
+name: particle radiation
+namespace: ENVO
+def: "A radiation process during which energy is transmitted or emitted by means of fast-moving subatomic particles." [https://en.wikipedia.org/wiki/Particle_radiation]
+subset: environmental_hazards
+subset: envoAstro
+is_a: ENVO:01001023 ! radiation
+
+[Term]
+id: ENVO:01001025
+name: particle beam radiation
+namespace: ENVO
+def: "A particle radiation process during which subatomic particles move in the same direction." [https://en.wikipedia.org/wiki/Particle_radiation]
+subset: environmental_hazards
+subset: envoAstro
+is_a: ENVO:01001024 ! particle radiation
+
+[Term]
+id: ENVO:01001026
+name: electromagnetic radiation
+namespace: ENVO
+def: "A radiation process during which waves (or their quanta, photons) of the electromagnetic field propagate (radiate) through space carrying electromagnetic energy." [https://en.wikipedia.org/wiki/Electromagnetic_radiation]
+comment: Note that this class is concerned only with active radiative processes: static electric and magnetic fields are not inlcuded. All electromagnetic radiation carries radiant energy.
+subset: environmental_hazards
+subset: envoAstro
+synonym: "EM radiation" EXACT []
+is_a: ENVO:01001023 ! radiation
+
+[Term]
+id: ENVO:01001093
+name: tectonic movement
+namespace: ENVO
+def: "A process during which pieces of a planetary crust and uppermost mantle move." [https://en.wikipedia.org/wiki/Plate_tectonics] {comment="https://en.wikipedia.org/wiki/List_of_tectonic_plates"}
+is_a: ENVO:03000010 ! material transport process
+intersection_of: ENVO:03000010 ! material transport process
+intersection_of: has_participant ENVO:01001097 ! tectonic plate
+
+[Term]
+id: ENVO:01001094
+name: convergent tectonic movement
+namespace: ENVO
+def: "A process during which pieces of a planetary crust and uppermost mantle move towards one another." [https://en.wikipedia.org/wiki/Convergent_boundary, https://en.wikipedia.org/wiki/List_of_tectonic_plates, https://en.wikipedia.org/wiki/Plate_tectonics]
+is_a: ENVO:01001093 ! tectonic movement
+relationship: has_part_that_occurs_in ENVO:01001100 ! convergent plate boundary
+relationship: has_participant ENVO:01001097 {minCardinality="2"} ! tectonic plate
+
+[Term]
+id: ENVO:01001097
+name: tectonic plate
+namespace: ENVO
+def: "A part of a lithosphere which is separated by other such parts by geographic faults or similar geomorphological discontinuities." [https://en.wikipedia.org/wiki/List_of_tectonic_plates]
+is_a: ENVO:00000191 ! solid astronomical body part
+relationship: overlaps ENVO:01001098 ! tectonic plate boundary
+relationship: part_of ENVO:01000646 ! lithosphere
+
+[Term]
+id: ENVO:01001098
+name: tectonic plate boundary
+namespace: ENVO
+def: "A geomorphological feature which is formed where two or more tectonic plates move towards, away from, or along one another, resulting in deformation of the lithosphere." [https://en.wikipedia.org/wiki/Plate_tectonics]
+is_a: ENVO:01000408 ! environmental zone
+relationship: formed_as_result_of ENVO:01001093 ! tectonic movement
+relationship: overlaps ENVO:01001097 {minCardinality="2"} ! tectonic plate
+
+[Term]
+id: ENVO:01001100
+name: convergent plate boundary
+namespace: ENVO
+def: "A geomorphological feature which is formed where two or more tectonic plates are actively moving towards one another, resulting in deformation of the lithosphere that forces one plate below the other where it melts in the mantle." [https://en.wikipedia.org/wiki/Convergent_boundary, https://en.wikipedia.org/wiki/Plate_tectonics]
+synonym: "convergent boundary" EXACT []
+synonym: "destructive boundary" EXACT []
+synonym: "destructive plate boundary" EXACT []
+is_a: ENVO:01001098 ! tectonic plate boundary
+relationship: contains_process ENVO:01001102 ! tectonic plate subduction
+
+[Term]
+id: ENVO:01001102
+name: tectonic plate subduction
+namespace: ENVO
+def: "A convergent tectonic movement process during which one plate moves under another and is forced or sinks due to gravity into a mantle." [https://en.wikipedia.org/wiki/Convergent_boundary, https://en.wikipedia.org/wiki/List_of_tectonic_plates, https://en.wikipedia.org/wiki/Plate_tectonics, https://en.wikipedia.org/wiki/Subduction]
+synonym: "subduction" EXACT []
+is_a: ENVO:01001094 ! convergent tectonic movement
+
+[Term]
+id: ENVO:01001108
+name: rockslide process
+namespace: ENVO
+def: "A rockslide is a process whereby a large mass of rock moves down a hill or a mountainside." [https://en.wikipedia.org/wiki/Mass_wasting]
+subset: environmental_hazards
+synonym: "rockslip" EXACT []
+is_a: ENVO:01000692 ! landslide process
+
+[Term]
+id: ENVO:01001110
+name: ecosystem
+namespace: ENVO
+alt_id: LTER:173 {xref="https://vocab.lternet.edu/vocab/vocab/index.php?tema=173&/ecosystems"}
+def: "An environmental system which includes both living and non-living components." [https://en.wikipedia.org/wiki/Ecosystem]
+comment: This class will be primarily filled by inference, any environmental system which necessarily includes living parts should be autoclassified here.
+is_a: ENVO:01000254 ! environmental system
+
+[Term]
+id: ENVO:01001125
+name: ice
+namespace: ENVO
+def: "An ice is an environmental material which is either frozen or which is maintained in a solid state by gravitational forces or pressure." []
+comment: This class is defined logically - any material that is frozen is considered a subclass. Note that ice may be formed at very high temperatures, due to gravitational effects and/or pressure.
+is_a: ENVO:00010483 ! environmental material
+
+[Term]
+id: ENVO:01001164
+name: geodiversity
+namespace: ENVO
+def: "A quality which inheres in a astronomical body or astronomical body part by virtue of the variation in its material composition, participation in geological processes, and the variation in is land- and hydroforms." [https://en.wikipedia.org/wiki/Geodiversity]
+comment: Materials which are usually assessed when appraising geodiversity include minerals, rocks, sediments, fossils, soils and water. Landforms factored into geodiversity metrics typically include folds, faults, and other expressions of morphology or relations between units of earth material. Natural processes that are included in measures of geodiversity are those which either maintain or change materials or geoforms, including tectonics, sediment transport, and pedogenesis. Geodiversity does not usually factor in anthropogenic entities. {xref=""}
+
+[Term]
+id: ENVO:01001199
+name: terrestrial environmental zone
+namespace: ENVO
+def: "An environmental zone which is bounded by material parts of a land mass or the atmosphere or space adjacent to it." []
+is_a: ENVO:01000408 ! environmental zone
+intersection_of: ENVO:01000408 ! environmental zone
+intersection_of: part_of ENVO:01000635 ! planetary landmass
+relationship: part_of ENVO:00000446 ! terrestrial biome
+
+[Term]
+id: ENVO:01001206
+name: grassland ecosystem
+namespace: ENVO
+def: "An ecosystem in which grasses (Graminae) are the dominant form of vegetation and determine the system's structure and dynamics." [https://en.wikipedia.org/wiki/Grassland]
+synonym: "down" RELATED [USGS:SDTS]
+synonym: "downland" RELATED [USGS:SDTS]
+synonym: "downs" RELATED [USGS:SDTS]
+synonym: "glade" RELATED [ADL:FTT]
+synonym: "glade" RELATED [USGS:SDTS]
+synonym: "GRASSLAND" EXACT [USGS:SDTS]
+synonym: "Grassland" RELATED [NASA:earthrealm]
+synonym: "grassland" EXACT [Geonames:feature]
+synonym: "grazing area" RELATED [Getty:TGN]
+synonym: "grazing area" RELATED [ADL:FTT]
+synonym: "herbaceous area" RELATED [USGS:SDTS]
+xref: EcoLexicon:grassland
+xref: FTT:259
+xref: FTT:760
+xref: FTT:766
+xref: Geonames:V.GRSLD
+xref: LTER:232
+xref: TGN:21604
+xref: TGN:54052
+is_a: ENVO:01001790 ! terrestrial ecosystem
+
+[Term]
+id: ENVO:01001211
+name: stellar radiation
+namespace: ENVO
+def: "An electromagnetic radiation process during which electromagnetic waves or their quanta are emitted from a star." [https://en.wikipedia.org/wiki/Electromagnetic_radiation, https://en.wikipedia.org/wiki/Solar_irradiance]
+subset: environmental_hazards
+subset: envoAstro
+synonym: "solar radiation" NARROW [NCIT:C44445]
+xref: NCIT:C44445
+is_a: ENVO:01001026 ! electromagnetic radiation
+
+[Term]
+id: ENVO:01001216
+name: ultraviolet stellar radiation
+namespace: ENVO
+def: "A stellar radiation process during which electromagnetic waves or their quanta are emitted from a star at wavelengths between 10 nm and 400 nm." [https://en.wikipedia.org/wiki/Ultraviolet, https://www.iso.org/obp/ui/#iso\:std\:iso\:21348]
+subset: environmental_hazards
+subset: envoAstro
+synonym: "ultraviolet solar radiation" NARROW []
+xref: NCIT:C17231
+is_a: ENVO:01001211 ! stellar radiation
+property_value: IAO:0000116 "To be expanded to account for subtypes." xsd:string
+
+[Term]
+id: ENVO:01001217
+name: X-ray stellar radiation
+namespace: ENVO
+def: "A stellar radiation process during which penetrating electromagnetic radiation is emitted by high-energy electrons as they fall into a lower state of energy." [https://en.wikipedia.org/wiki/X-ray]
+comment: Ambiguity exists in the definition of x-rays and their differentiation from gamma rays. Photons with sufficient energy to be classified as x-rays may be emitted by other processes than electrons falling to lower energy states. Most x-rays have wavelengths ranging from 0.01 to 10 nanometers, corresponding to frequencies in the range of 30 petahertz to 30 exahertz and energies in the range of 100 eV to 100 keV. {xref="https://en.wikipedia.org/wiki/X-ray#Energy_ranges"}
+subset: environmental_hazards
+subset: envoAstro
+synonym: "x ray stellar radiation" EXACT []
+synonym: "X-ray radiation" EXACT []
+synonym: "X-ray solar radiation" NARROW []
+synonym: "X-ray stellar radiation" EXACT []
+property_value: IAO:0000114 IAO:0000428
+
+[Term]
+id: ENVO:01001218
+name: gamma-ray stellar radiation
+namespace: ENVO
+def: "A stellar radiation process during which penetrating electromagnetic radiation is emitted from the radioactive decay (gamma decay) of atomic nuclei." [https://en.wikipedia.org/wiki/Gamma_ray]
+comment: Ambiguity exists in the definition of gamma rays. As a rule of thumb, gamma rays have energies above 100 keV, frequencies above 10 exahertz, and wavelengths less than 10 picometers. However, regardless of the energy released, electromagnetic radiation from radioactive decay of atomic nuclei is referred to as "gamma rays". In astronomy, however, gamma rays are defined by their energy, and no production process needs to be specified. {xref="https://en.wikipedia.org/wiki/Gamma_ray"}
+subset: environmental_hazards
+subset: envoAstro
+synonym: "gamma-ray solar radiation" NARROW []
+property_value: IAO:0000114 IAO:0000428
+
+[Term]
+id: ENVO:01001239
+name: forest canopy
+namespace: ENVO
+xref: EcoLexicon:canopy
+xref: https://en.wikipedia.org/wiki/Canopy
+xref: LTER:82
+xref: SWEETRealm:Canopy
+is_a: ENVO:01001242 ! canopy
+relationship: part_of ENVO:01001243 ! forest ecosystem
+
+[Term]
+id: ENVO:01001242
+name: canopy
+namespace: ENVO
+def: "A vegetation layer which is formed by a collection of individual plant crowns, themselves constituting part of the aboveground portion of a plant community." [https://en.wikipedia.org/wiki/Canopy_%28biology%29]
+comment: false
+xref: EcoLexicon:canopy
+xref: LTER:82
+xref: SWEETRealm:Canopy
+is_a: ENVO:01000355 ! vegetation layer
+
+[Term]
+id: ENVO:01001243
+name: forest ecosystem
+namespace: ENVO
+def: "An ecosystem which is determined by communities of plants with a tree growth form and in which members of those communities form continuous or discontinuous regions of canopy cover." [http://www.fao.org/docrep/017/ap862e/ap862e00.pdf] {comment="https://www1.usgs.gov/csas/nvcs/nvcsGetUnitDetails?elementGlobalId=860217"}
+comment: The definitions of forest can vary greatly, and different classes will be needed to support the major categories. Tree cover alone is not enough to distinguish between forests and plantations. The international definition proposed by the 2010 FAO Forestry Resource Assessment: "land spanning more than 0.5 ha with trees higher than 5 metres and canopy cover of more than 10 percent, or trees able to reach these thresholds in situ . It does not include land that is predominantly under agricultural or urban land use." - FAO.  2010. Global forest resources assessment 2010, Main report, FAO Forestry Paper 163. Rome.
+is_a: ENVO:01001790 ! terrestrial ecosystem
+relationship: has_part ENVO:01001239 ! forest canopy
+property_value: IAO:0000116 "The correct usage of FLOPO terms in the axiomatisation needs to be confirmed." xsd:string
+
+[Term]
+id: ENVO:01001287
+name: industrial fire
+namespace: ENVO
+def: "A fire which occurs in an industrial area or building." []
+subset: environmental_hazards
+is_a: ENVO:01000786 ! fire
+
+[Term]
+id: ENVO:01001289
+name: brush fire
+namespace: ENVO
+def: "A land fire which consumes low-growing plants such as scrub and brush." []
+subset: environmental_hazards
+is_a: ENVO:01001292 ! land fire
+
+[Term]
+id: ENVO:01001290
+name: bush fire
+namespace: ENVO
+def: "A land fire which occurs in a large uncleared or sparsely settled area (as in Australia) usually scrub-covered or forested." []
+comment: "Bush" is a rather loosely defined regional term, primarily used in Australia.
+subset: environmental_hazards
+is_a: ENVO:01001292 ! land fire
+
+[Term]
+id: ENVO:01001291
+name: pasture fire
+namespace: ENVO
+def: "A fire which occurs in a pastureland." []
+subset: environmental_hazards
+is_a: ENVO:03000131 ! grass fire
+
+[Term]
+id: ENVO:01001292
+name: land fire
+namespace: ENVO
+def: "A fire which occurs on land, typically consuming a terrestrial ecosystem as fuel." []
+subset: environmental_hazards
+is_a: ENVO:01000787 ! wildfire
+relationship: occurs_in ENVO:00000446 ! terrestrial biome
+relationship: occurs_in ENVO:01000635 ! planetary landmass
+
+[Term]
+id: ENVO:01001294
+name: convective storm
+namespace: ENVO
+def: "An atmospheric storm which is generated by the heating and convection of moist and unstable air masses." [http://glossary.ametsoc.org/wiki/Convective_storm, http://www.emdat.be/Glossary]
+comment: "Convective storms range from localised thunderstorms (with heavy rain and/or hail, lightning, high winds, tornadoes) to meso-scale, multi-day events." {xref="http://www.emdat.be/Glossary"}
+subset: envoAtmo
+is_a: ENVO:01000877 ! atmospheric storm
+
+[Term]
+id: ENVO:01001295
+name: extra-tropical cyclone
+namespace: ENVO
+def: "A warm-core cyclone which occurs in the middle and high latitudes, primarily drawing energy from horizontal temperature contrasts between atmospheric fronts." [http://www.emdat.be/Glossary]
+comment: "When associated with cold fronts, extratropical cyclones may be particularly damaging (e.g. European winter/windstorm, Nor’easter)." {xref="http://www.emdat.be/Glossary"}
+subset: environmental_hazards
+synonym: "mid-latitude cyclone" EXACT []
+is_a: ENVO:01001298 ! warm core cyclone
+
+[Term]
+id: ENVO:01001296
+name: tropical storm
+namespace: ENVO
+def: "A an atmospheric storm which originates over tropical or subtropical waters and possesses a warm-core, non-frontal synoptic-scale cyclone with a low pressure centre, spiral rain bands and strong winds." [http://www.emdat.be/Glossary]
+subset: environmental_hazards
+subset: envoAtmo
+is_a: ENVO:01000877 ! atmospheric storm
+
+[Term]
+id: ENVO:01001297
+name: cyclone
+namespace: ENVO
+def: "An atmospheric storm during which a large mass of atmospheric gas rotates around a centre of low atmospheric pressure, generating high winds which spiral towards that centre." [https://en.wikipedia.org/wiki/Cyclone]
+subset: environmental_hazards
+subset: envoAtmo
+is_a: ENVO:01000877 ! atmospheric storm
+relationship: causally_downstream_of_or_within ENVO:01001748 ! cyclonic circulation
+
+[Term]
+id: ENVO:01001298
+name: warm core cyclone
+namespace: ENVO
+def: "A cyclone which rotates around an area low atmospheric pressure with increased temperature." [https://en.wikipedia.org/wiki/Cyclone]
+comment: The threshold of  what is "warm" is variable, and thus data-level thresholding should be applied when using this class.
+subset: environmental_hazards
+synonym: "warm-core cyclone" EXACT []
+is_a: ENVO:01001297 ! cyclone
+
+[Term]
+id: ENVO:01001305
+name: vegetated area
+namespace: ENVO
+def: "A vegetated area is a geographic feature which has ground cover dominated by plant communities." []
+subset: envoPolar
+is_a: ENVO:01001199 ! terrestrial environmental zone
+created_by: ORCID:0000-0002-4366-3088
+
+[Term]
+id: ENVO:01001311
+name: solid surface layer
+namespace: ENVO
+def: "A surface layer which is composed primarily of solid environmental material." []
+is_a: ENVO:00010504 ! surface layer
+intersection_of: ENVO:00010504 ! surface layer
+intersection_of: composed_primarily_of ENVO:01000814 ! solid environmental material
+
+[Term]
+id: ENVO:01001334
+name: advective transport process
+namespace: ENVO
+def: "A material transport process during which a volume of material is displaced due to a disequilibrium in physical forces and during which 1) the qualities that inhere in that volume and 2) the processes that are unfolding within it are largely unchanged." [https://en.wikipedia.org/wiki/Advection, https://en.wikipedia.org/wiki/Intensive_and_extensive_properties]
+comment: Advective processes are disjoint from diffusive processes. Typically, fluids are advected.
+synonym: "advective transport" EXACT []
+is_a: ENVO:03000010 ! material transport process
+
+[Term]
+id: ENVO:01001476
+name: body of liquid
+namespace: ENVO
+is_a: ENVO:01001477 ! liquid astronomical body part
+created_by: http://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:01001477
+name: liquid astronomical body part
+namespace: ENVO
+def: "A part of an astronomical body which is primarily composed of a continuous volume of liquid material, shaped by one or more environmental processes." [https://en.wikipedia.org/wiki/Landform]
+is_a: ENVO:01001479 ! fluid astronomical body part
+intersection_of: ENVO:01001479 ! fluid astronomical body part
+intersection_of: composed_primarily_of ENVO:01000815 ! liquid environmental material
+created_by: http://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:01001479
+name: fluid astronomical body part
+namespace: ENVO
+def: "A part of an astronomical body which is primarily composed of a continuous volume of liquid or gaseous material, shaped by one or more environmental processes." [https://en.wikipedia.org/wiki/Landform]
+is_a: ENVO:01000813 ! astronomical body part
+created_by: http://orcid.org/0000-0002-4366-3088
+creation_date: 2018-10-04T13:59:22Z
+
+[Term]
+id: ENVO:01001483
+name: surface of an astronomical body
+namespace: ENVO
+def: "A surface layer where the solid or liquid material of an astronomical body comes into contact with an atmosphere or outer space." []
+comment: a useful class: this can be used to define sub-terrestrial and sub-marine entities
+is_a: ENVO:00010504 ! surface layer
+intersection_of: ENVO:00010504 ! surface layer
+intersection_of: part_of ENVO:01000799 ! astronomical body
+created_by: http://orcid.org/0000-0002-4366-3088
+creation_date: 2018-10-04T16:55:57Z
+
+[Term]
+id: ENVO:01001501
+name: radiation from a manufactured product
+namespace: ENVO
+def: "An electromagnetic radiation process during which electromagnetic waves or their quanta are emitted from a manufactured product." [https://en.wikipedia.org/wiki/Electromagnetic_radiation, https://en.wikipedia.org/wiki/Solar_irradiance]
+subset: environmental_hazards
+subset: envoAstro
+synonym: "anthropogenic radiation" BROAD []
+synonym: "artificial radiation" EXACT []
+is_a: ENVO:01001026 ! electromagnetic radiation
+created_by: http://orcid.org/0000-0002-4366-3088
+creation_date: 2019-01-09T09:07:24Z
+
+[Term]
+id: ENVO:01001510
+name: material congelation process
+namespace: ENVO
+def: "A material transformation process during which a material's viscosity increase either through a reduction in temperature, through chemical reactions, or other physical effects." [https://en.wikipedia.org/wiki/Congelation]
+comment: Sometimes the increase in viscosity is great enough to crystallize or solidify the substance in question. {xref="https://en.wikipedia.org/wiki/Congelation"}
+synonym: "congelation" EXACT []
+synonym: "congelation process" EXACT []
+is_a: ENVO:03000043 ! material transformation process
+created_by: http://orcid.org/0000-0002-4366-3088
+creation_date: 2019-01-14T18:47:32Z
+
+[Term]
+id: ENVO:01001678
+name: fluid layer
+namespace: ENVO
+def: "A layer which is composed primarily of some fluid." []
+is_a: ENVO:01000281 ! layer
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-07-22T17:35:08Z xsd:dateTime
+
+[Term]
+id: ENVO:01001684
+name: interface layer
+namespace: ENVO
+def: "A layer which separates two portions of environmental material which possess 1) differing compositions, 2) a discontinuity of some property, or 3) some derivative of some property in a direction normal to the interface." []
+is_a: ENVO:01000281 ! layer
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-08-20T09:28:10Z xsd:dateTime
+
+[Term]
+id: ENVO:01001686
+name: mass of environmental material
+namespace: ENVO
+def: "An object which is composed primarily of an environmental material" []
+comment: This class and its subclasses refer to objects that are discrete accumulations of environmental materials, generally primarily composed of one or a few main material types.
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-08-20T09:38:29Z xsd:dateTime
+
+[Term]
+id: ENVO:01001688
+name: mass of fluid
+namespace: ENVO
+def: "An object which is composed primarily of a fluid." []
+comment: This class and its subclasses refer to objects that are discrete accumulations of environmental materials, generally primarily composed of one or a few main material types.
+synonym: "fluid mass" EXACT []
+is_a: ENVO:01001686 ! mass of environmental material
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-08-20T09:42:35Z xsd:dateTime
+
+[Term]
+id: ENVO:01001690
+name: mass of liquid
+namespace: ENVO
+def: "An object which is composed primarily of a liquid." []
+comment: This class and its subclasses refer to objects that are discrete accumulations of environmental materials, generally primarily composed of one or a few main material types.
+synonym: "liquid mass" EXACT []
+is_a: ENVO:01001688 ! mass of fluid
+intersection_of: ENVO:01001688 ! mass of fluid
+intersection_of: composed_primarily_of ENVO:01000815 ! liquid environmental material
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-08-20T09:45:03Z xsd:dateTime
+
+[Term]
+id: ENVO:01001747
+name: mass fluid flow
+namespace: ENVO
+is_a: ENVO:01001334 ! advective transport process
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-09-05T05:47:26Z xsd:dateTime
+
+[Term]
+id: ENVO:01001748
+name: cyclonic circulation
+namespace: ENVO
+def: "A mass fluid flow which moves  in the same direction as a planet's rotation, rotating due to a Coriolis effect." [http://glossary.ametsoc.org/wiki/Cyclonic_circulation, https://en.wikipedia.org/wiki/Cyclonic_rotation]
+subset: envoAtmo
+subset: envoMarine
+subset: envoPolar
+synonym: "cyclonic rotation" EXACT []
+is_a: ENVO:01001747 ! mass fluid flow
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-09-05T05:47:55Z xsd:dateTime
+
+[Term]
+id: ENVO:01001767
+name: structural collapse process
+namespace: ENVO
+def: "A process during which the ability of a material entity to maintain its internal organisation fails, resulting in deformation and a breakdown of that organisation." [https://en.wikipedia.org/wiki/Structural_failure]
+comment: This is a very general concept, and should likely be elevated to OBO Core rather than held in ENVO.
+is_a: ENVO:01001852 ! energy transfer process
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-10-07T10:08:24Z xsd:dateTime
+
+[Term]
+id: ENVO:01001782
+name: landmass
+namespace: ENVO
+def: "A large continuous area of land, either surrounded by sea or contiguous with another landmass." [] {http://purl.obolibrary.org/obo/IAO_0000119="https://en.wiktionary.org/wiki/landmass"}
+is_a: ENVO:01001785 ! land
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-10-17T08:31:26Z xsd:dateTime
+
+[Term]
+id: ENVO:01001784
+name: compound astronomical body part
+namespace: ENVO
+def: "A part of an astronomical body which is primarily composed of a continuous medium bearing liquid, gaseous, and solid material in varying quantities." [https://en.wikipedia.org/wiki/Landform]
+is_a: ENVO:01000813 ! astronomical body part
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-10-17T08:36:00Z xsd:dateTime
+
+[Term]
+id: ENVO:01001785
+name: land
+namespace: ENVO
+def: "A surface layer of an astronomical body which is primarily composed of solid material and is not covered by oceans or other bodies of water." [https://en.wiktionary.org/wiki/land]
+is_a: ENVO:01001483 ! surface of an astronomical body
+relationship: composed_primarily_of ENVO:01000814 ! solid environmental material
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-10-21T10:42:26Z xsd:dateTime
+
+[Term]
+id: ENVO:01001790
+name: terrestrial ecosystem
+namespace: ENVO
+is_a: ENVO:01001110 ! ecosystem
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-10-21T11:09:58Z xsd:dateTime
+
+[Term]
+id: ENVO:01001852
+name: energy transfer process
+namespace: ENVO
+def: "A process during which one entity loses energy to another entity." []
+is_a: ENVO:02500000 ! environmental system process
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2020-02-13T13:34:28Z xsd:dateTime
+
+[Term]
+id: ENVO:02500000
+name: environmental system process
+namespace: ENVO
+def: "A process in which includes the components of an environmental system as participants." []
+comment: This is a convenience class for organisation and should not be used for annotation.
+relationship: RO:0002218 ENVO:01001110 ! ecosystem
+
+[Term]
+id: ENVO:02500002
+name: flooding
+namespace: ENVO
+def: "A general and temporary condition of partial or complete inundation of normally dry land areas from the overflow of inland and/or tidal waters, and/or the unusual and rapid accumulation or runoff of surface waters from any source. A great flow along a watercourse or a flow causing inundation of lands not normally covered by water." [GEMET: http\://www.eionet.europa.eu/gemet/concept/3301]
+subset: environmental_hazards
+is_a: ENVO:03000010 ! material transport process
+relationship: has_participant ENVO:00000063 ! water body
+relationship: has_participant ENVO:01000635 ! planetary landmass
+
+[Term]
+id: ENVO:02500036
+name: environmental pollution
+namespace: ENVO
+def: "An environmental system process that results in the introduction of contaminants into an environment." [https://en.wikipedia.org/wiki/Pollution]
+comment: Pollutants may be material or immaterial (e.g. heat energy)
+subset: environmental_hazards
+synonym: "pollution" EXACT []
+is_a: ENVO:02500000 ! environmental system process
+
+[Term]
+id: ENVO:02500037
+name: air pollution
+namespace: ENVO
+def: "A pollution process during which particulates or other contaminants are released into a portion of air." []
+subset: environmental_hazards
+subset: envoPolar
+intersection_of: ENVO:02500036 ! environmental pollution
+intersection_of: occurs_in ENVO:00002005 ! air
+
+[Term]
+id: ENVO:02500038
+name: soil pollution
+namespace: ENVO
+def: "A pollution process during which contaminants are released into soil." [https://en.wikipedia.org/wiki/Soil_pollution]
+subset: environmental_hazards
+subset: envoPolar
+intersection_of: ENVO:02500036 ! environmental pollution
+intersection_of: occurs_in ENVO:00001998 ! soil
+relationship: has_output ENVO:00002116 ! contaminated soil
+
+[Term]
+id: ENVO:02500039
+name: water pollution
+namespace: ENVO
+def: "A pollution process during which contaminants are released into water." []
+subset: environmental_hazards
+subset: envoPolar
+
+[Term]
+id: ENVO:02500040
+name: plastic pollution
+namespace: ENVO
+def: "A pollution process during which plastic contaminants are released into an environmental material." [https://en.wikipedia.org/wiki/Plastic_pollution]
+subset: environmental_hazards
+subset: envoPolar
+is_a: ENVO:02500036 ! environmental pollution
+
+[Term]
+id: ENVO:02500044
+name: urban pollution
+namespace: ENVO
+def: "A pollution process that results in increased levels of pollutants in an urban environment." []
+subset: environmental_hazards
+is_a: ENVO:02500036 ! environmental pollution
+intersection_of: ENVO:02500036 ! environmental pollution
+intersection_of: occurs_in ENVO:01000249 ! urban biome
+relationship: has_input ENVO:01000249 ! urban biome
+
+[Term]
+id: ENVO:03000009
+name: material accumulation process
+namespace: ENVO
+def: "A process during which the mass of one or more materials, present within a given site, increases." []
+comment: Experimental class for structural purposes not recommended for annotation. A material accumulation process ends a material transport process.
+subset: envoPolar
+is_a: ENVO:02500000 ! environmental system process
+property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
+property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:03000010
+name: material transport process
+namespace: ENVO
+def: "A process during which material is displaced from its original location and transported either to a new location or back to the original location." []
+comment: Experimental class for structural purposes not recommended for annotation.
+subset: envoPolar
+is_a: ENVO:02500000 ! environmental system process
+property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
+property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:03000016
+name: material decumulation process
+namespace: ENVO
+def: "A process during which a mass composed of one or more environmental materials, present within a given site, decreases." [https://www.merriam-webster.com/dictionary/decumulation]
+comment: Experimental class for structural purposes not recommended for annotation.
+subset: envoPolar
+is_a: ENVO:02500000 ! environmental system process
+property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
+property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:03000020
+name: aeolian transport process
+namespace: ENVO
+def: "A material transport process during which one or more environmental materials are transported by the action of wind." [https://en.wikipedia.org/wiki/Aeolian_processes]
+subset: envoPolar
+synonym: "eolian" EXACT []
+synonym: "æolian" EXACT []
+is_a: ENVO:03000010 ! material transport process
+relationship: has_part ENVO:01000793 ! atmospheric wind
+relationship: has_participant ENVO:00010483 ! environmental material
+property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
+property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:03000027
+name: powdery snow
+namespace: ENVO
+def: "Uncompacted snow containing trapped atmospheric gases." [https://en.wikipedia.org/wiki/Types_of_snow, https://nsidc.org/cryosphere/snow/science/characteristics.html]
+comment: Described as having a fluffy appearance.
+subset: envoPolar
+is_a: ENVO:01000406 ! snow
+property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
+property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:03000043
+name: material transformation process
+namespace: ENVO
+def: "A process during which a portion of some environmental material is converted into a different material or a collection of materials." []
+comment: Experimental class for structural purposes not recommended for annotation. A material transformation process only refers to ENVO:environmental material classes (e.g. bulk and typically impure substances), rather than transformations converting a specific chemical into another.
+subset: envoPolar
+is_a: ENVO:02500000 ! environmental system process
+relationship: has_input ENVO:00010483 ! environmental material
+relationship: has_output ENVO:00010483 ! environmental material
+property_value: IAO:0000116 "A different material transformation process class (or similarly named class) pertaining to the conversion of a specific chemical into another belongs in CHEBI and or REX ontologies." xsd:string
+property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
+property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:03000090
+name: explosion process
+namespace: ENVO
+def: "A process during which a material entity undergoes a rapid increase in volume, releasing gasses and various forms of energy, often including thermal, light and sound energy." [https://en.wikipedia.org/wiki/Explosion]
+comment: Supersonic explosions are known as detonations and subsonic explosions as deflagrations.
+subset: envoPolar
+synonym: "explosion" EXACT []
+is_a: ENVO:01000839 ! combustion process
+relationship: has_output ENVO:01000797 ! gaseous environmental material
+property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
+property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:03000091
+name: permafrost methane explosion
+namespace: ENVO
+def: "An explosion during which methane-rich gas trapped in permafrost combusts." [http://www.nature.com/news/mysterious-siberian-crater-attributed-to-methane-1.15649, http://www.sciencealert.com/7-000-huge-gas-bubbles-have-formed-under-siberia-and-could-explode-at-any-moment]
+subset: environmental_hazards
+subset: envoPolar
+is_a: ENVO:03000090 ! explosion process
+relationship: has_participant ENVO:00000134 ! permafrost
+relationship: occurs_in ENVO:00000134 ! permafrost
+property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
+property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:03000103
+name: aeolian transport of snow
+namespace: ENVO
+def: "An aeolian transport process during which powdery snow is displaced and moved." [https://en.wikipedia.org/wiki/Snow#Drifting]
+subset: envoPolar
+is_a: ENVO:03000020 ! aeolian transport process
+relationship: has_input ENVO:03000027 ! powdery snow
+relationship: has_participant ENVO:00010483 ! environmental material
+property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
+property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:03000105
+name: slab avalanche
+namespace: ENVO
+def: "A mass wasting process during which slab snow rapidly moves down a sloping surface." [https://en.wikipedia.org/wiki/Snow#Avalanche]
+comment: Slab avalanches account for most back-country fatalities.
+subset: environmental_hazards
+subset: envoPolar
+is_a: ENVO:01000690 ! mass wasting
+property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
+property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:03000106
+name: powdery snow avalanche
+namespace: ENVO
+def: "An avalanche during which powdery snow rapidly flows down a sloping surface." [https://en.wikipedia.org/wiki/Snow#Avalanche]
+subset: environmental_hazards
+subset: envoPolar
+synonym: "powder snow avalanche" EXACT []
+is_a: ENVO:01000691 ! avalanche
+property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
+property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:03000107
+name: wet snow avalanche
+namespace: ENVO
+def: "An avalanche during which a suspension of water and snow flows down a sloping surface." [https://en.wikipedia.org/wiki/Snow#Avalanche]
+comment: Wet snow avalanches travel at a lower velocity than other types of avalanches.
+subset: environmental_hazards
+subset: envoPolar
+is_a: ENVO:01000691 ! avalanche
+property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
+property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:03000131
+name: grass fire
+namespace: ENVO
+def: "A fire which occurs in a grassland, combusting biomass stored in grasses as its primary fuel." [https://www.publish.csiro.au/book/5971/] {comment="http://gfmc.online/wp-content/uploads/AFAC-Bushfire-Glossary-Indexed-2012.pdf"}
+subset: environmental_hazards
+is_a: ENVO:01001292 ! land fire
+relationship: occurs_in ENVO:00000106 ! grassland area
+property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
+property_value: IAO:0000117 https://orcid.org/0000-0002-3884-3420 xsd:string
+
+[Term]
+id: ENVO:1000745
+name: drought
+namespace: ENVO
+def: "A hydrological precipitation process with a reduced rate relative to some historical average, typically resulting in ecosystemic perturbations." []
+subset: environmental_hazards
+is_a: ENVO:01000703 ! hydrological precipitation process
+property_value: IAO:0000116 "Drought is often defined  as a temporal period of below-average precipitation, however, representing it as a temporal entity seems insufficient." xsd:string
+
+[Term]
+id: ENVO:21001216
+name: ultraviolet radiation
+namespace: ENVO
+def: "A radiation process during which electromagnetic waves or their quanta are emitted at wavelengths between 10 nm and 400 nm." [https://en.wikipedia.org/wiki/Ultraviolet, https://www.iso.org/obp/ui/#iso\:std\:iso\:21348]
+subset: environmental_hazards
+synonym: "UV radiation" EXACT []
+is_a: ENVO:01001026 ! electromagnetic radiation
+property_value: IAO:0000116 "To be expanded to account for subtypes." xsd:string
+
+[Term]
+id: ENVO:21001217
+name: X-ray radiation
+namespace: ENVO
+def: "A radiation process during which penetrating electromagnetic radiation is emitted by high-energy electrons as they fall into a lower state of energy." [https://en.wikipedia.org/wiki/X-ray]
+subset: environmental_hazards
+synonym: "X ray radiation" EXACT []
+synonym: "X-ray" RELATED [NCIT:C17262]
+xref: NCIT:C17262
+is_a: ENVO:21001219 ! ionizing radiation
+property_value: IAO:0000114 IAO:0000428
+
+[Term]
+id: ENVO:21001218
+name: gamma-ray radiation
+namespace: ENVO
+def: "A radiation process during which penetrating electromagnetic radiation is emitted from the radioactive decay (gamma decay) of atomic nuclei." [https://en.wikipedia.org/wiki/Gamma_ray]
+subset: environmental_hazards
+is_a: ENVO:21001219 ! ionizing radiation
+property_value: IAO:0000114 IAO:0000428
+
+[Term]
+id: ENVO:21001219
+name: ionizing radiation
+namespace: ENVO
+def: "A radiation process during which electromagnetic waves or their quanta are emitted with sufficient energy to disrupt molecular bonds or alter the electron number of atoms." [https://en.wikipedia.org/wiki/Electromagnetic_radiation]
+synonym: "ionising radiation" EXACT []
+xref: NCIT:C17052
+is_a: ENVO:01001026 ! electromagnetic radiation
+
+[Term]
+id: PCO:0000001
+namespace: ENVO
+relationship: has_habitat ENVO:01000739 ! habitat
+
+[Term]
+id: PCO:0000002
+namespace: ENVO
+subset: envoPolar
+
+[Typedef]
+id: RO:0002218
+namespace: ENVO
+xref: RO:0002218
+
+[Typedef]
+id: adjacent_to
+namespace: ENVO
+xref: RO:0002220
+is_functional: true
+
+[Typedef]
+id: attached_to
+namespace: ENVO
+xref: RO:0002371
+
+[Typedef]
+id: bearer_of
+namespace: ENVO
+xref: RO:0000053
+
+[Typedef]
+id: bounding_layer_of
+namespace: ENVO
+xref: RO:0002007
+
+[Typedef]
+id: capable_of
+namespace: ENVO
+xref: RO:0002215
+
+[Typedef]
+id: causal_agent_in_process
+namespace: ENVO
+xref: RO:0002500
+
+[Typedef]
+id: causally_downstream_of_or_within
+namespace: ENVO
+xref: RO:0002427
+
+[Typedef]
+id: causally_upstream_of
+namespace: ENVO
+xref: RO:0002411
+
+[Typedef]
+id: causally_upstream_of_or_within
+namespace: ENVO
+xref: RO:0002418
+
+[Typedef]
+id: composed_primarily_of
+namespace: ENVO
+xref: RO:0002473
+
+[Typedef]
+id: connected_to
+namespace: ENVO
+xref: RO:0002170
+
+[Typedef]
+id: connects
+name: connects
+namespace: ENVO
+xref: RO:0002176
+
+[Typedef]
+id: contained_in
+namespace: ENVO
+xref: RO:0001018
+
+[Typedef]
+id: contains
+namespace: ENVO
+xref: RO:0001019
+
+[Typedef]
+id: contains_process
+namespace: ENVO
+xref: BFO:0000067
+
+[Typedef]
+id: continuous_with
+namespace: ENVO
+xref: RO:0002150
+
+[Typedef]
+id: derives_from
+namespace: ENVO
+xref: RO:0001000
+
+[Typedef]
+id: derives_into
+namespace: ENVO
+xref: RO:0001001
+
+[Typedef]
+id: determined_by
+namespace: ENVO
+xref: RO:0002507
+
+[Typedef]
+id: determined_by_part_of
+namespace: ENVO
+xref: RO:0002509
+holds_over_chain: determined_by part_of
+
+[Typedef]
+id: determines
+namespace: ENVO
+xref: RO:0002508
+
+[Typedef]
+id: disconnected_from
+name: disconnected_from
+namespace: ENVO
+def: "A is disconnected_from B if they have no parts in common." [SO:cjm]
+synonym: "non_overlapping_with" EXACT []
+expand_assertion_to: "Class: <http://www.w3.org/2002/07/owl#Nothing> EquivalentTo: (BFO_0000050 some ?X) and (BFO_0000050 some ?Y)" []
+is_metadata_tag: true
+is_class_level: true
+
+[Typedef]
+id: distributary_of
+namespace: ENVO
+xref: RO:0002377
+
+[Typedef]
+id: during_which_ends
+namespace: ENVO
+xref: RO:0002084
+
+[Typedef]
+id: during_which_starts
+namespace: ENVO
+xref: RO:0002088
+
+[Typedef]
+id: ends
+namespace: ENVO
+xref: RO:0002229
+
+[Typedef]
+id: formed_as_result_of
+namespace: ENVO
+xref: RO:0002354
+
+[Typedef]
+id: generates
+name: generates
+namespace: ENVO
+def: "A relation between a process and a disposition such that the existence of the disposition is caused by the execution of the process." []
+xref: ENVO:2000036
+property_value: IAO:0000116 "Consider ceding to RO" xsd:string
+created_by: cjm
+creation_date: 2018-11-03T20:58:13Z
+
+[Typedef]
+id: has_condition
+name: has_condition
+namespace: ENVO
+comment: Experimental relation used in EnvO. A condition defines a restricted range of a given quality or combination of qualities. If an environment class, E, has_condition C, then all qualities listed in C are restricted to the ranges defined in C in E. This is not intended as a logical conditional.
+xref: has_condition
+is_inverse_functional: true
+creation_date: 2013-05-08T07:33:05Z
+
+[Typedef]
+id: has_disposition
+namespace: ENVO
+xref: RO:0000091
+
+[Typedef]
+id: has_end_location
+namespace: ENVO
+xref: RO:0002232
+
+[Typedef]
+id: has_function
+namespace: ENVO
+xref: RO:0000085
+
+[Typedef]
+id: has_habitat
+name: has habitat
+namespace: ENVO
+xref: RO:0002303
+
+[Typedef]
+id: has_increased_levels_of
+namespace: ENVO
+xref: has_increased_levels_of
+
+[Typedef]
+id: has_input
+namespace: ENVO
+xref: RO:0002233
+
+[Typedef]
+id: has_member
+namespace: ENVO
+xref: RO:0002351
+
+[Typedef]
+id: has_output
+namespace: ENVO
+xref: RO:0002234
+
+[Typedef]
+id: has_part
+namespace: ENVO
+xref: BFO:0000051
+
+[Typedef]
+id: has_part_that_occurs_in
+namespace: ENVO
+xref: RO:0002479
+
+[Typedef]
+id: has_participant
+namespace: ENVO
+xref: RO:0000057
+
+[Typedef]
+id: has_quality
+namespace: ENVO
+xref: RO:0000086
+
+[Typedef]
+id: has_role
+namespace: ENVO
+xref: RO:0000087
+
+[Typedef]
+id: inheres_in
+namespace: ENVO
+xref: RO:0000052
+
+[Typedef]
+id: input_of
+namespace: ENVO
+xref: RO:0002352
+
+[Typedef]
+id: involved_in_negative_regulation_of
+namespace: ENVO
+xref: RO:0002430
+
+[Typedef]
+id: located_in
+namespace: ENVO
+xref: RO:0001025
+
+[Typedef]
+id: location_of
+namespace: ENVO
+xref: RO:0001015
+
+[Typedef]
+id: member_of
+namespace: ENVO
+xref: RO:0002350
+
+[Typedef]
+id: negatively_regulates
+namespace: ENVO
+xref: RO:0002212
+
+[Typedef]
+id: obsolete_determined_by
+name: obsolete determined by
+namespace: ENVO
+xref: ENVO:2100001
+is_obsolete: true
+
+[Typedef]
+id: obsolete_determined_by_part_of
+name: obsolete determined by part of
+namespace: ENVO
+xref: ENVO:2100007
+is_obsolete: true
+
+[Typedef]
+id: occurs_in
+namespace: ENVO
+xref: BFO:0000066
+
+[Typedef]
+id: output_of
+namespace: ENVO
+xref: RO:0002353
+
+[Typedef]
+id: overlaps
+namespace: ENVO
+xref: RO:0002131
+
+[Typedef]
+id: part_of
+namespace: ENVO
+xref: BFO:0000050
+
+[Typedef]
+id: partially_overlaps
+namespace: ENVO
+xref: RO:0002151
+
+[Typedef]
+id: partially_surrounded_by
+name: partially_surrounded_by
+namespace: ENVO
+def: "x partially_surrounded_by y if and only if (1) x is adjacent to y and for the region r that is adjacent to x, r partially overlaps y (2) the shared boundary between x and y occupies  a non-trivial proportion of the outermost boundary of x" []
+comment: Definition modified from 'surrounded by'.
+xref: ENVO:01001307
+property_value: IAO:0000112 "A duck swimming in a pond is partially surrounded by air and partially surrounded by water." xsd:string
+
+[Typedef]
+id: participates_in
+namespace: ENVO
+xref: RO:0000056
+
+[Typedef]
+id: preceded_by
+namespace: ENVO
+xref: BFO:0000062
+
+[Typedef]
+id: precedes
+namespace: ENVO
+xref: BFO:0000063
+
+[Typedef]
+id: process_has_causal_agent
+namespace: ENVO
+xref: RO:0002608
+
+[Typedef]
+id: realized_in
+namespace: ENVO
+xref: BFO:0000054
+
+[Typedef]
+id: realizes
+namespace: ENVO
+xref: BFO:0000055
+
+[Typedef]
+id: regulates_(processual)
+name: regulates (processual)
+namespace: ENVO
+xref: RO:0002211
+
+[Typedef]
+id: results_in_expansion_of
+name: results in expansion of
+namespace: ENVO
+def: "A process, p, results in the expansion of a material entity, m, if the spatial extent of m is increased as a result of participating in p." []
+xref: ENVO:02500016
+property_value: IAO:0000112 "Afforestation results in the expansion of a forest." xsd:string
+
+[Typedef]
+id: results_in_formation_of
+namespace: ENVO
+xref: RO:0002297
+
+[Typedef]
+id: results_in_proliferation_of
+name: results in proliferation of
+namespace: ENVO
+comment: To be ceded to RO
+xref: ENVO:02500020
+
+[Typedef]
+id: results_in_transformation_into
+name: results in transformation into
+namespace: ENVO
+xref: ENVO:02500006
+
+[Typedef]
+id: starts_during
+namespace: ENVO
+xref: RO:0002091
+
+[Typedef]
+id: surrounded_by
+name: surrounded by
+namespace: ENVO
+xref: RO:0002219
+
+[Typedef]
+id: towards
+namespace: ENVO
+xref: RO:0002503
+
+[Typedef]
+id: tributary_of
+namespace: ENVO
+xref: RO:0002376
+

@@ -1,0 +1,973 @@
+format-version: 1.2
+data-version: envo/releases/2020-05-11/subsets/envoEmpo.owl
+subsetdef: disposition_slim "Disposition slim"
+subsetdef: environmental_hazards "environmental_hazards"
+subsetdef: EnvO-Lite-GSC "EnvO-Lite-GSC"
+subsetdef: envoAstro "envoAstro"
+subsetdef: envoAtmo "envoAtmo"
+subsetdef: envoCesab "envoCesab"
+subsetdef: envoCmecs "envoCmecs"
+subsetdef: envoEmpo "envoEmpo"
+subsetdef: envoEOVs "envoEOVs"
+subsetdef: envoMarine "envoMarine"
+subsetdef: envoMeo "envoMeo"
+subsetdef: envoNceas "envoNceas"
+subsetdef: envoOmics "envoOmics"
+subsetdef: envoPolar "envoPolar"
+subsetdef: mpath_slim "Pathology slim"
+subsetdef: nlcd2011 "nlcd2011"
+subsetdef: relational_slim "Relational slim: types of quality that require an additional entity in order to exist"
+subsetdef: ro-eco "ro-eco"
+subsetdef: scalar_slim "Scalar slim"
+subsetdef: value_slim "Value slim"
+subsetdef: wwfBiome "wwfBiome"
+synonymtypedef: PLURAL "plurals"
+ontology: envo/subsets/envoEmpo
+property_value: owl:versionInfo "2020-05-11" xsd:string
+
+[Term]
+id: ENVO:00002006
+name: liquid water
+namespace: ENVO
+def: "An environmental material primarily composed of dihydrogen oxide in its liquid form." [MA:ma]
+synonym: "water" BROAD []
+xref: EcoLexicon:water
+xref: https://en.wikipedia.org/wiki/Water
+xref: LTER:617
+is_a: ENVO:01000815 ! liquid environmental material
+
+[Term]
+id: ENVO:00002007
+name: sediment
+namespace: ENVO
+def: "Sediment is an environmental substance comprised of any particulate matter that can be transported by fluid flow and which eventually is deposited as a layer of solid particles on the bedor bottom of a body of water or other liquid." [https://en.wikipedia.org/wiki/Sediment]
+comment: It is recommended to use a combination of sediment terms to describe a more specific sediment type.
+subset: EnvO-Lite-GSC
+subset: envoPolar
+xref: EcoLexicon:sediment
+xref: EcoLexicon:sedimentation
+xref: https://en.wikipedia.org/wiki/Sediment
+xref: LTER:492
+xref: LTER:493
+xref: SWEETRealm:Sediment
+is_a: ENVO:00010483 ! environmental material
+
+[Term]
+id: ENVO:00002010
+name: saline water
+namespace: ENVO
+def: "Water which contains a significant concentration of dissolved salts." []
+comment: The threshold salt concentration for classifying water as saline varies, but typically begins at about 1,000 to 3,000 parts salt per million parts water or 0.1–0.3% salt by weight.
+synonym: "salt water" EXACT []
+xref: EcoLexicon:saltwater
+xref: https://en.wikipedia.org/wiki/Saline_water
+xref: SWEETRealm:SalineWater
+xref: SWEETRealm:SaltWater
+is_a: ENVO:00002006 ! liquid water
+
+[Term]
+id: ENVO:00002011
+name: fresh water
+namespace: ENVO
+def: "Water which has a low concentration of dissolved solutes, particularly that of sodium chloride." []
+comment: The lower bound of solute concentration required for water to be considered freshwater is variable, but is always less than that of seawater, and often cited as less than 1 gram of solutes per 1 litre of water.
+subset: envoEmpo
+subset: envoPolar
+synonym: "freshwater" EXACT []
+synonym: "sweet water" RELATED []
+xref: EcoLexicon:fresh_water
+xref: https://en.wikipedia.org/wiki/Fresh_water
+xref: LTER:216
+xref: SWEETRealm:FreshWater
+is_a: ENVO:00002006 ! liquid water
+
+[Term]
+id: ENVO:00005791
+name: sterile water
+namespace: ENVO
+def: "Sterile water is water which does not contain lliving organisms." []
+is_a: ENVO:00002006 ! liquid water
+
+[Term]
+id: ENVO:00005801
+name: rhizosphere
+namespace: ENVO
+def: "The narrow region of soil that is directly influenced by root secretions and associated soil microorganisms." [https://en.wikipedia.org/wiki/Rhizosphere_%28ecology%29]
+xref: LTER:472
+is_a: ENVO:01000408 ! environmental zone
+
+[Term]
+id: ENVO:00010483
+name: environmental material
+namespace: ENVO
+def: "A portion of environmental material is a fiat object part which forms the medium or part of the medium of an environmental system." [DOI:10.1186/2041-1480-4-43, MA:ma, ORCID:0000-0002-4366-3088, URL:http\://ontology.buffalo.edu/smith/articles/niches.html]
+comment: Everything under this parent must be a mass noun. All subclasses are to be understood as being composed primarily of the named entity, rather than restricted to that entity. For example, "ENVO:water" is to be understood as "environmental material composed primarly of some CHEBI:water". This class is currently being aligned to the Basic Formal Ontology. Following this alignment, its definition and the definitions of its subclasses will be revised.
+synonym: "portion of environmental material" EXACT []
+
+[Term]
+id: ENVO:01000155
+name: organic material
+namespace: ENVO
+def: "Environmental material derived from living organisms and composed primarily of one or more biomacromolecules." [ISBN:978-0-618-45504-1, ORCID:0000-0002-4366-3088]
+synonym: "biomass" EXACT []
+xref: EcoLexicon:organic_material
+is_a: ENVO:00010483 ! environmental material
+created_by: ORCID:0000-0002-4366-3088
+creation_date: 2010-03-20T08:40:04Z
+
+[Term]
+id: ENVO:01000254
+name: environmental system
+namespace: ENVO
+def: "A system which has the disposition to environ one or more material entities." [DOI:10.1186/2041-1480-4-43]
+comment: In ENVO's alignment with the Basic Formal Ontology, this class is being considered as a subclass of a proposed BFO class "system". The relation "environed_by" is also under development. Roughly, a system which includes a material entity (at least partially) within its site and causally influences that entity may be considered to environ it. Following the completion of this alignment, this class' definition and the definitions of its subclasses will be revised.
+synonym: "environment" EXACT []
+xref: EcoLexicon:environment
+creation_date: 2013-09-23T16:04:08Z
+
+[Term]
+id: ENVO:01000306
+name: freshwater environment
+namespace: ENVO
+def: "An aquatic environment which is determined by freshwater." []
+subset: envoEmpo
+subset: envoOmics
+subset: envoPolar
+synonym: "fresh water environment" EXACT []
+is_a: ENVO:01000317 ! aquatic environment
+intersection_of: ENVO:01000317 ! aquatic environment
+intersection_of: determined_by ENVO:00002011 ! fresh water
+property_value: IAO:0000118 "Water (non-saline)" xsd:string {xref="http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/"}
+
+[Term]
+id: ENVO:01000307
+name: saline water environment
+namespace: ENVO
+def: "An environmental system which has its properties and dynamics determined by saline water." []
+subset: envoEmpo
+subset: envoOmics
+subset: envoPolar
+is_a: ENVO:01000317 ! aquatic environment
+intersection_of: ENVO:01000317 ! aquatic environment
+intersection_of: determined_by ENVO:00002010 ! saline water
+property_value: IAO:0000118 "Water (saline)" xsd:string {xref="http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/"}
+
+[Term]
+id: ENVO:01000317
+name: aquatic environment
+namespace: ENVO
+def: "An environment whose dynamics are strongly influenced by water." []
+is_a: ENVO:01000254 ! environmental system
+intersection_of: ENVO:01000254 ! environmental system
+intersection_of: determined_by ENVO:00002006 ! liquid water
+
+[Term]
+id: ENVO:01000408
+name: environmental zone
+namespace: ENVO
+def: "A site which has its extent determined by the presence or influence of one or more components of an environmental system or the processes occurring therein." []
+comment: Formerly, this class was an experimental class and a subclass of "environmental feature". It is now aligned to BFO. The class was not obsoleted as the core semantics maintained their stability through its transition.
+subset: envoPolar
+synonym: "environmental area" RELATED []
+relationship: part_of ENVO:01000254 ! environmental system
+
+[Term]
+id: ENVO:01000815
+name: liquid environmental material
+namespace: ENVO
+def: "An environmental material which is in a liquid state." []
+comment: This is a defined class: its subclasses will not be asserted, but filled by inference.
+subset: envoPolar
+is_a: ENVO:00010483 ! environmental material
+
+[Term]
+id: ENVO:01000997
+name: environmental system determined by a quality
+namespace: ENVO
+def: "An environmental system which is determined by materials bearing roughly homogeneous qualities." []
+comment: Organisational class. Not intended for annotation.
+is_a: ENVO:01000254 ! environmental system
+
+[Term]
+id: ENVO:01000999
+name: rhizosphere environment
+namespace: ENVO
+def: "An environmental system determined by the presence of a plant rhizosphere." []
+subset: envoEmpo
+subset: envoOmics
+is_a: ENVO:01000254 ! environmental system
+relationship: overlaps ENVO:00005801 ! rhizosphere
+relationship: overlaps ENVO:01001001 ! plant-associated environment
+property_value: IAO:0000118 "Plant rhizosphere" xsd:string {comment="http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/"}
+
+[Term]
+id: ENVO:01001000
+name: environmental system determined by an organism
+namespace: ENVO
+def: "An environmental system which is determined by a living organism." []
+subset: envoEmpo
+subset: envoOmics
+synonym: "host-associated environment" RELATED []
+is_a: ENVO:01000254 ! environmental system
+
+[Term]
+id: ENVO:01001001
+name: plant-associated environment
+namespace: ENVO
+def: "An environmental system determined by a green plant." []
+subset: envoEmpo
+subset: envoOmics
+synonym: "plant environment" BROAD []
+synonym: "Viridiplantae-associated environment" EXACT []
+property_value: IAO:0000118 "Plant" xsd:string {xref="http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/"}
+
+[Term]
+id: ENVO:01001002
+name: animal-associated environment
+namespace: ENVO
+def: "An environmental system determined by an animal." []
+subset: envoEmpo
+subset: envoMeo
+subset: envoOmics
+synonym: "animal environment" BROAD []
+synonym: "Metazoan-associated environment" EXACT []
+property_value: IAO:0000118 "Animal" xsd:string {xref="http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/"}
+
+[Term]
+id: ENVO:01001003
+name: non-saline environment
+namespace: ENVO
+comment: This class (term) is defined by the lack of a quality (i.e. the lack of salinity or increased osmolarity), which is not best-practice ontologically. Use for annotation is generally discouraged and users should use classes which positively describe the material or environment sampled (i.e. stating the qualities the entity has, rather than those it does not).
+subset: envoEmpo
+is_a: ENVO:01000997 ! environmental system determined by a quality
+property_value: IAO:0000118 "Non-saline" xsd:string {xref="http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/"}
+
+[Term]
+id: ENVO:01001028
+name: sediment permeated by freshwater
+namespace: ENVO
+def: "Sediment which has its porespace filled by water which has very low levels of sodium chloride and/or other salts." []
+comment: We do not specify numeric thresholds for saline vs. non-saline here, as this is variable. Consider specifying this on the information and/or data layer for your purposes. If you require an ENVO class with a fixed threshold, please request one using our issue tracker.
+subset: envoEmpo
+subset: envoOmics
+is_a: ENVO:00002007 ! sediment
+relationship: surrounded_by ENVO:00002011 ! fresh water
+
+[Term]
+id: ENVO:01001029
+name: fecal environment
+namespace: ENVO
+def: "An environmental system which has its properties and dynamics determined by feces." []
+subset: envoEmpo
+subset: envoMeo
+subset: envoOmics
+is_a: ENVO:01000254 ! environmental system
+property_value: IAO:0000118 "Animal distal gut" xsd:string {xref="http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/", comment="The label of this EMPO class is ambiguous, but pers. comm. with L Thompson (http://orcid.org/0000-0002-3911-1280) reveals that this is essentially limited to fecal samples."}
+
+[Term]
+id: ENVO:01001030
+name: environment determined by a metazoan secretion
+namespace: ENVO
+def: "An environmental system which has its properties and dynamics determined by a bodily secretion of a metazoan." []
+subset: envoEmpo
+subset: envoMeo
+subset: envoOmics
+is_a: ENVO:01000254 ! environmental system
+property_value: IAO:0000118 "Animal secretion" xsd:string {xref="http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/"}
+
+[Term]
+id: ENVO:01001031
+name: environment determined by a plant substance
+namespace: ENVO
+def: "An environmental system which has its properties and dynamics determined by a substance produced by a plant." []
+subset: envoEmpo
+subset: envoMeo
+subset: envoOmics
+is_a: ENVO:01000254 ! environmental system
+property_value: IAO:0000118 "Plant secretion" xsd:string {xref="http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/"}
+
+[Term]
+id: ENVO:01001032
+name: environment determined by a biofilm on a plant surface
+namespace: ENVO
+def: "An environmental system which has its properties and dynamics determined by a biofilm on the surface of a plant." []
+subset: envoEmpo
+subset: envoMeo
+subset: envoOmics
+property_value: IAO:0000118 "Plant surface" xsd:string {xref="http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/"}
+
+[Term]
+id: ENVO:01001033
+name: digestive tract environment
+namespace: ENVO
+def: "An environmental system which has its properties and dynamics determined by a digestive tract." []
+subset: envoEmpo
+subset: envoMeo
+subset: envoOmics
+is_a: ENVO:2100000 ! anatomical entity environment
+property_value: IAO:0000118 "Animal proximal gut" xsd:string {xref="http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/", comment="This EMPO class includes examples of microbial environments determined by the \"gut intestine, gizzard, crop, lumen, [and] mucosa\"."}
+
+[Term]
+id: ENVO:01001034
+name: environment determined by a biofilm on an animal surface
+namespace: ENVO
+def: "An environmental system which has its properties and dynamics determined by a biofilm on the surface of a animal." []
+subset: envoEmpo
+subset: envoMeo
+subset: envoOmics
+property_value: IAO:0000118 "Animal surface" xsd:string {xref="http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/"}
+
+[Term]
+id: ENVO:01001035
+name: environment determined by a biofilm on a fungal surface
+namespace: ENVO
+def: "An environmental system which has its properties and dynamics determined by a biofilm on the surface of a fungus." []
+subset: envoEmpo
+subset: envoMeo
+subset: envoOmics
+property_value: IAO:0000118 "Fungus surface" xsd:string {xref="http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/"}
+
+[Term]
+id: ENVO:01001036
+name: sediment permeated by saline water
+namespace: ENVO
+def: "Sediment which has its porespace filled by water with increased levels of sodium chloride and other salts." []
+comment: We do not specify numeric thresholds for saline vs. non-saline here, as this is variable. Consider specifying this on the information and/or data layer for your purposes. If you require an ENVO class with a fixed threshold, please request one using our issue tracker.
+subset: envoEmpo
+subset: envoOmics
+is_a: ENVO:00002007 ! sediment
+relationship: surrounded_by ENVO:00002010 ! saline water
+
+[Term]
+id: ENVO:01001040
+name: saline environment
+namespace: ENVO
+def: "An environment which is determined by materials which bear significant concentrations of salts." []
+comment: The thresholds for "significant" concentrations of salts vary widely and thus no committment is made in this class. Subclasses with more explicit thresholds can be made upon request.
+subset: envoEmpo
+is_a: ENVO:01000997 ! environmental system determined by a quality
+property_value: IAO:0000118 "Saline" xsd:string {xref="http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/"}
+
+[Term]
+id: ENVO:01001041
+name: fungi-associated environment
+namespace: ENVO
+def: "An environmental system determined by a fungal structure." []
+subset: envoEmpo
+subset: envoMeo
+subset: envoOmics
+synonym: "fungus environment" BROAD []
+synonym: "fungus-associated environment" EXACT []
+relationship: determined_by FAO:0000001
+property_value: IAO:0000118 "Fungus" xsd:string {xref="http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/"}
+
+[Term]
+id: ENVO:01001042
+name: sterile water environment
+namespace: ENVO
+def: "An environmental system which has its properties and dynamics determined by sterile water." []
+comment: This term can be understood as a negative experimental control primarily composed of sterile water. The quantity of sterile water used may be contaminated; to express pure sterile water, please use http://purl.obolibrary.org/obo/ENVO_00005791
+subset: envoEmpo
+subset: envoOmics
+is_a: ENVO:01000317 ! aquatic environment
+intersection_of: ENVO:01000317 ! aquatic environment
+intersection_of: determined_by ENVO:00005791 ! sterile water
+relationship: composed_primarily_of ENVO:00005791 ! sterile water
+property_value: IAO:0000118 "Negative" xsd:string {xref="http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/"}
+
+[Term]
+id: ENVO:01001043
+name: hypersaline water environment
+namespace: ENVO
+def: "An environmental system which has its properties and dynamics determined by hypersaline water." []
+subset: envoEmpo
+subset: envoOmics
+subset: envoPolar
+is_a: ENVO:01000307 ! saline water environment
+property_value: IAO:0000118 "Hypersaline (saline)" xsd:string {xref="http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/", comment="Examples inlcude water from hypersaline samples or brines (>50 psu)"}
+
+[Term]
+id: ENVO:01001044
+name: soil environment
+namespace: ENVO
+def: "An environmental system which has its properties and dynamics determined by soil." []
+subset: envoEmpo
+subset: envoOmics
+is_a: ENVO:01000254 ! environmental system
+property_value: IAO:0000118 "Soil (non-saline)" xsd:string {xref="http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/"}
+
+[Term]
+id: ENVO:01001046
+name: planetary subsurface environment
+namespace: ENVO
+def: "An environmental system which has its properties and dynamics determined by the subsurface zone of a planet." []
+subset: envoEmpo
+subset: envoMeo
+subset: envoOmics
+is_a: ENVO:01000254 ! environmental system
+
+[Term]
+id: ENVO:01001047
+name: non-saline planetary subsurface environment
+namespace: ENVO
+def: "An environmental system which has its properties and dynamics determined by those parts of a planetary subsurface zone which are not saline." []
+subset: envoEmpo
+subset: envoMeo
+subset: envoOmics
+is_a: ENVO:01001046 ! planetary subsurface environment
+property_value: IAO:0000118 "Subsurface (non-saline)" xsd:string {xref="http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/"}
+
+[Term]
+id: ENVO:01001048
+name: sediment environment
+namespace: ENVO
+def: "An environmental system which has its properties and dynamics determined by sediment." []
+subset: envoEmpo
+subset: envoOmics
+is_a: ENVO:01000254 ! environmental system
+intersection_of: ENVO:01000254 ! environmental system
+intersection_of: determined_by ENVO:00002007 ! sediment
+
+[Term]
+id: ENVO:01001049
+name: non-saline sediment environment
+namespace: ENVO
+def: "An environmental system which has its properties and dynamics determined by sediment permeated by non-saline water." []
+subset: envoEmpo
+subset: envoOmics
+is_a: ENVO:01001048 ! sediment environment
+intersection_of: ENVO:01001048 ! sediment environment
+intersection_of: determined_by ENVO:01001028 ! sediment permeated by freshwater
+property_value: IAO:0000118 "Sediment (non-saline)" xsd:string {xref="http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/"}
+
+[Term]
+id: ENVO:01001050
+name: saline sediment environment
+namespace: ENVO
+def: "An environmental system which has its properties and dynamics determined by sediment permeated by saline water." []
+subset: envoEmpo
+subset: envoOmics
+is_a: ENVO:01001048 ! sediment environment
+intersection_of: ENVO:01001048 ! sediment environment
+intersection_of: determined_by ENVO:01001036 ! sediment permeated by saline water
+property_value: IAO:0000118 "Sediment (saline)" xsd:string {xref="http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/"}
+
+[Term]
+id: ENVO:01001051
+name: environment determined by a biofilm on a non-saline surface
+namespace: ENVO
+def: "An environmental system which has its properties and dynamics determined by a biofilm on a surface which is exposed to non-saline materials." []
+subset: envoEmpo
+subset: envoMeo
+subset: envoOmics
+property_value: IAO:0000118 "Surface (non-saline)" xsd:string {xref="http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/"}
+
+[Term]
+id: ENVO:01001052
+name: aerosol environment
+namespace: ENVO
+def: "An environmental system which has its properties and dynamics determined by an aerosol." []
+subset: envoEmpo
+subset: envoOmics
+is_a: ENVO:01000254 ! environmental system
+
+[Term]
+id: ENVO:01001053
+name: saline aerosol environment
+namespace: ENVO
+def: "An environmental system which has its properties and dynamics determined by a saline aerosol." []
+subset: envoEmpo
+subset: envoOmics
+is_a: ENVO:01001052 ! aerosol environment
+property_value: IAO:0000118 "Aerosol (saline)" xsd:string {xref="http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/", comment="seaspray or other aerosolized saline material (>5 psu)"}
+
+[Term]
+id: ENVO:01001054
+name: non-saline aerosol environment
+namespace: ENVO
+def: "An environmental system which has its properties and dynamics determined by an aerosol with a low concentration of dissolved solutes." []
+subset: envoEmpo
+subset: envoOmics
+is_a: ENVO:01001052 ! aerosol environment
+property_value: IAO:0000118 "Aerosol (non-saline)" xsd:string {xref="http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/", comment="aerosolized dust or liquid"}
+
+[Term]
+id: ENVO:01001055
+name: environment associated with an animal part or small animal
+namespace: ENVO
+def: "An environmental system determined by part of a living or dead animal, or a whole small animal." []
+subset: envoEmpo
+subset: envoMeo
+subset: envoOmics
+property_value: IAO:0000118 "Animal corpus" xsd:string {xref="http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/"}
+
+[Term]
+id: ENVO:01001056
+name: environment determined by a biofilm on a saline surface
+namespace: ENVO
+def: "An environmental system which has its properties and dynamics determined by a biofilm on a surface which is exposed to saline materials." []
+subset: envoEmpo
+subset: envoMeo
+subset: envoOmics
+property_value: IAO:0000118 "Surface (saline)" xsd:string {xref="http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/"}
+
+[Term]
+id: ENVO:01001057
+name: environment associated with a plant part or small plant
+namespace: ENVO
+def: "An environmental system determined by part of a living or dead plant, or a whole small plant." []
+subset: envoEmpo
+subset: envoMeo
+subset: envoOmics
+property_value: IAO:0000118 "Plant corpus" xsd:string {xref="http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/"}
+
+[Term]
+id: ENVO:01001058
+name: environment associated with a fungal tissue
+namespace: ENVO
+def: "An environmental system determined by part of a living or dead fungus." []
+subset: envoEmpo
+subset: envoMeo
+subset: envoOmics
+property_value: IAO:0000118 "Fungus corpus" xsd:string {xref="http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/"}
+
+[Term]
+id: ENVO:01001059
+name: mock community culture
+namespace: ENVO
+def: "A cell culture which is composed of a microbial community of known composition." []
+comment: Mock communities are typically used as positive controls in experiments.
+subset: envoEmpo
+subset: envoOmics
+is_a: ENVO:02000008 ! cell culture
+property_value: IAO:0000118 "Mock community" xsd:string {xref="http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/"}
+
+[Term]
+id: ENVO:01001060
+name: single strain cell culture
+namespace: ENVO
+def: "A cell culture which is composed of a single population of bacterial or archaeal cells." []
+subset: envoEmpo
+subset: envoOmics
+is_a: ENVO:02000008 ! cell culture
+property_value: IAO:0000118 "Single strain" xsd:string {xref="http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/"}
+
+[Term]
+id: ENVO:02000008
+name: cell culture
+namespace: ENVO
+def: "A cell culture is a growth of cells in vitro in an artificial medium for experimental research." [URL:http\://stemcells.nih.gov/StemCells/Templates/StemCellContentPage.aspx?NRMODE=Published&NRNODEGUID=%7b3C35BAB6-0FE6-4C4E-95F2-2CB61B58D96D%7d&NRORIGINALURL=%2finfo%2fglossary%2easp&NRCACHEHINT=NoModifyGuest#cellculture]
+xref: https://en.wikipedia.org/wiki/Cell_culture
+is_a: ENVO:01000155 ! organic material
+
+[Term]
+id: ENVO:2100000
+name: anatomical entity environment
+namespace: ENVO
+def: "An environment which is determined by an anatomical entity." []
+is_a: ENVO:01000254 ! environmental system
+relationship: part_of ENVO:01001000 ! environmental system determined by an organism
+
+[Term]
+id: FAO:0000001
+namespace: ENVO
+
+[Typedef]
+id: RO:0002218
+namespace: ENVO
+xref: RO:0002218
+
+[Typedef]
+id: adjacent_to
+namespace: ENVO
+xref: RO:0002220
+is_functional: true
+
+[Typedef]
+id: attached_to
+namespace: ENVO
+xref: RO:0002371
+
+[Typedef]
+id: bearer_of
+namespace: ENVO
+xref: RO:0000053
+
+[Typedef]
+id: bounding_layer_of
+namespace: ENVO
+xref: RO:0002007
+
+[Typedef]
+id: capable_of
+namespace: ENVO
+xref: RO:0002215
+
+[Typedef]
+id: causal_agent_in_process
+namespace: ENVO
+xref: RO:0002500
+
+[Typedef]
+id: causally_downstream_of_or_within
+namespace: ENVO
+xref: RO:0002427
+
+[Typedef]
+id: causally_upstream_of
+namespace: ENVO
+xref: RO:0002411
+
+[Typedef]
+id: causally_upstream_of_or_within
+namespace: ENVO
+xref: RO:0002418
+
+[Typedef]
+id: composed_primarily_of
+namespace: ENVO
+xref: RO:0002473
+
+[Typedef]
+id: connected_to
+namespace: ENVO
+xref: RO:0002170
+
+[Typedef]
+id: connects
+name: connects
+namespace: ENVO
+xref: RO:0002176
+
+[Typedef]
+id: contained_in
+namespace: ENVO
+xref: RO:0001018
+
+[Typedef]
+id: contains
+namespace: ENVO
+xref: RO:0001019
+
+[Typedef]
+id: contains_process
+namespace: ENVO
+xref: BFO:0000067
+
+[Typedef]
+id: continuous_with
+namespace: ENVO
+xref: RO:0002150
+
+[Typedef]
+id: derives_from
+namespace: ENVO
+xref: RO:0001000
+
+[Typedef]
+id: derives_into
+namespace: ENVO
+xref: RO:0001001
+
+[Typedef]
+id: determined_by
+namespace: ENVO
+xref: RO:0002507
+
+[Typedef]
+id: determined_by_part_of
+namespace: ENVO
+xref: RO:0002509
+holds_over_chain: determined_by part_of
+
+[Typedef]
+id: determines
+namespace: ENVO
+xref: RO:0002508
+
+[Typedef]
+id: disconnected_from
+name: disconnected_from
+namespace: ENVO
+def: "A is disconnected_from B if they have no parts in common." [SO:cjm]
+synonym: "non_overlapping_with" EXACT []
+expand_assertion_to: "Class: <http://www.w3.org/2002/07/owl#Nothing> EquivalentTo: (BFO_0000050 some ?X) and (BFO_0000050 some ?Y)" []
+is_metadata_tag: true
+is_class_level: true
+
+[Typedef]
+id: distributary_of
+namespace: ENVO
+xref: RO:0002377
+
+[Typedef]
+id: during_which_ends
+namespace: ENVO
+xref: RO:0002084
+
+[Typedef]
+id: during_which_starts
+namespace: ENVO
+xref: RO:0002088
+
+[Typedef]
+id: ends
+namespace: ENVO
+xref: RO:0002229
+
+[Typedef]
+id: formed_as_result_of
+namespace: ENVO
+xref: RO:0002354
+
+[Typedef]
+id: generates
+name: generates
+namespace: ENVO
+def: "A relation between a process and a disposition such that the existence of the disposition is caused by the execution of the process." []
+xref: ENVO:2000036
+property_value: IAO:0000116 "Consider ceding to RO" xsd:string
+created_by: cjm
+creation_date: 2018-11-03T20:58:13Z
+
+[Typedef]
+id: has_condition
+name: has_condition
+namespace: ENVO
+comment: Experimental relation used in EnvO. A condition defines a restricted range of a given quality or combination of qualities. If an environment class, E, has_condition C, then all qualities listed in C are restricted to the ranges defined in C in E. This is not intended as a logical conditional.
+xref: has_condition
+is_inverse_functional: true
+creation_date: 2013-05-08T07:33:05Z
+
+[Typedef]
+id: has_disposition
+namespace: ENVO
+xref: RO:0000091
+
+[Typedef]
+id: has_end_location
+namespace: ENVO
+xref: RO:0002232
+
+[Typedef]
+id: has_function
+namespace: ENVO
+xref: RO:0000085
+
+[Typedef]
+id: has_habitat
+name: has habitat
+namespace: ENVO
+xref: RO:0002303
+
+[Typedef]
+id: has_increased_levels_of
+namespace: ENVO
+xref: has_increased_levels_of
+
+[Typedef]
+id: has_input
+namespace: ENVO
+xref: RO:0002233
+
+[Typedef]
+id: has_member
+namespace: ENVO
+xref: RO:0002351
+
+[Typedef]
+id: has_output
+namespace: ENVO
+xref: RO:0002234
+
+[Typedef]
+id: has_part
+namespace: ENVO
+xref: BFO:0000051
+
+[Typedef]
+id: has_part_that_occurs_in
+namespace: ENVO
+xref: RO:0002479
+
+[Typedef]
+id: has_participant
+namespace: ENVO
+xref: RO:0000057
+
+[Typedef]
+id: has_quality
+namespace: ENVO
+xref: RO:0000086
+
+[Typedef]
+id: has_role
+namespace: ENVO
+xref: RO:0000087
+
+[Typedef]
+id: inheres_in
+namespace: ENVO
+xref: RO:0000052
+
+[Typedef]
+id: input_of
+namespace: ENVO
+xref: RO:0002352
+
+[Typedef]
+id: involved_in_negative_regulation_of
+namespace: ENVO
+xref: RO:0002430
+
+[Typedef]
+id: located_in
+namespace: ENVO
+xref: RO:0001025
+
+[Typedef]
+id: location_of
+namespace: ENVO
+xref: RO:0001015
+
+[Typedef]
+id: member_of
+namespace: ENVO
+xref: RO:0002350
+
+[Typedef]
+id: negatively_regulates
+namespace: ENVO
+xref: RO:0002212
+
+[Typedef]
+id: obsolete_determined_by
+name: obsolete determined by
+namespace: ENVO
+xref: ENVO:2100001
+is_obsolete: true
+
+[Typedef]
+id: obsolete_determined_by_part_of
+name: obsolete determined by part of
+namespace: ENVO
+xref: ENVO:2100007
+is_obsolete: true
+
+[Typedef]
+id: occurs_in
+namespace: ENVO
+xref: BFO:0000066
+
+[Typedef]
+id: output_of
+namespace: ENVO
+xref: RO:0002353
+
+[Typedef]
+id: overlaps
+namespace: ENVO
+xref: RO:0002131
+
+[Typedef]
+id: part_of
+namespace: ENVO
+xref: BFO:0000050
+
+[Typedef]
+id: partially_overlaps
+namespace: ENVO
+xref: RO:0002151
+
+[Typedef]
+id: partially_surrounded_by
+name: partially_surrounded_by
+namespace: ENVO
+def: "x partially_surrounded_by y if and only if (1) x is adjacent to y and for the region r that is adjacent to x, r partially overlaps y (2) the shared boundary between x and y occupies  a non-trivial proportion of the outermost boundary of x" []
+comment: Definition modified from 'surrounded by'.
+xref: ENVO:01001307
+property_value: IAO:0000112 "A duck swimming in a pond is partially surrounded by air and partially surrounded by water." xsd:string
+
+[Typedef]
+id: participates_in
+namespace: ENVO
+xref: RO:0000056
+
+[Typedef]
+id: preceded_by
+namespace: ENVO
+xref: BFO:0000062
+
+[Typedef]
+id: precedes
+namespace: ENVO
+xref: BFO:0000063
+
+[Typedef]
+id: process_has_causal_agent
+namespace: ENVO
+xref: RO:0002608
+
+[Typedef]
+id: realized_in
+namespace: ENVO
+xref: BFO:0000054
+
+[Typedef]
+id: realizes
+namespace: ENVO
+xref: BFO:0000055
+
+[Typedef]
+id: regulates_(processual)
+name: regulates (processual)
+namespace: ENVO
+xref: RO:0002211
+
+[Typedef]
+id: results_in_expansion_of
+name: results in expansion of
+namespace: ENVO
+def: "A process, p, results in the expansion of a material entity, m, if the spatial extent of m is increased as a result of participating in p." []
+xref: ENVO:02500016
+property_value: IAO:0000112 "Afforestation results in the expansion of a forest." xsd:string
+
+[Typedef]
+id: results_in_formation_of
+namespace: ENVO
+xref: RO:0002297
+
+[Typedef]
+id: results_in_proliferation_of
+name: results in proliferation of
+namespace: ENVO
+comment: To be ceded to RO
+xref: ENVO:02500020
+
+[Typedef]
+id: results_in_transformation_into
+name: results in transformation into
+namespace: ENVO
+xref: ENVO:02500006
+
+[Typedef]
+id: starts_during
+namespace: ENVO
+xref: RO:0002091
+
+[Typedef]
+id: surrounded_by
+name: surrounded by
+namespace: ENVO
+xref: RO:0002219
+
+[Typedef]
+id: towards
+namespace: ENVO
+xref: RO:0002503
+
+[Typedef]
+id: tributary_of
+namespace: ENVO
+xref: RO:0002376
+
