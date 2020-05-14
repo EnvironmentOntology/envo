@@ -1,6 +1,6 @@
 format-version: 1.2
 ontology: envo/imports/ro_import
-owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\nDeclaration(Class(<http://purl.obolibrary.org/obo/BFO_0000002>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/BFO_0000003>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/BFO_0000040>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/BFO_0000141>))\nDeclaration(ObjectProperty(<http://purl.obolibrary.org/obo/BFO_0000050>))\nDeclaration(ObjectProperty(<http://purl.obolibrary.org/obo/BFO_0000051>))\n\n############################\n#   Classes\n############################\n\n# Class: <http://purl.obolibrary.org/obo/BFO_0000002> (<http://purl.obolibrary.org/obo/BFO_0000002>)\n\nDisjointClasses(<http://purl.obolibrary.org/obo/BFO_0000002> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/BFO_0000003>))\n\n# Class: <http://purl.obolibrary.org/obo/BFO_0000003> (<http://purl.obolibrary.org/obo/BFO_0000003>)\n\nDisjointClasses(<http://purl.obolibrary.org/obo/BFO_0000003> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/BFO_0000002>))\n\n# Class: <http://purl.obolibrary.org/obo/BFO_0000040> (<http://purl.obolibrary.org/obo/BFO_0000040>)\n\nDisjointClasses(<http://purl.obolibrary.org/obo/BFO_0000040> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/BFO_0000141>))\n\n# Class: <http://purl.obolibrary.org/obo/BFO_0000141> (<http://purl.obolibrary.org/obo/BFO_0000141>)\n\nDisjointClasses(<http://purl.obolibrary.org/obo/BFO_0000141> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000051> <http://purl.obolibrary.org/obo/BFO_0000040>))\n\n\n)
+owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\nDeclaration(Class(<http://purl.obolibrary.org/obo/BFO_0000002>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/BFO_0000003>))\nDeclaration(ObjectProperty(<http://purl.obolibrary.org/obo/BFO_0000050>))\n\n############################\n#   Classes\n############################\n\n# Class: <http://purl.obolibrary.org/obo/BFO_0000002> (<http://purl.obolibrary.org/obo/BFO_0000002>)\n\nDisjointClasses(<http://purl.obolibrary.org/obo/BFO_0000002> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/BFO_0000003>))\n\n# Class: <http://purl.obolibrary.org/obo/BFO_0000003> (<http://purl.obolibrary.org/obo/BFO_0000003>)\n\nDisjointClasses(<http://purl.obolibrary.org/obo/BFO_0000003> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/BFO_0000002>))\n\n\n)
 
 [Term]
 id: BFO:0000002
@@ -21,13 +21,7 @@ name: independent continuant
 def: "A continuant that is a bearer of quality and realizable entity entities, in which other entities inhere and which itself cannot inhere in anything." []
 is_a: BFO:0000002 ! continuant
 disjoint_from: BFO:0000020 ! specifically dependent continuant
-disjoint_from: BFO:0000031 ! generically dependent continuant
 relationship: BFO:0000050 BFO:0000004 ! part of independent continuant
-
-[Term]
-id: BFO:0000006
-name: spatial region
-is_a: BFO:0000141 ! immaterial entity
 
 [Term]
 id: BFO:0000015
@@ -46,21 +40,13 @@ id: BFO:0000017
 name: realizable entity
 def: "A specifically dependent continuant  that inheres in continuant  entities and are not exhibited in full at every time in which it inheres in an entity or group of entities. The exhibition or actualization of a realizable entity is a particular manifestation, functioning or process that occurs under certain circumstances." []
 is_a: BFO:0000020 ! specifically dependent continuant
-disjoint_from: BFO:0000019 ! quality
 relationship: BFO:0000050 BFO:0000017 ! part of realizable entity
-
-[Term]
-id: BFO:0000019
-name: quality
-is_a: BFO:0000020 ! specifically dependent continuant
-relationship: BFO:0000050 BFO:0000019 ! part of quality
 
 [Term]
 id: BFO:0000020
 name: specifically dependent continuant
 def: "A continuant that inheres in or is borne by other entities. Every instance of A requires some specific instance of B which must always be the same." []
 is_a: BFO:0000002 ! continuant
-disjoint_from: BFO:0000031 ! generically dependent continuant
 relationship: BFO:0000050 BFO:0000020 ! part of specifically dependent continuant
 
 [Term]
@@ -68,13 +54,6 @@ id: BFO:0000023
 name: role
 def: "A realizable entity  the manifestation of which brings about some result or end that is not essential to a continuant  in virtue of the kind of thing that it is but that can be served or participated in by that kind of continuant  in some kinds of natural, social or institutional contexts." []
 is_a: BFO:0000017 ! realizable entity
-
-[Term]
-id: BFO:0000031
-name: generically dependent continuant
-def: "A continuant that is dependent on one or other independent continuant bearers. For every instance of A requires some instance of (an independent continuant type) B but which instance of B serves can change from time to time." []
-is_a: BFO:0000002 ! continuant
-relationship: BFO:0000050 BFO:0000031 ! part of generically dependent continuant
 
 [Term]
 id: BFO:0000034
@@ -85,12 +64,6 @@ is_a: BFO:0000016 ! disposition
 id: BFO:0000040
 name: material entity
 def: "An independent continuant that is spatially extended whose identity is independent of that of other entities and can be maintained through time." []
-is_a: BFO:0000004 ! independent continuant
-disjoint_from: BFO:0000141 ! immaterial entity
-
-[Term]
-id: BFO:0000141
-name: immaterial entity
 is_a: BFO:0000004 ! independent continuant
 
 [Term]
@@ -143,6 +116,19 @@ property_value: RO:0001900 RO:0001901
 is_a: RO:0002131 ! overlaps
 
 [Typedef]
+id: BFO:0000054
+name: realized in
+comment: Paraphrase of elucidation: a relation between a realizable entity and a process, where there is some material entity that is bearer of the realizable entity and participates in the process, and the realizable entity comes to be realized in the course of the process
+property_value: IAO:0000111 "realized in" xsd:string
+property_value: IAO:0000112 "this disease is realized in this disease course" xsd:string
+property_value: IAO:0000112 "this fragility is realized in this shattering" xsd:string
+property_value: IAO:0000112 "this investigator role is realized in this investigation" xsd:string
+property_value: IAO:0000118 "is realized by" xsd:string
+property_value: IAO:0000118 "realized_in" xsd:string
+property_value: IAO:0000600 "[copied from inverse property 'realizes'] to say that b realizes c at t is to assert that there is some material entity d & b is a process which has participant d at t & c is a disposition or role of which d is bearer_of at t& the type instantiated by b is correlated with the type instantiated by c. (axiom label in BFO2 Reference: [059-003])" xsd:string
+property_value: isDefinedBy http://purl.obolibrary.org/obo/bfo.owl
+
+[Typedef]
 id: BFO:0000055
 name: realizes
 comment: Paraphrase of elucidation: a relation between a process and a realizable entity, where there is some material entity that is bearer of the realizable entity and participates in the process, and the realizable entity comes to be realized in the course of the process
@@ -172,6 +158,17 @@ def: "x precedes y if and only if the time point at which x ends is before or eq
 subset: ro-eco
 property_value: IAO:0000111 "precedes" xsd:string
 is_a: RO:0002222 ! temporally related to
+
+[Typedef]
+id: BFO:0000066
+name: occurs in
+def: "b occurs_in c =def b is a process and c is a material entity or immaterial entity& there exists a spatiotemporal region r and b occupies_spatiotemporal_region r.& forall(t) if b exists_at t then c exists_at t & there exist spatial regions s and s’ where & b spatially_projects_onto s at t& c is occupies_spatial_region s’ at t& s is a proper_continuant_part_of s’ at t" []
+comment: Paraphrase of definition: a relation between a process and an independent continuant, in which the process takes place entirely within the independent continuant
+property_value: IAO:0000111 "occurs in" xsd:string
+property_value: IAO:0000118 "occurs_in" xsd:string
+property_value: IAO:0000118 "unfolds in" xsd:string
+property_value: IAO:0000118 "unfolds_in" xsd:string
+property_value: isDefinedBy http://purl.obolibrary.org/obo/bfo.owl
 
 [Typedef]
 id: BFO:0000067
@@ -273,6 +270,17 @@ property_value: IAO:0000118 "derives_from" xsd:string
 property_value: IAO:0000232 "This relation is taken from the RO2005 version of RO. It may be obsoleted and replaced by relations with different definitions. See also the 'develops from' family of relations." xsd:string
 
 [Typedef]
+id: RO:0001001
+name: derives into
+def: "a relation between two distinct material entities, the old entity and the new entity, in which the new entity begins to exist when the old entity ceases to exist, and the new entity inherits the significant portion of the matter of the old entity" []
+subset: ro-eco
+property_value: IAO:0000112 "this parent cell derives into this cell (cell division)" xsd:string
+property_value: IAO:0000112 "this parent nucleus derives into this nucleus (nuclear division)" xsd:string
+property_value: IAO:0000114 IAO:0000125
+property_value: IAO:0000116 "This is a very general relation. More specific relations are preferred when applicable, such as 'directly develops into'. To avoid making statements about a future that may not come to pass, it is often better to use the backward-looking 'derives from' rather than the forward-looking 'derives into'." xsd:string
+property_value: IAO:0000118 "derives_into" xsd:string
+
+[Typedef]
 id: RO:0001015
 name: location of
 def: "a relation between two independent continuants, the location and the target, in which the target is entirely within the location" []
@@ -334,6 +342,14 @@ property_value: IAO:0000117 "David Osumi-Sutherland" xsd:string
 is_a: RO:0002323 ! mereotopologically related to
 
 [Typedef]
+id: RO:0002084
+name: during which ends
+comment: Previously had ID  http://purl.obolibrary.org/obo/RO_0002122 in test files in sandpit - but this seems to have been dropped from ro-edit.owl at some point.  No re-use under this ID AFAIK, but leaving note here in case we run in to clashes down the line.  Official ID now chosen from DOS ID range.
+subset: ro-eco
+property_value: IAO:0000117 "David Osumi-Sutherland" xsd:string
+is_a: RO:0002222 ! temporally related to
+
+[Typedef]
 id: RO:0002086
 name: ends after
 comment: X ends_after Y iff: end(Y) before_or_simultaneous_with end(X)
@@ -348,6 +364,14 @@ comment: X immediately_preceded_by Y iff: end(X) simultaneous_with start(Y)
 property_value: IAO:0000117 "David Osumi-Sutherland" xsd:string
 property_value: IAO:0000118 "starts_at_end_of" xsd:string
 is_a: BFO:0000062 ! preceded by
+
+[Typedef]
+id: RO:0002088
+name: during which starts
+comment: Previously had ID  http://purl.obolibrary.org/obo/RO_0002123 in test files in sandpit - but this seems to have been dropped from ro-edit.owl at some point.  No re-use under this ID AFAIK, but leaving note here in case we run in to clashes down the line.  Official ID now chosen from DOS ID range.
+subset: ro-eco
+property_value: IAO:0000117 "David Osumi-Sutherland" xsd:string
+is_a: RO:0002222 ! temporally related to
 
 [Typedef]
 id: RO:0002091
@@ -413,6 +437,20 @@ property_value: RO:0001900 RO:0001901
 is_a: RO:0002131 ! overlaps
 
 [Typedef]
+id: RO:0002162
+name: in taxon
+def: "x is in taxon y if an only if y is an organism, and the relationship between x and y is one of: part of (reflexive), developmentally preceded by, derives from, secreted by, expressed." []
+comment: Connects a biological entity to its taxon of origin.
+subset: ro-eco
+property_value: IAO:0000114 IAO:0000125
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000117 "Jennifer Deegan" xsd:string
+property_value: IAO:0000119 http://www.ncbi.nlm.nih.gov/pubmed/17921072
+property_value: IAO:0000119 http://www.ncbi.nlm.nih.gov/pubmed/20973947
+property_value: seeAlso https://github.com/obophenotype/uberon/wiki/Taxon-constraints
+is_a: RO:0002320 ! evolutionarily related to
+
+[Typedef]
 id: RO:0002163
 name: spatially disjoint from
 def: "A is spatially_disjoint_from B if and only if they have no parts in common" []
@@ -438,6 +476,17 @@ property_value: IAO:0000119 http://www.ncbi.nlm.nih.gov/pubmed/22293552
 is_a: RO:0002323 ! mereotopologically related to
 
 [Typedef]
+id: RO:0002176
+name: connects
+def: "c connects a if and only if there exist some b such that a and b are similar parts of the same system, and c connects b, specifically, c connects a with b. When one structure connects two others it unites some aspect of the function or role they play within the system." []
+property_value: http://xmlns.com/foaf/0.1/page https://github.com/obophenotype/uberon/wiki/Connectivity-Design-Pattern xsd:anyURI
+property_value: http://xmlns.com/foaf/0.1/page https://github.com/obophenotype/uberon/wiki/Modeling-articulations-Design-Pattern xsd:anyURI
+property_value: IAO:0000112 "a 'toe distal phalanx bone' that is connected to a 'toe medial phalanx bone' (an interphalangeal joint *connects* these two bones)." xsd:string
+property_value: IAO:0000112 "The M8 connects Glasgow and Edinburgh" xsd:string
+property_value: IAO:0000119 http://www.ncbi.nlm.nih.gov/pubmed/22293552
+is_a: RO:0002323 ! mereotopologically related to
+
+[Typedef]
 id: RO:0002177
 name: attached to part of
 def: "a is attached to part of b if a is attached to b, or a is attached to some p, where p is part of b." []
@@ -454,6 +503,18 @@ property_value: IAO:0000119 http://www.ncbi.nlm.nih.gov/pubmed/20064205
 is_a: RO:0002170 ! connected to
 
 [Typedef]
+id: RO:0002202
+name: develops from
+def: "x develops from y if and only if either (a) x directly develops from y or (b) there exists some z such that x directly develops from z and z develops from y" []
+comment: This is the transitive form of the develops from relation
+property_value: IAO:0000114 IAO:0000125
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000117 "David Osumi-Sutherland" xsd:string
+property_value: IAO:0000117 "Melissa Haendel" xsd:string
+property_value: IAO:0000117 "Terry Meehan" xsd:string
+is_a: RO:0002258 ! developmentally preceded by
+
+[Typedef]
 id: RO:0002203
 name: develops into
 def: "inverse of develops from" []
@@ -465,6 +526,46 @@ property_value: IAO:0000117 "Terry Meehan" xsd:string
 is_a: RO:0002286 ! developmentally succeeded by
 is_a: RO:0002387 ! has potential to develop into
 is_a: RO:0002388 ! has potential to directly develop into
+
+[Typedef]
+id: RO:0002207
+name: directly develops from
+def: "Candidate definition: x directly_develops from y if and only if there exists some developmental process (GO:0032502) p such that x and y both participate in p, and x is the output of p and y is the input of p, and a substantial portion of the matter of x comes from y, and the start of x is coincident with or after the end of y." []
+comment: TODO - add child relations from DOS
+property_value: IAO:0000114 IAO:0000125
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000117 "David Osumi-Sutherland" xsd:string
+property_value: IAO:0000117 "has developmental precursor" xsd:string
+property_value: IAO:0000119 "FBbt" xsd:string
+property_value: RO:0002575 RO:0002202
+is_a: RO:0002202 ! develops from
+
+[Typedef]
+id: RO:0002211
+name: regulates
+def: "process(P1) regulates process(P2) iff: P1 results in the initiation or termination of P2 OR affects the frequency of its initiation or termination OR affects the magnitude or rate of output of P2." []
+property_value: IAO:0000114 IAO:0000125
+property_value: IAO:0000116 "We use 'regulates' here to specifically imply control. However, many colloquial usages of the term correctly correspond to the weaker relation of 'causally upstream of or within' (aka influences). Consider relabeling to make things more explicit" xsd:string
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000117 "David Hill" xsd:string
+property_value: IAO:0000117 "Tanya Berardini" xsd:string
+property_value: IAO:0000119 "GO" xsd:string
+property_value: IAO:0000119 http://purl.obolibrary.org/obo/ro/docs/causal-relations
+property_value: IAO:0000232 "Regulation precludes parthood; the regulatory process may not be within the regulated process." xsd:string
+property_value: IAO:0000589 "regulates (processual)" xsd:string
+property_value: IAO:0000600 "false" xsd:boolean
+is_a: RO:0002411 ! causally upstream of
+
+[Typedef]
+id: RO:0002212
+name: negatively regulates
+def: "Process(P1) negatively regulates process(P2) iff: P1 terminates P2, or P1 descreases the the frequency of initiation of P2 or the magnitude or rate of output of P2." []
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000119 http://purl.obolibrary.org/obo/ro/docs/causal-relations
+property_value: IAO:0000589 "negatively regulates (process to process)" xsd:string
+property_value: RO:0004050 RO:0002211
+is_a: RO:0002211 ! regulates
+is_a: RO:0002305 ! causally upstream of, negative effect
 
 [Typedef]
 id: RO:0002215
@@ -500,6 +601,28 @@ comment: Obsoleted as the inverse property was obsoleted.
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: IAO:0000118 "agent in" xsd:string
 is_obsolete: true
+
+[Typedef]
+id: RO:0002218
+name: obsolete has active participant
+def: "x has participant y if and only if x realizes some active role that inheres in y" []
+subset: ro-eco
+property_value: IAO:0000112 "'heart development' has active participant some Shh protein" xsd:string
+property_value: IAO:0000114 IAO:0000125
+property_value: IAO:0000116 "This may be obsoleted and replaced by the original 'has agent' relation" xsd:string
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000118 "has agent" xsd:string
+is_a: RO:0000057 ! has participant
+is_obsolete: true
+
+[Typedef]
+id: RO:0002219
+name: surrounded by
+def: "x surrounded_by y if and only if (1) x is adjacent to y and for every region r that is adjacent to x, r overlaps y (2) the shared boundary between x and y occupies the majority of the outermost boundary of x" []
+property_value: IAO:0000114 IAO:0000125
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: RO:0001900 RO:0001901
+is_a: RO:0002220 ! adjacent to
 
 [Typedef]
 id: RO:0002220
@@ -539,6 +662,24 @@ is_a: BFO:0000051 ! has part
 is_a: RO:0002222 ! temporally related to
 
 [Typedef]
+id: RO:0002225
+name: develops from part of
+def: "x develops from part of y if and only if there exists some z such that x develops from z and z is part of y" []
+property_value: IAO:0000114 IAO:0000125
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+is_a: RO:0002202 ! develops from
+
+[Typedef]
+id: RO:0002229
+name: ends
+def: "inverse of ends with" []
+subset: ro-eco
+property_value: IAO:0000114 IAO:0000125
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+is_a: BFO:0000050 ! part of
+is_a: RO:0002222 ! temporally related to
+
+[Typedef]
 id: RO:0002230
 name: ends with
 def: "x ends with y if and only if x has part y and the time point at which x ends is equivalent to the time point at which y ends. Formally: α(y) > α(x) ∧ ω(y) = ω(x), where α is a function that maps a process to a start point, and ω is a function that maps a process to an end point." []
@@ -548,6 +689,16 @@ property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: IAO:0000118 "finished by" xsd:string
 is_a: BFO:0000051 ! has part
 is_a: RO:0002222 ! temporally related to
+
+[Typedef]
+id: RO:0002232
+name: has end location
+def: "x 'has end location' y if and only if there exists some process z such that x 'ends with' z and z 'occurs in' y" []
+subset: ro-eco
+property_value: IAO:0000114 IAO:0000125
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000118 "ends with process that occurs in" xsd:string
+is_a: RO:0002479 ! has part that occurs in
 
 [Typedef]
 id: RO:0002233
@@ -570,6 +721,25 @@ property_value: IAO:0000118 "produces" xsd:string
 is_a: RO:0000057 ! has participant
 
 [Typedef]
+id: RO:0002258
+name: developmentally preceded by
+def: "Candidate definition: x developmentally related to y if and only if there exists some developmental process (GO:0032502) p such that x and y both participates in p, and x is the output of p and y is the input of p" []
+comment: This relation groups together various other developmental relations. It is fairly generic, encompassing induction, developmental contribution and direct and transitive develops from
+property_value: IAO:0000114 IAO:0000125
+property_value: IAO:0000116 "false" xsd:boolean
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000232 "In general you should not use this relation to make assertions - use one of the more specific relations below this one" xsd:string
+is_a: RO:0002324 ! developmentally related to
+
+[Typedef]
+id: RO:0002263
+name: acts upstream of
+def: "c acts upstream of p if and only if c enables some f that is involved in p' and p' occurs chronologically before p, is not part of p, and affects the execution of p. c is a material entity and f, p, p' are processes." []
+property_value: IAO:0000112 "A faulty traffic light (material entity) whose malfunctioning (a process) is causally upstream of a traffic collision (a process): the traffic light acts upstream of the collision." xsd:string
+property_value: seeAlso http://wiki.geneontology.org/index.php/Acts_upstream_of
+is_a: RO:0002264 ! acts upstream of or within
+
+[Typedef]
 id: RO:0002264
 name: acts upstream of or within
 def: "c acts upstream of or within p if c is enables f, and f is causally upstream of or within p. c is a material entity and p is an process." []
@@ -587,6 +757,27 @@ property_value: IAO:0000117 "Chris Mungall" xsd:string
 is_a: RO:0002384 ! has developmental potential involving
 
 [Typedef]
+id: RO:0002303
+name: has habitat
+def: "x 'has habitat' y if and only if: x is an organism, y is a habitat, and y can sustain and allow the growth of a population of xs." []
+comment: A population of xs will possess adaptations (either evolved naturally or via artifical selection) which permit it to exist and grow in y.
+subset: ro-eco
+property_value: IAO:0000112 "Hydrozoa (NCBITaxon_6074) SubClassOf 'has habitat' some 'Hydrozoa habitat'\nwhere\n'Hydrozoa habitat' SubClassOf overlaps some ('marine environment' (ENVO_00000569) and 'freshwater environment' (ENVO_01000306) and 'wetland' (ENVO_00000043)) and 'has part' some (freshwater (ENVO_00002011) or 'sea water' (ENVO_00002149)) -- http://eol.org/pages/1795/overview" xsd:string
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000117 "Pier Buttigieg" xsd:string
+property_value: IAO:0000118 "adapted for living in" xsd:string
+is_a: RO:0002321 ! ecologically related to
+
+[Typedef]
+id: RO:0002305
+name: causally upstream of, negative effect
+comment: holds between x and y if and only if x is causally upstream of y and the progression of x decreases the frequency, rate or extent of y
+property_value: http://purl.org/dc/terms/creator "cjm" xsd:string
+property_value: RO:0004050 RO:0002411
+is_a: RO:0002411 ! causally upstream of
+is_a: RO:0004046 ! causally upstream of or within, negative effect
+
+[Typedef]
 id: RO:0002314
 name: inheres in part of
 def: "q inheres in part of w if and only if there exists some p such that q inheres in p and p part of w." []
@@ -596,6 +787,13 @@ property_value: IAO:0000119 http://www.ncbi.nlm.nih.gov/pubmed/20064205
 property_value: RO:0001900 RO:0001901
 property_value: seeAlso "defining-property-chains-involving-reflexivity"
 is_a: RO:0002502 ! depends on
+
+[Typedef]
+id: RO:0002320
+name: evolutionarily related to
+def: "A relationship that holds via some environmental process" []
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000232 "Do not use this relation directly. It is ended as a grouping for a diverse set of relations, all involving the process of evolution." xsd:string
 
 [Typedef]
 id: RO:0002321
@@ -678,6 +876,16 @@ def: "has member is a mereological relation between a collection and an item." [
 property_value: IAO:0000119 "SIO" xsd:string
 property_value: RO:0001900 RO:0001901
 is_a: BFO:0000051 ! has part
+
+[Typedef]
+id: RO:0002352
+name: input of
+def: "inverse of has input" []
+subset: ro-eco
+subset: RO:0002259
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+is_a: RO:0000056 ! participates in
+is_a: RO:0002328 ! functionally related to
 
 [Typedef]
 id: RO:0002353
@@ -822,6 +1030,22 @@ property_value: IAO:0000119 http://purl.obolibrary.org/obo/ro/docs/causal-relati
 is_a: RO:0002501 ! causal relation between processes
 
 [Typedef]
+id: RO:0002428
+name: involved in regulation of
+def: "c involved in regulation of p if c is involved in some p' and p' regulates some p" []
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+is_a: RO:0002263 ! acts upstream of
+is_a: RO:0002431 ! involved in or involved in regulation of
+
+[Typedef]
+id: RO:0002430
+name: involved in negative regulation of
+def: "c involved in regulation of p if c is involved in some p' and p' negatively regulates some p" []
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: RO:0004050 RO:0002428
+is_a: RO:0002428 ! involved in regulation of
+
+[Typedef]
 id: RO:0002431
 name: involved in or involved in regulation of
 def: "c involved in or regulates p if and only if either (i) c is involved in p or (ii) c is involved in regulation of p" []
@@ -900,6 +1124,22 @@ subset: ro-eco
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 
 [Typedef]
+id: RO:0002494
+name: transformation of
+def: "x transformation of y if x is the immediate transformation of y, or is linked to y through a chain of transformation relationships" []
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+is_a: RO:0002202 ! develops from
+
+[Typedef]
+id: RO:0002495
+name: immediate transformation of
+def: "x immediate transformation of y iff x immediately succeeds y temporally at a time boundary t, and all of the matter present in x at t is present in y at t, and all the matter in y at t is present in x at t" []
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: RO:0002575 RO:0002494
+is_a: RO:0002207 ! directly develops from
+is_a: RO:0002494 ! transformation of
+
+[Typedef]
 id: RO:0002500
 name: causal agent in process
 def: "A relationship between a material entity and a process where the material entity has some causal role that influences the process" []
@@ -940,6 +1180,22 @@ property_value: IAO:0000232 "Do not use this relation directly. It is intended a
 is_a: RO:0002410 ! causally related to
 
 [Typedef]
+id: RO:0002507
+name: determined by
+def: "s determined by f if and only if s is a type of system, and f is a material entity that is part of s, such that f exerts a strong causal influence on the functioning of s, and the removal of f would cause the collapse of s." []
+subset: ro-eco
+property_value: http://purl.org/dc/terms/creator "Chris Mungall" xsd:string
+property_value: http://purl.org/dc/terms/creator "Pier Buttigieg" xsd:string
+property_value: IAO:0000112 "A coral reef environment is determined by a particular coral reef" xsd:string
+property_value: IAO:0000116 "The label for this relation is probably too general for its restricted use, where the domain is a system. It may be relabeled in future" xsd:string
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000119 http://www.ncbi.nlm.nih.gov/pubmed/24330602
+property_value: IAO:0000589 "determined by (system to material entity)" xsd:string
+is_a: BFO:0000050 ! part of
+is_a: RO:0002509 ! determined by part of
+is_a: RO:0002559 ! causally influenced by
+
+[Typedef]
 id: RO:0002508
 name: determines
 def: "inverse of determined by" []
@@ -948,6 +1204,23 @@ subset: RO:0002259
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: IAO:0000589 "determines (material entity to system)" xsd:string
 is_a: RO:0002566 ! causally influences
+
+[Typedef]
+id: RO:0002509
+name: determined by part of
+def: "s 'determined by part of' w if and only if there exists some f such that (1) s 'determined by' f and (2) f part_of w, or f=w." []
+subset: ro-eco
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+is_a: RO:0002131 ! overlaps
+is_a: RO:0002506 ! causal relation between entities
+
+[Typedef]
+id: RO:0002559
+name: causally influenced by
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000119 http://purl.obolibrary.org/obo/ro/docs/causal-relations
+property_value: IAO:0000589 "causally influenced by (entity-centric)" xsd:string
+is_a: RO:0002506 ! causal relation between entities
 
 [Typedef]
 id: RO:0002566
@@ -983,4 +1256,57 @@ property_value: IAO:0000116 "Do not use this relation directly. It is intended a
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: IAO:0000119 http://purl.obolibrary.org/obo/ro/docs/causal-relations
 is_a: RO:0002410 ! causally related to
+
+[Typedef]
+id: RO:0002608
+name: process has causal agent
+def: "Inverse of 'causal agent in process'" []
+property_value: IAO:0000119 http://purl.obolibrary.org/obo/ro/docs/causal-relations
+is_a: RO:0002410 ! causally related to
+
+[Typedef]
+id: RO:0003001
+name: produced by
+def: "a produced_by b iff some process that occurs_in b has_output a." []
+subset: ro-eco
+property_value: IAO:0000114 IAO:0000125
+property_value: IAO:0000117 "Melissa Haendel" xsd:string
+
+[Typedef]
+id: RO:0004046
+name: causally upstream of or within, negative effect
+property_value: RO:0004050 RO:0002418
+is_a: RO:0002418 ! causally upstream of or within
+created_by: cjm
+creation_date: 2018-03-13T23:55:05Z
+
+[Typedef]
+id: RO:0009001
+name: has substance added
+def: "\"has substance added\" is a relation existing between a (physical) entity and a substance in which the entity has had the substance added to it at some point in time." []
+property_value: IAO:0000112 "muffin 'has substance added' some 'baking soda'" xsd:string
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000116 "The relation X 'has substance added' some Y doesn't imply that X still has Y in any detectable fashion subsequent to the addition. Water in dehydrated food or ice cubes are examples, as is food that undergoes chemical transformation. This definition should encompass recipe ingredients." xsd:string
+property_value: IAO:0000117 "Damion Dooley" xsd:string
+
+[Typedef]
+id: results_in_developmental_progression_of
+name: results in developmental progression of
+def: "p results in the developmental progression of s iff p is a developmental process and s is an anatomical structure and p causes s to undergo a change in state at some point along its natural developmental cycle (this cycle starts with its formation, through the mature structure, and ends with its loss)." []
+property_value: IAO:0000114 IAO:0000125
+property_value: IAO:0000116 "This property and its subproperties are being used primarily for the definition of GO developmental processes. The property hierarchy mirrors the core GO hierarchy. In future we may be able to make do with a more minimal set of properties, but due to the way GO is currently structured we require highly specific relations to avoid incorrect entailments. To avoid this, the corresponding genus terms in GO should be declared mutually disjoint." xsd:string
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: seeAlso Ontology:extensions
+is_a: RO:0002324 ! developmentally related to
+
+[Typedef]
+id: results_in_formation_of
+name: results in formation of
+property_value: IAO:0000112 "an annotation of gene X to anatomical structure formation with results_in_formation_of UBERON:0000007 (pituitary gland) means that at the beginning of the process a pituitary gland does not exist and at the end of the process a pituitary gland exists." xsd:string
+property_value: IAO:0000112 "every \"endocardial cushion formation\" (GO:0003272) results_in_formation_of some \"endocardial cushion\" (UBERON:0002062)" xsd:string
+property_value: IAO:0000114 IAO:0000125
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000119 GOC:mtg_berkeley_2013 xsd:string
+is_a: results_in_developmental_progression_of ! results in developmental progression of
+is_a: RO:0002234 ! has output
 

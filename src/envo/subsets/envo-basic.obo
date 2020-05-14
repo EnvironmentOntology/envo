@@ -35,23 +35,11 @@ property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-00
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-8343-612X xsd:string
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0003-1604-1512 xsd:string
 property_value: http://purl.org/dc/elements/1.1/description "ENVO is an ontology which represents knowledge about environments,environmental processes, ecosystems, habitats, and related entities" xsd:string
+property_value: http://purl.org/dc/elements/1.1/title "The Environment Ontology" xsd:string
 property_value: http://purl.org/dc/elements/1.1/type http://purl.obolibrary.org/obo/IAO_8000001 xsd:string
 property_value: http://purl.org/dc/terms/license https://creativecommons.org/publicdomain/zero/1.0/ xsd:string
-property_value: http://purl.org/dc/terms/title "The Environment Ontology" xsd:string
 property_value: http://xmlns.com/foaf/0.1/homepage http://environmentontology.org/ xsd:anyURI
-property_value: owl:versionInfo "2020-05-11" xsd:string
-
-[Term]
-id: CHEBI:24431
-is_a: BFO:0000040
-
-[Term]
-id: CHEBI:36342
-is_a: BFO:0000040
-
-[Term]
-id: CHEBI:76413
-subset: envoPolar
+property_value: owl:versionInfo "2020-05-14" xsd:string
 
 [Term]
 id: ENVO:00000000
@@ -2538,7 +2526,7 @@ is_a: ENVO:00002297 ! environmental feature
 [Term]
 id: ENVO:00000132
 name: ice sheet
-def: "A mass of glacier ice that covers surrounding terrain and is greater than 50,000 km2." [https://en.wikipedia.org/wiki/Ice_sheet]
+def: "A glacier which covers an area of greater than 50,000 square kilometers." [https://en.wikipedia.org/wiki/Ice_sheet]
 comment: This is not always classified as a glacier in the cryosphere community. {xref="https://github.com/Vocamp/Virtual-Hackahon-on-Glacier-topic"}
 subset: envoPolar
 synonym: "Arctic pack" RELATED [USGS:SDTS]
@@ -6138,6 +6126,7 @@ relationship: part_of ENVO:00000023 ! stream
 
 [Term]
 id: ENVO:00000428
+name: biome
 alt_id: LTER:809 {xref="https://vocab.lternet.edu/vocab/vocab/index.php?tema=809&/biomes"}
 def: "A biome is an ecosystem to which resident ecological communities have evolved adaptations." [DOI:10.1186/2041-1480-4-43, https://en.wikipedia.org/wiki/Biome]
 comment: There has been some concern raised (see Issue #143) about the usefulness of the assertion that organisms have evolved within a given biome. They may have evolved adaptations elsewhere and demonstrating one or the other is often not feasible. Consider relabelling to "environmental system determined by an ecological community" or similar.
@@ -6319,7 +6308,7 @@ def: "A biome which is  primarily or completely situated on a landmass." [https:
 synonym: "terrestrial realm" RELATED []
 xref: LTER:798
 xref: SPIRE:Terrestrial
-is_a: ENVO:00000428
+is_a: ENVO:00000428 ! biome
 
 [Term]
 id: ENVO:00000447
@@ -8200,8 +8189,8 @@ id: ENVO:00002030
 name: aquatic biome
 def: "A biome which is determined by a water body and which has ecological climax communities adapted to life in or on water." []
 xref: LTER:41
-is_a: ENVO:00000428
-intersection_of: ENVO:00000428
+is_a: ENVO:00000428 ! biome
+intersection_of: ENVO:00000428 ! biome
 intersection_of: determined_by ENVO:00000063 ! water body
 
 [Term]
@@ -13105,7 +13094,7 @@ name: ocean biome
 def: "A marine biome which is determined by an ocean." [https://en.wikipedia.org/wiki/Ocean, ORCID:0000-0002-4366-3088]
 comment: Ocean biomes are determined by major bodies of saline water, principal components of the hydrosphere. Approximately 71% of the Earth's surface is covered by ocean, a continuous body of water that is customarily divided into several principal oceans and smaller seas. More than half of this area is over 3,000 metres (9,800 ft) deep. Average oceanic salinity is around 35 parts per thousand (ppt) (3.5%), and nearly all seawater has a salinity in the range of 30 to 38 ppt.
 subset: envoPolar
-intersection_of: ENVO:00000428
+intersection_of: ENVO:00000428 ! biome
 intersection_of: determined_by ENVO:00000015 ! ocean
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2010-03-15T11:23:23Z
@@ -15852,8 +15841,8 @@ name: polar biome
 def: "A biome which is subject to polar climatic conditions." []
 comment: This class is primarily for inference and, in general, should not be used directly by annotators. If you're an annotator, please consider using a more informative term such as 'tundra biome'.
 subset: envoPolar
-is_a: ENVO:00000428
-intersection_of: ENVO:00000428
+is_a: ENVO:00000428 ! biome
+intersection_of: ENVO:00000428 ! biome
 intersection_of: has_quality ENVO:01000238 ! polar
 
 [Term]
@@ -18891,9 +18880,9 @@ is_a: ENVO:01000692 ! landslide process
 id: ENVO:01000701
 name: volcanic ash
 def: "Volcanic ash is an environmental material which consists of fragments of pulverized rock, minerals, and volcanic glass, created during volcanic eruptions and measuring less than 2 millimetres in diameter. Volcanic ash is formed during explosive volcanic eruptions, phreatomagmatic eruptions and during transport in pyroclastic density currents." [https://en.wikipedia.org/wiki/Volcanic_ash]
-is_a: ENVO:00010483 ! environmental material
+intersection_of: ENVO:02000090 ! ash
+intersection_of: output_of ENVO:01000634 ! volcanic eruption
 relationship: composed_primarily_of CHEBI:30563
-relationship: output_of ENVO:01000634 ! volcanic eruption
 
 [Term]
 id: ENVO:01000702
@@ -19710,6 +19699,7 @@ id: ENVO:01000797
 name: gaseous environmental material
 def: "A material entity which is composed of one or more chemical entities and has neither independent shape nor volume but tends to expand indefinitely." [http://www.merriam-webster.com/dictionary/gas]
 synonym: "gas" NARROW []
+is_a: ENVO:02000140 ! fluid environmental material
 intersection_of: ENVO:00010483 ! environmental material
 intersection_of: has_quality PATO:0001547
 property_value: IAO:0000116 "This class is to be populated by inference." xsd:string
@@ -19718,7 +19708,7 @@ property_value: IAO:0000116 "This class is to be populated by inference." xsd:st
 id: ENVO:01000798
 name: plasma
 def: "A material entity which is composed of a volume of unbound positive and negative particles in roughly equal numbers, conducts electricity, and possesses internal magnetic fields." [http://www.merriam-webster.com/dictionary/plasma, https://en.wikipedia.org/wiki/Plasma_%28physics%29]
-is_a: ENVO:00010483 ! environmental material
+is_a: ENVO:02000140 ! fluid environmental material
 property_value: IAO:0000116 "An NTR for `quality of a plasma` has been posted on the PATO tracker: https://github.com/pato-ontology/pato/issues/88" xsd:string
 
 [Term]
@@ -19869,7 +19859,7 @@ name: liquid environmental material
 def: "An environmental material which is in a liquid state." []
 comment: This is a defined class: its subclasses will not be asserted, but filled by inference.
 subset: envoPolar
-is_a: ENVO:00010483 ! environmental material
+is_a: ENVO:02000140 ! fluid environmental material
 intersection_of: ENVO:00010483 ! environmental material
 intersection_of: has_quality PATO:0001548
 
@@ -20748,8 +20738,8 @@ def: "A process during which humans rear animals or plants in bodies of water fo
 comment: In 1988, the FAO introduced a definition of aquaculture which reduces its confusion with capture fisheries: Aquaculture is the farming of aquatic organisms, including fish, molluscs, crustaceans and aquatic plants. Farming implies some form of intervention in the rearing process to enhance production, such as regular stocking, feeding, protection from predators, etc. Farming also implies individual or corporate ownership of the stock being cultivated. For statistical purposes, aquatic organisms which are harvested by an individual or corporate body which has owned them throughout their rearing period contribute to aquaculture, while aquatic organisms which are exploitable by the public as a common property resources, with or without appropriate licences, are the harvest of fisheries.
 synonym: "aquatic farming" RELATED []
 is_a: ENVO:01001436 ! planned environmental usage process
+relationship: obsolete_has_active_participant NCBITaxon:9606
 relationship: occurs_in ENVO:00000063 ! water body
-relationship: RO:0002218 NCBITaxon:9606
 property_value: IAO:0000116 "Expand the sites of occurrence listed as axioms as new terms emerge." xsd:string
 
 [Term]
@@ -20826,9 +20816,10 @@ relationship: occurs_in ENVO:01000267 ! atmosphere
 
 [Term]
 id: ENVO:01000914
-name: ablation zone
+name: ice ablation zone
 def: "An environmental zone which overlaps a glacier or an ice sheet, and in which ice loss exceeds ice gain." [https://en.wikipedia.org/wiki/Ablation_zone]
 subset: envoPolar
+synonym: "ablation zone" BROAD []
 is_a: ENVO:01001351 ! ice decumulation zone
 property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
 property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088
@@ -20881,7 +20872,7 @@ name: glacial ice ablation process
 def: "An ice loss process which occurs in the low-altitude area of a glacier or ice sheet below the firn layer." [http://dx.doi.org/10.1038/nrmicro3522]
 subset: envoPolar
 is_a: ENVO:03000017 ! glacial ice loss
-relationship: occurs_in ENVO:01000914 ! ablation zone
+relationship: occurs_in ENVO:01000914 ! ice ablation zone
 property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
 property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088
 
@@ -21116,7 +21107,7 @@ name: ecotone
 def: "An envirommental system which bridges two or more biomes and which includes ecological communities which blend these biomes' phylogenetic and phenotypic compositions." [https://en.wikipedia.org/wiki/Ecotone, https://github.com/EnvironmentOntology/envo/issues/501, https://www.merriam-webster.com/dictionary/ecotone, ISBN:978-0-03-058414-5]
 comment: There are many subtypes of ecotone, some with sharp transitions and others with gradual, patchy transitions between communities. From Wikipedia:Ecotone - The word ecotone was coined from a combination of eco(logy) plus -tone, from the Greek tonos or tension – in other words, a place where ecologies are in tension.
 is_a: ENVO:01001110 ! ecosystem
-relationship: overlaps ENVO:00000428 {minCardinality="2"}
+relationship: overlaps ENVO:00000428 {minCardinality="2"} ! biome
 
 [Term]
 id: ENVO:01000948
@@ -21522,7 +21513,7 @@ comment: The term may refer to a range of human activity, from handicraft to hig
 is_a: OBI:0000011
 intersection_of: OBI:0000011
 intersection_of: has_output ENVO:00003074 ! manufactured product
-relationship: RO:0002218 NCBITaxon:9606
+relationship: obsolete_has_active_participant NCBITaxon:9606
 
 [Term]
 id: ENVO:01000994
@@ -21551,7 +21542,7 @@ intersection_of: OBI:0000011
 intersection_of: has_output ENVO:00000070 ! human construction
 relationship: has_part ENVO:03000010 ! material transport process
 relationship: has_part ENVO:03000043 ! material transformation process
-relationship: RO:0002218 NCBITaxon:9606
+relationship: obsolete_has_active_participant NCBITaxon:9606
 property_value: IAO:0000116 "The nature of \"structures\" must be further specified." xsd:string
 
 [Term]
@@ -23152,7 +23143,7 @@ synonym: "environmental management" RELATED []
 synonym: "Umweltmaßnahme" RELATED [www.awi.de/internas] {created_by="https://orcid.org/0000-0002-9620-2832"}
 is_a: ENVO:02500026 ! anthropogenic modulatory intervention process
 relationship: has_participant ENVO:01001110 ! ecosystem
-relationship: RO:0002218 NCBITaxon:9606
+relationship: obsolete_has_active_participant NCBITaxon:9606
 
 [Term]
 id: ENVO:01001171
@@ -23765,7 +23756,7 @@ is_a: ENVO:01000408 ! environmental zone
 relationship: contains ENVO:01000799 ! astronomical body
 relationship: contains_process ENVO:01001130 ! gravitational motion
 relationship: contains_process ENVO:01001130 ! gravitational motion
-relationship: RO:0002218 ENVO:01000799 {maxCardinality="1"} ! astronomical body
+relationship: obsolete_has_active_participant ENVO:01000799 {maxCardinality="1"} ! astronomical body
 
 [Term]
 id: ENVO:01001229
@@ -23913,8 +23904,8 @@ name: agricultural process
 def: "A process during which humans rear animals or plants on land for harvest and consumption." [] {comment="http://www.fao.org/docrep/003/x6941e/x6941e04.htm#bm04"}
 synonym: "agriculture" RELATED []
 is_a: ENVO:02500000 ! environmental system process
+relationship: obsolete_has_active_participant NCBITaxon:9606
 relationship: occurs_in ENVO:01000635 ! planetary landmass
-relationship: RO:0002218 NCBITaxon:9606
 property_value: IAO:0000116 "Expand the sites of occurrence listed as axioms as new terms emerge." xsd:string
 
 [Term]
@@ -23924,8 +23915,8 @@ def: "An agricultural process during which humans rear plants on land for harves
 synonym: "agronomy" RELATED []
 is_a: ENVO:01001246 ! agricultural process
 relationship: has_participant NCBITaxon:33090
+relationship: obsolete_has_active_participant NCBITaxon:9606
 relationship: occurs_in ENVO:01000635 ! planetary landmass
-relationship: RO:0002218 NCBITaxon:9606
 property_value: IAO:0000116 "Expand the sites of occurrence listed as axioms as new terms emerge." xsd:string
 
 [Term]
@@ -23935,8 +23926,8 @@ def: "An agricultural process during which humans rear animals on land for harve
 synonym: "agriculture" RELATED []
 is_a: ENVO:01001246 ! agricultural process
 relationship: has_participant NCBITaxon:33208
+relationship: obsolete_has_active_participant NCBITaxon:9606
 relationship: occurs_in ENVO:01000635 ! planetary landmass
-relationship: RO:0002218 NCBITaxon:9606
 property_value: IAO:0000116 "Expand the sites of occurrence listed as axioms as new terms emerge." xsd:string
 
 [Term]
@@ -23946,8 +23937,8 @@ def: "An aquaculture process during which humans rear crustaceans." [] {comment=
 synonym: "aquaculture of crustaceans" RELATED []
 synonym: "crustacean aquaculture" EXACT []
 is_a: ENVO:01001254 ! animal aquaculture process
+relationship: obsolete_has_active_participant NCBITaxon:9606
 relationship: occurs_in ENVO:00000063 ! water body
-relationship: RO:0002218 NCBITaxon:9606
 
 [Term]
 id: ENVO:01001250
@@ -23956,8 +23947,8 @@ def: "An aquaculture process during which humans rear finfish." [] {comment="htt
 synonym: "aquaculture of finfish" RELATED []
 synonym: "finfish aquaculture" EXACT []
 is_a: ENVO:01001254 ! animal aquaculture process
+relationship: obsolete_has_active_participant NCBITaxon:9606
 relationship: occurs_in ENVO:00000063 ! water body
-relationship: RO:0002218 NCBITaxon:9606
 
 [Term]
 id: ENVO:01001251
@@ -23966,8 +23957,8 @@ def: "An aquaculture process during which humans rear molluscs." [] {comment="ht
 synonym: "aquaculture of molluscs" RELATED []
 synonym: "mollusc aquaculture" EXACT []
 is_a: ENVO:01001254 ! animal aquaculture process
+relationship: obsolete_has_active_participant NCBITaxon:9606
 relationship: occurs_in ENVO:00000063 ! water body
-relationship: RO:0002218 NCBITaxon:9606
 
 [Term]
 id: ENVO:01001252
@@ -23976,8 +23967,8 @@ def: "An aquaculture process during which humans rear seaweed." [] {comment="htt
 synonym: "aquaculture of seaweed" RELATED []
 synonym: "seaweed aquaculture" EXACT []
 is_a: ENVO:01001255 ! plant aquaculture process
+relationship: obsolete_has_active_participant NCBITaxon:9606
 relationship: occurs_in ENVO:00000063 ! water body
-relationship: RO:0002218 NCBITaxon:9606
 
 [Term]
 id: ENVO:01001253
@@ -23986,8 +23977,8 @@ def: "An aquaculture process during which humans rear freshwater macrophytes." [
 synonym: "aquaculture of freshwater macrophytes" RELATED []
 synonym: "freshwater macrophyte aquaculture" EXACT []
 is_a: ENVO:01001255 ! plant aquaculture process
+relationship: obsolete_has_active_participant NCBITaxon:9606
 relationship: occurs_in ENVO:00000063 ! water body
-relationship: RO:0002218 NCBITaxon:9606
 
 [Term]
 id: ENVO:01001254
@@ -23997,8 +23988,8 @@ synonym: "animal aquaculture" EXACT []
 synonym: "aquaculture of animals" RELATED []
 is_a: ENVO:01000906 ! aquaculture process
 relationship: has_participant NCBITaxon:33208
+relationship: obsolete_has_active_participant NCBITaxon:9606
 relationship: occurs_in ENVO:00000063 ! water body
-relationship: RO:0002218 NCBITaxon:9606
 
 [Term]
 id: ENVO:01001255
@@ -24008,8 +23999,8 @@ synonym: "aquaculture of plants" RELATED []
 synonym: "plant aquaculture" EXACT []
 is_a: ENVO:01000906 ! aquaculture process
 relationship: has_participant NCBITaxon:33090
+relationship: obsolete_has_active_participant NCBITaxon:9606
 relationship: occurs_in ENVO:00000063 ! water body
-relationship: RO:0002218 NCBITaxon:9606
 property_value: IAO:0000116 "This is unlikely to be limited to Viridiplantae, better axiomatisation should be sought in revisions." xsd:string
 
 [Term]
@@ -24052,7 +24043,7 @@ def: "A process during which materials deemed to be waste are transported away f
 is_a: ENVO:02500042 ! pollution control
 relationship: has_part ENVO:03000010 ! material transport process
 relationship: has_participant ENVO:00002264 ! waste material
-relationship: RO:0002218 NCBITaxon:9606
+relationship: obsolete_has_active_participant NCBITaxon:9606
 
 [Term]
 id: ENVO:01001261
@@ -25792,7 +25783,7 @@ name: planned deforestation
 def: "A planned process during which humans convert forests into one or more alternative ecosystem types." []
 is_a: OBI:0000011
 relationship: has_part ENVO:02500012 ! deforestation
-relationship: RO:0002218 NCBITaxon:9606
+relationship: obsolete_has_active_participant NCBITaxon:9606
 created_by: http://orcid.org/0000-0002-4366-3088
 
 [Term]
@@ -25801,7 +25792,7 @@ name: planned environmental usage process
 def: "A planned process during which humans access and obtain resources, benefits, or services from a natural or anthropised ecosystem." []
 is_a: OBI:0000011
 relationship: has_part ENVO:01001170 ! active ecosystem management process
-relationship: RO:0002218 NCBITaxon:9606
+relationship: obsolete_has_active_participant NCBITaxon:9606
 created_by: http://orcid.org/0000-0002-4366-3088
 
 [Term]
@@ -26400,7 +26391,7 @@ comment: This form of pollution is typically the result of urbanisation or simil
 synonym: "Lichtverschmutzung" EXACT [http://www.awi.de/internas, INTERNAS:WS2]
 is_a: ENVO:02500036 ! environmental pollution
 relationship: has_part ENVO:01001502 ! visible spectrum radiation from a manufactured product
-relationship: RO:0002218 NCBITaxon:9606
+relationship: obsolete_has_active_participant NCBITaxon:9606
 created_by: http://orcid.org/0000-0002-4366-3088
 creation_date: 2019-01-09T09:05:35Z
 
@@ -26533,6 +26524,7 @@ name: congelation sea ice
 def: "Sea ice which 1) has formed on the submerged surface (i.e. the base) of an existing mass of sea ice and 2) is composed of columnar crystals due to the downward growth of the crystals into the water." [https://en.wikipedia.org/wiki/Congelation_ice, https://orcid.org/0000-0003-4808-4736]
 comment: Congelation ice usually forms through the fusion/coalescence of platelets into solid ice.
 synonym: "black ice" RELATED [] {comment="Common in limnology, but frequently used in other contexts (e.g. on roads)."}
+xref: http://sweetontology.net/realmCryo/CongelationIce
 is_a: ENVO:00002200 ! sea ice
 relationship: part_of ENVO:00002200 ! sea ice
 created_by: http://orcid.org/0000-0002-4366-3088
@@ -28423,8 +28415,10 @@ property_value: http://purl.org/dc/elements/1.1/date 2019-09-02T07:17:07Z xsd:da
 [Term]
 id: ENVO:01001738
 name: cooling of a fluid
-def: "A material cooling process during which a portion of gaseous environmental material loses thermal energy to its surroundings." []
+def: "A material cooling process during which a portion of fluid environmental material loses thermal energy to its surroundings." []
 is_a: ENVO:01001615 ! material cooling process
+intersection_of: ENVO:01001615 ! material cooling process
+intersection_of: has_participant ENVO:02000140 ! fluid environmental material
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
 property_value: http://purl.org/dc/elements/1.1/date 2019-09-02T07:22:06Z xsd:dateTime
 
@@ -29209,8 +29203,8 @@ property_value: http://purl.org/dc/elements/1.1/date 2019-11-06T12:23:30Z xsd:da
 id: ENVO:01001830
 name: tropical biome
 def: "A biome which is subject to tropical climatic conditions." []
-is_a: ENVO:00000428
-intersection_of: ENVO:00000428
+is_a: ENVO:00000428 ! biome
+intersection_of: ENVO:00000428 ! biome
 intersection_of: has_quality ENVO:01000204 ! tropical
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
 property_value: http://purl.org/dc/elements/1.1/date 2019-11-06T15:56:17Z xsd:dateTime
@@ -29219,8 +29213,8 @@ property_value: http://purl.org/dc/elements/1.1/date 2019-11-06T15:56:17Z xsd:da
 id: ENVO:01001831
 name: temperate biome
 def: "A biome which is subject to temperate climatic conditions." []
-is_a: ENVO:00000428
-intersection_of: ENVO:00000428
+is_a: ENVO:00000428 ! biome
+intersection_of: ENVO:00000428 ! biome
 intersection_of: has_quality ENVO:01000206 ! temperate
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
 property_value: http://purl.org/dc/elements/1.1/date 2019-11-06T15:57:04Z xsd:dateTime
@@ -29229,8 +29223,8 @@ property_value: http://purl.org/dc/elements/1.1/date 2019-11-06T15:57:04Z xsd:da
 id: ENVO:01001832
 name: subtropical biome
 def: "A biome which is subject to subtropical climatic conditions." []
-is_a: ENVO:00000428
-intersection_of: ENVO:00000428
+is_a: ENVO:00000428 ! biome
+intersection_of: ENVO:00000428 ! biome
 intersection_of: has_quality ENVO:01000205 ! subtropical
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
 property_value: http://purl.org/dc/elements/1.1/date 2019-11-06T15:57:36Z xsd:dateTime
@@ -29239,8 +29233,8 @@ property_value: http://purl.org/dc/elements/1.1/date 2019-11-06T15:57:36Z xsd:da
 id: ENVO:01001833
 name: mediterranean biome
 def: "A biome which is subject to mediterranean climatic conditions." []
-is_a: ENVO:00000428
-intersection_of: ENVO:00000428
+is_a: ENVO:00000428 ! biome
+intersection_of: ENVO:00000428 ! biome
 intersection_of: has_quality ENVO:01000207 ! mediterranean
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
 property_value: http://purl.org/dc/elements/1.1/date 2019-11-06T15:58:10Z xsd:dateTime
@@ -29249,8 +29243,8 @@ property_value: http://purl.org/dc/elements/1.1/date 2019-11-06T15:58:10Z xsd:da
 id: ENVO:01001834
 name: subpolar biome
 def: "A biome which is subject to subpolar climatic conditions." []
-is_a: ENVO:00000428
-intersection_of: ENVO:00000428
+is_a: ENVO:00000428 ! biome
+intersection_of: ENVO:00000428 ! biome
 intersection_of: has_quality ENVO:01000251 ! subpolar
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
 property_value: http://purl.org/dc/elements/1.1/date 2019-11-06T15:58:56Z xsd:dateTime
@@ -29259,8 +29253,8 @@ property_value: http://purl.org/dc/elements/1.1/date 2019-11-06T15:58:56Z xsd:da
 id: ENVO:01001835
 name: alpine biome
 def: "A biome which is subject to alpine altitudinal conditions." []
-is_a: ENVO:00000428
-intersection_of: ENVO:00000428
+is_a: ENVO:00000428 ! biome
+intersection_of: ENVO:00000428 ! biome
 intersection_of: has_quality ENVO:01000340 ! alpine
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
 property_value: http://purl.org/dc/elements/1.1/date 2019-11-06T15:59:35Z xsd:dateTime
@@ -29269,8 +29263,8 @@ property_value: http://purl.org/dc/elements/1.1/date 2019-11-06T15:59:35Z xsd:da
 id: ENVO:01001836
 name: montane biome
 def: "A biome which is subject to montane altitudinal conditions." []
-is_a: ENVO:00000428
-intersection_of: ENVO:00000428
+is_a: ENVO:00000428 ! biome
+intersection_of: ENVO:00000428 ! biome
 intersection_of: has_quality ENVO:01000342 ! montane
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
 property_value: http://purl.org/dc/elements/1.1/date 2019-11-06T16:00:33Z xsd:dateTime
@@ -29279,8 +29273,8 @@ property_value: http://purl.org/dc/elements/1.1/date 2019-11-06T16:00:33Z xsd:da
 id: ENVO:01001837
 name: subalpine biome
 def: "A biome which is subject to subapline altitudinal conditions." []
-is_a: ENVO:00000428
-intersection_of: ENVO:00000428
+is_a: ENVO:00000428 ! biome
+intersection_of: ENVO:00000428 ! biome
 intersection_of: has_quality ENVO:01000341 ! subalpine
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
 property_value: http://purl.org/dc/elements/1.1/date 2019-11-06T16:01:49Z xsd:dateTime
@@ -29289,8 +29283,8 @@ property_value: http://purl.org/dc/elements/1.1/date 2019-11-06T16:01:49Z xsd:da
 id: ENVO:01001838
 name: arid biome
 def: "A biome which is subject to arid environmental conditions." []
-is_a: ENVO:00000428
-intersection_of: ENVO:00000428
+is_a: ENVO:00000428 ! biome
+intersection_of: ENVO:00000428 ! biome
 intersection_of: has_quality ENVO:01000230 ! arid
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
 property_value: http://purl.org/dc/elements/1.1/date 2019-11-06T16:06:47Z xsd:dateTime
@@ -30101,6 +30095,13 @@ is_obsolete: true
 replaced_by: FOODON:00001300
 
 [Term]
+id: ENVO:02000090
+name: ash
+def: "An environmental material that is the non-aqueous, non-gaseous residues that remain after something is burned." [https://en.wikipedia.org/wiki/Ash]
+is_a: ENVO:00010483 ! environmental material
+relationship: output_of ENVO:01000839 ! combustion process
+
+[Term]
 id: ENVO:02000091
 name: coal
 def: "A combustible black or brownish-black sedimentary rock usually occurring in rock strata in layers or veins called coal beds or coal seams." [https://en.wikipedia.org/wiki/Coal]
@@ -30372,12 +30373,64 @@ is_a: ENVO:03000010 ! material transport process
 property_value: http://purl.org/dc/elements/1.1/creator "cjm" xsd:string
 
 [Term]
+id: ENVO:02000126
+name: wood ash
+def: "the residue powder that is derived from the combustion of wood." [https://en.wikipedia.org/wiki/Wood_ash]
+is_a: ENVO:02000090 ! ash
+intersection_of: ENVO:02000090 ! ash
+intersection_of: derives_from ENVO:00002040 ! wood
+
+[Term]
+id: ENVO:02000127
+name: coal ash
+def: "Ash that is produced from the burning of coal." [https://www.epa.gov/coalash/coal-ash-basics]
+synonym: "coal combustion residuals" EXACT [https://www.epa.gov/coalash/coal-ash-basics]
+is_a: ENVO:02000090 ! ash
+intersection_of: ENVO:02000090 ! ash
+intersection_of: derives_from ENVO:02000091 ! coal
+
+[Term]
+id: ENVO:02000128
+name: fly ash
+def: "A very fine, powdery material composed mostly of silica made from the burning of finely ground coal in a boiler." [https://www.epa.gov/coalash/coal-ash-basics]
+is_a: ENVO:02000127 ! coal ash
+
+[Term]
+id: ENVO:02000129
+name: bottom ash
+def: "a coarse, angular ash particle that is too large to be carried up into the smoke stacks so it forms in the bottom of the coal furnace." [https://www.epa.gov/coalash/coal-ash-basics]
+is_a: ENVO:02000127 ! coal ash
+
+[Term]
+id: ENVO:02000130
+name: boiler slag
+def: "molten bottom ash from slag tap and cyclone type furnaces that turns into pellets that have a smooth glassy appearance after it is cooled with water." [https://www.epa.gov/coalash/coal-ash-basics]
+is_a: ENVO:02000127 ! coal ash
+
+[Term]
+id: ENVO:02000131
+name: flue gas desulfurization material
+def: "a material leftover from the process of reducing sulfur dioxide emissions from a coal-fired boiler that can be a wet sludge consisting of calcium sulfite or calcium sulfate or a dry powered material that is a mixture of sulfites and sulfates." []
+xref: https://www.epa.gov/coalash/coal-ash-basics
+is_a: ENVO:02000127 ! coal ash
+
+[Term]
+id: ENVO:02000140
+name: fluid environmental material
+def: "A liquid or a gas." [https://github.com/EnvironmentOntology/envo/issues/940]
+synonym: "fluid" NARROW []
+is_a: ENVO:00010483 ! environmental material
+union_of: ENVO:01000797 ! gaseous environmental material
+union_of: ENVO:01000798 ! plasma
+union_of: ENVO:01000815 ! liquid environmental material
+
+[Term]
 id: ENVO:02500000
 name: environmental system process
 def: "A process in which includes the components of an environmental system as participants." []
 comment: This is a convenience class for organisation and should not be used for annotation.
 is_a: BFO:0000015
-relationship: RO:0002218 ENVO:01001110 ! ecosystem
+relationship: obsolete_has_active_participant ENVO:01001110 ! ecosystem
 
 [Term]
 id: ENVO:02500001
@@ -30464,7 +30517,7 @@ name: afforestation
 def: "Establishment of a new forest by seeding or planting of nonforested land." [GEMET:http\://www.eionet.europa.eu/gemet/concept/167]
 comment: Prior to afforestation, the land cover of a region must not include forests.
 is_a: ENVO:02500032 ! planned revegetation
-relationship: RO:0002218 NCBITaxon:9606
+relationship: obsolete_has_active_participant NCBITaxon:9606
 
 [Term]
 id: ENVO:02500012
@@ -30560,8 +30613,8 @@ def: "A process during which humans apply technology to alter the magnitude, dur
 comment: Relabel the obo foundry unique label to be generic process
 is_a: OBI:0000011
 intersection_of: OBI:0000011
+intersection_of: obsolete_has_active_participant NCBITaxon:9606
 intersection_of: regulates_(processual) ENVO:02500000 ! environmental system process
-intersection_of: RO:0002218 NCBITaxon:9606
 
 [Term]
 id: ENVO:02500027
@@ -30569,7 +30622,7 @@ name: anthropogenic environmental process
 def: "An environmental process which is driven by the action of humans." []
 is_a: ENVO:02500000 ! environmental system process
 intersection_of: ENVO:02500000 ! environmental system process
-intersection_of: RO:0002218 NCBITaxon:9606
+intersection_of: obsolete_has_active_participant NCBITaxon:9606
 
 [Term]
 id: ENVO:02500028
@@ -30610,7 +30663,7 @@ name: planned revegetation
 def: "A planned process during which human agents establish plant communities in ecosystems which have previously been, partially or wholly, stripped of existing plant communities." []
 is_a: ENVO:01001170 ! active ecosystem management process
 relationship: has_output ENVO:01001305 ! vegetated area
-relationship: RO:0002218 NCBITaxon:9606
+relationship: obsolete_has_active_participant NCBITaxon:9606
 
 [Term]
 id: ENVO:02500033
@@ -30681,7 +30734,7 @@ name: environmental monitoring
 def: "An process in which environmental parameters and variables are continually assayed." []
 synonym: "monitoring" BROAD []
 is_a: OBI:0000011
-relationship: RO:0002218 NCBITaxon:9606
+relationship: obsolete_has_active_participant NCBITaxon:9606
 
 [Term]
 id: ENVO:02500042
@@ -31059,7 +31112,7 @@ synonym: "area of glacial ablation" EXACT []
 synonym: "glacial ablation area" EXACT []
 synonym: "glacial ice ablation area" EXACT []
 xref: http://sweetontology.net/realmCryo/AblationZone {comment="SWEET asserts this to be a subclass of cryo:GlacialRegion, thus the lack of link to ice sheets."}
-is_a: ENVO:01000914 ! ablation zone
+is_a: ENVO:01000914 ! ice ablation zone
 relationship: contains_process ENVO:01000919 ! glacial ice ablation process
 relationship: part_of ENVO:00000133 ! glacier
 property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
@@ -32371,8 +32424,8 @@ def: "An environment that is determined by an axilla skin." [GOC:TermGenie]
 subset: envoMeo
 is_a: ENVO:2100003 {is_inferred="true"} ! skin environment
 intersection_of: ENVO:2100000 ! anatomical entity environment
-intersection_of: determined_by UBERON:0015474 ! axilla skin
-relationship: determined_by UBERON:0015474 {is_inferred="true"} ! axilla skin
+intersection_of: determined_by UBERON:0015474
+relationship: determined_by UBERON:0015474 {is_inferred="true"}
 created_by: TermGenie
 creation_date: 2014-12-15T22:32:00Z
 
@@ -33836,76 +33889,6 @@ def: "An area of tundra which is present in a region subject to polar conditions
 is_a: ENVO:00000112 ! area of tundra
 relationship: has_quality ENVO:01000238 ! polar
 
-[Term]
-id: FAO:0000001
-is_a: UBERON:0000061
-
-[Term]
-id: GO:0015948
-subset: envoPolar
-
-[Term]
-id: GO:0015979
-subset: envoPolar
-
-[Term]
-id: GO:0040011
-name: locomotion
-is_a: GO:0008150
-
-[Term]
-id: NCBITaxon:1
-is_a: BFO:0000040
-
-[Term]
-id: PATO:0001739
-
-[Term]
-id: PCO:0000001
-relationship: has_habitat ENVO:01000739 ! habitat
-
-[Term]
-id: PCO:0000002
-subset: envoPolar
-
-[Term]
-id: PCO:1001178
-name: train
-def: "A vehicle which uses a motor to impel itself along a track to which its movements are constrained." []
-comment: Conceivably, cable cars and ski lifts are also trains. Further, entities like hand cars (platforms with wheels propelled along train tracks) are usually not considered trains.
-is_a: ENVO:01000604 ! vehicle
-relationship: has_part ENVO:01000610 ! motor
-property_value: IAO:0000116 "Definition created on the Shinkansen from Tokyo to Morioka for the 2017 BioHackathon. Contributors to add to xrefs: Seth Carbon and Mark Wilkinson." xsd:string
-
-[Term]
-id: PO:0025131
-is_a: BFO:0000040
-
-[Term]
-id: UBERON:0000465
-is_a: BFO:0000040
-
-[Term]
-id: UBERON:0001062
-is_a: BFO:0000004
-
-[Term]
-id: UBERON:0009198
-is_a: UBERON:0002209
-
-[Term]
-id: UBERON:0015474
-name: axilla skin
-def: "A zone of skin that is part of a axilla." [OBOL:automatic]
-synonym: "axillary skin" EXACT []
-synonym: "skin of axilla" EXACT []
-xref: FMA:37322
-xref: MA:0003087
-
-[Typedef]
-id: RO:0002218
-xref: RO:0002218
-
 [Typedef]
 id: adjacent_to
 xref: RO:0002220
@@ -34131,6 +34114,10 @@ id: obsolete_determined_by_part_of
 name: obsolete determined by part of
 xref: ENVO:2100007
 is_obsolete: true
+
+[Typedef]
+id: obsolete_has_active_participant
+xref: RO:0002218
 
 [Typedef]
 id: occurs_in

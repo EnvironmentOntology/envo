@@ -1,17 +1,13 @@
 format-version: 1.2
 ontology: envo/imports/pco_import
-owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\nDeclaration(Class(<http://purl.obolibrary.org/obo/CARO_0001010>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/PCO_0000001>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/PCO_0000002>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/PCO_0000017>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/PCO_0000018>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/PCO_0000029>))\nDeclaration(ObjectProperty(<http://purl.obolibrary.org/obo/RO_0002350>))\nDeclaration(ObjectProperty(<http://purl.obolibrary.org/obo/RO_0002351>))\n\n\n\n############################\n#   Classes\n############################\n\n# Class: <http://purl.obolibrary.org/obo/PCO_0000002> (<http://purl.obolibrary.org/obo/PCO_0000002>)\n\nSubClassOf(<http://purl.obolibrary.org/obo/PCO_0000002> ObjectIntersectionOf(<http://purl.obolibrary.org/obo/PCO_0000029> ObjectMinCardinality(2 <http://purl.obolibrary.org/obo/RO_0002351> <http://purl.obolibrary.org/obo/PCO_0000001>)))\n\n# Class: <http://purl.obolibrary.org/obo/PCO_0000018> (<http://purl.obolibrary.org/obo/PCO_0000018>)\n\nEquivalentClasses(<http://purl.obolibrary.org/obo/PCO_0000018> ObjectIntersectionOf(ObjectAllValuesFrom(<http://purl.obolibrary.org/obo/RO_0002351> <http://purl.obolibrary.org/obo/CARO_0001010>) ObjectAllValuesFrom(<http://purl.obolibrary.org/obo/RO_0002351> ObjectExactCardinality(1 <http://purl.obolibrary.org/obo/RO_0002350> <http://purl.obolibrary.org/obo/PCO_0000017>)) ObjectMinCardinality(2 <http://purl.obolibrary.org/obo/RO_0002351> <http://purl.obolibrary.org/obo/CARO_0001010>)))\n\n# Class: <http://purl.obolibrary.org/obo/PCO_0000029> (<http://purl.obolibrary.org/obo/PCO_0000029>)\n\nAnnotationAssertion(rdfs:comment <http://purl.obolibrary.org/obo/PCO_0000029> \"\"@en)\n\n\n)
+owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\n\n\nAnnotationAssertion(rdfs:comment <http://purl.obolibrary.org/obo/PCO_0000029> \"\"@en)\n)
 
 [Term]
 id: PCO:0000000
 name: collection of organisms
 def: "A material entity that consists of two or more organisms, viruses, or viroids." []
 comment: May be of the same or different species.
-is_a: BFO:0000027
 is_a: PCO:0000031 ! organismal entity
-intersection_of: RO:0002351 CARO:0001010 {all_only="true"}
-intersection_of: RO:0002351 CARO:0001010 {minCardinality="2"}
-relationship: RO:0002351 CARO:0001010
 property_value: IAO:0000112 "Examples include: population, community, species (meaning the collection of organisms that makes up a species, not the taxonomic rank), and family." xsd:string
 property_value: IAO:0000114 IAO:0000125
 property_value: IAO:0000118 "group of organism" xsd:string
@@ -38,45 +34,12 @@ property_value: IAO:0000118 "multispecies community" xsd:string
 property_value: IAO:0000119 ISBN:0865423504 xsd:string
 
 [Term]
-id: PCO:0000017
-name: species as a collection of organisms
-def: "A collection of organisms that has as parts every organism of given species and no organisms of any other species." []
-comment: This term is neutral with respect to which organisms are included in a species. Membership will depend on the species concept and the taxonomic assertions used to define the species. These criteria must be specified by the user.
-is_a: PCO:0000018 ! single-species collection of organisms
-property_value: IAO:0000114 IAO:0000120
-property_value: IAO:0000116 "At the moment there is no way to specify in an OWL axiom that the collection includes every individual of a species. This should be added, if possible." xsd:string
-
-[Term]
 id: PCO:0000018
 name: single-species collection of organisms
 def: "A material entity that has as parts two or more organisms, viruses, or viroids of the same species and no members of any other species." []
 is_a: PCO:0000000 ! collection of organisms
-relationship: RO:0002351 CARO:0001010
 property_value: IAO:0000114 IAO:0000120
 property_value: IAO:0000118 "collection of organisms of the same species" xsd:string
-
-[Term]
-id: PCO:0000027
-name: collection of humans
-def: "A collection of organisms of the same species that has as members only humans." []
-is_a: PCO:0000018 ! single-species collection of organisms
-intersection_of: PCO:0000018 ! single-species collection of organisms
-intersection_of: RO:0002351 NCBITaxon:9606 {all_only="true"}
-intersection_of: RO:0002351 NCBITaxon:9606 {minCardinality="2"}
-relationship: RO:0002351 NCBITaxon:9606
-property_value: IAO:0000114 IAO:0000125
-property_value: IAO:0000118 "human community" xsd:string
-property_value: IAO:0000118 "human population" xsd:string
-
-[Term]
-id: PCO:0000028
-name: community
-def: "A collection of organisms of the same species whose members are all either genealogically related to each other or have mated with each other." []
-comment: These relations can include shared values, occupying the same spatial regkion. A community be be a single species collection of organsisms (as in a  human community, which is also a type of population) or a  or multi-species collection of organisms (as in an ecological community).
-is_a: ObsoleteClass
-property_value: IAO:0000116 "Biological or social relations are covered by RO_0002437 (biotically interacts with), but that relations does provide an easy way to specify that two entities are interacting with each other (participating in the same interaction). Until that axiom is specified, the logical definition of this term is incomplete." xsd:string
-property_value: IAO:0000231 IAO:0000103
-is_obsolete: true
 
 [Term]
 id: PCO:0000029
@@ -90,9 +53,6 @@ property_value: IAO:0000116 "Need to add axiom to specify that it has at a mimum
 id: PCO:0000031
 name: organismal entity
 def: "A material entity that is one or more organisms, viruses or viroids." []
-is_a: BFO:0000040
-union_of: CARO:0001010
-union_of: PCO:0000000 ! collection of organisms
 property_value: IAO:0000114 IAO:0000120
 
 [Term]

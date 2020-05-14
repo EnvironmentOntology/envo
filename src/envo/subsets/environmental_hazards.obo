@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: envo/releases/2020-05-11/subsets/environmental_hazards.owl
+data-version: envo/releases/2020-05-14/subsets/environmental_hazards.owl
 subsetdef: disposition_slim "Disposition slim"
 subsetdef: environmental_hazards "environmental_hazards"
 subsetdef: EnvO-Lite-GSC "EnvO-Lite-GSC"
@@ -23,11 +23,7 @@ subsetdef: value_slim "Value slim"
 subsetdef: wwfBiome "wwfBiome"
 synonymtypedef: PLURAL "plurals"
 ontology: envo/subsets/environmental_hazards
-property_value: owl:versionInfo "2020-05-11" xsd:string
-
-[Term]
-id: CHEBI:36342
-namespace: ENVO
+property_value: owl:versionInfo "2020-05-14" xsd:string
 
 [Term]
 id: ENVO:00000020
@@ -453,6 +449,7 @@ property_value: IAO:0000116 "We need a more general channel definition, the curr
 
 [Term]
 id: ENVO:00000428
+name: biome
 namespace: ENVO
 alt_id: LTER:809 {xref="https://vocab.lternet.edu/vocab/vocab/index.php?tema=809&/biomes"}
 def: "A biome is an ecosystem to which resident ecological communities have evolved adaptations." [DOI:10.1186/2041-1480-4-43, https://en.wikipedia.org/wiki/Biome]
@@ -461,7 +458,6 @@ synonym: "EcosytemType" RELATED [NASA:earthrealm]
 synonym: "major habitat type" EXACT [WWF:Biome]
 xref: EcoLexicon:biome
 is_a: ENVO:01001110 ! ecosystem
-relationship: determined_by PCO:0000002
 relationship: has_part ENVO:01000739 {minCardinality="2"} ! habitat
 relationship: part_of ENVO:01000817 ! biosphere
 
@@ -473,7 +469,7 @@ def: "A biome which is  primarily or completely situated on a landmass." [https:
 synonym: "terrestrial realm" RELATED []
 xref: LTER:798
 xref: SPIRE:Terrestrial
-is_a: ENVO:00000428
+is_a: ENVO:00000428 ! biome
 
 [Term]
 id: ENVO:00000501
@@ -1136,8 +1132,6 @@ id: ENVO:01000701
 name: volcanic ash
 namespace: ENVO
 def: "Volcanic ash is an environmental material which consists of fragments of pulverized rock, minerals, and volcanic glass, created during volcanic eruptions and measuring less than 2 millimetres in diameter. Volcanic ash is formed during explosive volcanic eruptions, phreatomagmatic eruptions and during transport in pyroclastic density currents." [https://en.wikipedia.org/wiki/Volcanic_ash]
-is_a: ENVO:00010483 ! environmental material
-relationship: output_of ENVO:01000634 ! volcanic eruption
 
 [Term]
 id: ENVO:01000702
@@ -1299,7 +1293,6 @@ xref: https://en.wikipedia.org/wiki/Habitat
 xref: LTER:238
 xref: SWEETRealm:Habitat
 is_a: ENVO:01001110 ! ecosystem
-relationship: determined_by PCO:0000001
 relationship: part_of ENVO:01000817 ! biosphere
 
 [Term]
@@ -1394,6 +1387,7 @@ name: gaseous environmental material
 namespace: ENVO
 def: "A material entity which is composed of one or more chemical entities and has neither independent shape nor volume but tends to expand indefinitely." [http://www.merriam-webster.com/dictionary/gas]
 synonym: "gas" NARROW []
+is_a: ENVO:02000140 ! fluid environmental material
 property_value: IAO:0000116 "This class is to be populated by inference." xsd:string
 
 [Term]
@@ -1401,7 +1395,7 @@ id: ENVO:01000798
 name: plasma
 namespace: ENVO
 def: "A material entity which is composed of a volume of unbound positive and negative particles in roughly equal numbers, conducts electricity, and possesses internal magnetic fields." [http://www.merriam-webster.com/dictionary/plasma, https://en.wikipedia.org/wiki/Plasma_%28physics%29]
-is_a: ENVO:00010483 ! environmental material
+is_a: ENVO:02000140 ! fluid environmental material
 property_value: IAO:0000116 "An NTR for `quality of a plasma` has been posted on the PATO tracker: https://github.com/pato-ontology/pato/issues/88" xsd:string
 
 [Term]
@@ -1460,7 +1454,7 @@ namespace: ENVO
 def: "An environmental material which is in a liquid state." []
 comment: This is a defined class: its subclasses will not be asserted, but filled by inference.
 subset: envoPolar
-is_a: ENVO:00010483 ! environmental material
+is_a: ENVO:02000140 ! fluid environmental material
 
 [Term]
 id: ENVO:01000817
@@ -1815,7 +1809,6 @@ def: "A process during which energy is emitted or transmitted in the form of wav
 subset: environmental_hazards
 subset: envoAstro
 is_a: ENVO:01001852 ! energy transfer process
-relationship: has_participant CHEBI:36342
 relationship: has_participant ENVO:00010483 ! environmental material
 property_value: IAO:0000116 "Requires addition of waves for full axiomatisation. This should be linked to \"subatomic particle\" with an \"or\". Note that ENVO represents space as an environmental material (a hard vacuum with sparse material inclusions)." xsd:string
 
@@ -2361,12 +2354,23 @@ property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-00
 property_value: http://purl.org/dc/elements/1.1/date 2020-02-13T13:34:28Z xsd:dateTime
 
 [Term]
+id: ENVO:02000140
+name: fluid environmental material
+namespace: ENVO
+def: "A liquid or a gas." [https://github.com/EnvironmentOntology/envo/issues/940]
+synonym: "fluid" NARROW []
+is_a: ENVO:00010483 ! environmental material
+union_of: ENVO:01000797 ! gaseous environmental material
+union_of: ENVO:01000798 ! plasma
+union_of: ENVO:01000815 ! liquid environmental material
+
+[Term]
 id: ENVO:02500000
 name: environmental system process
 namespace: ENVO
 def: "A process in which includes the components of an environmental system as participants." []
 comment: This is a convenience class for organisation and should not be used for annotation.
-relationship: RO:0002218 ENVO:01001110 ! ecosystem
+relationship: obsolete_has_active_participant ENVO:01001110 ! ecosystem
 
 [Term]
 id: ENVO:02500002
@@ -2642,21 +2646,6 @@ def: "A radiation process during which electromagnetic waves or their quanta are
 synonym: "ionising radiation" EXACT []
 xref: NCIT:C17052
 is_a: ENVO:01001026 ! electromagnetic radiation
-
-[Term]
-id: PCO:0000001
-namespace: ENVO
-relationship: has_habitat ENVO:01000739 ! habitat
-
-[Term]
-id: PCO:0000002
-namespace: ENVO
-subset: envoPolar
-
-[Typedef]
-id: RO:0002218
-namespace: ENVO
-xref: RO:0002218
 
 [Typedef]
 id: adjacent_to
@@ -2934,6 +2923,11 @@ name: obsolete determined by part of
 namespace: ENVO
 xref: ENVO:2100007
 is_obsolete: true
+
+[Typedef]
+id: obsolete_has_active_participant
+namespace: ENVO
+xref: RO:0002218
 
 [Typedef]
 id: occurs_in
