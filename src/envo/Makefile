@@ -276,6 +276,7 @@ imports/%_import.obo: imports/%_import.owl
 	$(OWLTOOLS) $(USECAT) $< -o -f obo --no-check $@
 
 
+# --remove-classes-in-idspace ENVO
 
 # clone remote ontology locally, perfoming some excision of relations and annotations
 mirror/%-local.owl:
@@ -346,9 +347,17 @@ mirror/ncbitaxon.owl: ncbitaxon.obo
 	OWLTOOLS_MEMORY=12G $(OWLTOOLS) $< --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations  --set-ontology-id $(OBO)/ncbitaxon.owl -o $@
 .PRECIOUS: mirror/ncbitaxon.owl
 
+# PCO woes:
+#
+# it's necessary to reason first with PCO. See: https://github.com/PopulationAndCommunityOntology/pco/issues/83
+#
+#
+# need to strip additional https class:
+# https://github.com/PopulationAndCommunityOntology/pco/issues/85
+#
+# https://github.com/ontodev/robot/issues/693
 mirror/pco.owl: envo-edit.owl
-	$(ROBOT) reason -r HERMIT -I $(OBO)/pco.owl relax -o $@.tmp.owl
-	$(OWLTOOLS) $@.tmp.owl --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/pco.owl -o $@
+	$(ROBOT) reason -r HERMIT -I $(OBO)/pco.owl relax remove --base-iri PCO --axioms external remove -i imports/pco_import.owl --term https://purl.obolibrary.org/obo/PCO_0000044 -o $@
 .PRECIOUS: mirror/%.owl
 
 mirror/iao.owl: envo-edit.owl
@@ -438,6 +447,14 @@ reports/envo-%.tsv: envo.owl sparql/%.sparql
 SPARQL_VALIDATION_QUERIES = $(foreach V,$(SPARQL_VALIDATION_CHECKS),$(SPARQLDIR)/$V-violation.sparql)
 sparql_test: $(SRC)
 	$(ROBOT) verify  --catalog catalog-v001.xml -i $< --queries $(SPARQL_VALIDATION_QUERIES) -O reports/
+
+# ----------------------------------------
+# ROBOT report
+# ----------------------------------------
+reports/envo-src-robot-report.tsv: $(SRC)
+	$(ROBOT) report -l true -i $< --fail-on $(REPORT_FAIL_ON) --print 5 -o $@
+reports/envo-base-robot-report.tsv: envo-base.owl
+	$(ROBOT) report -l true -i $< --fail-on $(REPORT_FAIL_ON) --print 5 -o $@
 
 
 # ----------------------------------------
