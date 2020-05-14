@@ -54,8 +54,8 @@ FORMATS_INCL_TSV = $(sort $(FORMATS) tsv)
 .PHONY: .FORCE
 all: all_imports all_main all_subsets sparql_test all_reports all_assets
 
-test: envo-edit.owl all_modules all_imports envo.owl
-travis_test: test_python envo-edit.owl all_modules envo.owl
+test: envo-edit.owl all_modules all_imports envo.owl all_reports
+travis_test: test_python envo-edit.owl all_reports all_modules envo.owl
 
 full_test: test envo.check-obo subsets/EnvO-Lite-GSC.check-obo
 
