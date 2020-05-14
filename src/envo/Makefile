@@ -312,16 +312,11 @@ mirror/chebi.owl: mirror/chebi-local.owl
 	$(OWLTOOLS) --no-debug $< --log-debug --remove-annotation-assertions -l --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS)  -o $@
 .PRECIOUS: mirror/%.owl
 
-#mirror/ro.owl: mirror/ro-relations.owl mirror/ro-classes.owl
-#	$(OWLTOOLS) $^ --merge-support-ontologies -o $@
 mirror/ro.owl:
-	$(OWLTOOLS) $(OBO)/ro.owl --merge-imports-closure -o $@
+	$(ROBOT) merge -I $(OBO)/ro.owl \
+	 remove --base-iri RO --base-iri BFO --axioms external -o $@
+#	$(OWLTOOLS) $(OBO)/ro.owl --merge-imports-closure -o $@
 .PRECIOUS: mirror/ro.owl
-
-mirror/ro-relations.owl: envo-edit.owl
-	$(OWLTOOLS) $(OBO)/ro.owl --merge-imports-closure --remove-tbox --remove-dangling -o $@
-mirror/ro-classes.owl: envo-edit.owl
-	$(OWLTOOLS) $(OBO)/ro.owl --merge-imports-closure --make-subset-by-properties -f // --remove-external-classes -k RO --remove-annotation-assertions -l -s -d  -o $@
 
 mirror/bfo.owl: envo-edit.owl
 	$(OWLTOOLS) $(OBO)/bfo.owl --merge-imports-closure --make-subset-by-properties -f // --remove-external-classes BFO --remove-annotation-assertions -l -s -d  --remove-dangling --set-ontology-id $(OBO)/bfo.owl -o $@
@@ -357,7 +352,9 @@ mirror/ncbitaxon.owl: ncbitaxon.obo
 #
 # https://github.com/ontodev/robot/issues/693
 mirror/pco.owl: envo-edit.owl
-	$(ROBOT) reason -r HERMIT -I $(OBO)/pco.owl relax remove --base-iri PCO --axioms external remove -i imports/pco_import.owl --term https://purl.obolibrary.org/obo/PCO_0000044 -o $@
+	$(ROBOT) reason -r HERMIT -I $(OBO)/pco.owl relax \
+	 remove --base-iri PCO --axioms external \
+	 remove --term https://purl.obolibrary.org/obo/PCO_0000044 -o $@
 .PRECIOUS: mirror/%.owl
 
 mirror/iao.owl: envo-edit.owl
