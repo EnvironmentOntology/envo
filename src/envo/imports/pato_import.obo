@@ -48,11 +48,6 @@ name: anatomical entity
 is_a: CARO:0030000 ! biological entity
 
 [Term]
-id: CARO:0000003
-name: connected anatomical structure
-is_a: CARO:0000006 ! material anatomical entity
-
-[Term]
 id: CARO:0000006
 name: material anatomical entity
 is_a: BFO:0000040 ! material entity
@@ -64,16 +59,6 @@ name: biological entity
 is_a: BFO:0000004 ! independent continuant
 
 [Term]
-id: GO:0003674
-name: molecular_function
-is_a: BFO:0000015 ! process
-
-[Term]
-id: GO:0003824
-name: catalytic activity
-is_a: GO:0003674 ! molecular_function
-
-[Term]
 id: GO:0008150
 name: biological_process
 def: "A biological process represents a specific objective that the organism is genetically programmed to achieve. Biological processes are often described by their outcome or ending state, e.g., the biological process of cell division results in the creation of two daughter cells (a divided cell) from a single parent cell. A biological process is accomplished by a particular set of molecular functions carried out by specific gene products (or macromolecular complexes), often in a highly regulated manner and in a particular temporal sequence." []
@@ -82,21 +67,6 @@ synonym: "physiological process" EXACT []
 synonym: "single organism process" RELATED []
 synonym: "single-organism process" RELATED []
 is_a: BFO:0000015 ! process
-
-[Term]
-id: GO:0016301
-name: kinase activity
-is_a: GO:0016772 ! transferase activity, transferring phosphorus-containing groups
-
-[Term]
-id: GO:0016740
-name: transferase activity
-is_a: GO:0003824 ! catalytic activity
-
-[Term]
-id: GO:0016772
-name: transferase activity, transferring phosphorus-containing groups
-is_a: GO:0016740 ! transferase activity
 
 [Term]
 id: PATO:0000001
@@ -265,17 +235,6 @@ def: "A physical quality that inheres in a bearer by virtue of the proportion of
 is_a: PATO:0001018 ! physical quality
 
 [Term]
-id: PATO:0000133
-name: orientation
-def: "A spatial quality inhering in a bearer by virtue of the bearer's placement which is defined by the angle between the bearer and an axis, or the angle between the bearer and another object." []
-synonym: "amount of rotation" RELATED []
-synonym: "angle" RELATED []
-synonym: "angular magnitude" RELATED []
-synonym: "angular placement" EXACT []
-synonym: "plane angle" RELATED []
-is_a: PATO:0000140 ! position
-
-[Term]
 id: PATO:0000136
 name: closure
 def: "A morphological quality pertaining to the degree to which an object contains an opening, aperture, orifice or vent." []
@@ -320,13 +279,6 @@ is_a: PATO:0001018 ! physical quality
 id: PATO:0000169
 name: viability
 def: "An organismal quality inhering in a bearer or a population by virtue of the bearer's disposition to survive and develop normally or the number of surviving individuals in a given population." []
-is_a: PATO:0001995 ! organismal quality
-
-[Term]
-id: PATO:0000186
-name: behavioral quality
-def: "An organismal quality inhering in a bearer by virtue of the bearer's behavior aggregate of the responses or reactions or movements in a given situation." []
-synonym: "behavioural quality" EXACT []
 is_a: PATO:0001995 ! organismal quality
 
 [Term]
@@ -431,13 +383,6 @@ is_a: PATO:0000048 ! hardness
 is_a: PATO:0002305 ! increased object quality
 
 [Term]
-id: PATO:0000387
-name: soft
-def: "A hardness quality of giving little resistance to pressure." []
-is_a: PATO:0000048 ! hardness
-is_a: PATO:0002303 ! decreased object quality
-
-[Term]
 id: PATO:0000402
 name: branched
 def: "A branchiness quality inhering in a bearer by virtue of the bearer's having branches." []
@@ -481,32 +426,6 @@ def: "A variability quality inhering in a bearer by virtue of the bearer's lacki
 synonym: "constant" RELATED []
 synonym: "uniform" EXACT []
 is_a: PATO:0001303 ! variability
-
-[Term]
-id: PATO:0000461
-name: normal
-def: "A quality inhering in a bearer by virtue of the bearer's exhibiting no deviation from normal or average." []
-synonym: "average" RELATED []
-is_a: PATO:0000068 ! qualitative
-
-[Term]
-id: PATO:0000467
-name: present
-def: "A quality inhering in a bearer by virtue of the bearer's existence." []
-synonym: "present in organism" RELATED []
-is_a: PATO:0000070 ! amount
-
-[Term]
-id: PATO:0000470
-name: increased amount
-def: "An amount which is relatively high." []
-synonym: "accessory" RELATED []
-synonym: "increased" RELATED []
-synonym: "increased number" EXACT []
-synonym: "present in greater numbers in organism" EXACT []
-synonym: "supernumerary" EXACT []
-is_a: PATO:0000467 ! present
-is_a: PATO:0002300 ! increased quality
 
 [Term]
 id: PATO:0000573
@@ -990,16 +909,6 @@ is_a: PATO:0000001 ! quality
 disjoint_from: PATO:0001241 ! physical object quality
 
 [Term]
-id: PATO:0001237
-is_obsolete: true
-replaced_by: PATO:0001241
-
-[Term]
-id: PATO:0001238
-is_obsolete: true
-replaced_by: PATO:0001241
-
-[Term]
 id: PATO:0001241
 name: physical object quality
 def: "A quality which inheres in a continuant." []
@@ -1295,18 +1204,6 @@ synonym: "liquidity" EXACT []
 is_a: PATO:0002198 ! quality of a substance
 
 [Term]
-id: PATO:0001555
-name: has number of
-def: "The number of parts of a particular type that the bearer entity has. This is a relational quality, and thus holds between two entities: the bearer of the quality, and the type of parts." []
-synonym: "cardinality" RELATED []
-synonym: "extra or missing physical or functional parts" EXACT []
-synonym: "has or lacks parts of type" EXACT []
-synonym: "mereological quality" EXACT []
-synonym: "number" RELATED []
-synonym: "number of" EXACT []
-is_a: PATO:0001241 ! physical object quality
-
-[Term]
 id: PATO:0001559
 name: having extra function
 def: "A functionality quality which is held by the bearer when the latter is able to perform additional or different function(s)." []
@@ -1364,22 +1261,6 @@ is_a: PATO:0001025 ! pressure
 is_a: PATO:0002305 ! increased object quality
 
 [Term]
-id: PATO:0001577
-name: increased permeability
-def: "A permeability which is relatively high." []
-synonym: "high permeability" EXACT []
-is_a: PATO:0000982 ! permeable
-is_a: PATO:0002305 ! increased object quality
-
-[Term]
-id: PATO:0001578
-name: decreased permeability
-def: "A permeability which is relatively low." []
-synonym: "low permeability" EXACT []
-is_a: PATO:0000982 ! permeable
-is_a: PATO:0002303 ! decreased object quality
-
-[Term]
 id: PATO:0001583
 name: decreased variability
 def: "A variability which is relatively low." []
@@ -1406,20 +1287,6 @@ id: PATO:0001591
 name: curvature
 def: "A surface shape quality inhering in a bearer by virtue of the bearer's exhibiting a degree of bending." []
 is_a: PATO:0000052 ! shape
-
-[Term]
-id: PATO:0001592
-name: increased curvature
-def: "A curvature which is relatively high." []
-is_a: PATO:0000406 ! curved
-is_a: PATO:0002305 ! increased object quality
-
-[Term]
-id: PATO:0001593
-name: decreased curvature
-def: "A curvature which is relatively low." []
-is_a: PATO:0000406 ! curved
-is_a: PATO:0002303 ! decreased object quality
 
 [Term]
 id: PATO:0001594
@@ -1494,11 +1361,6 @@ def: "A positional quality inhering in a bearer by virtue of the bearer's being 
 is_a: PATO:0000140 ! position
 
 [Term]
-id: PATO:0001631
-is_obsolete: true
-replaced_by: PATO:0000140
-
-[Term]
 id: PATO:0001632
 name: anterior to
 def: "A spatial quality inhering in a bearer by virtue of the bearer's being located toward the front of an organism relative to another entity." []
@@ -1556,14 +1418,6 @@ def: "A concentration quality inhering in a bearer by virtue of the bearer's amo
 is_a: PATO:0000033 ! concentration of
 
 [Term]
-id: PATO:0001656
-name: decreased osmolarity
-def: "A osmolarity which is relatively low." []
-synonym: "low osmolarity" EXACT []
-is_a: PATO:0001655 ! osmolarity
-is_a: PATO:0002303 ! decreased object quality
-
-[Term]
 id: PATO:0001657
 name: increased osmolarity
 def: "A osmolarity which is relatively high." []
@@ -1616,22 +1470,6 @@ def: "A physical quality inhering in a bearer by virtue of the bearer's disposit
 is_a: PATO:0001018 ! physical quality
 
 [Term]
-id: PATO:0001683
-name: increased magnetism
-def: "A magnetism which is relatively high." []
-synonym: "high magnetism" EXACT []
-is_a: PATO:0001685 ! magnetic
-is_a: PATO:0002305 ! increased object quality
-
-[Term]
-id: PATO:0001684
-name: decreased magnetism
-def: "A magnetism which is relatively low." []
-synonym: "low magnetism" EXACT []
-is_a: PATO:0001685 ! magnetic
-is_a: PATO:0002303 ! decreased object quality
-
-[Term]
 id: PATO:0001685
 name: magnetic
 def: "A magnetic quality inhering in a bearer by virtue of the bearer's ability to exert magnitism." []
@@ -1667,14 +1505,6 @@ def: "A viscosity which relatively high." []
 synonym: "high viscosity" EXACT []
 is_a: PATO:0000998 ! viscous
 is_a: PATO:0002305 ! increased object quality
-
-[Term]
-id: PATO:0001694
-name: decreased viscosity
-def: "A viscosity which relatively low." []
-synonym: "low viscosity" EXACT []
-is_a: PATO:0000998 ! viscous
-is_a: PATO:0002303 ! decreased object quality
 
 [Term]
 id: PATO:0001708
@@ -1773,22 +1603,6 @@ def: "A radiation quality inhering in bearer by virtue of the bearer's exhibitin
 is_a: PATO:0001740 ! activity (of a radionuclide)
 
 [Term]
-id: PATO:0001742
-name: increased radioactivity
-def: "A radioactivity which is relatively low." []
-synonym: "high radioactivity" EXACT []
-is_a: PATO:0001741 ! radioactive
-is_a: PATO:0002305 ! increased object quality
-
-[Term]
-id: PATO:0001743
-name: decreased radioactivity
-def: "A radioactivity which is relatively high." []
-synonym: "low radioactivity" EXACT []
-is_a: PATO:0001741 ! radioactive
-is_a: PATO:0002303 ! decreased object quality
-
-[Term]
 id: PATO:0001756
 name: heat conductivity
 def: "A conductivity quality inhering in a bearer by virtue of the bearer's disposition to spontaneous transfer of thermal energy from a region of higher temperature to a region of lower temperature." []
@@ -1808,46 +1622,6 @@ def: "A composition quality inhering in a bearer by virtue of the bearer's conta
 is_a: PATO:0000025 ! composition
 
 [Term]
-id: PATO:0001764
-name: increased age
-def: "An age which is high relative to the normal or average." []
-synonym: "high age" EXACT []
-is_a: PATO:0000011 ! age
-is_a: PATO:0002305 ! increased object quality
-
-[Term]
-id: PATO:0001765
-name: decreased age
-def: "An age which is low relative to the normal or average." []
-synonym: "low age" EXACT []
-is_a: PATO:0000011 ! age
-is_a: PATO:0002303 ! decreased object quality
-
-[Term]
-id: PATO:0001776
-name: increased flexibility
-def: "A flexibility which is relatively high." []
-synonym: "high flexibility" EXACT []
-is_a: PATO:0001544 ! flexible
-is_a: PATO:0002305 ! increased object quality
-
-[Term]
-id: PATO:0001777
-name: decreased flexibility
-def: "A flexibility which is relatively low." []
-synonym: "low flexibility" EXACT []
-is_a: PATO:0001544 ! flexible
-is_a: PATO:0002303 ! decreased object quality
-
-[Term]
-id: PATO:0001778
-name: increased strength
-def: "A strength which is relatively high." []
-synonym: "high strength" EXACT []
-is_a: PATO:0001230 ! strength
-is_a: PATO:0002305 ! increased object quality
-
-[Term]
 id: PATO:0001779
 name: decreased strength
 def: "A strength which is relatively low." []
@@ -1860,22 +1634,6 @@ id: PATO:0001781
 name: irregular thickness
 def: "A thickness quality which lacks pattern." []
 is_a: PATO:0000915 ! thickness
-
-[Term]
-id: PATO:0001782
-name: increased intensity
-def: "An intensity which is relatively high." []
-synonym: "high intensity" EXACT []
-is_a: PATO:0000049 ! intensity
-is_a: PATO:0002300 ! increased quality
-
-[Term]
-id: PATO:0001783
-name: decreased intensity
-def: "An intensity which is relatively low." []
-synonym: "low intensity" EXACT []
-is_a: PATO:0000049 ! intensity
-is_a: PATO:0002301 ! decreased quality
 
 [Term]
 id: PATO:0001788
@@ -1975,14 +1733,6 @@ synonym: "pH" EXACT []
 is_a: PATO:0000033 ! concentration of
 
 [Term]
-id: PATO:0001843
-name: decreased acidity
-def: "An acidity which is relatively low." []
-synonym: "low acidity" EXACT []
-is_a: PATO:0001842 ! acidity
-is_a: PATO:0002303 ! decreased object quality
-
-[Term]
 id: PATO:0001844
 name: increased acidity
 def: "An acidity which is relatively high." []
@@ -2057,13 +1807,6 @@ def: "A concave 3-D shape quality inhering in a bearer by virtue of the bearer's
 synonym: "trifurcate" EXACT []
 is_a: PATO:0000402 ! branched
 is_a: PATO:0002008 ! concave 3-D shape
-
-[Term]
-id: PATO:0001898
-name: increased circumference
-def: "A circumference which is relatively high." []
-is_a: PATO:0001648 ! circumference
-is_a: PATO:0001712 ! increased perimeter
 
 [Term]
 id: PATO:0001899
@@ -2162,18 +1905,6 @@ def: "A quality that inheres in an entire organism or part of an organism." []
 is_a: PATO:0001241 ! physical object quality
 
 [Term]
-id: PATO:0001997
-name: decreased amount
-def: "An amount which is relatively low." []
-synonym: "decreased" RELATED []
-synonym: "decreased number" EXACT []
-synonym: "present in fewer numbers in organism" EXACT []
-synonym: "reduced" RELATED []
-synonym: "subnumerary" RELATED []
-is_a: PATO:0000467 ! present
-is_a: PATO:0002301 ! decreased quality
-
-[Term]
 id: PATO:0002005
 name: concavity
 def: "Surface shape that refers to the inward or outward curvature of the surface." []
@@ -2217,22 +1948,6 @@ name: conical
 def: "A convex 3-D shape quality inhering in a bearer by virtue of the bearer's resembling a cone (a 3-D shape with a round cross section that tapers)." []
 synonym: "cone-shaped" EXACT []
 is_a: PATO:0002007 ! convex 3-D shape
-
-[Term]
-id: PATO:0002051
-name: increased occurrence
-def: "An occurrence which is relatively high." []
-synonym: "increased incidence" EXACT []
-is_a: PATO:0000057 ! occurrence
-is_a: PATO:0002304 ! increased process quality
-
-[Term]
-id: PATO:0002052
-name: decreased occurrence
-def: "An occurrence which is relatively low." []
-synonym: "decreased incidence" EXACT []
-is_a: PATO:0000057 ! occurrence
-is_a: PATO:0002302 ! decreased process quality
 
 [Term]
 id: PATO:0002057
@@ -2333,13 +2048,6 @@ name: sloped downward
 is_a: PATO:0001481 ! sloped
 
 [Term]
-id: PATO:0002162
-name: high-arched
-def: "A concave quality inhering in a bearer by virtue of the bearer's forming or resembling an arch of an increased apical height." []
-is_a: PATO:0001594 ! arched
-is_a: PATO:0002305 ! increased object quality
-
-[Term]
 id: PATO:0002173
 name: misaligned towards
 def: "An alignment quality inhering in a bearer by virtue of the bearer's being in a improper spatial positioning towards an additional entity." []
@@ -2375,30 +2083,6 @@ id: PATO:0002198
 name: quality of a substance
 def: "A quality inhering in a bearer by virtue of its constitution." []
 is_a: PATO:0001018 ! physical quality
-
-[Term]
-id: PATO:0002201
-name: handedness
-def: "A behavioral quality inhering ina bearer by virtue of the bearer's unequal distribution of fine motor skill between its left and right hands or feet." []
-is_a: PATO:0000186 ! behavioral quality
-
-[Term]
-id: PATO:0002202
-name: left handedness
-def: "Handedness where the organism preferentially uses the left hand or foot for tasks requiring the use of a single hand or foot or a dominant hand or foot." []
-is_a: PATO:0002201 ! handedness
-
-[Term]
-id: PATO:0002203
-name: right handedness
-def: "Handedness where the organism preferentially uses the right hand or foot for tasks requiring the use of a single hand or foot or a dominant hand or foot." []
-is_a: PATO:0002201 ! handedness
-
-[Term]
-id: PATO:0002204
-name: ambidextrous handedness
-def: "Handedness where the organism exhibits no overall dominance in the use of right or left hand or foot in the performance of tasks that require one hand or foot or a dominant hand or foot." []
-is_a: PATO:0002201 ! handedness
 
 [Term]
 id: PATO:0002212
@@ -2500,20 +2184,6 @@ id: PATO:0002272
 name: parallel to
 def: "A spatial quality inhering in a bearer by virtue of the bearer's being located at the same continuous distance relative to another object." []
 is_a: PATO:0000140 ! position
-
-[Term]
-id: PATO:0002287
-name: increased elasticity
-def: "An elasticity which is relatively high." []
-is_a: PATO:0001171 ! elastic
-is_a: PATO:0002305 ! increased object quality
-
-[Term]
-id: PATO:0002288
-name: decreased elasticity
-def: "An elasticity which is relatively low." []
-is_a: PATO:0001171 ! elastic
-is_a: PATO:0002303 ! decreased object quality
 
 [Term]
 id: PATO:0002292
@@ -2739,130 +2409,10 @@ is_a: PATO:0002305 ! increased object quality
 is_a: PATO:0015021 ! combustibility
 
 [Term]
-id: PATO:0015023
-name: decreased combustibility
-def: "An decrease in combustibility." []
-synonym: "noncombustible" RELATED []
-is_a: PATO:0002303 ! decreased object quality
-is_a: PATO:0015021 ! combustibility
-
-[Term]
-id: PATO:0015024
-name: increased porosity
-def: "An increase in porosity." []
-is_a: PATO:0000973 ! porosity
-is_a: PATO:0002305 ! increased object quality
-
-[Term]
-id: PATO:0015025
-name: decreased porosity
-def: "An decrease in porosity." []
-is_a: PATO:0000973 ! porosity
-is_a: PATO:0002303 ! decreased object quality
-
-[Term]
-id: PATO:0045000
-name: normal rate
-def: "A rate which is relatively normal." []
-is_a: PATO:0000161 ! rate
-is_a: PATO:0045073 ! normal process quality
-
-[Term]
 id: PATO:0045001
 name: normal object quality
 def: "A quality of an object that has a value that is normal or average." []
 is_a: PATO:0001241 ! physical object quality
-
-[Term]
-id: PATO:0045002
-name: normal acidity
-def: "An acidity which is relatively normal." []
-is_a: PATO:0001842 ! acidity
-is_a: PATO:0045001 ! normal object quality
-
-[Term]
-id: PATO:0045005
-name: normal age
-def: "An age which is relatively normal or average." []
-is_a: PATO:0000011 ! age
-is_a: PATO:0045001 ! normal object quality
-
-[Term]
-id: PATO:0045010
-name: normal concentration
-def: "A concentration which is relatively normal or average." []
-is_a: PATO:0001159 ! concentrated
-is_a: PATO:0045001 ! normal object quality
-
-[Term]
-id: PATO:0045013
-name: normal curvature
-def: "A curvature which is relatively normal or average." []
-is_a: PATO:0000406 ! curved
-is_a: PATO:0045001 ! normal object quality
-
-[Term]
-id: PATO:0045015
-name: normal efficiency
-def: "An efficiency which is relatively normal or average." []
-is_a: PATO:0001678 ! efficient
-is_a: PATO:0045001 ! normal object quality
-
-[Term]
-id: PATO:0045016
-name: normal elasticity
-def: "An elasticity which is relatively normal or average." []
-is_a: PATO:0001171 ! elastic
-is_a: PATO:0045001 ! normal object quality
-
-[Term]
-id: PATO:0045021
-name: normal flexibility
-def: "A flexibility which is relatively normal or average." []
-is_a: PATO:0001544 ! flexible
-is_a: PATO:0045001 ! normal object quality
-
-[Term]
-id: PATO:0045022
-name: normal fluid flow
-def: "A fluid flow which is relatively normal or average." []
-is_a: PATO:0002243 ! fluid flow rate
-is_a: PATO:0045001 ! normal object quality
-
-[Term]
-id: PATO:0045027
-name: normal magnetism
-def: "A magnetism which is relatively normal or average." []
-is_a: PATO:0001685 ! magnetic
-is_a: PATO:0045001 ! normal object quality
-
-[Term]
-id: PATO:0045030
-name: normal mass
-def: "A mass which is relatively normal or average." []
-is_a: PATO:0000125 ! mass
-is_a: PATO:0045001 ! normal object quality
-
-[Term]
-id: PATO:0045031
-name: normal mass density
-def: "A density which is relatively normal or average." []
-is_a: PATO:0001164 ! dense
-is_a: PATO:0045001 ! normal object quality
-
-[Term]
-id: PATO:0045035
-name: normal osmolarity
-def: "An osmolarity which is relatively normal or average odor." []
-is_a: PATO:0001655 ! osmolarity
-is_a: PATO:0045001 ! normal object quality
-
-[Term]
-id: PATO:0045036
-name: normal permeability
-def: "A permeability which is relatively normal or average." []
-is_a: PATO:0000982 ! permeable
-is_a: PATO:0045001 ! normal object quality
 
 [Term]
 id: PATO:0045040
@@ -2872,31 +2422,10 @@ is_a: PATO:0000140 ! position
 is_a: PATO:0045001 ! normal object quality
 
 [Term]
-id: PATO:0045042
-name: normal distribution
-def: "A distribution which is relatively normal or average" []
-is_a: PATO:0001566 ! distributed
-is_a: PATO:0045040 ! normal position
-
-[Term]
-id: PATO:0045043
-name: normal elevation
-def: "An elevation which is relatively normal or average" []
-is_a: PATO:0001687 ! elevation
-is_a: PATO:0045040 ! normal position
-
-[Term]
 id: PATO:0045044
 name: normal pressure
 def: "A pressure which is relatively normal or average" []
 is_a: PATO:0001025 ! pressure
-is_a: PATO:0045001 ! normal object quality
-
-[Term]
-id: PATO:0045045
-name: normal radioactivity
-def: "A radioactivity which is relatively normal or average" []
-is_a: PATO:0001741 ! radioactive
 is_a: PATO:0045001 ! normal object quality
 
 [Term]
@@ -2921,34 +2450,6 @@ is_a: PATO:0001595 ! depth
 is_a: PATO:0045050 ! normal size
 
 [Term]
-id: PATO:0045054
-name: normal length
-def: "A length quality which is relatively normal or average" []
-is_a: PATO:0000122 ! length
-is_a: PATO:0045050 ! normal size
-
-[Term]
-id: PATO:0045057
-name: normal perimeter
-def: "A perimeter which is relatively normal or average" []
-is_a: PATO:0001711 ! perimeter
-is_a: PATO:0045054 ! normal length
-
-[Term]
-id: PATO:0045058
-name: normal circumference
-def: "A circumference which is relatively normal or average" []
-is_a: PATO:0001648 ! circumference
-is_a: PATO:0045057 ! normal perimeter
-
-[Term]
-id: PATO:0045059
-name: normal thickness
-def: "A thickness which is relatively normal or average" []
-is_a: PATO:0000915 ! thickness
-is_a: PATO:0045050 ! normal size
-
-[Term]
 id: PATO:0045060
 name: normal volume
 def: "A volume which is relatively normal or average" []
@@ -2970,71 +2471,11 @@ is_a: PATO:0000008 ! speed
 is_a: PATO:0045001 ! normal object quality
 
 [Term]
-id: PATO:0045064
-name: normal strength
-def: "A strength which is relatively normal or average" []
-is_a: PATO:0001230 ! strength
-is_a: PATO:0045001 ! normal object quality
-
-[Term]
-id: PATO:0045067
-name: normal temperature
-def: "A temperature which is relatively normal or average" []
-is_a: PATO:0000146 ! temperature
-is_a: PATO:0045001 ! normal object quality
-
-[Term]
-id: PATO:0045073
-name: normal process quality
-def: "A quality of aprocess that has a value that is normal or average." []
-is_a: PATO:0001236 ! process quality
-
-[Term]
-id: PATO:0045074
-name: normal variability
-def: "A variability which is relatively normal or average" []
-is_a: PATO:0001227 ! variant
-
-[Term]
-id: PATO:0045077
-name: normal variability of size
-def: "A variability of size which is relatively normal or average" []
-is_a: PATO:0001956 ! variability of size
-
-[Term]
 id: PATO:0045079
 name: normal velocity
 def: "A velocity which is relatively normal or average" []
 is_a: PATO:0002242 ! velocity
 is_a: PATO:0045001 ! normal object quality
-
-[Term]
-id: PATO:0045081
-name: normal viscosity
-def: "A viscosity which is relatively normal or average" []
-is_a: PATO:0000998 ! viscous
-is_a: PATO:0045001 ! normal object quality
-
-[Term]
-id: PATO:0045083
-name: normal wetness
-def: "A wetness which is relatively normal or average" []
-is_a: PATO:0001823 ! wet
-is_a: PATO:0045001 ! normal object quality
-
-[Term]
-id: PATO:0045086
-name: normal occurrence
-def: "An occurrence which is relatively normal." []
-is_a: PATO:0000057 ! occurrence
-is_a: PATO:0045073 ! normal process quality
-
-[Term]
-id: PATO:0045087
-name: normal frequency
-def: "A frequency which is relatively normal." []
-is_a: PATO:0000044 ! frequency
-is_a: PATO:0045000 ! normal rate
 
 [Term]
 id: PATO:0045090

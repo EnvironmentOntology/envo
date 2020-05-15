@@ -1,584 +1,69 @@
 format-version: 1.2
 ontology: envo/imports/pco_import
-
-[Term]
-id: BFO:0000001
-name: entity
-
-[Term]
-id: BFO:0000002
-name: continuant
-is_a: BFO:0000001 ! entity
-disjoint_from: BFO:0000003 ! occurrent
-
-[Term]
-id: BFO:0000003
-name: occurrent
-is_a: BFO:0000001 ! entity
-
-[Term]
-id: BFO:0000004
-name: independent continuant
-def: "b is an independent continuant = Def. b is a continuant which is such that there is no c and no t such that b s-depends_on c at t. (axiom label in BFO2 Reference: [017-002])" []
-is_a: BFO:0000002 ! continuant
-disjoint_from: BFO:0000020 ! specifically dependent continuant
-disjoint_from: BFO:0000031 ! generically dependent continuant
-
-[Term]
-id: BFO:0000015
-name: process
-def: "p is a process = Def. p is an occurrent that has temporal proper parts and for some time t, p s-depends_on some material entity at t. (axiom label in BFO2 Reference: [083-003])" []
-is_a: BFO:0000003 ! occurrent
-
-[Term]
-id: BFO:0000017
-name: realizable entity
-is_a: BFO:0000020 ! specifically dependent continuant
-
-[Term]
-id: BFO:0000020
-name: specifically dependent continuant
-def: "b is a specifically dependent continuant = Def. b is a continuant & there is some independent continuant c which is not a spatial region and which is such that b s-depends_on c at every time t during the course of b’s existence. (axiom label in BFO2 Reference: [050-003])" []
-is_a: BFO:0000002 ! continuant
-disjoint_from: BFO:0000031 ! generically dependent continuant
-
-[Term]
-id: BFO:0000023
-name: role
-is_a: BFO:0000017 ! realizable entity
-
-[Term]
-id: BFO:0000027
-name: object aggregate
-is_a: BFO:0000040 ! material entity
-
-[Term]
-id: BFO:0000029
-name: site
-is_a: BFO:0000141 ! immaterial entity
-
-[Term]
-id: BFO:0000031
-name: generically dependent continuant
-def: "b is a generically dependent continuant = Def. b is a continuant that g-depends_on one or more other entities. (axiom label in BFO2 Reference: [074-001])" []
-is_a: BFO:0000002 ! continuant
-
-[Term]
-id: BFO:0000040
-name: material entity
-is_a: BFO:0000004 ! independent continuant
-disjoint_from: BFO:0000141 ! immaterial entity
-
-[Term]
-id: BFO:0000141
-name: immaterial entity
-is_a: BFO:0000004 ! independent continuant
-
-[Term]
-id: CARO:0001010
-name: organism or virus or viroid
-def: "Material anatomical entity that is a member of an individual species or is a viral or viroid particle." []
-is_a: PCO:0000031 ! organismal entity
-
-[Term]
-id: ENVO:00000070
-name: construction
-def: "A feature that has been constructed by deliberate human effort." []
-synonym: "constructed feature" EXACT []
-is_a: ENVO:01000813 ! astronomical body part
-
-[Term]
-id: ENVO:00002297
-name: environmental feature
-def: "A material entity which determines an environmental system." []
-is_a: BFO:0000040 ! material entity
-
-[Term]
-id: ENVO:01000254
-name: environmental system
-def: "A system which has the disposition to environ one or more material entities." []
-synonym: "environment" EXACT []
-is_a: BFO:0000040 ! material entity
-
-[Term]
-id: ENVO:01000744
-name: human dwelling
-def: "A self-contained constructed feature used by one or more households as a home, such as a house, apartment, mobile home, houseboat or other 'substantial' structure. A dwelling typically includes nearby outbuildings, sheds etc. within the curtilage of the property, excluding any 'open fields beyond'. It has significance in relation to search and seizure, conveyancing of real property, burglary, trespass, and land use planning." []
-is_a: ENVO:00000070 ! construction
-
-[Term]
-id: ENVO:01000813
-name: astronomical body part
-def: "A material part of an astronomical body." []
-is_a: ENVO:00002297 ! environmental feature
-
-[Term]
-id: ENVO:01001369
-name: tidal mangrove shrubland
-def: "A shrubland biome which is densely vegetated by dwarf or short mangroves (and associates) that are generally less than 6 meters in height, is tidally influenced,  is located in tropical or subtropical areas." []
-is_a: ENVO:01000254 ! environmental system
-
-[Term]
-id: GO:0008150
-name: biological_process
-def: "A biological process represents a specific objective that the organism is genetically programmed to achieve. Biological processes are often described by their outcome or ending state, e.g., the biological process of cell division results in the creation of two daughter cells (a divided cell) from a single parent cell. A biological process is accomplished by a particular set of molecular functions carried out by specific gene products (or macromolecular complexes), often in a highly regulated manner and in a particular temporal sequence." []
-synonym: "biological process" EXACT []
-synonym: "physiological process" EXACT []
-synonym: "single organism process" RELATED []
-synonym: "single-organism process" RELATED []
-
-[Term]
-id: IAO:0000027
-name: data item
-is_a: IAO:0000030 ! information content entity
-
-[Term]
-id: IAO:0000030
-name: information content entity
-is_a: BFO:0000031 ! generically dependent continuant
-
-[Term]
-id: IAO:0000078
-name: curation status specification
-def: "The curation status of the term. The allowed values come from an enumerated list of predefined terms. See the specification of these instances for more detailed definitions of each enumerated value." []
-is_a: IAO:0000102 ! data about an ontology part
-
-[Term]
-id: IAO:0000102
-name: data about an ontology part
-def: "data about an ontology part is a data item about a part of an ontology, for example a term" []
-is_a: IAO:0000027 ! data item
-
-[Term]
-id: IAO:0000225
-name: obsolescence reason specification
-def: "The reason for which a term has been deprecated. The allowed values come from an enumerated list of predefined terms. See the specification of these instances for more detailed definitions of each enumerated value." []
-is_a: IAO:0000102 ! data about an ontology part
-
-[Term]
-id: IAO:0000409
-name: denotator type
-def: "A denotator type indicates how a term should be interpreted from an ontological perspective." []
-is_a: IAO:0000102 ! data about an ontology part
-
-[Term]
-id: NCBITaxon:10239
-name: Viruses
-synonym: "Vira" RELATED []
-synonym: "Viridae" RELATED []
-synonym: "viruses" RELATED []
-
-[Term]
-id: NCBITaxon:117570
-name: Teleostomi
-is_a: NCBITaxon:7776 ! Gnathostomata <vertebrate>
-
-[Term]
-id: NCBITaxon:117571
-name: Euteleostomi
-synonym: "bony vertebrates" EXACT []
-is_a: NCBITaxon:117570 ! Teleostomi
-
-[Term]
-id: NCBITaxon:131221
-name: Streptophytina
-synonym: "Charophyta/Embryophyta group" RELATED []
-synonym: "charophyte/embryophyte group" RELATED []
-is_a: NCBITaxon:35493 ! Streptophyta
-
-[Term]
-id: NCBITaxon:131567
-name: cellular organisms
-synonym: "biota" RELATED []
-
-[Term]
-id: NCBITaxon:1338369
-name: Dipnotetrapodomorpha
-is_a: NCBITaxon:8287 ! Sarcopterygii
-
-[Term]
-id: NCBITaxon:1437010
-name: Boreoeutheria
-synonym: "Boreotheria" RELATED []
-is_a: NCBITaxon:9347 ! Eutheria
-
-[Term]
-id: NCBITaxon:1437180
-name: Acrogymnospermae
-is_a: NCBITaxon:58024 ! Spermatophyta
-
-[Term]
-id: NCBITaxon:2
-name: Bacteria
-synonym: "bacteria" RELATED []
-synonym: "eubacteria" EXACT []
-synonym: "Monera" RELATED []
-synonym: "Procaryotae" RELATED []
-synonym: "Prokaryota" RELATED []
-synonym: "Prokaryotae" RELATED []
-synonym: "prokaryote" RELATED []
-synonym: "prokaryotes" RELATED []
-is_a: NCBITaxon:131567 ! cellular organisms
-
-[Term]
-id: NCBITaxon:207598
-name: Homininae
-synonym: "Homo/Pan/Gorilla group" RELATED []
-is_a: NCBITaxon:9604 ! Hominidae
-
-[Term]
-id: NCBITaxon:2157
-name: Archaea
-synonym: "archaea" RELATED []
-synonym: "Archaebacteria" RELATED []
-synonym: "Mendosicutes" RELATED []
-synonym: "Metabacteria" RELATED []
-synonym: "Monera" RELATED []
-synonym: "Procaryotae" RELATED []
-synonym: "Prokaryota" RELATED []
-synonym: "Prokaryotae" RELATED []
-synonym: "prokaryote" RELATED []
-synonym: "prokaryotes" RELATED []
-is_a: NCBITaxon:131567 ! cellular organisms
-
-[Term]
-id: NCBITaxon:2759
-name: Eukaryota
-synonym: "Eucarya" RELATED []
-synonym: "Eucaryotae" RELATED []
-synonym: "eucaryotes" EXACT []
-synonym: "Eukarya" RELATED []
-synonym: "Eukaryotae" RELATED []
-synonym: "eukaryotes" EXACT []
-synonym: "eukaryotes" RELATED []
-is_a: NCBITaxon:131567 ! cellular organisms
-
-[Term]
-id: NCBITaxon:314146
-name: Euarchontoglires
-is_a: NCBITaxon:1437010 ! Boreoeutheria
-
-[Term]
-id: NCBITaxon:314293
-name: Simiiformes
-synonym: "Anthropoidea" RELATED []
-is_a: NCBITaxon:376913 ! Haplorrhini
-
-[Term]
-id: NCBITaxon:314295
-name: Hominoidea
-synonym: "ape" EXACT []
-synonym: "apes" EXACT []
-is_a: NCBITaxon:9526 ! Catarrhini
-
-[Term]
-id: NCBITaxon:3193
-name: Embryophyta
-synonym: "higher plants" EXACT []
-synonym: "land plants" EXACT []
-synonym: "land plants" RELATED []
-synonym: "plants" EXACT []
-is_a: NCBITaxon:131221 ! Streptophytina
-
-[Term]
-id: NCBITaxon:32523
-name: Tetrapoda
-synonym: "tetrapods" EXACT []
-is_a: NCBITaxon:1338369 ! Dipnotetrapodomorpha
-
-[Term]
-id: NCBITaxon:32524
-name: Amniota
-synonym: "amniotes" EXACT []
-is_a: NCBITaxon:32523 ! Tetrapoda
-
-[Term]
-id: NCBITaxon:32525
-name: Theria <Mammalia>
-synonym: "Theria" EXACT []
-is_a: NCBITaxon:40674 ! Mammalia
-
-[Term]
-id: NCBITaxon:33090
-name: Viridiplantae
-synonym: "Chlorobionta" RELATED []
-synonym: "Chlorophyta/Embryophyta group" RELATED []
-synonym: "chlorophyte/embryophyte group" RELATED []
-synonym: "green plants" EXACT []
-synonym: "green plants" RELATED []
-is_a: NCBITaxon:2759 ! Eukaryota
-
-[Term]
-id: NCBITaxon:33154
-name: Opisthokonta
-synonym: "Fungi/Metazoa group" RELATED []
-synonym: "opisthokonts" RELATED []
-is_a: NCBITaxon:2759 ! Eukaryota
-
-[Term]
-id: NCBITaxon:33208
-name: Metazoa
-synonym: "Animalia" RELATED []
-synonym: "animals" RELATED []
-synonym: "metazoans" EXACT []
-synonym: "multicellular animals" EXACT []
-is_a: NCBITaxon:33154 ! Opisthokonta
-
-[Term]
-id: NCBITaxon:33213
-name: Bilateria
-is_a: NCBITaxon:6072 ! Eumetazoa
-
-[Term]
-id: NCBITaxon:33511
-name: Deuterostomia
-synonym: "deuterostomes" EXACT []
-is_a: NCBITaxon:33213 ! Bilateria
-
-[Term]
-id: NCBITaxon:3398
-name: Magnoliophyta
-synonym: "Angiospermae" RELATED []
-synonym: "angiosperms" EXACT []
-synonym: "flowering plants" EXACT []
-synonym: "flowering plants" RELATED []
-is_a: NCBITaxon:58024 ! Spermatophyta
-
-[Term]
-id: NCBITaxon:35493
-name: Streptophyta
-is_a: NCBITaxon:33090 ! Viridiplantae
-
-[Term]
-id: NCBITaxon:376913
-name: Haplorrhini
-is_a: NCBITaxon:9443 ! Primates
-
-[Term]
-id: NCBITaxon:40674
-name: Mammalia
-synonym: "mammals" EXACT []
-synonym: "mammals" RELATED []
-is_a: NCBITaxon:32524 ! Amniota
-
-[Term]
-id: NCBITaxon:58023
-name: Tracheophyta
-synonym: "vascular plants" EXACT []
-synonym: "vascular plants" RELATED []
-is_a: NCBITaxon:3193 ! Embryophyta
-
-[Term]
-id: NCBITaxon:58024
-name: Spermatophyta
-synonym: "seed plants" EXACT []
-synonym: "seed plants" RELATED []
-is_a: NCBITaxon:78536 ! Euphyllophyta
-
-[Term]
-id: NCBITaxon:6072
-name: Eumetazoa
-is_a: NCBITaxon:33208 ! Metazoa
-
-[Term]
-id: NCBITaxon:7711
-name: Chordata
-synonym: "chordates" EXACT []
-synonym: "chordates" RELATED []
-is_a: NCBITaxon:33511 ! Deuterostomia
-
-[Term]
-id: NCBITaxon:7742
-name: Vertebrata <Metazoa>
-synonym: "Vertebrata" EXACT []
-synonym: "vertebrates" EXACT []
-synonym: "vertebrates" RELATED []
-is_a: NCBITaxon:89593 ! Craniata <chordata>
-
-[Term]
-id: NCBITaxon:7776
-name: Gnathostomata <vertebrate>
-synonym: "Gnathostomata" EXACT []
-synonym: "jawed vertebrates" EXACT []
-is_a: NCBITaxon:7742 ! Vertebrata <Metazoa>
-
-[Term]
-id: NCBITaxon:78536
-name: Euphyllophyta
-synonym: "euphyllophytes" RELATED []
-is_a: NCBITaxon:58023 ! Tracheophyta
-
-[Term]
-id: NCBITaxon:8287
-name: Sarcopterygii
-is_a: NCBITaxon:117571 ! Euteleostomi
-
-[Term]
-id: NCBITaxon:89593
-name: Craniata <chordata>
-synonym: "Craniata" EXACT []
-is_a: NCBITaxon:7711 ! Chordata
-
-[Term]
-id: NCBITaxon:9347
-name: Eutheria
-synonym: "eutherian mammals" EXACT []
-synonym: "placental mammals" EXACT []
-synonym: "Placentalia" RELATED []
-synonym: "placentals" EXACT []
-synonym: "placentals" RELATED []
-is_a: NCBITaxon:32525 ! Theria <Mammalia>
-
-[Term]
-id: NCBITaxon:9443
-name: Primates
-synonym: "Primata" RELATED []
-synonym: "primate" EXACT []
-synonym: "primates" RELATED []
-is_a: NCBITaxon:314146 ! Euarchontoglires
-
-[Term]
-id: NCBITaxon:9526
-name: Catarrhini
-is_a: NCBITaxon:314293 ! Simiiformes
-
-[Term]
-id: NCBITaxon:9604
-name: Hominidae
-synonym: "great apes" EXACT []
-synonym: "Pongidae" RELATED []
-is_a: NCBITaxon:314295 ! Hominoidea
-
-[Term]
-id: NCBITaxon:9605
-name: Homo
-synonym: "humans" EXACT []
-is_a: NCBITaxon:207598 ! Homininae
-
-[Term]
-id: NCBITaxon:9606
-name: Homo sapiens
-synonym: "Home sapiens" RELATED []
-synonym: "Homo sampiens" RELATED []
-synonym: "Homo sapeins" RELATED []
-synonym: "Homo sapian" RELATED []
-synonym: "Homo sapians" RELATED []
-synonym: "Homo sapien" RELATED []
-synonym: "Homo sapience" RELATED []
-synonym: "Homo sapiense" RELATED []
-synonym: "Homo sapients" RELATED []
-synonym: "Homo sapines" RELATED []
-synonym: "Homo spaiens" RELATED []
-synonym: "Homo spiens" RELATED []
-synonym: "human" EXACT []
-synonym: "Humo sapiens" RELATED []
-synonym: "man" EXACT []
-is_a: NCBITaxon:9605 ! Homo
-
-[Term]
-id: PATO:0000001
-name: quality
-def: "A dependent entity that inheres in a bearer by virtue of how the bearer is related to other entities" []
-synonym: "trait" EXACT []
-
-[Term]
-id: PATO:0000161
-name: rate
-def: "A quality of a single process inhering in a bearer by virtue of the bearer's occurrence per unit time." []
-is_a: PATO:0002062 ! physical quality of a process
-
-[Term]
-id: PATO:0001236
-name: process quality
-def: "A quality which inheres in an process." []
-synonym: "quality of a process" EXACT []
-synonym: "quality of occurrent" EXACT []
-synonym: "quality of process" EXACT []
-synonym: "relational quality of occurrent" EXACT []
-is_a: PATO:0000001 ! quality
-
-[Term]
-id: PATO:0001241
-name: physical object quality
-def: "A quality which inheres in a continuant." []
-synonym: "monadic quality of a continuant" EXACT []
-synonym: "monadic quality of an object" NARROW []
-synonym: "monadic quality of continuant" NARROW []
-synonym: "multiply inhering quality of a physical entity" EXACT []
-synonym: "quality of a continuant" EXACT []
-synonym: "quality of a single physical entity" EXACT []
-synonym: "quality of an object" EXACT []
-synonym: "quality of continuant" EXACT []
-is_a: PATO:0000001 ! quality
-
-[Term]
-id: PATO:0002062
-name: physical quality of a process
-is_a: PATO:0001236 ! process quality
+owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\n\n\nAnnotationAssertion(rdfs:comment <http://purl.obolibrary.org/obo/PCO_0000029> \"\"@en)\n)
 
 [Term]
 id: PCO:0000000
 name: collection of organisms
 def: "A material entity that consists of two or more organisms, viruses, or viroids." []
-is_a: BFO:0000027 ! object aggregate
+comment: May be of the same or different species.
 is_a: PCO:0000031 ! organismal entity
+property_value: IAO:0000112 "Examples include: population, community, species (meaning the collection of organisms that makes up a species, not the taxonomic rank), and family." xsd:string
+property_value: IAO:0000114 IAO:0000125
+property_value: IAO:0000118 "group of organism" xsd:string
+property_value: IAO:0000118 "organism collection" xsd:string
 
 [Term]
 id: PCO:0000001
 name: population of organisms
 def: "A collection of organisms, all of the same species, that live in the same place." []
+comment: It is sometimes difficult to define the physical boundaries of a population. In the case of sexually reproducing organisms, the individuals within a population have the potential to reproduce with one another during the course of their lifetimes. 'Community', as often used to describe a group of humans, is a type of population of organisms. \n\nClasses for population already  exist in IDO ('organism population', IDO_0000509) and OBI ('population', OBI_0000181). The definitions should be standardized across OBO Foundry ontologies and only one term used.
 is_a: PCO:0000018 ! single-species collection of organisms
+property_value: IAO:0000112 "" xsd:string
+property_value: IAO:0000112 "This a general term that can include every organism of a species living in an area or any subset of them.  Subclasses can be more specific as needed." xsd:string
+property_value: IAO:0000114 IAO:0000125
+property_value: IAO:0000119 ISBN:0878932739 xsd:string
 
 [Term]
 id: PCO:0000002
 name: ecological community
 def: "A multi-species collection of organisms of at least two different species, living in a particular area. Must have at least two populations of different species as members." []
+comment: Ecological community is defined broadly here, but includes both ecological interactions (inherited from parent term community) and spatial co-existence. It may be used to describe every organisms living in an area, but is often used to refer only to organisms of a particular taxon or guild (e.g., the plant community, the insect community, the herbivore community). The word community, as it often used to describe a group of humans living together, is a type of single-species collection of organisms, not an ecological community.
 is_a: PCO:0000029 ! multi-species collection of organisms
+property_value: IAO:0000118 "multispecies community" xsd:string
+property_value: IAO:0000119 ISBN:0865423504 xsd:string
 
 [Term]
 id: PCO:0000018
 name: single-species collection of organisms
 def: "A material entity that has as parts two or more organisms, viruses, or viroids of the same species and no members of any other species." []
 is_a: PCO:0000000 ! collection of organisms
-
-[Term]
-id: PCO:0000028
-name: community
-def: "A collection of organisms of the same species whose members are all either genealogically related to each other or have mated with each other." []
-is_obsolete: true
+property_value: IAO:0000114 IAO:0000120
+property_value: IAO:0000118 "collection of organisms of the same species" xsd:string
 
 [Term]
 id: PCO:0000029
 name: multi-species collection of organisms
 def: "A collection of organisms that consists of two or more organisms from at least two species." []
 is_a: PCO:0000000 ! collection of organisms
+property_value: IAO:0000114 IAO:0000123
+property_value: IAO:0000116 "Need to add axiom to specify that it has at a mimum members of two different species, but not sure how to specify that. Can't say \"('has member' only ('member of' min 2 'species as a collection of organisms'))\"." xsd:string
 
 [Term]
 id: PCO:0000031
 name: organismal entity
 def: "A material entity that is one or more organisms, viruses or viroids." []
-is_a: BFO:0000040 ! material entity
-union_of: CARO:0001010 ! organism or virus or viroid
-union_of: PCO:0000000 ! collection of organisms
-
-[Term]
-id: PCO:0000043
-name: collection of microbial organisms
-def: "A collection of organisms consisting of two or more microbes." []
-is_a: PCO:0000000 ! collection of organisms
-
-[Term]
-id: PCO:0000044
-name: multi-species collection of microbes
-def: "A multi-species collection of organisms that consists of two or more microbes from at least two species." []
-is_a: PCO:0000029 ! multi-species collection of organisms
-is_a: PCO:0000043 ! collection of microbial organisms
+property_value: IAO:0000114 IAO:0000120
 
 [Term]
 id: PCO:1000004
 name: microbial community
 def: "An ecological community which is composed of co-existing populations of microbial organisms that interact, directly or indirectly, such that they impact one another's ecological fitness." []
+comment: The definition of a microbial species is deeply debated, however, units of phylogenetic and functional diversity are recognised with respect to their varying roles in an ecosystem. In turn, there exist multiple operational definitions of microbial community, such as local, phenomenological, and indexical communities. This class seeks to capture microbial communities in a very broad sense, as collections of phylogenetically and functionally divergent microbial organisms co-existing, potentially interacting, and competing for niche space in the same ecosystem over a period of time in which their causal footprints overlap one another.
 synonym: "microbiota" BROAD []
 is_a: PCO:0000002 ! ecological community
-is_a: PCO:0000044 ! multi-species collection of microbes
+property_value: IAO:0000114 IAO:0000125
+property_value: IAO:0000116 "A class for a collection of organisms considered \"microbial\" and an accompanying quality in PATO (e.g. \"microscopic\") would be useful to better axiomatise this class. See https://github.com/PopulationAndCommunityOntology/pco/issues/22" xsd:string
+property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088 xsd:string
+property_value: IAO:0000119 http://dx.doi.org/10.1038/ismej.2009.88 xsd:string
 

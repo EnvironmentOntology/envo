@@ -54,8 +54,8 @@ FORMATS_INCL_TSV = $(sort $(FORMATS) tsv)
 .PHONY: .FORCE
 all: all_imports all_main all_subsets sparql_test all_reports all_assets
 
-test: envo-edit.owl all_modules all_imports envo.owl
-travis_test: test_python envo-edit.owl all_modules envo.owl
+test: envo-edit.owl all_modules all_imports envo.owl all_reports
+travis_test: test_python envo-edit.owl all_reports all_modules envo.owl
 
 full_test: test envo.check-obo subsets/EnvO-Lite-GSC.check-obo
 
@@ -218,7 +218,7 @@ release-diffs:
 ##
 ## By default this is the cross-product of IMPORT_MODULES x FORMATS
 
-IMPORTS = pato uberon chebi ro pco foodon go ncbitaxon  obi po iao fao agro
+IMPORTS = pato uberon chebi ro pco foodon go ncbitaxon  obi po iao fao 
 
 IMPORT_ROOTS = $(patsubst %, imports/%_import, $(IMPORTS))
 IMPORT_OWL_FILES = $(foreach n,$(IMPORT_ROOTS), $(n).owl)
@@ -260,10 +260,13 @@ SEEDS= $(patsubst %, imports/%_terms.txt,$(IMPORTS))
 KEEPRELS = BFO:0000050 BFO:0000051 RO:0002202 immediate_transformation_of RO:0002176 IAO:0000136
 
 # See https://github.com/EnvironmentOntology/envo/issues/521
-imports/seed.tsv: envo-edit.owl $(ALL_MODS_OWL)
-	$(OWLTOOLS) $(USECAT) $< --merge-imports-closure --export-table $@.tmp && cut -f1 $@.tmp | grep purl.obolib | sort -u > $@
+imports/seed.txt: $(SRC)
+	$(ROBOT) query -f csv -i $< --query ./sparql/terms.sparql $@.tmp &&\
+	cat $@.tmp | sort | uniq >  $@
+#imports/seed.tsv: envo-edit.owl $(ALL_MODS_OWL)
+#	$(OWLTOOLS) $(USECAT) $< --merge-imports-closure --export-table $@.tmp && cut -f1 $@.tmp | grep purl.obolib | sort -u > $@
 
-imports/%_combined_seed.tsv: imports/%_terms.txt imports/seed.tsv
+imports/%_combined_seed.tsv: imports/%_terms.txt imports/seed.txt
 	cut -f1 $^ | sort -u > $@
 
 # Create an import module using the OWLAPI module extraction code via OWLTools.
@@ -276,6 +279,7 @@ imports/%_import.obo: imports/%_import.owl
 	$(OWLTOOLS) $(USECAT) $< -o -f obo --no-check $@
 
 
+# --remove-classes-in-idspace ENVO
 
 # clone remote ontology locally, perfoming some excision of relations and annotations
 mirror/%-local.owl:
@@ -298,12 +302,6 @@ mirror/obi.owl: envo-edit.owl
 	$(OWLTOOLS) $(OBO)/obi.owl --remove-classes-in-idspace GO --remove-classes-in-idspace ENVO --remove-classes-in-idspace CHEBI --remove-classes-in-idspace UBERON --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/obi.owl -o $@
 .PRECIOUS: mirror/%.owl
 
-mirror/foodon-local.owl:
-	$(OWLTOOLS) $(OBO)/foodon.owl --merge-imports-closure $(REMOVE_SELF_REF) --remove-annotation-assertions -l -s -d --remove-axiom-annotations  --set-ontology-id $(OBO)/foodon.owl -o $@
-mirror/foodon.owl: mirror/foodon-local.owl
-	$(ROBOT) relax -i $< reduce -o $@
-.PRECIOUS: mirror/%.owl
-
 # chebi.owl is large and the owlapi often times out when reading it; use the obo instead
 mirror/chebi-local.owl: 
 	wget --no-check-certificate $(OBO)/chebi.owl -O $@ && touch $@
@@ -311,16 +309,26 @@ mirror/chebi.owl: mirror/chebi-local.owl
 	$(OWLTOOLS) --no-debug $< --log-debug --remove-annotation-assertions -l --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS)  -o $@
 .PRECIOUS: mirror/%.owl
 
-#mirror/ro.owl: mirror/ro-relations.owl mirror/ro-classes.owl
-#	$(OWLTOOLS) $^ --merge-support-ontologies -o $@
-mirror/ro.owl:
-	$(OWLTOOLS) $(OBO)/ro.owl --merge-imports-closure -o $@
-.PRECIOUS: mirror/ro.owl
+mirror/foodon.owl: 
+	$(ROBOT) merge -I $(OBO)/foodon.owl \
+	 remove --base-iri FOODON --axioms external \
+	  relax reduce \
+	  -o $@.tmp.owl && \
+	$(OWLTOOLS) $@.tmp.owl --make-subset-by-properties -f $(KEEPRELS) -o $@
+.PRECIOUS: mirror/%.owl
 
-mirror/ro-relations.owl: envo-edit.owl
-	$(OWLTOOLS) $(OBO)/ro.owl --merge-imports-closure --remove-tbox --remove-dangling -o $@
-mirror/ro-classes.owl: envo-edit.owl
-	$(OWLTOOLS) $(OBO)/ro.owl --merge-imports-closure --make-subset-by-properties -f // --remove-external-classes -k RO --remove-annotation-assertions -l -s -d  -o $@
+mirror/po.owl: envo-edit.owl
+	$(ROBOT) merge -I $(OBO)/po.owl \
+	 remove --base-iri PO --axioms external \
+	  relax reduce \
+	  -o $@
+.PRECIOUS: mirror/po.owl
+
+
+mirror/ro.owl:
+	$(ROBOT) merge -I $(OBO)/ro.owl \
+	 remove --base-iri RO --base-iri BFO --axioms external -o $@
+.PRECIOUS: mirror/ro.owl
 
 mirror/bfo.owl: envo-edit.owl
 	$(OWLTOOLS) $(OBO)/bfo.owl --merge-imports-closure --make-subset-by-properties -f // --remove-external-classes BFO --remove-annotation-assertions -l -s -d  --remove-dangling --set-ontology-id $(OBO)/bfo.owl -o $@
@@ -330,9 +338,6 @@ mirror/uberon.owl:
 	$(OWLTOOLS) $(OBO)/uberon.obo  --remove-axiom-annotations  --make-subset-by-properties -f $(KEEPRELS) --remove-external-classes UBERON --remove-dangling-annotations --remove-annotation-assertions -l -s -d --set-ontology-id $(OBO)/uberon.owl -o $@
 .PRECIOUS: mirror/%.owl
 
-mirror/po.owl: envo-edit.owl
-	$(OWLTOOLS) $(OBO)/po.owl --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/po.owl -o $@
-.PRECIOUS: mirror/%.owl
 
 mirror/fao.owl: envo-edit.owl
 	$(OWLTOOLS) $(OBO)/fao.owl --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/fao.owl -o $@
@@ -346,9 +351,20 @@ mirror/ncbitaxon.owl: ncbitaxon.obo
 	OWLTOOLS_MEMORY=12G $(OWLTOOLS) $< --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations  --set-ontology-id $(OBO)/ncbitaxon.owl -o $@
 .PRECIOUS: mirror/ncbitaxon.owl
 
+# PCO woes:
+#
+# it's necessary to reason first with PCO. See: https://github.com/PopulationAndCommunityOntology/pco/issues/83
+#
+#
+# need to strip additional https class:
+# https://github.com/PopulationAndCommunityOntology/pco/issues/85
+#
+# https://github.com/ontodev/robot/issues/693
 mirror/pco.owl: envo-edit.owl
-	$(ROBOT) reason -r HERMIT -I $(OBO)/pco.owl relax -o $@.tmp.owl
-	$(OWLTOOLS) $@.tmp.owl --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/pco.owl -o $@
+	$(ROBOT) reason -r HERMIT -I $(OBO)/pco.owl relax \
+	 remove --base-iri PCO --axioms external \
+	 remove --term https://purl.obolibrary.org/obo/PCO_0000044 -o $@.tmp.owl && \
+	$(OWLTOOLS) $@.tmp.owl --make-subset-by-properties -f $(KEEPRELS) -o $@
 .PRECIOUS: mirror/%.owl
 
 mirror/iao.owl: envo-edit.owl
@@ -420,7 +436,7 @@ subsets/%.obo: subsets/%.owl
 # Reports
 # ----------------------------------------
 REPORTS=edges basicReport termTable tags stats subsetTable
-all_reports: $(patsubst %, reports/envo-%.tsv, $(REPORTS))
+all_reports: $(patsubst %, reports/envo-%.tsv, $(REPORTS)) all_robot_reports
 
 reports/envo-%.tsv: envo.owl sparql/%.sparql
 	arq --data $< --query sparql/$*.sparql --results tsv > $@.tmp && mv $@.tmp $@
@@ -438,6 +454,24 @@ reports/envo-%.tsv: envo.owl sparql/%.sparql
 SPARQL_VALIDATION_QUERIES = $(foreach V,$(SPARQL_VALIDATION_CHECKS),$(SPARQLDIR)/$V-violation.sparql)
 sparql_test: $(SRC)
 	$(ROBOT) verify  --catalog catalog-v001.xml -i $< --queries $(SPARQL_VALIDATION_QUERIES) -O reports/
+
+# ----------------------------------------
+# ROBOT report
+# ----------------------------------------
+all_robot_reports: reports/envo-edit-robot-report.tsv reports/envo-base-robot-report.tsv reports/envo-src-robot-report.tsv
+
+# we use a modified profile that allows missing labels, as we sometimes declare properties on
+# an auto-class from modules (e.g ENVO:09200020)
+reports/envo-edit-robot-report.tsv: $(PRE_SRC)
+	$(ROBOT) report -p reports/report_profile_edit.txt -l true -i $< --fail-on $(REPORT_FAIL_ON) --print 5 -o $@
+
+# default profile
+reports/envo-src-robot-report.tsv: $(SRC)
+	$(ROBOT) report -l true -i $< --fail-on $(REPORT_FAIL_ON) --print 5 -o $@
+
+# default profile
+reports/envo-base-robot-report.tsv: envo-base.owl
+	$(ROBOT) report -l true -i $< --fail-on $(REPORT_FAIL_ON) --print 5 -o $@
 
 
 # ----------------------------------------

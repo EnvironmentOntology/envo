@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: envo/releases/2020-05-11/subsets/EnvO-Lite-GSC.owl
+data-version: envo/releases/2020-05-14/subsets/EnvO-Lite-GSC.owl
 subsetdef: disposition_slim "Disposition slim"
 subsetdef: environmental_hazards "environmental_hazards"
 subsetdef: EnvO-Lite-GSC "EnvO-Lite-GSC"
@@ -23,7 +23,7 @@ subsetdef: value_slim "Value slim"
 subsetdef: wwfBiome "wwfBiome"
 synonymtypedef: PLURAL "plurals"
 ontology: envo/subsets/EnvO-Lite-GSC
-property_value: owl:versionInfo "2020-05-11" xsd:string
+property_value: owl:versionInfo "2020-05-14" xsd:string
 
 [Term]
 id: ENVO:00000000
@@ -477,6 +477,7 @@ name: gaseous environmental material
 namespace: ENVO
 def: "A material entity which is composed of one or more chemical entities and has neither independent shape nor volume but tends to expand indefinitely." [http://www.merriam-webster.com/dictionary/gas]
 synonym: "gas" NARROW []
+is_a: ENVO:02000140 ! fluid environmental material
 property_value: IAO:0000116 "This class is to be populated by inference." xsd:string
 
 [Term]
@@ -535,7 +536,7 @@ namespace: ENVO
 def: "An environmental material which is in a liquid state." []
 comment: This is a defined class: its subclasses will not be asserted, but filled by inference.
 subset: envoPolar
-is_a: ENVO:00010483 ! environmental material
+is_a: ENVO:02000140 ! fluid environmental material
 
 [Term]
 id: ENVO:01000817
@@ -684,17 +685,20 @@ is_obsolete: true
 replaced_by: ENVO:01000312
 
 [Term]
+id: ENVO:02000140
+name: fluid environmental material
+namespace: ENVO
+def: "A liquid or a gas." [https://github.com/EnvironmentOntology/envo/issues/940]
+synonym: "fluid" NARROW []
+is_a: ENVO:00010483 ! environmental material
+
+[Term]
 id: ENVO:02500000
 name: environmental system process
 namespace: ENVO
 def: "A process in which includes the components of an environmental system as participants." []
 comment: This is a convenience class for organisation and should not be used for annotation.
-relationship: RO:0002218 ENVO:01001110 ! ecosystem
-
-[Typedef]
-id: RO:0002218
-namespace: ENVO
-xref: RO:0002218
+relationship: obsolete_has_active_participant ENVO:01001110 ! ecosystem
 
 [Typedef]
 id: adjacent_to
@@ -972,6 +976,11 @@ name: obsolete determined by part of
 namespace: ENVO
 xref: ENVO:2100007
 is_obsolete: true
+
+[Typedef]
+id: obsolete_has_active_participant
+namespace: ENVO
+xref: RO:0002218
 
 [Typedef]
 id: occurs_in
