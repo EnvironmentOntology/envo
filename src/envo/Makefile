@@ -439,8 +439,7 @@ REPORTS=edges basicReport termTable tags stats subsetTable
 all_reports: $(patsubst %, reports/envo-%.tsv, $(REPORTS)) all_robot_reports
 
 reports/envo-%.tsv: envo.owl sparql/%.sparql
-	arq --data $< --query sparql/$*.sparql --results tsv > $@.tmp && mv $@.tmp $@
-
+	robot query -f tsv -i $< -q  sparql/$*.sparql $@.tmp && mv $@.tmp $@
 
 # ----------------------------------------
 # Sparql queries: Q/C
