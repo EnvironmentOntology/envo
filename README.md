@@ -19,6 +19,10 @@ ENVO is a domain ontology concerned with "environments" of all kinds and aims to
 
 ENVO currently deals with 'environmental systems' (i.e. environments) particularly 'biomes' and environments determined by a material entity that assumes the role of an 'environmental feature' (e.g. a digestive tract environment). It also handles 'environmental materials' like soil, water, and so on. 
 
+## Documentation
+
+Check out our [wiki](https://github.com/EnvironmentOntology/envo/wiki) for more documentation, including an [editors' and contributors' guide](https://github.com/EnvironmentOntology/envo/wiki/Adding-classes-to-ENVO)
+
 ## Versions
 ### Stable release versions
 ENVO's latest release version can be downloaded in OWL and OBO format from the following links:
