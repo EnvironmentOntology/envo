@@ -1,0 +1,3539 @@
+format-version: 1.2
+ontology: envo
+
+[Term]
+id: ENVO:01000622
+name: vaporisation
+def: "Vaporisation of an element or compound is process whereby that element or compound undergoes a phase transition from the liquid to vapor." []
+comment: Note that a vapor describes an element or compound in the gas phase at a temperature lower than its critical point,
+synonym: "vaporization" EXACT []
+is_a: ENVO:03000043 ! material transformation process
+
+[Term]
+id: ENVO:01000623
+name: boiling
+def: "Boiling is a form of vaporisation which occurs when a liquid is heated to a temperature at which the vapor pressure of the liquid is equal to the pressure exerted on the liquid by the surrounding environmental pressure." [https://en.wikipedia.org/wiki/Boiling]
+is_a: ENVO:01000622 ! vaporisation
+
+[Term]
+id: ENVO:01000624
+name: hydrological condensation process
+def: "Hydrological condensation is a process in which atmospheric water vapour undergoes a phase transition from the gas phase to the liquid phase." [https://en.wikipedia.org/wiki/Condensation]
+comment: "process" is included in the label to make it clear that we are not referring to the condensed material (e.g. water droplets, window fog)
+subset: envoAtmo
+subset: envoPolar
+synonym: "condensation" BROAD []
+is_a: ENVO:01000724 ! condensation process
+is_a: ENVO:02500031 ! hydrological process
+
+[Term]
+id: ENVO:01000629
+name: climate change
+def: "The long-term fluctuations in temperature, precipitation, wind, and all other aspects of the Earth's climate. External processes, such as solar-irradiance variations, variations of the Earth's orbital parameters (eccentricity, precession, and inclination), lithosphere motions, and volcanic activity, are factors in climatic variation. Internal variations of the climate system, e.g., changes in the abundance of greenhouse gases, also may produce fluctuations of sufficient magnitude and variability to explain observed climate change through the feedback processes interrelating the components of the climate system." [GEMET:http\://www.eionet.europa.eu/gemet/concept/1471]
+comment: Definition vebatim from GEMET. Will need to be refined. Further, distinction between "climate change" and (one or many) "climate change process" will need to be discussed. Fluctuations are not processes, per se.
+subset: envoPolar
+is_a: ENVO:02500000 ! environmental system process
+
+[Term]
+id: ENVO:01000630
+name: acidification of an aquatic environment
+def: "Acidification of an aquatic environment is a process whereby the pH of an aquatic environment, biome, or water body is lowered." []
+is_a: ENVO:02500000 ! environmental system process
+
+[Term]
+id: ENVO:01000631
+name: ocean acidification
+alt_id: LTER:962 {xref="https://vocab.lternet.edu/vocab/vocab/index.php?tema=962&/ocean-acidification"}
+def: "Ocean acidification is a process during which the pH of a sea or ocean is lowered." []
+comment: On Earth, the major cause of ocean acidification is the update of carbon dioxide from the atmosphere.
+subset: envoPolar
+xref: LTER:962
+is_a: ENVO:01000630 ! acidification of an aquatic environment
+
+[Term]
+id: ENVO:01000633
+name: ecosystem-wide aerobic respiration
+def: "A process which consists of all aerobic respiration processes instantiated in an ecosystem." []
+subset: envoPolar
+is_a: ENVO:02500008 ! ecosystem-wide respiration
+is_a: ENVO:02500031 ! hydrological process
+property_value: IAO:0000116 "See issue #275" xsd:string
+
+[Term]
+id: ENVO:01000634
+name: volcanic eruption
+def: "A volcanic eruption is a process during which lava, tephra (ash, lapilli, volcanic bombs and blocks), and assorted gases are expelled from a volcanic vent or fissure." [https://en.wikipedia.org/wiki/Types_of_volcanic_eruptions]
+subset: environmental_hazards
+is_a: ENVO:02500031 ! hydrological process
+is_a: ENVO:03000010 ! material transport process
+
+[Term]
+id: ENVO:01000655
+name: explosive eruption
+def: "An explosive eruption is a volcanic process in which pressurised magma is violently expelled and froths into volcanic ash. Explosive eruptions can eject a cloud of rocks, dust, gas, and pyroclastic material  which may then collapse, creating a pyroclastic flow of hot volcanic matter." [https://en.wikipedia.org/wiki/Explosive_eruption]
+subset: environmental_hazards
+is_a: ENVO:01000634 ! volcanic eruption
+
+[Term]
+id: ENVO:01000656
+name: effusive eruption
+def: "An effusive eruption is a volcanic eruption during which lava flows onto the ground." [https://en.wikipedia.org/wiki/Effusive_eruption]
+subset: environmental_hazards
+is_a: ENVO:01000634 ! volcanic eruption
+
+[Term]
+id: ENVO:01000657
+name: igneous intrusion process
+def: "A process whereby rising magma cools and solidifies without reaching the surface. Instead, the cooled and solidified igneous mass crystallises within the crust to form an igneous intrusion." [https://en.wikipedia.org/wiki/Volcanism]
+is_a: ENVO:01000738 ! rock-precursor intrusion process
+
+[Term]
+id: ENVO:01000677
+name: earthquake
+def: "An earthquake is a process during which energy is released in an astronomical body's crust, causing the displacement of crustal parts and the generation of seismic waves." [Adapted from URL:http\://www.britannica.com/science/earthquake-geology, https://en.wikipedia.org/wiki/Earthquake]
+comment: Elastic strain, gravity, chemical reactions, or even the motion of massive bodies can produce earthquakes.
+subset: environmental_hazards
+synonym: "quake" EXACT []
+synonym: "temblor" RELATED []
+synonym: "tremor" RELATED []
+is_a: ENVO:03000010 ! material transport process
+
+[Term]
+id: ENVO:01000678
+name: tectonic earthquake
+def: "An earthquake caused by the sudden release of energy accumulated in an astronomical body's crust, as the elastic strain placed on constituent rock masses causes them to fracture." [URL:http\://www.britannica.com/science/earthquake-geology]
+subset: environmental_hazards
+is_a: ENVO:01000677 ! earthquake
+
+[Term]
+id: ENVO:01000679
+name: megathrust earthquake
+def: "A megathrust earthquake is a tectonic earthquake which occurs at subduction zones at destructive plate boundaries (convergent boundaries). These interplate earthquakes are the planet's most powerful, with moment magnitudes that can exceed 9.0." [Adapted from URL:http\://www.britannica.com/science/earthquake-geology, https://en.wikipedia.org/wiki/Earthquake]
+subset: environmental_hazards
+is_a: ENVO:01000678 ! tectonic earthquake
+
+[Term]
+id: ENVO:01000682
+name: glacial abrasion
+def: "A glacial abrasion process is an erosional process during which debris in the basal ice scrapes along the bed, polishing and gouging the underlying rocks, similar to sandpaper on wood." [https://en.wikipedia.org/wiki/Erosion]
+subset: envoPolar
+synonym: "abrasion" BROAD []
+synonym: "glacial scouring" EXACT []
+synonym: "scouring" BROAD []
+is_a: ENVO:03000006 ! glacial erosion process
+
+[Term]
+id: ENVO:01000683
+name: glacial plucking
+def: "Glacial plucking is an erosional process during which pieces of bedrock are cracked off due to the mechanical force of a moving glacier." [https://en.wikipedia.org/wiki/Erosion]
+subset: envoPolar
+synonym: "glacial quarrying" EXACT []
+synonym: "quarrying" BROAD []
+is_a: ENVO:03000006 ! glacial erosion process
+
+[Term]
+id: ENVO:01000684
+name: glacial ice thrusting
+def: "Glacial ice thrusting is an erosional process during which a moving glacier which has frozen to its bed surges forward and moves large sheets of sediment frozen to the glacial mass." [https://en.wikipedia.org/wiki/Erosion]
+subset: envoPolar
+synonym: "ice thrusting" EXACT []
+is_a: ENVO:03000006 ! glacial erosion process
+
+[Term]
+id: ENVO:01000689
+name: tsunami
+def: "A tsunami is a process during which a series of waves is generated in a water body, typically an ocean or large lake, by the displacement of a large volume of water. Earthquakes, volcanic eruptions and other underwater explosions (including detonations of underwater nuclear devices), landslides, glacier calvings, meteorite impacts and other disturbances above or below water all have the potential to generate a tsunami." [https://en.wikipedia.org/wiki/Tsunami]
+subset: environmental_hazards
+synonym: "seismic sea wave" EXACT []
+synonym: "tidal wave" EXACT []
+is_a: ENVO:01000981 ! mass liquid flow
+
+[Term]
+id: ENVO:01000690
+name: mass wasting
+def: "Mass wasting is the geomorphic process by which solid environmental material such as soil, sand, regolith, and/or rock move downslope typically as a mass, largely under the force of gravity, but frequently affected by water and water content as in submarine environments and mudslides." [https://en.wikipedia.org/wiki/Mass_wasting]
+comment: Of interest for future development: Some causes of mass wasting earthquakes, increased overburden from structures, increased soil moisture, reduction of roots holding the soil to bedrock, undercutting of the slope by excavation or erosion, weathering by frost heave, bioturbation, volcanic edifice over-steepening. Some processes that reduce mass wasting: Afforestation, Reforestation, Terracing steps on slopes (reduce angle of slope). https://en.wikipedia.org/wiki/Mass_wasting.
+subset: environmental_hazards
+subset: envoPolar
+synonym: "mass movement" BROAD []
+synonym: "slope movement" EXACT []
+is_a: ENVO:03000010 ! material transport process
+
+[Term]
+id: ENVO:01000691
+name: avalanche
+def: "A mass wasting flow during which snow rapidly flows down a sloping surface." [https://en.wikipedia.org/wiki/Mass_wasting]
+subset: environmental_hazards
+subset: envoPolar
+synonym: "snowslide" EXACT []
+synonym: "snowslip" EXACT []
+is_a: ENVO:01000696 ! mass wasting flow
+
+[Term]
+id: ENVO:01000692
+name: landslide process
+def: "A landslide is a process whereby a large mass of earth and rocks moves down a hill or a mountainside." [https://en.wikipedia.org/wiki/Mass_wasting]
+subset: environmental_hazards
+synonym: "landslip" EXACT []
+xref: GEMET:http\://www.eionet.europa.eu/gemet/concept/4668
+is_a: ENVO:01000690 ! mass wasting
+
+[Term]
+id: ENVO:01000693
+name: rockfall
+subset: environmental_hazards
+is_a: ENVO:01000690 ! mass wasting
+
+[Term]
+id: ENVO:01000694
+name: geological subsidence
+def: "A material transport process during which a geological surface shifts downward relative to a datum such as sea-level." [https://en.wikipedia.org/wiki/Subsidence]
+subset: environmental_hazards
+synonym: "subsidence" BROAD []
+is_a: ENVO:03000010 ! material transport process
+
+[Term]
+id: ENVO:01000695
+name: mudslide
+subset: environmental_hazards
+is_a: ENVO:01000690 ! mass wasting
+
+[Term]
+id: ENVO:01000696
+name: mass wasting flow
+def: "A mass wasting flow is a form of mass wasting during which the moving materials behave similarly to a flowing fluid. Water, air and ice are often involved in enabling fluidlike motion of the material." [https://en.wikipedia.org/wiki/Mass_wasting]
+subset: environmental_hazards
+subset: envoPolar
+synonym: "flow" BROAD []
+is_a: ENVO:01000690 ! mass wasting
+
+[Term]
+id: ENVO:01000697
+name: mudflow
+def: "A mudflow is a form of mass wasting which involves very rapid to extremely rapid surging flow of debris that has become partially or fully liquified by the addition of significant amounts of water to clay-rich source material." [https://en.wikipedia.org/wiki/Mudflow]
+comment: "Mudflows are often called mudslides, a term applied indiscriminately by the mass media to a variety of mass wasting events. Mudflows often start as slides, becoming flows as water is entrained along the flow path; such events are often called flow slides." https://en.wikipedia.org/wiki/Mudflow
+subset: environmental_hazards
+synonym: "mud flow" EXACT []
+is_a: ENVO:01000696 ! mass wasting flow
+
+[Term]
+id: ENVO:01000698
+name: debris flow
+subset: environmental_hazards
+is_a: ENVO:01000696 ! mass wasting flow
+
+[Term]
+id: ENVO:01000699
+name: lahar
+def: "A lahar is a type of mudflow or debris flow composed of a slurry of pyroclastic material, rocky debris, and water. The material flows down from a volcano, typically along a river valley." [https://en.wikipedia.org/wiki/Lahar]
+subset: environmental_hazards
+is_a: ENVO:01000697 ! mudflow
+
+[Term]
+id: ENVO:01000700
+name: sturzstrom
+def: "A sturzstrom is a landslide consisting which has a great amount of kinetic energy resulting in greater horizontal movement when compared to its initial vertical drop — as much as 20 or 30 times the vertical distance. By contrast a normal landslide will typically travel a horizontal distance that is less than twice the distance that the material has fallen." [https://en.wikipedia.org/wiki/Sturtzstrom]
+is_a: ENVO:01000692 ! landslide process
+
+[Term]
+id: ENVO:01000702
+name: ash fall process
+def: "An ash fall process is a process in which volcanic ash formed during an explosive volcanic eruption, phreatomagmatic eruption, or during material transport in pyroclastic density currents is pulled towards the planetary surface by gravity." [https://en.wikipedia.org/wiki/Volcanic_ash]
+subset: environmental_hazards
+is_a: ENVO:01000875 ! precipitation process
+
+[Term]
+id: ENVO:01000703
+name: hydrological precipitation process
+def: "Hydrological precipitation is a process during which any product of the condensation of atmospheric water vapour is pulled to the planetary surface by gravity." [https://en.wikipedia.org/wiki/Precipitation]
+comment: "process" is included in the label to make it clear that we are not referring to the precipitated material (e.g. snow, rain, sleet)
+synonym: "precipitation" BROAD []
+is_a: ENVO:01000875 ! precipitation process
+
+[Term]
+id: ENVO:01000704
+name: hydrological evaporation
+def: "Hydrological evaporation is the evaporation of water, generally as part of a planetary water cycle." []
+is_a: ENVO:02500031 ! hydrological process
+is_a: ENVO:02500034 ! evaporation
+
+[Term]
+id: ENVO:01000705
+name: soil degradation
+def: "Soil degradation is a process which results in a change in soil health status resulting in a diminished capacity of the ecosystem in which the soil occurs to provide goods and services for its  beneficiaries." [FAO:http\://www.fao.org/soils-portal/soil-degradation-restoration/en/]
+is_a: ENVO:02500005 ! land degradation
+
+[Term]
+id: ENVO:01000706
+name: soil erosion
+def: "Soil erosion is a process in which exogenic processes remove soil from one location on the Earth's crust and transport it to another location where it is deposited." []
+comment: "Soil Erosion is a common term that is often confused with soil degradation as a whole,  but in fact refers only to absolute soil losses in terms of topsoil and nutrients. This  is indeed the most visible effect of soil degradation, but does not cover all of its aspects. Soil erosion is a natural process in mountainous areas, but is often made much worse by poor management practices." http://www.fao.org/soils-portal/soil-degradation-restoration/en/
+subset: envoPolar
+is_a: ENVO:02500028 ! planetary erosion
+
+[Term]
+id: ENVO:01000707
+name: coastal flooding
+def: "Coastal flooding is a process in which normally dry, low-lying land near a coast is flooded by sea water." [https://en.wikipedia.org/wiki/Coastal_flood]
+subset: environmental_hazards
+is_a: ENVO:02500002 ! flooding
+
+[Term]
+id: ENVO:01000708
+name: riverine flooding
+def: "Riverine flooding is a process in which the flow rate of river water exceeds the capacity of its channel, thus flooding neighbouring land. Bends and meanders in a river channel are particularly disposed to such flooding." [https://en.wikipedia.org/wiki/Flood#Riverine]
+subset: environmental_hazards
+is_a: ENVO:02500002 ! flooding
+property_value: IAO:0000116 "A disposition class such as 'flooding disposition' may be interesting, especially when attached to things like meanders and bends." xsd:string
+
+[Term]
+id: ENVO:01000709
+name: flash flooding
+def: "Flash flooding is a process in which low-lying land is inundated with water for a short period of time and are usually the result of precipitation or a breach in the container of a water body." [https://en.wikipedia.org/wiki/Flash_flood]
+comment: Flash floods generally last no more than six hours. http://www.srh.noaa.gov/mrx/hydro/flooddef.php
+subset: environmental_hazards
+is_a: ENVO:02500002 ! flooding
+
+[Term]
+id: ENVO:01000715
+name: meteotsunami
+def: "A meteotsunami is a tsunami caused by atmospheric processes and differences in air pressure." [https://en.wikipedia.org/wiki/Meteotsunami]
+subset: environmental_hazards
+synonym: "rissaga" EXACT [] {comment="Language: Catalan"}
+is_a: ENVO:01000689 ! tsunami
+property_value: IAO:0000116 "Ambiguity as to whether this label refers to the process or the material entities (the waves). The material entities are a type of severe storm surge." xsd:string
+
+[Term]
+id: ENVO:01000716
+name: storm surge process
+def: "A storm surge process is a coastal flooding process which is caused by low pressure weather systems such as tropical cyclones and strong extratropical cyclones, the severity of which is affected by the shallowness and orientation of the water body relative to storm path, and the timing of tides." [https://en.wikipedia.org/wiki/Storm_surge]
+subset: environmental_hazards
+is_a: ENVO:01000707 ! coastal flooding
+property_value: IAO:0000116 "Should be linked to the relevant weather classes when these are created." xsd:string
+
+[Term]
+id: ENVO:01000717
+name: areal flooding
+def: "Areal flooding is a flooding process in which flat or low-lying areas become inundated with water due to water input exceeding infiltration, evaporation, or run off." [https://en.wikipedia.org/wiki/Flood#Areal]
+subset: environmental_hazards
+is_a: ENVO:02500002 ! flooding
+
+[Term]
+id: ENVO:01000718
+name: urban flooding
+def: "Urban flooding is a flooding process in which land or property in a built environment, particularly in more densely populated areas, is inundated due to the rate of water input exceeding that of water drainage provided by the environment's drainage systems." [https://en.wikipedia.org/wiki/Flood#Urban_flooding]
+subset: environmental_hazards
+is_a: ENVO:02500002 ! flooding
+property_value: IAO:0000116 "Relevant to built environments and can be linked to urban flows. Also relevant to water and sanitation SDGs." xsd:string
+
+[Term]
+id: ENVO:01000719
+name: snowmelt
+def: "Snowmelt is a hydrological melting process in which water is produced by the melting of snow and becomes part of the hydrological surface runoff." [https://en.wikipedia.org/wiki/Snowmelt]
+subset: envoPolar
+is_a: ENVO:01000720 ! hydrological melting process
+property_value: IAO:0000116 "The assertion that the output is freshwater seems reasonable; however, this can certianly be changed if a counter example is provided." xsd:string
+
+[Term]
+id: ENVO:01000720
+name: hydrological melting process
+def: "A melting process during which water-based ice, snow, or other solid phase water transitions into a liquid phase." []
+comment: Here, we've nexted melting within thawing as one approach to resolve the semantics of thawing of ice-free materials. Expert group revision is requried.
+subset: envoPolar
+is_a: ENVO:01000723 ! melting
+is_a: ENVO:02500031 ! hydrological process
+
+[Term]
+id: ENVO:01000721
+name: icemelt
+def: "Icemelt is a hydrological melthing process in which water is produced by the melting of ice and becomes part of the hydrological surface runoff." [https://en.wikipedia.org/wiki/Meltwater]
+subset: envoPolar
+synonym: "ice melt" EXACT []
+is_a: ENVO:01000720 ! hydrological melting process
+property_value: IAO:0000116 "The assertion that the output is freshwater seems reasonable; however, this can certianly be changed if a counter example is provided." xsd:string
+
+[Term]
+id: ENVO:01000723
+name: melting
+def: "Melting is a physical process that results in the phase transition of a substance from a solid to a liquid." [https://en.wikipedia.org/wiki/Melting]
+comment: Note that melting need not be due to warming, thus the classes are separated.
+subset: envoPolar
+synonym: "fusion" RELATED []
+synonym: "melting process" EXACT []
+is_a: ENVO:03000043 ! material transformation process
+property_value: IAO:0000116 "could replace with http://purl.obolibrary.org/obo/REX_0000177" xsd:string
+
+[Term]
+id: ENVO:01000724
+name: condensation process
+def: "Condensation is a process during which a gas undergoes a phase transition into a liquid." [https://en.wikipedia.org/wiki/Condensation]
+is_a: ENVO:01001510 ! material congelation process
+
+[Term]
+id: ENVO:01000725
+name: chemical precipitation process
+def: "Chemical precipitation is a process in which a portion of some solid substance segregates from a material in which that substance or its precursors were dissolved in and settles due to a force such as gravity or centrifugal force. Segregation may occur due to the solubility limits of the precipitating substance being exceeded or due to a chemical reaction that forms a solid product from aqueous reagents." [https://en.wikipedia.org/wiki/Precipitation_(chemistry)]
+is_a: ENVO:01000875 ! precipitation process
+
+[Term]
+id: ENVO:01000726
+name: desublimation process
+def: "Desublimation is a process in which a portion of some gas undergoes a phase transition into a portion of some solid." [https://en.wikipedia.org/wiki/Deposition_(phase_transition)]
+synonym: "deposition" BROAD []
+is_a: ENVO:01001510 ! material congelation process
+
+[Term]
+id: ENVO:01000727
+name: sublimation process
+def: "Sublimation is a process during which a portion of some solid undergoes a phase transition into a portion of some gas." [https://en.wikipedia.org/wiki/Sublimation_(phase_transition)]
+is_a: ENVO:03000043 ! material transformation process
+
+[Term]
+id: ENVO:01000728
+name: tectonic uplift process
+def: "A tectonic uplift process is a geomorphologic process in which a geological surface shifts upward relative to a datum such as sea-level due to forces other than isostatic responses to unloading." [https://en.wikipedia.org/wiki/Tectonic_uplift]
+is_a: ENVO:01001093 ! tectonic movement
+
+[Term]
+id: ENVO:01000729
+name: atmospheric subsidence
+def: "A material transport process during which a mass of air moves through an atmosphere towards a planetary surface." [http://glossary.ametsoc.org/wiki/Subsidence, https://en.wikipedia.org/wiki/Subsidence_(atmosphere)]
+comment: This process usually refers to large-scale air motion, rather than local winds.
+subset: envoAtmo
+is_a: ENVO:03000010 ! material transport process
+
+[Term]
+id: ENVO:01000730
+name: lava flow process
+def: "A process in which a volume of lava emitted during an effusive eruption moves along a solid surface." [https://en.wikipedia.org/wiki/Lava]
+subset: environmental_hazards
+is_a: ENVO:01000981 ! mass liquid flow
+
+[Term]
+id: ENVO:01000738
+name: rock-precursor intrusion process
+def: "A process whereby the precursors of rock, such as magma or sedimentary particles, fill a fracture in a mass of rock." []
+is_a: ENVO:03000010 ! material transport process
+
+[Term]
+id: ENVO:01000741
+name: recycling process
+def: "A process in which some input bearing a waste role is consumed to produce an output which bears a resource role." [https://stats.oecd.org/glossary/detail.asp?ID=2260]
+comment: This has been created for SDGIO. Revision is likely, but the general meaning should be stable. The frame of reference for determining what is 'waste' and what is a  'resource' is unclear.
+is_a: ENVO:02500000 ! environmental system process
+
+[Term]
+id: ENVO:01000742
+name: carbon-bearing gas emission process
+def: "A carbon emission process is any environmental process which outputs a carbon-bearing gas." []
+comment: Requested for SDGIO. Likely to be revised.
+subset: envoPolar
+synonym: "carbon emission process" BROAD []
+is_a: ENVO:03000093 ! hydrocarbon gas emission process
+
+[Term]
+id: ENVO:01000743
+name: land consumption process
+def: "A process in which natural ecosystems present over an expanse of land are removed and replaced with anthropogenic ecosystems." [Adapted from EEA (1997) The concept of environmental space\, Copenhagen\, URL: http\://www.eea.europa.eu/publications/92-9167-078-2/at_download/file]
+comment: These anthropogenic ecosystems may include urban or other built-up settlements or anthropogenic ecosystems used for activities such as forestry or agriculture.
+is_a: ENVO:01000952 ! anthropisation
+property_value: IAO:0000116 "An SDGIO request. Likely to be refined and revised. This looks like an aggregate class, subsuming a range of processes which can lead to degradation." xsd:string
+
+[Term]
+id: ENVO:01000769
+name: carbon dioxide emission process
+def: "A carbon emission process is any environmental process which releases carbon dioxide gas into the atmosphere." []
+comment: Requested for SDGIO. This class may be revised in future once the offical definitions become more clear.
+subset: envoPolar
+is_a: ENVO:01000742 ! carbon-bearing gas emission process
+
+[Term]
+id: ENVO:01000785
+name: material extraction process
+def: "A planned process during which a portion of environmental material is removed from a material entity." []
+comment: Created for SDGIO and intended to be a more general form of resource extraction process.
+is_a: ENVO:02500000 ! environmental system process
+property_value: IAO:0000116 "This should be an OBI planned process. Pending import." xsd:string
+
+[Term]
+id: ENVO:01000786
+name: fire
+def: "A fire is a process whereby rapid and exothermic oxidation of a material through a combustion process releases heat, light, and other products." [http://www.eionet.europa.eu/gemet/concept?cp=3212, https://en.wikipedia.org/wiki/Fire]
+comment: Not to be confused with a flame - the visible portion of gas released by a fire . Oxidation processes such as rusting or biological digestion are not subsumed here.
+is_a: ENVO:01000839 ! combustion process
+
+[Term]
+id: ENVO:01000787
+name: wildfire
+def: "A conflagration which is uncontrolled and combusts material in a vegetated area, be it rural or wild." []
+comment: The definition of "wildland" or "wild" is ambiguous.
+subset: environmental_hazards
+synonym: "wildland fire" EXACT []
+is_a: ENVO:01000788 ! conflagration
+
+[Term]
+id: ENVO:01000788
+name: conflagration
+def: "A fire which occurs in a large spatial area poses a risk to human life, animal life, health, and/or property." [https://en.wikipedia.org/wiki/Conflagration]
+synonym: "blaze" RELATED []
+synonym: "large fire" RELATED []
+is_a: ENVO:01000786 ! fire
+
+[Term]
+id: ENVO:01000791
+name: forest fire
+def: "A wildfire which occurs in a forest, primarily consuming vegetation as fuel." [http://www.emdat.be/Glossary]
+subset: environmental_hazards
+is_a: ENVO:01001292 ! land fire
+
+[Term]
+id: ENVO:01000792
+name: mass gaseous flow
+def: "A process whereby a large volume of gas moves due to a disequilibrium of physical forces." [https://en.wikipedia.org/wiki/Wind]
+comment: This class refers to all forms of "wind": from the familiar movement of air in the Earth's atmosphere to the solar wind. Use a subclass to be more precise.
+subset: envoAtmo
+subset: envoPolar
+synonym: "wind" RELATED []
+is_a: ENVO:01001747 ! mass fluid flow
+
+[Term]
+id: ENVO:01000793
+name: atmospheric wind
+subset: envoAtmo
+subset: envoPolar
+synonym: "A mass gaseous flow which occurrs in a planet's atmosphere due to internal pressure disequilibria." RELATED [https://en.wikipedia.org/wiki/Wind]
+synonym: "wind" BROAD []
+is_a: ENVO:01000792 ! mass gaseous flow
+is_a: ENVO:02500003 ! atmospheric process
+
+[Term]
+id: ENVO:01000794
+name: stellar wind
+def: "A stream of plasma primarily composed of electrons, protons, and alpha particles ejected from the upper atmosphere of a star." [https://en.wikipedia.org/wiki/Solar_wind, https://en.wikipedia.org/wiki/Wind]
+synonym: "Solar wind" RELATED []
+is_a: ENVO:01000796 ! mass plasma flow
+
+[Term]
+id: ENVO:01000795
+name: planetary wind
+subset: envoAtmo
+subset: envoPolar
+synonym: "A mass gaseous flow in which planetary atmospheric gases flow into outer space." RELATED []
+synonym: "atmospheric escape" RELATED []
+is_a: ENVO:01000792 ! mass gaseous flow
+
+[Term]
+id: ENVO:01000796
+name: mass plasma flow
+def: "A process whereby a large volume of plasma moves due to a disequilibrium of physical forces." []
+is_a: ENVO:01001334 ! advective transport process
+
+[Term]
+id: ENVO:01000830
+name: water-based rainfall
+def: "A hydrological precipitation process in which atmospheric water vapour condenses to form droplets of liquid water massive enough to fall to a planetary surface due to the planet's gravity." [https://en.wikipedia.org/wiki/Rain]
+comment: This is the process which typically happens on Earth. Other planets may have different liquids involved in the process.
+subset: envoPolar
+synonym: "rain" RELATED []
+synonym: "rain fall" BROAD []
+synonym: "rainfall" BROAD []
+is_a: ENVO:01000703 ! hydrological precipitation process
+
+[Term]
+id: ENVO:01000837
+name: virga
+synonym: "A process in which precipitation falls from a cloud but evaporates or sublimes before making contact with a planetary surface." BROAD [https://en.wikipedia.org/wiki/Rain]
+is_a: ENVO:01000703 ! hydrological precipitation process
+
+[Term]
+id: ENVO:01000839
+name: combustion process
+def: "Combustion or burning is a high-temperature exothermic redox chemical reaction between a fuel and an oxidant that produces oxidized, often gaseous products, in a mixture termed as smoke." [https://en.wikipedia.org/wiki/Combustion]
+comment: Unlike the "combustion" class in the Chemical Methods Ontology, this class is not necessarily a planned process. http://purl.obolibrary.org/obo/CHMO_0001473
+is_a: ENVO:01000840 ! thermolysis
+is_a: ENVO:01001654 ! aerosol formation process
+property_value: IAO:0000116 "This class may be surrendered to REX." xsd:string
+
+[Term]
+id: ENVO:01000840
+name: thermolysis
+def: "A chemical decomposition (the separation of a single chemical compound into its two or more elemental parts or to simpler compounds) caused by heat." []
+synonym: "thermal decomposition" EXACT []
+is_a: ENVO:03000043 ! material transformation process
+
+[Term]
+id: ENVO:01000841
+name: pyrolysis
+def: "A thermolysis process in which organic material is decomposed in the absence of oxygen." []
+is_a: ENVO:01000840 ! thermolysis
+is_a: ENVO:01001654 ! aerosol formation process
+
+[Term]
+id: ENVO:01000852
+name: coral bleaching process
+def: "An environmental process in which coral expels the symbiotic algae living in its tissue as a result of stress, causing the coral to turn white." [http://oceanservice.noaa.gov/facts/coral_bleach.html]
+synonym: "coral bleaching" RELATED []
+is_a: ENVO:01001795 ! ecosystem process
+property_value: IAO:0000116 "Add relations to coral organisms in NCBI taxonomy." xsd:string
+created_by: orcid.org/0000-0001-8369-8114
+
+[Term]
+id: ENVO:01000870
+name: ground deformation process
+def: "A process in which a solid planetary surface is deformed." []
+comment: This is a class to be filled by inference.
+is_a: ENVO:02500000 ! environmental system process
+
+[Term]
+id: ENVO:01000874
+name: hailfall
+def: "Hailfall is a hydrological process in which balls or irregular lumps of water ice formed in thunderstorm or cumulonimbus clouds fall to a planetary surface." [https://en.wikipedia.org/wiki/Hail]
+subset: environmental_hazards
+subset: envoPolar
+synonym: "hail fall" EXACT []
+is_a: ENVO:01000703 ! hydrological precipitation process
+is_a: ENVO:02500031 ! hydrological process
+
+[Term]
+id: ENVO:01000875
+name: precipitation process
+def: "A precipitation process is a process in which a portion of some substance segregates from a material in which that substance or its precursors were dissolved or suspended in and settles due to a force such as gravity or centrifugal force." [https://en.wikipedia.org/wiki/Precipitation_%28chemistry%29] {comment="https://en.wikipedia.org/wiki/Precipitation"}
+is_a: ENVO:03000010 ! material transport process
+
+[Term]
+id: ENVO:01000876
+name: storm
+def: "A storm is an environmental process in which an environmental system and the processes it participates in are strongly perturbed by external forcings. These forcings typically increase the rates of processes unfolding in the system, relative to their normal rates." []
+comment: The threshold of what constitutes "strong" perturbation is not defined here due to considerable semantic variation. If a specific threshold is required, please request a new term.
+subset: environmental_hazards
+is_a: ENVO:02500000 ! environmental system process
+
+[Term]
+id: ENVO:01000877
+name: atmospheric storm
+def: "An atmospheric storm is a process in which a portion of an astronomical body's atmosphere is strongly perturbed from its prevaling weather." [https://en.wikipedia.org/wiki/Storm]
+subset: environmental_hazards
+is_a: ENVO:01000876 ! storm
+is_a: ENVO:02500003 ! atmospheric process
+
+[Term]
+id: ENVO:01000878
+name: thunderstorm
+def: "An atmospheric storm which occurs in cumulonimbus clouds and during which lightning and thunder occur." []
+comment: Thunderstorms may or may not involve processes which result in strong winds, heavy rain, snow, sleet, hail, or other forms of precipitation.
+subset: environmental_hazards
+synonym: "electrical storm" EXACT []
+synonym: "lightning storm" EXACT []
+is_a: ENVO:01001294 ! convective storm
+
+[Term]
+id: ENVO:01000879
+name: rainstorm
+def: "An atmospheric storm during which intense rainfall occurs." []
+subset: environmental_hazards
+subset: envoAtmo
+is_a: ENVO:01000877 ! atmospheric storm
+
+[Term]
+id: ENVO:01000880
+name: hailstorm
+def: "An atmospheric storm which intense hailfall occurs." []
+subset: environmental_hazards
+subset: envoAtmo
+subset: envoPolar
+is_a: ENVO:01000882 ! icestorm
+
+[Term]
+id: ENVO:01000881
+name: snowstorm
+def: "An atmospheric storm during which intense snowfall occurs." []
+subset: environmental_hazards
+subset: envoAtmo
+subset: envoPolar
+is_a: ENVO:01000877 ! atmospheric storm
+
+[Term]
+id: ENVO:01000882
+name: icestorm
+def: "An atmospheric storm during which freezing rain falls and accumulates as ice on exposed surfaces." [https://en.wikipedia.org/wiki/Ice_storm]
+comment: The U.S. National Weather Service defines an ice storm as a storm which results in the accumulation of at least 0.25-inch (6.4 mm) of ice on exposed surfaces. {xref="https://en.wikipedia.org/wiki/Ice_storm", xref="Hauer RJ, Dawson JO, Werner LP (2006) Trees and Ice Storms - The Development of Ice Storm-Resistant Urban Tree Populations (2 ed.). College of Natural Resources, University of Wisconsin–Stevens Point, and the Department of Natural Resources and Environmental Sciences and the Office of Continuing Education, University of Illinois at Urbana-Champaign. http://web.extension.uiuc.edu/forestry/publications/pdf/urban_community_forestry/trees_and_ice_storms_2006.pdf"}
+subset: environmental_hazards
+subset: envoAtmo
+subset: envoPolar
+synonym: "glaze event" EXACT []
+synonym: "silver thaw" EXACT []
+is_a: ENVO:01000877 ! atmospheric storm
+
+[Term]
+id: ENVO:01000895
+name: snowfall
+def: "A hydrological process in which irregular aggregates of snow fall to a planetary surface." []
+subset: environmental_hazards
+subset: envoPolar
+synonym: "snow fall" EXACT []
+is_a: ENVO:01000703 ! hydrological precipitation process
+
+[Term]
+id: ENVO:01000896
+name: freezing rainfall
+alt_id: METAR:FZRA
+def: "Rainfall which occurs when the temperature of a planetary surface and its surrounding atmosphere are below the freezing point of water, resulting in supercooled raindrops which freeze upon impact with solid surfaces." [] {comment="https://en.wikipedia.org/wiki/Freezing_rain"}
+subset: environmental_hazards
+subset: envoPolar
+synonym: "freezing rain" BROAD []
+synonym: "freezing rain fall" BROAD []
+is_a: ENVO:01000830 ! water-based rainfall
+
+[Term]
+id: ENVO:01000897
+name: electrostatic discharge process
+def: "A process during which a sudden flow of electricity occurs, often accompanied by a visible release of photons, between two electrically charged objects due to contact, an electrical short, or dielectric breakdown." [https://en.wikipedia.org/wiki/Electrostatic_discharge]
+is_a: ENVO:02500000 ! environmental system process
+property_value: IAO:0000116 "This should probably be moved to an ontology of physical processes when one is created, and be imported back into ENVO." xsd:string
+
+[Term]
+id: ENVO:01000898
+name: atmospheric lightning
+def: "A sudden electrostatic discharge which occurs during an electrical storm as differentially charged atmospheric entities equalise their charge." [https://en.wikipedia.org/wiki/Lightning]
+subset: environmental_hazards
+synonym: "lightning" EXACT []
+is_a: ENVO:01000897 ! electrostatic discharge process
+is_a: ENVO:02500003 ! atmospheric process
+
+[Term]
+id: ENVO:01000899
+name: intercloud lightning
+def: "A lightning process during which electrostatic discharge occurs between at least two clouds." []
+subset: environmental_hazards
+synonym: "CC lightning" EXACT []
+synonym: "cloud-cloud lightning" EXACT []
+is_a: ENVO:01000902 ! lightning flash
+
+[Term]
+id: ENVO:01000900
+name: intracloud lightning
+def: "A lightning process during which electrostatic discharge occurs within a single cloud." []
+subset: environmental_hazards
+synonym: "IC lightning" EXACT []
+is_a: ENVO:01000902 ! lightning flash
+
+[Term]
+id: ENVO:01000901
+name: lightning strike
+def: "A lightning process during which electrostatic discharge occurs between a cloud and an object on a planetary surface, or a planetary surface itself." []
+subset: environmental_hazards
+synonym: "CG lightning" EXACT []
+synonym: "cloud-ground lightning" EXACT []
+is_a: ENVO:01000898 ! atmospheric lightning
+
+[Term]
+id: ENVO:01000902
+name: lightning flash
+def: "A lightning process during which electrostatic discharge occurs within a single cloud or between multiple clouds." []
+subset: environmental_hazards
+is_a: ENVO:01000898 ! atmospheric lightning
+
+[Term]
+id: ENVO:01000903
+name: blizzard
+def: "A blizzard is a severe snowstorm during which snowfall is transported by strong winds, sustained for several hours." [https://en.wikipedia.org/wiki/Blizzard]
+comment: To qualify a snowstorm as a blizzard, some sources require the windspeed to be at least 56 km/h and the duration of the storm to be at least three hours. We set no such hard boundaries in this definition, as this should be done with reference to local standards. {comment="https://en.wikipedia.org/wiki/Blizzard"}
+subset: environmental_hazards
+subset: envoAtmo
+subset: envoPolar
+is_a: ENVO:01000881 ! snowstorm
+
+[Term]
+id: ENVO:01000904
+name: ground blizzard
+def: "A ground blizzard is a storm during which snow which has settled on a planetary surface is resuspended in and transported through its atmosphere by strong winds, sustained for several hours." [https://en.wikipedia.org/wiki/Blizzard]
+comment: This form of blizzard does not involve snowfall as the snow which is blown by the winds is already present on the ground. To qualify a snowstorm as a blizzard, some sources require the windspeed to be at least 56 km/h and the duration of the storm to be at least three hours. We set no such hard boundaries in this definition, as this should be done with reference to local standards. {comment="https://en.wikipedia.org/wiki/Blizzard"}
+subset: environmental_hazards
+subset: envoAtmo
+is_a: ENVO:01000877 ! atmospheric storm
+
+[Term]
+id: ENVO:01000913
+name: nucleation of cloud condensation
+def: "A process during which a solid particle or liquid droplet catalyses the condensation of water vapour in an atmosphere." [https://en.wikipedia.org/wiki/Cloud_condensation_nuclei]
+synonym: "cloud seeding process" EXACT []
+is_a: ENVO:02500003 ! atmospheric process
+is_a: ENVO:02500031 ! hydrological process
+
+[Term]
+id: ENVO:01000915
+name: ice loss process
+def: "A material decumulation process during which the mass of an existing ice mass decreases in size." [http://dx.doi.org/10.1038/nrmicro3522, http://physicalgeography.net/, https://en.wikipedia.org/wiki/Ablation_zone]
+subset: envoPolar
+synonym: "ice loss" EXACT []
+is_a: ENVO:03000016 ! material decumulation process
+property_value: IAO:0000116 "Ice loss could likely become a defined class with some equivalence axioms linking it to processes, along the lines of: 'has part' some (icemelt or 'ice calving process' or 'water ice sublimation process')." xsd:string
+property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
+property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:01000916
+name: rubbish landslide
+def: "A mass wasting process during which refuse from human activities, usually accumulated at a dumping site, falls down a slope under the force of gravity." [http://www.bbc.com/news/world-africa-39247381]
+comment: "At least 48 people have been killed in a landslide at a vast rubbish dump on the outskirts of Ethiopia's capital Addis Ababa, officials say...Hundreds of people attempt to make a living by scavenging at the landfill site, sifting through the rubbish for items they can sell, the BBC's Emmanuel Igunza in Addis Ababa reports" BBC Africa reports
+subset: environmental_hazards
+synonym: "garbage landslide" EXACT []
+synonym: "refuse landslide" EXACT []
+synonym: "trash landslide" EXACT []
+is_a: ENVO:01000690 ! mass wasting
+property_value: IAO:0000116 "Of interest to sustainable development goals, linking production and consumption to human health and environmental impacts." xsd:string
+
+[Term]
+id: ENVO:01000917
+name: ice calving process
+def: "A process during which a part of an ice mass breaks away from the main mass." [http://dx.doi.org/10.1038/nrmicro3522, https://orcid.org/0000-0003-4808-4736]
+subset: envoPolar
+synonym: "calving" BROAD [https://cdn.earthdata.nasa.gov/conduit/upload/502/cf-standard-name-table_v13.txt]
+xref: http://sweetontology.net/phenCryo/IceCalving
+is_a: ENVO:01000690 ! mass wasting
+property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
+property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:01000919
+name: glacial ice ablation process
+def: "An ice loss process which occurs in the low-altitude area of a glacier or ice sheet below the firn layer." [http://dx.doi.org/10.1038/nrmicro3522]
+subset: envoPolar
+is_a: ENVO:03000017 ! glacial ice loss
+property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
+property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:01000920
+name: water ice sublimation process
+def: "A sublimation process during which water ice transitions into a gaseous state." []
+subset: envoPolar
+is_a: ENVO:01000727 ! sublimation process
+is_a: ENVO:02500031 ! hydrological process
+
+[Term]
+id: ENVO:01000950
+name: water ice formation process
+def: "A material transformation process during which water ice is formed." [http://www.waterencyclopedia.com/Re-St/Sea-Water-Freezing-of.html]
+subset: envoPolar
+is_a: ENVO:01001510 ! material congelation process
+is_a: ENVO:02500031 ! hydrological process
+property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
+property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:01000952
+name: anthropisation
+def: "A process during which a natural environmental system is altered by human action." [https://en.wikipedia.org/wiki/Anthropization]
+comment: An area may be classified as anthropized even though it looks natural, such as grasslands that have been deforested by humans. It can be difficult to determine how much a site has been anthropized in the case of urbanization because one must be able to estimate the state of the landscape before significant human action. {xref="https://en.wikipedia.org/wiki/Anthropization"}
+synonym: "anthropization" EXACT []
+is_a: ENVO:01001434 ! anthropogenic ecosystem conversion process
+
+[Term]
+id: ENVO:01000981
+name: mass liquid flow
+def: "A process whereby a volume of liquid moves due to a disequilibrium of physical forces." [https://en.wikipedia.org/wiki/Wind]
+comment: This class can refer to the flow of any material in a liquid phase.
+subset: envoPolar
+is_a: ENVO:01001747 ! mass fluid flow
+
+[Term]
+id: ENVO:01000982
+name: water flow process
+def: "A process during which a volume of water is transported due to a disequilibria in physical forces." []
+subset: environmental_hazards
+is_a: ENVO:01000981 ! mass liquid flow
+is_a: ENVO:02500031 ! hydrological process
+
+[Term]
+id: ENVO:01001023
+name: radiation
+def: "A process during which energy is emitted or transmitted in the form of waves or particles through space or a material medium." [https://en.wikipedia.org/wiki/Radiation]
+subset: environmental_hazards
+subset: envoAstro
+is_a: ENVO:01001852 ! energy transfer process
+property_value: IAO:0000116 "Requires addition of waves for full axiomatisation. This should be linked to \"subatomic particle\" with an \"or\". Note that ENVO represents space as an environmental material (a hard vacuum with sparse material inclusions)." xsd:string
+
+[Term]
+id: ENVO:01001024
+name: particle radiation
+def: "A radiation process during which energy is transmitted or emitted by means of fast-moving subatomic particles." [https://en.wikipedia.org/wiki/Particle_radiation]
+subset: environmental_hazards
+subset: envoAstro
+is_a: ENVO:01001023 ! radiation
+
+[Term]
+id: ENVO:01001025
+name: particle beam radiation
+def: "A particle radiation process during which subatomic particles move in the same direction." [https://en.wikipedia.org/wiki/Particle_radiation]
+subset: environmental_hazards
+subset: envoAstro
+is_a: ENVO:01001024 ! particle radiation
+
+[Term]
+id: ENVO:01001026
+name: electromagnetic radiation
+def: "A radiation process during which waves (or their quanta, photons) of the electromagnetic field propagate (radiate) through space carrying electromagnetic energy." [https://en.wikipedia.org/wiki/Electromagnetic_radiation]
+comment: Note that this class is concerned only with active radiative processes: static electric and magnetic fields are not inlcuded. All electromagnetic radiation carries radiant energy.
+subset: environmental_hazards
+subset: envoAstro
+synonym: "EM radiation" EXACT []
+is_a: ENVO:01001023 ! radiation
+
+[Term]
+id: ENVO:01001027
+name: acoustic radiation
+def: "A radiation process during which mechanical waves generated by oscillations radiate through an environmental material." [https://en.wikipedia.org/wiki/Acoustics] {comment="https://en.wikipedia.org/wiki/Vibration", comment="https://en.wikipedia.org/wiki/Mechanical_wave"}
+comment: The mechanical waves generated by this process are also referred to as pressure waves.
+subset: envoAstro
+is_a: ENVO:01001023 ! radiation
+
+[Term]
+id: ENVO:01001066
+name: impact between astronomical bodies
+def: "An impact event is a collision between astronomical bodies." [https://en.wikipedia.org/wiki/Impact_event]
+is_a: ENVO:01001763 ! impact event
+
+[Term]
+id: ENVO:01001067
+name: meterorite impact
+def: "An impact event during which a meteoroid collides with another astronomical body." [https://en.wikipedia.org/wiki/Impact_event]
+is_a: ENVO:01001066 ! impact between astronomical bodies
+
+[Term]
+id: ENVO:01001083
+name: cloud formation process
+def: "A process during which water vapour condensing in the atmosphere aggregates into clouds." [https://en.wikipedia.org/wiki/Cloud_condensation_nuclei]
+synonym: "cloud formation" EXACT []
+is_a: ENVO:02500003 ! atmospheric process
+is_a: ENVO:02500031 ! hydrological process
+is_a: ENVO:03000009 ! material accumulation process
+
+[Term]
+id: ENVO:01001084
+name: particulate matter formation process
+def: "A process during which microscopic solid or liquid objects are formed." [https://en.wikipedia.org/wiki/Particulates]
+synonym: "particle formation" RELATED []
+is_a: ENVO:03000043 ! material transformation process
+
+[Term]
+id: ENVO:01001085
+name: atmospheric aerosol formation
+def: "An aerosol formation process which occurs in an atmosphere." [https://en.wikipedia.org/wiki/Particulates]
+subset: envoAtmo
+synonym: "atmospheric aerosol formation" EXACT []
+is_a: ENVO:01001654 ! aerosol formation process
+is_a: ENVO:02500003 ! atmospheric process
+
+[Term]
+id: ENVO:01001086
+name: formation of a solid aerosol in an atmosphere
+def: "A process during which an aerosol, consisting of solid particulates suspended in a gas, is formed in an atmosphere." [https://en.wikipedia.org/wiki/Particulates]
+subset: envoAtmo
+synonym: "formation of solid particles in an atmosphere" RELATED []
+is_a: ENVO:01001085 ! atmospheric aerosol formation
+
+[Term]
+id: ENVO:01001087
+name: formation of a liquid aerosol in an atmosphere
+def: "A process during which an aerosol, consisting of droplets of liquid suspended in gas, is formed in an atmosphere." [https://en.wikipedia.org/wiki/Particulates]
+subset: envoAtmo
+synonym: "formation of liquid droplets in an atmosphere" RELATED []
+synonym: "formation of liquid particles in an atmosphere" RELATED []
+is_a: ENVO:01001085 ! atmospheric aerosol formation
+
+[Term]
+id: ENVO:01001090
+name: formation of a solid aerosol from gaseous material in an atmosphere
+def: "A process during which microscopic solid particulates are formed from gaseous materials in an atmosphere." [https://en.wikipedia.org/wiki/Particulates]
+subset: envoAtmo
+synonym: "atmospheric formation of a solid aerosol" BROAD []
+synonym: "formation of a solid aerosol in an atmosphere" BROAD []
+synonym: "formation of a solid aerosol in the atmosphere" BROAD []
+synonym: "formation of solid particles from gaseous material in an atmosphere" RELATED []
+is_a: ENVO:01001086 ! formation of a solid aerosol in an atmosphere
+
+[Term]
+id: ENVO:01001091
+name: formation of a liquid aerosol from gaseous material in an atmosphere
+def: "A process during which microscopic liquid droplets are formed from gaseous materials in an atmosphere." [https://en.wikipedia.org/wiki/Particulates]
+subset: envoAtmo
+synonym: "atmospheric formation of a liquid aerosol" EXACT []
+synonym: "formation of a liquid aerosol in an atmosphere" EXACT []
+synonym: "formation of a liquid aerosol in the atmosphere" EXACT []
+synonym: "formation of liquid droplets from gaseous material in an atmosphere" RELATED []
+synonym: "formation of liquid particles from gaseous material in an atmosphere" RELATED []
+is_a: ENVO:01001087 ! formation of a liquid aerosol in an atmosphere
+
+[Term]
+id: ENVO:01001093
+name: tectonic movement
+def: "A process during which pieces of a planetary crust and uppermost mantle move." [https://en.wikipedia.org/wiki/Plate_tectonics] {comment="https://en.wikipedia.org/wiki/List_of_tectonic_plates"}
+is_a: ENVO:03000010 ! material transport process
+
+[Term]
+id: ENVO:01001094
+name: convergent tectonic movement
+def: "A process during which pieces of a planetary crust and uppermost mantle move towards one another." [https://en.wikipedia.org/wiki/Convergent_boundary, https://en.wikipedia.org/wiki/List_of_tectonic_plates, https://en.wikipedia.org/wiki/Plate_tectonics]
+is_a: ENVO:01001093 ! tectonic movement
+
+[Term]
+id: ENVO:01001095
+name: divergent tectonic movement
+def: "A process during which pieces of a planetary crust and uppermost mantle move away from one another." [https://en.wikipedia.org/wiki/Divergent_boundary, https://en.wikipedia.org/wiki/List_of_tectonic_plates, https://en.wikipedia.org/wiki/Plate_tectonics]
+synonym: "constructive tectonic movement" EXACT []
+synonym: "extensional tectonic movement" EXACT []
+is_a: ENVO:01001093 ! tectonic movement
+
+[Term]
+id: ENVO:01001096
+name: transform tectonic movement
+def: "A process during which pieces of a planetary crust and uppermost mantle move along each other in a predominantly horizontal manner, either in a sinistral (left lateral) or dextral (right lateral) direction." [https://en.wikipedia.org/wiki/List_of_tectonic_plates, https://en.wikipedia.org/wiki/Plate_tectonics, https://en.wikipedia.org/wiki/Transform_fault]
+synonym: "conservative tectonic movement" EXACT []
+is_a: ENVO:01001093 ! tectonic movement
+
+[Term]
+id: ENVO:01001102
+name: tectonic plate subduction
+def: "A convergent tectonic movement process during which one plate moves under another and is forced or sinks due to gravity into a mantle." [https://en.wikipedia.org/wiki/Convergent_boundary, https://en.wikipedia.org/wiki/List_of_tectonic_plates, https://en.wikipedia.org/wiki/Plate_tectonics, https://en.wikipedia.org/wiki/Subduction]
+synonym: "subduction" EXACT []
+is_a: ENVO:01001094 ! convergent tectonic movement
+
+[Term]
+id: ENVO:01001108
+name: rockslide process
+def: "A rockslide is a process whereby a large mass of rock moves down a hill or a mountainside." [https://en.wikipedia.org/wiki/Mass_wasting]
+subset: environmental_hazards
+synonym: "rockslip" EXACT []
+is_a: ENVO:01000692 ! landslide process
+
+[Term]
+id: ENVO:01001112
+name: fossilization of organic material
+def: "A process during which organic substances are replaced with mineral substrances, maintaining part of their anatomical organisation." [https://en.wikipedia.org/wiki/Fossil#Fossilization_processes]
+synonym: "fossilization" BROAD []
+is_a: ENVO:02500000 ! environmental system process
+
+[Term]
+id: ENVO:01001130
+name: gravitational motion
+def: "A process during which one or more entities move along geodesics in a region of spacetime that has been sufficiently curved towards an entity with sufficient mass and/or energy." [https://en.wikipedia.org/wiki/Gravity]
+subset: envoAstro
+is_a: ENVO:02500000 ! environmental system process
+
+[Term]
+id: ENVO:01001146
+name: photoevaporation
+def: "A process during which energetic radiation ionises gas and causes it to disperse away from the ionising source." [arXiv:1604.05220, https://en.wikipedia.org/wiki/Chthonian_planet#cite_note-4, https://en.wikipedia.org/wiki/Photoevaporation]
+comment: This process is responsible for the stripping away of gases from the atmosphere of planets and related bodies by acceleration on interaction with high energy photons and other electromagnetic radiation.
+subset: envoAstro
+is_a: ENVO:03000010 ! material transport process
+
+[Term]
+id: ENVO:01001157
+name: atmospheric escape
+def: "A process during which gases that constitute a planetary atmosphere escape that planet's gravitational field and move away into outer space." [https://en.wikipedia.org/wiki/Atmospheric_escape]
+subset: envoAstro
+is_a: ENVO:03000010 ! material transport process
+
+[Term]
+id: ENVO:01001158
+name: hydrodynamic escape
+def: "An atmospheric escape process during which atoms that are parts of a planetary atmosphere escape into outer space through numerous collisions with lighter atoms in that atmosphere." [https://en.wikipedia.org/wiki/Atmospheric_escape]
+subset: envoAstro
+is_a: ENVO:01001157 ! atmospheric escape
+
+[Term]
+id: ENVO:01001168
+name: ecosystem fragmentation process
+def: "A process during which one or more parts of an ecosystem become causally isolated such that the direct flow or exchange of materials, resources, and energy between a given fragment and the remainder of the original system is severely curtailed or entirely halted." [https://en.wikipedia.org/wiki/Ecosystem_decay, https://en.wikipedia.org/wiki/Habitat_fragmentation, https://en.wikipedia.org/wiki/Population_fragmentation]
+is_a: ENVO:01001795 ! ecosystem process
+
+[Term]
+id: ENVO:01001170
+name: active ecosystem management process
+def: "A process during which an ecosystem, its parts, or the processes it participates in are modified by human intervention to accomplish an objective." [https://www.iucn.org/theme/protected-areas/about/protected-areas-categories/category-iv-habitatspecies-management-area]
+synonym: "ecosystem management" EXACT []
+synonym: "environmental management" RELATED []
+synonym: "Umweltmaßnahme" RELATED [www.awi.de/internas] {created_by="https://orcid.org/0000-0002-9620-2832"}
+is_a: ENVO:02500027 ! anthropogenic environmental process
+
+[Term]
+id: ENVO:01001171
+name: conservation-focused active ecosystem management process
+def: "An active management process which has the conservation of an ecosystem, or a part thereof, as its primary objective." [https://www.iucn.org/theme/protected-areas/about/protected-areas-categories/category-iv-habitatspecies-management-area]
+synonym: "conservation action" RELATED []
+synonym: "conservation process" RELATED []
+synonym: "nature conservation" RELATED []
+synonym: "Umweltschutz" RELATED [www.awi.de/internas] {created_by="https://orcid.org/0000-0002-9620-2832"}
+is_a: ENVO:01001170 ! active ecosystem management process
+
+[Term]
+id: ENVO:01001174
+name: ecosystem decay
+def: "A process during which an ecosystem fragment loses its system integrity, with many of its resident ecological populations 1) losing their habitats, 2) undergoing a loss of functional and phylogenetic diversity, and 3) undergoing a subsequent genetic destabilisation through inbreeding." [https://en.wikipedia.org/wiki/Ecosystem_decay]
+comment: This process may be caused by direct anthropisation (i.e. the fragmentation of ecosystems due to the establishment of cropland) or by more natural events such as forest fires or erosion of land bridges.
+is_a: ENVO:01001795 ! ecosystem process
+
+[Term]
+id: ENVO:01001175
+name: habitat fragmentation process
+def: "An ecosystem fragmentation process during which discontinuities emerge in the habitats of one or more ecological populations." [https://en.wikipedia.org/wiki/Habitat_fragmentation]
+is_a: ENVO:01001168 ! ecosystem fragmentation process
+
+[Term]
+id: ENVO:01001205
+name: lithification
+def: "A process during which sediments compact under pressure, expel connate fluids, and gradually become solid sedimentary rock." [https://en.wikipedia.org/wiki/Lithification]
+is_a: ENVO:03000043 ! material transformation process
+
+[Term]
+id: ENVO:01001211
+name: stellar radiation
+def: "An electromagnetic radiation process during which electromagnetic waves or their quanta are emitted from a star." [https://en.wikipedia.org/wiki/Electromagnetic_radiation, https://en.wikipedia.org/wiki/Solar_irradiance]
+subset: environmental_hazards
+subset: envoAstro
+synonym: "solar radiation" NARROW [NCIT:C44445]
+xref: NCIT:C44445
+is_a: ENVO:01001026 ! electromagnetic radiation
+
+[Term]
+id: ENVO:01001212
+name: microwave stellar radiation
+namespace: ENVO
+def: "A stellar radiation process during which electromagnetic waves or their quanta are emitted from a star at wavelengths and frequencies which travel exclusively in a line-of-sight fashion and which may produce molecular rotation and torsion on contact with matter." [https://en.wikipedia.org/wiki/Microwave, https://www.iso.org/obp/ui/#iso\:std\:iso\:21348]
+comment: This definition focuses on the properties of microwaves rather than their wavelength or frequency limits. Considerable ambiguity exists around the wavelength and frequency thresholds of microwaves. The ISO 21348 definition bounds these waves at 1 mm and 15 mm, with frequencies between 100 GHz and 0.225 GHz.
+subset: envoAstro
+synonym: "microwave radiation" EXACT []
+synonym: "microwave solar radiation" NARROW []
+is_a: ENVO:01001211 ! stellar radiation
+is_a: ENVO:21001212 ! microwave radiation
+property_value: IAO:0000114 IAO:0000428
+
+[Term]
+id: ENVO:01001213
+name: radio wave stellar radiation
+namespace: ENVO
+def: "A stellar radiation process during which electromagnetic waves or their quanta are emitted from a star at wavelengths ranging from millimetre to kilometer scales." [https://en.wikipedia.org/wiki/Radio_wave, https://www.iso.org/obp/ui/#iso\:std\:iso\:21348]
+comment: As with microwaves, considerable variation exists in the delimitation of frequency and wavelength thresholds for radiowaves. The ISO 21348 standard allows a wavelength range of 0.10 mm to 100 m and a frequency range of 300 GHz to 3 MHz. However, much lower thresholds also exist.
+subset: envoAstro
+synonym: "radio wave radiation" EXACT []
+synonym: "radio wave solar radiation" NARROW []
+is_a: ENVO:01001211 ! stellar radiation
+is_a: ENVO:21001213 ! radio wave radiation
+property_value: IAO:0000114 IAO:0000428
+
+[Term]
+id: ENVO:01001214
+name: infrared stellar radiation
+def: "A stellar radiation process during which electromagnetic waves or their quanta are emitted from a star when molecules change their rotational-vibrational movements, usually at wavelengths between 760 nm and 1 mm." [https://en.wikipedia.org/wiki/Infrared, https://www.iso.org/obp/ui/#iso\:std\:iso\:21348]
+subset: envoAstro
+synonym: "infra-red stellar radiation" EXACT []
+synonym: "infrared radiation" BROAD []
+synonym: "infrared solar radiation" NARROW []
+synonym: "IR stellar radiation" RELATED []
+is_a: ENVO:01001211 ! stellar radiation
+is_a: ENVO:21001214 ! infrared radiation
+
+[Term]
+id: ENVO:01001215
+name: visible spectrum stellar radiation
+namespace: ENVO
+def: "A stellar radiation process during which electromagnetic waves or their quanta are emitted from a star at wavelengths between 380 nm and 760 nm." [https://www.iso.org/obp/ui/#iso\:std\:iso\:21348]
+subset: envoAstro
+synonym: "optical stellar radiation" EXACT []
+synonym: "visible spectrum solar radiation" NARROW []
+is_a: ENVO:01001211 ! stellar radiation
+is_a: ENVO:21001215 ! visible spectrum radiation
+
+[Term]
+id: ENVO:01001216
+name: ultraviolet stellar radiation
+namespace: ENVO
+def: "A stellar radiation process during which electromagnetic waves or their quanta are emitted from a star at wavelengths between 10 nm and 400 nm." [https://en.wikipedia.org/wiki/Ultraviolet, https://www.iso.org/obp/ui/#iso\:std\:iso\:21348]
+subset: environmental_hazards
+subset: envoAstro
+synonym: "ultraviolet solar radiation" NARROW []
+xref: NCIT:C17231
+is_a: ENVO:01001211 ! stellar radiation
+is_a: ENVO:21001216 ! ultraviolet radiation
+property_value: IAO:0000116 "To be expanded to account for subtypes." xsd:string
+
+[Term]
+id: ENVO:01001217
+name: X-ray stellar radiation
+namespace: ENVO
+def: "A stellar radiation process during which penetrating electromagnetic radiation is emitted by high-energy electrons as they fall into a lower state of energy." [https://en.wikipedia.org/wiki/X-ray]
+comment: Ambiguity exists in the definition of x-rays and their differentiation from gamma rays. Photons with sufficient energy to be classified as x-rays may be emitted by other processes than electrons falling to lower energy states. Most x-rays have wavelengths ranging from 0.01 to 10 nanometers, corresponding to frequencies in the range of 30 petahertz to 30 exahertz and energies in the range of 100 eV to 100 keV. {xref="https://en.wikipedia.org/wiki/X-ray#Energy_ranges"}
+subset: environmental_hazards
+subset: envoAstro
+synonym: "x ray stellar radiation" EXACT []
+synonym: "X-ray radiation" EXACT []
+synonym: "X-ray solar radiation" NARROW []
+synonym: "X-ray stellar radiation" EXACT []
+is_a: ENVO:01001219 ! ionizing stellar radiation
+is_a: ENVO:21001217 ! X-ray radiation
+property_value: IAO:0000114 IAO:0000428
+
+[Term]
+id: ENVO:01001218
+name: gamma-ray stellar radiation
+def: "A stellar radiation process during which penetrating electromagnetic radiation is emitted from the radioactive decay (gamma decay) of atomic nuclei." [https://en.wikipedia.org/wiki/Gamma_ray]
+comment: Ambiguity exists in the definition of gamma rays. As a rule of thumb, gamma rays have energies above 100 keV, frequencies above 10 exahertz, and wavelengths less than 10 picometers. However, regardless of the energy released, electromagnetic radiation from radioactive decay of atomic nuclei is referred to as "gamma rays". In astronomy, however, gamma rays are defined by their energy, and no production process needs to be specified. {xref="https://en.wikipedia.org/wiki/Gamma_ray"}
+subset: environmental_hazards
+subset: envoAstro
+synonym: "gamma-ray solar radiation" NARROW []
+is_a: ENVO:01001219 ! ionizing stellar radiation
+is_a: ENVO:21001218 ! gamma-ray radiation
+property_value: IAO:0000114 IAO:0000428
+
+[Term]
+id: ENVO:01001219
+name: ionizing stellar radiation
+namespace: ENVO
+def: "A stellar radiation process during which electromagnetic waves or their quanta are emitted from a star with sufficient energy to disrupt molecular bonds or alter the electron number of atoms." [https://en.wikipedia.org/wiki/Electromagnetic_radiation, https://en.wikipedia.org/wiki/Solar_irradiance]
+subset: envoAstro
+synonym: "ionising solar radiation" NARROW []
+synonym: "ionising stellar radiation" EXACT []
+is_a: ENVO:01001211 ! stellar radiation
+is_a: ENVO:21001219 ! ionizing radiation
+
+[Term]
+id: ENVO:01001220
+name: water accumulation process
+def: "A process during which liquid water accumulates in a site, most often in some form of container." []
+is_a: ENVO:01001856 ! liquid accumulation process
+is_a: ENVO:02500031 ! hydrological process
+
+[Term]
+id: ENVO:01001246
+name: agricultural process
+def: "A process during which humans rear animals or plants on land for harvest and consumption." [] {comment="http://www.fao.org/docrep/003/x6941e/x6941e04.htm#bm04"}
+synonym: "agriculture" RELATED []
+is_a: ENVO:02500027 ! anthropogenic environmental process
+property_value: IAO:0000116 "Expand the sites of occurrence listed as axioms as new terms emerge." xsd:string
+
+[Term]
+id: ENVO:01001247
+name: agronomic process
+def: "An agricultural process during which humans rear plants on land for harvest and consumption." [] {comment="http://www.fao.org/docrep/003/x6941e/x6941e04.htm#bm04"}
+synonym: "agronomy" RELATED []
+is_a: ENVO:01001246 ! agricultural process
+property_value: IAO:0000116 "Expand the sites of occurrence listed as axioms as new terms emerge." xsd:string
+
+[Term]
+id: ENVO:01001248
+name: animal husbandry
+def: "An agricultural process during which humans rear animals on land for harvest and consumption." [] {comment="http://www.fao.org/docrep/003/x6941e/x6941e04.htm#bm04"}
+synonym: "agriculture" RELATED []
+is_a: ENVO:01001246 ! agricultural process
+property_value: IAO:0000116 "Expand the sites of occurrence listed as axioms as new terms emerge." xsd:string
+
+[Term]
+id: ENVO:01001259
+name: transport of waste to a designated storage site
+def: "A process during which materials deemed to be waste are removed from a site and transported to another site designated for its storage." [https://eupathdb.org/eupathdb/]
+is_a: ENVO:01001260 ! waste disposal process
+
+[Term]
+id: ENVO:01001260
+name: waste disposal process
+def: "A process during which materials deemed to be waste are transported away from a site." [https://eupathdb.org/eupathdb/]
+is_a: ENVO:02500027 ! anthropogenic environmental process
+
+[Term]
+id: ENVO:01001261
+name: transport of child feces to a designated site
+def: "A waste disposal process during which the feces of human children is transported to a designated storage site." [https://eupathdb.org/eupathdb/]
+synonym: "child feces disposal" BROAD []
+is_a: ENVO:01001259 ! transport of waste to a designated storage site
+
+[Term]
+id: ENVO:01001262
+name: transport of household waste to a designated storage site
+def: "A process during which materials used in a household and deemed to be waste are removed from the housing unit and transported to another site designated for its storage." [https://eupathdb.org/eupathdb/]
+synonym: "household waste disposal" BROAD []
+is_a: ENVO:01001259 ! transport of waste to a designated storage site
+
+[Term]
+id: ENVO:01001265
+name: thermal pollution
+def: "An environmental pollution process during which the temperature of an environmental system, or parts thereof, is raised above its natural levels." [https://en.wikipedia.org/wiki/Thermal_pollution]
+is_a: ENVO:02500036 ! environmental pollution
+
+[Term]
+id: ENVO:01001266
+name: thermal pollution of an aquatic system
+def: "A thermal pollution process which occurs in a water body or aquatic environment." [https://en.wikipedia.org/wiki/Thermal_pollution]
+is_a: ENVO:01001265 ! thermal pollution
+is_a: ENVO:02500031 ! hydrological process
+
+[Term]
+id: ENVO:01001287
+name: industrial fire
+def: "A fire which occurs in an industrial area or building." []
+subset: environmental_hazards
+is_a: ENVO:01000786 ! fire
+
+[Term]
+id: ENVO:01001289
+name: brush fire
+def: "A land fire which consumes low-growing plants such as scrub and brush." []
+subset: environmental_hazards
+is_a: ENVO:01001292 ! land fire
+
+[Term]
+id: ENVO:01001290
+name: bush fire
+def: "A land fire which occurs in a large uncleared or sparsely settled area (as in Australia) usually scrub-covered or forested." []
+comment: "Bush" is a rather loosely defined regional term, primarily used in Australia.
+subset: environmental_hazards
+is_a: ENVO:01001292 ! land fire
+
+[Term]
+id: ENVO:01001291
+name: pasture fire
+def: "A fire which occurs in a pastureland." []
+subset: environmental_hazards
+is_a: ENVO:03000131 ! grass fire
+
+[Term]
+id: ENVO:01001292
+name: land fire
+def: "A fire which occurs on land, typically consuming a terrestrial ecosystem as fuel." []
+subset: environmental_hazards
+is_a: ENVO:01000787 ! wildfire
+
+[Term]
+id: ENVO:01001294
+name: convective storm
+def: "An atmospheric storm which is generated by the heating and convection of moist and unstable air masses." [http://glossary.ametsoc.org/wiki/Convective_storm, http://www.emdat.be/Glossary]
+comment: "Convective storms range from localised thunderstorms (with heavy rain and/or hail, lightning, high winds, tornadoes) to meso-scale, multi-day events." {xref="http://www.emdat.be/Glossary"}
+subset: envoAtmo
+is_a: ENVO:01000877 ! atmospheric storm
+
+[Term]
+id: ENVO:01001295
+name: extra-tropical cyclone
+def: "A warm-core cyclone which occurs in the middle and high latitudes, primarily drawing energy from horizontal temperature contrasts between atmospheric fronts." [http://www.emdat.be/Glossary]
+comment: "When associated with cold fronts, extratropical cyclones may be particularly damaging (e.g. European winter/windstorm, Nor’easter)." {xref="http://www.emdat.be/Glossary"}
+subset: environmental_hazards
+synonym: "mid-latitude cyclone" EXACT []
+is_a: ENVO:01001298 ! warm core cyclone
+
+[Term]
+id: ENVO:01001296
+name: tropical storm
+def: "A an atmospheric storm which originates over tropical or subtropical waters and possesses a warm-core, non-frontal synoptic-scale cyclone with a low pressure centre, spiral rain bands and strong winds." [http://www.emdat.be/Glossary]
+subset: environmental_hazards
+subset: envoAtmo
+is_a: ENVO:01000877 ! atmospheric storm
+
+[Term]
+id: ENVO:01001297
+name: cyclone
+def: "An atmospheric storm during which a large mass of atmospheric gas rotates around a centre of low atmospheric pressure, generating high winds which spiral towards that centre." [https://en.wikipedia.org/wiki/Cyclone]
+subset: environmental_hazards
+subset: envoAtmo
+is_a: ENVO:01000877 ! atmospheric storm
+
+[Term]
+id: ENVO:01001298
+name: warm core cyclone
+def: "A cyclone which rotates around an area low atmospheric pressure with increased temperature." [https://en.wikipedia.org/wiki/Cyclone]
+comment: The threshold of  what is "warm" is variable, and thus data-level thresholding should be applied when using this class.
+subset: environmental_hazards
+synonym: "warm-core cyclone" EXACT []
+is_a: ENVO:01001297 ! cyclone
+
+[Term]
+id: ENVO:01001330
+name: nitrogen cycling
+def: "A biogeochemical cycle which has nitrogen-bearing chemical entities as participants." []
+subset: envoPolar
+synonym: "nitrogen cycle" RELATED []
+is_a: ENVO:02500009 ! biogeochemical cycling
+
+[Term]
+id: ENVO:01001331
+name: sulfur cycling
+def: "A biogeochemical cycle which has sulfur-bearing chemical entities as participants." []
+subset: envoPolar
+synonym: "sulfur cycle" RELATED []
+synonym: "sulphur cycling" EXACT []
+is_a: ENVO:02500009 ! biogeochemical cycling
+
+[Term]
+id: ENVO:01001332
+name: phosphorous cycling
+def: "A biogeochemical cycle which has phosphorous-bearing chemical entities as participants." []
+subset: envoPolar
+synonym: "phosphorous cycle" RELATED []
+is_a: ENVO:02500009 ! biogeochemical cycling
+
+[Term]
+id: ENVO:01001333
+name: marine tidal flow process
+alt_id: CMECS:643
+def: "A tidal flow process which occurs in an ocean or sea and during which tidal movements generate advective flows, often amplified in velocity when moving through an inlet, pass or channel." []
+comment: This class aligns to the Coastal and Marine Ecological Classification Standard (CMECS). In ENVO, we may adapt the definition for consistency, but the semantics (meaning) of the term should be unaffected. Please consult the CMECS catalogue (https://cmecscatalog.org/) for authoritative and semantically unconstrained definitions.
+subset: envoCmecs
+subset: envoMarine
+synonym: "tidal flow" RELATED []
+xref: https://cmecscatalog.org/cmecs/classification/unit/643.html
+is_a: ENVO:01001342 ! tidal flow process
+
+[Term]
+id: ENVO:01001334
+name: advective transport process
+def: "A material transport process during which a volume of material is displaced due to a disequilibrium in physical forces and during which 1) the qualities that inhere in that volume and 2) the processes that are unfolding within it are largely unchanged." [https://en.wikipedia.org/wiki/Advection, https://en.wikipedia.org/wiki/Intensive_and_extensive_properties]
+comment: Advective processes are disjoint from diffusive processes. Typically, fluids are advected.
+synonym: "advective transport" EXACT []
+is_a: ENVO:03000010 ! material transport process
+
+[Term]
+id: ENVO:01001339
+name: diurnal marine tidal flow process
+def: "A tidal flow process which occurs once per day in ocean waters where a second daily oscillation is blocked by land masses or ocean basin geometry." []
+comment: This class broadly aligns to the Coastal and Marine Ecological Classification Standard (CMECS). This class is provided as the processual equivalent of CMECS unit 664 "Diurnal Tidal Flow" (https://cmecscatalog.org/cmecs/classification/unit/664.html); however, based on its definition, CMECS:664 is more accurately mapped to ENVO:01001338 as the definition aligns with ENVO's "environmental zone" semantics. A class has been created to accommodate the  semantics of the resulting hydroform (ENVO:01001336). Please consult the CMECS catalogue (https://cmecscatalog.org/) for authoritative and semantically unconstrained definitions.
+subset: envoCmecs
+subset: envoMarine
+is_a: ENVO:01001333 ! marine tidal flow process
+property_value: IAO:0000118 "diurnal tidal flow" xsd:string
+
+[Term]
+id: ENVO:01001342
+name: tidal flow process
+def: "A water flow process during which movements of water masses caused by varying gravitational and rotational forces from astronomical bodies, combined with the rotation of the astronomical body containing the water mass, cause waters to undergo periodic depth oscillations (tides)." []
+subset: envoCmecs
+subset: envoMarine
+is_a: ENVO:01000982 ! water flow process
+property_value: IAO:0000118 "tidal flow" xsd:string
+
+[Term]
+id: ENVO:01001343
+name: semi-diurnal marine tidal flow process
+def: "A marine tidal flow process which occurs twice per day, resulting in two high and two low tides per day, both of roughly equal amplitude." []
+comment: This class broadly aligns to the Coastal and Marine Ecological Classification Standard (CMECS). This class is provided as the processual equivalent of CMECS unit 666 "Semi-diurnal Tidal Flow" (https://cmecscatalog.org/cmecs/classification/unit/666.html); however, based on its definition, CMECS:666 is more accurately mapped to ENVO:01001340 as the definition aligns with ENVO's "environmental zone" semantics. A class has been created to accommodate the  semantics of the resulting hydroform (ENVO:01001336). Please consult the CMECS catalogue (https://cmecscatalog.org/) for authoritative and semantically unconstrained definitions.
+subset: envoCmecs
+subset: envoMarine
+is_a: ENVO:01001333 ! marine tidal flow process
+property_value: IAO:0000118 "semi-diurnal tidal flow" xsd:string
+
+[Term]
+id: ENVO:01001346
+name: erosion
+def: "An action of exogenic processes (such as water flow or wind) which remove environmental material from one location on the surface of an astronomical body, transporting it to another location where it is deposited." [https://en.wikipedia.org/wiki/Erosion]
+is_a: ENVO:03000010 ! material transport process
+
+[Term]
+id: ENVO:01001359
+name: atmospheric aerosolised particle formation event
+def: "An aerosol formation event  which occurs in an atmosphere." [https://github.com/EnvironmentOntology/envo/issues/602]
+comment: Note that the detection of such events, and thus the thresholds used to define them in the field, are operational and dependent on the technology and observation strategy used. The event must be intense enough, occur in a large enough area, and persist for enough time to allow the formed particle population to be observed. There are no exact or universally agreed upon thresholds for the intensity, area and duration of such events. If elevated new particle formation rate is observed in the atmosphere (away from direct sources of the related gas-phase molecules) for an operationally defined period of time, practitioners often declare that such an event has taken place. {xref="https://github.com/EnvironmentOntology/envo/issues/602"}
+subset: envoAtmo
+synonym: "rapid formation of liquid or solid particles from gaseous material in an atmosphere" BROAD []
+is_a: ENVO:01001372 ! aerosolised particle formation event
+is_a: ENVO:02500003 ! atmospheric process
+
+[Term]
+id: ENVO:01001365
+name: atmospheric secondary aerosol formation process
+def: "A process during which gas-phase molecules form solid or liquid particles that are stable enough to continue growing in size - via the condensation or aggregation of other gas-phase molecules - at a greater rate than their constituents re-enter gas phase." [https://en.wikipedia.org/wiki/Particulates]
+subset: envoAtmo
+synonym: "atmospheric formation of an aerosol" EXACT []
+synonym: "formation of an aerosol in an atmosphere" EXACT []
+synonym: "formation of an aerosol in the atmosphere" EXACT []
+synonym: "formation of particles from gaseous material in an atmosphere" EXACT []
+is_a: ENVO:01001368 ! secondary aerosol formation process
+is_a: ENVO:02500003 ! atmospheric process
+property_value: IAO:0000118 "formation of liquid or solid particles from gaseous material in an atmosphere" xsd:string
+
+[Term]
+id: ENVO:01001366
+name: aerosolised particle formation process
+def: "A process during which particles suspended in a gaseous medium are formed." [https://en.wikipedia.org/wiki/Aerosol, https://en.wikipedia.org/wiki/Particulates]
+subset: envoAtmo
+synonym: "new particle formation process" EXACT []
+is_a: ENVO:01001084 ! particulate matter formation process
+
+[Term]
+id: ENVO:01001367
+name: primary aerosol formation process
+def: "A material transport process during which solid or liquid particles are directly introduced into a volume of gas." [https://en.wikipedia.org/wiki/Aerosol, https://en.wikipedia.org/wiki/Particulates]
+synonym: "primary aerosol formation" RELATED []
+is_a: ENVO:03000010 ! material transport process
+
+[Term]
+id: ENVO:01001368
+name: secondary aerosol formation process
+def: "An aerosol formation process during which solid or liquid particles are either 1) formed in a volume of gas through gas-to-liquid or gas-to-solid conversions or 2) increase in size through aggregation with other particles." [https://en.wikipedia.org/wiki/Aerosol, https://en.wikipedia.org/wiki/Particulates]
+subset: envoAtmo
+synonym: "secondary aerosol formation" EXACT []
+is_a: ENVO:02500000 ! environmental system process
+
+[Term]
+id: ENVO:01001372
+name: aerosolised particle formation event
+def: "An aerosol formation process during which the rate of particle formation exceeds that which is normally present in the site of its occurrence." [] {comment="https://github.com/EnvironmentOntology/envo/issues/602"}
+comment: This is similar to the semantics of storms, where increased rates are observed due to external forcings.
+subset: envoAtmo
+is_a: ENVO:01001366 ! aerosolised particle formation process
+created_by: http://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:01001373
+name: secondary atmospheric aerosol formation event
+def: "A secondary aerosol formation process which occurs in an atmosphere at an increased rate relative to background processes of the same kind." [https://github.com/EnvironmentOntology/envo/issues/602]
+comment: Note that the detection of such events, and thus the thresholds used to define them in the field, are operational and dependent on the technology and observation strategy used. The event must be intense enough, occur in a large enough area, and persist for enough time to allow the formed particle population to be observed. There are no exact or universally agreed upon thresholds for the intensity, area and duration of such events. If elevated new particle formation rate is observed in the atmosphere (away from direct sources of the related gas-phase molecules) for an operationally defined period of time, practitioners often declare that such an event has taken place. {xref="https://github.com/EnvironmentOntology/envo/issues/602"}
+subset: envoAtmo
+synonym: "atmospheric new particle formation event" RELATED []
+synonym: "rapid formation of liquid or solid particles from gaseous material in an atmosphere" BROAD []
+is_a: ENVO:01001368 ! secondary aerosol formation process
+created_by: http://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:01001394
+name: accumulation of matter on aerosolised particles
+comment: A material accumulation process during which the solid or liquid parts of an aerosol increase in mass due to mechanical aggregation of existing particles or through chemical conversion of gas-phase material.
+subset: envoAtmo
+is_a: ENVO:03000009 ! material accumulation process
+created_by: http://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:01001398
+name: aerosolisation of dust
+def: "A primary aerosol formation process during which dust particles are suspended in a gaseous medium." []
+is_a: ENVO:01001367 ! primary aerosol formation process
+created_by: http://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:01001399
+name: atmospheric aerosolisation of dust
+def: "A process during which dust is aerosolised in an atmosphere." []
+synonym: "dust event" EXACT []
+is_a: ENVO:01001398 ! aerosolisation of dust
+is_a: ENVO:02500003 ! atmospheric process
+created_by: http://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:01001401
+name: haze formation process
+def: "An environmental process during which a haze is formed by the aerosolisation of solid particles, including natural materials and anthropogenic pollutants, in an atmosphere." [https://en.wikipedia.org/wiki/Haze]
+is_a: ENVO:02500003 ! atmospheric process
+created_by: http://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:01001403
+name: haze formation event
+def: "A haze formation process which has an increased rate relative to that which is usually present in a given site." [https://en.wikipedia.org/wiki/Haze]
+is_a: ENVO:01001401 ! haze formation process
+created_by: http://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:01001429
+name: land conversion process
+def: "An anthropisation process during which terrestrial environments - natural or anthropised - or parts thereof are altered to facilitate human activities such as agriculture, settlement, or commerce." [https://en.wikipedia.org/wiki/Land_development]
+comment: Further examples include subdividing real estate into lots, typically for the purpose of building homes and converting unused factories into condominia. {xref="https://en.wikipedia.org/wiki/Land_development"}
+synonym: "land conversion" EXACT []
+synonym: "land development" EXACT []
+is_a: ENVO:01000743 ! land consumption process
+created_by: http://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:01001430
+name: agricultural land conversion process
+def: "A land conversion process during which terrestrial ecosystems are altered to facilitate agricultural activities such as crop cultivation or the rearing of livestock." [https://en.wikipedia.org/wiki/Land_development]
+comment: This process typically relies on the conversion and development of  forests, savannas or grassland. Creation of farmland from wasteland, deserts or previous impervious surfaces is considerably less frequent because of the presence of degraded soil or the lack of fertile soil. {xref="https://en.wikipedia.org/wiki/Land_development"}
+synonym: "agricultural land conversion" EXACT []
+is_a: ENVO:01001429 ! land conversion process
+created_by: http://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:01001434
+name: anthropogenic ecosystem conversion process
+def: "A process during which an ecosystem - natural or anthropised - is changed by the actions of humans." []
+is_a: ENVO:02500027 ! anthropogenic environmental process
+created_by: http://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:01001440
+name: coal mining
+def: "A mining process during which coal is extracted from the rocky portion of an astronomical body." [https://en.wikipedia.org/wiki/Mining, https://www.eionet.europa.eu/gemet/en/concept/1507]
+comment: This may be either terrestrial or marine.
+is_a: ENVO:02500027 ! anthropogenic environmental process
+created_by: http://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:01001450
+name: usage of an environment for industry
+def: "A planned environmental usage process during which an environment supports manufacturing facilities producing commodities that are sold with the expectation of recovering the total cost of production." [https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/11493/144275.pdf, https://en.wikipedia.org/wiki/Land_use, https://www.eionet.europa.eu/gemet/en/concept/4279]
+comment: This class includes environments used to support the facilities engaged with a broad variety of manufacturing activities from food and tobacco, to textiles, metals, vehicles, and chemicals.
+is_a: ENVO:02500027 ! anthropogenic environmental process
+created_by: http://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:01001493
+name: satellite imaging of a planet
+def: "A remote sensing process during which image data about a planet is generated by sensors mounted on a satellite." [https://en.wikipedia.org/wiki/Satellite_imagery]
+is_a: ENVO:02500000 ! environmental system process
+created_by: http://orcid.org/0000-0002-4366-3088
+creation_date: 2018-10-09T15:05:27Z
+
+[Term]
+id: ENVO:01001498
+name: thermokarst formation process
+def: "A process by which landforms are formed from the thawing of ice-rich permafrost or the melting of massive ground ice." [https://orcid.org/0000-0003-4808-4736]
+comment: Landforms found in Thermokarst terrain include alases, thermokarst lakes, and thermokarst mounds. Landscape dominated by depressions, pits, and caves that is created by the thawing of ground ice in high latitude locations. Resembles karst landscape but is not created by chemical weathering.
+synonym: "thermokarst" EXACT []
+is_a: ENVO:02500000 ! environmental system process
+created_by: http://orcid.org/0000-0002-4366-3088
+creation_date: 2018-11-20T18:20:02Z
+
+[Term]
+id: ENVO:01001499
+name: active agri-ecosystem management process
+def: "An active ecosystem management process which targets an agricultural ecosystem." []
+synonym: "Agrarumweltmaßnahme" RELATED [INTERNAS:WS2, www.awi.de/internas] {created_by="https://orcid.org/0000-0002-9620-2832"}
+synonym: "agri-ecosystem management" EXACT []
+synonym: "agri-environmental management" RELATED []
+synonym: "agricultural environment management" RELATED []
+is_a: ENVO:01001170 ! active ecosystem management process
+created_by: http://orcid.org/0000-0002-4366-3088
+creation_date: 2018-12-18T13:53:17Z
+
+[Term]
+id: ENVO:01001500
+name: anthropogenic light pollution
+def: "A pollution process during which artificial light with wavelengths in the visible spectrum is released into the environment." []
+comment: This form of pollution is typically the result of urbanisation or similar land use change.
+synonym: "Lichtverschmutzung" EXACT [http://www.awi.de/internas, INTERNAS:WS2]
+is_a: ENVO:02500027 ! anthropogenic environmental process
+is_a: ENVO:02500036 ! environmental pollution
+created_by: http://orcid.org/0000-0002-4366-3088
+creation_date: 2019-01-09T09:05:35Z
+
+[Term]
+id: ENVO:01001501
+name: radiation from a manufactured product
+def: "An electromagnetic radiation process during which electromagnetic waves or their quanta are emitted from a manufactured product." [https://en.wikipedia.org/wiki/Electromagnetic_radiation, https://en.wikipedia.org/wiki/Solar_irradiance]
+subset: environmental_hazards
+subset: envoAstro
+synonym: "anthropogenic radiation" BROAD []
+synonym: "artificial radiation" EXACT []
+is_a: ENVO:01001026 ! electromagnetic radiation
+created_by: http://orcid.org/0000-0002-4366-3088
+creation_date: 2019-01-09T09:07:24Z
+
+[Term]
+id: ENVO:01001502
+name: visible spectrum radiation from a manufactured product
+def: "Radiation from a manufactured product during which light between the wavelenghts of 380 nm and 760 nm is emitted." [https://www.iso.org/obp/ui/#iso\:std\:iso\:21348]
+synonym: "optical radiation from a manufactured product" EXACT []
+is_a: ENVO:01001501 ! radiation from a manufactured product
+created_by: http://orcid.org/0000-0002-4366-3088
+creation_date: 2019-01-09T09:21:10Z
+
+[Term]
+id: ENVO:01001510
+name: material congelation process
+def: "A material transformation process during which a material's viscosity increase either through a reduction in temperature, through chemical reactions, or other physical effects." [https://en.wikipedia.org/wiki/Congelation]
+comment: Sometimes the increase in viscosity is great enough to crystallize or solidify the substance in question. {xref="https://en.wikipedia.org/wiki/Congelation"}
+synonym: "congelation" EXACT []
+synonym: "congelation process" EXACT []
+is_a: ENVO:03000043 ! material transformation process
+created_by: http://orcid.org/0000-0002-4366-3088
+creation_date: 2019-01-14T18:47:32Z
+
+[Term]
+id: ENVO:01001533
+name: mass ice flow
+def: "An advective transport process during which a mass of ice is transported from one location to another." []
+is_a: ENVO:01001334 ! advective transport process
+created_by: http://orcid.org/0000-0002-4366-3088
+creation_date: 2019-01-31T17:51:48Z
+
+[Term]
+id: ENVO:01001548
+name: freezing
+def: "A material congelation process during which a liquid turns into a solid when its temperature is lowered below its melting point." [https://en.wikipedia.org/wiki/Freezing]
+is_a: ENVO:01001510 ! material congelation process
+created_by: http://orcid.org/0000-0002-4366-3088
+creation_date: 2019-01-31T21:13:16Z
+
+[Term]
+id: ENVO:01001549
+name: freezing of water into water ice
+def: "A freezing process during which liquid water is transformed into water ice." []
+is_a: ENVO:01001548 ! freezing
+is_a: ENVO:02500031 ! hydrological process
+created_by: http://orcid.org/0000-0002-4366-3088
+creation_date: 2019-01-31T21:16:46Z
+
+[Term]
+id: ENVO:01001566
+name: infrasound
+def: "Sound which is lower in frequency than 20 Hertz, or cycles per second." [https://en.wikipedia.org/wiki/Infrasound]
+comment: 20 Hertz is the average limit of human hearing.
+synonym: "inaudible sound" BROAD []
+synonym: "low-frequency sound" BROAD []
+is_a: ENVO:01001027 ! acoustic radiation
+created_by: http://orcid.org/0000-0002-4366-3088
+creation_date: 2019-03-02T14:06:26Z
+
+[Term]
+id: ENVO:01001611
+name: thawing process
+def: "A warming process during which the thermal energy in a portion of environmental material is sufficient to melt water-based ice or snow." [https://en.wiktionary.org/wiki/thaw, https://wikidiff.com/melt/thaw]
+comment: Note that ice or snow need not be present in the material in order for it to undergo thawing. The semantics of 'thaw' vs 'melt' are debated in fields such as permafrost geology/physics. This module is thus likely to be dynamic.
+synonym: "thawing" BROAD []
+is_a: ENVO:01001612 ! material warming process
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+creation_date: 2019-04-09T13:17:56Z
+
+[Term]
+id: ENVO:01001612
+name: material warming process
+def: "A process during which the temperature of a portion of environmental material is increased, along with the kinetic energy of its constituent molecules." [] {comment="https://en.wiktionary.org/wiki/warming"}
+comment: Note that melting need not involve warming (e.g. due to extreme gravitational effects). See the melting hierarchy for more terms.
+is_a: ENVO:03000043 ! material transformation process
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+creation_date: 2019-04-09T13:26:10Z
+
+[Term]
+id: ENVO:01001613
+name: permafrost thawing process
+def: "A thawing process during which permafrost is warmed beyond the melting point of water-based ice, snow, or other forms of solid water." [https://en.wikipedia.org/wiki/Permafrost]
+subset: envoPolar
+is_a: ENVO:01001611 ! thawing process
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+creation_date: 2019-04-09T13:41:52Z
+
+[Term]
+id: ENVO:01001615
+name: material cooling process
+def: "A process during which the temperature of a portion of environmental material is decreased, along with the kinetic energy of its constituent molecules." [] {comment="https://en.wiktionary.org/wiki/warming"}
+comment: Note that ice formation, freezing, etc may have this process as a part, but may also occur without temperature decreases (e.g. through extreme gravitational effects). See the material congelation process hierarchy for more.
+is_a: ENVO:03000043 ! material transformation process
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+creation_date: 2019-04-09T14:00:20Z
+
+[Term]
+id: ENVO:01001617
+name: snow accumulation process
+def: "A material accumulation process during which the mass of snow on a surface increases." [http://orcid.org/0000-0003-4808-4736]
+comment: This term is used both as a process and as an amount of mass added. Semantically speaking these are two distinct concepts (e.g., accumulation results in accumulation_amount of ice or snow gain), though accumulation_amount would more likely be an attribute.\n\nThe scope of this term varies depending on the definition.  Some definitions constrain themselves snow or ice added to glaciers; while others also include ice fields, snow cover, and/or floating ice.  How to resolve this depends on the scope desired.\n\nSome definitions include additional discussion of the the physics involved which would be useful for connecting glacier ontologies to atmospheric, hydrologic, etc. ontologies.  This information should be captured no matter how the inconsistencies above are resolved.
+xref: http://sweetontology.net/phenCryo/Accumulation
+is_a: ENVO:03000009 ! material accumulation process
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+creation_date: 2019-04-24T18:29:18Z
+
+[Term]
+id: ENVO:01001618
+name: ice accumulation process
+def: "A material accumulation process during which ice forms in an environmental material or an existing accumulation of ice increases in mass." [http://orcid.org/0000-0003-4808-4736]
+xref: http://sweetontology.net/phenCryo/Accumulation
+is_a: ENVO:02500031 ! hydrological process
+is_a: ENVO:03000009 ! material accumulation process
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+creation_date: 2019-04-24T18:48:53Z
+
+[Term]
+id: ENVO:01001622
+name: englacial process
+def: "An environmental system process which occurs within a glacier or ice sheet." [http://orcid.org/0000-0003-4808-4736]
+xref: http://sweetontology.net/phenCryo/Englacial
+is_a: ENVO:02500000 ! environmental system process
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+creation_date: 2019-04-24T19:59:58Z
+
+[Term]
+id: ENVO:01001630
+name: submarine groundwater discharge process
+def: "A water flow process during which fresh or brackish groundwater flows from from a landmass into the sea." [https://en.wikipedia.org/wiki/Submarine_groundwater_discharge]
+is_a: ENVO:01001631 ! groundwater discharge process
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+creation_date: 2019-05-22T14:15:08Z
+
+[Term]
+id: ENVO:01001631
+name: groundwater discharge process
+def: "A water flow process during which water flows out of an aquifer." [https://en.wikipedia.org/wiki/Groundwater_discharge]
+is_a: ENVO:01000982 ! water flow process
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+creation_date: 2019-05-22T14:18:15Z
+
+[Term]
+id: ENVO:01001632
+name: groundwater flow
+def: "A water flow process during which water is transported through an aquifer." [https://en.wikipedia.org/wiki/Groundwater_discharge]
+is_a: ENVO:01000982 ! water flow process
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+creation_date: 2019-05-22T14:22:43Z
+
+[Term]
+id: ENVO:01001633
+name: agricultural pollution
+def: "An environmental pollution process during which contaminants derived from agricultural activity are released into an environmental system." [http://www.awi.de/internas, INTERNAS:WS2]
+comment: Examples include the release of pesticies and/or antibiotic-laden animal waste into water bodies.
+synonym: "Verschumutzung durch Landwirtschaft" EXACT []
+is_a: ENVO:02500036 ! environmental pollution
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+creation_date: 2019-05-29T08:01:44Z
+
+[Term]
+id: ENVO:01001634
+name: agricultural landscape diversification process
+def: "An active agri-ecosystem management process during which the variability of land use types or the spatial structure of land under agricultural production is increased." [http://awi.de/internas, https://www.ipbes.net/system/tdf/downloads/pdf/ipbes_4_19_annex_ii_spm_pollination_en.pdf?file=1&type=node&id=28363, INTERNAS:WS2]
+comment: This includes the introduction or balancing of cover types such as forests, crops, grassland, or land covered by crop cultivars such as wheat, maize, legumes, vegetables.
+synonym: "Agrarlandschaftsdiversifizierung" EXACT []
+is_a: ENVO:01001499 ! active agri-ecosystem management process
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+creation_date: 2019-05-29T08:19:55Z
+
+[Term]
+id: ENVO:01001635
+name: biodiversity conservation process
+def: "A conservation process during which the variability of life - from genes to ecosystems - is preserved." []
+is_a: ENVO:01001171 ! conservation-focused active ecosystem management process
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+creation_date: 2019-05-29T08:25:13Z
+
+[Term]
+id: ENVO:01001636
+name: insect conservation process
+def: "A biodiversity conservation process during which the variability of insect communities, or parts thereof, is preserved." [http://www.awi.de/internas, http://www.eionet.europa.eu/gemet/concept/15073, INTERNAS:WS2]
+comment: Like other forms of conservation, planned management actions (i.e. preservation, maintenance, sustainable use, recovery, enhancement) of natural resources or of a particular ecosystem is typically employed to halt, reverse or slow-down the die off of insects from the impacts of anthropic exploitation or pollution.
+is_a: ENVO:01001635 ! biodiversity conservation process
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+creation_date: 2019-05-29T08:26:59Z
+
+[Term]
+id: ENVO:01001637
+name: agricultural specialisation process
+def: "An active agri-ecosystem management process during which an ecosystem is modified for the production of one or a small collection of crops or other agricultural products." [http://www.awi.de/internas, INTERNAS:WS2]
+comment: Agricultural specialisation is often a means to produce sufficiently large quantities of crops to compete in global markets. Entire landscapes and regions are often dedicated to such production.
+synonym: "Spezialisierung der Landwirtschaft" EXACT []
+is_a: ENVO:01001499 ! active agri-ecosystem management process
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+creation_date: 2019-05-29T08:45:22Z
+
+[Term]
+id: ENVO:01001639
+name: formation of a solid aerosol from liquid material in an atmosphere
+def: "A process during which microscopic solid particulates are formed from liquid materials in an atmosphere." [https://en.wikipedia.org/wiki/Particulates]
+subset: envoAtmo
+synonym: "atmospheric formation of a solid aerosol" BROAD []
+synonym: "formation of a solid aerosol in an atmosphere" BROAD []
+synonym: "formation of a solid aerosol in the atmosphere" BROAD []
+synonym: "formation of solid particles from liquid material in an atmosphere" EXACT []
+is_a: ENVO:01001086 ! formation of a solid aerosol in an atmosphere
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+creation_date: 2019-05-30T21:07:51Z
+
+[Term]
+id: ENVO:01001640
+name: glaciation of water droplets in a cloud
+def: "A process during which supercooled water droplets in a cloud freeze into ice crystals." []
+subset: envoAtmo
+synonym: "glaciation" BROAD []
+is_a: ENVO:01001639 ! formation of a solid aerosol from liquid material in an atmosphere
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+creation_date: 2019-05-30T21:10:14Z
+
+[Term]
+id: ENVO:01001654
+name: aerosol formation process
+def: "A material transformation process during which solid or liquid particles form and are suspended in a mass of air, thus creating an aerosol." []
+is_a: ENVO:03000043 ! material transformation process
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-06-24T13:43:29Z xsd:dateTime
+
+[Term]
+id: ENVO:01001655
+name: glacial process
+def: "An environmental process which involves glaciers or ice sheets." []
+comment: Note that ice sheets and glaciers are confounded and confused in multiple communities and across multiple sources. {xref="https://orcid.org/0000-0003-4808-4736"}
+xref: http://sweetontology.net/phenCryo/GlacialProcess
+is_a: ENVO:02500000 ! environmental system process
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-06-24T17:12:30Z xsd:dateTime
+
+[Term]
+id: ENVO:01001656
+name: glacial retreat
+def: "A glacial ice loss process during which the snout (toe) of a glacier shrinks following successive years of negative mass balance." [https://orcid.org/0000-0003-4808-4736]
+comment: Glacial retreat is usually evident from the recession of the ice margin on land, or calving in the sea, but also from down-wasting. {xref="https://orcid.org/0000-0003-4808-4736"}
+synonym: "glacier retreat" EXACT []
+xref: http://sweetontology.net/phenCryo/GlacierRetreat
+is_a: ENVO:03000017 ! glacial ice loss
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-06-24T17:21:38Z xsd:dateTime
+
+[Term]
+id: ENVO:01001657
+name: calving of ice onto land
+def: "An ice calving process during which a mass of ice falls from a larger mass onto land." [https://orcid.org/0000-0003-4808-4736]
+is_a: ENVO:01000917 ! ice calving process
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-06-24T17:33:46Z xsd:dateTime
+
+[Term]
+id: ENVO:01001658
+name: calving of ice into water
+def: "An ice calving process during which a mass of ice falls from a larger mass into a body of water." [https://orcid.org/0000-0003-4808-4736]
+is_a: ENVO:01000917 ! ice calving process
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-06-24T17:36:27Z xsd:dateTime
+
+[Term]
+id: ENVO:01001659
+name: periglacial process
+def: "A frost action process which occurs in cold environments which are not part of a glacier." [https://orcid.org/0000-0003-4808-4736]
+comment: Past usage of this term referenced climatic and geomorphic conditions in areas periperal to Pleistocene ice sheets and glaciers. Modern usage refers, however, to a wider range of cold climatic conditions regardless of their proximity to a Glacier, either in space or time. Many, but not all, Periglacial Environments possess Permafrost; all are dominated by Frost Action processes. {comment="https://orcid.org/0000-0003-4808-4736"}
+synonym: "periglaciation" RELATED []
+xref: http://sweetontology.net/phenCryo/Periglacial
+xref: http://sweetontology.net/phenCryo/Periglaciation
+is_a: ENVO:01001660 ! frost action process
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-06-24T17:39:31Z xsd:dateTime
+
+[Term]
+id: ENVO:01001660
+name: frost action process
+def: "A material transport process during which alternate freezing and thawing of moisture in soil, rock and other materials results  modifications of those materials and in the formation of structures on, or in, the ground." [https://orcid.org/0000-0003-4808-4736]
+comment: Frost action in soils describes the processes of Frost Heave that occurs in the ground during the freezing period, and Thaw Weakening that occurs as the seasonally Frozen Ground thaws. Although it normally refers to seasonal freezing and thawing processes and effects, the term Frost action has also been used to describe the long-term heaving that occurs when soils are subjected continuously to a freezing temperature over a long period of time (years). Frost action contributes to the mechanical weathering (disintegration or breakdown) of soil and rock materials, by frost wedging, Cryoturbation activity, and to the development of cryotexture and cryogenic fabric in soils. {xref="https://orcid.org/0000-0003-4808-4736"}
+is_a: ENVO:03000010 ! material transport process
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-06-24T17:43:00Z xsd:dateTime
+
+[Term]
+id: ENVO:01001661
+name: frost jacking
+def: "A frost action process during which objects embedded in the ground are cumulatively displaced upwards." [https://orcid.org/0000-0003-4808-4736]
+is_a: ENVO:01001664 ! cryoturbation of soil
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-06-24T17:43:13Z xsd:dateTime
+
+[Term]
+id: ENVO:01001662
+name: frost sorting
+def: "A frost action process during which the soil particles are differentially displaced according to their size ranges." [] {comment="https://orcid.org/0000-0003-4808-4736"}
+is_a: ENVO:01001664 ! cryoturbation of soil
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-06-24T17:43:43Z xsd:dateTime
+
+[Term]
+id: ENVO:01001663
+name: frost wedging
+def: "A frost action process during which the pressure of water freezing in cracks, crevices, pores, joints or bedding planes results in the mechanical disintegration, splitting or break-up of rock." [] {comment="https://orcid.org/0000-0003-4808-4736"}
+is_a: ENVO:01001664 ! cryoturbation of soil
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-06-24T17:43:49Z xsd:dateTime
+
+[Term]
+id: ENVO:01001664
+name: cryoturbation of soil
+def: "A frost action process during which soil is displaced." [https://orcid.org/0000-0003-4808-4736]
+comment: The processes that form irregular structures in earth materials characterized by folded, broken and dislocated beds, and lenses of unconsolidated deposits, including organic horizons and even bedrock.  These processes include deep frost penetration, frost action, frost heaving, thaw settlement and all differential movements, including expansion and contraction due to temperature changes and the growth and disappearance of ground ice bodies, whether perennial or seasonal.  Low temperatures alone are not enough to produce cryoturbation; the water-ice phase change is necessary.  Cryoturbation is an important process in the development of patterned ground.
+is_a: ENVO:01001660 ! frost action process
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-06-24T17:44:01Z xsd:dateTime
+
+[Term]
+id: ENVO:01001666
+name: glacial run
+def: "A water flow process which comprises a sudden‐onset high‐magnitude discharge of water and sediment from a glacial source" [https://en.wikipedia.org/wiki/Jökulhlaup] {http://purl.obolibrary.org/obo/IAO_0000119="https://doi.org/10.1111/j.1365-2451.2011.00800.x"}
+comment: Glacial runs occur in virtually all glaciated regions of the world and are most commonly directly sourced from any part of a glacier where water can accumulate into a lake. A jökulhlaup usually occurs because a glacial lake drains rapidly due to failure of an ice dam or moraine dam. {xref="https://doi.org/10.1111/j.1365-2451.2011.00800.x"}
+synonym: "Jokuelhlaup" EXACT []
+synonym: "Jokulhlaup" EXACT []
+synonym: "Jökulhlaup" EXACT []
+is_a: ENVO:01000982 ! water flow process
+property_value: http://purl.org/dc/elements/1.1/contributor http://orcid.org/0000-0003-1336-5554
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-07-03T14:50:41Z xsd:dateTime
+
+[Term]
+id: ENVO:01001669
+name: mariculture process
+def: "An aquaculture process during which marine organisms are cultivated in the open ocean, an enclosure in the ocean, or in tanks, ponds or raceways which are filled with seawater." [https://en.wikipedia.org/wiki/Mariculture, https://www.sciencedirect.com/topics/agricultural-and-biological-sciences/mariculture]
+synonym: "mariculture" EXACT []
+is_a: ENVO:02500027 ! anthropogenic environmental process
+is_a: ENVO:02500031 ! hydrological process
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-07-15T21:49:02Z xsd:dateTime
+
+[Term]
+id: ENVO:01001670
+name: open cage mariculture process
+def: "A mariculture process during which organisms are cultivated in cages which allow the passage of materials such as wastes, pathogens, antibiotics, and - should a containment breach occur - cultivated organisms themselves to and from the surrounding marine environment." [https://www.foodandwaterwatch.org/sites/default/files/fs_1802_ocean-aquaculture-web.pdf, https://www.tranaquaculture.com/]
+is_a: ENVO:01001669 ! mariculture process
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-07-15T22:00:48Z xsd:dateTime
+
+[Term]
+id: ENVO:01001719
+name: katabatic wind
+def: "An atmospheric wind during which cold atmospheric gas flows downwards towards the surface of an astronomical body." [http://glossary.ametsoc.org/wiki/Katabatic_wind]
+comment: "From its etymology, the term means simply "going down" or "descending," and thus could refer to any descending flow; some authors have further generalized it to include downslope flows such as the foehn or chinook even though they do not represent a flow of cold air. This concept has given rise to the expression katafront, which indicates flow down a sloped cold-frontal surface." {xref="Katabatic:wind"}
+subset: envoAtmo
+is_a: ENVO:01000793 ! atmospheric wind
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-08-30T10:29:47Z xsd:dateTime
+
+[Term]
+id: ENVO:01001720
+name: downslope katabatic wind
+def: "A katabatic wind during which atmospheric gas flows down the slope of an elevation, typically during periods of light larger-scale winds." [http://glossary.ametsoc.org/wiki/Katabatic_wind]
+comment: "The many synonyms for downslope flow are sometimes used interchangeably, and this gives rise to ambiguity and confusion. Downslope can be used generically to denote any wind flow blowing down a slope, or it is used specifically for katabatic flows on any scale, such as the nocturnal slope-wind component of mountain–valley wind systems or mountain–plains wind systems." Note also that slope winds are typically classed separately from fall winds, which occur at larger scales. {xref="Downslope:wind"}
+subset: envoAtmo
+is_a: ENVO:01001719 ! katabatic wind
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-08-30T10:34:48Z xsd:dateTime
+
+[Term]
+id: ENVO:01001721
+name: cooling-driven katabatic wind
+def: "A katabatic wind which is driven by the cooling and subsequent sinking of atmospheric gas masses." [http://glossary.ametsoc.org/wiki/Katabatic_wind]
+subset: envoAtmo
+is_a: ENVO:01001719 ! katabatic wind
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-08-30T10:40:06Z xsd:dateTime
+
+[Term]
+id: ENVO:01001722
+name: foehn wind
+def: "A downslope katabatic wind during which warm, dry atmospheric gas descends along the lee side of a mountain range as a result of synoptic-scale, cross-barrier flow over that range." [http://glossary.ametsoc.org/wiki/Foehn, http://glossary.ametsoc.org/wiki/Katabatic_wind]
+subset: envoAtmo
+synonym: "aspre" NARROW []
+synonym: "austru" NARROW []
+synonym: "Canterbury northwester." NARROW []
+synonym: "chinook" NARROW [http://glossary.ametsoc.org/wiki/Chinook]
+synonym: "favogn" NARROW []
+synonym: "halny wiatr" NARROW []
+synonym: "ljuka" NARROW []
+synonym: "sky sweeper" NARROW []
+synonym: "zonda" NARROW []
+is_a: ENVO:01001720 ! downslope katabatic wind
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-08-30T10:52:46Z xsd:dateTime
+
+[Term]
+id: ENVO:01001723
+name: adiabatic process
+def: "An environmental process during which a system does not thermally interact with its surroundings by virtue of a temperature difference between them." [http://glossary.ametsoc.org/wiki/Adiabatic]
+comment: "In an adiabatic process any change in internal energy (for a system of fixed mass) is solely a consequence of working. For an ideal gas and for most atmospheric systems, compression results in warming, expansion results in cooling." {xref="http://glossary.ametsoc.org/wiki/Adiabatic"}
+subset: envoAtmo
+is_a: ENVO:02500000 ! environmental system process
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-09-02T01:35:56Z xsd:dateTime
+
+[Term]
+id: ENVO:01001724
+name: dry-adiabatic process
+def: "An adiabatic process during which no condensation of water vapor occurs and no liquid water is present." [http://glossary.ametsoc.org/wiki/Dry-adiabatic_process]
+subset: envoAtmo
+is_a: ENVO:01001723 ! adiabatic process
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-09-02T01:41:52Z xsd:dateTime
+
+[Term]
+id: ENVO:01001725
+name: moist-adiabatic process
+def: "An adiabatic process which involves air saturated with water vapour and the presence of liquid water." [http://glossary.ametsoc.org/wiki/Moist-adiabatic_process]
+subset: envoAtmo
+synonym: "saturation-adiabatic process" EXACT []
+is_a: ENVO:01001723 ! adiabatic process
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-09-02T01:42:56Z xsd:dateTime
+
+[Term]
+id: ENVO:01001726
+name: fall wind
+def: "A katabatic wind during which the low temperature and increased density of a cold mass of atmospheric gas accelerates its descent." [http://glossary.ametsoc.org/wiki/Fall_wind]
+comment: "A fall wind is a larger-scale phenomenon than the individual-slope scale and is produced by accumulated cold air spilling down a slope or over a mountain range. The cold air often either accumulates on a plateau or other elevated terrain, or is part of an extensive cold air mass approaching a mountain range as a cold front." {xref="Fall:wind"}
+subset: envoAtmo
+synonym: "mistral" RELATED [http://glossary.ametsoc.org/wiki/Mistral]
+synonym: "papagayo" NARROW [http://glossary.ametsoc.org/wiki/Papagayo]
+synonym: "vardar" NARROW [http://glossary.ametsoc.org/wiki/Vardar]
+is_a: ENVO:01001719 ! katabatic wind
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-09-02T01:48:45Z xsd:dateTime
+
+[Term]
+id: ENVO:01001727
+name: bora
+def: "A fall wind which has a source so cold that, when the atmospheric gas reaches the lowlands or coast, the dynamic warming is insufficient to raise its temperature to the normal level for the region; hence it appears as a cold wind." [] {def="http://glossary.ametsoc.org/wiki/Bora"}
+subset: envoAtmo
+is_a: ENVO:01001726 ! fall wind
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-09-02T01:56:30Z xsd:dateTime
+
+[Term]
+id: ENVO:01001728
+name: squall wind
+def: "An atmospheric wind which rapidly forms, lasts for a duration in the order of minutes, and then rapidly decreases in speed." [http://glossary.ametsoc.org/wiki/Squalls]
+subset: envoAtmo
+is_a: ENVO:01000793 ! atmospheric wind
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-09-02T02:04:04Z xsd:dateTime
+
+[Term]
+id: ENVO:01001729
+name: nautical squall
+def: "A storm which is nautical, localised, and of high severity local storm considered as a whole: that is, winds and cloud mass and (if any) precipitation, thunder and lightning." [http://glossary.ametsoc.org/wiki/Squalls]
+subset: envoAtmo
+is_a: ENVO:01000877 ! atmospheric storm
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-09-02T02:16:07Z xsd:dateTime
+
+[Term]
+id: ENVO:01001730
+name: jet-effect wind
+def: "A wind which is driven by the acceleration of flow through a gap, constriction, or channel resulting from large-scale pressure gradient, or by Venturi acceleration through a constricting passage." [http://glossary.ametsoc.org/wiki/Jet-effect_wind]
+subset: envoAtmo
+is_a: ENVO:01000793 ! atmospheric wind
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-09-02T02:35:38Z xsd:dateTime
+
+[Term]
+id: ENVO:01001731
+name: mountain-gap wind
+def: "A jet-effect which passes through a gap, constriction, or channel between mountains in a mountain range or between ranges themselves." [http://glossary.ametsoc.org/wiki/Jet-effect_wind]
+subset: envoAtmo
+synonym: "düsenwind" NARROW []
+synonym: "kossava" NARROW []
+synonym: "tehuantepecer" NARROW []
+is_a: ENVO:01001730 ! jet-effect wind
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-09-02T02:40:43Z xsd:dateTime
+
+[Term]
+id: ENVO:01001732
+name: slope flow
+def: "An atmospheric wind which moves up or down a slope and is driven by heating or cooling of that slope." []
+subset: envoAtmo
+is_a: ENVO:01000793 ! atmospheric wind
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-09-02T03:28:02Z xsd:dateTime
+
+[Term]
+id: ENVO:01001733
+name: anabatic wind
+def: "An upslope wind driven by heating at the slope surface under fair-weather conditions." [http://glossary.ametsoc.org/wiki/Anabatic_wind]
+comment: Unlike the term "katabatic wind", anabatic wind has a focused meaning and suffers from less ambiguity, thus the more precise treatement of this term and its place deeper in the hierarchy. {xref="Anabatic:wind"}
+subset: envoAtmo
+is_a: ENVO:01001732 ! slope flow
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-09-02T03:30:18Z xsd:dateTime
+
+[Term]
+id: ENVO:01001734
+name: insolation process
+def: "A process during which direct stellar radiation interacts with a planetary surface." [http://glossary.ametsoc.org/wiki/Insolation]
+synonym: "incoming solar radiation" BROAD []
+synonym: "insolation" BROAD [] {comment="The broader term can also refer to the amount of radiation received, rather than the process."}
+is_a: ENVO:01001023 ! radiation
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-09-02T03:42:52Z xsd:dateTime
+
+[Term]
+id: ENVO:01001735
+name: cooling of a gas
+def: "A material cooling process during which a portion of gaseous environmental material loses thermal energy to its surroundings." []
+is_a: ENVO:01001738 ! cooling of a fluid
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-09-02T07:16:38Z xsd:dateTime
+
+[Term]
+id: ENVO:01001736
+name: cooling of a liquid
+def: "A material cooling process during which a portion of liquid environmental material loses thermal energy to its surroundings." []
+is_a: ENVO:01001738 ! cooling of a fluid
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-09-02T07:16:58Z xsd:dateTime
+
+[Term]
+id: ENVO:01001737
+name: cooling of a solid
+def: "A material cooling process during which a portion of solid environmental material loses thermal energy to its surroundings." []
+is_a: ENVO:01001615 ! material cooling process
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-09-02T07:17:07Z xsd:dateTime
+
+[Term]
+id: ENVO:01001738
+name: cooling of a fluid
+def: "A material cooling process during which a portion of fluid environmental material loses thermal energy to its surroundings." []
+is_a: ENVO:01001615 ! material cooling process
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-09-02T07:22:06Z xsd:dateTime
+
+[Term]
+id: ENVO:01001739
+name: warming of a fluid
+def: "A material warming process during which the thermal energy in a volume of fluid increases." []
+is_a: ENVO:01001612 ! material warming process
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-09-02T07:24:11Z xsd:dateTime
+
+[Term]
+id: ENVO:01001740
+name: warming of a gas
+def: "A process of warming a fluid during which the thermal energy in a volume of gas increases." []
+is_a: ENVO:01001739 ! warming of a fluid
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-09-02T07:24:20Z xsd:dateTime
+
+[Term]
+id: ENVO:01001741
+name: warming of a liquid
+def: "A process of warming a fluid which includes a volume of liquid as a participant." []
+is_a: ENVO:01001739 ! warming of a fluid
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-09-02T07:24:32Z xsd:dateTime
+
+[Term]
+id: ENVO:01001742
+name: warming of a solid
+def: "A material warming process during which the thermal energy in a mass of solid material increases." []
+is_a: ENVO:01001612 ! material warming process
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-09-02T07:24:44Z xsd:dateTime
+
+[Term]
+id: ENVO:01001744
+name: drainage wind
+def: "A downslope katabatic wind which is generated by the cooling of atmospheric gas in contact with terrain surfaces." [http://glossary.ametsoc.org/wiki/Drainage_wind]
+comment: Note that slope winds are typically classed separately from fall winds, which occur at larger scales.
+subset: envoAtmo
+synonym: "gravity wind" EXACT [http://glossary.ametsoc.org/wiki/Gravity_wind]
+is_a: ENVO:01001720 ! downslope katabatic wind
+is_a: ENVO:01001721 ! cooling-driven katabatic wind
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-09-02T08:48:06Z xsd:dateTime
+
+[Term]
+id: ENVO:01001746
+name: glacier wind
+def: "A drainage wind which flows along the icy surface of a glacier." [http://glossary.ametsoc.org/wiki/Glacier_winds]
+subset: envoAtmo
+subset: envoPolar
+is_a: ENVO:01001744 ! drainage wind
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-09-05T05:11:59Z xsd:dateTime
+
+[Term]
+id: ENVO:01001747
+name: mass fluid flow
+is_a: ENVO:01001334 ! advective transport process
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-09-05T05:47:26Z xsd:dateTime
+
+[Term]
+id: ENVO:01001748
+name: cyclonic circulation
+def: "A mass fluid flow which moves  in the same direction as a planet's rotation, rotating due to a Coriolis effect." [http://glossary.ametsoc.org/wiki/Cyclonic_circulation, https://en.wikipedia.org/wiki/Cyclonic_rotation]
+subset: envoAtmo
+subset: envoMarine
+subset: envoPolar
+synonym: "cyclonic rotation" EXACT []
+is_a: ENVO:01001747 ! mass fluid flow
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-09-05T05:47:55Z xsd:dateTime
+
+[Term]
+id: ENVO:01001749
+name: wind storm
+def: "An atmospheric storm during which winds flow with increased rates." []
+is_a: ENVO:01000877 ! atmospheric storm
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-3410-4655
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-3884-3420
+property_value: http://purl.org/dc/elements/1.1/date 2019-09-05T05:58:25Z xsd:dateTime
+
+[Term]
+id: ENVO:01001750
+name: straight-line wind
+def: "A wind storm during which strong gusts of wind occur, transporting atmospheric gas in a linear fashion." [https://en.wikipedia.org/wiki/Downburst#Straight-line_winds]
+synonym: "hurricane of the prairie" EXACT []
+synonym: "plough winds" EXACT []
+synonym: "thundergust" EXACT []
+is_a: ENVO:01000793 ! atmospheric wind
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-3410-4655
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-3884-3420
+property_value: http://purl.org/dc/elements/1.1/date 2019-09-05T06:04:47Z xsd:dateTime
+
+[Term]
+id: ENVO:01001751
+name: downburst
+def: "A downdraft which is of high intensity and which spreads radially,, with high speed, across the planetary surface upon reaching it." [http://glossary.ametsoc.org/wiki/Downburst]
+is_a: ENVO:01001758 ! downdraft
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-09-05T06:13:28Z xsd:dateTime
+
+[Term]
+id: ENVO:01001752
+name: dry macroburst
+def: "A macroburst during which no or very little rain is generated." [https://en.wikipedia.org/wiki/Downburst]
+is_a: ENVO:01001755 ! macroburst
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-09-05T06:13:36Z xsd:dateTime
+
+[Term]
+id: ENVO:01001753
+name: wet macroburst
+def: "A macroburst during which large amounts of rain are generated." [https://en.wikipedia.org/wiki/Downburst]
+is_a: ENVO:01001755 ! macroburst
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-09-05T06:16:28Z xsd:dateTime
+
+[Term]
+id: ENVO:01001754
+name: microburst
+def: "A downburst during which high winds occur over an area less than four kilometres in diameter." [http://glossary.ametsoc.org/wiki/Downburst, https://en.wikipedia.org/wiki/Downburst]
+is_a: ENVO:01001751 ! downburst
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-09-05T06:36:46Z xsd:dateTime
+
+[Term]
+id: ENVO:01001755
+name: macroburst
+def: "A downburst during which high winds occur over an area larger than four kilometres in diameter." [http://glossary.ametsoc.org/wiki/Downburst, https://en.wikipedia.org/wiki/Downburst]
+is_a: ENVO:01001751 ! downburst
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-09-05T06:36:54Z xsd:dateTime
+
+[Term]
+id: ENVO:01001756
+name: wet microburst
+def: "A microburst during which large amounts of rain are generated." [https://en.wikipedia.org/wiki/Downburst]
+is_a: ENVO:01001754 ! microburst
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-09-05T06:44:02Z xsd:dateTime
+
+[Term]
+id: ENVO:01001757
+name: dry microburst
+def: "A microburst during which no or very little rain is generated." [https://en.wikipedia.org/wiki/Downburst]
+is_a: ENVO:01001754 ! microburst
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-09-05T06:44:34Z xsd:dateTime
+
+[Term]
+id: ENVO:01001758
+name: downdraft
+is_a: ENVO:01001719 ! katabatic wind
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-09-05T06:51:54Z xsd:dateTime
+
+[Term]
+id: ENVO:01001759
+name: vibration process
+def: "A material transport process during which parts of an elastic material oscillate around their positions of equilibrium." [] {comment="https://www.merriam-webster.com/dictionary/vibration"}
+synonym: "vibration" EXACT []
+is_a: ENVO:03000010 ! material transport process
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-10-07T08:36:54Z xsd:dateTime
+
+[Term]
+id: ENVO:01001760
+name: seismic vibration process
+def: "A vibration process which occurs in the solid parts of an astronomical body as low-frequency acoustic waves pass through them." [https://en.wikipedia.org/wiki/Seismic_wave]
+synonym: "seismic activity" RELATED []
+is_a: ENVO:01001759 ! vibration process
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-10-07T08:45:41Z xsd:dateTime
+
+[Term]
+id: ENVO:01001761
+name: volcanic seismic vibration
+def: "A seismic vibration process which is caused by a volcanic eruption." []
+synonym: "volcanic seismicity" RELATED []
+is_a: ENVO:01001760 ! seismic vibration process
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-10-07T09:32:53Z xsd:dateTime
+
+[Term]
+id: ENVO:01001762
+name: impact-driven seismic vibration
+def: "A seismic vibration process which is caused by the impact of a solid object on the surface of an astronomical body." []
+is_a: ENVO:01001760 ! seismic vibration process
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-10-07T09:39:31Z xsd:dateTime
+
+[Term]
+id: ENVO:01001763
+name: impact event
+def: "An impact event is a collision between material entities, resulting in changes in one or both of those entities." []
+comment: This class is valid for impacts of celestial bodies as well as impacts of missiles, etc. See https://github.com/EnvironmentOntology/envo/issues/860
+is_a: ENVO:01001852 ! energy transfer process
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-10-07T09:46:06Z xsd:dateTime
+
+[Term]
+id: ENVO:01001764
+name: explosion-driven seismic vibration
+def: "A seismic vibration process which is caused by an explosion." []
+is_a: ENVO:01001760 ! seismic vibration process
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-10-07T09:52:12Z xsd:dateTime
+
+[Term]
+id: ENVO:01001765
+name: mass-wasting-driven seismic vibration
+def: "A seismic vibration process which is caused by mass wasting." []
+is_a: ENVO:01001760 ! seismic vibration process
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-10-07T09:57:00Z xsd:dateTime
+
+[Term]
+id: ENVO:01001766
+name: collapse-driven seismic vibration
+def: "A seismic vibration process which is caused by the collapose of a material entity, sending kinetic energy into astronomical body." []
+is_a: ENVO:01001760 ! seismic vibration process
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-10-07T10:03:26Z xsd:dateTime
+
+[Term]
+id: ENVO:01001767
+name: structural collapse process
+def: "A process during which the ability of a material entity to maintain its internal organisation fails, resulting in deformation and a breakdown of that organisation." [https://en.wikipedia.org/wiki/Structural_failure]
+comment: This is a very general concept, and should likely be elevated to OBO Core rather than held in ENVO.
+is_a: ENVO:01001852 ! energy transfer process
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-10-07T10:08:24Z xsd:dateTime
+
+[Term]
+id: ENVO:01001768
+name: cave collapse
+def: "A structural collapse process during which the walls of cave are unable to support the load placed upon them." []
+is_a: ENVO:01001767 ! structural collapse process
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-10-07T10:12:54Z xsd:dateTime
+
+[Term]
+id: ENVO:01001769
+name: earthquake-driven seismic vibration
+def: "A seismic vibration process which is caused by an earthquake." []
+is_a: ENVO:01001760 ! seismic vibration process
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-10-07T11:56:48Z xsd:dateTime
+
+[Term]
+id: ENVO:01001770
+name: foreshock
+def: "A tectonic earthquake which precedes the strongest tectonic earthquake in a series, linked to the same release of energy in the crust." [https://en.wikipedia.org/wiki/Foreshock]
+is_a: ENVO:01000678 ! tectonic earthquake
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-10-07T13:43:56Z xsd:dateTime
+
+[Term]
+id: ENVO:01001771
+name: mainshock
+def: "A tectonic earthquake which 1) is embedded in a series of tectonic earthquakes, linked to the same release of energy in the crust and 2) has the largest magnitude of the series." [https://en.wikipedia.org/wiki/Foreshock]
+is_a: ENVO:01000678 ! tectonic earthquake
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-10-07T13:54:59Z xsd:dateTime
+
+[Term]
+id: ENVO:01001772
+name: aftershock
+def: "A tectonic earthquake which 1) is embedded in a series of tectonic earthquakes, linked to the same release of energy in the crust and 2) occurs after the mainshock." [https://en.wikipedia.org/wiki/Foreshock]
+is_a: ENVO:01000678 ! tectonic earthquake
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-10-07T13:54:59Z xsd:dateTime
+property_value: http://purl.org/dc/elements/1.1/date 2019-10-07T13:59:06Z xsd:dateTime
+
+[Term]
+id: ENVO:01001774
+name: blind thrust earthquake
+def: "A tectonic earthquake which occurs along a thrust fault which does not breach the surface of an astronomical body." [https://en.wikipedia.org/wiki/Blind_thrust_earthquake]
+is_a: ENVO:01000678 ! tectonic earthquake
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-10-07T14:13:46Z xsd:dateTime
+
+[Term]
+id: ENVO:01001777
+name: multiplet tectonic earthquake
+def: "A tectonic earthquake which has two or more mainshocks of similar magnitude, and which originate from the same fracture zone and stress field." [https://en.wikipedia.org/wiki/Doublet_earthquake]
+comment: The mainshocks may be separated by seconds or years. Mainshocks must be within 1.2 units of magnitude of one another and have nearly identical seismic waveforms. {xref="Doublet:earthquake"}
+synonym: "multiplet earthquake" BROAD []
+is_a: ENVO:01000678 ! tectonic earthquake
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-10-07T14:30:11Z xsd:dateTime
+
+[Term]
+id: ENVO:01001778
+name: interplate earthquake
+def: "A tectonic earthquake which occurs at the boundary between two tectonic plates." [https://en.wikipedia.org/wiki/Interplate_earthquake]
+is_a: ENVO:01000678 ! tectonic earthquake
+is_a: ENVO:01001093 ! tectonic movement
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-10-07T15:02:10Z xsd:dateTime
+
+[Term]
+id: ENVO:01001779
+name: intraplate earthquake
+def: "A tectonic earthquake which occurs within the interior parts of a tectonic plate." [https://en.wikipedia.org/wiki/Intraplate_earthquake]
+is_a: ENVO:01000678 ! tectonic earthquake
+is_a: ENVO:01001093 ! tectonic movement
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-10-07T15:27:47Z xsd:dateTime
+
+[Term]
+id: ENVO:01001795
+name: ecosystem process
+def: "An environmental process either driven by or primarily impacting the parts or emergent properties of an ecosystem." []
+is_a: ENVO:02500000 ! environmental system process
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-10-21T11:52:55Z xsd:dateTime
+
+[Term]
+id: ENVO:01001842
+name: momentum transfer process
+def: "An environmental process during which momentum is transferred from one material entity to another." []
+comment: Momentum is a bit tricky, it's the product of mass and velocity thus can be understood as rest energy and kinetic energy. But this is variable.
+is_a: ENVO:01001852 ! energy transfer process
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-11-20T14:50:39Z xsd:dateTime
+
+[Term]
+id: ENVO:01001843
+name: atmosphere-ocean momentum transfer process
+def: "A momentum transfer process which unfolds as winds generate drag at the bottom of the atmosphere,coupled to dynamical forcing at the surface of the ocean." [http://www.goosocean.org/components/com_oe/oe.php?task=download&id=34507&version=1.0&lang=1&format=1]
+subset: envoMarine
+is_a: ENVO:01001842 ! momentum transfer process
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-11-20T14:53:01Z xsd:dateTime
+
+[Term]
+id: ENVO:01001852
+name: energy transfer process
+def: "A process during which one entity loses energy to another entity." []
+is_a: ENVO:02500000 ! environmental system process
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2020-02-13T13:34:28Z xsd:dateTime
+
+[Term]
+id: ENVO:01001856
+name: liquid accumulation process
+def: "A material accumulation process during which the volume of liquid entity increases." []
+is_a: ENVO:03000009 ! material accumulation process
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2020-05-18T14:39:20Z xsd:dateTime
+
+[Term]
+id: ENVO:01001857
+name: outgoing longwave radiation
+def: "An infrared radiation process which 1) transmits radiant energy has wavelengths between 3.0 and 100 μm, 2) is emitted from a planet and its atmosphere out to space in the form of thermal radiation." [https://en.wikipedia.org/wiki/Outgoing_longwave_radiation]
+comment: In the Earth's climate system, long-wave radiation involves processes of absorption, scattering, and emissions from atmospheric gases, aerosols, clouds and the surface.
+synonym: "outgoing long-wave radiation" EXACT []
+synonym: "terrestrial long-wave flux" NARROW []
+synonym: "up-welling long-wave radiation" EXACT []
+is_a: ENVO:21001214 ! infrared radiation
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2020-05-18T21:55:44Z xsd:dateTime
+
+[Term]
+id: ENVO:01001860
+name: wind gust
+def: "An atmospheric wind which 1) has an increased rate relative to other winds in the same region and 2) is followed by a lull." [http://glossary.ametsoc.org/wiki/Gust, https://en.wikipedia.org/wiki/Wind_gust]
+comment: According to U.S. weather observing practice, gusts are reported when the peak wind speed reaches at least 16 knots and the variation in wind speed between the peaks and lulls is at least 9 knots. The duration of a gust is usually less than 20 seconds. {xref="http://glossary.ametsoc.org/wiki/Gust"}
+synonym: "gust" BROAD []
+is_a: ENVO:01000793 ! atmospheric wind
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2020-05-19T21:47:51Z xsd:dateTime
+
+[Term]
+id: ENVO:01001861
+name: shortwave radiation
+def: "An electromagnetic radiation process during which radiant energy with wavelengths in the visible, near-ultraviolet, or near-infrared spectra is realised." [https://en.wikipedia.org/wiki/Shortwave_radiation]
+comment: There is no standard cut-off for the near-infrared range; therefore, the shortwave radiation range is also variously defined. It may be broadly defined to include all radiation with a wavelength of 0.1 micrometers and 5.0 micrometers or narrowly defined so as to include only radiation between 0.2 micrometers and 3.0 micrometers. {xref="Shortwave:radiation"}
+synonym: "short-wave radiation" EXACT []
+is_a: ENVO:01001026 ! electromagnetic radiation
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2020-05-19T22:14:12Z xsd:dateTime
+
+[Term]
+id: ENVO:01001864
+name: photosynthetically active radiation
+def: "Electromagnetic radidation which involves radiant energy in a spectral range (wave band) between 400 to 700 nanometers, that photosynthetic organisms are able to use in the process of photosynthesis." [https://en.wikipedia.org/wiki/Photosynthetically_active_radiation]
+comment: Many definitions specify that this is Solar radiation, but consistency is lacking.
+is_a: ENVO:01001026 ! electromagnetic radiation
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2020-05-19T22:41:55Z xsd:dateTime
+
+[Term]
+id: ENVO:02000121
+name: peat extraction
+is_a: ENVO:01000785 ! material extraction process
+property_value: http://purl.org/dc/elements/1.1/creator "cjm" xsd:string
+
+[Term]
+id: ENVO:02000122
+name: peat drainage
+def: "A hydrological process that results in the drainage of water from peatlands" [https://en.wikipedia.org/wiki/Peat#Peat_drainage]
+is_a: ENVO:02500031 ! hydrological process
+property_value: http://purl.org/dc/elements/1.1/creator "cjm" xsd:string
+property_value: IAO:0000232 "Typically a part of a peat extraction process" xsd:string
+
+[Term]
+id: ENVO:02000125
+name: transportation
+def: "A planned process that is the movement of people, animals and goods from one location to another." [https://en.wikipedia.org/wiki/Transport]
+is_a: ENVO:03000010 ! material transport process
+property_value: http://purl.org/dc/elements/1.1/creator "cjm" xsd:string
+
+[Term]
+id: ENVO:02500000
+name: environmental system process
+def: "A process in which includes the components of an environmental system as participants." []
+comment: This is a convenience class for organisation and should not be used for annotation.
+
+[Term]
+id: ENVO:02500001
+name: desertification
+def: "A type of land degradation in which terrestrial ecosystem becomes increasingly dry, typically losing its bodies of water as well as vegetation and wildlife." [https://en.wikipedia.org/wiki/Desertification]
+is_a: ENVO:02500005 ! land degradation
+
+[Term]
+id: ENVO:02500002
+name: flooding
+def: "A general and temporary condition of partial or complete inundation of normally dry land areas from the overflow of inland and/or tidal waters, and/or the unusual and rapid accumulation or runoff of surface waters from any source. A great flow along a watercourse or a flow causing inundation of lands not normally covered by water." [GEMET: http\://www.eionet.europa.eu/gemet/concept/3301]
+subset: environmental_hazards
+is_a: ENVO:03000010 ! material transport process
+
+[Term]
+id: ENVO:02500003
+name: atmospheric process
+def: "A process which occurs within an atmosphere." []
+comment: This class will be populated by inference and is primarily organisational.
+is_a: ENVO:02500000 ! environmental system process
+
+[Term]
+id: ENVO:02500004
+name: greenhouse effect
+def: "A process by which thermal radiation from a planetary surface is absorbed by atmospheric greenhouse gases, and is re-radiated in all directions. Since part of this re-radiation is back towards the surface and the lower atmosphere, it results in an elevation of the average surface temperature above what it would be in the absence of the gases." [https://en.wikipedia.org/wiki/Greenhouse_effect]
+subset: envoPolar
+is_a: ENVO:02500003 ! atmospheric process
+
+[Term]
+id: ENVO:02500005
+name: land degradation
+def: "A process which diminishes the functioning of an ecosystem located on land." [http://www.who.int/globalchange/ecosystems/desert/en/, https://en.wikipedia.org/wiki/Land_degradation]
+comment: This could include, for example, reducing soil health, pollinator activity, or an ecosystem's ability  to sequester carbon.
+is_a: ENVO:01001795 ! ecosystem process
+property_value: IAO:0000116 "An SDGIO request. Likely to be refined and revised." xsd:string
+
+[Term]
+id: ENVO:02500007
+name: ecosystem-wide photosynthesis
+def: "A process which consists of all photosynthesis processes instantiated in an ecosystem." []
+subset: envoPolar
+is_a: ENVO:01001795 ! ecosystem process
+is_a: ENVO:02500031 ! hydrological process
+property_value: IAO:0000116 "See issue #275" xsd:string
+
+[Term]
+id: ENVO:02500008
+name: ecosystem-wide respiration
+def: "A process which consists of all respiration processes instantiated in an ecosystem." []
+is_a: ENVO:02500000 ! environmental system process
+property_value: IAO:0000116 "See issue #275" xsd:string
+
+[Term]
+id: ENVO:02500009
+name: biogeochemical cycling
+def: "A biogeochemical process during which one or more chemical compounds are sequentially converted into a series of related compounds in a regularly repeating, periodic fashion." []
+subset: envoPolar
+is_a: ENVO:02500030 ! biogeochemical process
+
+[Term]
+id: ENVO:02500010
+name: carbon cycling
+def: "A biogeochemical cycle which has carbon-bearing chemical entities as participants." []
+subset: envoPolar
+synonym: "carbon cycle" RELATED []
+is_a: ENVO:02500009 ! biogeochemical cycling
+
+[Term]
+id: ENVO:02500011
+name: afforestation
+def: "Establishment of a new forest by seeding or planting of nonforested land." [GEMET:http\://www.eionet.europa.eu/gemet/concept/167]
+comment: Prior to afforestation, the land cover of a region must not include forests.
+is_a: ENVO:02500032 ! planned revegetation
+
+[Term]
+id: ENVO:02500012
+name: deforestation
+def: "The removal of forest and undergrowth to, for example, increase the surface of arable land or to use the timber for construction or industrial purposes." [http://www.eionet.europa.eu/gemet/concept?cp=2036]
+synonym: "clearance" BROAD []
+synonym: "clearing" BROAD []
+is_a: ENVO:01001795 ! ecosystem process
+
+[Term]
+id: ENVO:02500013
+name: reforestation
+def: "The planting of trees in areas in where forests have previously been cleared." [Adapted from GEMET:http\://www.eionet.europa.eu/gemet/concept/6979]
+comment: reforestation is reestablishment of forest where the forest recently existed[IPCC]
+is_a: ENVO:02500032 ! planned revegetation
+
+[Term]
+id: ENVO:02500014
+name: forest process
+comment: To be populated through inference. Do not use for annotation.
+is_a: ENVO:01001795 ! ecosystem process
+
+[Term]
+id: ENVO:02500015
+name: forest area expansion
+is_a: ENVO:01001795 ! ecosystem process
+
+[Term]
+id: ENVO:02500018
+name: algal bloom process
+def: "A process during which the populations in a community of algae in a marine or freshwater ecosystem undergo rapid growth, resulting in high concentrations of algal cells that occur only periodically and briefly in that ecosystem, relative to their concentrations through the majority of the planetary orbital period." [https://en.wikipedia.org/wiki/Algal_bloom]
+comment: This class is under development. Note that cyanobacterial blooms are often confused with algal blooms. There is no globally recognised threshold beyond which community density enters a bloom state. {xref="https://en.wikipedia.org/wiki/Algal_bloom"}
+subset: envoPolar
+is_a: ENVO:01001795 ! ecosystem process
+
+[Term]
+id: ENVO:02500021
+name: algal bloom collapse
+def: "A process during which the rapid growth of algal populations that result in an algal bloom ceases, and cell densities begin to fall due to death, predation, and transport." [https://en.wikipedia.org/wiki/Algal_bloom]
+is_a: ENVO:01001795 ! ecosystem process
+
+[Term]
+id: ENVO:02500022
+name: algal bloom process phase
+is_a: ENVO:01001795 ! ecosystem process
+
+[Term]
+id: ENVO:02500023
+name: algal production
+def: "A process during which the algal cells constituting an algal bloom produce biomass from abiotic components during photosynthesis." []
+is_a: ENVO:01001795 ! ecosystem process
+
+[Term]
+id: ENVO:02500024
+name: accumulation of toxins from algal bloom process
+comment: TODO; add axioms pointing to GO organismal process; Add axioms pointing to toxin role
+is_a: ENVO:02500022 ! algal bloom process phase
+
+[Term]
+id: ENVO:02500025
+name: degradation of toxins from algal bloom process
+is_a: ENVO:02500022 ! algal bloom process phase
+
+[Term]
+id: ENVO:02500027
+name: anthropogenic environmental process
+def: "An environmental process which is driven by the action of humans." []
+is_a: ENVO:02500000 ! environmental system process
+
+[Term]
+id: ENVO:02500028
+name: planetary erosion
+def: "An action of exogenic processes (such as water flow or wind) which remove environmental material from one part of a planet's crust, transporting it to another location where it is deposited." [https://en.wikipedia.org/wiki/Erosion]
+subset: envoPolar
+is_a: ENVO:01001346 ! erosion
+
+[Term]
+id: ENVO:02500029
+name: bedrock dissolution
+def: "An erosional process in which bedrock is converted from its solid form into a solute by the action of some solvent." []
+is_a: ENVO:02500028 ! planetary erosion
+
+[Term]
+id: ENVO:02500030
+name: biogeochemical process
+def: "A process during which chemicals that are involved in natural ecosystem processes are transported or transformed, and which impact the activity of biological entities" [https://en.wikipedia.org/wiki/Biogeochemistry]
+subset: envoPolar
+is_a: ENVO:02500000 ! environmental system process
+
+[Term]
+id: ENVO:02500031
+name: hydrological process
+def: "An environmental process which has water - in any of its states - as a participant." []
+comment: This classes asserted subclasses will be moved away as it should be an inferred class.
+is_a: ENVO:02500000 ! environmental system process
+
+[Term]
+id: ENVO:02500032
+name: planned revegetation
+def: "A planned process during which human agents establish plant communities in ecosystems which have previously been, partially or wholly, stripped of existing plant communities." []
+is_a: ENVO:01001170 ! active ecosystem management process
+
+[Term]
+id: ENVO:02500033
+name: evapotranspiration
+def: "Evapotranspiration is the sum of evaporation and plant transpiration from the Earth's land and ocean surface to the atmosphere." [https://en.wikipedia.org/wiki/Evapotranspiration]
+is_a: ENVO:03000010 ! material transport process
+
+[Term]
+id: ENVO:02500034
+name: evaporation
+def: "Evaporation is a form of vaporisation which occurs when a portion of the surface layer of a liquid in contact with a gaseous material, which is not saturated with the evaporating substance, vaporises." [https://en.wikipedia.org/wiki/Evaporation]
+is_a: ENVO:01000622 ! vaporisation
+
+[Term]
+id: ENVO:02500035
+name: transpiration
+def: "Transpiration is the process of water movement through a plant and its evaporation from aerial parts of that plant, such as from leaves but also from stems and flowers." []
+comment: Needs a process part "water transport" or similar and some link to plants to be complete.
+is_a: ENVO:03000010 ! material transport process
+
+[Term]
+id: ENVO:02500036
+name: environmental pollution
+def: "An environmental system process that results in the introduction of contaminants into an environment." [https://en.wikipedia.org/wiki/Pollution]
+comment: Pollutants may be material or immaterial (e.g. heat energy)
+subset: environmental_hazards
+synonym: "pollution" EXACT []
+is_a: ENVO:02500000 ! environmental system process
+
+[Term]
+id: ENVO:02500037
+name: air pollution
+def: "A pollution process during which particulates or other contaminants are released into a portion of air." []
+subset: environmental_hazards
+subset: envoPolar
+is_a: ENVO:02500036 ! environmental pollution
+
+[Term]
+id: ENVO:02500038
+name: soil pollution
+def: "A pollution process during which contaminants are released into soil." [https://en.wikipedia.org/wiki/Soil_pollution]
+subset: environmental_hazards
+subset: envoPolar
+is_a: ENVO:02500036 ! environmental pollution
+
+[Term]
+id: ENVO:02500039
+name: water pollution
+def: "A pollution process during which contaminants are released into water." []
+subset: environmental_hazards
+subset: envoPolar
+is_a: ENVO:02500036 ! environmental pollution
+
+[Term]
+id: ENVO:02500040
+name: plastic pollution
+def: "A pollution process during which plastic contaminants are released into an environmental material." [https://en.wikipedia.org/wiki/Plastic_pollution]
+subset: environmental_hazards
+subset: envoPolar
+is_a: ENVO:02500036 ! environmental pollution
+
+[Term]
+id: ENVO:02500044
+name: urban pollution
+def: "A pollution process that results in increased levels of pollutants in an urban environment." []
+subset: environmental_hazards
+is_a: ENVO:02500036 ! environmental pollution
+
+[Term]
+id: ENVO:03000003
+name: nivation
+def: "A material transformation process during which recently precipitated, powdery snow transitions into firn or névé through compaction and/or through cycles of freezing and thawing." [https://en.wikipedia.org/wiki/Nivation]
+comment: Often, the weight of material deposited on top of powdery snow by, for example, mass wasting, can lead to nivation.
+subset: envoPolar
+is_a: ENVO:03000043 ! material transformation process
+property_value: IAO:0000116 "Link to mass wasting process." xsd:string
+property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
+property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:03000006
+name: glacial erosion process
+def: "An erosion process during which the movement of a glacier across a terrestrial surface causes the removal of material from that surface." []
+subset: envoPolar
+synonym: "glaciation" BROAD []
+is_a: ENVO:01001655 ! glacial process
+is_a: ENVO:02500028 ! planetary erosion
+property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
+property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:03000008
+name: compaction process
+def: "A physical process during which atoms, molecules, or other consituents of a material entity are forced closer together." [https://en.wikipedia.org/wiki/Compaction]
+subset: envoPolar
+is_a: ENVO:02500000 ! environmental system process
+property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
+property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:03000009
+name: material accumulation process
+def: "A process during which the mass of one or more materials, present within a given site, increases." []
+comment: Experimental class for structural purposes not recommended for annotation. A material accumulation process ends a material transport process.
+subset: envoPolar
+is_a: ENVO:02500000 ! environmental system process
+property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
+property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:03000010
+name: material transport process
+def: "A process during which material is displaced from its original location and transported either to a new location or back to the original location." []
+comment: Experimental class for structural purposes not recommended for annotation.
+subset: envoPolar
+is_a: ENVO:02500000 ! environmental system process
+property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
+property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:03000011
+name: ice gain
+def: "A material accumulation process during which the mass of an existing ice mass increases." [https://en.wikipedia.org/wiki/Ablation_zone]
+subset: envoPolar
+synonym: "accumulation of ice" BROAD []
+synonym: "ice accumulation" BROAD []
+is_a: ENVO:01001618 ! ice accumulation process
+property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
+property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:03000012
+name: glacial transport process
+def: "A material transport process during which the snow and ice constituting a glacier, and anything contained within it, is transported down a slope by gravitation." []
+comment: This must be differentiated from small ice masses simply falling or moving down slopes. In ENVO, this is a subclass of advective transport process, however, this may not be universally accepted by some which strictly limit advection to fluids.
+subset: envoPolar
+synonym: "glacial flow" EXACT []
+synonym: "glacial movement" EXACT []
+is_a: ENVO:01001533 ! mass ice flow
+is_a: ENVO:01001655 ! glacial process
+property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
+property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:03000016
+name: material decumulation process
+def: "A process during which a mass composed of one or more environmental materials, present within a given site, decreases." [https://www.merriam-webster.com/dictionary/decumulation]
+comment: Experimental class for structural purposes not recommended for annotation.
+subset: envoPolar
+is_a: ENVO:02500000 ! environmental system process
+property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
+property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:03000017
+name: glacial ice loss
+def: "A process during which the mass of ice constituting a glacier decreases." []
+subset: envoPolar
+is_a: ENVO:01000915 ! ice loss process
+is_a: ENVO:01001655 ! glacial process
+is_a: ENVO:02500031 ! hydrological process
+property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
+property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:03000020
+name: aeolian transport process
+def: "A material transport process during which one or more environmental materials are transported by the action of wind." [https://en.wikipedia.org/wiki/Aeolian_processes]
+subset: envoPolar
+synonym: "eolian" EXACT []
+synonym: "æolian" EXACT []
+is_a: ENVO:03000010 ! material transport process
+property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
+property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:03000029
+name: glacial ice gain
+def: "A process during which the mass of ice constituting a glacier increases." []
+subset: envoPolar
+xref: http://sweetontology.net/phenCryo/Glaciation
+is_a: ENVO:01001655 ! glacial process
+is_a: ENVO:03000011 ! ice gain
+property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
+property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:03000030
+name: glacial ice calving process
+def: "A process during which a part of a glacier breaks away from the main mass." [http://dx.doi.org/10.1038/nrmicro3522]
+comment: Calving is usually caused by the expansion of glaciers.
+subset: envoPolar
+synonym: "glacier calving" EXACT []
+is_a: ENVO:01000917 ! ice calving process
+is_a: ENVO:01001655 ! glacial process
+property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
+property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:03000031
+name: iceberg calving process
+def: "A process during which a part of a glacier breaks away from the main mass as an iceberg." [http://dx.doi.org/10.1038/nrmicro3522]
+comment: Calving is usually caused by the expansion of glaciers.
+subset: envoPolar
+synonym: "glacier calving" RELATED []
+synonym: "iceberg calving" EXACT []
+is_a: ENVO:03000030 ! glacial ice calving process
+property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
+property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:03000032
+name: calving of ice from an iceberg
+def: "A process during which a part of an iceberg breaks away from the main mass." [http://dx.doi.org/10.1038/nrmicro3522]
+subset: envoPolar
+is_a: ENVO:01000917 ! ice calving process
+property_value: IAO:0000116 "It would be ideal to express that the size of the icemass calved must be smaller than an iceberg." xsd:string
+property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
+property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:03000036
+name: sedimentation in a water body
+def: "A material accumulation process during which solid particles are pulled through a water body by gravitation or centrifugal force and which ends when they settle on a solid surface." []
+subset: envoPolar
+is_a: ENVO:03000009 ! material accumulation process
+property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
+property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:03000042
+name: brine channel formation process
+def: "A material accumulation process during which brine droplets, trapped between ice crystals formed during seawater freezing, form brine channels." [https://nsidc.org/cryosphere/glossary/term/frazil]
+comment: This process may be considered a material accumulation process as it is the accumulation of brine droplets which form the channels.
+subset: envoPolar
+is_a: ENVO:01001856 ! liquid accumulation process
+is_a: ENVO:02500031 ! hydrological process
+property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
+property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:03000043
+name: material transformation process
+def: "A process during which a portion of some environmental material is converted into a different material or a collection of materials." []
+comment: Experimental class for structural purposes not recommended for annotation. A material transformation process only refers to ENVO:environmental material classes (e.g. bulk and typically impure substances), rather than transformations converting a specific chemical into another.
+subset: envoPolar
+is_a: ENVO:02500000 ! environmental system process
+property_value: IAO:0000116 "A different material transformation process class (or similarly named class) pertaining to the conversion of a specific chemical into another belongs in CHEBI and or REX ontologies." xsd:string
+property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
+property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:03000044
+name: sea ice formation process
+def: "A material transformation process during which seawater freezes into sea ice." [http://www.waterencyclopedia.com/Re-St/Sea-Water-Freezing-of.html]
+subset: envoPolar
+is_a: ENVO:01000950 ! water ice formation process
+property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
+property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:03000045
+name: brine rejection from seawater
+def: "A material transformation process during which brine is formed due to the expulsion of salt during frazil formation or a seawater freezing process." [https://en.wikipedia.org/wiki/Brine_rejection]
+comment: Expelled salt accumulates in brine droplets, which remain in a liquid state due to their increased salinity.
+subset: envoPolar
+is_a: ENVO:02500031 ! hydrological process
+is_a: ENVO:03000043 ! material transformation process
+property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
+property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:03000047
+name: frazil ice formation
+def: "A new ice formation process during which small, needle-like crystals consisting of nearly pure fresh water, form due to the freezing of open, turbulent, supercooled water." [https://en.wikipedia.org/wiki/Frazil_ice#Formation, https://nsidc.org/cryosphere/glossary/term/frazil]
+subset: envoPolar
+is_a: ENVO:03000056 ! new ice formation process
+property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
+property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:03000054
+name: depositional process
+def: "A process during which material entities are added to a landform or to a feature upon the landform." [] {comment="https://en.wikipedia.org/wiki/Deposition_(geology)"}
+subset: envoPolar
+is_a: ENVO:03000009 ! material accumulation process
+property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
+property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:03000055
+name: desublimation of water vapour into ice
+def: "A desublimation process during which water vapour is frozen into water ice." []
+subset: envoPolar
+is_a: ENVO:01000726 ! desublimation process
+is_a: ENVO:02500031 ! hydrological process
+property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
+property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:03000056
+name: new ice formation process
+def: "An ice formation process during which water is frozen into a form of new ice such as frazil, grease ice, slush, or shuga." [https://nsidc.org/cryosphere/glossary/term/new-ice]
+subset: envoPolar
+is_a: ENVO:01000950 ! water ice formation process
+property_value: IAO:0000116 "Make this class the union of the following processes: frazil ice formation, grease ice formation process, slush formation process, and shuga formation process." xsd:string
+property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
+property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:03000058
+name: nilas formation process
+def: "A sea ice formation process during which new ice crystals freeze together, forming nilas, a thin, elastic, continuous, ice sheet of a transparent gray color." [https://en.wikipedia.org/wiki/Sea_ice#New_ice.2C_nilas_and_young_ice, https://nsidc.org/cryosphere/glossary/term/nilas]
+subset: envoPolar
+is_a: ENVO:03000044 ! sea ice formation process
+property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
+property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:03000059
+name: young ice formation process
+def: "A sea ice formation process during which water freezes to the bottom of an existing nilas ice floe creating a thicker ice floe known as young ice." [https://en.wikipedia.org/wiki/Sea_ice#New_ice.2C_nilas_and_young_ice]
+subset: envoPolar
+is_a: ENVO:03000044 ! sea ice formation process
+property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
+property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:03000060
+name: first year ice formation process
+def: "A sea ice formation process during which seawater freezes onto young ice during the cold season, forming first year ice." [https://en.wikipedia.org/wiki/Sea_ice#New_ice.2C_nilas_and_young_ice]
+comment: First year ice that survives melting during spring and summer can transition to second year ice.
+subset: envoPolar
+is_a: ENVO:03000044 ! sea ice formation process
+property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
+property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:03000061
+name: second year ice formation
+def: "A sea ice formation process during which seawater freezes onto first year ice during the cold season, forming second year sea ice." [https://en.wikipedia.org/wiki/Sea_ice#New_ice.2C_nilas_and_young_ice]
+comment: Second year ice forms from first year ice which has previously survived one melt season.
+subset: envoPolar
+is_a: ENVO:03000044 ! sea ice formation process
+property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
+property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:03000062
+name: multiyear ice formation process
+def: "A sea ice formation process during which seawater freezes into second year ice during the cold season, forming multiyear ice." [https://en.wikipedia.org/wiki/Sea_ice#New_ice.2C_nilas_and_young_ice]
+comment: Multiyear ice forms from second year ice which has previously survived at least two melt seasons.
+subset: envoPolar
+is_a: ENVO:03000044 ! sea ice formation process
+property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
+property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:03000078
+name: slush formation process
+def: "A new ice formation process in which slush ice is formed." []
+subset: envoPolar
+is_a: ENVO:03000056 ! new ice formation process
+property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
+property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:03000079
+name: shuga formation process
+def: "A new ice formation process in which shuga is formed." []
+subset: envoPolar
+is_a: ENVO:03000056 ! new ice formation process
+property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
+property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:03000086
+name: ice-bearing permafrost thawing process
+def: "A permafrost thawing process during which water-based ice or snow present in permafrost is converted into meltwater." [https://en.wikipedia.org/wiki/Permafrost]
+subset: envoPolar
+is_a: ENVO:01001613 ! permafrost thawing process
+is_a: ENVO:01001741 ! warming of a liquid
+is_a: ENVO:01001742 ! warming of a solid
+is_a: ENVO:02500031 ! hydrological process
+property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
+property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:03000090
+name: explosion process
+def: "A process during which a material entity undergoes a rapid increase in volume, releasing gasses and various forms of energy, often including thermal, light and sound energy." [https://en.wikipedia.org/wiki/Explosion]
+comment: Supersonic explosions are known as detonations and subsonic explosions as deflagrations.
+subset: envoPolar
+synonym: "explosion" EXACT []
+is_a: ENVO:01000839 ! combustion process
+property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
+property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:03000091
+name: permafrost methane explosion
+def: "An explosion during which methane-rich gas trapped in permafrost combusts." [http://www.nature.com/news/mysterious-siberian-crater-attributed-to-methane-1.15649, http://www.sciencealert.com/7-000-huge-gas-bubbles-have-formed-under-siberia-and-could-explode-at-any-moment]
+subset: environmental_hazards
+subset: envoPolar
+is_a: ENVO:03000090 ! explosion process
+property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
+property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:03000092
+name: gas emission process
+def: "A material transport process during which a portion of gaseous environmental material is transported into the atmosphere." [https://en.wikipedia.org/wiki/Greenhouse_gas]
+subset: envoPolar
+is_a: ENVO:03000010 ! material transport process
+property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
+property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:03000093
+name: hydrocarbon gas emission process
+def: "A gas emission process during which a portion of hydrocarbon gas is transported into the atmosphere." [https://www.epa.gov/ghgemissions/overview-greenhouse-gases]
+comment: Some hydrocarbon gasses within the atmosphere contribute to the planetary green house gas effect by increasing absorption of solar energy.
+subset: envoPolar
+is_a: ENVO:03000092 ! gas emission process
+property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
+property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:03000094
+name: methane gas emission process
+def: "A hydrocarbon gas emission process during which a portion of methane gas is transported into the atmosphere." [https://www.epa.gov/ghgemissions/overview-greenhouse-gases]
+comment: Methane is emitted during the production and transport of coal, natural gas, and oil. Methane emissions also result from livestock and other agricultural practices and by the decay of organic waste in municipal solid waste landfills.
+subset: envoPolar
+is_a: ENVO:03000093 ! hydrocarbon gas emission process
+property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
+property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:03000095
+name: season generating process
+def: "A process during which the intesity of stellar radiation received by a planet's surface varies in a cyclical regime due to the planet's orbital motion around the barycentre of a planetary system and/or the tilt of its rotational axis relative to its orbital plane." []
+comment: The seasons that are generated by this process are divisions of time between warm (maximal radiation exposure) and cold (minimum radiation exposure) extremes. Depending on the planet's makeup, the resulting seasonal dynamics may include ecological and meteorological cycles which may form the basis for further divisions of the cycle (e.g. rainy season, dry season, wildfire season).
+subset: envoPolar
+is_a: ENVO:02500000 ! environmental system process
+property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
+property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:03000099
+name: seasonal melting process
+def: "A material transformation process during which a material entity melts during a warm season." []
+subset: envoPolar
+is_a: ENVO:01000723 ! melting
+property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
+property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:03000101
+name: solid-phase sintering
+def: "A compaction process during which a material entity subjected to heat and/or pressure is compacted into a solid mass without undergoing melting." [https://en.wikipedia.org/wiki/Sintering]
+subset: envoPolar
+is_a: ENVO:03000008 ! compaction process
+property_value: IAO:0000116 "We should add the subclass axiom: 'has output' some ('environmental material' and 'has quality' some 'decreased porosity') once PATO:decreased porosity is available see ENVO issue #497\n\nAdditional axioms could also refer to object aggregates becoming objects within an environmental material." xsd:string
+property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
+property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:03000102
+name: glacial sintering
+def: "A sintering process during which snow is compacted into glacial ice." [https://en.wikipedia.org/wiki/Sintering]
+subset: envoPolar
+is_a: ENVO:02500031 ! hydrological process
+is_a: ENVO:03000101 ! solid-phase sintering
+property_value: IAO:0000116 "Axioms will probably need to be updated if the axiomatisation of solid-phase sintering changes." xsd:string
+property_value: IAO:0000117 "" xsd:string
+property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
+property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:03000103
+name: aeolian transport of snow
+def: "An aeolian transport process during which powdery snow is displaced and moved." [https://en.wikipedia.org/wiki/Snow#Drifting]
+subset: envoPolar
+is_a: ENVO:03000020 ! aeolian transport process
+property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
+property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:03000104
+name: snow drift formation
+def: "An accumulation process during which a powdery snow carried on the wind settles on a solid surface, forming a mound." []
+subset: envoPolar
+synonym: "drifting of unsintered snow" EXACT []
+is_a: ENVO:01001617 ! snow accumulation process
+property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
+property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:03000105
+name: slab avalanche
+def: "A mass wasting process during which slab snow rapidly moves down a sloping surface." [https://en.wikipedia.org/wiki/Snow#Avalanche]
+comment: Slab avalanches account for most back-country fatalities.
+subset: environmental_hazards
+subset: envoPolar
+is_a: ENVO:01000690 ! mass wasting
+property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
+property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:03000106
+name: powdery snow avalanche
+def: "An avalanche during which powdery snow rapidly flows down a sloping surface." [https://en.wikipedia.org/wiki/Snow#Avalanche]
+subset: environmental_hazards
+subset: envoPolar
+synonym: "powder snow avalanche" EXACT []
+is_a: ENVO:01000691 ! avalanche
+property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
+property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:03000107
+name: wet snow avalanche
+def: "An avalanche during which a suspension of water and snow flows down a sloping surface." [https://en.wikipedia.org/wiki/Snow#Avalanche]
+comment: Wet snow avalanches travel at a lower velocity than other types of avalanches.
+subset: environmental_hazards
+subset: envoPolar
+is_a: ENVO:01000691 ! avalanche
+is_a: ENVO:02500031 ! hydrological process
+property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
+property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:03000121
+name: erosion through nivation
+def: "An erosion process during which rock or soil is removed or degraded due to alternative thawing and freezing of meltwater beneath and at the margins of snowbanks." [https://www.merriam-webster.com/dictionary/nivation]
+subset: envoPolar
+is_a: ENVO:02500028 ! planetary erosion
+property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
+property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:03000122
+name: planned burn
+def: "A fire which is planned and executed deliberately under human supervision." [https://en.wikipedia.org/wiki/Controlled_burn]
+comment: Fire-stick farming was the practice of Indigenous Australians who regularly used fire to burn vegetation to facilitate hunting and to change the composition of plant and animal species in an area. Aboriginal people may have been able to aim the burning of the scrub to avoid growing areas. There may have been a ritual taboo against burning certain areas of jungle. This type of farming directly increased the food supply for Aboriginal people by promoting the growth of bush potatoes and other edible ground-level plants. {xref="https://en.wikipedia.org/wiki/Fire-stick_farming"}
+comment: Planned burns are conducted for a variety of reasons such combating or preventing uncontrolled wildfires in order by reducing the fuel load in a wooded or similar areas with combustible vegetation. Alternatively planned burns, such as those practiced by various indigenous people, are conducted for a variety of reasons including facilitating agriculture, hunting and or traveling. As well as managing populations of parasitic species or game animals by decreasing or increasing the size of their habitats respectively. {xref="https://en.wikipedia.org/wiki/Native_American_use_of_fire_in_ecosystems#Reasons_for_and_Benefits_of_burning"}
+synonym: "fire-stick farming" NARROW []
+is_a: ENVO:01000786 ! fire
+property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
+property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088 xsd:string
+property_value: IAO:0000117 https://orcid.org/0000-0002-2908-3327 xsd:string
+property_value: IAO:0000117 https://orcid.org/0000-0002-3884-3420 xsd:string
+property_value: IAO:0000117 https://orcid.org/0000-0002-6601-2165 xsd:string
+
+[Term]
+id: ENVO:03000127
+name: acid rainfall
+def: "A water-based rainfall process during which water droplets with increased acidity fall towards a planetary surface." [https://en.wikipedia.org/wiki/Acid_rain]
+comment: On Earth, the acidity of raindrops is typically increased through interactions of water molecules with sulfur dioxide or nitrogen oxide, released into the atmosphere by natural or anthropogenic processes.
+synonym: "acid rain" BROAD []
+is_a: ENVO:01000830 ! water-based rainfall
+is_a: ENVO:02500031 ! hydrological process
+property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
+property_value: IAO:0000117 https://orcid.org/0000-0002-3884-3420 xsd:string
+property_value: IAO:0000117 https://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:03000130
+name: monsoon wind
+def: "An atmospheric wind during which air masses over an ocean flow towards a land mass, driven by disequilibria between land and ocean surface temperatures." [https://en.wikipedia.org/wiki/Monsoon, https://www.merriam-webster.com/dictionary/monsoon]
+is_a: ENVO:01000793 ! atmospheric wind
+property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
+property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088 xsd:string
+property_value: IAO:0000117 https://orcid.org/0000-0002-3884-3420 xsd:string
+
+[Term]
+id: ENVO:03000131
+name: grass fire
+def: "A fire which occurs in a grassland, combusting biomass stored in grasses as its primary fuel." [https://www.publish.csiro.au/book/5971/] {comment="http://gfmc.online/wp-content/uploads/AFAC-Bushfire-Glossary-Indexed-2012.pdf"}
+subset: environmental_hazards
+is_a: ENVO:01001292 ! land fire
+property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
+property_value: IAO:0000117 https://orcid.org/0000-0002-3884-3420 xsd:string
+
+[Term]
+id: ENVO:04000000
+name: adfreezing
+def: "Adfreezing is a freezing process during which two objects adhere to each other via ice." [https://www.merriam-webster.com/dictionary/adfreezing]
+subset: envoNceas
+subset: envoPolar
+is_a: ENVO:01001548 ! freezing
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0003-1264-1166
+property_value: http://purl.org/dc/elements/1.1/date 2019-03-04T18:47:34Z xsd:dateTime
+
+[Term]
+id: ENVO:04000001
+name: frost heaving process
+def: "Frost heaving is a process during which an upwards swelling of soil occurs due to freezing conditions caused by an increasing presence of ice as it grows towards the surface." [https://en.wikipedia.org/wiki/Frost_heaving, https://orcid.org/0000-0003-4808-4736]
+subset: envoNceas
+subset: envoPolar
+is_a: ENVO:01001664 ! cryoturbation of soil
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0003-1264-1166
+property_value: http://purl.org/dc/elements/1.1/date 2019-03-04T20:17:35Z xsd:dateTime
+
+[Term]
+id: ENVO:04000015
+name: carbon sequestration process
+def: "A material accumulation process during which atmospheric carbon dioxide is captured and stored." [https://www.usgs.gov/faqs/what-carbon-sequestration?qt-news_science_products=0#qt-news_science_products]
+subset: envoNceas
+is_a: ENVO:03000009 ! material accumulation process
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0003-1264-1166
+property_value: http://purl.org/dc/elements/1.1/date 2019-06-07T23:28:29Z xsd:dateTime
+
+[Term]
+id: ENVO:04000016
+name: biotic carbon sequestration
+def: "A carbon sequestration process during which atmospheric carbon dioxide is captured and stored by biological processes." [https://en.wikipedia.org/wiki/Biosequestration]
+subset: envoNceas
+is_a: ENVO:04000015 ! carbon sequestration process
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0003-1264-1166
+property_value: http://purl.org/dc/elements/1.1/date 2019-06-07T23:33:27Z xsd:dateTime
+
+[Term]
+id: ENVO:04000017
+name: geological carbon sequestration
+def: "A carbon sequestration process during which carbon dioxide is stored in underground geological formations." [https://www.usgs.gov/faqs/what-s-difference-between-geologic-and-biologic-carbon-sequestration?qt-news_science_products=0#qt-news_science_products]
+subset: envoNceas
+synonym: "abiotic carbon sequestration" RELATED []
+is_a: ENVO:04000015 ! carbon sequestration process
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0003-1264-1166
+property_value: http://purl.org/dc/elements/1.1/date 2019-06-07T23:33:38Z xsd:dateTime
+
+[Term]
+id: ENVO:04000018
+name: carbon sequestration by the ocean carbonate system
+def: "A carbon sequestration process during which carbon dioxide is stored in the carbonate system of an ocean." [https://en.wikipedia.org/wiki/Ocean_storage_of_carbon_dioxide]
+subset: envoNceas
+xref: SDGIO:00010072
+is_a: ENVO:04000015 ! carbon sequestration process
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0003-1264-1166
+property_value: http://purl.org/dc/elements/1.1/date 2019-06-11T20:49:49Z xsd:dateTime
+
+[Term]
+id: ENVO:1000745
+name: drought
+def: "A hydrological precipitation process with a reduced rate relative to some historical average, typically resulting in ecosystemic perturbations." []
+subset: environmental_hazards
+is_a: ENVO:01000703 ! hydrological precipitation process
+property_value: IAO:0000116 "Drought is often defined  as a temporal period of below-average precipitation, however, representing it as a temporal entity seems insufficient." xsd:string
+
+[Term]
+id: ENVO:1000747
+name: exudation of carbohydrates
+def: "A process in which carbohydrates are transported from the interior of an organism to its surroundings." []
+is_a: ENVO:03000010 ! material transport process
+property_value: IAO:0000116 "Class for testing with marine mucilage." xsd:string
+
+[Term]
+id: ENVO:1000748
+name: island formation process
+def: "A process which results in the formation of an island." []
+is_a: ENVO:02500000 ! environmental system process
+property_value: IAO:0000116 "Addressing Issue #268. This top-level class may be converted to an inferred class." xsd:string
+
+[Term]
+id: ENVO:2000012
+name: anthropogenic generation of energy
+def: "The generation of energy for use by humans" []
+is_a: ENVO:02500027 ! anthropogenic environmental process
+created_by: cjm
+creation_date: 2018-11-03T20:02:04Z
+
+[Term]
+id: ENVO:2000013
+name: generation of energy from coal
+is_a: ENVO:2000012 ! anthropogenic generation of energy
+created_by: cjm
+creation_date: 2018-11-03T20:04:34Z
+
+[Term]
+id: ENVO:2000014
+name: generation of energy from oil
+is_a: ENVO:2000012 ! anthropogenic generation of energy
+created_by: cjm
+creation_date: 2018-11-03T20:05:18Z
+
+[Term]
+id: ENVO:2000046
+name: oxygen cycling
+def: "A biogeochemical cycle which has oxygen as participant." []
+synonym: "global carbon cycling" EXACT []
+is_a: ENVO:02500009 ! biogeochemical cycling
+created_by: cjm
+creation_date: 2018-11-03T22:06:08Z
+
+[Term]
+id: ENVO:21001212
+name: microwave radiation
+def: "A radiation process during which electromagnetic waves or their quanta are emitted at wavelengths and frequencies which travel exclusively in a line-of-sight fashion and which may produce molecular rotation and torsion on contact with matter." [https://en.wikipedia.org/wiki/Microwave, https://www.iso.org/obp/ui/#iso\:std\:iso\:21348]
+comment: This definition focuses on the properties of microwaves rather than their wavelength or frequency limits. Considerable ambiguity exists around the wavelength and frequency thresholds of microwaves. The ISO 21348 definition bounds these waves at 1 mm and 15 mm, with frequencies between 100 GHz and 0.225 GHz.
+xref: NCIT:C16862
+is_a: ENVO:01001026 ! electromagnetic radiation
+property_value: IAO:0000114 IAO:0000428
+
+[Term]
+id: ENVO:21001213
+name: radio wave radiation
+namespace: ENVO
+def: "A radiation process during which electromagnetic waves or their quanta are emitted at wavelengths ranging from millimetre to kilometer scales." [https://www.iso.org/obp/ui/#iso\:std\:iso\:21348]
+comment: As with microwaves, considerable variation exists in the delimitation of frequency and wavelength thresholds for radiowaves. The ISO 21348 standard allows a wavelength range of 0.10 mm to 100 m and a frequency range of 300 GHz to 3 MHz. However, much lower thresholds also exist.
+is_a: ENVO:01001026 ! electromagnetic radiation
+property_value: IAO:0000114 IAO:0000428
+
+[Term]
+id: ENVO:21001214
+name: infrared radiation
+def: "A radiation process during which electromagnetic waves or their quanta are emitted when molecules change their rotational-vibrational movements, usually at wavelengths between 760 nm and 1 mm." [https://en.wikipedia.org/wiki/Infrared, https://www.iso.org/obp/ui/#iso\:std\:iso\:21348]
+synonym: "infra-red radiation" EXACT []
+synonym: "IR radiation" RELATED []
+xref: NCIT:C16736
+is_a: ENVO:01001026 ! electromagnetic radiation
+
+[Term]
+id: ENVO:21001215
+name: visible spectrum radiation
+namespace: ENVO
+def: "A radiation process during which electromagnetic waves or their quanta are emitted at wavelengths between 380 nm and 760 nm." [https://www.iso.org/obp/ui/#iso\:std\:iso\:21348]
+synonym: "optical radiation" EXACT []
+synonym: "visible light" RELATED [NCIT:C17732]
+xref: NCIT:C17732
+is_a: ENVO:01001026 ! electromagnetic radiation
+
+[Term]
+id: ENVO:21001216
+name: ultraviolet radiation
+namespace: ENVO
+def: "A radiation process during which electromagnetic waves or their quanta are emitted at wavelengths between 10 nm and 400 nm." [https://en.wikipedia.org/wiki/Ultraviolet, https://www.iso.org/obp/ui/#iso\:std\:iso\:21348]
+subset: environmental_hazards
+synonym: "UV radiation" EXACT []
+is_a: ENVO:01001026 ! electromagnetic radiation
+property_value: IAO:0000116 "To be expanded to account for subtypes." xsd:string
+
+[Term]
+id: ENVO:21001217
+name: X-ray radiation
+namespace: ENVO
+def: "A radiation process during which penetrating electromagnetic radiation is emitted by high-energy electrons as they fall into a lower state of energy." [https://en.wikipedia.org/wiki/X-ray]
+subset: environmental_hazards
+synonym: "X ray radiation" EXACT []
+synonym: "X-ray" RELATED [NCIT:C17262]
+xref: NCIT:C17262
+is_a: ENVO:21001219 ! ionizing radiation
+property_value: IAO:0000114 IAO:0000428
+
+[Term]
+id: ENVO:21001218
+name: gamma-ray radiation
+namespace: ENVO
+def: "A radiation process during which penetrating electromagnetic radiation is emitted from the radioactive decay (gamma decay) of atomic nuclei." [https://en.wikipedia.org/wiki/Gamma_ray]
+subset: environmental_hazards
+is_a: ENVO:21001219 ! ionizing radiation
+property_value: IAO:0000114 IAO:0000428
+
+[Term]
+id: ENVO:21001219
+name: ionizing radiation
+namespace: ENVO
+def: "A radiation process during which electromagnetic waves or their quanta are emitted with sufficient energy to disrupt molecular bonds or alter the electron number of atoms." [https://en.wikipedia.org/wiki/Electromagnetic_radiation]
+synonym: "ionising radiation" EXACT []
+xref: NCIT:C17052
+is_a: ENVO:01001026 ! electromagnetic radiation
+
