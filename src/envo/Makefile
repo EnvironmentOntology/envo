@@ -190,7 +190,7 @@ SUBSET_FILES = $(foreach n,$(SUBSET_ROOTS), $(foreach f,$(FORMATS_INCL_TSV), $(n
 all_subsets: $(SUBSET_FILES)
 
 subsets/%.tsv: subsets/%.owl
-	$(ROBOT) export -i $< -c "ID|label|SubClassOf [ID]|SubClassOf [LABEL]|SYNONYMS|definition|inSubset" -e $@
+	$(ROBOT) export -i $< -c "ID|label|subClassOf [ID]|subClassOf [LABEL]|SYNONYMS|inSubset|definition" -e $@
 #	$(ROBOT) query -f tsv -i $< -s ./sparql/labels.sparql $@
 
 envo-simple.owl: envo-base.owl
@@ -213,38 +213,50 @@ subsets/envo-basic.obo: envo-simple.owl
 
 subsets/biome-hierarchy.owl: envo.owl
 	robot filter --input $< \
-	--term ENVO:00000428  \
-	--term IAO:0000115  \
-	--select "annotations self descendants" \
-	--signature true \
-	--output $@
+	  --term ENVO:00000428  \
+	  --term IAO:0000115  \
+	  --select "annotations self descendants" \
+	  --signature true \
+	annotate --ontology-iri $(ONTBASE)/$@ \
+	  --version-iri $(ONTBASE)/releases/$(TODAY)/$@ \
+	  -a owl:versionInfo "$@ $(TODAY)" \
+	  --output $@
 .PRECIOUS: subsets/biome-hierarchy.owl
 
 subsets/feature-hierarchy.owl: envo.owl
 	robot filter --input $< \
-	--term ENVO:01000813  \
-	--term IAO:0000115  \
-	--select "annotations self descendants" \
-	--signature true \
-	--output $@
+	  --term ENVO:01000813  \
+	  --term IAO:0000115  \
+	  --select "annotations self descendants" \
+	  --signature true \
+	annotate --ontology-iri $(ONTBASE)/$@ \
+	  --version-iri $(ONTBASE)/releases/$(TODAY)/$@ \
+	  -a owl:versionInfo "$@ $(TODAY)" \
+	  --output $@
 .PRECIOUS: subsets/feature-hierarchy.owl
 
 subsets/material-hierarchy.owl: envo.owl
 	robot filter --input $< \
-	--term ENVO:00010483  \
-	--term IAO:0000115  \
-	--select "annotations self descendants" \
-	--signature true \
-	--output $@
+	  --term ENVO:00010483  \
+	  --term IAO:0000115  \
+	  --select "annotations self descendants" \
+	  --signature true \
+	annotate --ontology-iri $(ONTBASE)/$@ \
+	  --version-iri $(ONTBASE)/releases/$(TODAY)/$@ \
+	  -a owl:versionInfo "$@ $(TODAY)" \
+	  --output $@
 .PRECIOUS: subsets/material-hierarchy.owl
 
 subsets/process-hierarchy.owl: envo.owl
 	robot filter --input $< \
-	--term ENVO:02500000  \
-	--term IAO:0000115  \
-	--select "annotations self descendants" \
-	--signature true \
-	--output $@
+	  --term ENVO:02500000  \
+	  --term IAO:0000115  \
+	  --select "annotations self descendants" \
+	  --signature true \
+	annotate --ontology-iri $(ONTBASE)/$@ \
+	  --version-iri $(ONTBASE)/releases/$(TODAY)/$@ \
+	  -a owl:versionInfo "$@ $(TODAY)" \
+	  --output $@
 .PRECIOUS: subsets/process-hierarchy.owl
 
 release-diffs:

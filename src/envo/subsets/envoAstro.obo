@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: envo/releases/2020-05-14/subsets/envoAstro.owl
+data-version: envo/releases/2020-06-02/subsets/envoAstro.owl
 subsetdef: disposition_slim "Disposition slim"
 subsetdef: environmental_hazards "environmental_hazards"
 subsetdef: EnvO-Lite-GSC "EnvO-Lite-GSC"
@@ -23,7 +23,7 @@ subsetdef: value_slim "Value slim"
 subsetdef: wwfBiome "wwfBiome"
 synonymtypedef: PLURAL "plurals"
 ontology: envo/subsets/envoAstro
-property_value: owl:versionInfo "2020-05-14" xsd:string
+property_value: owl:versionInfo "2020-06-02" xsd:string
 
 [Term]
 id: ENVO:00000070
@@ -163,16 +163,6 @@ xref: EcoLexicon:organic_material
 is_a: ENVO:00010483 ! environmental material
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2010-03-20T08:40:04Z
-
-[Term]
-id: ENVO:01000254
-name: environmental system
-namespace: ENVO
-def: "A system which has the disposition to environ one or more material entities." [DOI:10.1186/2041-1480-4-43]
-comment: In ENVO's alignment with the Basic Formal Ontology, this class is being considered as a subclass of a proposed BFO class "system". The relation "environed_by" is also under development. Roughly, a system which includes a material entity (at least partially) within its site and causally influences that entity may be considered to environ it. Following the completion of this alignment, this class' definition and the definitions of its subclasses will be revised.
-synonym: "environment" EXACT []
-xref: EcoLexicon:environment
-creation_date: 2013-09-23T16:04:08Z
 
 [Term]
 id: ENVO:01000256
@@ -558,15 +548,6 @@ subset: envoAstro
 is_a: ENVO:01000799 ! astronomical body
 
 [Term]
-id: ENVO:01001110
-name: ecosystem
-namespace: ENVO
-alt_id: LTER:173 {xref="https://vocab.lternet.edu/vocab/vocab/index.php?tema=173&/ecosystems"}
-def: "An environmental system which includes both living and non-living components." [https://en.wikipedia.org/wiki/Ecosystem]
-comment: This class will be primarily filled by inference, any environmental system which necessarily includes living parts should be autoclassified here.
-is_a: ENVO:01000254 ! environmental system
-
-[Term]
 id: ENVO:01001122
 name: gas planet
 namespace: ENVO
@@ -600,7 +581,7 @@ id: ENVO:01001125
 name: ice
 namespace: ENVO
 def: "An ice is an environmental material which is either frozen or which is maintained in a solid state by gravitational forces or pressure." []
-comment: This class is defined logically - any material that is frozen is considered a subclass. Note that ice may be formed at very high temperatures, due to gravitational effects and/or pressure.
+comment: Note that ice may be formed at very high temperatures, due to gravitational effects and/or pressure.
 is_a: ENVO:00010483 ! environmental material
 
 [Term]
@@ -957,7 +938,6 @@ comment: This definition focuses on the properties of microwaves rather than the
 subset: envoAstro
 synonym: "microwave radiation" EXACT []
 synonym: "microwave solar radiation" NARROW []
-is_a: ENVO:01001211 ! stellar radiation
 property_value: IAO:0000114 IAO:0000428
 
 [Term]
@@ -969,7 +949,6 @@ comment: As with microwaves, considerable variation exists in the delimitation o
 subset: envoAstro
 synonym: "radio wave radiation" EXACT []
 synonym: "radio wave solar radiation" NARROW []
-is_a: ENVO:01001211 ! stellar radiation
 property_value: IAO:0000114 IAO:0000428
 
 [Term]
@@ -982,7 +961,6 @@ synonym: "infra-red stellar radiation" EXACT []
 synonym: "infrared radiation" BROAD []
 synonym: "infrared solar radiation" NARROW []
 synonym: "IR stellar radiation" RELATED []
-is_a: ENVO:01001211 ! stellar radiation
 
 [Term]
 id: ENVO:01001215
@@ -992,7 +970,6 @@ def: "A stellar radiation process during which electromagnetic waves or their qu
 subset: envoAstro
 synonym: "optical stellar radiation" EXACT []
 synonym: "visible spectrum solar radiation" NARROW []
-is_a: ENVO:01001211 ! stellar radiation
 
 [Term]
 id: ENVO:01001216
@@ -1003,7 +980,6 @@ subset: environmental_hazards
 subset: envoAstro
 synonym: "ultraviolet solar radiation" NARROW []
 xref: NCIT:C17231
-is_a: ENVO:01001211 ! stellar radiation
 property_value: IAO:0000116 "To be expanded to account for subtypes." xsd:string
 
 [Term]
@@ -1039,7 +1015,6 @@ def: "A stellar radiation process during which electromagnetic waves or their qu
 subset: envoAstro
 synonym: "ionising solar radiation" NARROW []
 synonym: "ionising stellar radiation" EXACT []
-is_a: ENVO:01001211 ! stellar radiation
 
 [Term]
 id: ENVO:01001477
@@ -1119,7 +1094,6 @@ name: environmental system process
 namespace: ENVO
 def: "A process in which includes the components of an environmental system as participants." []
 comment: This is a convenience class for organisation and should not be used for annotation.
-relationship: obsolete_has_active_participant ENVO:01001110 ! ecosystem
 
 [Term]
 id: ENVO:03000010
@@ -1258,12 +1232,6 @@ xref: RO:0002507
 id: determined_by_part_of
 namespace: ENVO
 xref: RO:0002509
-holds_over_chain: determined_by part_of
-
-[Typedef]
-id: determines
-namespace: ENVO
-xref: RO:0002508
 
 [Typedef]
 id: disconnected_from
