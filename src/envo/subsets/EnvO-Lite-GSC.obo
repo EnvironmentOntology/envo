@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: envo/releases/2020-05-14/subsets/EnvO-Lite-GSC.owl
+data-version: envo/releases/2020-06-02/subsets/EnvO-Lite-GSC.owl
 subsetdef: disposition_slim "Disposition slim"
 subsetdef: environmental_hazards "environmental_hazards"
 subsetdef: EnvO-Lite-GSC "EnvO-Lite-GSC"
@@ -23,17 +23,7 @@ subsetdef: value_slim "Value slim"
 subsetdef: wwfBiome "wwfBiome"
 synonymtypedef: PLURAL "plurals"
 ontology: envo/subsets/EnvO-Lite-GSC
-property_value: owl:versionInfo "2020-05-14" xsd:string
-
-[Term]
-id: ENVO:00000000
-name: geographic feature
-namespace: ENVO
-comment: This class is being depopulated and will be filled only with inferred subclasses. Please do not use this for direct annotation, favouring instead a more descriptive subclass.
-subset: envoPolar
-synonym: "macroscopic spatial feature" EXACT []
-xref: https://en.wikipedia.org/wiki/Geographic_feature
-is_a: ENVO:01000813 ! astronomical body part
+property_value: owl:versionInfo "2020-06-02" xsd:string
 
 [Term]
 id: ENVO:00000027
@@ -49,7 +39,7 @@ xref: FTT:982
 xref: Geonames:H.SPNG
 xref: SWEETRealm:Spring
 xref: TGN:21126
-is_a: ENVO:00000000 ! geographic feature
+is_a: ENVO:01000813 ! astronomical body part
 is_a: ENVO:01001784 ! compound astronomical body part
 relationship: part_of ENVO:01001311 ! solid surface layer
 
@@ -367,16 +357,6 @@ created_by: ORCID:0000-0002-4366-3088
 creation_date: 2010-03-20T08:40:04Z
 
 [Term]
-id: ENVO:01000254
-name: environmental system
-namespace: ENVO
-def: "A system which has the disposition to environ one or more material entities." [DOI:10.1186/2041-1480-4-43]
-comment: In ENVO's alignment with the Basic Formal Ontology, this class is being considered as a subclass of a proposed BFO class "system". The relation "environed_by" is also under development. Roughly, a system which includes a material entity (at least partially) within its site and causally influences that entity may be considered to environ it. Following the completion of this alignment, this class' definition and the definitions of its subclasses will be revised.
-synonym: "environment" EXACT []
-xref: EcoLexicon:environment
-creation_date: 2013-09-23T16:04:08Z
-
-[Term]
 id: ENVO:01000256
 name: mineral material
 namespace: ENVO
@@ -575,15 +555,6 @@ relationship: overlaps ENVO:01000817 ! biosphere
 relationship: overlaps ENVO:01000819 ! hydrosphere
 
 [Term]
-id: ENVO:01001110
-name: ecosystem
-namespace: ENVO
-alt_id: LTER:173 {xref="https://vocab.lternet.edu/vocab/vocab/index.php?tema=173&/ecosystems"}
-def: "An environmental system which includes both living and non-living components." [https://en.wikipedia.org/wiki/Ecosystem]
-comment: This class will be primarily filled by inference, any environmental system which necessarily includes living parts should be autoclassified here.
-is_a: ENVO:01000254 ! environmental system
-
-[Term]
 id: ENVO:01001112
 name: fossilization of organic material
 namespace: ENVO
@@ -698,7 +669,6 @@ name: environmental system process
 namespace: ENVO
 def: "A process in which includes the components of an environmental system as participants." []
 comment: This is a convenience class for organisation and should not be used for annotation.
-relationship: obsolete_has_active_participant ENVO:01001110 ! ecosystem
 
 [Typedef]
 id: adjacent_to
@@ -801,12 +771,6 @@ xref: RO:0002507
 id: determined_by_part_of
 namespace: ENVO
 xref: RO:0002509
-holds_over_chain: determined_by part_of
-
-[Typedef]
-id: determines
-namespace: ENVO
-xref: RO:0002508
 
 [Typedef]
 id: disconnected_from
