@@ -181,7 +181,7 @@ $(ONT)-full.owl: $(SRC) $(OTHER_SRC)
 
 
 SUBSETS = envo-basic EnvO-Lite-GSC envoEmpo envoAstro envoPolar envoEmpo envoOmics envoCesab environmental_hazards \
-   biome-hierarchy feature-hierarchy material-hierarchy process-hierarchy
+   biome-hierarchy astronomical-body-part-hierarchy material-hierarchy process-hierarchy
 
 SUBSET_ROOTS = $(patsubst %, subsets/%, $(SUBSETS))
 SUBSET_FILES = $(foreach n,$(SUBSET_ROOTS), $(foreach f,$(FORMATS_INCL_TSV), $(n).$(f)))
@@ -233,7 +233,7 @@ subsets/astronomical-body-part-hierarchy.owl: envo.owl
 	  --version-iri $(ONTBASE)/releases/$(TODAY)/$@ \
 	  -a owl:versionInfo "$@ $(TODAY)" \
 	  --output $@
-.PRECIOUS: subsets/feature-hierarchy.owl
+.PRECIOUS: subsets/astronomical-body-part-hierarchy.owl
 
 subsets/material-hierarchy.owl: envo.owl
 	robot filter --input $< \
