@@ -223,7 +223,7 @@ subsets/biome-hierarchy.owl: envo.owl
 	  --output $@
 .PRECIOUS: subsets/biome-hierarchy.owl
 
-subsets/feature-hierarchy.owl: envo.owl
+subsets/astronomical-body-part-hierarchy.owl: envo.owl
 	robot filter --input $< \
 	  --term ENVO:01000813  \
 	  --term IAO:0000115  \
