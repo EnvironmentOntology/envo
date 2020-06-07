@@ -1,0 +1,62 @@
+format-version: 1.2
+ontology: envo/imports/fao_import
+
+[Term]
+id: FAO:0000001
+name: fungal structure
+def: "An anatomical structure that forms all or part of a fungus." []
+synonym: "fungal structure ontology" RELATED []
+
+[Term]
+id: NCBITaxon:1
+name: root
+namespace: ncbi_taxonomy
+synonym: "all" RELATED synonym []
+xref: GC_ID:1
+
+[Term]
+id: NCBITaxon:131567
+name: cellular organisms
+namespace: ncbi_taxonomy
+synonym: "biota" RELATED synonym []
+xref: GC_ID:1
+is_a: NCBITaxon:1 ! root
+
+[Term]
+id: NCBITaxon:2759
+name: Eukaryota
+namespace: ncbi_taxonomy
+synonym: "Eucarya" RELATED synonym []
+synonym: "Eucaryotae" RELATED synonym []
+synonym: "eucaryotes" EXACT genbank_common_name []
+synonym: "Eukarya" RELATED synonym []
+synonym: "Eukaryotae" RELATED synonym []
+synonym: "eukaryotes" EXACT common_name []
+synonym: "eukaryotes" RELATED blast_name []
+xref: GC_ID:1
+xref: PMID:23020233
+xref: PMID:30257078
+is_a: NCBITaxon:131567 ! cellular organisms
+property_value: has_rank NCBITaxon:superkingdom
+
+[Term]
+id: NCBITaxon:33154
+name: Opisthokonta
+namespace: ncbi_taxonomy
+synonym: "Fungi/Metazoa group" RELATED synonym []
+synonym: "opisthokonts" RELATED synonym []
+xref: GC_ID:1
+is_a: NCBITaxon:2759 ! Eukaryota
+
+[Term]
+id: NCBITaxon:4751
+name: Fungi
+namespace: ncbi_taxonomy
+synonym: "fungi" EXACT genbank_common_name []
+synonym: "fungi" RELATED blast_name []
+xref: GC_ID:1
+xref: PMID:11062127
+xref: PMID:12684019
+is_a: NCBITaxon:33154 ! Opisthokonta
+property_value: has_rank NCBITaxon:kingdom
+
