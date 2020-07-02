@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: envo/releases/2020-06-02/subsets/envoPolar.owl
+data-version: envo/releases/2020-06-22/subsets/envoPolar.owl
 subsetdef: disposition_slim "Disposition slim"
 subsetdef: environmental_hazards "environmental_hazards"
 subsetdef: EnvO-Lite-GSC "EnvO-Lite-GSC"
@@ -23,7 +23,7 @@ subsetdef: value_slim "Value slim"
 subsetdef: wwfBiome "wwfBiome"
 synonymtypedef: PLURAL "plurals"
 ontology: envo/subsets/envoPolar
-property_value: owl:versionInfo "2020-06-02" xsd:string
+property_value: owl:versionInfo "2020-06-22" xsd:string
 
 [Term]
 id: ENVO:00000000
@@ -1922,8 +1922,7 @@ relationship: part_of ENVO:00000309 ! depression
 id: ENVO:00000514
 name: crater
 namespace: ENVO
-def: "A generally circular saucer or bowl-shaped depression caused by volcanic or meteorite explosive action." [Geonames:feature]
-synonym: "caldera" NARROW [USGS:SDTS]
+def: "A generally circular saucer or bowl-shaped depression caused by explosive action." [Geonames:feature]
 synonym: "CRATER" EXACT [USGS:SDTS]
 xref: FTT:219
 xref: Geonames:T.CRTR
@@ -2851,7 +2850,7 @@ name: marine pockmark
 namespace: ENVO
 def: "Pockmarks are craters in the seabed resulting from the release of gas or liquid. Generally, they are formed in soft, fine-grained seabed sediments by the escape of fluids (gas or water, but mainly methane) into the water column." [https://en.wikipedia.org/wiki/Pockmark, ORCID:0000-0002-4366-3088]
 subset: envoPolar
-is_a: ENVO:00000309 ! depression
+is_a: ENVO:00000514 ! crater
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2010-03-20T09:14:38Z
 
@@ -3003,7 +3002,7 @@ comment: Perhaps a better relation between water vapour and water can be found i
 synonym: "aqueous vapor" EXACT [https://en.wikipedia.org/wiki/Water_vapor]
 synonym: "aqueous vapour" EXACT [https://en.wikipedia.org/wiki/Water_vapor]
 synonym: "water vapor" EXACT [https://en.wikipedia.org/wiki/Water_vapor]
-is_a: ENVO:00010483 ! environmental material
+is_a: ENVO:01000797 ! gaseous environmental material
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2013-10-10T07:58:18Z
 
@@ -4183,7 +4182,7 @@ id: ENVO:01000815
 name: liquid environmental material
 namespace: ENVO
 def: "An environmental material which is in a liquid state." []
-comment: This is a defined class: its subclasses will not be asserted, but filled by inference.
+comment: This is a defined class: most of its subclasses will not be asserted, but filled by inference.
 subset: envoPolar
 is_a: ENVO:02000140 ! fluid environmental material
 
@@ -7690,6 +7689,11 @@ xref: RO:0002418
 id: composed_primarily_of
 namespace: ENVO
 xref: RO:0002473
+
+[Typedef]
+id: concretizes
+namespace: ENVO
+xref: RO:0000059
 
 [Typedef]
 id: connected_to
