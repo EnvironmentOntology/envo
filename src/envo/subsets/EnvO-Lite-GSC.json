@@ -606,24 +606,6 @@
       "type" : "CLASS",
       "lbl" : "anthropogenic environmental material"
     }, {
-      "id" : "http://purl.obolibrary.org/obo/ENVO_01001110",
-      "meta" : {
-        "definition" : {
-          "val" : "An environmental system which includes both living and non-living components.",
-          "xrefs" : [ "https://en.wikipedia.org/wiki/Ecosystem" ]
-        },
-        "comments" : [ "This class will be primarily filled by inference, any environmental system which necessarily includes living parts should be autoclassified here." ],
-        "basicPropertyValues" : [ {
-          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
-          "val" : "ENVO"
-        }, {
-          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasAlternativeId",
-          "val" : "LTER:173"
-        } ]
-      },
-      "type" : "CLASS",
-      "lbl" : "ecosystem"
-    }, {
       "id" : "http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym",
       "type" : "PROPERTY",
       "lbl" : "has_related_synonym"
@@ -1686,6 +1668,21 @@
       },
       "type" : "PROPERTY"
     }, {
+      "id" : "http://purl.obolibrary.org/obo/RO_0000059",
+      "meta" : {
+        "xrefs" : [ {
+          "val" : "RO:0000059"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "ENVO"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#shorthand",
+          "val" : "concretizes"
+        } ]
+      },
+      "type" : "PROPERTY"
+    }, {
       "id" : "http://purl.obolibrary.org/obo/RO_0000057",
       "meta" : {
         "xrefs" : [ {
@@ -1811,26 +1808,6 @@
       },
       "type" : "PROPERTY",
       "lbl" : "has_condition"
-    }, {
-      "id" : "http://purl.obolibrary.org/obo/ENVO_00000000",
-      "meta" : {
-        "comments" : [ "This class is being depopulated and will be filled only with inferred subclasses. Please do not use this for direct annotation, favouring instead a more descriptive subclass." ],
-        "subsets" : [ "http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar" ],
-        "xrefs" : [ {
-          "val" : "https://en.wikipedia.org/wiki/Geographic_feature"
-        } ],
-        "synonyms" : [ {
-          "pred" : "hasExactSynonym",
-          "val" : "macroscopic spatial feature",
-          "xrefs" : [ ]
-        } ],
-        "basicPropertyValues" : [ {
-          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
-          "val" : "ENVO"
-        } ]
-      },
-      "type" : "CLASS",
-      "lbl" : "geographic feature"
     }, {
       "id" : "http://www.geneontology.org/formats/oboInOwl#hasExactSynonym",
       "type" : "PROPERTY",
@@ -1968,21 +1945,6 @@
       "type" : "CLASS",
       "lbl" : "biosphere"
     }, {
-      "id" : "http://purl.obolibrary.org/obo/RO_0002353",
-      "meta" : {
-        "xrefs" : [ {
-          "val" : "RO:0002353"
-        } ],
-        "basicPropertyValues" : [ {
-          "pred" : "http://www.geneontology.org/formats/oboInOwl#shorthand",
-          "val" : "output_of"
-        }, {
-          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
-          "val" : "ENVO"
-        } ]
-      },
-      "type" : "PROPERTY"
-    }, {
       "id" : "http://purl.obolibrary.org/obo/RO_0002232",
       "meta" : {
         "xrefs" : [ {
@@ -1994,6 +1956,21 @@
         }, {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#shorthand",
           "val" : "has_end_location"
+        } ]
+      },
+      "type" : "PROPERTY"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/RO_0002353",
+      "meta" : {
+        "xrefs" : [ {
+          "val" : "RO:0002353"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#shorthand",
+          "val" : "output_of"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "ENVO"
         } ]
       },
       "type" : "PROPERTY"
@@ -2127,7 +2104,7 @@
           "val" : "An environmental material which is in a liquid state.",
           "xrefs" : [ ]
         },
-        "comments" : [ "This is a defined class: its subclasses will not be asserted, but filled by inference." ],
+        "comments" : [ "This is a defined class: most of its subclasses will not be asserted, but filled by inference." ],
         "subsets" : [ "http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar" ],
         "basicPropertyValues" : [ {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
@@ -2276,32 +2253,6 @@
       },
       "type" : "PROPERTY"
     }, {
-      "id" : "http://purl.obolibrary.org/obo/ENVO_01000254",
-      "meta" : {
-        "definition" : {
-          "val" : "A system which has the disposition to environ one or more material entities.",
-          "xrefs" : [ "DOI:10.1186/2041-1480-4-43" ]
-        },
-        "comments" : [ "In ENVO's alignment with the Basic Formal Ontology, this class is being considered as a subclass of a proposed BFO class \"system\". The relation \"environed_by\" is also under development. Roughly, a system which includes a material entity (at least partially) within its site and causally influences that entity may be considered to environ it. Following the completion of this alignment, this class' definition and the definitions of its subclasses will be revised." ],
-        "xrefs" : [ {
-          "val" : "EcoLexicon:environment"
-        } ],
-        "synonyms" : [ {
-          "pred" : "hasExactSynonym",
-          "val" : "environment",
-          "xrefs" : [ ]
-        } ],
-        "basicPropertyValues" : [ {
-          "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
-          "val" : "2013-09-23T16:04:08Z"
-        }, {
-          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
-          "val" : "ENVO"
-        } ]
-      },
-      "type" : "CLASS",
-      "lbl" : "environmental system"
-    }, {
       "id" : "http://purl.obolibrary.org/obo/RO_0002507",
       "meta" : {
         "xrefs" : [ {
@@ -2313,21 +2264,6 @@
         }, {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "ENVO"
-        } ]
-      },
-      "type" : "PROPERTY"
-    }, {
-      "id" : "http://purl.obolibrary.org/obo/RO_0002508",
-      "meta" : {
-        "xrefs" : [ {
-          "val" : "RO:0002508"
-        } ],
-        "basicPropertyValues" : [ {
-          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
-          "val" : "ENVO"
-        }, {
-          "pred" : "http://www.geneontology.org/formats/oboInOwl#shorthand",
-          "val" : "determines"
         } ]
       },
       "type" : "PROPERTY"
@@ -2600,10 +2536,6 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_01001691"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/ENVO_02500000",
-      "pred" : "http://purl.obolibrary.org/obo/RO_0002218",
-      "obj" : "http://purl.obolibrary.org/obo/ENVO_01001110"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01001684",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_01000281"
@@ -2635,10 +2567,6 @@
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01000008",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_01000549"
-    }, {
-      "sub" : "http://purl.obolibrary.org/obo/ENVO_00000000",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/ENVO_01000813"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01000800",
       "pred" : "is_a",
@@ -2692,10 +2620,6 @@
       "pred" : "http://purl.obolibrary.org/obo/RO_0002131",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_01000646"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/ENVO_01001110",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/ENVO_01000254"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01000637",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_00010483"
@@ -2739,10 +2663,6 @@
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01000639",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_01000281"
-    }, {
-      "sub" : "http://purl.obolibrary.org/obo/ENVO_00000027",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/ENVO_00000000"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01000820",
       "pred" : "http://purl.obolibrary.org/obo/RO_0002473",
@@ -2792,10 +2712,6 @@
       "pred" : "http://purl.obolibrary.org/obo/RO_0000087",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_01000665"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000266",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/ENVO_00010483"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_00002001",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_00002006"
@@ -2807,6 +2723,10 @@
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01000814",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_00010483"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000266",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01000797"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01000804",
       "pred" : "http://purl.obolibrary.org/obo/RO_0000086",
@@ -2879,6 +2799,10 @@
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01000638",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_01000639"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_00000027",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01000813"
     } ],
     "id" : "http://purl.obolibrary.org/obo/envo/subsets/EnvO-Lite-GSC.owl",
     "meta" : {
@@ -2886,9 +2810,9 @@
       "xrefs" : [ ],
       "basicPropertyValues" : [ {
         "pred" : "http://www.w3.org/2002/07/owl#versionInfo",
-        "val" : "2020-05-14"
+        "val" : "2020-06-22"
       } ],
-      "version" : "http://purl.obolibrary.org/obo/envo/releases/2020-05-14/subsets/EnvO-Lite-GSC.owl"
+      "version" : "http://purl.obolibrary.org/obo/envo/releases/2020-06-22/subsets/EnvO-Lite-GSC.owl"
     },
     "equivalentNodesSets" : [ ],
     "logicalDefinitionAxioms" : [ {
@@ -2907,9 +2831,6 @@
       } ]
     } ],
     "domainRangeAxioms" : [ ],
-    "propertyChainAxioms" : [ {
-      "predicateId" : "http://purl.obolibrary.org/obo/RO_0002509",
-      "chainPredicateIds" : [ "http://purl.obolibrary.org/obo/RO_0002507", "http://purl.obolibrary.org/obo/BFO_0000050" ]
-    } ]
+    "propertyChainAxioms" : [ ]
   } ]
 }

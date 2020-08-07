@@ -76,7 +76,7 @@ all_main: $(MAIN_FILES)
 # release products
 #build: base all_modules all_imports envo.owl envo.obo envo.json subsets/envo-basic.obo subsets/envo-basic.json subsets/EnvO-Lite-GSC.obo
 
-release: build copy-release
+release: all copy-release
 
 # stages release in top level folder
 copy-release:
@@ -180,7 +180,8 @@ $(ONT)-full.owl: $(SRC) $(OTHER_SRC)
 ## Note we also include TSV as a format
 
 
-SUBSETS = envo-basic EnvO-Lite-GSC envoEmpo envoAstro envoPolar envoEmpo envoOmics envoCesab environmental_hazards
+SUBSETS = envo-basic EnvO-Lite-GSC envoEmpo envoAstro envoPolar envoEmpo envoOmics envoCesab environmental_hazards \
+   biome-hierarchy astronomical-body-part-hierarchy material-hierarchy process-hierarchy
 
 SUBSET_ROOTS = $(patsubst %, subsets/%, $(SUBSETS))
 SUBSET_FILES = $(foreach n,$(SUBSET_ROOTS), $(foreach f,$(FORMATS_INCL_TSV), $(n).$(f)))
@@ -189,7 +190,7 @@ SUBSET_FILES = $(foreach n,$(SUBSET_ROOTS), $(foreach f,$(FORMATS_INCL_TSV), $(n
 all_subsets: $(SUBSET_FILES)
 
 subsets/%.tsv: subsets/%.owl
-	$(ROBOT) export -i $< -c "ID|label|definition" -e $@
+	$(ROBOT) export -i $< -c "ID|label|subClassOf [ID]|subClassOf [LABEL]|SYNONYMS|inSubset|definition" -e $@
 #	$(ROBOT) query -f tsv -i $< -s ./sparql/labels.sparql $@
 
 envo-simple.owl: envo-base.owl
@@ -209,6 +210,54 @@ subsets/envo-basic.obo: envo-simple.owl
 #	$(OWLTOOLS) $(OBO)/chebi.obo --make-subset-by-properties -o -f obo $@
 #pato-lite.obo:
 #	$(OWLTOOLS) $(OBO)/pato.obo --make-subset-by-properties -o -f obo $@
+
+subsets/biome-hierarchy.owl: envo.owl
+	robot filter --input $< \
+	  --term ENVO:00000428  \
+	  --term IAO:0000115  \
+	  --select "annotations self descendants" \
+	  --signature true \
+	annotate --ontology-iri $(ONTBASE)/$@ \
+	  --version-iri $(ONTBASE)/releases/$(TODAY)/$@ \
+	  -a owl:versionInfo "$@ $(TODAY)" \
+	  --output $@
+.PRECIOUS: subsets/biome-hierarchy.owl
+
+subsets/astronomical-body-part-hierarchy.owl: envo.owl
+	robot filter --input $< \
+	  --term ENVO:01000813  \
+	  --term IAO:0000115  \
+	  --select "annotations self descendants" \
+	  --signature true \
+	annotate --ontology-iri $(ONTBASE)/$@ \
+	  --version-iri $(ONTBASE)/releases/$(TODAY)/$@ \
+	  -a owl:versionInfo "$@ $(TODAY)" \
+	  --output $@
+.PRECIOUS: subsets/astronomical-body-part-hierarchy.owl
+
+subsets/material-hierarchy.owl: envo.owl
+	robot filter --input $< \
+	  --term ENVO:00010483  \
+	  --term IAO:0000115  \
+	  --select "annotations self descendants" \
+	  --signature true \
+	annotate --ontology-iri $(ONTBASE)/$@ \
+	  --version-iri $(ONTBASE)/releases/$(TODAY)/$@ \
+	  -a owl:versionInfo "$@ $(TODAY)" \
+	  --output $@
+.PRECIOUS: subsets/material-hierarchy.owl
+
+subsets/process-hierarchy.owl: envo.owl
+	robot filter --input $< \
+	  --term ENVO:02500000  \
+	  --term IAO:0000115  \
+	  --select "annotations self descendants" \
+	  --signature true \
+	annotate --ontology-iri $(ONTBASE)/$@ \
+	  --version-iri $(ONTBASE)/releases/$(TODAY)/$@ \
+	  -a owl:versionInfo "$@ $(TODAY)" \
+	  --output $@
+.PRECIOUS: subsets/process-hierarchy.owl
 
 release-diffs:
 	cd diffs && make

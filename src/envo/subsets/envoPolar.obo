@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: envo/releases/2020-05-14/subsets/envoPolar.owl
+data-version: envo/releases/2020-06-22/subsets/envoPolar.owl
 subsetdef: disposition_slim "Disposition slim"
 subsetdef: environmental_hazards "environmental_hazards"
 subsetdef: EnvO-Lite-GSC "EnvO-Lite-GSC"
@@ -23,7 +23,7 @@ subsetdef: value_slim "Value slim"
 subsetdef: wwfBiome "wwfBiome"
 synonymtypedef: PLURAL "plurals"
 ontology: envo/subsets/envoPolar
-property_value: owl:versionInfo "2020-05-14" xsd:string
+property_value: owl:versionInfo "2020-06-22" xsd:string
 
 [Term]
 id: ENVO:00000000
@@ -683,7 +683,6 @@ xref: EcoLexicon:ice
 xref: FTT:648
 xref: SWEETRealm:LandIce
 xref: TGN:21410
-is_a: ENVO:00002297 ! environmental feature
 
 [Term]
 id: ENVO:00000132
@@ -856,7 +855,7 @@ xref: https://en.wikipedia.org/wiki/Isthmus
 xref: SWEETRealm:Isthmus
 xref: TGN:21473
 xref: TGN:21478
-is_a: ENVO:00000000 ! geographic feature
+is_a: ENVO:01000813 ! astronomical body part
 
 [Term]
 id: ENVO:00000176
@@ -883,7 +882,7 @@ xref: FTT:759
 xref: Geonames:T.MRN
 xref: https://en.wikipedia.org/wiki/Moraine
 xref: TGN:21414
-is_a: ENVO:00000000 ! geographic feature
+is_a: ENVO:01000813 ! astronomical body part
 relationship: formed_as_result_of ENVO:03000006 ! glacial erosion process
 
 [Term]
@@ -1711,7 +1710,7 @@ def: "A place where ships may shelter from the weather or are stored." [https://
 subset: envoPolar
 xref: https://en.wikipedia.org/wiki/Harbor
 xref: SWEETRealm:Harbor
-is_a: ENVO:00000000 ! geographic feature
+is_a: ENVO:01000813 ! astronomical body part
 
 [Term]
 id: ENVO:00000464
@@ -1923,8 +1922,7 @@ relationship: part_of ENVO:00000309 ! depression
 id: ENVO:00000514
 name: crater
 namespace: ENVO
-def: "A generally circular saucer or bowl-shaped depression caused by volcanic or meteorite explosive action." [Geonames:feature]
-synonym: "caldera" NARROW [USGS:SDTS]
+def: "A generally circular saucer or bowl-shaped depression caused by explosive action." [Geonames:feature]
 synonym: "CRATER" EXACT [USGS:SDTS]
 xref: FTT:219
 xref: Geonames:T.CRTR
@@ -2278,13 +2276,6 @@ comment: This cline is typically horizontal, with qualities varying with depth.
 subset: envoPolar
 xref: https://en.wikipedia.org/wiki/Chemocline
 is_a: ENVO:01000258 ! fluid cline
-
-[Term]
-id: ENVO:00002297
-name: environmental feature
-namespace: ENVO
-def: "A material entity which determines an environmental system." [DOI:10.1186/2041-1480-4-43, NM:nm, ORCID:0000-0002-4366-3088]
-comment: A material entity determines an environmental system when its removal would cause the collapse of that system. For example, a seamount determines a seamount environment, acting as its 'hub'. This class is currently being aligned to the Basic Formal Ontology. Following this alignment, its definition and the definitions of its subclasses will be revised.
 
 [Term]
 id: ENVO:00002450
@@ -2859,7 +2850,7 @@ name: marine pockmark
 namespace: ENVO
 def: "Pockmarks are craters in the seabed resulting from the release of gas or liquid. Generally, they are formed in soft, fine-grained seabed sediments by the escape of fluids (gas or water, but mainly methane) into the water column." [https://en.wikipedia.org/wiki/Pockmark, ORCID:0000-0002-4366-3088]
 subset: envoPolar
-is_a: ENVO:00000309 ! depression
+is_a: ENVO:00000514 ! crater
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2010-03-20T09:14:38Z
 
@@ -3011,7 +3002,7 @@ comment: Perhaps a better relation between water vapour and water can be found i
 synonym: "aqueous vapor" EXACT [https://en.wikipedia.org/wiki/Water_vapor]
 synonym: "aqueous vapour" EXACT [https://en.wikipedia.org/wiki/Water_vapor]
 synonym: "water vapor" EXACT [https://en.wikipedia.org/wiki/Water_vapor]
-is_a: ENVO:00010483 ! environmental material
+is_a: ENVO:01000797 ! gaseous environmental material
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2013-10-10T07:58:18Z
 
@@ -4191,7 +4182,7 @@ id: ENVO:01000815
 name: liquid environmental material
 namespace: ENVO
 def: "An environmental material which is in a liquid state." []
-comment: This is a defined class: its subclasses will not be asserted, but filled by inference.
+comment: This is a defined class: most of its subclasses will not be asserted, but filled by inference.
 subset: envoPolar
 is_a: ENVO:02000140 ! fluid environmental material
 
@@ -4813,7 +4804,7 @@ id: ENVO:01001125
 name: ice
 namespace: ENVO
 def: "An ice is an environmental material which is either frozen or which is maintained in a solid state by gravitational forces or pressure." []
-comment: This class is defined logically - any material that is frozen is considered a subclass. Note that ice may be formed at very high temperatures, due to gravitational effects and/or pressure.
+comment: Note that ice may be formed at very high temperatures, due to gravitational effects and/or pressure.
 is_a: ENVO:00010483 ! environmental material
 
 [Term]
@@ -5662,7 +5653,7 @@ creation_date: 2019-04-09T13:41:52Z
 id: ENVO:01001617
 name: snow accumulation process
 namespace: ENVO
-def: "A material accumulation process during which the mass of snow on a surface increases." [http://orcid.org/0000-0003-4808-4736%20]
+def: "A material accumulation process during which the mass of snow on a surface increases." [http://orcid.org/0000-0003-4808-4736]
 comment: This term is used both as a process and as an amount of mass added. Semantically speaking these are two distinct concepts (e.g., accumulation results in accumulation_amount of ice or snow gain), though accumulation_amount would more likely be an attribute.\n\nThe scope of this term varies depending on the definition.  Some definitions constrain themselves snow or ice added to glaciers; while others also include ice fields, snow cover, and/or floating ice.  How to resolve this depends on the scope desired.\n\nSome definitions include additional discussion of the the physics involved which would be useful for connecting glacier ontologies to atmospheric, hydrologic, etc. ontologies.  This information should be captured no matter how the inconsistencies above are resolved.
 xref: http://sweetontology.net/phenCryo/Accumulation
 is_a: ENVO:03000009 ! material accumulation process
@@ -6046,6 +6037,8 @@ name: ecosystem process
 namespace: ENVO
 def: "An environmental process either driven by or primarily impacting the parts or emergent properties of an ecosystem." []
 is_a: ENVO:02500000 ! environmental system process
+intersection_of: ENVO:02500000 ! environmental system process
+intersection_of: process_has_causal_agent ENVO:01001110 ! ecosystem
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
 property_value: http://purl.org/dc/elements/1.1/date 2019-10-21T11:52:55Z xsd:dateTime
 
@@ -6093,7 +6086,6 @@ name: environmental system process
 namespace: ENVO
 def: "A process in which includes the components of an environmental system as participants." []
 comment: This is a convenience class for organisation and should not be used for annotation.
-relationship: obsolete_has_active_participant ENVO:01001110 ! ecosystem
 
 [Term]
 id: ENVO:02500003
@@ -7642,7 +7634,7 @@ creation_date: 2013-04-27T04:28:27Z
 id: ENVO:3400001
 name: area of alpine tundra
 namespace: ENVO
-def: "An area of tundra which is present in a region subject to alpine conditions." [] {comment="http://orcid.org/0000-0002-4366-3088", http://purl.obolibrary.org/obo/IAO_0000119="http://orcid.org/0000-0003-4808-4736"}
+def: "An area of tundra which is present in a region subject to alpine conditions." [http://orcid.org/0000-0002-4366-3088] {http://purl.obolibrary.org/obo/IAO_0000119="http://orcid.org/0000-0003-4808-4736"}
 xref: http://sweetontology.net/realmCryo/AlpineTundra
 is_a: ENVO:00000112 ! area of tundra
 relationship: has_quality ENVO:01000340 ! alpine
@@ -7699,6 +7691,11 @@ namespace: ENVO
 xref: RO:0002473
 
 [Typedef]
+id: concretizes
+namespace: ENVO
+xref: RO:0000059
+
+[Typedef]
 id: connected_to
 namespace: ENVO
 xref: RO:0002170
@@ -7748,12 +7745,6 @@ xref: RO:0002507
 id: determined_by_part_of
 namespace: ENVO
 xref: RO:0002509
-holds_over_chain: determined_by part_of
-
-[Typedef]
-id: determines
-namespace: ENVO
-xref: RO:0002508
 
 [Typedef]
 id: disconnected_from
