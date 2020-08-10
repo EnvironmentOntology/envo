@@ -76,7 +76,7 @@ all_main: $(MAIN_FILES)
 # release products
 #build: base all_modules all_imports envo.owl envo.obo envo.json subsets/envo-basic.obo subsets/envo-basic.json subsets/EnvO-Lite-GSC.obo
 
-release: build copy-release
+release: all copy-release
 
 # stages release in top level folder
 copy-release:
