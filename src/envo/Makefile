@@ -511,7 +511,7 @@ all_robot_reports: reports/envo-edit-robot-report.tsv reports/envo-base-robot-re
 # we use a modified profile that allows missing labels, as we sometimes declare properties on
 # an auto-class from modules (e.g ENVO:09200020)
 reports/envo-edit-robot-report.tsv: $(PRE_SRC)
-	$(ROBOT) report -p reports/report_profile_edit.txt -l true -i $< --fail-on $(REPORT_FAIL_ON) --print 5 -o $@
+	$(ROBOT) report -p reports/report_profile_edit.txt -l true -i $< --fail-on ERROR --print 5 -o $@
 
 # default profile
 reports/envo-src-robot-report.tsv: $(SRC)
