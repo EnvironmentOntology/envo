@@ -560,16 +560,3 @@ fill: envo-edit.csv
 
 #modules/%.tsv:
 #	blip-findall -i patterns/spec.obo  -consult pmaker.pro -r envo -r chebi -r pato pattern_$*/3 -no_pred -label -use_tabs > $@
-MIXTURES="https://docs.google.com/spreadsheets/d/e/2PACX-1vQr0nBpt5ySurXeTgAIoiI2t1wC3xk2fGrZRVQOvc_ugziNlKHoNj4-xbVGnz84ohOVc-0g693LWiiz/pub?output=tsv"
-templates/mixtures.tsv:
-	wget $(MIXTURES) -O $@
-
-templates/mixtures.owl: templates/mixtures.tsv
-	$(ROBOT) template -i imports/ro_import.owl --template $< -o $@.tmp.ofn &&\
-	sed -i '/^Declaration[(][^A][a-zA-Z]*[(][<]http[:][/][/]purl[.]obolibrary[.]org[/]obo[/][^E]/d' $@.tmp.ofn &&\
-	mv $@.tmp.ofn $@
-
-merge_mixtures: templates/mixtures.owl
-	$(ROBOT) merge -i envo-edit.owl -i $< --collapse-import-closure false -o envo-edit.owl.ofn && mv envo-edit.owl.ofn envo-edit.owl
-
-
