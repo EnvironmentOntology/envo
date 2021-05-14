@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: envo/releases/2020-06-22/subsets/environmental_hazards.owl
+data-version: envo/releases/2021-05-14/subsets/environmental_hazards.owl
 subsetdef: disposition_slim "Disposition slim"
 subsetdef: environmental_hazards "environmental_hazards"
 subsetdef: EnvO-Lite-GSC "EnvO-Lite-GSC"
@@ -13,6 +13,7 @@ subsetdef: envoMarine "envoMarine"
 subsetdef: envoMeo "envoMeo"
 subsetdef: envoNceas "envoNceas"
 subsetdef: envoOmics "envoOmics"
+subsetdef: envoPlastics "envoPlastics"
 subsetdef: envoPolar "envoPolar"
 subsetdef: mpath_slim "Pathology slim"
 subsetdef: nlcd2011 "nlcd2011"
@@ -23,7 +24,7 @@ subsetdef: value_slim "Value slim"
 subsetdef: wwfBiome "wwfBiome"
 synonymtypedef: PLURAL "plurals"
 ontology: envo/subsets/environmental_hazards
-property_value: owl:versionInfo "2020-06-22" xsd:string
+property_value: owl:versionInfo "2021-05-14" xsd:string
 
 [Term]
 id: ENVO:00000020
@@ -458,7 +459,8 @@ synonym: "EcosytemType" RELATED [NASA:earthrealm]
 synonym: "major habitat type" EXACT [WWF:Biome]
 xref: EcoLexicon:biome
 is_a: ENVO:01001110 ! ecosystem
-relationship: has_part ENVO:01000739 {minCardinality="2"} ! habitat
+relationship: has_component ENVO:01000739 {minCardinality="2"} ! habitat
+relationship: has_part ENVO:01000739 ! habitat
 relationship: part_of ENVO:01000817 ! biosphere
 
 [Term]
@@ -615,7 +617,6 @@ def: "Airborne solid particles (also called dust or particulate matter (PM)) or 
 comment: Should connect to PATO as "quality of an aerosol"
 subset: envoAtmo
 xref: EcoLexicon:aerosol
-xref: http://purl.obolibrary.org/obo/envo.owl
 xref: SWEETRealm:Aerosol
 is_a: ENVO:00010483 ! environmental material
 relationship: has_part ENVO:01000797 ! gaseous environmental material
@@ -748,13 +749,13 @@ creation_date: 2013-10-10T08:14:50Z
 id: ENVO:01000277
 name: water ice
 namespace: ENVO
-def: "Ice is water frozen into a solid state. It can appear transparent or opaque bluish-white color, depending on the presence of impurities or air inclusions. The addition of other materials such as soil may further alter its appearance." [https://en.wikipedia.org/wiki/Ice]
+def: "Ice which is formed from water." [https://en.wikipedia.org/wiki/Ice]
+comment: Water ice can appear transparent or opaque bluish-white color, depending on the presence of impurities or air inclusions. The addition of other materials such as soil may further alter its appearance.\n\nWhen speaking about ice on Earth, usually water ice is meant - the solid, crystalline form of water found in the atmosphere as snow crystals, hail, ice pellets, etc., and on the earth's surface in forms such as hoarfrost, rime, glaze, sea ice, glacier ice, ground ice, frazil, anchor ice, etc.  \n\nThis form of water is, strictly speaking, called ice Ih, the Roman numeral I distinguishing it from more than a dozen other phases and the letter h distinguishing it from the metastable cubic phase ice Ic. Ice Ih is the only one of the several known phases of water ice that is stable at commonly occurring temperatures and pressures. (Some of the other forms have very unusual properties, ice VII, for example, being stable only at pressures above 22 400 kg/cm^2, but then existing at temperatures up to about 100C.) \n\nIt has an open structure with a specific gravity of 0.9166 which is slightly less than water; because the water molecules bond to their neighbors covalently only in four directions; it therefore floats on higher density water, where broken molecular bonds permit closer packing. All commonly occurring forms of ice are crystalline, although large single crystals are relatively rare except in glaciers. The ice crystal lattice possesses hexagonal symmetry that manifests itself in the gross forms of such single crystals as are sometimes found in snow. At an air pressure of one atmosphere, ice melts at 0 C by definition of the Celsius temperature scale. (Strictly speaking the equilibrium point among water, ice, and vapor occurs at +0.01C, the triple point.) On the other hand, ice does not invariably form in liquid water cooled below this temperature; it has a tendency to supercool, more so in the absence of ice nuclei. \n\nIn permafrost regions, ice may occupy voids in soils and rocks and may develop in a variety of forms. Ice may be colourless to pale blue or greenish-blue. It may appear white due to included gas bubbles; in exposures, ground ice may also appear black.\n\nIn nature ice is formed either by: (a) the freezing of water, (b) the condensation of atmospheric water vapour direct into ice crystals, (c) the compaction of snow with or without the motion of a glacier, or (d) the impregnation of porous snow masses with water which subsequently freeze.
 subset: envoPolar
 synonym: "ice" RELATED [http://www.eionet.europa.eu/gemet/concept/4131]
+xref: http://sweetontology.net/matrWater/Ice
 xref: LTER:262
-is_a: ENVO:01001125 ! ice
-relationship: composed_primarily_of ENVO:00002006 ! liquid water
-created_by: ORCID:0000-0002-4366-3088
+created_by: http://orcid.org/0000-0002-4366-3088
 creation_date: 2013-10-13T12:01:28Z
 
 [Term]
@@ -1116,6 +1117,7 @@ is_a: ENVO:01000696 ! mass wasting flow
 id: ENVO:01000698
 name: debris flow
 namespace: ENVO
+def: "A debris flow is a mass wasting flow which occurs when masses of poorly sorted sediment are saturated with water and agitated into motion." [https://orcid.org/0000-0002-2282-7215] {http://purl.obolibrary.org/obo/IAO_0000119="qt-science_center_objects"}
 subset: environmental_hazards
 is_a: ENVO:01000696 ! mass wasting flow
 
@@ -1426,7 +1428,7 @@ def: "An object which is composed of one or more gravitationally bound structure
 comment: If there is only one astronomical body involved, this class is equivalent to ENVO:01000799. This may be problematic with reasoning, but it seems to be true to the rather fuzzy definitions found thus far.
 subset: envoAstro
 synonym: "celestial object" RELATED []
-relationship: has_part ENVO:01000799 {minCardinality="1"} ! astronomical body
+relationship: has_part ENVO:01000799 ! astronomical body
 relationship: has_quality ENVO:01001164 ! geodiversity
 relationship: surrounded_by ENVO:01000637 ! outer space
 
@@ -1744,11 +1746,16 @@ relationship: has_participant ENVO:01000760 {minCardinality="1"} ! cloud
 id: ENVO:01000903
 name: blizzard
 namespace: ENVO
-def: "A blizzard is a severe snowstorm during which snowfall is transported by strong winds, sustained for several hours." [https://en.wikipedia.org/wiki/Blizzard]
+def: "A blizzard is a severe snowstorm during which snowfall is transported by strong winds, sustained for several hours." [http://glossary.ametsoc.org/wiki/Main_Page, http://www.bom.gov.au/lam/glossary/, http://www.physicalgeography.net/glossary.html, https://en.wikipedia.org/wiki/Blizzard, https://orcid.org/0000-0003-4808-4736, https://www.ec.gc.ca/meteo-weather/default.asp?lang=En&n=B8CD636F-1&def=allShow]
+comment: The U.S. National Weather Service specifies sustained wind or frequent gusts of 16 m per second (30 kt or 35 mi per hour) or greater, accompanied by falling and/or blowing snow, frequently reducing visibility to less than 400 m (0.25 mi or 0.4 km) for 3 hours or longer. Earlier definitions also included a condition of low temperatures, on the order of -7C (20F) or lower, or -12C (10F) or lower (severe blizzard). The name originated in the United States but it is also used in other countries. In the Antarctic the name is given to violent autumnal winds off the ice cap. In southeastern France, the cold north wind with snow is termed blizzard (see also boulbie). Similar storms in Russian Asia are the buran and purga. In popular usage in the United States and in England, the term is often used for any heavy snowstorm accompanied by strong winds.
 comment: To qualify a snowstorm as a blizzard, some sources require the windspeed to be at least 56 km/h and the duration of the storm to be at least three hours. We set no such hard boundaries in this definition, as this should be done with reference to local standards. {comment="https://en.wikipedia.org/wiki/Blizzard"}
 subset: environmental_hazards
 subset: envoAtmo
 subset: envoPolar
+synonym: "boulbie" NARROW []
+synonym: "buran" NARROW []
+synonym: "purga" NARROW []
+xref: http://sweetontology.net/phenAtmoPrecipitation/Blizzard
 is_a: ENVO:01000881 ! snowstorm
 relationship: has_part ENVO:03000103 ! aeolian transport of snow
 
@@ -1875,7 +1882,8 @@ namespace: ENVO
 def: "A geomorphological feature which is formed where two or more tectonic plates move towards, away from, or along one another, resulting in deformation of the lithosphere." [https://en.wikipedia.org/wiki/Plate_tectonics]
 is_a: ENVO:01000408 ! environmental zone
 relationship: formed_as_result_of ENVO:01001093 ! tectonic movement
-relationship: overlaps ENVO:01001097 {minCardinality="2"} ! tectonic plate
+relationship: has_component ENVO:01001097 {minCardinality="2"} ! tectonic plate
+relationship: overlaps ENVO:01001097 ! tectonic plate
 
 [Term]
 id: ENVO:01001100
@@ -1913,14 +1921,6 @@ alt_id: LTER:173 {xref="https://vocab.lternet.edu/vocab/vocab/index.php?tema=173
 def: "An environmental system which includes both living and non-living components." [https://en.wikipedia.org/wiki/Ecosystem]
 comment: This class will be primarily filled by inference, any environmental system which necessarily includes living parts should be autoclassified here.
 is_a: ENVO:01000254 ! environmental system
-
-[Term]
-id: ENVO:01001125
-name: ice
-namespace: ENVO
-def: "An ice is an environmental material which is either frozen or which is maintained in a solid state by gravitational forces or pressure." []
-comment: Note that ice may be formed at very high temperatures, due to gravitational effects and/or pressure.
-is_a: ENVO:00010483 ! environmental material
 
 [Term]
 id: ENVO:01001164
@@ -2425,6 +2425,7 @@ name: plastic pollution
 namespace: ENVO
 def: "A pollution process during which plastic contaminants are released into an environmental material." [https://en.wikipedia.org/wiki/Plastic_pollution]
 subset: environmental_hazards
+subset: envoPlastics
 subset: envoPolar
 is_a: ENVO:02500036 ! environmental pollution
 
@@ -2649,7 +2650,6 @@ is_a: ENVO:01001026 ! electromagnetic radiation
 id: adjacent_to
 namespace: ENVO
 xref: RO:0002220
-is_functional: true
 
 [Typedef]
 id: attached_to
@@ -2796,6 +2796,11 @@ xref: ENVO:2000036
 property_value: IAO:0000116 "Consider ceding to RO" xsd:string
 created_by: cjm
 creation_date: 2018-11-03T20:58:13Z
+
+[Typedef]
+id: has_component
+namespace: ENVO
+xref: RO:0002180
 
 [Typedef]
 id: has_condition
