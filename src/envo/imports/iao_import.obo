@@ -1,0 +1,225 @@
+format-version: 1.2
+ontology: envo/imports/iao_import
+owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\nDeclaration(Class(<http://purl.obolibrary.org/obo/IAO_0000032>))\nDeclaration(DataProperty(<http://purl.obolibrary.org/obo/IAO_0000004>))\n############################\n#   Data Properties\n############################\n\n# Data Property: <http://purl.obolibrary.org/obo/IAO_0000004> (<http://purl.obolibrary.org/obo/IAO_0000004>)\n\nFunctionalDataProperty(<http://purl.obolibrary.org/obo/IAO_0000004>)\nDataPropertyDomain(<http://purl.obolibrary.org/obo/IAO_0000004> <http://purl.obolibrary.org/obo/IAO_0000032>)\nDataPropertyRange(<http://purl.obolibrary.org/obo/IAO_0000004> xsd:double)\n\n\n\n############################\n#   Classes\n############################\n\n# Class: <http://purl.obolibrary.org/obo/IAO_0000032> (<http://purl.obolibrary.org/obo/IAO_0000032>)\n\nSubClassOf(<http://purl.obolibrary.org/obo/IAO_0000032> DataMinCardinality(1 <http://purl.obolibrary.org/obo/IAO_0000004>))\n\n\n)
+
+[Term]
+id: BFO:0000001
+name: entity
+
+[Term]
+id: BFO:0000002
+name: continuant
+def: "An entity that exists in full at any time in which it exists at all, persists through time while maintaining its identity and has no temporal parts." []
+is_a: BFO:0000001 ! entity
+disjoint_from: BFO:0000003 ! occurrent
+
+[Term]
+id: BFO:0000003
+name: occurrent
+def: "An entity that has temporal parts and that happens, unfolds or develops through time." []
+is_a: BFO:0000001 ! entity
+
+[Term]
+id: BFO:0000004
+name: independent continuant
+def: "A continuant that is a bearer of quality and realizable entity entities, in which other entities inhere and which itself cannot inhere in anything." []
+def: "b is an independent continuant = Def. b is a continuant which is such that there is no c and no t such that b s-depends_on c at t. (axiom label in BFO2 Reference: [017-002])" []
+is_a: BFO:0000002 ! continuant
+disjoint_from: BFO:0000020 ! specifically dependent continuant
+disjoint_from: BFO:0000031 ! generically dependent continuant
+
+[Term]
+id: BFO:0000008
+name: temporal region
+is_a: BFO:0000003 ! occurrent
+disjoint_from: BFO:0000015 ! process
+
+[Term]
+id: BFO:0000015
+name: process
+def: "An occurrent that has temporal proper parts and for some time t, p s-depends_on some material entity at t." []
+def: "p is a process = Def. p is an occurrent that has temporal proper parts and for some time t, p s-depends_on some material entity at t. (axiom label in BFO2 Reference: [083-003])" []
+is_a: BFO:0000003 ! occurrent
+
+[Term]
+id: BFO:0000016
+name: disposition
+is_a: BFO:0000017 ! realizable entity
+disjoint_from: BFO:0000023 ! role
+
+[Term]
+id: BFO:0000017
+name: realizable entity
+def: "A specifically dependent continuant  that inheres in continuant  entities and are not exhibited in full at every time in which it inheres in an entity or group of entities. The exhibition or actualization of a realizable entity is a particular manifestation, functioning or process that occurs under certain circumstances." []
+is_a: BFO:0000020 ! specifically dependent continuant
+disjoint_from: BFO:0000019 ! quality
+
+[Term]
+id: BFO:0000019
+name: quality
+is_a: BFO:0000020 ! specifically dependent continuant
+
+[Term]
+id: BFO:0000020
+name: specifically dependent continuant
+def: "A continuant that inheres in or is borne by other entities. Every instance of A requires some specific instance of B which must always be the same." []
+def: "b is a specifically dependent continuant = Def. b is a continuant & there is some independent continuant c which is not a spatial region and which is such that b s-depends_on c at every time t during the course of b’s existence. (axiom label in BFO2 Reference: [050-003])" []
+is_a: BFO:0000002 ! continuant
+disjoint_from: BFO:0000031 ! generically dependent continuant
+
+[Term]
+id: BFO:0000023
+name: role
+def: "A realizable entity  the manifestation of which brings about some result or end that is not essential to a continuant  in virtue of the kind of thing that it is but that can be served or participated in by that kind of continuant  in some kinds of natural, social or institutional contexts." []
+is_a: BFO:0000017 ! realizable entity
+
+[Term]
+id: BFO:0000024
+name: fiat object part
+is_a: BFO:0000040 ! material entity
+
+[Term]
+id: BFO:0000027
+name: object aggregate
+is_a: BFO:0000040 ! material entity
+
+[Term]
+id: BFO:0000029
+name: site
+is_a: BFO:0000141 ! immaterial entity
+
+[Term]
+id: BFO:0000030
+name: object
+is_a: BFO:0000040 ! material entity
+
+[Term]
+id: BFO:0000031
+name: generically dependent continuant
+def: "A continuant that is dependent on one or other independent continuant bearers. For every instance of A requires some instance of (an independent continuant type) B but which instance of B serves can change from time to time." []
+def: "b is a generically dependent continuant = Def. b is a continuant that g-depends_on one or more other entities. (axiom label in BFO2 Reference: [074-001])" []
+is_a: BFO:0000002 ! continuant
+
+[Term]
+id: BFO:0000038
+name: one-dimensional temporal region
+is_a: BFO:0000008 ! temporal region
+
+[Term]
+id: BFO:0000040
+name: material entity
+def: "An independent continuant that is spatially extended whose identity is independent of that of other entities and can be maintained through time." []
+is_a: BFO:0000004 ! independent continuant
+disjoint_from: BFO:0000141 ! immaterial entity
+
+[Term]
+id: BFO:0000140
+name: continuant fiat boundary
+def: "b is a continuant fiat boundary = Def. b is an immaterial entity that is of zero, one or two dimensions and does not include a spatial region as part. (axiom label in BFO2 Reference: [029-001])" []
+is_a: BFO:0000141 ! immaterial entity
+
+[Term]
+id: BFO:0000141
+name: immaterial entity
+is_a: BFO:0000004 ! independent continuant
+
+[Term]
+id: BFO:0000146
+name: two-dimensional continuant fiat boundary
+is_a: BFO:0000140 ! continuant fiat boundary
+
+[Term]
+id: IAO:0000005
+name: objective specification
+def: "a directive information entity that describes an intended process endpoint. When part of a plan specification the concretization is realized in a planned process in which the bearer tries to effect the world so that the process endpoint is achieved." []
+is_a: IAO:0000033 ! directive information entity
+
+[Term]
+id: IAO:0000007
+name: action specification
+def: "a directive information entity that describes an action the bearer will take" []
+is_a: IAO:0000033 ! directive information entity
+
+[Term]
+id: IAO:0000027
+name: data item
+def: "a data item is an information content entity that is intended to be a truthful statement about something (modulo, e.g., measurement precision or other systematic errors) and is constructed/acquired by a method which reliably tends to produce (approximately) truthful statements." []
+is_a: IAO:0000030 ! information content entity
+
+[Term]
+id: IAO:0000030
+name: information content entity
+def: "A generically dependent continuant that is about some thing." []
+is_a: BFO:0000031 ! generically dependent continuant
+
+[Term]
+id: IAO:0000032
+name: scalar measurement datum
+def: "a scalar measurement datum is a measurement datum that is composed of two parts, numerals and a unit label." []
+is_a: IAO:0000109 ! measurement datum
+
+[Term]
+id: IAO:0000033
+name: directive information entity
+def: "An information content entity whose concretizations indicate to their bearer how to realize them in a process." []
+is_a: IAO:0000030 ! information content entity
+
+[Term]
+id: IAO:0000100
+name: data set
+def: "A data item that is an aggregate of other data items of the same type that have something in common. Averages and distributions can be determined for data sets." []
+is_a: IAO:0000027 ! data item
+
+[Term]
+id: IAO:0000101
+name: image
+def: "An image is an affine projection to a two dimensional surface, of measurements of some quality of an entity or entities repeated at regular intervals across a spatial range, where the measurements are represented as color and luminosity on the projected on surface." []
+is_a: IAO:0000308 ! figure
+
+[Term]
+id: IAO:0000104
+name: plan specification
+def: "A directive information entity with action specifications and objective specifications as parts that, when concretized, is realized in a process in which the bearer tries to achieve the objectives by taking the actions specified." []
+is_a: IAO:0000033 ! directive information entity
+
+[Term]
+id: IAO:0000109
+name: measurement datum
+def: "A measurement datum is an information content entity that is a recording of the output of a measurement such as produced by a device." []
+is_a: IAO:0000027 ! data item
+
+[Term]
+id: IAO:0000308
+name: figure
+def: "An information content entity consisting of a two dimensional arrangement of information content entities such that the arrangement itself is about something." []
+is_a: IAO:0000030 ! information content entity
+
+[Term]
+id: IAO:0000582
+name: time stamped measurement datum
+is_a: IAO:0000109 ! measurement datum
+
+[Term]
+id: IAO:0000584
+name: time sampled measurement data set
+def: "A data set that is an aggregate of data recording some measurement at a number of time points. The time series data set is an ordered list of pairs of time measurement data and the corresponding measurement data acquired at that time." []
+is_a: IAO:0000100 ! data set
+
+[Term]
+id: OBI:0000011
+name: planned process
+def: "A processual entity that realizes a plan which is the concretization of a plan specification." []
+is_a: BFO:0000015 ! process
+
+[Term]
+id: PATO:0001018
+name: physical quality
+def: "A quality of a physical entity that exists through action of continuants at the physical level of organisation in relation to other entities." []
+is_a: PATO:0001241 ! physical object quality
+
+[Term]
+id: PATO:0001241
+name: physical object quality
+def: "A quality which inheres in a continuant." []
+is_a: BFO:0000019 ! quality
+

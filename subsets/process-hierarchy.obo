@@ -1,7 +1,7 @@
 format-version: 1.2
-data-version: envo/releases/2020-06-22/subsets/process-hierarchy.owl
+data-version: envo/releases/2021-05-14/subsets/process-hierarchy.owl
 ontology: envo/subsets/process-hierarchy
-property_value: owl:versionInfo "subsets/process-hierarchy.owl 2020-06-22" xsd:string
+property_value: owl:versionInfo "subsets/process-hierarchy.owl 2021-05-14" xsd:string
 
 [Term]
 id: ENVO:01000622
@@ -221,6 +221,7 @@ is_a: ENVO:01000696 ! mass wasting flow
 [Term]
 id: ENVO:01000698
 name: debris flow
+def: "A debris flow is a mass wasting flow which occurs when masses of poorly sorted sediment are saturated with water and agitated into motion." [https://orcid.org/0000-0002-2282-7215] {http://purl.obolibrary.org/obo/IAO_0000119="qt-science_center_objects"}
 subset: environmental_hazards
 is_a: ENVO:01000696 ! mass wasting flow
 
@@ -357,11 +358,12 @@ property_value: IAO:0000116 "The assertion that the output is freshwater seems r
 [Term]
 id: ENVO:01000723
 name: melting
-def: "Melting is a physical process that results in the phase transition of a substance from a solid to a liquid." [https://en.wikipedia.org/wiki/Melting]
+def: "Melting is a material transformation process which results in the phase transition of a substance from a solid to a liquid." [https://en.wikipedia.org/wiki/Melting]
 comment: Note that melting need not be due to warming, thus the classes are separated.
 subset: envoPolar
 synonym: "fusion" RELATED []
 synonym: "melting process" EXACT []
+xref: http://sweetontology.net/procStateChange/Melting
 is_a: ENVO:03000043 ! material transformation process
 property_value: IAO:0000116 "could replace with http://purl.obolibrary.org/obo/REX_0000177" xsd:string
 
@@ -420,9 +422,17 @@ is_a: ENVO:03000010 ! material transport process
 [Term]
 id: ENVO:01000741
 name: recycling process
-def: "A process in which some input bearing a waste role is consumed to produce an output which bears a resource role." [https://stats.oecd.org/glossary/detail.asp?ID=2260]
+def: "A process during which materials deemed as waste are separated and converted into a form which can be used as input by the same processes which generated them." [https://stats.oecd.org/glossary/detail.asp?ID=2260]
 comment: This has been created for SDGIO. Revision is likely, but the general meaning should be stable. The frame of reference for determining what is 'waste' and what is a  'resource' is unclear.
+subset: envoPlastics
+synonym: "proceso de reciclaje" EXACT []
+synonym: "processo di riciclo" EXACT []
+synonym: "Recycling-Prozess" EXACT []
+synonym: "資源回收" EXACT []
 is_a: ENVO:02500000 ! environmental system process
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-2996-719X
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-8166-0486
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0003-1072-8081
 
 [Term]
 id: ENVO:01000742
@@ -738,11 +748,16 @@ is_a: ENVO:01000898 ! atmospheric lightning
 [Term]
 id: ENVO:01000903
 name: blizzard
-def: "A blizzard is a severe snowstorm during which snowfall is transported by strong winds, sustained for several hours." [https://en.wikipedia.org/wiki/Blizzard]
+def: "A blizzard is a severe snowstorm during which snowfall is transported by strong winds, sustained for several hours." [http://glossary.ametsoc.org/wiki/Main_Page, http://www.bom.gov.au/lam/glossary/, http://www.physicalgeography.net/glossary.html, https://en.wikipedia.org/wiki/Blizzard, https://orcid.org/0000-0003-4808-4736, https://www.ec.gc.ca/meteo-weather/default.asp?lang=En&n=B8CD636F-1&def=allShow]
+comment: The U.S. National Weather Service specifies sustained wind or frequent gusts of 16 m per second (30 kt or 35 mi per hour) or greater, accompanied by falling and/or blowing snow, frequently reducing visibility to less than 400 m (0.25 mi or 0.4 km) for 3 hours or longer. Earlier definitions also included a condition of low temperatures, on the order of -7C (20F) or lower, or -12C (10F) or lower (severe blizzard). The name originated in the United States but it is also used in other countries. In the Antarctic the name is given to violent autumnal winds off the ice cap. In southeastern France, the cold north wind with snow is termed blizzard (see also boulbie). Similar storms in Russian Asia are the buran and purga. In popular usage in the United States and in England, the term is often used for any heavy snowstorm accompanied by strong winds.
 comment: To qualify a snowstorm as a blizzard, some sources require the windspeed to be at least 56 km/h and the duration of the storm to be at least three hours. We set no such hard boundaries in this definition, as this should be done with reference to local standards. {comment="https://en.wikipedia.org/wiki/Blizzard"}
 subset: environmental_hazards
 subset: envoAtmo
 subset: envoPolar
+synonym: "boulbie" NARROW []
+synonym: "buran" NARROW []
+synonym: "purga" NARROW []
+xref: http://sweetontology.net/phenAtmoPrecipitation/Blizzard
 is_a: ENVO:01000881 ! snowstorm
 
 [Term]
@@ -1241,7 +1256,14 @@ is_a: ENVO:01001260 ! waste disposal process
 id: ENVO:01001260
 name: waste disposal process
 def: "A process during which materials deemed to be waste are transported away from a site." [https://eupathdb.org/eupathdb/]
+subset: envoPlastics
+synonym: "Abfallentsorgungsprozess" EXACT []
+synonym: "proceso de eliminación de residuos" EXACT []
+synonym: "processo di smaltimento rifiuti" EXACT []
 is_a: ENVO:02500027 ! anthropogenic environmental process
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-2996-719X
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-8166-0486
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0003-1072-8081
 
 [Term]
 id: ENVO:01001261
@@ -1667,6 +1689,8 @@ creation_date: 2019-01-31T17:51:48Z
 id: ENVO:01001548
 name: freezing
 def: "A material congelation process during which a liquid turns into a solid when its temperature is lowered below its melting point." [https://en.wikipedia.org/wiki/Freezing]
+subset: envoPolar
+xref: http://sweetontology.net/procStateChange/Freezing
 is_a: ENVO:01001510 ! material congelation process
 created_by: http://orcid.org/0000-0002-4366-3088
 creation_date: 2019-01-31T21:13:16Z
@@ -2278,7 +2302,7 @@ property_value: http://purl.org/dc/elements/1.1/date 2019-09-05T06:04:47Z xsd:da
 [Term]
 id: ENVO:01001751
 name: downburst
-def: "A downdraft which is of high intensity and which spreads radially,, with high speed, across the planetary surface upon reaching it." [http://glossary.ametsoc.org/wiki/Downburst]
+def: "A downdraft which is of high intensity and which spreads radially, with high speed, across the planetary surface upon reaching it." [http://glossary.ametsoc.org/wiki/Downburst]
 is_a: ENVO:01001758 ! downdraft
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
 property_value: http://purl.org/dc/elements/1.1/date 2019-09-05T06:13:28Z xsd:dateTime
@@ -2334,6 +2358,7 @@ property_value: http://purl.org/dc/elements/1.1/date 2019-09-05T06:44:34Z xsd:da
 [Term]
 id: ENVO:01001758
 name: downdraft
+def: "A katabatic wind which is sudden and strong." [https://www.merriam-webster.com/dictionary/downdraft, https://www.thefreedictionary.com/downdraft]
 is_a: ENVO:01001719 ! katabatic wind
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
 property_value: http://purl.org/dc/elements/1.1/date 2019-09-05T06:51:54Z xsd:dateTime
@@ -2589,6 +2614,14 @@ synonym: "hydrofracturing" EXACT []
 is_a: ENVO:02500027 ! anthropogenic environmental process
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
 property_value: http://purl.org/dc/elements/1.1/date 2020-06-02T13:54:58Z xsd:dateTime
+
+[Term]
+id: ENVO:01001875
+name: debris flow following rainfall
+def: "A debris flow which is causally preceded by rainfall." []
+is_a: ENVO:01000698 ! debris flow
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2020-07-13T18:44:15Z xsd:dateTime
 
 [Term]
 id: ENVO:02000121
@@ -2848,6 +2881,7 @@ id: ENVO:02500040
 name: plastic pollution
 def: "A pollution process during which plastic contaminants are released into an environmental material." [https://en.wikipedia.org/wiki/Plastic_pollution]
 subset: environmental_hazards
+subset: envoPlastics
 subset: envoPolar
 is_a: ENVO:02500036 ! environmental pollution
 
@@ -3375,6 +3409,88 @@ property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
 property_value: IAO:0000117 https://orcid.org/0000-0002-3884-3420 xsd:string
 
 [Term]
+id: ENVO:03000134
+name: WMO blizzard
+def: "A blizzard which 1) lasts at least 3 hours, 2) combines below freezing temperatures and very strong wind, laden with blowing snow." [https://www.wmo.int/pages/prog/lsp/meteoterm_wmo_en.html] {comment="https://orcid.org/0000-0003-4808-4736"}
+comment: Blizzards typically reduces visibility to less than 1 km
+subset: envoPolar
+is_a: ENVO:01000903 ! blizzard
+created_by: http://orcid.org/0000-0002-3410-4655
+created_by: http://orcid.org/0000-0002-4366-3088
+created_by: https://orcid.org/0000-0002-0337-8610
+created_by: https://orcid.org/0000-0002-2282-7215
+created_by: https://orcid.org/0000-0003-0632-7576
+created_by: https://orcid.org/0000-0003-4808-4736
+creation_date: 2020-10-14T20:13:10.917Z
+
+[Term]
+id: ENVO:03000135
+name: NSIDC blizzard
+def: "A blizzard which has 1) winds of 35 miles per hour (approximately 56 kilometers per hour), 2) lasts for a period of at least three hours, and 3) occurs in extremely cold temperatures." [https://nsidc.org/cryosphere/glossary, https://orcid.org/0000-0003-4808-4736]
+comment: The original definition has been edited to conform to ENVO's textual pattern. Subjective/observer-based differentia (e.g. visibility) have been moved to comments. The NSIDC definition notes that blizzards involve snow reducing visibility to less than one-quarter mile (0.4 km) and are associated with dangerous blizzard conditions.
+subset: envoPolar
+is_a: ENVO:01000903 ! blizzard
+created_by: http://orcid.org/0000-0002-3410-4655
+created_by: http://orcid.org/0000-0002-4366-3088
+created_by: https://orcid.org/0000-0002-0337-8610
+created_by: https://orcid.org/0000-0002-2282-7215
+created_by: https://orcid.org/0000-0003-0632-7576
+created_by: https://orcid.org/0000-0003-4808-4736
+creation_date: 2020-10-14T20:13:10.917Z
+
+[Term]
+id: ENVO:03000136
+name: winter blizzard
+def: "A blizzard which occurs in winter." [http://www.physicalgeography.net/glossary.html] {comment="https://orcid.org/0000-0003-4808-4736"}
+comment: The original definition has been edited to conform to ENVO's textual pattern. Subjective/observer-based differentia (e.g. visibility) have been moved to comments.
+subset: envoPolar
+is_a: ENVO:01000903 ! blizzard
+created_by: http://orcid.org/0000-0002-3410-4655
+created_by: http://orcid.org/0000-0002-4366-3088
+created_by: https://orcid.org/0000-0002-0337-8610
+created_by: https://orcid.org/0000-0002-2282-7215
+created_by: https://orcid.org/0000-0003-0632-7576
+created_by: https://orcid.org/0000-0003-4808-4736
+creation_date: 2020-10-14T20:13:10.917Z
+
+[Term]
+id: ENVO:03000146
+name: water cooling
+def: "A material transport process during which liquid water is circulated in the vicinity of a heat source in order to absorb thermal energy and transport it away form that source." []
+is_a: ENVO:03000010 ! material transport process
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-3410-4655
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0001-9625-1899
+
+[Term]
+id: ENVO:03500012
+name: ultrasound radiation
+def: "An acoustic radiation process during which waves that transmit sound energy at frequencies above 20 kHz are emitted by a source." []
+xref: http://purl.bioontology.org/ontology/npo#NPO_1744
+is_a: ENVO:01001027 ! acoustic radiation
+
+[Term]
+id: ENVO:03500013
+name: mid-infrared radiation
+def: "An infrared radiation during which waves with frequencies between 30 THz and 120 THz and with wavelengths between 10 micrometers and 2.5 micrometers are emitted by a source." []
+xref: http://purl.bioontology.org/ontology/npo#NPO_1739
+is_a: ENVO:21001214 ! infrared radiation
+
+[Term]
+id: ENVO:03500014
+name: near-infrared radiation
+def: "An infrared radiation during which waves with frequencies between 120 THz and 400 THz and with wavelengths between 2.5 micrometers and 750 nanometers are emitted by a source." []
+xref: http://purl.bioontology.org/ontology/npo#NPO_1740
+is_a: ENVO:21001214 ! infrared radiation
+
+[Term]
+id: ENVO:03500015
+name: far-infrared radiation
+def: "An infrared radiation which consists of waves with frequencies between 300 GHz and 30 THz and with wavelengths between 1 mm and 10 micrometers are emitted by a source." []
+xref: http://purl.bioontology.org/ontology/npo#NPO_1738
+is_a: ENVO:21001214 ! infrared radiation
+
+[Term]
 id: ENVO:04000000
 name: adfreezing
 def: "Adfreezing is a freezing process during which two objects adhere to each other via ice." [https://www.merriam-webster.com/dictionary/adfreezing]
@@ -3431,6 +3547,161 @@ xref: SDGIO:00010072
 is_a: ENVO:04000015 ! carbon sequestration process
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0003-1264-1166
 property_value: http://purl.org/dc/elements/1.1/date 2019-06-11T20:49:49Z xsd:dateTime
+
+[Term]
+id: ENVO:06105021
+name: adsorption
+def: "A material accumulation process during which material adheres to a solid or liquid surface." [https://en.wikipedia.org/wiki/Adsorption, https://www.merriam-webster.com/dictionary/adsorption]
+subset: envoPlastics
+synonym: "adsorbimento" EXACT []
+synonym: "adsorción" EXACT []
+synonym: "Adsorption" EXACT []
+synonym: "吸附" EXACT []
+is_a: ENVO:03000009 ! material accumulation process
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-2996-719X
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0003-1072-8081
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-8166-0486
+property_value: http://purl.org/dc/elements/1.1/date 2021-05-11T14:20:33Z xsd:dateTime
+
+[Term]
+id: ENVO:06105022
+name: fouling
+def: "A material accumulation process during which material builds up on a solid surface such that a function of that surface, or the object it is a part of, is impaired." [https://en.wikipedia.org/wiki/Fouling, https://www.corrosionpedia.com/definition/540/fouling]
+comment: Following BFO:function semantics, this suggests that the functions of the object of which the surface is a part are affected in their realisation in one or more processes.
+subset: envoPlastics
+synonym: "Fouling" EXACT []
+synonym: "incrostazione" EXACT []
+synonym: "incrustación" EXACT []
+is_a: ENVO:03000009 ! material accumulation process
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-2996-719X
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0003-1072-8081
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-8166-0486
+property_value: http://purl.org/dc/elements/1.1/date 2021-05-11T19:24:44Z xsd:dateTime
+
+[Term]
+id: ENVO:06105023
+name: biofouling
+def: "A fouling process during which biological matter accumulates on a solid surface." [https://doi.org/10.1098/rsta.2011.0502]
+comment: The biological matter can be microscale (e.g. biofilms created by microorganism) and macroscale (created by macroorganism). {xref="https://doi.org/10.1098/rsta.2011.0502"}
+subset: envoPlastics
+synonym: "Bewuchs" RELATED []
+synonym: "bio-incrostazione" EXACT []
+synonym: "bio-incrustación" EXACT []
+synonym: "biological fouling" EXACT []
+synonym: "Makrofouling" NARROW []
+synonym: "Mikrofouling" NARROW []
+is_a: ENVO:06105022 ! fouling
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-2996-719X
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0003-1072-8081
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-8166-0486
+property_value: http://purl.org/dc/elements/1.1/date 2021-05-11T19:26:55Z xsd:dateTime
+
+[Term]
+id: ENVO:06105027
+name: fragmentation process
+def: "An environmental system process during which a material entity breaks into pieces or parts." [https://www.oxfordlearnersdictionaries.com/definition/english/fragmentation?q=fragmentation]
+subset: envoPlastics
+synonym: "fragmentación" EXACT []
+synonym: "Fragmentierung" EXACT []
+synonym: "frammentazione" EXACT []
+is_a: ENVO:02500000 ! environmental system process
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-2996-719X
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0003-1072-8081
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-8166-0486
+property_value: http://purl.org/dc/elements/1.1/date 2021-05-13T14:48:11Z xsd:dateTime
+
+[Term]
+id: ENVO:06105028
+name: fragmentation due to weathering
+def: "A fragmentation process which is caused by weathering." []
+comment: Some example of materials that undergo fragmentation due to weathering are rocks and plastics. {xref="https://doi.org/10.1016/j.envpol.2019.113011", xref="https://www.cambridge.org/core/books/principles-of-soilscape-and-landscape-evolution/soils-physical-weathering-and-soil-particle-fragmentation/FE8DB635652194D54A5E52B63CF9CA93/core-reader"}
+subset: envoPlastics
+is_a: ENVO:06105027 ! fragmentation process
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-2996-719X
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0003-1072-8081
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-8166-0486
+property_value: http://purl.org/dc/elements/1.1/date 2021-05-13T14:48:17Z xsd:dateTime
+
+[Term]
+id: ENVO:06105108
+name: littering
+def: "A waste disposal process during which waste is improperly disposed of into the environment." [https://doi.org/10.3390/environments7100073]
+comment: Very large objects that are discarded are typically considered "debris", but this term is loosely defined and there are no standard size classifications which can be used to distinguish debris from litter.
+subset: envoPlastics
+is_a: ENVO:01001260 ! waste disposal process
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-2996-719X
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-8166-0486
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0003-1072-8081
+property_value: http://purl.org/dc/elements/1.1/date 2021-05-04T14:13:18Z xsd:dateTime
+
+[Term]
+id: ENVO:06105114
+name: ghost fishing
+def: "An anthropogenic environmental process during which abandoned, lost, or discarded fishing gear attracts and entangles organisms." [] {comment="http://www.gesamp.org/publications/guidelines-for-the-monitoring-and-assessment-of-plastic-litter-in-the-ocean"}
+subset: envoPlastics
+is_a: ENVO:02500027 ! anthropogenic environmental process
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-2996-719X
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-8166-0486
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0003-1072-8081
+property_value: http://purl.org/dc/elements/1.1/date 2021-05-07T18:00:11Z xsd:dateTime
+property_value: IAO:0000116 "While not driven by humans directly, ghost fishing is a downstream result of their intentional actions." xsd:string
+
+[Term]
+id: ENVO:06105119
+name: weathering
+def: "A material transformation process during which the properties of a material are changed as a result of in situ exposure to atmospheric processes." [https://en.wikipedia.org/wiki/Weathering, https://www.britannica.com/science/weathering-geology]
+comment: The term "weathering" should not be confused with "erosion", which is the removal and transport of environmental material away from a site via exogenic processes.
+subset: envoPlastics
+synonym: "meteorización" EXACT []
+synonym: "meteorizzazione" EXACT []
+synonym: "Verwitterung" EXACT []
+synonym: "風化(作用)" EXACT []
+is_a: ENVO:03000043 ! material transformation process
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-2996-719X
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-8166-0486
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0003-1072-8081
+property_value: http://purl.org/dc/elements/1.1/date 2021-05-07T18:39:54Z xsd:dateTime
+
+[Term]
+id: ENVO:06105120
+name: entanglement process
+def: "An environmental system process during which material entities become entrapped, wrapped, twisted, entwined, or otherwise caught in one another." [https://www.lexico.com/definition/entangle]
+subset: envoPlastics
+synonym: "proceso de enredamiento" EXACT []
+synonym: "processo di impigliamento" EXACT []
+synonym: "Verfangen" BROAD []
+synonym: "Verhedderung" BROAD []
+synonym: "Verstrickung" BROAD []
+is_a: ENVO:02500000 ! environmental system process
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-2996-719X
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-8166-0486
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0003-1072-8081
+property_value: http://purl.org/dc/elements/1.1/date 2021-05-07T18:43:55Z xsd:dateTime
+
+[Term]
+id: ENVO:06105121
+name: entanglement of organisms in marine debris
+def: "An entanglement process during which organisms become entrapped in anthropogenic marine debris." []
+comment: Examples of marine debris include boating gear, or fishing gear (active or derelict). Marine debris may be in water or on land.
+subset: envoPlastics
+is_a: ENVO:06105120 ! entanglement process
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-2996-719X
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-8166-0486
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0003-1072-8081
+property_value: http://purl.org/dc/elements/1.1/date 2021-05-07T18:47:14Z xsd:dateTime
+
+[Term]
+id: ENVO:06105126
+name: weathering of plastic
+def: "Weathering during which plastic is worn or broken down." []
+subset: envoPlastics
+is_a: ENVO:06105119 ! weathering
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-2996-719X
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-8166-0486
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0003-1072-8081
+property_value: http://purl.org/dc/elements/1.1/date 2021-05-12T14:28:52Z xsd:dateTime
 
 [Term]
 id: ENVO:1000745

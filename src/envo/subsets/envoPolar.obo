@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: envo/releases/2020-06-22/subsets/envoPolar.owl
+data-version: envo/releases/2021-05-14/subsets/envoPolar.owl
 subsetdef: disposition_slim "Disposition slim"
 subsetdef: environmental_hazards "environmental_hazards"
 subsetdef: EnvO-Lite-GSC "EnvO-Lite-GSC"
@@ -13,6 +13,7 @@ subsetdef: envoMarine "envoMarine"
 subsetdef: envoMeo "envoMeo"
 subsetdef: envoNceas "envoNceas"
 subsetdef: envoOmics "envoOmics"
+subsetdef: envoPlastics "envoPlastics"
 subsetdef: envoPolar "envoPolar"
 subsetdef: mpath_slim "Pathology slim"
 subsetdef: nlcd2011 "nlcd2011"
@@ -23,7 +24,7 @@ subsetdef: value_slim "Value slim"
 subsetdef: wwfBiome "wwfBiome"
 synonymtypedef: PLURAL "plurals"
 ontology: envo/subsets/envoPolar
-property_value: owl:versionInfo "2020-06-22" xsd:string
+property_value: owl:versionInfo "2021-05-14" xsd:string
 
 [Term]
 id: ENVO:00000000
@@ -421,8 +422,8 @@ xref: SWEETRealm:MountainRange
 xref: TGN:21431
 xref: TGN:21432
 is_a: ENVO:00000478 ! range of mounts
+relationship: has_component ENVO:00000081 {minCardinality="2"} ! mountain
 relationship: overlaps ENVO:00000081 ! mountain
-relationship: overlaps ENVO:00000081 {minCardinality="2"} ! mountain
 
 [Term]
 id: ENVO:00000081
@@ -1595,7 +1596,8 @@ xref: EcoLexicon:biome
 is_a: ENVO:01001110 ! ecosystem
 disjoint_from: ENVO:01000276 ! ecoregion
 disjoint_from: ENVO:01000280 ! ecozone
-relationship: has_part ENVO:01000739 {minCardinality="2"} ! habitat
+relationship: has_component ENVO:01000739 {minCardinality="2"} ! habitat
+relationship: has_part ENVO:01000739 ! habitat
 relationship: part_of ENVO:01000817 ! biosphere
 
 [Term]
@@ -1802,7 +1804,8 @@ subset: envoPolar
 synonym: "range (physiographic)" RELATED [ADL:FTT]
 xref: FTT:996
 is_a: ENVO:01000352 ! field
-relationship: overlaps ENVO:00000477 {minCardinality="2"} ! mount
+relationship: has_component ENVO:00000477 {minCardinality="2"} ! mount
+relationship: overlaps ENVO:00000477 ! mount
 
 [Term]
 id: ENVO:00000479
@@ -1815,7 +1818,8 @@ xref: EcoLexicon:outlet
 xref: https://en.wikipedia.org/wiki/Mouth
 xref: SWEETRealm:Mouth
 is_a: ENVO:00000029 ! watercourse
-relationship: overlaps ENVO:00000063 {minCardinality="2"} ! water body
+relationship: has_component ENVO:00000063 {minCardinality="2"} ! water body
+relationship: overlaps ENVO:00000063 ! water body
 
 [Term]
 id: ENVO:00000480
@@ -1851,14 +1855,23 @@ relationship: part_of ENVO:00000176 ! elevation
 id: ENVO:00000482
 name: sea floor
 namespace: ENVO
-def: "The ground surface that lies beneath a sea." [MA:ma]
-synonym: "sea bed" EXACT []
-synonym: "sea bottom" EXACT []
+def: "A marine bed which lies below a sea." [https://en.wikipedia.org/wiki/Seabed, MA:ma]
+subset: envoPlastics
+synonym: "fondale marino" EXACT []
+synonym: "fondo marino" EXACT []
+synonym: "Meeresboden" EXACT []
+synonym: "ocean floor" RELATED [] {comment="Seas are smaller than oceans and are usually located where the land and ocean meet. However, these two terms are often used interchangeably."}
+synonym: "sea bed" RELATED []
 synonym: "SeaFloor" EXACT [NASA:earthrealm]
+synonym: "seafloor" EXACT []
+synonym: "海床" RELATED []
+synonym: "海底" RELATED []
 xref: EcoLexicon:sea_floor
-xref: https://en.wikipedia.org/wiki/Sea_floor
 is_a: ENVO:01001378 ! marine bed
 relationship: adjacent_to ENVO:00000016 ! sea
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-2996-719X
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-8166-0486
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0003-1072-8081
 
 [Term]
 id: ENVO:00000484
@@ -2402,7 +2415,6 @@ def: "Airborne solid particles (also called dust or particulate matter (PM)) or 
 comment: Should connect to PATO as "quality of an aerosol"
 subset: envoAtmo
 xref: EcoLexicon:aerosol
-xref: http://purl.obolibrary.org/obo/envo.owl
 xref: SWEETRealm:Aerosol
 is_a: ENVO:00010483 ! environmental material
 relationship: has_part ENVO:01000797 ! gaseous environmental material
@@ -3055,13 +3067,15 @@ creation_date: 2013-10-12T17:21:09Z
 id: ENVO:01000277
 name: water ice
 namespace: ENVO
-def: "Ice is water frozen into a solid state. It can appear transparent or opaque bluish-white color, depending on the presence of impurities or air inclusions. The addition of other materials such as soil may further alter its appearance." [https://en.wikipedia.org/wiki/Ice]
+def: "Ice which is formed from water." [https://en.wikipedia.org/wiki/Ice]
+comment: Water ice can appear transparent or opaque bluish-white color, depending on the presence of impurities or air inclusions. The addition of other materials such as soil may further alter its appearance.\n\nWhen speaking about ice on Earth, usually water ice is meant - the solid, crystalline form of water found in the atmosphere as snow crystals, hail, ice pellets, etc., and on the earth's surface in forms such as hoarfrost, rime, glaze, sea ice, glacier ice, ground ice, frazil, anchor ice, etc.  \n\nThis form of water is, strictly speaking, called ice Ih, the Roman numeral I distinguishing it from more than a dozen other phases and the letter h distinguishing it from the metastable cubic phase ice Ic. Ice Ih is the only one of the several known phases of water ice that is stable at commonly occurring temperatures and pressures. (Some of the other forms have very unusual properties, ice VII, for example, being stable only at pressures above 22 400 kg/cm^2, but then existing at temperatures up to about 100C.) \n\nIt has an open structure with a specific gravity of 0.9166 which is slightly less than water; because the water molecules bond to their neighbors covalently only in four directions; it therefore floats on higher density water, where broken molecular bonds permit closer packing. All commonly occurring forms of ice are crystalline, although large single crystals are relatively rare except in glaciers. The ice crystal lattice possesses hexagonal symmetry that manifests itself in the gross forms of such single crystals as are sometimes found in snow. At an air pressure of one atmosphere, ice melts at 0 C by definition of the Celsius temperature scale. (Strictly speaking the equilibrium point among water, ice, and vapor occurs at +0.01C, the triple point.) On the other hand, ice does not invariably form in liquid water cooled below this temperature; it has a tendency to supercool, more so in the absence of ice nuclei. \n\nIn permafrost regions, ice may occupy voids in soils and rocks and may develop in a variety of forms. Ice may be colourless to pale blue or greenish-blue. It may appear white due to included gas bubbles; in exposures, ground ice may also appear black.\n\nIn nature ice is formed either by: (a) the freezing of water, (b) the condensation of atmospheric water vapour direct into ice crystals, (c) the compaction of snow with or without the motion of a glacier, or (d) the impregnation of porous snow masses with water which subsequently freeze.
 subset: envoPolar
 synonym: "ice" RELATED [http://www.eionet.europa.eu/gemet/concept/4131]
+xref: http://sweetontology.net/matrWater/Ice
 xref: LTER:262
-is_a: ENVO:01001125 ! ice
-relationship: composed_primarily_of ENVO:00002006 ! liquid water
-created_by: ORCID:0000-0002-4366-3088
+intersection_of: ENVO:01001125 ! ice
+intersection_of: composed_primarily_of ENVO:00002006 ! liquid water
+created_by: http://orcid.org/0000-0002-4366-3088
 creation_date: 2013-10-13T12:01:28Z
 
 [Term]
@@ -3483,6 +3497,14 @@ relationship: part_of ENVO:01000267 ! atmosphere
 created_by: ORCID:0000-0002-4366-3088
 
 [Term]
+id: ENVO:01000452
+name: environmental disposition
+namespace: ENVO
+def: "A disposition which is realised by an environmental system or system parts thereof." []
+comment: This class and its subclasses are experimental and are being developed with NCEAS use cases in mind.
+created_by: ORCID:0000-0002-4366-3088
+
+[Term]
 id: ENVO:01000508
 name: salt material
 namespace: ENVO
@@ -3870,11 +3892,12 @@ relationship: formed_as_result_of ENVO:01000720 ! hydrological melting process
 id: ENVO:01000723
 name: melting
 namespace: ENVO
-def: "Melting is a physical process that results in the phase transition of a substance from a solid to a liquid." [https://en.wikipedia.org/wiki/Melting]
+def: "Melting is a material transformation process which results in the phase transition of a substance from a solid to a liquid." [https://en.wikipedia.org/wiki/Melting]
 comment: Note that melting need not be due to warming, thus the classes are separated.
 subset: envoPolar
 synonym: "fusion" RELATED []
 synonym: "melting process" EXACT []
+xref: http://sweetontology.net/procStateChange/Melting
 is_a: ENVO:03000043 ! material transformation process
 property_value: IAO:0000116 "could replace with http://purl.obolibrary.org/obo/REX_0000177" xsd:string
 
@@ -4045,7 +4068,7 @@ synonym: "IUCN Important Site for Freshwater Biodiversity" NARROW []
 synonym: "Prime Butterfly Area" NARROW []
 synonym: "Ramsar Sites" NARROW []
 is_a: ENVO:00000358 ! area of protected biodiversity
-relationship: overlaps ENVO:01001110 {minCardinality="1"} ! ecosystem
+relationship: overlaps ENVO:01001110 ! ecosystem
 property_value: IAO:0000116 "The narrow synonyms will be made into subclasses in their own right." xsd:string
 property_value: IAO:0000118 "important site" xsd:string
 
@@ -4138,7 +4161,7 @@ def: "An object which is composed of one or more gravitationally bound structure
 comment: If there is only one astronomical body involved, this class is equivalent to ENVO:01000799. This may be problematic with reasoning, but it seems to be true to the rather fuzzy definitions found thus far.
 subset: envoAstro
 synonym: "celestial object" RELATED []
-relationship: has_part ENVO:01000799 {minCardinality="1"} ! astronomical body
+relationship: has_part ENVO:01000799 ! astronomical body
 relationship: has_quality ENVO:01001164 ! geodiversity
 relationship: surrounded_by ENVO:01000637 ! outer space
 
@@ -4339,6 +4362,20 @@ synonym: "thermal decomposition" EXACT []
 is_a: ENVO:03000043 ! material transformation process
 
 [Term]
+id: ENVO:01000844
+name: fog
+namespace: ENVO
+def: "A visible mass of cloud water droplets or ice crystals suspended in the air at or near the surface of an astronomical body." [https://en.wikipedia.org/wiki/Fog]
+comment: Fog is more opaque than mist, reducing visibility to under one kilometre. This class refers only to fog formed by materials primarily composed of water. "Fog can be considered a type of low-lying cloud and is heavily influenced by nearby bodies of water, topography, and wind conditions. In turn, fog has affected many human activities, such as shipping, travel, and warfare." https://en.wikipedia.org/wiki/Fog
+synonym: "haar" RELATED []
+xref: http://sweetontology.net/phenAtmoFog/Fog
+is_a: ENVO:00010505 ! aerosol
+relationship: composed_primarily_of ENVO:00002006 ! liquid water
+relationship: located_in ENVO:01000267 ! atmosphere
+relationship: output_of ENVO:01000724 ! condensation process
+relationship: part_of ENVO:01000267 ! atmosphere
+
+[Term]
 id: ENVO:01000845
 name: crystal
 namespace: ENVO
@@ -4351,8 +4388,10 @@ id: ENVO:01000846
 name: water ice crystal
 namespace: ENVO
 def: "A crystal which is primarily composed of water ice." []
+comment: Any one of a number of macroscopic, crystalline forms in which ice appears, including hexagonal columns, hexagonal platelets, dendritic crystals, ice needles, and combinations of these forms.  The crystal lattice of ice is hexagonal in its symmetry under most atmospheric conditions. {xref="https://orcid.org/0000-0003-4808-4736"}
 subset: envoPolar
 synonym: "ice crystal" BROAD []
+xref: http://sweetontology.net/matrWater/Ice
 is_a: ENVO:01000845 ! crystal
 relationship: composed_primarily_of ENVO:01000277 ! water ice
 
@@ -4506,11 +4545,16 @@ is_a: ENVO:01000830 ! water-based rainfall
 id: ENVO:01000903
 name: blizzard
 namespace: ENVO
-def: "A blizzard is a severe snowstorm during which snowfall is transported by strong winds, sustained for several hours." [https://en.wikipedia.org/wiki/Blizzard]
+def: "A blizzard is a severe snowstorm during which snowfall is transported by strong winds, sustained for several hours." [http://glossary.ametsoc.org/wiki/Main_Page, http://www.bom.gov.au/lam/glossary/, http://www.physicalgeography.net/glossary.html, https://en.wikipedia.org/wiki/Blizzard, https://orcid.org/0000-0003-4808-4736, https://www.ec.gc.ca/meteo-weather/default.asp?lang=En&n=B8CD636F-1&def=allShow]
+comment: The U.S. National Weather Service specifies sustained wind or frequent gusts of 16 m per second (30 kt or 35 mi per hour) or greater, accompanied by falling and/or blowing snow, frequently reducing visibility to less than 400 m (0.25 mi or 0.4 km) for 3 hours or longer. Earlier definitions also included a condition of low temperatures, on the order of -7C (20F) or lower, or -12C (10F) or lower (severe blizzard). The name originated in the United States but it is also used in other countries. In the Antarctic the name is given to violent autumnal winds off the ice cap. In southeastern France, the cold north wind with snow is termed blizzard (see also boulbie). Similar storms in Russian Asia are the buran and purga. In popular usage in the United States and in England, the term is often used for any heavy snowstorm accompanied by strong winds.
 comment: To qualify a snowstorm as a blizzard, some sources require the windspeed to be at least 56 km/h and the duration of the storm to be at least three hours. We set no such hard boundaries in this definition, as this should be done with reference to local standards. {comment="https://en.wikipedia.org/wiki/Blizzard"}
 subset: environmental_hazards
 subset: envoAtmo
 subset: envoPolar
+synonym: "boulbie" NARROW []
+synonym: "buran" NARROW []
+synonym: "purga" NARROW []
+xref: http://sweetontology.net/phenAtmoPrecipitation/Blizzard
 is_a: ENVO:01000881 ! snowstorm
 relationship: has_part ENVO:03000103 ! aeolian transport of snow
 
@@ -4614,7 +4658,7 @@ namespace: ENVO
 def: "Regions of a planet which are not exposed to the planet's atmosphere or space, often comprising parts of one or more planetary structural layers." []
 is_a: ENVO:01001776 ! subsurface zone of an astronomical body
 relationship: adjacent_to ENVO:01000324 ! planetary surface
-relationship: overlaps ENVO:01000639 {minCardinality="1"} ! planetary structural layer
+relationship: overlaps ENVO:01000639 ! planetary structural layer
 
 [Term]
 id: ENVO:01000947
@@ -4623,7 +4667,8 @@ namespace: ENVO
 def: "An envirommental system which bridges two or more biomes and which includes ecological communities which blend these biomes' phylogenetic and phenotypic compositions." [https://en.wikipedia.org/wiki/Ecotone, https://github.com/EnvironmentOntology/envo/issues/501, https://www.merriam-webster.com/dictionary/ecotone, ISBN:978-0-03-058414-5]
 comment: There are many subtypes of ecotone, some with sharp transitions and others with gradual, patchy transitions between communities. From Wikipedia:Ecotone - The word ecotone was coined from a combination of eco(logy) plus -tone, from the Greek tonos or tension – in other words, a place where ecologies are in tension.
 is_a: ENVO:01001110 ! ecosystem
-relationship: overlaps ENVO:00000428 {minCardinality="2"} ! biome
+relationship: has_component ENVO:00000428 {minCardinality="2"} ! biome
+relationship: overlaps ENVO:00000428 ! biome
 
 [Term]
 id: ENVO:01000950
@@ -4722,6 +4767,15 @@ intersection_of: determined_by ENVO:00002012 ! hypersaline water
 property_value: IAO:0000118 "Hypersaline (saline)" xsd:string {xref="http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/", comment="Examples inlcude water from hypersaline samples or brines (>50 psu)"}
 
 [Term]
+id: ENVO:01001082
+name: climate
+namespace: ENVO
+def: "The disposition of an environmental system, particularly those influencing atmospheres, to manifest a cyclic pattern of weather over time." [https://en.wikipedia.org/wiki/Climate]
+comment: Climate is commonly defined as the weather averaged, or otherwise summarised, over a period of time much longer than the duration of any phenomenon that constitutes weather. The standard averaging period is 30 years, but other periods may be used depending on the purpose. {xref="https://en.wikipedia.org/wiki/Climate"}
+is_a: ENVO:01000452 ! environmental disposition
+property_value: IAO:0000116 "The current alignment of \"climate\" under BFO:disposition is drawing from its very useful etymology (Ancient Greek klima, meaning inclination). The climatic conditions currently used to axiomatise biomes (polar, tropical, etc) may be better placed under this class." xsd:string
+
+[Term]
 id: ENVO:01001093
 name: tectonic movement
 namespace: ENVO
@@ -4757,7 +4811,8 @@ namespace: ENVO
 def: "A geomorphological feature which is formed where two or more tectonic plates move towards, away from, or along one another, resulting in deformation of the lithosphere." [https://en.wikipedia.org/wiki/Plate_tectonics]
 is_a: ENVO:01000408 ! environmental zone
 relationship: formed_as_result_of ENVO:01001093 ! tectonic movement
-relationship: overlaps ENVO:01001097 {minCardinality="2"} ! tectonic plate
+relationship: has_component ENVO:01001097 {minCardinality="2"} ! tectonic plate
+relationship: overlaps ENVO:01001097 ! tectonic plate
 
 [Term]
 id: ENVO:01001099
@@ -5163,9 +5218,13 @@ created_by: http://orcid.org/0000-0002-4366-3088
 id: ENVO:01001378
 name: marine bed
 namespace: ENVO
-def: "A bed which underlies a marine water body." []
+def: "A submerged bed which underlies a marine water body." []
+synonym: "sea bottom" NARROW []
 is_a: ENVO:00000501 ! submerged bed
 relationship: adjacent_to ENVO:00001999 ! marine water body
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-2996-719X
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-8166-0486
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0003-1072-8081
 created_by: http://orcid.org/0000-0002-4366-3088
 
 [Term]
@@ -5367,7 +5426,7 @@ comment: Floebergs may float up to 17 ft (5 m) above sea level. {xref="https://o
 subset: envoPolar
 is_a: ENVO:01001536 ! sea ice mass
 relationship: composed_primarily_of ENVO:00002200 ! sea ice
-relationship: has_part ENVO:01001537 {minCardinality="1"} ! sea ice hummock
+relationship: has_part ENVO:01001537 ! sea ice hummock
 created_by: http://orcid.org/0000-0002-4366-3088
 creation_date: 2019-01-31T19:00:41Z
 
@@ -5436,6 +5495,8 @@ id: ENVO:01001548
 name: freezing
 namespace: ENVO
 def: "A material congelation process during which a liquid turns into a solid when its temperature is lowered below its melting point." [https://en.wikipedia.org/wiki/Freezing]
+subset: envoPolar
+xref: http://sweetontology.net/procStateChange/Freezing
 is_a: ENVO:01001510 ! material congelation process
 created_by: http://orcid.org/0000-0002-4366-3088
 creation_date: 2019-01-31T21:13:16Z
@@ -5678,7 +5739,8 @@ creation_date: 2019-04-24T18:48:53Z
 id: ENVO:01001621
 name: englacial
 namespace: ENVO
-def: "A positional quality inhering in a bearer by virtue of the bearer being located within a glacier or ice sheet, between their summer surface or bed." []
+def: "A positional quality inhering in a bearer by virtue of the bearer being located within a glacier or ice sheet, between their summer surface or bed." [https://orcid.org/0000-0003-4808-4736]
+xref: https://github.com/ESIPFed/sweet/issues/219
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
 creation_date: 2019-04-24T19:51:34Z
 
@@ -6051,6 +6113,40 @@ property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-00
 property_value: http://purl.org/dc/elements/1.1/date 2019-10-29T15:02:58Z xsd:dateTime
 
 [Term]
+id: ENVO:01001848
+name: rime
+namespace: ENVO
+def: "Water ice which 1) has a white or milky and opaque appearance, 2) has a granular texture, and 3) is formed as a result of the deposition and rapid freezing of supercooled water drops as they make contact with an exposed object." [https://orcid.org/0000-0003-4808-4736]
+comment: Rime is denser and harder than hoarfrost, but lighter, softer, and less transparent than glaze. Rime is composed essentially of discrete ice granules and has densities as low as 0.2-0.3 g cm-3. Glaze is generally continuous but with some air pockets and has much higher densities. Factors that favor rime formation are small drop size, slow accretion, a high degree of supercooling, and rapid dissipation of latent heat of fusion. The opposite effects favor glaze formation. Both rime and glaze occur when supercooled water drops strike an object at a temperature below freezing. Such formation on terrestrial objects constitutes an ice storm; on aircraft, it is called aircraft icing (where rime is known as rime ice). Either rime or glaze may form on snow crystals, droxtals, or other ice particles in the atmosphere. When such a deposit is wholly or chiefly of rime, snow pellets result; when most or all of the deposit is glaze, ordinary hail or ice pellets result. The alternating clear and opaque layers of some hailstones represent glaze and rime, deposited under varying conditions around the growing hailstone. {xref="https://orcid.org/0000-0003-4808-4736"}
+subset: envoPolar
+xref: http://sweetontology.net/matrWater/Rime
+is_a: ENVO:01001850 ! frost
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2020-02-12T21:03:46Z xsd:dateTime
+property_value: IAO:0000116 "The previously use definition was: Frost which is 1) composed primarily of granular ice tufts, 2) formed on the windward sides of exposed objects through contact with supercooled fog or cloud, and 3) built out directly against the wind." xsd:string
+created_by: http://orcid.org/0000-0002-3410-4655
+created_by: http://orcid.org/0000-0002-4366-3088
+created_by: https://orcid.org/0000-0002-0337-8610
+created_by: https://orcid.org/0000-0002-2282-7215
+created_by: https://orcid.org/0000-0003-0632-7576
+created_by: https://orcid.org/0000-0003-4808-4736
+creation_date: 2020-11-18T19:59:42.028Z
+
+[Term]
+id: ENVO:01001850
+name: frost
+namespace: ENVO
+def: "An environmental material which is primarily composed of minute ice crystals forming a fuzzy layer over a cold surface by direct deposition of water vapor." [https://orcid.org/0000-0003-4808-4736, https://www.merriam-webster.com/dictionary/frost]
+comment: In British usage, a day on which the minimum temperature at the level of the ground or on the tops of low, close-growing vegetation falls to -0.9C (30.4F) or below (also called a "day with ground frost").  In more general usage, "frost" can refer to the condition that exists when the temperature of the Earth's surface and Earthbound objects fall below the melting point of water (0 degrees Celsius or 32 degrees Fahrenheit). Depending upon the actual values of ambient-air temperature, dewpoint, and the temperature attained by surface objects, frost may occur in a variety of forms. These include a general freeze, hoarfrost (or white frost), and dry freeze (or black frost). If a frost period is sufficiently severe to end the growing season (or delay its beginning), it is commonly referred to as a killing frost.
+xref: http://sweetontology.net/matrWater/Frost
+is_a: ENVO:00010483 ! environmental material
+relationship: adjacent_to ENVO:00010504 ! surface layer
+relationship: composed_primarily_of ENVO:01000846 ! water ice crystal
+relationship: formed_as_result_of ENVO:03000055 ! desublimation of water vapour into ice
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2020-02-12T21:05:54Z xsd:dateTime
+
+[Term]
 id: ENVO:02000044
 name: siliceous ooze
 namespace: ENVO
@@ -6221,6 +6317,7 @@ name: plastic pollution
 namespace: ENVO
 def: "A pollution process during which plastic contaminants are released into an environmental material." [https://en.wikipedia.org/wiki/Plastic_pollution]
 subset: environmental_hazards
+subset: envoPlastics
 subset: envoPolar
 is_a: ENVO:02500036 ! environmental pollution
 
@@ -7567,6 +7664,136 @@ property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
 property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088
 
 [Term]
+id: ENVO:03000134
+name: WMO blizzard
+namespace: ENVO
+def: "A blizzard which 1) lasts at least 3 hours, 2) combines below freezing temperatures and very strong wind, laden with blowing snow." [https://www.wmo.int/pages/prog/lsp/meteoterm_wmo_en.html] {comment="https://orcid.org/0000-0003-4808-4736"}
+comment: Blizzards typically reduces visibility to less than 1 km
+subset: envoPolar
+is_a: ENVO:01000903 ! blizzard
+created_by: http://orcid.org/0000-0002-3410-4655
+created_by: http://orcid.org/0000-0002-4366-3088
+created_by: https://orcid.org/0000-0002-0337-8610
+created_by: https://orcid.org/0000-0002-2282-7215
+created_by: https://orcid.org/0000-0003-0632-7576
+created_by: https://orcid.org/0000-0003-4808-4736
+creation_date: 2020-10-14T20:13:10.917Z
+
+[Term]
+id: ENVO:03000135
+name: NSIDC blizzard
+namespace: ENVO
+def: "A blizzard which has 1) winds of 35 miles per hour (approximately 56 kilometers per hour), 2) lasts for a period of at least three hours, and 3) occurs in extremely cold temperatures." [https://nsidc.org/cryosphere/glossary, https://orcid.org/0000-0003-4808-4736]
+comment: The original definition has been edited to conform to ENVO's textual pattern. Subjective/observer-based differentia (e.g. visibility) have been moved to comments. The NSIDC definition notes that blizzards involve snow reducing visibility to less than one-quarter mile (0.4 km) and are associated with dangerous blizzard conditions.
+subset: envoPolar
+is_a: ENVO:01000903 ! blizzard
+created_by: http://orcid.org/0000-0002-3410-4655
+created_by: http://orcid.org/0000-0002-4366-3088
+created_by: https://orcid.org/0000-0002-0337-8610
+created_by: https://orcid.org/0000-0002-2282-7215
+created_by: https://orcid.org/0000-0003-0632-7576
+created_by: https://orcid.org/0000-0003-4808-4736
+creation_date: 2020-10-14T20:13:10.917Z
+
+[Term]
+id: ENVO:03000136
+name: winter blizzard
+namespace: ENVO
+def: "A blizzard which occurs in winter." [http://www.physicalgeography.net/glossary.html] {comment="https://orcid.org/0000-0003-4808-4736"}
+comment: The original definition has been edited to conform to ENVO's textual pattern. Subjective/observer-based differentia (e.g. visibility) have been moved to comments.
+subset: envoPolar
+is_a: ENVO:01000903 ! blizzard
+created_by: http://orcid.org/0000-0002-3410-4655
+created_by: http://orcid.org/0000-0002-4366-3088
+created_by: https://orcid.org/0000-0002-0337-8610
+created_by: https://orcid.org/0000-0002-2282-7215
+created_by: https://orcid.org/0000-0003-0632-7576
+created_by: https://orcid.org/0000-0003-4808-4736
+creation_date: 2020-10-14T20:13:10.917Z
+
+[Term]
+id: ENVO:03000137
+name: freezing fog
+namespace: ENVO
+def: "A fog the droplets of which freeze upon contact with exposed objects, forming a coating of rime or glaze." [http://glossary.ametsoc.org/wiki/Main_Page, https://orcid.org/0000-0003-4808-4736]
+subset: envoPolar
+xref: http://sweetontology.net/phenAtmoFog/FreezingFog
+is_a: ENVO:01000844 ! fog
+created_by: http://orcid.org/0000-0002-3410-4655
+created_by: http://orcid.org/0000-0002-4366-3088
+created_by: https://orcid.org/0000-0002-0337-8610
+created_by: https://orcid.org/0000-0002-2282-7215
+created_by: https://orcid.org/0000-0003-0632-7576
+created_by: https://orcid.org/0000-0003-4808-4736
+creation_date: 2020-10-14T20:13:10.917Z
+
+[Term]
+id: ENVO:03000138
+name: grain of snow
+namespace: ENVO
+def: "An ice mass which is 1) on the order of 1 milimeter or less, 2) has a white and opaque appearance, and 3) is formed as a result of water droplets freezing during precipitation." [https://orcid.org/0000-0003-4808-4736]
+comment: Precipitation in the form of very small, white opaque particles of ice; the solid equivalent of drizzle. They resemble snow pellets in external appearance, but are more flattened and elongated, and generally have diameters of less than 1 mm; they neither shatter nor bounce when they hit a hard surface. Descriptions of the physical structure of snow grains vary widely and include very fine, simple ice crystals; tiny, complex snow crystals; small, compact bundles of rime; and particles with a rime core and a fine glaze coating. It is agreed that snow grains usually fall in very small quantities, mostly from stratus clouds or from fog, and never in the form of a shower. {xref="https://orcid.org/0000-0003-4808-4736"}
+subset: envoPolar
+synonym: "granular snow" RELATED []
+synonym: "snow grain" EXACT []
+xref: http://sweetontology.net/matrWater/SnowGrain
+is_a: ENVO:01000293 ! ice mass
+relationship: formed_as_result_of ENVO:01001549 ! freezing of water into water ice
+relationship: participates_in ENVO:01000875 ! precipitation process
+property_value: IAO:0000116 "Need to add a computable size constraint." xsd:string
+created_by: http://orcid.org/0000-0002-3410-4655
+created_by: http://orcid.org/0000-0002-4366-3088
+created_by: https://orcid.org/0000-0002-0337-8610
+created_by: https://orcid.org/0000-0002-2282-7215
+created_by: https://orcid.org/0000-0003-0632-7576
+created_by: https://orcid.org/0000-0003-4808-4736
+creation_date: 2020-11-18T20:22:03.870Z
+
+[Term]
+id: ENVO:03000139
+name: ice fog
+namespace: ENVO
+def: "Fog which is composed of particles of ice." [https://orcid.org/0000-0003-4808-4736]
+comment: The suspended particles may be partly ice crystals 20 to 100 micron in diameter, but chiefly, especially when dense, droxtals 12-20 micron in diameter. Ice fog is formed by direct freezing of supercooled water droplets with little growth directly from the vapor. It occurs at very low temperatures, and usually in clear, calm weather in high latitudes. The sun is usually visible and may cause halo phenomena or luminous pillars. Ice fog is rare at temperatures warmer than -30 °C, and increases in frequency with decreasing temperature until it is almost always present at air temperatures of -45 °C in the vicinity of a source of water vapor. Such sources are the open water of fast-flowing streams or of the sea, herds of animals, volcanoes, and especially products of combustion for heating or propulsion. At temperatures warmer than -30 °C, these sources can cause steam fog of liquid water droplets, which may turn into ice fog when cooled. {xref="https://orcid.org/0000-0003-4808-4736"}
+subset: envoPolar
+synonym: "air hoar" RELATED []
+synonym: "frost flakes" RELATED []
+synonym: "frost fog" RELATED []
+synonym: "frozen fog" EXACT []
+synonym: "ice-crystal fog" EXACT []
+synonym: "pogonip" EXACT []
+synonym: "rime fog" RELATED []
+xref: http://sweetontology.net/phenAtmoFog/IceFog
+is_a: ENVO:01000844 ! fog
+relationship: composed_primarily_of ENVO:01000277 ! water ice
+property_value: IAO:0000116 "In future will add computable renditions of size and temperature constraints. The synonyms of this class can be quite confusing, as they reference entities like frost (which requires a surface for deposition). Might need to add a new droxtal class see https://glossary.ametsoc.org/wiki/Droxtal." xsd:string
+created_by: http://orcid.org/0000-0002-3410-4655
+created_by: http://orcid.org/0000-0002-4366-3088
+created_by: https://orcid.org/0000-0002-0337-8610
+created_by: https://orcid.org/0000-0002-2282-7215
+created_by: https://orcid.org/0000-0003-0632-7576
+created_by: https://orcid.org/0000-0003-4808-4736
+creation_date: 2020-11-18T20:48:37.965Z
+
+[Term]
+id: ENVO:03000140
+name: tundra climate
+namespace: ENVO
+def: "A climate which 1) has a mean temperature for the warmest month of less than 10°C (50°F), but higher than 0°C (32°F), 2) is not conducive to a permanent surficial cover of snow or ice, and 3) supports a tundra ecosystem." [https://orcid.org/0000-0003-4808-4736]
+comment: In W. Köppen's 1936 climatic classification it is one of the polar climates, defined as having a mean temperature for the warmest month of less than 10°C (50°F) (in contrast to snow forest and temperate rainy climates) but higher than 0°C (32°F) (which is the limit of perpetual frost climate). Tundra is designated ET. Tundra climate appears as a temperature province in C. W. Thornthwaite's 1931 classification. {xref="https://orcid.org/0000-0003-4808-4736"}
+subset: envoPolar
+xref: http://sweetontology.net/realmClimateZone/TundraClimate
+is_a: ENVO:01001082 ! climate
+property_value: IAO:0000116 "Might need to add the Köppen climate classifications. Climate conditions might be obsoleted. Warmest month and mean temperature are operationally defined, will need to sort these out. Focusing on physical differential like surface cover would be preferable, (but maybe not practical)." xsd:string
+created_by: http://orcid.org/0000-0002-3410-4655
+created_by: http://orcid.org/0000-0002-4366-3088
+created_by: https://orcid.org/0000-0002-0337-8610
+created_by: https://orcid.org/0000-0002-2282-7215
+created_by: https://orcid.org/0000-0003-0632-7576
+created_by: https://orcid.org/0000-0003-4808-4736
+creation_date: 2020-11-18T21:04:41.822Z
+
+[Term]
 id: ENVO:04000000
 name: adfreezing
 namespace: ENVO
@@ -7643,7 +7870,6 @@ relationship: has_quality ENVO:01000340 ! alpine
 id: adjacent_to
 namespace: ENVO
 xref: RO:0002220
-is_functional: true
 
 [Typedef]
 id: attached_to
@@ -7790,6 +8016,11 @@ xref: ENVO:2000036
 property_value: IAO:0000116 "Consider ceding to RO" xsd:string
 created_by: cjm
 creation_date: 2018-11-03T20:58:13Z
+
+[Typedef]
+id: has_component
+namespace: ENVO
+xref: RO:0002180
 
 [Typedef]
 id: has_condition

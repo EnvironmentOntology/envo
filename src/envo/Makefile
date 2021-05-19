@@ -181,7 +181,7 @@ $(ONT)-full.owl: $(SRC) $(OTHER_SRC)
 
 
 SUBSETS = envo-basic EnvO-Lite-GSC envoEmpo envoAstro envoPolar envoEmpo envoOmics envoCesab environmental_hazards \
-   biome-hierarchy astronomical-body-part-hierarchy material-hierarchy process-hierarchy
+   biome-hierarchy astronomical-body-part-hierarchy material-hierarchy process-hierarchy envoPlastics
 
 SUBSET_ROOTS = $(patsubst %, subsets/%, $(SUBSETS))
 SUBSET_FILES = $(foreach n,$(SUBSET_ROOTS), $(foreach f,$(FORMATS_INCL_TSV), $(n).$(f)))
@@ -541,7 +541,7 @@ all_modules_obo: $(patsubst %, modules/%.obo, $(MODS))
 
 modules/%.owl: modules/%.csv patterns/%.yaml curie_map.yaml 
 	@perl -pe 's/\r\n/\n/' $< > $<.tmp && mv $<.tmp $< # replace crlf with lf
-	dosdp-tools --table-format=csv --template=./patterns/$*.yaml --outfile=modules/$*.tmp.owl --obo-prefixes=true generate --infile=modules/$*.csv
+	dosdp-tools generate --table-format=csv --template=./patterns/$*.yaml --outfile=modules/$*.tmp.owl --obo-prefixes=true --infile=modules/$*.csv
 	$(ROBOT) annotate --input modules/$*.tmp.owl -O http://purl.obolibrary.org/obo/envo/modules/$*.owl --output modules/$*.owl && rm modules/$*.tmp.owl
 
 modules/%.obo: modules/%.owl

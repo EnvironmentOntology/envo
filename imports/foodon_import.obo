@@ -11,15 +11,12 @@ intersection_of: FOODON:03430109 ! food (liquid, low viscosity)
 
 [Term]
 id: FOODON:00001002
-name: foodon product type
-def: "A substance, usually composed primarily of carbohydrates, fats, water and/or proteins, that can be eaten or drunk by an animal or human being for nutrition or pleasure." []
-comment: The FoodOn product type class is provided as a food product category tree under which new food product categories and food products themselves can be placed.  This tree has upper level categories inspired from other product type schemes like the US Code of Federal Regulations.  However it has a much greater depth to it than the other product type schemes in an effort to group related products together.  The basis of this tree was inherited from the environment ontology (ENVO).
+name: food product
+def: "Food material for humans and animals which is processed with the intention that it be consumable as a whole or added to other food products." []
+comment: The FoodOn "food product" class is provided as a branch under which new food product categories and food products themselves can be placed. Here classes are provided to differentiate a food product by its food composition, processing and/or consumption characteristics. This avoids brand name products but it may include generic food dish categories. It has a much greater depth and polyhierarchy than other agency product type schemes have in an effort to group related products together.  The upper level basis of this tree originated in the environment ontology (ENVO) and from the US Code of Federal Regulations.
 is_a: FOODON:00002403 ! food material
-is_a: FOODON:03400361 ! food product type
-intersection_of: FOODON:00002403 ! food material
-intersection_of: FOODON:03400361 ! food product type
-property_value: hasSynonym "food product" xsd:string
 property_value: IAO:0000117 "Damion Dooley" xsd:string
+property_value: IAO:0000118 "Foodon product type" xsd:string
 property_value: IAO:0000119 https://en.wikipedia.org/wiki/Food xsd:anyURI
 
 [Term]
@@ -96,8 +93,10 @@ id: FOODON:00001013
 name: cheese food product
 def: "Cheese is a food derived from milk that is produced in a wide range of flavors, textures, and forms by coagulation of the milk protein casein." []
 xref: https://en.wikipedia.org/wiki/Cheese
+xref: SUBSET_SIREN:F1076
 is_a: FOODON:00001256 ! dairy food product
 property_value: IAO:0000114 IAO:0000428
+property_value: seeAlso https://www.asmscience.org/content/book/10.1128/9781555818593.chap3
 
 [Term]
 id: FOODON:00001014
@@ -116,7 +115,7 @@ property_value: IAO:0000119 https://en.wikipedia.org/wiki/Yogurt xsd:anyURI
 [Term]
 id: FOODON:00001015
 name: plant food product
-def: "This food product type includes food products which are derived from or produced by a plant." []
+def: "This class includes food products which are derived from or produced by a plant." []
 is_a: FOODON:00002381 ! food product by organism
 property_value: IAO:0000114 IAO:0000428
 
@@ -126,6 +125,7 @@ name: cabbage food product
 def: "Cabbage or headed cabbage (comprising several cultivars of Brassica oleracea) is a leafy green or purple biennial plant, grown as an annual vegetable crop for its dense-leaved heads." []
 xref: https://en.wikipedia.org/wiki/Cabbage
 is_a: FOODON:00001171 ! cruciferous inflorescence food product
+is_a: FOODON:00003341 ! brassica food product
 property_value: IAO:0000114 IAO:0000428
 
 [Term]
@@ -346,6 +346,7 @@ property_value: IAO:0000119 Wikipedia:Flour xsd:anyURI
 [Term]
 id: FOODON:00001057
 name: plant fruit food product
+def: "A food product derived from plant fruit." []
 is_a: FOODON:00001015 ! plant food product
 
 [Term]
@@ -550,7 +551,7 @@ property_value: IAO:0000412 http://langual.org xsd:string
 id: FOODON:00001089
 name: corn flour food product
 is_a: FOODON:00001056 ! flour food product
-is_a: FOODON:00001142 ! corn food product
+is_a: FOODON:00001142 ! maize (corn) food product
 
 [Term]
 id: FOODON:00001090
@@ -748,8 +749,12 @@ is_a: FOODON:00001125 ! ovine cheese food product
 [Term]
 id: FOODON:00001131
 name: poultry meat food product
+def: "A food product made from domesticated bird meat." []
 is_a: FOODON:00001006 ! meat food product
 is_a: FOODON:00001283 ! poultry food product
+property_value: IAO:0000114 IAO:0000122
+property_value: IAO:0000117 "Damion Dooley" xsd:string
+property_value: IAO:0000119 https://en.wikipedia.org/wiki/Poultry
 
 [Term]
 id: FOODON:00001132
@@ -765,7 +770,7 @@ property_value: IAO:0000119 https://en.wikipedia.org/wiki/Suidae xsd:anyURI
 id: FOODON:00001133
 name: condiment food product
 def: "A relish, sauce, or seasoning  added to food to impart a particular flavour or to complement the dish." []
-is_a: FOODON:00001714 ! food component
+is_a: FOODON:00001714 ! food product component
 property_value: IAO:0000117 "Damion Dooley" xsd:string
 property_value: IAO:0000119 https://en.wikipedia.org/wiki/Condiment xsd:anyURI
 
@@ -818,15 +823,15 @@ is_a: FOODON:03315552 ! juice beverage
 
 [Term]
 id: FOODON:00001141
-name: wheat based food product
+name: wheat food product
 is_a: FOODON:00001093 ! cereal grain food product
 
 [Term]
 id: FOODON:00001142
-name: corn food product
+name: maize (corn) food product
 def: "A food product deriving primarily from corn (maize)." []
 synonym: "maize food product" EXACT []
-is_a: FOODON:00001093 ! cereal grain food product
+is_a: FOODON:00001015 ! plant food product
 property_value: IAO:0000117 "Damion Dooley" xsd:string
 property_value: IAO:0000119 https://en.wikipedia.org/wiki/Maize
 
@@ -841,7 +846,7 @@ property_value: seeAlso https://en.wikipedia.org/wiki/Tuber
 [Term]
 id: FOODON:00001147
 name: plant root food product
-def: "A food product derived from or produced by a plant." []
+def: "A food product derived from or produced by a plant root." []
 is_a: FOODON:00001015 ! plant food product
 
 [Term]
@@ -855,8 +860,9 @@ property_value: IAO:0000117 "Damion Dooley" xsd:string
 [Term]
 id: FOODON:00001149
 name: confectionery food product
-def: "Food items that are rich in sugar, any one or type of which is called a confection. Modern usage may include substances rich in artificial sweeteners as well." [http://en.wikipedia.org/wiki/Confectionery]
-is_a: FOODON:00001181 ! food (cooked)
+def: "Food items that are rich in sugar, any one or type of which is called a confection. Modern usage may include substances rich in artificial sweeteners as well." []
+is_a: FOODON:00002373 ! food product by meal type
+property_value: IAO:0000119 http://en.wikipedia.org/wiki/Confectionery
 
 [Term]
 id: FOODON:00001150
@@ -881,7 +887,7 @@ is_a: FOODON:00002029 ! melon food product
 
 [Term]
 id: FOODON:00001153
-name: round melon (cucumis melo) fruit food product
+name: muskmelon (Cucumis melo) fruit food product
 is_a: FOODON:00001152 ! melon fruit food product
 
 [Term]
@@ -1058,7 +1064,7 @@ id: FOODON:00001180
 name: prepared food product
 def: "Food product that is 1) ready or nearly ready for consumption; 2) usually a composite of several foods or ingredients that often belong to distinct product types; 3) usually formulated, mixed and partially or fully cooked." []
 synonym: "prepared" BROAD []
-is_a: FOODON:00001002 ! foodon product type
+is_a: FOODON:00001002 ! food product
 property_value: IAO:0000119 langual:thesaurus.asp?termid=A0172
 
 [Term]
@@ -1078,8 +1084,8 @@ is_a: FOODON:00002333 ! vegetable pickle food product
 [Term]
 id: FOODON:00001183
 name: bread food product
-is_a: FOODON:00001141 ! wheat based food product
-is_a: FOODON:00001213 ! baked food product
+is_a: FOODON:00002456 ! food (baked)
+is_a: FOODON:00003395 ! multi-component wheat food product
 
 [Term]
 id: FOODON:00001184
@@ -1310,25 +1316,20 @@ property_value: seeAlso https://en.wikipedia.org/wiki/Legume#Classification_of_p
 id: FOODON:00001210
 name: wheat flour food product
 is_a: FOODON:00001056 ! flour food product
-is_a: FOODON:00001141 ! wheat based food product
+is_a: FOODON:00001141 ! wheat food product
 
 [Term]
 id: FOODON:00001211
 name: pasta food product
 def: "A food made from an unleavened dough of wheat or buckwheat  flour and water, sometimes with other ingredients such as eggs and vegetable  extracts." [http://en.wikipedia.org/wiki/Pasta]
-is_a: FOODON:00001141 ! wheat based food product
+is_a: FOODON:00001141 ! wheat food product
 
 [Term]
 id: FOODON:00001212
 name: pastry food product
 def: "A pastry food product is a food product containing a pastry component.  The food may be ready for consumption or may require further cooking." [http://en.wikipedia.org/wiki/Pastry]
-is_a: FOODON:00001141 ! wheat based food product
 is_a: FOODON:00001626 ! bakery food product
-
-[Term]
-id: FOODON:00001213
-name: baked food product
-is_a: FOODON:00002456 ! food (baked)
+is_a: FOODON:00003395 ! multi-component wheat food product
 
 [Term]
 id: FOODON:00001214
@@ -1435,9 +1436,10 @@ is_a: FOODON:03311737 ! processed food product
 
 [Term]
 id: FOODON:00001230
-name: mustard food product
-def: "A condiment  made from the seeds of a mustard plant (white or yellow mustard, Sinapis hirta; brown or Indian mustard, Brassica juncea; or black mustard, Brassica nigra). The whole, ground, cracked, or bruised mustard seeds are mixed with water, vinegar or other liquids, and sometimes other flavorings and spices, to create a thick paste ranging in colour from bright yellow to dark brown." [http://en.wikipedia.org/wiki/Mustard_%28condiment%29]
+name: mustard seed food product
+def: "A product made from the seeds of a mustard plant (white or yellow mustard, Sinapis hirta; brown or Indian mustard, Brassica juncea; or black mustard, Brassica nigra)." []
 is_a: FOODON:00001242 ! spice or herb
+is_a: FOODON:00002053 ! mustard food product
 
 [Term]
 id: FOODON:00001231
@@ -1591,7 +1593,8 @@ property_value: seeAlso https://en.wikipedia.org/wiki/Fat_content_of_milk#/media
 [Term]
 id: FOODON:00001258
 name: food (fermented)
-is_a: FOODON:00002158 ! food (preserved)
+is_a: FOODON:00002501 ! multi-component food product
+is_a: FOODON:00002645 ! food product by process
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000116 "Are all fermented foods considered preserved to some extent?" xsd:string
 property_value: IAO:0000117 "Damion Dooley" xsd:string
@@ -1611,8 +1614,9 @@ property_value: IAO:0000119 https://en.wikipedia.org/wiki/Beer xsd:anyURI
 [Term]
 id: FOODON:00001261
 name: vegetable food product
-def: "Any plant food product which, typically, is constituted by intact parts from one or more annual plants cultivated as field and garden crops in the open and under glass, and used almost exclusively for food." [http://www.fao.org/es/faodef/fdef07e.htm#7.01]
+def: "Any plant food product which, typically, is constituted by intact parts from one or more annual plants cultivated as field and garden crops in the open and under glass, and used almost exclusively for food." []
 is_a: FOODON:00001015 ! plant food product
+property_value: IAO:0000119 "7.01"
 
 [Term]
 id: FOODON:00001262
@@ -1653,6 +1657,7 @@ is_a: FOODON:00001092 ! vertebrate animal food product
 id: FOODON:00001275
 name: hen egg food product
 def: "A hen egg food product is any food product consisting mainly of hen eggs or derivatives." []
+xref: SUBSET_SIREN:F1074
 is_a: FOODON:00001105 ! avian egg food product
 property_value: IAO:0000114 IAO:0000122
 property_value: IAO:0000119 https://en.wikipedia.org/wiki/Egg_as_food xsd:anyURI
@@ -1741,7 +1746,7 @@ property_value: IAO:0000117 "Damion Dooley" xsd:string
 
 [Term]
 id: FOODON:00001287
-name: mushroom
+name: mushroom (whole organism)
 def: "A mushroom (or toadstool) is the fleshy, spore-bearing fruiting body of a fungus, typically produced above ground on soil or on its food source." []
 synonym: "fungi" BROAD []
 synonym: "wild mushroom" NARROW []
@@ -1757,7 +1762,7 @@ name: cantaloupe fruit food product
 def: "Cantaloupe (also known as muskmelon (India and the United States), mushmelon, rockmelon (in Australian states and in New Zealand), sweet melon, spanspek (South Africa), or capuchin (Scotland) refers to a variety of the Cucumis melo species in the Cucurbitaceae family." []
 synonym: "cantaloup" EXACT []
 synonym: "muskmelon" EXACT []
-is_a: FOODON:00001153 ! round melon (cucumis melo) fruit food product
+is_a: FOODON:00001153 ! muskmelon (Cucumis melo) fruit food product
 property_value: IAO:0000114 IAO:0000122
 property_value: IAO:0000117 "Damion Dooley" xsd:string
 
@@ -1765,7 +1770,6 @@ property_value: IAO:0000117 "Damion Dooley" xsd:string
 id: FOODON:00001289
 name: potato salad food product
 is_a: FOODON:00002132 ! plant based salad food product
-is_a: FOODON:03316579 ! multi-component vegetable product
 
 [Term]
 id: FOODON:00001290
@@ -1814,15 +1818,6 @@ is_a: FOODON:00001130 ! sheep milk cheese food product
 id: FOODON:00001298
 name: unpasteurized camel milk beverage
 is_a: FOODON:00001266 ! camel milk beverage
-
-[Term]
-id: FOODON:00001579
-name: alcoholic beverage
-def: "An alcoholic drink (or alcoholic beverage) is a drink that contains ethanol, a type of alcohol produced by fermentation of grains, fruits, or other sources of sugar." []
-is_a: FOODON:00001254 ! plant derived fermented beverage
-property_value: IAO:0000114 IAO:0000122
-property_value: IAO:0000117 "Damion Dooley" xsd:string
-property_value: IAO:0000119 https://en.m.wikipedia.org/wiki/Alcoholic_drink xsd:anyURI
 
 [Term]
 id: FOODON:00001611
@@ -1880,8 +1875,9 @@ intersection_of: FOODON:00001041 ! beef food product
 
 [Term]
 id: FOODON:00001714
-name: food component
-is_a: FOODON:00001002 ! foodon product type
+name: food product component
+def: "A food product which normally exists as an ingredient to another food product, rather than eaten on its own, and is more complex than a chemical food component." []
+is_a: FOODON:00001002 ! food product
 
 [Term]
 id: FOODON:00001747
@@ -1898,7 +1894,8 @@ is_a: FOODON:00001635 ! bean food product
 
 [Term]
 id: FOODON:00001765
-name: corn (vegetable) food product
+name: vegetable corn food product
+is_a: FOODON:00001142 ! maize (corn) food product
 is_a: FOODON:00002153 ! plant seed vegetable food product
 
 [Term]
@@ -1922,7 +1919,7 @@ is_a: FOODON:03303220 ! dessert food
 [Term]
 id: FOODON:00001857
 name: food flavoring or seasoning product
-is_a: FOODON:00001714 ! food component
+is_a: FOODON:00001714 ! food product component
 
 [Term]
 id: FOODON:00001859
@@ -1933,7 +1930,7 @@ is_a: FOODON:00001173 ! plant seed food product
 [Term]
 id: FOODON:00001867
 name: food dressing product
-is_a: FOODON:00001714 ! food component
+is_a: FOODON:00001714 ! food product component
 
 [Term]
 id: FOODON:00001878
@@ -1947,11 +1944,6 @@ intersection_of: FOODON:00001879 ! frozen dairy food product
 id: FOODON:00001879
 name: frozen dairy food product
 is_a: FOODON:00001256 ! dairy food product
-
-[Term]
-id: FOODON:00001882
-name: fruit based alcoholic beverage
-is_a: FOODON:00001579 ! alcoholic beverage
 
 [Term]
 id: FOODON:00001891
@@ -1979,9 +1971,13 @@ is_a: FOODON:00001093 ! cereal grain food product
 [Term]
 id: FOODON:00002044
 name: mollusc food product
-name: mollusk food product
+synonym: "mollusk food product" EXACT []
 is_a: FOODON:00001293 ! shellfish food product
-property_value: IAO:0000116 "Note american/ gb english spelling variation" xsd:string
+
+[Term]
+id: FOODON:00002053
+name: mustard food product
+is_a: FOODON:00003341 ! brassica food product
 
 [Term]
 id: FOODON:00002071
@@ -1991,18 +1987,18 @@ is_a: FOODON:00001151 ! citrus fruit food product
 [Term]
 id: FOODON:00002125
 name: plant based bakery food product
-is_a: FOODON:00001015 ! plant food product
 is_a: FOODON:00001626 ! bakery food product
-intersection_of: FOODON:00001015 ! plant food product
+is_a: FOODON:03316579 ! multi-component plant food product
 intersection_of: FOODON:00001626 ! bakery food product
+intersection_of: FOODON:03316579 ! multi-component plant food product
 
 [Term]
 id: FOODON:00002126
-name: plant based candy food product
-is_a: FOODON:00001015 ! plant food product
+name: plant-based candy
 is_a: FOODON:00001214 ! candy food product
-intersection_of: FOODON:00001015 ! plant food product
+is_a: FOODON:03316579 ! multi-component plant food product
 intersection_of: FOODON:00001214 ! candy food product
+intersection_of: FOODON:03316579 ! multi-component plant food product
 
 [Term]
 id: FOODON:00002131
@@ -2012,8 +2008,8 @@ is_a: FOODON:00002196 ! refined or partially-refined food product
 [Term]
 id: FOODON:00002132
 name: plant based salad food product
-is_a: FOODON:00001015 ! plant food product
 is_a: FOODON:00002219 ! salad food product
+is_a: FOODON:03316579 ! multi-component plant food product
 
 [Term]
 id: FOODON:00002139
@@ -2036,10 +2032,10 @@ intersection_of: FOODON:00001261 ! vegetable food product
 [Term]
 id: FOODON:00002146
 name: plant product dressing
-is_a: FOODON:00001015 ! plant food product
 is_a: FOODON:00001867 ! food dressing product
-intersection_of: FOODON:00001015 ! plant food product
+is_a: FOODON:03316579 ! multi-component plant food product
 intersection_of: FOODON:00001867 ! food dressing product
+intersection_of: FOODON:03316579 ! multi-component plant food product
 
 [Term]
 id: FOODON:00002151
@@ -2144,14 +2140,6 @@ intersection_of: FOODON:00001038 ! pork meat food product
 intersection_of: FOODON:00001039 ! cured meat food product
 
 [Term]
-id: FOODON:00002330
-name: corn multi-component food product
-is_a: FOODON:00001765 ! corn (vegetable) food product
-is_a: FOODON:03316579 ! multi-component vegetable product
-intersection_of: FOODON:00001765 ! corn (vegetable) food product
-intersection_of: FOODON:03316579 ! multi-component vegetable product
-
-[Term]
 id: FOODON:00002333
 name: vegetable pickle food product
 is_a: FOODON:00001079 ! food (pickled)
@@ -2160,25 +2148,33 @@ is_a: FOODON:00001261 ! vegetable food product
 [Term]
 id: FOODON:00002364
 name: wine or wine-like food product
-is_a: FOODON:00001882 ! fruit based alcoholic beverage
+is_a: FOODON:00001094 ! fermented beverage
 
 [Term]
 id: FOODON:00002373
 name: food product by meal type
 def: "A meal type is the name of an eating occasion that may have location, food type, or other customary contextual features. (Damion's 1st draft definition)" []
-is_a: FOODON:00001002 ! foodon product type
+is_a: FOODON:00001002 ! food product
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000117 "Damion Dooley" xsd:string
 
 [Term]
 id: FOODON:00002381
 name: food product by organism
-is_a: FOODON:00001002 ! foodon product type
+def: "A food product consisting of food material derived primarily from a single organism." []
+is_a: FOODON:00001002 ! food product
+property_value: IAO:0000117 "Damion Dooley" xsd:string
 
 [Term]
 id: FOODON:00002403
 name: food material
-property_value: hasSynonym "food" xsd:string
+def: "Any substance that can be consumed by an organism to satisfy nutritional or other health needs, or to provide a social or organoleptic food experience" []
+synonym: "food" EXACT []
+synonym: "foodstuff" EXACT []
+synonym: "nourishment" EXACT []
+synonym: "sustenance" EXACT []
+property_value: IAO:0000119 https://en.wikipedia.org/wiki/Food
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/envo.owl
 
 [Term]
 id: FOODON:00002423
@@ -2189,22 +2185,22 @@ is_a: FOODON:00001015 ! plant food product
 id: FOODON:00002450
 name: multi-component honey product
 is_a: FOODON:00001178 ! honey food product
-is_a: FOODON:00002501 ! multi-component food
+is_a: FOODON:00002501 ! multi-component food product
 intersection_of: FOODON:00001178 ! honey food product
-intersection_of: FOODON:00002501 ! multi-component food
+intersection_of: FOODON:00002501 ! multi-component food product
 
 [Term]
 id: FOODON:00002451
 name: food transformation process
 def: "A process involving the physical transformation of a food source or food product into some derived organic material or food product" []
-property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000114 "requires discussion" xsd:string
 property_value: IAO:0000117 "Damion Dooley" xsd:string
 
 [Term]
 id: FOODON:00002454
 name: food product by quality
-def: "The food product by quality class provides descriptors for describing food visually or via other senses, which is useful for tasks like food inspection where little prior knowledge of how the food came to be is available. Some terms like \"food (frozen)\" are both a quality descriptor and the output of a process." []
-is_a: FOODON:00001002 ! foodon product type
+def: "A class which contains food product categories qualified by a quality such as granularity or temperature, which is useful for tasks like food inspection where little prior knowledge of how the food came to be is available. Some terms like \"food (frozen)\" are both a quality descriptor and the output of a process." []
+is_a: FOODON:00001002 ! food product
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000117 "Damion Dooley" xsd:string
 
@@ -2212,23 +2208,27 @@ property_value: IAO:0000117 "Damion Dooley" xsd:string
 id: FOODON:00002456
 name: food (baked)
 synonym: "baked" EXACT []
+synonym: "baked food product" EXACT []
 is_a: FOODON:00001181 ! food (cooked)
 
 [Term]
 id: FOODON:00002501
-name: multi-component food
+name: multi-component food product
+def: "A food product consisting of food material derived from ingredients sourced from multiple organisms." []
 comment: The definition of this is being discussed in issue: https://github.com/FoodOntology/foodon/issues/57\n\nNamely, how to characterize the threshold of ingredients that make for multi-component classification? Salt, pepper, spices wouldn't normally make a food multi-component?
-is_a: FOODON:00001002 ! foodon product type
+is_a: FOODON:00001002 ! food product
 property_value: hasSynonym "multi-ingredient" xsd:string
 property_value: http://purl.org/dc/elements/1.1/date 2019-01-23T22:40:32Z xsd:dateTime
-property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000114 IAO:0000122
 property_value: IAO:0000117 "Damion Dooley" xsd:string
 
 [Term]
 id: FOODON:00002645
 name: food product by process
-is_a: FOODON:00001002 ! foodon product type
+def: "A food product organized by the process which it results from." []
+is_a: FOODON:00001002 ! food product
 property_value: http://purl.org/dc/elements/1.1/date 2019-05-23T23:02:07Z xsd:dateTime
+property_value: IAO:0000114 IAO:0000122
 property_value: IAO:0000117 "Damion Dooley" xsd:string
 
 [Term]
@@ -2303,10 +2303,13 @@ property_value: seeAlso https://en.wikipedia.org/wiki/Pigeon_pea xsd:anyURI
 [Term]
 id: FOODON:00002781
 name: pigeon pea (whole)
+def: "A seed of a pigeon pea plant (Cajanus cajan)." []
 synonym: "pigeon pea" EXACT []
 is_a: FOODON:00002780 ! pigeon pea food product
-property_value: http://purl.org/dc/elements/1.1/date 2019-07-09T22:29:49Z xsd:dateTime
-property_value: IAO:0000117 "Damion Dooley" xsd:string
+property_value: http://purl.org/dc/terms/date 2019-07-09T22:29:49Z xsd:dateTime
+property_value: IAO:0000114 IAO:0000122
+property_value: IAO:0000117 http://orcid.org/0000-0002-8844-9165 xsd:string
+property_value: IAO:0000119 https://en.wikipedia.org/wiki/Pigeon_pea xsd:string
 
 [Term]
 id: FOODON:00002786
@@ -2351,6 +2354,35 @@ property_value: IAO:0000114 IAO:0000122
 property_value: IAO:0000117 "Damion Dooley" xsd:string
 
 [Term]
+id: FOODON:00003341
+name: brassica food product
+def: "A genus of plants in the mustard family (Brassicaceae). The members of the genus are informally known as cruciferous vegetables, cabbages, or mustard plants." []
+synonym: "bok choy vegetable food product" NARROW []
+synonym: "bomdong vegetable food product" NARROW []
+synonym: "broccolini vegetable food product" NARROW []
+synonym: "chinese cabbage vegetable food product" NARROW []
+synonym: "choy sum vegetable food product" NARROW []
+synonym: "cole crop vegetable food product" RELATED []
+synonym: "collard greens vegetable food product" NARROW []
+synonym: "cruciferous vegetable food product" RELATED []
+synonym: "gai lan vegetable food product" NARROW []
+synonym: "komatsuna vegetable food product" NARROW []
+synonym: "mizuna vegetable food product" NARROW []
+synonym: "rutabaga vegetable food product" NARROW []
+synonym: "savoy cabbage vegetable food product" NARROW []
+synonym: "tatsoi vegetable food product" NARROW []
+is_a: FOODON:00001169 ! cruciferous food product
+is_a: FOODON:00001261 ! vegetable food product
+property_value: IAO:0000119 https://en.wikipedia.org/wiki/Brassica
+
+[Term]
+id: FOODON:00003395
+name: multi-component wheat food product
+is_a: FOODON:03316579 ! multi-component plant food product
+property_value: http://purl.org/dc/elements/1.1/date 2020-09-06T15:59:54Z xsd:dateTime
+property_value: IAO:0000117 http://orcid.org/0000-0002-8844-9165
+
+[Term]
 id: FOODON:03301073
 name: sugar (granulated)
 comment: SIREN DB annotation:\n* has quality 'crystal' (http://purl.obolibrary.org/obo/FOODON_03430143)\n* has quality 'fully heat-treated' (http://purl.obolibrary.org/obo/FOODON_03440014)\n* derives from 'sugar' (http://purl.obolibrary.org/obo/FOODON_03420108)\n* formed as a result of 'water removal process' (http://purl.obolibrary.org/obo/FOODON_03460138)\n* formed as a result of 'preservation by dehydration or drying' (http://purl.obolibrary.org/obo/FOODON_03470116)\n        
@@ -2376,8 +2408,7 @@ property_value: IAO:0000412 http://langual.org xsd:string
 [Term]
 id: FOODON:03301227
 name: broad bean (whole)
-def: "A broad bean is a bean harvested from a broad bean plant." []
-comment: SIREN DB annotation:\n* has quality 'whole, natural shape' (http://purl.obolibrary.org/obo/FOODON_03430150)\n* has quality 'not heat-treated' (http://purl.obolibrary.org/obo/FOODON_03440003)\n* derives from 'seed, skin present, germ present' (http://purl.obolibrary.org/obo/FOODON_03420133)\n        
+def: "A seed of a broad bean plant (Vicia faba)." []
 subset: subset_siren
 synonym: "broad bean" EXACT []
 synonym: "broadbean" EXACT []
@@ -2390,8 +2421,9 @@ synonym: "tick bean" NARROW []
 synonym: "Windsor bean" EXACT []
 xref: SUBSET_SIREN:F1227
 is_a: FOODON:00001665 ! broad bean food product
-is_a: FOODON:00002753 ! bean (whole)
 property_value: IAO:0000114 IAO:0000122
+property_value: IAO:0000117 http://orcid.org/0000-0002-8844-9165 xsd:string
+property_value: IAO:0000119 "FoodOn" xsd:string
 property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
@@ -2489,7 +2521,7 @@ comment: SIREN DB annotation:\n* has quality 'whole, natural shape' (http://purl
 subset: subset_siren
 xref: SUBSET_SIREN:F10226
 is_a: FOODON:03310791 ! corn (on-the-cob, kernel or parts)
-union_of: FOODON:00001142 ! corn food product
+union_of: FOODON:00001142 ! maize (corn) food product
 union_of: FOODON:03310791 ! corn (on-the-cob, kernel or parts)
 property_value: hasSynonym "paatsami" xsd:string
 property_value: IAO:0000114 IAO:0000122
@@ -2513,7 +2545,7 @@ name: corn (on-the-cob, kernel or parts)
 comment: SIREN DB annotation:\n* has quality 'whole, natural shape' (http://purl.obolibrary.org/obo/FOODON_03430150)\n* has quality 'not heat-treated' (http://purl.obolibrary.org/obo/FOODON_03440003)\n* derives from 'seed, skin present, germ present' (http://purl.obolibrary.org/obo/FOODON_03420133)\n        
 subset: subset_siren
 xref: SUBSET_SIREN:F10791
-is_a: FOODON:00001765 ! corn (vegetable) food product
+is_a: FOODON:00001765 ! vegetable corn food product
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
 
@@ -2522,7 +2554,7 @@ id: FOODON:03311737
 name: processed food product
 subset: subset_siren
 xref: SUBSET_SIREN:F11737
-is_a: FOODON:00001002 ! foodon product type
+is_a: FOODON:00001002 ! food product
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
 
@@ -2603,14 +2635,11 @@ property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
 id: FOODON:03316579
-name: multi-component vegetable product
+name: multi-component plant food product
 comment: SIREN DB annotation:\n* derives from 'part of plant' (http://purl.obolibrary.org/obo/FOODON_03420174)\n        
 subset: subset_siren
 xref: SUBSET_SIREN:F16579
-is_a: FOODON:00001261 ! vegetable food product
-is_a: FOODON:00002501 ! multi-component food
-intersection_of: FOODON:00001261 ! vegetable food product
-intersection_of: FOODON:00002501 ! multi-component food
+is_a: FOODON:00002501 ! multi-component food product
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
 
@@ -2687,7 +2716,7 @@ id: FOODON:03400164
 name: dairy product (us cfr)
 def: "Milk, a product derived from milk, or a dairy product analog; includes cheese and frozen dairy desserts. [FDA CFSAN 1995]" []
 xref: http://www.langual.org/langual_thesaurus.asp?termid=A0164
-is_a: FOODON:03401270 ! product type, U.S. code of federal regulations, title 21
+is_a: FOODON:03401270 ! U.S. code of federal regulations, title 21 food product type
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
 
@@ -2705,7 +2734,7 @@ id: FOODON:03400188
 name: confectionery (us cfr)
 def: "Candy or other food product made with sweeteners and frequently containing nuts, fruits, starches, flavorings and other foods (21 CFR 170.3(n)(9). [FDA CFSAN 1995]" []
 xref: http://www.langual.org/langual_thesaurus.asp?termid=A0188
-is_a: FOODON:03401270 ! product type, U.S. code of federal regulations, title 21
+is_a: FOODON:03401270 ! U.S. code of federal regulations, title 21 food product type
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
 
@@ -2750,17 +2779,17 @@ id: FOODON:03400257
 name: fruit or vegetable product (us cfr)
 def: "Fruits and vegetables in all forms. [FDA CFSAN 1995]" []
 xref: http://www.langual.org/langual_thesaurus.asp?termid=A0257
-is_a: FOODON:03401270 ! product type, U.S. code of federal regulations, title 21
+is_a: FOODON:03401270 ! U.S. code of federal regulations, title 21 food product type
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
 id: FOODON:03400289
-name: product type, USA
+name: USA agency food product type
 def: "Food group having common consumption, functional or manufacturing characteristics, e.g. *FRUIT OR VEGETABLE PRODUCT*, *DAIRY PRODUCT*, *CONFECTIONARY*, *PREPARED FOOD PRODUCT*, etc. [FDA CFSAN 1995]" []
 comment: LanguaL curation note: This term is for CLASSIFICATION ONLY; DO NOT USE term in indexing. Use a more precise narrower term.
 xref: http://www.langual.org/langual_thesaurus.asp?termid=A0289
-is_a: FOODON:03400361 ! food product type
+is_a: FOODON:03400361 ! agency food product type
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
 
@@ -2787,29 +2816,30 @@ property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
 id: FOODON:03400352
-name: product type, international
+name: international agency food product type
 def: "Renamed from *PRODUCT TYPE, CODEX ALIMENTARIUS* in LanguaL 2008." []
 comment: LanguaL curation note: This term is for CLASSIFICATION ONLY; DO NOT USE term in indexing. Use a more precise narrower term.
 xref: http://www.langual.org/langual_thesaurus.asp?termid=A0352
-is_a: FOODON:03400361 ! food product type
+is_a: FOODON:03400361 ! agency food product type
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
 id: FOODON:03400356
-name: product type, European Union
+name: European Union agency food product type
 comment: LanguaL curation note: This term is for CLASSIFICATION ONLY; DO NOT USE term in indexing. Use a more precise narrower term.
 xref: http://www.langual.org/langual_thesaurus.asp?termid=A0356
-is_a: FOODON:03400361 ! food product type
+is_a: FOODON:03400361 ! agency food product type
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
 id: FOODON:03400361
-name: food product type
-def: "A food product type is a class of food products that is differentiated by its food composition, processing and/or consumption characteristics. This does not include brand name products but it may include generic food dish categories." []
-comment: LanguaL curation note: This term is for CLASSIFICATION ONLY; DO NOT USE term in indexing. Use a more precise narrower term.
+name: agency food product type
+def: "An agency food product type is a class of food product defined by an agency or consortium." []
+comment: This class is designed to hold 3rd party food classification schemes which are being mapped to FoodOn classes using the 'has member' relation. The two hierarchies are not melded into a subclass polyhierarchy because of possible logical inconsistencies in the agency schemes. The hierarchies of agency schemes are as true to their agency representation as possible.
 xref: http://www.langual.org/langual_thesaurus.asp?termid=A0361
+is_a: FOODON:00002403 ! food material
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000117 "Damion Dooley" xsd:string
 property_value: IAO:0000412 http://langual.org xsd:string
@@ -2820,7 +2850,7 @@ name: Codex Alimentarius classification of food and feed commodities
 def: "Codex Alimentarius, Volume 2 - 1993, Section 2:  Pesticide Residues in Food.\n\nThe Codex Classification of food and animal feed commodities moving in trade and the description of the various items and groups of food and animal feedstuffs included in the present document have been developed by the Codex Committee on Pesticide Residues. It was first adopted by the 18th Session of the Codex Alimentarius Commission, (1989).\n\nThe Codex Classification includes food commodities and animal feedstuffs for which Codex maximum residue limits will not necessarily be established. The Classification is intended to be as complete a listing of food commodities in trade as possible, classified into groups on the basis of the commodity's similar potential for pesticide residues.\n\nThe Classification may also be appropriate for other purposes such as setting maximum levels for other types of residues or for other contaminants in food. The Codex Classification should be consulted in order to obtain a precise description of the food or animal feed commodities and, especially, in cases where Codex maximum residue limits have been set for groups of food and groups of animal feedstuffs. The Codex Classification is intended to promote harmonization of the terms used to describe commodities which are subject to maximum residue limits and of the approach to grouping commodities with similar potential for residue for which a common group maximum residue limit can be set." []
 comment: LanguaL curation note: This term is for CLASSIFICATION ONLY; DO NOT USE term in indexing. Use a more precise narrower term.
 xref: http://www.langual.org/langual_thesaurus.asp?termid=A0643
-is_a: FOODON:03400352 ! product type, international
+is_a: FOODON:03400352 ! international agency food product type
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
 
@@ -2856,7 +2886,7 @@ id: FOODON:03400777
 name: eurofir food classification
 comment: LanguaL curation note: This term is for CLASSIFICATION ONLY; DO NOT USE term in indexing. Use a more precise narrower term.
 xref: http://www.langual.org/langual_thesaurus.asp?termid=A0777
-is_a: FOODON:03400356 ! product type, European Union
+is_a: FOODON:03400356 ! European Union agency food product type
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
 
@@ -2942,7 +2972,7 @@ id: FOODON:03400874
 name: GS1 Global Product Classification (GPC)
 def: "The Global System 1 (GS1) Global Product Classification (GPC) is a system that gives buyers and sellers a common language for grouping products in the same way, everywhere in the world.$br/$\nThe GS1 GPC classification in facet A is currently updated based on June 2017 release of GS1 GPC Standard for Food/Beverage/Tobacco, except for codes pertaining to tobacco. See the GS1 site for details [https://www.gs1.org/standards/gpc]." []
 xref: http://www.langual.org/langual_thesaurus.asp?termid=A0874
-is_a: FOODON:03400352 ! product type, international
+is_a: FOODON:03400352 ! international agency food product type
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
 property_value: seeAlso https://www.gs1.org/docs/gdsn/support/it/GDSN_Mandatory_Attributes_Simplified_TK.ppt
@@ -2982,11 +3012,11 @@ property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
 id: FOODON:03401270
-name: product type, U.S. code of federal regulations, title 21
+name: U.S. code of federal regulations, title 21 food product type
 def: "Food and Drugs, title 21, Code of Federal Regulations. Original food classification in LanguaL." []
 comment: LanguaL curation note: This term is for CLASSIFICATION ONLY; DO NOT USE term in indexing. Use a more precise narrower term.
 xref: http://www.langual.org/langual_thesaurus.asp?termid=A1270
-is_a: FOODON:03400289 ! product type, USA
+is_a: FOODON:03400289 ! USA agency food product type
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
 property_value: seeAlso https://www.ecfr.gov/cgi-bin/text-idx?SID=87f720ce0d0b6c4548f4bbfd1f8e4c3d&mc=true&tpl=/ecfrbrowse/Title21/21chapterI.tpl xsd:anyURI
@@ -3003,7 +3033,6 @@ property_value: IAO:0000412 http://langual.org xsd:string
 id: FOODON:03411013
 name: plant used for producing extract or concentrate
 xref: http://www.langual.org/langual_thesaurus.asp?termid=B1013
-is_a: FOODON:03411347 ! obsolete: plant
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
 
@@ -3018,10 +3047,11 @@ property_value: IAO:0000412 http://langual.org xsd:string
 [Term]
 id: FOODON:03411041
 name: chemical food component
+def: "Any chemical or chemical mixture that exists in a food material or was added to a food material." []
 comment: LanguaL curation note: A chemical food component is a food substance derived from a nonliving source (e.g., salt, water or synthesized compounds).
 xref: http://www.langual.org/langual_thesaurus.asp?termid=B1041
-is_a: FOODON:00001714 ! food component
-property_value: IAO:0000114 IAO:0000428
+xref: langual:thesaurus.asp?termid=B2973
+property_value: IAO:0000114 IAO:0000122
 property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
@@ -3036,7 +3066,6 @@ property_value: IAO:0000412 http://langual.org xsd:string
 id: FOODON:03411140
 name: fruit-producing plant
 xref: http://www.langual.org/langual_thesaurus.asp?termid=B1140
-is_a: FOODON:03411347 ! obsolete: plant
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
 
@@ -3046,7 +3075,7 @@ name: fungus
 def: "A member of the group of eukaryotic organisms in the kingdom Fungi that includes unicellular microorganisms such as yeasts and molds, as well as multicellular fungi that produce familiar fruiting forms known as mushrooms." []
 synonym: "fungi" EXACT []
 xref: http://www.langual.org/langual_thesaurus.asp?termid=B1261
-is_a: FOODON:03411564 ! food source
+is_a: FOODON:03411564 ! food product organismal source
 property_value: http://schema.org/image 551px-Fungi:collage.jpg {http://purl.org/dc/terms/license="https://creativecommons.org/licenses/by-sa/2.5/deed.en", http://purl.org/dc/terms/rightsHolder="BorgQueen"}
 property_value: IAO:0000114 IAO:0000122
 property_value: IAO:0000117 http://orcid.org/0000-0002-8844-9165
@@ -3067,25 +3096,12 @@ property_value: IAO:0000119 WIKIPEDIA:Melon xsd:string
 property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
-id: FOODON:03411347
-name: obsolete: plant
-def: "A multicellular eukaryote organism of the kingdom Plantae." []
-xref: http://www.langual.org/langual_thesaurus.asp?termid=B1347
-is_a: FOODON:03411564 ! food source
-property_value: IAO:0000117 http://orcid.org/0000-0002-8844-9165
-property_value: IAO:0000119 https://en.wikipedia.org/wiki/Plant
-property_value: IAO:0000412 http://langual.org xsd:string
-property_value: seeAlso http://purl.obolibrary.org/obo/PO_0000003 xsd:anyURI
-is_obsolete: true
-replaced_by: PO:0000003
-
-[Term]
 id: FOODON:03411564
-name: food source
-def: "A food source is a plant or animal from which a food product or  component is derived." []
+name: food product organismal source
+def: "This is a hierarchy of organisms, grouped minimally in a combination of taxonomy and consumer-oriented food groups." []
 comment: This was LanguaL definition: Individual plant or animal from which the food product or its major ingredient is derived; also a chemical food source [FDA CFSAN 1995].
 xref: http://www.langual.org/langual_thesaurus.asp?termid=B1564
-property_value: GENEPIO:0001763 "order=\nobolibrary:FOODON_03411297 # vertebrate \nobolibrary:FOODON_00002452 # invertebrate\nobolibrary:FOODON_03411347 # plant\nobolibrary:FOODON_03411301 # algae\nobolibrary:FOODON_03411261 # fungae\nobolibrary:FOODON_03412345 # lichen" xsd:string
+property_value: GENEPIO:0001763 "order=\nobolibrary:FOODON_03411297 # vertebrate \nobolibrary:FOODON_00002452 # invertebrate\nobolibrary:PO_0000003 # whole plant\nobolibrary:FOODON_03411301 # algae\nobolibrary:FOODON_03411261 # fungae\nobolibrary:FOODON_03412345 # lichen" xsd:string
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
 
@@ -3145,7 +3161,6 @@ id: FOODON:03413357
 name: plant according to family
 comment: LanguaL curation note: This term is for CLASSIFICATION ONLY; DO NOT USE term in indexing. Use a more precise narrower term.
 xref: http://www.langual.org/langual_thesaurus.asp?termid=B3357
-is_a: FOODON:03411347 ! obsolete: plant
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
 
@@ -3165,7 +3180,6 @@ def: "The *Cucurbitaceae*, also called cucurbits and the gourd family, are a pla
 xref: http://www.langual.org/langual_thesaurus.asp?termid=B4460
 is_a: FOODON:03413357 ! plant according to family
 property_value: hasSynonym "cucurbitaceae" xsd:string
-property_value: hasSynonym "gourd/squash family" xsd:string
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000119 https://en.wikipedia.org/wiki/Cucurbitaceae
 property_value: IAO:0000412 http://langual.org xsd:string
@@ -3203,7 +3217,7 @@ name: extract, concentrate or isolate of plant or animal
 def: "A physical-chemical component separated from the food source or its parts by extraction, centrifugation, filtration, heat processing, expressing or a similar process. The separated component may be converted through further processing. If this is done, the final substance is indexed. A water-extracted component may remain in aqueous dispersion. The extract, concentrate or isolate is indexed in preference to the anatomic part from which it is derived. For example, peanut oil is indexed under *PEANUT* combined wih *FAT OR OIL* rather than with *SEED OR KERNEL*. On the other hand, fruit and vegetable juices can be indexed under *FRUIT JUICE OR NECTAR* or *VEGETABLE JUICE* (A. PRODUCT TYPE); therefore the anatomic part of the plant should be indexed." []
 comment: Damion Dooley's note: Items in this branch will be merged into foodon food product branch.
 xref: http://www.langual.org/langual_thesaurus.asp?termid=C0228
-is_a: FOODON:00001714 ! food component
+is_a: FOODON:00001714 ! food product component
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
 
@@ -3251,12 +3265,10 @@ property_value: IAO:0000412 http://langual.org xsd:string
 [Term]
 id: FOODON:03460111
 name: food treatment process
-def: "Used to specifically characterize a food product based on the treatment or processes applied to the product or any indexed ingredient. The processes include adding, substituting or removing components or modifying the food or component, e.g., through fermentation. Multiple values can be assigned." []
+def: "Used to specifically characterize a food product based on the treatment or processes applied to the product or any indexed ingredient. The processes include adding, substituting or removing components or modifying the food or component, e.g., through fermentation." []
 comment: LanguaL curation note: This term is for CLASSIFICATION ONLY; DO NOT USE term in indexing. Use a more precise narrower term.
 xref: http://www.langual.org/langual_thesaurus.asp?termid=H0111
 is_a: FOODON:00002451 ! food transformation process
-property_value: IAO:0000114 IAO:0000428
-property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
 id: FOODON:03460117
@@ -3293,10 +3305,7 @@ name: food component addition process
 comment: LanguaL curation note: A food product is characterized by its main ingredient (food source and part); the addition of secondary ingredients is considered a treatment applied to the product. Secondary ingredients are indexed according to rules that are based on the order of predominance by weight (not counting water) as seen from the label statement, formulation or recipe and/or from the amount of the ingredient as percentage of total product weight. The general rule is:  an ingredient is always indexed if it is the second ingredient in order of predominance, if it is used as a filling, or if it is part of the product name(e.g., raisin bread). Specific rules are given in the scope note for the individual ingredient added; these rules specify more exhaustive indexing. For example, *MUSHROOM ADDED* is indexed regardless of ingredient position. another specific rule is given in the scope note for *SALTED*:  Use if the level of salt is more than 4%. Such a rule is used only when the percentage level can be inferred from the list of ingredients.
 xref: http://www.langual.org/langual_thesaurus.asp?termid=H0225
 is_a: FOODON:03460111 ! food treatment process
-property_value: IAO:0000114 IAO:0000428
-property_value: IAO:0000116 "This class'es semantics are now focused on the process of adding various food components.  This class originated in LanguaL's \"ingredient added\", but ingredients are now listed directly via \"has ingredient\", 'has part', 'derives from', and 'has substance added' relations." xsd:string
 property_value: IAO:0000117 "Damion Dooley" xsd:string
-property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
 id: FOODON:03460227
@@ -3350,15 +3359,11 @@ id: FOODON:03460751
 name: leavening agent addition process
 xref: http://www.langual.org/langual_thesaurus.asp?termid=H0751
 is_a: FOODON:03460225 ! food component addition process
-property_value: IAO:0000114 IAO:0000428
-property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
 id: FOODON:03460752
 name: sourdough addition process
-comment: LanguaL curation note: If wheat sourdough was added use also *WHEAT ADDED [H0319]*.\n\nIf rye sourdough was added use also *RYE ADDED [H0337]*.
+comment: LanguaL curation note: If wheat sourdough was added use also *WHEAT ADDED [H0319]*. If rye sourdough was added use also *RYE ADDED [H0337]*.
 xref: http://www.langual.org/langual_thesaurus.asp?termid=H0752
 is_a: FOODON:03460751 ! leavening agent addition process
-property_value: IAO:0000114 IAO:0000428
-property_value: IAO:0000412 http://langual.org xsd:string
 
