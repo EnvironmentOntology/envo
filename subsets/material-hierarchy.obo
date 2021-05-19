@@ -1,7 +1,7 @@
 format-version: 1.2
-data-version: envo/releases/2020-06-22/subsets/material-hierarchy.owl
+data-version: envo/releases/2021-05-14/subsets/material-hierarchy.owl
 ontology: envo/subsets/material-hierarchy
-property_value: owl:versionInfo "subsets/material-hierarchy.owl 2020-06-22" xsd:string
+property_value: owl:versionInfo "subsets/material-hierarchy.owl 2021-05-14" xsd:string
 
 [Term]
 id: ENVO:00000003
@@ -721,8 +721,7 @@ is_a: ENVO:00002044 ! sludge
 [Term]
 id: ENVO:00002223
 name: oligotrophic water
-namespace: ENVO
-def: "Water with a very low nutrient level." [MA:ma]
+def: "Water which has very low concentrations of nutrients." [MA:ma]
 is_a: ENVO:00002006 ! liquid water
 
 [Term]
@@ -1215,17 +1214,6 @@ namespace: ENVO
 is_a: ENVO:00003030 ! silage
 
 [Term]
-id: ENVO:00003076
-name: glue
-def: "Glue is any substance applied to the surfaces of materials that binds them together and resists separation." [https://en.wikipedia.org/wiki/Glue]
-comment: This sounds more like a role than a material, per se. {created_by="ORCID:0000-0002-4366-3088"}
-synonym: "adhesive" EXACT []
-synonym: "mucilage" EXACT []
-synonym: "paste" BROAD []
-xref: https://en.wikipedia.org/wiki/Glue
-is_a: ENVO:0010001 ! anthropogenic environmental material
-
-[Term]
 id: ENVO:00003081
 name: metal contaminated soil
 def: "Soil which has elevated concentrations of metals." []
@@ -1436,17 +1424,25 @@ is_a: ENVO:00002053 ! limestone
 
 [Term]
 id: ENVO:00005738
-name: foam
-comment: This is a state more than a material.
-xref: https://en.wikipedia.org/wiki/Foam
+name: foamy environmental material
+def: "An environmental material which has the quality of a foam." [https://en.wikipedia.org/wiki/Foam]
 is_a: ENVO:00010483 ! environmental material
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-2996-719X
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-8166-0486
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0003-1072-8081
 
 [Term]
 id: ENVO:00005739
 name: sea foam
 namespace: ENVO
-xref: https://en.wikipedia.org/wiki/Sea_foam
-is_a: ENVO:00005738 ! foam
+def: "A foamy environmental material which 1) is created by the agitation of seawater, 2) whose stability depends on the content of the seawater." [https://en.wikipedia.org/wiki/Sea_foam]
+comment: The lifetime of sea foam can vary from only seconds to several hours or days. The longer-lasting foam are formed in particular when seawater contain higher concentration of dissolved organic matter that derived from sources such as algal blooms. {xref="Sea:foam"}
+is_a: ENVO:00005738 ! foamy environmental material
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-2996-719X
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-8166-0486
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0003-1072-8081
 
 [Term]
 id: ENVO:00005740
@@ -1491,6 +1487,7 @@ is_a: ENVO:00005750 ! grassland soil
 id: ENVO:00005747
 name: compost soil
 namespace: ENVO
+def: "Soil which is derived from compost." []
 is_a: ENVO:00001998 ! soil
 
 [Term]
@@ -1603,6 +1600,7 @@ is_a: ENVO:00001998 ! soil
 id: ENVO:00005765
 name: frozen compost soil
 namespace: ENVO
+def: "Compost soil which is frozen." []
 is_a: ENVO:00005747 ! compost soil
 is_a: ENVO:01001526 ! frozen soil
 
@@ -1842,7 +1840,6 @@ def: "Airborne solid particles (also called dust or particulate matter (PM)) or 
 comment: Should connect to PATO as "quality of an aerosol"
 subset: envoAtmo
 xref: EcoLexicon:aerosol
-xref: http://purl.obolibrary.org/obo/envo.owl
 xref: SWEETRealm:Aerosol
 is_a: ENVO:00010483 ! environmental material
 
@@ -2355,13 +2352,15 @@ creation_date: 2013-10-12T14:51:19Z
 [Term]
 id: ENVO:01000277
 name: water ice
-def: "Ice is water frozen into a solid state. It can appear transparent or opaque bluish-white color, depending on the presence of impurities or air inclusions. The addition of other materials such as soil may further alter its appearance." [https://en.wikipedia.org/wiki/Ice]
+def: "Ice which is formed from water." [https://en.wikipedia.org/wiki/Ice]
+comment: Water ice can appear transparent or opaque bluish-white color, depending on the presence of impurities or air inclusions. The addition of other materials such as soil may further alter its appearance.\n\nWhen speaking about ice on Earth, usually water ice is meant - the solid, crystalline form of water found in the atmosphere as snow crystals, hail, ice pellets, etc., and on the earth's surface in forms such as hoarfrost, rime, glaze, sea ice, glacier ice, ground ice, frazil, anchor ice, etc.  \n\nThis form of water is, strictly speaking, called ice Ih, the Roman numeral I distinguishing it from more than a dozen other phases and the letter h distinguishing it from the metastable cubic phase ice Ic. Ice Ih is the only one of the several known phases of water ice that is stable at commonly occurring temperatures and pressures. (Some of the other forms have very unusual properties, ice VII, for example, being stable only at pressures above 22 400 kg/cm^2, but then existing at temperatures up to about 100C.) \n\nIt has an open structure with a specific gravity of 0.9166 which is slightly less than water; because the water molecules bond to their neighbors covalently only in four directions; it therefore floats on higher density water, where broken molecular bonds permit closer packing. All commonly occurring forms of ice are crystalline, although large single crystals are relatively rare except in glaciers. The ice crystal lattice possesses hexagonal symmetry that manifests itself in the gross forms of such single crystals as are sometimes found in snow. At an air pressure of one atmosphere, ice melts at 0 C by definition of the Celsius temperature scale. (Strictly speaking the equilibrium point among water, ice, and vapor occurs at +0.01C, the triple point.) On the other hand, ice does not invariably form in liquid water cooled below this temperature; it has a tendency to supercool, more so in the absence of ice nuclei. \n\nIn permafrost regions, ice may occupy voids in soils and rocks and may develop in a variety of forms. Ice may be colourless to pale blue or greenish-blue. It may appear white due to included gas bubbles; in exposures, ground ice may also appear black.\n\nIn nature ice is formed either by: (a) the freezing of water, (b) the condensation of atmospheric water vapour direct into ice crystals, (c) the compaction of snow with or without the motion of a glacier, or (d) the impregnation of porous snow masses with water which subsequently freeze.
 subset: envoPolar
 synonym: "ice" RELATED [http://www.eionet.europa.eu/gemet/concept/4131]
+xref: http://sweetontology.net/matrWater/Ice
 xref: LTER:262
 is_a: ENVO:01000814 ! solid environmental material
 is_a: ENVO:01001125 ! ice
-created_by: ORCID:0000-0002-4366-3088
+created_by: http://orcid.org/0000-0002-4366-3088
 creation_date: 2013-10-13T12:01:28Z
 
 [Term]
@@ -2944,9 +2943,10 @@ is_a: ENVO:01000844 ! fog
 [Term]
 id: ENVO:01000844
 name: fog
-def: "A visible mass of cloud water droplets or ice crystals suspended in the air at or near a planetary surface." [https://en.wikipedia.org/wiki/Fog]
+def: "A visible mass of cloud water droplets or ice crystals suspended in the air at or near the surface of an astronomical body." [https://en.wikipedia.org/wiki/Fog]
 comment: Fog is more opaque than mist, reducing visibility to under one kilometre. This class refers only to fog formed by materials primarily composed of water. "Fog can be considered a type of low-lying cloud and is heavily influenced by nearby bodies of water, topography, and wind conditions. In turn, fog has affected many human activities, such as shipping, travel, and warfare." https://en.wikipedia.org/wiki/Fog
 synonym: "haar" RELATED []
+xref: http://sweetontology.net/phenAtmoFog/Fog
 is_a: ENVO:01001088 ! aerosolised liquids
 is_a: ENVO:01001652 ! atmospheric aerosol
 
@@ -2961,8 +2961,10 @@ is_a: ENVO:01000814 ! solid environmental material
 id: ENVO:01000846
 name: water ice crystal
 def: "A crystal which is primarily composed of water ice." []
+comment: Any one of a number of macroscopic, crystalline forms in which ice appears, including hexagonal columns, hexagonal platelets, dendritic crystals, ice needles, and combinations of these forms.  The crystal lattice of ice is hexagonal in its symmetry under most atmospheric conditions. {xref="https://orcid.org/0000-0003-4808-4736"}
 subset: envoPolar
 synonym: "ice crystal" BROAD []
+xref: http://sweetontology.net/matrWater/Ice
 is_a: ENVO:01000845 ! crystal
 
 [Term]
@@ -3465,7 +3467,7 @@ id: ENVO:01001288
 name: kaolin dust
 def: "Dust which is primarily composed of kaolinite particles." []
 synonym: "kaolinite dust" EXACT []
-is_a: ENVO:00002008 ! dust
+is_a: ENVO:02000100 ! mineral dust
 
 [Term]
 id: ENVO:01001391
@@ -3813,8 +3815,9 @@ property_value: http://purl.org/dc/elements/1.1/date 2019-11-08T16:48:01Z xsd:da
 [Term]
 id: ENVO:01001845
 name: hoar
-comment: Frost which is composed of interlocking ice crystals formed by vapour transfer (sublimation followed by deposition) of water vapour on some surface. {xref="https://orcid.org/0000-0003-4808-4736"}
+def: "Frost which is composed of interlocking ice crystals formed by vapour transfer (sublimation followed by deposition) of water vapour on some surface." [https://orcid.org/0000-0003-4808-4736]
 synonym: "hoar frost" EXACT []
+synonym: "white frost" EXACT []
 is_a: ENVO:01001850 ! frost
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
 property_value: http://purl.org/dc/elements/1.1/date 2020-02-12T20:54:38Z xsd:dateTime
@@ -3822,8 +3825,8 @@ property_value: http://purl.org/dc/elements/1.1/date 2020-02-12T20:54:38Z xsd:da
 [Term]
 id: ENVO:01001846
 name: depth hoar
-def: "Hoar which is usually cup-shaped and facetted and which forms within dry snow beneath the snow surface." [https://orcid.org/0000-0003-4808-4736]
-comment: Depth hoar is associated with very fast crystal growth under large temperature gradients. Sometimes a layer of depth hoar forms just above, and may assist in identifying, the summer surface. The low density and low strength of depth hoar can make it difficult to retrieve unbroken core sections during coring, and can complicate estimates of accumulation by microwave remote sensing. Layers of depth hoar also increase the likelihood of avalanching. This is one way in which firn formation may begin. Depth hoar is similar in physical origin to crevasse hoar.  A type of hoarfrost.
+def: "Hoar which is usually cup-shaped and facetted and which forms within dry, low-density snow beneath the snow surface." [https://orcid.org/0000-0003-4808-4736]
+comment: Depth hoar is associated with very fast crystal growth under large temperature gradients. Sometimes a layer of depth hoar forms just above, and may assist in identifying the summer surface. The low density and low strength of depth hoar can make it difficult to retrieve unbroken core sections during coring, and can complicate estimates of accumulation by microwave remote sensing. Layers of depth hoar also increase the likelihood of avalanching. This is one way in which firn formation may begin. Depth hoar is similar in physical origin to crevasse hoar.
 xref: http://sweetontology.net/matrWater/DepthHoar
 is_a: ENVO:01001845 ! hoar
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
@@ -3839,10 +3842,21 @@ property_value: http://purl.org/dc/elements/1.1/date 2020-02-12T21:03:38Z xsd:da
 [Term]
 id: ENVO:01001848
 name: rime
-def: "Frost which is 1) composed primarily of granular ice tufts, 2) formed on the windward sides of exposed objects through contact with supercooled fog or cloud, and 3) built out directly against the wind." []
+def: "Water ice which 1) has a white or milky and opaque appearance, 2) has a granular texture, and 3) is formed as a result of the deposition and rapid freezing of supercooled water drops as they make contact with an exposed object." [https://orcid.org/0000-0003-4808-4736]
+comment: Rime is denser and harder than hoarfrost, but lighter, softer, and less transparent than glaze. Rime is composed essentially of discrete ice granules and has densities as low as 0.2-0.3 g cm-3. Glaze is generally continuous but with some air pockets and has much higher densities. Factors that favor rime formation are small drop size, slow accretion, a high degree of supercooling, and rapid dissipation of latent heat of fusion. The opposite effects favor glaze formation. Both rime and glaze occur when supercooled water drops strike an object at a temperature below freezing. Such formation on terrestrial objects constitutes an ice storm; on aircraft, it is called aircraft icing (where rime is known as rime ice). Either rime or glaze may form on snow crystals, droxtals, or other ice particles in the atmosphere. When such a deposit is wholly or chiefly of rime, snow pellets result; when most or all of the deposit is glaze, ordinary hail or ice pellets result. The alternating clear and opaque layers of some hailstones represent glaze and rime, deposited under varying conditions around the growing hailstone. {xref="https://orcid.org/0000-0003-4808-4736"}
+subset: envoPolar
+xref: http://sweetontology.net/matrWater/Rime
 is_a: ENVO:01001850 ! frost
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
 property_value: http://purl.org/dc/elements/1.1/date 2020-02-12T21:03:46Z xsd:dateTime
+property_value: IAO:0000116 "The previously use definition was: Frost which is 1) composed primarily of granular ice tufts, 2) formed on the windward sides of exposed objects through contact with supercooled fog or cloud, and 3) built out directly against the wind." xsd:string
+created_by: http://orcid.org/0000-0002-3410-4655
+created_by: http://orcid.org/0000-0002-4366-3088
+created_by: https://orcid.org/0000-0002-0337-8610
+created_by: https://orcid.org/0000-0002-2282-7215
+created_by: https://orcid.org/0000-0003-0632-7576
+created_by: https://orcid.org/0000-0003-4808-4736
+creation_date: 2020-11-18T19:59:42.028Z
 
 [Term]
 id: ENVO:01001849
@@ -3854,7 +3868,9 @@ property_value: http://purl.org/dc/elements/1.1/date 2020-02-12T21:04:27Z xsd:da
 [Term]
 id: ENVO:01001850
 name: frost
-def: "An environmental material which is primarily composed of minute ice crystals covering a cold surface." [https://www.merriam-webster.com/dictionary/frost]
+def: "An environmental material which is primarily composed of minute ice crystals forming a fuzzy layer over a cold surface by direct deposition of water vapor." [https://orcid.org/0000-0003-4808-4736, https://www.merriam-webster.com/dictionary/frost]
+comment: In British usage, a day on which the minimum temperature at the level of the ground or on the tops of low, close-growing vegetation falls to -0.9C (30.4F) or below (also called a "day with ground frost").  In more general usage, "frost" can refer to the condition that exists when the temperature of the Earth's surface and Earthbound objects fall below the melting point of water (0 degrees Celsius or 32 degrees Fahrenheit). Depending upon the actual values of ambient-air temperature, dewpoint, and the temperature attained by surface objects, frost may occur in a variety of forms. These include a general freeze, hoarfrost (or white frost), and dry freeze (or black frost). If a frost period is sufficiently severe to end the growing season (or delay its beginning), it is commonly referred to as a killing frost.
+xref: http://sweetontology.net/matrWater/Frost
 is_a: ENVO:00010483 ! environmental material
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
 property_value: http://purl.org/dc/elements/1.1/date 2020-02-12T21:05:54Z xsd:dateTime
@@ -3868,6 +3884,38 @@ is_a: ENVO:0010001 ! anthropogenic environmental material
 is_a: ENVO:01000815 ! liquid environmental material
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
 property_value: http://purl.org/dc/elements/1.1/date 2020-06-02T17:50:36Z xsd:dateTime
+
+[Term]
+id: ENVO:01001876
+name: graupel
+def: "Snow which is composed of heavily rimed particles typically 2 to 5 millimeters in diameter (0.1 to 0.2 inch)." [https://orcid.org/0000-0003-4808-4736]
+comment: Often indistinguishable from very small soft hail except for the size convention that hail must have a diameter greater than 5 mm. Sometimes distinguished by shape into conical, hexagonal, and lump (irregular) graupel.
+synonym: "snow pellets" RELATED []
+xref: http://sweetontology.net/phenAtmoPrecipitation/Graupel
+is_a: ENVO:01000406 ! snow
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2020-07-22T19:10:46Z xsd:dateTime
+property_value: IAO:0000116 "Subclass by shape into conical, hexagonal, and lump (irregular) graupel. Mark Parsons notes that the formational processes may be a source of useful differentia to distinguish graupel from other snow types." xsd:string
+
+[Term]
+id: ENVO:01001882
+name: surface hoar
+def: "Hoar which a) forms on surfaces, b) occurs when the temperature of the surface is colder than the air above and colder than the frost point of that air." [https://orcid.org/0000-0003-4808-4736]
+comment: When buried by snowfall, surface hoar may be considered depth hoar. The crystals formed by surface hoar are usually leaf-, fern- or plate-shaped and facetted. Two types of surface hoar are the fernlike ice crystals deposited directly on a snow surface and the hoarfrost that has grown primarily in two dimensions, as on a window or other smooth surface.
+is_a: ENVO:01001845 ! hoar
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2020-09-09T19:10:18Z xsd:dateTime
+
+[Term]
+id: ENVO:01001883
+name: hoar crystal
+def: "A water ice crystal which is a part of a deposit of hoarfrost and which only grows by desublimation." [https://orcid.org/0000-0003-4808-4736]
+synonym: "hoar frost crystal" EXACT []
+synonym: "white frost crystal" BROAD []
+xref: http://sweetontology.net/matrWater/HoarCrystal
+is_a: ENVO:01000846 ! water ice crystal
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2020-09-09T19:31:29Z xsd:dateTime
 
 [Term]
 id: ENVO:02000004
@@ -4618,15 +4666,410 @@ property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
 property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088
 
 [Term]
-id: ENVO:03500005
-name: anthropogenic litter
-def: "An anthropogenic environmental material consisting of any object no longer wanted and discarded outside of approved trash receptacles." []
-synonym: "litter" BROAD []
-is_a: ENVO:00002264 ! waste material
-is_a: ENVO:0010001 ! anthropogenic environmental material
+id: ENVO:03000133
+name: agricultural potting mixture
+def: "An agricultural environmental material which 1) is composed of a mixture of materials such as peat, composted bark, sand, perlite, or compost, and 2) serves as a medium in which to grow plants." [https://en.wikipedia.org/wiki/Potting_soil]
+comment: Potting soil can be composed of a wide range of materials in varying ratios, often containing little or no actual soil.
+synonym: "potting soil" EXACT []
+is_a: ENVO:0010003 ! agricultural environmental material
 property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-4366-3088
-created_by: http://orcid.org/0000-0002-2908-3327
-creation_date: 2019-11-05T16:02:41Z
+property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
+
+[Term]
+id: ENVO:03000137
+name: freezing fog
+def: "A fog the droplets of which freeze upon contact with exposed objects, forming a coating of rime or glaze." [http://glossary.ametsoc.org/wiki/Main_Page, https://orcid.org/0000-0003-4808-4736]
+subset: envoPolar
+xref: http://sweetontology.net/phenAtmoFog/FreezingFog
+is_a: ENVO:01000844 ! fog
+created_by: http://orcid.org/0000-0002-3410-4655
+created_by: http://orcid.org/0000-0002-4366-3088
+created_by: https://orcid.org/0000-0002-0337-8610
+created_by: https://orcid.org/0000-0002-2282-7215
+created_by: https://orcid.org/0000-0003-0632-7576
+created_by: https://orcid.org/0000-0003-4808-4736
+creation_date: 2020-10-14T20:13:10.917Z
+
+[Term]
+id: ENVO:03000139
+name: ice fog
+def: "Fog which is composed of particles of ice." [https://orcid.org/0000-0003-4808-4736]
+comment: The suspended particles may be partly ice crystals 20 to 100 micron in diameter, but chiefly, especially when dense, droxtals 12-20 micron in diameter. Ice fog is formed by direct freezing of supercooled water droplets with little growth directly from the vapor. It occurs at very low temperatures, and usually in clear, calm weather in high latitudes. The sun is usually visible and may cause halo phenomena or luminous pillars. Ice fog is rare at temperatures warmer than -30 °C, and increases in frequency with decreasing temperature until it is almost always present at air temperatures of -45 °C in the vicinity of a source of water vapor. Such sources are the open water of fast-flowing streams or of the sea, herds of animals, volcanoes, and especially products of combustion for heating or propulsion. At temperatures warmer than -30 °C, these sources can cause steam fog of liquid water droplets, which may turn into ice fog when cooled. {xref="https://orcid.org/0000-0003-4808-4736"}
+subset: envoPolar
+synonym: "air hoar" RELATED []
+synonym: "frost flakes" RELATED []
+synonym: "frost fog" RELATED []
+synonym: "frozen fog" EXACT []
+synonym: "ice-crystal fog" EXACT []
+synonym: "pogonip" EXACT []
+synonym: "rime fog" RELATED []
+xref: http://sweetontology.net/phenAtmoFog/IceFog
+is_a: ENVO:01000844 ! fog
+is_a: ENVO:01001089 ! aerosolised solids
+property_value: IAO:0000116 "In future will add computable renditions of size and temperature constraints. The synonyms of this class can be quite confusing, as they reference entities like frost (which requires a surface for deposition). Might need to add a new droxtal class see https://glossary.ametsoc.org/wiki/Droxtal." xsd:string
+created_by: http://orcid.org/0000-0002-3410-4655
+created_by: http://orcid.org/0000-0002-4366-3088
+created_by: https://orcid.org/0000-0002-0337-8610
+created_by: https://orcid.org/0000-0002-2282-7215
+created_by: https://orcid.org/0000-0003-0632-7576
+created_by: https://orcid.org/0000-0003-4808-4736
+creation_date: 2020-11-18T20:48:37.965Z
+
+[Term]
+id: ENVO:03510000
+name: wood dust
+def: "Dust which is 1) generated when wood is processed and 2) composed primarily of cellulose, polyoses, and lignin." []
+comment: Wood dust is typically generated through processes where wood is chipped, sawed, turned, drilled or sanded. The chemical composition of wood dust depends on the species of tree. Wood dust is not typically produced for specific uses. However, it is used commercially for wood composts. The primary routes of potential human exposure to wood dust are inhalation and dermal contact. It is known to be a human carcinogen.
+xref: http://purl.obolibrary.org/obo/NCIT_C44463
+is_a: ENVO:00002008 ! dust
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-7463-6306
+property_value: http://purl.org/dc/elements/1.1/date 2020-08-03T17:28:49Z xsd:dateTime
+
+[Term]
+id: ENVO:03510006
+name: diesel fuel
+def: "A liquid fuel used in diesel engines, whose fuel ignition takes place, without any spark, as a result of compression of the inlet air mixture and then injection of fuel." [https://en.wikipedia.org/wiki/Diesel_fuel, https://www.eia.gov/energyexplained/diesel-fuel/]
+synonym: "petroleum distillate fuel oil" BROAD []
+is_a: ENVO:00002984 ! petroleum
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-7463-6306
+property_value: http://purl.org/dc/elements/1.1/date 2020-08-03T17:39:59Z xsd:dateTime
+
+[Term]
+id: ENVO:03510007
+name: gasoline
+def: "A clear petroleum-derived flammable liquid which is used as fuel in most spark-ignited internal combustion engines." [https://en.wikipedia.org/wiki/Gasoline]
+comment: Gasoline consists mostly of organic compounds obtained by the fractional distillation of petroleum, enhanced with a variety of additives.
+synonym: "gas" EXACT []
+synonym: "petrol" EXACT []
+is_a: ENVO:00002984 ! petroleum
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-7463-6306
+property_value: http://purl.org/dc/elements/1.1/date 2020-08-03T17:41:45Z xsd:dateTime
+
+[Term]
+id: ENVO:03510008
+name: diesel exhaust
+def: "A gas which results from the incomplete or complete combustion of diesel fuel." []
+xref: http://purl.obolibrary.org/obo/NCIT_C113679
+is_a: ENVO:01000797 ! gaseous environmental material
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-7463-6306
+property_value: http://purl.org/dc/elements/1.1/date 2020-08-03T17:43:30Z xsd:dateTime
+created_by: https://orcid.org/0000-0002-3410-4655
+created_by: https://orcid.org/0000-0002-7356-1779
+created_by: https://orcid.org/0000-0002-7463-6306
+creation_date: 2021-02-12T15:10:14.018Z
+
+[Term]
+id: ENVO:03510009
+name: gasoline exhaust
+def: "A gas which results from the complete or incomplete combustion of gasoline fuel." [https://www.ncbi.nlm.nih.gov/books/NBK531367/]
+is_a: ENVO:01000797 ! gaseous environmental material
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-7463-6306
+property_value: http://purl.org/dc/elements/1.1/date 2020-08-03T17:44:42Z xsd:dateTime
+created_by: https://orcid.org/0000-0002-3410-4655
+created_by: https://orcid.org/0000-0002-7356-1779
+created_by: https://orcid.org/0000-0002-7463-6306
+creation_date: 2021-02-12T15:10:14.018Z
+
+[Term]
+id: ENVO:03510015
+name: xanthan gum
+def: "A polysaccharide that functions as an emulsifier, stabilizer, and thickener in mixtures." []
+xref: http://purl.obolibrary.org/obo/DRON_00723355
+xref: http://purl.obolibrary.org/obo/FOODON_03413321
+xref: http://purl.obolibrary.org/obo/NCIT_C84244
+is_a: ENVO:00010483 ! environmental material
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-7463-6306
+property_value: http://purl.org/dc/elements/1.1/date 2020-08-03T17:52:46Z xsd:dateTime
+
+[Term]
+id: ENVO:03510016
+name: tragacanth
+def: "A naturally occurring plant-based gum, which functions as a viscous, odorless, tasteless, water-soluble mixture of polysaccharides that absorbs water to become a gel/paste." []
+comment: Tragacanth has many uses, including as an emulsifier, thickener, stabilizer, and texturant additive for foods, pharmaceuticals, and art materials.
+synonym: "shiraz gum" EXACT []
+synonym: "tragacanth gum" EXACT []
+xref: http://purl.obolibrary.org/obo/DRON_00723978
+xref: http://purl.obolibrary.org/obo/FOODON_03413310
+xref: http://purl.obolibrary.org/obo/NCIT_C84223
+xref: http://purl.obolibrary.org/obo/OMIT_0014984
+is_a: ENVO:00010483 ! environmental material
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-7463-6306
+property_value: http://purl.org/dc/elements/1.1/date 2020-08-03T17:54:12Z xsd:dateTime
+
+[Term]
+id: ENVO:03510018
+name: resin
+def: "A solid or highly viscous plant or synthetic based substance that is typically convertible into polymers." [https://en.wikipedia.org/wiki/Resin]
+is_a: ENVO:00010483 ! environmental material
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-7463-6306
+property_value: http://purl.org/dc/elements/1.1/date 2020-08-03T17:58:04Z xsd:dateTime
+
+[Term]
+id: ENVO:03510023
+name: shellac
+def: "A resin secreted by the female lac bug, which is dissolved in alcohol to be used as a brush-on colorant, food glaze, and wood finish." [https://en.wikipedia.org/wiki/Shellac]
+synonym: "shellack" EXACT []
+is_a: ENVO:00010483 ! environmental material
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-7463-6306
+property_value: http://purl.org/dc/elements/1.1/date 2020-08-03T18:09:37Z xsd:dateTime
+
+[Term]
+id: ENVO:03510029
+name: primer (paint)
+def: "A paint product which adheres to surfaces and forms a binding layer, preparing it to receive paint." [https://en.wikipedia.org/wiki/Primer_(paint)]
+is_a: ENVO:02000123 ! paint
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-7463-6306
+property_value: http://purl.org/dc/elements/1.1/date 2020-08-03T18:17:39Z xsd:dateTime
+
+[Term]
+id: ENVO:03510031
+name: oil-based paint
+def: "A slow-drying paint that consists of particles of pigment suspended in a drying oil, commonly linseed oil." [https://en.wikipedia.org/wiki/Oil_paint]
+synonym: "oil paint" EXACT []
+is_a: ENVO:02000123 ! paint
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-7463-6306
+property_value: http://purl.org/dc/elements/1.1/date 2020-08-03T18:21:06Z xsd:dateTime
+
+[Term]
+id: ENVO:03510032
+name: acrylic paint
+def: "A water soluble, fast-drying paint made of pigment suspended in acrylic polymer emulsion." [https://en.wikipedia.org/wiki/Acrylic_paint]
+is_a: ENVO:02000123 ! paint
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-7463-6306
+property_value: http://purl.org/dc/elements/1.1/date 2020-08-03T18:22:26Z xsd:dateTime
+
+[Term]
+id: ENVO:03510033
+name: luminescent paint
+def: "A paint that exhibits luminescence, giving off visible light through fluorescence, phosphorescence, or radioluminescence." [https://en.wikipedia.org/wiki/Luminous_paint]
+synonym: "luminous paint" EXACT []
+is_a: ENVO:02000123 ! paint
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-7463-6306
+property_value: http://purl.org/dc/elements/1.1/date 2020-08-03T18:23:19Z xsd:dateTime
+
+[Term]
+id: ENVO:03510036
+name: rock dust
+def: "Dust which is composed of minerals and trace elements, generated by  finely crushed rock." [https://en.wikipedia.org/wiki/Rockdust]
+comment: Rock dust is widely used in mining to prevent coal dust explosions, or in agriculture for organic farming uses.
+synonym: "mineral fines" BROAD []
+synonym: "rock flour" BROAD []
+synonym: "rock powder" EXACT []
+synonym: "soil remineralization" BROAD []
+is_a: ENVO:00002008 ! dust
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-7463-6306
+property_value: http://purl.org/dc/elements/1.1/date 2020-08-03T18:27:44Z xsd:dateTime
+
+[Term]
+id: ENVO:03510037
+name: radioactive material
+def: "Any material containing unstable atoms that emit ionizing radiation as it decays." [https://www.ehs.iastate.edu/research/radiation/radioactive-materials]
+is_a: ENVO:00010483 ! environmental material
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-7463-6306
+property_value: http://purl.org/dc/elements/1.1/date 2020-08-03T18:32:42Z xsd:dateTime
+
+[Term]
+id: ENVO:03510038
+name: volume of cyanoacrylate
+def: "An environmental material which is primarily composed of cyanoacrolate." [https://en.wikipedia.org/wiki/Cyanoacrylate]
+comment: Cyanoacrylates have industrial, medical, and household uses. A strong fast-acting adhesive which is an ester of cyanoacrylic acid.
+is_a: ENVO:00010483 ! environmental material
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-7463-6306
+property_value: http://purl.org/dc/elements/1.1/date 2020-08-03T18:34:01Z xsd:dateTime
+
+[Term]
+id: ENVO:03510039
+name: plastic production compound
+def: "A compound utilized for the production of plastics or polymers." [https://plastics.americanchemistry.com/How-Plastics-Are-Made/]
+comment: Plastics are produced by the conversion of natural products or by the synthesis of primary chemicals generally coming from oil, natural gas, or coal. Plasctic production compounds typically include elements such as carbon, hydrogen, oxygen, nitrogen, chlorine, and sulfur.
+is_a: ENVO:00010483 ! environmental material
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-7463-6306
+property_value: http://purl.org/dc/elements/1.1/date 2020-08-03T18:35:21Z xsd:dateTime
+
+[Term]
+id: ENVO:03510055
+name: rubber cement
+def: "An environmental material which is composed of elastic polymers mixed in a solvent." []
+comment: Solvents typically used include acetone, hexane, heptane or toluene.
+synonym: "cow gum" EXACT []
+is_a: ENVO:0010001 ! anthropogenic environmental material
+is_a: ENVO:2000045 ! hydrocarbon-based environmental material
+created_by: https://orcid.org/0000-0002-3410-4655
+created_by: https://orcid.org/0000-0002-7356-1779
+created_by: https://orcid.org/0000-0002-7463-6306
+creation_date: 2021-02-12T15:10:14.018Z
+
+[Term]
+id: ENVO:03510056
+name: methyl cellulose paste
+def: "An environmental material which is 1) composed primarily of methyl cellulose and water, and 2) formulated to fix wallpaper to walls." []
+synonym: "wallpaper adhesive" EXACT []
+synonym: "wallpaper paste" EXACT []
+is_a: ENVO:0010001 ! anthropogenic environmental material
+is_a: ENVO:01000155 ! organic material
+created_by: https://orcid.org/0000-0002-3410-4655
+created_by: https://orcid.org/0000-0002-7356-1779
+created_by: https://orcid.org/0000-0002-7463-6306
+creation_date: 2021-02-12T15:10:14.018Z
+
+[Term]
+id: ENVO:03510057
+name: permanent hair dye
+def: "An environmental material which is 1) manufactured and 2) primarily composed of hydrogen peroxide and ammonia, and 3) when applied to hair, can alter the natural hair pigments for 6-8 weeks." []
+synonym: "hair color" RELATED []
+is_a: ENVO:0010001 ! anthropogenic environmental material
+created_by: https://orcid.org/0000-0002-3410-4655
+created_by: https://orcid.org/0000-0002-7356-1779
+created_by: https://orcid.org/0000-0002-7463-6306
+creation_date: 2021-02-12T15:10:14.018Z
+
+[Term]
+id: ENVO:03510058
+name: pharmaceutical ink
+def: "A colorant fluid which is 1) manufactured and 2) composed of alcohol, titanium dioxide, and propylene glycol." []
+is_a: ENVO:0010001 ! anthropogenic environmental material
+is_a: ENVO:03510065 ! colorant fluid
+created_by: https://orcid.org/0000-0002-3410-4655
+created_by: https://orcid.org/0000-0002-7356-1779
+created_by: https://orcid.org/0000-0002-7463-6306
+creation_date: 2021-02-12T15:10:14.018Z
+
+[Term]
+id: ENVO:03510060
+name: gel ink
+def: "A colorant fluid which is 1) manufactured and 2) composed of copper phthalocyanine, iron oxides, water, and biopolymers." []
+is_a: ENVO:0010001 ! anthropogenic environmental material
+is_a: ENVO:03510065 ! colorant fluid
+created_by: https://orcid.org/0000-0002-3410-4655
+created_by: https://orcid.org/0000-0002-7356-1779
+created_by: https://orcid.org/0000-0002-7463-6306
+creation_date: 2021-02-12T15:10:14.018Z
+
+[Term]
+id: ENVO:03510061
+name: soy ink
+def: "A colorant fluid which is 1) manufactured and 2) primarily composed of soybean oil, as well as pigment, resin, and wax." []
+is_a: ENVO:0010001 ! anthropogenic environmental material
+is_a: ENVO:03510065 ! colorant fluid
+created_by: https://orcid.org/0000-0002-3410-4655
+created_by: https://orcid.org/0000-0002-7356-1779
+created_by: https://orcid.org/0000-0002-7463-6306
+creation_date: 2021-02-12T15:10:14.018Z
+
+[Term]
+id: ENVO:03510062
+name: aqueous inkjet printer ink
+def: "A colorant fluid which is 1) manufactured, 2) primarily composed of water, as well as glycol, and dye, and 3) intended for use in inkjet printers." []
+is_a: ENVO:0010001 ! anthropogenic environmental material
+is_a: ENVO:03510065 ! colorant fluid
+created_by: https://orcid.org/0000-0002-3410-4655
+created_by: https://orcid.org/0000-0002-7356-1779
+created_by: https://orcid.org/0000-0002-7463-6306
+creation_date: 2021-02-12T15:10:14.018Z
+
+[Term]
+id: ENVO:03510064
+name: emissions from petroleum combustion
+def: "An environmental material which is composed primarily of gases and particles produced by the combustion of petroleum fuels." []
+is_a: ENVO:00010483 ! environmental material
+created_by: https://orcid.org/0000-0002-3410-4655
+created_by: https://orcid.org/0000-0002-7356-1779
+created_by: https://orcid.org/0000-0002-7463-6306
+creation_date: 2021-02-12T15:10:14.018Z
+
+[Term]
+id: ENVO:03510065
+name: colorant fluid
+def: "A liquid environmental material which 1) contains at least one substance which can act as a chemical colorant." []
+is_a: ENVO:01000815 ! liquid environmental material
+created_by: https://orcid.org/0000-0002-3410-4655
+created_by: https://orcid.org/0000-0002-7356-1779
+created_by: https://orcid.org/0000-0002-7463-6306
+creation_date: 2021-04-15T15:10:14.018Z
+
+[Term]
+id: ENVO:03520007
+name: snow crystal
+def: "A water ice crystal which is constituted by water molecules aligned in a hexagonal array." [http://www.snowcrystals.com/science/science.html, https://www.athropolis.com/arctic-facts/fact-snow-crystal.htm, https://www.noaa.gov/stories/how-do-snowflakes-form-science-behind-snow]
+synonym: "snowflake" BROAD [] {comment="Snow crystals and snowflakes are often noted as synonyms, however, the term \"snowflake\" is generally used more loosely. Some sites mention that snow crystals refer to individual crystals of ice, while the term \"snowflake\" can refer both to an individual crystal of ice and to a bundle of snow crystals. Please see here [https://github.com/EnvironmentOntology/envo/issues/998#issuecomment-685649444]"}
+is_a: ENVO:01000846 ! water ice crystal
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-2996-719X
+
+[Term]
+id: ENVO:03600001
+name: chemically contaminated sediment
+def: "Sediment which contains some chemical contaminant." [https://en.wikipedia.org/wiki/Contamination]
+is_a: ENVO:00002114 ! chemically enriched sediment
+property_value: IAO:0000116 "See https://github.com/EnvironmentOntology/envo/issues/1102 for a possible design pattern.\n\nUses undesirability standard, compared to polluted river's ecological impact standard. What is the relation to ENVO:00002114 'chemically enriched sediment'? Does 'element' in the definition refer to something found in the periosic table (like selenium) or the member of some set, aka an entity?" xsd:string
+created_by: http://orcid.org/0000-0002-6670-9157
+creation_date: 2021-04-05T16:38:47.162Z
+
+[Term]
+id: ENVO:03600002
+name: cooling water
+def: "Liquid water which is a participant in a water cooling process." [https://en.wikipedia.org/wiki/Water_cooling]
+comment: Cooling water is commonly used for cooling automobile internal combustion engines and power stations. {xref="Water:cooling"}
+is_a: ENVO:00002006 ! liquid water
+created_by: http://orcid.org/0000-0002-6670-9157
+creation_date: 2021-02-02T21:33:40.901Z
+
+[Term]
+id: ENVO:03600006
+name: food waste
+def: "A waste material which is primarily composed of uneaten food and removed from the food supply chain." [https://en.wikipedia.org/wiki/Food_waste]
+comment: The causes of food waste or loss are numerous and can occur during production, processing, distribution, retail and consumption. {xref="Food:waste"}
+synonym: "food loss" EXACT []
+is_a: ENVO:00002264 ! waste material
+property_value: IAO:0000116 "does FoodOn want this?" xsd:string
+created_by: http://orcid.org/0000-0002-6670-9157
+creation_date: 2021-04-05T16:38:47.162Z
+
+[Term]
+id: ENVO:03600007
+name: formation fluid
+def: "A fluid environmental material which is contained in geologic formations naturally." [https://en.wikipedia.org/wiki/Formation_fluid]
+is_a: ENVO:02000140 ! fluid environmental material
+property_value: IAO:0000116 "assert contained in some child of astronmical body part? cavity? Parent class could use a better definition?" xsd:string
+created_by: http://orcid.org/0000-0002-6670-9157
+creation_date: 2021-04-05T16:38:47.162Z
+
+[Term]
+id: ENVO:03600009
+name: interstitial water
+def: "Liquid water which occurs naturally within the pores of rocks and sediments." [https://link.springer.com/chapter/10.1007/978-94-010-9488-7_14, https://www.glossary.oilfield.slb.com/en/Terms/i/interstitial_water.aspx]
+is_a: ENVO:00002006 ! liquid water
+created_by: http://orcid.org/0000-0002-6670-9157
+creation_date: 2021-04-05T16:38:47.162Z
+
+[Term]
+id: ENVO:03600013
+name: bituminous sand
+def: "An environmental material which consists of either loose sands or partially consolidated sandstone, containing a naturally occurring mixture of sand, clay, and water, soaked with a dense and extremely viscous form of petroleum." [https://en.wikipedia.org/wiki/Oil_sands]
+synonym: "crude bitumen" EXACT []
+synonym: "oil sands" EXACT []
+synonym: "tar sands" EXACT []
+is_a: ENVO:00010483 ! environmental material
+property_value: IAO:0000116 "TODO: create an astonomical body part 'bituminous sands\" and assert composed primarily of realtionship. Xref https://github.com/EnvironmentOntology/envo/issues/1154.\n\nTREATED THIS as a material entity. could add something like \"oil sands deposit\" as a geospatial location later." xsd:string
+created_by: http://orcid.org/0000-0002-6670-9157
+creation_date: 2021-04-05T16:38:47.162Z
+
+[Term]
+id: ENVO:03600016
+name: saprolite
+def: "Rock which is derived from bedrock through chemical weathering" [https://en.wikipedia.org/wiki/Saprolite]
+is_a: ENVO:00001995 ! rock
+property_value: IAO:0000116 "add chemcical weathering term to improve axiomitization" xsd:string
+created_by: http://orcid.org/0000-0002-6670-9157
+creation_date: 2021-04-05T16:38:47.162Z
+
+[Term]
+id: ENVO:03600017
+name: slurry
+def: "An environmental material which is composed of insoluble solid particles suspended in a liquid." [https://en.wikipedia.org/wiki/Slurry, https://www.dictionary.com/browse/slurry, https://www.merriam-webster.com/dictionary/slurry]
+is_a: ENVO:00010483 ! environmental material
+property_value: IAO:0000116 "term requester also included <denser than water> and <usually suspended in water>, but they may only be found in wikipedia's definition" xsd:string
+created_by: http://orcid.org/0000-0002-6670-9157
+creation_date: 2021-04-05T16:38:47.162Z
 
 [Term]
 id: ENVO:04000007
@@ -4672,6 +5115,73 @@ subset: envoNceas
 is_a: ENVO:04000012 ! particulate organic matter
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0003-1264-1166
 property_value: http://purl.org/dc/elements/1.1/date 2019-04-30T18:33:45Z xsd:dateTime
+
+[Term]
+id: ENVO:06105003
+name: thermoplastic material
+def: "An environmental material which is capable of, repeatedly, becoming plastic when heated and hardening again when cooled." [https://en.wikipedia.org/wiki/Thermoplastic, https://www.lexico.com/en/definition/thermoplastic]
+subset: envoPlastics
+is_a: ENVO:00010483 ! environmental material
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-2996-719X
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0003-1072-8081
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-8166-0486
+property_value: http://purl.org/dc/elements/1.1/date 2021-04-27T09:45:29Z xsd:dateTime
+
+[Term]
+id: ENVO:06105016
+name: foamed plastic
+def: "A plastic which has a matrix- or sponge-like structure with numerous, hollow internal spaces." [https://doi.org/10.1016/B978-185617431-2/50011-6, https://doi.org/10.1533/9780857093967.2.309]
+subset: envoPlastics
+synonym: "cellular polymers" BROAD []
+synonym: "expanded polymers" BROAD []
+synonym: "geschäumter Kunststoff" EXACT []
+synonym: "plastic foam" EXACT []
+is_a: ENVO:06105101 ! plastic
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-2996-719X
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0003-1072-8081
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-8166-0486
+property_value: http://purl.org/dc/elements/1.1/date 2021-05-07T12:26:54Z xsd:dateTime
+
+[Term]
+id: ENVO:06105101
+name: plastic
+def: "An environnmental material which 1) is composed primarily of polymers with high molecular mass and 2) once deformed does not spontaneously return to its original shape." [https://readanddigest.com/what-is-plastic/, https://www.britannica.com/science/plastic#ref82461, https://www.lexico.com/definition/plastic]
+comment: "High molecular mass" can be ambiguous as it does not set a threshold for what is considered "high". Here we make no commitment to a threshold.
+subset: envoPlastics
+synonym: "Kunststoff" NARROW [] {comment="In German \"Kunststoff\" connotes those plastics which have intentionally been shaped by some art, thus \"Kunst\"."}
+synonym: "plastica" EXACT []
+synonym: "Plastik" EXACT []
+synonym: "塑膠" EXACT []
+is_a: ENVO:00010483 ! environmental material
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-2996-719X
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-8166-0486
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0003-1072-8081
+property_value: http://purl.org/dc/elements/1.1/date 2021-04-07T14:40:26Z xsd:dateTime
+
+[Term]
+id: ENVO:06105111
+name: natural plastic
+def: "Plastic which is composed primarily of polymers produced by processes whose agents do not include humans or their technologies." []
+subset: envoPlastics
+is_a: ENVO:06105101 ! plastic
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-2996-719X
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-8166-0486
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0003-1072-8081
+property_value: http://purl.org/dc/elements/1.1/date 2021-05-07T09:09:37Z xsd:dateTime
+property_value: IAO:0000116 "The corresponding subclass axiom will be added in the second phase of this project." xsd:string
+
+[Term]
+id: ENVO:06105112
+name: synthetic plastic
+def: "A plastic which is composed primarily of polymers produced by a manufacturing process." []
+subset: envoPlastics
+synonym: "manufactured plastic" EXACT []
+is_a: ENVO:06105101 ! plastic
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-2996-719X
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-8166-0486
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0003-1072-8081
+property_value: http://purl.org/dc/elements/1.1/date 2021-05-07T09:12:35Z xsd:dateTime
+property_value: IAO:0000116 "The corresponding subclass axiom will be added in the second phase of this project." xsd:string
 
 [Term]
 id: ENVO:1000746
