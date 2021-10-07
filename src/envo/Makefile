@@ -72,6 +72,16 @@ ro_test: $(PRE_SRC)
 	  --input-iri http://purl.obolibrary.org/obo/ro.owl \
 	  reason --reasoner hermit 
 
+dl-profile-errors.txt: $(PRE_SRC)
+# validates the DL profile for envo-edit merged with RO
+# note: The file is not part of the repo. It is there for you to check.
+# Use the command  "grep non-simple" to find non-simple violations
+	robot merge \
+        --input $< \
+        --input-iri http://purl.obolibrary.org/obo/ro.owl \
+        validate-profile --profile DL > $@
+
+
 ## -- main targets --
 ##
 ## By default this is the cross-product of {ont, ont-base} x FORMATS
