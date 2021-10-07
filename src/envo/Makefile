@@ -63,11 +63,12 @@ full_test: test envo.check-obo subsets/EnvO-Lite-GSC.check-obo
 test_python:
 	python3 --version
 
-ro_test:
+ro_test: $(PRE_SRC) 
 # currently the ro import does not include domaina and ranges (see issue #1182)
 # this test merges full ro with envo and runs the hermit reasoner
+# $(PRE_SRC) -> envo-edit.owl
 	$(ROBOT) merge \
-	  --input envo-edit.owl \
+	  --input $< \
 	  --input-iri http://purl.obolibrary.org/obo/ro.owl \
 	  reason --reasoner hermit 
 
