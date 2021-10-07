@@ -217,10 +217,10 @@ envo-simple.owl: envo-base.owl
 
 # TODO - fix IRI
 subsets/envo-basic.owl: envo-simple.owl
-	$(OWLTOOLS) $< imports/ro_import.owl --merge-imports-closure --set-ontology-id $(OBO)/$@ -o $@.tmp && mv $@.tmp $@
+	$(OWLTOOLS) $< imports/ro-base_import.owl --merge-imports-closure --set-ontology-id $(OBO)/$@ -o $@.tmp && mv $@.tmp $@
 
 subsets/envo-basic.obo: envo-simple.owl
-	$(OWLTOOLS) $< imports/ro_import.owl --merge-imports-closure  --add-obo-shorthand-to-properties --set-ontology-id $(OBO)/$@ -o -f obo --no-check $@.tmp && grep -v ^owl-axioms $@.tmp > $@
+	$(OWLTOOLS) $< imports/ro-base_import.owl --merge-imports-closure  --add-obo-shorthand-to-properties --set-ontology-id $(OBO)/$@ -o -f obo --no-check $@.tmp && grep -v ^owl-axioms $@.tmp > $@
 
 #envo-mireot.obo: envo-edit.owl chebi-lite.obo pato-lite.obo
 #	ontology-release-runner --no-subsets --skip-format owx --run-obo-basic-dag-check --no-reasoner --allow-overwrite --asserted --outdir build $< chebi-lite.obo pato-lite.obo && cp build/envo-merged.obo $@
@@ -286,12 +286,13 @@ release-diffs:
 ##
 ## By default this is the cross-product of IMPORT_MODULES x FORMATS
 
-IMPORTS = pato uberon chebi ro pco foodon go ncbitaxon  obi po iao fao 
+IMPORTS = pato uberon chebi ro-base pco foodon go ncbitaxon  obi po iao fao
 
 IMPORT_ROOTS = $(patsubst %, imports/%_import, $(IMPORTS))
 IMPORT_OWL_FILES = $(foreach n,$(IMPORT_ROOTS), $(n).owl)
 IMPORT_FILES = $(IMPORT_OWL_FILES)
 
+# this adds IMPORT_FILES as a dependency; the recipe is below
 all_imports: $(IMPORT_FILES)
 
 
@@ -323,7 +324,6 @@ REMOVE_SELF_REF= --remove-classes-in-idspace -d ENVO
 all_imports: $(patsubst %, imports/%_import.owl,$(IMPORTS)) $(patsubst %, imports/%_import.obo,$(IMPORTS))
 
 SEEDS= $(patsubst %, imports/%_terms.txt,$(IMPORTS))
-
 
 KEEPRELS = BFO:0000050 BFO:0000051 RO:0002202 immediate_transformation_of RO:0002176 IAO:0000136
 
@@ -391,7 +391,6 @@ mirror/po.owl: envo-edit.owl
 	  relax reduce \
 	  -o $@
 .PRECIOUS: mirror/po.owl
-
 
 mirror/ro.owl:
 	$(ROBOT) merge -I $(OBO)/ro.owl \
@@ -571,7 +570,7 @@ modules/%.obo: modules/%.owl
 	$(OWLTOOLS) $< -o -f obo $@.tmp && grep -v ^owl-axioms $@.tmp > $@
 
 modules/ebi_biomes.owl: modules/ebi_biomes.csv
-	$(ROBOT) template --template $< -i imports/ro_import.owl -o $@.tmp.owl && mv $@.tmp.owl $@
+	$(ROBOT) template --template $< -i imports/ro-base_import.owl -o $@.tmp.owl && mv $@.tmp.owl $@
 
 envo-edit.csv: envo-edit.owl
 	$(OWLTOOLS) $(USECAT) $< --merge-support-ontologies --export-table $@.tmp && cut -f1 $@.tmp | grep ENVO_ | perl -npe 's@https@http@' > $@
