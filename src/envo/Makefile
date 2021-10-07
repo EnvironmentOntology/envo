@@ -69,16 +69,16 @@ ro_test: $(PRE_SRC)
 # $(PRE_SRC) -> envo-edit.owl
 	$(ROBOT) merge \
 	  --input $< \
-	  --input-iri http://purl.obolibrary.org/obo/ro.owl \
+	  --input-iri $(OBO)/ro/ro-base.owl \
 	  reason --reasoner hermit 
 
 dl-profile-errors.txt: $(PRE_SRC)
 # validates the DL profile for envo-edit merged with RO
 # note: The file is not part of the repo. It is there for you to check.
 # Use the command  "grep non-simple" to find non-simple violations
-	robot merge \
+	$(ROBOT) merge \
         --input $< \
-        --input-iri http://purl.obolibrary.org/obo/ro.owl \
+        --input-iri $(OBO)/ro/ro-base.owl \
         validate-profile --profile DL > $@
 
 
@@ -397,6 +397,10 @@ mirror/ro.owl:
 	$(ROBOT) merge -I $(OBO)/ro.owl \
 	 remove --base-iri RO --base-iri BFO --axioms external -o $@
 .PRECIOUS: mirror/ro.owl
+
+mirror/ro-base.owl:
+	$(ROBOT) merge -I $(OBO)/ro/ro-base.owl -o $@
+.PRECIOUS: mirror/ro-base.owl
 
 mirror/bfo.owl: envo-edit.owl
 	$(OWLTOOLS) $(OBO)/bfo.owl --merge-imports-closure --make-subset-by-properties -f // --remove-external-classes BFO --remove-annotation-assertions -l -s -d  --remove-dangling --set-ontology-id $(OBO)/bfo.owl -o $@
