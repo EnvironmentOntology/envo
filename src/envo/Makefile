@@ -52,7 +52,7 @@ FORMATS_INCL_TSV = $(sort $(FORMATS) tsv)
 # ----------------------------------------
 
 .PHONY: .FORCE
-all: all_imports all_main all_subsets sparql_test all_reports all_assets
+all: all_imports all_main all_subsets sparql_test all_reports all_assets validate-dl-profile
 
 test: envo-edit.owl all_modules all_imports envo.owl all_reports
 travis_test: test_python envo-edit.owl all_reports all_modules envo.owl
@@ -63,23 +63,13 @@ full_test: test envo.check-obo subsets/EnvO-Lite-GSC.check-obo
 test_python:
 	python3 --version
 
-ro_test: $(PRE_SRC) 
-# currently the ro import does not include domaina and ranges (see issue #1182)
-# this test merges full ro with envo and runs the hermit reasoner
-# $(PRE_SRC) -> envo-edit.owl
-	$(ROBOT) merge \
-	  --input $< \
-	  --input-iri $(OBO)/ro/ro-base.owl \
-	  reason --reasoner hermit 
-
-dl-profile-errors.txt: $(PRE_SRC)
+validate-dl-profile: $(PRE_SRC)
 # validates the DL profile for envo-edit merged with RO
 # note: The file is not part of the repo. It is there for you to check.
 # Use the command  "grep non-simple" to find non-simple violations
 	$(ROBOT) merge \
         --input $< \
-        --input-iri $(OBO)/ro/ro-base.owl \
-        validate-profile --profile DL > $@
+        validate-profile --profile DL
 
 
 ## -- main targets --
@@ -217,10 +207,10 @@ envo-simple.owl: envo-base.owl
 
 # TODO - fix IRI
 subsets/envo-basic.owl: envo-simple.owl
-	$(OWLTOOLS) $< imports/ro-base_import.owl --merge-imports-closure --set-ontology-id $(OBO)/$@ -o $@.tmp && mv $@.tmp $@
+	$(OWLTOOLS) $< imports/ro_import.owl --merge-imports-closure --set-ontology-id $(OBO)/$@ -o $@.tmp && mv $@.tmp $@
 
 subsets/envo-basic.obo: envo-simple.owl
-	$(OWLTOOLS) $< imports/ro-base_import.owl --merge-imports-closure  --add-obo-shorthand-to-properties --set-ontology-id $(OBO)/$@ -o -f obo --no-check $@.tmp && grep -v ^owl-axioms $@.tmp > $@
+	$(OWLTOOLS) $< imports/ro_import.owl --merge-imports-closure  --add-obo-shorthand-to-properties --set-ontology-id $(OBO)/$@ -o -f obo --no-check $@.tmp && grep -v ^owl-axioms $@.tmp > $@
 
 #envo-mireot.obo: envo-edit.owl chebi-lite.obo pato-lite.obo
 #	ontology-release-runner --no-subsets --skip-format owx --run-obo-basic-dag-check --no-reasoner --allow-overwrite --asserted --outdir build $< chebi-lite.obo pato-lite.obo && cp build/envo-merged.obo $@
@@ -286,7 +276,7 @@ release-diffs:
 ##
 ## By default this is the cross-product of IMPORT_MODULES x FORMATS
 
-IMPORTS = pato uberon chebi ro-base pco foodon go ncbitaxon  obi po iao fao
+IMPORTS = pato uberon chebi ro pco foodon go ncbitaxon  obi po iao fao
 
 IMPORT_ROOTS = $(patsubst %, imports/%_import, $(IMPORTS))
 IMPORT_OWL_FILES = $(foreach n,$(IMPORT_ROOTS), $(n).owl)
@@ -393,13 +383,10 @@ mirror/po.owl: envo-edit.owl
 .PRECIOUS: mirror/po.owl
 
 mirror/ro.owl:
-	$(ROBOT) merge -I $(OBO)/ro.owl \
-	 remove --base-iri RO --base-iri BFO --axioms external -o $@
-.PRECIOUS: mirror/ro.owl
-
-mirror/ro-base.owl:
+# this removes the property chains from the ro import; use ro-base instead
+#	$(ROBOT) merge -I $(OBO)/ro.owl remove --base-iri RO --base-iri BFO --axioms external -o $@
 	$(ROBOT) merge -I $(OBO)/ro/ro-base.owl -o $@
-.PRECIOUS: mirror/ro-base.owl
+.PRECIOUS: mirror/ro.owl
 
 mirror/bfo.owl: envo-edit.owl
 	$(OWLTOOLS) $(OBO)/bfo.owl --merge-imports-closure --make-subset-by-properties -f // --remove-external-classes BFO --remove-annotation-assertions -l -s -d  --remove-dangling --set-ontology-id $(OBO)/bfo.owl -o $@
@@ -570,7 +557,7 @@ modules/%.obo: modules/%.owl
 	$(OWLTOOLS) $< -o -f obo $@.tmp && grep -v ^owl-axioms $@.tmp > $@
 
 modules/ebi_biomes.owl: modules/ebi_biomes.csv
-	$(ROBOT) template --template $< -i imports/ro-base_import.owl -o $@.tmp.owl && mv $@.tmp.owl $@
+	$(ROBOT) template --template $< -i imports/ro_import.owl -o $@.tmp.owl && mv $@.tmp.owl $@
 
 envo-edit.csv: envo-edit.owl
 	$(OWLTOOLS) $(USECAT) $< --merge-support-ontologies --export-table $@.tmp && cut -f1 $@.tmp | grep ENVO_ | perl -npe 's@https@http@' > $@
