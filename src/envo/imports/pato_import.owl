@@ -94,9 +94,18 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/BFO_0000001 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000001">
+        <rdfs:label xml:lang="en">entity</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/BFO_0000002 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000002">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000001"/>
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/BFO_0000003"/>
         <obo:IAO_0000115 xml:lang="en">An entity that exists in full at any time in which it exists at all, persists through time while maintaining its identity and has no temporal parts.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">continuant</rdfs:label>
@@ -107,6 +116,7 @@
     <!-- http://purl.obolibrary.org/obo/BFO_0000003 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000003">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000001"/>
         <obo:IAO_0000115 xml:lang="en">An entity that has temporal parts and that happens, unfolds or develops through time.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">occurrent</rdfs:label>
     </owl:Class>
@@ -134,6 +144,27 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/BFO_0000016 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000016">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000017"/>
+        <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/BFO_0000023"/>
+        <rdfs:label xml:lang="en">disposition</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000017 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000017">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000020"/>
+        <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/BFO_0000019"/>
+        <obo:IAO_0000115 xml:lang="en">A specifically dependent continuant  that inheres in continuant  entities and are not exhibited in full at every time in which it inheres in an entity or group of entities. The exhibition or actualization of a realizable entity is a particular manifestation, functioning or process that occurs under certain circumstances.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">realizable entity</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/BFO_0000019 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000019">
@@ -153,11 +184,41 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/BFO_0000023 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000023">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000017"/>
+        <obo:IAO_0000115 xml:lang="en">A realizable entity  the manifestation of which brings about some result or end that is not essential to a continuant  in virtue of the kind of thing that it is but that can be served or participated in by that kind of continuant  in some kinds of natural, social or institutional contexts.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">role</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000030 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000030">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
+        <rdfs:label>object</rdfs:label>
+        <rdfs:label xml:lang="en">object</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000034 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000034">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000016"/>
+        <rdfs:label xml:lang="en">function</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/BFO_0000040 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000040">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
         <obo:IAO_0000115 xml:lang="en">An independent continuant that is spatially extended whose identity is independent of that of other entities and can be maintained through time.</obo:IAO_0000115>
+        <rdfs:label>material entity</rdfs:label>
         <rdfs:label xml:lang="en">material entity</rdfs:label>
     </owl:Class>
     
@@ -191,6 +252,288 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/CHEBI_23367 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_23367">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_24431"/>
+        <rdfs:label>molecular entity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_24431 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_24431">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000030"/>
+        <rdfs:label>chemical entity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_25555 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_25555">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_25585"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33300"/>
+        <rdfs:label>nitrogen atom</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_25585 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_25585">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33250"/>
+        <rdfs:label>nonmetal atom</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_25806 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_25806">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33304"/>
+        <rdfs:label>oxygen molecular entity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_26833 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_26833">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_25585"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33303"/>
+        <rdfs:label>sulfur atom</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_26835 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_26835">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33304"/>
+        <rdfs:label>sulfur molecular entity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_27594 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_27594">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_25585"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33306"/>
+        <rdfs:label>carbon atom</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_33250 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_33250">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_24431"/>
+        <rdfs:label>atom</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_33300 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_33300">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33560"/>
+        <rdfs:label>pnictogen</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_33302 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_33302">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33675"/>
+        <rdfs:label>pnictogen molecular entity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_33303 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_33303">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33560"/>
+        <rdfs:label>chalcogen</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_33304 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_33304">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33675"/>
+        <rdfs:label>chalcogen molecular entity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_33306 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_33306">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33560"/>
+        <rdfs:label>carbon group element atom</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_33318 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_33318">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33250"/>
+        <rdfs:label>main group element atom</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_33560 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_33560">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33318"/>
+        <rdfs:label>p-block element atom</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_33579 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_33579">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_23367"/>
+        <rdfs:label>main group molecular entity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_33582 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_33582">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33675"/>
+        <rdfs:label>carbon group molecular entity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_33675 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_33675">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33579"/>
+        <rdfs:label>p-block molecular entity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_33694 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_33694">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33839"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_50860"/>
+        <rdfs:label>biomacromolecule</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_33839 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_33839">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_36357"/>
+        <rdfs:label>macromolecule</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_36342 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_36342">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
+        <rdfs:label>subatomic particle</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_36357 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_36357">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_23367"/>
+        <rdfs:label>polyatomic entity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_46662 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_46662">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_59999"/>
+        <rdfs:label>mineral</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_50860 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_50860">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33582"/>
+        <rdfs:label>organic molecular entity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_51143 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_51143">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33302"/>
+        <rdfs:label>nitrogen molecular entity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_59999 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_59999">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_24431"/>
+        <rdfs:label>chemical substance</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ENVO_00000568 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_00000568">
+        <rdfs:label>obsolete aerial habitat</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ENVO_01000254 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000254">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002577"/>
+        <rdfs:label>environmental system</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GO_0003008 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0003008">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0032501"/>
+        <rdfs:label>system process</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GO_0007588 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0007588">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0003008"/>
+        <rdfs:label>excretion</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/GO_0008150 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0008150">
@@ -201,6 +544,162 @@
         <oboInOwl:hasRelatedSynonym>single organism process</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>single-organism process</oboInOwl:hasRelatedSynonym>
         <rdfs:label>biological_process</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GO_0032501 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0032501">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0008150"/>
+        <rdfs:label>multicellular organismal process</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCBITaxon_1 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_1">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
+        <rdfs:label>root</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCBITaxon_10239 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_10239">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0100026"/>
+        <rdfs:label>Viruses</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCBITaxon_131567 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_131567">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1"/>
+        <rdfs:label>cellular organisms</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCBITaxon_2 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_2">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_131567"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0100026"/>
+        <rdfs:label>Bacteria</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCBITaxon_2157 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_2157">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0100026"/>
+        <rdfs:label>Archaea</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCBITaxon_2759 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_2759">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_131567"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0100026"/>
+        <rdfs:label>Eukaryota</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCBITaxon_33154 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_33154">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2759"/>
+        <rdfs:label>Opisthokonta</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCBITaxon_33208 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_33208">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_33154"/>
+        <rdfs:label>Metazoa</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCBITaxon_33213 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_33213">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_6072"/>
+        <rdfs:label>Bilateria</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCBITaxon_33511 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_33511">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_33213"/>
+        <rdfs:label>Deuterostomia</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCBITaxon_6072 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_6072">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_33208"/>
+        <rdfs:label>Eumetazoa</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCBITaxon_7711 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_7711">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_33511"/>
+        <rdfs:label>Chordata</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCBITaxon_7742 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_7742">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_89593"/>
+        <rdfs:label>Vertebrata &lt;vertebrates&gt;</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCBITaxon_89593 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_89593">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7711"/>
+        <rdfs:label>Craniata &lt;chordates&gt;</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0100026 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0100026">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_10239"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_2"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_2157"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_2759"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
+        <rdfs:label xml:lang="en">organism</rdfs:label>
     </owl:Class>
     
 
@@ -339,7 +838,6 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0000051 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000051">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000019"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001241"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A quality of a single physical entity inhering in the bearer by virtue of the bearer&apos;s size or shape or structure.</obo:IAO_0000115>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">morphology</rdfs:label>
@@ -1618,6 +2116,7 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001241 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001241">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000019"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000001"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A quality which inheres in a continuant.</obo:IAO_0000115>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">monadic quality of a continuant</oboInOwl:hasExactSynonym>
@@ -1696,6 +2195,18 @@
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cold</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">low temperature</oboInOwl:hasExactSynonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decreased temperature</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0001309 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001309">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002062"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A process quality inhering in a bearer by virtue of the bearer&apos;s magnitude of the temporal extent between the starting and ending point.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">period</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">time</oboInOwl:hasRelatedSynonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">duration</rdfs:label>
     </owl:Class>
     
 
@@ -2282,7 +2793,7 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001595">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001708"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A 1-D extent quality inhering in a bearer by virtue of the bearer&apos;s downward or backward or inward dimenision.</obo:IAO_0000115>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A 1-D extent quality inhering in a bearer by virtue of the bearer&apos;s downward or backward or inward dimension.</obo:IAO_0000115>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">depth</rdfs:label>
     </owl:Class>
     
@@ -2392,7 +2903,6 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000140"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A spatial quality inhering in a bearer by virtue of the bearer&apos;s being located toward the front of an organism relative to another entity.</obo:IAO_0000115>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">preceding</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ventral_to</oboInOwl:hasExactSynonym>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">anterior to</rdfs:label>
     </owl:Class>
     
@@ -2681,7 +3191,7 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001729">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001995"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An organismal quality inhering in a bearer by virtue of the bearer&apos;s disposition to lose an entitity by natural process.</obo:IAO_0000115>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An organismal quality inhering in a bearer by virtue of the bearer&apos;s disposition to lose an entity by natural process.</obo:IAO_0000115>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">shedability</rdfs:label>
     </owl:Class>
     
@@ -3486,7 +3996,7 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002080">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001444"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A broken quality inhering in a bearer by virtue of the bearer&apos;s being seperated into two contiguous wholes.</obo:IAO_0000115>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A broken quality inhering in a bearer by virtue of the bearer&apos;s being separated into two contiguous wholes.</obo:IAO_0000115>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">broken into two pieces</rdfs:label>
     </owl:Class>
     
@@ -3517,7 +4027,7 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002121">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000330"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A spatial pattern inhering in a bearer by virtue of the bearer&apos;s structureresembling an irregular meshwork with cross-linking struts.</obo:IAO_0000115>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A spatial pattern inhering in a bearer by virtue of the bearer&apos;s structure resembling an irregular meshwork with cross-linking struts.</obo:IAO_0000115>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">trabecular</rdfs:label>
     </owl:Class>
     
@@ -4513,6 +5023,547 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0050000"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A rate of occurrence that is relatively low.</obo:IAO_0000115>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decreased rate of occurrence</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0002577 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/RO_0002577">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
+        <rdfs:label>system</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0000014 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000014">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004121"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0034944"/>
+        <obo:IAO_0000115>Any portion of the organ that covers that body and consists of a layer of epidermis and a layer of dermis.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>portion of skin</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>region of skin</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>skin</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>skin region</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>skin zone</oboInOwl:hasExactSynonym>
+        <rdfs:label>zone of skin</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0000025 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000025">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004111"/>
+        <obo:IAO_0000115>Any hollow cylindrical anatomical structure containing a lumen through which substances are transported.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>anatomical tube</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasNarrowSynonym>duct</oboInOwl:hasNarrowSynonym>
+        <rdfs:label>tube</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0000061 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000061">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000465"/>
+        <obo:IAO_0000115>Material anatomical entity that is a single connected structure with inherent 3D shape generated by coordinated expression of the organism&apos;s own genome.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>biological structure</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>connected biological structure</oboInOwl:hasExactSynonym>
+        <rdfs:label>anatomical structure</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0000062 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000062">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010000"/>
+        <obo:IAO_0000115>Anatomical structure that performs a specific function or group of functions [WP].</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>anatomical unit</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>body organ</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>element</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>organ</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0000064 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000064">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010000"/>
+        <obo:IAO_0000115>A multicellular structure that is a part of an organ.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>cardinal organ part</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>regional part of organ</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>organ part</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0000160 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000160">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004921"/>
+        <obo:IAO_0000115>Segment of the alimentary canal extending from the stomach to the anus and, in humans and other mammals, consists of two segments, the small intestine and the large intestine.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>bowel</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>intestinal tract</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>intestine</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0000165 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000165">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004921"/>
+        <obo:IAO_0000115>The proximal portion of the digestive tract, containing the oral cavity and bounded by the oral opening. In vertebrates, this extends to the pharynx and includes gums, lips, tongue and parts of the palate. Typically also includes the teeth, except where these occur elsewhere (e.g. pharyngeal jaws) or protrude from the mouth (tusks).</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>regio oralis</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasNarrowSynonym>adult mouth</oboInOwl:hasNarrowSynonym>
+        <oboInOwl:hasRelatedSynonym>cavital oralis</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>cavitas oris</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>cavum oris</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>mouth cavity</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>oral region</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>oral vestibule</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>rima oris</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>stoma</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>stomatodaeum</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>trophic apparatus</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>vestibule of mouth</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>vestibulum oris</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>mouth</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0000174 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000174">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000463"/>
+        <obo:IAO_0000115>A portion of organism substance that is the product of an excretion process that will be eliminated from the body. An excretion process is elimination by an organism of the waste products that arise as a result of metabolic activity</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>excreted substance</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>portion of excreted substance</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>waste substance</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>excretion</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>excreta</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0000178 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000178">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CARO_0000000"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000179"/>
+        <obo:IAO_0000115>A fluid that is composed of blood plasma and erythrocytes.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>portion of blood</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>vertebrate blood</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>whole blood</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>blood</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0000179 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000179">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0006314"/>
+        <obo:IAO_0000115>Circulating fluid that is part of the hemolymphoid system. Blood, lymph, interstitial fluid or its analogs.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>blood or blood analog</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>circulating fluid</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>haemolymphatic fluid</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0000456 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000456">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000463"/>
+        <obo:IAO_0000115>A portion of organism substance that is produced by exocrine glands.</obo:IAO_0000115>
+        <oboInOwl:hasBroadSynonym>secretion</oboInOwl:hasBroadSynonym>
+        <oboInOwl:hasExactSynonym>bodily secretion</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>exocrine gland fluid/secretion</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>secreted substance</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>exocrine gland fluid</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>exocrine gland fluid or secretion</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>exocrine gland secretion</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>external secretion</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>secretion of exocrine gland</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0000463 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000463">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000465"/>
+        <obo:IAO_0000115>Material anatomical entity in a gaseous, liquid, semisolid or solid state; produced by anatomical structures or derived from inhaled and ingested substances that have been modified by anatomical structures as they pass through the body.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>body fluid or substance</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>body substance</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>organism substance</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>portion of body substance</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>portion of organism substance</oboInOwl:hasExactSynonym>
+        <rdfs:label>organism substance</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0000465 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000465">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001062"/>
+        <obo:IAO_0000115>Anatomical entity that has mass.</obo:IAO_0000115>
+        <rdfs:label>material anatomical entity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0000467 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000467">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000061"/>
+        <obo:IAO_0000115>Multicellular, connected anatomical structure that has multiple organs as parts and whose parts work together to achieve some shared function.</obo:IAO_0000115>
+        <oboInOwl:hasBroadSynonym>system</oboInOwl:hasBroadSynonym>
+        <oboInOwl:hasExactSynonym>body system</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>connected anatomical system</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>organ system</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>anatomical systems</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>anatomical system</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0000479 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000479">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010000"/>
+        <obo:IAO_0000115>Multicellular anatomical structure that consists of many cells of one or a few types, arranged in an extracellular matrix such that their long-range organisation is at least partly a repetition of their short-range organisation.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>portion of tissue</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>tissue portion</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasNarrowSynonym>simple tissue</oboInOwl:hasNarrowSynonym>
+        <rdfs:label>tissue</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0001062 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001062">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
+        <obo:IAO_0000115>Biological entity that is either an individual member of a biological species or constitutes the structural organization of an individual member of a biological species.</obo:IAO_0000115>
+        <rdfs:label>anatomical entity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0001084 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001084">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0012180"/>
+        <obo:IAO_0000115>A zone of skin that is part of a head [Automatically generated definition].</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>adult head zone of skin</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>head skin</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>head zone of skin</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>zone of skin of adult head</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>zone of skin of head</oboInOwl:hasExactSynonym>
+        <rdfs:label>skin of head</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0001090 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001090">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007779"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007794"/>
+        <obo:IAO_0000115>Joint fluid is a transudate of plasma that is actively secreted by synovial cells.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>joint fluid</oboInOwl:hasExactSynonym>
+        <rdfs:label>synovial fluid</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0001474 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001474">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CARO_0000000"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004765"/>
+        <obo:IAO_0000115>Skeletal element that is composed of bone tissue.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>bone organ</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>bone</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>bones</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>bone element</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0001555 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001555">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CARO_0000000"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000025"/>
+        <obo:IAO_0000115>A tube extending from the mouth to the anus.</obo:IAO_0000115>
+        <oboInOwl:hasBroadSynonym>gut</oboInOwl:hasBroadSynonym>
+        <oboInOwl:hasExactSynonym>digestive tube</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>enteric tract</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasNarrowSynonym>alimentary canal</oboInOwl:hasNarrowSynonym>
+        <oboInOwl:hasNarrowSynonym>alimentary tract</oboInOwl:hasNarrowSynonym>
+        <oboInOwl:hasRelatedSynonym>digestive canal</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>gut tube</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>digestive tract</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0001796 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001796">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0006312"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0006314"/>
+        <obo:IAO_0000115>A thick watery refractive medium that fills the space between the lens and the cornea[WP].</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>aqueous humor</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>aqueous humour</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>humor aquosus</oboInOwl:hasExactSynonym>
+        <rdfs:label>aqueous humor of eyeball</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0001969 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001969">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CARO_0000000"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000179"/>
+        <obo:IAO_0000115>The liquid component of blood, in which erythrocytes are suspended.</obo:IAO_0000115>
+        <oboInOwl:hasBroadSynonym>plasma</oboInOwl:hasBroadSynonym>
+        <oboInOwl:hasBroadSynonym>portion of plasma</oboInOwl:hasBroadSynonym>
+        <oboInOwl:hasExactSynonym>blood plasm</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>portion of blood plasma</oboInOwl:hasExactSynonym>
+        <rdfs:label>blood plasma</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0001988 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001988">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000174"/>
+        <obo:IAO_0000115>Portion of semisolid bodily waste discharged through the anus[MW,modified]</obo:IAO_0000115>
+        <oboInOwl:hasBroadSynonym>excreta</oboInOwl:hasBroadSynonym>
+        <oboInOwl:hasExactSynonym>faeces</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>fecal material</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>fecal matter</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>piece of shit</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>portion of excrement</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>portion of faeces</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>portion of fecal material</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>portion of fecal matter</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>portion of feces</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>portionem cacas</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>stool</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasNarrowSynonym>cow dung</oboInOwl:hasNarrowSynonym>
+        <oboInOwl:hasNarrowSynonym>cow pat</oboInOwl:hasNarrowSynonym>
+        <oboInOwl:hasNarrowSynonym>dung</oboInOwl:hasNarrowSynonym>
+        <oboInOwl:hasNarrowSynonym>fewmet</oboInOwl:hasNarrowSynonym>
+        <oboInOwl:hasNarrowSynonym>frass</oboInOwl:hasNarrowSynonym>
+        <oboInOwl:hasNarrowSynonym>guano</oboInOwl:hasNarrowSynonym>
+        <oboInOwl:hasNarrowSynonym>portion of dung</oboInOwl:hasNarrowSynonym>
+        <oboInOwl:hasNarrowSynonym>portion of guano</oboInOwl:hasNarrowSynonym>
+        <oboInOwl:hasNarrowSynonym>portion of scat</oboInOwl:hasNarrowSynonym>
+        <oboInOwl:hasNarrowSynonym>scat</oboInOwl:hasNarrowSynonym>
+        <oboInOwl:hasNarrowSynonym>spraint</oboInOwl:hasNarrowSynonym>
+        <oboInOwl:hasRelatedSynonym>droppings</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>excrement</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>ordure</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>spoor</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>feces</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0002416 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0002416">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CARO_0000000"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000467"/>
+        <obo:IAO_0000115>Connected anatomical system that forms a barrier between an animal and its environment. In vertebrates, the integumental system consists of the epidermis, dermis plus associated glands and adnexa such as hair and scales. In invertebrates, the integumental system may include cuticle.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>integumentary system</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>body surface</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>dermal system</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>external covering of organism</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>integumentum commune</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>organism surface</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>surface</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>integumental system</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0004111 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0004111">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010000"/>
+        <obo:IAO_0000115>Any tube, opening or passage that connects two distinct anatomical spaces.</obo:IAO_0000115>
+        <oboInOwl:hasNarrowSynonym>foramen</oboInOwl:hasNarrowSynonym>
+        <oboInOwl:hasNarrowSynonym>foramina</oboInOwl:hasNarrowSynonym>
+        <oboInOwl:hasRelatedSynonym>opening</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>ostia</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>ostium</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>anatomical conduit</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0004121 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0004121">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CARO_0000000"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000061"/>
+        <obo:IAO_0000115>An anatomical structure that develops (entirely or partially) from the ectoderm.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>ectodermal deriviative</oboInOwl:hasExactSynonym>
+        <rdfs:label>ectoderm-derived structure</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0004765 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0004765">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000062"/>
+        <obo:IAO_0000115>Organ consisting of skeletal tissue. Encompasses whole bones, fused bones, cartilaginious elements, teeth, dermal denticles.</obo:IAO_0000115>
+        <rdfs:label>skeletal element</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0004921 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0004921">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CARO_0000000"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0013522"/>
+        <obo:IAO_0000115>A proximal-distal subdivision of the digestive tract.</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>alimentary system subdivision</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>intestinal tract</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>segment of intestinal tract</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>subdivision of alimentary system</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>subdivision of digestive tract</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0006312 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0006312">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CARO_0000000"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000463"/>
+        <obo:IAO_0000115>Body substance in a liquid or semi-solid state in the eyeball which serves to refract light.</obo:IAO_0000115>
+        <rdfs:label>ocular refractive media</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0006314 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0006314">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000463"/>
+        <obo:IAO_0000115>Liquid components of living organisms. includes fluids that are excreted or secreted from the body as well as body water that normally is not.</obo:IAO_0000115>
+        <oboInOwl:hasBroadSynonym>fluid</oboInOwl:hasBroadSynonym>
+        <oboInOwl:hasExactSynonym>body fluid</oboInOwl:hasExactSynonym>
+        <rdfs:label>bodily fluid</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0007779 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0007779">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CARO_0000000"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0006314"/>
+        <obo:IAO_0000115>Any bodily fluid that has passed through a membrane such as the capillary wall, as a result of unbalanced hydrostatic and osmotic forces</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>plasma ultrafiltrate</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>transudate</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0007794 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0007794">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000456"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0006314"/>
+        <obo:IAO_0000115>Any fluid produced by a serous gland.</obo:IAO_0000115>
+        <oboInOwl:hasBroadSynonym>serous fluid</oboInOwl:hasBroadSynonym>
+        <oboInOwl:hasExactSynonym>serosal fluid</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>serous gland fluid</oboInOwl:hasExactSynonym>
+        <rdfs:label>secretion of serous gland</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0010000 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010000">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000061"/>
+        <obo:IAO_0000115>An anatomical structure that has more than one cell as a part.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>multicellular structure</oboInOwl:hasExactSynonym>
+        <rdfs:label>multicellular anatomical structure</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0012180 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0012180">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000014"/>
+        <obo:IAO_0000115>A zone of skin that is part of a craniocervical region.</obo:IAO_0000115>
+        <rdfs:label>head or neck skin</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0013522 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0013522">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000064"/>
+        <rdfs:label>subdivision of tube</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0034944 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0034944">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000064"/>
+        <oboInOwl:hasExactSynonym>organ sector</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>organ zonal region</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>organ zone</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>organ region with floating fiat boundary</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>zone of organ</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0036215 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0036215">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000465"/>
+        <obo:IAO_0000115>Material anatomical entity that forms the outermost boundary of an anatomical structure.</obo:IAO_0000115>
+        <rdfs:label>anatomical surface region</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_1000021 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_1000021">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001084"/>
+        <obo:IAO_0000115>A zone of skin that is part of the face.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>face skin</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>facial skin</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>skin of face</rdfs:label>
     </owl:Class>
 </rdf:RDF>
 
