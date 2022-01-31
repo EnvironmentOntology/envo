@@ -1,5 +1,6 @@
 format-version: 1.2
 ontology: envo/imports/foodon_import
+owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\nDeclaration(AnnotationProperty(<http://purl.obolibrary.org/obo/IAO_0000117>))\nDeclaration(Datatype(rdfs:anyURI))\n\n\nAnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000117> <http://purl.obolibrary.org/obo/FOODON_00002753> \"https://orcid.org/0000-0001-5275-8866\"^^rdfs:anyURI)\nAnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000117> <http://purl.obolibrary.org/obo/FOODON_00002781> \"http://orcid.org/0000-0002-8844-9165\"^^rdfs:anyURI)\nAnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000117> <http://purl.obolibrary.org/obo/FOODON_03301227> \"http://orcid.org/0000-0002-8844-9165\"^^rdfs:anyURI)\n)
 
 [Term]
 id: FOODON:00001001
@@ -92,11 +93,13 @@ is_a: FOODON:00001091 ! dried milk food product
 id: FOODON:00001013
 name: cheese food product
 def: "Cheese is a food derived from milk that is produced in a wide range of flavors, textures, and forms by coagulation of the milk protein casein." []
+synonym: "cheese" EXACT []
 xref: https://en.wikipedia.org/wiki/Cheese
 xref: SUBSET_SIREN:F1076
 is_a: FOODON:00001256 ! dairy food product
 property_value: IAO:0000114 IAO:0000428
 property_value: seeAlso https://www.asmscience.org/content/book/10.1128/9781555818593.chap3
+property_value: seeAlso https://www.asmscience.org/content/journal/microbiolspec/10.1128/microbiolspec.CM-0003-2012
 
 [Term]
 id: FOODON:00001014
@@ -437,9 +440,10 @@ property_value: IAO:0000119 Wikipedia:Miso
 [Term]
 id: FOODON:00001071
 name: grape must
-def: "Must is the juice of freshly pressed grapes, that contains various quantities of pulp, skins, stems, and seeds, called pomace or grape solids, which typically comprise between 7 to 23 percent of the total weight of the must." [Wikipedia:Must]
-is_a: FOODON:00001101 ! grape beverage
+def: "A grape berry food product which is the juice of freshly pressed grapes that contains some amount of pulp, skins, stems, and seeds." []
+comment: Grape pomace components typically comprises between 7 to 23 percent of the total weight of must. [https://en.wikipedia.org/wiki/Must]
 is_a: FOODON:00001162 ! grape extract
+property_value: IAO:0000119 https://en.wikipedia.org/wiki/Must#Winemaking xsd:string
 
 [Term]
 id: FOODON:00001073
@@ -595,14 +599,6 @@ property_value: IAO:0000117 "Damion Dooley" xsd:string
 property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
-id: FOODON:00001095
-name: fermented grape beverage
-is_a: FOODON:00001101 ! grape beverage
-is_a: FOODON:00001254 ! plant derived fermented beverage
-intersection_of: FOODON:00001101 ! grape beverage
-intersection_of: FOODON:00001254 ! plant derived fermented beverage
-
-[Term]
 id: FOODON:00001096
 name: fermented elaeis palm beverage
 is_a: FOODON:00001254 ! plant derived fermented beverage
@@ -639,11 +635,6 @@ intersection_of: FOODON:00002071 ! orange food product
 property_value: http://purl.org/dc/elements/1.1/date 2019-06-20T07:47:47Z xsd:dateTime
 property_value: IAO:0000117 "Damion Dooley" xsd:string
 property_value: IAO:0000412 http://langual.org xsd:string
-
-[Term]
-id: FOODON:00001101
-name: grape beverage
-is_a: FOODON:00001170 ! grape fruit food product
 
 [Term]
 id: FOODON:00001102
@@ -900,29 +891,10 @@ property_value: IAO:0000117 "Damion Dooley" xsd:string
 
 [Term]
 id: FOODON:00001155
-name: watermelon plant
-synonym: "Citrullus lanatus (Thunb.) Matsum. & Nakai" NARROW []
-synonym: "Citrullus lanatus (Thunb.) Matsumura & Nakai" NARROW []
-xref: DPNL 2003:8684
-xref: GRIN:10675
-xref: http://eol.org/pages/584423
-xref: http://www.langual.org/langual_thesaurus.asp?termid=B1391
-xref: ITIS:22356
-xref: MANSFELD:3905
-xref: NCBITaxon:3654
-xref: PLANTS:CILA3
-is_a: FOODON:03411283 ! melon plant
-property_value: hasSynonym "citrullus lanatus" xsd:string
-property_value: hasSynonym "citrullus vulgaris" xsd:string
-property_value: hasSynonym "colocynthis citrullus" xsd:string
-property_value: hasSynonym "cucurbita citrullus" xsd:string
-property_value: hasSynonym "datiro" xsd:string
-property_value: hasSynonym "edible seed melon" xsd:string
-property_value: hasSynonym "equisi" xsd:string
-property_value: hasSynonym "kaffir melon" xsd:string
-property_value: hasSynonym "momordica lanata" xsd:string
-property_value: IAO:0000114 IAO:0000428
+name: obsolete: watermelon plant
 property_value: IAO:0000412 http://langual.org xsd:string
+is_obsolete: true
+replaced_by: NCBITaxon:3654
 
 [Term]
 id: FOODON:00001156
@@ -969,7 +941,7 @@ is_a: FOODON:00001151 ! citrus fruit food product
 id: FOODON:00001162
 name: grape extract
 is_a: FOODON:00001058 ! fruit extract food product
-is_a: FOODON:00001170 ! grape fruit food product
+is_a: FOODON:00001170 ! grape berry food product
 
 [Term]
 id: FOODON:00001163
@@ -1007,7 +979,7 @@ is_a: FOODON:00001015 ! plant food product
 
 [Term]
 id: FOODON:00001170
-name: grape fruit food product
+name: grape berry food product
 is_a: FOODON:00001057 ! plant fruit food product
 
 [Term]
@@ -1095,6 +1067,7 @@ subset: subset_siren
 xref: SUBSET_SIREN:F10419
 is_a: FOODON:00002381 ! food product by organism
 property_value: IAO:0000412 http://langual.org xsd:string
+property_value: seeAlso https://ungc-communications-assets.s3.amazonaws.com/docs/publications/The-Seaweed-Manifesto.pdf
 
 [Term]
 id: FOODON:00001185
@@ -1207,6 +1180,7 @@ name: chickpea food product
 def: "A product of the dry seeds of Cicer arietinum." []
 synonym: "Bengal gram" NARROW []
 synonym: "Egyptian pea" NARROW []
+synonym: "garbanzo bean food product" EXACT []
 synonym: "gram" NARROW []
 is_a: FOODON:00001209 ! pulse food product
 is_a: FOODON:00001635 ! bean food product
@@ -1893,12 +1867,6 @@ name: common bean food product
 is_a: FOODON:00001635 ! bean food product
 
 [Term]
-id: FOODON:00001765
-name: vegetable corn food product
-is_a: FOODON:00001142 ! maize (corn) food product
-is_a: FOODON:00002153 ! plant seed vegetable food product
-
-[Term]
 id: FOODON:00001771
 name: cow milk based food product
 is_a: FOODON:00001118 ! cattle dairy food product
@@ -2266,10 +2234,10 @@ property_value: seeAlso http://www.fao.org/es/faodef/fdef04e.htm#4.02 xsd:anyURI
 [Term]
 id: FOODON:00002753
 name: bean (whole)
-def: "A whole bean is a bean having an intact seed shape and composition." []
+def: "A seed of a bean plant from one of several genera of the flowering plant family (Fabaceae)." []
 synonym: "bean" EXACT []
 is_a: FOODON:00001635 ! bean food product
-property_value: http://purl.org/dc/elements/1.1/date 2019-06-29T15:02:04Z xsd:dateTime
+property_value: http://purl.org/dc/elements/1.1/date 2020-10-14T07:28:59 xsd:dateTime
 property_value: IAO:0000114 IAO:0000122
 property_value: IAO:0000116 "Damion Dooley's note.  This could be enhanced to explicitly state the anatomical parts of a seed - seed coat, cotyledons, embryo etc.  Currently the Plant Ontology is not explicit about this yet." xsd:string
 property_value: IAO:0000117 "Damion Dooley" xsd:string
@@ -2277,11 +2245,13 @@ property_value: IAO:0000117 "Damion Dooley" xsd:string
 [Term]
 id: FOODON:00002778
 name: jack bean (whole)
+def: "A seed of a jack seed plant (Canavalia ensiformis)." []
 synonym: "jack bean" EXACT []
 is_a: FOODON:00002753 ! bean (whole)
 is_a: FOODON:00002779 ! jack-bean food product
-property_value: http://purl.org/dc/elements/1.1/date 2019-07-09T22:17:36Z xsd:dateTime
+property_value: http://purl.org/dc/elements/1.1/date 2019-07-09T22:17:36 xsd:dateTime
 property_value: IAO:0000117 "Damion Dooley" xsd:string
+property_value: IAO:0000119 https://en.wikipedia.org/wiki/Canavalia_ensiformis xsd:string
 
 [Term]
 id: FOODON:00002779
@@ -2306,21 +2276,22 @@ name: pigeon pea (whole)
 def: "A seed of a pigeon pea plant (Cajanus cajan)." []
 synonym: "pigeon pea" EXACT []
 is_a: FOODON:00002780 ! pigeon pea food product
-property_value: http://purl.org/dc/terms/date 2019-07-09T22:29:49Z xsd:dateTime
+property_value: http://purl.org/dc/elements/1.1/date 2019-07-09T22:29:49 xsd:dateTime
 property_value: IAO:0000114 IAO:0000122
-property_value: IAO:0000117 http://orcid.org/0000-0002-8844-9165 xsd:string
 property_value: IAO:0000119 https://en.wikipedia.org/wiki/Pigeon_pea xsd:string
 
 [Term]
 id: FOODON:00002786
 name: velvet bean (whole)
-def: "A product of the velvet bean plant (Mucuna pruriens var. utilis)." []
+def: "A seed of a  velvet bean plant (Mucuna pruriens)" []
 synonym: "tericopelo bean" EXACT []
+synonym: "velvet bean" EXACT []
 is_a: FOODON:00002753 ! bean (whole)
-property_value: http://purl.org/dc/elements/1.1/date 2019-07-10T00:00:22Z xsd:dateTime
+property_value: http://purl.org/dc/elements/1.1/date 2019-07-10T00:00:22 xsd:dateTime
 property_value: IAO:0000114 IAO:0000122
 property_value: IAO:0000117 "Damion Dooley" xsd:string
 property_value: IAO:0000119 http://en.wikipedia.org/wiki/Legume xsd:anyURI
+property_value: IAO:0000119 https://en.wikipedia.org/wiki/Mucuna_pruriens xsd:string
 
 [Term]
 id: FOODON:00002787
@@ -2332,9 +2303,12 @@ property_value: IAO:0000117 "Damion Dooley" xsd:string
 [Term]
 id: FOODON:00002791
 name: vetch seed (whole)
+def: "A seed of a vetch plant." []
+synonym: "vetch seed" EXACT []
 is_a: FOODON:00002787 ! vetch food product
 property_value: http://purl.org/dc/elements/1.1/date 2019-07-10T01:33:15Z xsd:dateTime
 property_value: IAO:0000117 "Damion Dooley" xsd:string
+property_value: IAO:0000119 https://en.wikipedia.org/wiki/Vicia xsd:string
 
 [Term]
 id: FOODON:00002813
@@ -2400,8 +2374,6 @@ subset: subset_siren
 xref: SUBSET_SIREN:F1103
 xref: SUBSET_SIREN:F11069
 is_a: FOODON:00001100 ! orange fruit beverage
-intersection_of: FOODON:00001100 ! orange fruit beverage
-intersection_of: FOODON:00002071 ! orange food product
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
 
@@ -2421,9 +2393,8 @@ synonym: "tick bean" NARROW []
 synonym: "Windsor bean" EXACT []
 xref: SUBSET_SIREN:F1227
 is_a: FOODON:00001665 ! broad bean food product
+is_a: FOODON:00002753 ! bean (whole)
 property_value: IAO:0000114 IAO:0000122
-property_value: IAO:0000117 http://orcid.org/0000-0002-8844-9165 xsd:string
-property_value: IAO:0000119 "FoodOn" xsd:string
 property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
@@ -2514,38 +2485,12 @@ property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
-id: FOODON:03310226
-name: hominy
-def: "Hominy is a food produced from dried maize (corn) kernels that have been treated with an alkali, in a process called nixtamalization (nextamalli is the Nahuatl word for \"hominy\")." []
-comment: SIREN DB annotation:\n* has quality 'whole, natural shape' (http://purl.obolibrary.org/obo/FOODON_03430150)\n* derives from 'seed, skin removed, germ removed (endosperm)' (http://purl.obolibrary.org/obo/FOODON_03420208)\n* formed as a result of 'food alkalization process' (http://purl.obolibrary.org/obo/FOODON_03460206)\n        
-subset: subset_siren
-xref: SUBSET_SIREN:F10226
-is_a: FOODON:03310791 ! corn (on-the-cob, kernel or parts)
-union_of: FOODON:00001142 ! maize (corn) food product
-union_of: FOODON:03310791 ! corn (on-the-cob, kernel or parts)
-property_value: hasSynonym "paatsami" xsd:string
-property_value: IAO:0000114 IAO:0000122
-property_value: IAO:0000119 https://en.wikipedia.org/wiki/Hominy xsd:anyURI
-property_value: IAO:0000412 http://langual.org xsd:string
-property_value: seeAlso http://m.grandcanyonnews.com/news/2009/feb/17/hopi-recipes-promote-healthy-eating-habits/ xsd:string
-
-[Term]
 id: FOODON:03310387
 name: oil
 comment: SIREN DB annotation:\n* has quality 'liquid, high viscosity, with no visible particles' (http://purl.obolibrary.org/obo/FOODON_03430139)\n* derives from 'fat or oil' (http://purl.obolibrary.org/obo/FOODON_03420190)\n                
 subset: subset_siren
 xref: SUBSET_SIREN:F10387
 is_a: FOODON:00002664 ! lipid food product
-property_value: IAO:0000114 IAO:0000428
-property_value: IAO:0000412 http://langual.org xsd:string
-
-[Term]
-id: FOODON:03310791
-name: corn (on-the-cob, kernel or parts)
-comment: SIREN DB annotation:\n* has quality 'whole, natural shape' (http://purl.obolibrary.org/obo/FOODON_03430150)\n* has quality 'not heat-treated' (http://purl.obolibrary.org/obo/FOODON_03440003)\n* derives from 'seed, skin present, germ present' (http://purl.obolibrary.org/obo/FOODON_03420133)\n        
-subset: subset_siren
-xref: SUBSET_SIREN:F10791
-is_a: FOODON:00001765 ! vegetable corn food product
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
 
@@ -3045,27 +2990,10 @@ property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
-id: FOODON:03411041
-name: chemical food component
-def: "Any chemical or chemical mixture that exists in a food material or was added to a food material." []
-comment: LanguaL curation note: A chemical food component is a food substance derived from a nonliving source (e.g., salt, water or synthesized compounds).
-xref: http://www.langual.org/langual_thesaurus.asp?termid=B1041
-xref: langual:thesaurus.asp?termid=B2973
-property_value: IAO:0000114 IAO:0000122
-property_value: IAO:0000412 http://langual.org xsd:string
-
-[Term]
 id: FOODON:03411048
 name: carbohydrate-producing plant
 xref: http://www.langual.org/langual_thesaurus.asp?termid=B1048
 is_a: FOODON:03411013 ! plant used for producing extract or concentrate
-property_value: IAO:0000114 IAO:0000428
-property_value: IAO:0000412 http://langual.org xsd:string
-
-[Term]
-id: FOODON:03411140
-name: fruit-producing plant
-xref: http://www.langual.org/langual_thesaurus.asp?termid=B1140
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
 
@@ -3083,25 +3011,12 @@ property_value: IAO:0000119 https://en.wikipedia.org/wiki/Fungus
 property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
-id: FOODON:03411283
-name: melon plant
-def: "Melon is a name given to various members of the plant family *Cucurbitaceae* with sweet flavored, fleshy fruit e.g. gourds or cucurbits. Melon can be referred as a plant or a fruit. Many different cultivars have been produced, particularly of muskmelons." []
-xref: http://eol.org/pages/38795
-xref: http://www.langual.org/langual_thesaurus.asp?termid=B1283
-is_a: FOODON:03411140 ! fruit-producing plant
-is_a: FOODON:03414459 ! cucumis species
-property_value: hasSynonym "cucumis spp." xsd:string
-property_value: IAO:0000114 IAO:0000428
-property_value: IAO:0000119 WIKIPEDIA:Melon xsd:string
-property_value: IAO:0000412 http://langual.org xsd:string
-
-[Term]
 id: FOODON:03411564
 name: food product organismal source
 def: "This is a hierarchy of organisms, grouped minimally in a combination of taxonomy and consumer-oriented food groups." []
 comment: This was LanguaL definition: Individual plant or animal from which the food product or its major ingredient is derived; also a chemical food source [FDA CFSAN 1995].
 xref: http://www.langual.org/langual_thesaurus.asp?termid=B1564
-property_value: GENEPIO:0001763 "order=\nobolibrary:FOODON_03411297 # vertebrate \nobolibrary:FOODON_00002452 # invertebrate\nobolibrary:PO_0000003 # whole plant\nobolibrary:FOODON_03411301 # algae\nobolibrary:FOODON_03411261 # fungae\nobolibrary:FOODON_03412345 # lichen" xsd:string
+xref: langual:thesaurus.asp?termid=B0001
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000412 http://langual.org xsd:string
 
@@ -3141,47 +3056,6 @@ xref: http://www.langual.org/langual_thesaurus.asp?termid=B2637
 is_a: FOODON:03412344 ! devils tongue plant
 property_value: hasSynonym "amorphophallus rivieri var. konjac" xsd:string
 property_value: IAO:0000114 IAO:0000428
-property_value: IAO:0000412 http://langual.org xsd:string
-
-[Term]
-id: FOODON:03412972
-name: food additive
-comment: Damion Dooley's note: manysubclasses here are currently originating from LanguaL additives that have not yet been matched to CHEBI ontology terms.  If matches are possible they will be implemented over time, at which point the corresponding FoodOn id's will be deprecated.
-xref: http://www.langual.org/langual_thesaurus.asp?termid=B2972
-is_a: FOODON:03411041 ! chemical food component
-property_value: IAO:0000114 IAO:0000428
-property_value: IAO:0000119 "This section and its narrover terms refer to the European Commission food additive regulation according to COMMISSION REGULATION (EU) No 1129/2011 of 11 November 2011 amending Annex II to Regulation (EC) No 1333/2008 of the European Parliament and of the Council by establishing a Union list of food additives [http://eur-lex.europa.eu/LexUriServ/LexUriServ.do?uri=OJ:L:2011:295:0001:0177:EN:PDF] and its basis, the four Food Additive Directives: the EEC Framework Directive on Food Additives (89/107/EEC), the Directive on colours (94/36/EC), the Directive on sweeteners (94/35/EC) and the 'miscellaneous' Directive (95/2/EC) plus amendments [http://ec.europa.eu/food/fs/sfp/flav_index_en.html]\n and/or Codex Alimentarius Commission General Standard for Food Additives (CODEX STAN 192, revised 2011) [http://www.codexalimentarius.net/download/standards/4/CXS_192e.pdf].\n\nIf used for food supplement substances, thissection and its narrover terms refer to the European Commission regulation in general [http://ec.europa.eu/food/food/labellingnutrition/supplements/index_en.htm] and specifically to the EC Directive on the approximation of the laws of the Members States relating to food supplements (2002/46/EC) [http://eur-lex.europa.eu/LexUriServ/LexUriServ.do?uri=OJ:L:2002:183:0051:0057:EN:PDF]." xsd:string
-property_value: IAO:0000412 http://langual.org xsd:string
-property_value: seeAlso https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=celex:31995L0002
-property_value: seeAlso https://www.fda.gov/food/food-additives-petitions/food-additive-status-list
-property_value: seeAlso https://www.globalharmonization.net/wg-nomenclature
-
-[Term]
-id: FOODON:03413357
-name: plant according to family
-comment: LanguaL curation note: This term is for CLASSIFICATION ONLY; DO NOT USE term in indexing. Use a more precise narrower term.
-xref: http://www.langual.org/langual_thesaurus.asp?termid=B3357
-property_value: IAO:0000114 IAO:0000428
-property_value: IAO:0000412 http://langual.org xsd:string
-
-[Term]
-id: FOODON:03414459
-name: cucumis species
-def: "*Cucumis* is a genus of twining, tendril-bearing plants in the *Cucurbitaceae* family which includes the cucumber (*Cucumis sativus*), muskmelons (*Cucumis melo*, including cantaloupe and honeydew), the horned melon (*Cucumis metuliferus*), and the West Indian gherkin (*Cucumis anguria*). [https://en.wikipedia.org/wiki/Cucumis]" []
-xref: http://www.langual.org/langual_thesaurus.asp?termid=B4459
-is_a: FOODON:03414460 ! gourd/squash family
-property_value: IAO:0000114 IAO:0000428
-property_value: IAO:0000412 http://langual.org xsd:string
-
-[Term]
-id: FOODON:03414460
-name: gourd/squash family
-def: "The *Cucurbitaceae*, also called cucurbits and the gourd family, are a plant family consisting of about 965 species in around 95 genera, the most important of which are: \n  *Cucurbita* - squash, pumpkin, zucchini, some gourds; \n  *Lagenaria* - calabash, and others that are inedible; \n  *Citrullus* - watermelon (*C. lanatus, C. colocynthis*) and others; \n  *Cucumis* - cucumber (*C. sativus*), various melons; \n  *Luffa* - luffa, loofah" []
-xref: http://www.langual.org/langual_thesaurus.asp?termid=B4460
-is_a: FOODON:03413357 ! plant according to family
-property_value: hasSynonym "cucurbitaceae" xsd:string
-property_value: IAO:0000114 IAO:0000428
-property_value: IAO:0000119 https://en.wikipedia.org/wiki/Cucurbitaceae
 property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
@@ -3271,16 +3145,6 @@ xref: http://www.langual.org/langual_thesaurus.asp?termid=H0111
 is_a: FOODON:00002451 ! food transformation process
 
 [Term]
-id: FOODON:03460117
-name: flavor or taste ingredient
-comment: LanguaL curation note: Used when such an ingredient is added for the purpose of imparting flavor or taste. Processes such as salting and smoking are also used for preservation. If one of these is used as the primary preservation method, the appropriate factor value from *J. PRESERVATION METHOD* (e.g., *preservation by SALTING*) should also be applied.
-xref: http://www.langual.org/langual_thesaurus.asp?termid=H0117
-is_a: FOODON:03412972 ! food additive
-property_value: IAO:0000114 IAO:0000428
-property_value: IAO:0000118 "flavor or taste ingredient added" xsd:string
-property_value: IAO:0000412 http://langual.org xsd:string
-
-[Term]
 id: FOODON:03460156
 name: obsolete: molasses added
 property_value: IAO:0000412 http://langual.org xsd:string
@@ -3306,27 +3170,6 @@ comment: LanguaL curation note: A food product is characterized by its main ingr
 xref: http://www.langual.org/langual_thesaurus.asp?termid=H0225
 is_a: FOODON:03460111 ! food treatment process
 property_value: IAO:0000117 "Damion Dooley" xsd:string
-
-[Term]
-id: FOODON:03460227
-name: flavoring, spice or herb
-comment: LanguaL curation note: Used when flavoring, spice or herb is added at any level.
-xref: http://www.langual.org/langual_thesaurus.asp?termid=H0227
-is_a: FOODON:03460117 ! flavor or taste ingredient
-property_value: IAO:0000114 IAO:0000428
-property_value: IAO:0000118 "flavoring, spice or herb added" xsd:string
-property_value: IAO:0000412 http://langual.org xsd:string
-
-[Term]
-id: FOODON:03460229
-name: flavoring, spice or herb, natural
-xref: http://www.langual.org/langual_thesaurus.asp?termid=H0229
-is_a: FOODON:03460227 ! flavoring, spice or herb
-union_of: FOODON:00001280 ! chocolate food product
-union_of: FOODON:03315302 ! cocoa food product
-property_value: IAO:0000114 IAO:0000428
-property_value: IAO:0000118 "flavoring, spice or herb added, natural" xsd:string
-property_value: IAO:0000412 http://langual.org xsd:string
 
 [Term]
 id: FOODON:03460231
