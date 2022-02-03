@@ -393,8 +393,7 @@ mirror/bfo.owl: envo-edit.owl
 .PRECIOUS: mirror/%.owl
 
 mirror/uberon.owl: 
-	wget http://purl.obolibrary.org/obo/uberon.obo # suggest fix for parser error; see https://github.com/EnvironmentOntology/envo/pull/1289
-	$(OWLTOOLS) uberon.obo  --remove-axiom-annotations  --make-subset-by-properties -f $(KEEPRELS) --remove-external-classes UBERON --remove-dangling-annotations --remove-annotation-assertions -l -s -d --set-ontology-id $(OBO)/uberon.owl -o $@
+	$(OWLTOOLS) $(OBO)/uberon.obo  --remove-axiom-annotations  --make-subset-by-properties -f $(KEEPRELS) --remove-external-classes UBERON --remove-dangling-annotations --remove-annotation-assertions -l -s -d --set-ontology-id $(OBO)/uberon.owl -o $@
 .PRECIOUS: mirror/%.owl
 
 
@@ -407,7 +406,7 @@ ncbitaxon.obo:
 .PRECIOUS: ncbitaxon.obo
 
 mirror/ncbitaxon.owl: ncbitaxon.obo
-	OWLTOOLS_MEMORY=16G $(OWLTOOLS) $< --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations  --set-ontology-id $(OBO)/ncbitaxon.owl -o $@
+	OWLTOOLS_MEMORY=12G $(OWLTOOLS) $< --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations  --set-ontology-id $(OBO)/ncbitaxon.owl -o $@
 .PRECIOUS: mirror/ncbitaxon.owl
 
 # PCO woes:
