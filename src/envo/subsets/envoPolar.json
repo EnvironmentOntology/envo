@@ -265,7 +265,7 @@
           "val" : "A pollution process during which plastic contaminants are released into an environmental material.",
           "xrefs" : [ "https://en.wikipedia.org/wiki/Plastic_pollution" ]
         },
-        "subsets" : [ "http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar", "http://purl.obolibrary.org/obo/subsets/envo-basic.obo#environmental_hazards" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPlastics", "http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar", "http://purl.obolibrary.org/obo/subsets/envo-basic.obo#environmental_hazards" ],
         "basicPropertyValues" : [ {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "ENVO"
@@ -487,6 +487,24 @@
       },
       "type" : "CLASS",
       "lbl" : "sea ice floe"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/ENVO_01001082",
+      "meta" : {
+        "definition" : {
+          "val" : "The disposition of an environmental system, particularly those influencing atmospheres, to manifest a cyclic pattern of weather over time.",
+          "xrefs" : [ "https://en.wikipedia.org/wiki/Climate" ]
+        },
+        "comments" : [ "Climate is commonly defined as the weather averaged, or otherwise summarised, over a period of time much longer than the duration of any phenomenon that constitutes weather. The standard averaging period is 30 years, but other periods may be used depending on the purpose." ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000116",
+          "val" : "The current alignment of \"climate\" under BFO:disposition is drawing from its very useful etymology (Ancient Greek klima, meaning inclination). The climatic conditions currently used to axiomatise biomes (polar, tropical, etc) may be better placed under this class."
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "ENVO"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "climate"
     }, {
       "id" : "http://purl.obolibrary.org/obo/ENVO_03000069",
       "meta" : {
@@ -2335,6 +2353,49 @@
         } ]
       },
       "type" : "PROPERTY"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/ENVO_03000140",
+      "meta" : {
+        "definition" : {
+          "val" : "A climate which 1) has a mean temperature for the warmest month of less than 10°C (50°F), but higher than 0°C (32°F), 2) is not conducive to a permanent surficial cover of snow or ice, and 3) supports a tundra ecosystem.",
+          "xrefs" : [ "https://orcid.org/0000-0003-4808-4736" ]
+        },
+        "comments" : [ "In W. Köppen's 1936 climatic classification it is one of the polar climates, defined as having a mean temperature for the warmest month of less than 10°C (50°F) (in contrast to snow forest and temperate rainy climates) but higher than 0°C (32°F) (which is the limit of perpetual frost climate). Tundra is designated ET. Tundra climate appears as a temperature province in C. W. Thornthwaite's 1931 classification." ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar" ],
+        "xrefs" : [ {
+          "val" : "http://sweetontology.net/realmClimateZone/TundraClimate"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "https://orcid.org/0000-0003-0632-7576"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000116",
+          "val" : "Might need to add the Köppen climate classifications. Climate conditions might be obsoleted. Warmest month and mean temperature are operationally defined, will need to sort these out. Focusing on physical differential like surface cover would be preferable, (but maybe not practical)."
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "http://orcid.org/0000-0002-3410-4655"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "http://orcid.org/0000-0002-4366-3088"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "ENVO"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "https://orcid.org/0000-0003-4808-4736"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "https://orcid.org/0000-0002-0337-8610"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "https://orcid.org/0000-0002-2282-7215"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
+          "val" : "2020-11-18T21:04:41.822Z"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "tundra climate"
     }, {
       "id" : "http://purl.obolibrary.org/obo/RO_0002371",
       "meta" : {
@@ -5347,11 +5408,14 @@
       "id" : "http://purl.obolibrary.org/obo/ENVO_01000723",
       "meta" : {
         "definition" : {
-          "val" : "Melting is a physical process that results in the phase transition of a substance from a solid to a liquid.",
+          "val" : "Melting is a material transformation process which results in the phase transition of a substance from a solid to a liquid.",
           "xrefs" : [ "https://en.wikipedia.org/wiki/Melting" ]
         },
         "comments" : [ "Note that melting need not be due to warming, thus the classes are separated." ],
         "subsets" : [ "http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar" ],
+        "xrefs" : [ {
+          "val" : "http://sweetontology.net/procStateChange/Melting"
+        } ],
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "melting process",
@@ -5371,6 +5435,29 @@
       },
       "type" : "CLASS",
       "lbl" : "melting"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/ENVO_01000844",
+      "meta" : {
+        "definition" : {
+          "val" : "A visible mass of cloud water droplets or ice crystals suspended in the air at or near the surface of an astronomical body.",
+          "xrefs" : [ "https://en.wikipedia.org/wiki/Fog" ]
+        },
+        "comments" : [ "Fog is more opaque than mist, reducing visibility to under one kilometre. This class refers only to fog formed by materials primarily composed of water. \"Fog can be considered a type of low-lying cloud and is heavily influenced by nearby bodies of water, topography, and wind conditions. In turn, fog has affected many human activities, such as shipping, travel, and warfare.\" https://en.wikipedia.org/wiki/Fog" ],
+        "xrefs" : [ {
+          "val" : "http://sweetontology.net/phenAtmoFog/Fog"
+        } ],
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "haar",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "ENVO"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "fog"
     }, {
       "id" : "http://purl.obolibrary.org/obo/ENVO_01000724",
       "meta" : {
@@ -5442,7 +5529,11 @@
           "val" : "A crystal which is primarily composed of water ice.",
           "xrefs" : [ ]
         },
+        "comments" : [ "Any one of a number of macroscopic, crystalline forms in which ice appears, including hexagonal columns, hexagonal platelets, dendritic crystals, ice needles, and combinations of these forms.  The crystal lattice of ice is hexagonal in its symmetry under most atmospheric conditions." ],
         "subsets" : [ "http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar" ],
+        "xrefs" : [ {
+          "val" : "http://sweetontology.net/matrWater/Ice"
+        } ],
         "synonyms" : [ {
           "pred" : "hasBroadSynonym",
           "val" : "ice crystal",
@@ -5590,8 +5681,6 @@
           "val" : "SWEETRealm:Aerosol"
         }, {
           "val" : "EcoLexicon:aerosol"
-        }, {
-          "val" : "http://purl.obolibrary.org/obo/envo.owl"
         } ],
         "basicPropertyValues" : [ {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
@@ -5789,10 +5878,26 @@
       "meta" : {
         "definition" : {
           "val" : "A blizzard is a severe snowstorm during which snowfall is transported by strong winds, sustained for several hours.",
-          "xrefs" : [ "https://en.wikipedia.org/wiki/Blizzard" ]
+          "xrefs" : [ "http://glossary.ametsoc.org/wiki/Main_Page", "http://www.bom.gov.au/lam/glossary/", "http://www.physicalgeography.net/glossary.html", "https://en.wikipedia.org/wiki/Blizzard", "https://orcid.org/0000-0003-4808-4736", "https://www.ec.gc.ca/meteo-weather/default.asp?lang=En&n=B8CD636F-1&def=allShow" ]
         },
-        "comments" : [ "To qualify a snowstorm as a blizzard, some sources require the windspeed to be at least 56 km/h and the duration of the storm to be at least three hours. We set no such hard boundaries in this definition, as this should be done with reference to local standards." ],
+        "comments" : [ "The U.S. National Weather Service specifies sustained wind or frequent gusts of 16 m per second (30 kt or 35 mi per hour) or greater, accompanied by falling and/or blowing snow, frequently reducing visibility to less than 400 m (0.25 mi or 0.4 km) for 3 hours or longer. Earlier definitions also included a condition of low temperatures, on the order of -7C (20F) or lower, or -12C (10F) or lower (severe blizzard). The name originated in the United States but it is also used in other countries. In the Antarctic the name is given to violent autumnal winds off the ice cap. In southeastern France, the cold north wind with snow is termed blizzard (see also boulbie). Similar storms in Russian Asia are the buran and purga. In popular usage in the United States and in England, the term is often used for any heavy snowstorm accompanied by strong winds.", "To qualify a snowstorm as a blizzard, some sources require the windspeed to be at least 56 km/h and the duration of the storm to be at least three hours. We set no such hard boundaries in this definition, as this should be done with reference to local standards." ],
         "subsets" : [ "http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar", "http://purl.obolibrary.org/obo/subsets/envo-basic.obo#environmental_hazards", "http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoAtmo" ],
+        "xrefs" : [ {
+          "val" : "http://sweetontology.net/phenAtmoPrecipitation/Blizzard"
+        } ],
+        "synonyms" : [ {
+          "pred" : "hasNarrowSynonym",
+          "val" : "buran",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasNarrowSynonym",
+          "val" : "purga",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasNarrowSynonym",
+          "val" : "boulbie",
+          "xrefs" : [ ]
+        } ],
         "basicPropertyValues" : [ {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "ENVO"
@@ -6989,6 +7094,10 @@
           "val" : "A material congelation process during which a liquid turns into a solid when its temperature is lowered below its melting point.",
           "xrefs" : [ "https://en.wikipedia.org/wiki/Freezing" ]
         },
+        "subsets" : [ "http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar" ],
+        "xrefs" : [ {
+          "val" : "http://sweetontology.net/procStateChange/Freezing"
+        } ],
         "basicPropertyValues" : [ {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
           "val" : "2019-01-31T21:13:16Z"
@@ -7235,6 +7344,24 @@
       },
       "type" : "CLASS",
       "lbl" : "atmospheric carbon dioxide"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/ENVO_01000452",
+      "meta" : {
+        "definition" : {
+          "val" : "A disposition which is realised by an environmental system or system parts thereof.",
+          "xrefs" : [ ]
+        },
+        "comments" : [ "This class and its subclasses are experimental and are being developed with NCEAS use cases in mind." ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "ENVO"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "ORCID:0000-0002-4366-3088"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "environmental disposition"
     }, {
       "id" : "http://purl.obolibrary.org/obo/ENVO_01001782",
       "meta" : {
@@ -8156,6 +8283,55 @@
       "type" : "CLASS",
       "lbl" : "cryospheric layer"
     }, {
+      "id" : "http://purl.obolibrary.org/obo/ENVO_01001848",
+      "meta" : {
+        "definition" : {
+          "val" : "Water ice which 1) has a white or milky and opaque appearance, 2) has a granular texture, and 3) is formed as a result of the deposition and rapid freezing of supercooled water drops as they make contact with an exposed object.",
+          "xrefs" : [ "https://orcid.org/0000-0003-4808-4736" ]
+        },
+        "comments" : [ "Rime is denser and harder than hoarfrost, but lighter, softer, and less transparent than glaze. Rime is composed essentially of discrete ice granules and has densities as low as 0.2-0.3 g cm-3. Glaze is generally continuous but with some air pockets and has much higher densities. Factors that favor rime formation are small drop size, slow accretion, a high degree of supercooling, and rapid dissipation of latent heat of fusion. The opposite effects favor glaze formation. Both rime and glaze occur when supercooled water drops strike an object at a temperature below freezing. Such formation on terrestrial objects constitutes an ice storm; on aircraft, it is called aircraft icing (where rime is known as rime ice). Either rime or glaze may form on snow crystals, droxtals, or other ice particles in the atmosphere. When such a deposit is wholly or chiefly of rime, snow pellets result; when most or all of the deposit is glaze, ordinary hail or ice pellets result. The alternating clear and opaque layers of some hailstones represent glaze and rime, deposited under varying conditions around the growing hailstone." ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar" ],
+        "xrefs" : [ {
+          "val" : "http://sweetontology.net/matrWater/Rime"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.org/dc/elements/1.1/creator",
+          "val" : "http://orcid.org/0000-0002-4366-3088"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "http://orcid.org/0000-0002-3410-4655"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "http://orcid.org/0000-0002-4366-3088"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "ENVO"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "https://orcid.org/0000-0003-4808-4736"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "https://orcid.org/0000-0003-0632-7576"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "https://orcid.org/0000-0002-0337-8610"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "https://orcid.org/0000-0002-2282-7215"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000116",
+          "val" : "The previously use definition was: Frost which is 1) composed primarily of granular ice tufts, 2) formed on the windward sides of exposed objects through contact with supercooled fog or cloud, and 3) built out directly against the wind."
+        }, {
+          "pred" : "http://purl.org/dc/elements/1.1/date",
+          "val" : "2020-02-12T21:03:46Z"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
+          "val" : "2020-11-18T19:59:42.028Z"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "rime"
+    }, {
       "id" : "http://purl.obolibrary.org/obo/ENVO_01000637",
       "meta" : {
         "definition" : {
@@ -9009,8 +9185,11 @@
       "meta" : {
         "definition" : {
           "val" : "A positional quality inhering in a bearer by virtue of the bearer being located within a glacier or ice sheet, between their summer surface or bed.",
-          "xrefs" : [ ]
+          "xrefs" : [ "https://orcid.org/0000-0003-4808-4736" ]
         },
+        "xrefs" : [ {
+          "val" : "https://github.com/ESIPFed/sweet/issues/219"
+        } ],
         "basicPropertyValues" : [ {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
           "val" : "2019-04-24T19:51:34Z"
@@ -9524,6 +9703,30 @@
       "type" : "CLASS",
       "lbl" : "desert area"
     }, {
+      "id" : "http://purl.obolibrary.org/obo/ENVO_01001850",
+      "meta" : {
+        "definition" : {
+          "val" : "An environmental material which is primarily composed of minute ice crystals forming a fuzzy layer over a cold surface by direct deposition of water vapor.",
+          "xrefs" : [ "https://orcid.org/0000-0003-4808-4736", "https://www.merriam-webster.com/dictionary/frost" ]
+        },
+        "comments" : [ "In British usage, a day on which the minimum temperature at the level of the ground or on the tops of low, close-growing vegetation falls to -0.9C (30.4F) or below (also called a \"day with ground frost\").  In more general usage, \"frost\" can refer to the condition that exists when the temperature of the Earth's surface and Earthbound objects fall below the melting point of water (0 degrees Celsius or 32 degrees Fahrenheit). Depending upon the actual values of ambient-air temperature, dewpoint, and the temperature attained by surface objects, frost may occur in a variety of forms. These include a general freeze, hoarfrost (or white frost), and dry freeze (or black frost). If a frost period is sufficiently severe to end the growing season (or delay its beginning), it is commonly referred to as a killing frost." ],
+        "xrefs" : [ {
+          "val" : "http://sweetontology.net/matrWater/Frost"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "ENVO"
+        }, {
+          "pred" : "http://purl.org/dc/elements/1.1/creator",
+          "val" : "http://orcid.org/0000-0002-4366-3088"
+        }, {
+          "pred" : "http://purl.org/dc/elements/1.1/date",
+          "val" : "2020-02-12T21:05:54Z"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "frost"
+    }, {
       "id" : "http://purl.obolibrary.org/obo/ENVO_01001611",
       "meta" : {
         "definition" : {
@@ -9897,12 +10100,15 @@
       "id" : "http://purl.obolibrary.org/obo/ENVO_01000277",
       "meta" : {
         "definition" : {
-          "val" : "Ice is water frozen into a solid state. It can appear transparent or opaque bluish-white color, depending on the presence of impurities or air inclusions. The addition of other materials such as soil may further alter its appearance.",
+          "val" : "Ice which is formed from water.",
           "xrefs" : [ "https://en.wikipedia.org/wiki/Ice" ]
         },
+        "comments" : [ "Water ice can appear transparent or opaque bluish-white color, depending on the presence of impurities or air inclusions. The addition of other materials such as soil may further alter its appearance.\n\nWhen speaking about ice on Earth, usually water ice is meant - the solid, crystalline form of water found in the atmosphere as snow crystals, hail, ice pellets, etc., and on the earth's surface in forms such as hoarfrost, rime, glaze, sea ice, glacier ice, ground ice, frazil, anchor ice, etc.  \n\nThis form of water is, strictly speaking, called ice Ih, the Roman numeral I distinguishing it from more than a dozen other phases and the letter h distinguishing it from the metastable cubic phase ice Ic. Ice Ih is the only one of the several known phases of water ice that is stable at commonly occurring temperatures and pressures. (Some of the other forms have very unusual properties, ice VII, for example, being stable only at pressures above 22 400 kg/cm^2, but then existing at temperatures up to about 100C.) \n\nIt has an open structure with a specific gravity of 0.9166 which is slightly less than water; because the water molecules bond to their neighbors covalently only in four directions; it therefore floats on higher density water, where broken molecular bonds permit closer packing. All commonly occurring forms of ice are crystalline, although large single crystals are relatively rare except in glaciers. The ice crystal lattice possesses hexagonal symmetry that manifests itself in the gross forms of such single crystals as are sometimes found in snow. At an air pressure of one atmosphere, ice melts at 0 C by definition of the Celsius temperature scale. (Strictly speaking the equilibrium point among water, ice, and vapor occurs at +0.01C, the triple point.) On the other hand, ice does not invariably form in liquid water cooled below this temperature; it has a tendency to supercool, more so in the absence of ice nuclei. \n\nIn permafrost regions, ice may occupy voids in soils and rocks and may develop in a variety of forms. Ice may be colourless to pale blue or greenish-blue. It may appear white due to included gas bubbles; in exposures, ground ice may also appear black.\n\nIn nature ice is formed either by: (a) the freezing of water, (b) the condensation of atmospheric water vapour direct into ice crystals, (c) the compaction of snow with or without the motion of a glacier, or (d) the impregnation of porous snow masses with water which subsequently freeze." ],
         "subsets" : [ "http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar" ],
         "xrefs" : [ {
           "val" : "LTER:262"
+        }, {
+          "val" : "http://sweetontology.net/matrWater/Ice"
         } ],
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
@@ -9913,11 +10119,11 @@
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "ENVO"
         }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "http://orcid.org/0000-0002-4366-3088"
+        }, {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
           "val" : "2013-10-13T12:01:28Z"
-        }, {
-          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
-          "val" : "ORCID:0000-0002-4366-3088"
         } ]
       },
       "type" : "CLASS",
@@ -12523,15 +12729,29 @@
       "id" : "http://purl.obolibrary.org/obo/ENVO_01001378",
       "meta" : {
         "definition" : {
-          "val" : "A bed which underlies a marine water body.",
+          "val" : "A submerged bed which underlies a marine water body.",
           "xrefs" : [ ]
         },
+        "synonyms" : [ {
+          "pred" : "hasNarrowSynonym",
+          "val" : "sea bottom",
+          "xrefs" : [ ]
+        } ],
         "basicPropertyValues" : [ {
+          "pred" : "http://purl.org/dc/elements/1.1/contributor",
+          "val" : "https://orcid.org/0000-0003-1072-8081"
+        }, {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
           "val" : "http://orcid.org/0000-0002-4366-3088"
         }, {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "ENVO"
+        }, {
+          "pred" : "http://purl.org/dc/elements/1.1/contributor",
+          "val" : "https://orcid.org/0000-0002-8166-0486"
+        }, {
+          "pred" : "http://purl.org/dc/elements/1.1/contributor",
+          "val" : "https://orcid.org/0000-0002-2996-719X"
         } ]
       },
       "type" : "CLASS",
@@ -12693,6 +12913,43 @@
       "type" : "CLASS",
       "lbl" : "ice gain"
     }, {
+      "id" : "http://purl.obolibrary.org/obo/ENVO_03000135",
+      "meta" : {
+        "definition" : {
+          "val" : "A blizzard which has 1) winds of 35 miles per hour (approximately 56 kilometers per hour), 2) lasts for a period of at least three hours, and 3) occurs in extremely cold temperatures.",
+          "xrefs" : [ "https://nsidc.org/cryosphere/glossary", "https://orcid.org/0000-0003-4808-4736" ]
+        },
+        "comments" : [ "The original definition has been edited to conform to ENVO's textual pattern. Subjective/observer-based differentia (e.g. visibility) have been moved to comments. The NSIDC definition notes that blizzards involve snow reducing visibility to less than one-quarter mile (0.4 km) and are associated with dangerous blizzard conditions." ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar" ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "https://orcid.org/0000-0002-0337-8610"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "https://orcid.org/0000-0002-2282-7215"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "https://orcid.org/0000-0003-4808-4736"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "ENVO"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "http://orcid.org/0000-0002-4366-3088"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "http://orcid.org/0000-0002-3410-4655"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "https://orcid.org/0000-0003-0632-7576"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
+          "val" : "2020-10-14T20:13:10.917Z"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "NSIDC blizzard"
+    }, {
       "id" : "http://purl.obolibrary.org/obo/ENVO_03000013",
       "meta" : {
         "definition" : {
@@ -12714,6 +12971,82 @@
       },
       "type" : "CLASS",
       "lbl" : "cirque glacier"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/ENVO_03000134",
+      "meta" : {
+        "definition" : {
+          "val" : "A blizzard which 1) lasts at least 3 hours, 2) combines below freezing temperatures and very strong wind, laden with blowing snow.",
+          "xrefs" : [ "https://www.wmo.int/pages/prog/lsp/meteoterm_wmo_en.html" ]
+        },
+        "comments" : [ "Blizzards typically reduces visibility to less than 1 km" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar" ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
+          "val" : "2020-10-14T20:13:10.917Z"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "https://orcid.org/0000-0003-0632-7576"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "ENVO"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "http://orcid.org/0000-0002-3410-4655"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "http://orcid.org/0000-0002-4366-3088"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "https://orcid.org/0000-0003-4808-4736"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "https://orcid.org/0000-0002-2282-7215"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "https://orcid.org/0000-0002-0337-8610"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "WMO blizzard"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/ENVO_03000137",
+      "meta" : {
+        "definition" : {
+          "val" : "A fog the droplets of which freeze upon contact with exposed objects, forming a coating of rime or glaze.",
+          "xrefs" : [ "http://glossary.ametsoc.org/wiki/Main_Page", "https://orcid.org/0000-0003-4808-4736" ]
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar" ],
+        "xrefs" : [ {
+          "val" : "http://sweetontology.net/phenAtmoFog/FreezingFog"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "https://orcid.org/0000-0003-4808-4736"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "https://orcid.org/0000-0002-0337-8610"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "https://orcid.org/0000-0002-2282-7215"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
+          "val" : "2020-10-14T20:13:10.917Z"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "https://orcid.org/0000-0003-0632-7576"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "ENVO"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "http://orcid.org/0000-0002-4366-3088"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "http://orcid.org/0000-0002-3410-4655"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "freezing fog"
     }, {
       "id" : "http://purl.obolibrary.org/obo/ENVO_03000016",
       "meta" : {
@@ -12761,6 +13094,115 @@
       "type" : "CLASS",
       "lbl" : "geographic basin"
     }, {
+      "id" : "http://purl.obolibrary.org/obo/ENVO_03000136",
+      "meta" : {
+        "definition" : {
+          "val" : "A blizzard which occurs in winter.",
+          "xrefs" : [ "http://www.physicalgeography.net/glossary.html" ]
+        },
+        "comments" : [ "The original definition has been edited to conform to ENVO's textual pattern. Subjective/observer-based differentia (e.g. visibility) have been moved to comments." ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar" ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "https://orcid.org/0000-0003-4808-4736"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "https://orcid.org/0000-0002-2282-7215"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "https://orcid.org/0000-0002-0337-8610"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "https://orcid.org/0000-0003-0632-7576"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "ENVO"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "http://orcid.org/0000-0002-3410-4655"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "http://orcid.org/0000-0002-4366-3088"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
+          "val" : "2020-10-14T20:13:10.917Z"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "winter blizzard"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/ENVO_03000139",
+      "meta" : {
+        "definition" : {
+          "val" : "Fog which is composed of particles of ice.",
+          "xrefs" : [ "https://orcid.org/0000-0003-4808-4736" ]
+        },
+        "comments" : [ "The suspended particles may be partly ice crystals 20 to 100 micron in diameter, but chiefly, especially when dense, droxtals 12-20 micron in diameter. Ice fog is formed by direct freezing of supercooled water droplets with little growth directly from the vapor. It occurs at very low temperatures, and usually in clear, calm weather in high latitudes. The sun is usually visible and may cause halo phenomena or luminous pillars. Ice fog is rare at temperatures warmer than -30 °C, and increases in frequency with decreasing temperature until it is almost always present at air temperatures of -45 °C in the vicinity of a source of water vapor. Such sources are the open water of fast-flowing streams or of the sea, herds of animals, volcanoes, and especially products of combustion for heating or propulsion. At temperatures warmer than -30 °C, these sources can cause steam fog of liquid water droplets, which may turn into ice fog when cooled." ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar" ],
+        "xrefs" : [ {
+          "val" : "http://sweetontology.net/phenAtmoFog/IceFog"
+        } ],
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "frost flakes",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "rime fog",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "pogonip",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "frost fog",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "frozen fog",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "air hoar",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "ice-crystal fog",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "https://orcid.org/0000-0003-0632-7576"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "http://orcid.org/0000-0002-4366-3088"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "http://orcid.org/0000-0002-3410-4655"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "ENVO"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000116",
+          "val" : "In future will add computable renditions of size and temperature constraints. The synonyms of this class can be quite confusing, as they reference entities like frost (which requires a surface for deposition). Might need to add a new droxtal class see https://glossary.ametsoc.org/wiki/Droxtal."
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
+          "val" : "2020-11-18T20:48:37.965Z"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "https://orcid.org/0000-0003-4808-4736"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "https://orcid.org/0000-0002-0337-8610"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "https://orcid.org/0000-0002-2282-7215"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "ice fog"
+    }, {
       "id" : "http://purl.obolibrary.org/obo/ENVO_03000018",
       "meta" : {
         "definition" : {
@@ -12802,6 +13244,58 @@
       },
       "type" : "CLASS",
       "lbl" : "glacial ice loss"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/ENVO_03000138",
+      "meta" : {
+        "definition" : {
+          "val" : "An ice mass which is 1) on the order of 1 milimeter or less, 2) has a white and opaque appearance, and 3) is formed as a result of water droplets freezing during precipitation.",
+          "xrefs" : [ "https://orcid.org/0000-0003-4808-4736" ]
+        },
+        "comments" : [ "Precipitation in the form of very small, white opaque particles of ice; the solid equivalent of drizzle. They resemble snow pellets in external appearance, but are more flattened and elongated, and generally have diameters of less than 1 mm; they neither shatter nor bounce when they hit a hard surface. Descriptions of the physical structure of snow grains vary widely and include very fine, simple ice crystals; tiny, complex snow crystals; small, compact bundles of rime; and particles with a rime core and a fine glaze coating. It is agreed that snow grains usually fall in very small quantities, mostly from stratus clouds or from fog, and never in the form of a shower." ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar" ],
+        "xrefs" : [ {
+          "val" : "http://sweetontology.net/matrWater/SnowGrain"
+        } ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "snow grain",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "granular snow",
+          "xrefs" : [ ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "http://orcid.org/0000-0002-3410-4655"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "ENVO"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "http://orcid.org/0000-0002-4366-3088"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "https://orcid.org/0000-0003-0632-7576"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000116",
+          "val" : "Need to add a computable size constraint."
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
+          "val" : "2020-11-18T20:22:03.870Z"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "https://orcid.org/0000-0002-2282-7215"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "https://orcid.org/0000-0002-0337-8610"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "https://orcid.org/0000-0003-4808-4736"
+        } ]
+      },
+      "type" : "CLASS",
+      "lbl" : "grain of snow"
     }, {
       "id" : "http://purl.obolibrary.org/obo/BFO_0000066",
       "meta" : {
@@ -15664,30 +16158,62 @@
       "id" : "http://purl.obolibrary.org/obo/ENVO_00000482",
       "meta" : {
         "definition" : {
-          "val" : "The ground surface that lies beneath a sea.",
-          "xrefs" : [ "MA:ma" ]
+          "val" : "A marine bed which lies below a sea.",
+          "xrefs" : [ "MA:ma", "https://en.wikipedia.org/wiki/Seabed" ]
         },
+        "subsets" : [ "http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPlastics" ],
         "xrefs" : [ {
-          "val" : "https://en.wikipedia.org/wiki/Sea_floor"
-        }, {
           "val" : "EcoLexicon:sea_floor"
         } ],
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
+          "val" : "fondale marino",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "fondo marino",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasExactSynonym",
           "val" : "SeaFloor",
           "xrefs" : [ "NASA:earthrealm" ]
         }, {
-          "pred" : "hasExactSynonym",
-          "val" : "sea bottom",
+          "pred" : "hasRelatedSynonym",
+          "val" : "ocean floor",
           "xrefs" : [ ]
         }, {
           "pred" : "hasExactSynonym",
+          "val" : "Meeresboden",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "海底",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasRelatedSynonym",
+          "val" : "海床",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasRelatedSynonym",
           "val" : "sea bed",
+          "xrefs" : [ ]
+        }, {
+          "pred" : "hasExactSynonym",
+          "val" : "seafloor",
           "xrefs" : [ ]
         } ],
         "basicPropertyValues" : [ {
+          "pred" : "http://purl.org/dc/elements/1.1/contributor",
+          "val" : "https://orcid.org/0000-0002-8166-0486"
+        }, {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "ENVO"
+        }, {
+          "pred" : "http://purl.org/dc/elements/1.1/contributor",
+          "val" : "https://orcid.org/0000-0003-1072-8081"
+        }, {
+          "pred" : "http://purl.org/dc/elements/1.1/contributor",
+          "val" : "https://orcid.org/0000-0002-2996-719X"
         } ]
       },
       "type" : "CLASS",
@@ -16253,6 +16779,21 @@
       },
       "type" : "CLASS",
       "lbl" : "organic object formed through microbial activity"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/RO_0002180",
+      "meta" : {
+        "xrefs" : [ {
+          "val" : "RO:0002180"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#shorthand",
+          "val" : "has_component"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "ENVO"
+        } ]
+      },
+      "type" : "PROPERTY"
     }, {
       "id" : "http://purl.obolibrary.org/obo/ENVO_00000134",
       "meta" : {
@@ -16964,6 +17505,10 @@
       "lbl" : "ocean"
     } ],
     "edges" : [ {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_03000138",
+      "pred" : "http://purl.obolibrary.org/obo/RO_0000056",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01000875"
+    }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_03000119",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_03000040"
@@ -17076,13 +17621,13 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_01000950"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/ENVO_00000208",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/ENVO_01000295"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_03000091",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_03000090"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_00000208",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01000295"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01000079",
       "pred" : "is_a",
@@ -17112,13 +17657,13 @@
       "pred" : "http://purl.obolibrary.org/obo/RO_0002354",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_01001617"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/ENVO_04000009",
-      "pred" : "http://purl.obolibrary.org/obo/RO_0000056",
-      "obj" : "http://purl.obolibrary.org/obo/ENVO_01001613"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01001641",
       "pred" : "http://purl.obolibrary.org/obo/BFO_0000051",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_03000029"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_04000009",
+      "pred" : "http://purl.obolibrary.org/obo/RO_0000056",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01001613"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_00002450",
       "pred" : "is_a",
@@ -17328,6 +17873,10 @@
       "pred" : "http://purl.obolibrary.org/obo/RO_0000057",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_00001998"
     }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_00000478",
+      "pred" : "http://purl.obolibrary.org/obo/RO_0002131",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_00000477"
+    }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01000832",
       "pred" : "http://purl.obolibrary.org/obo/RO_0002354",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_01000724"
@@ -17444,6 +17993,10 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_01001479"
     }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_03000137",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01000844"
+    }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_03000034",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_03000033"
@@ -17512,13 +18065,13 @@
       "pred" : "http://purl.obolibrary.org/obo/RO_0002234",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_00002116"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000078",
-      "pred" : "http://purl.obolibrary.org/obo/BFO_0000050",
-      "obj" : "http://purl.obolibrary.org/obo/ENVO_00001999"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_00009686",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_00000176"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000078",
+      "pred" : "http://purl.obolibrary.org/obo/BFO_0000050",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_00001999"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_00000187",
       "pred" : "is_a",
@@ -17616,6 +18169,10 @@
       "pred" : "http://purl.obolibrary.org/obo/RO_0002220",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_01000323"
     }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000844",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_00010505"
+    }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01000850",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_01000845"
@@ -17684,13 +18241,13 @@
       "pred" : "http://purl.obolibrary.org/obo/subsets/envo-basic.obo#has_increased_levels_of",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_01000266"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000109",
-      "pred" : "http://purl.obolibrary.org/obo/RO_0002473",
-      "obj" : "http://purl.obolibrary.org/obo/ENVO_00002149"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01000982",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_01000981"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000109",
+      "pred" : "http://purl.obolibrary.org/obo/RO_0002473",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_00002149"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_00000476",
       "pred" : "http://purl.obolibrary.org/obo/BFO_0000050",
@@ -17772,13 +18329,13 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_01000720"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000267",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/ENVO_01001678"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_03000044",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_01000950"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000267",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01001678"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01000666",
       "pred" : "is_a",
@@ -17852,17 +18409,13 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_01001681"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/ENVO_03000106",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/ENVO_01000691"
-    }, {
-      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000277",
-      "pred" : "http://purl.obolibrary.org/obo/RO_0002473",
-      "obj" : "http://purl.obolibrary.org/obo/ENVO_00002006"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_00002144",
       "pred" : "http://purl.obolibrary.org/obo/BFO_0000050",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_00000067"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_03000106",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01000691"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_00000207",
       "pred" : "is_a",
@@ -17887,6 +18440,10 @@
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01000001",
       "pred" : "http://purl.obolibrary.org/obo/BFO_0000051",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_01000016"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000844",
+      "pred" : "http://purl.obolibrary.org/obo/RO_0002353",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01000724"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01001782",
       "pred" : "is_a",
@@ -17927,6 +18484,10 @@
       "sub" : "http://purl.obolibrary.org/obo/ENVO_00000206",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_01000295"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_03000139",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01000844"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01001552",
       "pred" : "is_a",
@@ -18092,13 +18653,13 @@
       "pred" : "http://purl.obolibrary.org/obo/RO_0002220",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_00000016"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/ENVO_01001681",
-      "pred" : "http://purl.obolibrary.org/obo/RO_0002500",
-      "obj" : "http://purl.obolibrary.org/obo/ENVO_02500003"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01000839",
       "pred" : "http://purl.obolibrary.org/obo/RO_0002234",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_01000838"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01001681",
+      "pred" : "http://purl.obolibrary.org/obo/RO_0002500",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_02500003"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01001273",
       "pred" : "is_a",
@@ -18111,10 +18672,6 @@
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01000754",
       "pred" : "http://purl.obolibrary.org/obo/RO_0002220",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_01000365"
-    }, {
-      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000277",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/ENVO_01001125"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01000017",
       "pred" : "http://purl.obolibrary.org/obo/RO_0001000",
@@ -18260,21 +18817,25 @@
       "pred" : "http://purl.obolibrary.org/obo/BFO_0000050",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_00000209"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/ENVO_2000005",
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000275",
       "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/ENVO_2000004"
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_00000309"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01001537",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_00000176"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000275",
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_2000005",
       "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/ENVO_00000309"
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_2000004"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_03000041",
       "pred" : "http://purl.obolibrary.org/obo/BFO_0000051",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_00003044"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000804",
+      "pred" : "http://purl.obolibrary.org/obo/BFO_0000051",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01000799"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_03000038",
       "pred" : "http://purl.obolibrary.org/obo/BFO_0000051",
@@ -18303,6 +18864,10 @@
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01000941",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_01001776"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_03000139",
+      "pred" : "http://purl.obolibrary.org/obo/RO_0002473",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01000277"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01001691",
       "pred" : "is_a",
@@ -18564,13 +19129,13 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_00000309"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000820",
-      "pred" : "http://purl.obolibrary.org/obo/RO_0002131",
-      "obj" : "http://purl.obolibrary.org/obo/ENVO_01000817"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01000876",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_02500000"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000820",
+      "pred" : "http://purl.obolibrary.org/obo/RO_0002131",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01000817"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01000840",
       "pred" : "is_a",
@@ -18655,6 +19220,10 @@
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01000077",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_01000259"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_00000428",
+      "pred" : "http://purl.obolibrary.org/obo/BFO_0000051",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01000739"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_03000082",
       "pred" : "http://purl.obolibrary.org/obo/RO_0002473",
@@ -18764,6 +19333,10 @@
       "pred" : "http://purl.obolibrary.org/obo/RO_0000057",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_2000004"
     }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01001098",
+      "pred" : "http://purl.obolibrary.org/obo/RO_0002131",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01001097"
+    }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01001378",
       "pred" : "http://purl.obolibrary.org/obo/RO_0002220",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_00001999"
@@ -18840,6 +19413,10 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_00000447"
     }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000778",
+      "pred" : "http://purl.obolibrary.org/obo/RO_0002131",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01001110"
+    }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_00000299",
       "pred" : "http://purl.obolibrary.org/obo/RO_0002473",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_01000277"
@@ -18876,9 +19453,17 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_00002000"
     }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000844",
+      "pred" : "http://purl.obolibrary.org/obo/RO_0001025",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01000267"
+    }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01001551",
       "pred" : "http://purl.obolibrary.org/obo/RO_0002220",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_01000293"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01001850",
+      "pred" : "http://purl.obolibrary.org/obo/RO_0002220",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_00010504"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_03000030",
       "pred" : "http://purl.obolibrary.org/obo/RO_0000057",
@@ -18944,13 +19529,13 @@
       "pred" : "http://purl.obolibrary.org/obo/RO_0002234",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_00002006"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/ENVO_01001746",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/ENVO_01001744"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_00000015",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_00001999"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01001746",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01001744"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_03000072",
       "pred" : "is_a",
@@ -19040,6 +19625,10 @@
       "pred" : "http://purl.obolibrary.org/obo/RO_0002473",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_01000814"
     }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000844",
+      "pred" : "http://purl.obolibrary.org/obo/BFO_0000050",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01000267"
+    }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01001641",
       "pred" : "http://purl.obolibrary.org/obo/BFO_0000050",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_01001643"
@@ -19068,13 +19657,13 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_00000309"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/ENVO_03000113",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/ENVO_03000111"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_00000480",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_00000191"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_03000113",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_03000111"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01000917",
       "pred" : "is_a",
@@ -19095,6 +19684,10 @@
       "sub" : "http://purl.obolibrary.org/obo/ENVO_03000039",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_03000048"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000947",
+      "pred" : "http://purl.obolibrary.org/obo/RO_0002131",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_00000428"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01000306",
       "pred" : "is_a",
@@ -19180,13 +19773,13 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_00000488"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000325",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/ENVO_01001273"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01001548",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_01001510"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000325",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01001273"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_00000176",
       "pred" : "http://purl.obolibrary.org/obo/BFO_0000051",
@@ -19243,6 +19836,10 @@
       "sub" : "http://purl.obolibrary.org/obo/ENVO_03000116",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_03000111"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01001850",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_00010483"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_03000003",
       "pred" : "is_a",
@@ -19408,6 +20005,10 @@
       "pred" : "http://purl.obolibrary.org/obo/BFO_0000051",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_01000722"
     }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_03000136",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01000903"
+    }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_03000075",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_03000063"
@@ -19423,6 +20024,10 @@
       "sub" : "http://purl.obolibrary.org/obo/ENVO_03000040",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_00000063"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_03000138",
+      "pred" : "http://purl.obolibrary.org/obo/RO_0002354",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01001549"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01000080",
       "pred" : "http://purl.obolibrary.org/obo/BFO_0000050",
@@ -19496,13 +20101,13 @@
       "pred" : "http://purl.obolibrary.org/obo/RO_0000057",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_00002006"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/ENVO_00000457",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/ENVO_00000133"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_00000455",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_00000020"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_00000457",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_00000133"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01001554",
       "pred" : "http://purl.obolibrary.org/obo/BFO_0000050",
@@ -19604,6 +20209,10 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_00000137"
     }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01001850",
+      "pred" : "http://purl.obolibrary.org/obo/RO_0002354",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_03000055"
+    }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01000180",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_00000446"
@@ -19656,17 +20265,21 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_00002030"
     }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01001535",
+      "pred" : "http://purl.obolibrary.org/obo/BFO_0000051",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01001537"
+    }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_00000307",
       "pred" : "http://purl.obolibrary.org/obo/BFO_0000051",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_00000320"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/ENVO_00000250",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/ENVO_00000177"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01000404",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_01000814"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_00000250",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_00000177"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01000081",
       "pred" : "http://purl.obolibrary.org/obo/BFO_0000050",
@@ -19732,13 +20345,13 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_01000307"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000109",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/ENVO_01000686"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_00000133",
       "pred" : "http://purl.obolibrary.org/obo/BFO_0000051",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_01000406"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000109",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01000686"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01000675",
       "pred" : "is_a",
@@ -19747,6 +20360,10 @@
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01000833",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_01000831"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000844",
+      "pred" : "http://purl.obolibrary.org/obo/RO_0002473",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_00002006"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_03000092",
       "pred" : "is_a",
@@ -19759,6 +20376,10 @@
       "sub" : "http://purl.obolibrary.org/obo/ENVO_00000067",
       "pred" : "http://purl.obolibrary.org/obo/BFO_0000051",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_00002144"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01001082",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01000452"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_00000184",
       "pred" : "is_a",
@@ -19792,13 +20413,13 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_00000133"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/ENVO_03000059",
-      "pred" : "http://purl.obolibrary.org/obo/RO_0002234",
-      "obj" : "http://purl.obolibrary.org/obo/ENVO_03000069"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01000822",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_01000813"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_03000059",
+      "pred" : "http://purl.obolibrary.org/obo/RO_0002234",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_03000069"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_03000038",
       "pred" : "http://purl.obolibrary.org/obo/RO_0002353",
@@ -19920,13 +20541,13 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_03000056"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000801",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/ENVO_01000799"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_03000071",
       "pred" : "http://purl.obolibrary.org/obo/RO_0002353",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_03000060"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000801",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01000799"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01000406",
       "pred" : "http://purl.obolibrary.org/obo/RO_0002473",
@@ -19980,13 +20601,13 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_00000191"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/ENVO_01001744",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/ENVO_01001720"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_00000428",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_01001110"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01001744",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01001720"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01000721",
       "pred" : "http://purl.obolibrary.org/obo/RO_0002234",
@@ -20068,13 +20689,13 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_00000191"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000639",
-      "pred" : "http://purl.obolibrary.org/obo/BFO_0000050",
-      "obj" : "http://purl.obolibrary.org/obo/ENVO_01000800"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_00000459",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_00000133"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000639",
+      "pred" : "http://purl.obolibrary.org/obo/BFO_0000050",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01000800"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_00002150",
       "pred" : "is_a",
@@ -20288,6 +20909,10 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_00000176"
     }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01001850",
+      "pred" : "http://purl.obolibrary.org/obo/RO_0002473",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01000846"
+    }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01000279",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_01001547"
@@ -20312,13 +20937,13 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_01000406"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/ENVO_00000393",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/ENVO_00000137"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01000666",
       "pred" : "http://purl.obolibrary.org/obo/BFO_0000050",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_01000324"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_00000393",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_00000137"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01000847",
       "pred" : "http://purl.obolibrary.org/obo/RO_0001025",
@@ -20332,9 +20957,17 @@
       "pred" : "http://purl.obolibrary.org/obo/BFO_0000067",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_01000982"
     }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000941",
+      "pred" : "http://purl.obolibrary.org/obo/RO_0002131",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01000639"
+    }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_03000067",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_03000066"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01001848",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01001850"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01000815",
       "pred" : "is_a",
@@ -20492,13 +21125,13 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_01000307"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/ENVO_00000873",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/ENVO_00002030"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_03000035",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_00000020"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_00000873",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_00002030"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_03000116",
       "pred" : "http://purl.obolibrary.org/obo/RO_0002473",
@@ -20616,6 +21249,10 @@
       "pred" : "http://purl.obolibrary.org/obo/RO_0002354",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_01001093"
     }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_00000479",
+      "pred" : "http://purl.obolibrary.org/obo/RO_0002131",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_00000063"
+    }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_03000047",
       "pred" : "http://purl.obolibrary.org/obo/RO_0002233",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_00002006"
@@ -20664,6 +21301,10 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_01000254"
     }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_03000140",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01001082"
+    }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01000293",
       "pred" : "http://purl.obolibrary.org/obo/BFO_0000050",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_01000818"
@@ -20679,6 +21320,10 @@
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01000684",
       "pred" : "http://purl.obolibrary.org/obo/RO_0000057",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_00000133"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_03000135",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01000903"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_00002144",
       "pred" : "is_a",
@@ -20784,13 +21429,13 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_00002270"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000666",
-      "pred" : "http://purl.obolibrary.org/obo/RO_0002220",
-      "obj" : "http://purl.obolibrary.org/obo/ENVO_01000323"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01000647",
       "pred" : "http://purl.obolibrary.org/obo/RO_0002220",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_01000646"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000666",
+      "pred" : "http://purl.obolibrary.org/obo/RO_0002220",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01000323"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01000083",
       "pred" : "is_a",
@@ -20811,6 +21456,10 @@
       "sub" : "http://purl.obolibrary.org/obo/ENVO_00000531",
       "pred" : "http://purl.obolibrary.org/obo/BFO_0000050",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_00000145"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_03000138",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01000293"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01000276",
       "pred" : "http://purl.obolibrary.org/obo/BFO_0000050",
@@ -20955,6 +21604,10 @@
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01000618",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_00000063"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_03000134",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01000903"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_03000002",
       "pred" : "is_a",
@@ -21110,9 +21763,9 @@
       "xrefs" : [ ],
       "basicPropertyValues" : [ {
         "pred" : "http://www.w3.org/2002/07/owl#versionInfo",
-        "val" : "2020-06-22"
+        "val" : "2021-05-14"
       } ],
-      "version" : "http://purl.obolibrary.org/obo/envo/releases/2020-06-22/subsets/envoPolar.owl"
+      "version" : "http://purl.obolibrary.org/obo/envo/releases/2021-05-14/subsets/envoPolar.owl"
     },
     "equivalentNodesSets" : [ ],
     "logicalDefinitionAxioms" : [ {
@@ -21414,6 +22067,13 @@
       "restrictions" : [ {
         "propertyId" : "http://purl.obolibrary.org/obo/BFO_0000050",
         "fillerId" : "http://purl.obolibrary.org/obo/ENVO_01000267"
+      } ]
+    }, {
+      "definedClassId" : "http://purl.obolibrary.org/obo/ENVO_01000277",
+      "genusIds" : [ "http://purl.obolibrary.org/obo/ENVO_01001125" ],
+      "restrictions" : [ {
+        "propertyId" : "http://purl.obolibrary.org/obo/RO_0002473",
+        "fillerId" : "http://purl.obolibrary.org/obo/ENVO_00002006"
       } ]
     }, {
       "definedClassId" : "http://purl.obolibrary.org/obo/ENVO_01001554",

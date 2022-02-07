@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: envo/releases/2020-06-22/subsets/envoAstro.owl
+data-version: envo/releases/2021-05-14/subsets/envoAstro.owl
 subsetdef: disposition_slim "Disposition slim"
 subsetdef: environmental_hazards "environmental_hazards"
 subsetdef: EnvO-Lite-GSC "EnvO-Lite-GSC"
@@ -13,6 +13,7 @@ subsetdef: envoMarine "envoMarine"
 subsetdef: envoMeo "envoMeo"
 subsetdef: envoNceas "envoNceas"
 subsetdef: envoOmics "envoOmics"
+subsetdef: envoPlastics "envoPlastics"
 subsetdef: envoPolar "envoPolar"
 subsetdef: mpath_slim "Pathology slim"
 subsetdef: nlcd2011 "nlcd2011"
@@ -23,7 +24,7 @@ subsetdef: value_slim "Value slim"
 subsetdef: wwfBiome "wwfBiome"
 synonymtypedef: PLURAL "plurals"
 ontology: envo/subsets/envoAstro
-property_value: owl:versionInfo "2020-06-22" xsd:string
+property_value: owl:versionInfo "2021-05-14" xsd:string
 
 [Term]
 id: ENVO:00000070
@@ -190,13 +191,15 @@ creation_date: 2013-10-10T08:14:50Z
 id: ENVO:01000277
 name: water ice
 namespace: ENVO
-def: "Ice is water frozen into a solid state. It can appear transparent or opaque bluish-white color, depending on the presence of impurities or air inclusions. The addition of other materials such as soil may further alter its appearance." [https://en.wikipedia.org/wiki/Ice]
+def: "Ice which is formed from water." [https://en.wikipedia.org/wiki/Ice]
+comment: Water ice can appear transparent or opaque bluish-white color, depending on the presence of impurities or air inclusions. The addition of other materials such as soil may further alter its appearance.\n\nWhen speaking about ice on Earth, usually water ice is meant - the solid, crystalline form of water found in the atmosphere as snow crystals, hail, ice pellets, etc., and on the earth's surface in forms such as hoarfrost, rime, glaze, sea ice, glacier ice, ground ice, frazil, anchor ice, etc.  \n\nThis form of water is, strictly speaking, called ice Ih, the Roman numeral I distinguishing it from more than a dozen other phases and the letter h distinguishing it from the metastable cubic phase ice Ic. Ice Ih is the only one of the several known phases of water ice that is stable at commonly occurring temperatures and pressures. (Some of the other forms have very unusual properties, ice VII, for example, being stable only at pressures above 22 400 kg/cm^2, but then existing at temperatures up to about 100C.) \n\nIt has an open structure with a specific gravity of 0.9166 which is slightly less than water; because the water molecules bond to their neighbors covalently only in four directions; it therefore floats on higher density water, where broken molecular bonds permit closer packing. All commonly occurring forms of ice are crystalline, although large single crystals are relatively rare except in glaciers. The ice crystal lattice possesses hexagonal symmetry that manifests itself in the gross forms of such single crystals as are sometimes found in snow. At an air pressure of one atmosphere, ice melts at 0 C by definition of the Celsius temperature scale. (Strictly speaking the equilibrium point among water, ice, and vapor occurs at +0.01C, the triple point.) On the other hand, ice does not invariably form in liquid water cooled below this temperature; it has a tendency to supercool, more so in the absence of ice nuclei. \n\nIn permafrost regions, ice may occupy voids in soils and rocks and may develop in a variety of forms. Ice may be colourless to pale blue or greenish-blue. It may appear white due to included gas bubbles; in exposures, ground ice may also appear black.\n\nIn nature ice is formed either by: (a) the freezing of water, (b) the condensation of atmospheric water vapour direct into ice crystals, (c) the compaction of snow with or without the motion of a glacier, or (d) the impregnation of porous snow masses with water which subsequently freeze.
 subset: envoPolar
 synonym: "ice" RELATED [http://www.eionet.europa.eu/gemet/concept/4131]
+xref: http://sweetontology.net/matrWater/Ice
 xref: LTER:262
-is_a: ENVO:01001125 ! ice
-relationship: composed_primarily_of ENVO:00002006 ! liquid water
-created_by: ORCID:0000-0002-4366-3088
+intersection_of: ENVO:01001125 ! ice
+intersection_of: composed_primarily_of ENVO:00002006 ! liquid water
+created_by: http://orcid.org/0000-0002-4366-3088
 creation_date: 2013-10-13T12:01:28Z
 
 [Term]
@@ -321,7 +324,7 @@ def: "An object which is composed of one or more gravitationally bound structure
 comment: If there is only one astronomical body involved, this class is equivalent to ENVO:01000799. This may be problematic with reasoning, but it seems to be true to the rather fuzzy definitions found thus far.
 subset: envoAstro
 synonym: "celestial object" RELATED []
-relationship: has_part ENVO:01000799 {minCardinality="1"} ! astronomical body
+relationship: has_part ENVO:01000799 ! astronomical body
 relationship: has_quality ENVO:01001164 ! geodiversity
 relationship: surrounded_by ENVO:01000637 ! outer space
 
@@ -713,7 +716,6 @@ namespace: ENVO
 def: "Ice which is primarily composed of carbon dioxide." [https://en.wikipedia.org/wiki/Ice]
 subset: envoAstro
 synonym: "dry ice" RELATED []
-is_a: ENVO:01001125 ! ice
 
 [Term]
 id: ENVO:01001139
@@ -729,7 +731,6 @@ name: ammonia ice
 namespace: ENVO
 def: "Ice which is primarily composed of ammonia." [https://en.wikipedia.org/wiki/Ice]
 subset: envoAstro
-is_a: ENVO:01001125 ! ice
 
 [Term]
 id: ENVO:01001141
@@ -737,7 +738,6 @@ name: carbon monoxide ice
 namespace: ENVO
 def: "Ice which is primarily composed of carbon monoxide." [https://en.wikipedia.org/wiki/Ice]
 subset: envoAstro
-is_a: ENVO:01001125 ! ice
 
 [Term]
 id: ENVO:01001142
@@ -826,7 +826,7 @@ namespace: ENVO
 def: "An astronomical object which is composed of dense gas and dust rotating around a young newly formed star, a T Tauri star, or a Herbig Ae/Be star in a disk-shaped configuration." [https://en.wikipedia.org/wiki/Protoplanetary_disk]
 subset: envoAstro
 is_a: ENVO:01000804 ! astronomical object
-relationship: has_part ENVO:01000799 {minCardinality="1"} ! astronomical body
+relationship: has_part ENVO:01000799 ! astronomical body
 relationship: surrounded_by ENVO:01000637 ! outer space
 
 [Term]
@@ -837,7 +837,7 @@ def: "A protoplanetary disk which is externally illuminated and undergoing photo
 subset: envoAstro
 synonym: "ionized protoplanetary disk" EXACT []
 is_a: ENVO:01001150 ! protoplanetary disk
-relationship: has_part ENVO:01000799 {minCardinality="1"} ! astronomical body
+relationship: has_part ENVO:01000799 ! astronomical body
 relationship: surrounded_by ENVO:01000637 ! outer space
 
 [Term]
@@ -1135,7 +1135,6 @@ property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088
 id: adjacent_to
 namespace: ENVO
 xref: RO:0002220
-is_functional: true
 
 [Typedef]
 id: attached_to
@@ -1282,6 +1281,11 @@ xref: ENVO:2000036
 property_value: IAO:0000116 "Consider ceding to RO" xsd:string
 created_by: cjm
 creation_date: 2018-11-03T20:58:13Z
+
+[Typedef]
+id: has_component
+namespace: ENVO
+xref: RO:0002180
 
 [Typedef]
 id: has_condition

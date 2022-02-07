@@ -52,7 +52,7 @@ FORMATS_INCL_TSV = $(sort $(FORMATS) tsv)
 # ----------------------------------------
 
 .PHONY: .FORCE
-all: all_imports all_main all_subsets sparql_test all_reports all_assets
+all: all_imports all_main all_subsets sparql_test all_reports all_assets validate-dl-profile
 
 test: envo-edit.owl all_modules all_imports envo.owl all_reports
 travis_test: test_python envo-edit.owl all_reports all_modules envo.owl
@@ -62,6 +62,15 @@ full_test: test envo.check-obo subsets/EnvO-Lite-GSC.check-obo
 # temp test for travis
 test_python:
 	python3 --version
+
+validate-dl-profile: $(PRE_SRC)
+# validates the DL profile for envo-edit merged with RO
+# note: The file is not part of the repo. It is there for you to check.
+# Use the command  "grep non-simple" to find non-simple violations
+	$(ROBOT) merge \
+        --input $< \
+        validate-profile --profile DL
+
 
 ## -- main targets --
 ##
@@ -267,12 +276,13 @@ release-diffs:
 ##
 ## By default this is the cross-product of IMPORT_MODULES x FORMATS
 
-IMPORTS = pato uberon chebi ro pco foodon go ncbitaxon  obi po iao fao 
+IMPORTS = pato uberon chebi ro pco foodon go ncbitaxon  obi po iao fao
 
 IMPORT_ROOTS = $(patsubst %, imports/%_import, $(IMPORTS))
 IMPORT_OWL_FILES = $(foreach n,$(IMPORT_ROOTS), $(n).owl)
 IMPORT_FILES = $(IMPORT_OWL_FILES)
 
+# this adds IMPORT_FILES as a dependency; the recipe is below
 all_imports: $(IMPORT_FILES)
 
 
@@ -304,7 +314,6 @@ REMOVE_SELF_REF= --remove-classes-in-idspace -d ENVO
 all_imports: $(patsubst %, imports/%_import.owl,$(IMPORTS)) $(patsubst %, imports/%_import.obo,$(IMPORTS))
 
 SEEDS= $(patsubst %, imports/%_terms.txt,$(IMPORTS))
-
 
 KEEPRELS = BFO:0000050 BFO:0000051 RO:0002202 immediate_transformation_of RO:0002176 IAO:0000136
 
@@ -373,10 +382,10 @@ mirror/po.owl: envo-edit.owl
 	  -o $@
 .PRECIOUS: mirror/po.owl
 
-
 mirror/ro.owl:
-	$(ROBOT) merge -I $(OBO)/ro.owl \
-	 remove --base-iri RO --base-iri BFO --axioms external -o $@
+# this removes the property chains from the ro import; use ro-base instead
+#	$(ROBOT) merge -I $(OBO)/ro.owl remove --base-iri RO --base-iri BFO --axioms external -o $@
+	$(ROBOT) merge -I $(OBO)/ro/ro-base.owl -o $@
 .PRECIOUS: mirror/ro.owl
 
 mirror/bfo.owl: envo-edit.owl
@@ -384,7 +393,8 @@ mirror/bfo.owl: envo-edit.owl
 .PRECIOUS: mirror/%.owl
 
 mirror/uberon.owl: 
-	$(OWLTOOLS) $(OBO)/uberon.obo  --remove-axiom-annotations  --make-subset-by-properties -f $(KEEPRELS) --remove-external-classes UBERON --remove-dangling-annotations --remove-annotation-assertions -l -s -d --set-ontology-id $(OBO)/uberon.owl -o $@
+	wget http://purl.obolibrary.org/obo/uberon.obo # suggest fix for parser error; see https://github.com/EnvironmentOntology/envo/pull/1289
+	$(OWLTOOLS) uberon.obo  --remove-axiom-annotations  --make-subset-by-properties -f $(KEEPRELS) --remove-external-classes UBERON --remove-dangling-annotations --remove-annotation-assertions -l -s -d --set-ontology-id $(OBO)/uberon.owl -o $@
 .PRECIOUS: mirror/%.owl
 
 
@@ -397,7 +407,7 @@ ncbitaxon.obo:
 .PRECIOUS: ncbitaxon.obo
 
 mirror/ncbitaxon.owl: ncbitaxon.obo
-	OWLTOOLS_MEMORY=12G $(OWLTOOLS) $< --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations  --set-ontology-id $(OBO)/ncbitaxon.owl -o $@
+	OWLTOOLS_MEMORY=16G $(OWLTOOLS) $< --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations  --set-ontology-id $(OBO)/ncbitaxon.owl -o $@
 .PRECIOUS: mirror/ncbitaxon.owl
 
 # PCO woes:
