@@ -9,7 +9,6 @@
 # Also used for unit tests executed by travis
 #
 # See README-editors.md for more details on release process
-#
 # To make a release, type 'make release' in this directory
 
 # ----------------------------------------
