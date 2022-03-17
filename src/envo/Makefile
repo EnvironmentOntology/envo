@@ -55,7 +55,7 @@ FORMATS_INCL_TSV = $(sort $(FORMATS) tsv)
 all: all_imports all_main all_subsets sparql_test all_reports all_assets validate-dl-profile
 
 test: envo-edit.owl all_modules all_imports envo.owl all_reports
-travis_test: test_python envo-edit.owl all_reports all_modules envo.owl
+travis_test: test_python envo-edit.owl all_reports all_modules envo.owl validate-dl-profile
 
 full_test: test envo.check-obo subsets/EnvO-Lite-GSC.check-obo
 
@@ -167,7 +167,7 @@ $(ONT)-base.owl: $(SRC) $(OTHER_SRC)
 # Full: The full artefacts with imports merged, reasoned
 $(ONT)-full.owl: $(SRC) $(OTHER_SRC)
 	$(ROBOT) merge --input $< \
-		reason --reasoner ELK --equivalent-classes-allowed all --exclude-tautologies structural \
+		reason --reasoner ELK --equivalent-classes-allowed asserted-only --exclude-tautologies structural \
 		relax \
 		reduce -r ELK \
 		annotate --ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@  -a owl:versionInfo $(TODAY)\
