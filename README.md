@@ -1,7 +1,6 @@
 [![Build Status](https://travis-ci.org/EnvironmentOntology/envo.svg?branch=master)](https://travis-ci.org/EnvironmentOntology/envo)
 [![DOI](https://zenodo.org/badge/13996/EnvironmentOntology/envo.svg)](https://zenodo.org/badge/latestdoi/13996/EnvironmentOntology/envo)
 
-
 # The Environment Ontology
 
 
