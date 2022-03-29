@@ -51,10 +51,10 @@ FORMATS_INCL_TSV = $(sort $(FORMATS) tsv)
 # ----------------------------------------
 
 .PHONY: .FORCE
-all: all_imports all_main all_subsets sparql_test all_reports all_assets validate-dl-profile
+all: all_imports all_main all_subsets sparql_test all_reports all_assets
 
 test: envo-edit.owl all_modules all_imports envo.owl all_reports
-travis_test: test_python envo-edit.owl all_reports all_modules envo.owl validate-dl-profile
+travis_test: test_python envo-edit.owl all_reports envo.owl
 
 full_test: test envo.check-obo subsets/EnvO-Lite-GSC.check-obo
 
@@ -62,6 +62,7 @@ full_test: test envo.check-obo subsets/EnvO-Lite-GSC.check-obo
 test_python:
 	python3 --version
 
+# TODO: add this back to tests
 validate-dl-profile: $(PRE_SRC)
 # validates the DL profile for envo-edit merged with RO
 # note: The file is not part of the repo. It is there for you to check.
