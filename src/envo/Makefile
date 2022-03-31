@@ -64,13 +64,11 @@ test_python:
 
 # TODO: add this back to tests
 validate-dl-profile: $(PRE_SRC)
-# validates the DL profile for envo-edit merged with RO
-# note: The file is not part of the repo. It is there for you to check.
-# Use the command  "grep non-simple" to find non-simple violations
-	$(ROBOT) merge \
-        --input $< \
-        validate-profile --profile DL
-
+	# validates the DL profile for envo-edit merged with RO
+	# note: The file is not part of the repo. It is there for you to check.
+	#	Use the command  "grep non-simple" to find non-simple violations
+	$(ROBOT) merge -i $< convert -f ofn -o $(TMPDIR)/validate.ofn
+	$(ROBOT) validate-profile --profile DL -i $(TMPDIR)/validate.ofn
 
 ## -- main targets --
 ##
