@@ -71,6 +71,7 @@ validate-dl-profile: $(PRE_SRC)
 	$(ROBOT) validate-profile --profile DL -i $(TMPDIR)/validate.ofn
 
 test: validate-dl-profile-with-ro
+travis_test: validate-dl-profile-with-ro
 
 ## -- main targets --
 ##
