@@ -70,8 +70,8 @@ validate-dl-profile: $(PRE_SRC)
 	$(ROBOT) merge -i $< -I http://purl.obolibrary.org/obo/ro.owl convert -f ofn -o $(TMPDIR)/validate.ofn
 	$(ROBOT) validate-profile --profile DL -i $(TMPDIR)/validate.ofn
 
-test: validate-dl-profile-with-ro
-travis_test: validate-dl-profile-with-ro
+test: validate-dl-profile
+travis_test: validate-dl-profile
 
 ## -- main targets --
 ##
