@@ -67,8 +67,11 @@ validate-dl-profile: $(PRE_SRC)
 	# validates the DL profile for envo-edit merged with RO
 	# note: The file is not part of the repo. It is there for you to check.
 	#	Use the command  "grep non-simple" to find non-simple violations
-	$(ROBOT) merge -i $< convert -f ofn -o $(TMPDIR)/validate.ofn
+	$(ROBOT) merge -i $< -I http://purl.obolibrary.org/obo/ro.owl convert -f ofn -o $(TMPDIR)/validate.ofn
 	$(ROBOT) validate-profile --profile DL -i $(TMPDIR)/validate.ofn
+
+test: validate-dl-profile
+travis_test: validate-dl-profile
 
 ## -- main targets --
 ##
