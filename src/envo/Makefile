@@ -53,8 +53,14 @@ FORMATS_INCL_TSV = $(sort $(FORMATS) tsv)
 .PHONY: .FORCE
 all: all_imports all_main all_subsets sparql_test all_reports all_assets
 
-test: envo-edit.owl all_modules all_imports envo.owl all_reports
-travis_test: test_python envo-edit.owl all_reports envo.owl
+# complete tests
+test: all_modules all_imports envo.owl all_reports validate-dl-profile
+
+# a more limited set of tests that can be run using github actions
+continuous_integration_test: test_python all_reports envo.owl validate-dl-profile
+
+# deprecated alias
+travis_test: continuous_integration_test
 
 full_test: test envo.check-obo subsets/EnvO-Lite-GSC.check-obo
 
@@ -63,10 +69,10 @@ test_python:
 	python3 --version
 
 # TODO: add this back to tests
+# validates the DL profile for envo-edit merged with RO.
+# Note that it's necessary to merge the ontology first;
+#       see https://github.com/ontodev/robot/issues/1040
 validate-dl-profile: $(PRE_SRC)
-	# validates the DL profile for envo-edit merged with RO
-	# note: The file is not part of the repo. It is there for you to check.
-	#	Use the command  "grep non-simple" to find non-simple violations
 	$(ROBOT) merge -i $< -I http://purl.obolibrary.org/obo/ro.owl convert -f ofn -o $(TMPDIR)/validate.ofn
 	$(ROBOT) validate-profile --profile DL -i $(TMPDIR)/validate.ofn
 
