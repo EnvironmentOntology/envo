@@ -1,0 +1,36 @@
+# Basic ODK workflow
+
+name: CI
+
+# Controls when the action will run. 
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "ontology_qc"
+  ontology_qc:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    container: obolibrary/odkfull:v1.2.29
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      - name: Run ontology QC checks
+        env:
+          DEFAULT_BRANCH: main
+        # note for github actions we want to run a slightly more minimal test where do don't
+        # build all_imports, as this is expensive. For historic reasons this target is
+        # called "travis_test", this should probably be renamed something like "ci_test".
+        # see: https://github.com/EnvironmentOntology/envo/pull/1172#issuecomment-1035522412
+        run: cd src/envo && make ROBOT_ENV='ROBOT_JAVA_ARGS=-Xmx6G' travis_test IMP=false PAT=false

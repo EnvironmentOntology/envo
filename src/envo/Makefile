@@ -9,7 +9,6 @@
 # Also used for unit tests executed by travis
 #
 # See README-editors.md for more details on release process
-#
 # To make a release, type 'make release' in this directory
 
 # ----------------------------------------
@@ -52,10 +51,10 @@ FORMATS_INCL_TSV = $(sort $(FORMATS) tsv)
 # ----------------------------------------
 
 .PHONY: .FORCE
-all: all_imports all_main all_subsets sparql_test all_reports all_assets validate-dl-profile
+all: all_imports all_main all_subsets sparql_test all_reports all_assets
 
 test: envo-edit.owl all_modules all_imports envo.owl all_reports
-travis_test: test_python envo-edit.owl all_reports all_modules envo.owl
+travis_test: test_python envo-edit.owl all_reports envo.owl
 
 full_test: test envo.check-obo subsets/EnvO-Lite-GSC.check-obo
 
@@ -63,14 +62,16 @@ full_test: test envo.check-obo subsets/EnvO-Lite-GSC.check-obo
 test_python:
 	python3 --version
 
+# TODO: add this back to tests
 validate-dl-profile: $(PRE_SRC)
-# validates the DL profile for envo-edit merged with RO
-# note: The file is not part of the repo. It is there for you to check.
-# Use the command  "grep non-simple" to find non-simple violations
-	$(ROBOT) merge \
-        --input $< \
-        validate-profile --profile DL
+	# validates the DL profile for envo-edit merged with RO
+	# note: The file is not part of the repo. It is there for you to check.
+	#	Use the command  "grep non-simple" to find non-simple violations
+	$(ROBOT) merge -i $< -I http://purl.obolibrary.org/obo/ro.owl convert -f ofn -o $(TMPDIR)/validate.ofn
+	$(ROBOT) validate-profile --profile DL -i $(TMPDIR)/validate.ofn
 
+test: validate-dl-profile
+travis_test: validate-dl-profile
 
 ## -- main targets --
 ##
@@ -167,7 +168,7 @@ $(ONT)-base.owl: $(SRC) $(OTHER_SRC)
 # Full: The full artefacts with imports merged, reasoned
 $(ONT)-full.owl: $(SRC) $(OTHER_SRC)
 	$(ROBOT) merge --input $< \
-		reason --reasoner ELK --equivalent-classes-allowed none --exclude-tautologies structural \
+		reason --reasoner ELK --equivalent-classes-allowed asserted-only --exclude-tautologies structural \
 		relax \
 		reduce -r ELK \
 		annotate --ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@  -a owl:versionInfo $(TODAY)\
@@ -393,7 +394,8 @@ mirror/bfo.owl: envo-edit.owl
 .PRECIOUS: mirror/%.owl
 
 mirror/uberon.owl: 
-	$(OWLTOOLS) $(OBO)/uberon.obo  --remove-axiom-annotations  --make-subset-by-properties -f $(KEEPRELS) --remove-external-classes UBERON --remove-dangling-annotations --remove-annotation-assertions -l -s -d --set-ontology-id $(OBO)/uberon.owl -o $@
+	wget http://purl.obolibrary.org/obo/uberon.obo # suggest fix for parser error; see https://github.com/EnvironmentOntology/envo/pull/1289
+	$(OWLTOOLS) uberon.obo  --remove-axiom-annotations  --make-subset-by-properties -f $(KEEPRELS) --remove-external-classes UBERON --remove-dangling-annotations --remove-annotation-assertions -l -s -d --set-ontology-id $(OBO)/uberon.owl -o $@
 .PRECIOUS: mirror/%.owl
 
 
@@ -406,7 +408,7 @@ ncbitaxon.obo:
 .PRECIOUS: ncbitaxon.obo
 
 mirror/ncbitaxon.owl: ncbitaxon.obo
-	OWLTOOLS_MEMORY=12G $(OWLTOOLS) $< --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations  --set-ontology-id $(OBO)/ncbitaxon.owl -o $@
+	OWLTOOLS_MEMORY=16G $(OWLTOOLS) $< --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations  --set-ontology-id $(OBO)/ncbitaxon.owl -o $@
 .PRECIOUS: mirror/ncbitaxon.owl
 
 # PCO woes:
@@ -550,7 +552,7 @@ all_modules_obo: $(patsubst %, modules/%.obo, $(MODS))
 
 modules/%.owl: modules/%.csv patterns/%.yaml curie_map.yaml 
 	@perl -pe 's/\r\n/\n/' $< > $<.tmp && mv $<.tmp $< # replace crlf with lf
-	dosdp-tools generate --table-format=csv --template=./patterns/$*.yaml --outfile=modules/$*.tmp.owl --obo-prefixes=true --infile=modules/$*.csv
+	if [ true = true ]; then dosdp-tools generate --table-format=csv --template=./patterns/$*.yaml --outfile=modules/$*.tmp.owl --obo-prefixes=true --infile=modules/$*.csv; fi
 	$(ROBOT) annotate --input modules/$*.tmp.owl -O http://purl.obolibrary.org/obo/envo/modules/$*.owl --output modules/$*.owl && rm modules/$*.tmp.owl
 
 modules/%.obo: modules/%.owl
