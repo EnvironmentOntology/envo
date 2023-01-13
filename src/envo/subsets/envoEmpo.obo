@@ -1,8 +1,9 @@
 format-version: 1.2
-data-version: envo/releases/2021-05-14/subsets/envoEmpo.owl
+data-version: envo/releases/2023-01-13/subsets/envoEmpo.owl
 subsetdef: disposition_slim "Disposition slim"
 subsetdef: environmental_hazards "environmental_hazards"
 subsetdef: EnvO-Lite-GSC "EnvO-Lite-GSC"
+subsetdef: envoANZSoil "envoANZSoil"
 subsetdef: envoAstro "envoAstro"
 subsetdef: envoAtmo "envoAtmo"
 subsetdef: envoCesab "envoCesab"
@@ -24,7 +25,7 @@ subsetdef: value_slim "Value slim"
 subsetdef: wwfBiome "wwfBiome"
 synonymtypedef: PLURAL "plurals"
 ontology: envo/subsets/envoEmpo
-property_value: owl:versionInfo "2021-05-14" xsd:string
+property_value: owl:versionInfo "2023-01-13" xsd:string
 
 [Term]
 id: ENVO:00002006
@@ -499,6 +500,7 @@ def: "An environmental system determined by part of a living or dead animal, or 
 subset: envoEmpo
 subset: envoMeo
 subset: envoOmics
+is_a: ENVO:01001110 ! ecosystem
 property_value: IAO:0000118 "Animal corpus" xsd:string {xref="http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/"}
 
 [Term]
@@ -553,6 +555,15 @@ is_a: ENVO:02000008 ! cell culture
 property_value: IAO:0000118 "Single strain" xsd:string {xref="http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/"}
 
 [Term]
+id: ENVO:01001110
+name: ecosystem
+namespace: ENVO
+alt_id: LTER:173 {xref="https://vocab.lternet.edu/vocab/vocab/index.php?tema=173&/ecosystems"}
+def: "An environmental system which includes both living and non-living components." [https://en.wikipedia.org/wiki/Ecosystem]
+comment: This class will be primarily filled by inference, any environmental system which necessarily includes living parts should be autoclassified here.
+is_a: ENVO:01000254 ! environmental system
+
+[Term]
 id: ENVO:02000008
 name: cell culture
 namespace: ENVO
@@ -587,11 +598,6 @@ namespace: ENVO
 xref: RO:0002371
 
 [Typedef]
-id: bearer_of
-namespace: ENVO
-xref: RO:0000053
-
-[Typedef]
 id: bounding_layer_of
 namespace: ENVO
 xref: RO:0002007
@@ -612,6 +618,11 @@ namespace: ENVO
 xref: RO:0002427
 
 [Typedef]
+id: causally_influenced_by
+namespace: ENVO
+xref: RO:0002559
+
+[Typedef]
 id: causally_upstream_of
 namespace: ENVO
 xref: RO:0002411
@@ -620,6 +631,16 @@ xref: RO:0002411
 id: causally_upstream_of_or_within
 namespace: ENVO
 xref: RO:0002418
+
+[Typedef]
+id: characteristic_of
+namespace: ENVO
+xref: RO:0000052
+
+[Typedef]
+id: characteristic_of_part_of
+namespace: ENVO
+xref: RO:0002314
 
 [Typedef]
 id: composed_primarily_of
@@ -666,6 +687,14 @@ xref: RO:0002150
 id: derives_from
 namespace: ENVO
 xref: RO:0001000
+is_a: derives_from_part_of ! derives from part of
+
+[Typedef]
+id: derives_from_part_of
+name: derives from part of
+namespace: ENVO
+def: "A relation between two distinct material entities, the new entity and the old entity, in which the new entity begins to exist through the separation or transformation of a part of the old entity, and the new entity inherits a significant portion of the matter belonging to that part of the old entity." []
+xref: ENVO:01003004
 
 [Typedef]
 id: derives_into
@@ -686,7 +715,7 @@ xref: RO:0002509
 id: disconnected_from
 name: disconnected_from
 namespace: ENVO
-def: "A is disconnected_from B if they have no parts in common." [SO:cjm]
+def: "A is disconnected_from B if they have no parts in common." [https://orcid.org/0000-0002-6601-2165]
 synonym: "non_overlapping_with" EXACT []
 expand_assertion_to: "Class: <http://www.w3.org/2002/07/owl#Nothing> EquivalentTo: (BFO_0000050 some ?X) and (BFO_0000050 some ?Y)" []
 is_metadata_tag: true
@@ -724,8 +753,13 @@ namespace: ENVO
 def: "A relation between a process and a disposition such that the existence of the disposition is caused by the execution of the process." []
 xref: ENVO:2000036
 property_value: IAO:0000116 "Consider ceding to RO" xsd:string
-created_by: cjm
+created_by: https://orcid.org/0000-0002-6601-2165
 creation_date: 2018-11-03T20:58:13Z
+
+[Typedef]
+id: has_characteristic
+namespace: ENVO
+xref: RO:0000053
 
 [Typedef]
 id: has_component
@@ -808,14 +842,14 @@ namespace: ENVO
 xref: RO:0000087
 
 [Typedef]
-id: inheres_in
-namespace: ENVO
-xref: RO:0000052
-
-[Typedef]
 id: input_of
 namespace: ENVO
 xref: RO:0002352
+
+[Typedef]
+id: involved_in
+namespace: ENVO
+xref: RO:0002331
 
 [Typedef]
 id: involved_in_negative_regulation_of

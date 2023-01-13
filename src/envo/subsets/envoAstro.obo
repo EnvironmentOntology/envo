@@ -1,8 +1,9 @@
 format-version: 1.2
-data-version: envo/releases/2021-05-14/subsets/envoAstro.owl
+data-version: envo/releases/2023-01-13/subsets/envoAstro.owl
 subsetdef: disposition_slim "Disposition slim"
 subsetdef: environmental_hazards "environmental_hazards"
 subsetdef: EnvO-Lite-GSC "EnvO-Lite-GSC"
+subsetdef: envoANZSoil "envoANZSoil"
 subsetdef: envoAstro "envoAstro"
 subsetdef: envoAtmo "envoAtmo"
 subsetdef: envoCesab "envoCesab"
@@ -24,7 +25,7 @@ subsetdef: value_slim "Value slim"
 subsetdef: wwfBiome "wwfBiome"
 synonymtypedef: PLURAL "plurals"
 ontology: envo/subsets/envoAstro
-property_value: owl:versionInfo "2021-05-14" xsd:string
+property_value: owl:versionInfo "2023-01-13" xsd:string
 
 [Term]
 id: ENVO:00000070
@@ -32,50 +33,42 @@ name: human construction
 namespace: ENVO
 def: "A construction that has been assembled by deliberate human effort." [MA:ma]
 synonym: "constructed feature" EXACT []
+is_a: ENVO:01001813 ! construction
 relationship: output_of ENVO:01000996 ! human-directed construction process
 relationship: part_of ENVO:01000983 ! technosphere
 property_value: IAO:0000116 "\"constructed\" should probably be made something like a quality and this class obsoleted or filled only by inference" xsd:string
 
 [Term]
-id: ENVO:00000191
-name: solid astronomical body part
+id: ENVO:00000340
+name: particle of sand
 namespace: ENVO
-def: "A part of an astronomical body which is primarily composed of a continuous volume of solid material, shaped by one or more environmental processes." [https://en.wikipedia.org/wiki/Landform]
-synonym: "geological feature" RELATED [ADL:FTT]
-synonym: "physiographic feature" RELATED []
-xref: EcoLexicon:landform
-xref: EcoLexicon:landforms
-xref: FTT:754
-xref: FTT:96
-xref: SWEETRealm:Landform
-xref: TGN:21400
-xref: TGN:21401
-is_a: ENVO:01000813 ! astronomical body part
-intersection_of: ENVO:01000813 ! astronomical body part
-intersection_of: composed_primarily_of ENVO:01000814 ! solid environmental material
+def: "A particle which 1) is composed primarily of and derived from rock or mineral sources and 2) is or was part of a portion of sand." [https://en.wikipedia.org/wiki/Sand]
+comment: In general, sand grains are larger than those of silt, but finer than those of gravel.
+synonym: "grain of sand" EXACT []
+synonym: "granule of sand" EXACT []
+synonym: "sand granule" EXACT []
+is_a: ENVO:01003002 ! particle
+disjoint_from: ENVO:01000017 ! sand
 
 [Term]
-id: ENVO:00001995
-name: rock
+id: ENVO:00000343
+name: particle of silt
 namespace: ENVO
-def: "A rock is a naturally occurring solid aggregate of one or more minerals or mineraloids." [https://en.wikipedia.org/wiki/Rock_(geology), MA:ma]
-comment: From https://en.wikipedia.org/wiki/ [A mineral] is different from a rock, which can be an aggregate of minerals or non-minerals and does not have a specific chemical composition. The exact definition of a mineral is under debate, especially with respect to the requirement a valid species be abiogenic, and to a lesser extent with regards to it having an ordered atomic structure.
-xref: EcoLexicon:rock
-xref: FTT:1010
-xref: FTT:145
-xref: Geonames:T.RK
-xref: Geonames:T.RKS
-xref: https://en.wikipedia.org/wiki/Rock
-xref: SWEETRealm:Rock
-xref: TGN:21444
-is_a: ENVO:01000814 ! solid environmental material
-disjoint_from: ENVO:01000256 ! mineral material
+def: "A particle which 1) is primarily composed of quartz or feldspar and 2) is or was part of a portion of silt." []
+comment: The distinction between silt and clay varies by discipline. Geologists and soil scientists usually consider the separation to occur at a particle size of 2 μm (clays being finer than silts), sedimentologists often use 4–5 μm, and colloid chemists use 1 μm. Geotechnical engineers distinguish between silts and clays based on the plasticity properties of the soil, as measured by the soils' Atterberg limits. ISO 14688 grades clay particles as being smaller than 2 μm and silt particles as being larger. Mixtures of sand, silt and less than 40% clay are called loam. {xref="Properties"}
+synonym: "grain of silt" EXACT []
+synonym: "granule of silt" EXACT []
+is_a: ENVO:01003002 ! particle
+
+[Term]
+id: ENVO:00000369
+alt_id: ENVO:01000060
 
 [Term]
 id: ENVO:00001998
 name: soil
 namespace: ENVO
-def: "Soil is an environmental material which is primarily composed of minerals, varying proportions of sand, silt, and clay, organic material such as humus, gases, liquids, and a broad range of resident micro- and macroorganisms." [https://en.wikipedia.org/wiki/Soil]
+def: "An environmental material which is primarily composed of minerals, varying proportions of sand, silt, and clay, organic material such as humus, interstitial gases, liquids, and a broad range of resident micro- and macroorganisms." [https://en.wikipedia.org/wiki/Soil]
 comment: 'In engineering terms, soil is referred to as regolith, or loose rock material that lies above the 'solid geology'. Soil is commonly referred to as "earth" or "dirt"; technically, the term "dirt" should be restricted to displaced soil.' https://en.wikipedia.org/wiki/Soil\n\n" The upper limit of soil is the boundary between soil and air, shallow water, live plants, or plant materials that have not begun to decompose. Areas are not considered to have soil if the surface is permanently covered by water too deep (typically more than 2.5 meters) for the growth of rooted plants.\n\nThe lower boundary that separates soil from the nonsoil underneath is most difficult to define. Soil consists of horizons near the Earth's surface that, in contrast to the underlying parent material, have been altered by the interactions of climate, relief, and living organisms over time. Commonly, soil grades at its lower boundary to hard rock or to earthy materials virtually devoid of animals, roots, or other marks of biological activity. For purposes of classification, the lower boundary of soil is arbitrarily set at 200 cm."  Soil taxonomy, 2nd Ed., quoted in http://www.nrcs.usda.gov/wps/portal/nrcs/detail/soils/edu/?cid=nrcs142p2_054280
 subset: EnvO-Lite-GSC
 synonym: "regolith" BROAD []
@@ -84,6 +77,7 @@ xref: LTER:535
 xref: SPIRE:Soil
 xref: SWEETRealm:Soil
 is_a: ENVO:00010483 ! environmental material
+relationship: has_disposition ENVO:06105304 ! water-holding capacity of soil
 relationship: has_part ENVO:00002982 ! clay
 relationship: has_part ENVO:01000016 ! silt
 relationship: has_part ENVO:01000017 ! sand
@@ -107,12 +101,14 @@ is_a: ENVO:01000815 ! liquid environmental material
 id: ENVO:00002982
 name: clay
 namespace: ENVO
-def: "A group of hydrous aluminium phyllosilicate (phyllosilicates being a subgroup of silicate minerals) minerals (see clay minerals), that are typically less than 2 micrometres in diameter. Clay consists of a variety of phyllosilicate minerals rich in silicon and aluminium oxides and hydroxides which include variable amounts of structural water." [https://en.wikipedia.org/wiki/Clay]
+def: "Particulate environmental material which 1) is composed primarily of clay particles, with only minor proportions of other materials, 2) demonstrates plasticity when wet, and 3) is capable of hardening when dried or fired." [https://en.wikipedia.org/wiki/Clay]
+comment: This definition is intentionally ambiguous to support the multiple thresholds set by different authorities.The distinction between silt and clay varies by discipline. Geologists and soil scientists usually consider the separation to occur at a particle size of 2 μm (clays being finer than silts), sedimentologists often use 4–5 μm, and colloid chemists use 1 μm. Geotechnical engineers distinguish between silts and clays based on the plasticity properties of the soil, as measured by the soils' Atterberg limits. ISO 14688 grades clay particles as being smaller than 2 μm and silt particles as being larger. Mixtures of sand, silt and less than 40% clay are called loam. Similar mixtures with greater than 40% clay are often considered clay soils. {xref="https://en.wikipedia.org/wiki/Clay"}
 xref: EcoLexicon:clay
-xref: https://en.wikipedia.org/wiki/Clay
 xref: SWEETRealm:Clay
-is_a: ENVO:00010483 ! environmental material
+is_a: ENVO:01000060
 disjoint_from: ENVO:01000016 ! silt
+relationship: has_part ENVO:01003003 ! particle of clay
+property_value: IAO:0000116 "Do not oversimplify the particulate environmental material subclasses with design patterns or similar. The materials have properties that their components do not - write full definitions including these where possible." xsd:string
 
 [Term]
 id: ENVO:00003074
@@ -134,25 +130,34 @@ synonym: "portion of environmental material" EXACT []
 id: ENVO:01000016
 name: silt
 namespace: ENVO
-def: "Silt is granular material of a size somewhere between sand and clay whose mineral origin is quartz and feldspar." [https://en.wikipedia.org/wiki/Silt]
-comment: https://en.wikipedia.org/wiki/ In the Udden-Wentworth scale (due to Krumbein), silt particles range between 0.0039 to 0.0625 mm, larger than clay but smaller than sand particles. ISO 14688 grades silts between 0.002 mm and 0.063 mm. In actuality, silt is chemically distinct from clay, and unlike clay, grains of silt are approximately the same size in all dimensions; furthermore, their size ranges overlap. Clays are formed from thin plate-shaped particles held together by electrostatic forces, so present a cohesion. According to the U.S. Department of Agriculture Soil Texture Classification system, the sand-silt distinction is made at the 0.05 mm particle size. The USDA system has been adopted by the Food and Agriculture Organization (FAO). In the Unified Soil Classification System (USCS) and the AASHTO Soil Classification system, the sand-silt distinction is made at the 0.075 mm particle size (i.e., material passing the #200 sieve). Silts and clays are distinguished mechanically by their plasticity.
+def: "Particulate environmental material which is primarily composed of silt particles." [https://en.wikipedia.org/wiki/Silt]
+comment: This definition is intentionally ambiguous to support the multiple thresholds set by different authorities. Some authorities consider this soil material that contains 80% or more silt and less than 12% clay. In the Udden-Wentworth scale (due to Krumbein), silt particles range between 0.0039 to 0.0625 mm, larger than clay but smaller than sand particles. ISO 14688 grades silts between 0.002 mm and 0.063 mm. In actuality, silt is chemically distinct from clay, and unlike clay, grains of silt are approximately the same size in all dimensions; furthermore, their size ranges overlap. Clays are formed from thin plate-shaped particles held together by electrostatic forces, so present a cohesion. According to the U.S. Department of Agriculture Soil Texture Classification system, the sand-silt distinction is made at the 0.05 mm particle size. The USDA system has been adopted by the Food and Agriculture Organization (FAO). In the Unified Soil Classification System (USCS) and the AASHTO Soil Classification system, the sand-silt distinction is made at the 0.075 mm particle size (i.e., material passing the #200 sieve). Silts and clays are distinguished mechanically by their plasticity. {xref="https://sis.agr.gc.ca/cansis/glossary/t/index.html", xref="https://en.wikipedia.org/wiki/Silt"}
 xref: EcoLexicon:silt
 xref: https://en.wikipedia.org/wiki/Silt
 xref: SWEETRealm:Silt
-is_a: ENVO:00010483 ! environmental material
+is_a: ENVO:01000060
 disjoint_from: ENVO:01000017 ! sand
+relationship: has_part ENVO:00000343 ! particle of silt
+property_value: IAO:0000116 "Do not oversimplify the particulate environmental material subclasses with design patterns or similar. The materials have properties that their components do not - write full definitions including these where possible." xsd:string
 
 [Term]
 id: ENVO:01000017
 name: sand
 namespace: ENVO
-def: "A naturally occurring granular material composed of finely divided rock and mineral particles." [https://en.wikipedia.org/wiki/Sand]
+def: "Particulate environmental material which is composed primarily of particles of sand with only minor proportions of other substances." [https://en.wikipedia.org/wiki/Sand]
+comment: This definition is intentionally ambiguous to support the multiple thresholds set by different authorities. Some authorities consider as sands soil material that contains 85% or more sand; the percentage of silt plus 1.5 times the percentage of clay does not exceed 15. coarse sand (sable grossier) 25% or more very coarse and coarse sand, and less than 50% any other one grade of sand. {xref="https://sis.agr.gc.ca/cansis/glossary/t/index.html"}
 xref: EcoLexicon:sand
 xref: https://en.wikipedia.org/wiki/Sand
 xref: LTER:484
 xref: SWEETRealm:Sand
+is_a: ENVO:01000060
+relationship: has_part ENVO:00000340 ! particle of sand
+property_value: IAO:0000116 "Do not oversimplify the particulate environmental material subclasses with design patterns or similar. The materials have properties that their components do not - write full definitions including these where possible." xsd:string
+
+[Term]
+id: ENVO:01000060
 is_a: ENVO:00010483 ! environmental material
-relationship: derives_from ENVO:00001995 ! rock
+relationship: has_part ENVO:01003002 ! particle
 
 [Term]
 id: ENVO:01000155
@@ -186,21 +191,6 @@ is_a: ENVO:01001678 ! fluid layer
 relationship: adjacent_to ENVO:01000799 ! astronomical body
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2013-10-10T08:14:50Z
-
-[Term]
-id: ENVO:01000277
-name: water ice
-namespace: ENVO
-def: "Ice which is formed from water." [https://en.wikipedia.org/wiki/Ice]
-comment: Water ice can appear transparent or opaque bluish-white color, depending on the presence of impurities or air inclusions. The addition of other materials such as soil may further alter its appearance.\n\nWhen speaking about ice on Earth, usually water ice is meant - the solid, crystalline form of water found in the atmosphere as snow crystals, hail, ice pellets, etc., and on the earth's surface in forms such as hoarfrost, rime, glaze, sea ice, glacier ice, ground ice, frazil, anchor ice, etc.  \n\nThis form of water is, strictly speaking, called ice Ih, the Roman numeral I distinguishing it from more than a dozen other phases and the letter h distinguishing it from the metastable cubic phase ice Ic. Ice Ih is the only one of the several known phases of water ice that is stable at commonly occurring temperatures and pressures. (Some of the other forms have very unusual properties, ice VII, for example, being stable only at pressures above 22 400 kg/cm^2, but then existing at temperatures up to about 100C.) \n\nIt has an open structure with a specific gravity of 0.9166 which is slightly less than water; because the water molecules bond to their neighbors covalently only in four directions; it therefore floats on higher density water, where broken molecular bonds permit closer packing. All commonly occurring forms of ice are crystalline, although large single crystals are relatively rare except in glaciers. The ice crystal lattice possesses hexagonal symmetry that manifests itself in the gross forms of such single crystals as are sometimes found in snow. At an air pressure of one atmosphere, ice melts at 0 C by definition of the Celsius temperature scale. (Strictly speaking the equilibrium point among water, ice, and vapor occurs at +0.01C, the triple point.) On the other hand, ice does not invariably form in liquid water cooled below this temperature; it has a tendency to supercool, more so in the absence of ice nuclei. \n\nIn permafrost regions, ice may occupy voids in soils and rocks and may develop in a variety of forms. Ice may be colourless to pale blue or greenish-blue. It may appear white due to included gas bubbles; in exposures, ground ice may also appear black.\n\nIn nature ice is formed either by: (a) the freezing of water, (b) the condensation of atmospheric water vapour direct into ice crystals, (c) the compaction of snow with or without the motion of a glacier, or (d) the impregnation of porous snow masses with water which subsequently freeze.
-subset: envoPolar
-synonym: "ice" RELATED [http://www.eionet.europa.eu/gemet/concept/4131]
-xref: http://sweetontology.net/matrWater/Ice
-xref: LTER:262
-intersection_of: ENVO:01001125 ! ice
-intersection_of: composed_primarily_of ENVO:00002006 ! liquid water
-created_by: http://orcid.org/0000-0002-4366-3088
-creation_date: 2013-10-13T12:01:28Z
 
 [Term]
 id: ENVO:01000281
@@ -408,17 +398,6 @@ subset: envoAstro
 subset: envoPolar
 is_a: ENVO:01001784 ! compound astronomical body part
 property_value: IAO:0000116 "Whether this class should be grouped with classes such as \"hydrosphere\" and \"cryosphere\" requires some discussion." xsd:string
-
-[Term]
-id: ENVO:01000818
-name: cryosphere
-namespace: ENVO
-def: "A cryosphere is that part of a planet which is primarily composed of water is in solid form." [https://en.wikipedia.org/wiki/Cryosphere]
-comment: This is a very broad and, in practice, poorly defined term. Please consider using or requesting a more specific class.
-subset: envoAstro
-subset: envoPolar
-is_a: ENVO:00000191 ! solid astronomical body part
-relationship: composed_primarily_of ENVO:01000277 ! water ice
 
 [Term]
 id: ENVO:01000819
@@ -936,7 +915,6 @@ namespace: ENVO
 def: "A stellar radiation process during which electromagnetic waves or their quanta are emitted from a star at wavelengths and frequencies which travel exclusively in a line-of-sight fashion and which may produce molecular rotation and torsion on contact with matter." [https://en.wikipedia.org/wiki/Microwave, https://www.iso.org/obp/ui/#iso\:std\:iso\:21348]
 comment: This definition focuses on the properties of microwaves rather than their wavelength or frequency limits. Considerable ambiguity exists around the wavelength and frequency thresholds of microwaves. The ISO 21348 definition bounds these waves at 1 mm and 15 mm, with frequencies between 100 GHz and 0.225 GHz.
 subset: envoAstro
-synonym: "microwave radiation" EXACT []
 synonym: "microwave solar radiation" NARROW []
 property_value: IAO:0000114 IAO:0000428
 
@@ -947,7 +925,6 @@ namespace: ENVO
 def: "A stellar radiation process during which electromagnetic waves or their quanta are emitted from a star at wavelengths ranging from millimetre to kilometer scales." [https://en.wikipedia.org/wiki/Radio_wave, https://www.iso.org/obp/ui/#iso\:std\:iso\:21348]
 comment: As with microwaves, considerable variation exists in the delimitation of frequency and wavelength thresholds for radiowaves. The ISO 21348 standard allows a wavelength range of 0.10 mm to 100 m and a frequency range of 300 GHz to 3 MHz. However, much lower thresholds also exist.
 subset: envoAstro
-synonym: "radio wave radiation" EXACT []
 synonym: "radio wave solar radiation" NARROW []
 property_value: IAO:0000114 IAO:0000428
 
@@ -991,9 +968,7 @@ comment: Ambiguity exists in the definition of x-rays and their differentiation 
 subset: environmental_hazards
 subset: envoAstro
 synonym: "x ray stellar radiation" EXACT []
-synonym: "X-ray radiation" EXACT []
 synonym: "X-ray solar radiation" NARROW []
-synonym: "X-ray stellar radiation" EXACT []
 property_value: IAO:0000114 IAO:0000428
 
 [Term]
@@ -1024,7 +999,7 @@ def: "A part of an astronomical body which is primarily composed of a continuous
 is_a: ENVO:01001479 ! fluid astronomical body part
 intersection_of: ENVO:01001479 ! fluid astronomical body part
 intersection_of: composed_primarily_of ENVO:01000815 ! liquid environmental material
-created_by: http://orcid.org/0000-0002-4366-3088
+created_by: https://orcid.org/0000-0002-4366-3088
 
 [Term]
 id: ENVO:01001479
@@ -1032,7 +1007,7 @@ name: fluid astronomical body part
 namespace: ENVO
 def: "A part of an astronomical body which is primarily composed of a continuous volume of liquid or gaseous material, shaped by one or more environmental processes." [https://en.wikipedia.org/wiki/Landform]
 is_a: ENVO:01000813 ! astronomical body part
-created_by: http://orcid.org/0000-0002-4366-3088
+created_by: https://orcid.org/0000-0002-4366-3088
 creation_date: 2018-10-04T13:59:22Z
 
 [Term]
@@ -1047,7 +1022,7 @@ synonym: "artificial radiation" EXACT []
 is_a: ENVO:01001026 ! electromagnetic radiation
 intersection_of: ENVO:01001026 ! electromagnetic radiation
 intersection_of: process_has_causal_agent ENVO:00003074 ! manufactured product
-created_by: http://orcid.org/0000-0002-4366-3088
+created_by: https://orcid.org/0000-0002-4366-3088
 creation_date: 2019-01-09T09:07:24Z
 
 [Term]
@@ -1056,17 +1031,46 @@ name: fluid layer
 namespace: ENVO
 def: "A layer which is composed primarily of some fluid." []
 is_a: ENVO:01000281 ! layer
-property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-4366-3088
 property_value: http://purl.org/dc/elements/1.1/date 2019-07-22T17:35:08Z xsd:dateTime
+
+[Term]
+id: ENVO:01001686
+name: mass of environmental material
+namespace: ENVO
+def: "An object which is composed primarily of an environmental material" []
+comment: This class and its subclasses refer to objects that are discrete accumulations of environmental materials, generally primarily composed of one or a few main material types.
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-08-20T09:38:29Z xsd:dateTime
+
+[Term]
+id: ENVO:01001687
+name: mass of solid material
+namespace: ENVO
+def: "An mass of environmental material which is composed primarily of a solid environmental material" []
+comment: This class and its subclasses refer to objects that are discrete accumulations of environmental materials, generally primarily composed of one or a few main material types.
+is_a: ENVO:01001686 ! mass of environmental material
+intersection_of: ENVO:01001686 ! mass of environmental material
+intersection_of: composed_primarily_of ENVO:01000814 ! solid environmental material
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-08-20T09:41:27Z xsd:dateTime
 
 [Term]
 id: ENVO:01001784
 name: compound astronomical body part
 namespace: ENVO
-def: "A part of an astronomical body which is primarily composed of a continuous medium bearing liquid, gaseous, and solid material in varying quantities." [https://en.wikipedia.org/wiki/Landform]
+def: "A part of an astronomical body which is composed of a continuous medium bearing liquid, gaseous, and solid material in variable quantities." [https://en.wikipedia.org/wiki/Landform]
 is_a: ENVO:01000813 ! astronomical body part
-property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-4366-3088
 property_value: http://purl.org/dc/elements/1.1/date 2019-10-17T08:36:00Z xsd:dateTime
+
+[Term]
+id: ENVO:01001813
+name: construction
+namespace: ENVO
+def: "A material entity which has been assembled through the intentional, instinctual, or deliberately programmed efforts of an organism or machine." []
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-10-29T14:50:34Z xsd:dateTime
 
 [Term]
 id: ENVO:01001852
@@ -1074,8 +1078,33 @@ name: energy transfer process
 namespace: ENVO
 def: "A process during which one entity loses energy to another entity." []
 is_a: ENVO:02500000 ! environmental system process
-property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-4366-3088
 property_value: http://purl.org/dc/elements/1.1/date 2020-02-13T13:34:28Z xsd:dateTime
+
+[Term]
+id: ENVO:01003001
+name: water-holding capacity
+namespace: ENVO
+def: "A disposition of a material entity which is realised when it is saturated with liquid water." []
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:01003002
+name: particle
+namespace: ENVO
+def: "A mass of solid material which is either 1) a minute fragment of a larger mass or 2) one of a collection of small masses composing an aggregate." [https://en.wiktionary.org/wiki/particle]
+synonym: "grain" RELATED []
+is_a: ENVO:01001687 ! mass of solid material
+relationship: part_of ENVO:01000060
+
+[Term]
+id: ENVO:01003003
+name: particle of clay
+namespace: ENVO
+def: "A particle which 1) is composed primarily of hydrous aluminium phyllosilicate minerals, in turn composed of aluminium and silicon ions bonded into tiny, thin plates by interconnecting oxygen and hydroxide ions, and 2) is or was part of a portion of clay." [https://en.wikipedia.org/wiki/Clay#Properties]
+comment: The distinction between silt and clay varies by discipline. Geologists and soil scientists usually consider the separation to occur at a particle size of 2 μm (clays being finer than silts), sedimentologists often use 4–5 μm, and colloid chemists use 1 μm. Geotechnical engineers distinguish between silts and clays based on the plasticity properties of the soil, as measured by the soils' Atterberg limits. ISO 14688 grades clay particles as being smaller than 2 μm and silt particles as being larger. Mixtures of sand, silt and less than 40% clay are called loam. {xref="Properties"}
+synonym: "clay particle" EXACT []
+is_a: ENVO:01003002 ! particle
 
 [Term]
 id: ENVO:02000140
@@ -1104,7 +1133,7 @@ comment: Experimental class for structural purposes not recommended for annotati
 subset: envoPolar
 is_a: ENVO:02500000 ! environmental system process
 property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
-property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088
+property_value: IAO:0000117 https://orcid.org/0000-0002-4366-3088
 
 [Term]
 id: ENVO:03000043
@@ -1118,7 +1147,7 @@ relationship: has_input ENVO:00010483 ! environmental material
 relationship: has_output ENVO:00010483 ! environmental material
 property_value: IAO:0000116 "A different material transformation process class (or similarly named class) pertaining to the conversion of a specific chemical into another belongs in CHEBI and or REX ontologies." xsd:string
 property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
-property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088
+property_value: IAO:0000117 https://orcid.org/0000-0002-4366-3088
 
 [Term]
 id: ENVO:03000096
@@ -1129,7 +1158,18 @@ subset: envoAstro
 subset: envoPolar
 property_value: IAO:0000116 "Season could be implemented as a subclass of one-dimensional temporal region, however, this will need further thought and discussion with BFO editors." xsd:string
 property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
-property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088
+property_value: IAO:0000117 https://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:06105304
+name: water-holding capacity of soil
+namespace: ENVO
+def: "Water-holding capacity which inheres in some soil." [https://www.canr.msu.edu/news/why_is_soil_water_holding_capacity_important]
+synonym: "soil water-holding capacity" EXACT []
+is_a: ENVO:01003001 ! water-holding capacity
+relationship: characteristic_of ENVO:00001998 ! soil
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-8461-9745
+property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0001-6284-4821
 
 [Typedef]
 id: adjacent_to
@@ -1140,11 +1180,6 @@ xref: RO:0002220
 id: attached_to
 namespace: ENVO
 xref: RO:0002371
-
-[Typedef]
-id: bearer_of
-namespace: ENVO
-xref: RO:0000053
 
 [Typedef]
 id: bounding_layer_of
@@ -1167,6 +1202,11 @@ namespace: ENVO
 xref: RO:0002427
 
 [Typedef]
+id: causally_influenced_by
+namespace: ENVO
+xref: RO:0002559
+
+[Typedef]
 id: causally_upstream_of
 namespace: ENVO
 xref: RO:0002411
@@ -1175,6 +1215,16 @@ xref: RO:0002411
 id: causally_upstream_of_or_within
 namespace: ENVO
 xref: RO:0002418
+
+[Typedef]
+id: characteristic_of
+namespace: ENVO
+xref: RO:0000052
+
+[Typedef]
+id: characteristic_of_part_of
+namespace: ENVO
+xref: RO:0002314
 
 [Typedef]
 id: composed_primarily_of
@@ -1221,6 +1271,14 @@ xref: RO:0002150
 id: derives_from
 namespace: ENVO
 xref: RO:0001000
+is_a: derives_from_part_of ! derives from part of
+
+[Typedef]
+id: derives_from_part_of
+name: derives from part of
+namespace: ENVO
+def: "A relation between two distinct material entities, the new entity and the old entity, in which the new entity begins to exist through the separation or transformation of a part of the old entity, and the new entity inherits a significant portion of the matter belonging to that part of the old entity." []
+xref: ENVO:01003004
 
 [Typedef]
 id: derives_into
@@ -1241,7 +1299,7 @@ xref: RO:0002509
 id: disconnected_from
 name: disconnected_from
 namespace: ENVO
-def: "A is disconnected_from B if they have no parts in common." [SO:cjm]
+def: "A is disconnected_from B if they have no parts in common." [https://orcid.org/0000-0002-6601-2165]
 synonym: "non_overlapping_with" EXACT []
 expand_assertion_to: "Class: <http://www.w3.org/2002/07/owl#Nothing> EquivalentTo: (BFO_0000050 some ?X) and (BFO_0000050 some ?Y)" []
 is_metadata_tag: true
@@ -1279,8 +1337,13 @@ namespace: ENVO
 def: "A relation between a process and a disposition such that the existence of the disposition is caused by the execution of the process." []
 xref: ENVO:2000036
 property_value: IAO:0000116 "Consider ceding to RO" xsd:string
-created_by: cjm
+created_by: https://orcid.org/0000-0002-6601-2165
 creation_date: 2018-11-03T20:58:13Z
+
+[Typedef]
+id: has_characteristic
+namespace: ENVO
+xref: RO:0000053
 
 [Typedef]
 id: has_component
@@ -1363,14 +1426,14 @@ namespace: ENVO
 xref: RO:0000087
 
 [Typedef]
-id: inheres_in
-namespace: ENVO
-xref: RO:0000052
-
-[Typedef]
 id: input_of
 namespace: ENVO
 xref: RO:0002352
+
+[Typedef]
+id: involved_in
+namespace: ENVO
+xref: RO:0002331
 
 [Typedef]
 id: involved_in_negative_regulation_of
