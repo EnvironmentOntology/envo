@@ -25,8 +25,8 @@ subsetdef: wwfBiome "wwfBiome"
 synonymtypedef: PLURAL "plurals"
 default-namespace: ENVO
 remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/modules/chemical_concentration.owl>) VersionIRI(<null>))) [Axioms: 679 Logical Axioms: 119]
-remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/modules/entity_attribute.owl>) VersionIRI(<null>))) [Axioms: 207 Logical Axioms: 34]
-remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/modules/entity_attribute_location.owl>) VersionIRI(<null>))) [Axioms: 173 Logical Axioms: 29]
+remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/modules/entity_attribute.owl>) VersionIRI(<null>))) [Axioms: 206 Logical Axioms: 34]
+remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/modules/entity_attribute_location.owl>) VersionIRI(<null>))) [Axioms: 168 Logical Axioms: 29]
 remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/modules/entity_quality_location.owl>) VersionIRI(<null>))) [Axioms: 40 Logical Axioms: 6]
 remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/modules/process_attribute.owl>) VersionIRI(<null>))) [Axioms: 21 Logical Axioms: 2]
 ontology: subsets/envo-basic.obo
@@ -42,7 +42,7 @@ property_value: http://purl.org/dc/elements/1.1/title "The Environment Ontology"
 property_value: http://purl.org/dc/elements/1.1/type http://purl.obolibrary.org/obo/IAO_8000001 xsd:string
 property_value: http://purl.org/dc/terms/license https://creativecommons.org/publicdomain/zero/1.0/
 property_value: http://xmlns.com/foaf/0.1/homepage http://environmentontology.org/ xsd:anyURI
-property_value: owl:versionInfo "2023-01-13" xsd:string
+property_value: owl:versionInfo "2023-01-18" xsd:string
 
 [Term]
 id: ENVO:00000000
@@ -5730,7 +5730,6 @@ is_a: ENVO:00000309 ! depressed landform
 relationship: has_part ENVO:00000141 ! bank
 relationship: has_part ENVO:00000501 ! submerged bed
 relationship: has_quality PATO:0001689
-relationship: output_of ENVO:01001813 ! construction
 property_value: IAO:0000116 "We need a more general channel definition, the current is only for water course channels. We need to refactor the semantics of channels, tunnels and conduits, in a similar way to uberon anatomical channels http://purl.obolibrary.org/obo/UBERON_0004111. See https://github.com/EnvironmentOntology/envo/issues/147" xsd:string
 
 [Term]
@@ -11228,7 +11227,7 @@ name: burned soil
 def: "Soil which has been transformed through a combustion process." []
 synonym: "burnt soil" RELATED []
 is_a: ENVO:00001998 ! soil
-relationship: causally_influenced_by ENVO:01000839 ! combustion process
+relationship: output_of ENVO:01000839 ! combustion process
 
 [Term]
 id: ENVO:00005761
@@ -39808,13 +39807,9 @@ intersection_of: characteristic_of ENVO:00001998 ! soil
 
 [Term]
 id: ENVO:09200022
-name: hours of sunshine
 name: mass density of snow
 def: "The mass density of some snow." []
-subset: envoCryo
-subset: envoPolar
 synonym: "snow mass density" EXACT []
-synonym: "sunshine hours" EXACT []
 intersection_of: PATO:0001019
 intersection_of: characteristic_of ENVO:01000406 ! snow
 
@@ -39896,11 +39891,11 @@ intersection_of: characteristic_of ENVO:06105241 ! soil drainage
 
 [Term]
 id: ENVO:09200031
-name: amplitude of air temperature
-def: "The amplitude of some air temperature." []
-synonym: "air temperature amplitude" EXACT []
+name: amplitude of temperature of air
+def: "The amplitude of some temperature of air." []
+synonym: "temperature of air amplitude" EXACT []
 intersection_of: PATO:0000080
-intersection_of: characteristic_of ENVO:01000753 ! obsolete air temperature
+intersection_of: characteristic_of ENVO:09200001 ! temperature of air
 
 [Term]
 id: ENVO:09200032
@@ -41289,10 +41284,6 @@ xref: RO:0002500
 [Typedef]
 id: causally_downstream_of_or_within
 xref: RO:0002427
-
-[Typedef]
-id: causally_influenced_by
-xref: RO:0002559
 
 [Typedef]
 id: causally_upstream_of

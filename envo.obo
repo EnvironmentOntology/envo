@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: releases/2023-01-13
+data-version: releases/2023-01-18
 subsetdef: disposition_slim "Disposition slim"
 subsetdef: environmental_hazards "environmental_hazards"
 subsetdef: EnvO-Lite-GSC "EnvO-Lite-GSC"
@@ -26,8 +26,8 @@ subsetdef: wwfBiome "wwfBiome"
 synonymtypedef: PLURAL "plurals"
 default-namespace: ENVO
 remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/modules/chemical_concentration.owl>) VersionIRI(<null>))) [Axioms: 679 Logical Axioms: 119]
-remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/modules/entity_attribute.owl>) VersionIRI(<null>))) [Axioms: 207 Logical Axioms: 34]
-remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/modules/entity_attribute_location.owl>) VersionIRI(<null>))) [Axioms: 173 Logical Axioms: 29]
+remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/modules/entity_attribute.owl>) VersionIRI(<null>))) [Axioms: 206 Logical Axioms: 34]
+remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/modules/entity_attribute_location.owl>) VersionIRI(<null>))) [Axioms: 168 Logical Axioms: 29]
 remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/modules/entity_quality_location.owl>) VersionIRI(<null>))) [Axioms: 40 Logical Axioms: 6]
 remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/modules/process_attribute.owl>) VersionIRI(<null>))) [Axioms: 21 Logical Axioms: 2]
 ontology: envo
@@ -42,7 +42,7 @@ property_value: http://purl.org/dc/elements/1.1/description "ENVO is an ontology
 property_value: http://purl.org/dc/elements/1.1/title "The Environment Ontology" xsd:string
 property_value: http://purl.org/dc/terms/license https://creativecommons.org/publicdomain/zero/1.0/
 property_value: http://xmlns.com/foaf/0.1/homepage http://environmentontology.org/ xsd:anyURI
-property_value: owl:versionInfo "2023-01-13" xsd:string
+property_value: owl:versionInfo "2023-01-18" xsd:string
 
 [Term]
 id: BFO:0000001
@@ -11510,7 +11510,6 @@ xref: TGN:23451
 is_a: ENVO:00000309 ! depressed landform
 relationship: BFO:0000051 ENVO:00000141 ! has part bank
 relationship: BFO:0000051 ENVO:00000501 ! has part submerged bed
-relationship: RO:0002353 ENVO:01001813 ! output of construction
 property_value: IAO:0000116 "We need a more general channel definition, the current is only for water course channels. We need to refactor the semantics of channels, tunnels and conduits, in a similar way to uberon anatomical channels http://purl.obolibrary.org/obo/UBERON_0004111. See https://github.com/EnvironmentOntology/envo/issues/147" xsd:string
 
 [Term]
@@ -17058,7 +17057,7 @@ name: burned soil
 def: "Soil which has been transformed through a combustion process." []
 synonym: "burnt soil" RELATED []
 is_a: ENVO:00001998 ! soil
-relationship: RO:0002559 ENVO:01000839 ! causally influenced by combustion process
+relationship: RO:0002353 ENVO:01000839 ! output of combustion process
 
 [Term]
 id: ENVO:00005761
@@ -45997,13 +45996,9 @@ relationship: RO:0000052 ENVO:00001998 ! characteristic of soil
 
 [Term]
 id: ENVO:09200022
-name: hours of sunshine
 name: mass density of snow
 def: "The mass density of some snow." []
-subset: envoCryo
-subset: envoPolar
 synonym: "snow mass density" EXACT []
-synonym: "sunshine hours" EXACT []
 is_a: PATO:0001019 ! mass density
 intersection_of: PATO:0001019 ! mass density
 intersection_of: RO:0000052 ENVO:01000406 ! characteristic of snow
@@ -46103,13 +46098,13 @@ relationship: RO:0000052 ENVO:06105241 ! characteristic of soil drainage
 
 [Term]
 id: ENVO:09200031
-name: amplitude of air temperature
-def: "The amplitude of some air temperature." []
-synonym: "air temperature amplitude" EXACT []
+name: amplitude of temperature of air
+def: "The amplitude of some temperature of air." []
+synonym: "temperature of air amplitude" EXACT []
 is_a: PATO:0000080 ! amplitude
 intersection_of: PATO:0000080 ! amplitude
-intersection_of: RO:0000052 ENVO:01000753 ! characteristic of obsolete air temperature
-relationship: RO:0000052 ENVO:01000753 ! characteristic of obsolete air temperature
+intersection_of: RO:0000052 ENVO:09200001 ! characteristic of temperature of air
+relationship: RO:0000052 ENVO:09200001 ! characteristic of temperature of air
 
 [Term]
 id: ENVO:09200032
