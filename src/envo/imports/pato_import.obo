@@ -20,6 +20,11 @@ is_a: BFO:0000002 ! continuant
 disjoint_from: BFO:0000020 ! specifically dependent continuant
 
 [Term]
+id: BFO:0000006
+name: spatial region
+is_a: BFO:0000141 ! immaterial entity
+
+[Term]
 id: BFO:0000015
 name: process
 def: "An occurrent that has temporal proper parts and for some time t, p s-depends_on some material entity at t." []
@@ -59,6 +64,12 @@ is_a: BFO:0000016 ! disposition
 id: BFO:0000040
 name: material entity
 def: "An independent continuant that is spatially extended whose identity is independent of that of other entities and can be maintained through time." []
+is_a: BFO:0000004 ! independent continuant
+disjoint_from: BFO:0000141 ! immaterial entity
+
+[Term]
+id: BFO:0000141
+name: immaterial entity
 is_a: BFO:0000004 ! independent continuant
 
 [Term]
@@ -108,9 +119,32 @@ is_a: CHEBI:35107 ! azane
 is_a: CHEBI:37176 ! mononuclear parent hydride
 
 [Term]
+id: CHEBI:16189
+name: sulfate
+def: "A sulfur oxoanion obtained by deprotonation of both OH groups of sulfuric acid." []
+synonym: "[SO4](2-)" RELATED []
+synonym: "SO4(2-)" RELATED []
+synonym: "Sulfate" EXACT []
+synonym: "sulfate" EXACT []
+synonym: "Sulfate anion(2-)" RELATED []
+synonym: "Sulfate dianion" RELATED []
+synonym: "SULFATE ION" RELATED []
+synonym: "Sulfate(2-)" RELATED []
+synonym: "Sulfuric acid ion(2-)" RELATED []
+synonym: "sulphate" RELATED []
+synonym: "sulphate ion" RELATED []
+synonym: "tetraoxidosulfate(2-)" EXACT []
+synonym: "tetraoxosulfate(2-)" EXACT []
+synonym: "tetraoxosulfate(VI)" EXACT []
+is_a: CHEBI:33482 ! sulfur oxoanion
+is_a: CHEBI:48154 ! sulfur oxide
+is_a: CHEBI:79388 ! divalent inorganic anion
+
+[Term]
 id: CHEBI:16646
 name: carbohydrate
 def: "Any member of the class of organooxygen compounds that is a polyhydroxy-aldehyde or -ketone or a lactol resulting from their intramolecular condensation (monosaccharides); substances derived from these by reduction of the carbonyl group (alditols), by oxidation of one or more hydroxy groups to afford the corresponding aldehydes, ketones, or carboxylic acids, or by replacement of one or more hydroxy group(s) by a hydrogen atom; and polymeric products arising by intermolecular acetal formation between two or more such molecules (disaccharides, polysaccharides and oligosaccharides). Carbohydrates contain only carbon, hydrogen and oxygen atoms; prior to any oxidation or reduction, most have the empirical formula Cm(H2O)n. Compounds obtained from carbohydrates by substitution, etc., are known as carbohydrate derivatives and may contain other elements. Cyclitols are generally not regarded as carbohydrates." []
+synonym: "a carbohydrate" RELATED []
 synonym: "carbohidrato" RELATED []
 synonym: "carbohidratos" RELATED []
 synonym: "carbohydrate" EXACT []
@@ -167,6 +201,17 @@ synonym: "iron" RELATED []
 is_a: CHEBI:33356 ! iron group element atom
 
 [Term]
+id: CHEBI:22563
+name: anion
+def: "A monoatomic or polyatomic species having one or more elementary charges of the electron." []
+synonym: "Anion" EXACT []
+synonym: "anion" EXACT []
+synonym: "Anionen" RELATED []
+synonym: "aniones" RELATED []
+synonym: "anions" RELATED []
+is_a: CHEBI:24870 ! ion
+
+[Term]
 id: CHEBI:23367
 name: molecular entity
 def: "Any constitutionally or isotopically distinct atom, molecule, ion, ion pair, radical, radical ion, complex, conformer etc., identifiable as a separately distinguishable entity." []
@@ -215,6 +260,13 @@ synonym: "oxyacids" RELATED []
 is_a: CHEBI:24651 ! hydroxides
 
 [Term]
+id: CHEBI:24834
+name: inorganic anion
+synonym: "inorganic anions" RELATED []
+is_a: CHEBI:22563 ! anion
+is_a: CHEBI:36914 ! inorganic ion
+
+[Term]
 id: CHEBI:24835
 name: inorganic molecular entity
 def: "A molecular entity that contains no carbon." []
@@ -231,6 +283,22 @@ name: inorganic oxide
 synonym: "inorganic oxides" RELATED []
 is_a: CHEBI:24835 ! inorganic molecular entity
 is_a: CHEBI:25741 ! oxide
+
+[Term]
+id: CHEBI:24866
+name: salt
+def: "A salt is an assembly of cations and anions." []
+synonym: "ionic compound" RELATED []
+synonym: "ionic compounds" RELATED []
+synonym: "sal" RELATED []
+synonym: "sales" RELATED []
+synonym: "salt" EXACT []
+synonym: "salts" RELATED []
+synonym: "Salz" RELATED []
+synonym: "Salze" RELATED []
+synonym: "sel" RELATED []
+synonym: "sels" RELATED []
+is_a: CHEBI:37577 ! heteroatomic molecular entity
 
 [Term]
 id: CHEBI:24870
@@ -332,6 +400,13 @@ id: CHEBI:26082
 name: phosphorus molecular entity
 synonym: "phosphorus molecular entities" RELATED []
 is_a: CHEBI:33302 ! pnictogen molecular entity
+
+[Term]
+id: CHEBI:26712
+name: sodium molecular entity
+synonym: "sodium compounds" RELATED []
+synonym: "sodium molecular entities" RELATED []
+is_a: CHEBI:33296 ! alkali metal molecular entity
 
 [Term]
 id: CHEBI:26833
@@ -494,6 +569,14 @@ name: diatomic oxygen
 is_a: CHEBI:33262 ! elemental oxygen
 
 [Term]
+id: CHEBI:33273
+name: polyatomic anion
+def: "An anion consisting of more than one atom." []
+synonym: "polyatomic anions" RELATED []
+is_a: CHEBI:22563 ! anion
+is_a: CHEBI:36358 ! polyatomic ion
+
+[Term]
 id: CHEBI:33284
 name: nutrient
 def: "A nutrient is a food component that an organism uses to survive and grow." []
@@ -507,6 +590,31 @@ def: "A heteroorganic entity is an organic molecular entity in which carbon atom
 synonym: "heteroorganic entities" RELATED []
 synonym: "organoelement compounds" RELATED []
 is_a: CHEBI:50860 ! organic molecular entity
+
+[Term]
+id: CHEBI:33286
+name: agrochemical
+def: "An agrochemical is a substance that is used in agriculture or horticulture." []
+synonym: "agrichemical" RELATED []
+synonym: "agrichemicals" RELATED []
+synonym: "agricultural chemicals" RELATED []
+synonym: "agrochemicals" RELATED []
+is_a: CHEBI:33232 ! application
+
+[Term]
+id: CHEBI:33287
+name: fertilizer
+def: "A fertilizer is any substance that is added to soil or water to assist the growth of plants." []
+synonym: "fertiliser" RELATED []
+synonym: "fertilizers" RELATED []
+is_a: CHEBI:33286 ! agrochemical
+
+[Term]
+id: CHEBI:33296
+name: alkali metal molecular entity
+def: "A molecular entity containing one or more atoms of an alkali metal." []
+synonym: "alkali metal molecular entities" RELATED []
+is_a: CHEBI:33674 ! s-block molecular entity
 
 [Term]
 id: CHEBI:33300
@@ -595,11 +703,27 @@ is_a: CHEBI:26835 ! sulfur molecular entity
 is_a: CHEBI:33484 ! chalcogen oxoacid
 
 [Term]
+id: CHEBI:33482
+name: sulfur oxoanion
+synonym: "oxoanions of sulfur" RELATED []
+synonym: "sulfur oxoanion" EXACT []
+synonym: "sulfur oxoanions" RELATED []
+is_a: CHEBI:26835 ! sulfur molecular entity
+is_a: CHEBI:33485 ! chalcogen oxoanion
+
+[Term]
 id: CHEBI:33484
 name: chalcogen oxoacid
 synonym: "chalcogen oxoacid" EXACT []
 synonym: "chalcogen oxoacids" RELATED []
 is_a: CHEBI:24833 ! oxoacid
+
+[Term]
+id: CHEBI:33485
+name: chalcogen oxoanion
+synonym: "chalcogen oxoanion" EXACT []
+synonym: "chalcogen oxoanions" RELATED []
+is_a: CHEBI:35406 ! oxoanion
 
 [Term]
 id: CHEBI:33497
@@ -759,6 +883,16 @@ synonym: "azanes" RELATED []
 is_a: CHEBI:35106 ! nitrogen hydride
 
 [Term]
+id: CHEBI:35406
+name: oxoanion
+def: "An oxoanion is an anion derived from an oxoacid by loss of hydron(s) bound to oxygen." []
+synonym: "oxoacid anions" RELATED []
+synonym: "oxoanion" EXACT []
+synonym: "oxoanions" RELATED []
+is_a: CHEBI:25741 ! oxide
+is_a: CHEBI:33273 ! polyatomic anion
+
+[Term]
 id: CHEBI:35881
 name: pnictogen hydride
 synonym: "pnictogen hydride" EXACT []
@@ -778,6 +912,14 @@ name: polyatomic entity
 def: "Any molecular entity consisting of more than one atom." []
 synonym: "polyatomic entities" RELATED []
 is_a: CHEBI:23367 ! molecular entity
+
+[Term]
+id: CHEBI:36358
+name: polyatomic ion
+def: "An ion consisting of more than one atom." []
+synonym: "polyatomic ions" RELATED []
+is_a: CHEBI:24870 ! ion
+is_a: CHEBI:36357 ! polyatomic entity
 
 [Term]
 id: CHEBI:36359
@@ -1026,6 +1168,26 @@ synonym: "carbohydrates and their derivatives" RELATED []
 is_a: CHEBI:36963 ! organooxygen compound
 
 [Term]
+id: CHEBI:79388
+name: divalent inorganic anion
+def: "Any inorganic anion with a valency of two." []
+synonym: "divalent inorganic anions" RELATED []
+is_a: CHEBI:24834 ! inorganic anion
+
+[Term]
+id: GO:0003008
+name: system process
+def: "A multicellular organismal process carried out by any of the organs or tissues in an organ system. An organ system is a regularly interacting or interdependent group of organs or tissues that work together to carry out a biological objective." []
+synonym: "organ system process" EXACT []
+is_a: GO:0032501 ! multicellular organismal process
+
+[Term]
+id: GO:0007588
+name: excretion
+def: "The elimination by an organism of the waste products that arise as a result of metabolic activity. These products include water, carbon dioxide (CO2), and nitrogenous compounds." []
+is_a: GO:0003008 ! system process
+
+[Term]
 id: GO:0008150
 name: biological_process
 def: "A biological process represents a specific objective that the organism is genetically programmed to achieve. Biological processes are often described by their outcome or ending state, e.g., the biological process of cell division results in the creation of two daughter cells (a divided cell) from a single parent cell. A biological process is accomplished by a particular set of molecular functions carried out by specific gene products (or macromolecular complexes), often in a highly regulated manner and in a particular temporal sequence." []
@@ -1034,6 +1196,14 @@ synonym: "physiological process" EXACT []
 synonym: "single organism process" RELATED []
 synonym: "single-organism process" RELATED []
 is_a: BFO:0000015 ! process
+
+[Term]
+id: GO:0032501
+name: multicellular organismal process
+def: "Any biological process, occurring at the level of a multicellular organism, pertinent to its function." []
+synonym: "organismal physiological process" EXACT []
+synonym: "single-multicellular organism process" RELATED []
+is_a: GO:0008150 ! biological_process
 
 [Term]
 id: NCBITaxon:1
@@ -1413,6 +1583,12 @@ synonym: "presence" RELATED []
 synonym: "presence or absence in organism" EXACT []
 synonym: "quantitative" EXACT []
 is_a: PATO:0000068 ! qualitative
+
+[Term]
+id: PATO:0000080
+name: amplitude
+def: "A physical quality of a process inhering in a bearer by virtue of the size of the bearer's maximum displacement from the 'normal' position, when periodic motion is taking place." []
+is_a: PATO:0002062 ! physical quality of a process
 
 [Term]
 id: PATO:0000085
@@ -2194,10 +2370,22 @@ synonym: "quality of continuant" EXACT []
 is_a: PATO:0000001 ! quality
 
 [Term]
-id: PATO:0001291
-name: electromagnetic (EM) radiation quality
-def: "A physical quality that inheres in an bearer by virtue of how that bearer interacts with electromagnetic radiation." []
-is_a: PATO:0001739 ! radiation quality
+id: PATO:0001292
+name: full-spectrum EM radiation quality
+def: "An EM radiation quality that is independent of the EM wavelength range." []
+is_a: PATO:0070060 ! quality of interaction of a substance with electromagnetic radiation
+
+[Term]
+id: PATO:0001294
+name: radiation reflective quality
+def: "A scalar EM radiation quality which obtains by the capacity of the bearer to scatter or reflect radiation." []
+is_a: PATO:0001292 ! full-spectrum EM radiation quality
+
+[Term]
+id: PATO:0001295
+name: albedo
+def: "A reflective quality restricted to a particular wavelength." []
+is_a: PATO:0001294 ! radiation reflective quality
 
 [Term]
 id: PATO:0001296
@@ -2209,7 +2397,7 @@ is_a: PATO:0001300 ! optical quality
 id: PATO:0001300
 name: optical quality
 def: "An EM radiation quality in which the EM radiation is within the fiat range of the spectrum visible deemed to be light." []
-is_a: PATO:0001291 ! electromagnetic (EM) radiation quality
+is_a: PATO:0070060 ! quality of interaction of a substance with electromagnetic radiation
 
 [Term]
 id: PATO:0001303
@@ -2235,6 +2423,14 @@ synonym: "cold" EXACT []
 synonym: "low temperature" EXACT []
 is_a: PATO:0000146 ! temperature
 is_a: PATO:0002303 ! decreased object quality
+
+[Term]
+id: PATO:0001309
+name: duration
+def: "A process quality inhering in a bearer by virtue of the bearer's magnitude of the temporal extent between the starting and ending point." []
+synonym: "period" EXACT []
+synonym: "time" RELATED []
+is_a: PATO:0002062 ! physical quality of a process
 
 [Term]
 id: PATO:0001323
@@ -2622,7 +2818,7 @@ name: protruding
 def: "A quality inhering in a bearer by virtue of the bearer's extending out above or beyond a surface or boundary." []
 synonym: "protruding" EXACT []
 synonym: "relational protruding quality" EXACT []
-is_a: PATO:0000140 ! position
+is_a: PATO:0001018 ! physical quality
 
 [Term]
 id: PATO:0001608
@@ -2897,17 +3093,11 @@ def: "A quality inhering in a plant by virtue of the bearer's disposition to bei
 is_a: PATO:0001729 ! shedability
 
 [Term]
-id: PATO:0001739
-name: radiation quality
-def: "A quality that inheres in an bearer by virtue of how that bearer interacts with radiation." []
-is_a: PATO:0001018 ! physical quality
-
-[Term]
 id: PATO:0001740
 name: activity (of a radionuclide)
 def: "A radiation quality inhering in a radioactive substance by virtue of its transformation (disintegration) rate." []
 synonym: "radioactivity" EXACT []
-is_a: PATO:0001739 ! radiation quality
+is_a: PATO:0002198 ! quality of a substance
 
 [Term]
 id: PATO:0001741
@@ -4011,6 +4201,12 @@ is_a: PATO:0000911 ! decreased rate
 is_a: PATO:0050000 ! rate of occurence
 
 [Term]
+id: PATO:0070060
+name: quality of interaction of a substance with electromagnetic radiation
+def: "A quality of a substance on which or through which electromagnetic radiation impinges or traverses with respect to radiation. This substance quality changes the quality of the incident radiation with respect to any of: intensity, direction, scatter and wavelength." []
+is_a: PATO:0002198 ! quality of a substance
+
+[Term]
 id: PCO:0000000
 name: collection of organisms
 def: "A material entity that consists of two or more organisms, viruses, or viroids." []
@@ -4077,7 +4273,6 @@ name: anatomical structure
 def: "Material anatomical entity that is a single connected structure with inherent 3D shape generated by coordinated expression of the organism's own genome." []
 synonym: "biological structure" EXACT []
 synonym: "connected biological structure" EXACT []
-is_a: BFO:0000004 ! independent continuant
 is_a: UBERON:0000465 ! material anatomical entity
 
 [Term]
@@ -4087,7 +4282,6 @@ def: "Anatomical structure that performs a specific function or group of functio
 synonym: "anatomical unit" RELATED []
 synonym: "body organ" RELATED []
 synonym: "element" RELATED []
-is_a: BFO:0000040 ! material entity
 is_a: UBERON:0010000 ! multicellular anatomical structure
 
 [Term]
@@ -4097,6 +4291,14 @@ def: "A multicellular structure that is a part of an organ." []
 synonym: "cardinal organ part" EXACT []
 synonym: "regional part of organ" RELATED []
 is_a: UBERON:0010000 ! multicellular anatomical structure
+
+[Term]
+id: UBERON:0000160
+name: intestine
+def: "Segment of the alimentary canal extending from the stomach to the anus and, in humans and other mammals, consists of two segments, the small intestine and the large intestine." []
+synonym: "bowel" EXACT []
+synonym: "intestinal tract" RELATED []
+is_a: UBERON:0004921 ! subdivision of digestive tract
 
 [Term]
 id: UBERON:0000165
@@ -4119,13 +4321,22 @@ synonym: "vestibulum oris" RELATED []
 is_a: UBERON:0004921 ! subdivision of digestive tract
 
 [Term]
+id: UBERON:0000174
+name: excreta
+def: "A portion of organism substance that is the product of an excretion process that will be eliminated from the body. An excretion process is elimination by an organism of the waste products that arise as a result of metabolic activity." []
+synonym: "excreted substance" EXACT []
+synonym: "excretion" RELATED []
+synonym: "portion of excreted substance" EXACT []
+synonym: "waste substance" EXACT []
+is_a: UBERON:0000463 ! organism substance
+
+[Term]
 id: UBERON:0000178
 name: blood
 def: "A fluid that is composed of blood plasma and erythrocytes." []
 synonym: "portion of blood" EXACT []
 synonym: "vertebrate blood" EXACT []
 synonym: "whole blood" RELATED []
-is_a: BFO:0000040 ! material entity
 is_a: UBERON:0000179 ! haemolymphatic fluid
 
 [Term]
@@ -4148,7 +4359,6 @@ synonym: "exocrine gland secretion" RELATED []
 synonym: "external secretion" RELATED []
 synonym: "secreted substance" EXACT []
 synonym: "secretion" BROAD []
-is_a: BFO:0000040 ! material entity
 is_a: UBERON:0000463 ! organism substance
 
 [Term]
@@ -4160,13 +4370,13 @@ synonym: "body substance" EXACT []
 synonym: "organism substance" EXACT []
 synonym: "portion of body substance" EXACT []
 synonym: "portion of organism substance" EXACT []
-is_a: BFO:0000004 ! independent continuant
 is_a: UBERON:0000465 ! material anatomical entity
 
 [Term]
 id: UBERON:0000465
 name: material anatomical entity
 def: "Anatomical entity that has mass." []
+is_a: BFO:0000040 ! material entity
 is_a: UBERON:0001062 ! anatomical entity
 
 [Term]
@@ -4178,7 +4388,6 @@ synonym: "body system" EXACT []
 synonym: "connected anatomical system" EXACT []
 synonym: "organ system" EXACT []
 synonym: "system" BROAD []
-is_a: BFO:0000040 ! material entity
 is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
@@ -4189,6 +4398,13 @@ synonym: "portion of tissue" EXACT []
 synonym: "simple tissue" NARROW []
 synonym: "tissue portion" EXACT []
 is_a: UBERON:0010000 ! multicellular anatomical structure
+
+[Term]
+id: UBERON:0000912
+name: mucus
+def: "Mucus is a bodily fluid consisting of a slippery secretion of the lining of the mucous membranes in the body. It is a viscous colloid containing antiseptic enzymes (such as lysozyme) and immunoglobulins. Mucus is produced by goblet cells in the mucous membranes that cover the surfaces of the membranes. It is made up of mucins and inorganic salts suspended in water." []
+is_a: UBERON:0000456 ! secretion of exocrine gland
+is_a: UBERON:0006314 ! bodily fluid
 
 [Term]
 id: UBERON:0001062
@@ -4255,6 +4471,48 @@ synonym: "plasma" BROAD []
 synonym: "portion of blood plasma" EXACT []
 synonym: "portion of plasma" BROAD []
 is_a: UBERON:0000179 ! haemolymphatic fluid
+
+[Term]
+id: UBERON:0001970
+name: bile
+def: "Vital aqueous secretion of the liver that is formed by hepatocytes and modified down stream by absorptive and secretory properties of the bile duct epithelium." []
+synonym: "fel" RELATED []
+synonym: "gall" RELATED []
+is_a: UBERON:0000456 ! secretion of exocrine gland
+is_a: UBERON:0006314 ! bodily fluid
+
+[Term]
+id: UBERON:0001988
+name: feces
+def: "Portion of semisolid bodily waste discharged through the anus[MW,modified]." []
+synonym: "cow dung" NARROW []
+synonym: "cow pat" NARROW []
+synonym: "droppings" RELATED []
+synonym: "dung" NARROW []
+synonym: "excrement" RELATED []
+synonym: "excreta" BROAD []
+synonym: "faeces" EXACT []
+synonym: "fecal material" EXACT []
+synonym: "fecal matter" EXACT []
+synonym: "fewmet" NARROW []
+synonym: "frass" NARROW []
+synonym: "guano" NARROW []
+synonym: "ordure" RELATED []
+synonym: "piece of shit" EXACT []
+synonym: "portion of dung" NARROW []
+synonym: "portion of excrement" EXACT []
+synonym: "portion of faeces" EXACT []
+synonym: "portion of fecal material" EXACT []
+synonym: "portion of fecal matter" EXACT []
+synonym: "portion of feces" EXACT []
+synonym: "portion of guano" NARROW []
+synonym: "portion of scat" NARROW []
+synonym: "portionem cacas" EXACT []
+synonym: "scat" NARROW []
+synonym: "spoor" RELATED []
+synonym: "spraint" NARROW []
+synonym: "stool" EXACT []
+is_a: UBERON:0000174 ! excreta
 
 [Term]
 id: UBERON:0002416
@@ -4358,7 +4616,6 @@ is_a: UBERON:0000064 ! organ part
 id: UBERON:0036215
 name: anatomical surface region
 def: "Material anatomical entity that forms the outermost boundary of an anatomical structure." []
-is_a: BFO:0000040 ! material entity
 is_a: UBERON:0000465 ! material anatomical entity
 
 [Term]

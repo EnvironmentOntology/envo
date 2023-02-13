@@ -1,8 +1,9 @@
 format-version: 1.2
-data-version: envo/releases/2021-05-14/subsets/environmental_hazards.owl
+data-version: envo/releases/2023-02-13/subsets/environmental_hazards.owl
 subsetdef: disposition_slim "Disposition slim"
 subsetdef: environmental_hazards "environmental_hazards"
 subsetdef: EnvO-Lite-GSC "EnvO-Lite-GSC"
+subsetdef: envoANZSoil "envoANZSoil"
 subsetdef: envoAstro "envoAstro"
 subsetdef: envoAtmo "envoAtmo"
 subsetdef: envoCesab "envoCesab"
@@ -24,7 +25,7 @@ subsetdef: value_slim "Value slim"
 subsetdef: wwfBiome "wwfBiome"
 synonymtypedef: PLURAL "plurals"
 ontology: envo/subsets/environmental_hazards
-property_value: owl:versionInfo "2021-05-14" xsd:string
+property_value: owl:versionInfo "2023-02-13" xsd:string
 
 [Term]
 id: ENVO:00000020
@@ -61,7 +62,7 @@ id: ENVO:00000022
 name: river
 namespace: ENVO
 alt_id: LTER:474 {xref="https://vocab.lternet.edu/vocab/vocab/index.php?tema=474&/rivers"}
-def: "A stream which, through permanent or seasonal flow processes, moves from elevated land towards lower elevations through a definite channel and empties either into a sea, lake, or another river or ends on land as bed seepage and evapotranspiration exceed water supply." [ADL:FTT, http://orcid.org/0000-0002-4366-3088] {comment="https://en.wikipedia.org/wiki/River"}
+def: "A stream which, through permanent or seasonal flow processes, moves from elevated land towards lower elevations through a definite channel and empties either into a sea, lake, or another river or ends on land as bed seepage and evapotranspiration exceed water supply." [ADL:FTT, https://orcid.org/0000-0002-4366-3088] {comment="https://en.wikipedia.org/wiki/River"}
 comment: "There are no official definitions for the generic term river as applied to geographic features, although in some countries or communities a stream is defined by its size. Many names for small rivers are specific to geographic location; examples are "run" in some parts of the United States, "burn" in Scotland and northeast England, and "beck" in northern England. Sometimes a river is defined as being larger than a creek, but not always: the language is vague." {comment="https://en.wikipedia.org/wiki/River"}
 synonym: "braided river" NARROW [USGS:SDTS]
 synonym: "rio" EXACT [USGS:SDTS]
@@ -95,9 +96,8 @@ synonym: "fork (hydrographic" NARROW [ADL:FTT]
 synonym: "lode" NARROW [USGS:SDTS]
 synonym: "millstream" NARROW []
 synonym: "rivulet" RELATED [USGS:SDTS]
-synonym: "Stream" EXACT [NASA:earthrealm]
-synonym: "stream" EXACT [Geonames:feature]
 synonym: "stream bend" NARROW [ADL:FTT]
+synonym: "streamlet" NARROW []
 synonym: "streams" EXACT [Geonames:feature]
 synonym: "watercourse" BROAD [ADL:FTT]
 synonym: "watercourse" BROAD [USGS:SDTS]
@@ -120,6 +120,7 @@ xref: TGN:21108
 xref: TGN:21109
 is_a: ENVO:00000029 ! watercourse
 relationship: continuous_with ENVO:01000650 ! stream channel
+created_by: https://orcid.org/0000-0002-9578-0788
 
 [Term]
 id: ENVO:00000029
@@ -216,6 +217,59 @@ is_a: ENVO:01000685 ! water mass
 relationship: part_of ENVO:01000819 ! hydrosphere
 
 [Term]
+id: ENVO:00000100
+name: valley
+namespace: ENVO
+def: "A depression which has been formed as a result of erosion by water or ice and which is low-lying, bordered by higher ground, and especially elongate." [ADL:FTT, https://en.wikipedia.org/wiki/Valley]
+comment: Valleys are typically located between hills our mountains.
+synonym: "chasm" NARROW [USGS:SDTS]
+synonym: "coulee" NARROW [USGS:SDTS]
+synonym: "dale" NARROW [USGS:SDTS]
+synonym: "glacial gorge" NARROW [USGS:SDTS]
+synonym: "glacial trough" NARROW [USGS:SDTS]
+synonym: "glen" RELATED [ADL:FTT]
+synonym: "glen" RELATED [USGS:SDTS]
+synonym: "goe" RELATED [USGS:SDTS]
+synonym: "gorge" RELATED [USGS:SDTS]
+synonym: "gorge" RELATED [Geonames:feature]
+synonym: "graben" RELATED [USGS:SDTS]
+synonym: "gulch" NARROW [USGS:SDTS]
+synonym: "gully" NARROW [USGS:SDTS]
+synonym: "gully" NARROW [Getty:TGN]
+synonym: "hollow" RELATED [ADL:FTT]
+synonym: "hollow" RELATED [Getty:TGN]
+synonym: "hollow" RELATED [USGS:SDTS]
+synonym: "lavaka" RELATED []
+synonym: "median valley" NARROW [Geonames:feature]
+synonym: "median valley" NARROW [ADL:FTT]
+synonym: "moat" RELATED [USGS:SDTS]
+synonym: "ravine" RELATED [USGS:SDTS]
+synonym: "re-entrant" RELATED [USGS:SDTS]
+synonym: "seachannel" RELATED [USGS:SDTS]
+synonym: "shelf valley" NARROW [Geonames:feature]
+synonym: "strath" RELATED [USGS:SDTS]
+synonym: "trench" RELATED [USGS:SDTS]
+synonym: "vale" RELATED []
+synonym: "water gap" RELATED [USGS:SDTS]
+xref: EcoLexicon:valley
+xref: FTT:158
+xref: FTT:166
+xref: FTT:418
+xref: FTT:761
+xref: FTT:811
+xref: FTT:949
+xref: Geonames:T.GRGE
+xref: Geonames:T.VAL
+xref: Geonames:T.VALS
+xref: SWEETRealm:Valley
+xref: TGN:21425
+xref: TGN:21451
+xref: TGN:21452
+xref: TGN:21453
+is_a: ENVO:03000015 ! geographic basin
+relationship: formed_as_result_of ENVO:02500028 ! planetary erosion
+
+[Term]
 id: ENVO:00000106
 name: grassland area
 namespace: ENVO
@@ -310,11 +364,9 @@ intersection_of: overlaps ENVO:01001243 ! forest ecosystem
 id: ENVO:00000134
 name: permafrost
 namespace: ENVO
-def: "Soil or rock and included ice or organic material at or below the freezing point of water (0 degrees Celsius or 32 degrees Fahrenheit) for two or more years." [https://en.wikipedia.org/wiki/Permafrost, https://orcid.org/0000-0003-4808-4736]
+def: "An environmental material which is 1) composed primarily of soil or rock and included ice or organic material and 2) at or below the freezing point of water for two or more years." [https://en.wikipedia.org/wiki/Permafrost, https://orcid.org/0000-0003-4808-4736]
 comment: Ice is not always present, as may be in the case of nonporous bedrock, but it frequently occurs and it may be in amounts exceeding the potential hydraulic saturation of the ground material.
 subset: envoPolar
-synonym: "Permafrost" EXACT [NASA:earthrealm]
-xref: EcoLexicon:permafrost
 xref: http://sweetontology.net/realmSoil/Permafrost
 xref: https://en.wikipedia.org/wiki/Permafrost
 xref: LTER:408
@@ -340,7 +392,6 @@ name: stream bank
 namespace: ENVO
 def: "The sloping margin of a stream, serving to confine it to its natural channel." [MA:ma]
 synonym: "bank (hydrographic)" RELATED [ADL:FTT]
-synonym: "stream bank" EXACT [Geonames:feature]
 xref: FTT:195
 xref: FTT:196
 xref: Geonames:H.BNKR
@@ -363,6 +414,7 @@ name: solid astronomical body part
 namespace: ENVO
 def: "A part of an astronomical body which is primarily composed of a continuous volume of solid material, shaped by one or more environmental processes." [https://en.wikipedia.org/wiki/Landform]
 synonym: "geological feature" RELATED [ADL:FTT]
+synonym: "landform" RELATED []
 synonym: "physiographic feature" RELATED []
 xref: EcoLexicon:landform
 xref: EcoLexicon:landforms
@@ -381,8 +433,6 @@ name: volcano
 namespace: ENVO
 def: "An opening, or rupture, in the Earth's surface or crust, which allows hot, molten rock, ash and gases to escape from deep below the surface." [https://en.wikipedia.org/wiki/Volcano]
 synonym: "mount" BROAD [USGS:SDTS]
-synonym: "Volcano" EXACT [NASA:earthrealm]
-synonym: "volcano" EXACT [Geonames:feature]
 xref: EcoLexicon:volcano
 xref: FTT:592
 xref: Geonames:T.VLC
@@ -393,10 +443,11 @@ relationship: formed_as_result_of ENVO:01000634 ! volcanic eruption
 
 [Term]
 id: ENVO:00000309
-name: depression
+name: depressed landform
 namespace: ENVO
 def: "A landform sunken or depressed below the surrounding area." [https://en.wikipedia.org/wiki/Depression_%28geology%29]
 synonym: "barrier basin" RELATED [USGS:SDTS]
+synonym: "depression" BROAD []
 synonym: "depression" RELATED [Geonames:feature]
 synonym: "non tidal basin" RELATED [USGS:SDTS]
 synonym: "pan" RELATED [Geonames:feature]
@@ -415,15 +466,41 @@ xref: SWEETRealm:Depression
 xref: TGN:21454
 xref: TGN:21497
 xref: TGN:21521
-is_a: ENVO:00000191 ! solid astronomical body part
+is_a: ENVO:01001886 ! landform
 relationship: has_part ENVO:00002000 ! slope
 property_value: IAO:0000116 "Clarify that this pertains to the planetary crust and create superclass for general topological depressions. https://github.com/EnvironmentOntology/envo/issues/486" xsd:string
+
+[Term]
+id: ENVO:00000340
+name: particle of sand
+namespace: ENVO
+def: "A particle which 1) is composed primarily of and derived from rock or mineral sources and 2) is or was part of a portion of sand." [https://en.wikipedia.org/wiki/Sand]
+comment: In general, sand grains are larger than those of silt, but finer than those of gravel.
+synonym: "grain of sand" EXACT []
+synonym: "granule of sand" EXACT []
+synonym: "sand granule" EXACT []
+is_a: ENVO:01003002 ! particle
+disjoint_from: ENVO:01000017 ! sand
+
+[Term]
+id: ENVO:00000343
+name: particle of silt
+namespace: ENVO
+def: "A particle which 1) is primarily composed of quartz or feldspar and 2) is or was part of a portion of silt." []
+comment: The distinction between silt and clay varies by discipline. Geologists and soil scientists usually consider the separation to occur at a particle size of 2 μm (clays being finer than silts), sedimentologists often use 4–5 μm, and colloid chemists use 1 μm. Geotechnical engineers distinguish between silts and clays based on the plasticity properties of the soil, as measured by the soils' Atterberg limits. ISO 14688 grades clay particles as being smaller than 2 μm and silt particles as being larger. Mixtures of sand, silt and less than 40% clay are called loam. {xref="Properties"}
+synonym: "grain of silt" EXACT []
+synonym: "granule of silt" EXACT []
+is_a: ENVO:01003002 ! particle
+
+[Term]
+id: ENVO:00000369
+alt_id: ENVO:01000060
 
 [Term]
 id: ENVO:00000395
 name: channel of a watercourse
 namespace: ENVO
-def: "The physical confine of a river, slough or ocean strait consisting of a bed and banks." [https://en.wikipedia.org/wiki/Channel_%28geography%29]
+def: "A depressed landform which physically confines a river, slough or ocean strait, and which consists of a bed and banks." [https://en.wikipedia.org/wiki/Channel_%28geography%29]
 xref: EcoLexicon:channel
 xref: EcoLexicon:sea_channel
 xref: FTT:1192
@@ -443,7 +520,7 @@ xref: Geonames:U.SCSU
 xref: SWEETRealm:Channel
 xref: TGN:21137
 xref: TGN:23451
-is_a: ENVO:00000309 ! depression
+is_a: ENVO:00000309 ! depressed landform
 relationship: has_part ENVO:00000141 ! bank
 relationship: has_part ENVO:00000501 ! submerged bed
 property_value: IAO:0000116 "We need a more general channel definition, the current is only for water course channels. We need to refactor the semantics of channels, tunnels and conduits, in a similar way to uberon anatomical channels http://purl.obolibrary.org/obo/UBERON_0004111. See https://github.com/EnvironmentOntology/envo/issues/147" xsd:string
@@ -485,7 +562,7 @@ xref: https://en.wikipedia.org/wiki/Stream_bed
 xref: SWEETRealm:Bottom
 is_a: ENVO:01001311 ! solid surface layer
 relationship: adjacent_to ENVO:00000063 ! water body
-relationship: part_of ENVO:00000309 ! depression
+relationship: part_of ENVO:00000309 ! depressed landform
 
 [Term]
 id: ENVO:00001995
@@ -508,7 +585,7 @@ disjoint_from: ENVO:01000256 ! mineral material
 id: ENVO:00001998
 name: soil
 namespace: ENVO
-def: "Soil is an environmental material which is primarily composed of minerals, varying proportions of sand, silt, and clay, organic material such as humus, gases, liquids, and a broad range of resident micro- and macroorganisms." [https://en.wikipedia.org/wiki/Soil]
+def: "An environmental material which is primarily composed of minerals, varying proportions of sand, silt, and clay, organic material such as humus, interstitial gases, liquids, and a broad range of resident micro- and macroorganisms." [https://en.wikipedia.org/wiki/Soil]
 comment: 'In engineering terms, soil is referred to as regolith, or loose rock material that lies above the 'solid geology'. Soil is commonly referred to as "earth" or "dirt"; technically, the term "dirt" should be restricted to displaced soil.' https://en.wikipedia.org/wiki/Soil\n\n" The upper limit of soil is the boundary between soil and air, shallow water, live plants, or plant materials that have not begun to decompose. Areas are not considered to have soil if the surface is permanently covered by water too deep (typically more than 2.5 meters) for the growth of rooted plants.\n\nThe lower boundary that separates soil from the nonsoil underneath is most difficult to define. Soil consists of horizons near the Earth's surface that, in contrast to the underlying parent material, have been altered by the interactions of climate, relief, and living organisms over time. Commonly, soil grades at its lower boundary to hard rock or to earthy materials virtually devoid of animals, roots, or other marks of biological activity. For purposes of classification, the lower boundary of soil is arbitrarily set at 200 cm."  Soil taxonomy, 2nd Ed., quoted in http://www.nrcs.usda.gov/wps/portal/nrcs/detail/soils/edu/?cid=nrcs142p2_054280
 subset: EnvO-Lite-GSC
 synonym: "regolith" BROAD []
@@ -517,6 +594,7 @@ xref: LTER:535
 xref: SPIRE:Soil
 xref: SWEETRealm:Soil
 is_a: ENVO:00010483 ! environmental material
+relationship: has_disposition ENVO:06105304 ! water-holding capacity of soil
 relationship: has_part ENVO:00002982 ! clay
 relationship: has_part ENVO:01000016 ! silt
 relationship: has_part ENVO:01000017 ! sand
@@ -529,13 +607,13 @@ property_value: IAO:0000116 "The various 'has part' and 'has quality' relations 
 id: ENVO:00002000
 name: slope
 namespace: ENVO
-def: "A solid astronomical body part which is part of the planetary surface between the peak of an elevation or the bottom of a depression and  relatively flat surrounding land." [MA:ma]
+def: "A solid astronomical body part which is part of the planetary surface between the peak of an elevation or the bottom of a depression and relatively flat surrounding land." [MA:ma]
 synonym: "flank" RELATED []
 synonym: "side" RELATED []
 xref: EcoLexicon:slope
 xref: https://en.wikipedia.org/wiki/Slope
 xref: SWEETRealm:Slope
-is_a: ENVO:00000191 ! solid astronomical body part
+is_a: ENVO:01001886 ! landform
 relationship: part_of ENVO:01000799 ! astronomical body
 
 [Term]
@@ -575,12 +653,14 @@ is_a: ENVO:00003082 ! enriched soil
 id: ENVO:00002982
 name: clay
 namespace: ENVO
-def: "A group of hydrous aluminium phyllosilicate (phyllosilicates being a subgroup of silicate minerals) minerals (see clay minerals), that are typically less than 2 micrometres in diameter. Clay consists of a variety of phyllosilicate minerals rich in silicon and aluminium oxides and hydroxides which include variable amounts of structural water." [https://en.wikipedia.org/wiki/Clay]
+def: "Particulate environmental material which 1) is composed primarily of clay particles, with only minor proportions of other materials, 2) demonstrates plasticity when wet, and 3) is capable of hardening when dried or fired." [https://en.wikipedia.org/wiki/Clay]
+comment: This definition is intentionally ambiguous to support the multiple thresholds set by different authorities.The distinction between silt and clay varies by discipline. Geologists and soil scientists usually consider the separation to occur at a particle size of 2 μm (clays being finer than silts), sedimentologists often use 4–5 μm, and colloid chemists use 1 μm. Geotechnical engineers distinguish between silts and clays based on the plasticity properties of the soil, as measured by the soils' Atterberg limits. ISO 14688 grades clay particles as being smaller than 2 μm and silt particles as being larger. Mixtures of sand, silt and less than 40% clay are called loam. Similar mixtures with greater than 40% clay are often considered clay soils. {xref="https://en.wikipedia.org/wiki/Clay"}
 xref: EcoLexicon:clay
-xref: https://en.wikipedia.org/wiki/Clay
 xref: SWEETRealm:Clay
-is_a: ENVO:00010483 ! environmental material
+is_a: ENVO:01000060
 disjoint_from: ENVO:01000016 ! silt
+relationship: has_part ENVO:01003003 ! particle of clay
+property_value: IAO:0000116 "Do not oversimplify the particulate environmental material subclasses with design patterns or similar. The materials have properties that their components do not - write full definitions including these where possible." xsd:string
 
 [Term]
 id: ENVO:00003082
@@ -625,25 +705,34 @@ relationship: has_part ENVO:01000797 ! gaseous environmental material
 id: ENVO:01000016
 name: silt
 namespace: ENVO
-def: "Silt is granular material of a size somewhere between sand and clay whose mineral origin is quartz and feldspar." [https://en.wikipedia.org/wiki/Silt]
-comment: https://en.wikipedia.org/wiki/ In the Udden-Wentworth scale (due to Krumbein), silt particles range between 0.0039 to 0.0625 mm, larger than clay but smaller than sand particles. ISO 14688 grades silts between 0.002 mm and 0.063 mm. In actuality, silt is chemically distinct from clay, and unlike clay, grains of silt are approximately the same size in all dimensions; furthermore, their size ranges overlap. Clays are formed from thin plate-shaped particles held together by electrostatic forces, so present a cohesion. According to the U.S. Department of Agriculture Soil Texture Classification system, the sand-silt distinction is made at the 0.05 mm particle size. The USDA system has been adopted by the Food and Agriculture Organization (FAO). In the Unified Soil Classification System (USCS) and the AASHTO Soil Classification system, the sand-silt distinction is made at the 0.075 mm particle size (i.e., material passing the #200 sieve). Silts and clays are distinguished mechanically by their plasticity.
+def: "Particulate environmental material which is primarily composed of silt particles." [https://en.wikipedia.org/wiki/Silt]
+comment: This definition is intentionally ambiguous to support the multiple thresholds set by different authorities. Some authorities consider this soil material that contains 80% or more silt and less than 12% clay. In the Udden-Wentworth scale (due to Krumbein), silt particles range between 0.0039 to 0.0625 mm, larger than clay but smaller than sand particles. ISO 14688 grades silts between 0.002 mm and 0.063 mm. In actuality, silt is chemically distinct from clay, and unlike clay, grains of silt are approximately the same size in all dimensions; furthermore, their size ranges overlap. Clays are formed from thin plate-shaped particles held together by electrostatic forces, so present a cohesion. According to the U.S. Department of Agriculture Soil Texture Classification system, the sand-silt distinction is made at the 0.05 mm particle size. The USDA system has been adopted by the Food and Agriculture Organization (FAO). In the Unified Soil Classification System (USCS) and the AASHTO Soil Classification system, the sand-silt distinction is made at the 0.075 mm particle size (i.e., material passing the #200 sieve). Silts and clays are distinguished mechanically by their plasticity. {xref="https://sis.agr.gc.ca/cansis/glossary/t/index.html", xref="https://en.wikipedia.org/wiki/Silt"}
 xref: EcoLexicon:silt
 xref: https://en.wikipedia.org/wiki/Silt
 xref: SWEETRealm:Silt
-is_a: ENVO:00010483 ! environmental material
+is_a: ENVO:01000060
 disjoint_from: ENVO:01000017 ! sand
+relationship: has_part ENVO:00000343 ! particle of silt
+property_value: IAO:0000116 "Do not oversimplify the particulate environmental material subclasses with design patterns or similar. The materials have properties that their components do not - write full definitions including these where possible." xsd:string
 
 [Term]
 id: ENVO:01000017
 name: sand
 namespace: ENVO
-def: "A naturally occurring granular material composed of finely divided rock and mineral particles." [https://en.wikipedia.org/wiki/Sand]
+def: "Particulate environmental material which is composed primarily of particles of sand with only minor proportions of other substances." [https://en.wikipedia.org/wiki/Sand]
+comment: This definition is intentionally ambiguous to support the multiple thresholds set by different authorities. Some authorities consider as sands soil material that contains 85% or more sand; the percentage of silt plus 1.5 times the percentage of clay does not exceed 15. coarse sand (sable grossier) 25% or more very coarse and coarse sand, and less than 50% any other one grade of sand. {xref="https://sis.agr.gc.ca/cansis/glossary/t/index.html"}
 xref: EcoLexicon:sand
 xref: https://en.wikipedia.org/wiki/Sand
 xref: LTER:484
 xref: SWEETRealm:Sand
+is_a: ENVO:01000060
+relationship: has_part ENVO:00000340 ! particle of sand
+property_value: IAO:0000116 "Do not oversimplify the particulate environmental material subclasses with design patterns or similar. The materials have properties that their components do not - write full definitions including these where possible." xsd:string
+
+[Term]
+id: ENVO:01000060
 is_a: ENVO:00010483 ! environmental material
-relationship: derives_from ENVO:00001995 ! rock
+relationship: has_part ENVO:01003002 ! particle
 
 [Term]
 id: ENVO:01000155
@@ -750,12 +839,12 @@ id: ENVO:01000277
 name: water ice
 namespace: ENVO
 def: "Ice which is formed from water." [https://en.wikipedia.org/wiki/Ice]
-comment: Water ice can appear transparent or opaque bluish-white color, depending on the presence of impurities or air inclusions. The addition of other materials such as soil may further alter its appearance.\n\nWhen speaking about ice on Earth, usually water ice is meant - the solid, crystalline form of water found in the atmosphere as snow crystals, hail, ice pellets, etc., and on the earth's surface in forms such as hoarfrost, rime, glaze, sea ice, glacier ice, ground ice, frazil, anchor ice, etc.  \n\nThis form of water is, strictly speaking, called ice Ih, the Roman numeral I distinguishing it from more than a dozen other phases and the letter h distinguishing it from the metastable cubic phase ice Ic. Ice Ih is the only one of the several known phases of water ice that is stable at commonly occurring temperatures and pressures. (Some of the other forms have very unusual properties, ice VII, for example, being stable only at pressures above 22 400 kg/cm^2, but then existing at temperatures up to about 100C.) \n\nIt has an open structure with a specific gravity of 0.9166 which is slightly less than water; because the water molecules bond to their neighbors covalently only in four directions; it therefore floats on higher density water, where broken molecular bonds permit closer packing. All commonly occurring forms of ice are crystalline, although large single crystals are relatively rare except in glaciers. The ice crystal lattice possesses hexagonal symmetry that manifests itself in the gross forms of such single crystals as are sometimes found in snow. At an air pressure of one atmosphere, ice melts at 0 C by definition of the Celsius temperature scale. (Strictly speaking the equilibrium point among water, ice, and vapor occurs at +0.01C, the triple point.) On the other hand, ice does not invariably form in liquid water cooled below this temperature; it has a tendency to supercool, more so in the absence of ice nuclei. \n\nIn permafrost regions, ice may occupy voids in soils and rocks and may develop in a variety of forms. Ice may be colourless to pale blue or greenish-blue. It may appear white due to included gas bubbles; in exposures, ground ice may also appear black.\n\nIn nature ice is formed either by: (a) the freezing of water, (b) the condensation of atmospheric water vapour direct into ice crystals, (c) the compaction of snow with or without the motion of a glacier, or (d) the impregnation of porous snow masses with water which subsequently freeze.
+comment: Water ice can appear transparent or opaque bluish-white color, depending on the presence of impurities or air inclusions. The addition of other materials such as soil may further alter its appearance.\n\nWhen speaking about ice on Earth, usually water ice is meant - the solid, crystalline form of water found in the atmosphere as snow crystals, hail, ice pellets, etc., and on the earth's surface in forms such as hoarfrost, rime, glaze, sea ice, glacier ice, ground ice, frazil, anchor ice, etc.\n\nThis form of water is, strictly speaking, called ice Ih, the Roman numeral I distinguishing it from more than a dozen other phases and the letter h distinguishing it from the metastable cubic phase ice Ic. Ice Ih is the only one of the several known phases of water ice that is stable at commonly occurring temperatures and pressures. (Some of the other forms have very unusual properties, ice VII, for example, being stable only at pressures above 22 400 kg/cm^2, but then existing at temperatures up to about 100C.)\n\nIt has an open structure with a specific gravity of 0.9166 which is slightly less than water; because the water molecules bond to their neighbors covalently only in four directions; it therefore floats on higher density water, where broken molecular bonds permit closer packing. All commonly occurring forms of ice are crystalline, although large single crystals are relatively rare except in glaciers. The ice crystal lattice possesses hexagonal symmetry that manifests itself in the gross forms of such single crystals as are sometimes found in snow. At an air pressure of one atmosphere, ice melts at 0 C by definition of the Celsius temperature scale. (Strictly speaking the equilibrium point among water, ice, and vapor occurs at +0.01C, the triple point.) On the other hand, ice does not invariably form in liquid water cooled below this temperature; it has a tendency to supercool, more so in the absence of ice nuclei.\n\nIn permafrost regions, ice may occupy voids in soils and rocks and may develop in a variety of forms. Ice may be colourless to pale blue or greenish-blue. It may appear white due to included gas bubbles; in exposures, ground ice may also appear black.\n\nIn nature ice is formed either by: (a) the freezing of water, (b) the condensation of atmospheric water vapour direct into ice crystals, (c) the compaction of snow with or without the motion of a glacier, or (d) the impregnation of porous snow masses with water which subsequently freeze.
 subset: envoPolar
 synonym: "ice" RELATED [http://www.eionet.europa.eu/gemet/concept/4131]
 xref: http://sweetontology.net/matrWater/Ice
 xref: LTER:262
-created_by: http://orcid.org/0000-0002-4366-3088
+created_by: https://orcid.org/0000-0002-4366-3088
 creation_date: 2013-10-13T12:01:28Z
 
 [Term]
@@ -767,6 +856,23 @@ comment: Preliminary definition.
 subset: envoPolar
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2013-10-15T16:42:02Z
+
+[Term]
+id: ENVO:01000293
+name: ice mass
+namespace: ENVO
+def: "A mass of water ice." []
+subset: envoPolar
+synonym: "accumulation of ice" BROAD []
+synonym: "ice accumulation" BROAD []
+xref: http://sweetontology.net/phenCryo/Accumulation
+intersection_of: ENVO:01001687 ! mass of solid material
+intersection_of: composed_primarily_of ENVO:01000277 ! water ice
+relationship: composed_primarily_of ENVO:01000277 ! water ice
+relationship: part_of ENVO:03000143 ! cryosphere
+property_value: IAO:0000116 "Class should be populated by inference and asserted subclasses redistributed." xsd:string
+created_by: ORCID:0000-0002-4366-3088
+creation_date: 2013-10-15T19:49:11Z
 
 [Term]
 id: ENVO:01000324
@@ -821,6 +927,19 @@ subset: environmental_hazards
 is_a: ENVO:01001476 ! body of liquid
 relationship: composed_primarily_of ENVO:01000231 ! lava
 relationship: formed_as_result_of ENVO:01000656 ! effusive eruption
+
+[Term]
+id: ENVO:01000547
+name: glaze ice layer
+namespace: ENVO
+def: "A glaze ice layer is a smooth, transparent and homogeneous ice layer which coats some surface and which is formed when freezing rain or drizzle hits that surface." [https://en.wikipedia.org/wiki/Glaze_ice]
+synonym: "glaze" BROAD []
+synonym: "glaze" RELATED []
+synonym: "glaze ice" RELATED [http://www.eionet.europa.eu/gemet/concept/12091]
+is_a: ENVO:01001276 ! water ice layer
+relationship: composed_primarily_of ENVO:01000277 ! water ice
+relationship: formed_as_result_of ENVO:01000896 ! freezing rainfall
+created_by: ORCID:0000-0002-4366-3088
 
 [Term]
 id: ENVO:01000618
@@ -901,6 +1020,7 @@ relationship: located_in ENVO:01000639 ! planetary structural layer
 id: ENVO:01000650
 name: stream channel
 namespace: ENVO
+def: "A channel of a watercourse which contains a stream." []
 is_a: ENVO:00000395 ! channel of a watercourse
 intersection_of: ENVO:00000395 ! channel of a watercourse
 intersection_of: location_of ENVO:00000023 ! stream
@@ -909,6 +1029,7 @@ intersection_of: location_of ENVO:00000023 ! stream
 id: ENVO:01000652
 name: river channel
 namespace: ENVO
+def: "A stream channel which contains a river." []
 is_a: ENVO:01000650 ! stream channel
 relationship: location_of ENVO:00000022 ! river
 
@@ -1117,9 +1238,13 @@ is_a: ENVO:01000696 ! mass wasting flow
 id: ENVO:01000698
 name: debris flow
 namespace: ENVO
-def: "A debris flow is a mass wasting flow which occurs when masses of poorly sorted sediment are saturated with water and agitated into motion." [https://orcid.org/0000-0002-2282-7215] {http://purl.obolibrary.org/obo/IAO_0000119="qt-science_center_objects"}
+def: "A mass wasting flow during which water-laden masses of soil and fragmented rock rush down the slopes of elevations, funnel into stream channels, entrain objects in their paths, and form thick, muddy deposits on valley floors." [https://en.wikipedia.org/wiki/Debris_flow]
 subset: environmental_hazards
 is_a: ENVO:01000696 ! mass wasting flow
+relationship: has_participant ENVO:00000100 ! valley
+relationship: has_participant ENVO:00001995 ! rock
+relationship: has_participant ENVO:00001998 ! soil
+relationship: has_participant ENVO:01000650 ! stream channel
 
 [Term]
 id: ENVO:01000699
@@ -1181,7 +1306,7 @@ def: "Flash flooding is a process in which low-lying land is inundated with wate
 comment: Flash floods generally last no more than six hours. http://www.srh.noaa.gov/mrx/hydro/flooddef.php
 subset: environmental_hazards
 is_a: ENVO:02500002 ! flooding
-relationship: has_participant ENVO:00000309 ! depression
+relationship: has_participant ENVO:00000309 ! depressed landform
 
 [Term]
 id: ENVO:01000710
@@ -1573,12 +1698,13 @@ is_a: ENVO:03000043 ! material transformation process
 id: ENVO:01000874
 name: hailfall
 namespace: ENVO
-def: "Hailfall is a hydrological process in which balls or irregular lumps of water ice formed in thunderstorm or cumulonimbus clouds fall to a planetary surface." [https://en.wikipedia.org/wiki/Hail]
+def: "A hydrological process during which hail stones fall to the surface of an astronomical body." [https://en.wikipedia.org/wiki/Hail]
 subset: environmental_hazards
 subset: envoPolar
 synonym: "hail fall" EXACT []
 is_a: ENVO:01000703 ! hydrological precipitation process
-relationship: has_participant ENVO:01000277 ! water ice
+relationship: has_participant ENVO:03400012 ! hail stone
+property_value: IAO:0000116 "This is Earth-centric for the moment, other types of hail (methane etc) exist" xsd:string
 
 [Term]
 id: ENVO:01000875
@@ -1630,11 +1756,21 @@ is_a: ENVO:01000877 ! atmospheric storm
 id: ENVO:01000880
 name: hailstorm
 namespace: ENVO
-def: "An atmospheric storm which intense hailfall occurs." []
+def: "An atmospheric storm during which intense hailfall occurs" [https://glossary.ametsoc.org/wiki/Hailstorm]
 subset: environmental_hazards
 subset: envoAtmo
+subset: envoCryo
 subset: envoPolar
+xref: http://sweetontology.net/phenAtmoPrecipitation/HailStorm
 is_a: ENVO:01000882 ! icestorm
+created_by: https://orcid.org/0000-0002-0337-8610
+created_by: https://orcid.org/0000-0002-2282-7215
+created_by: https://orcid.org/0000-0002-2908-3327
+created_by: https://orcid.org/0000-0002-3410-4655
+created_by: https://orcid.org/0000-0002-4366-3088
+created_by: https://orcid.org/0000-0003-0632-7576
+created_by: https://orcid.org/0000-0003-4808-4736
+creation_date: 2021-04-14T18:57:18.275Z
 
 [Term]
 id: ENVO:01000881
@@ -1650,37 +1786,79 @@ is_a: ENVO:01000877 ! atmospheric storm
 id: ENVO:01000882
 name: icestorm
 namespace: ENVO
-def: "An atmospheric storm during which freezing rain falls and accumulates as ice on exposed surfaces." [https://en.wikipedia.org/wiki/Ice_storm]
+def: "An atmospheric storm during which freezing rain falls and accumulates as ice on exposed surfaces." [https://en.wikipedia.org/wiki/Ice_storm, https://orcid.org/0000-0003-4808-4736]
+comment: Icestorms are associated with multiple hazards. Significant accumulations of ice pull down trees and utility lines resulting in loss of power and communication. These accumulations of ice make walking and driving extremely dangerous. Significant ice accumulations are usually accumulations of 0.25 inch or 0.60 cm or more. Has synonyms silver storm, glaze storm. {xref="https://orcid.org/0000-0003-4808-4736"}
 comment: The U.S. National Weather Service defines an ice storm as a storm which results in the accumulation of at least 0.25-inch (6.4 mm) of ice on exposed surfaces. {xref="https://en.wikipedia.org/wiki/Ice_storm", xref="Hauer RJ, Dawson JO, Werner LP (2006) Trees and Ice Storms - The Development of Ice Storm-Resistant Urban Tree Populations (2 ed.). College of Natural Resources, University of Wisconsin–Stevens Point, and the Department of Natural Resources and Environmental Sciences and the Office of Continuing Education, University of Illinois at Urbana-Champaign. http://web.extension.uiuc.edu/forestry/publications/pdf/urban_community_forestry/trees_and_ice_storms_2006.pdf"}
 subset: environmental_hazards
 subset: envoAtmo
+subset: envoCryo
 subset: envoPolar
 synonym: "glaze event" EXACT []
+synonym: "glaze event" RELATED []
+synonym: "glaze storm" EXACT []
+synonym: "ice storm" EXACT []
+synonym: "silver storm" EXACT []
 synonym: "silver thaw" EXACT []
+synonym: "silver thaw" RELATED []
+xref: http://sweetontology.net/phenAtmoPrecipitation/IceStorm
 is_a: ENVO:01000877 ! atmospheric storm
+relationship: has_output ENVO:01000547 ! glaze ice layer
+relationship: has_part ENVO:01000896 ! freezing rainfall
+property_value: IAO:0000116 "Note it is a hazard, could perhaps later link to https://github.com/Vocamp/Hazard or https://github.com/Vocamp/Hazard/blob/master/concept-map/ModifiedHazardousSituation.png  and https://github.com/SDG-InterfaceOntology/sdgio/issues/14" xsd:string
+created_by: https://orcid.org/0000-0002-0337-8610
+created_by: https://orcid.org/0000-0002-2282-7215
+created_by: https://orcid.org/0000-0002-2908-3327
+created_by: https://orcid.org/0000-0002-3410-4655
+created_by: https://orcid.org/0000-0002-4366-3088
+created_by: https://orcid.org/0000-0003-0632-7576
+created_by: https://orcid.org/0000-0003-4808-4736
+creation_date: 2021-04-14T18:57:18.275Z
 
 [Term]
 id: ENVO:01000895
 name: snowfall
 namespace: ENVO
-def: "A hydrological process in which irregular aggregates of snow fall to a planetary surface." []
+def: "A hydrological process in which irregular aggregates of snow fall to the surface of an astronomical body." []
 subset: environmental_hazards
+subset: envoCryo
 subset: envoPolar
 synonym: "snow fall" EXACT []
+xref: http://sweetontology.net/phenAtmoPrecipitation/Snowfall
 is_a: ENVO:01000703 ! hydrological precipitation process
 relationship: has_participant ENVO:01000406 ! snow
+property_value: IAO:0000116 "This is currently bound to water-based snow on Earth, may need revisions for interplanetary applications" xsd:string
+created_by: https://orcid.org/0000-0002-0337-8610
+created_by: https://orcid.org/0000-0002-2282-7215
+created_by: https://orcid.org/0000-0002-2908-3327
+created_by: https://orcid.org/0000-0002-3410-4655
+created_by: https://orcid.org/0000-0002-4366-3088
+created_by: https://orcid.org/0000-0003-0632-7576
+created_by: https://orcid.org/0000-0003-4808-4736
+creation_date: 2021-04-14T18:57:18.275Z
 
 [Term]
 id: ENVO:01000896
 name: freezing rainfall
 namespace: ENVO
 alt_id: METAR:FZRA
-def: "Rainfall which occurs when the temperature of a planetary surface and its surrounding atmosphere are below the freezing point of water, resulting in supercooled raindrops which freeze upon impact with solid surfaces." [] {comment="https://en.wikipedia.org/wiki/Freezing_rain"}
+def: "Water-based rainfall which freezes either 1) on impact with a surface to form a coating of clear ice (glaze) or 2) after percolating through surface layers." [https://orcid.org/0000-0003-4808-4736]
+comment: A surface temperature inversion is usually required. In such an inversion, the surface must have a temperature below freezing, while the temperature of the atmosphere where the precipitation forms is above freezing. Alternately, if the temperature of the ground surface and glazed objects is typically near or below freezing (0C or 32F), it is necessary that the water drops be supercooled before striking. Freezing rain can sometimes occur on surfaces exposed to the air (such as tree limbs) with air temperatures slightly above freezing in strong winds. Local evaporational cooling may result in freezing. Freezing rain frequently occurs, therefore, as a transient condition between the occurrence of rain and ice pellets (sleet). When encountered by an aircraft in flight, freezing rain can cause a dangerous accretion of clear icing. In aviation weather observations, this hydrometeor is encoded ZR by NOAA. {xref="https://orcid.org/0000-0003-4808-4736"}
 subset: environmental_hazards
+subset: envoCryo
 subset: envoPolar
 synonym: "freezing rain" BROAD []
 synonym: "freezing rain fall" BROAD []
+xref: http://sweetontology.net/phenAtmoPrecipitation/FreezingRain
 is_a: ENVO:01000830 ! water-based rainfall
+property_value: IAO:0000116 "This term exists, we're revising the definition with ESIP semantic Harmonization group, delete the old one.\n\nConsider adding axioms like PATO:\"decreased temperature\" to this and other cold forms of precipitation, such that we can create a grouping class to be filled by inference (with hail, sleet, snow, freezing rain). Something like precipitation below the liquid-solid phase transition point of water." xsd:string
+created_by: https://orcid.org/0000-0002-0337-8610
+created_by: https://orcid.org/0000-0002-2282-7215
+created_by: https://orcid.org/0000-0002-2908-3327
+created_by: https://orcid.org/0000-0002-3410-4655
+created_by: https://orcid.org/0000-0002-4366-3088
+created_by: https://orcid.org/0000-0003-0632-7576
+created_by: https://orcid.org/0000-0003-4808-4736
+creation_date: 2021-04-14T18:57:18.275Z
 
 [Term]
 id: ENVO:01000897
@@ -1699,7 +1877,7 @@ subset: environmental_hazards
 synonym: "lightning" EXACT []
 is_a: ENVO:01000897 ! electrostatic discharge process
 relationship: has_output ENVO:01000798 ! plasma
-relationship: has_participant ENVO:01000760 {minCardinality="1"} ! cloud
+relationship: has_participant ENVO:01000760 ! cloud
 relationship: occurs_in ENVO:01000267 ! atmosphere
 
 [Term]
@@ -1711,7 +1889,7 @@ subset: environmental_hazards
 synonym: "CC lightning" EXACT []
 synonym: "cloud-cloud lightning" EXACT []
 is_a: ENVO:01000902 ! lightning flash
-relationship: has_participant ENVO:01000760 {minCardinality="2"} ! cloud
+relationship: has_participant ENVO:01000760 {comment="QCR: 'has participant' min 2 cloud"} ! cloud
 
 [Term]
 id: ENVO:01000900
@@ -1721,7 +1899,7 @@ def: "A lightning process during which electrostatic discharge occurs within a s
 subset: environmental_hazards
 synonym: "IC lightning" EXACT []
 is_a: ENVO:01000902 ! lightning flash
-relationship: has_participant ENVO:01000760 {maxCardinality="1"} ! cloud
+relationship: has_participant ENVO:01000760 {comment="QCR: 'has participant' max 1 cloud"} ! cloud
 
 [Term]
 id: ENVO:01000901
@@ -1740,7 +1918,6 @@ namespace: ENVO
 def: "A lightning process during which electrostatic discharge occurs within a single cloud or between multiple clouds." []
 subset: environmental_hazards
 is_a: ENVO:01000898 ! atmospheric lightning
-relationship: has_participant ENVO:01000760 {minCardinality="1"} ! cloud
 
 [Term]
 id: ENVO:01000903
@@ -1751,6 +1928,7 @@ comment: The U.S. National Weather Service specifies sustained wind or frequent 
 comment: To qualify a snowstorm as a blizzard, some sources require the windspeed to be at least 56 km/h and the duration of the storm to be at least three hours. We set no such hard boundaries in this definition, as this should be done with reference to local standards. {comment="https://en.wikipedia.org/wiki/Blizzard"}
 subset: environmental_hazards
 subset: envoAtmo
+subset: envoCryo
 subset: envoPolar
 synonym: "boulbie" NARROW []
 synonym: "buran" NARROW []
@@ -1796,9 +1974,11 @@ relationship: has_participant ENVO:01000815 ! liquid environmental material
 id: ENVO:01000982
 name: water flow process
 namespace: ENVO
-def: "A process during which a volume of water is transported due to a disequilibria in physical forces." []
+def: "A material transport process during which a volume of liquid water is transported due to a disequilibria in physical forces." []
 subset: environmental_hazards
-is_a: ENVO:01000981 ! mass liquid flow
+is_a: ENVO:03000010 ! material transport process
+intersection_of: ENVO:03000010 ! material transport process
+intersection_of: has_participant ENVO:00002006 ! liquid water
 relationship: has_participant ENVO:00002006 ! liquid water
 
 [Term]
@@ -1854,8 +2034,7 @@ name: tectonic movement
 namespace: ENVO
 def: "A process during which pieces of a planetary crust and uppermost mantle move." [https://en.wikipedia.org/wiki/Plate_tectonics] {comment="https://en.wikipedia.org/wiki/List_of_tectonic_plates"}
 is_a: ENVO:03000010 ! material transport process
-intersection_of: ENVO:03000010 ! material transport process
-intersection_of: has_participant ENVO:01001097 ! tectonic plate
+relationship: has_participant ENVO:01001097 ! tectonic plate
 
 [Term]
 id: ENVO:01001094
@@ -1864,7 +2043,7 @@ namespace: ENVO
 def: "A process during which pieces of a planetary crust and uppermost mantle move towards one another." [https://en.wikipedia.org/wiki/Convergent_boundary, https://en.wikipedia.org/wiki/List_of_tectonic_plates, https://en.wikipedia.org/wiki/Plate_tectonics]
 is_a: ENVO:01001093 ! tectonic movement
 relationship: has_part_that_occurs_in ENVO:01001100 ! convergent plate boundary
-relationship: has_participant ENVO:01001097 {minCardinality="2"} ! tectonic plate
+relationship: has_participant ENVO:01001097 {comment="QCR: 'has participant' min 2 'tectonic plate'"} ! tectonic plate
 
 [Term]
 id: ENVO:01001097
@@ -1996,9 +2175,7 @@ comment: Ambiguity exists in the definition of x-rays and their differentiation 
 subset: environmental_hazards
 subset: envoAstro
 synonym: "x ray stellar radiation" EXACT []
-synonym: "X-ray radiation" EXACT []
 synonym: "X-ray solar radiation" NARROW []
-synonym: "X-ray stellar radiation" EXACT []
 property_value: IAO:0000114 IAO:0000428
 
 [Term]
@@ -2043,6 +2220,13 @@ comment: The definitions of forest can vary greatly, and different classes will 
 is_a: ENVO:01001790 ! terrestrial ecosystem
 relationship: has_part ENVO:01001239 ! forest canopy
 property_value: IAO:0000116 "The correct usage of FLOPO terms in the axiomatisation needs to be confirmed." xsd:string
+
+[Term]
+id: ENVO:01001276
+name: water ice layer
+namespace: ENVO
+def: "A solid layer which is primarily composed of some water-based ice." []
+is_a: ENVO:01001609 ! cryospheric layer
 
 [Term]
 id: ENVO:01001287
@@ -2154,20 +2338,21 @@ intersection_of: ENVO:00010504 ! surface layer
 intersection_of: composed_primarily_of ENVO:01000814 ! solid environmental material
 
 [Term]
-id: ENVO:01001334
-name: advective transport process
+id: ENVO:01001346
+name: erosion
 namespace: ENVO
-def: "A material transport process during which a volume of material is displaced due to a disequilibrium in physical forces and during which 1) the qualities that inhere in that volume and 2) the processes that are unfolding within it are largely unchanged." [https://en.wikipedia.org/wiki/Advection, https://en.wikipedia.org/wiki/Intensive_and_extensive_properties]
-comment: Advective processes are disjoint from diffusive processes. Typically, fluids are advected.
-synonym: "advective transport" EXACT []
+def: "An action of exogenic processes (such as water flow or wind) which remove environmental material from one location on the surface of an astronomical body, transporting it to another location where it is deposited." [https://en.wikipedia.org/wiki/Erosion]
 is_a: ENVO:03000010 ! material transport process
+relationship: has_participant ENVO:00010483 ! environmental material
+relationship: has_participant ENVO:01000638 ! planetary crust
 
 [Term]
 id: ENVO:01001476
 name: body of liquid
 namespace: ENVO
+def: "A liquid astronomical body part which is continuous and is delimited by physical discontinuities or non-liquid boundaries." []
 is_a: ENVO:01001477 ! liquid astronomical body part
-created_by: http://orcid.org/0000-0002-4366-3088
+created_by: https://orcid.org/0000-0002-4366-3088
 
 [Term]
 id: ENVO:01001477
@@ -2177,7 +2362,7 @@ def: "A part of an astronomical body which is primarily composed of a continuous
 is_a: ENVO:01001479 ! fluid astronomical body part
 intersection_of: ENVO:01001479 ! fluid astronomical body part
 intersection_of: composed_primarily_of ENVO:01000815 ! liquid environmental material
-created_by: http://orcid.org/0000-0002-4366-3088
+created_by: https://orcid.org/0000-0002-4366-3088
 
 [Term]
 id: ENVO:01001479
@@ -2185,7 +2370,7 @@ name: fluid astronomical body part
 namespace: ENVO
 def: "A part of an astronomical body which is primarily composed of a continuous volume of liquid or gaseous material, shaped by one or more environmental processes." [https://en.wikipedia.org/wiki/Landform]
 is_a: ENVO:01000813 ! astronomical body part
-created_by: http://orcid.org/0000-0002-4366-3088
+created_by: https://orcid.org/0000-0002-4366-3088
 creation_date: 2018-10-04T13:59:22Z
 
 [Term]
@@ -2194,10 +2379,11 @@ name: surface of an astronomical body
 namespace: ENVO
 def: "A surface layer where the solid or liquid material of an astronomical body comes into contact with an atmosphere or outer space." []
 comment: a useful class: this can be used to define sub-terrestrial and sub-marine entities
+synonym: "land surface" RELATED []
 is_a: ENVO:00010504 ! surface layer
 intersection_of: ENVO:00010504 ! surface layer
 intersection_of: part_of ENVO:01000799 ! astronomical body
-created_by: http://orcid.org/0000-0002-4366-3088
+created_by: https://orcid.org/0000-0002-4366-3088
 creation_date: 2018-10-04T16:55:57Z
 
 [Term]
@@ -2210,7 +2396,7 @@ subset: envoAstro
 synonym: "anthropogenic radiation" BROAD []
 synonym: "artificial radiation" EXACT []
 is_a: ENVO:01001026 ! electromagnetic radiation
-created_by: http://orcid.org/0000-0002-4366-3088
+created_by: https://orcid.org/0000-0002-4366-3088
 creation_date: 2019-01-09T09:07:24Z
 
 [Term]
@@ -2222,8 +2408,20 @@ comment: Sometimes the increase in viscosity is great enough to crystallize or s
 synonym: "congelation" EXACT []
 synonym: "congelation process" EXACT []
 is_a: ENVO:03000043 ! material transformation process
-created_by: http://orcid.org/0000-0002-4366-3088
+created_by: https://orcid.org/0000-0002-4366-3088
 creation_date: 2019-01-14T18:47:32Z
+
+[Term]
+id: ENVO:01001609
+name: cryospheric layer
+namespace: ENVO
+def: "A layer which is part of a cryosphere." []
+subset: envoPolar
+is_a: ENVO:01000281 ! layer
+intersection_of: ENVO:01000281 ! layer
+intersection_of: part_of ENVO:03000143 ! cryosphere
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-4366-3088
+creation_date: 2019-04-09T13:05:25Z
 
 [Term]
 id: ENVO:01001678
@@ -2231,7 +2429,7 @@ name: fluid layer
 namespace: ENVO
 def: "A layer which is composed primarily of some fluid." []
 is_a: ENVO:01000281 ! layer
-property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-4366-3088
 property_value: http://purl.org/dc/elements/1.1/date 2019-07-22T17:35:08Z xsd:dateTime
 
 [Term]
@@ -2240,7 +2438,7 @@ name: interface layer
 namespace: ENVO
 def: "A layer which separates two portions of environmental material which possess 1) differing compositions, 2) a discontinuity of some property, or 3) some derivative of some property in a direction normal to the interface." []
 is_a: ENVO:01000281 ! layer
-property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-4366-3088
 property_value: http://purl.org/dc/elements/1.1/date 2019-08-20T09:28:10Z xsd:dateTime
 
 [Term]
@@ -2249,8 +2447,20 @@ name: mass of environmental material
 namespace: ENVO
 def: "An object which is composed primarily of an environmental material" []
 comment: This class and its subclasses refer to objects that are discrete accumulations of environmental materials, generally primarily composed of one or a few main material types.
-property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-4366-3088
 property_value: http://purl.org/dc/elements/1.1/date 2019-08-20T09:38:29Z xsd:dateTime
+
+[Term]
+id: ENVO:01001687
+name: mass of solid material
+namespace: ENVO
+def: "An mass of environmental material which is composed primarily of a solid environmental material" []
+comment: This class and its subclasses refer to objects that are discrete accumulations of environmental materials, generally primarily composed of one or a few main material types.
+is_a: ENVO:01001686 ! mass of environmental material
+intersection_of: ENVO:01001686 ! mass of environmental material
+intersection_of: composed_primarily_of ENVO:01000814 ! solid environmental material
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-08-20T09:41:27Z xsd:dateTime
 
 [Term]
 id: ENVO:01001688
@@ -2260,7 +2470,7 @@ def: "An object which is composed primarily of a fluid." []
 comment: This class and its subclasses refer to objects that are discrete accumulations of environmental materials, generally primarily composed of one or a few main material types.
 synonym: "fluid mass" EXACT []
 is_a: ENVO:01001686 ! mass of environmental material
-property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-4366-3088
 property_value: http://purl.org/dc/elements/1.1/date 2019-08-20T09:42:35Z xsd:dateTime
 
 [Term]
@@ -2273,15 +2483,18 @@ synonym: "liquid mass" EXACT []
 is_a: ENVO:01001688 ! mass of fluid
 intersection_of: ENVO:01001688 ! mass of fluid
 intersection_of: composed_primarily_of ENVO:01000815 ! liquid environmental material
-property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-4366-3088
 property_value: http://purl.org/dc/elements/1.1/date 2019-08-20T09:45:03Z xsd:dateTime
 
 [Term]
 id: ENVO:01001747
 name: mass fluid flow
 namespace: ENVO
-is_a: ENVO:01001334 ! advective transport process
-property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+def: "An advective transport process during which a fluid moves." []
+is_a: ENVO:03000010 ! material transport process
+relationship: has_characteristic ENVO:01003012 ! advective
+relationship: has_participant ENVO:02000140 ! fluid environmental material
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-4366-3088
 property_value: http://purl.org/dc/elements/1.1/date 2019-09-05T05:47:26Z xsd:dateTime
 
 [Term]
@@ -2294,7 +2507,7 @@ subset: envoMarine
 subset: envoPolar
 synonym: "cyclonic rotation" EXACT []
 is_a: ENVO:01001747 ! mass fluid flow
-property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-4366-3088
 property_value: http://purl.org/dc/elements/1.1/date 2019-09-05T05:47:55Z xsd:dateTime
 
 [Term]
@@ -2304,7 +2517,7 @@ namespace: ENVO
 def: "A process during which the ability of a material entity to maintain its internal organisation fails, resulting in deformation and a breakdown of that organisation." [https://en.wikipedia.org/wiki/Structural_failure]
 comment: This is a very general concept, and should likely be elevated to OBO Core rather than held in ENVO.
 is_a: ENVO:01001852 ! energy transfer process
-property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-4366-3088
 property_value: http://purl.org/dc/elements/1.1/date 2019-10-07T10:08:24Z xsd:dateTime
 
 [Term]
@@ -2313,16 +2526,16 @@ name: landmass
 namespace: ENVO
 def: "A large continuous area of land, either surrounded by sea or contiguous with another landmass." [] {http://purl.obolibrary.org/obo/IAO_0000119="https://en.wiktionary.org/wiki/landmass"}
 is_a: ENVO:01001785 ! land
-property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-4366-3088
 property_value: http://purl.org/dc/elements/1.1/date 2019-10-17T08:31:26Z xsd:dateTime
 
 [Term]
 id: ENVO:01001784
 name: compound astronomical body part
 namespace: ENVO
-def: "A part of an astronomical body which is primarily composed of a continuous medium bearing liquid, gaseous, and solid material in varying quantities." [https://en.wikipedia.org/wiki/Landform]
+def: "A part of an astronomical body which is composed of a continuous medium bearing liquid, gaseous, and solid material in variable quantities." [https://en.wikipedia.org/wiki/Landform]
 is_a: ENVO:01000813 ! astronomical body part
-property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-4366-3088
 property_value: http://purl.org/dc/elements/1.1/date 2019-10-17T08:36:00Z xsd:dateTime
 
 [Term]
@@ -2332,7 +2545,7 @@ namespace: ENVO
 def: "A surface layer of an astronomical body which is primarily composed of solid material and is not covered by oceans or other bodies of water." [https://en.wiktionary.org/wiki/land]
 is_a: ENVO:01001483 ! surface of an astronomical body
 relationship: composed_primarily_of ENVO:01000814 ! solid environmental material
-property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-4366-3088
 property_value: http://purl.org/dc/elements/1.1/date 2019-10-21T10:42:26Z xsd:dateTime
 
 [Term]
@@ -2340,7 +2553,7 @@ id: ENVO:01001790
 name: terrestrial ecosystem
 namespace: ENVO
 is_a: ENVO:01001110 ! ecosystem
-property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-4366-3088
 property_value: http://purl.org/dc/elements/1.1/date 2019-10-21T11:09:58Z xsd:dateTime
 
 [Term]
@@ -2349,8 +2562,50 @@ name: energy transfer process
 namespace: ENVO
 def: "A process during which one entity loses energy to another entity." []
 is_a: ENVO:02500000 ! environmental system process
-property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-4366-3088
 property_value: http://purl.org/dc/elements/1.1/date 2020-02-13T13:34:28Z xsd:dateTime
+
+[Term]
+id: ENVO:01001886
+name: landform
+namespace: ENVO
+def: "A solid astronomical body part which has been formed from and is composed primarily of the matter of that astronomical body." [https://en.wikipedia.org/wiki/Landform]
+comment: Landforms may be natural or anthropogenic. This term has often has loose usage when referencing entities which are either subterranean or submerged below water bodies. In some cases, oceans themselves are considered landforms. Here, we have provided subclasses to resolve this ambiguity, but place oceans and other water bodies elsewhere.In later revisions, this hiearchy is likely to be reordered based on the formation processes of the entities within it.
+is_a: ENVO:00000191 ! solid astronomical body part
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2021-05-15T09:40:37Z xsd:dateTime
+
+[Term]
+id: ENVO:01003001
+name: water-holding capacity
+namespace: ENVO
+def: "A disposition of a material entity which is realised when it is saturated with liquid water." []
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:01003002
+name: particle
+namespace: ENVO
+def: "A mass of solid material which is either 1) a minute fragment of a larger mass or 2) one of a collection of small masses composing an aggregate." [https://en.wiktionary.org/wiki/particle]
+synonym: "grain" RELATED []
+is_a: ENVO:01001687 ! mass of solid material
+relationship: part_of ENVO:01000060
+
+[Term]
+id: ENVO:01003003
+name: particle of clay
+namespace: ENVO
+def: "A particle which 1) is composed primarily of hydrous aluminium phyllosilicate minerals, in turn composed of aluminium and silicon ions bonded into tiny, thin plates by interconnecting oxygen and hydroxide ions, and 2) is or was part of a portion of clay." [https://en.wikipedia.org/wiki/Clay#Properties]
+comment: The distinction between silt and clay varies by discipline. Geologists and soil scientists usually consider the separation to occur at a particle size of 2 μm (clays being finer than silts), sedimentologists often use 4–5 μm, and colloid chemists use 1 μm. Geotechnical engineers distinguish between silts and clays based on the plasticity properties of the soil, as measured by the soils' Atterberg limits. ISO 14688 grades clay particles as being smaller than 2 μm and silt particles as being larger. Mixtures of sand, silt and less than 40% clay are called loam. {xref="Properties"}
+synonym: "clay particle" EXACT []
+is_a: ENVO:01003002 ! particle
+
+[Term]
+id: ENVO:01003012
+name: advective
+namespace: ENVO
+def: "A physical quality of a process which is characteristic of process that transport material without, themselves, changing the qualities of those materials or the processes that are unfolding within them." [https://en.wikipedia.org/wiki/Advection]
+property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-4366-3088
 
 [Term]
 id: ENVO:02000140
@@ -2379,6 +2634,16 @@ subset: environmental_hazards
 is_a: ENVO:03000010 ! material transport process
 relationship: has_participant ENVO:00000063 ! water body
 relationship: has_participant ENVO:01000635 ! planetary landmass
+
+[Term]
+id: ENVO:02500028
+name: planetary erosion
+namespace: ENVO
+def: "An action of exogenic processes (such as water flow or wind) which remove environmental material from one part of a planet's crust, transporting it to another location where it is deposited." [https://en.wikipedia.org/wiki/Erosion]
+subset: envoPolar
+is_a: ENVO:01001346 ! erosion
+relationship: has_participant ENVO:00010483 ! environmental material
+relationship: has_participant ENVO:01000638 ! planetary crust
 
 [Term]
 id: ENVO:02500036
@@ -2449,7 +2714,7 @@ comment: Experimental class for structural purposes not recommended for annotati
 subset: envoPolar
 is_a: ENVO:02500000 ! environmental system process
 property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
-property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088
+property_value: IAO:0000117 https://orcid.org/0000-0002-4366-3088
 
 [Term]
 id: ENVO:03000010
@@ -2460,7 +2725,19 @@ comment: Experimental class for structural purposes not recommended for annotati
 subset: envoPolar
 is_a: ENVO:02500000 ! environmental system process
 property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
-property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088
+property_value: IAO:0000117 https://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:03000015
+name: geographic basin
+namespace: ENVO
+def: "A depression which is part of a planetary crust, is of geographic scale, and is partially or completely enclosed." [https://en.wikipedia.org/wiki/Basin]
+subset: envoPolar
+is_a: ENVO:00000309 ! depressed landform
+relationship: overlaps ENVO:01000638 ! planetary crust
+property_value: IAO:0000116 "The general semantics of depression and geographic basin are still to be worked out see  https://github.com/EnvironmentOntology/envo/issues/486" xsd:string
+property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
+property_value: IAO:0000117 https://orcid.org/0000-0002-4366-3088
 
 [Term]
 id: ENVO:03000016
@@ -2471,7 +2748,7 @@ comment: Experimental class for structural purposes not recommended for annotati
 subset: envoPolar
 is_a: ENVO:02500000 ! environmental system process
 property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
-property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088
+property_value: IAO:0000117 https://orcid.org/0000-0002-4366-3088
 
 [Term]
 id: ENVO:03000020
@@ -2485,7 +2762,7 @@ is_a: ENVO:03000010 ! material transport process
 relationship: has_part ENVO:01000793 ! atmospheric wind
 relationship: has_participant ENVO:00010483 ! environmental material
 property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
-property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088
+property_value: IAO:0000117 https://orcid.org/0000-0002-4366-3088
 
 [Term]
 id: ENVO:03000027
@@ -2496,7 +2773,7 @@ comment: Described as having a fluffy appearance.
 subset: envoPolar
 is_a: ENVO:01000406 ! snow
 property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
-property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088
+property_value: IAO:0000117 https://orcid.org/0000-0002-4366-3088
 
 [Term]
 id: ENVO:03000043
@@ -2510,7 +2787,7 @@ relationship: has_input ENVO:00010483 ! environmental material
 relationship: has_output ENVO:00010483 ! environmental material
 property_value: IAO:0000116 "A different material transformation process class (or similarly named class) pertaining to the conversion of a specific chemical into another belongs in CHEBI and or REX ontologies." xsd:string
 property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
-property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088
+property_value: IAO:0000117 https://orcid.org/0000-0002-4366-3088
 
 [Term]
 id: ENVO:03000090
@@ -2523,7 +2800,7 @@ synonym: "explosion" EXACT []
 is_a: ENVO:01000839 ! combustion process
 relationship: has_output ENVO:01000797 ! gaseous environmental material
 property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
-property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088
+property_value: IAO:0000117 https://orcid.org/0000-0002-4366-3088
 
 [Term]
 id: ENVO:03000091
@@ -2536,7 +2813,7 @@ is_a: ENVO:03000090 ! explosion process
 relationship: has_participant ENVO:00000134 ! permafrost
 relationship: occurs_in ENVO:00000134 ! permafrost
 property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
-property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088
+property_value: IAO:0000117 https://orcid.org/0000-0002-4366-3088
 
 [Term]
 id: ENVO:03000103
@@ -2548,7 +2825,7 @@ is_a: ENVO:03000020 ! aeolian transport process
 relationship: has_input ENVO:03000027 ! powdery snow
 relationship: has_participant ENVO:00010483 ! environmental material
 property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
-property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088
+property_value: IAO:0000117 https://orcid.org/0000-0002-4366-3088
 
 [Term]
 id: ENVO:03000105
@@ -2560,7 +2837,7 @@ subset: environmental_hazards
 subset: envoPolar
 is_a: ENVO:01000690 ! mass wasting
 property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
-property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088
+property_value: IAO:0000117 https://orcid.org/0000-0002-4366-3088
 
 [Term]
 id: ENVO:03000106
@@ -2572,7 +2849,7 @@ subset: envoPolar
 synonym: "powder snow avalanche" EXACT []
 is_a: ENVO:01000691 ! avalanche
 property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
-property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088
+property_value: IAO:0000117 https://orcid.org/0000-0002-4366-3088
 
 [Term]
 id: ENVO:03000107
@@ -2584,7 +2861,7 @@ subset: environmental_hazards
 subset: envoPolar
 is_a: ENVO:01000691 ! avalanche
 property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
-property_value: IAO:0000117 http://orcid.org/0000-0002-4366-3088
+property_value: IAO:0000117 https://orcid.org/0000-0002-4366-3088
 
 [Term]
 id: ENVO:03000131
@@ -2596,6 +2873,55 @@ is_a: ENVO:01001292 ! land fire
 relationship: occurs_in ENVO:00000106 ! grassland area
 property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
 property_value: IAO:0000117 https://orcid.org/0000-0002-3884-3420 xsd:string
+
+[Term]
+id: ENVO:03000143
+name: cryosphere
+namespace: ENVO
+def: "An astronomical body part which is composed primarily of environmental materials in their frozen form." [https://orcid.org/0000-0003-4808-4736]
+comment: The term refers collectively to the portions of the earth (i.e., a planet) where water is in solid form, including snow cover, floating ice, glaciers, ice caps, ice sheets, seasonally frozen ground and perennially frozen ground (permafrost). The Cryosphere may be divided into the cryoatmosphere, the cryohydrosphere (snow cover, glaciers, and river, lake and sea Ice) and the cryolithosphere (perennially and seasonally cryotic ground, rock glacier).\n\nThis is an Earth centric definition, other cryospheres will be considered later. Some definitions reffer to that which is sufficiently cold for pure water to freeze for at least a part of each year.\n\nIt should be noted that "Some authorities exclude the earth's atmosphere from the Earth's Cryosphere; others restrict the term Cryosphere to the regions of the earth's crust where Permafrost exists."\n\nDefinitions of Cryosphere come from several glossaries including:\n- PhysicalGeography.net http://physicalgeography.net/\n-  van Everdingen, Robert, ed., 2005 (1998 revised May 2005). Multi-language glossary of permafrost and related ground-ice terms. Boulder, CO: National Snow and Ice Data Center/World Data Center for Glaciology. [https://globalcryospherewatch.org/reference/glossary_docs/Glossary_of_Permafrost_and_Ground-Ice_IPA_2005.pdf]\n- American Meteorological Society, 2015. Glossary of Meteorology [online], Available at: http://glossary.ametsoc.org/wiki/Main_Page. [Accessed 27/01/2017].\n- EU Climate-ADAPT (The European Climate Adaptation Platform), no date, Glossary, Available from: http://climate-adapt.eea.europa.eu/glossary\n- IPCC, 2014: Annex II: Glossary [Agard, J., Schipper, E. L. F., (ed.)]. In: Climate Change 2014: Impacts, Adaptation, and Vulnerability. Contribution of Working Group II to the Fifth Assessment Report of the Intergovernmental Panel on Climate Change [Birkmann, J., Campos, M., Dubeux, C., Nojiri, Y., Olsson, L., Osman-Elasha, B., Pelling, M., Prather, M. J., Rivera-Ferre M. G., Ruppel, O. C., Sallenger, A., Smith, K. R., St. Clair, A. L.,]. Cambridge University Press, Cambridge, United Kingdom and New York, NY, USA. [Link]\n- NSIDC, The National Snow and Ice Data Center glossary is available at https://nsidc.org/cryosphere/glossary, Last accessed [26/01/2016].\n- Trombotto, D., P. Wainstein & L. Arenson, 2014, Guía Terminológica de la Geocriología Sudamericana” / “Terminological Guide of the South American Geocryology, 1a ed. 128 pp. [Link]\n- UNESCO-WMO, 2012, International Glossary of Hydrology, 3rd edition, WMO-No. 385. [Link] {xref="https://orcid.org/0000-0003-4808-4736"}
+subset: envoCryo
+subset: envoPolar
+xref: http://sweetontology.net/realm/Cryosphere
+is_a: ENVO:01000813 ! astronomical body part
+property_value: IAO:0000116 "For the moment the definition links to liquid water but in the future we might need to link to other materials for other planets, e.g., Mars. Need to make this planet agnostic. Might want to not have the definition link to years as some astronomical body parts might not be in systems with years.\n\nNote that in a strict sense, rocks are also frozen but in a practical sense we use terms like \"solidified\". This maybe something to revist if we add more astrogelogical content." xsd:string
+created_by: https://orcid.org/0000-0002-0337-8610
+created_by: https://orcid.org/0000-0002-2282-7215
+created_by: https://orcid.org/0000-0002-2908-3327
+created_by: https://orcid.org/0000-0002-3410-4655
+created_by: https://orcid.org/0000-0002-4366-3088
+created_by: https://orcid.org/0000-0003-0632-7576
+created_by: https://orcid.org/0000-0003-4808-4736
+creation_date: 2021-04-14T18:57:18.275Z
+
+[Term]
+id: ENVO:03400012
+name: hail stone
+namespace: ENVO
+def: "An ice mass which 1) occurs in a ball-shape or irregular lump, 2) has a minimum diameter of 5 millimeters (or 0.2 inches), and 3) is formed within convective clouds." []
+comment: Nearly always formed within cumulonimbus clouds. Typically have a diameter ranging between 5 and 50 millimeters.
+subset: envoCryo
+subset: envoPolar
+is_a: ENVO:01000293 ! ice mass
+created_by: https://orcid.org/0000-0002-0337-8610
+created_by: https://orcid.org/0000-0002-2282-7215
+created_by: https://orcid.org/0000-0002-2908-3327
+created_by: https://orcid.org/0000-0002-3410-4655
+created_by: https://orcid.org/0000-0002-4366-3088
+created_by: https://orcid.org/0000-0003-0632-7576
+created_by: https://orcid.org/0000-0003-4808-4736
+creation_date: 2021-04-14T18:57:18.275Z
+
+[Term]
+id: ENVO:06105304
+name: water-holding capacity of soil
+namespace: ENVO
+def: "Water-holding capacity which inheres in some soil." [https://www.canr.msu.edu/news/why_is_soil_water_holding_capacity_important]
+synonym: "soil water-holding capacity" EXACT []
+is_a: ENVO:01003001 ! water-holding capacity
+relationship: characteristic_of ENVO:00001998 ! soil
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-8461-9745
+property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0001-6284-4821
 
 [Term]
 id: ENVO:1000745
@@ -2657,11 +2983,6 @@ namespace: ENVO
 xref: RO:0002371
 
 [Typedef]
-id: bearer_of
-namespace: ENVO
-xref: RO:0000053
-
-[Typedef]
 id: bounding_layer_of
 namespace: ENVO
 xref: RO:0002007
@@ -2690,6 +3011,16 @@ xref: RO:0002411
 id: causally_upstream_of_or_within
 namespace: ENVO
 xref: RO:0002418
+
+[Typedef]
+id: characteristic_of
+namespace: ENVO
+xref: RO:0000052
+
+[Typedef]
+id: characteristic_of_part_of
+namespace: ENVO
+xref: RO:0002314
 
 [Typedef]
 id: composed_primarily_of
@@ -2736,6 +3067,14 @@ xref: RO:0002150
 id: derives_from
 namespace: ENVO
 xref: RO:0001000
+is_a: derives_from_part_of ! derives from part of
+
+[Typedef]
+id: derives_from_part_of
+name: derives from part of
+namespace: ENVO
+def: "A relation between two distinct material entities, the new entity and the old entity, in which the new entity begins to exist through the separation or transformation of a part of the old entity, and the new entity inherits a significant portion of the matter belonging to that part of the old entity." []
+xref: ENVO:01003004
 
 [Typedef]
 id: derives_into
@@ -2756,7 +3095,7 @@ xref: RO:0002509
 id: disconnected_from
 name: disconnected_from
 namespace: ENVO
-def: "A is disconnected_from B if they have no parts in common." [SO:cjm]
+def: "A is disconnected_from B if they have no parts in common." [https://orcid.org/0000-0002-6601-2165]
 synonym: "non_overlapping_with" EXACT []
 expand_assertion_to: "Class: <http://www.w3.org/2002/07/owl#Nothing> EquivalentTo: (BFO_0000050 some ?X) and (BFO_0000050 some ?Y)" []
 is_metadata_tag: true
@@ -2794,8 +3133,13 @@ namespace: ENVO
 def: "A relation between a process and a disposition such that the existence of the disposition is caused by the execution of the process." []
 xref: ENVO:2000036
 property_value: IAO:0000116 "Consider ceding to RO" xsd:string
-created_by: cjm
+created_by: https://orcid.org/0000-0002-6601-2165
 creation_date: 2018-11-03T20:58:13Z
+
+[Typedef]
+id: has_characteristic
+namespace: ENVO
+xref: RO:0000053
 
 [Typedef]
 id: has_component
@@ -2878,14 +3222,14 @@ namespace: ENVO
 xref: RO:0000087
 
 [Typedef]
-id: inheres_in
-namespace: ENVO
-xref: RO:0000052
-
-[Typedef]
 id: input_of
 namespace: ENVO
 xref: RO:0002352
+
+[Typedef]
+id: involved_in
+namespace: ENVO
+xref: RO:0002331
 
 [Typedef]
 id: involved_in_negative_regulation_of
