@@ -42,7 +42,7 @@ property_value: http://purl.org/dc/elements/1.1/title "The Environment Ontology"
 property_value: http://purl.org/dc/elements/1.1/type http://purl.obolibrary.org/obo/IAO_8000001 xsd:string
 property_value: http://purl.org/dc/terms/license https://creativecommons.org/publicdomain/zero/1.0/
 property_value: http://xmlns.com/foaf/0.1/homepage http://environmentontology.org/ xsd:anyURI
-property_value: owl:versionInfo "2023-01-18" xsd:string
+property_value: owl:versionInfo "2023-02-13" xsd:string
 
 [Term]
 id: ENVO:00000000
@@ -39807,11 +39807,11 @@ intersection_of: characteristic_of ENVO:00001998 ! soil
 
 [Term]
 id: ENVO:09200022
-name: mass density of snow
-def: "The mass density of some snow." []
-synonym: "snow mass density" EXACT []
-intersection_of: PATO:0001019
-intersection_of: characteristic_of ENVO:01000406 ! snow
+name: obsolete hours of sunshine
+comment: The ID related to this term was accidentally used for two separate classes, hours of sunshine and mass density of snow, which are now seperate terms.
+is_obsolete: true
+consider: ENVO:09200036
+consider: ENVO:09200037
 
 [Term]
 id: ENVO:09200023
@@ -39928,6 +39928,23 @@ def: "The porosity of some water ice." []
 synonym: "water ice porosity" EXACT []
 intersection_of: PATO:0000973
 intersection_of: characteristic_of ENVO:01000277 ! water ice
+
+[Term]
+id: ENVO:09200036
+name: mass density of snow
+def: "The mass density of some snow." []
+synonym: "snow mass density" EXACT []
+intersection_of: PATO:0001019
+intersection_of: characteristic_of ENVO:01000406 ! snow
+
+[Term]
+id: ENVO:09200037
+name: hours of sunshine
+def: "A one-dimensional temporal region during which an entity is exposed to stellar radiation." []
+subset: envoCryo
+subset: envoPolar
+synonym: "sunshine hours" EXACT []
+is_a: BFO:0000038
 
 [Term]
 id: ENVO:1000745
