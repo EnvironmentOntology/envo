@@ -1,0 +1,449 @@
+format-version: 1.2
+data-version: envo/releases/2023-02-13/subsets/envoANZSoil.owl
+subsetdef: disposition_slim "Disposition slim"
+subsetdef: environmental_hazards "environmental_hazards"
+subsetdef: EnvO-Lite-GSC "EnvO-Lite-GSC"
+subsetdef: envoANZSoil "envoANZSoil"
+subsetdef: envoAstro "envoAstro"
+subsetdef: envoAtmo "envoAtmo"
+subsetdef: envoCesab "envoCesab"
+subsetdef: envoCmecs "envoCmecs"
+subsetdef: envoEmpo "envoEmpo"
+subsetdef: envoEOVs "envoEOVs"
+subsetdef: envoMarine "envoMarine"
+subsetdef: envoMeo "envoMeo"
+subsetdef: envoNceas "envoNceas"
+subsetdef: envoOmics "envoOmics"
+subsetdef: envoPlastics "envoPlastics"
+subsetdef: envoPolar "envoPolar"
+subsetdef: mpath_slim "Pathology slim"
+subsetdef: nlcd2011 "nlcd2011"
+subsetdef: relational_slim "Relational slim: types of quality that require an additional entity in order to exist"
+subsetdef: ro-eco "ro-eco"
+subsetdef: scalar_slim "Scalar slim"
+subsetdef: value_slim "Value slim"
+subsetdef: wwfBiome "wwfBiome"
+synonymtypedef: PLURAL "plurals"
+ontology: envo/subsets/envoANZSoil
+property_value: owl:versionInfo "2023-02-13" xsd:string
+
+[Typedef]
+id: adjacent_to
+namespace: ENVO
+xref: RO:0002220
+
+[Typedef]
+id: attached_to
+namespace: ENVO
+xref: RO:0002371
+
+[Typedef]
+id: bounding_layer_of
+namespace: ENVO
+xref: RO:0002007
+
+[Typedef]
+id: capable_of
+namespace: ENVO
+xref: RO:0002215
+
+[Typedef]
+id: causal_agent_in_process
+namespace: ENVO
+xref: RO:0002500
+
+[Typedef]
+id: causally_downstream_of_or_within
+namespace: ENVO
+xref: RO:0002427
+
+[Typedef]
+id: causally_upstream_of
+namespace: ENVO
+xref: RO:0002411
+
+[Typedef]
+id: causally_upstream_of_or_within
+namespace: ENVO
+xref: RO:0002418
+
+[Typedef]
+id: characteristic_of
+namespace: ENVO
+xref: RO:0000052
+
+[Typedef]
+id: characteristic_of_part_of
+namespace: ENVO
+xref: RO:0002314
+
+[Typedef]
+id: composed_primarily_of
+namespace: ENVO
+xref: RO:0002473
+
+[Typedef]
+id: concretizes
+namespace: ENVO
+xref: RO:0000059
+
+[Typedef]
+id: connected_to
+namespace: ENVO
+xref: RO:0002170
+
+[Typedef]
+id: connects
+name: connects
+namespace: ENVO
+xref: RO:0002176
+
+[Typedef]
+id: contained_in
+namespace: ENVO
+xref: RO:0001018
+
+[Typedef]
+id: contains
+namespace: ENVO
+xref: RO:0001019
+
+[Typedef]
+id: contains_process
+namespace: ENVO
+xref: BFO:0000067
+
+[Typedef]
+id: continuous_with
+namespace: ENVO
+xref: RO:0002150
+
+[Typedef]
+id: derives_from
+namespace: ENVO
+xref: RO:0001000
+is_a: derives_from_part_of ! derives from part of
+
+[Typedef]
+id: derives_from_part_of
+name: derives from part of
+namespace: ENVO
+def: "A relation between two distinct material entities, the new entity and the old entity, in which the new entity begins to exist through the separation or transformation of a part of the old entity, and the new entity inherits a significant portion of the matter belonging to that part of the old entity." []
+xref: ENVO:01003004
+
+[Typedef]
+id: derives_into
+namespace: ENVO
+xref: RO:0001001
+
+[Typedef]
+id: determined_by
+namespace: ENVO
+xref: RO:0002507
+
+[Typedef]
+id: determined_by_part_of
+namespace: ENVO
+xref: RO:0002509
+
+[Typedef]
+id: disconnected_from
+name: disconnected_from
+namespace: ENVO
+def: "A is disconnected_from B if they have no parts in common." [https://orcid.org/0000-0002-6601-2165]
+synonym: "non_overlapping_with" EXACT []
+expand_assertion_to: "Class: <http://www.w3.org/2002/07/owl#Nothing> EquivalentTo: (BFO_0000050 some ?X) and (BFO_0000050 some ?Y)" []
+is_metadata_tag: true
+is_class_level: true
+
+[Typedef]
+id: distributary_of
+namespace: ENVO
+xref: RO:0002377
+
+[Typedef]
+id: during_which_ends
+namespace: ENVO
+xref: RO:0002084
+
+[Typedef]
+id: during_which_starts
+namespace: ENVO
+xref: RO:0002088
+
+[Typedef]
+id: ends
+namespace: ENVO
+xref: RO:0002229
+
+[Typedef]
+id: formed_as_result_of
+namespace: ENVO
+xref: RO:0002354
+
+[Typedef]
+id: generates
+name: generates
+namespace: ENVO
+def: "A relation between a process and a disposition such that the existence of the disposition is caused by the execution of the process." []
+xref: ENVO:2000036
+property_value: IAO:0000116 "Consider ceding to RO" xsd:string
+created_by: https://orcid.org/0000-0002-6601-2165
+creation_date: 2018-11-03T20:58:13Z
+
+[Typedef]
+id: has_characteristic
+namespace: ENVO
+xref: RO:0000053
+
+[Typedef]
+id: has_component
+namespace: ENVO
+xref: RO:0002180
+
+[Typedef]
+id: has_condition
+name: has_condition
+namespace: ENVO
+comment: Experimental relation used in EnvO. A condition defines a restricted range of a given quality or combination of qualities. If an environment class, E, has_condition C, then all qualities listed in C are restricted to the ranges defined in C in E. This is not intended as a logical conditional.
+xref: has_condition
+is_inverse_functional: true
+creation_date: 2013-05-08T07:33:05Z
+
+[Typedef]
+id: has_disposition
+namespace: ENVO
+xref: RO:0000091
+
+[Typedef]
+id: has_end_location
+namespace: ENVO
+xref: RO:0002232
+
+[Typedef]
+id: has_function
+namespace: ENVO
+xref: RO:0000085
+
+[Typedef]
+id: has_habitat
+name: has habitat
+namespace: ENVO
+xref: RO:0002303
+
+[Typedef]
+id: has_increased_levels_of
+namespace: ENVO
+xref: has_increased_levels_of
+
+[Typedef]
+id: has_input
+namespace: ENVO
+xref: RO:0002233
+
+[Typedef]
+id: has_member
+namespace: ENVO
+xref: RO:0002351
+
+[Typedef]
+id: has_output
+namespace: ENVO
+xref: RO:0002234
+
+[Typedef]
+id: has_part
+namespace: ENVO
+xref: BFO:0000051
+
+[Typedef]
+id: has_part_that_occurs_in
+namespace: ENVO
+xref: RO:0002479
+
+[Typedef]
+id: has_participant
+namespace: ENVO
+xref: RO:0000057
+
+[Typedef]
+id: has_quality
+namespace: ENVO
+xref: RO:0000086
+
+[Typedef]
+id: has_role
+namespace: ENVO
+xref: RO:0000087
+
+[Typedef]
+id: input_of
+namespace: ENVO
+xref: RO:0002352
+
+[Typedef]
+id: involved_in
+namespace: ENVO
+xref: RO:0002331
+
+[Typedef]
+id: involved_in_negative_regulation_of
+namespace: ENVO
+xref: RO:0002430
+
+[Typedef]
+id: located_in
+namespace: ENVO
+xref: RO:0001025
+
+[Typedef]
+id: location_of
+namespace: ENVO
+xref: RO:0001015
+
+[Typedef]
+id: member_of
+namespace: ENVO
+xref: RO:0002350
+
+[Typedef]
+id: negatively_regulates
+namespace: ENVO
+xref: RO:0002212
+
+[Typedef]
+id: obsolete_determined_by
+name: obsolete determined by
+namespace: ENVO
+xref: ENVO:2100001
+is_obsolete: true
+
+[Typedef]
+id: obsolete_determined_by_part_of
+name: obsolete determined by part of
+namespace: ENVO
+xref: ENVO:2100007
+is_obsolete: true
+
+[Typedef]
+id: obsolete_has_active_participant
+namespace: ENVO
+xref: RO:0002218
+
+[Typedef]
+id: occurs_in
+namespace: ENVO
+xref: BFO:0000066
+
+[Typedef]
+id: output_of
+namespace: ENVO
+xref: RO:0002353
+
+[Typedef]
+id: overlaps
+namespace: ENVO
+xref: RO:0002131
+
+[Typedef]
+id: part_of
+namespace: ENVO
+xref: BFO:0000050
+
+[Typedef]
+id: partially_overlaps
+namespace: ENVO
+xref: RO:0002151
+
+[Typedef]
+id: partially_surrounded_by
+name: partially_surrounded_by
+namespace: ENVO
+def: "x partially_surrounded_by y if and only if (1) x is adjacent to y and for the region r that is adjacent to x, r partially overlaps y (2) the shared boundary between x and y occupies  a non-trivial proportion of the outermost boundary of x" []
+comment: Definition modified from 'surrounded by'.
+xref: ENVO:01001307
+property_value: IAO:0000112 "A duck swimming in a pond is partially surrounded by air and partially surrounded by water." xsd:string
+
+[Typedef]
+id: participates_in
+namespace: ENVO
+xref: RO:0000056
+
+[Typedef]
+id: preceded_by
+namespace: ENVO
+xref: BFO:0000062
+
+[Typedef]
+id: precedes
+namespace: ENVO
+xref: BFO:0000063
+
+[Typedef]
+id: process_has_causal_agent
+namespace: ENVO
+xref: RO:0002608
+
+[Typedef]
+id: realized_in
+namespace: ENVO
+xref: BFO:0000054
+
+[Typedef]
+id: realizes
+namespace: ENVO
+xref: BFO:0000055
+
+[Typedef]
+id: regulates_(processual)
+name: regulates (processual)
+namespace: ENVO
+xref: RO:0002211
+
+[Typedef]
+id: results_in_expansion_of
+name: results in expansion of
+namespace: ENVO
+def: "A process, p, results in the expansion of a material entity, m, if the spatial extent of m is increased as a result of participating in p." []
+xref: ENVO:02500016
+property_value: IAO:0000112 "Afforestation results in the expansion of a forest." xsd:string
+
+[Typedef]
+id: results_in_formation_of
+namespace: ENVO
+xref: RO:0002297
+
+[Typedef]
+id: results_in_proliferation_of
+name: results in proliferation of
+namespace: ENVO
+comment: To be ceded to RO
+xref: ENVO:02500020
+
+[Typedef]
+id: results_in_transformation_into
+name: results in transformation into
+namespace: ENVO
+xref: ENVO:02500006
+
+[Typedef]
+id: starts_during
+namespace: ENVO
+xref: RO:0002091
+
+[Typedef]
+id: surrounded_by
+name: surrounded by
+namespace: ENVO
+xref: RO:0002219
+
+[Typedef]
+id: towards
+namespace: ENVO
+xref: RO:0002503
+
+[Typedef]
+id: tributary_of
+namespace: ENVO
+xref: RO:0002376
+
