@@ -73,7 +73,6 @@ synonym: "epidermal growth" RELATED []
 synonym: "skin appendage" EXACT []
 is_a: UBERON:0013703 ! integumentary projection
 relationship: BFO:0000050 UBERON:0002416 ! integumental system
-relationship: RO:0002176 UBERON:0002097 ! skin of body
 
 [Term]
 id: UBERON:0000022
@@ -93,17 +92,6 @@ is_a: UBERON:0004111 ! anatomical conduit
 relationship: BFO:0000051 UBERON:0013522 ! subdivision of tube
 
 [Term]
-id: UBERON:0000030
-name: lamina propria
-def: "A thin layer of loose connective tissue which lies beneath the epithelium and together with the epithelium constitutes the mucosa[WP]. The lamina propria contains capillaries and a central lacteal (lymph vessel) in the small intestine, as well as lymphoid tissue. Lamina propria also contains glands with the ducts opening on to the mucosal epithelium, that secrete mucus and serous secretions." []
-synonym: "lamina propria mucosa" EXACT []
-synonym: "lamina propria mucosae" EXACT []
-synonym: "tunica propria" RELATED []
-is_a: UBERON:0004923 ! organ component layer
-relationship: BFO:0000050 UBERON:0000344 ! mucosa
-relationship: BFO:0000051 UBERON:0011825 ! loose connective tissue
-
-[Term]
 id: UBERON:0000033
 name: head
 def: "The head is the anterior-most division of the body [GO]." []
@@ -113,20 +101,6 @@ synonym: "head (volume)" EXACT []
 is_a: UBERON:0011676 ! subdivision of organism along main body axis
 relationship: BFO:0000050 UBERON:0000153 ! anterior region of body
 relationship: BFO:0000050 UBERON:0007811 ! craniocervical region
-
-[Term]
-id: UBERON:0000042
-name: serous membrane
-def: "Multi-tissue structure that is comprised of a secretory epithelial layer (mesothelium) and a connective tissue layer." []
-synonym: "serosa" RELATED []
-synonym: "tunica serosa" EXACT []
-synonym: "wall of serous sac" EXACT []
-is_a: UBERON:0000481 ! multi-tissue structure
-is_a: UBERON:0004120 ! mesoderm-derived structure
-relationship: BFO:0000050 UBERON:0000060 ! anatomical wall
-relationship: BFO:0000051 UBERON:0001136 ! mesothelium
-relationship: BFO:0000051 UBERON:0002384 ! connective tissue
-relationship: RO:0002202 UBERON:0000926 ! mesoderm
 
 [Term]
 id: UBERON:0000047
@@ -243,15 +217,6 @@ intersection_of: RO:0002202 UBERON:0000926 ! mesoderm
 relationship: RO:0002202 UBERON:0000924 ! ectoderm
 relationship: RO:0002202 UBERON:0000925 ! endoderm
 relationship: RO:0002202 UBERON:0000926 ! mesoderm
-
-[Term]
-id: UBERON:0000094
-name: membrane organ
-def: "Nonparenchymatous organ that primarily consists of dense connective tissue organized into a sheet which interconnects two or more organs, separates two or more body spaces from one another, or surrounds an organ or body part. Examples: interosseous membrane of forearm, obturator membrane, tympanic membrane, fibrous pericardium, fascia lata, dura mater. [FMA]." []
-synonym: "membrane" BROAD []
-synonym: "membrane of organ" EXACT []
-is_a: UBERON:0000062 ! organ
-relationship: BFO:0000051 UBERON:0011823 ! dense connective tissue
 
 [Term]
 id: UBERON:0000122
@@ -505,7 +470,6 @@ synonym: "set of all muscles" EXACT []
 synonym: "set of muscles of body" EXACT []
 synonym: "vertebrate muscular system" EXACT []
 is_a: UBERON:0011216 ! organ system subdivision
-relationship: BFO:0000050 UBERON:0002204 ! musculoskeletal system
 relationship: BFO:0000051 UBERON:0001015 ! musculature
 
 [Term]
@@ -549,6 +513,7 @@ id: UBERON:0000465
 name: material anatomical entity
 def: "Anatomical entity that has mass." []
 is_a: UBERON:0001062 ! anatomical entity
+disjoint_from: UBERON:0000466 ! immaterial anatomical entity
 
 [Term]
 id: UBERON:0000466
@@ -574,7 +539,6 @@ relationship: BFO:0000051 UBERON:0000062 ! organ
 id: UBERON:0000468
 name: multicellular organism
 def: "Anatomical structure that is an individual member of a species and consists of more than one cell." []
-synonym: "animal" NARROW []
 synonym: "body" RELATED []
 synonym: "Koerper" RELATED []
 synonym: "multi-cellular organism" EXACT []
@@ -606,7 +570,7 @@ disjoint_from: UBERON:0010000 ! multicellular anatomical structure
 id: UBERON:0000477
 name: anatomical cluster
 def: "Anatomical group that has its parts adjacent to one another." []
-is_a: UBERON:0001062 ! anatomical entity
+is_a: UBERON:0034923 ! disconnected anatomical group
 
 [Term]
 id: UBERON:0000478
@@ -677,15 +641,6 @@ def: "Epithelium which consists of more than one layer of epithelial cells that 
 synonym: "laminated epithelium" RELATED []
 synonym: "stratified epithelium" EXACT []
 is_a: UBERON:0000483 ! epithelium
-
-[Term]
-id: UBERON:0000487
-name: simple squamous epithelium
-def: "Unilaminar epithelium which consists of a single layer of squamous cells. Examples: pulmonary alveolar epithelium, endothelium.[FMA]." []
-synonym: "epithelium simplex squamosum" EXACT []
-synonym: "simple squamous epithelia" RELATED []
-is_a: UBERON:0000490 ! unilaminar epithelium
-is_a: UBERON:0006914 ! squamous epithelium
 
 [Term]
 id: UBERON:0000488
@@ -919,9 +874,9 @@ id: UBERON:0000990
 name: reproductive system
 def: "Anatomical system that has as its parts the organs concerned with reproduction." []
 synonym: "animal reproductive system" RELATED []
-synonym: "genital system" RELATED []
+synonym: "genital system" NARROW []
 synonym: "genital tract" RELATED []
-synonym: "genitalia" RELATED []
+synonym: "genitalia" NARROW []
 synonym: "Geschlechtsorgan" RELATED []
 synonym: "organa genitalia" RELATED []
 synonym: "reproductive tissue" RELATED []
@@ -930,7 +885,6 @@ synonym: "systemata genitalia" RELATED []
 is_a: UBERON:0000467 ! anatomical system
 disjoint_from: UBERON:0001004 ! respiratory system
 disjoint_from: UBERON:0001007 ! digestive system
-disjoint_from: UBERON:0001008 ! renal system
 disjoint_from: UBERON:0001009 ! circulatory system
 disjoint_from: UBERON:0001016 ! nervous system
 disjoint_from: UBERON:0001434 ! skeletal system
@@ -939,6 +893,7 @@ disjoint_from: UBERON:0002390 ! hematopoietic system
 disjoint_from: UBERON:0002405 ! immune system
 disjoint_from: UBERON:0002416 ! integumental system
 disjoint_from: UBERON:0004456 ! entire sense organ system
+disjoint_from: UBERON:8450002 ! excretory system
 relationship: BFO:0000051 UBERON:0000991 ! gonad
 
 [Term]
@@ -975,7 +930,6 @@ synonym: "respiratory system" EXACT []
 synonym: "systema respiratorium" RELATED []
 is_a: UBERON:0000467 ! anatomical system
 disjoint_from: UBERON:0001007 ! digestive system
-disjoint_from: UBERON:0001008 ! renal system
 disjoint_from: UBERON:0001009 ! circulatory system
 disjoint_from: UBERON:0001016 ! nervous system
 disjoint_from: UBERON:0001434 ! skeletal system
@@ -984,6 +938,7 @@ disjoint_from: UBERON:0002390 ! hematopoietic system
 disjoint_from: UBERON:0002405 ! immune system
 disjoint_from: UBERON:0002416 ! integumental system
 disjoint_from: UBERON:0004456 ! entire sense organ system
+disjoint_from: UBERON:8450002 ! excretory system
 
 [Term]
 id: UBERON:0001007
@@ -994,7 +949,6 @@ synonym: "alimentary tract" RELATED []
 synonym: "gastrointestinal system" RELATED []
 synonym: "gut" RELATED []
 is_a: UBERON:0000467 ! anatomical system
-disjoint_from: UBERON:0001008 ! renal system
 disjoint_from: UBERON:0001009 ! circulatory system
 disjoint_from: UBERON:0001016 ! nervous system
 disjoint_from: UBERON:0001434 ! skeletal system
@@ -1003,28 +957,20 @@ disjoint_from: UBERON:0002390 ! hematopoietic system
 disjoint_from: UBERON:0002405 ! immune system
 disjoint_from: UBERON:0002416 ! integumental system
 disjoint_from: UBERON:0004456 ! entire sense organ system
+disjoint_from: UBERON:8450002 ! excretory system
 
 [Term]
 id: UBERON:0001008
 name: renal system
-def: "The renal system in an anatomical system that maintains fluid balance and contributes to electrolyte balance, acid/base balance, and disposal of nitrogenous waste products.." []
-synonym: "excretory system" EXACT []
+def: "The renal system in an anatomical system that maintains fluid balance and contributes to electrolyte balance, acid/base balance, and disposal of nitrogenous waste products." []
+synonym: "excretory system" BROAD []
 synonym: "renal or urinary system" RELATED []
-synonym: "renal system" EXACT []
 synonym: "renal/urinary system" RELATED []
 synonym: "systema urinaria" EXACT []
 synonym: "systema urinarium" EXACT []
 synonym: "urinary system" EXACT []
 synonym: "urinary tract" EXACT []
-is_a: UBERON:0000467 ! anatomical system
-disjoint_from: UBERON:0001009 ! circulatory system
-disjoint_from: UBERON:0001016 ! nervous system
-disjoint_from: UBERON:0001434 ! skeletal system
-disjoint_from: UBERON:0002204 ! musculoskeletal system
-disjoint_from: UBERON:0002390 ! hematopoietic system
-disjoint_from: UBERON:0002405 ! immune system
-disjoint_from: UBERON:0002416 ! integumental system
-disjoint_from: UBERON:0004456 ! entire sense organ system
+is_a: UBERON:8450002 ! excretory system
 
 [Term]
 id: UBERON:0001009
@@ -1039,6 +985,7 @@ disjoint_from: UBERON:0002390 ! hematopoietic system
 disjoint_from: UBERON:0002405 ! immune system
 disjoint_from: UBERON:0002416 ! integumental system
 disjoint_from: UBERON:0004456 ! entire sense organ system
+disjoint_from: UBERON:8450002 ! excretory system
 
 [Term]
 id: UBERON:0001013
@@ -1084,6 +1031,7 @@ disjoint_from: UBERON:0002390 ! hematopoietic system
 disjoint_from: UBERON:0002405 ! immune system
 disjoint_from: UBERON:0002416 ! integumental system
 disjoint_from: UBERON:0004456 ! entire sense organ system
+disjoint_from: UBERON:8450002 ! excretory system
 relationship: RO:0002202 UBERON:0016880 ! future nervous system
 relationship: RO:0002495 UBERON:0016880 ! future nervous system
 
@@ -1124,7 +1072,7 @@ synonym: "sensory organ system" RELATED []
 synonym: "sensory subsystem" EXACT []
 synonym: "sensory systems" EXACT []
 synonym: "set of sense organs" RELATED []
-is_a: UBERON:0000467 ! anatomical system
+is_a: UBERON:0015203 ! non-connected functional system
 relationship: BFO:0000050 UBERON:0004456 ! entire sense organ system
 
 [Term]
@@ -1172,18 +1120,6 @@ relationship: RO:0002202 UBERON:0005068 ! neural rod
 id: UBERON:0001062
 name: anatomical entity
 def: "Biological entity that is either an individual member of a biological species or constitutes the structural organization of an individual member of a biological species." []
-
-[Term]
-id: UBERON:0001074
-name: pericardial cavity
-def: "A potential space between the visceral and parietal layers of the pericardium." []
-synonym: "cavitas pericardiaca" RELATED []
-synonym: "cavity of pericardial sac" EXACT []
-synonym: "pericardial space" EXACT []
-is_a: UBERON:0002323 ! coelemic cavity lumen
-is_a: UBERON:0035809 ! serous cavity
-relationship: BFO:0000050 UBERON:0002406 ! pericardial sac
-relationship: RO:0002202 UBERON:0003887 ! intraembryonic coelom
 
 [Term]
 id: UBERON:0001084
@@ -1242,36 +1178,6 @@ is_a: UBERON:0007779 ! transudate
 is_a: UBERON:0007794 ! secretion of serous gland
 
 [Term]
-id: UBERON:0001133
-name: cardiac muscle tissue
-def: "Muscle tissue composed of cardiac muscle cells, forming the muscles of the heart[ZFA,modified]." []
-synonym: "cardiac muscle" EXACT []
-synonym: "cardiac muscle muscle tissue" EXACT []
-synonym: "cardiac muscle textus muscularis" EXACT []
-synonym: "cardiac musculature" RELATED []
-synonym: "heart muscle muscle tissue" EXACT []
-synonym: "heart muscle textus muscularis" EXACT []
-synonym: "heart myocardium muscle tissue" EXACT []
-synonym: "heart myocardium textus muscularis" EXACT []
-synonym: "muscle of heart muscle tissue" EXACT []
-synonym: "muscle of heart textus muscularis" EXACT []
-synonym: "muscle tissue of cardiac muscle" EXACT []
-synonym: "muscle tissue of heart muscle" EXACT []
-synonym: "muscle tissue of heart myocardium" EXACT []
-synonym: "muscle tissue of muscle of heart" EXACT []
-synonym: "muscle tissue of myocardium" EXACT []
-synonym: "myocardium muscle tissue" EXACT []
-synonym: "myocardium textus muscularis" EXACT []
-synonym: "textus muscularis of cardiac muscle" EXACT []
-synonym: "textus muscularis of heart muscle" EXACT []
-synonym: "textus muscularis of heart myocardium" EXACT []
-synonym: "textus muscularis of muscle of heart" EXACT []
-synonym: "textus muscularis of myocardium" EXACT []
-is_a: UBERON:0002036 ! striated muscle tissue
-is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
-relationship: BFO:0000050 UBERON:0000948 ! heart
-
-[Term]
 id: UBERON:0001135
 name: smooth muscle tissue
 def: "Muscle tissue which is unstriated, composed primarily of smooth muscle fibers surrounded by a reticulum of collagen and elastic fibers. Smooth muscle differs from striated muscle in the much higher actin/myosin ratio, the absence of conspicuous sarcomeres and the ability to contract to a much smaller fraction of its resting length[GO]." []
@@ -1283,19 +1189,6 @@ synonym: "textus muscularis nonstriatus" EXACT []
 synonym: "visceral muscle" NARROW []
 synonym: "visceral muscle tissue" NARROW []
 is_a: UBERON:0002385 ! muscle tissue
-disjoint_from: UBERON:0002036 ! striated muscle tissue
-
-[Term]
-id: UBERON:0001136
-name: mesothelium
-def: "Simple squamous epithelium of mesodermal origin which lines serous membranes. Examples: mesothelium of pleura, mesothelium of peritoneum[FMA]. Wikipedia: The mesothelium is a membrane that forms the lining of several body cavities: the pleura (thoracal cavity), peritoneum (abdominal cavity including the mesentery) and pericardium (heart sac). Mesothelial tissue also surrounds the male internal reproductive organs (the tunica vaginalis testis) and covers the internal reproductive organs of women (the tunica serosa uteri)." []
-is_a: UBERON:0000487 ! simple squamous epithelium
-is_a: UBERON:0012275 ! meso-epithelium
-intersection_of: UBERON:0000487 ! simple squamous epithelium
-intersection_of: BFO:0000050 UBERON:0000042 ! serous membrane
-intersection_of: RO:0002202 UBERON:0000926 ! mesoderm
-relationship: BFO:0000050 UBERON:0000042 ! serous membrane
-relationship: RO:0002202 UBERON:0000926 ! mesoderm
 
 [Term]
 id: UBERON:0001242
@@ -1320,55 +1213,6 @@ synonym: "organ mucosa of intestine" EXACT []
 synonym: "tunica mucosa intestini" EXACT []
 is_a: UBERON:0004786 ! gastrointestinal system mucosa
 intersection_of: UBERON:0000344 ! mucosa
-intersection_of: BFO:0000050 UBERON:0000160 ! intestine
-relationship: BFO:0000050 UBERON:0000160 ! intestine
-relationship: BFO:0000050 UBERON:0001262 ! wall of intestine
-
-[Term]
-id: UBERON:0001243
-name: serosa of intestine
-def: "A serous membrane that is part of a wall of intestine [Automatically generated definition]." []
-synonym: "anatomical wall of bowel serosa" EXACT []
-synonym: "anatomical wall of bowel serous membrane" EXACT []
-synonym: "anatomical wall of intestine serosa" EXACT []
-synonym: "anatomical wall of intestine serous membrane" EXACT []
-synonym: "bowel anatomical wall serosa" EXACT []
-synonym: "bowel anatomical wall serous membrane" EXACT []
-synonym: "bowel wall serosa" EXACT []
-synonym: "bowel wall serous membrane" EXACT []
-synonym: "intestinal serosa" EXACT []
-synonym: "intestinal wall serosa" EXACT []
-synonym: "intestinal wall serous membrane" EXACT []
-synonym: "intestine anatomical wall serosa" EXACT []
-synonym: "intestine anatomical wall serous membrane" EXACT []
-synonym: "intestine serosa" EXACT []
-synonym: "intestine wall serosa" EXACT []
-synonym: "intestine wall serous membrane" EXACT []
-synonym: "serosa of anatomical wall of bowel" EXACT []
-synonym: "serosa of anatomical wall of intestine" EXACT []
-synonym: "serosa of bowel anatomical wall" EXACT []
-synonym: "serosa of bowel wall" EXACT []
-synonym: "serosa of intestinal wall" EXACT []
-synonym: "serosa of intestine anatomical wall" EXACT []
-synonym: "serosa of intestine wall" EXACT []
-synonym: "serosa of wall of bowel" EXACT []
-synonym: "serosa of wall of intestine" EXACT []
-synonym: "serous membrane of anatomical wall of bowel" EXACT []
-synonym: "serous membrane of anatomical wall of intestine" EXACT []
-synonym: "serous membrane of bowel anatomical wall" EXACT []
-synonym: "serous membrane of bowel wall" EXACT []
-synonym: "serous membrane of intestinal wall" EXACT []
-synonym: "serous membrane of intestine anatomical wall" EXACT []
-synonym: "serous membrane of intestine wall" EXACT []
-synonym: "serous membrane of wall of bowel" EXACT []
-synonym: "serous membrane of wall of intestine" EXACT []
-synonym: "visceral peritoneum of intestine" EXACT []
-synonym: "wall of bowel serosa" EXACT []
-synonym: "wall of bowel serous membrane" EXACT []
-synonym: "wall of intestine serosa" EXACT []
-synonym: "wall of intestine serous membrane" EXACT []
-is_a: UBERON:0004782 ! gastrointestinal system serosa
-intersection_of: UBERON:0000042 ! serous membrane
 intersection_of: BFO:0000050 UBERON:0000160 ! intestine
 relationship: BFO:0000050 UBERON:0000160 ! intestine
 relationship: BFO:0000050 UBERON:0001262 ! wall of intestine
@@ -1508,6 +1352,7 @@ disjoint_from: UBERON:0002390 ! hematopoietic system
 disjoint_from: UBERON:0002405 ! immune system
 disjoint_from: UBERON:0002416 ! integumental system
 disjoint_from: UBERON:0004456 ! entire sense organ system
+disjoint_from: UBERON:8450002 ! excretory system
 relationship: BFO:0000050 UBERON:0002204 ! musculoskeletal system
 relationship: BFO:0000051 UBERON:0004288 ! skeleton
 relationship: BFO:0000051 UBERON:0004770 ! articular system
@@ -2009,13 +1854,6 @@ is_a: UBERON:0011215 ! central nervous system cell part cluster
 relationship: BFO:0000050 UBERON:0001017 ! central nervous system
 
 [Term]
-id: UBERON:0002036
-name: striated muscle tissue
-def: "Muscle tissue that contains fibers that are divided by transverse bands into striations." []
-synonym: "striated muscle" EXACT []
-is_a: UBERON:0002385 ! muscle tissue
-
-[Term]
 id: UBERON:0002049
 name: vasculature
 def: "An interconnected tubular multi-tissue structure contains fluid that is actively transported around the organism[ZFA]. Examples: vasculature of lung, vasculature of face." []
@@ -2268,6 +2106,7 @@ disjoint_from: UBERON:0002390 ! hematopoietic system
 disjoint_from: UBERON:0002405 ! immune system
 disjoint_from: UBERON:0002416 ! integumental system
 disjoint_from: UBERON:0004456 ! entire sense organ system
+disjoint_from: UBERON:8450002 ! excretory system
 relationship: BFO:0000051 UBERON:0000383 ! musculature of body
 relationship: BFO:0000051 UBERON:0001434 ! skeletal system
 
@@ -2349,24 +2188,6 @@ relationship: BFO:0000050 UBERON:0000955 ! brain
 relationship: BFO:0000050 UBERON:0003528 ! brain gray matter
 
 [Term]
-id: UBERON:0002323
-name: coelemic cavity lumen
-def: "The cavity within the body of all animals higher than the coelenterates and certain primitive worms, formed by the splitting of the embryonic mesoderm into two layers. In mammals it forms the peritoneal, pleural, and pericardial cavities." []
-synonym: "body cavity" BROAD []
-synonym: "celom" RELATED []
-synonym: "coelom" RELATED []
-synonym: "coelome" RELATED []
-synonym: "coelomic cavity" EXACT []
-synonym: "coelomic cavity lumen" EXACT []
-synonym: "hemocoel" RELATED []
-synonym: "main body cavity" EXACT []
-synonym: "space of body compartment" EXACT []
-synonym: "ventral body cavity" NARROW []
-is_a: UBERON:0002553 ! anatomical cavity
-relationship: BFO:0000050 UBERON:0011997 ! coelom
-relationship: RO:0002202 UBERON:0003886 ! future coelemic cavity lumen
-
-[Term]
 id: UBERON:0002329
 name: somite
 def: "Somites are spheres of epithelial cells that form sequentially along the anterior-posterior axis of the embryo through mesenchymal to epithelial transition of the presomitic mesoderm." []
@@ -2410,77 +2231,6 @@ is_a: UBERON:0004121 ! ectoderm-derived structure
 relationship: RO:0002202 UBERON:0000924 ! ectoderm
 
 [Term]
-id: UBERON:0002348
-name: epicardium
-def: "A region of the serous membrane that forms the innermost layer of the pericardium and the outer surface of the heart." []
-synonym: "heart epicardium" EXACT []
-synonym: "pericardium visceral mesothelium" RELATED []
-synonym: "visceral serous pericardium of heart" EXACT []
-synonym: "visceral serous pericardium proper" EXACT []
-is_a: UBERON:0000481 ! multi-tissue structure
-is_a: UBERON:0004120 ! mesoderm-derived structure
-relationship: BFO:0000050 UBERON:0000948 ! heart
-relationship: BFO:0000050 UBERON:0002425 ! visceral serous pericardium
-relationship: RO:0002176 UBERON:0002349 ! myocardium
-relationship: RO:0002202 UBERON:0004160 ! proepicardium
-
-[Term]
-id: UBERON:0002349
-name: myocardium
-def: "The middle layer of the heart, comprised mainly of striated cardiac muscle fibers." []
-synonym: "cardiac muscle" RELATED []
-synonym: "heart muscle" RELATED []
-synonym: "heart myocardium" EXACT []
-synonym: "muscle of heart" EXACT []
-is_a: UBERON:0005983 ! heart layer
-is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
-is_a: UBERON:0018260 ! layer of muscle tissue
-relationship: BFO:0000050 UBERON:0000383 ! musculature of body
-relationship: BFO:0000050 UBERON:0000948 ! heart
-relationship: BFO:0000051 UBERON:0001133 ! cardiac muscle tissue
-relationship: BFO:0000051 UBERON:0002350 ! conducting system of heart
-
-[Term]
-id: UBERON:0002350
-name: conducting system of heart
-def: "The cardiac conduction system consists of specialized cardiomyocytes that regulate the frequency of heart beat[GO]." []
-synonym: "cardiac conducting system" EXACT []
-synonym: "cardiac conduction system" EXACT []
-synonym: "cardiac impulse conducting system" EXACT []
-synonym: "cardionector" EXACT []
-synonym: "central conduction system" RELATED []
-synonym: "complexus stimulans cordis" EXACT []
-synonym: "heart conduction system" EXACT []
-synonym: "impulse conducting system" EXACT []
-synonym: "systema conducente cordis" EXACT []
-is_a: UBERON:0004493 ! cardiac muscle tissue of myocardium
-is_a: UBERON:0010131 ! conducting tissue of heart
-relationship: BFO:0000050 UBERON:0002349 ! myocardium
-
-[Term]
-id: UBERON:0002357
-name: serous pericardium
-def: "Serous membrane which is divided into parietal and visceral serous pericardium." []
-synonym: "pericardium serosum" RELATED []
-synonym: "serous portion of pericardium" EXACT []
-is_a: UBERON:0000042 ! serous membrane
-relationship: BFO:0000050 UBERON:0002406 ! pericardial sac
-relationship: BFO:0000051 UBERON:0002408 ! parietal serous pericardium
-relationship: BFO:0000051 UBERON:0002425 ! visceral serous pericardium
-relationship: RO:0002176 UBERON:0002359 ! fibrous pericardium
-
-[Term]
-id: UBERON:0002359
-name: fibrous pericardium
-def: "Membrane organ which is attached to the pericardial sac proper and the central tendon of diaphragm and is continuous with the pretracheal fascia.[FMA]." []
-synonym: "fibrous portion of pericardium" EXACT []
-synonym: "pericardium fibrosum" RELATED []
-is_a: UBERON:0000094 ! membrane organ
-is_a: UBERON:0005181 ! thoracic segment organ
-relationship: BFO:0000050 UBERON:0002407 ! pericardium
-relationship: BFO:0000051 UBERON:0006815 ! areolar connective tissue
-
-[Term]
 id: UBERON:0002384
 name: connective tissue
 def: "Tissue with cells that deposit non-polarized extracellular matrix including connective tissue fibers and ground substance." []
@@ -2519,6 +2269,7 @@ is_a: UBERON:0004120 ! mesoderm-derived structure
 disjoint_from: UBERON:0002405 ! immune system
 disjoint_from: UBERON:0002416 ! integumental system
 disjoint_from: UBERON:0004456 ! entire sense organ system
+disjoint_from: UBERON:8450002 ! excretory system
 relationship: BFO:0000050 UBERON:0002193 ! hemolymphoid system
 relationship: RO:0002202 UBERON:0003061 ! blood island
 
@@ -2535,47 +2286,10 @@ relationship: RO:0002202 UBERON:0000913 ! interstitial fluid
 id: UBERON:0002405
 name: immune system
 def: "Anatomical system that protects the body from foreign substances, cells, and tissues by producing the immune response and that includes especially the thymus, spleen, lymphoid tissue, lymphocytes including the B cells and T cells, and antibodies." []
-is_a: UBERON:0000467 ! anatomical system
+is_a: UBERON:0015203 ! non-connected functional system
 disjoint_from: UBERON:0002416 ! integumental system
 disjoint_from: UBERON:0004456 ! entire sense organ system
-
-[Term]
-id: UBERON:0002406
-name: pericardial sac
-def: "A double-walled sac containing the heart and the roots of the great vessels." []
-synonym: "pericardium" RELATED []
-is_a: UBERON:0005181 ! thoracic segment organ
-is_a: UBERON:0005906 ! serous sac
-intersection_of: UBERON:0005906 ! serous sac
-intersection_of: BFO:0000051 UBERON:0001074 ! pericardial cavity
-intersection_of: BFO:0000051 UBERON:0002357 ! serous pericardium
-relationship: BFO:0000050 UBERON:0001009 ! circulatory system
-relationship: BFO:0000050 UBERON:0002407 ! pericardium
-relationship: BFO:0000051 UBERON:0001074 ! pericardial cavity
-relationship: BFO:0000051 UBERON:0002357 ! serous pericardium
-
-[Term]
-id: UBERON:0002407
-name: pericardium
-def: "The combination of pericardial sac (a double-walled sac containing the heart and the roots of the great vessels) plus fibrous pericardium." []
-is_a: UBERON:0000481 ! multi-tissue structure
-relationship: BFO:0000050 UBERON:0015410 ! heart plus pericardium
-relationship: BFO:0000051 UBERON:0002359 ! fibrous pericardium
-relationship: BFO:0000051 UBERON:0002406 ! pericardial sac
-
-[Term]
-id: UBERON:0002408
-name: parietal serous pericardium
-def: "Parietal serous membrane which is part of the pericardium and forms the outer layer of the pericardial sac." []
-synonym: "lamina parietalis (pericardii serosum)" EXACT []
-synonym: "lamina parietalis pericardii" EXACT []
-synonym: "parietal layer of serous pericardium" EXACT []
-synonym: "parietal pericardium" EXACT []
-synonym: "pericardial sac" RELATED []
-is_a: UBERON:0022351 ! parietal serous membrane
-intersection_of: UBERON:0022351 ! parietal serous membrane
-intersection_of: BFO:0000050 UBERON:0002357 ! serous pericardium
-relationship: BFO:0000050 UBERON:0002357 ! serous pericardium
+disjoint_from: UBERON:8450002 ! excretory system
 
 [Term]
 id: UBERON:0002416
@@ -2590,6 +2304,7 @@ synonym: "organism surface" RELATED []
 synonym: "surface" RELATED []
 is_a: UBERON:0000467 ! anatomical system
 disjoint_from: UBERON:0004456 ! entire sense organ system
+disjoint_from: UBERON:8450002 ! excretory system
 relationship: BFO:0000050 UBERON:0000468 ! multicellular organism
 relationship: BFO:0000051 UBERON:0007376 ! outer epithelium
 
@@ -2604,24 +2319,6 @@ is_a: UBERON:0003929 ! digestive tract epithelium
 intersection_of: UBERON:0000483 ! epithelium
 intersection_of: BFO:0000050 UBERON:0003729 ! mouth mucosa
 relationship: BFO:0000050 UBERON:0003729 ! mouth mucosa
-
-[Term]
-id: UBERON:0002425
-name: visceral serous pericardium
-def: "Visceral serous membrane which is continuous with the parietal serous pericardium and is attached to the myocardium[FMA]." []
-synonym: "epicardium" RELATED []
-synonym: "lamina visceralis pericardii serosi" EXACT []
-synonym: "pericardium visceral mesothelium" RELATED []
-synonym: "serous visceral pericardium" EXACT []
-synonym: "visceral lamina of serous pericardium" EXACT []
-synonym: "visceral layer of serous pericardium" EXACT []
-synonym: "visceral pericardium" EXACT []
-is_a: UBERON:0022350 ! visceral serous membrane
-intersection_of: UBERON:0022350 ! visceral serous membrane
-intersection_of: BFO:0000050 UBERON:0002357 ! serous pericardium
-relationship: BFO:0000050 UBERON:0002357 ! serous pericardium
-relationship: BFO:0000051 UBERON:0002348 ! epicardium
-relationship: RO:0002176 UBERON:0002349 ! myocardium
 
 [Term]
 id: UBERON:0002443
@@ -2985,7 +2682,6 @@ synonym: "surface feature" RELATED []
 synonym: "surface region" RELATED []
 synonym: "surface structures" RELATED []
 is_a: UBERON:0000061 ! anatomical structure
-relationship: BFO:0000050 UBERON:0002416 ! integumental system
 
 [Term]
 id: UBERON:0003103
@@ -3228,22 +2924,6 @@ is_a: UBERON:0004121 ! ectoderm-derived structure
 intersection_of: UBERON:0001135 ! smooth muscle tissue
 intersection_of: BFO:0000050 UBERON:0000019 ! camera-type eye
 relationship: BFO:0000050 UBERON:0000019 ! camera-type eye
-
-[Term]
-id: UBERON:0003388
-name: mesothelium of pericardial cavity
-def: "A mesothelium that is part of a pericardium [Automatically generated definition]." []
-synonym: "cavity of pericardial sac meso-epithelium" EXACT []
-synonym: "cavity of pericardial sac mesothelium" EXACT []
-synonym: "meso-epithelium of cavity of pericardial sac" EXACT []
-synonym: "meso-epithelium of pericardial cavity" EXACT []
-synonym: "mesothelium of cavity of pericardial sac" EXACT []
-synonym: "pericardial cavity meso-epithelium" EXACT []
-synonym: "pericardial cavity mesothelium" EXACT []
-is_a: UBERON:0001136 ! mesothelium
-intersection_of: UBERON:0001136 ! mesothelium
-intersection_of: BFO:0000050 UBERON:0002407 ! pericardium
-relationship: BFO:0000050 UBERON:0002407 ! pericardium
 
 [Term]
 id: UBERON:0003426
@@ -3646,23 +3326,6 @@ intersection_of: BFO:0000050 UBERON:0000991 ! gonad
 relationship: BFO:0000050 UBERON:0000991 ! gonad
 
 [Term]
-id: UBERON:0003886
-name: future coelemic cavity lumen
-def: "An anatomical cavity that has the potential to develop into a coelemic cavity lumen." []
-synonym: "body cavity precursor" RELATED []
-is_a: UBERON:0000464 ! anatomical space
-relationship: BFO:0000050 UBERON:0000926 ! mesoderm
-
-[Term]
-id: UBERON:0003887
-name: intraembryonic coelom
-def: "The part of the coelom in the embryo between the somatopleuric and splanchnopleuric mesoderm; the principal body cavities of the trunk (thoracic, abdominal, and pelvic) arise from this embryonic part of the coelom." []
-synonym: "somatic coelom" EXACT []
-is_a: UBERON:0002050 ! embryonic structure
-relationship: BFO:0000050 UBERON:0011997 ! coelom
-relationship: RO:0002202 UBERON:0003081 ! lateral plate mesoderm
-
-[Term]
 id: UBERON:0003911
 name: choroid plexus epithelium
 def: "The epithelial component of the choroid plexus. Consists of cuboidal epithelial cells surrounding a core of capillaries and loose connective tissue." []
@@ -3759,7 +3422,7 @@ synonym: "ostia" RELATED []
 synonym: "ostium" RELATED []
 is_a: UBERON:0010000 ! multicellular anatomical structure
 relationship: BFO:0000051 UBERON:0013686 ! anatomical conduit space
-relationship: RO:0002176 UBERON:0000464 {minCardinality="2", maxCardinality="2"} ! anatomical space
+relationship: RO:0002176 UBERON:0000464 {cardinality="2"} ! anatomical space
 
 [Term]
 id: UBERON:0004118
@@ -3886,24 +3549,6 @@ synonym: "heart chamber" EXACT []
 is_a: UBERON:0000064 ! organ part
 is_a: UBERON:0004120 ! mesoderm-derived structure
 relationship: BFO:0000050 UBERON:0000948 ! heart
-
-[Term]
-id: UBERON:0004160
-name: proepicardium
-def: "An embryonic group of progenitor cells that forms from an outpouching of the septum transversum near the venous pole of the heart and gives rise to the epicardium." []
-synonym: "proepicardial cluster" EXACT []
-synonym: "proepicardial organ" EXACT []
-is_a: UBERON:0003104 ! mesenchyme
-relationship: BFO:0000050 UBERON:0004161 ! septum transversum
-relationship: BFO:0000050 UBERON:0004535 ! cardiovascular system
-
-[Term]
-id: UBERON:0004161
-name: septum transversum
-def: "A thick plate of mesodermal tissue that occupies the space between the thoracic cavity and yolk stalk in the early embryo, forming a transverse partition partially separating the coelomic cavity into thoracic and abdominal portions. It gives rise to the central tendon of the diaphragm[VHOG]." []
-synonym: "transverse septum" EXACT []
-is_a: UBERON:0003104 ! mesenchyme
-relationship: BFO:0000050 UBERON:0002100 ! trunk
 
 [Term]
 id: UBERON:0004177
@@ -4163,23 +3808,6 @@ relationship: RO:0002202 UBERON:0003084 ! heart primordium
 relationship: RO:0002202 UBERON:0004139 ! cardiogenic plate
 
 [Term]
-id: UBERON:0004292
-name: cardiac skeleton
-def: "Dense connective tissue that separates the atria from the ventricles and provides physical support for the heart." []
-synonym: "anulus fibrosus dexter cordis" RELATED []
-synonym: "anulus fibrosus sinister cordis" RELATED []
-synonym: "cardiac fibrous skeleton" EXACT []
-synonym: "fibrous skeleton of heart" EXACT []
-synonym: "heart fibrous skeleton" EXACT []
-synonym: "skeleton of heart" EXACT []
-synonym: "trigona fibrosa" RELATED []
-synonym: "trigonum fibrosum dextrum cordis" RELATED []
-synonym: "trigonum fibrosum sinistrum cordis" RELATED []
-is_a: UBERON:0003837 ! thoracic segment connective tissue
-is_a: UBERON:0004120 ! mesoderm-derived structure
-relationship: BFO:0000050 UBERON:0000948 ! heart
-
-[Term]
 id: UBERON:0004296
 name: respiratory system lymphatic vessel smooth muscle
 def: "A lymphatic vessel smooth muscle that is part of a respiratory system [Automatically generated definition]." []
@@ -4223,6 +3851,7 @@ name: entire sense organ system
 def: "Sum of all sensory systems in an organism." []
 synonym: "sense organ system" EXACT []
 is_a: UBERON:0000467 ! anatomical system
+disjoint_from: UBERON:8450002 ! excretory system
 
 [Term]
 id: UBERON:0004464
@@ -4279,33 +3908,10 @@ intersection_of: BFO:0000050 UBERON:0002100 ! trunk
 relationship: BFO:0000050 UBERON:0002100 ! trunk
 
 [Term]
-id: UBERON:0004492
-name: cardiac muscle tissue of cardiac septum
-def: "A portion of cardiac muscle tissue that is part of a cardiac septum [Automatically generated definition]." []
-synonym: "cardiac septum cardiac muscle tissue" EXACT []
-synonym: "cardiac septum heart muscle" EXACT []
-synonym: "cardiac septum muscle" EXACT []
-synonym: "cardiac septum myocardium" EXACT []
-is_a: UBERON:0001133 ! cardiac muscle tissue
-intersection_of: UBERON:0001133 ! cardiac muscle tissue
-intersection_of: BFO:0000050 UBERON:0002099 ! cardiac septum
-relationship: BFO:0000050 UBERON:0002099 ! cardiac septum
-
-[Term]
-id: UBERON:0004493
-name: cardiac muscle tissue of myocardium
-def: "A portion of cardiac muscle tissue that is part of a myocardium [Automatically generated definition]." []
-is_a: UBERON:0001133 ! cardiac muscle tissue
-intersection_of: UBERON:0001133 ! cardiac muscle tissue
-intersection_of: BFO:0000050 UBERON:0002349 ! myocardium
-relationship: BFO:0000050 UBERON:0002349 ! myocardium
-
-[Term]
 id: UBERON:0004521
 name: vasculature of muscle organ
 def: "A vasculature that is part of a muscle organ [Automatically generated definition]." []
 synonym: "muscular organ vasculature" EXACT []
-is_a: UBERON:0004522 ! vasculature of musculoskeletal system
 is_a: UBERON:0006876 ! vasculature of organ
 intersection_of: UBERON:0002049 ! vasculature
 intersection_of: BFO:0000050 UBERON:0001630 ! muscle organ
@@ -4507,50 +4113,6 @@ synonym: "set of joints of body" RELATED []
 is_a: UBERON:0034925 ! anatomical collection
 relationship: BFO:0000050 UBERON:0001434 ! skeletal system
 relationship: BFO:0000051 UBERON:0000982 ! skeletal joint
-
-[Term]
-id: UBERON:0004779
-name: respiratory system lamina propria
-def: "A lamina propria that is part of a respiratory system [Automatically generated definition]." []
-synonym: "apparatus respiratorius lamina propria" EXACT []
-synonym: "apparatus respiratorius lamina propria mucosa" EXACT []
-synonym: "lamina propria mucosa of apparatus respiratorius" EXACT []
-synonym: "lamina propria mucosa of respiratory system" EXACT []
-synonym: "lamina propria of apparatus respiratorius" EXACT []
-synonym: "lamina propria of respiratory system" EXACT []
-synonym: "respiratory system lamina propria mucosa" EXACT []
-is_a: UBERON:0000030 ! lamina propria
-intersection_of: UBERON:0000030 ! lamina propria
-intersection_of: BFO:0000050 UBERON:0001004 ! respiratory system
-relationship: BFO:0000050 UBERON:0001004 ! respiratory system
-relationship: BFO:0000050 UBERON:0003570 ! respiratory system connective tissue
-relationship: BFO:0000050 UBERON:0004785 ! respiratory system mucosa
-
-[Term]
-id: UBERON:0004780
-name: gastrointestinal system lamina propria
-def: "A lamina propria that is part of a gastrointestinal system." []
-is_a: UBERON:0000030 ! lamina propria
-intersection_of: UBERON:0000030 ! lamina propria
-intersection_of: BFO:0000050 UBERON:0005409 ! alimentary part of gastrointestinal system
-relationship: BFO:0000050 UBERON:0004786 ! gastrointestinal system mucosa
-relationship: BFO:0000050 UBERON:0005409 ! alimentary part of gastrointestinal system
-
-[Term]
-id: UBERON:0004782
-name: gastrointestinal system serosa
-def: "A serous membrane that is part of a digestive system [Automatically generated definition]." []
-synonym: "digestive system serosa" EXACT []
-synonym: "digestive system serous membrane" EXACT []
-synonym: "gastrointestinal system serous membrane" EXACT []
-synonym: "serosa of digestive system" EXACT []
-synonym: "serosa of gastrointestinal system" EXACT []
-synonym: "serous membrane of digestive system" EXACT []
-synonym: "serous membrane of gastrointestinal system" EXACT []
-is_a: UBERON:0000042 ! serous membrane
-intersection_of: UBERON:0000042 ! serous membrane
-intersection_of: BFO:0000050 UBERON:0005409 ! alimentary part of gastrointestinal system
-relationship: BFO:0000050 UBERON:0005409 ! alimentary part of gastrointestinal system
 
 [Term]
 id: UBERON:0004785
@@ -4809,7 +4371,7 @@ def: "A structure consisting of multiple cell components but which is not itself
 synonym: "cell part cluster" RELATED []
 synonym: "multi-cell-component structure" EXACT []
 synonym: "multi-cell-part structure" EXACT []
-is_a: UBERON:0000477 ! anatomical cluster
+is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
 id: UBERON:0005177
@@ -4936,16 +4498,6 @@ is_a: UBERON:0000479 ! tissue
 intersection_of: UBERON:0000479 ! tissue
 intersection_of: BFO:0000050 UBERON:0016887 ! entire extraembryonic component
 relationship: BFO:0000050 UBERON:0016887 ! entire extraembryonic component
-
-[Term]
-id: UBERON:0005334
-name: oral lamina propria
-def: "A lamina propria that is part of a mucosa of oral region." []
-synonym: "lamina propria of oral mucosa" EXACT []
-is_a: UBERON:0000030 ! lamina propria
-intersection_of: UBERON:0000030 ! lamina propria
-intersection_of: BFO:0000050 UBERON:0003343 ! mucosa of oral region
-relationship: BFO:0000050 UBERON:0003343 ! mucosa of oral region
 
 [Term]
 id: UBERON:0005358
@@ -5113,14 +4665,6 @@ synonym: "prominentia mandibularis" RELATED []
 is_a: UBERON:0012314 ! embryonic facial prominence
 relationship: BFO:0000050 UBERON:0000166 ! oral opening
 relationship: RO:0002202 UBERON:0007237 ! 1st arch mandibular component
-
-[Term]
-id: UBERON:0005906
-name: serous sac
-def: "Organ with organ cavity, which has as parts a serous membrane and a serous cavity . Examples: pleural sac, pericardial sac, tendon sheath, bursa.[FMA]." []
-is_a: UBERON:0000062 ! organ
-relationship: BFO:0000051 UBERON:0000042 ! serous membrane
-relationship: BFO:0000051 UBERON:0002553 ! anatomical cavity
 
 [Term]
 id: UBERON:0005911
@@ -5367,16 +4911,6 @@ is_a: UBERON:0000477 ! anatomical cluster
 relationship: BFO:0000050 UBERON:0002416 ! integumental system
 
 [Term]
-id: UBERON:0006815
-name: areolar connective tissue
-def: "Loose connective tissue located at the outer and inner layers of organs. Examples: submucosal connective tissue, tunica adventitia of artery, papillary dermis, superficial fascia of dorsum of hand." []
-synonym: "areolar tissue" RELATED []
-synonym: "loose areolar connective tissue" EXACT []
-synonym: "loose connective tissue" RELATED []
-is_a: UBERON:0011825 ! loose connective tissue
-relationship: BFO:0000050 UBERON:0000030 ! lamina propria
-
-[Term]
 id: UBERON:0006876
 name: vasculature of organ
 def: "A vasculature that is part of a organ." []
@@ -5416,12 +4950,6 @@ is_a: UBERON:0010314 ! structure with developmental contribution from neural cre
 intersection_of: UBERON:0003104 ! mesenchyme
 intersection_of: BFO:0000050 UBERON:0005867 ! mandibular prominence
 relationship: BFO:0000050 UBERON:0005867 ! mandibular prominence
-
-[Term]
-id: UBERON:0006914
-name: squamous epithelium
-def: "An epithelium characterised by its most superficial layer consisting of squamous epithelial cells." []
-is_a: UBERON:0000483 ! epithelium
 
 [Term]
 id: UBERON:0006965
@@ -5493,18 +5021,6 @@ def: "An intermediate stage (between the neural plate and neural rod) during the
 synonym: "presumptive central nervous system" RELATED []
 is_a: UBERON:0016879 ! future central nervous system
 relationship: RO:0002202 UBERON:0003075 ! neural plate
-
-[Term]
-id: UBERON:0007188
-name: mesothelium of serous pericardium
-def: "A mesothelium that is part of a serous pericardium." []
-synonym: "mesothelium of pericardium" EXACT []
-synonym: "pericardial mesothelium" EXACT []
-synonym: "serous pericardium mesothelium" EXACT []
-is_a: UBERON:0003388 ! mesothelium of pericardial cavity
-intersection_of: UBERON:0001136 ! mesothelium
-intersection_of: BFO:0000050 UBERON:0002357 ! serous pericardium
-relationship: BFO:0000050 UBERON:0002357 ! serous pericardium
 
 [Term]
 id: UBERON:0007213
@@ -5964,6 +5480,7 @@ id: UBERON:0009663
 name: telencephalic nucleus
 def: "A nucleus of brain that is part of a telencephalon." []
 is_a: UBERON:0002308 ! nucleus of brain
+is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
 intersection_of: UBERON:0002308 ! nucleus of brain
 intersection_of: BFO:0000050 UBERON:0001893 ! telencephalon
 relationship: BFO:0000050 UBERON:0001893 ! telencephalon
@@ -6079,14 +5596,6 @@ is_a: UBERON:0003104 ! mesenchyme
 relationship: BFO:0000050 UBERON:0002199 ! integument
 relationship: RO:0002202 UBERON:0003089 ! sclerotome
 relationship: RO:0002202 UBERON:0004016 ! dermatome
-
-[Term]
-id: UBERON:0010131
-name: conducting tissue of heart
-def: "Any portion of cardiac muscle tissue that is part of the conducting system of heart or the Purkinje fibers." []
-synonym: "specialized conducting tissue of heart" EXACT []
-synonym: "specialized muscle tissue of heart" EXACT []
-is_a: UBERON:0001133 ! cardiac muscle tissue
 
 [Term]
 id: UBERON:0010188
@@ -6476,6 +5985,7 @@ name: central nervous system cell part cluster
 def: "A multi cell part structure that is part of a central nervous system." []
 synonym: "cell part cluster of neuraxis" EXACT []
 synonym: "neuraxis layer" EXACT []
+is_a: UBERON:0004121 ! ectoderm-derived structure
 is_a: UBERON:0005162 ! multi cell part structure
 intersection_of: UBERON:0005162 ! multi cell part structure
 intersection_of: BFO:0000050 UBERON:0001017 ! central nervous system
@@ -6522,6 +6032,7 @@ id: UBERON:0011300
 name: gray matter of telencephalon
 def: "A portion of gray matter that is part of a telencephalon." []
 synonym: "predominantly gray regional part of telencephalon" EXACT []
+is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
 is_a: UBERON:0019264 ! gray matter of forebrain
 intersection_of: UBERON:0002020 ! gray matter
 intersection_of: BFO:0000050 UBERON:0001893 ! telencephalon
@@ -6690,17 +6201,6 @@ relationship: BFO:0000051 UBERON:0001769 ! iris
 relationship: BFO:0000051 UBERON:0001775 ! ciliary body
 
 [Term]
-id: UBERON:0011997
-name: coelom
-def: "The aggregate of the coelemic cavity lumen plus the membranes that line the lumen." []
-synonym: "coelem" RELATED []
-synonym: "coelomic cavity" RELATED []
-synonym: "enterocoelom" NARROW []
-synonym: "haemocoelom" NARROW []
-synonym: "schizocoelom" NARROW []
-is_a: UBERON:0000481 ! multi-tissue structure
-
-[Term]
 id: UBERON:0012112
 name: ingested food
 def: "A substance that is consumed by the organism for food." []
@@ -6828,20 +6328,6 @@ relationship: BFO:0000050 UBERON:0000162 ! cloaca
 relationship: RO:0002202 UBERON:0000925 ! endoderm
 
 [Term]
-id: UBERON:0012483
-name: serosa of cloaca
-def: "A serous membrane that is part of a cloaca [Automatically generated definition]." []
-synonym: "cloaca serosa" EXACT []
-synonym: "cloaca serous membrane" EXACT []
-synonym: "cloacal serosa" EXACT []
-synonym: "serous membrane of cloaca" EXACT []
-synonym: "visceral peritoneum of cloaca" EXACT []
-is_a: UBERON:0000042 ! serous membrane
-intersection_of: UBERON:0000042 ! serous membrane
-intersection_of: BFO:0000050 UBERON:0000162 ! cloaca
-relationship: BFO:0000050 UBERON:0000162 ! cloaca
-
-[Term]
 id: UBERON:0013150
 name: future brain vesicle
 synonym: "brain vesicle" RELATED []
@@ -6882,7 +6368,7 @@ def: "An anatomical space which is the lumen of some anatomical conduit and conn
 synonym: "foramen space" NARROW []
 is_a: UBERON:0000464 ! anatomical space
 relationship: BFO:0000050 UBERON:0004111 ! anatomical conduit
-relationship: RO:0002176 UBERON:0000464 {minCardinality="2", maxCardinality="2"} ! anatomical space
+relationship: RO:0002176 UBERON:0000464 {cardinality="2"} ! anatomical space
 
 [Term]
 id: UBERON:0013701
@@ -7021,6 +6507,12 @@ is_a: UBERON:0001048 ! primordium
 relationship: BFO:0000050 UBERON:0011695 ! embryonic cardiovascular system
 
 [Term]
+id: UBERON:0015203
+name: non-connected functional system
+def: "An anatomical group whose component structures share a common function." []
+is_a: UBERON:0034923 ! disconnected anatomical group
+
+[Term]
 id: UBERON:0015212
 name: lateral structure
 def: "Any structure that is placed on one side of the left-right axis of a bilaterian." []
@@ -7062,7 +6554,7 @@ name: axilla skin
 def: "A zone of skin that is part of a axilla." []
 synonym: "axillary skin" EXACT []
 synonym: "skin of axilla" EXACT []
-is_a: UBERON:0000014 ! zone of skin
+is_a: UBERON:8480025 ! skin of clavicle region
 intersection_of: UBERON:0000014 ! zone of skin
 intersection_of: BFO:0000050 UBERON:0009472 ! axilla
 relationship: BFO:0000050 UBERON:0009472 ! axilla
@@ -7138,13 +6630,6 @@ is_a: UBERON:0005423 ! developing anatomical structure
 relationship: BFO:0000051 UBERON:0003104 ! mesenchyme
 
 [Term]
-id: UBERON:0018260
-name: layer of muscle tissue
-def: "Any organ component layer that consists of muscle tissue." []
-is_a: UBERON:0004923 ! organ component layer
-relationship: BFO:0000051 UBERON:0002385 ! muscle tissue
-
-[Term]
 id: UBERON:0018674
 name: heart vasculature
 def: "An interconnected tubular multi-tissue structure that contains fluid that is actively transported around the heart." []
@@ -7214,25 +6699,6 @@ intersection_of: BFO:0000050 UBERON:0000020 ! sense organ
 relationship: BFO:0000050 UBERON:0000020 ! sense organ
 
 [Term]
-id: UBERON:0022350
-name: visceral serous membrane
-def: "Serous membrane layer that is adjacent to and lines an organ." []
-synonym: "visceral wall of serous membrane" EXACT []
-is_a: UBERON:0004120 ! mesoderm-derived structure
-is_a: UBERON:0004923 ! organ component layer
-relationship: BFO:0000050 UBERON:0000042 ! serous membrane
-
-[Term]
-id: UBERON:0022351
-name: parietal serous membrane
-def: "Serous membrane layer that lines to a body cavity." []
-synonym: "cavity lining" BROAD []
-synonym: "parietal wall of serous membrane" EXACT []
-is_a: UBERON:0004120 ! mesoderm-derived structure
-is_a: UBERON:0004923 ! organ component layer
-relationship: BFO:0000050 UBERON:0000042 ! serous membrane
-
-[Term]
 id: UBERON:0034768
 name: morphological feature
 def: "A part of an organism or organ that is continuous with its surroundings and distinguished from its surroundings based on morphology." []
@@ -7254,6 +6720,13 @@ def: "An multicellular anatomical structure that has subparts of multiple organs
 synonym: "anatomical cluster" RELATED []
 is_a: UBERON:0010000 ! multicellular anatomical structure
 relationship: BFO:0000051 UBERON:0000064 ! organ part
+
+[Term]
+id: UBERON:0034923
+name: disconnected anatomical group
+def: "Material anatomical entity consisting of multiple anatomical structures that are not connected to each other." []
+is_a: UBERON:0000465 ! material anatomical entity
+relationship: BFO:0000051 UBERON:0000061 ! anatomical structure
 
 [Term]
 id: UBERON:0034925
@@ -7309,12 +6782,6 @@ is_a: UBERON:0013522 ! subdivision of tube
 relationship: BFO:0000050 UBERON:0007026 ! presumptive gut
 relationship: BFO:0000051 UBERON:0000925 ! endoderm
 relationship: BFO:0000051 UBERON:0000930 ! stomodeum
-
-[Term]
-id: UBERON:0035809
-name: serous cavity
-is_a: UBERON:0002553 ! anatomical cavity
-relationship: BFO:0000050 UBERON:0005906 ! serous sac
 
 [Term]
 id: UBERON:0035965
@@ -7432,8 +6899,6 @@ is_a: UBERON:0004120 ! mesoderm-derived structure
 intersection_of: UBERON:0000060 ! anatomical wall
 intersection_of: BFO:0000050 UBERON:0000948 ! heart
 relationship: BFO:0000050 UBERON:0000948 ! heart
-relationship: RO:0002176 UBERON:0002406 ! pericardial sac
-relationship: RO:0002176 UBERON:0004292 ! cardiac skeleton
 
 [Term]
 id: UBERON:1000021
@@ -7514,6 +6979,21 @@ intersection_of: RO:0002176 UBERON:0004921 ! subdivision of digestive tract
 relationship: BFO:0000050 UBERON:0000160 ! intestine
 relationship: RO:0002176 UBERON:0004921 ! subdivision of digestive tract
 
+[Term]
+id: UBERON:8450002
+name: excretory system
+def: "An anatomical system that eliminates waste products that arise as a result of metabolic activity." []
+is_a: UBERON:0000467 ! anatomical system
+
+[Term]
+id: UBERON:8480025
+name: skin of clavicle region
+def: "A zone of skin that is above the clavicle zone in the pectoral girdle region." []
+is_a: UBERON:0000014 ! zone of skin
+intersection_of: UBERON:0000014 ! zone of skin
+intersection_of: BFO:0000050 UBERON:0001421 ! pectoral girdle region
+relationship: BFO:0000050 UBERON:0001421 ! pectoral girdle region
+
 [Typedef]
 id: BFO:0000050
 is_transitive: true
@@ -7525,7 +7005,5 @@ is_transitive: true
 
 [Typedef]
 id: RO:0002202
-holds_over_chain: BFO:0000050 RO:0002202
 is_transitive: true
-transitive_over: BFO:0000050
 
