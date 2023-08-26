@@ -9,7 +9,6 @@
 # Also used for unit tests executed by travis
 #
 # See README-editors.md for more details on release process
-#
 # To make a release, type 'make release' in this directory
 
 # ----------------------------------------
@@ -54,14 +53,31 @@ FORMATS_INCL_TSV = $(sort $(FORMATS) tsv)
 .PHONY: .FORCE
 all: all_imports all_main all_subsets sparql_test all_reports all_assets
 
-test: envo-edit.owl all_modules all_imports envo.owl all_reports
-travis_test: test_python envo-edit.owl all_reports all_modules envo.owl
+# complete tests
+test: all_modules all_imports envo.owl all_reports validate-dl-profile
+
+# a more limited set of tests that can be run using github actions
+continuous_integration_test: test_python all_reports envo.owl validate-dl-profile
+
+# deprecated alias
+travis_test: continuous_integration_test
 
 full_test: test envo.check-obo subsets/EnvO-Lite-GSC.check-obo
 
 # temp test for travis
 test_python:
 	python3 --version
+
+# TODO: add this back to tests
+# validates the DL profile for envo-edit merged with RO.
+# Note that it's necessary to merge the ontology first;
+#       see https://github.com/ontodev/robot/issues/1040
+validate-dl-profile: $(PRE_SRC)
+	$(ROBOT) merge -i $< -I http://purl.obolibrary.org/obo/ro.owl convert -f ofn -o $(TMPDIR)/validate.ofn
+	$(ROBOT) validate-profile --profile DL -i $(TMPDIR)/validate.ofn
+
+test: validate-dl-profile
+travis_test: validate-dl-profile
 
 ## -- main targets --
 ##
@@ -76,7 +92,7 @@ all_main: $(MAIN_FILES)
 # release products
 #build: base all_modules all_imports envo.owl envo.obo envo.json subsets/envo-basic.obo subsets/envo-basic.json subsets/EnvO-Lite-GSC.obo
 
-release: build copy-release
+release: all copy-release
 
 # stages release in top level folder
 copy-release:
@@ -158,7 +174,7 @@ $(ONT)-base.owl: $(SRC) $(OTHER_SRC)
 # Full: The full artefacts with imports merged, reasoned
 $(ONT)-full.owl: $(SRC) $(OTHER_SRC)
 	$(ROBOT) merge --input $< \
-		reason --reasoner ELK --equivalent-classes-allowed all --exclude-tautologies structural \
+		reason --reasoner ELK --equivalent-classes-allowed asserted-only --exclude-tautologies structural \
 		relax \
 		reduce -r ELK \
 		annotate --ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@  -a owl:versionInfo $(TODAY)\
@@ -181,7 +197,7 @@ $(ONT)-full.owl: $(SRC) $(OTHER_SRC)
 
 
 SUBSETS = envo-basic EnvO-Lite-GSC envoEmpo envoAstro envoPolar envoEmpo envoOmics envoCesab environmental_hazards \
-   biome-hierarchy astronomical-body-part-hierarchy material-hierarchy process-hierarchy
+   biome-hierarchy astronomical-body-part-hierarchy material-hierarchy process-hierarchy envoPlastics envoANZSoil
 
 SUBSET_ROOTS = $(patsubst %, subsets/%, $(SUBSETS))
 SUBSET_FILES = $(foreach n,$(SUBSET_ROOTS), $(foreach f,$(FORMATS_INCL_TSV), $(n).$(f)))
@@ -267,12 +283,13 @@ release-diffs:
 ##
 ## By default this is the cross-product of IMPORT_MODULES x FORMATS
 
-IMPORTS = pato uberon chebi ro pco foodon go ncbitaxon  obi po iao fao 
+IMPORTS = pato uberon chebi ro pco foodon go ncbitaxon  obi po iao fao
 
 IMPORT_ROOTS = $(patsubst %, imports/%_import, $(IMPORTS))
 IMPORT_OWL_FILES = $(foreach n,$(IMPORT_ROOTS), $(n).owl)
 IMPORT_FILES = $(IMPORT_OWL_FILES)
 
+# this adds IMPORT_FILES as a dependency; the recipe is below
 all_imports: $(IMPORT_FILES)
 
 
@@ -305,7 +322,6 @@ all_imports: $(patsubst %, imports/%_import.owl,$(IMPORTS)) $(patsubst %, import
 
 SEEDS= $(patsubst %, imports/%_terms.txt,$(IMPORTS))
 
-
 KEEPRELS = BFO:0000050 BFO:0000051 RO:0002202 immediate_transformation_of RO:0002176 IAO:0000136
 
 # See https://github.com/EnvironmentOntology/envo/issues/521
@@ -322,7 +338,8 @@ imports/%_combined_seed.tsv: imports/%_terms.txt imports/seed.txt
 # We use the standard catalog, but rewrite the import to X to be a local mirror of ALL of X.
 # After extraction, we further reduce the ontology by creating a "mingraph" (removes all annotations except label) and by
 imports/%_import.owl: mirror/%.owl envo-edit.owl imports/%_combined_seed.tsv
-	$(ROBOT) extract -i $< -T imports/$*_combined_seed.tsv -m BOT -O $(ENVO_IMPORTS_BASE_URI)/$@ -o $@.tmp.owl && mv $@.tmp.owl $@
+	echo "Skipping"
+	#$(ROBOT) extract -i $< -T imports/$*_combined_seed.tsv -m BOT -O $(ENVO_IMPORTS_BASE_URI)/$@ -o $@.tmp.owl && mv $@.tmp.owl $@
 
 imports/%_import.obo: imports/%_import.owl
 	$(OWLTOOLS) $(USECAT) $< -o -f obo --no-check $@
@@ -373,10 +390,10 @@ mirror/po.owl: envo-edit.owl
 	  -o $@
 .PRECIOUS: mirror/po.owl
 
-
 mirror/ro.owl:
-	$(ROBOT) merge -I $(OBO)/ro.owl \
-	 remove --base-iri RO --base-iri BFO --axioms external -o $@
+# this removes the property chains from the ro import; use ro-base instead
+#	$(ROBOT) merge -I $(OBO)/ro.owl remove --base-iri RO --base-iri BFO --axioms external -o $@
+	$(ROBOT) merge -I $(OBO)/ro/ro-base.owl -o $@
 .PRECIOUS: mirror/ro.owl
 
 mirror/bfo.owl: envo-edit.owl
@@ -384,7 +401,8 @@ mirror/bfo.owl: envo-edit.owl
 .PRECIOUS: mirror/%.owl
 
 mirror/uberon.owl: 
-	$(OWLTOOLS) $(OBO)/uberon.obo  --remove-axiom-annotations  --make-subset-by-properties -f $(KEEPRELS) --remove-external-classes UBERON --remove-dangling-annotations --remove-annotation-assertions -l -s -d --set-ontology-id $(OBO)/uberon.owl -o $@
+	wget http://purl.obolibrary.org/obo/uberon.obo # suggest fix for parser error; see https://github.com/EnvironmentOntology/envo/pull/1289
+	$(OWLTOOLS) uberon.obo  --remove-axiom-annotations  --make-subset-by-properties -f $(KEEPRELS) --remove-external-classes UBERON --remove-dangling-annotations --remove-annotation-assertions -l -s -d --set-ontology-id $(OBO)/uberon.owl -o $@
 .PRECIOUS: mirror/%.owl
 
 
@@ -397,7 +415,7 @@ ncbitaxon.obo:
 .PRECIOUS: ncbitaxon.obo
 
 mirror/ncbitaxon.owl: ncbitaxon.obo
-	OWLTOOLS_MEMORY=12G $(OWLTOOLS) $< --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations  --set-ontology-id $(OBO)/ncbitaxon.owl -o $@
+	OWLTOOLS_MEMORY=16G $(OWLTOOLS) $< --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations  --set-ontology-id $(OBO)/ncbitaxon.owl -o $@
 .PRECIOUS: mirror/ncbitaxon.owl
 
 # PCO woes:
@@ -511,7 +529,7 @@ all_robot_reports: reports/envo-edit-robot-report.tsv reports/envo-base-robot-re
 # we use a modified profile that allows missing labels, as we sometimes declare properties on
 # an auto-class from modules (e.g ENVO:09200020)
 reports/envo-edit-robot-report.tsv: $(PRE_SRC)
-	$(ROBOT) report -p reports/report_profile_edit.txt -l true -i $< --fail-on $(REPORT_FAIL_ON) --print 5 -o $@
+	$(ROBOT) report -p reports/report_profile_edit.txt -l true -i $< --fail-on ERROR --print 5 -o $@
 
 # default profile
 reports/envo-src-robot-report.tsv: $(SRC)
@@ -539,8 +557,9 @@ all_modules: all_modules_owl all_modules_obo
 all_modules_owl: $(ALL_MODS_OWL)
 all_modules_obo: $(patsubst %, modules/%.obo, $(MODS))
 
-modules/%.owl: modules/%.csv patterns/%.yaml curie_map.yaml
-	dosdp-tools --table-format=csv --template=./patterns/$*.yaml --outfile=modules/$*.tmp.owl --obo-prefixes=true generate --infile=modules/$*.csv
+modules/%.owl: modules/%.csv patterns/%.yaml curie_map.yaml 
+	@perl -pe 's/\r\n/\n/' $< > $<.tmp && mv $<.tmp $< # replace crlf with lf
+	if [ true = true ]; then dosdp-tools generate --table-format=csv --template=./patterns/$*.yaml --outfile=modules/$*.tmp.owl --obo-prefixes=true --infile=modules/$*.csv; fi
 	$(ROBOT) annotate --input modules/$*.tmp.owl -O http://purl.obolibrary.org/obo/envo/modules/$*.owl --output modules/$*.owl && rm modules/$*.tmp.owl
 
 modules/%.obo: modules/%.owl

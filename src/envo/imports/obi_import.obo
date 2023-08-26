@@ -1,0 +1,468 @@
+format-version: 1.2
+ontology: envo/imports/obi_import
+owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\nDeclaration(Class(<http://purl.obolibrary.org/obo/BFO_0000004>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/BFO_0000006>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/BFO_0000008>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/BFO_0000011>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/BFO_0000015>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/BFO_0000020>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/BFO_0000029>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/BFO_0000031>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/BFO_0000035>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/BFO_0000140>))\n############################\n#   Classes\n############################\n\n# Class: <http://purl.obolibrary.org/obo/BFO_0000004> (<http://purl.obolibrary.org/obo/BFO_0000004>)\n\n\n# Class: <http://purl.obolibrary.org/obo/BFO_0000006> (<http://purl.obolibrary.org/obo/BFO_0000006>)\n\n\n# Class: <http://purl.obolibrary.org/obo/BFO_0000008> (<http://purl.obolibrary.org/obo/BFO_0000008>)\n\n\n# Class: <http://purl.obolibrary.org/obo/BFO_0000011> (<http://purl.obolibrary.org/obo/BFO_0000011>)\n\n\n# Class: <http://purl.obolibrary.org/obo/BFO_0000015> (<http://purl.obolibrary.org/obo/BFO_0000015>)\n\n\n# Class: <http://purl.obolibrary.org/obo/BFO_0000020> (<http://purl.obolibrary.org/obo/BFO_0000020>)\n\n\n# Class: <http://purl.obolibrary.org/obo/BFO_0000029> (<http://purl.obolibrary.org/obo/BFO_0000029>)\n\n\n# Class: <http://purl.obolibrary.org/obo/BFO_0000031> (<http://purl.obolibrary.org/obo/BFO_0000031>)\n\n\n# Class: <http://purl.obolibrary.org/obo/BFO_0000035> (<http://purl.obolibrary.org/obo/BFO_0000035>)\n\n\n# Class: <http://purl.obolibrary.org/obo/BFO_0000140> (<http://purl.obolibrary.org/obo/BFO_0000140>)\n\n\n\nDisjointClasses(<http://purl.obolibrary.org/obo/BFO_0000004> <http://purl.obolibrary.org/obo/BFO_0000020> <http://purl.obolibrary.org/obo/BFO_0000031>)\nDisjointClasses(<http://purl.obolibrary.org/obo/BFO_0000006> <http://purl.obolibrary.org/obo/BFO_0000029> <http://purl.obolibrary.org/obo/BFO_0000140>)\nDisjointClasses(<http://purl.obolibrary.org/obo/BFO_0000008> <http://purl.obolibrary.org/obo/BFO_0000011> <http://purl.obolibrary.org/obo/BFO_0000015> <http://purl.obolibrary.org/obo/BFO_0000035>)\n)
+
+[Term]
+id: BFO:0000001
+name: entity
+
+[Term]
+id: BFO:0000002
+name: continuant
+def: "An entity that exists in full at any time in which it exists at all, persists through time while maintaining its identity and has no temporal parts." []
+is_a: BFO:0000001 ! entity
+disjoint_from: BFO:0000003 ! occurrent
+
+[Term]
+id: BFO:0000003
+name: occurrent
+def: "An entity that has temporal parts and that happens, unfolds or develops through time." []
+is_a: BFO:0000001 ! entity
+
+[Term]
+id: BFO:0000004
+name: independent continuant
+def: "A continuant that is a bearer of quality and realizable entity entities, in which other entities inhere and which itself cannot inhere in anything." []
+def: "b is an independent continuant = Def. b is a continuant which is such that there is no c and no t such that b s-depends_on c at t. (axiom label in BFO2 Reference: [017-002])" []
+is_a: BFO:0000002 ! continuant
+disjoint_from: BFO:0000020 ! specifically dependent continuant
+disjoint_from: BFO:0000020 ! specifically dependent continuant
+disjoint_from: BFO:0000031 ! generically dependent continuant
+
+[Term]
+id: BFO:0000006
+name: spatial region
+is_a: BFO:0000141 ! immaterial entity
+disjoint_from: BFO:0000029 ! site
+disjoint_from: BFO:0000029 ! site
+disjoint_from: BFO:0000140 ! continuant fiat boundary
+
+[Term]
+id: BFO:0000008
+name: temporal region
+is_a: BFO:0000003 ! occurrent
+disjoint_from: BFO:0000011 ! spatiotemporal region
+disjoint_from: BFO:0000011 ! spatiotemporal region
+disjoint_from: BFO:0000015 ! process
+disjoint_from: BFO:0000035 ! process boundary
+
+[Term]
+id: BFO:0000011
+name: spatiotemporal region
+is_a: BFO:0000003 ! occurrent
+
+[Term]
+id: BFO:0000015
+name: process
+def: "An occurrent that has temporal proper parts and for some time t, p s-depends_on some material entity at t." []
+def: "p is a process = Def. p is an occurrent that has temporal proper parts and for some time t, p s-depends_on some material entity at t. (axiom label in BFO2 Reference: [083-003])" []
+is_a: BFO:0000003 ! occurrent
+
+[Term]
+id: BFO:0000016
+name: disposition
+is_a: BFO:0000017 ! realizable entity
+disjoint_from: BFO:0000023 ! role
+
+[Term]
+id: BFO:0000017
+name: realizable entity
+def: "A specifically dependent continuant  that inheres in continuant  entities and are not exhibited in full at every time in which it inheres in an entity or group of entities. The exhibition or actualization of a realizable entity is a particular manifestation, functioning or process that occurs under certain circumstances." []
+is_a: BFO:0000020 ! specifically dependent continuant
+disjoint_from: BFO:0000019 ! quality
+
+[Term]
+id: BFO:0000019
+name: quality
+is_a: BFO:0000020 ! specifically dependent continuant
+
+[Term]
+id: BFO:0000020
+name: specifically dependent continuant
+def: "A continuant that inheres in or is borne by other entities. Every instance of A requires some specific instance of B which must always be the same." []
+def: "b is a relational specifically dependent continuant = Def. b is a specifically dependent continuant and there are n &gt; 1 independent continuants c1, … cn which are not spatial regions are such that for all 1  i &lt; j  n, ci  and cj share no common parts, are such that for each 1  i  n, b s-depends_on ci at every time t during the course of b’s existence (axiom label in BFO2 Reference: [131-004])" []
+def: "b is a specifically dependent continuant = Def. b is a continuant & there is some independent continuant c which is not a spatial region and which is such that b s-depends_on c at every time t during the course of b’s existence. (axiom label in BFO2 Reference: [050-003])" []
+is_a: BFO:0000002 ! continuant
+disjoint_from: BFO:0000031 ! generically dependent continuant
+
+[Term]
+id: BFO:0000023
+name: role
+def: "A realizable entity  the manifestation of which brings about some result or end that is not essential to a continuant  in virtue of the kind of thing that it is but that can be served or participated in by that kind of continuant  in some kinds of natural, social or institutional contexts." []
+is_a: BFO:0000017 ! realizable entity
+
+[Term]
+id: BFO:0000024
+name: fiat object
+name: fiat object part
+is_a: BFO:0000040 ! material entity
+
+[Term]
+id: BFO:0000027
+name: object aggregate
+is_a: BFO:0000040 ! material entity
+
+[Term]
+id: BFO:0000029
+name: site
+is_a: BFO:0000141 ! immaterial entity
+
+[Term]
+id: BFO:0000030
+name: object
+is_a: BFO:0000040 ! material entity
+
+[Term]
+id: BFO:0000031
+name: generically dependent continuant
+def: "A continuant that is dependent on one or other independent continuant bearers. For every instance of A requires some instance of (an independent continuant type) B but which instance of B serves can change from time to time." []
+def: "b is a generically dependent continuant = Def. b is a continuant that g-depends_on one or more other entities. (axiom label in BFO2 Reference: [074-001])" []
+is_a: BFO:0000002 ! continuant
+
+[Term]
+id: BFO:0000034
+name: function
+is_a: BFO:0000016 ! disposition
+
+[Term]
+id: BFO:0000035
+name: process boundary
+def: "p is a process boundary =Def. p is a temporal part of a process & p has no proper temporal parts. (axiom label in BFO2 Reference: [084-001])" []
+is_a: BFO:0000003 ! occurrent
+
+[Term]
+id: BFO:0000038
+name: one-dimensional temporal region
+is_a: BFO:0000008 ! temporal region
+
+[Term]
+id: BFO:0000040
+name: material entity
+def: "An independent continuant that is spatially extended whose identity is independent of that of other entities and can be maintained through time." []
+is_a: BFO:0000004 ! independent continuant
+disjoint_from: BFO:0000141 ! immaterial entity
+
+[Term]
+id: BFO:0000140
+name: continuant fiat boundary
+def: "b is a continuant fiat boundary = Def. b is an immaterial entity that is of zero, one or two dimensions and does not include a spatial region as part. (axiom label in BFO2 Reference: [029-001])" []
+is_a: BFO:0000141 ! immaterial entity
+
+[Term]
+id: BFO:0000141
+name: immaterial entity
+is_a: BFO:0000004 ! independent continuant
+
+[Term]
+id: BFO:0000146
+name: two-dimensional continuant fiat boundary
+is_a: BFO:0000140 ! continuant fiat boundary
+
+[Term]
+id: IAO:0000030
+name: information content entity
+def: "A generically dependent continuant that is about some thing." []
+is_a: BFO:0000031 ! generically dependent continuant
+
+[Term]
+id: IAO:0000033
+name: directive information entity
+def: "An information content entity whose concretizations indicate to their bearer how to realize them in a process." []
+is_a: IAO:0000030 ! information content entity
+
+[Term]
+id: IAO:0000101
+name: image
+def: "An image is an affine projection to a two dimensional surface, of measurements of some quality of an entity or entities repeated at regular intervals across a spatial range, where the measurements are represented as color and luminosity on the projected on surface." []
+is_a: IAO:0000308 ! figure
+
+[Term]
+id: IAO:0000104
+name: plan specification
+def: "A directive information entity with action specifications and objective specifications as parts that, when concretized, is realized in a process in which the bearer tries to achieve the objectives by taking the actions specified." []
+is_a: IAO:0000033 ! directive information entity
+
+[Term]
+id: IAO:0000308
+name: figure
+def: "An information content entity consisting of a two dimensional arrangement of information content entities such that the arrangement itself is about something." []
+is_a: IAO:0000030 ! information content entity
+
+[Term]
+id: NCBITaxon:10239
+name: Viruses
+is_a: OBI:0100026 ! organism
+
+[Term]
+id: NCBITaxon:117571
+name: Euteleostomi
+is_a: NCBITaxon:7742 ! Vertebrata <vertebrates>
+
+[Term]
+id: NCBITaxon:2
+name: Bacteria
+is_a: OBI:0100026 ! organism
+
+[Term]
+id: NCBITaxon:2157
+name: Archaea
+is_a: OBI:0100026 ! organism
+
+[Term]
+id: NCBITaxon:2759
+name: Eukaryota
+is_a: OBI:0100026 ! organism
+
+[Term]
+id: NCBITaxon:314146
+name: Euarchontoglires
+is_a: NCBITaxon:40674 ! Mammalia
+
+[Term]
+id: NCBITaxon:32523
+name: Tetrapoda
+is_a: NCBITaxon:117571 ! Euteleostomi
+
+[Term]
+id: NCBITaxon:32524
+name: Amniota
+is_a: NCBITaxon:32523 ! Tetrapoda
+
+[Term]
+id: NCBITaxon:33154
+name: Opisthokonta
+is_a: NCBITaxon:2759 ! Eukaryota
+
+[Term]
+id: NCBITaxon:33208
+name: Metazoa
+is_a: NCBITaxon:33154 ! Opisthokonta
+
+[Term]
+id: NCBITaxon:33213
+name: Bilateria
+is_a: NCBITaxon:33208 ! Metazoa
+
+[Term]
+id: NCBITaxon:40674
+name: Mammalia
+is_a: NCBITaxon:32524 ! Amniota
+
+[Term]
+id: NCBITaxon:7742
+name: Vertebrata <vertebrates>
+is_a: NCBITaxon:33213 ! Bilateria
+
+[Term]
+id: NCBITaxon:9606
+name: Homo sapiens
+is_a: NCBITaxon:314146 ! Euarchontoglires
+
+[Term]
+id: OBI:0000011
+name: planned process
+def: "A process that realizes a plan which is the concretization of a plan specification." []
+is_a: BFO:0000015 ! process
+
+[Term]
+id: OBI:0000047
+name: processed material
+def: "Is a material entity that is created or changed during material processing." []
+is_a: BFO:0000040 ! material entity
+
+[Term]
+id: OBI:0000401
+name: environment control function
+def: "An environmental control function is a function that regulates a contained environment within specified parameter ranges. For example the control of light exposure, humidity and temperature." []
+is_a: BFO:0000034 ! function
+
+[Term]
+id: OBI:0000967
+name: container
+def: "A device that can be used to restrict the location of material entities over time" []
+is_a: OBI:0000968 ! device
+
+[Term]
+id: OBI:0000968
+name: device
+def: "A material entity that is designed to perform a function in a scientific investigation, but is not a reagent." []
+is_a: OBI:0000047 ! processed material
+
+[Term]
+id: OBI:0100026
+name: organism
+def: "A material entity that is an individual living system, such as animal, plant, bacteria or virus, that is capable of replicating or reproducing, growth and maintenance in the right environment. An organism may be unicellular or made up, like humans, of many billions of cells divided into specialized tissues and organs." []
+is_a: BFO:0000040 ! material entity
+union_of: NCBITaxon:10239 ! Viruses
+union_of: NCBITaxon:2 ! Bacteria
+union_of: NCBITaxon:2157 ! Archaea
+union_of: NCBITaxon:2759 ! Eukaryota
+
+[Term]
+id: PATO:0000018
+name: fluorescence
+def: "A luminous flux quality inhering in a bearer by virtue of the bearer's emitting longer wavelength light following the absorption of shorter wavelength radiation; fluorescence is common with aromatic compounds with several rings joined together." []
+is_a: PATO:0001296 ! luminous flux
+
+[Term]
+id: PATO:0000025
+name: composition
+def: "A single physical entity inhering in an bearer by virtue of the bearer's quantities or relative ratios of subparts." []
+is_a: PATO:0000141 ! structure
+
+[Term]
+id: PATO:0000033
+name: concentration of
+def: "A quality inhering in a substance by virtue of the amount of the bearer's there is mixed with another substance." []
+is_a: PATO:0002182 ! molecular quality
+
+[Term]
+id: PATO:0000051
+name: morphology
+def: "A quality of a single physical entity inhering in the bearer by virtue of the bearer's size or shape or structure." []
+is_a: PATO:0001241 ! physical object quality
+
+[Term]
+id: PATO:0000117
+name: size
+def: "A morphology quality inhering in a bearer by virtue of the bearer's physical magnitude." []
+is_a: PATO:0000051 ! morphology
+
+[Term]
+id: PATO:0000140
+name: position
+def: "A spatial quality inhering in a bearer by virtue of the bearer's spatial location relative to other objects in the vicinity." []
+is_a: PATO:0001018 ! physical quality
+
+[Term]
+id: PATO:0000141
+name: structure
+def: "A morphology quality inhering in a bearer by virtue of the bearer's relative position, shape, arrangements and connectivity of an organism's various parts; the pattern underlying its form." []
+is_a: PATO:0000051 ! morphology
+
+[Term]
+id: PATO:0000146
+name: temperature
+def: "A physical quality of the thermal energy of a system." []
+is_a: PATO:0001018 ! physical quality
+
+[Term]
+id: PATO:0000169
+name: viability
+def: "An organismal quality inhering in a bearer or a population by virtue of the bearer's disposition to survive and develop normally or the number of surviving individuals in a given population." []
+is_a: PATO:0001995 ! organismal quality
+
+[Term]
+id: PATO:0000918
+name: volume
+def: "A 3-D extent quality inhering in a bearer by virtue of the bearer's amount of 3-dimensional space it occupies." []
+is_a: PATO:0001710 ! 3-D extent
+
+[Term]
+id: PATO:0001018
+name: physical quality
+def: "A quality of a physical entity that exists through action of continuants at the physical level of organisation in relation to other entities." []
+is_a: PATO:0001241 ! physical object quality
+
+[Term]
+id: PATO:0001025
+name: pressure
+def: "A physical quality that inheres in a bearer by virtue of the bearer's amount of force per unit area it exerts." []
+is_a: PATO:0001018 ! physical quality
+
+[Term]
+id: PATO:0001241
+name: physical object quality
+def: "A quality which inheres in a continuant." []
+is_a: BFO:0000019 ! quality
+
+[Term]
+id: PATO:0001291
+name: electromagnetic (EM) radiation quality
+def: "A physical quality that inheres in an bearer by virtue of how that bearer interacts with electromagnetic radiation." []
+is_a: PATO:0001739 ! radiation quality
+
+[Term]
+id: PATO:0001296
+name: luminous flux
+def: "A scalar optical quality which obtains by the magnitude of the light emitted by the bearer." []
+is_a: PATO:0001300 ! optical quality
+
+[Term]
+id: PATO:0001300
+name: optical quality
+def: "An EM radiation quality in which the EM radiation is within the fiat range of the spectrum visible deemed to be light." []
+is_a: PATO:0001291 ! electromagnetic (EM) radiation quality
+
+[Term]
+id: PATO:0001422
+name: dead
+def: "A viability quality inhering in a bearer by virtue of the cessation of the bearer's life." []
+is_a: PATO:0000169 ! viability
+
+[Term]
+id: PATO:0001546
+name: quality of a solid
+def: "A physical quality inhering in a bearer by virtue of the bearer's exhibiting the physical characteristics of an entity characterized by particles arranged such that their shape and volume are relatively stable." []
+is_a: PATO:0002198 ! quality of a substance
+
+[Term]
+id: PATO:0001547
+name: quality of a gas
+def: "A physical quality inhering in a bearer by virtue of the bearer's exhibiting the physical characteristics of an entity consisting of particles that have neither a defined volume nor defined shape." []
+is_a: PATO:0002198 ! quality of a substance
+
+[Term]
+id: PATO:0001548
+name: quality of a liquid
+def: "A physical quality inhering in an entity exhibiting the physical characteristics of an amorphous (non-crystalline) form of matter between a gas and a solid that has a definite volume, but no definite shape." []
+is_a: PATO:0002198 ! quality of a substance
+
+[Term]
+id: PATO:0001710
+name: 3-D extent
+def: "A size quality inhering in an bearer by virtue of the bearer's extension in three dimensions." []
+is_a: PATO:0000117 ! size
+
+[Term]
+id: PATO:0001739
+name: radiation quality
+def: "A quality that inheres in an bearer by virtue of how that bearer interacts with radiation." []
+is_a: PATO:0001018 ! physical quality
+
+[Term]
+id: PATO:0001740
+name: activity (of a radionuclide)
+def: "A radiation quality inhering in a radioactive substance by virtue of its transformation (disintegration) rate." []
+is_a: PATO:0001739 ! radiation quality
+
+[Term]
+id: PATO:0001741
+name: radioactive
+def: "A radiation quality inhering in bearer by virtue of the bearer's exhibiting or being caused by radioactivity." []
+is_a: PATO:0001740 ! activity (of a radionuclide)
+
+[Term]
+id: PATO:0001985
+name: frozen
+def: "A quality inhering in a bearer by virtue of the bearer's being kept below its freezing point." []
+is_a: PATO:0000146 ! temperature
+
+[Term]
+id: PATO:0001995
+name: organismal quality
+def: "A quality that inheres in an entire organism or part of an organism." []
+is_a: PATO:0001241 ! physical object quality
+
+[Term]
+id: PATO:0002182
+name: molecular quality
+def: "A quality which inheres in a molecular entity, a single molecule, atom, ion, radical etc." []
+is_a: PATO:0001241 ! physical object quality
+
+[Term]
+id: PATO:0002198
+name: quality of a substance
+def: "A quality inhering in a bearer by virtue of its constitution." []
+is_a: PATO:0001018 ! physical quality
+

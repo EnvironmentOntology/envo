@@ -1,8 +1,9 @@
 format-version: 1.2
-data-version: envo/releases/2020-06-02/subsets/envoCesab.owl
+data-version: envo/releases/2023-02-13/subsets/envoCesab.owl
 subsetdef: disposition_slim "Disposition slim"
 subsetdef: environmental_hazards "environmental_hazards"
 subsetdef: EnvO-Lite-GSC "EnvO-Lite-GSC"
+subsetdef: envoANZSoil "envoANZSoil"
 subsetdef: envoAstro "envoAstro"
 subsetdef: envoAtmo "envoAtmo"
 subsetdef: envoCesab "envoCesab"
@@ -13,6 +14,7 @@ subsetdef: envoMarine "envoMarine"
 subsetdef: envoMeo "envoMeo"
 subsetdef: envoNceas "envoNceas"
 subsetdef: envoOmics "envoOmics"
+subsetdef: envoPlastics "envoPlastics"
 subsetdef: envoPolar "envoPolar"
 subsetdef: mpath_slim "Pathology slim"
 subsetdef: nlcd2011 "nlcd2011"
@@ -23,7 +25,7 @@ subsetdef: value_slim "Value slim"
 subsetdef: wwfBiome "wwfBiome"
 synonymtypedef: PLURAL "plurals"
 ontology: envo/subsets/envoCesab
-property_value: owl:versionInfo "2020-06-02" xsd:string
+property_value: owl:versionInfo "2023-02-13" xsd:string
 
 [Term]
 id: ENVO:00000191
@@ -31,6 +33,7 @@ name: solid astronomical body part
 namespace: ENVO
 def: "A part of an astronomical body which is primarily composed of a continuous volume of solid material, shaped by one or more environmental processes." [https://en.wikipedia.org/wiki/Landform]
 synonym: "geological feature" RELATED [ADL:FTT]
+synonym: "landform" RELATED []
 synonym: "physiographic feature" RELATED []
 xref: EcoLexicon:landform
 xref: EcoLexicon:landforms
@@ -42,57 +45,16 @@ xref: TGN:21401
 is_a: ENVO:01000813 ! astronomical body part
 
 [Term]
-id: ENVO:00000309
-name: depression
-namespace: ENVO
-def: "A landform sunken or depressed below the surrounding area." [https://en.wikipedia.org/wiki/Depression_%28geology%29]
-synonym: "barrier basin" RELATED [USGS:SDTS]
-synonym: "depression" RELATED [Geonames:feature]
-synonym: "non tidal basin" RELATED [USGS:SDTS]
-synonym: "pan" RELATED [Geonames:feature]
-synonym: "pan" RELATED [Getty:TGN]
-synonym: "pan (geologic)" RELATED [ADL:FTT]
-synonym: "pans" RELATED [Geonames:feature]
-synonym: "tidal basin" RELATED [USGS:SDTS]
-xref: EcoLexicon:depression
-xref: FTT:175
-xref: FTT:215
-xref: FTT:216
-xref: Geonames:T.DPR
-xref: Geonames:T.PAN
-xref: Geonames:T.PANS
-xref: SWEETRealm:Depression
-xref: TGN:21454
-xref: TGN:21497
-xref: TGN:21521
-is_a: ENVO:00000191 ! solid astronomical body part
-relationship: has_part ENVO:00002000 ! slope
-property_value: IAO:0000116 "Clarify that this pertains to the planetary crust and create superclass for general topological depressions. https://github.com/EnvironmentOntology/envo/issues/486" xsd:string
-
-[Term]
 id: ENVO:00000549
 name: container of an intermittent water body
 namespace: ENVO
-def: "A depression which is is periodically filled with water when water supply exceeds evapotranspiration and bed seepage." [MA:ma] {comment="http://orcid.org/0000-0002-4366-3088"}
+def: "A depression which is is periodically filled with water when water supply exceeds evapotranspiration and bed seepage." [MA:ma] {comment="https://orcid.org/0000-0002-4366-3088"}
 comment: This was formerly represented as a water body, which would not be valid during dry periods. This class more properly refers to the container of the water body, thusfar always some depression, which periodically contains a water body.
 synonym: "intermittent body of water" EXACT [Getty:TGN]
 synonym: "intermittent water body" EXACT []
 xref: TGN:21198
-is_a: ENVO:00000309 ! depression
+is_a: ENVO:01001884 ! surface landform
 property_value: IAO:0000116 "Despite the relocation from its position under 'water body' and the rewording of the definition, the class was not obsoleted as the entity being referenced is effectively the same." xsd:string
-
-[Term]
-id: ENVO:00002000
-name: slope
-namespace: ENVO
-def: "A solid astronomical body part which is part of the planetary surface between the peak of an elevation or the bottom of a depression and  relatively flat surrounding land." [MA:ma]
-synonym: "flank" RELATED []
-synonym: "side" RELATED []
-xref: EcoLexicon:slope
-xref: https://en.wikipedia.org/wiki/Slope
-xref: SWEETRealm:Slope
-is_a: ENVO:00000191 ! solid astronomical body part
-relationship: part_of ENVO:01000799 ! astronomical body
 
 [Term]
 id: ENVO:00003074
@@ -137,7 +99,7 @@ def: "An object which is composed of one or more gravitationally bound structure
 comment: If there is only one astronomical body involved, this class is equivalent to ENVO:01000799. This may be problematic with reasoning, but it seems to be true to the rather fuzzy definitions found thus far.
 subset: envoAstro
 synonym: "celestial object" RELATED []
-relationship: has_part ENVO:01000799 {minCardinality="1"} ! astronomical body
+relationship: has_part ENVO:01000799 ! astronomical body
 relationship: has_quality ENVO:01001164 ! geodiversity
 relationship: surrounded_by ENVO:01000637 ! outer space
 
@@ -216,21 +178,36 @@ namespace: ENVO
 def: "A quality which inheres in a astronomical body or astronomical body part by virtue of the variation in its material composition, participation in geological processes, and the variation in is land- and hydroforms." [https://en.wikipedia.org/wiki/Geodiversity]
 comment: Materials which are usually assessed when appraising geodiversity include minerals, rocks, sediments, fossils, soils and water. Landforms factored into geodiversity metrics typically include folds, faults, and other expressions of morphology or relations between units of earth material. Natural processes that are included in measures of geodiversity are those which either maintain or change materials or geoforms, including tectonics, sediment transport, and pedogenesis. Geodiversity does not usually factor in anthropogenic entities. {xref=""}
 
+[Term]
+id: ENVO:01001884
+name: surface landform
+namespace: ENVO
+def: "A landform which occurs on the surface of an astronomical body." []
+comment: The usage of "surface" here aligns with that of planetary surface: in contact with the atmosphere or space. The extent of the "surface" can vary. For rocky planets like Earth, astrogeologists consider the crust as the surface.
+synonym: "geographic feature" RELATED []
+is_a: ENVO:01001886 ! landform
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2021-05-15T09:16:23Z xsd:dateTime
+
+[Term]
+id: ENVO:01001886
+name: landform
+namespace: ENVO
+def: "A solid astronomical body part which has been formed from and is composed primarily of the matter of that astronomical body." [https://en.wikipedia.org/wiki/Landform]
+comment: Landforms may be natural or anthropogenic. This term has often has loose usage when referencing entities which are either subterranean or submerged below water bodies. In some cases, oceans themselves are considered landforms. Here, we have provided subclasses to resolve this ambiguity, but place oceans and other water bodies elsewhere.In later revisions, this hiearchy is likely to be reordered based on the formation processes of the entities within it.
+is_a: ENVO:00000191 ! solid astronomical body part
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2021-05-15T09:40:37Z xsd:dateTime
+
 [Typedef]
 id: adjacent_to
 namespace: ENVO
 xref: RO:0002220
-is_functional: true
 
 [Typedef]
 id: attached_to
 namespace: ENVO
 xref: RO:0002371
-
-[Typedef]
-id: bearer_of
-namespace: ENVO
-xref: RO:0000053
 
 [Typedef]
 id: bounding_layer_of
@@ -263,9 +240,24 @@ namespace: ENVO
 xref: RO:0002418
 
 [Typedef]
+id: characteristic_of
+namespace: ENVO
+xref: RO:0000052
+
+[Typedef]
+id: characteristic_of_part_of
+namespace: ENVO
+xref: RO:0002314
+
+[Typedef]
 id: composed_primarily_of
 namespace: ENVO
 xref: RO:0002473
+
+[Typedef]
+id: concretizes
+namespace: ENVO
+xref: RO:0000059
 
 [Typedef]
 id: connected_to
@@ -302,6 +294,14 @@ xref: RO:0002150
 id: derives_from
 namespace: ENVO
 xref: RO:0001000
+is_a: derives_from_part_of ! derives from part of
+
+[Typedef]
+id: derives_from_part_of
+name: derives from part of
+namespace: ENVO
+def: "A relation between two distinct material entities, the new entity and the old entity, in which the new entity begins to exist through the separation or transformation of a part of the old entity, and the new entity inherits a significant portion of the matter belonging to that part of the old entity." []
+xref: ENVO:01003004
 
 [Typedef]
 id: derives_into
@@ -322,7 +322,7 @@ xref: RO:0002509
 id: disconnected_from
 name: disconnected_from
 namespace: ENVO
-def: "A is disconnected_from B if they have no parts in common." [SO:cjm]
+def: "A is disconnected_from B if they have no parts in common." [https://orcid.org/0000-0002-6601-2165]
 synonym: "non_overlapping_with" EXACT []
 expand_assertion_to: "Class: <http://www.w3.org/2002/07/owl#Nothing> EquivalentTo: (BFO_0000050 some ?X) and (BFO_0000050 some ?Y)" []
 is_metadata_tag: true
@@ -360,8 +360,18 @@ namespace: ENVO
 def: "A relation between a process and a disposition such that the existence of the disposition is caused by the execution of the process." []
 xref: ENVO:2000036
 property_value: IAO:0000116 "Consider ceding to RO" xsd:string
-created_by: cjm
+created_by: https://orcid.org/0000-0002-6601-2165
 creation_date: 2018-11-03T20:58:13Z
+
+[Typedef]
+id: has_characteristic
+namespace: ENVO
+xref: RO:0000053
+
+[Typedef]
+id: has_component
+namespace: ENVO
+xref: RO:0002180
 
 [Typedef]
 id: has_condition
@@ -439,14 +449,14 @@ namespace: ENVO
 xref: RO:0000087
 
 [Typedef]
-id: inheres_in
-namespace: ENVO
-xref: RO:0000052
-
-[Typedef]
 id: input_of
 namespace: ENVO
 xref: RO:0002352
+
+[Typedef]
+id: involved_in
+namespace: ENVO
+xref: RO:0002331
 
 [Typedef]
 id: involved_in_negative_regulation_of

@@ -9,11 +9,13 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:obo1="http://purl.obolibrary.org/obo/"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:elements="http://www.geneontology.org/formats/oboInOwl#http://purl.org/dc/elements/1.1/"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
      xmlns:envo-basic="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/envo/subsets/envoAstro.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/envo/releases/2020-06-02/subsets/envoAstro.owl"/>
-        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2020-06-02</owl:versionInfo>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/envo/releases/2023-02-13/subsets/envoAstro.owl"/>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2023-02-13</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -58,6 +60,12 @@
     <!-- http://purl.obolibrary.org/obo/IAO_0000117 -->
 
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000117"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000231 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000231"/>
     
 
 
@@ -111,7 +119,7 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#disconnected_from"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A is disconnected_from B if they have no parts in common.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SO:cjm</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://orcid.org/0000-0002-6601-2165</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -129,6 +137,15 @@
 
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#environmental_hazards">
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">environmental_hazards</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#SubsetProperty"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoANZSoil -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoANZSoil">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">envoANZSoil</rdfs:comment>
         <rdfs:subPropertyOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#SubsetProperty"/>
     </owl:AnnotationProperty>
     
@@ -224,6 +241,15 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPlastics -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPlastics">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">envoPlastics</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#SubsetProperty"/>
+    </owl:AnnotationProperty>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar -->
 
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar">
@@ -305,6 +331,12 @@
     <!-- http://purl.org/dc/elements/1.1/date -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/date"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator"/>
     
 
 
@@ -474,6 +506,12 @@
     
 
 
+    <!-- http://www.geneontology.org/formats/oboInOwl#http://purl.org/dc/elements/1.1/source -->
+
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#http://purl.org/dc/elements/1.1/source"/>
+    
+
+
     <!-- http://www.w3.org/2000/01/rdf-schema#comment -->
 
     <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#comment"/>
@@ -606,6 +644,19 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/ENVO_01003004 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/ENVO_01003004">
+        <obo1:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A relation between two distinct material entities, the new entity and the old entity, in which the new entity begins to exist through the separation or transformation of a part of the old entity, and the new entity inherits a significant portion of the matter belonging to that part of the old entity.</obo1:IAO_0000115>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ENVO:01003004</oboInOwl:hasDbXref>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ENVO</oboInOwl:hasOBONamespace>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">derives_from_part_of</oboInOwl:id>
+        <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">derives_from_part_of</oboInOwl:shorthand>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">derives from part of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/ENVO_02500006 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/ENVO_02500006">
@@ -650,7 +701,7 @@
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/ENVO_2000036">
         <obo1:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A relation between a process and a disposition such that the existence of the disposition is caused by the execution of the process.</obo1:IAO_0000115>
         <obo1:IAO_0000116 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Consider ceding to RO</obo1:IAO_0000116>
-        <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cjm</oboInOwl:created_by>
+        <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://orcid.org/0000-0002-6601-2165</oboInOwl:created_by>
         <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2018-11-03T20:58:13Z</oboInOwl:creation_date>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ENVO:2000036</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ENVO</oboInOwl:hasOBONamespace>
@@ -692,8 +743,8 @@
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0000052">
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RO:0000052</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ENVO</oboInOwl:hasOBONamespace>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">inheres_in</oboInOwl:id>
-        <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">inheres_in</oboInOwl:shorthand>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">characteristic_of</oboInOwl:id>
+        <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">characteristic_of</oboInOwl:shorthand>
     </owl:ObjectProperty>
     
 
@@ -703,8 +754,8 @@
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0000053">
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RO:0000053</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ENVO</oboInOwl:hasOBONamespace>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">bearer_of</oboInOwl:id>
-        <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">bearer_of</oboInOwl:shorthand>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_characteristic</oboInOwl:id>
+        <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_characteristic</oboInOwl:shorthand>
     </owl:ObjectProperty>
     
 
@@ -727,6 +778,17 @@
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_participant</oboInOwl:id>
         <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_participant</oboInOwl:shorthand>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0000059 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0000059">
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RO:0000059</oboInOwl:hasDbXref>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ENVO</oboInOwl:hasOBONamespace>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">concretizes</oboInOwl:id>
+        <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">concretizes</oboInOwl:shorthand>
     </owl:ObjectProperty>
     
 
@@ -778,6 +840,7 @@
     <!-- http://purl.obolibrary.org/obo/RO_0001000 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0001000">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01003004"/>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RO:0001000</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">derives_from</oboInOwl:id>
@@ -941,6 +1004,17 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/RO_0002180 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002180">
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RO:0002180</oboInOwl:hasDbXref>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ENVO</oboInOwl:hasOBONamespace>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_component</oboInOwl:id>
+        <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_component</oboInOwl:shorthand>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/RO_0002211 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002211">
@@ -1001,7 +1075,6 @@
     <!-- http://purl.obolibrary.org/obo/RO_0002220 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002220">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RO:0002220</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">adjacent_to</oboInOwl:id>
@@ -1073,6 +1146,28 @@
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_habitat</oboInOwl:id>
         <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_habitat</oboInOwl:shorthand>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has habitat</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0002314 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002314">
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RO:0002314</oboInOwl:hasDbXref>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ENVO</oboInOwl:hasOBONamespace>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">characteristic_of_part_of</oboInOwl:id>
+        <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">characteristic_of_part_of</oboInOwl:shorthand>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0002331 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002331">
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RO:0002331</oboInOwl:hasDbXref>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ENVO</oboInOwl:hasOBONamespace>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">involved_in</oboInOwl:id>
+        <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">involved_in</oboInOwl:shorthand>
     </owl:ObjectProperty>
     
 
@@ -1324,6 +1419,7 @@
     <!-- http://purl.obolibrary.org/obo/ENVO_00000070 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_00000070">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001813"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
@@ -1352,75 +1448,46 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/ENVO_00000191 -->
+    <!-- http://purl.obolibrary.org/obo/ENVO_00000340 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_00000191">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/ENVO_01000813"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002473"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000814"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000813"/>
-        <obo1:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A part of an astronomical body which is primarily composed of a continuous volume of solid material, shaped by one or more environmental processes.</obo1:IAO_0000115>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EcoLexicon:landform</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EcoLexicon:landforms</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FTT:754</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FTT:96</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SWEETRealm:Landform</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TGN:21400</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TGN:21401</oboInOwl:hasDbXref>
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_00000340">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01003002"/>
+        <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000017"/>
+        <obo1:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A particle which 1) is composed primarily of and derived from rock or mineral sources and 2) is or was part of a portion of sand.</obo1:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">grain of sand</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">granule of sand</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sand granule</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ENVO</oboInOwl:hasOBONamespace>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">geological feature</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">physiographic feature</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ENVO:00000191</oboInOwl:id>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">solid astronomical body part</rdfs:label>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ENVO:00000340</oboInOwl:id>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">In general, sand grains are larger than those of silt, but finer than those of gravel.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">particle of sand</rdfs:label>
     </owl:Class>
     <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000191"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">geological feature</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ADL:FTT</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000191"/>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000340"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A part of an astronomical body which is primarily composed of a continuous volume of solid material, shaped by one or more environmental processes.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://en.wikipedia.org/wiki/Landform</oboInOwl:hasDbXref>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A particle which 1) is composed primarily of and derived from rock or mineral sources and 2) is or was part of a portion of sand.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://en.wikipedia.org/wiki/Sand</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
 
-    <!-- http://purl.obolibrary.org/obo/ENVO_00001995 -->
+    <!-- http://purl.obolibrary.org/obo/ENVO_00000343 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_00001995">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000814"/>
-        <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000256"/>
-        <obo1:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A rock is a naturally occurring solid aggregate of one or more minerals or mineraloids.</obo1:IAO_0000115>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EcoLexicon:rock</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FTT:1010</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FTT:145</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Geonames:T.RK</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Geonames:T.RKS</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SWEETRealm:Rock</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TGN:21444</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://en.wikipedia.org/wiki/Rock</oboInOwl:hasDbXref>
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_00000343">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01003002"/>
+        <obo1:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A particle which 1) is primarily composed of quartz or feldspar and 2) is or was part of a portion of silt.</obo1:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">grain of silt</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">granule of silt</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ENVO</oboInOwl:hasOBONamespace>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ENVO:00001995</oboInOwl:id>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">From https://en.wikipedia.org/wiki/ [A mineral] is different from a rock, which can be an aggregate of minerals or non-minerals and does not have a specific chemical composition. The exact definition of a mineral is under debate, especially with respect to the requirement a valid species be abiogenic, and to a lesser extent with regards to it having an ordered atomic structure.</rdfs:comment>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rock</rdfs:label>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ENVO:00000343</oboInOwl:id>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The distinction between silt and clay varies by discipline. Geologists and soil scientists usually consider the separation to occur at a particle size of 2 μm (clays being finer than silts), sedimentologists often use 4–5 μm, and colloid chemists use 1 μm. Geotechnical engineers distinguish between silts and clays based on the plasticity properties of the soil, as measured by the soils&apos; Atterberg limits. ISO 14688 grades clay particles as being smaller than 2 μm and silt particles as being larger. Mixtures of sand, silt and less than 40% clay are called loam.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">particle of silt</rdfs:label>
     </owl:Class>
     <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_00001995"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A rock is a naturally occurring solid aggregate of one or more minerals or mineraloids.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MA:ma</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://en.wikipedia.org/wiki/Rock_(geology)</oboInOwl:hasDbXref>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000343"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#comment"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The distinction between silt and clay varies by discipline. Geologists and soil scientists usually consider the separation to occur at a particle size of 2 μm (clays being finer than silts), sedimentologists often use 4–5 μm, and colloid chemists use 1 μm. Geotechnical engineers distinguish between silts and clays based on the plasticity properties of the soil, as measured by the soils&apos; Atterberg limits. ISO 14688 grades clay particles as being smaller than 2 μm and silt particles as being larger. Mixtures of sand, silt and less than 40% clay are called loam.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Properties</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -1465,7 +1532,13 @@
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000256"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo1:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Soil is an environmental material which is primarily composed of minerals, varying proportions of sand, silt, and clay, organic material such as humus, gases, liquids, and a broad range of resident micro- and macroorganisms.</obo1:IAO_0000115>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000091"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_06105304"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo1:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An environmental material which is primarily composed of minerals, varying proportions of sand, silt, and clay, organic material such as humus, interstitial gases, liquids, and a broad range of resident micro- and macroorganisms.</obo1:IAO_0000115>
         <obo1:IAO_0000116 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The various &apos;has part&apos; and &apos;has quality&apos; relations may not hold true for all soils; however, I have yet to find counter examples. Require input from a pedologist or similar. [pbuttigieg]</obo1:IAO_0000116>
         <oboInOwl:hasBroadSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">regolith</oboInOwl:hasBroadSynonym>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LTER:535</oboInOwl:hasDbXref>
@@ -1485,7 +1558,7 @@ The lower boundary that separates soil from the nonsoil underneath is most diffi
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_00001998"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Soil is an environmental material which is primarily composed of minerals, varying proportions of sand, silt, and clay, organic material such as humus, gases, liquids, and a broad range of resident micro- and macroorganisms.</owl:annotatedTarget>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An environmental material which is primarily composed of minerals, varying proportions of sand, silt, and clay, organic material such as humus, interstitial gases, liquids, and a broad range of resident micro- and macroorganisms.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://en.wikipedia.org/wiki/Soil</oboInOwl:hasDbXref>
     </owl:Axiom>
     
@@ -1516,20 +1589,33 @@ The lower boundary that separates soil from the nonsoil underneath is most diffi
     <!-- http://purl.obolibrary.org/obo/ENVO_00002982 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_00002982">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_00010483"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000060"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01003003"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000016"/>
-        <obo1:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A group of hydrous aluminium phyllosilicate (phyllosilicates being a subgroup of silicate minerals) minerals (see clay minerals), that are typically less than 2 micrometres in diameter. Clay consists of a variety of phyllosilicate minerals rich in silicon and aluminium oxides and hydroxides which include variable amounts of structural water.</obo1:IAO_0000115>
+        <obo1:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Particulate environmental material which 1) is composed primarily of clay particles, with only minor proportions of other materials, 2) demonstrates plasticity when wet, and 3) is capable of hardening when dried or fired.</obo1:IAO_0000115>
+        <obo1:IAO_0000116 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Do not oversimplify the particulate environmental material subclasses with design patterns or similar. The materials have properties that their components do not - write full definitions including these where possible.</obo1:IAO_0000116>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EcoLexicon:clay</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SWEETRealm:Clay</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://en.wikipedia.org/wiki/Clay</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ENVO:00002982</oboInOwl:id>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This definition is intentionally ambiguous to support the multiple thresholds set by different authorities.The distinction between silt and clay varies by discipline. Geologists and soil scientists usually consider the separation to occur at a particle size of 2 μm (clays being finer than silts), sedimentologists often use 4–5 μm, and colloid chemists use 1 μm. Geotechnical engineers distinguish between silts and clays based on the plasticity properties of the soil, as measured by the soils&apos; Atterberg limits. ISO 14688 grades clay particles as being smaller than 2 μm and silt particles as being larger. Mixtures of sand, silt and less than 40% clay are called loam. Similar mixtures with greater than 40% clay are often considered clay soils.</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">clay</rdfs:label>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_00002982"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A group of hydrous aluminium phyllosilicate (phyllosilicates being a subgroup of silicate minerals) minerals (see clay minerals), that are typically less than 2 micrometres in diameter. Clay consists of a variety of phyllosilicate minerals rich in silicon and aluminium oxides and hydroxides which include variable amounts of structural water.</owl:annotatedTarget>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Particulate environmental material which 1) is composed primarily of clay particles, with only minor proportions of other materials, 2) demonstrates plasticity when wet, and 3) is capable of hardening when dried or fired.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://en.wikipedia.org/wiki/Clay</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_00002982"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#comment"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This definition is intentionally ambiguous to support the multiple thresholds set by different authorities.The distinction between silt and clay varies by discipline. Geologists and soil scientists usually consider the separation to occur at a particle size of 2 μm (clays being finer than silts), sedimentologists often use 4–5 μm, and colloid chemists use 1 μm. Geotechnical engineers distinguish between silts and clays based on the plasticity properties of the soil, as measured by the soils&apos; Atterberg limits. ISO 14688 grades clay particles as being smaller than 2 μm and silt particles as being larger. Mixtures of sand, silt and less than 40% clay are called loam. Similar mixtures with greater than 40% clay are often considered clay soils.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://en.wikipedia.org/wiki/Clay</oboInOwl:hasDbXref>
     </owl:Axiom>
     
@@ -1584,22 +1670,36 @@ The lower boundary that separates soil from the nonsoil underneath is most diffi
     <!-- http://purl.obolibrary.org/obo/ENVO_01000016 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000016">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_00010483"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000060"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000343"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000017"/>
-        <obo1:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Silt is granular material of a size somewhere between sand and clay whose mineral origin is quartz and feldspar.</obo1:IAO_0000115>
+        <obo1:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Particulate environmental material which is primarily composed of silt particles.</obo1:IAO_0000115>
+        <obo1:IAO_0000116 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Do not oversimplify the particulate environmental material subclasses with design patterns or similar. The materials have properties that their components do not - write full definitions including these where possible.</obo1:IAO_0000116>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EcoLexicon:silt</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SWEETRealm:Silt</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://en.wikipedia.org/wiki/Silt</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ENVO:01000016</oboInOwl:id>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://en.wikipedia.org/wiki/ In the Udden-Wentworth scale (due to Krumbein), silt particles range between 0.0039 to 0.0625 mm, larger than clay but smaller than sand particles. ISO 14688 grades silts between 0.002 mm and 0.063 mm. In actuality, silt is chemically distinct from clay, and unlike clay, grains of silt are approximately the same size in all dimensions; furthermore, their size ranges overlap. Clays are formed from thin plate-shaped particles held together by electrostatic forces, so present a cohesion. According to the U.S. Department of Agriculture Soil Texture Classification system, the sand-silt distinction is made at the 0.05 mm particle size. The USDA system has been adopted by the Food and Agriculture Organization (FAO). In the Unified Soil Classification System (USCS) and the AASHTO Soil Classification system, the sand-silt distinction is made at the 0.075 mm particle size (i.e., material passing the #200 sieve). Silts and clays are distinguished mechanically by their plasticity.</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This definition is intentionally ambiguous to support the multiple thresholds set by different authorities. Some authorities consider this soil material that contains 80% or more silt and less than 12% clay. In the Udden-Wentworth scale (due to Krumbein), silt particles range between 0.0039 to 0.0625 mm, larger than clay but smaller than sand particles. ISO 14688 grades silts between 0.002 mm and 0.063 mm. In actuality, silt is chemically distinct from clay, and unlike clay, grains of silt are approximately the same size in all dimensions; furthermore, their size ranges overlap. Clays are formed from thin plate-shaped particles held together by electrostatic forces, so present a cohesion. According to the U.S. Department of Agriculture Soil Texture Classification system, the sand-silt distinction is made at the 0.05 mm particle size. The USDA system has been adopted by the Food and Agriculture Organization (FAO). In the Unified Soil Classification System (USCS) and the AASHTO Soil Classification system, the sand-silt distinction is made at the 0.075 mm particle size (i.e., material passing the #200 sieve). Silts and clays are distinguished mechanically by their plasticity.</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">silt</rdfs:label>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000016"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Silt is granular material of a size somewhere between sand and clay whose mineral origin is quartz and feldspar.</owl:annotatedTarget>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Particulate environmental material which is primarily composed of silt particles.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://en.wikipedia.org/wiki/Silt</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000016"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#comment"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This definition is intentionally ambiguous to support the multiple thresholds set by different authorities. Some authorities consider this soil material that contains 80% or more silt and less than 12% clay. In the Udden-Wentworth scale (due to Krumbein), silt particles range between 0.0039 to 0.0625 mm, larger than clay but smaller than sand particles. ISO 14688 grades silts between 0.002 mm and 0.063 mm. In actuality, silt is chemically distinct from clay, and unlike clay, grains of silt are approximately the same size in all dimensions; furthermore, their size ranges overlap. Clays are formed from thin plate-shaped particles held together by electrostatic forces, so present a cohesion. According to the U.S. Department of Agriculture Soil Texture Classification system, the sand-silt distinction is made at the 0.05 mm particle size. The USDA system has been adopted by the Food and Agriculture Organization (FAO). In the Unified Soil Classification System (USCS) and the AASHTO Soil Classification system, the sand-silt distinction is made at the 0.075 mm particle size (i.e., material passing the #200 sieve). Silts and clays are distinguished mechanically by their plasticity.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://en.wikipedia.org/wiki/Silt</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://sis.agr.gc.ca/cansis/glossary/t/index.html</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -1607,28 +1707,61 @@ The lower boundary that separates soil from the nonsoil underneath is most diffi
     <!-- http://purl.obolibrary.org/obo/ENVO_01000017 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000017">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_00010483"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000060"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001000"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00001995"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000340"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo1:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A naturally occurring granular material composed of finely divided rock and mineral particles.</obo1:IAO_0000115>
+        <obo1:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Particulate environmental material which is composed primarily of particles of sand with only minor proportions of other substances.</obo1:IAO_0000115>
+        <obo1:IAO_0000116 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Do not oversimplify the particulate environmental material subclasses with design patterns or similar. The materials have properties that their components do not - write full definitions including these where possible.</obo1:IAO_0000116>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EcoLexicon:sand</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LTER:484</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SWEETRealm:Sand</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://en.wikipedia.org/wiki/Sand</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ENVO:01000017</oboInOwl:id>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This definition is intentionally ambiguous to support the multiple thresholds set by different authorities. Some authorities consider as sands soil material that contains 85% or more sand; the percentage of silt plus 1.5 times the percentage of clay does not exceed 15. coarse sand (sable grossier) 25% or more very coarse and coarse sand, and less than 50% any other one grade of sand.</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sand</rdfs:label>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000017"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A naturally occurring granular material composed of finely divided rock and mineral particles.</owl:annotatedTarget>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Particulate environmental material which is composed primarily of particles of sand with only minor proportions of other substances.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://en.wikipedia.org/wiki/Sand</oboInOwl:hasDbXref>
     </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000017"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#comment"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This definition is intentionally ambiguous to support the multiple thresholds set by different authorities. Some authorities consider as sands soil material that contains 85% or more sand; the percentage of silt plus 1.5 times the percentage of clay does not exceed 15. coarse sand (sable grossier) 25% or more very coarse and coarse sand, and less than 50% any other one grade of sand.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://sis.agr.gc.ca/cansis/glossary/t/index.html</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ENVO_01000060 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000060">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_00010483"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01003002"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo1:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An environmental material which is composed primarily of particles.</obo1:IAO_0000115>
+        <obo1:IAO_0000116 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Do not oversimplify this branch with design patterns or similar. The materials have properties that their components do not - write full definitions including these where possible.</obo1:IAO_0000116>
+        <obo1:IAO_0000231 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000227"/>
+        <obo1:IAO_0100001 rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000369"/>
+        <oboInOwl:hasBroadSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">particulate matter</oboInOwl:hasBroadSynonym>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ENVO</oboInOwl:hasOBONamespace>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ENVO:01000060</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoAtmo"/>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">particulate environmental material</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
+    </owl:Class>
     
 
 
@@ -1702,41 +1835,6 @@ From https://en.wikipedia.org/wiki/ [A mineral] is different from a rock, which 
         <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An atmosphere is a layer of gases surrounding a material body of sufficient mass that is held in place by the gravity of the body.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://en.wikipedia.org/wiki/Atmosphere</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://en.wikipedia.org/wiki/Physical_geography</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/ENVO_01000277 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000277">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001125"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002473"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00002006"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo1:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ice is water frozen into a solid state. It can appear transparent or opaque bluish-white color, depending on the presence of impurities or air inclusions. The addition of other materials such as soil may further alter its appearance.</obo1:IAO_0000115>
-        <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ORCID:0000-0002-4366-3088</oboInOwl:created_by>
-        <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2013-10-13T12:01:28Z</oboInOwl:creation_date>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LTER:262</oboInOwl:hasDbXref>
-        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ENVO</oboInOwl:hasOBONamespace>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ice</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ENVO:01000277</oboInOwl:id>
-        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">water ice</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000277"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ice is water frozen into a solid state. It can appear transparent or opaque bluish-white color, depending on the presence of impurities or air inclusions. The addition of other materials such as soil may further alter its appearance.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://en.wikipedia.org/wiki/Ice</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000277"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ice</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.eionet.europa.eu/gemet/concept/4131</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -2003,6 +2101,12 @@ From https://en.wikipedia.org/wiki/ [A mineral] is different from a rock, which 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000804">
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000799"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000086"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001164"/>
             </owl:Restriction>
@@ -2011,13 +2115,6 @@ From https://en.wikipedia.org/wiki/ [A mineral] is different from a rock, which 
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002219"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000637"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000799"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo1:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An object which is composed of one or more gravitationally bound structures that are associated with a position in space.</obo1:IAO_0000115>
@@ -2183,7 +2280,7 @@ From https://en.wikipedia.org/wiki/ [A mineral] is different from a rock, which 
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ENVO:01000815</oboInOwl:id>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar"/>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This is a defined class: its subclasses will not be asserted, but filled by inference.</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This is a defined class: most of its subclasses will not be asserted, but filled by inference.</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">liquid environmental material</rdfs:label>
     </owl:Class>
     
@@ -2208,33 +2305,6 @@ From https://en.wikipedia.org/wiki/ [A mineral] is different from a rock, which 
         <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A biosphere is a part of an astronomical body which includes, as parts, all the living entities within the gravitational sphere of influence of that body, as well as the non-living and dead entities with which they interact.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.biology-online.org/dictionary/Biosphere</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://en.wikipedia.org/wiki/Biosphere</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/ENVO_01000818 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000818">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000191"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002473"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000277"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo1:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A cryosphere is that part of a planet which is primarily composed of water is in solid form.</obo1:IAO_0000115>
-        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ENVO</oboInOwl:hasOBONamespace>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ENVO:01000818</oboInOwl:id>
-        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoAstro"/>
-        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar"/>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This is a very broad and, in practice, poorly defined term. Please consider using or requesting a more specific class.</rdfs:comment>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cryosphere</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000818"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A cryosphere is that part of a planet which is primarily composed of water is in solid form.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://en.wikipedia.org/wiki/Cryosphere</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -2945,7 +3015,6 @@ From https://en.wikipedia.org/wiki/ [A mineral] is different from a rock, which 
     <!-- http://purl.obolibrary.org/obo/ENVO_01001138 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01001138">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001125"/>
         <obo1:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ice which is primarily composed of carbon dioxide.</obo1:IAO_0000115>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dry ice</oboInOwl:hasRelatedSynonym>
@@ -2984,7 +3053,6 @@ From https://en.wikipedia.org/wiki/ [A mineral] is different from a rock, which 
     <!-- http://purl.obolibrary.org/obo/ENVO_01001140 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01001140">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001125"/>
         <obo1:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ice which is primarily composed of ammonia.</obo1:IAO_0000115>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ENVO:01001140</oboInOwl:id>
@@ -3003,7 +3071,6 @@ From https://en.wikipedia.org/wiki/ [A mineral] is different from a rock, which 
     <!-- http://purl.obolibrary.org/obo/ENVO_01001141 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01001141">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001125"/>
         <obo1:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ice which is primarily composed of carbon monoxide.</obo1:IAO_0000115>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ENVO:01001141</oboInOwl:id>
@@ -3247,15 +3314,14 @@ From https://en.wikipedia.org/wiki/ [A mineral] is different from a rock, which 
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000804"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002219"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000637"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000799"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000799"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002219"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000637"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo1:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An astronomical object which is composed of dense gas and dust rotating around a young newly formed star, a T Tauri star, or a Herbig Ae/Be star in a disk-shaped configuration.</obo1:IAO_0000115>
@@ -3279,15 +3345,14 @@ From https://en.wikipedia.org/wiki/ [A mineral] is different from a rock, which 
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001150"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002219"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000637"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000799"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000799"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002219"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000637"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo1:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A protoplanetary disk which is externally illuminated and undergoing photoevaporation.</obo1:IAO_0000115>
@@ -3560,7 +3625,6 @@ From https://en.wikipedia.org/wiki/ [A mineral] is different from a rock, which 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01001212">
         <obo1:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
         <obo1:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A stellar radiation process during which electromagnetic waves or their quanta are emitted from a star at wavelengths and frequencies which travel exclusively in a line-of-sight fashion and which may produce molecular rotation and torsion on contact with matter.</obo1:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">microwave radiation</oboInOwl:hasExactSynonym>
         <oboInOwl:hasNarrowSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">microwave solar radiation</oboInOwl:hasNarrowSynonym>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ENVO:01001212</oboInOwl:id>
@@ -3583,7 +3647,6 @@ From https://en.wikipedia.org/wiki/ [A mineral] is different from a rock, which 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01001213">
         <obo1:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
         <obo1:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A stellar radiation process during which electromagnetic waves or their quanta are emitted from a star at wavelengths ranging from millimetre to kilometer scales.</obo1:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">radio wave radiation</oboInOwl:hasExactSynonym>
         <oboInOwl:hasNarrowSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">radio wave solar radiation</oboInOwl:hasNarrowSynonym>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ENVO:01001213</oboInOwl:id>
@@ -3672,8 +3735,6 @@ From https://en.wikipedia.org/wiki/ [A mineral] is different from a rock, which 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01001217">
         <obo1:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
         <obo1:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A stellar radiation process during which penetrating electromagnetic radiation is emitted by high-energy electrons as they fall into a lower state of energy.</obo1:IAO_0000115>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">X-ray radiation</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">X-ray stellar radiation</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">x ray stellar radiation</oboInOwl:hasExactSynonym>
         <oboInOwl:hasNarrowSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">X-ray solar radiation</oboInOwl:hasNarrowSynonym>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ENVO</oboInOwl:hasOBONamespace>
@@ -3763,7 +3824,7 @@ From https://en.wikipedia.org/wiki/ [A mineral] is different from a rock, which 
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001479"/>
         <obo1:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A part of an astronomical body which is primarily composed of a continuous volume of liquid material, shaped by one or more environmental processes.</obo1:IAO_0000115>
-        <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://orcid.org/0000-0002-4366-3088</oboInOwl:created_by>
+        <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://orcid.org/0000-0002-4366-3088</oboInOwl:created_by>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ENVO:01001477</oboInOwl:id>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">liquid astronomical body part</rdfs:label>
@@ -3782,7 +3843,7 @@ From https://en.wikipedia.org/wiki/ [A mineral] is different from a rock, which 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01001479">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000813"/>
         <obo1:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A part of an astronomical body which is primarily composed of a continuous volume of liquid or gaseous material, shaped by one or more environmental processes.</obo1:IAO_0000115>
-        <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://orcid.org/0000-0002-4366-3088</oboInOwl:created_by>
+        <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://orcid.org/0000-0002-4366-3088</oboInOwl:created_by>
         <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2018-10-04T13:59:22Z</oboInOwl:creation_date>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ENVO:01001479</oboInOwl:id>
@@ -3813,7 +3874,7 @@ From https://en.wikipedia.org/wiki/ [A mineral] is different from a rock, which 
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001026"/>
         <obo1:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An electromagnetic radiation process during which electromagnetic waves or their quanta are emitted from a manufactured product.</obo1:IAO_0000115>
-        <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://orcid.org/0000-0002-4366-3088</oboInOwl:created_by>
+        <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://orcid.org/0000-0002-4366-3088</oboInOwl:created_by>
         <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2019-01-09T09:07:24Z</oboInOwl:creation_date>
         <oboInOwl:hasBroadSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">anthropogenic radiation</oboInOwl:hasBroadSynonym>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">artificial radiation</oboInOwl:hasExactSynonym>
@@ -3838,7 +3899,7 @@ From https://en.wikipedia.org/wiki/ [A mineral] is different from a rock, which 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01001678">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000281"/>
         <obo1:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A layer which is composed primarily of some fluid.</obo1:IAO_0000115>
-        <dc:creator rdf:resource="http://orcid.org/0000-0002-4366-3088"/>
+        <dc:creator rdf:resource="https://orcid.org/0000-0002-4366-3088"/>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-07-22T17:35:08Z</dc:date>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ENVO:01001678</oboInOwl:id>
@@ -3847,12 +3908,52 @@ From https://en.wikipedia.org/wiki/ [A mineral] is different from a rock, which 
     
 
 
+    <!-- http://purl.obolibrary.org/obo/ENVO_01001686 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01001686">
+        <obo1:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An object which is composed primarily of an environmental material</obo1:IAO_0000115>
+        <dc:creator rdf:resource="https://orcid.org/0000-0002-4366-3088"/>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-08-20T09:38:29Z</dc:date>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ENVO</oboInOwl:hasOBONamespace>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ENVO:01001686</oboInOwl:id>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class and its subclasses refer to objects that are discrete accumulations of environmental materials, generally primarily composed of one or a few main material types.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mass of environmental material</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ENVO_01001687 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01001687">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/ENVO_01001686"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002473"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000814"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001686"/>
+        <obo1:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An mass of environmental material which is composed primarily of a solid environmental material</obo1:IAO_0000115>
+        <dc:creator rdf:resource="https://orcid.org/0000-0002-4366-3088"/>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-08-20T09:41:27Z</dc:date>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ENVO</oboInOwl:hasOBONamespace>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ENVO:01001687</oboInOwl:id>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class and its subclasses refer to objects that are discrete accumulations of environmental materials, generally primarily composed of one or a few main material types.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mass of solid material</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/ENVO_01001784 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01001784">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000813"/>
-        <obo1:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A part of an astronomical body which is primarily composed of a continuous medium bearing liquid, gaseous, and solid material in varying quantities.</obo1:IAO_0000115>
-        <dc:creator rdf:resource="http://orcid.org/0000-0002-4366-3088"/>
+        <obo1:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A part of an astronomical body which is composed of a continuous medium bearing liquid, gaseous, and solid material in variable quantities.</obo1:IAO_0000115>
+        <dc:creator rdf:resource="https://orcid.org/0000-0002-4366-3088"/>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-10-17T08:36:00Z</dc:date>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ENVO:01001784</oboInOwl:id>
@@ -3861,9 +3962,22 @@ From https://en.wikipedia.org/wiki/ [A mineral] is different from a rock, which 
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001784"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A part of an astronomical body which is primarily composed of a continuous medium bearing liquid, gaseous, and solid material in varying quantities.</owl:annotatedTarget>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A part of an astronomical body which is composed of a continuous medium bearing liquid, gaseous, and solid material in variable quantities.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://en.wikipedia.org/wiki/Landform</oboInOwl:hasDbXref>
     </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ENVO_01001813 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01001813">
+        <obo1:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A material entity which has been assembled through the intentional, instinctual, or deliberately programmed efforts of an organism or machine.</obo1:IAO_0000115>
+        <dc:creator rdf:resource="https://orcid.org/0000-0002-4366-3088"/>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-10-29T14:50:34Z</dc:date>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ENVO</oboInOwl:hasOBONamespace>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ENVO:01001813</oboInOwl:id>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">construction</rdfs:label>
+    </owl:Class>
     
 
 
@@ -3872,12 +3986,75 @@ From https://en.wikipedia.org/wiki/ [A mineral] is different from a rock, which 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01001852">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_02500000"/>
         <obo1:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A process during which one entity loses energy to another entity.</obo1:IAO_0000115>
-        <dc:creator rdf:resource="http://orcid.org/0000-0002-4366-3088"/>
+        <dc:creator rdf:resource="https://orcid.org/0000-0002-4366-3088"/>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-02-13T13:34:28Z</dc:date>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ENVO:01001852</oboInOwl:id>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">energy transfer process</rdfs:label>
     </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ENVO_01003001 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01003001">
+        <obo1:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A disposition of a material entity which is realised when it is saturated with liquid water.</obo1:IAO_0000115>
+        <dc:creator rdf:resource="https://orcid.org/0000-0002-4366-3088"/>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ENVO</oboInOwl:hasOBONamespace>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ENVO:01003001</oboInOwl:id>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">water-holding capacity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ENVO_01003002 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01003002">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001687"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000060"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo1:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A mass of solid material which is either 1) a minute fragment of a larger mass or 2) one of a collection of small masses composing an aggregate.</obo1:IAO_0000115>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ENVO</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">grain</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ENVO:01003002</oboInOwl:id>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">particle</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01003002"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A mass of solid material which is either 1) a minute fragment of a larger mass or 2) one of a collection of small masses composing an aggregate.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://en.wiktionary.org/wiki/particle</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ENVO_01003003 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01003003">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01003002"/>
+        <obo1:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A particle which 1) is composed primarily of hydrous aluminium phyllosilicate minerals, in turn composed of aluminium and silicon ions bonded into tiny, thin plates by interconnecting oxygen and hydroxide ions, and 2) is or was part of a portion of clay.</obo1:IAO_0000115>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">clay particle</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ENVO</oboInOwl:hasOBONamespace>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ENVO:01003003</oboInOwl:id>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The distinction between silt and clay varies by discipline. Geologists and soil scientists usually consider the separation to occur at a particle size of 2 μm (clays being finer than silts), sedimentologists often use 4–5 μm, and colloid chemists use 1 μm. Geotechnical engineers distinguish between silts and clays based on the plasticity properties of the soil, as measured by the soils&apos; Atterberg limits. ISO 14688 grades clay particles as being smaller than 2 μm and silt particles as being larger. Mixtures of sand, silt and less than 40% clay are called loam.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">particle of clay</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01003003"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A particle which 1) is composed primarily of hydrous aluminium phyllosilicate minerals, in turn composed of aluminium and silicon ions bonded into tiny, thin plates by interconnecting oxygen and hydroxide ions, and 2) is or was part of a portion of clay.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://en.wikipedia.org/wiki/Clay#Properties</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01003003"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#comment"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The distinction between silt and clay varies by discipline. Geologists and soil scientists usually consider the separation to occur at a particle size of 2 μm (clays being finer than silts), sedimentologists often use 4–5 μm, and colloid chemists use 1 μm. Geotechnical engineers distinguish between silts and clays based on the plasticity properties of the soil, as measured by the soils&apos; Atterberg limits. ISO 14688 grades clay particles as being smaller than 2 μm and silt particles as being larger. Mixtures of sand, silt and less than 40% clay are called loam.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Properties</oboInOwl:hasDbXref>
+    </owl:Axiom>
     
 
 
@@ -3926,7 +4103,7 @@ From https://en.wikipedia.org/wiki/ [A mineral] is different from a rock, which 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_03000010">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_02500000"/>
         <obo1:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A process during which material is displaced from its original location and transported either to a new location or back to the original location.</obo1:IAO_0000115>
-        <obo1:IAO_0000117 rdf:resource="http://orcid.org/0000-0002-4366-3088"/>
+        <obo1:IAO_0000117 rdf:resource="https://orcid.org/0000-0002-4366-3088"/>
         <obo1:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://orcid.org/0000-0002-3410-4655</obo1:IAO_0000117>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ENVO:03000010</oboInOwl:id>
@@ -3955,7 +4132,7 @@ From https://en.wikipedia.org/wiki/ [A mineral] is different from a rock, which 
         </rdfs:subClassOf>
         <obo1:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A process during which a portion of some environmental material is converted into a different material or a collection of materials.</obo1:IAO_0000115>
         <obo1:IAO_0000116 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A different material transformation process class (or similarly named class) pertaining to the conversion of a specific chemical into another belongs in CHEBI and or REX ontologies.</obo1:IAO_0000116>
-        <obo1:IAO_0000117 rdf:resource="http://orcid.org/0000-0002-4366-3088"/>
+        <obo1:IAO_0000117 rdf:resource="https://orcid.org/0000-0002-4366-3088"/>
         <obo1:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://orcid.org/0000-0002-3410-4655</obo1:IAO_0000117>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ENVO:03000043</oboInOwl:id>
@@ -3971,7 +4148,7 @@ From https://en.wikipedia.org/wiki/ [A mineral] is different from a rock, which 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_03000096">
         <obo1:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A one-dimensional temporal region which is delimited by the occurrence of processes which serve as its delimiters.</obo1:IAO_0000115>
         <obo1:IAO_0000116 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Season could be implemented as a subclass of one-dimensional temporal region, however, this will need further thought and discussion with BFO editors.</obo1:IAO_0000116>
-        <obo1:IAO_0000117 rdf:resource="http://orcid.org/0000-0002-4366-3088"/>
+        <obo1:IAO_0000117 rdf:resource="https://orcid.org/0000-0002-4366-3088"/>
         <obo1:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://orcid.org/0000-0002-3410-4655</obo1:IAO_0000117>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ENVO:03000096</oboInOwl:id>
@@ -3979,6 +4156,33 @@ From https://en.wikipedia.org/wiki/ [A mineral] is different from a rock, which 
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">season</rdfs:label>
     </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ENVO_06105304 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_06105304">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01003001"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000052"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00001998"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo1:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Water-holding capacity which inheres in some soil.</obo1:IAO_0000115>
+        <dc:creator rdf:resource="http://orcid.org/0000-0002-8461-9745"/>
+        <terms:creator rdf:resource="https://orcid.org/0000-0001-6284-4821"/>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">soil water-holding capacity</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ENVO</oboInOwl:hasOBONamespace>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ENVO:06105304</oboInOwl:id>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">water-holding capacity of soil</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_06105304"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Water-holding capacity which inheres in some soil.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://www.canr.msu.edu/news/why_is_soil_water_holding_capacity_important</oboInOwl:hasDbXref>
+    </owl:Axiom>
 </rdf:RDF>
 
 
