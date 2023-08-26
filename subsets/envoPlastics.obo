@@ -1,0 +1,2139 @@
+format-version: 1.2
+data-version: envo/releases/2023-02-13/subsets/envoPlastics.owl
+subsetdef: disposition_slim "Disposition slim"
+subsetdef: environmental_hazards "environmental_hazards"
+subsetdef: EnvO-Lite-GSC "EnvO-Lite-GSC"
+subsetdef: envoANZSoil "envoANZSoil"
+subsetdef: envoAstro "envoAstro"
+subsetdef: envoAtmo "envoAtmo"
+subsetdef: envoCesab "envoCesab"
+subsetdef: envoCmecs "envoCmecs"
+subsetdef: envoEmpo "envoEmpo"
+subsetdef: envoEOVs "envoEOVs"
+subsetdef: envoMarine "envoMarine"
+subsetdef: envoMeo "envoMeo"
+subsetdef: envoNceas "envoNceas"
+subsetdef: envoOmics "envoOmics"
+subsetdef: envoPlastics "envoPlastics"
+subsetdef: envoPolar "envoPolar"
+subsetdef: mpath_slim "Pathology slim"
+subsetdef: nlcd2011 "nlcd2011"
+subsetdef: relational_slim "Relational slim: types of quality that require an additional entity in order to exist"
+subsetdef: ro-eco "ro-eco"
+subsetdef: scalar_slim "Scalar slim"
+subsetdef: value_slim "Value slim"
+subsetdef: wwfBiome "wwfBiome"
+synonymtypedef: PLURAL "plurals"
+ontology: envo/subsets/envoPlastics
+property_value: owl:versionInfo "2023-02-13" xsd:string
+
+[Term]
+id: ENVO:00000016
+name: sea
+namespace: ENVO
+def: "A large expanse of saline water usually connected with an ocean." [https://en.wikipedia.org/wiki/Sea]
+subset: envoMarine
+subset: envoPolar
+synonym: "channel" NARROW []
+synonym: "closed sea" NARROW [USGS:SDTS]
+synonym: "marginal sea" NARROW [USGS:SDTS]
+synonym: "open sea" NARROW [USGS:SDTS]
+synonym: "open sound" NARROW [USGS:SDTS]
+synonym: "open water" NARROW [USGS:SDTS]
+xref: EcoLexicon:sea
+xref: FTT:233
+xref: FTT:830
+xref: Geonames:H.SEA
+xref: https://en.wikipedia.org/wiki/Sea
+xref: TGN:21103
+is_a: ENVO:00001999 ! marine water body
+relationship: composed_primarily_of ENVO:00002149 ! sea water
+relationship: part_of ENVO:01000819 ! hydrosphere
+
+[Term]
+id: ENVO:00000063
+name: water body
+namespace: ENVO
+def: "An accumulation of water of varying size." [https://en.wikipedia.org/wiki/Body_of_water]
+comment: https://en.wikipedia.org/wiki/ The term body of water most often refers to large accumulations of water, such as oceans, seas, and lakes, but it includes smaller pools of water such as ponds, wetlands, or more rarely, puddles. A body of water does not have to be still or contained; Rivers, streams, canals, and other geographical features where water moves from one place to another are also considered bodies of water.
+synonym: "aquatic feature" EXACT []
+synonym: "bodies of water" EXACT [Getty:TGN]
+synonym: "body of water" EXACT [ADL:FTT]
+synonym: "body of water" EXACT [Getty:TGN]
+synonym: "hydrographic feature" BROAD [ADL:FTT]
+synonym: "waterbody" EXACT []
+xref: EcoLexicon:waterbody
+xref: FTT:131
+xref: FTT:280
+xref: FTT:827
+xref: https://en.wikipedia.org/wiki/Water_body
+xref: SWEETRealm:BodyOfWater
+xref: TGN:21100
+xref: TGN:21101
+is_a: ENVO:01000685 ! water mass
+relationship: part_of ENVO:01000819 ! hydrosphere
+
+[Term]
+id: ENVO:00000191
+name: solid astronomical body part
+namespace: ENVO
+def: "A part of an astronomical body which is primarily composed of a continuous volume of solid material, shaped by one or more environmental processes." [https://en.wikipedia.org/wiki/Landform]
+synonym: "geological feature" RELATED [ADL:FTT]
+synonym: "landform" RELATED []
+synonym: "physiographic feature" RELATED []
+xref: EcoLexicon:landform
+xref: EcoLexicon:landforms
+xref: FTT:754
+xref: FTT:96
+xref: SWEETRealm:Landform
+xref: TGN:21400
+xref: TGN:21401
+is_a: ENVO:01000813 ! astronomical body part
+intersection_of: ENVO:01000813 ! astronomical body part
+intersection_of: composed_primarily_of ENVO:01000814 ! solid environmental material
+
+[Term]
+id: ENVO:00000304
+name: shore
+namespace: ENVO
+def: "That part of the land in immediate contact with a body of water including the area between high and low water lines." [USGS:SDTS]
+synonym: "beach face" RELATED [USGS:SDTS]
+synonym: "coastal zone" BROAD [ADL:FTT]
+synonym: "foreshore" RELATED [USGS:SDTS]
+synonym: "inshore" RELATED [USGS:SDTS]
+synonym: "rivage" RELATED [USGS:SDTS]
+synonym: "seashore" RELATED [USGS:SDTS]
+synonym: "shoreface" NARROW [USGS:SDTS]
+synonym: "strand" RELATED [USGS:SDTS]
+xref: EcoLexicon:shore
+xref: FTT:240
+xref: FTT:503
+xref: FTT:504
+xref: Geonames:T.SHOR
+xref: https://en.wikipedia.org/wiki/Shore
+xref: SWEETRealm:Shore
+xref: TGN:21481
+is_a: ENVO:01001884 ! surface landform
+relationship: adjacent_to ENVO:00000063 ! water body
+relationship: part_of ENVO:01000687 ! coast
+
+[Term]
+id: ENVO:00000309
+name: depressed landform
+namespace: ENVO
+def: "A landform sunken or depressed below the surrounding area." [https://en.wikipedia.org/wiki/Depression_%28geology%29]
+synonym: "barrier basin" RELATED [USGS:SDTS]
+synonym: "depression" BROAD []
+synonym: "depression" RELATED [Geonames:feature]
+synonym: "non tidal basin" RELATED [USGS:SDTS]
+synonym: "pan" RELATED [Geonames:feature]
+synonym: "pan" RELATED [Getty:TGN]
+synonym: "pan (geologic)" RELATED [ADL:FTT]
+synonym: "pans" RELATED [Geonames:feature]
+synonym: "tidal basin" RELATED [USGS:SDTS]
+xref: EcoLexicon:depression
+xref: FTT:175
+xref: FTT:215
+xref: FTT:216
+xref: Geonames:T.DPR
+xref: Geonames:T.PAN
+xref: Geonames:T.PANS
+xref: SWEETRealm:Depression
+xref: TGN:21454
+xref: TGN:21497
+xref: TGN:21521
+is_a: ENVO:01001886 ! landform
+relationship: has_part ENVO:00002000 ! slope
+property_value: IAO:0000116 "Clarify that this pertains to the planetary crust and create superclass for general topological depressions. https://github.com/EnvironmentOntology/envo/issues/486" xsd:string
+
+[Term]
+id: ENVO:00000428
+name: biome
+namespace: ENVO
+alt_id: LTER:809 {xref="https://vocab.lternet.edu/vocab/vocab/index.php?tema=809&/biomes"}
+def: "A biome is an ecosystem to which resident ecological communities have evolved adaptations." [DOI:10.1186/2041-1480-4-43, https://en.wikipedia.org/wiki/Biome]
+comment: There has been some concern raised (see Issue #143) about the usefulness of the assertion that organisms have evolved within a given biome. They may have evolved adaptations elsewhere and demonstrating one or the other is often not feasible. Consider relabelling to "environmental system determined by an ecological community" or similar.
+synonym: "EcosytemType" RELATED [NASA:earthrealm]
+synonym: "major habitat type" EXACT [WWF:Biome]
+xref: EcoLexicon:biome
+is_a: ENVO:01001110 ! ecosystem
+relationship: has_component ENVO:01000739 {minCardinality="2"} ! habitat
+relationship: has_part ENVO:01000739 ! habitat
+relationship: part_of ENVO:01000817 ! biosphere
+
+[Term]
+id: ENVO:00000447
+name: marine biome
+namespace: ENVO
+def: "An aquatic biome which is determined by a marine water body." [https://en.wikipedia.org/wiki/Ocean, https://orcid.org/0000-0002-4366-3088, ISBN:978-0-618-45504-1, MA:ma]
+comment: This biome includes open-ocean and unprotected coastal ecosystems, characterized by exposure to wave action, tidal fluctuation, and ocean currents as well as systems that largely resemble these. Water in the marine biome is generally within the salinity range of seawater: 30 to 38 ppt.
+subset: envoPolar
+synonym: "marine realm" RELATED []
+xref: SPIRE:Marine
+is_a: ENVO:00002030 ! aquatic biome
+intersection_of: ENVO:00002030 ! aquatic biome
+intersection_of: determined_by ENVO:00001999 ! marine water body
+
+[Term]
+id: ENVO:00000482
+name: sea floor
+namespace: ENVO
+def: "A marine bed which lies below a sea." [https://en.wikipedia.org/wiki/Seabed, MA:ma]
+subset: envoPlastics
+synonym: "fondale marino" EXACT []
+synonym: "fondo marino" EXACT []
+synonym: "Meeresboden" EXACT []
+synonym: "ocean floor" EXACT []
+synonym: "ocean floor" RELATED [] {comment="Seas are smaller than oceans and are usually located where the land and ocean meet. However, these two terms are often used interchangeably."}
+synonym: "sea bed" RELATED []
+synonym: "seabed" EXACT []
+synonym: "SeaFloor" EXACT [NASA:earthrealm]
+synonym: "seafloor" EXACT []
+synonym: "海床" RELATED []
+synonym: "海底" RELATED []
+xref: EcoLexicon:sea_floor
+is_a: ENVO:01001378 ! marine bed
+relationship: adjacent_to ENVO:00000016 ! sea
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-2996-719X
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-8166-0486
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0003-1072-8081
+created_by: https://orcid.org/0000-0002-8395-2570
+
+[Term]
+id: ENVO:00000486
+name: shoreline
+namespace: ENVO
+def: "A two-dimensional continuant fiat boundary which is located between a landmass and a water body." [USGS:SDTS] {comment="https://en.wikipedia.org/wiki/Shore"}
+comment: 1) this term is usually used for larger water bodies like lakes and oceans, 2) that the actual spatial extent of a shoreline, and the sharpness of its boundaries, is often arbitrarily or operationally defined, and 3) this term is for the physical shoreline, not the one- or two-dimensional representation of shorelines.
+subset: envoPlastics
+synonym: "coastline" RELATED [USGS:SDTS] {http://purl.obolibrary.org/obo/IAO_0000116="The distinction between shoreline and coastline needs more thought."}
+synonym: "Küstenlinie" EXACT []
+synonym: "linea costiera" EXACT []
+synonym: "línea costera" EXACT []
+synonym: "SHOR" RELATED [Geonames:feature]
+synonym: "Shoreline" EXACT [NASA:earthrealm]
+synonym: "海岸線" NARROW []
+xref: EcoLexicon:shoreline
+xref: FTT:240
+xref: FTT:503
+xref: TGN:21481
+relationship: part_of ENVO:00000304 ! shore
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-2996-719X
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-8166-0486
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0003-1072-8081
+
+[Term]
+id: ENVO:00000501
+name: submerged bed
+namespace: ENVO
+def: "The portion of the ground surface which lies below water." [USGS:SDTS]
+synonym: "BOTTOM" BROAD [USGS:SDTS]
+xref: EcoLexicon:bed
+xref: FTT:804
+xref: https://en.wikipedia.org/wiki/Stream_bed
+xref: SWEETRealm:Bottom
+is_a: ENVO:01001311 ! solid surface layer
+relationship: adjacent_to ENVO:00000063 ! water body
+relationship: part_of ENVO:00000309 ! depressed landform
+
+[Term]
+id: ENVO:00000533
+name: landfill
+namespace: ENVO
+def: "A depression which contains objects and materials discarded by humans or their technologies." [https://doi.org/10.1177%2F0734242X0202000209, https://en.wikipedia.org/wiki/Landfill, MA:ma]
+subset: envoPlastics
+synonym: "Deponie" EXACT []
+synonym: "discarica" EXACT []
+synonym: "disposal site" RELATED [ADL:FTT]
+synonym: "garbage dump" EXACT []
+synonym: "rubbish dump" EXACT []
+synonym: "vertedero" EXACT []
+synonym: "垃圾掩埋場" EXACT []
+xref: FTT:621
+xref: FTT:624
+is_a: ENVO:01001884 ! surface landform
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-2996-719X
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-8166-0486
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0003-1072-8081
+
+[Term]
+id: ENVO:00001999
+name: marine water body
+namespace: ENVO
+def: "A significant accumulation of water which is part of a marine biome." []
+comment: Ideas like "significant" are fuzzy and need to be modelled more accurately. The definition is a candidate for review.
+synonym: "body of marine water" EXACT []
+synonym: "marine waterbody" EXACT []
+is_a: ENVO:01000617 ! lentic water body
+relationship: part_of ENVO:00000447 ! marine biome
+relationship: part_of ENVO:01000320 ! marine environment
+relationship: part_of ENVO:01000819 ! hydrosphere
+
+[Term]
+id: ENVO:00002000
+name: slope
+namespace: ENVO
+def: "A solid astronomical body part which is part of the planetary surface between the peak of an elevation or the bottom of a depression and relatively flat surrounding land." [MA:ma]
+synonym: "flank" RELATED []
+synonym: "side" RELATED []
+xref: EcoLexicon:slope
+xref: https://en.wikipedia.org/wiki/Slope
+xref: SWEETRealm:Slope
+is_a: ENVO:01001886 ! landform
+relationship: part_of ENVO:01000799 ! astronomical body
+
+[Term]
+id: ENVO:00002006
+name: liquid water
+namespace: ENVO
+def: "An environmental material primarily composed of dihydrogen oxide in its liquid form." [MA:ma]
+synonym: "water" BROAD []
+xref: EcoLexicon:water
+xref: https://en.wikipedia.org/wiki/Water
+xref: LTER:617
+is_a: ENVO:01000815 ! liquid environmental material
+
+[Term]
+id: ENVO:00002010
+name: saline water
+namespace: ENVO
+def: "Water which contains a significant concentration of dissolved salts." []
+comment: The threshold salt concentration for classifying water as saline varies, but typically begins at about 1,000 to 3,000 parts salt per million parts water or 0.1–0.3% salt by weight.
+synonym: "salt water" EXACT []
+xref: EcoLexicon:saltwater
+xref: https://en.wikipedia.org/wiki/Saline_water
+xref: SWEETRealm:SalineWater
+xref: SWEETRealm:SaltWater
+is_a: ENVO:00002006 ! liquid water
+
+[Term]
+id: ENVO:00002030
+name: aquatic biome
+namespace: ENVO
+def: "A biome which is determined by a water body and which has ecological climax communities adapted to life in or on water." []
+xref: LTER:41
+is_a: ENVO:00000428 ! biome
+intersection_of: ENVO:00000428 ! biome
+intersection_of: determined_by ENVO:00000063 ! water body
+
+[Term]
+id: ENVO:00002149
+name: sea water
+namespace: ENVO
+def: "Water which has physicochemical properties that have been determined by the processes occuring in a sea or ocean." []
+comment: This definition refers to water that is actually in a sea or ocean. This water may have a wide range of salinity levels.
+synonym: "ocean water" EXACT []
+synonym: "seawater" EXACT []
+xref: EcoLexicon:sea_water
+xref: https://en.wikipedia.org/wiki/Sea_water
+xref: LTER:701
+xref: SWEETRealm:SeaWater
+is_a: ENVO:00002010 ! saline water
+property_value: IAO:0000116 "When we have more classes representing the various processes which make seawater seawater, we can further axiomatise this class." xsd:string
+
+[Term]
+id: ENVO:00002264
+name: waste material
+namespace: ENVO
+def: "A material which is not the desired output of a process and which is typically the input of a process which removes it from its producer (e.g. a disposal process)." []
+xref: EcoLexicon:waste
+xref: https://en.wikipedia.org/wiki/Waste
+xref: SWEETRealm:Waste
+intersection_of: ENVO:00010483 ! environmental material
+intersection_of: has_role ENVO:01000665 ! waste role
+property_value: IAO:0000116 "This seems more like a role than a material. Anything can be waste. Thus, a \"waste\" role or disposition will be created and this class can then be populated by inference: any environmental material which has [role,disposition] waste will be considered a waste material." xsd:string
+
+[Term]
+id: ENVO:00003074
+name: manufactured product
+namespace: ENVO
+def: "A material entity that has been processed by humans or their technology in any way, including intermediate products as well as final products." [] {comment="https://en.wikipedia.org/wiki/Manufactured_product"}
+synonym: "manufactured good" EXACT []
+relationship: output_of ENVO:01000993 ! manufacturing process
+
+[Term]
+id: ENVO:00010483
+name: environmental material
+namespace: ENVO
+def: "A portion of environmental material is a fiat object part which forms the medium or part of the medium of an environmental system." [DOI:10.1186/2041-1480-4-43, MA:ma, ORCID:0000-0002-4366-3088, URL:http\://ontology.buffalo.edu/smith/articles/niches.html]
+comment: Everything under this parent must be a mass noun. All subclasses are to be understood as being composed primarily of the named entity, rather than restricted to that entity. For example, "ENVO:water" is to be understood as "environmental material composed primarly of some CHEBI:water". This class is currently being aligned to the Basic Formal Ontology. Following this alignment, its definition and the definitions of its subclasses will be revised.
+synonym: "portion of environmental material" EXACT []
+
+[Term]
+id: ENVO:00010504
+name: surface layer
+namespace: ENVO
+def: "A layer of some material entity which is adjacent to one or more of its external boundaries and directly interacts with its immediate surroundings." [URL:http\://www.merriam-webster.com/dictionary/surface]
+comment: This class is distinct from a geometric surface, which is two-dimensional. The idea of "uppermost" may be problematic. Further, the definition of layer (the superclass of surface in rev 133) references surface. This may be another issue. Perhaps this can be made into an inferred class using 'bounding layer of' some material entity, note that 'bounding layer' implies containment, which may not be valid here.
+xref: EcoLexicon:surface
+xref: http://sweetontology.net/reprSpaceGeometry/Surface
+xref: https://en.wikipedia.org/wiki/Surface
+is_a: ENVO:01001684 ! interface layer
+
+[Term]
+id: ENVO:01000254
+name: environmental system
+namespace: ENVO
+def: "A system which has the disposition to environ one or more material entities." [DOI:10.1186/2041-1480-4-43]
+comment: In ENVO's alignment with the Basic Formal Ontology, this class is being considered as a subclass of a proposed BFO class "system". The relation "environed_by" is also under development. Roughly, a system which includes a material entity (at least partially) within its site and causally influences that entity may be considered to environ it. Following the completion of this alignment, this class' definition and the definitions of its subclasses will be revised.
+synonym: "environment" EXACT []
+xref: EcoLexicon:environment
+creation_date: 2013-09-23T16:04:08Z
+
+[Term]
+id: ENVO:01000281
+name: layer
+namespace: ENVO
+def: "A layer is a quantity of some material which is spatially continuous, has comparable thickness, and usually covers some surface." [Wiktionary:layer]
+comment: Preliminary definition.
+subset: envoPolar
+created_by: ORCID:0000-0002-4366-3088
+creation_date: 2013-10-15T16:42:02Z
+
+[Term]
+id: ENVO:01000320
+name: marine environment
+namespace: ENVO
+def: "A marine environment and enviroment which is determined by a marine water body." [NM:nm]
+subset: envoPolar
+intersection_of: ENVO:01000254 ! environmental system
+intersection_of: determined_by ENVO:00001999 ! marine water body
+
+[Term]
+id: ENVO:01000617
+name: lentic water body
+namespace: ENVO
+def: "A lentic water body is a water body in which the accumulated water, in its totality, has very little to no directed flow." []
+is_a: ENVO:00000063 ! water body
+
+[Term]
+id: ENVO:01000635
+name: planetary landmass
+namespace: ENVO
+def: "A landmass which is part of a planet." [Adpated from https://en.wikipedia.org/wiki/Planetary_surface]
+synonym: "ground" RELATED []
+synonym: "land" BROAD []
+is_a: ENVO:01001782 ! landmass
+relationship: composed_primarily_of ENVO:01000814 ! solid environmental material
+relationship: part_of ENVO:01000800 ! planet
+
+[Term]
+id: ENVO:01000637
+name: outer space
+namespace: ENVO
+def: "Outer space is a hard vacuum containing a low density of particles, predominantly a plasma of hydrogen and helium as well as electromagnetic radiation, magnetic fields, neutrinos, dust and cosmic rays that exists between celestial bodies." [https://en.wikipedia.org/wiki/Outer_space]
+subset: envoAstro
+synonym: "space" BROAD []
+is_a: ENVO:00010483 ! environmental material
+
+[Term]
+id: ENVO:01000665
+name: waste role
+namespace: ENVO
+def: "A role that is realized in some process wherein the bearer is discarded or not utilized further." []
+property_value: IAO:0000116 "This definition is preliminary." xsd:string
+
+[Term]
+id: ENVO:01000685
+name: water mass
+namespace: ENVO
+def: "A mass of water." []
+is_a: ENVO:01001476 ! body of liquid
+relationship: composed_primarily_of ENVO:00002006 ! liquid water
+
+[Term]
+id: ENVO:01000687
+name: coast
+namespace: ENVO
+def: "A coast is the area where land meets the sea, ocean, or lake." [https://en.wikipedia.org/wiki/Coast]
+comment: Used for both marine and lake coasts. The boundary of the coast is fuzzy and it overlaps both the water body and land in quesiton. Compared to 'shore'
+relationship: overlaps ENVO:01000635 ! planetary landmass
+
+[Term]
+id: ENVO:01000739
+name: habitat
+namespace: ENVO
+def: "An environmental system which can sustain and allow the growth of an ecological population." [EnvO:EnvO]
+comment: A habitat's specificity to an ecological population differentiates it from other environment classes.
+xref: EcoLexicon:habitat
+xref: https://en.wikipedia.org/wiki/Habitat
+xref: LTER:238
+xref: SWEETRealm:Habitat
+is_a: ENVO:01001110 ! ecosystem
+relationship: part_of ENVO:01000817 ! biosphere
+
+[Term]
+id: ENVO:01000741
+name: recycling process
+namespace: ENVO
+def: "A process during which materials deemed as waste are separated and converted into a form which can be used as input by the same processes which generated them." [https://stats.oecd.org/glossary/detail.asp?ID=2260]
+comment: This has been created for SDGIO. Revision is likely, but the general meaning should be stable. The frame of reference for determining what is 'waste' and what is a  'resource' is unclear.
+subset: envoPlastics
+synonym: "proceso de reciclaje" EXACT []
+synonym: "processo di riciclo" EXACT []
+synonym: "Recycling-Prozess" EXACT []
+synonym: "資源回收" EXACT []
+is_a: ENVO:02500000 ! environmental system process
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-2996-719X
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-8166-0486
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0003-1072-8081
+
+[Term]
+id: ENVO:01000776
+name: piece of plastic
+namespace: ENVO
+def: "A mass of solid material which is primarily composed of plastic." []
+subset: envoPlastics
+synonym: "pedazo de plástico" EXACT []
+synonym: "pezzo di plastica" EXACT []
+synonym: "Plastikstück" EXACT []
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-2996-719X
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-8166-0486
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0003-1072-8081
+
+[Term]
+id: ENVO:01000777
+name: nurdle
+namespace: ENVO
+def: "A plastic pellet which is produced such that its size allows it to be rapidly melted and used as input for further downstream manufacturing processes." [https://en.wiktionary.org/wiki/nurdle]
+subset: envoPlastics
+is_a: ENVO:06105010 ! plastic pellet
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-2996-719X
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:01000799
+name: astronomical body
+namespace: ENVO
+def: "An object which is naturally occuring, bound together by gravitational or electromagnetic forces, and surrounded by space." [https://en.wikipedia.org/wiki/Astronomical_object]
+comment: Astronomical bodies are usually cohesive, thus the use of the term 'object' sensu BFO 'object'.
+subset: envoAstro
+synonym: "celestial body" RELATED []
+is_a: ENVO:01000804 ! astronomical object
+
+[Term]
+id: ENVO:01000800
+name: planet
+namespace: ENVO
+def: "A planet is an astronomical body orbiting a star or stellar remnant that is massive enough to be rounded by its own gravity, is not massive enough to cause thermonuclear fusion, and has cleared its neighbouring region of planetesimals." [http://solarsystem.nasa.gov/planets/whatisaplanet, https://en.wikipedia.org/wiki/Planet]
+comment: Considerable debate on the definition of planet exists.
+subset: envoAstro
+subset: envoPolar
+is_a: ENVO:01000799 ! astronomical body
+
+[Term]
+id: ENVO:01000804
+name: astronomical object
+namespace: ENVO
+def: "An object which is composed of one or more gravitationally bound structures that are associated with a position in space." [https://en.wikipedia.org/wiki/Astronomical_object]
+comment: If there is only one astronomical body involved, this class is equivalent to ENVO:01000799. This may be problematic with reasoning, but it seems to be true to the rather fuzzy definitions found thus far.
+subset: envoAstro
+synonym: "celestial object" RELATED []
+relationship: has_part ENVO:01000799 ! astronomical body
+relationship: has_quality ENVO:01001164 ! geodiversity
+relationship: surrounded_by ENVO:01000637 ! outer space
+
+[Term]
+id: ENVO:01000813
+name: astronomical body part
+namespace: ENVO
+def: "A material part of an astronomical body." []
+subset: envoAstro
+subset: envoPolar
+relationship: part_of ENVO:01000799 ! astronomical body
+
+[Term]
+id: ENVO:01000814
+name: solid environmental material
+namespace: ENVO
+def: "An environmental material which is in a solid state." []
+comment: This is a defined class: its subclasses will not be asserted, but filled by inference.
+is_a: ENVO:00010483 ! environmental material
+
+[Term]
+id: ENVO:01000815
+name: liquid environmental material
+namespace: ENVO
+def: "An environmental material which is in a liquid state." []
+comment: This is a defined class: most of its subclasses will not be asserted, but filled by inference.
+subset: envoPolar
+is_a: ENVO:02000140 ! fluid environmental material
+
+[Term]
+id: ENVO:01000817
+name: biosphere
+namespace: ENVO
+def: "A biosphere is a part of an astronomical body which includes, as parts, all the living entities within the gravitational sphere of influence of that body, as well as the non-living and dead entities with which they interact." [http://www.biology-online.org/dictionary/Biosphere, https://en.wikipedia.org/wiki/Biosphere]
+comment: The gravitational sphere of influence referenced in this class' definition is the Hill sphere: a region in which an object dominates the attraction of satellites despite gravitational perturbations.
+subset: envoAstro
+subset: envoPolar
+is_a: ENVO:01001784 ! compound astronomical body part
+property_value: IAO:0000116 "Whether this class should be grouped with classes such as \"hydrosphere\" and \"cryosphere\" requires some discussion." xsd:string
+
+[Term]
+id: ENVO:01000819
+name: hydrosphere
+namespace: ENVO
+def: "An astronomical body part which is composed of the combined mass of water found on, under, and over the surface of a planet." [https://en.wikipedia.org/wiki/Hydrosphere]
+comment: This is a very broad and, in practice, poorly defined term. Please consider using or requesting a more specific class.
+subset: envoAstro
+subset: envoPolar
+is_a: ENVO:01001477 ! liquid astronomical body part
+relationship: composed_primarily_of ENVO:00002006 ! liquid water
+
+[Term]
+id: ENVO:01000944
+name: microplastic particle
+namespace: ENVO
+def: "A piece of plastic which has a diameter less than five millimetres." [https://en.wikipedia.org/wiki/Microplastics, https://marinedebris.noaa.gov/file/2192/download?token=5dvqb-YY]
+comment: This classification is based on the thresholds detailed in GESAMP report # 99 on recommendation from the SDG 14 indicator team. While the definition is in accordance with the common use of this term (as per GESAMP report # 99), alternative size classifications exist. Alternative classifications are a piece of plastic which is between 1 and 5 millimetres in diameter, a piece of plastic which has a diameter less than 1 millimetre, or a piece of plastic which has a diameter greater than 330 micrometres. The use of the word diameter in this case was understood to mean the generalised form of diameter, i.e. the largest distance between two points belonging to an object. {xref="http://www.gesamp.org/publications/guidelines-for-the-monitoring-and-assessment-of-plastic-litter-in-the-ocean"}
+subset: envoPlastics
+synonym: "microplastic" RELATED []
+is_a: ENVO:01000776 ! piece of plastic
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-2996-719X
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-8166-0486
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0003-1072-8081
+
+[Term]
+id: ENVO:01000945
+name: primary microplastic particle
+namespace: ENVO
+def: "A microplastic particle which is the direct output of a manufacturing process." [https://en.wikipedia.org/wiki/Microplastics, https://marinedebris.noaa.gov/file/2192/download?token=5dvqb-YY]
+subset: envoPlastics
+synonym: "microplastic" RELATED []
+synonym: "microplastica primaria" EXACT []
+synonym: "microplástico primario" EXACT []
+synonym: "Primäres Mikroplastik" EXACT []
+is_a: ENVO:01000944 ! microplastic particle
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-2996-719X
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-8166-0486
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0003-1072-8081
+
+[Term]
+id: ENVO:01000946
+name: secondary microplastic particle
+namespace: ENVO
+def: "A microplastic particle which is derived from the breakdown of larger plastic debris." [https://en.wikipedia.org/wiki/Microplastics, https://marinedebris.noaa.gov/file/2192/download?token=5dvqb-YY]
+comment: The debris that make up the Great Pacific Garbage Patch constantly release microplastics as they break down.
+subset: envoPlastics
+synonym: "microplastic" RELATED []
+synonym: "microplastica secondaria" EXACT []
+synonym: "microplástico secundario" EXACT []
+synonym: "Sekundäres Mikroplastik" EXACT []
+is_a: ENVO:01000944 ! microplastic particle
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-2996-719X
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-8166-0486
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0003-1072-8081
+
+[Term]
+id: ENVO:01000993
+name: manufacturing process
+namespace: ENVO
+def: "A planned process during which raw or recycled materials are transformed into products for use or sale using labour and machines, tools, chemical and biological processing, or formulation." [https://en.wikipedia.org/wiki/Manufacturing]
+comment: The term may refer to a range of human activity, from handicraft to high tech, but is most commonly applied to industrial production, in which raw materials are transformed into finished goods on a large scale. {xref="https://en.wikipedia.org/wiki/Manufacturing"}
+
+[Term]
+id: ENVO:01001110
+name: ecosystem
+namespace: ENVO
+alt_id: LTER:173 {xref="https://vocab.lternet.edu/vocab/vocab/index.php?tema=173&/ecosystems"}
+def: "An environmental system which includes both living and non-living components." [https://en.wikipedia.org/wiki/Ecosystem]
+comment: This class will be primarily filled by inference, any environmental system which necessarily includes living parts should be autoclassified here.
+is_a: ENVO:01000254 ! environmental system
+
+[Term]
+id: ENVO:01001164
+name: geodiversity
+namespace: ENVO
+def: "A quality which inheres in a astronomical body or astronomical body part by virtue of the variation in its material composition, participation in geological processes, and the variation in is land- and hydroforms." [https://en.wikipedia.org/wiki/Geodiversity]
+comment: Materials which are usually assessed when appraising geodiversity include minerals, rocks, sediments, fossils, soils and water. Landforms factored into geodiversity metrics typically include folds, faults, and other expressions of morphology or relations between units of earth material. Natural processes that are included in measures of geodiversity are those which either maintain or change materials or geoforms, including tectonics, sediment transport, and pedogenesis. Geodiversity does not usually factor in anthropogenic entities. {xref=""}
+
+[Term]
+id: ENVO:01001170
+name: active ecosystem management process
+namespace: ENVO
+def: "A process during which an ecosystem, its parts, or the processes it participates in are modified by human intervention to accomplish an objective." [https://www.iucn.org/theme/protected-areas/about/protected-areas-categories/category-iv-habitatspecies-management-area]
+synonym: "ecosystem management" EXACT []
+synonym: "environmental management" RELATED []
+synonym: "Umweltmaßnahme" RELATED [www.awi.de/internas] {created_by="https://orcid.org/0000-0002-9620-2832"}
+is_a: ENVO:02500026 ! anthropogenic modulatory intervention process
+relationship: has_participant ENVO:01001110 ! ecosystem
+
+[Term]
+id: ENVO:01001191
+name: water surface
+namespace: ENVO
+def: "The surface layer of a volume of water." []
+synonym: "surface of a body of water" EXACT []
+synonym: "water body surface" EXACT []
+xref: EcoLexicon:surface_water
+xref: https://en.wikipedia.org/wiki/Surface_water
+xref: SWEETRealm:SurfaceWater
+is_a: ENVO:01001310 ! liquid surface layer
+intersection_of: ENVO:01001310 ! liquid surface layer
+intersection_of: part_of ENVO:00002006 ! liquid water
+relationship: composed_primarily_of ENVO:00002006 ! liquid water
+
+[Term]
+id: ENVO:01001260
+name: waste disposal process
+namespace: ENVO
+def: "A process during which materials deemed to be waste are transported away from a site." [https://eupathdb.org/eupathdb/]
+subset: envoPlastics
+synonym: "Abfallentsorgungsprozess" EXACT []
+synonym: "proceso de eliminación de residuos" EXACT []
+synonym: "processo di smaltimento rifiuti" EXACT []
+is_a: ENVO:02500042 ! pollution control
+relationship: has_part ENVO:03000010 ! material transport process
+relationship: has_participant ENVO:00002264 ! waste material
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-2996-719X
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-8166-0486
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0003-1072-8081
+
+[Term]
+id: ENVO:01001310
+name: liquid surface layer
+namespace: ENVO
+def: "A surface layer which is composed primarily of some liquid." []
+is_a: ENVO:01001673 ! fluid surface layer
+intersection_of: ENVO:01001673 ! fluid surface layer
+intersection_of: composed_primarily_of ENVO:01000815 ! liquid environmental material
+
+[Term]
+id: ENVO:01001311
+name: solid surface layer
+namespace: ENVO
+def: "A surface layer which is composed primarily of solid environmental material." []
+is_a: ENVO:00010504 ! surface layer
+intersection_of: ENVO:00010504 ! surface layer
+intersection_of: composed_primarily_of ENVO:01000814 ! solid environmental material
+
+[Term]
+id: ENVO:01001378
+name: marine bed
+namespace: ENVO
+def: "A submerged bed which underlies a marine water body." []
+synonym: "sea bottom" NARROW []
+is_a: ENVO:00000501 ! submerged bed
+relationship: adjacent_to ENVO:00001999 ! marine water body
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-2996-719X
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-8166-0486
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0003-1072-8081
+created_by: https://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:01001436
+name: planned environmental usage process
+namespace: ENVO
+def: "A planned process during which humans access and obtain resources, benefits, or services from a natural or anthropised ecosystem." []
+relationship: has_part ENVO:01001170 ! active ecosystem management process
+created_by: https://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:01001476
+name: body of liquid
+namespace: ENVO
+def: "A liquid astronomical body part which is continuous and is delimited by physical discontinuities or non-liquid boundaries." []
+is_a: ENVO:01001477 ! liquid astronomical body part
+created_by: https://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:01001477
+name: liquid astronomical body part
+namespace: ENVO
+def: "A part of an astronomical body which is primarily composed of a continuous volume of liquid material, shaped by one or more environmental processes." [https://en.wikipedia.org/wiki/Landform]
+is_a: ENVO:01001479 ! fluid astronomical body part
+intersection_of: ENVO:01001479 ! fluid astronomical body part
+intersection_of: composed_primarily_of ENVO:01000815 ! liquid environmental material
+created_by: https://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:01001479
+name: fluid astronomical body part
+namespace: ENVO
+def: "A part of an astronomical body which is primarily composed of a continuous volume of liquid or gaseous material, shaped by one or more environmental processes." [https://en.wikipedia.org/wiki/Landform]
+is_a: ENVO:01000813 ! astronomical body part
+created_by: https://orcid.org/0000-0002-4366-3088
+creation_date: 2018-10-04T13:59:22Z
+
+[Term]
+id: ENVO:01001483
+name: surface of an astronomical body
+namespace: ENVO
+def: "A surface layer where the solid or liquid material of an astronomical body comes into contact with an atmosphere or outer space." []
+comment: a useful class: this can be used to define sub-terrestrial and sub-marine entities
+synonym: "land surface" RELATED []
+is_a: ENVO:00010504 ! surface layer
+intersection_of: ENVO:00010504 ! surface layer
+intersection_of: part_of ENVO:01000799 ! astronomical body
+created_by: https://orcid.org/0000-0002-4366-3088
+creation_date: 2018-10-04T16:55:57Z
+
+[Term]
+id: ENVO:01001554
+name: surface layer of a water body
+namespace: ENVO
+def: "A water surface that is part of a water body." []
+is_a: ENVO:01001191 ! water surface
+intersection_of: ENVO:01001191 ! water surface
+intersection_of: part_of ENVO:00000063 ! water body
+relationship: part_of ENVO:00000063 ! water body
+created_by: https://orcid.org/0000-0002-4366-3088
+creation_date: 2019-02-27T21:22:13Z
+
+[Term]
+id: ENVO:01001581
+name: sea surface layer
+namespace: ENVO
+def: "A surface layer which is part of an ocean or sea." []
+comment: At this level, the depth of this layer is ambiguous. Some methods (telemetry) measure only the first few centimeters of the sea or ocean surface. In situ methods often sample the first few meters. Subclasses can be created for such cases.\nSea surface layer is also used to refer to the surfaces of oceans.
+subset: envoMarine
+subset: envoPlastics
+is_a: ENVO:01001554 ! surface layer of a water body
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-2996-719X
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-8166-0486
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0003-1072-8081
+created_by: https://orcid.org/0000-0002-4366-3088
+creation_date: 2019-03-06T01:22:01Z
+
+[Term]
+id: ENVO:01001673
+name: fluid surface layer
+namespace: ENVO
+def: "A surface layer which is composed primarily of some liquid or gas." []
+is_a: ENVO:00010504 ! surface layer
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-08-20T08:28:42Z xsd:dateTime
+
+[Term]
+id: ENVO:01001684
+name: interface layer
+namespace: ENVO
+def: "A layer which separates two portions of environmental material which possess 1) differing compositions, 2) a discontinuity of some property, or 3) some derivative of some property in a direction normal to the interface." []
+is_a: ENVO:01000281 ! layer
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-08-20T09:28:10Z xsd:dateTime
+
+[Term]
+id: ENVO:01001782
+name: landmass
+namespace: ENVO
+def: "A large continuous area of land, either surrounded by sea or contiguous with another landmass." [] {http://purl.obolibrary.org/obo/IAO_0000119="https://en.wiktionary.org/wiki/landmass"}
+is_a: ENVO:01001785 ! land
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-10-17T08:31:26Z xsd:dateTime
+
+[Term]
+id: ENVO:01001784
+name: compound astronomical body part
+namespace: ENVO
+def: "A part of an astronomical body which is composed of a continuous medium bearing liquid, gaseous, and solid material in variable quantities." [https://en.wikipedia.org/wiki/Landform]
+is_a: ENVO:01000813 ! astronomical body part
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-10-17T08:36:00Z xsd:dateTime
+
+[Term]
+id: ENVO:01001785
+name: land
+namespace: ENVO
+def: "A surface layer of an astronomical body which is primarily composed of solid material and is not covered by oceans or other bodies of water." [https://en.wiktionary.org/wiki/land]
+is_a: ENVO:01001483 ! surface of an astronomical body
+relationship: composed_primarily_of ENVO:01000814 ! solid environmental material
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-10-21T10:42:26Z xsd:dateTime
+
+[Term]
+id: ENVO:01001884
+name: surface landform
+namespace: ENVO
+def: "A landform which occurs on the surface of an astronomical body." []
+comment: The usage of "surface" here aligns with that of planetary surface: in contact with the atmosphere or space. The extent of the "surface" can vary. For rocky planets like Earth, astrogeologists consider the crust as the surface.
+synonym: "geographic feature" RELATED []
+is_a: ENVO:01001886 ! landform
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2021-05-15T09:16:23Z xsd:dateTime
+
+[Term]
+id: ENVO:01001886
+name: landform
+namespace: ENVO
+def: "A solid astronomical body part which has been formed from and is composed primarily of the matter of that astronomical body." [https://en.wikipedia.org/wiki/Landform]
+comment: Landforms may be natural or anthropogenic. This term has often has loose usage when referencing entities which are either subterranean or submerged below water bodies. In some cases, oceans themselves are considered landforms. Here, we have provided subclasses to resolve this ambiguity, but place oceans and other water bodies elsewhere.In later revisions, this hiearchy is likely to be reordered based on the formation processes of the entities within it.
+is_a: ENVO:00000191 ! solid astronomical body part
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2021-05-15T09:40:37Z xsd:dateTime
+
+[Term]
+id: ENVO:02000140
+name: fluid environmental material
+namespace: ENVO
+def: "A liquid or a gas." [https://github.com/EnvironmentOntology/envo/issues/940]
+synonym: "fluid" NARROW []
+is_a: ENVO:00010483 ! environmental material
+
+[Term]
+id: ENVO:02500000
+name: environmental system process
+namespace: ENVO
+def: "A process in which includes the components of an environmental system as participants." []
+comment: This is a convenience class for organisation and should not be used for annotation.
+
+[Term]
+id: ENVO:02500026
+name: anthropogenic modulatory intervention process
+namespace: ENVO
+def: "A process during which humans apply technology to alter the magnitude, duration, rate, or impact of an environmental process." []
+comment: Relabel the obo foundry unique label to be generic process
+
+[Term]
+id: ENVO:02500027
+name: anthropogenic environmental process
+namespace: ENVO
+def: "An environmental process which is driven by the action of humans." []
+is_a: ENVO:02500000 ! environmental system process
+
+[Term]
+id: ENVO:02500036
+name: environmental pollution
+namespace: ENVO
+def: "An environmental system process that results in the introduction of contaminants into an environment." [https://en.wikipedia.org/wiki/Pollution]
+comment: Pollutants may be material or immaterial (e.g. heat energy)
+subset: environmental_hazards
+synonym: "pollution" EXACT []
+is_a: ENVO:02500000 ! environmental system process
+
+[Term]
+id: ENVO:02500040
+name: plastic pollution
+namespace: ENVO
+def: "A pollution process during which plastic contaminants are released into an environmental material." [https://en.wikipedia.org/wiki/Plastic_pollution]
+subset: environmental_hazards
+subset: envoPlastics
+subset: envoPolar
+is_a: ENVO:02500036 ! environmental pollution
+
+[Term]
+id: ENVO:02500042
+name: pollution control
+namespace: ENVO
+def: "A planned process during which the amount of pollutants released into an environmental system is regulated." []
+synonym: "pollution prevention" NARROW []
+intersection_of: ENVO:02500026 ! anthropogenic modulatory intervention process
+intersection_of: regulates_(processual) ENVO:02500036 ! environmental pollution
+
+[Term]
+id: ENVO:03000009
+name: material accumulation process
+namespace: ENVO
+def: "A process during which the mass of one or more materials, present within a given site, increases." []
+comment: Experimental class for structural purposes not recommended for annotation. A material accumulation process ends a material transport process.
+subset: envoPolar
+is_a: ENVO:02500000 ! environmental system process
+property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
+property_value: IAO:0000117 https://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:03000010
+name: material transport process
+namespace: ENVO
+def: "A process during which material is displaced from its original location and transported either to a new location or back to the original location." []
+comment: Experimental class for structural purposes not recommended for annotation.
+subset: envoPolar
+is_a: ENVO:02500000 ! environmental system process
+property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
+property_value: IAO:0000117 https://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:03000043
+name: material transformation process
+namespace: ENVO
+def: "A process during which a portion of some environmental material is converted into a different material or a collection of materials." []
+comment: Experimental class for structural purposes not recommended for annotation. A material transformation process only refers to ENVO:environmental material classes (e.g. bulk and typically impure substances), rather than transformations converting a specific chemical into another.
+subset: envoPolar
+is_a: ENVO:02500000 ! environmental system process
+relationship: has_input ENVO:00010483 ! environmental material
+relationship: has_output ENVO:00010483 ! environmental material
+property_value: IAO:0000116 "A different material transformation process class (or similarly named class) pertaining to the conversion of a specific chemical into another belongs in CHEBI and or REX ontologies." xsd:string
+property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
+property_value: IAO:0000117 https://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:03500005
+name: anthropogenic litter
+namespace: ENVO
+def: "A material entity which has been discarded outside waste management systems by humans or their technologies." []
+comment: Very large objects that are discarded are typically considered "debris", but this term is loosely defined and there are no standard size classifications which can be used to distinguish debris from litter.
+subset: envoPlastics
+synonym: "anthropogener Abfall" EXACT []
+synonym: "basura antropogénica" BROAD []
+synonym: "litter" BROAD []
+synonym: "menschengemachter Abfall" EXACT []
+synonym: "rifiuti antropogenici" BROAD []
+relationship: has_role ENVO:01000665 ! waste role
+relationship: output_of ENVO:06105108 ! littering
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-2996-719X
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-8166-0486
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0003-1072-8081
+created_by: https://orcid.org/0000-0002-2908-3327
+creation_date: 2019-11-05T16:02:41Z
+
+[Term]
+id: ENVO:06105002
+name: thermoplasticity
+namespace: ENVO
+def: "A disposition inhering in a bearer by virtue of that bearer's ability to, repeatedly, become plastic on heating and harden again on cooling." [https://www.lexico.com/en/definition/thermoplastic, https://www.merriam-webster.com/dictionary/thermoplastic]
+subset: envoPlastics
+synonym: "termoplasticità" EXACT []
+synonym: "熱塑性" EXACT []
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-2996-719X
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0003-1072-8081
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-8166-0486
+property_value: http://purl.org/dc/elements/1.1/date 2021-04-27T09:10:14Z xsd:dateTime
+
+[Term]
+id: ENVO:06105003
+name: thermoplastic material
+namespace: ENVO
+def: "An environmental material which is capable of, repeatedly, becoming plastic when heated and hardening again when cooled." [https://en.wikipedia.org/wiki/Thermoplastic, https://www.lexico.com/en/definition/thermoplastic]
+subset: envoPlastics
+is_a: ENVO:00010483 ! environmental material
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-2996-719X
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0003-1072-8081
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-8166-0486
+property_value: http://purl.org/dc/elements/1.1/date 2021-04-27T09:45:29Z xsd:dateTime
+
+[Term]
+id: ENVO:06105004
+name: thermosetting disposition
+namespace: ENVO
+def: "A disposition which inheres in materials capable of becoming rigid when cured by heating." [https://en.wikipedia.org/wiki/Thermosetting_polymer]
+subset: envoPlastics
+synonym: "熱固性" EXACT []
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-2996-719X
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0003-1072-8081
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-8166-0486
+property_value: http://purl.org/dc/elements/1.1/date 2021-04-27T13:46:52Z xsd:dateTime
+
+[Term]
+id: ENVO:06105005
+name: thermoset polymer
+namespace: ENVO
+def: "A polymer which has been irreversibly hardened by heat-induced curing." [https://en.wikipedia.org/wiki/Thermosetting_polymer]
+comment: Prior to curing, thermoset materials often occur as a soft solid or viscous liquid prepolymer or resin. In the literature, those are often referred to thermosetting resins.\nDuring curing process, well-defined and irreversible chemical networks form in three dimensions thus giving the thermosets a strong and rigid structure that can be added to other materials to increase strength. {xref="https://doi.org/10.1016/B978-0-12-816808-0.00001-9"}
+subset: envoPlastics
+synonym: "thermoset" EXACT []
+synonym: "thermoset material" BROAD []
+synonym: "thermoset plastic" EXACT []
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-2996-719X
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0003-1072-8081
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-8166-0486
+property_value: http://purl.org/dc/elements/1.1/date 2021-04-27T13:51:32Z xsd:dateTime
+
+[Term]
+id: ENVO:06105006
+name: piece of plastic foam
+namespace: ENVO
+def: "A piece of plastic which has a matrix- or sponge-like structure with numerous, hollow internal spaces." [https://doi.org/10.1016/B978-185617431-2/50011-6, https://doi.org/10.1533/9780857093967.2.309]
+comment: Depending on the type of plastic used and the organisation of the foam, a piece of plastic foam can show elastic properties (even if the plastic it is made out of does not have elastic properties).
+subset: envoPlastics
+synonym: "Plastikschaumstück" EXACT []
+synonym: "Schaumstoffstück" EXACT []
+is_a: ENVO:01000776 ! piece of plastic
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-2996-719X
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0003-1072-8081
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-8166-0486
+property_value: http://purl.org/dc/elements/1.1/date 2021-05-04T13:42:05Z xsd:dateTime
+
+[Term]
+id: ENVO:06105007
+name: plastic film
+namespace: ENVO
+def: "A piece of plastic which is flexible, thin, and planar." [http://www.gesamp.org/publications/guidelines-for-the-monitoring-and-assessment-of-plastic-litter-in-the-ocean]
+comment: The edge can be either smooth or angular. {xref="http://www.gesamp.org/publications/guidelines-for-the-monitoring-and-assessment-of-plastic-litter-in-the-ocean"}
+subset: envoPlastics
+synonym: "Kunststofffolie" NARROW []
+synonym: "pellicola di plastica" EXACT []
+synonym: "película de plástico" EXACT []
+synonym: "plastic membrane" RELATED []
+synonym: "plastic sheet" RELATED []
+synonym: "Plastikfolie" EXACT []
+is_a: ENVO:01000776 ! piece of plastic
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-2996-719X
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0003-1072-8081
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-8166-0486
+property_value: http://purl.org/dc/elements/1.1/date 2021-05-04T13:58:27Z xsd:dateTime
+
+[Term]
+id: ENVO:06105008
+name: plastic fragment
+namespace: ENVO
+def: "A piece of plastic which 1) is hard, 2) has an irregular shape, and 3) has broken off of a larger piece of plastic." [http://www.gesamp.org/publications/guidelines-for-the-monitoring-and-assessment-of-plastic-litter-in-the-ocean]
+comment: To avoid ambiguity, we are being stricter with the "has broken off of a larger piece of plastic" aspect compared to the GESAMP report, which originally stated "having appearance of being broken down from a larger piece of litter".
+subset: envoPlastics
+synonym: "fragmento de plástico" EXACT []
+synonym: "frammento di plastica" EXACT []
+synonym: "plastic flake" EXACT []
+synonym: "plastic granule" EXACT []
+synonym: "Plastikfragment" EXACT []
+is_a: ENVO:01000776 ! piece of plastic
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-2996-719X
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0003-1072-8081
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-8166-0486
+property_value: http://purl.org/dc/elements/1.1/date 2021-05-04T14:37:37Z xsd:dateTime
+
+[Term]
+id: ENVO:06105009
+name: plastic line
+namespace: ENVO
+def: "A piece of plastic which is linear and flexible." [http://www.gesamp.org/publications/guidelines-for-the-monitoring-and-assessment-of-plastic-litter-in-the-ocean]
+subset: envoPlastics
+synonym: "plastic fibre" EXACT []
+synonym: "plastic filament" EXACT []
+synonym: "plastic strand" EXACT []
+is_a: ENVO:01000776 ! piece of plastic
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-2996-719X
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0003-1072-8081
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-8166-0486
+property_value: http://purl.org/dc/elements/1.1/date 2021-05-04T14:40:36Z xsd:dateTime
+
+[Term]
+id: ENVO:06105010
+name: plastic pellet
+namespace: ENVO
+def: "A piece of plastic which is 1) hard, 2) has a smooth external surface, and 3) has a roughly spherical or granular shape." [http://www.gesamp.org/publications/guidelines-for-the-monitoring-and-assessment-of-plastic-litter-in-the-ocean]
+subset: envoPlastics
+synonym: "mermaid's tears" EXACT []
+synonym: "pellet de plástico" EXACT []
+synonym: "pellet di plastica" EXACT []
+synonym: "resin bead" EXACT []
+is_a: ENVO:01000776 ! piece of plastic
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-2996-719X
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0003-1072-8081
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-8166-0486
+property_value: http://purl.org/dc/elements/1.1/date 2021-05-04T14:42:15Z xsd:dateTime
+
+[Term]
+id: ENVO:06105011
+name: water column
+namespace: ENVO
+def: "A liquid astronomical body part which 1) vertically spans a water body and 2) has fiat boundaries approximating a columnar shape." [https://www.merriam-webster.com/dictionary/water%20column]
+subset: envoPlastics
+synonym: "colonna d'acqua" EXACT []
+synonym: "columna de agua" EXACT []
+synonym: "Wassersäule" EXACT []
+synonym: "水層" EXACT []
+is_a: ENVO:01001477 ! liquid astronomical body part
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-2996-719X
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0003-1072-8081
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-8166-0486
+property_value: http://purl.org/dc/elements/1.1/date 2021-05-05T12:26:45Z xsd:dateTime
+
+[Term]
+id: ENVO:06105012
+name: biota
+namespace: ENVO
+def: "A collection of organisms which inhabits the same region, ecosystem, or time period." [https://www.lexico.com/definition/biota]
+subset: envoPlastics
+synonym: "Biota" EXACT []
+synonym: "biota" EXACT []
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-2996-719X
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0003-1072-8081
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-8166-0486
+property_value: http://purl.org/dc/elements/1.1/date 2021-05-05T12:32:21Z xsd:dateTime
+property_value: IAO:0000116 "This term is also requested on the PCO. Once it is added in PCO we will obsolete it in ENVO and replace it with the PCO terms." xsd:string
+
+[Term]
+id: ENVO:06105013
+name: marine biota
+namespace: ENVO
+def: "A biota which inhabits a marine ecosystem." [https://en.wikipedia.org/wiki/Marine_life]
+subset: envoPlastics
+synonym: "biota marino" EXACT []
+synonym: "marine life" EXACT []
+synonym: "Meeresbiota" EXACT []
+synonym: "ocean life" EXACT []
+synonym: "sea life" EXACT []
+is_a: ENVO:06105012 ! biota
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-2996-719X
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0003-1072-8081
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-8166-0486
+property_value: http://purl.org/dc/elements/1.1/date 2021-05-05T12:34:25Z xsd:dateTime
+property_value: IAO:0000116 "This term is also requested on the PCO. Once it is added in PCO we will obsolete it in ENVO and replace it with the PCO terms." xsd:string
+
+[Term]
+id: ENVO:06105014
+name: biodegradation
+namespace: ENVO
+def: "A biological process during which a material entity is broken down." [https://doi.org/10.1351%2FPAC-REC-10-12-04]
+subset: envoPlastics
+synonym: "biodegradación" EXACT []
+synonym: "Biodegradation" EXACT []
+synonym: "biodegradazione" EXACT []
+synonym: "Biologischer Abbauprozess" EXACT []
+synonym: "生物分解" EXACT []
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-2996-719X
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0003-1072-8081
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-8166-0486
+property_value: http://purl.org/dc/elements/1.1/date 2021-05-06T12:15:46Z xsd:dateTime
+
+[Term]
+id: ENVO:06105015
+name: biodegradation of plastic
+namespace: ENVO
+def: "A biodegradation process during which plastic is broken down." [https://doi.org/10.1016/j.matpr.2020.06.096]
+comment: Biodegradation of plastic will lead to reduce molecular weight of that plastic. {xref="https://doi.org/10.1016/j.matpr.2020.06.096"}
+subset: envoPlastics
+synonym: "biodegradación del plástico" EXACT []
+synonym: "biodegradazione della plastica" EXACT []
+synonym: "biological degradation of plastics" EXACT []
+synonym: "Biologischer Plastikabbauprozess" EXACT []
+is_a: ENVO:06105014 ! biodegradation
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-2996-719X
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0003-1072-8081
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-8166-0486
+property_value: http://purl.org/dc/elements/1.1/date 2021-05-06T12:17:43Z xsd:dateTime
+
+[Term]
+id: ENVO:06105016
+name: foamed plastic
+namespace: ENVO
+def: "A plastic which has a matrix- or sponge-like structure with numerous, hollow internal spaces." [https://doi.org/10.1016/B978-185617431-2/50011-6, https://doi.org/10.1533/9780857093967.2.309]
+subset: envoPlastics
+synonym: "cellular polymers" BROAD []
+synonym: "expanded polymers" BROAD []
+synonym: "geschäumter Kunststoff" EXACT []
+synonym: "plastic foam" EXACT []
+is_a: ENVO:06105101 ! plastic
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-2996-719X
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0003-1072-8081
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-8166-0486
+property_value: http://purl.org/dc/elements/1.1/date 2021-05-07T12:26:54Z xsd:dateTime
+
+[Term]
+id: ENVO:06105019
+name: quality of a foam
+namespace: ENVO
+def: "A physical quality which inheres in a liquid or solid bearer by virtue of that bearer trapping a gas in a colloidal suspension throughout its volume." [https://en.wikipedia.org/wiki/Foam]
+subset: envoPlastics
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-2996-719X
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0003-1072-8081
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-8166-0486
+property_value: http://purl.org/dc/elements/1.1/date 2021-05-11T11:07:53Z xsd:dateTime
+property_value: IAO:0000116 "This term is also requested on the PATO. Once it is added in PATO we will obsolete it in ENVO and replace it with the PATO terms." xsd:string
+
+[Term]
+id: ENVO:06105020
+name: ingestion
+namespace: ENVO
+def: "A feeding behavior during which material is taken into the body of an organism." [https://en.wikipedia.org/wiki/Ingestion]
+comment: Note that ingestion is not limited to materials which provide nutrition to an organism; indigestible or otherwise biologically inaccessible particles may also be ingested by organisms. Ingestion is also not limited to organisms with a mouth and digestive tract, as single-celled organisms like amoebae ingest material with their cell membrane.\nhttps://github.com/EnvironmentOntology/envo/pull/1153
+subset: envoPlastics
+synonym: "(Nahrungs)aufnahme" EXACT []
+synonym: "Ingestion" EXACT []
+synonym: "ingestione" EXACT []
+synonym: "ingestión" EXACT []
+synonym: "攝食" EXACT []
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-2996-719X
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0003-1072-8081
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-8166-0486
+property_value: http://purl.org/dc/elements/1.1/date 2021-05-11T14:09:27Z xsd:dateTime
+
+[Term]
+id: ENVO:06105021
+name: adsorption
+namespace: ENVO
+def: "A material accumulation process during which material adheres to a solid or liquid surface." [https://en.wikipedia.org/wiki/Adsorption, https://www.merriam-webster.com/dictionary/adsorption]
+subset: envoPlastics
+synonym: "adsorbimento" EXACT []
+synonym: "adsorción" EXACT []
+synonym: "Adsorption" EXACT []
+synonym: "吸附" EXACT []
+is_a: ENVO:03000009 ! material accumulation process
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-2996-719X
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0003-1072-8081
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-8166-0486
+property_value: http://purl.org/dc/elements/1.1/date 2021-05-11T14:20:33Z xsd:dateTime
+
+[Term]
+id: ENVO:06105022
+name: fouling
+namespace: ENVO
+def: "A material accumulation process during which material builds up on a solid surface such that a function of that surface, or the object it is a part of, is impaired." [https://en.wikipedia.org/wiki/Fouling, https://www.corrosionpedia.com/definition/540/fouling]
+comment: Following BFO:function semantics, this suggests that the functions of the object of which the surface is a part are affected in their realisation in one or more processes.
+subset: envoPlastics
+synonym: "Fouling" EXACT []
+synonym: "incrostazione" EXACT []
+synonym: "incrustación" EXACT []
+is_a: ENVO:03000009 ! material accumulation process
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-2996-719X
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0003-1072-8081
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-8166-0486
+property_value: http://purl.org/dc/elements/1.1/date 2021-05-11T19:24:44Z xsd:dateTime
+
+[Term]
+id: ENVO:06105023
+name: biofouling
+namespace: ENVO
+def: "A fouling process during which biological matter accumulates on a solid surface." [https://doi.org/10.1098/rsta.2011.0502]
+comment: The biological matter can be microscale (e.g. biofilms created by microorganism) and macroscale (created by macroorganism). {xref="https://doi.org/10.1098/rsta.2011.0502"}
+subset: envoPlastics
+synonym: "Bewuchs" RELATED []
+synonym: "bio-incrostazione" EXACT []
+synonym: "bio-incrustación" EXACT []
+synonym: "biological fouling" EXACT []
+synonym: "Makrofouling" NARROW []
+synonym: "Mikrofouling" NARROW []
+is_a: ENVO:06105022 ! fouling
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-2996-719X
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0003-1072-8081
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-8166-0486
+property_value: http://purl.org/dc/elements/1.1/date 2021-05-11T19:26:55Z xsd:dateTime
+
+[Term]
+id: ENVO:06105026
+name: granule of plastic foam
+namespace: ENVO
+def: "A piece of plastic foam which has a near-spherical or granular shape." [http://www.gesamp.org/publications/guidelines-for-the-monitoring-and-assessment-of-plastic-litter-in-the-ocean]
+comment: These granules are usually white or opaque but can be any color. {xref="https://doi.org/10.1002/etc.4371"}
+subset: envoPlastics
+is_a: ENVO:06105006 ! piece of plastic foam
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-2996-719X
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0003-1072-8081
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-8166-0486
+property_value: http://purl.org/dc/elements/1.1/date 2021-05-13T14:28:02Z xsd:dateTime
+
+[Term]
+id: ENVO:06105027
+name: fragmentation process
+namespace: ENVO
+def: "An environmental system process during which a material entity breaks into pieces or parts." [https://www.oxfordlearnersdictionaries.com/definition/english/fragmentation?q=fragmentation]
+subset: envoPlastics
+synonym: "fragmentación" EXACT []
+synonym: "Fragmentierung" EXACT []
+synonym: "frammentazione" EXACT []
+is_a: ENVO:02500000 ! environmental system process
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-2996-719X
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0003-1072-8081
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-8166-0486
+property_value: http://purl.org/dc/elements/1.1/date 2021-05-13T14:48:11Z xsd:dateTime
+
+[Term]
+id: ENVO:06105028
+name: fragmentation due to weathering
+namespace: ENVO
+def: "A fragmentation process which is caused by weathering." []
+comment: Some example of materials that undergo fragmentation due to weathering are rocks and plastics. {xref="https://doi.org/10.1016/j.envpol.2019.113011", xref="https://www.cambridge.org/core/books/principles-of-soilscape-and-landscape-evolution/soils-physical-weathering-and-soil-particle-fragmentation/FE8DB635652194D54A5E52B63CF9CA93/core-reader"}
+subset: envoPlastics
+is_a: ENVO:06105027 ! fragmentation process
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-2996-719X
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0003-1072-8081
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-8166-0486
+property_value: http://purl.org/dc/elements/1.1/date 2021-05-13T14:48:17Z xsd:dateTime
+
+[Term]
+id: ENVO:06105101
+name: plastic
+namespace: ENVO
+def: "An environnmental material which 1) is composed primarily of polymers with high molecular mass and 2) once deformed does not spontaneously return to its original shape." [https://readanddigest.com/what-is-plastic/, https://www.britannica.com/science/plastic#ref82461, https://www.lexico.com/definition/plastic]
+comment: "High molecular mass" can be ambiguous as it does not set a threshold for what is considered "high". Here we make no commitment to a threshold.
+subset: envoPlastics
+synonym: "Kunststoff" NARROW [] {comment="In German \"Kunststoff\" connotes those plastics which have intentionally been shaped by some art, thus \"Kunst\"."}
+synonym: "plastica" EXACT []
+synonym: "Plastik" EXACT []
+synonym: "塑膠" EXACT []
+is_a: ENVO:00010483 ! environmental material
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-2996-719X
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-8166-0486
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0003-1072-8081
+property_value: http://purl.org/dc/elements/1.1/date 2021-04-07T14:40:26Z xsd:dateTime
+
+[Term]
+id: ENVO:06105102
+name: megaplastic particle
+namespace: ENVO
+def: "A piece of plastic which is greater than 1 metre in its longest dimension." [http://www.gesamp.org/publications/guidelines-for-the-monitoring-and-assessment-of-plastic-litter-in-the-ocean]
+comment: This classification is based on the thresholds detailed in GESAMP report # 99 on recommendation from the SDG 14 indicator team.
+subset: envoPlastics
+is_a: ENVO:01000776 ! piece of plastic
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-2996-719X
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-8166-0486
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0003-1072-8081
+property_value: http://purl.org/dc/elements/1.1/date 2021-04-08T13:55:24Z xsd:dateTime
+
+[Term]
+id: ENVO:06105103
+name: macroplastic particle
+namespace: ENVO
+def: "A piece of plastic which is between 25 and 1000 millimetres in its longest dimension." [http://www.gesamp.org/publications/guidelines-for-the-monitoring-and-assessment-of-plastic-litter-in-the-ocean]
+comment: This classification is based on the thresholds detailed in GESAMP report # 99 on recommendation from the SDG 14 indicator team. While the definition is in accordance with the common use of this term (as per GESAMP report # 99), alternative size classifications exist and are detailed in the same report. An alternative classification is a piece of plastic which is between 25 and 50 millimetres in its longest dimension.
+subset: envoPlastics
+is_a: ENVO:01000776 ! piece of plastic
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-2996-719X
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-8166-0486
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0003-1072-8081
+property_value: http://purl.org/dc/elements/1.1/date 2021-04-08T14:01:58Z xsd:dateTime
+
+[Term]
+id: ENVO:06105104
+name: mesoplastic particle
+namespace: ENVO
+def: "A piece of plastic which is between 5 and 25 millimetres in its longest dimension." [http://www.gesamp.org/publications/guidelines-for-the-monitoring-and-assessment-of-plastic-litter-in-the-ocean]
+comment: This classification is based on the thresholds detailed in GESAMP report # 99 on recommendation from the SDG 14 indicator team. While the definition is in accordance with the common use of this term (as per GESAMP report # 99), alternative size classifications exist. Alternatives classifications are a piece of plastic which is less than 25 millimetres in its longest dimension, or a piece of plastic which is between 1 and 25 millimetres in its longest dimension.
+subset: envoPlastics
+is_a: ENVO:01000776 ! piece of plastic
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-2996-719X
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-8166-0486
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0003-1072-8081
+property_value: http://purl.org/dc/elements/1.1/date 2021-04-08T14:04:53Z xsd:dateTime
+
+[Term]
+id: ENVO:06105105
+name: nanoplastic particle
+namespace: ENVO
+def: "A piece of plastic which has a diameter less than 1 micrometre." [http://www.gesamp.org/publications/guidelines-for-the-monitoring-and-assessment-of-plastic-litter-in-the-ocean]
+comment: This classification is based on the thresholds detailed in GESAMP report # 99 on recommendation from the SDG 14 indicator team. While the definition is in accordance with the common use of this term (as per GESAMP report # 99), alternative size classifications exist. An alternative classification is a piece of plastic which has a diameter less than 100 nanometres. The GESAMP report states that it assumes a spherical shape for this size classification, which was understood to mean the generalised form of diameter, i.e. the largest distance between two points belonging to an object.
+subset: envoPlastics
+is_a: ENVO:01000776 ! piece of plastic
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-2996-719X
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-8166-0486
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0003-1072-8081
+property_value: http://purl.org/dc/elements/1.1/date 2021-04-08T14:07:41Z xsd:dateTime
+
+[Term]
+id: ENVO:06105106
+name: plastisphere
+namespace: ENVO
+def: "A part of an astronomical body which includes, as parts, all the entities which are composed primarily of plastic and which are within the gravitational sphere of influence of that body." [https://doi.org/10.3390/environments7100073]
+subset: envoPlastics
+synonym: "Plastiksphäre" EXACT []
+synonym: "plastisfera" EXACT []
+is_a: ENVO:00000191 ! solid astronomical body part
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-2996-719X
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-8166-0486
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0003-1072-8081
+property_value: http://purl.org/dc/elements/1.1/date 2021-04-27T08:42:44Z xsd:dateTime
+
+[Term]
+id: ENVO:06105107
+name: marine anthropogenic litter
+namespace: ENVO
+def: "Anthropogenic litter which is present in the marine environment." [http://www.gesamp.org/publications/guidelines-for-the-monitoring-and-assessment-of-plastic-litter-in-the-ocean]
+comment: Very large objects that are discarded are typically considered "debris", but this term is loosely defined and there are no standard size classifications which can be used to distinguish debris from litter.
+subset: envoPlastics
+synonym: "海洋廢棄物" EXACT []
+is_a: ENVO:03500005 ! anthropogenic litter
+relationship: part_of ENVO:01000320 ! marine environment
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-2996-719X
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-8166-0486
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0003-1072-8081
+property_value: http://purl.org/dc/elements/1.1/date 2021-05-04T14:07:44Z xsd:dateTime
+
+[Term]
+id: ENVO:06105108
+name: littering
+namespace: ENVO
+def: "An anthropogenic environmental process during which waste is improperly disposed of into the environment." [https://doi.org/10.3390/environments7100073]
+comment: Very large objects that are discarded are typically considered "debris", but this term is loosely defined and there are no standard size classifications which can be used to distinguish debris from litter.
+subset: envoPlastics
+is_a: ENVO:02500027 ! anthropogenic environmental process
+relationship: has_output ENVO:03500005 ! anthropogenic litter
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-2996-719X
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-8166-0486
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0003-1072-8081
+property_value: http://purl.org/dc/elements/1.1/date 2021-05-04T14:13:18Z xsd:dateTime
+
+[Term]
+id: ENVO:06105109
+name: litter role
+namespace: ENVO
+def: "A role which 1) inheres in a material entity 2) is realised when that entity is discarded outside waste management systems by humans or their technologies." []
+subset: envoPlastics
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-2996-719X
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-8166-0486
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0003-1072-8081
+property_value: http://purl.org/dc/elements/1.1/date 2021-05-05T14:15:43Z xsd:dateTime
+
+[Term]
+id: ENVO:06105110
+name: manufactured plastisphere
+namespace: ENVO
+def: "A plastisphere which is composed primarily of manufactured plastic." []
+subset: envoPlastics
+is_a: ENVO:06105106 ! plastisphere
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-2996-719X
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-8166-0486
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0003-1072-8081
+property_value: http://purl.org/dc/elements/1.1/date 2021-05-06T12:41:22Z xsd:dateTime
+
+[Term]
+id: ENVO:06105111
+name: natural plastic
+namespace: ENVO
+def: "Plastic which is composed primarily of polymers produced by processes whose agents do not include humans or their technologies." []
+subset: envoPlastics
+is_a: ENVO:06105101 ! plastic
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-2996-719X
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-8166-0486
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0003-1072-8081
+property_value: http://purl.org/dc/elements/1.1/date 2021-05-07T09:09:37Z xsd:dateTime
+property_value: IAO:0000116 "The corresponding subclass axiom will be added in the second phase of this project." xsd:string
+
+[Term]
+id: ENVO:06105112
+name: synthetic plastic
+namespace: ENVO
+def: "A plastic which is composed primarily of polymers produced by a manufacturing process." []
+subset: envoPlastics
+subset: envoPolar
+synonym: "manufactured plastic" EXACT []
+xref: c:5998
+xref: http://eurovoc.europa.eu/1837
+is_a: ENVO:06105101 ! plastic
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-2996-719X
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-8166-0486
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0003-1072-8081
+property_value: http://purl.org/dc/elements/1.1/date 2021-05-07T09:12:35Z xsd:dateTime
+property_value: IAO:0000116 "The corresponding subclass axiom will be added in the second phase of this project." xsd:string
+
+[Term]
+id: ENVO:06105113
+name: fishing
+namespace: ENVO
+def: "A planned environmental usage process during which any number of fish are caught by humans or their technologies." [https://en.wikipedia.org/wiki/Fishing, https://www.lexico.com/definition/fishing]
+subset: envoPlastics
+synonym: "angeln" EXACT []
+synonym: "fischen" EXACT []
+synonym: "pesca" EXACT []
+is_a: ENVO:01001436 ! planned environmental usage process
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-2996-719X
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-8166-0486
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0003-1072-8081
+property_value: http://purl.org/dc/elements/1.1/date 2021-05-07T17:56:06Z xsd:dateTime
+
+[Term]
+id: ENVO:06105114
+name: ghost fishing
+namespace: ENVO
+def: "An anthropogenic environmental process during which abandoned, lost, or discarded fishing gear attracts and entangles organisms." [] {comment="http://www.gesamp.org/publications/guidelines-for-the-monitoring-and-assessment-of-plastic-litter-in-the-ocean"}
+subset: envoPlastics
+is_a: ENVO:02500027 ! anthropogenic environmental process
+relationship: process_has_causal_agent ENVO:06105115 ! fishing gear
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-2996-719X
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-8166-0486
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0003-1072-8081
+property_value: http://purl.org/dc/elements/1.1/date 2021-05-07T18:00:11Z xsd:dateTime
+property_value: IAO:0000116 "While not driven by humans directly, ghost fishing is a downstream result of their intentional actions." xsd:string
+
+[Term]
+id: ENVO:06105115
+name: fishing gear
+namespace: ENVO
+def: "A manufactured product which is used for fishing." [https://en.wikipedia.org/wiki/Fishing_tackle]
+subset: envoPlastics
+synonym: "Angelausrüstung" EXACT []
+synonym: "Angelzubehör" EXACT []
+synonym: "attrezzo di pesca" EXACT []
+synonym: "equipo de pesca" EXACT []
+synonym: "Fischereiausrüstung" EXACT []
+synonym: "fishing tackle" EXACT []
+synonym: "漁具" EXACT []
+is_a: ENVO:00003074 ! manufactured product
+relationship: involved_in ENVO:06105113 ! fishing
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-2996-719X
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-8166-0486
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0003-1072-8081
+property_value: http://purl.org/dc/elements/1.1/date 2021-05-07T18:01:58Z xsd:dateTime
+
+[Term]
+id: ENVO:06105116
+name: discarded fishing gear
+namespace: ENVO
+def: "Abandoned fishing gear which was intentionally left unmaintained and uncontrolled by its custodian." [https://www.oxfordlearnersdictionaries.com/definition/english/discard_1]
+comment: In the literature, including GESAMP Report #99, this term is often referenced as part of abandoned, lost or otherwise discarded fishing gear (ALDFG). {xref="http://www.gesamp.org/publications/guidelines-for-the-monitoring-and-assessment-of-plastic-litter-in-the-ocean"}
+subset: envoPlastics
+synonym: "attrezzo di pesca scartato" EXACT []
+synonym: "entsorgte Angelausrüstung" BROAD []
+synonym: "equipo de pesca desechado" BROAD []
+synonym: "weggeworfene Angelausrüstung" EXACT []
+synonym: "weggeworfene Fischerreiausrüstung" EXACT []
+synonym: "weggeworfenes Angelzubehör" EXACT []
+is_a: ENVO:06105117 ! abandoned fishing gear
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-2996-719X
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-8166-0486
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0003-1072-8081
+property_value: http://purl.org/dc/elements/1.1/date 2021-05-07T18:06:28Z xsd:dateTime
+property_value: IAO:0000116 "In the future some role semantics for \"abandoned\", \"lost\", and \"discarded\" could be set up." xsd:string
+
+[Term]
+id: ENVO:06105117
+name: abandoned fishing gear
+namespace: ENVO
+def: "Fishing gear which is not under the control of or maintained by its custodian." [https://www.merriam-webster.com/dictionary/abandoned]
+comment: In the literature, including GESAMP Report #99, this term is often referenced as part of abandoned, lost or otherwise discarded fishing gear (ALDFG). {xref="http://www.gesamp.org/publications/guidelines-for-the-monitoring-and-assessment-of-plastic-litter-in-the-ocean"}
+subset: envoPlastics
+is_a: ENVO:06105115 ! fishing gear
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-2996-719X
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-8166-0486
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0003-1072-8081
+property_value: http://purl.org/dc/elements/1.1/date 2021-05-07T18:11:07Z xsd:dateTime
+property_value: IAO:0000116 "In the future some role semantics for \"abandoned\", \"lost\", and \"discarded\" could be set up." xsd:string
+
+[Term]
+id: ENVO:06105118
+name: lost fishing gear
+namespace: ENVO
+def: "Abandoned fishing gear which was unintentionally left unmaintained and uncontrolled by its custodian." [https://www.oxfordlearnersdictionaries.com/definition/english/lost_1?q=lost]
+comment: In the literature, including GESAMP Report #99, this term is often referenced as part of abandoned, lost or otherwise discarded fishing gear (ALDFG). {xref="http://www.gesamp.org/publications/guidelines-for-the-monitoring-and-assessment-of-plastic-litter-in-the-ocean"}
+subset: envoPlastics
+synonym: "attrezzo di pesca perso" EXACT []
+synonym: "equipo de pesca perdido" EXACT []
+synonym: "verschollene Angelausrüstung" EXACT []
+is_a: ENVO:06105117 ! abandoned fishing gear
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-2996-719X
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-8166-0486
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0003-1072-8081
+property_value: http://purl.org/dc/elements/1.1/date 2021-05-07T18:13:31Z xsd:dateTime
+property_value: IAO:0000116 "In the future some role semantics for \"abandoned\", \"lost\", and \"discarded\" could be set up." xsd:string
+
+[Term]
+id: ENVO:06105119
+name: weathering
+namespace: ENVO
+def: "A material transformation process during which the properties of a material are changed as a result of in situ exposure to atmospheric processes." [https://en.wikipedia.org/wiki/Weathering, https://www.britannica.com/science/weathering-geology]
+comment: The term "weathering" should not be confused with "erosion", which is the removal and transport of environmental material away from a site via exogenic processes.
+subset: envoPlastics
+synonym: "meteorización" EXACT []
+synonym: "meteorizzazione" EXACT []
+synonym: "Verwitterung" EXACT []
+synonym: "風化(作用)" EXACT []
+is_a: ENVO:03000043 ! material transformation process
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-2996-719X
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-8166-0486
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0003-1072-8081
+property_value: http://purl.org/dc/elements/1.1/date 2021-05-07T18:39:54Z xsd:dateTime
+
+[Term]
+id: ENVO:06105120
+name: entanglement process
+namespace: ENVO
+def: "An environmental system process during which material entities become entrapped, wrapped, twisted, entwined, or otherwise caught in one another." [https://www.lexico.com/definition/entangle]
+subset: envoPlastics
+synonym: "proceso de enredamiento" EXACT []
+synonym: "processo di impigliamento" EXACT []
+synonym: "Verfangen" BROAD []
+synonym: "Verhedderung" BROAD []
+synonym: "Verstrickung" BROAD []
+is_a: ENVO:02500000 ! environmental system process
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-2996-719X
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-8166-0486
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0003-1072-8081
+property_value: http://purl.org/dc/elements/1.1/date 2021-05-07T18:43:55Z xsd:dateTime
+
+[Term]
+id: ENVO:06105121
+name: entanglement of organisms in marine debris
+namespace: ENVO
+def: "An entanglement process during which organisms become entrapped in anthropogenic marine debris." []
+comment: Examples of marine debris include boating gear, or fishing gear (active or derelict). Marine debris may be in water or on land.
+subset: envoPlastics
+is_a: ENVO:06105120 ! entanglement process
+relationship: has_input ENVO:03500005 ! anthropogenic litter
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-2996-719X
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-8166-0486
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0003-1072-8081
+property_value: http://purl.org/dc/elements/1.1/date 2021-05-07T18:47:14Z xsd:dateTime
+property_value: IAO:0000116 "We've added anthropogenic litter as an input, as the threshold between litter and debris is ambigious. See the notes on anthropogenic litter" xsd:string
+
+[Term]
+id: ENVO:06105122
+name: biopolymer
+namespace: ENVO
+def: "A polymer which is the output of a biological process." [http://purl.obolibrary.org/obo/NCIT_C73478]
+subset: envoPlastics
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-2996-719X
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-8166-0486
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0003-1072-8081
+property_value: http://purl.org/dc/elements/1.1/date 2021-05-10T10:54:01Z xsd:dateTime
+
+[Term]
+id: ENVO:06105123
+name: synthetic polymer
+namespace: ENVO
+def: "A polymer which is the output of a manufacturing process." [http://purl.obolibrary.org/obo/NCIT_C82130]
+subset: envoPlastics
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-2996-719X
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-8166-0486
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0003-1072-8081
+property_value: http://purl.org/dc/elements/1.1/date 2021-05-10T10:56:03Z xsd:dateTime
+
+[Term]
+id: ENVO:06105124
+name: coastal anthropogenic litter
+namespace: ENVO
+def: "Anthropogenic litter which is present in a coastal environment." []
+comment: Very large objects that are discarded are typically considered "debris", but this term is loosely defined and there are no standard size classifications which can be used to distinguish debris from litter.
+subset: envoPlastics
+is_a: ENVO:03500005 ! anthropogenic litter
+relationship: located_in ENVO:01000687 ! coast
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-2996-719X
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-8166-0486
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0003-1072-8081
+property_value: http://purl.org/dc/elements/1.1/date 2021-05-10T11:07:40Z xsd:dateTime
+
+[Term]
+id: ENVO:06105125
+name: plastic manufacturing process
+namespace: ENVO
+def: "A manufacturing process which includes plastic as one of its specified outputs." [https://en.wikipedia.org/wiki/Plastics_industry]
+subset: envoPlastics
+synonym: "plastic production" EXACT []
+synonym: "Plastikherstellung" EXACT []
+synonym: "producción de plástico" EXACT []
+synonym: "produzione di plastica" EXACT []
+is_a: ENVO:01000993 ! manufacturing process
+relationship: has_output ENVO:06105101 ! plastic
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-2996-719X
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-8166-0486
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0003-1072-8081
+property_value: http://purl.org/dc/elements/1.1/date 2021-05-11T08:17:35Z xsd:dateTime
+
+[Term]
+id: ENVO:06105126
+name: weathering of plastic
+namespace: ENVO
+def: "Weathering during which plastic is worn or broken down." []
+subset: envoPlastics
+is_a: ENVO:06105119 ! weathering
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-2996-719X
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-8166-0486
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0003-1072-8081
+property_value: http://purl.org/dc/elements/1.1/date 2021-05-12T14:28:52Z xsd:dateTime
+
+[Typedef]
+id: adjacent_to
+namespace: ENVO
+xref: RO:0002220
+
+[Typedef]
+id: attached_to
+namespace: ENVO
+xref: RO:0002371
+
+[Typedef]
+id: bounding_layer_of
+namespace: ENVO
+xref: RO:0002007
+
+[Typedef]
+id: capable_of
+namespace: ENVO
+xref: RO:0002215
+
+[Typedef]
+id: causal_agent_in_process
+namespace: ENVO
+xref: RO:0002500
+
+[Typedef]
+id: causally_downstream_of_or_within
+namespace: ENVO
+xref: RO:0002427
+
+[Typedef]
+id: causally_upstream_of
+namespace: ENVO
+xref: RO:0002411
+
+[Typedef]
+id: causally_upstream_of_or_within
+namespace: ENVO
+xref: RO:0002418
+
+[Typedef]
+id: characteristic_of
+namespace: ENVO
+xref: RO:0000052
+
+[Typedef]
+id: characteristic_of_part_of
+namespace: ENVO
+xref: RO:0002314
+
+[Typedef]
+id: composed_primarily_of
+namespace: ENVO
+xref: RO:0002473
+
+[Typedef]
+id: concretizes
+namespace: ENVO
+xref: RO:0000059
+
+[Typedef]
+id: connected_to
+namespace: ENVO
+xref: RO:0002170
+
+[Typedef]
+id: connects
+name: connects
+namespace: ENVO
+xref: RO:0002176
+
+[Typedef]
+id: contained_in
+namespace: ENVO
+xref: RO:0001018
+
+[Typedef]
+id: contains
+namespace: ENVO
+xref: RO:0001019
+
+[Typedef]
+id: contains_process
+namespace: ENVO
+xref: BFO:0000067
+
+[Typedef]
+id: continuous_with
+namespace: ENVO
+xref: RO:0002150
+
+[Typedef]
+id: derives_from
+namespace: ENVO
+xref: RO:0001000
+is_a: derives_from_part_of ! derives from part of
+
+[Typedef]
+id: derives_from_part_of
+name: derives from part of
+namespace: ENVO
+def: "A relation between two distinct material entities, the new entity and the old entity, in which the new entity begins to exist through the separation or transformation of a part of the old entity, and the new entity inherits a significant portion of the matter belonging to that part of the old entity." []
+xref: ENVO:01003004
+
+[Typedef]
+id: derives_into
+namespace: ENVO
+xref: RO:0001001
+
+[Typedef]
+id: determined_by
+namespace: ENVO
+xref: RO:0002507
+
+[Typedef]
+id: determined_by_part_of
+namespace: ENVO
+xref: RO:0002509
+
+[Typedef]
+id: disconnected_from
+name: disconnected_from
+namespace: ENVO
+def: "A is disconnected_from B if they have no parts in common." [https://orcid.org/0000-0002-6601-2165]
+synonym: "non_overlapping_with" EXACT []
+expand_assertion_to: "Class: <http://www.w3.org/2002/07/owl#Nothing> EquivalentTo: (BFO_0000050 some ?X) and (BFO_0000050 some ?Y)" []
+is_metadata_tag: true
+is_class_level: true
+
+[Typedef]
+id: distributary_of
+namespace: ENVO
+xref: RO:0002377
+
+[Typedef]
+id: during_which_ends
+namespace: ENVO
+xref: RO:0002084
+
+[Typedef]
+id: during_which_starts
+namespace: ENVO
+xref: RO:0002088
+
+[Typedef]
+id: ends
+namespace: ENVO
+xref: RO:0002229
+
+[Typedef]
+id: formed_as_result_of
+namespace: ENVO
+xref: RO:0002354
+
+[Typedef]
+id: generates
+name: generates
+namespace: ENVO
+def: "A relation between a process and a disposition such that the existence of the disposition is caused by the execution of the process." []
+xref: ENVO:2000036
+property_value: IAO:0000116 "Consider ceding to RO" xsd:string
+created_by: https://orcid.org/0000-0002-6601-2165
+creation_date: 2018-11-03T20:58:13Z
+
+[Typedef]
+id: has_characteristic
+namespace: ENVO
+xref: RO:0000053
+
+[Typedef]
+id: has_component
+namespace: ENVO
+xref: RO:0002180
+
+[Typedef]
+id: has_condition
+name: has_condition
+namespace: ENVO
+comment: Experimental relation used in EnvO. A condition defines a restricted range of a given quality or combination of qualities. If an environment class, E, has_condition C, then all qualities listed in C are restricted to the ranges defined in C in E. This is not intended as a logical conditional.
+xref: has_condition
+is_inverse_functional: true
+creation_date: 2013-05-08T07:33:05Z
+
+[Typedef]
+id: has_disposition
+namespace: ENVO
+xref: RO:0000091
+
+[Typedef]
+id: has_end_location
+namespace: ENVO
+xref: RO:0002232
+
+[Typedef]
+id: has_function
+namespace: ENVO
+xref: RO:0000085
+
+[Typedef]
+id: has_habitat
+name: has habitat
+namespace: ENVO
+xref: RO:0002303
+
+[Typedef]
+id: has_increased_levels_of
+namespace: ENVO
+xref: has_increased_levels_of
+
+[Typedef]
+id: has_input
+namespace: ENVO
+xref: RO:0002233
+
+[Typedef]
+id: has_member
+namespace: ENVO
+xref: RO:0002351
+
+[Typedef]
+id: has_output
+namespace: ENVO
+xref: RO:0002234
+
+[Typedef]
+id: has_part
+namespace: ENVO
+xref: BFO:0000051
+
+[Typedef]
+id: has_part_that_occurs_in
+namespace: ENVO
+xref: RO:0002479
+
+[Typedef]
+id: has_participant
+namespace: ENVO
+xref: RO:0000057
+
+[Typedef]
+id: has_quality
+namespace: ENVO
+xref: RO:0000086
+
+[Typedef]
+id: has_role
+namespace: ENVO
+xref: RO:0000087
+
+[Typedef]
+id: input_of
+namespace: ENVO
+xref: RO:0002352
+
+[Typedef]
+id: involved_in
+namespace: ENVO
+xref: RO:0002331
+
+[Typedef]
+id: involved_in_negative_regulation_of
+namespace: ENVO
+xref: RO:0002430
+
+[Typedef]
+id: located_in
+namespace: ENVO
+xref: RO:0001025
+
+[Typedef]
+id: location_of
+namespace: ENVO
+xref: RO:0001015
+
+[Typedef]
+id: member_of
+namespace: ENVO
+xref: RO:0002350
+
+[Typedef]
+id: negatively_regulates
+namespace: ENVO
+xref: RO:0002212
+
+[Typedef]
+id: obsolete_determined_by
+name: obsolete determined by
+namespace: ENVO
+xref: ENVO:2100001
+is_obsolete: true
+
+[Typedef]
+id: obsolete_determined_by_part_of
+name: obsolete determined by part of
+namespace: ENVO
+xref: ENVO:2100007
+is_obsolete: true
+
+[Typedef]
+id: obsolete_has_active_participant
+namespace: ENVO
+xref: RO:0002218
+
+[Typedef]
+id: occurs_in
+namespace: ENVO
+xref: BFO:0000066
+
+[Typedef]
+id: output_of
+namespace: ENVO
+xref: RO:0002353
+
+[Typedef]
+id: overlaps
+namespace: ENVO
+xref: RO:0002131
+
+[Typedef]
+id: part_of
+namespace: ENVO
+xref: BFO:0000050
+
+[Typedef]
+id: partially_overlaps
+namespace: ENVO
+xref: RO:0002151
+
+[Typedef]
+id: partially_surrounded_by
+name: partially_surrounded_by
+namespace: ENVO
+def: "x partially_surrounded_by y if and only if (1) x is adjacent to y and for the region r that is adjacent to x, r partially overlaps y (2) the shared boundary between x and y occupies  a non-trivial proportion of the outermost boundary of x" []
+comment: Definition modified from 'surrounded by'.
+xref: ENVO:01001307
+property_value: IAO:0000112 "A duck swimming in a pond is partially surrounded by air and partially surrounded by water." xsd:string
+
+[Typedef]
+id: participates_in
+namespace: ENVO
+xref: RO:0000056
+
+[Typedef]
+id: preceded_by
+namespace: ENVO
+xref: BFO:0000062
+
+[Typedef]
+id: precedes
+namespace: ENVO
+xref: BFO:0000063
+
+[Typedef]
+id: process_has_causal_agent
+namespace: ENVO
+xref: RO:0002608
+
+[Typedef]
+id: realized_in
+namespace: ENVO
+xref: BFO:0000054
+
+[Typedef]
+id: realizes
+namespace: ENVO
+xref: BFO:0000055
+
+[Typedef]
+id: regulates_(processual)
+name: regulates (processual)
+namespace: ENVO
+xref: RO:0002211
+
+[Typedef]
+id: results_in_expansion_of
+name: results in expansion of
+namespace: ENVO
+def: "A process, p, results in the expansion of a material entity, m, if the spatial extent of m is increased as a result of participating in p." []
+xref: ENVO:02500016
+property_value: IAO:0000112 "Afforestation results in the expansion of a forest." xsd:string
+
+[Typedef]
+id: results_in_formation_of
+namespace: ENVO
+xref: RO:0002297
+
+[Typedef]
+id: results_in_proliferation_of
+name: results in proliferation of
+namespace: ENVO
+comment: To be ceded to RO
+xref: ENVO:02500020
+
+[Typedef]
+id: results_in_transformation_into
+name: results in transformation into
+namespace: ENVO
+xref: ENVO:02500006
+
+[Typedef]
+id: starts_during
+namespace: ENVO
+xref: RO:0002091
+
+[Typedef]
+id: surrounded_by
+name: surrounded by
+namespace: ENVO
+xref: RO:0002219
+
+[Typedef]
+id: towards
+namespace: ENVO
+xref: RO:0002503
+
+[Typedef]
+id: tributary_of
+namespace: ENVO
+xref: RO:0002376
+
