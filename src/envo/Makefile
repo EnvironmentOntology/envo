@@ -338,7 +338,8 @@ imports/%_combined_seed.tsv: imports/%_terms.txt imports/seed.txt
 # We use the standard catalog, but rewrite the import to X to be a local mirror of ALL of X.
 # After extraction, we further reduce the ontology by creating a "mingraph" (removes all annotations except label) and by
 imports/%_import.owl: mirror/%.owl envo-edit.owl imports/%_combined_seed.tsv
-	$(ROBOT) extract -i $< -T imports/$*_combined_seed.tsv -m BOT -O $(ENVO_IMPORTS_BASE_URI)/$@ -o $@.tmp.owl && mv $@.tmp.owl $@
+	echo "Skipping"
+	#$(ROBOT) extract -i $< -T imports/$*_combined_seed.tsv -m BOT -O $(ENVO_IMPORTS_BASE_URI)/$@ -o $@.tmp.owl && mv $@.tmp.owl $@
 
 imports/%_import.obo: imports/%_import.owl
 	$(OWLTOOLS) $(USECAT) $< -o -f obo --no-check $@
