@@ -1,0 +1,38 @@
+pattern_name: envo-p/patterns/increased_levels
+classes:
+  material entity: BFO:0000040
+
+relations:
+  has increased levels of: ENVO:02000200
+
+vars:
+  whole: "'material entity'"
+  part: "'material entity'"
+
+name:
+  text: "%s-enriched %s"
+  vars:
+    - part
+    - whole
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+
+annotations:
+  - annotationProperty: exact_synonym
+    text: "%s enriched %s"
+    vars:
+      - part
+      - whole
+
+def:
+  text: "A %s which has elevated levels of %s."
+  vars:
+    - part
+    - whole
+
+equivalentTo:
+  text: "%s and 'has increased levels of' some %s"
+  vars:
+    - whole
+    - part
