@@ -9,7 +9,6 @@
 # Also used for unit tests executed by travis
 #
 # See README-editors.md for more details on release process
-#
 # To make a release, type 'make release' in this directory
 
 # ----------------------------------------
@@ -52,10 +51,16 @@ FORMATS_INCL_TSV = $(sort $(FORMATS) tsv)
 # ----------------------------------------
 
 .PHONY: .FORCE
-all: all_imports all_main all_subsets sparql_test all_reports all_assets validate-dl-profile
+all: all_imports all_main all_subsets sparql_test all_reports all_assets
 
-test: envo-edit.owl all_modules all_imports envo.owl all_reports
-travis_test: test_python envo-edit.owl all_reports all_modules envo.owl
+# complete tests
+test: all_modules all_imports envo.owl all_reports validate-dl-profile
+
+# a more limited set of tests that can be run using github actions
+continuous_integration_test: test_python all_reports envo.owl validate-dl-profile
+
+# deprecated alias
+travis_test: continuous_integration_test
 
 full_test: test envo.check-obo subsets/EnvO-Lite-GSC.check-obo
 
@@ -63,14 +68,16 @@ full_test: test envo.check-obo subsets/EnvO-Lite-GSC.check-obo
 test_python:
 	python3 --version
 
+# TODO: add this back to tests
+# validates the DL profile for envo-edit merged with RO.
+# Note that it's necessary to merge the ontology first;
+#       see https://github.com/ontodev/robot/issues/1040
 validate-dl-profile: $(PRE_SRC)
-# validates the DL profile for envo-edit merged with RO
-# note: The file is not part of the repo. It is there for you to check.
-# Use the command  "grep non-simple" to find non-simple violations
-	$(ROBOT) merge \
-        --input $< \
-        validate-profile --profile DL
+	$(ROBOT) merge -i $< -I http://purl.obolibrary.org/obo/ro.owl convert -f ofn -o $(TMPDIR)/validate.ofn
+	$(ROBOT) validate-profile --profile DL -i $(TMPDIR)/validate.ofn
 
+test: validate-dl-profile
+travis_test: validate-dl-profile
 
 ## -- main targets --
 ##
@@ -167,7 +174,7 @@ $(ONT)-base.owl: $(SRC) $(OTHER_SRC)
 # Full: The full artefacts with imports merged, reasoned
 $(ONT)-full.owl: $(SRC) $(OTHER_SRC)
 	$(ROBOT) merge --input $< \
-		reason --reasoner ELK --equivalent-classes-allowed all --exclude-tautologies structural \
+		reason --reasoner ELK --equivalent-classes-allowed asserted-only --exclude-tautologies structural \
 		relax \
 		reduce -r ELK \
 		annotate --ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@  -a owl:versionInfo $(TODAY)\
@@ -190,7 +197,7 @@ $(ONT)-full.owl: $(SRC) $(OTHER_SRC)
 
 
 SUBSETS = envo-basic EnvO-Lite-GSC envoEmpo envoAstro envoPolar envoEmpo envoOmics envoCesab environmental_hazards \
-   biome-hierarchy astronomical-body-part-hierarchy material-hierarchy process-hierarchy envoPlastics
+   biome-hierarchy astronomical-body-part-hierarchy material-hierarchy process-hierarchy envoPlastics envoANZSoil
 
 SUBSET_ROOTS = $(patsubst %, subsets/%, $(SUBSETS))
 SUBSET_FILES = $(foreach n,$(SUBSET_ROOTS), $(foreach f,$(FORMATS_INCL_TSV), $(n).$(f)))
@@ -331,7 +338,8 @@ imports/%_combined_seed.tsv: imports/%_terms.txt imports/seed.txt
 # We use the standard catalog, but rewrite the import to X to be a local mirror of ALL of X.
 # After extraction, we further reduce the ontology by creating a "mingraph" (removes all annotations except label) and by
 imports/%_import.owl: mirror/%.owl envo-edit.owl imports/%_combined_seed.tsv
-	$(ROBOT) extract -i $< -T imports/$*_combined_seed.tsv -m BOT -O $(ENVO_IMPORTS_BASE_URI)/$@ -o $@.tmp.owl && mv $@.tmp.owl $@
+	echo "Skipping"
+	#$(ROBOT) extract -i $< -T imports/$*_combined_seed.tsv -m BOT -O $(ENVO_IMPORTS_BASE_URI)/$@ -o $@.tmp.owl && mv $@.tmp.owl $@
 
 imports/%_import.obo: imports/%_import.owl
 	$(OWLTOOLS) $(USECAT) $< -o -f obo --no-check $@
@@ -551,7 +559,7 @@ all_modules_obo: $(patsubst %, modules/%.obo, $(MODS))
 
 modules/%.owl: modules/%.csv patterns/%.yaml curie_map.yaml 
 	@perl -pe 's/\r\n/\n/' $< > $<.tmp && mv $<.tmp $< # replace crlf with lf
-	dosdp-tools generate --table-format=csv --template=./patterns/$*.yaml --outfile=modules/$*.tmp.owl --obo-prefixes=true --infile=modules/$*.csv
+	if [ true = true ]; then dosdp-tools generate --table-format=csv --template=./patterns/$*.yaml --outfile=modules/$*.tmp.owl --obo-prefixes=true --infile=modules/$*.csv; fi
 	$(ROBOT) annotate --input modules/$*.tmp.owl -O http://purl.obolibrary.org/obo/envo/modules/$*.owl --output modules/$*.owl && rm modules/$*.tmp.owl
 
 modules/%.obo: modules/%.owl
