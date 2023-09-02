@@ -18,4 +18,4 @@
 
 # Contributing via making Pull Requests
 
-Details to be filled in soon
+Please refer to the [OBO Academy best practices](https://oboacademy.github.io/obook/howto/github-create-pull-request/)
