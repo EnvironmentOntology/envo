@@ -1,0 +1,34 @@
+pattern_name: ecosystem patterns
+pattern_iri: http://purl.obolibrary.org/obo/envo/ecosystem
+
+description: >-
+
+  An ecosystem is any environmental system which has both biotic and abiotic parts. 
+  Ecosystems are typically defined by some entity that "determines" them. For example, 
+  a desert ecosystem is determined by the presence of a desert - if the desert wasn't there, 
+  it wouldn't be a desert ecosystem.
+
+classes:
+  ecosystem: ENVO:01001110
+  material entity: BFO:0000040
+
+relations:
+  determined by: RO:0002507
+
+vars:
+  determinant: "'material entity'"
+
+name:
+  text: "%s ecosystem"
+  vars:
+    - determinant
+
+def:
+  text: "An ecosystem in which the composition, structure, and function of resident ecological assemblages are primarily determined by a(n) %s."
+  vars:
+    - determinant
+
+equivalentTo: 
+  text: "ecosystem and ('determined by' some %s)"
+  vars:
+    - determinant
