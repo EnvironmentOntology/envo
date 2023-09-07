@@ -39,3 +39,5 @@ modules/tags.owl: tmp/tags-dosdp.owl
 
 sparql_test2: $(SRC) modules/tags.owl
 	$(ROBOT) merge $(addprefix -i , $^) verify --queries sparql/dosdp-conforms-violation.sparql -O reports/
+
+test: sparql_test2
