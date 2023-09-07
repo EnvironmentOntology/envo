@@ -1,0 +1,36 @@
+pattern_name: biome patterns
+pattern_iri: http://purl.obolibrary.org/obo/envo/biome
+
+description: >-
+
+  A biome is an ecosystem that participates in some climactic ecological succession, ie it is resilient to perturbations
+  It should be possible to infer that class with "biome" in its label should be classified as a 'biome'.
+  Does this pattern generate biomes from all ecosystems, or does it check the patterns of classes that are already present?
+
+classes: 
+  biome: ENVO:00000428
+  ecosystem: ENVO:01001110
+  climactic ecological succession: ENVO:01001827
+
+relations:
+  participates in: RO:0000056
+
+vars:
+  participant: "'ecosystem'"
+
+# TODO: this will create names that include 'ecosystem' in the label, like 'desert ecosystem biome'
+#  we would prefer to REPLACE 'ecosystem' with 'biome'
+name:
+  text: "%s biome"
+  vars:
+    - participant
+
+def:
+  text: "An %s that is undergoing climactic ecological succession."
+  vars:
+    - participant
+
+equivalentTo: 
+  text: "%s and ('participates in' some 'climactic ecological succession')"
+  vars:
+    - participant
