@@ -1,0 +1,18 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX ENVO: <http://purl.obolibrary.org/obo/ENVO_>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX nmdc: <https://w3id.org/nmdc/>
+select ?class_curie (str(?label) as ?label_str)
+where {
+    {
+        ?c rdfs:label ?label .
+        filter(strends(?label, "biome"))
+    } minus {
+        ?c owl:deprecated true
+    }
+    minus {
+        ?c rdfs:subClassOf* ENVO:00000428 .
+    }
+    bind(concat("ENVO:", strafter(str(?c), "http://purl.obolibrary.org/obo/ENVO_")) as ?class_curie)
+}
+order by str(?label)
