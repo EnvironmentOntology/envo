@@ -368,9 +368,10 @@ mirror/obi.owl: envo-edit.owl
 	$(OWLTOOLS) $(OBO)/obi.owl --remove-classes-in-idspace GO --remove-classes-in-idspace ENVO --remove-classes-in-idspace CHEBI --remove-classes-in-idspace UBERON --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/obi.owl -o $@
 .PRECIOUS: mirror/%.owl
 
-# chebi.owl is large and the owlapi often times out when reading it; use the obo instead
+CHEBI_MIRROR=https://raw.githubusercontent.com/obophenotype/chebi_obo_slim/main/chebi_slim.owl
+# chebi.owl is large. Using OBO Chebi Slim instead (https://github.com/obophenotype/chebi_obo_slim)
 mirror/chebi-local.owl: 
-	wget --no-check-certificate $(OBO)/chebi.owl -O $@ && touch $@
+	wget --no-check-certificate $(CHEBI_MIRROR) -O $@ && touch $@
 mirror/chebi.owl: mirror/chebi-local.owl
 	$(OWLTOOLS) --no-debug $< --log-debug --remove-annotation-assertions -l --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS)  -o $@
 .PRECIOUS: mirror/%.owl
@@ -410,12 +411,10 @@ mirror/fao.owl: envo-edit.owl
 	$(OWLTOOLS) $(OBO)/fao.owl --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/fao.owl -o $@
 .PRECIOUS: mirror/%.owl
 
-ncbitaxon.obo:
-	wget $(OBO)/ncbitaxon.obo -O $@.tmp && mv $@.tmp $@
-.PRECIOUS: ncbitaxon.obo
-
-mirror/ncbitaxon.owl: ncbitaxon.obo
-	OWLTOOLS_MEMORY=16G $(OWLTOOLS) $< --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations  --set-ontology-id $(OBO)/ncbitaxon.owl -o $@
+mirror/ncbitaxon.owl:
+	wget http://purl.obolibrary.org/obo/ncbitaxon/subsets/taxslim.owl -O $@.tmp
+	OWLTOOLS_MEMORY=16G $(OWLTOOLS) $@.tmp --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations  --set-ontology-id $(OBO)/ncbitaxon.owl -o $@
+	rm $@.tmp
 .PRECIOUS: mirror/ncbitaxon.owl
 
 # PCO woes:
