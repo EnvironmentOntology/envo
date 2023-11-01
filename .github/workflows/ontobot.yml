@@ -8,7 +8,7 @@ on:
 jobs:
   build:
     runs-on: ${{ matrix.os }}
-    container: obolibrary/odkfull:v1.4.1
+    container: obolibrary/odkfull:latest
     strategy:
       matrix:
         python-version: ["3.9"]
@@ -44,7 +44,9 @@ jobs:
           echo "branch-name=kgcl_automation_"${{ steps.gh-script-issue.outputs.result }} >> $GITHUB_ENV
       
       - name: Get jar & create alias command.
-        run: wget https://github.com/gouttegd/kgcl-java/releases/download/kgcl-0.2.0/kgcl-robot-plugin-0.2.0.jar -O kgcl.jar
+        run: |
+          mkdir -p ~/.robot/plugins
+          wget https://github.com/gouttegd/kgcl-java/releases/download/kgcl-0.2.0/kgcl-robot-plugin-0.2.0.jar -O ~/.robot/plugins/kgcl.jar
       
       - name: Install dependencies
         run: |
