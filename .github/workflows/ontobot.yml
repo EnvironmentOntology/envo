@@ -43,7 +43,7 @@ jobs:
           echo "resource=src/envo/envo-edit.owl" >> $GITHUB_ENV
           echo "branch-name=kgcl_automation_"${{ steps.gh-script-issue.outputs.result }} >> $GITHUB_ENV
       
-      - name: Get jar & create alias command.
+      - name: Get jar & enable plugin.
         run: |
           mkdir -p robot-plugins
           wget https://github.com/gouttegd/kgcl-java/releases/download/kgcl-0.2.0/kgcl-robot-plugin-0.2.0.jar -O robot-plugins/kgcl.jar
