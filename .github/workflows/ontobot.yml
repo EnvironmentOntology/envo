@@ -61,6 +61,9 @@ jobs:
           -n ${{ steps.gh-script-issue.outputs.result }} \
           -g ${{ secrets.GH_TOKEN }}
 
+      - name: Clean-up
+        run: rm -rf robot-plugins
+
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v5
         if: ${{ env.PR_TITLE}}
