@@ -6,9 +6,32 @@ on:
     types: [ opened, edited ]
 
 jobs:
+  check:
+    runs-on: ubuntu-latest
+    outputs:
+      phraseExists: ${{ steps.check-body.outputs.result }}
+    steps:
+      - name: Check if issue body contains 'Hey ontobot'
+        id: check-body
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const issue = await github.rest.issues.get({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number
+            });
+            if (!issue.data.body) {
+              console.log('Issue body is empty or null');
+              return false;
+            }
+            return issue.data.body.toLowerCase().includes('hey ontobot');
+
   build:
+    needs: check
+    if: needs.check.outputs.phraseExists == 'true'
     runs-on: ${{ matrix.os }}
-    container: obolibrary/odkfull:v1.4.1
+    container: obolibrary/odkfull:v1.4.3
     strategy:
       matrix:
         python-version: ["3.9"]
@@ -43,8 +66,11 @@ jobs:
           echo "resource=src/envo/envo-edit.owl" >> $GITHUB_ENV
           echo "branch-name=kgcl_automation_"${{ steps.gh-script-issue.outputs.result }} >> $GITHUB_ENV
       
-      - name: Get jar & create alias command.
-        run: wget https://github.com/gouttegd/kgcl-java/releases/download/kgcl-0.2.0/kgcl-robot-standalone-0.2.0.jar -O kgcl-robot.jar
+      - name: Get jar & enable plugin.
+        run: |
+          mkdir -p robot-plugins
+          wget https://github.com/gouttegd/kgcl-java/releases/download/kgcl-0.2.0/kgcl-robot-plugin-0.2.0.jar -O robot-plugins/kgcl.jar
+          echo "ROBOT_PLUGINS_DIRECTORY=$(pwd)/robot-plugins/" >> "$GITHUB_ENV"
       
       - name: Install dependencies
         run: |
@@ -56,11 +82,10 @@ jobs:
           ochange process-issue ${{ env.resource }} \
           -r ${{ steps.gh-script-repo.outputs.result }} \
           -n ${{ steps.gh-script-issue.outputs.result }} \
-          -g ${{ secrets.GH_TOKEN }} \
-          -j kgcl-robot.jar
+          -g ${{ secrets.GH_TOKEN }}
 
       - name: Clean-up
-        run: rm -f kgcl-robot.jar
+        run: rm -rf robot-plugins
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v5
