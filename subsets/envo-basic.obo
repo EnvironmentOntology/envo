@@ -22,7 +22,7 @@ subsetdef: ro-eco "ro-eco"
 subsetdef: scalar_slim "Scalar slim"
 subsetdef: value_slim "Value slim"
 subsetdef: wwfBiome "wwfBiome"
-synonymtypedef: PLURAL "plurals"
+synonymtypedef: OMO:0003004 "plural form"
 default-namespace: ENVO
 remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/modules/chemical_concentration.owl>) VersionIRI(<null>))) [Axioms: 679 Logical Axioms: 119]
 remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/modules/entity_attribute.owl>) VersionIRI(<null>))) [Axioms: 206 Logical Axioms: 34]
@@ -42,7 +42,7 @@ property_value: http://purl.org/dc/elements/1.1/title "The Environment Ontology"
 property_value: http://purl.org/dc/elements/1.1/type http://purl.obolibrary.org/obo/IAO_8000001 xsd:string
 property_value: http://purl.org/dc/terms/license https://creativecommons.org/publicdomain/zero/1.0/
 property_value: http://xmlns.com/foaf/0.1/homepage http://environmentontology.org/ xsd:anyURI
-property_value: owl:versionInfo "2023-02-13" xsd:string
+property_value: owl:versionInfo "2024-02-05" xsd:string
 
 [Term]
 id: ENVO:00000000
@@ -122,7 +122,7 @@ xref: SWEETRealm:AdministrativeRegion
 xref: TGN:80001
 xref: TGN:81099
 xref: TGN:81123
-is_a: BFO:0000029
+is_a: ENVO:01003020 ! fiat part of an astronomical object
 
 [Term]
 id: ENVO:00000005
@@ -246,6 +246,7 @@ xref: FTT:828
 xref: FTT:829
 xref: Geonames:H.OVF
 is_a: ENVO:00000000 ! geographic feature
+relationship: determined_by ENVO:00000063 ! water body
 
 [Term]
 id: ENVO:00000013
@@ -274,7 +275,6 @@ relationship: has_quality PATO:0001154
 [Term]
 id: ENVO:00000015
 name: ocean
-alt_id: LTER:695 {xref="https://vocab.lternet.edu/vocab/vocab/index.php?tema=695&/oceans"}
 def: "A marine water body which is constitutes the majority of an astronomical body's hydrosphere." []
 subset: envoMarine
 subset: envoPolar
@@ -284,6 +284,7 @@ xref: FTT:1019
 xref: FTT:943
 xref: Geonames:H.OCN
 xref: https://en.wikipedia.org/wiki/Ocean
+xref: LTER:695 {xref="https://vocab.lternet.edu/vocab/vocab/index.php?tema=695&/oceans"}
 xref: SWEETRealm:Ocean
 xref: TGN:21102
 is_a: ENVO:00001999 ! marine water body
@@ -345,7 +346,6 @@ relationship: composed_primarily_of ENVO:00002010 ! saline water
 [Term]
 id: ENVO:00000020
 name: lake
-alt_id: LTER:278 {xref="https://vocab.lternet.edu/vocab/vocab/index.php?tema=278&/lakes"}
 def: "A body of water or other liquid of considerable size contained in a depression on a landmass." [https://en.wikipedia.org/wiki/Lake]
 subset: envoPolar
 synonym: "broad" RELATED []
@@ -365,11 +365,15 @@ xref: FTT:704
 xref: FTT:909
 xref: Geonames:H.LK
 xref: Geonames:H.LKS
+xref: LTER:278 {xref="https://vocab.lternet.edu/vocab/vocab/index.php?tema=278&/lakes"}
 xref: SPIRE:Lake_or_pond
 xref: SWEETRealm:Lake
 xref: TGN:21114
 xref: TGN:21115
+is_a: ENVO:01000617 ! lentic water body
+relationship: located_in ENVO:00000309 ! depressed landform
 relationship: part_of ENVO:01000819 ! hydrosphere
+relationship: partially_surrounded_by ENVO:01001782 ! landmass
 
 [Term]
 id: ENVO:00000021
@@ -384,7 +388,6 @@ relationship: composed_primarily_of ENVO:00002011 ! fresh water
 [Term]
 id: ENVO:00000022
 name: river
-alt_id: LTER:474 {xref="https://vocab.lternet.edu/vocab/vocab/index.php?tema=474&/rivers"}
 def: "A stream which, through permanent or seasonal flow processes, moves from elevated land towards lower elevations through a definite channel and empties either into a sea, lake, or another river or ends on land as bed seepage and evapotranspiration exceed water supply." [ADL:FTT, https://orcid.org/0000-0002-4366-3088] {comment="https://en.wikipedia.org/wiki/River"}
 comment: "There are no official definitions for the generic term river as applied to geographic features, although in some countries or communities a stream is defined by its size. Many names for small rivers are specific to geographic location; examples are "run" in some parts of the United States, "burn" in Scotland and northeast England, and "beck" in northern England. Sometimes a river is defined as being larger than a creek, but not always: the language is vague." {comment="https://en.wikipedia.org/wiki/River"}
 synonym: "braided river" NARROW [USGS:SDTS]
@@ -393,6 +396,7 @@ synonym: "rio" EXACT [ADL:FTT]
 xref: EcoLexicon:river
 xref: FTT:1179
 xref: FTT:251
+xref: LTER:474 {xref="https://vocab.lternet.edu/vocab/vocab/index.php?tema=474&/rivers"}
 xref: SPIRE:River
 xref: SWEETRealm:River
 xref: TGN:21105
@@ -403,7 +407,6 @@ relationship: continuous_with ENVO:01000652 ! river channel
 [Term]
 id: ENVO:00000023
 name: stream
-alt_id: LTER:562 {xref="https://vocab.lternet.edu/vocab/vocab/index.php?tema=562&/streams"}
 def: "A watercourse which is linear and flows across the solid portion of a planetary surface." [USGS:http\://mapping.usgs.gov/www/ti/GNIS/gnis_users_guide_appendixc.html]
 synonym: "beck" RELATED [USGS:SDTS]
 synonym: "braided stream" NARROW [USGS:SDTS]
@@ -435,6 +438,7 @@ xref: FTT:721
 xref: Geonames:H.STM
 xref: Geonames:H.STMS
 xref: https://en.wikipedia.org/wiki/Stream
+xref: LTER:562 {xref="https://vocab.lternet.edu/vocab/vocab/index.php?tema=562&/streams"}
 xref: SWEETRealm:Stream
 xref: TGN:21106
 xref: TGN:21107
@@ -652,7 +656,6 @@ is_a: ENVO:00000137 ! coastal inlet
 [Term]
 id: ENVO:00000033
 name: pond
-alt_id: LTER:975 {xref="https://vocab.lternet.edu/vocab/vocab/index.php?tema=975&/ponds"}
 def: "A body of water, usually of smaller size than a lake." [MA:ma]
 synonym: "lake" BROAD [ADL:FTT]
 synonym: "lake" BROAD [USGS:SDTS]
@@ -676,6 +679,7 @@ xref: Geonames:H.PND
 xref: Geonames:H.PNDS
 xref: Geonames:H.POOL
 xref: https://en.wikipedia.org/wiki/Pond
+xref: LTER:975 {xref="https://vocab.lternet.edu/vocab/vocab/index.php?tema=975&/ponds"}
 xref: SPIRE:Lake_or_pond
 xref: SWEETRealm:Pond
 xref: TGN:21104
@@ -877,7 +881,6 @@ relationship: composed_primarily_of ENVO:00005774 ! peat soil
 [Term]
 id: ENVO:00000045
 name: estuary
-alt_id: LTER:182 {xref="https://vocab.lternet.edu/vocab/vocab/index.php?tema=182&/estuaries"}
 def: "A semi-enclosed coastal body of water with one or more rivers or streams flowing into it, and with a free connection to the open sea." [https://en.wikipedia.org/wiki/Estuary]
 synonym: "inlet" RELATED [USGS:SDTS]
 synonym: "mouth" BROAD [USGS:SDTS]
@@ -885,6 +888,7 @@ xref: EcoLexicon:estuary
 xref: FTT:234
 xref: Geonames:H.ESTY
 xref: https://en.wikipedia.org/wiki/Estuary
+xref: LTER:182 {xref="https://vocab.lternet.edu/vocab/vocab/index.php?tema=182&/estuaries"}
 xref: SWEETRealm:Estuary
 xref: TGN:21152
 is_a: ENVO:00000063 ! water body
@@ -1110,7 +1114,7 @@ relationship: location_of NCBITaxon:9606 {comment="QCR: 'location of' min 1 buil
 id: ENVO:00000063
 name: water body
 def: "An accumulation of water of varying size." [https://en.wikipedia.org/wiki/Body_of_water]
-comment: https://en.wikipedia.org/wiki/ The term body of water most often refers to large accumulations of water, such as oceans, seas, and lakes, but it includes smaller pools of water such as ponds, wetlands, or more rarely, puddles. A body of water does not have to be still or contained; Rivers, streams, canals, and other geographical features where water moves from one place to another are also considered bodies of water.
+comment: The term body of water most often refers to large accumulations of water, such as oceans, seas, and lakes, but it includes smaller pools of water such as ponds, wetlands, or more rarely, puddles. A body of water does not have to be still or contained; Rivers, streams, canals, and other geographical features where water moves from one place to another are also considered bodies of water.
 synonym: "aquatic feature" EXACT []
 synonym: "bodies of water" EXACT [Getty:TGN]
 synonym: "body of water" EXACT [ADL:FTT]
@@ -1127,6 +1131,7 @@ xref: TGN:21100
 xref: TGN:21101
 is_a: ENVO:01000685 ! water mass
 relationship: composed_primarily_of CHEBI:15377
+relationship: formed_as_result_of ENVO:01001220 ! water accumulation process
 relationship: part_of ENVO:01000819 ! hydrosphere
 
 [Term]
@@ -1416,6 +1421,7 @@ xref: Geonames:L.RESA
 xref: Geonames:S.NSY
 xref: TGN:55001
 is_a: ENVO:01001110 ! ecosystem
+relationship: formed_as_result_of ENVO:01000952 ! anthropisation
 
 [Term]
 id: ENVO:00000078
@@ -1887,9 +1893,12 @@ is_a: ENVO:00000386 ! river mouth
 [Term]
 id: ENVO:00000102
 name: cave entrance
+def: "A two-dimensional continuant fiat boundary which is used to demarcate the interior from the exterior of a cave." []
+comment: The term "cave entrance" is typically used when ingress or entry to the cave is desired. The same fiat bondary can serve as a cave exit, although that may be less feasible due to the shape or other physical properties of the cave.
+synonym: "cave exit" RELATED []
 synonym: "Cueva de Altamira" EXACT []
 xref: FTT:444
-is_a: BFO:0000029
+is_a: BFO:0000146
 relationship: part_of ENVO:00000067 ! cave
 
 [Term]
@@ -2132,10 +2141,7 @@ synonym: "stand" RELATED [USGS:SDTS]
 synonym: "taiga" RELATED [USGS:SDTS]
 synonym: "thicket" RELATED [USGS:SDTS]
 synonym: "thorn forest" RELATED [USGS:SDTS]
-synonym: "tropical rain forest" RELATED [USGS:SDTS]
 synonym: "wood" RELATED [Getty:TGN]
-synonym: "wood" RELATED [USGS:SDTS]
-synonym: "wood" RELATED [ADL:FTT]
 synonym: "wooded area" RELATED [USGS:SDTS]
 xref: FTT:1083
 xref: FTT:505
@@ -2353,7 +2359,8 @@ synonym: "political entity" RELATED [Geonames:feature]
 xref: FTT:1093
 xref: Geonames:A.PCL
 xref: TGN:80002
-is_a: ENVO:00000004 ! administrative region
+is_a: BFO:0000024
+relationship: has_part ENVO:00000004 ! administrative region
 
 [Term]
 id: ENVO:00000124
@@ -2481,20 +2488,6 @@ name: ice sheet
 def: "A glacier which covers an area of greater than 50,000 square kilometers." [https://en.wikipedia.org/wiki/Ice_sheet]
 comment: This is not always classified as a glacier in the cryosphere community. {xref="https://github.com/Vocamp/Virtual-Hackahon-on-Glacier-topic"}
 subset: envoPolar
-synonym: "Arctic pack" RELATED [USGS:SDTS]
-synonym: "bay ice" RELATED [USGS:SDTS]
-synonym: "continental glacier" RELATED [USGS:SDTS]
-synonym: "continental ice" RELATED [USGS:SDTS]
-synonym: "glacial tongue" RELATED [USGS:SDTS]
-synonym: "ICE FIELD" RELATED [USGS:SDTS]
-synonym: "ice field" RELATED [ADL:FTT]
-synonym: "ice mass" RELATED [ADL:FTT]
-synonym: "island ice" RELATED [USGS:SDTS]
-synonym: "pack ice" RELATED [USGS:SDTS]
-synonym: "polar ice" RELATED [USGS:SDTS]
-synonym: "polar ice pack" RELATED [USGS:SDTS]
-synonym: "rock glacier" RELATED [USGS:SDTS]
-synonym: "shelf ice" RELATED [USGS:SDTS]
 xref: FTT:758
 xref: FTT:835
 xref: FTT:837
@@ -2721,7 +2714,6 @@ is_a: ENVO:01001899 ! reef
 [Term]
 id: ENVO:00000150
 name: coral reef
-alt_id: LTER:127 {xref="https://vocab.lternet.edu/vocab/vocab/index.php?tema=127&/coral-reefs"}
 def: "A marine reef which is composed primarily of aragonite structures produced by living organisms, found in shallow, low-nutrient waters." [https://en.wikipedia.org/wiki/Coral_reef]
 synonym: "barrier reef" RELATED []
 synonym: "CoralReef" EXACT [NASA:earthrealm]
@@ -2734,7 +2726,7 @@ xref: FTT:547
 xref: FTT:729
 xref: Geonames:H.RFC
 xref: https://en.wikipedia.org/wiki/Coral_reef
-xref: LTER:127
+xref: LTER:127 {xref="https://vocab.lternet.edu/vocab/vocab/index.php?tema=127&/coral-reefs"}
 is_a: ENVO:01000143 ! marine reef
 
 [Term]
@@ -3379,7 +3371,7 @@ is_a: ENVO:00000104 ! undersea feature
 [Term]
 id: ENVO:00000191
 name: solid astronomical body part
-def: "A part of an astronomical body which is primarily composed of a continuous volume of solid material, shaped by one or more environmental processes." [https://en.wikipedia.org/wiki/Landform]
+def: "A part of an astronomical body which is primarily composed of solid material." [https://en.wikipedia.org/wiki/Landform]
 synonym: "geological feature" RELATED [ADL:FTT]
 synonym: "landform" RELATED []
 synonym: "physiographic feature" RELATED []
@@ -3426,8 +3418,8 @@ id: ENVO:00000194
 name: scree
 def: "Broken rock that appears at the bottom of crags, mountain cliffs or valley shoulders." [https://en.wikipedia.org/wiki/Scree]
 synonym: "TALUS" RELATED [USGS:SDTS]
-synonym: "talus slope" RELATED [Geonames:feature]
 synonym: "talus slope" RELATED [Getty:TGN]
+synonym: "talus slope" RELATED [Geonames:feature]
 xref: EcoLexicon:scree
 xref: FTT:1078
 xref: FTT:96
@@ -3435,11 +3427,9 @@ xref: Geonames:T.TAL
 xref: https://en.wikipedia.org/wiki/Scree
 xref: SWEETRealm:Talus
 xref: TGN:21508
-is_a: ENVO:00010483 ! environmental material
-intersection_of: ENVO:00010483 ! environmental material
-intersection_of: derives_from ENVO:00001995 ! rock
-intersection_of: has_part ENVO:00000339 ! piece of rock
+is_a: ENVO:01000814 ! solid environmental material
 relationship: derives_from ENVO:00001995 ! rock
+relationship: has_part ENVO:00000339 ! piece of rock
 
 [Term]
 id: ENVO:00000195
@@ -5108,10 +5098,14 @@ relationship: part_of ENVO:00000067 ! cave
 [Term]
 id: ENVO:00000328
 name: vadose zone
-def: "A zone beneath the land surface and above the level of permanent groundwater or phreatic zone in which water has a hydraulic head less than atmospheric pressure and is retained by a combination of adhesion and capillary action." [http://wasg.iinet.net.au/terminol.html, https://en.wikipedia.org/wiki/Vadose_zone]
-comment: https://en.wikipedia.org/wiki/ If the vadose zone envelops soil, the water contained therein is termed soil moisture. In fine grained soils, capillary action can cause the pores of the soil to be fully saturated above the water table at a pressure less than atmospheric. In such soils, therefore, the unsaturated zone is the upper section of the vadose zone and not identical to it.
+def: "An interface layer which 1) is primarily composed of solid materials, 2) separates the land surface and phreatic zone, and 3) contains groundwater at atmospheric pressure." [http://wasg.iinet.net.au/terminol.html, https://en.wikipedia.org/wiki/Vadose_zone]
+comment: If the vadose zone includes portions of soil, the water contained therein is termed soil moisture. In fine grained soils, capillary action can cause the pores of the soil to be fully saturated above the water table at a pressure less than atmospheric. In such soils, therefore, the unsaturated zone is the upper section of the vadose zone and not identical to it.
 synonym: "unsaturated zone" EXACT [https://en.wikipedia.org/wiki/Vadose_zone]
-is_a: ENVO:01000408 ! environmental zone
+is_a: ENVO:01001684 ! interface layer
+relationship: adjacent_to ENVO:00000329 ! phreatic zone
+relationship: adjacent_to ENVO:01001785 ! land
+relationship: composed_primarily_of ENVO:01000814 ! solid environmental material
+relationship: has_part ENVO:01001004 ! groundwater
 
 [Term]
 id: ENVO:00000329
@@ -5426,10 +5420,10 @@ is_a: ENVO:00000358 ! area of protected biodiversity
 [Term]
 id: ENVO:00000367
 name: IUCN national park
-alt_id: IUCN-PACS:II {xref="https://www.iucn.org/theme/protected-areas/about/protected-areas-categories/category-ii-national-park"}
 def: "An IUCN protected area which 1) primarily consists of ecosystems which are able to maintain their natural composition, structure, and function at a regional scale and which are deemed to be representative of a region's natural bio- and geodiversity, 2) is sufficiently large to allow its constituent ecosystems to function, develop, and recover from natural perturbations without human intervention, and 3) is managed to preserve natural ecosystem integrity and functioning at a regional scale, while allowing human access for the purposes of conservation, cultural and spiritural activities, research, education, tourism, subsistence use by indigenous communities, and recreation." [https://en.wikipedia.org/wiki/National_park, https://www.iucn.org/theme/protected-areas/about/protected-areas-categories/category-ii-national-park]
 comment: Note that this ENVO class is not authoritative: see the associated IUCN references for a complete definition of all Protected Areas. These areas often serve as migration corridors between other natural and semi-natural ecosystems and pools of biodiversity. They may have core zones that are similar to IUCN Protected Area classes Ia and Ib. {xref="https://www.iucn.org/theme/protected-areas/about/protected-areas-categories/category-ii-national-park"}
 synonym: "national park" BROAD [https://www.iucn.org/theme/protected-areas/about/protected-areas-categories/category-ii-national-park]
+xref: IUCN-PACS:II {xref="https://www.iucn.org/theme/protected-areas/about/protected-areas-categories/category-ii-national-park"}
 is_a: ENVO:01001169 ! area protected according to IUCN guidelines
 
 [Term]
@@ -5916,7 +5910,7 @@ synonym: "bugor" RELATED []
 synonym: "bulginniakh" RELATED []
 synonym: "hydrolaccolith" EXACT [https://en.wikipedia.org/wiki/Pingo]
 synonym: "mount" BROAD [USGS:SDTS]
-synonym: "pingos" EXACT PLURAL []
+synonym: "pingos" EXACT OMO:0003004 []
 xref: https://en.wikipedia.org/wiki/Pingo
 is_a: ENVO:01001884 ! surface landform
 relationship: has_part ENVO:01000293 ! ice mass
@@ -6061,18 +6055,18 @@ relationship: part_of ENVO:00000023 ! stream
 [Term]
 id: ENVO:00000428
 name: biome
-alt_id: LTER:809 {xref="https://vocab.lternet.edu/vocab/vocab/index.php?tema=809&/biomes"}
-def: "A biome is an ecosystem to which resident ecological communities have evolved adaptations." [DOI:10.1186/2041-1480-4-43, https://en.wikipedia.org/wiki/Biome]
-comment: There has been some concern raised (see Issue #143) about the usefulness of the assertion that organisms have evolved within a given biome. They may have evolved adaptations elsewhere and demonstrating one or the other is often not feasible. Consider relabelling to "environmental system determined by an ecological community" or similar.
+def: "A biome is an ecosystem which is undergoing climactic ecological succession." [DOI:10.1186/2041-1480-4-43, https://en.wikipedia.org/wiki/Biome]
+comment: In this definition, there is an assumption that no major perturbations are occurring or have occurred in a time frame affects the successional dynamics of the ecosystem. A "major" perturbation is one which disrupts the community's ability to restore its (near) equilibrium. Usually, pioneer or early secondary successional processes would be in effect in such scenarios.
 synonym: "EcosytemType" RELATED [NASA:earthrealm]
 synonym: "major habitat type" EXACT [WWF:Biome]
 xref: EcoLexicon:biome
+xref: LTER:809 {xref="https://vocab.lternet.edu/vocab/vocab/index.php?tema=809&/biomes"}
 is_a: ENVO:01001110 ! ecosystem
+intersection_of: ENVO:01001110 ! ecosystem
+intersection_of: participates_in ENVO:01001827 ! climactic ecological succession
 disjoint_from: ENVO:01000276 ! ecoregion
 disjoint_from: ENVO:01000280 ! ecozone
 relationship: determined_by PCO:0000002
-relationship: has_component ENVO:01000739 {minCardinality="2"} ! habitat
-relationship: has_part ENVO:01000739 ! habitat
 relationship: part_of ENVO:01000817 ! biosphere
 
 [Term]
@@ -6260,6 +6254,8 @@ synonym: "terrestrial realm" RELATED []
 xref: LTER:798
 xref: SPIRE:Terrestrial
 is_a: ENVO:00000428 ! biome
+intersection_of: ENVO:01001790 ! terrestrial ecosystem
+intersection_of: participates_in ENVO:01001827 ! climactic ecological succession
 
 [Term]
 id: ENVO:00000447
@@ -7542,7 +7538,7 @@ id: ENVO:00000564
 name: archeological site
 def: "A place (or group of physical sites) in which evidence of past activity is preserved (either prehistoric or historic or contemporary), and which is, has been, or may be, investigated using the discipline of archaeology." [https://en.wikipedia.org/wiki/Archeological_site]
 xref: https://en.wikipedia.org/wiki/Archeological_site
-is_a: BFO:0000029
+is_a: BFO:0000024
 
 [Term]
 id: ENVO:00000565
@@ -7877,13 +7873,10 @@ property_value: IAO:0000116 "The various 'has part' and 'has quality' relations 
 [Term]
 id: ENVO:00001999
 name: marine water body
-def: "A significant accumulation of water which is part of a marine biome." []
-comment: Ideas like "significant" are fuzzy and need to be modelled more accurately. The definition is a candidate for review.
+def: "A lentic water body which is composed primarily of marine water." []
 synonym: "body of marine water" EXACT []
 synonym: "marine waterbody" EXACT []
 is_a: ENVO:01000617 ! lentic water body
-relationship: part_of ENVO:00000447 ! marine biome
-relationship: part_of ENVO:01000320 ! marine environment
 relationship: part_of ENVO:01000819 ! hydrosphere
 
 [Term]
@@ -7977,8 +7970,8 @@ relationship: has_quality PATO:0001548
 [Term]
 id: ENVO:00002007
 name: sediment
-def: "Sediment is an environmental substance comprised of any particulate matter that can be transported by fluid flow and which eventually is deposited as a layer of solid particles on the bedor bottom of a body of water or other liquid." [https://en.wikipedia.org/wiki/Sediment]
-comment: It is recommended to use a combination of sediment terms to describe a more specific sediment type.
+def: "Particulate environmental material which is formed as a result of the transport and deposition of particles by flowing liquid." [https://en.wikipedia.org/wiki/Sediment]
+comment: Sediment is typically deposited on the bed or bottom of a body of water or other liquid.
 subset: EnvO-Lite-GSC
 subset: envoPolar
 xref: EcoLexicon:sediment
@@ -7987,7 +7980,7 @@ xref: https://en.wikipedia.org/wiki/Sediment
 xref: LTER:492
 xref: LTER:493
 xref: SWEETRealm:Sediment
-is_a: ENVO:00010483 ! environmental material
+is_a: ENVO:01000060 ! particulate environmental material
 relationship: has_quality PATO:0000984
 relationship: has_quality PATO:0001759
 
@@ -9137,6 +9130,7 @@ id: ENVO:00002204
 name: anthropogenic contamination feature
 def: "An anthropogenic geographic feature which has increased levels of contaminants in its consituent materials." []
 is_a: ENVO:00000002 ! anthropogenic geographic feature
+relationship: formed_as_result_of ENVO:01000952 ! anthropisation
 
 [Term]
 id: ENVO:00002205
@@ -11518,7 +11512,9 @@ id: ENVO:00005801
 name: rhizosphere
 def: "The narrow region of soil that is directly influenced by root secretions and associated soil microorganisms." [https://en.wikipedia.org/wiki/Rhizosphere_%28ecology%29]
 xref: LTER:472
-is_a: ENVO:01000408 ! environmental zone
+is_a: ENVO:01001110 ! ecosystem
+relationship: has_part PCO:1000004
+relationship: part_of ENVO:00001998 ! soil
 
 [Term]
 id: ENVO:00005802
@@ -11623,7 +11619,6 @@ id: ENVO:00010005
 name: soil bulk density
 def: "A volumetric density quality which inheres in soil by virtue of some influence exerted by the soil's mass on a given volume." []
 comment: It is calculated as the dry weight of soil divided by its volume.
-synonym: "soil compaction" EXACT []
 intersection_of: PATO:0001353
 intersection_of: characteristic_of ENVO:00001998 ! soil
 property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0001-6284-4821
@@ -11646,10 +11641,11 @@ is_a: ENVO:00000002 ! anthropogenic geographic feature
 [Term]
 id: ENVO:00010483
 name: environmental material
-def: "A portion of environmental material is a fiat object part which forms the medium or part of the medium of an environmental system." [DOI:10.1186/2041-1480-4-43, MA:ma, ORCID:0000-0002-4366-3088, URL:http\://ontology.buffalo.edu/smith/articles/niches.html]
-comment: Everything under this parent must be a mass noun. All subclasses are to be understood as being composed primarily of the named entity, rather than restricted to that entity. For example, "ENVO:water" is to be understood as "environmental material composed primarly of some CHEBI:water". This class is currently being aligned to the Basic Formal Ontology. Following this alignment, its definition and the definitions of its subclasses will be revised.
+def: "A material entity which other material entities in an environmental system are primarily or partially composed of." [http://ontology.buffalo.edu/smith/articles/niches.html, https://dx.doi.org/10.1186/2041-1480-4-43, https://en.wikipedia.org/wiki/Material]
+comment: Everything under this parent must be a mass noun (i.e. not countable). All subclasses are to be understood as being composed primarily of the named entity, rather than restricted to that entity. For example, "ENVO:water" is to be understood as "environmental material composed primarly of some CHEBI:water".
+comment: Instances of this class are portions of environmental materials, such as seawater in bucket, a water parcel in the photic zone of a lake, or the concrete that composes a building part. Instances of these portions may have fiat or non-fiat boundaries. For example, a water parcel has not physical boundaries, while the seawater in a bucket is bounded by the internal surfaces of the bucket.
 synonym: "portion of environmental material" EXACT []
-is_a: BFO:0000024
+is_a: BFO:0000040
 relationship: composed_primarily_of CHEBI:33839
 
 [Term]
@@ -12964,7 +12960,7 @@ def: "An environmental material which is composed primarily of pieces of gravel.
 comment: As with all size-based classifications, there is considerable variation in what is considered gravel.
 xref: EcoLexicon:gravel
 xref: SWEETRealm:Gravel
-is_a: ENVO:00010483 ! environmental material
+is_a: ENVO:01000814 ! solid environmental material
 relationship: has_part ENVO:00000341 ! piece of gravel
 relationship: has_quality PATO:0000984
 relationship: has_quality PATO:0001759
@@ -14361,11 +14357,12 @@ creation_date: 2010-03-21T06:05:53Z
 [Term]
 id: ENVO:01000174
 name: forest biome
-def: "A forest ecosystem in which dominant ecological communities have reached their climax successional state." []
-comment: Preliminary definition.
+def: "A forest ecosystem which is undergoing climactic ecological succession." []
 xref: LTER:212
 xref: SPIRE:Forest
 is_a: ENVO:01001243 ! forest ecosystem
+intersection_of: ENVO:01001243 ! forest ecosystem
+intersection_of: participates_in ENVO:01001827 ! climactic ecological succession
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2013-04-07T14:26:46Z
 
@@ -14394,6 +14391,8 @@ name: grassland biome
 def: "A grassland ecosystem in which dominant ecological communities have reached their climax successional state." []
 xref: SPIRE:Savannah_or_grassland
 is_a: ENVO:01001206 ! grassland ecosystem
+intersection_of: ENVO:01001206 ! grassland ecosystem
+intersection_of: participates_in ENVO:01001827 ! climactic ecological succession
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2013-04-07T14:26:46Z
 
@@ -14409,12 +14408,12 @@ creation_date: 2013-04-07T14:26:46Z
 [Term]
 id: ENVO:01000179
 name: desert biome
-def: "A desert biome is a terrestrial biome which loses more liquid water by evapotranspiration than is supplied by precipitation and includes communities adapted to these conditions." []
-comment: Preliminary definition.
+def: "A desert ecosystem which is undergoing climactic ecological succession." []
 subset: wwfBiome
 xref: SPIRE:Desert_or_dune
+is_a: ENVO:01001780 ! desert ecosystem
 intersection_of: ENVO:01001780 ! desert ecosystem
-intersection_of: determined_by PCO:0000002
+intersection_of: participates_in ENVO:01001827 ! climactic ecological succession
 relationship: overlaps ENVO:00000097 ! desert area
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2013-04-07T14:26:46Z
@@ -14422,12 +14421,12 @@ creation_date: 2013-04-07T14:26:46Z
 [Term]
 id: ENVO:01000180
 name: tundra biome
-def: "A terrestrial biome which comprises a tundra ecosystem that has reached its climax community." []
-comment: Preliminary definition.
+def: "A tundra ecosystem which is undergoing climactic ecological succession." []
 subset: envoPolar
 subset: wwfBiome
 xref: SPIRE:Tundra
-is_a: ENVO:00000446 ! terrestrial biome
+intersection_of: ENVO:01001370 ! tundra ecosystem
+intersection_of: participates_in ENVO:01001827 ! climactic ecological succession
 relationship: overlaps ENVO:00000112 ! area of tundra
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2013-04-07T14:26:46Z
@@ -14545,6 +14544,8 @@ name: subtropical grassland biome
 def: "A subtropical grassland in which dominant ecological communities have reached their climax successional state." []
 subset: wwfBiome
 is_a: ENVO:01001809 ! subtropical grassland
+intersection_of: ENVO:01001809 ! subtropical grassland
+intersection_of: participates_in ENVO:01001827 ! climactic ecological succession
 relationship: has_quality ENVO:01000205 ! subtropical
 creation_date: 2013-04-07T14:29:48Z
 
@@ -14554,6 +14555,8 @@ name: tropical grassland biome
 comment: Preliminary definition. The semantics and definitions of "mediterranean", "subtropical", "tropical", "temperate", "polar", and similar climate types may be transferred to an "environmental condition" class once the semantics of this class have been established.
 subset: wwfBiome
 is_a: ENVO:01001806 ! tropical grassland
+intersection_of: ENVO:01001806 ! tropical grassland
+intersection_of: participates_in ENVO:01001827 ! climactic ecological succession
 relationship: has_quality ENVO:01000204 ! tropical
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2013-04-07T14:29:48Z
@@ -14564,6 +14567,8 @@ name: temperate grassland biome
 comment: Preliminary definition. The semantics and definitions of "mediterranean", "subtropical", "tropical", "temperate", "polar", and similar climate types may be transferred to an "environmental condition" class once the semantics of this class have been established.
 synonym: "prairie biome" BROAD []
 is_a: ENVO:01001811 ! temperate grassland
+intersection_of: ENVO:01001811 ! temperate grassland
+intersection_of: participates_in ENVO:01001827 ! climactic ecological succession
 relationship: has_quality ENVO:01000206 ! temperate
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2013-04-07T14:29:48Z
@@ -14575,6 +14580,8 @@ def: "A montane grassland biome is a grassland biome which occurs in regions ele
 comment: Preliminary definition.
 subset: wwfBiome
 is_a: ENVO:01001808 ! montane grassland
+intersection_of: ENVO:01001808 ! montane grassland
+intersection_of: participates_in ENVO:01001827 ! climactic ecological succession
 relationship: has_quality ENVO:01000342 ! montane
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2013-04-07T14:29:48Z
@@ -14584,6 +14591,8 @@ id: ENVO:01000195
 name: flooded grassland biome
 subset: wwfBiome
 is_a: ENVO:01001807 ! flooded grassland
+intersection_of: ENVO:01001807 ! flooded grassland
+intersection_of: participates_in ENVO:01001827 ! climactic ecological succession
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2013-04-07T14:29:48Z
 
@@ -14593,14 +14602,18 @@ name: coniferous forest biome
 def: "A coniferous forest biome is a forest biome which contains densely packed populations or communities of coniferous trees, strongly limiting light penetration to the forest floor." []
 comment: Preliminary definition.
 is_a: ENVO:01000433 ! needleleaf forest
+intersection_of: ENVO:01000433 ! needleleaf forest
+intersection_of: participates_in ENVO:01001827 ! climactic ecological succession
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2013-04-07T14:31:01Z
 
 [Term]
 id: ENVO:01000197
 name: broadleaf forest biome
-def: "A broadleaf forest in which dominant ecological communities have reached their climax successional state." []
+def: "A broadleaf forest ecosystem which is undergoing climactic ecological succession." []
 is_a: ENVO:01000430 ! broadleaf forest
+intersection_of: ENVO:01000430 ! broadleaf forest
+intersection_of: participates_in ENVO:01001827 ! climactic ecological succession
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2013-04-07T14:31:01Z
 
@@ -14610,6 +14623,8 @@ name: mixed forest biome
 def: "A mixed forest in which dominant ecological communities have reached their climax successional state." []
 subset: wwfBiome
 is_a: ENVO:01000431 ! mixed forest
+intersection_of: ENVO:01000431 ! mixed forest
+intersection_of: participates_in ENVO:01001827 ! climactic ecological succession
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2013-04-07T14:31:01Z
 
@@ -14619,6 +14634,8 @@ name: mediterranean forest biome
 def: "A mediterranean forest in which dominant ecological communities have reached their climax successional state." []
 subset: wwfBiome
 is_a: ENVO:01001791 ! mediterranean forest
+intersection_of: ENVO:01001791 ! mediterranean forest
+intersection_of: participates_in ENVO:01001827 ! climactic ecological succession
 relationship: has_quality ENVO:01000207 ! mediterranean
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2013-04-07T14:31:01Z
@@ -14628,6 +14645,8 @@ id: ENVO:01000200
 name: tropical broadleaf forest biome
 def: "A tropical broadleaf forest in which dominant ecological communities have reached their climax successional state." []
 is_a: ENVO:01001792 ! tropical broadleaf forest
+intersection_of: ENVO:01001792 ! tropical broadleaf forest
+intersection_of: participates_in ENVO:01001827 ! climactic ecological succession
 relationship: has_quality ENVO:01000204 ! tropical
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2013-04-07T14:32:28Z
@@ -14637,6 +14656,8 @@ id: ENVO:01000201
 name: subtropical broadleaf forest biome
 def: "A subtropical broadleaf forest in which dominant ecological communities have reached their climax successional state." []
 is_a: ENVO:01001793 ! subtropical broadleaf forest
+intersection_of: ENVO:01001793 ! subtropical broadleaf forest
+intersection_of: participates_in ENVO:01001827 ! climactic ecological succession
 relationship: has_quality ENVO:01000205 ! subtropical
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2013-04-07T14:32:28Z
@@ -14647,6 +14668,8 @@ name: temperate broadleaf forest biome
 def: "A broadleaf forest which is subject to temperate climate patterns." []
 subset: wwfBiome
 is_a: ENVO:01001794 ! temperate broadleaf forest
+intersection_of: ENVO:01001794 ! temperate broadleaf forest
+intersection_of: participates_in ENVO:01001827 ! climactic ecological succession
 relationship: has_quality ENVO:01000206 ! temperate
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2013-04-07T14:32:28Z
@@ -14729,6 +14752,8 @@ def: "A coniferous forest biome which is subject to tropical climate patterns." 
 comment: Preliminary definition. The semantics and definitions of "mediterranean", "subtropical", "tropical", "temperate", "polar", and similar climate types may be transferred to an "environmental condition" class once the semantics of this class have been established.
 subset: wwfBiome
 is_a: ENVO:01000399 ! tropical needleleaf forest
+intersection_of: ENVO:01000399 ! tropical needleleaf forest
+intersection_of: participates_in ENVO:01001827 ! climactic ecological succession
 relationship: has_quality ENVO:01000204 ! tropical
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2013-04-07T14:39:14Z
@@ -14750,6 +14775,8 @@ name: temperate mixed forest biome
 def: "A temperate mixed forest in which dominant ecological communities have reached their climax successional state." []
 subset: wwfBiome
 is_a: ENVO:01001796 ! temperate mixed forest
+intersection_of: ENVO:01001796 ! temperate mixed forest
+intersection_of: participates_in ENVO:01001827 ! climactic ecological succession
 relationship: has_quality ENVO:01000206 ! temperate
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2013-04-07T14:39:30Z
@@ -14877,6 +14904,8 @@ name: mediterranean grassland biome
 def: "A subtropical grassland biome which includes communities adapted to hot to warm, dry summers, mild to cold, rainy winters, and the influence of large, usually marine, bodies of water." []
 comment: Preliminary definition. The semantics and definitions of "mediterranean", "subtropical", "tropical", "temperate", "polar", and similar climate types may be transferred to an "environmental condition" class once the semantics of this class have been established.
 is_a: ENVO:01001810 ! mediterranean grassland
+intersection_of: ENVO:01001810 ! mediterranean grassland
+intersection_of: participates_in ENVO:01001827 ! climactic ecological succession
 relationship: has_quality ENVO:01000207 ! mediterranean
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2013-04-19T11:42:48Z
@@ -14888,6 +14917,8 @@ def: "A subtropical dry broadleaf forest in which dominant ecological communitie
 subset: wwfBiome
 xref: https://www.worldwildlife.org/biomes/tropical-and-subtropical-dry-broadleaf-forests
 is_a: ENVO:01001801 ! subtropical dry broadleaf forest
+intersection_of: ENVO:01001801 ! subtropical dry broadleaf forest
+intersection_of: participates_in ENVO:01001827 ! climactic ecological succession
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2013-04-24T12:04:53Z
 
@@ -14897,6 +14928,8 @@ name: subtropical moist broadleaf forest biome
 def: "A subtropical moist broadleaf forest in which dominant ecological communities have reached their climax successional state." []
 subset: wwfBiome
 is_a: ENVO:01001802 ! subtropical moist broadleaf forest
+intersection_of: ENVO:01001802 ! subtropical moist broadleaf forest
+intersection_of: participates_in ENVO:01001827 ! climactic ecological succession
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2013-04-24T12:04:53Z
 
@@ -14907,6 +14940,8 @@ def: "A tropical dry broadleaf forest in which dominant ecological communities h
 subset: wwfBiome
 xref: https://www.worldwildlife.org/biomes/tropical-and-subtropical-dry-broadleaf-forests
 is_a: ENVO:01001799 ! tropical dry broadleaf forest
+intersection_of: ENVO:01001799 ! tropical dry broadleaf forest
+intersection_of: participates_in ENVO:01001827 ! climactic ecological succession
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2013-04-24T12:05:25Z
 
@@ -14918,6 +14953,8 @@ subset: wwfBiome
 synonym: "rainforest biome" RELATED []
 xref: SPIRE:Rainforest
 is_a: ENVO:01001800 ! tropical moist broadleaf forest
+intersection_of: ENVO:01001800 ! tropical moist broadleaf forest
+intersection_of: participates_in ENVO:01001827 ! climactic ecological succession
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2013-04-24T12:05:25Z
 
@@ -15083,9 +15120,9 @@ creation_date: 2013-06-06T15:22:52Z
 [Term]
 id: ENVO:01000245
 name: cropland biome
-def: "A cropland ecosystem in which dominant ecological communities are maintained in a stable state - mimicking a climax community - by human intervention." [http://dx.doi.org/10.1111/j.1466-8238.2010.00540.x, http://dx.doi.org/10.1890/070062]
-is_a: ENVO:01001244 ! cropland ecosystem
-relationship: formed_as_result_of ENVO:01000952 ! anthropisation
+def: "A cropland ecosystem which is undergoing climactic ecological succession." [http://dx.doi.org/10.1111/j.1466-8238.2010.00540.x, http://dx.doi.org/10.1890/070062]
+intersection_of: ENVO:01001244 ! cropland ecosystem
+intersection_of: participates_in ENVO:01001827 ! climactic ecological succession
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2013-06-14T11:45:47Z
 
@@ -15094,7 +15131,8 @@ id: ENVO:01000246
 name: village biome
 def: "A village biome is an anthropogenic terrestrial biome which contains settlements such as villages, towns, and/or small cities and which is primarily used for agricultural activity." [DOI:10.1111/j.1466-8238.2010.00540.x, DOI:10.1890/070062]
 comment: Villages are also described as agricultural settlements with greater than 100 persons per square kilometre; however, no upper limit is defined.
-is_a: ENVO:01000219 ! anthropogenic terrestrial biome
+intersection_of: ENVO:01000773 ! village
+intersection_of: participates_in ENVO:01001827 ! climactic ecological succession
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2013-06-14T11:45:47Z
 
@@ -15110,7 +15148,8 @@ creation_date: 2013-06-14T11:45:47Z
 id: ENVO:01000248
 name: dense settlement biome
 def: "A dense settlement biome is an anthropogenic terrestrial biome which is primarily used for human habitation, recreation, and industry within built structures with little other land use." [DOI:10.1111/j.1466-8238.2010.00540.x, DOI:10.1890/070062]
-is_a: ENVO:01000219 ! anthropogenic terrestrial biome
+intersection_of: ENVO:01000658 ! dense settlement
+intersection_of: participates_in ENVO:01001827 ! climactic ecological succession
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2013-06-14T11:45:47Z
 
@@ -15409,7 +15448,7 @@ synonym: "ice" RELATED [http://www.eionet.europa.eu/gemet/concept/4131]
 xref: http://sweetontology.net/matrWater/Ice
 xref: LTER:262
 intersection_of: ENVO:01001125 ! ice
-intersection_of: composed_primarily_of ENVO:00002006 ! liquid water
+intersection_of: composed_primarily_of CHEBI:15377
 relationship: has_quality PATO:0001546
 created_by: https://orcid.org/0000-0002-4366-3088
 creation_date: 2013-10-13T12:01:28Z
@@ -15429,7 +15468,7 @@ id: ENVO:01000279
 name: ice lens
 def: "An ice mass which is formed when moisture, diffused within soil or rock, accumulates and freezes in a localized zone, wedging soil or rock apart." [https://en.wikipedia.org/wiki/Ice_Lens]
 subset: envoPolar
-synonym: "ice lenses" EXACT PLURAL []
+synonym: "ice lenses" EXACT OMO:0003004 []
 is_a: ENVO:01001547 ! land ice mass
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2013-10-13T12:20:34Z
@@ -15448,19 +15487,18 @@ creation_date: 2013-10-13T18:32:46Z
 [Term]
 id: ENVO:01000281
 name: layer
-def: "A layer is a quantity of some material which is spatially continuous, has comparable thickness, and usually covers some surface." [Wiktionary:layer]
-comment: Preliminary definition.
+def: "A material entity which 1) is spatially continuous, 2) is composed of material of comparable thickness, composition, and physical properties, and 3) is physically distinct from adjacent portions of environmental material." [https://en.wiktionary.org/wiki/layer]
 subset: envoPolar
 is_a: BFO:0000040
+relationship: has_quality PATO:0000689
 relationship: has_quality PATO:0002124
-created_by: ORCID:0000-0002-4366-3088
+created_by: https://orcid.org/0000-0002-4366-3088
 creation_date: 2013-10-15T16:42:02Z
 
 [Term]
 id: ENVO:01000282
 name: sedimentary stratum
-def: "A stratum is a layer which is composed of sedimentary rock or soil with internally consistent characteristics that distinguish it from other layers." [https://en.wikipedia.org/wiki/Stratum]
-comment: Preliminary definition. Concepts such as "characteristic" may be problematic.
+def: "A solid layer which is composed primarily of sedimentary rock or soil." [https://en.wikipedia.org/wiki/Stratum]
 synonym: "stratum" BROAD []
 is_a: ENVO:01001275 ! solid layer
 created_by: ORCID:0000-0002-4366-3088
@@ -15637,7 +15675,7 @@ comment: This is an interesting class. It's not really a column in the sense of 
 is_a: ENVO:01001479 ! fluid astronomical body part
 relationship: formed_as_result_of ENVO:01001747 ! mass fluid flow
 relationship: has_quality PATO:0002063
-created_by: ORCID:0000-0002-4366-3088
+created_by: https://orcid.org/0000-0002-4366-3088
 creation_date: 2013-10-19T11:11:28Z
 
 [Term]
@@ -15779,6 +15817,8 @@ name: anthropogenic environment
 def: "An anthropogenic environment is an environmental system which is the product of human activity." []
 comment: Unsatisfactory definition here. Must consider the threshold that makes an environmental system anthropogenic.
 is_a: ENVO:01000254 ! environmental system
+intersection_of: ENVO:01000254 ! environmental system
+intersection_of: formed_as_result_of ENVO:01000952 ! anthropisation
 
 [Term]
 id: ENVO:01000314
@@ -16591,7 +16631,7 @@ def: "A site which has its extent determined by the presence or influence of one
 comment: Formerly, this class was an experimental class and a subclass of "environmental feature". It is now aligned to BFO. The class was not obsoleted as the core semantics maintained their stability through its transition.
 subset: envoPolar
 synonym: "environmental area" RELATED []
-is_a: BFO:0000029
+is_a: BFO:0000024
 relationship: part_of ENVO:01000254 ! environmental system
 
 [Term]
@@ -16893,8 +16933,9 @@ is_a: ENVO:00000100 ! valley
 id: ENVO:01000447
 name: roadside
 def: "An environmental zone of varying area which is adjacent to a road." []
-is_a: ENVO:01000408 ! environmental zone
+is_a: ENVO:00000002 ! anthropogenic geographic feature
 relationship: adjacent_to ENVO:00000064 ! road
+relationship: formed_as_result_of ENVO:01000952 ! anthropisation
 relationship: part_of ENVO:01001782 ! landmass
 
 [Term]
@@ -18441,11 +18482,10 @@ is_a: ENVO:02500000 ! environmental system process
 [Term]
 id: ENVO:01000631
 name: ocean acidification
-alt_id: LTER:962 {xref="https://vocab.lternet.edu/vocab/vocab/index.php?tema=962&/ocean-acidification"}
 def: "Ocean acidification is a process during which the pH of a sea or ocean is lowered." []
 comment: On Earth, the major cause of ocean acidification is the update of carbon dioxide from the atmosphere.
 subset: envoPolar
-xref: LTER:962
+xref: LTER:962 {xref="https://vocab.lternet.edu/vocab/vocab/index.php?tema=962&/ocean-acidification"}
 is_a: ENVO:01000630 ! acidification of an aquatic environment
 
 [Term]
@@ -18676,7 +18716,7 @@ id: ENVO:01000658
 name: dense settlement
 def: "A settlement with a high density of buildings and inhabitants." []
 comment: The thresholds for what makes a settlment "dense" can be determined as needed. If there is a specific threshold that should be added to ENVO, please make a new class request.
-is_a: ENVO:00000062 ! populated place
+is_a: ENVO:01001829 ! human settlement
 property_value: IAO:0000116 "See also: http://www.ecotope.org/anthromes/v1/guide/urban/12_dense_settlements/default.aspx" xsd:string
 
 [Term]
@@ -18695,7 +18735,7 @@ property_value: IAO:0000116 "Subclasses of this class will be created by inferen
 id: ENVO:01000660
 name: tephra
 def: "Tephra is fragmental material produced by a volcanic eruption regardless of composition, fragment size or emplacement mechanism." [https://en.wikipedia.org/wiki/Tephra]
-is_a: ENVO:00010483 ! environmental material
+is_a: ENVO:01000814 ! solid environmental material
 relationship: has_quality PATO:0001444
 relationship: output_of ENVO:01000655 ! explosive eruption
 
@@ -18741,12 +18781,12 @@ property_value: IAO:0000116 "This definition is preliminary." xsd:string
 [Term]
 id: ENVO:01000666
 name: area of open water
-alt_id: NLCD:11
 def: "An area of a planet's surface which is primarily composed of water in contact with an atmospheric column extending from the planetary boundary layer to the planet's exosphere with little to no physical obstruction." [https://en.wikipedia.org/wiki/Exosphere, https://en.wikipedia.org/wiki/Planetary_surface, https://www.mrlc.gov/nlcd11_leg.php]
 comment: According to the NLCD 2011, areas of open water generally have less than 25% cover of vegetation or soil. A specific threshold is not asserted in this definition.
 subset: envoPolar
 subset: nlcd2011
-is_a: ENVO:01000408 ! environmental zone
+xref: NLCD:11
+is_a: ENVO:01003020 ! fiat part of an astronomical object
 relationship: adjacent_to ENVO:01000323 ! atmospheric boundary layer
 relationship: part_of ENVO:00000063 ! water body
 relationship: part_of ENVO:01000324 ! planetary surface
@@ -18817,14 +18857,14 @@ relationship: has_quality PATO:0000587
 [Term]
 id: ENVO:01000675
 name: atmospheric column
-def: "A vertical pillar defined by a unit area on a planetary surface and bounded by the top of the atmosphere that is used to quantify an atmospheric parameter such as pressure, ozone or precipitable water." [https://mynasadata.larc.nasa.gov/glossary/atmospheric-column-2/]
+def: "A fiat part of an atmosphere which is defined as a vertical, three-dimensional pillar extending from a unit area on a planetary surface and bounded by the top of the atmosphere." [https://mynasadata.larc.nasa.gov/glossary/atmospheric-column-2/]
+comment: Once defined, an atmospheric column can be used to quantify an atmospheric parameter such as pressure, ozone or precipitable water.
 subset: envoPolar
-is_a: ENVO:01001478 ! gaseous astronomical body part
+is_a: ENVO:01003020 ! fiat part of an astronomical object
 relationship: adjacent_to ENVO:01000324 ! planetary surface
 relationship: adjacent_to ENVO:01000637 ! outer space
 relationship: has_quality PATO:0002063
 relationship: part_of ENVO:01000267 ! atmosphere
-property_value: IAO:0000116 "This should be relocated under \"fiat object part\" of the BFO during next refactoring. Also, the \"part of\" relation to atomosphere should be updated to express that this is a fiat part of the atmosphere." xsd:string
 
 [Term]
 id: ENVO:01000676
@@ -19370,10 +19410,8 @@ def: "An area of a planet's surface which is primarily composed of water ice, pr
 comment: This class covers part of the NLCD "Perennial Ice/Snow" class.
 subset: envoPolar
 subset: nlcd2011
-is_a: ENVO:01000408 ! environmental zone
+is_a: ENVO:01000746 ! area of perennial ice or snow
 relationship: adjacent_to ENVO:01000323 ! atmospheric boundary layer
-relationship: part_of ENVO:01000324 ! planetary surface
-relationship: part_of ENVO:01000746 ! area of perennial ice or snow
 
 [Term]
 id: ENVO:01000741
@@ -19424,7 +19462,7 @@ name: area of perennial snow
 def: "An area of a planet's surface which is primarily composed of snow, present throughout multiple years, in contact with an atmospheric column extending from the planetary boundary layer to the planet's exosphere with little to no physical obstruction." [https://www.mrlc.gov/nlcd11_leg.php]
 comment: This class covers part of the NLCD "Perennial Ice/Snow" class.
 subset: nlcd2011
-is_a: ENVO:01000408 ! environmental zone
+is_a: ENVO:01000746 ! area of perennial ice or snow
 relationship: adjacent_to ENVO:01000323 ! atmospheric boundary layer
 relationship: part_of ENVO:01000324 ! planetary surface
 relationship: part_of ENVO:01000746 ! area of perennial ice or snow
@@ -19433,11 +19471,11 @@ property_value: IAO:0000117 "envoPolar" xsd:string
 [Term]
 id: ENVO:01000746
 name: area of perennial ice or snow
-alt_id: NLCD:12
 def: "An area of a planet's surface which is primarily composed of snow or water ice, present throughout multiple years, in contact with an atmospheric column extending from the planetary boundary layer to the planet's exosphere with little to no physical obstruction." [https://en.wikipedia.org/wiki/Exosphere, https://en.wikipedia.org/wiki/Planetary_surface, https://www.mrlc.gov/nlcd11_leg.php]
 comment: According to the NLCD 2011, these areas are characterised by ice and/or snow cover generally greater than 25% of total cover. The definition of perennial needs clarification.
 subset: nlcd2011
-is_a: ENVO:01000408 ! environmental zone
+xref: NLCD:12
+is_a: ENVO:01003020 ! fiat part of an astronomical object
 relationship: adjacent_to ENVO:01000323 ! atmospheric boundary layer
 property_value: IAO:0000117 "envoPolar" xsd:string
 property_value: IAO:0000118 "perennial ice/snow" xsd:string
@@ -19445,11 +19483,11 @@ property_value: IAO:0000118 "perennial ice/snow" xsd:string
 [Term]
 id: ENVO:01000747
 name: regolith
-def: "A layer of loose, heterogeneous, superficial material covering solid rock. It includes dust, soil, broken rock, and other related materials." [https://en.wikipedia.org/wiki/Regolith]
+def: "A solid layer which is composed primarily of loose, heterogeneous, superficial material covering solid rock." [https://en.wikipedia.org/wiki/Regolith]
+comment: Regolith typically includes dust, soil, broken rock, and similar materials, but can be highly variable.
 is_a: ENVO:01001275 ! solid layer
 relationship: adjacent_to ENVO:01000638 ! planetary crust
 relationship: has_part ENVO:00002008 ! dust
-relationship: has_quality PATO:0001444
 property_value: IAO:0000116 "The various parts of the regolith are highly variable. Perhaps some sort of \"unconsolidated\" quality should be used here with \"environmental material\" to cover this scope. Note that organisms, their parts, or their derivatives are also included." xsd:string
 
 [Term]
@@ -19488,11 +19526,11 @@ is_a: ENVO:00001995 ! rock
 [Term]
 id: ENVO:01000752
 name: area of barren land
-alt_id: NLCD:31
 def: "An area of a planet's surface which is primarily composed of bedrock, desert pavement, scarp rock, talus, material exposed by slides, volcanic material, glacial debris, sand, material exposed during strip mining, gravel, and other accumulations of earthen material in contact with an atmospheric column extending from the planetary boundary layer to the planet's exosphere with little to no physical obstruction." [https://en.wikipedia.org/wiki/Exosphere, https://en.wikipedia.org/wiki/Planetary_surface, https://www.mrlc.gov/nlcd11_leg.php]
 comment: According to the NLCD 2011, areas of barren land generally have less than 15% cover of vegetation. A specific threshold is not asserted in this definition.
 subset: envoPolar
 subset: nlcd2011
+xref: NLCD:31
 is_a: ENVO:01001199 ! terrestrial environmental zone
 relationship: adjacent_to ENVO:01000323 ! atmospheric boundary layer
 relationship: part_of ENVO:01000324 ! planetary surface
@@ -19580,7 +19618,7 @@ id: ENVO:01000762
 name: sparsely populated settlement
 def: "A settlement with a low density of buildings and inhabitants." []
 comment: The thresholds for what makes a settlment "sparsely populated" can be determined as needed. These are usually "sparse" in relation to urban environments. If there is a specific threshold that should be added to ENVO, please make a new class request.
-is_a: ENVO:00000062 ! populated place
+is_a: ENVO:01001829 ! human settlement
 
 [Term]
 id: ENVO:01000763
@@ -19594,7 +19632,8 @@ relationship: part_of ENVO:01000772 ! rural area
 id: ENVO:01000764
 name: formal settlement
 def: "A settlement which has been established and is managed through officially sanctioned processes and is recognised as legal by a competent authority." []
-is_a: ENVO:00000062 ! populated place
+is_a: ENVO:01001829 ! human settlement
+disjoint_from: ENVO:01000765 ! informal settlement
 property_value: IAO:0000116 "This is merely a defined class and should not have too many subclasses." xsd:string
 
 [Term]
@@ -19602,7 +19641,7 @@ id: ENVO:01000765
 name: informal settlement
 def: "A settlement which is not associated with or directed by official planning processes and which typically lacks municipal services and infrastructure such as sanitation, water services, and waste management services." []
 comment: Informal settlements need not be illegal.
-is_a: ENVO:00000062 ! populated place
+is_a: ENVO:01001829 ! human settlement
 property_value: IAO:0000116 "Can a formerly formal settlement become an informal settlement?" xsd:string
 property_value: IAO:0000116 "This is merely a defined class and should not have too many subclasses." xsd:string
 
@@ -19610,14 +19649,15 @@ property_value: IAO:0000116 "This is merely a defined class and should not have 
 id: ENVO:01000766
 name: legal settlement
 def: "A settlement on land that the inhabitants have a legal claim to." []
-is_a: ENVO:00000062 ! populated place
+is_a: ENVO:01001829 ! human settlement
+disjoint_from: ENVO:01000767 ! illegal settlement
 property_value: IAO:0000116 "This is merely a defined class and should not have too many subclasses." xsd:string
 
 [Term]
 id: ENVO:01000767
 name: illegal settlement
 def: "A settlement on land that the inhabitants have no legal claim to or occupy illegally." [http://stats.oecd.org/glossary/detail.asp?ID=1351]
-is_a: ENVO:00000062 ! populated place
+is_a: ENVO:01001829 ! human settlement
 property_value: IAO:0000116 "This is merely a defined class and should not have too many subclasses." xsd:string
 
 [Term]
@@ -19666,8 +19706,7 @@ relationship: overlaps ENVO:01001305 ! vegetated area
 id: ENVO:01000773
 name: village
 def: "A village is a clustered human settlement or community, larger than a hamlet but smaller than a town, with a population ranging from a few hundred to a few thousand. Though often located in rural areas, the term urban village is also applied to certain urban neighbourhoods. Villages are normally permanent, with fixed dwellings; however, transient villages can occur. Further, the dwellings of a village are fairly close to one another, not scattered broadly over the landscape, as a dispersed settlement." [https://en.wikipedia.org/wiki/Village]
-is_a: ENVO:00000062 ! populated place
-relationship: part_of ENVO:01000246 ! village biome
+is_a: ENVO:01001829 ! human settlement
 property_value: IAO:0000116 "This class may be split. \"urban village\" doesn't sit well and prevents relations to village biomes." xsd:string
 
 [Term]
@@ -20029,10 +20068,16 @@ relationship: part_of ENVO:01001357 ! desert
 id: ENVO:01000813
 name: astronomical body part
 def: "A material part of an astronomical body." []
+comment: Material parts of astronomical bodies generally have boundaries formed by discontinuities in qualities, composition, or other physical characterisitcs. These boundaries are sometimes sharp, and sometimes diffuse, with different classification systems and communities declaring varying thresholds (e.g. for where a shoreline, forest, or other entity begins and ends). However, some boundaries are declared by fiat - that is, by arbitrary human convention or decree - particularly by regulatory or other authorities and communities of practice. The classes in this hierarchy attempt to offer generalisable definitions that allow multiple classfiication systems to map to and interoperate through. If desired, we can create classes that declare thresholds used by a given authority or community under the more generic ones, annotated with source information.
 subset: envoAstro
 subset: envoPolar
-is_a: BFO:0000024
+is_a: BFO:0000040
+intersection_of: BFO:0000040
+intersection_of: part_of ENVO:01000799 ! astronomical body
 relationship: part_of ENVO:01000799 ! astronomical body
+property_value: IAO:0000116 "Also note that some astronomical body parts (ABPs) may have fiat boundaries: if there's strong debate about where an ABP begins or ends (over and above fuzzy boundaries), with different official classifications setting different thresholds or limits, axiomatise the class with fiat boundaries of the appropriate dimension." xsd:string
+property_value: IAO:0000116 "Note that material entities may have immaterial entities (e.g. sites) as parts." xsd:string
+property_value: IAO:0000116 "This class includes material parts of astronomical bodies. Immaterial parts, such as magnetospheres, are represented as sites under the influence of magnetic fields.Please post countercases in the ENVO tracker for revision of this hierarchy if needed." xsd:string
 
 [Term]
 id: ENVO:01000814
@@ -20056,10 +20101,10 @@ intersection_of: has_quality PATO:0001548
 [Term]
 id: ENVO:01000816
 name: area of deciduous forest
-alt_id: NLCD:41
 def: "An area of a planet's surface which is primarily covered by a forest in which the majority of trees shed foliage simultaneously in response to seasonal change. The surfaces of this area (including the surface of the forest canopy) are in contact with an atmospheric column extending from the planetary boundary layer to the planet's exosphere with little to no physical obstruction." [https://en.wikipedia.org/wiki/Exosphere, https://en.wikipedia.org/wiki/Planetary_surface, https://www.mrlc.gov/nlcd11_leg.php]
 comment: According to the NLCD 2011, areas of deciduous forest are dominated by trees generally greater than 5 meters tall, and making up more than 20% of total vegetation cover. The NLCD 2011 continues to state that more than 75% of these trees should shed foliage simultaneously in response to seasonal change. Such thresholds - which are themselves fuzzy - are not asserted in this definition.
 subset: nlcd2011
+xref: NLCD:41
 is_a: ENVO:01001199 ! terrestrial environmental zone
 relationship: adjacent_to ENVO:01000323 ! atmospheric boundary layer
 relationship: part_of ENVO:01000324 ! planetary surface
@@ -20068,11 +20113,11 @@ property_value: IAO:0000118 "deciduous forest" xsd:string
 [Term]
 id: ENVO:01000817
 name: biosphere
-def: "A biosphere is a part of an astronomical body which includes, as parts, all the living entities within the gravitational sphere of influence of that body, as well as the non-living and dead entities with which they interact." [http://www.biology-online.org/dictionary/Biosphere, https://en.wikipedia.org/wiki/Biosphere]
+def: "An astronomical body part which includes all the living entities within the gravitational sphere of influence of that body, as well as the non-living and dead entities with which they interact." [http://www.biology-online.org/dictionary/Biosphere, https://en.wikipedia.org/wiki/Biosphere]
 comment: The gravitational sphere of influence referenced in this class' definition is the Hill sphere: a region in which an object dominates the attraction of satellites despite gravitational perturbations.
 subset: envoAstro
 subset: envoPolar
-is_a: ENVO:01001784 ! compound astronomical body part
+is_a: ENVO:01000813 ! astronomical body part
 relationship: has_part PCO:0000000
 property_value: IAO:0000116 "Whether this class should be grouped with classes such as \"hydrosphere\" and \"cryosphere\" requires some discussion." xsd:string
 
@@ -20109,7 +20154,7 @@ name: pedosphere
 def: "An astronomical body part which is composed of soil, subject to soil formation processes, and found on the surface of a lithosphere." [https://en.wikipedia.org/wiki/Pedosphere]
 comment: This is a very broad and, in practice, poorly defined term. Please consider using or requesting a more specific class.
 subset: envoAstro
-is_a: ENVO:01001784 ! compound astronomical body part
+is_a: ENVO:01000813 ! astronomical body part
 relationship: composed_primarily_of ENVO:00001998 ! soil
 relationship: overlaps ENVO:01000267 ! atmosphere
 relationship: overlaps ENVO:01000646 ! lithosphere
@@ -20132,6 +20177,7 @@ comment: In some literature, the term photosphere is used; however, this is more
 subset: envoPolar
 synonym: "photosphere" RELATED []
 is_a: ENVO:01000813 ! astronomical body part
+relationship: part_of ENVO:01000800 ! planet
 
 [Term]
 id: ENVO:01000823
@@ -20298,10 +20344,10 @@ relationship: has_role CHEBI:78298
 [Term]
 id: ENVO:01000843
 name: area of evergreen forest
-alt_id: NLCD:42
 def: "An area of a planet's surface which is primarily covered by a forest in which the majority of trees maintain their foliage despite seasonal change. The surfaces of this area (including the surface of the forest canopy) are in contact with an atmospheric column extending from the planetary boundary layer to the planet's exosphere with little to no physical obstruction." [https://en.wikipedia.org/wiki/Exosphere, https://en.wikipedia.org/wiki/Planetary_surface, https://www.mrlc.gov/nlcd11_leg.php]
 comment: According to the NLCD 2011, areas of evergreen forest are dominated by trees generally greater than 5 meters tall, and making up more than 20% of total vegetation cover. The NLCD 2011 continues to state that more than 75% of these trees should maintain their foliage despite seasonal change - the canopy is never without green foliage. Such thresholds - which are themselves fuzzy - are not asserted in this definition.
 subset: nlcd2011
+xref: NLCD:42
 is_a: ENVO:01001305 ! vegetated area
 relationship: adjacent_to ENVO:01000323 ! atmospheric boundary layer
 relationship: part_of ENVO:01000324 ! planetary surface
@@ -20424,10 +20470,10 @@ relationship: has_quality ENVO:01000204 ! tropical
 [Term]
 id: ENVO:01000855
 name: area of mixed forest
-alt_id: NLCD:43
 def: "An area of a planet's surface which is primarily covered by a forest in which the trees are a mixture between those that lose and retain their foliage despite seasonal change. The surfaces of this area (including the surface of the forest canopy) are in contact with an atmospheric column extending from the planetary boundary layer to the planet's exosphere with little to no physical obstruction." [https://en.wikipedia.org/wiki/Exosphere, https://en.wikipedia.org/wiki/Planetary_surface, https://www.mrlc.gov/nlcd11_leg.php]
 comment: According to the NLCD 2011, areas of mixed forest are dominated by trees generally greater than 5 meters tall, and making up more than 20% of total vegetation cover. The NLCD 2011 continues to state that neither deciduous or evergreen trees make up more than 75% of the total tree cover. Such thresholds - which are themselves fuzzy - are not asserted in this definition.
 subset: nlcd2011
+xref: NLCD:43
 is_a: ENVO:01001305 ! vegetated area
 relationship: adjacent_to ENVO:01000323 ! atmospheric boundary layer
 relationship: overlaps ENVO:01000431 ! mixed forest
@@ -20474,11 +20520,11 @@ relationship: has_quality ENVO:01000206 ! temperate
 [Term]
 id: ENVO:01000861
 name: area of dwarf scrub
-alt_id: NLCD:51
 def: "An area of a planet's surface which is partly covered by shrubs with ground-hugging stems or low growth habit, in contact with an atmospheric column extending from the planetary boundary layer to the planet's exosphere with little to no physical obstruction." [https://en.wikipedia.org/wiki/Exosphere, https://en.wikipedia.org/wiki/Planetary_surface, https://en.wikipedia.org/wiki/Subshrub, https://www.mrlc.gov/nlcd11_leg.php]
 comment: According to the NLCD 2011, areas of dwarf scrub are dominated by shrubs less than 20 centimeters tall with shrub canopy typically greater than 20% of total vegetation. This type is often co-associated with grasses, sedges, herbs, and non-vascular vegetation. The NLCD 2011 notes that this is intended as an Alaska only land cover. Such thresholds - which are themselves fuzzy - are not asserted in this definition.
 subset: nlcd2011
 synonym: "area of subshrub" EXACT []
+xref: NLCD:51
 is_a: ENVO:01001305 ! vegetated area
 relationship: adjacent_to ENVO:01000323 ! atmospheric boundary layer
 relationship: part_of ENVO:00000300 ! scrubland area
@@ -20541,11 +20587,11 @@ relationship: part_of ENVO:01000744 ! human dwelling
 [Term]
 id: ENVO:01000869
 name: area of scrub
-alt_id: NLCD:52
 def: "An area of a planet's surface which is primarily covered by a shrubs, young trees, or stunted trees.. The surfaces of this area are in contact with an atmospheric column extending from the planetary boundary layer to the planet's exosphere with little to no physical obstruction." [http://dx.doi.org/10.1016/j.rse.2015.07.014, https://en.wikipedia.org/wiki/Exosphere, https://en.wikipedia.org/wiki/Planetary_surface, https://en.wikipedia.org/wiki/Subshrub, https://www.mrlc.gov/nlcd11_leg.php]
 comment: According to the NLCD 2011, areas of scrub or shrub are dominated by shrubs; less than 5 meters tall with shrub canopy typically greater than 20% of total vegetation. This class includes true shrubs, young trees in an early successional stage or trees stunted from environmental conditions. Such thresholds - which are themselves fuzzy - are not asserted in this definition.
 subset: nlcd2011
 synonym: "area of shrub" EXACT []
+xref: NLCD:52
 is_a: ENVO:01001305 ! vegetated area
 relationship: adjacent_to ENVO:01000323 ! atmospheric boundary layer
 relationship: part_of ENVO:00000300 ! scrubland area
@@ -20573,7 +20619,7 @@ name: ballast water
 def: "Ballast water is water contained in the ballast tanks of sea-going vessels." [http://www.nature.com/news/four-routes-to-better-maritime-governance-1.21051?WT.mc_id=TWT_NatureNews, https://en.wikipedia.org/wiki/Ballast_water_discharge_and_the_environment, https://en.wikipedia.org/wiki/Sailing_ballast#Water_ballast]
 comment: This definition could be improved, as ballast water is often used in more general ways, beyond the water contained in a ballast tank at any given time. For example, water which has just been released from a ballast tank is often still refered to as ballast water.
 is_a: ENVO:00002006 ! liquid water
-relationship: contained_in ENVO:01000873 ! ballast tank
+relationship: located_in ENVO:01000873 ! ballast tank
 
 [Term]
 id: ENVO:01000873
@@ -20696,10 +20742,10 @@ creation_date: 2021-04-14T18:57:18.275Z
 [Term]
 id: ENVO:01000883
 name: area of developed open space
-alt_id: NLCD:21
 def: "An area of a planet's surface which is primarily covered by cultivated or anthropically maintained vegetation planted for recreation, erosion control, or aesthetic purposes interspersed by constructed or manufactured objects and materials. This area is in contact with an atmospheric column extending from the planetary boundary layer to the planet's exosphere with little to no physical obstruction." [https://en.wikipedia.org/wiki/Exosphere, https://en.wikipedia.org/wiki/Planetary_surface, https://www.mrlc.gov/nlcd11_leg.php]
 comment: According to the NLCD 2011, areas of developed open space are dominated by vegetation such as lawn grasses and include large-lot single-family housing units, parks, golf courses. Further, it is asserted that "impervious surfaces", most likely referring to concrete and related substances, cover less than 20% of the area. Such thresholds - which are themselves fuzzy - are not asserted in this definition.
 subset: nlcd2011
+xref: NLCD:21
 is_a: ENVO:01001200 ! anthropised terrestrial environmental zone
 relationship: adjacent_to ENVO:01000323 ! atmospheric boundary layer
 relationship: part_of ENVO:01000248 ! dense settlement biome
@@ -20710,10 +20756,10 @@ property_value: IAO:0000118 "developed, open space" xsd:string
 [Term]
 id: ENVO:01000884
 name: area of developed space with low usage intensity
-alt_id: NLCD:22
 def: "An area of a planet's surface which is primarily covered by cultivated or anthropically maintained vegetation and by constructed or manufactured objects and materials covering up to approximately half its extent. Such areas are used for low intensity purposes such as accommodating collections of single-family residential units. This area is in contact with an atmospheric column extending from the planetary boundary layer to the planet's exosphere with little to no physical obstruction." [https://en.wikipedia.org/wiki/Exosphere, https://en.wikipedia.org/wiki/Planetary_surface, https://www.mrlc.gov/nlcd11_leg.php]
 comment: According to the NLCD 2011, areas of developed space under low intensity usage are dominated by vegetation such as lawn grasses and include collections of single-family housing units. Further, it is asserted that "impervious surfaces", most likely referring to concrete and related substances, cover between than 20 - 49% of the area. Such thresholds - which are themselves fuzzy - are not strictly asserted in this definition.
 subset: nlcd2011
+xref: NLCD:22
 is_a: ENVO:01001269 ! area of developed space
 relationship: adjacent_to ENVO:01000323 ! atmospheric boundary layer
 relationship: part_of ENVO:01000248 ! dense settlement biome
@@ -20724,10 +20770,10 @@ property_value: IAO:0000118 "developed, low intensity" xsd:string
 [Term]
 id: ENVO:01000885
 name: area of developed space with medium usage intensity
-alt_id: NLCD:23
 def: "An area of a planet's surface which is primarily covered by constructed or manufactured objects and materials covering from half to three-forths of its extent and by cultivated or anthropically maintained vegetation. Such areas are used for medium intensity purposes such as accommodating dense collections of single-family residential units. This area is in contact with an atmospheric column extending from the planetary boundary layer to the planet's exosphere with little to no physical obstruction." [https://en.wikipedia.org/wiki/Exosphere, https://en.wikipedia.org/wiki/Planetary_surface, https://www.mrlc.gov/nlcd11_leg.php]
 comment: According to the NLCD 2011, areas of developed space under medium intensity usage are dominated by vegetation such as lawn grasses and include collections of single-family housing units. Further, it is asserted that "impervious surfaces", most likely referring to concrete and related substances, cover between than 50 - 79% of the area. Such thresholds - which are themselves fuzzy - are not strictly asserted in this definition.
 subset: nlcd2011
+xref: NLCD:23
 is_a: ENVO:01001269 ! area of developed space
 relationship: adjacent_to ENVO:01000323 ! atmospheric boundary layer
 relationship: part_of ENVO:01000248 ! dense settlement biome
@@ -20738,10 +20784,10 @@ property_value: IAO:0000118 "developed, medium intensity" xsd:string
 [Term]
 id: ENVO:01000886
 name: area of developed space with high usage intensity
-alt_id: NLCD:24
 def: "An area of developed space used for high intensity purposes such as accommodating dense and multi-occupant residential, commercial, and industrial units. This area is in contact with an atmospheric column extending from the planetary boundary layer to the planet's exosphere with little to no physical obstruction." [https://en.wikipedia.org/wiki/Exosphere, https://en.wikipedia.org/wiki/Planetary_surface, https://www.mrlc.gov/nlcd11_leg.php]
 comment: According to the NLCD 2011, areas of developed space under high intensity usage are dominated by constructed features where humans reside and work.  Examples include apartment complexes, row houses and commercial/industrial facilities. Further, it is asserted that "impervious surfaces", most likely referring to concrete and related substances, cover between than 80 - 100% of the area. Such thresholds - which are themselves fuzzy - are not strictly asserted in this definition.
 subset: nlcd2011
+xref: NLCD:24
 is_a: ENVO:01001269 ! area of developed space
 relationship: adjacent_to ENVO:01000323 ! atmospheric boundary layer
 relationship: part_of ENVO:01000249 ! urban biome
@@ -20752,10 +20798,10 @@ property_value: IAO:0000118 "developed, high intensity" xsd:string
 [Term]
 id: ENVO:01000887
 name: area of sedge- and forb-dominated herbaceous vegetation
-alt_id: NLCD:72
 def: "An area of a planet's surface which is primarily covered by sedges or forbs, possibly interpersed with grasses or grass-like plants. This area is in contact with an atmospheric column extending from the planetary boundary layer to the planet's exosphere with little to no physical obstruction." [https://en.wikipedia.org/wiki/Exosphere, https://en.wikipedia.org/wiki/Planetary_surface, https://www.mrlc.gov/nlcd11_leg.php]
 comment: According to the NLCD 2011, at least 80% of these areas are covered by sedge or forbs.  Such thresholds - which are themselves fuzzy - are not strictly asserted in this definition. The NLCD description also notes that land covered by sedge tundra and sedge tussock tundra are subsumed in this category. The original definition notes that this is intended as an "Alaska only" category.
 subset: nlcd2011
+xref: NLCD:72
 is_a: ENVO:01001305 ! vegetated area
 relationship: adjacent_to ENVO:01000323 ! atmospheric boundary layer
 relationship: part_of ENVO:01000324 ! planetary surface
@@ -20765,10 +20811,10 @@ property_value: IAO:0000118 "sedge/herbaceous" xsd:string
 [Term]
 id: ENVO:01000888
 name: area of gramanoid or herbaceous vegetation
-alt_id: NLCD:71
 def: "An area of a planet's surface which is primarily covered by gramanoid or herbaceous vegetation and which is not subject to intensive management by humans. This area is in contact with an atmospheric column extending from the planetary boundary layer to the planet's exosphere with little to no physical obstruction." [https://en.wikipedia.org/wiki/Exosphere, https://en.wikipedia.org/wiki/Planetary_surface, https://www.mrlc.gov/nlcd11_leg.php]
 comment: According to the NLCD 2011, at least 80% of these areas are covered by grasslands or non-woody, herbaceous plants.  Such thresholds - which are themselves fuzzy - are not strictly asserted in this definition. The NLCD description also notes that, while no "intensive" management such as tilling is performed in these areas, they may be used for grazing.
 subset: nlcd2011
+xref: NLCD:71
 is_a: ENVO:00000106 ! grassland area
 relationship: adjacent_to ENVO:01000323 ! atmospheric boundary layer
 relationship: part_of ENVO:01000324 ! planetary surface
@@ -20778,11 +20824,11 @@ property_value: IAO:0000118 "grassland/herbaceous" xsd:string
 [Term]
 id: ENVO:01000889
 name: area of lichen-dominated vegetation
-alt_id: NLCD:73
 def: "An area of a planet's surface which is primarily covered by fruticose or foliose lichens and which is in contact with an atmospheric column extending from the planetary boundary layer to the planet's exosphere with little to no physical obstruction." [https://en.wikipedia.org/wiki/Exosphere, https://en.wikipedia.org/wiki/Planetary_surface, https://www.mrlc.gov/nlcd11_leg.php]
 comment: According to the NLCD 2011, at least 80% of these areas are covered by lichens.  Such thresholds - which are themselves fuzzy - are not strictly asserted in this definition. The original definition notes that this is intended as an "Alaska only" category.
 subset: envoPolar
 subset: nlcd2011
+xref: NLCD:73
 is_a: ENVO:01001305 ! vegetated area
 relationship: adjacent_to ENVO:01000323 ! atmospheric boundary layer
 relationship: part_of ENVO:01000180 ! tundra biome
@@ -20793,10 +20839,10 @@ property_value: IAO:0000118 "lichens" xsd:string
 [Term]
 id: ENVO:01000890
 name: area of moss-dominated vegetation
-alt_id: NLCD:74
 def: "An area of a planet's surface which is primarily covered by mosses and which is in contact with an atmospheric column extending from the planetary boundary layer to the planet's exosphere with little to no physical obstruction." [https://en.wikipedia.org/wiki/Exosphere, https://en.wikipedia.org/wiki/Planetary_surface, https://www.mrlc.gov/nlcd11_leg.php]
 comment: According to the NLCD 2011, at least 80% of these areas are covered by mosses.  Such thresholds - which are themselves fuzzy - are not strictly asserted in this definition. The original definition notes that this is intended as an "Alaska only" category.
 subset: nlcd2011
+xref: NLCD:74
 is_a: ENVO:01001305 ! vegetated area
 relationship: adjacent_to ENVO:01000323 ! atmospheric boundary layer
 relationship: part_of ENVO:01000324 ! planetary surface
@@ -20806,10 +20852,10 @@ property_value: IAO:0000118 "moss" xsd:string
 [Term]
 id: ENVO:01000891
 name: area of pastureland or hayfields
-alt_id: NLCD:81
 def: "An area of a planet's surface which is partly covered by planted grasses, legumes, or mixtures of grass and legumes and used for livestock grazing or the production of seed or hay crops. This area is in contact with an atmospheric column extending from the planetary boundary layer to the planet's exosphere with little to no physical obstruction." [https://en.wikipedia.org/wiki/Exosphere, https://en.wikipedia.org/wiki/Planetary_surface, https://www.mrlc.gov/nlcd11_leg.php]
 comment: According to the NLCD 2011, at least 20% of these areas are covered by pasturelands or hayfields.  Such thresholds - which are themselves fuzzy - are not strictly asserted in this definition. The NLCD also notes that the crops are grown on a perennial cycle in these areas.
 subset: nlcd2011
+xref: NLCD:81
 is_a: ENVO:01000888 ! area of gramanoid or herbaceous vegetation
 relationship: adjacent_to ENVO:01000323 ! atmospheric boundary layer
 relationship: part_of ENVO:01000324 ! planetary surface
@@ -20820,10 +20866,10 @@ property_value: IAO:0000118 "pasture/hay" xsd:string
 [Term]
 id: ENVO:01000892
 name: area of cropland
-alt_id: NLCD:82
 def: "An area of a planet's surface which is partly covered either by annual crops and perennial woody crops or by actively tilled land. This area is in contact with an atmospheric column extending from the planetary boundary layer to the planet's exosphere with little to no physical obstruction." [https://en.wikipedia.org/wiki/Exosphere, https://en.wikipedia.org/wiki/Planetary_surface, https://www.mrlc.gov/nlcd11_leg.php]
 comment: According to the NLCD 2011, at least 20% of these areas are covered by croplands or actively tilled land.  Such thresholds - which are themselves fuzzy - are not strictly asserted in this definition. The NLCD provides corn, soybeans, vegetables, tobacco, and cotton as examples of annual crops and the trees and vines in orchards and vineyards as examples of perennial woody crops.
 subset: nlcd2011
+xref: NLCD:82
 is_a: ENVO:01001305 ! vegetated area
 relationship: adjacent_to ENVO:01000323 ! atmospheric boundary layer
 relationship: part_of ENVO:01000324 ! planetary surface
@@ -20834,10 +20880,10 @@ property_value: IAO:0000118 "cultivated crops" xsd:string
 [Term]
 id: ENVO:01000893
 name: area of woody wetland
-alt_id: NLCD:90
 def: "An area of a planet's surface which is partly covered by forest or shrubland vegetation and where the underlying soil or substrate is periodically saturated with or covered by water. This area is in contact with an atmospheric column extending from the planetary boundary layer to the planet's exosphere with little to no physical obstruction." [https://en.wikipedia.org/wiki/Exosphere, https://en.wikipedia.org/wiki/Planetary_surface, https://www.mrlc.gov/nlcd11_leg.php]
 comment: According to the NLCD 2011, at least 20% of these areas are covered by forest or shrubland vegetation.  Such thresholds - which are themselves fuzzy - are not strictly asserted in this definition.
 subset: nlcd2011
+xref: NLCD:90
 is_a: ENVO:01001305 ! vegetated area
 relationship: adjacent_to ENVO:01000323 ! atmospheric boundary layer
 relationship: has_part ENVO:00000043 ! wetland area
@@ -20848,10 +20894,10 @@ property_value: IAO:0000118 "woody wetlands" xsd:string
 [Term]
 id: ENVO:01000894
 name: area of emergent herbaceous wetland
-alt_id: NLCD:95
 def: "An area of a planet's surface which is primarily covered by perennial herbaceous vegetation and where the underlying soil or substrate is periodically saturated with or covered by water. This area is in contact with an atmospheric column extending from the planetary boundary layer to the planet's exosphere with little to no physical obstruction." [https://en.wikipedia.org/wiki/Exosphere, https://en.wikipedia.org/wiki/Planetary_surface, https://www.mrlc.gov/nlcd11_leg.php]
 comment: According to the NLCD 2011, at least 80% of these areas are covered by herbaceous vegetation.  Such thresholds - which are themselves fuzzy - are not strictly asserted in this definition.
 subset: nlcd2011
+xref: NLCD:95
 is_a: ENVO:01001305 ! vegetated area
 relationship: adjacent_to ENVO:01000323 ! atmospheric boundary layer
 relationship: part_of ENVO:01000324 ! planetary surface
@@ -20883,7 +20929,6 @@ creation_date: 2021-04-14T18:57:18.275Z
 [Term]
 id: ENVO:01000896
 name: freezing rainfall
-alt_id: METAR:FZRA
 def: "Water-based rainfall which freezes either 1) on impact with a surface to form a coating of clear ice (glaze) or 2) after percolating through surface layers." [https://orcid.org/0000-0003-4808-4736]
 comment: A surface temperature inversion is usually required. In such an inversion, the surface must have a temperature below freezing, while the temperature of the atmosphere where the precipitation forms is above freezing. Alternately, if the temperature of the ground surface and glazed objects is typically near or below freezing (0C or 32F), it is necessary that the water drops be supercooled before striking. Freezing rain can sometimes occur on surfaces exposed to the air (such as tree limbs) with air temperatures slightly above freezing in strong winds. Local evaporational cooling may result in freezing. Freezing rain frequently occurs, therefore, as a transient condition between the occurrence of rain and ice pellets (sleet). When encountered by an aircraft in flight, freezing rain can cause a dangerous accretion of clear icing. In aviation weather observations, this hydrometeor is encoded ZR by NOAA. {xref="https://orcid.org/0000-0003-4808-4736"}
 subset: environmental_hazards
@@ -20892,6 +20937,7 @@ subset: envoPolar
 synonym: "freezing rain" BROAD []
 synonym: "freezing rain fall" BROAD []
 xref: http://sweetontology.net/phenAtmoPrecipitation/FreezingRain
+xref: METAR:FZRA
 is_a: ENVO:01000830 ! water-based rainfall
 property_value: IAO:0000116 "This term exists, we're revising the definition with ESIP semantic Harmonization group, delete the old one.\n\nConsider adding axioms like PATO:\"decreased temperature\" to this and other cold forms of precipitation, such that we can create a grouping class to be filled by inference (with hail, sleet, snow, freezing rain). Something like precipitation below the liquid-solid phase transition point of water." xsd:string
 created_by: https://orcid.org/0000-0002-0337-8610
@@ -21709,8 +21755,8 @@ def: "A part of an astronomical body which includes, as parts, all the entities 
 comment: The gravitational sphere of influence referenced in this class' definition is the Hill sphere: a region in which an object dominates the attraction of satellites despite gravitational perturbations.
 subset: envoAstro
 is_a: ENVO:01000813 ! astronomical body part
-relationship: has_part ENVO:00000070 ! human construction
-relationship: has_part ENVO:00003074 ! manufactured product
+relationship: composed_primarily_of ENVO:00000070 ! human construction
+relationship: composed_primarily_of ENVO:00003074 ! manufactured product
 relationship: overlaps ENVO:01000817 ! biosphere
 
 [Term]
@@ -21802,6 +21848,7 @@ comment: The term may refer to a range of human activity, from handicraft to hig
 is_a: OBI:0000011
 intersection_of: OBI:0000011
 intersection_of: has_output ENVO:00003074 ! manufactured product
+relationship: has_part ENVO:01000952 ! anthropisation
 relationship: process_has_causal_agent NCBITaxon:9606
 
 [Term]
@@ -21829,6 +21876,7 @@ def: "An process during which natural or manufactured materials and products are
 is_a: OBI:0000011
 intersection_of: OBI:0000011
 intersection_of: has_output ENVO:00000070 ! human construction
+relationship: has_part ENVO:01000952 ! anthropisation
 relationship: has_part ENVO:03000010 ! material transport process
 relationship: has_part ENVO:03000043 ! material transformation process
 relationship: process_has_causal_agent NCBITaxon:9606
@@ -22757,8 +22805,8 @@ id: ENVO:01001092
 name: tectonic lake
 def: "A lake which is contained in a depression formed by the deformation and resulting lateral and vertical movements of a lithosphere." [https://en.wikipedia.org/wiki/Lake#Tectonic_lakes]
 is_a: ENVO:00000020 ! lake
-relationship: contained_in ENVO:00000309 ! depressed landform
 relationship: formed_as_result_of ENVO:01001093 ! tectonic movement
+relationship: located_in ENVO:00000309 ! depressed landform
 
 [Term]
 id: ENVO:01001093
@@ -22913,9 +22961,9 @@ is_a: ENVO:01001479 ! fluid astronomical body part
 [Term]
 id: ENVO:01001110
 name: ecosystem
-alt_id: LTER:173 {xref="https://vocab.lternet.edu/vocab/vocab/index.php?tema=173&/ecosystems"}
 def: "An environmental system which includes both living and non-living components." [https://en.wikipedia.org/wiki/Ecosystem]
 comment: This class will be primarily filled by inference, any environmental system which necessarily includes living parts should be autoclassified here.
+xref: LTER:173 {xref="https://vocab.lternet.edu/vocab/vocab/index.php?tema=173&/ecosystems"}
 is_a: ENVO:01000254 ! environmental system
 
 [Term]
@@ -23027,7 +23075,7 @@ id: ENVO:01001125
 name: ice
 def: "An ice is an environmental material which is either frozen or which is maintained in a solid state by gravitational forces or pressure." []
 comment: Note that ice may be formed at very high temperatures, due to gravitational effects and/or pressure.
-is_a: ENVO:00010483 ! environmental material
+is_a: ENVO:01000814 ! solid environmental material
 
 [Term]
 id: ENVO:01001126
@@ -23362,19 +23410,19 @@ is_obsolete: true
 [Term]
 id: ENVO:01001162
 name: IUCN strict nature reserve
-alt_id: IUCN-PACS:Ia {xref="https://www.iucn.org/theme/protected-areas/about/protected-areas-categories/category-ia-strict-nature-reserve"}
 def: "An IUCN protected area in which human visitation, use and impacts are strictly controlled and limited to ensure protection and conservation of natural biodiversity and/or geodiversity, natural ecosystem assemblages and processes, and any associated cultural and spiritual values." [https://www.iucn.org/theme/protected-areas/about/protected-areas-categories/category-ia-strict-nature-reserve]
 comment: Note that this ENVO class is not authoritative: see the associated IUCN references for a complete definition of all Protected Areas. Previous anthropogenic impacts (e.g. by early human settlement) may be present in these sites; these should be reversible by either natural processes or brief restorative interventions. Note that this ENVO class is not authoritative: see the associated IUCN references for a complete definition of all Protected Areas. {xref="https://www.iucn.org/theme/protected-areas/about/protected-areas-categories/category-ia-strict-nature-reserve"}
 synonym: "strict nature reserve" BROAD [https://www.iucn.org/theme/protected-areas/about/protected-areas-categories/category-ia-strict-nature-reserve]
+xref: IUCN-PACS:Ia {xref="https://www.iucn.org/theme/protected-areas/about/protected-areas-categories/category-ia-strict-nature-reserve"}
 is_a: ENVO:01001169 ! area protected according to IUCN guidelines
 
 [Term]
 id: ENVO:01001163
 name: IUCN wilderness area
-alt_id: IUCN-PACS:Ib {xref="https://www.iucn.org/theme/protected-areas/about/protected-areas-categories/category-ib-wilderness-area"}
 def: "An IUCN protected area which 1) is dominated by natural ecosystems, 2) is sufficiently large to allow those ecosystems to function and develop without local anthropogenic perturbation, 3) is  managed to prevent perturbations by proximate or local anthropisation, including those caused by local and/or indigenous human communities or human visitation." [https://www.iucn.org/theme/protected-areas/about/protected-areas-categories/category-ib-wilderness-area]
 comment: Note that this ENVO class is not authoritative: see the associated IUCN references for a complete definition of all Protected Areas. These areas exclude permanent built infrastructure, activities by extractive industries, commercial or intensive agriculture, extensive access by motor vehicles, unregulated visitation supported by any infrastructure, as well as other activities that may lead to significant ecosystem perturbations. {xref="https://www.iucn.org/theme/protected-areas/about/protected-areas-categories/category-ib-wilderness-area"}
 synonym: "wilderness area" EXACT [https://www.iucn.org/theme/protected-areas/about/protected-areas-categories/category-ib-wilderness-area]
+xref: IUCN-PACS:Ib {xref="https://www.iucn.org/theme/protected-areas/about/protected-areas-categories/category-ib-wilderness-area"}
 is_a: ENVO:01001169 ! area protected according to IUCN guidelines
 
 [Term]
@@ -23387,21 +23435,21 @@ is_a: PATO:0001241
 [Term]
 id: ENVO:01001165
 name: IUCN natural monument or feature
-alt_id: IUCN-PACS:III {xref="https://www.iucn.org/theme/protected-areas/about/protected-areas-categories/category-iii-natural-monument-or-feature"}
 def: "An IUCN protected area which includes a primarily natural formation designated to be of high natural heritage value and the environmental systems which it determines (e.g. the spray zone of a waterfall monument)." [https://www.iucn.org/theme/protected-areas/about/protected-areas-categories/category-iii-natural-monument-or-feature]
 comment: Note that this ENVO class is not authoritative: see the associated IUCN references for a complete definition of all Protected Areas. Further, note that the use of "natural" in the IUCN definition may allow for some anthropisation such as the presence of cave dwellings or spiritual sites. These areas tend to be smaller than other IUCN protected areas and are sites of frequent human visitation and high tourism value. They often serve to conserve natural heritage in land- or seascapes which have otherwise been anthropised. Frequently, these areas have high spiritual and cultural value as well as bio- and geodiversity value. It is not clear what would happen to the status of a IUCN Category III protected area if its key natural monument dies or degrades. IUCN acknowledges that larger ecosystem areas may need protection or management to sustain the area given Category III protection. {xref="https://www.iucn.org/theme/protected-areas/about/protected-areas-categories/category-iii-natural-monument-or-feature"}
 synonym: "natural monument" RELATED []
+xref: IUCN-PACS:III {xref="https://www.iucn.org/theme/protected-areas/about/protected-areas-categories/category-iii-natural-monument-or-feature"}
 is_a: ENVO:01001169 ! area protected according to IUCN guidelines
 relationship: overlaps ENVO:00000359 ! natural monument
 
 [Term]
 id: ENVO:01001166
 name: IUCN habitat/species management area
-alt_id: IUCN-PACS:IV {xref="https://www.iucn.org/theme/protected-areas/about/protected-areas-categories/category-iv-habitatspecies-management-area"}
 def: "An IUCN protected area within which the habitats of or ecosystems used by floral and faunal species deemed to be of international, national, or local importance are maintained, conserved, or restored such that their composition and functional integrity are maintained." [https://www.iucn.org/theme/protected-areas/about/protected-areas-categories/category-iv-habitatspecies-management-area]
 comment: Note that this ENVO class is not authoritative: see the associated IUCN references for a complete definition of all Protected Areas. Note that many Category IV sites require frequent interventions to maintain habitats for the species conserved, particularly as many of these areas are ecosystem fragments which are unable to sustain themselves. Additionally, many are used for public outreach, education, and recreation, implying regular human visitation. What qualifies a species as important is variable and often ill-defined. {xref="https://www.iucn.org/theme/protected-areas/about/protected-areas-categories/category-iv-habitatspecies-management-area"}
 synonym: "habitat management area" BROAD []
 synonym: "species management area" RELATED []
+xref: IUCN-PACS:IV {xref="https://www.iucn.org/theme/protected-areas/about/protected-areas-categories/category-iv-habitatspecies-management-area"}
 is_a: ENVO:01001169 ! area protected according to IUCN guidelines
 property_value: IAO:0000116 "Clarify what is encompassed by floral and faunal. Do microbial and fungal species (e.g. of importance to many marine systems) fall within these categories? Further, create subclasses for habitat and species conservation separately." xsd:string
 
@@ -23455,16 +23503,16 @@ is_a: ENVO:01001170 ! active ecosystem management process
 [Term]
 id: ENVO:01001172
 name: IUCN protected landscape/seascape
-alt_id: IUCN-PACS:V {comment="https://www.iucn.org/theme/protected-areas/about/protected-areas-categories/category-v-protected-landscapeseascape"}
 def: "An IUCN protected area which 1) includes entities that have been deemed to be of high scenic quality, 2) is composed of a historically stable assemblage of causally interlinked natural and anthropised ecosystems that provides cultural ecosystem services, and 3) hosts traditional and sustainable human activities." [https://www.iucn.org/theme/protected-areas/about/protected-areas-categories/category-v-protected-landscapeseascape]
 comment: Note that this ENVO class is not authoritative: see the associated IUCN references for a complete definition of all Protected Areas. The IUCN note that the integrity of balanced natural and anthropogenic ecosystems may be compromised in some Category V areas, as long as "there is reasonable hope of restoring that integrity". {xref="https://www.iucn.org/theme/protected-areas/about/protected-areas-categories/category-v-protected-landscapeseascape"}
+xref: IUCN-PACS:V {comment="https://www.iucn.org/theme/protected-areas/about/protected-areas-categories/category-v-protected-landscapeseascape"}
 is_a: ENVO:01001169 ! area protected according to IUCN guidelines
 
 [Term]
 id: ENVO:01001173
 name: sacred site
-def: "A site which is bounded or relativised by a material entity which is of spiritual significance to one or more human groups." []
-is_a: BFO:0000029
+def: "A fiat object part which contains entities of high spiritual or cultural significance to one or more human groups." []
+is_a: BFO:0000024
 
 [Term]
 id: ENVO:01001174
@@ -23642,9 +23690,9 @@ id: ENVO:01001194
 name: magnetosphere
 def: "A site in which charged particles are influenced by an astronomical body's magnetic field." [https://en.wikipedia.org/wiki/Magnetosphere]
 comment: Magentospheres are generated by the motion of active hot iron and nickle or metallic planetary cores or by the interactions of plasma in stars.. The magnetic field near the surface of many astronomical bodies resembles that of a dipole. The field lines farther away from the surface can be significantly distorted by the flow of electrically conducting plasma emitted from a nearby star. The structure and behaviour of magnetospheres depend on numerous variables, including the type of astronomical body which generates it, the period of the object's spin, the properties of the axis about which the object spins, the axis of the magnetic dipole, and the magnitude and direction of the flow of stellar wind. {xref="https://en.wikipedia.org/wiki/Magnetosphere"}
-is_a: ENVO:01000408 ! environmental zone
-relationship: contains ENVO:01000799 ! astronomical body
+is_a: BFO:0000029
 relationship: has_disposition ENVO:01001196 ! cosmic ray shielding disposition
+relationship: location_of ENVO:01000799 ! astronomical body
 relationship: overlaps ENVO:01000637 ! outer space
 property_value: IAO:0000116 "The original definition referenced astronomical objects, however, the text suggests that  reference to an astronomical body is more accurate." xsd:string
 
@@ -23694,11 +23742,10 @@ intersection_of: part_of ENVO:01000219 ! anthropogenic terrestrial biome
 [Term]
 id: ENVO:01001201
 name: marine environmental zone
-def: "An environmental zone which is bounded by material parts of a marine environment." []
+def: "An astronomical body part which is part of a marine environment." []
 comment: This class will eventually be populated by inference alone, with its subclasses distributed in more process-linked hierarchies to improve semantic density.
-is_a: ENVO:01000408 ! environmental zone
-intersection_of: ENVO:01000408 ! environmental zone
-intersection_of: part_of ENVO:01000320 ! marine environment
+is_a: ENVO:01000813 ! astronomical body part
+relationship: part_of ENVO:01000320 ! marine environment
 
 [Term]
 id: ENVO:01001202
@@ -24012,10 +24059,10 @@ is_a: ENVO:01000420 ! building part
 [Term]
 id: ENVO:01001225
 name: IUCN protected area with sustainable use of natural resources
-alt_id: IUCN-PACS:VI {xref="https://www.iucn.org/theme/protected-areas/about/protected-areas-categories/category-ib-wilderness-area"}
 def: "An IUCN protected area within which 1) natural ecosystems and their resources are either conserved or used through non-industrial human activities, 2) usage activites contribute to conservation goals, ensuring inter-generational security for local communities' livelihoods, and 3) the majority of benefits derived from the use of ecosystems are received by communities living near or in the area." [https://www.iucn.org/theme/protected-areas/about/protected-areas-categories/category-ib-wilderness-area]
 comment: Note that this ENVO class is not authoritative: see the associated IUCN references for a complete definition of all Protected Areas.  Note, that the IUCN recommends that a proportion of the area is retained in a natural condition (e.g. a no-take management zone). As this is a recommendation rather than a rule, this ENVO class does not include IUCN categories with strict conservation regimes as necessary parts. An emphasis is placed on the integration of  cultural approaches, belief systems and world-views possessed by human populations in and around the protected area into the conservation approaches used. Further, these areas host activities which facilitate scientific research, environmental monitoring, recreation, and "appropriate" small-scale tourism. {xref="https://www.iucn.org/theme/protected-areas/about/protected-areas-categories/category-ib-wilderness-area"}
 synonym: "protected area with sustainable use of natural resources" BROAD [https://www.iucn.org/theme/protected-areas/about/protected-areas-categories/category-ib-wilderness-area]
+xref: IUCN-PACS:VI {xref="https://www.iucn.org/theme/protected-areas/about/protected-areas-categories/category-ib-wilderness-area"}
 is_a: ENVO:01001169 ! area protected according to IUCN guidelines
 
 [Term]
@@ -24039,10 +24086,10 @@ id: ENVO:01001228
 name: Hill sphere
 def: "A site in which the attraction of satellites by gravitation is dominated by an astronomical body, bounded by a zero-velocity surface." [https://en.wikipedia.org/wiki/Hill_sphere]
 synonym: "Roche sphere" EXACT []
-is_a: ENVO:01000408 ! environmental zone
-relationship: contains ENVO:01000799 ! astronomical body
+is_a: BFO:0000029
 relationship: contains_process ENVO:01001130 {comment="QCR: 'process has causal agent' max 1 'astronomical body'"} ! gravitational motion
 relationship: contains_process ENVO:01001130 ! gravitational motion
+relationship: location_of ENVO:01000799 ! astronomical body
 relationship: process_has_causal_agent ENVO:01000799 {comment="QCR: 'process has causal agent' max 1 'astronomical body'"} ! astronomical body
 
 [Term]
@@ -24052,7 +24099,7 @@ def: "A site in which the combined gravitational pull of the two large astronomi
 synonym: "L-points" EXACT []
 synonym: "Lagrange points" EXACT []
 synonym: "libration points" EXACT []
-is_a: ENVO:01000408 ! environmental zone
+is_a: BFO:0000029
 relationship: has_component ENVO:01001228 {minCardinality="2"} ! Hill sphere
 relationship: overlaps ENVO:01001228 ! Hill sphere
 
@@ -24176,6 +24223,7 @@ id: ENVO:01001244
 name: cropland ecosystem
 def: "An ecosystem which 1) is determined by communities of annual crops, perennial woody crops, or by actively tilled land, 2) is primarily used for agricultural activity, and 3) contains no village or larger human settlement." [http://dx.doi.org/10.1890/070062]
 is_a: ENVO:01001790 ! terrestrial ecosystem
+relationship: formed_as_result_of ENVO:01000952 ! anthropisation
 
 [Term]
 id: ENVO:01001245
@@ -24361,7 +24409,7 @@ id: ENVO:01001263
 name: area designated for human defecation
 def: "A site which has been designated as a place where humans may defecate." [] {http://purl.obolibrary.org/obo/IAO_0000119="https://eupathdb.org/eupathdb/"}
 synonym: "defecation area" BROAD []
-is_a: ENVO:01000408 ! environmental zone
+is_a: ENVO:01003020 ! fiat part of an astronomical object
 
 [Term]
 id: ENVO:01001264
@@ -24369,7 +24417,7 @@ name: area designated for waste storage
 def: "A site which has been designated for the storage of waste material." [https://eupathdb.org/eupathdb/]
 synonym: "waste disposal site" RELATED []
 synonym: "waste storage site" RELATED []
-is_a: ENVO:01000408 ! environmental zone
+is_a: ENVO:01003020 ! fiat part of an astronomical object
 
 [Term]
 id: ENVO:01001265
@@ -24658,9 +24706,9 @@ intersection_of: part_of ENVO:01000267 ! atmosphere
 [Term]
 id: ENVO:01001300
 name: area of low atmospheric pressure
-def: "An atmospheric zone in which atmospheric gaseous masses have reduced atmospheric pressure." []
+def: "A gaseous part of an atmosphere in which gases have reduced atmospheric pressure." []
 comment: Air is not specified directly (although the definition subsumes air masses) to allow for other forms of low pressure areas in planetary atmospheres.
-is_a: ENVO:01001299 ! atmospheric zone
+is_a: ENVO:01001645 ! gaseous part of an atmosphere
 
 [Term]
 id: ENVO:01001301
@@ -24677,11 +24725,11 @@ relationship: part_of ENVO:00000045 ! estuary
 [Term]
 id: ENVO:01001302
 name: estuarine coastal surface layer
-alt_id: CMECS:595
 def: "A layer of estuarine water which extends a few centimeters from the surface of the water column towards the estuary bed and from the shore to a fiat boundary where the estuary bed below the water column reaches a depth of 4 meters." []
 comment: This class aligns to the Coastal and Marine Ecological Classification Standard (CMECS). In ENVO, we may adapt the definition for consistency, but the semantics (meaning) of the term should be unaffected. Please consult the CMECS catalogue (https://cmecscatalog.org/) for authoritative and semantically unconstrained definitions.
 subset: envoCmecs
 subset: envoMarine
+xref: CMECS:595
 xref: https://cmecscatalog.org/cmecs/classification/unit/595.html
 is_a: ENVO:01001309 ! liquid air-water interface layer
 relationship: adjacent_to ENVO:00000486 ! shoreline
@@ -24761,11 +24809,11 @@ intersection_of: composed_primarily_of ENVO:01000814 ! solid environmental mater
 [Term]
 id: ENVO:01001312
 name: estuarine coastal upper water column
-alt_id: CMECS:596
 def: "A layer of estuarine water which extends from the surface of the water column to the pycnocline or mid-depth and from the shore to a fiat boundary where the estuary bed below the water column reaches a depth of 4 meters." []
 comment: This class aligns to the Coastal and Marine Ecological Classification Standard (CMECS). In ENVO, we may adapt the definition for consistency, but the semantics (meaning) of the term should be unaffected. Please consult the CMECS catalogue (https://cmecscatalog.org/) for authoritative and semantically unconstrained definitions.
 subset: envoCmecs
 subset: envoMarine
+xref: CMECS:596
 xref: https://cmecscatalog.org/cmecs/classification/unit/596.html
 is_a: ENVO:01001309 ! liquid air-water interface layer
 relationship: adjacent_to ENVO:00000486 ! shoreline
@@ -24778,11 +24826,11 @@ property_value: IAO:0000116 "\"Mid-depth\", present in many CMECS classes, is am
 [Term]
 id: ENVO:01001313
 name: estuarine coastal pycnocline
-alt_id: CMECS:597
 def: "A pycnocline which is part of an estuarine water body, spanning from the shore to a fiat boundary where the estuary bed below the water column reaches a depth of 4 meters." []
 comment: This class aligns to the Coastal and Marine Ecological Classification Standard (CMECS). In ENVO, we may adapt the definition for consistency, but the semantics (meaning) of the term should be unaffected. Please consult the CMECS catalogue (https://cmecscatalog.org/) for authoritative and semantically unconstrained definitions.
 subset: envoCmecs
 subset: envoMarine
+xref: CMECS:597
 xref: https://cmecscatalog.org/cmecs/classification/unit/597.html
 is_a: ENVO:01000259 ! pycnocline
 relationship: adjacent_to ENVO:00000486 ! shoreline
@@ -24794,11 +24842,11 @@ relationship: part_of ENVO:00000045 ! estuary
 [Term]
 id: ENVO:01001314
 name: estuarine coastal lower water column
-alt_id: CMECS:598
 def: "A layer of estuarine water which extends from an estuarine pycnocline or mid-depth to the estuarine bed and from the shore to a fiat boundary where the estuary bed below the water column reaches a depth of 4 meters." []
 comment: This class aligns to the Coastal and Marine Ecological Classification Standard (CMECS). In ENVO, we may adapt the definition for consistency, but the semantics (meaning) of the term should be unaffected. Please consult the CMECS catalogue (https://cmecscatalog.org/) for authoritative and semantically unconstrained definitions.
 subset: envoCmecs
 subset: envoMarine
+xref: CMECS:598
 xref: https://cmecscatalog.org/cmecs/classification/unit/598.html
 is_a: ENVO:01001301 ! aquatic estuarine layer
 relationship: adjacent_to ENVO:00000486 ! shoreline
@@ -24810,11 +24858,11 @@ property_value: IAO:0000116 "\"Mid-depth\", present in many CMECS classes, is am
 [Term]
 id: ENVO:01001315
 name: estuarine open water surface layer
-alt_id: CMECS:599
 def: "A layer of estuarine water which extends a few centimeters from the surface of the water column towards the estuary bed and from a fiat boundary where the estuary bed below the water column reaches a depth of 4 meters until the end of the estuary most distal from the coast." []
 comment: This class aligns to the Coastal and Marine Ecological Classification Standard (CMECS). In ENVO, we may adapt the definition for consistency, but the semantics (meaning) of the term should be unaffected. Please consult the CMECS catalogue (https://cmecscatalog.org/) for authoritative and semantically unconstrained definitions.
 subset: envoCmecs
 subset: envoMarine
+xref: CMECS:599
 xref: https://cmecscatalog.org/cmecs/classification/unit/599.html
 is_a: ENVO:01001309 ! liquid air-water interface layer
 relationship: composed_primarily_of ENVO:01000301 ! estuarine water
@@ -24823,11 +24871,11 @@ relationship: part_of ENVO:00000045 ! estuary
 [Term]
 id: ENVO:01001316
 name: estuarine open water upper water column
-alt_id: CMECS:600
 def: "A layer of estuarine water which extends from the surface of the water column to the pycnocline or mid-depth and from a fiat boundary where the estuary bed below the water column reaches a depth of 4 meters until the end of the estuary most distal from the coast." []
 comment: This class aligns to the Coastal and Marine Ecological Classification Standard (CMECS). In ENVO, we may adapt the definition for consistency, but the semantics (meaning) of the term should be unaffected. Please consult the CMECS catalogue (https://cmecscatalog.org/) for authoritative and semantically unconstrained definitions.
 subset: envoCmecs
 subset: envoMarine
+xref: CMECS:600
 xref: https://cmecscatalog.org/cmecs/classification/unit/600.html
 is_a: ENVO:01001309 ! liquid air-water interface layer
 relationship: adjacent_to ENVO:01001323 ! estuarine open water pycnocline
@@ -24839,11 +24887,11 @@ property_value: IAO:0000116 "\"Mid-depth\", present in many CMECS classes, is am
 [Term]
 id: ENVO:01001317
 name: estuarine tidal riverine coastal surface layer
-alt_id: CMECS:603
 def: "A layer of fresh estuarine water which extends a few centimeters from the surface of the water column towards the estuary bed and from the land-water interface to a fiat boundary where the estuary bed below the water column reaches a depth of 4 meters." []
 comment: This class aligns to the Coastal and Marine Ecological Classification Standard (CMECS). In ENVO, we may adapt the definition for consistency, but the semantics (meaning) of the term should be unaffected. Please consult the CMECS catalogue (https://cmecscatalog.org/) for authoritative and semantically unconstrained definitions.
 subset: envoCmecs
 subset: envoMarine
+xref: CMECS:603
 xref: https://cmecscatalog.org/cmecs/classification/unit/603.html
 is_a: ENVO:01001302 ! estuarine coastal surface layer
 relationship: adjacent_to ENVO:00000486 ! shoreline
@@ -24854,11 +24902,11 @@ property_value: IAO:0000116 "What causes this freshwater layer to be \"tidal\" i
 [Term]
 id: ENVO:01001318
 name: estuarine tidal riverine coastal upper water column
-alt_id: CMECS:604
 def: "A layer of fresh estuarine water which extends from the surface of the water column to the pycnocline or mid-depth and from the land-water interface to a fiat boundary where the estuary bed below the water column reaches a depth of 4 meters." []
 comment: This class aligns to the Coastal and Marine Ecological Classification Standard (CMECS). In ENVO, we may adapt the definition for consistency, but the semantics (meaning) of the term should be unaffected. Please consult the CMECS catalogue (https://cmecscatalog.org/) for authoritative and semantically unconstrained definitions.
 subset: envoCmecs
 subset: envoMarine
+xref: CMECS:604
 xref: https://cmecscatalog.org/cmecs/classification/unit/604.html
 is_a: ENVO:01001312 ! estuarine coastal upper water column
 relationship: adjacent_to ENVO:00000486 ! shoreline
@@ -24881,11 +24929,11 @@ intersection_of: composed_primarily_of ENVO:00002010 ! saline water
 [Term]
 id: ENVO:01001320
 name: fresh water body
-alt_id: LTER:216 {xref="https://vocab.lternet.edu/vocab/vocab/index.php?tema=216&/freshwater"}
 def: "A body of water which is primarily composed of freshwater, with low solute content." []
 comment: This class has its subclasses primarily populated by inference. The threshold for what constitutes "fresh" water is variable and should typically be deferred to an applicatoin layer resource.
 synonym: "fresh body of water" EXACT []
 synonym: "freshwater body" EXACT []
+xref: LTER:216 {xref="https://vocab.lternet.edu/vocab/vocab/index.php?tema=216&/freshwater"}
 is_a: ENVO:00000063 ! water body
 intersection_of: ENVO:00000063 ! water body
 intersection_of: composed_primarily_of ENVO:00002011 ! fresh water
@@ -24903,11 +24951,11 @@ intersection_of: composed_primarily_of ENVO:00002019 ! brackish water
 [Term]
 id: ENVO:01001322
 name: estuarine open water lower water column
-alt_id: CMECS:602
 def: "A layer of estuarine water which extends from an estuarine pycnocline or mid-depth to the estuary bed and from a fiat boundary where the estuary bed below the water column reaches a depth of 4 meters to end of the estuary most distal from the coast." []
 comment: This class aligns to the Coastal and Marine Ecological Classification Standard (CMECS). In ENVO, we may adapt the definition for consistency, but the semantics (meaning) of the term should be unaffected. Please consult the CMECS catalogue (https://cmecscatalog.org/) for authoritative and semantically unconstrained definitions.
 subset: envoCmecs
 subset: envoMarine
+xref: CMECS:602
 xref: https://cmecscatalog.org/cmecs/classification/unit/602.html
 is_a: ENVO:01001301 ! aquatic estuarine layer
 relationship: adjacent_to ENVO:01001323 ! estuarine open water pycnocline
@@ -24918,11 +24966,11 @@ property_value: IAO:0000116 "\"Mid-depth\", present in many CMECS classes, is am
 [Term]
 id: ENVO:01001323
 name: estuarine open water pycnocline
-alt_id: CMECS:601
 def: "A pycnocline which is part of an estuarine water body, spanning from a fiat boundary where the estuary bed below the water column reaches a depth of 4 meters until the end of the estuary most distal from the coast." []
 comment: This class aligns to the Coastal and Marine Ecological Classification Standard (CMECS). In ENVO, we may adapt the definition for consistency, but the semantics (meaning) of the term should be unaffected. Please consult the CMECS catalogue (https://cmecscatalog.org/) for authoritative and semantically unconstrained definitions.
 subset: envoCmecs
 subset: envoMarine
+xref: CMECS:601
 xref: https://cmecscatalog.org/cmecs/classification/unit/601.html
 is_a: ENVO:01000259 ! pycnocline
 relationship: adjacent_to ENVO:01001316 ! estuarine open water upper water column
@@ -24933,11 +24981,11 @@ relationship: part_of ENVO:00000045 ! estuary
 [Term]
 id: ENVO:01001324
 name: estuarine tidal riverine coastal pycnocline
-alt_id: CMECS:605
 def: "An estuarine coastal pycnocline which is composed primarily of fresh tidal water." []
 comment: This class aligns to the Coastal and Marine Ecological Classification Standard (CMECS). In ENVO, we may adapt the definition for consistency, but the semantics (meaning) of the term should be unaffected. Please consult the CMECS catalogue (https://cmecscatalog.org/) for authoritative and semantically unconstrained definitions.
 subset: envoCmecs
 subset: envoMarine
+xref: CMECS:605
 xref: https://cmecscatalog.org/cmecs/classification/unit/605.html
 is_a: ENVO:01001313 ! estuarine coastal pycnocline
 relationship: adjacent_to ENVO:00000486 ! shoreline
@@ -24950,11 +24998,11 @@ property_value: IAO:0000116 "What causes this freshwater layer to be \"tidal\" i
 [Term]
 id: ENVO:01001325
 name: estuarine tidal riverine coastal lower water column
-alt_id: CMECS:606
 def: "A layer of fresh estuarine water which extends from an estuarine pycnocline or mid-depth to the estuarine bed and from the land-water interface to a fiat boundary where the estuary bed below the water column reaches a depth of 4 meters." []
 comment: This class aligns to the Coastal and Marine Ecological Classification Standard (CMECS). In ENVO, we may adapt the definition for consistency, but the semantics (meaning) of the term should be unaffected. Please consult the CMECS catalogue (https://cmecscatalog.org/) for authoritative and semantically unconstrained definitions.
 subset: envoCmecs
 subset: envoMarine
+xref: CMECS:606
 xref: https://cmecscatalog.org/cmecs/classification/unit/606.html
 is_a: ENVO:01001314 ! estuarine coastal lower water column
 relationship: adjacent_to ENVO:00000486 ! shoreline
@@ -24966,11 +25014,11 @@ property_value: IAO:0000116 "\"Mid-depth\", present in many CMECS classes, is am
 [Term]
 id: ENVO:01001326
 name: estuarine tidal riverine open water surface layer
-alt_id: CMECS:607
 def: "A layer of fresh, tidal estuarine water which extends a few centimeters from the surface of the water column towards the estuary bed and from a fiat boundary where the estuary bed below the water column reaches a depth of 4 meters until the end of the estuary most distal from the coast." []
 comment: This class aligns to the Coastal and Marine Ecological Classification Standard (CMECS). In ENVO, we may adapt the definition for consistency, but the semantics (meaning) of the term should be unaffected. Please consult the CMECS catalogue (https://cmecscatalog.org/) for authoritative and semantically unconstrained definitions.
 subset: envoCmecs
 subset: envoMarine
+xref: CMECS:607
 xref: https://cmecscatalog.org/cmecs/classification/unit/607.html
 is_a: ENVO:01001315 ! estuarine open water surface layer
 relationship: composed_primarily_of ENVO:00002011 ! fresh water
@@ -24980,11 +25028,11 @@ property_value: IAO:0000116 "What causes this freshwater layer to be \"tidal\" i
 [Term]
 id: ENVO:01001327
 name: estuarine tidal riverine open water upper water column
-alt_id: CMECS:608
 def: "A layer of fresh, tidal estuarine water which extends from the surface of the water column to the pycnocline or mid-depth and from a fiat boundary where the estuary bed below the water column reaches a depth of 4 meters until the end of the estuary most distal from the coast." []
 comment: This class aligns to the Coastal and Marine Ecological Classification Standard (CMECS). In ENVO, we may adapt the definition for consistency, but the semantics (meaning) of the term should be unaffected. Please consult the CMECS catalogue (https://cmecscatalog.org/) for authoritative and semantically unconstrained definitions.
 subset: envoCmecs
 subset: envoMarine
+xref: CMECS:608
 xref: https://cmecscatalog.org/cmecs/classification/unit/608.html
 is_a: ENVO:01001316 ! estuarine open water upper water column
 relationship: adjacent_to ENVO:01001323 ! estuarine open water pycnocline
@@ -24996,11 +25044,11 @@ property_value: IAO:0000116 "\"Mid-depth\", present in many CMECS classes, is am
 [Term]
 id: ENVO:01001328
 name: estuarine tidal riverine open water pycnocline
-alt_id: CMECS:609
 def: "An estuarine open water pycnocline which is composed primarily of fresh tidal water." []
 comment: This class aligns to the Coastal and Marine Ecological Classification Standard (CMECS). In ENVO, we may adapt the definition for consistency, but the semantics (meaning) of the term should be unaffected. Please consult the CMECS catalogue (https://cmecscatalog.org/) for authoritative and semantically unconstrained definitions.
 subset: envoCmecs
 subset: envoMarine
+xref: CMECS:609
 xref: https://cmecscatalog.org/cmecs/classification/unit/609.html
 is_a: ENVO:01001323 ! estuarine open water pycnocline
 relationship: adjacent_to ENVO:01001316 ! estuarine open water upper water column
@@ -25012,11 +25060,11 @@ property_value: IAO:0000116 "What causes this freshwater layer to be \"tidal\" i
 [Term]
 id: ENVO:01001329
 name: estuarine tidal riverine open water lower water column
-alt_id: CMECS:610
 def: "A layer of fresh estuarine water which extends from an estuarine pycnocline or mid-depth to the estuary bed and from a fiat boundary where the estuary bed below the water column reaches a depth of 4 meters to end of the estuary most distal from the coast." []
 comment: This class aligns to the Coastal and Marine Ecological Classification Standard (CMECS). In ENVO, we may adapt the definition for consistency, but the semantics (meaning) of the term should be unaffected. Please consult the CMECS catalogue (https://cmecscatalog.org/) for authoritative and semantically unconstrained definitions.
 subset: envoCmecs
 subset: envoMarine
+xref: CMECS:610
 xref: https://cmecscatalog.org/cmecs/classification/unit/610.html
 is_a: ENVO:01001301 ! aquatic estuarine layer
 relationship: adjacent_to ENVO:01001323 ! estuarine open water pycnocline
@@ -25058,12 +25106,12 @@ intersection_of: has_input CHEBI:28659
 [Term]
 id: ENVO:01001333
 name: marine tidal flow process
-alt_id: CMECS:643
 def: "A tidal flow process which occurs in an ocean or sea and during which tidal movements generate advective flows, often amplified in velocity when moving through an inlet, pass or channel." []
 comment: This class aligns to the Coastal and Marine Ecological Classification Standard (CMECS). In ENVO, we may adapt the definition for consistency, but the semantics (meaning) of the term should be unaffected. Please consult the CMECS catalogue (https://cmecscatalog.org/) for authoritative and semantically unconstrained definitions.
 subset: envoCmecs
 subset: envoMarine
 synonym: "tidal flow" RELATED []
+xref: CMECS:643
 xref: https://cmecscatalog.org/cmecs/classification/unit/643.html
 is_a: ENVO:01001342 ! tidal flow process
 
@@ -25112,12 +25160,12 @@ relationship: partially_surrounded_by ENVO:01000599 ! river water
 [Term]
 id: ENVO:01001338
 name: diurnal marine tidal flow zone
-alt_id: CMECS:664
 def: "A marine zone in which ocean waters undergo a diurnal (once per day) tidal oscillation - with one high and one low tide per day - due to the supression of a second daily oscillation by the geometry of the ocean basin and obstructions presented by land masses." []
 comment: This class aligns to the Coastal and Marine Ecological Classification Standard (CMECS). In ENVO, we may adapt the definition for consistency, but the semantics (meaning) of the term should be unaffected. In this case, the definition aligns with ENVO's "environmental zone" semantics. Alternate classes have been created to accommodate the process of diurnal tidal flow. The as the frequency of the process does not influence the semantics of the resulting hydroform, please use ENVO_01001336 to reference the hydroform rather than the zone or the process. Please consult the CMECS catalogue (https://cmecscatalog.org/) for authoritative and semantically unconstrained definitions.
 subset: envoCmecs
 subset: envoMarine
 synonym: "diurnal tidal flow" RELATED []
+xref: CMECS:664
 xref: https://cmecscatalog.org/cmecs/classification/unit/664.html
 is_a: ENVO:01001341 ! marine tidal flow zone
 relationship: contains_process ENVO:01001339 ! diurnal marine tidal flow process
@@ -25137,12 +25185,12 @@ property_value: IAO:0000118 "diurnal tidal flow" xsd:string
 [Term]
 id: ENVO:01001340
 name: semi-diurnal marine tidal flow zone
-alt_id: CMECS:666
 def: "A marine tidal flow zone in which ocean waters undergo a semi-diurnal (twice per day) tidal oscillation - with two high and two low tides per day of roughly equal amplitude." []
 comment: This class aligns to the Coastal and Marine Ecological Classification Standard (CMECS). In ENVO, we may adapt the definition for consistency, but the semantics (meaning) of the term should be unaffected. In this case, the definition aligns with ENVO's "environmental zone" semantics. Alternate classes have been created to accommodate the process of diurnal tidal flow. The as the frequency of the process does not influence the semantics of the resulting hydroform, please use ENVO:01001336 to reference the hydroform rather than the zone or the process. Please consult the CMECS catalogue (https://cmecscatalog.org/) for authoritative and semantically unconstrained definitions.
 subset: envoCmecs
 subset: envoMarine
 synonym: "semi-diurnal tidal flow" RELATED []
+xref: CMECS:666
 xref: https://cmecscatalog.org/cmecs/classification/unit/666.html
 is_a: ENVO:01001341 ! marine tidal flow zone
 relationship: contains_process ENVO:01001343 ! semi-diurnal marine tidal flow process
@@ -25292,7 +25340,7 @@ name: volcanic crater glacier
 def: "A glacier which is contained in the site bounded by a volcanic crater." []
 synonym: "crater glacier" RELATED []
 is_a: ENVO:00000133 ! glacier
-relationship: contained_in ENVO:01001356 ! volcanic crater zone
+relationship: located_in ENVO:01001356 ! volcanic crater zone
 
 [Term]
 id: ENVO:01001355
@@ -25311,7 +25359,7 @@ relationship: partially_surrounded_by ENVO:00000246 ! volcanic crater
 [Term]
 id: ENVO:01001357
 name: desert
-def: "A landform which has been rendered barren or partially barren by environmental extremes, especially by low rainfall." []
+def: "A landform which has been rendered barren or partially barren by environmental extremes, especially by low rainfall, and which loses more liquid water by evapotranspiration than is supplied by precipitation." []
 is_a: ENVO:01001884 ! surface landform
 relationship: overlaps ENVO:00000097 ! desert area
 
@@ -25420,11 +25468,11 @@ is_a: ENVO:02500000 ! environmental system process
 [Term]
 id: ENVO:01001369
 name: tidal mangrove shrubland
-alt_id: CMECS:577
 def: "A shrubland biome which is densely vegetated by dwarf or short mangroves (and associates) that are generally less than 6 meters in height, is tidally influenced,  is located in tropical or subtropical areas." []
 comment: This class aligns to the Coastal and Marine Ecological Classification Standard (CMECS). In ENVO, we may adapt the definition for consistency, but the semantics (meaning) of the term should be unaffected. Please consult the CMECS catalogue (https://cmecscatalog.org/) for authoritative and semantically unconstrained definitions. CMECS provides the following notes: "Commonly found on intertidal mud flats along the shores of estuaries. Tidal mangrove shrublands may include immature stands or stunted mature trees that indicate a harsh growing environment. Areas characterized by tall mangroves (> 6 meters) are placed in the Tidal Mangrove Forest Biotic Group. Where tidal amplitude is relatively low, the vegetation forms narrow bands along the coastal plains, and it rarely penetrates inland more than several kilometers along rivers. Where tidal amplitude is greater, mangroves extend further inland along river courses, forming extensive stands in the major river deltas. Also, mangrove cays may occur within the lagoon complex of barrier reefs. The list of biotic communities for this group is long: a few examples are provided below, and the complete list is available in Appendix F"
 subset: envoCmecs
 subset: envoMarine
+xref: CMECS:577
 xref: https://cmecscatalog.org/cmecs/classification/unit/577.html
 is_a: ENVO:01000176 ! shrubland biome
 relationship: contains_process ENVO:01001342 ! tidal flow process
@@ -25504,12 +25552,12 @@ created_by: https://orcid.org/0000-0002-4366-3088
 [Term]
 id: ENVO:01001376
 name: marine faunal bed
-alt_id: CMECS:391
 def: "A marine bed which is covered by animals which have benthic habitats, including attached, clinging, sessile, infaunal, burrowing, laying, interstitial, and slow-moving animals, but not animals that have created substrate." []
 comment: This class aligns to the Coastal and Marine Ecological Classification Standard (CMECS). In ENVO, we may adapt the definition for consistency, but the semantics (meaning) of the term should be unaffected. Please consult the CMECS catalogue (https://cmecscatalog.org/) for authoritative and semantically unconstrained definitions. An excerpt of the CMECS description: "Faunal Beds are highly dependent on substrate type. Individual species and entire biotic communities have adapted specialized anatomies and behaviors for survival on hard substrates; other species and communities have specialized and developed adaptations for life on soft substrates. Generalist fauna also occur (e.g., certain holothurians, crustaceans, and sponges) that can succeed on both substrate types. However, substrate type is such a defining aspect of the Faunal Bed class that CMECS Faunal Bed subclasses are assigned as physical-biological associations involving both biota and substrate."
 subset: envoCmecs
 subset: envoMarine
 synonym: "faunal bed" BROAD []
+xref: CMECS:391
 xref: https://cmecscatalog.org/cmecs/classification/unit/391.html
 is_a: ENVO:01001378 ! marine bed
 property_value: IAO:0000116 "\"Mid-depth\", present in many CMECS classes, is ambiguous and needs refinement." xsd:string
@@ -25541,11 +25589,11 @@ created_by: https://orcid.org/0000-0002-4366-3088
 [Term]
 id: ENVO:01001379
 name: mussel bed
-alt_id: CMECS:532
 def: "A marine faunal bed which is dominated by mussels of the Mytilus or Modiolus genera either 1) resting on the sediment surface, 2)  partially embedded in the sediment, 3) attached to conspecifics (by using their byssal threads), or 4) attached to a piece of gravel in slightly gravelly fine sediments." []
 comment: This class aligns to the Coastal and Marine Ecological Classification Standard (CMECS). In ENVO, we may adapt the definition for consistency, but the semantics (meaning) of the term should be unaffected. Please consult the CMECS catalogue (https://cmecscatalog.org/) for authoritative and semantically unconstrained definitions. An excerpt of the CMECS description: "Faunal Beds are highly dependent on substrate type. Individual species and entire biotic communities have adapted specialized anatomies and behaviors for survival on hard substrates; other species and communities have specialized and developed adaptations for life on soft substrates. Generalist fauna also occur (e.g., certain holothurians, crustaceans, and sponges) that can succeed on both substrate types. However, substrate type is such a defining aspect of the Faunal Bed class that CMECS Faunal Bed subclasses are assigned as physical-biological associations involving both biota and substrate."
 subset: envoCmecs
 subset: envoMarine
+xref: CMECS:532
 xref: https://cmecscatalog.org/cmecs/classification/unit/532.html
 is_a: ENVO:01001376 ! marine faunal bed
 relationship: has_part ENVO:01001192 ! sediment surface
@@ -25555,11 +25603,11 @@ created_by: https://orcid.org/0000-0002-4366-3088
 [Term]
 id: ENVO:01001380
 name: neritic mussel reef
-alt_id: CMECS:338
 def: "A marine reef which is located on a shelf (i.e. in the neritic zone) and primarily composed of self-adhered or conglomerated mussel shells." []
 comment: This class aligns to the Coastal and Marine Ecological Classification Standard (CMECS). In ENVO, we may adapt the definition for consistency, but the semantics (meaning) of the term should be unaffected. Please consult the CMECS catalogue (https://cmecscatalog.org/) for authoritative and semantically unconstrained definitions.
 subset: envoCmecs
 subset: envoMarine
+xref: CMECS:338
 xref: https://cmecscatalog.org/cmecs/classification/unit/338.html
 is_a: ENVO:01001386 ! mussel reef
 relationship: part_of ENVO:00000223 ! continental shelf
@@ -25581,11 +25629,11 @@ created_by: https://orcid.org/0000-0002-4366-3088
 [Term]
 id: ENVO:01001382
 name: area of attached mussel assemblages
-alt_id: CMECS:532
 def: "An area which is dominated by dense accumulations of mussels attached to a substrate other than conspecifics, including the associated faunal communities and predators present on the mussels (e.g., starfish)." []
 comment: This class aligns to the Coastal and Marine Ecological Classification Standard (CMECS). In ENVO, we may adapt the definition for consistency, but the semantics (meaning) of the term should be unaffected. Please consult the CMECS catalogue (https://cmecscatalog.org/) for authoritative and semantically unconstrained definitions. From the CMECs definition: "Areas where mussels have constructed substrate are classified as Mussel Reef. Areas where mussels are not attached to a hard substrate are classified as Soft Sediment Fauna, Mussel Bed."
 subset: envoCmecs
 subset: envoMarine
+xref: CMECS:532
 xref: https://cmecscatalog.org/cmecs/classification/unit/515.html
 is_a: ENVO:01001384 ! area of attached faunal communities
 relationship: part_of ENVO:01000024 ! marine benthic biome
@@ -25595,11 +25643,11 @@ created_by: https://orcid.org/0000-0002-4366-3088
 [Term]
 id: ENVO:01001383
 name: area of attached Modiolus assemblages
-alt_id: CMECS:532
 def: "An area which is dominated by dense accumulations of mussels, of the genus Modiolus, attached to a substrate other than conspecifics, including the associated faunal communities and predators present on the mussels (e.g., starfish)." []
 comment: This class aligns to the Coastal and Marine Ecological Classification Standard (CMECS). In ENVO, we may adapt the definition for consistency, but the semantics (meaning) of the term should be unaffected. Please consult the CMECS catalogue (https://cmecscatalog.org/) for authoritative and semantically unconstrained definitions. From the CMECs definition: "Areas where mussels have constructed substrate are classified as Mussel Reef. Areas where mussels are not attached to a hard substrate are classified as Soft Sediment Fauna, Mussel Bed."
 subset: envoCmecs
 subset: envoMarine
+xref: CMECS:532
 xref: https://cmecscatalog.org/cmecs/classification/unit/883.html
 is_a: ENVO:01001382 ! area of attached mussel assemblages
 created_by: https://orcid.org/0000-0002-4366-3088
@@ -25608,7 +25656,7 @@ created_by: https://orcid.org/0000-0002-4366-3088
 id: ENVO:01001384
 name: area of attached faunal communities
 def: "An environmental zone within which ecological communities of  animals are attached to some substrate." []
-is_a: ENVO:01000408 ! environmental zone
+is_a: ENVO:01003020 ! fiat part of an astronomical object
 created_by: https://orcid.org/0000-0002-4366-3088
 
 [Term]
@@ -25625,11 +25673,11 @@ created_by: https://orcid.org/0000-0002-4366-3088
 [Term]
 id: ENVO:01001386
 name: mussel reef
-alt_id: CMECS:338
 def: "A marine reef which is primarily composed of self-adhered or conglomerated mussel shells." []
 comment: This class aligns to the Coastal and Marine Ecological Classification Standard (CMECS). In ENVO, we may adapt the definition for consistency, but the semantics (meaning) of the term should be unaffected. Please consult the CMECS catalogue (https://cmecscatalog.org/) for authoritative and semantically unconstrained definitions.
 subset: envoCmecs
 subset: envoMarine
+xref: CMECS:338
 xref: https://cmecscatalog.org/cmecs/classification/unit/338.html
 is_a: ENVO:01000143 ! marine reef
 relationship: part_of ENVO:00000223 ! continental shelf
@@ -26166,6 +26214,7 @@ id: ENVO:01001436
 name: planned environmental usage process
 def: "A planned process during which humans access and obtain resources, benefits, or services from a natural or anthropised ecosystem." []
 is_a: OBI:0000011
+relationship: has_part ENVO:01000952 ! anthropisation
 relationship: has_part ENVO:01001170 ! active ecosystem management process
 relationship: process_has_causal_agent NCBITaxon:9606
 created_by: https://orcid.org/0000-0002-4366-3088
@@ -26439,7 +26488,6 @@ created_by: https://orcid.org/0000-0002-4366-3088
 [Term]
 id: ENVO:01001468
 name: intertidal ecosystem
-alt_id: LTER:941 {xref="https://vocab.lternet.edu/vocab/vocab/index.php?tema=941&/intertidal"}
 def: "An ecosystem which overlaps those areas of the foreshore and seabed that are exposed to the air at low tide and submerged at high tide." [https://en.wikipedia.org/wiki/Intertidal_zone]
 comment: These semantics link with those of environmental zones. Use this class to refer to the ecosystem rather than the area that it occupies.
 synonym: "coastal zone" BROAD []
@@ -26449,6 +26497,7 @@ xref: EcoLexicon:intertidal_zone
 xref: FTT:240
 xref: FTT:501
 xref: https://en.wikipedia.org/wiki/Intertidal_zone
+xref: LTER:941 {xref="https://vocab.lternet.edu/vocab/vocab/index.php?tema=941&/intertidal"}
 xref: SPIRE:Intertidal
 xref: SWEETRealm:IntertidalZone
 is_a: ENVO:00000230 ! coastal wetland ecosystem
@@ -26512,7 +26561,7 @@ created_by: https://orcid.org/0000-0002-4366-3088
 [Term]
 id: ENVO:01001477
 name: liquid astronomical body part
-def: "A part of an astronomical body which is primarily composed of a continuous volume of liquid material, shaped by one or more environmental processes." [https://en.wikipedia.org/wiki/Landform]
+def: "A part of an astronomical body which is primarily composed of liquid material." []
 is_a: ENVO:01001479 ! fluid astronomical body part
 intersection_of: ENVO:01001479 ! fluid astronomical body part
 intersection_of: composed_primarily_of ENVO:01000815 ! liquid environmental material
@@ -26521,7 +26570,7 @@ created_by: https://orcid.org/0000-0002-4366-3088
 [Term]
 id: ENVO:01001478
 name: gaseous astronomical body part
-def: "A part of an astronomical body which is primarily composed of a continuous volume of gaseous material, shaped by one or more environmental processes." [https://en.wikipedia.org/wiki/Landform]
+def: "A part of an astronomical body which is primarily composed of gaseous material." []
 is_a: ENVO:01001479 ! fluid astronomical body part
 intersection_of: ENVO:01001479 ! fluid astronomical body part
 intersection_of: composed_primarily_of ENVO:01000797 ! gaseous environmental material
@@ -26530,8 +26579,10 @@ created_by: https://orcid.org/0000-0002-4366-3088
 [Term]
 id: ENVO:01001479
 name: fluid astronomical body part
-def: "A part of an astronomical body which is primarily composed of a continuous volume of liquid or gaseous material, shaped by one or more environmental processes." [https://en.wikipedia.org/wiki/Landform]
+def: "A part of an astronomical body which is primarily composed of fluid." [https://en.wikipedia.org/wiki/Fluid]
 is_a: ENVO:01000813 ! astronomical body part
+intersection_of: ENVO:01000813 ! astronomical body part
+intersection_of: composed_primarily_of ENVO:02000140 ! fluid environmental material
 created_by: https://orcid.org/0000-0002-4366-3088
 creation_date: 2018-10-04T13:59:22Z
 
@@ -26984,8 +27035,8 @@ creation_date: 2019-01-14T19:50:54Z
 id: ENVO:01001519
 name: area of pack ice
 def: "An area in which masses of drift ice aggregate such that they cover a minimum of 7/10ths-8/10ths of the surface the water body they are floating in." [http://hdl.handle.net/11329/394, https://orcid.org/0000-0003-4808-4736]
-is_a: ENVO:01000408 ! environmental zone
-relationship: overlaps ENVO:00000063 ! water body
+is_a: ENVO:01003020 ! fiat part of an astronomical object
+relationship: part_of ENVO:00000063 ! water body
 created_by: https://orcid.org/0000-0002-4366-3088
 creation_date: 2019-01-14T20:02:00Z
 
@@ -26994,9 +27045,9 @@ id: ENVO:01001520
 name: area of sea ice
 def: "An environmental zone that overlaps that part of a water body covered or partially covered by sea ice." [https://orcid.org/0000-0003-4808-4736]
 synonym: "area with sea ice" EXACT []
-is_a: ENVO:01000408 ! environmental zone
-relationship: overlaps ENVO:00000063 ! water body
-relationship: overlaps ENVO:00002200 ! sea ice
+is_a: ENVO:01003020 ! fiat part of an astronomical object
+relationship: has_part ENVO:00002200 ! sea ice
+relationship: part_of ENVO:00000063 ! water body
 created_by: https://orcid.org/0000-0002-4366-3088
 creation_date: 2019-01-14T20:02:00Z
 creation_date: 2019-01-14T20:03:25Z
@@ -27005,8 +27056,8 @@ creation_date: 2019-01-14T20:03:25Z
 id: ENVO:01001521
 name: area of drift ice
 def: "An area in which masses of drift ice aggregate such that they cover less than 7/10ths of the surface the water body they are floating in." [http://hdl.handle.net/11329/394, https://orcid.org/0000-0003-4808-4736]
-is_a: ENVO:01000408 ! environmental zone
-relationship: overlaps ENVO:00000063 ! water body
+is_a: ENVO:01003020 ! fiat part of an astronomical object
+relationship: part_of ENVO:00000063 ! water body
 created_by: https://orcid.org/0000-0002-4366-3088
 creation_date: 2019-01-14T20:38:34Z
 
@@ -27262,6 +27313,7 @@ creation_date: 2019-01-31T20:23:31Z
 id: ENVO:01001544
 name: two-dimensional fiat ice surface
 def: "An two-dimensional continuant fiat boundary which overlaps the surface layer of a mass of ice." []
+comment: This class was created during a semantic harmonisation exercise with the SWEET resource, currently adminstered by Earth Science Information Partners. Its subclass(es) are mapped to the corresponding SWEET terms, which were determined to align with fiat boundaries rather than physical ones.
 is_a: BFO:0000146
 relationship: overlaps ENVO:01001542 ! ice surface layer
 created_by: https://orcid.org/0000-0002-4366-3088
@@ -27270,7 +27322,8 @@ creation_date: 2019-01-31T20:25:26Z
 [Term]
 id: ENVO:01001545
 name: two-dimensional fiat water ice surface
-def: "A two-dimensional fiat ice surface which is composed primarily of water ice." []
+def: "A two-dimensional fiat ice surface which overlaps the surface layer of a mass of water ice." []
+comment: This class was created during a semantic harmonisation exercise with the SWEET resource, currently adminstered by Earth Science Information Partners. It is mapped to the corresponding SWEET term, which was determined to align with fiat boundaries rather than physical ones.
 xref: http://sweetontology.net/realmCryo/IceSurface
 is_a: ENVO:01001544 ! two-dimensional fiat ice surface
 relationship: overlaps ENVO:01001543 ! water ice surface layer
@@ -27413,7 +27466,8 @@ creation_date: 2019-02-27T20:07:15Z
 id: ENVO:01001558
 name: area of seasonal sea ice
 def: "An environmental zone which overlaps that part of an ocean or sea within which 1) sea ice is present only part of the year, 2) extends from the permanent ice zone to the boundary where winter sea ice extent is at a maximum, and 3) primarily overlaps first-year ice when seasonal ice is present." [https://orcid.org/0000-0003-4808-4736]
-is_a: ENVO:01000408 ! environmental zone
+comment: As this part of the environment is defined by a seasonal process, some of its differentia aren't physically there at all times of its existence.Thus, all boundaries of this entity are fiat.
+is_a: ENVO:01003020 ! fiat part of an astronomical object
 created_by: https://orcid.org/0000-0002-4366-3088
 creation_date: 2019-02-27T20:17:41Z
 
@@ -27506,7 +27560,7 @@ name: protected area
 def: "An environmental zone which 1) contains ecosystems, constructed features, or other entities deemed to be of natural, historical, cultural, or other significance and 2) has been afforded legal protections restricting one or more forms of use by a competent authority." []
 synonym: "preserve" RELATED []
 synonym: "reserve" RELATED []
-is_a: ENVO:01000408 ! environmental zone
+is_a: ENVO:01003020 ! fiat part of an astronomical object
 created_by: https://orcid.org/0000-0002-4366-3088
 creation_date: 2019-03-03T00:21:59Z
 
@@ -28157,11 +28211,12 @@ property_value: http://purl.org/dc/elements/1.1/date 2019-07-15T18:16:01Z xsd:da
 [Term]
 id: ENVO:01001668
 name: atmospheric frontal zone
-def: "An environmental zone which contains a weather front, bounded by frontal surfaces." [http://glossary.ametsoc.org/wiki/Front]
+def: "Part of an atmosphere which contains a weather front, bounded by frontal surfaces." [http://glossary.ametsoc.org/wiki/Front]
 subset: envoAtmo
 synonym: "frontal zone" BROAD []
-is_a: ENVO:01000408 ! environmental zone
+is_a: ENVO:01001645 ! gaseous part of an atmosphere
 relationship: contains ENVO:01001681 ! weather front
+relationship: part_of ENVO:01000267 ! atmosphere
 property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-4366-3088
 property_value: http://purl.org/dc/elements/1.1/date 2019-08-20T08:08:36Z xsd:dateTime
 
@@ -29194,7 +29249,7 @@ id: ENVO:01001775
 name: blind thrust fault
 def: "A thrust fault which does not breach the surface of an astronomical body." [https://en.wikipedia.org/wiki/Blind_thrust_earthquake]
 is_a: ENVO:01001773 ! thrust fault
-relationship: contained_in ENVO:01001776 ! subsurface zone of an astronomical body
+relationship: located_in ENVO:01001776 ! subsurface zone of an astronomical body
 property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-4366-3088
 property_value: http://purl.org/dc/elements/1.1/date 2019-10-07T14:18:31Z xsd:dateTime
 
@@ -29330,7 +29385,10 @@ property_value: http://purl.org/dc/elements/1.1/date 2019-10-21T11:06:34Z xsd:da
 [Term]
 id: ENVO:01001790
 name: terrestrial ecosystem
+def: "An ecosystem which primarily occurs on land." []
 is_a: ENVO:01001110 ! ecosystem
+intersection_of: ENVO:01001110 ! ecosystem
+intersection_of: determined_by ENVO:01001785 ! land
 property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-4366-3088
 property_value: http://purl.org/dc/elements/1.1/date 2019-10-21T11:09:58Z xsd:dateTime
 
@@ -29407,6 +29465,8 @@ name: tropical mixed forest biome
 def: "A tropical mixed forest in which dominant ecological communities have reached their climax successional state." []
 subset: wwfBiome
 is_a: ENVO:01001797 ! tropical mixed forest
+intersection_of: ENVO:01001797 ! tropical mixed forest
+intersection_of: participates_in ENVO:01001827 ! climactic ecological succession
 relationship: has_quality ENVO:01000204 ! tropical
 property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-4366-3088
 property_value: http://purl.org/dc/elements/1.1/date 2019-10-27T16:05:39Z xsd:dateTime
@@ -29628,6 +29688,14 @@ is_a: ENVO:01001743 ! plume
 property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-0569-2259
 
 [Term]
+id: ENVO:01001824
+name: ecological succession
+def: "An ecosystem process during which the species composition of an ecosystem gradually changes as species which are more adapted to the prevailing conditions in the ecosystem replace those which are less adapted." [https://en.wikipedia.org/wiki/Ecological_succession]
+is_a: ENVO:01001795 ! ecosystem process
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2023-09-07T13:10:32Z xsd:dateTime
+
+[Term]
 id: ENVO:01001825
 name: active anaerobic enrichment culturing unit
 def: "An active enrichment culturing unit which contains environmental material maintained under conditions with no free oxygen." []
@@ -29643,6 +29711,34 @@ is_a: ENVO:01001825 ! active anaerobic enrichment culturing unit
 property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-6912-7865
 property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-4366-3088
 property_value: http://purl.org/dc/elements/1.1/date 2019-11-06T12:23:30Z xsd:dateTime
+
+[Term]
+id: ENVO:01001827
+name: climactic ecological succession
+def: "An ecological succession process during which 1) organisms in ecological communities possess high adaptation to the conditions in the ecosystem, 2) participant communities largely fill available niches, 3) individual organisms are typically replaced by others of the same species, 4) a near equilibrium is maintained between gross primary production and total respiration and across biogeochemical cycles." [https://en.wikipedia.org/wiki/Ecological_succession]
+is_a: ENVO:01001824 ! ecological succession
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2023-09-07T13:35:09Z xsd:dateTime
+
+[Term]
+id: ENVO:01001828
+name: anthropised ecosystem
+def: "An ecosystem which is formed as a result of human activity or impact." []
+is_a: ENVO:01001110 ! ecosystem
+intersection_of: ENVO:01001110 ! ecosystem
+intersection_of: formed_as_result_of ENVO:01000952 ! anthropisation
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2023-09-07T16:56:05Z xsd:dateTime
+
+[Term]
+id: ENVO:01001829
+name: human settlement
+def: "An anthropised ecosystem which is determined by the presence of humans and their constructions." []
+intersection_of: ENVO:01001828 ! anthropised ecosystem
+intersection_of: determined_by ENVO:00000070 ! human construction
+intersection_of: determined_by NCBITaxon:9606
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2023-09-07T16:58:25Z xsd:dateTime
 
 [Term]
 id: ENVO:01001830
@@ -29857,6 +29953,7 @@ is_a: ENVO:00010483 ! environmental material
 relationship: adjacent_to ENVO:00010504 ! surface layer
 relationship: composed_primarily_of ENVO:01000846 ! water ice crystal
 relationship: formed_as_result_of ENVO:03000055 ! desublimation of water vapour into ice
+relationship: has_quality PATO:0001546
 property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-4366-3088
 property_value: http://purl.org/dc/elements/1.1/date 2020-02-12T21:05:54Z xsd:dateTime
 
@@ -29980,6 +30077,7 @@ name: well intervention
 def: "A planned process during which an oil or gas well is modified." [https://en.wikipedia.org/wiki/Well_intervention]
 comment: Interventions may change state of the well or well geometry, provide well diagnostics, or manage the production of the well. {xref="Well:intervention"}
 is_a: OBI:0000011
+relationship: has_part ENVO:01000952 ! anthropisation
 relationship: process_has_causal_agent NCBITaxon:9606
 property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-4366-3088
 property_value: http://purl.org/dc/elements/1.1/date 2020-06-02T13:21:28Z xsd:dateTime
@@ -30447,6 +30545,21 @@ name: wave energy
 def: "Energy which inheres in a wave and is realised during its propagation." []
 is_a: ENVO:2000015 ! energy
 property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:01003020
+name: fiat part of an astronomical object
+def: "A part of an environmental system whose boundaries are determined by fiat." []
+comment: Subclasses of this class have fiat (and only fiat) boundaries - that is, boundaries which are determined by human consensus or opinion rather than (and sometimes in contrast to) well-defined physical discontinuities. We distinguish these from entities that have fuzzy or hard to define boundaries that do overlap some form of physical discontinuity.
+is_a: BFO:0000024
+relationship: part_of ENVO:01000804 ! astronomical object
+
+[Term]
+id: ENVO:01003021
+name: area of high atmospheric pressure
+def: "A gaseous part of an atmosphere in which gases have increased atmospheric pressure." []
+comment: Air is not specified directly (although the definition subsumes air masses) to allow for other forms of low pressure areas in planetary atmospheres.
+is_a: ENVO:01001645 ! gaseous part of an atmosphere
 
 [Term]
 id: ENVO:02000000
@@ -31504,12 +31617,9 @@ property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0
 [Term]
 id: ENVO:02000140
 name: fluid environmental material
-def: "A liquid or a gas." [https://github.com/EnvironmentOntology/envo/issues/940]
+def: "An environmental material which is unable to resist shear forces and continuously deforms when subject to them." [https://en.wikipedia.org/wiki/Fluid, https://github.com/EnvironmentOntology/envo/issues/940]
 synonym: "fluid" NARROW []
 is_a: ENVO:00010483 ! environmental material
-union_of: ENVO:01000797 ! gaseous environmental material
-union_of: ENVO:01000798 ! plasma
-union_of: ENVO:01000815 ! liquid environmental material
 
 [Term]
 id: ENVO:02000141
@@ -31575,6 +31685,7 @@ id: ENVO:02000149
 name: hydrogen production process
 def: "A chemical engineering process which generates hydrogen gas." [https://en.wikipedia.org/wiki/Hydrogen_production]
 is_a: ENVO:02000146 ! chemical engineering process
+relationship: has_output CHEBI:18276
 property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-6601-2165
 
 [Term]
@@ -31736,13 +31847,11 @@ subset: envoPolar
 is_a: ENVO:01001795 ! ecosystem process
 relationship: has_participant ENVO:2000004 ! algal bloom
 relationship: occurs_in ENVO:01000317 ! aquatic environment
-relationship: results_in_proliferation_of ENVO:02500019 ! alga
 
 [Term]
 id: ENVO:02500019
-name: alga
-comment: To be ceded to external ontology (e.g. pco)
-is_a: NCBITaxon:131567
+name: obsolete alga
+is_obsolete: true
 
 [Term]
 id: ENVO:02500021
@@ -32025,6 +32134,7 @@ name: compaction process
 def: "A physical process during which atoms, molecules, or other consituents of a material entity are forced closer together." [https://en.wikipedia.org/wiki/Compaction]
 subset: envoPolar
 is_a: ENVO:02500000 ! environmental system process
+relationship: has_output ENVO:06105205 ! compacted soil
 property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
 property_value: IAO:0000117 https://orcid.org/0000-0002-4366-3088
 
@@ -32206,9 +32316,6 @@ subset: envoPolar
 synonym: "glacier calving" RELATED []
 synonym: "iceberg calving" EXACT []
 is_a: ENVO:03000030 ! glacial ice calving process
-relationship: has_input ENVO:00000133 ! glacier
-relationship: has_output ENVO:00000133 ! glacier
-relationship: has_output ENVO:00000298 ! marine iceberg
 property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
 property_value: IAO:0000117 https://orcid.org/0000-0002-4366-3088
 
@@ -32218,7 +32325,6 @@ name: calving of ice from an iceberg
 def: "A process during which a part of an iceberg breaks away from the main mass." [http://dx.doi.org/10.1038/nrmicro3522]
 subset: envoPolar
 is_a: ENVO:01000917 ! ice calving process
-relationship: has_output ENVO:01000293 ! ice mass
 relationship: has_participant ENVO:00000298 ! marine iceberg
 property_value: IAO:0000116 "It would be ideal to express that the size of the icemass calved must be smaller than an iceberg." xsd:string
 property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
@@ -33494,7 +33600,7 @@ creation_date: 2021-04-14T18:57:18.275Z
 id: ENVO:03000143
 name: cryosphere
 def: "An astronomical body part which is composed primarily of environmental materials in their frozen form." [https://orcid.org/0000-0003-4808-4736]
-comment: The term refers collectively to the portions of the earth (i.e., a planet) where water is in solid form, including snow cover, floating ice, glaciers, ice caps, ice sheets, seasonally frozen ground and perennially frozen ground (permafrost). The Cryosphere may be divided into the cryoatmosphere, the cryohydrosphere (snow cover, glaciers, and river, lake and sea Ice) and the cryolithosphere (perennially and seasonally cryotic ground, rock glacier).\n\nThis is an Earth centric definition, other cryospheres will be considered later. Some definitions reffer to that which is sufficiently cold for pure water to freeze for at least a part of each year.\n\nIt should be noted that "Some authorities exclude the earth's atmosphere from the Earth's Cryosphere; others restrict the term Cryosphere to the regions of the earth's crust where Permafrost exists."\n\nDefinitions of Cryosphere come from several glossaries including:\n- PhysicalGeography.net http://physicalgeography.net/\n-  van Everdingen, Robert, ed., 2005 (1998 revised May 2005). Multi-language glossary of permafrost and related ground-ice terms. Boulder, CO: National Snow and Ice Data Center/World Data Center for Glaciology. [https://globalcryospherewatch.org/reference/glossary_docs/Glossary_of_Permafrost_and_Ground-Ice_IPA_2005.pdf]\n- American Meteorological Society, 2015. Glossary of Meteorology [online], Available at: http://glossary.ametsoc.org/wiki/Main_Page. [Accessed 27/01/2017].\n- EU Climate-ADAPT (The European Climate Adaptation Platform), no date, Glossary, Available from: http://climate-adapt.eea.europa.eu/glossary\n- IPCC, 2014: Annex II: Glossary [Agard, J., Schipper, E. L. F., (ed.)]. In: Climate Change 2014: Impacts, Adaptation, and Vulnerability. Contribution of Working Group II to the Fifth Assessment Report of the Intergovernmental Panel on Climate Change [Birkmann, J., Campos, M., Dubeux, C., Nojiri, Y., Olsson, L., Osman-Elasha, B., Pelling, M., Prather, M. J., Rivera-Ferre M. G., Ruppel, O. C., Sallenger, A., Smith, K. R., St. Clair, A. L.,]. Cambridge University Press, Cambridge, United Kingdom and New York, NY, USA. [Link]\n- NSIDC, The National Snow and Ice Data Center glossary is available at https://nsidc.org/cryosphere/glossary, Last accessed [26/01/2016].\n- Trombotto, D., P. Wainstein & L. Arenson, 2014, Guía Terminológica de la Geocriología Sudamericana” / “Terminological Guide of the South American Geocryology, 1a ed. 128 pp. [Link]\n- UNESCO-WMO, 2012, International Glossary of Hydrology, 3rd edition, WMO-No. 385. [Link] {xref="https://orcid.org/0000-0003-4808-4736"}
+comment: The term generally refers to the portions of the Earth where water is in solid form, including snow cover, floating ice, glaciers, ice caps, ice sheets, seasonally frozen ground and perennially frozen ground (permafrost). The Cryosphere may be divided into the cryoatmosphere, the cryohydrosphere (snow cover, glaciers, and river, lake and sea Ice) and the cryolithosphere (perennially and seasonally cryotic ground, rock glacier). Some definitions consider the cryosphere to include any area of Earth which is sufficiently cold for pure water to freeze for at least a part of each year. It should be noted that "Some authorities exclude the earth's atmosphere from the Earth's Cryosphere; others restrict the term Cryosphere to the regions of the earth's crust where Permafrost exists."\n\nDefinitions of Cryosphere come from several glossaries including:\n- PhysicalGeography.net http://physicalgeography.net/\n-  van Everdingen, Robert, ed., 2005 (1998 revised May 2005). Multi-language glossary of permafrost and related ground-ice terms. Boulder, CO: National Snow and Ice Data Center/World Data Center for Glaciology. [https://globalcryospherewatch.org/reference/glossary_docs/Glossary_of_Permafrost_and_Ground-Ice_IPA_2005.pdf]\n- American Meteorological Society, 2015. Glossary of Meteorology [online], Available at: http://glossary.ametsoc.org/wiki/Main_Page. [Accessed 27/01/2017].\n- EU Climate-ADAPT (The European Climate Adaptation Platform), no date, Glossary, Available from: http://climate-adapt.eea.europa.eu/glossary\n- IPCC, 2014: Annex II: Glossary [Agard, J., Schipper, E. L. F., (ed.)]. In: Climate Change 2014: Impacts, Adaptation, and Vulnerability. Contribution of Working Group II to the Fifth Assessment Report of the Intergovernmental Panel on Climate Change [Birkmann, J., Campos, M., Dubeux, C., Nojiri, Y., Olsson, L., Osman-Elasha, B., Pelling, M., Prather, M. J., Rivera-Ferre M. G., Ruppel, O. C., Sallenger, A., Smith, K. R., St. Clair, A. L.,]. Cambridge University Press, Cambridge, United Kingdom and New York, NY, USA. [Link]\n- NSIDC, The National Snow and Ice Data Center glossary is available at https://nsidc.org/cryosphere/glossary, Last accessed [26/01/2016].\n- Trombotto, D., P. Wainstein & L. Arenson, 2014, Guía Terminológica de la Geocriología Sudamericana” / “Terminological Guide of the South American Geocryology, 1a ed. 128 pp. [Link]\n- UNESCO-WMO, 2012, International Glossary of Hydrology, 3rd edition, WMO-No. 385. [Link] {xref="https://orcid.org/0000-0003-4808-4736"}
 subset: envoCryo
 subset: envoPolar
 xref: http://sweetontology.net/realm/Cryosphere
@@ -33529,12 +33635,15 @@ creation_date: 2021-04-14T18:57:18.275Z
 
 [Term]
 id: ENVO:03000145
-name: area of snow cover
-def: "An environmental zone which is covered or partially covered by snow." [https://orcid.org/0000-0003-4808-4736]
-comment: This is one of three classes representing the idea of snow cover in the GCW glossary in addition to depth of snow and snow cover. In the GCW this refers to 1. The areal extent of snow-covered ground, usually expressed as percent of total area in a given region. {xref="https://orcid.org/0000-0003-4808-4736"}
+name: snow-covered land
+def: "Land which is covered or partially covered by snow." [https://orcid.org/0000-0003-4808-4736]
+comment: The threshold at which land is considered covered by snow varies. Please define such thresholds on the instance level, or request a subclass of this class if a threshold you know of is used by a large community of practice or in an official definition. This is one of three classes representing the idea of snow cover in the GCW glossary in addition to depth of snow and snow cover. In the GCW this refers to 1. The areal extent of snow-covered ground, usually expressed as percent of total area in a given region. {xref="https://orcid.org/0000-0003-4808-4736"}
 subset: envoCryo
 subset: envoPolar
-is_a: ENVO:01000408 ! environmental zone
+synonym: "area of snow cover" EXACT []
+synonym: "land covered by snow" EXACT []
+synonym: "snow covered land" EXACT []
+is_a: ENVO:01001785 ! land
 created_by: https://orcid.org/0000-0002-0337-8610
 created_by: https://orcid.org/0000-0002-2282-7215
 created_by: https://orcid.org/0000-0002-2908-3327
@@ -33846,7 +33955,8 @@ name: area of ice cover
 def: "An environmental zone which is covered or partially covered by ice." [https://orcid.org/0000-0003-4808-4736]
 subset: envoCryo
 subset: envoPolar
-is_a: ENVO:01000408 ! environmental zone
+is_a: ENVO:01003020 ! fiat part of an astronomical object
+relationship: has_part ENVO:01001542 ! ice surface layer
 created_by: https://orcid.org/0000-0002-0337-8610
 created_by: https://orcid.org/0000-0002-2282-7215
 created_by: https://orcid.org/0000-0002-2908-3327
@@ -36660,9 +36770,10 @@ creation_date: 2021-12-09T00:00:00Z
 [Term]
 id: ENVO:03501369
 name: seam surface
-def: "A two-dimensional spatial region where one material entity touches or is attached to itself or another material entity along some length which is exposed to an environment." [http://vocab.getty.edu/page/aat/300228472]
-is_a: BFO:0000006
-created_by: https://orcid.org/0000-0002-2738-824X
+def: "An interface layer which is formed where either two parts of a material entity or two separate material entities touch or are attached to one another along some length." [http://vocab.getty.edu/page/aat/300228472]
+is_a: ENVO:01001684 ! interface layer
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-2738-824X
 creation_date: 2021-12-09T00:00:00Z
 
 [Term]
@@ -38048,6 +38159,160 @@ created_by: https://orcid.org/0000-0002-6670-9157
 creation_date: 2021-07-03T00:22:16.764Z
 
 [Term]
+id: ENVO:03600090
+name: alcohol fermentation pit
+def: "A fermentation pit which is constructed to facilitate the fermentation of alcoholic substances." []
+comment: Definition from 2021-08-05 call with Buttigieg, Duncan and Miller
+is_a: ENVO:03600039 ! fermentation pit
+created_by: https://orcid.org/0000-0001-9076-6066
+created_by: https://orcid.org/0000-0001-9625-1899
+created_by: https://orcid.org/0000-0002-4366-3088
+creation_date: 2021-08-09T15:00:00.000Z
+
+[Term]
+id: ENVO:03600091
+name: clay fermentation pit
+def: "A fermentation pit which is constructed from clay." []
+comment: Definition from 2021-08-05 call with Buttigieg, Duncan and Miller
+is_a: ENVO:01001871 ! pit
+created_by: https://orcid.org/0000-0001-9076-6066
+created_by: https://orcid.org/0000-0001-9625-1899
+created_by: https://orcid.org/0000-0002-4366-3088
+creation_date: 2021-08-09T15:00:00.000Z
+
+[Term]
+id: ENVO:03600092
+name: artificial pond
+def: "A pond which has been constructed by humans or their technologies." []
+comment: Definition from 2021-08-05 call with Buttigieg, Duncan and Miller
+is_a: ENVO:00000033 ! pond
+created_by: https://orcid.org/0000-0001-9076-6066
+created_by: https://orcid.org/0000-0001-9625-1899
+created_by: https://orcid.org/0000-0002-4366-3088
+creation_date: 2021-08-09T15:00:00.000Z
+
+[Term]
+id: ENVO:03600093
+name: artificial satellite
+def: "A human construction that has intentionally been placed into orbit." [https://en.wikipedia.org/wiki/Satellite]
+comment: Definition from 2021-08-05 call with Buttigieg, Duncan and Miller
+comment: Not to be confused with a natural satellite like the earth's moon (https://en.wikipedia.org/wiki/Natural_satellite)
+is_a: ENVO:00000070 ! human construction
+created_by: https://orcid.org/0000-0001-9076-6066
+created_by: https://orcid.org/0000-0001-9625-1899
+created_by: https://orcid.org/0000-0002-4366-3088
+creation_date: 2021-08-09T15:00:00.000Z
+
+[Term]
+id: ENVO:03600094
+name: stream pool
+def: "A water body which is created in a stream by local scour or impoundment and has some structural control." [https://data.neonscience.org/documents/10179/2093436/NEON.DOC.003044vD/6d60d722-b43e-4654-bca3-524527771e66]
+comment: Pool water depth is above average for the stream. If if all the running water in the stream was shut off, areas in the stream that still hold water are pools. Pool water velocity is below average for the reach, causing fine sediments to deposit in pools. Pools are generally longer than they are wide (unless they are plunge pools), and are 1.5 x deeper at their maximum depth than they are at their crest
+synonym: "pool" BROAD []
+is_a: ENVO:00000063 ! water body
+relationship: part_of ENVO:00000023 ! stream
+created_by: https://orcid.org/0000-0002-5004-3362
+creation_date: 2023-08-25T:17:42.901Z
+
+[Term]
+id: ENVO:03600095
+name: stream run
+def: "A hydroform which is that part of a stream where water flows swiftly and uniformly with low surface water agitation." [https://data.neonscience.org/documents/10179/2093436/NEON.DOC.003044vD/6d60d722-b43e-4654-bca3-524527771e66]
+synonym: "run" BROAD []
+is_a: ENVO:01001308 ! hydroform
+relationship: part_of ENVO:00000023 ! stream
+created_by: https://orcid.org/0000-0002-5004-3362
+creation_date: 2023-08-25T:17:42.901Z
+
+[Term]
+id: ENVO:03600096
+name: step pool
+def: "A stream pool which is formed as a result of high-gradient, steep streams where water cascades over a rock or woody snag." [http://thanospapanicolaou.com/files/2013/01/step-pool.pdf, https://data.neonscience.org/documents/10179/2093436/NEON.DOC.003044vD/6d60d722-b43e-4654-bca3-524527771e66]
+comment: Due to the gradient and surrounding geology, this pattern continues down the stream: step (drop), pool, step, pool, etc.
+is_a: ENVO:03600094 ! stream pool
+relationship: part_of ENVO:00000023 ! stream
+created_by: https://orcid.org/0000-0002-5004-3362
+creation_date: 2023-08-25T:17:42.901Z
+
+[Term]
+id: ENVO:03605000
+name: periphytic biofilm
+def: "Biofilm consisting of a mixture of algae, cyanobacteria, microbes, and detritus." [https://data.neonscience.org/documents/10179/1883159/NEON.DOC.003044vE/05ca8fcc-33ba-a5b2-0e93-8f4001f38c37, https://www.frontiersin.org/articles/10.3389/fmicb.2021.684903/full]
+comment: Periphytic biofilm coats the submerged surfaces in most bodies of water
+synonym: "Periphyton" RELATED []
+is_a: ENVO:01000156 ! biofilm material
+
+[Term]
+id: ENVO:03605001
+name: epilithon
+def: "Periphyton colonizing rock substrata" [https://data.neonscience.org/documents/10179/1883159/NEON.DOC.003044vE/05ca8fcc-33ba-a5b2-0e93-8f4001f38c37]
+is_a: ENVO:03605000 ! periphytic biofilm
+
+[Term]
+id: ENVO:03605002
+name: epipelon
+def: "Periphyton colonizing silt substrata" [https://data.neonscience.org/documents/10179/1883159/NEON.DOC.003044vE/05ca8fcc-33ba-a5b2-0e93-8f4001f38c37]
+is_a: ENVO:03605000 ! periphytic biofilm
+
+[Term]
+id: ENVO:03605003
+name: epiphyton
+def: "Periphyton colonizing surface of aquatic plants" [https://data.neonscience.org/documents/10179/1883159/NEON.DOC.003044vE/05ca8fcc-33ba-a5b2-0e93-8f4001f38c37]
+is_a: ENVO:03605000 ! periphytic biofilm
+
+[Term]
+id: ENVO:03605004
+name: epipsammon
+def: "Periphyton colonizing sand substrata" [https://data.neonscience.org/documents/10179/1883159/NEON.DOC.003044vE/05ca8fcc-33ba-a5b2-0e93-8f4001f38c37]
+is_a: ENVO:03605000 ! periphytic biofilm
+
+[Term]
+id: ENVO:03605005
+name: epixylon
+def: "Periphyton colonizing woody substrata" [https://data.neonscience.org/documents/10179/1883159/NEON.DOC.003044vE/05ca8fcc-33ba-a5b2-0e93-8f4001f38c37]
+is_a: ENVO:03605000 ! periphytic biofilm
+
+[Term]
+id: ENVO:03605006
+name: stream water
+def: "Water which is part of a stream." []
+is_a: ENVO:00002006 ! liquid water
+intersection_of: ENVO:00002006 ! liquid water
+intersection_of: part_of ENVO:00000023 ! stream
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0001-9076-6066
+property_value: http://purl.org/dc/elements/1.1/date 2024-01-12T13:48:00Z xsd:dateTime
+
+[Term]
+id: ENVO:03605007
+name: freshwater stream
+def: "A stream which is composed primarily of fresh water." []
+is_a: ENVO:00000023 ! stream
+intersection_of: ENVO:00000023 ! stream
+intersection_of: has_part ENVO:00002011 ! fresh water
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0001-9076-6066
+property_value: http://purl.org/dc/elements/1.1/date 2024-01-10T19:48:00Z xsd:dateTime
+
+[Term]
+id: ENVO:03605008
+name: freshwater stream biome
+def: "A freshwater stream ecosystem which is undergoing climactic ecological succession." []
+is_a: ENVO:03605009 ! freshwater stream ecosystem
+intersection_of: ENVO:03605009 ! freshwater stream ecosystem
+intersection_of: participates_in ENVO:01001827 ! climactic ecological succession
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0001-9076-6066
+property_value: http://purl.org/dc/elements/1.1/date 2024-01-10T19:19:00Z xsd:dateTime
+
+[Term]
+id: ENVO:03605009
+name: freshwater stream ecosystem
+def: "An ecosystem in which the composition, structure, and function of resident ecological assemblages are primarily determined by a freshwater stream." []
+is_a: ENVO:01001789 ! freshwater ecosystem
+intersection_of: ENVO:01001789 ! freshwater ecosystem
+intersection_of: determined_by ENVO:03605007 ! freshwater stream
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0001-9076-6066
+property_value: http://purl.org/dc/elements/1.1/date 2024-01-10T19:18:00Z xsd:dateTime
+
+[Term]
 id: ENVO:04000000
 name: adfreezing
 def: "Adfreezing is a freezing process during which two objects adhere to each other via ice." [https://www.merriam-webster.com/dictionary/adfreezing]
@@ -38983,6 +39248,14 @@ property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0
 property_value: http://purl.org/dc/elements/1.1/date 2021-10-29T14:15:55Z xsd:dateTime
 
 [Term]
+id: ENVO:06105202
+name: soil compaction process
+def: "Soil compaction is a compaction process during which the bulk density of soil increases and/or its porosity decreases due to externally or internally applied loads." []
+is_a: ENVO:03000008 ! compaction process
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0001-6284-4821
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-8461-9745
+
+[Term]
 id: ENVO:06105203
 name: water table depth
 def: "An elevation which inheres in a water table by virture of its vertical distance from a land surface." []
@@ -39008,6 +39281,16 @@ relationship: characteristic_of ENVO:01003017 ! irradiation by photosyntheticall
 property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0001-6284-4821
 property_value: http://purl.org/dc/elements/1.1/date 2021-11-05T00:08:35Z xsd:dateTime
 property_value: IAO:0000116 "A best-guess at representing \"density\" of massless entities - likely to require further expert input and refinement." xsd:string
+
+[Term]
+id: ENVO:06105205
+name: compacted soil
+def: "A soil which has a high bulk density and/or a low porosity. A compacted soil has a reduced rate of both water infiltration and drainage" [] {comment="https://extension.umn.edu/soil-management-and-health/soil-compaction"}
+is_a: ENVO:00001998 ! soil
+intersection_of: ENVO:00001998 ! soil
+intersection_of: has_quality PATO:0001485
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0001-6284-4821
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-8461-9745
 
 [Term]
 id: ENVO:06105210
@@ -41336,10 +41619,6 @@ name: connects
 xref: RO:0002176
 
 [Typedef]
-id: contained_in
-xref: RO:0001018
-
-[Typedef]
 id: contains
 xref: RO:0001019
 
@@ -41421,14 +41700,6 @@ id: has_component
 xref: RO:0002180
 
 [Typedef]
-id: has_condition
-name: has_condition
-comment: Experimental relation used in EnvO. A condition defines a restricted range of a given quality or combination of qualities. If an environment class, E, has_condition C, then all qualities listed in C are restricted to the ranges defined in C in E. This is not intended as a logical conditional.
-xref: has_condition
-is_inverse_functional: true
-creation_date: 2013-05-08T07:33:05Z
-
-[Typedef]
 id: has_disposition
 xref: RO:0000091
 
@@ -41447,7 +41718,12 @@ xref: RO:0002303
 
 [Typedef]
 id: has_increased_levels_of
-xref: has_increased_levels_of
+name: has increased levels of
+def: "A has part relationship between a whole and a part, where the number of parts present in the whole is higher than in comparable entities." []
+comment: This relation is present in ENVO to support compositional classes such as "X-enriched soil". These will later be formalized, and a different relation from RO may be chosen.
+xref: ENVO:02000200
+property_value: seeAlso https://github.com/EnvironmentOntology/envo/issues/1380
+is_a: has_component
 
 [Typedef]
 id: has_input

@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: envo/releases/2023-02-13/subsets/environmental_hazards.owl
+data-version: envo/releases/2024-02-05/subsets/environmental_hazards.owl
 subsetdef: disposition_slim "Disposition slim"
 subsetdef: environmental_hazards "environmental_hazards"
 subsetdef: EnvO-Lite-GSC "EnvO-Lite-GSC"
@@ -23,15 +23,14 @@ subsetdef: ro-eco "ro-eco"
 subsetdef: scalar_slim "Scalar slim"
 subsetdef: value_slim "Value slim"
 subsetdef: wwfBiome "wwfBiome"
-synonymtypedef: PLURAL "plurals"
+synonymtypedef: OMO:0003004 "plural form"
 ontology: envo/subsets/environmental_hazards
-property_value: owl:versionInfo "2023-02-13" xsd:string
+property_value: owl:versionInfo "2024-02-05" xsd:string
 
 [Term]
 id: ENVO:00000020
 name: lake
 namespace: ENVO
-alt_id: LTER:278 {xref="https://vocab.lternet.edu/vocab/vocab/index.php?tema=278&/lakes"}
 def: "A body of water or other liquid of considerable size contained in a depression on a landmass." [https://en.wikipedia.org/wiki/Lake]
 subset: envoPolar
 synonym: "broad" RELATED []
@@ -51,17 +50,20 @@ xref: FTT:704
 xref: FTT:909
 xref: Geonames:H.LK
 xref: Geonames:H.LKS
+xref: LTER:278 {xref="https://vocab.lternet.edu/vocab/vocab/index.php?tema=278&/lakes"}
 xref: SPIRE:Lake_or_pond
 xref: SWEETRealm:Lake
 xref: TGN:21114
 xref: TGN:21115
+is_a: ENVO:01000617 ! lentic water body
+relationship: located_in ENVO:00000309 ! depressed landform
 relationship: part_of ENVO:01000819 ! hydrosphere
+relationship: partially_surrounded_by ENVO:01001782 ! landmass
 
 [Term]
 id: ENVO:00000022
 name: river
 namespace: ENVO
-alt_id: LTER:474 {xref="https://vocab.lternet.edu/vocab/vocab/index.php?tema=474&/rivers"}
 def: "A stream which, through permanent or seasonal flow processes, moves from elevated land towards lower elevations through a definite channel and empties either into a sea, lake, or another river or ends on land as bed seepage and evapotranspiration exceed water supply." [ADL:FTT, https://orcid.org/0000-0002-4366-3088] {comment="https://en.wikipedia.org/wiki/River"}
 comment: "There are no official definitions for the generic term river as applied to geographic features, although in some countries or communities a stream is defined by its size. Many names for small rivers are specific to geographic location; examples are "run" in some parts of the United States, "burn" in Scotland and northeast England, and "beck" in northern England. Sometimes a river is defined as being larger than a creek, but not always: the language is vague." {comment="https://en.wikipedia.org/wiki/River"}
 synonym: "braided river" NARROW [USGS:SDTS]
@@ -70,6 +72,7 @@ synonym: "rio" EXACT [ADL:FTT]
 xref: EcoLexicon:river
 xref: FTT:1179
 xref: FTT:251
+xref: LTER:474 {xref="https://vocab.lternet.edu/vocab/vocab/index.php?tema=474&/rivers"}
 xref: SPIRE:River
 xref: SWEETRealm:River
 xref: TGN:21105
@@ -81,7 +84,6 @@ relationship: continuous_with ENVO:01000652 ! river channel
 id: ENVO:00000023
 name: stream
 namespace: ENVO
-alt_id: LTER:562 {xref="https://vocab.lternet.edu/vocab/vocab/index.php?tema=562&/streams"}
 def: "A watercourse which is linear and flows across the solid portion of a planetary surface." [USGS:http\://mapping.usgs.gov/www/ti/GNIS/gnis_users_guide_appendixc.html]
 synonym: "beck" RELATED [USGS:SDTS]
 synonym: "braided stream" NARROW [USGS:SDTS]
@@ -113,6 +115,7 @@ xref: FTT:721
 xref: Geonames:H.STM
 xref: Geonames:H.STMS
 xref: https://en.wikipedia.org/wiki/Stream
+xref: LTER:562 {xref="https://vocab.lternet.edu/vocab/vocab/index.php?tema=562&/streams"}
 xref: SWEETRealm:Stream
 xref: TGN:21106
 xref: TGN:21107
@@ -198,7 +201,7 @@ id: ENVO:00000063
 name: water body
 namespace: ENVO
 def: "An accumulation of water of varying size." [https://en.wikipedia.org/wiki/Body_of_water]
-comment: https://en.wikipedia.org/wiki/ The term body of water most often refers to large accumulations of water, such as oceans, seas, and lakes, but it includes smaller pools of water such as ponds, wetlands, or more rarely, puddles. A body of water does not have to be still or contained; Rivers, streams, canals, and other geographical features where water moves from one place to another are also considered bodies of water.
+comment: The term body of water most often refers to large accumulations of water, such as oceans, seas, and lakes, but it includes smaller pools of water such as ponds, wetlands, or more rarely, puddles. A body of water does not have to be still or contained; Rivers, streams, canals, and other geographical features where water moves from one place to another are also considered bodies of water.
 synonym: "aquatic feature" EXACT []
 synonym: "bodies of water" EXACT [Getty:TGN]
 synonym: "body of water" EXACT [ADL:FTT]
@@ -214,6 +217,7 @@ xref: SWEETRealm:BodyOfWater
 xref: TGN:21100
 xref: TGN:21101
 is_a: ENVO:01000685 ! water mass
+relationship: formed_as_result_of ENVO:01001220 ! water accumulation process
 relationship: part_of ENVO:01000819 ! hydrosphere
 
 [Term]
@@ -316,10 +320,7 @@ synonym: "stand" RELATED [USGS:SDTS]
 synonym: "taiga" RELATED [USGS:SDTS]
 synonym: "thicket" RELATED [USGS:SDTS]
 synonym: "thorn forest" RELATED [USGS:SDTS]
-synonym: "tropical rain forest" RELATED [USGS:SDTS]
 synonym: "wood" RELATED [Getty:TGN]
-synonym: "wood" RELATED [USGS:SDTS]
-synonym: "wood" RELATED [ADL:FTT]
 synonym: "wooded area" RELATED [USGS:SDTS]
 xref: FTT:1083
 xref: FTT:505
@@ -412,7 +413,7 @@ is_a: ENVO:00000142 ! stream bank
 id: ENVO:00000191
 name: solid astronomical body part
 namespace: ENVO
-def: "A part of an astronomical body which is primarily composed of a continuous volume of solid material, shaped by one or more environmental processes." [https://en.wikipedia.org/wiki/Landform]
+def: "A part of an astronomical body which is primarily composed of solid material." [https://en.wikipedia.org/wiki/Landform]
 synonym: "geological feature" RELATED [ADL:FTT]
 synonym: "landform" RELATED []
 synonym: "physiographic feature" RELATED []
@@ -529,15 +530,13 @@ property_value: IAO:0000116 "We need a more general channel definition, the curr
 id: ENVO:00000428
 name: biome
 namespace: ENVO
-alt_id: LTER:809 {xref="https://vocab.lternet.edu/vocab/vocab/index.php?tema=809&/biomes"}
-def: "A biome is an ecosystem to which resident ecological communities have evolved adaptations." [DOI:10.1186/2041-1480-4-43, https://en.wikipedia.org/wiki/Biome]
-comment: There has been some concern raised (see Issue #143) about the usefulness of the assertion that organisms have evolved within a given biome. They may have evolved adaptations elsewhere and demonstrating one or the other is often not feasible. Consider relabelling to "environmental system determined by an ecological community" or similar.
+def: "A biome is an ecosystem which is undergoing climactic ecological succession." [DOI:10.1186/2041-1480-4-43, https://en.wikipedia.org/wiki/Biome]
+comment: In this definition, there is an assumption that no major perturbations are occurring or have occurred in a time frame affects the successional dynamics of the ecosystem. A "major" perturbation is one which disrupts the community's ability to restore its (near) equilibrium. Usually, pioneer or early secondary successional processes would be in effect in such scenarios.
 synonym: "EcosytemType" RELATED [NASA:earthrealm]
 synonym: "major habitat type" EXACT [WWF:Biome]
 xref: EcoLexicon:biome
+xref: LTER:809 {xref="https://vocab.lternet.edu/vocab/vocab/index.php?tema=809&/biomes"}
 is_a: ENVO:01001110 ! ecosystem
-relationship: has_component ENVO:01000739 {minCardinality="2"} ! habitat
-relationship: has_part ENVO:01000739 ! habitat
 relationship: part_of ENVO:01000817 ! biosphere
 
 [Term]
@@ -674,8 +673,9 @@ is_a: ENVO:00001998 ! soil
 id: ENVO:00010483
 name: environmental material
 namespace: ENVO
-def: "A portion of environmental material is a fiat object part which forms the medium or part of the medium of an environmental system." [DOI:10.1186/2041-1480-4-43, MA:ma, ORCID:0000-0002-4366-3088, URL:http\://ontology.buffalo.edu/smith/articles/niches.html]
-comment: Everything under this parent must be a mass noun. All subclasses are to be understood as being composed primarily of the named entity, rather than restricted to that entity. For example, "ENVO:water" is to be understood as "environmental material composed primarly of some CHEBI:water". This class is currently being aligned to the Basic Formal Ontology. Following this alignment, its definition and the definitions of its subclasses will be revised.
+def: "A material entity which other material entities in an environmental system are primarily or partially composed of." [http://ontology.buffalo.edu/smith/articles/niches.html, https://dx.doi.org/10.1186/2041-1480-4-43, https://en.wikipedia.org/wiki/Material]
+comment: Everything under this parent must be a mass noun (i.e. not countable). All subclasses are to be understood as being composed primarily of the named entity, rather than restricted to that entity. For example, "ENVO:water" is to be understood as "environmental material composed primarly of some CHEBI:water".
+comment: Instances of this class are portions of environmental materials, such as seawater in bucket, a water parcel in the photic zone of a lake, or the concrete that composes a building part. Instances of these portions may have fiat or non-fiat boundaries. For example, a water parcel has not physical boundaries, while the seawater in a bucket is bounded by the internal surfaces of the bucket.
 synonym: "portion of environmental material" EXACT []
 
 [Term]
@@ -746,18 +746,6 @@ created_by: ORCID:0000-0002-4366-3088
 creation_date: 2010-03-20T08:40:04Z
 
 [Term]
-id: ENVO:01000219
-name: anthropogenic terrestrial biome
-namespace: ENVO
-def: "An anthropogenic terrestrial biome is a terrestrial biome which has community structures determined by human activity." [http://www.eoearth.org/view/article/150128/]
-comment: Preliminary definition.
-synonym: "anthrome" EXACT []
-synonym: "human biome" EXACT []
-is_a: ENVO:00000446 ! terrestrial biome
-created_by: ORCID:0000-0002-4366-3088
-creation_date: 2013-04-07T14:45:22Z
-
-[Term]
 id: ENVO:01000231
 name: lava
 namespace: ENVO
@@ -775,7 +763,6 @@ id: ENVO:01000248
 name: dense settlement biome
 namespace: ENVO
 def: "A dense settlement biome is an anthropogenic terrestrial biome which is primarily used for human habitation, recreation, and industry within built structures with little other land use." [DOI:10.1111/j.1466-8238.2010.00540.x, DOI:10.1890/070062]
-is_a: ENVO:01000219 ! anthropogenic terrestrial biome
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2013-06-14T11:45:47Z
 
@@ -851,10 +838,9 @@ creation_date: 2013-10-13T12:01:28Z
 id: ENVO:01000281
 name: layer
 namespace: ENVO
-def: "A layer is a quantity of some material which is spatially continuous, has comparable thickness, and usually covers some surface." [Wiktionary:layer]
-comment: Preliminary definition.
+def: "A material entity which 1) is spatially continuous, 2) is composed of material of comparable thickness, composition, and physical properties, and 3) is physically distinct from adjacent portions of environmental material." [https://en.wiktionary.org/wiki/layer]
 subset: envoPolar
-created_by: ORCID:0000-0002-4366-3088
+created_by: https://orcid.org/0000-0002-4366-3088
 creation_date: 2013-10-15T16:42:02Z
 
 [Term]
@@ -940,6 +926,13 @@ is_a: ENVO:01001276 ! water ice layer
 relationship: composed_primarily_of ENVO:01000277 ! water ice
 relationship: formed_as_result_of ENVO:01000896 ! freezing rainfall
 created_by: ORCID:0000-0002-4366-3088
+
+[Term]
+id: ENVO:01000617
+name: lentic water body
+namespace: ENVO
+def: "A lentic water body is a water body in which the accumulated water, in its totality, has very little to no directed flow." []
+is_a: ENVO:00000063 ! water body
 
 [Term]
 id: ENVO:01000618
@@ -1057,7 +1050,7 @@ id: ENVO:01000660
 name: tephra
 namespace: ENVO
 def: "Tephra is fragmental material produced by a volcanic eruption regardless of composition, fragment size or emplacement mechanism." [https://en.wikipedia.org/wiki/Tephra]
-is_a: ENVO:00010483 ! environmental material
+is_a: ENVO:01000814 ! solid environmental material
 relationship: output_of ENVO:01000655 ! explosive eruption
 
 [Term]
@@ -1410,19 +1403,6 @@ relationship: has_participant ENVO:01000231 ! lava
 relationship: has_participant ENVO:01000635 ! planetary landmass
 
 [Term]
-id: ENVO:01000739
-name: habitat
-namespace: ENVO
-def: "An environmental system which can sustain and allow the growth of an ecological population." [EnvO:EnvO]
-comment: A habitat's specificity to an ecological population differentiates it from other environment classes.
-xref: EcoLexicon:habitat
-xref: https://en.wikipedia.org/wiki/Habitat
-xref: LTER:238
-xref: SWEETRealm:Habitat
-is_a: ENVO:01001110 ! ecosystem
-relationship: part_of ENVO:01000817 ! biosphere
-
-[Term]
 id: ENVO:01000760
 name: cloud
 namespace: ENVO
@@ -1562,9 +1542,13 @@ id: ENVO:01000813
 name: astronomical body part
 namespace: ENVO
 def: "A material part of an astronomical body." []
+comment: Material parts of astronomical bodies generally have boundaries formed by discontinuities in qualities, composition, or other physical characterisitcs. These boundaries are sometimes sharp, and sometimes diffuse, with different classification systems and communities declaring varying thresholds (e.g. for where a shoreline, forest, or other entity begins and ends). However, some boundaries are declared by fiat - that is, by arbitrary human convention or decree - particularly by regulatory or other authorities and communities of practice. The classes in this hierarchy attempt to offer generalisable definitions that allow multiple classfiication systems to map to and interoperate through. If desired, we can create classes that declare thresholds used by a given authority or community under the more generic ones, annotated with source information.
 subset: envoAstro
 subset: envoPolar
 relationship: part_of ENVO:01000799 ! astronomical body
+property_value: IAO:0000116 "Also note that some astronomical body parts (ABPs) may have fiat boundaries: if there's strong debate about where an ABP begins or ends (over and above fuzzy boundaries), with different official classifications setting different thresholds or limits, axiomatise the class with fiat boundaries of the appropriate dimension." xsd:string
+property_value: IAO:0000116 "Note that material entities may have immaterial entities (e.g. sites) as parts." xsd:string
+property_value: IAO:0000116 "This class includes material parts of astronomical bodies. Immaterial parts, such as magnetospheres, are represented as sites under the influence of magnetic fields.Please post countercases in the ENVO tracker for revision of this hierarchy if needed." xsd:string
 
 [Term]
 id: ENVO:01000814
@@ -1587,11 +1571,11 @@ is_a: ENVO:02000140 ! fluid environmental material
 id: ENVO:01000817
 name: biosphere
 namespace: ENVO
-def: "A biosphere is a part of an astronomical body which includes, as parts, all the living entities within the gravitational sphere of influence of that body, as well as the non-living and dead entities with which they interact." [http://www.biology-online.org/dictionary/Biosphere, https://en.wikipedia.org/wiki/Biosphere]
+def: "An astronomical body part which includes all the living entities within the gravitational sphere of influence of that body, as well as the non-living and dead entities with which they interact." [http://www.biology-online.org/dictionary/Biosphere, https://en.wikipedia.org/wiki/Biosphere]
 comment: The gravitational sphere of influence referenced in this class' definition is the Hill sphere: a region in which an object dominates the attraction of satellites despite gravitational perturbations.
 subset: envoAstro
 subset: envoPolar
-is_a: ENVO:01001784 ! compound astronomical body part
+is_a: ENVO:01000813 ! astronomical body part
 property_value: IAO:0000116 "Whether this class should be grouped with classes such as \"hydrosphere\" and \"cryosphere\" requires some discussion." xsd:string
 
 [Term]
@@ -1612,7 +1596,7 @@ namespace: ENVO
 def: "An astronomical body part which is composed of soil, subject to soil formation processes, and found on the surface of a lithosphere." [https://en.wikipedia.org/wiki/Pedosphere]
 comment: This is a very broad and, in practice, poorly defined term. Please consider using or requesting a more specific class.
 subset: envoAstro
-is_a: ENVO:01001784 ! compound astronomical body part
+is_a: ENVO:01000813 ! astronomical body part
 relationship: composed_primarily_of ENVO:00001998 ! soil
 relationship: overlaps ENVO:01000267 ! atmosphere
 relationship: overlaps ENVO:01000646 ! lithosphere
@@ -1840,7 +1824,6 @@ creation_date: 2021-04-14T18:57:18.275Z
 id: ENVO:01000896
 name: freezing rainfall
 namespace: ENVO
-alt_id: METAR:FZRA
 def: "Water-based rainfall which freezes either 1) on impact with a surface to form a coating of clear ice (glaze) or 2) after percolating through surface layers." [https://orcid.org/0000-0003-4808-4736]
 comment: A surface temperature inversion is usually required. In such an inversion, the surface must have a temperature below freezing, while the temperature of the atmosphere where the precipitation forms is above freezing. Alternately, if the temperature of the ground surface and glazed objects is typically near or below freezing (0C or 32F), it is necessary that the water drops be supercooled before striking. Freezing rain can sometimes occur on surfaces exposed to the air (such as tree limbs) with air temperatures slightly above freezing in strong winds. Local evaporational cooling may result in freezing. Freezing rain frequently occurs, therefore, as a transient condition between the occurrence of rain and ice pellets (sleet). When encountered by an aircraft in flight, freezing rain can cause a dangerous accretion of clear icing. In aviation weather observations, this hydrometeor is encoded ZR by NOAA. {xref="https://orcid.org/0000-0003-4808-4736"}
 subset: environmental_hazards
@@ -1849,6 +1832,7 @@ subset: envoPolar
 synonym: "freezing rain" BROAD []
 synonym: "freezing rain fall" BROAD []
 xref: http://sweetontology.net/phenAtmoPrecipitation/FreezingRain
+xref: METAR:FZRA
 is_a: ENVO:01000830 ! water-based rainfall
 property_value: IAO:0000116 "This term exists, we're revising the definition with ESIP semantic Harmonization group, delete the old one.\n\nConsider adding axioms like PATO:\"decreased temperature\" to this and other cold forms of precipitation, such that we can create a grouping class to be filled by inference (with hail, sleet, snow, freezing rain). Something like precipitation below the liquid-solid phase transition point of water." xsd:string
 created_by: https://orcid.org/0000-0002-0337-8610
@@ -2096,9 +2080,9 @@ is_a: ENVO:01000692 ! landslide process
 id: ENVO:01001110
 name: ecosystem
 namespace: ENVO
-alt_id: LTER:173 {xref="https://vocab.lternet.edu/vocab/vocab/index.php?tema=173&/ecosystems"}
 def: "An environmental system which includes both living and non-living components." [https://en.wikipedia.org/wiki/Ecosystem]
 comment: This class will be primarily filled by inference, any environmental system which necessarily includes living parts should be autoclassified here.
+xref: LTER:173 {xref="https://vocab.lternet.edu/vocab/vocab/index.php?tema=173&/ecosystems"}
 is_a: ENVO:01000254 ! environmental system
 
 [Term]
@@ -2188,6 +2172,15 @@ subset: environmental_hazards
 subset: envoAstro
 synonym: "gamma-ray solar radiation" NARROW []
 property_value: IAO:0000114 IAO:0000428
+
+[Term]
+id: ENVO:01001220
+name: water accumulation process
+namespace: ENVO
+def: "A process during which liquid water accumulates in a site, most often in some form of container." []
+is_a: ENVO:01001856 ! liquid accumulation process
+relationship: has_output ENVO:00000063 ! water body
+relationship: has_participant ENVO:00002006 ! liquid water
 
 [Term]
 id: ENVO:01001239
@@ -2358,7 +2351,7 @@ created_by: https://orcid.org/0000-0002-4366-3088
 id: ENVO:01001477
 name: liquid astronomical body part
 namespace: ENVO
-def: "A part of an astronomical body which is primarily composed of a continuous volume of liquid material, shaped by one or more environmental processes." [https://en.wikipedia.org/wiki/Landform]
+def: "A part of an astronomical body which is primarily composed of liquid material." []
 is_a: ENVO:01001479 ! fluid astronomical body part
 intersection_of: ENVO:01001479 ! fluid astronomical body part
 intersection_of: composed_primarily_of ENVO:01000815 ! liquid environmental material
@@ -2368,8 +2361,10 @@ created_by: https://orcid.org/0000-0002-4366-3088
 id: ENVO:01001479
 name: fluid astronomical body part
 namespace: ENVO
-def: "A part of an astronomical body which is primarily composed of a continuous volume of liquid or gaseous material, shaped by one or more environmental processes." [https://en.wikipedia.org/wiki/Landform]
+def: "A part of an astronomical body which is primarily composed of fluid." [https://en.wikipedia.org/wiki/Fluid]
 is_a: ENVO:01000813 ! astronomical body part
+intersection_of: ENVO:01000813 ! astronomical body part
+intersection_of: composed_primarily_of ENVO:02000140 ! fluid environmental material
 created_by: https://orcid.org/0000-0002-4366-3088
 creation_date: 2018-10-04T13:59:22Z
 
@@ -2530,15 +2525,6 @@ property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0
 property_value: http://purl.org/dc/elements/1.1/date 2019-10-17T08:31:26Z xsd:dateTime
 
 [Term]
-id: ENVO:01001784
-name: compound astronomical body part
-namespace: ENVO
-def: "A part of an astronomical body which is composed of a continuous medium bearing liquid, gaseous, and solid material in variable quantities." [https://en.wikipedia.org/wiki/Landform]
-is_a: ENVO:01000813 ! astronomical body part
-property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-4366-3088
-property_value: http://purl.org/dc/elements/1.1/date 2019-10-17T08:36:00Z xsd:dateTime
-
-[Term]
 id: ENVO:01001785
 name: land
 namespace: ENVO
@@ -2552,7 +2538,10 @@ property_value: http://purl.org/dc/elements/1.1/date 2019-10-21T10:42:26Z xsd:da
 id: ENVO:01001790
 name: terrestrial ecosystem
 namespace: ENVO
+def: "An ecosystem which primarily occurs on land." []
 is_a: ENVO:01001110 ! ecosystem
+intersection_of: ENVO:01001110 ! ecosystem
+intersection_of: determined_by ENVO:01001785 ! land
 property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-4366-3088
 property_value: http://purl.org/dc/elements/1.1/date 2019-10-21T11:09:58Z xsd:dateTime
 
@@ -2564,6 +2553,17 @@ def: "A process during which one entity loses energy to another entity." []
 is_a: ENVO:02500000 ! environmental system process
 property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-4366-3088
 property_value: http://purl.org/dc/elements/1.1/date 2020-02-13T13:34:28Z xsd:dateTime
+
+[Term]
+id: ENVO:01001856
+name: liquid accumulation process
+namespace: ENVO
+def: "A material accumulation process during which the volume of liquid entity increases." []
+is_a: ENVO:03000009 ! material accumulation process
+intersection_of: ENVO:03000009 ! material accumulation process
+intersection_of: has_participant ENVO:01000815 ! liquid environmental material
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2020-05-18T14:39:20Z xsd:dateTime
 
 [Term]
 id: ENVO:01001886
@@ -2611,12 +2611,9 @@ property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-436
 id: ENVO:02000140
 name: fluid environmental material
 namespace: ENVO
-def: "A liquid or a gas." [https://github.com/EnvironmentOntology/envo/issues/940]
+def: "An environmental material which is unable to resist shear forces and continuously deforms when subject to them." [https://en.wikipedia.org/wiki/Fluid, https://github.com/EnvironmentOntology/envo/issues/940]
 synonym: "fluid" NARROW []
 is_a: ENVO:00010483 ! environmental material
-union_of: ENVO:01000797 ! gaseous environmental material
-union_of: ENVO:01000798 ! plasma
-union_of: ENVO:01000815 ! liquid environmental material
 
 [Term]
 id: ENVO:02500000
@@ -2879,7 +2876,7 @@ id: ENVO:03000143
 name: cryosphere
 namespace: ENVO
 def: "An astronomical body part which is composed primarily of environmental materials in their frozen form." [https://orcid.org/0000-0003-4808-4736]
-comment: The term refers collectively to the portions of the earth (i.e., a planet) where water is in solid form, including snow cover, floating ice, glaciers, ice caps, ice sheets, seasonally frozen ground and perennially frozen ground (permafrost). The Cryosphere may be divided into the cryoatmosphere, the cryohydrosphere (snow cover, glaciers, and river, lake and sea Ice) and the cryolithosphere (perennially and seasonally cryotic ground, rock glacier).\n\nThis is an Earth centric definition, other cryospheres will be considered later. Some definitions reffer to that which is sufficiently cold for pure water to freeze for at least a part of each year.\n\nIt should be noted that "Some authorities exclude the earth's atmosphere from the Earth's Cryosphere; others restrict the term Cryosphere to the regions of the earth's crust where Permafrost exists."\n\nDefinitions of Cryosphere come from several glossaries including:\n- PhysicalGeography.net http://physicalgeography.net/\n-  van Everdingen, Robert, ed., 2005 (1998 revised May 2005). Multi-language glossary of permafrost and related ground-ice terms. Boulder, CO: National Snow and Ice Data Center/World Data Center for Glaciology. [https://globalcryospherewatch.org/reference/glossary_docs/Glossary_of_Permafrost_and_Ground-Ice_IPA_2005.pdf]\n- American Meteorological Society, 2015. Glossary of Meteorology [online], Available at: http://glossary.ametsoc.org/wiki/Main_Page. [Accessed 27/01/2017].\n- EU Climate-ADAPT (The European Climate Adaptation Platform), no date, Glossary, Available from: http://climate-adapt.eea.europa.eu/glossary\n- IPCC, 2014: Annex II: Glossary [Agard, J., Schipper, E. L. F., (ed.)]. In: Climate Change 2014: Impacts, Adaptation, and Vulnerability. Contribution of Working Group II to the Fifth Assessment Report of the Intergovernmental Panel on Climate Change [Birkmann, J., Campos, M., Dubeux, C., Nojiri, Y., Olsson, L., Osman-Elasha, B., Pelling, M., Prather, M. J., Rivera-Ferre M. G., Ruppel, O. C., Sallenger, A., Smith, K. R., St. Clair, A. L.,]. Cambridge University Press, Cambridge, United Kingdom and New York, NY, USA. [Link]\n- NSIDC, The National Snow and Ice Data Center glossary is available at https://nsidc.org/cryosphere/glossary, Last accessed [26/01/2016].\n- Trombotto, D., P. Wainstein & L. Arenson, 2014, Guía Terminológica de la Geocriología Sudamericana” / “Terminological Guide of the South American Geocryology, 1a ed. 128 pp. [Link]\n- UNESCO-WMO, 2012, International Glossary of Hydrology, 3rd edition, WMO-No. 385. [Link] {xref="https://orcid.org/0000-0003-4808-4736"}
+comment: The term generally refers to the portions of the Earth where water is in solid form, including snow cover, floating ice, glaciers, ice caps, ice sheets, seasonally frozen ground and perennially frozen ground (permafrost). The Cryosphere may be divided into the cryoatmosphere, the cryohydrosphere (snow cover, glaciers, and river, lake and sea Ice) and the cryolithosphere (perennially and seasonally cryotic ground, rock glacier). Some definitions consider the cryosphere to include any area of Earth which is sufficiently cold for pure water to freeze for at least a part of each year. It should be noted that "Some authorities exclude the earth's atmosphere from the Earth's Cryosphere; others restrict the term Cryosphere to the regions of the earth's crust where Permafrost exists."\n\nDefinitions of Cryosphere come from several glossaries including:\n- PhysicalGeography.net http://physicalgeography.net/\n-  van Everdingen, Robert, ed., 2005 (1998 revised May 2005). Multi-language glossary of permafrost and related ground-ice terms. Boulder, CO: National Snow and Ice Data Center/World Data Center for Glaciology. [https://globalcryospherewatch.org/reference/glossary_docs/Glossary_of_Permafrost_and_Ground-Ice_IPA_2005.pdf]\n- American Meteorological Society, 2015. Glossary of Meteorology [online], Available at: http://glossary.ametsoc.org/wiki/Main_Page. [Accessed 27/01/2017].\n- EU Climate-ADAPT (The European Climate Adaptation Platform), no date, Glossary, Available from: http://climate-adapt.eea.europa.eu/glossary\n- IPCC, 2014: Annex II: Glossary [Agard, J., Schipper, E. L. F., (ed.)]. In: Climate Change 2014: Impacts, Adaptation, and Vulnerability. Contribution of Working Group II to the Fifth Assessment Report of the Intergovernmental Panel on Climate Change [Birkmann, J., Campos, M., Dubeux, C., Nojiri, Y., Olsson, L., Osman-Elasha, B., Pelling, M., Prather, M. J., Rivera-Ferre M. G., Ruppel, O. C., Sallenger, A., Smith, K. R., St. Clair, A. L.,]. Cambridge University Press, Cambridge, United Kingdom and New York, NY, USA. [Link]\n- NSIDC, The National Snow and Ice Data Center glossary is available at https://nsidc.org/cryosphere/glossary, Last accessed [26/01/2016].\n- Trombotto, D., P. Wainstein & L. Arenson, 2014, Guía Terminológica de la Geocriología Sudamericana” / “Terminological Guide of the South American Geocryology, 1a ed. 128 pp. [Link]\n- UNESCO-WMO, 2012, International Glossary of Hydrology, 3rd edition, WMO-No. 385. [Link] {xref="https://orcid.org/0000-0003-4808-4736"}
 subset: envoCryo
 subset: envoPolar
 xref: http://sweetontology.net/realm/Cryosphere
@@ -3044,11 +3041,6 @@ namespace: ENVO
 xref: RO:0002176
 
 [Typedef]
-id: contained_in
-namespace: ENVO
-xref: RO:0001018
-
-[Typedef]
 id: contains
 namespace: ENVO
 xref: RO:0001019
@@ -3147,15 +3139,6 @@ namespace: ENVO
 xref: RO:0002180
 
 [Typedef]
-id: has_condition
-name: has_condition
-namespace: ENVO
-comment: Experimental relation used in EnvO. A condition defines a restricted range of a given quality or combination of qualities. If an environment class, E, has_condition C, then all qualities listed in C are restricted to the ranges defined in C in E. This is not intended as a logical conditional.
-xref: has_condition
-is_inverse_functional: true
-creation_date: 2013-05-08T07:33:05Z
-
-[Typedef]
 id: has_disposition
 namespace: ENVO
 xref: RO:0000091
@@ -3178,8 +3161,13 @@ xref: RO:0002303
 
 [Typedef]
 id: has_increased_levels_of
+name: has increased levels of
 namespace: ENVO
-xref: has_increased_levels_of
+def: "A has part relationship between a whole and a part, where the number of parts present in the whole is higher than in comparable entities." []
+comment: This relation is present in ENVO to support compositional classes such as "X-enriched soil". These will later be formalized, and a different relation from RO may be chosen.
+xref: ENVO:02000200
+property_value: seeAlso https://github.com/EnvironmentOntology/envo/issues/1380
+is_a: has_component
 
 [Typedef]
 id: has_input

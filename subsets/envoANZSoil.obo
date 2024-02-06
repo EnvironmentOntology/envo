@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: envo/releases/2023-02-13/subsets/envoANZSoil.owl
+data-version: envo/releases/2024-02-05/subsets/envoANZSoil.owl
 subsetdef: disposition_slim "Disposition slim"
 subsetdef: environmental_hazards "environmental_hazards"
 subsetdef: EnvO-Lite-GSC "EnvO-Lite-GSC"
@@ -23,9 +23,9 @@ subsetdef: ro-eco "ro-eco"
 subsetdef: scalar_slim "Scalar slim"
 subsetdef: value_slim "Value slim"
 subsetdef: wwfBiome "wwfBiome"
-synonymtypedef: PLURAL "plurals"
+synonymtypedef: OMO:0003004 "plural form"
 ontology: envo/subsets/envoANZSoil
-property_value: owl:versionInfo "2023-02-13" xsd:string
+property_value: owl:versionInfo "2024-02-05" xsd:string
 
 [Typedef]
 id: adjacent_to
@@ -97,11 +97,6 @@ id: connects
 name: connects
 namespace: ENVO
 xref: RO:0002176
-
-[Typedef]
-id: contained_in
-namespace: ENVO
-xref: RO:0001018
 
 [Typedef]
 id: contains
@@ -202,15 +197,6 @@ namespace: ENVO
 xref: RO:0002180
 
 [Typedef]
-id: has_condition
-name: has_condition
-namespace: ENVO
-comment: Experimental relation used in EnvO. A condition defines a restricted range of a given quality or combination of qualities. If an environment class, E, has_condition C, then all qualities listed in C are restricted to the ranges defined in C in E. This is not intended as a logical conditional.
-xref: has_condition
-is_inverse_functional: true
-creation_date: 2013-05-08T07:33:05Z
-
-[Typedef]
 id: has_disposition
 namespace: ENVO
 xref: RO:0000091
@@ -233,8 +219,13 @@ xref: RO:0002303
 
 [Typedef]
 id: has_increased_levels_of
+name: has increased levels of
 namespace: ENVO
-xref: has_increased_levels_of
+def: "A has part relationship between a whole and a part, where the number of parts present in the whole is higher than in comparable entities." []
+comment: This relation is present in ENVO to support compositional classes such as "X-enriched soil". These will later be formalized, and a different relation from RO may be chosen.
+xref: ENVO:02000200
+property_value: seeAlso https://github.com/EnvironmentOntology/envo/issues/1380
+is_a: has_component
 
 [Typedef]
 id: has_input

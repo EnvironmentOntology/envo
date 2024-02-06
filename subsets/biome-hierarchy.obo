@@ -1,17 +1,17 @@
 format-version: 1.2
-data-version: envo/releases/2023-02-13/subsets/biome-hierarchy.owl
+data-version: envo/releases/2024-02-05/subsets/biome-hierarchy.owl
 ontology: envo/subsets/biome-hierarchy
-property_value: owl:versionInfo "subsets/biome-hierarchy.owl 2023-02-13" xsd:string
+property_value: owl:versionInfo "subsets/biome-hierarchy.owl 2024-02-05" xsd:string
 
 [Term]
 id: ENVO:00000428
 name: biome
-alt_id: LTER:809 {xref="https://vocab.lternet.edu/vocab/vocab/index.php?tema=809&/biomes"}
-def: "A biome is an ecosystem to which resident ecological communities have evolved adaptations." [DOI:10.1186/2041-1480-4-43, https://en.wikipedia.org/wiki/Biome]
-comment: There has been some concern raised (see Issue #143) about the usefulness of the assertion that organisms have evolved within a given biome. They may have evolved adaptations elsewhere and demonstrating one or the other is often not feasible. Consider relabelling to "environmental system determined by an ecological community" or similar.
+def: "A biome is an ecosystem which is undergoing climactic ecological succession." [DOI:10.1186/2041-1480-4-43, https://en.wikipedia.org/wiki/Biome]
+comment: In this definition, there is an assumption that no major perturbations are occurring or have occurred in a time frame affects the successional dynamics of the ecosystem. A "major" perturbation is one which disrupts the community's ability to restore its (near) equilibrium. Usually, pioneer or early secondary successional processes would be in effect in such scenarios.
 synonym: "EcosytemType" RELATED [NASA:earthrealm]
 synonym: "major habitat type" EXACT [WWF:Biome]
 xref: EcoLexicon:biome
+xref: LTER:809 {xref="https://vocab.lternet.edu/vocab/vocab/index.php?tema=809&/biomes"}
 
 [Term]
 id: ENVO:00000446
@@ -424,6 +424,16 @@ created_by: ORCID:0000-0002-4366-3088
 creation_date: 2010-03-19T09:32:59Z
 
 [Term]
+id: ENVO:01000174
+name: forest biome
+def: "A forest ecosystem which is undergoing climactic ecological succession." []
+xref: LTER:212
+xref: SPIRE:Forest
+is_a: ENVO:00000446 ! terrestrial biome
+created_by: ORCID:0000-0002-4366-3088
+creation_date: 2013-04-07T14:26:46Z
+
+[Term]
 id: ENVO:01000175
 name: woodland biome
 def: "A woodland biome is a terrestrial biome which includes, across its entire spatial extent, woody plants spaced sufficiently far apart to allow light penetration to support communities of herbaceous plants or shrubs living closer to the woodland floor." []
@@ -442,6 +452,15 @@ created_by: ORCID:0000-0002-4366-3088
 creation_date: 2013-04-07T14:26:46Z
 
 [Term]
+id: ENVO:01000177
+name: grassland biome
+def: "A grassland ecosystem in which dominant ecological communities have reached their climax successional state." []
+xref: SPIRE:Savannah_or_grassland
+is_a: ENVO:00000446 ! terrestrial biome
+created_by: ORCID:0000-0002-4366-3088
+creation_date: 2013-04-07T14:26:46Z
+
+[Term]
 id: ENVO:01000178
 name: savanna biome
 def: "A woodland biome which has seasonal water availability and includes trees spaced sufficiently far apart to allow an unbroken layer of grass, sedge (Cyperaceae) or  rush (Juncaceae) communities to live." []
@@ -451,10 +470,19 @@ created_by: ORCID:0000-0002-4366-3088
 creation_date: 2013-04-07T14:26:46Z
 
 [Term]
+id: ENVO:01000179
+name: desert biome
+def: "A desert ecosystem which is undergoing climactic ecological succession." []
+subset: wwfBiome
+xref: SPIRE:Desert_or_dune
+is_a: ENVO:00000428 ! biome
+created_by: ORCID:0000-0002-4366-3088
+creation_date: 2013-04-07T14:26:46Z
+
+[Term]
 id: ENVO:01000180
 name: tundra biome
-def: "A terrestrial biome which comprises a tundra ecosystem that has reached its climax community." []
-comment: Preliminary definition.
+def: "A tundra ecosystem which is undergoing climactic ecological succession." []
 subset: envoPolar
 subset: wwfBiome
 xref: SPIRE:Tundra
@@ -472,6 +500,57 @@ xref: LTER:322
 is_a: ENVO:00000446 ! terrestrial biome
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2013-04-07T14:26:46Z
+
+[Term]
+id: ENVO:01000182
+name: temperate desert biome
+def: "A temperate desert biome is a desert biome which has communities adapted to intermediate insolation, low rainfall, and large temperature variations between winter and summer. Winter temperatures may fall below 0 degrees Celsius. Some precipitation in this biome may fall as snow." [WWW:http\://www.fs.fed.us/land/ecosysmgmt/colorimagemap/images/340.html]
+comment: Preliminary definition. The semantics and definitions of "mediterranean", "subtropical", "tropical", "temperate", "polar", and similar climate types may be transferred to an "environmental condition" class once the semantics of this class have been established.
+is_a: ENVO:01000179 ! desert biome
+is_a: ENVO:01001831 ! temperate biome
+created_by: ORCID:0000-0002-4366-3088
+creation_date: 2013-04-07T14:28:08Z
+
+[Term]
+id: ENVO:01000183
+name: tropical desert biome
+def: "A tropical desert biome is a desert biome which has communities adapted to temperatures above a monthly average of 18 degrees Celsius, high daily temperature ranges of approximately 20 degrees Celsius, very high insolation due to inhibited cloud formation, and very low precipitation. Tropical desert biomes located near coasts with cold upwellings may have cooler temperatures and reduced insolution due to fog." [WWW:http\://www.earthonlinemedia.com/ebooks/tpe_3e/title_page.html]
+comment: Preliminary definition. The semantics and definitions of "mediterranean", "subtropical", "tropical", "temperate", "polar", and similar climate types may be transferred to an "environmental condition" class once the semantics of this class have been established.
+is_a: ENVO:01000179 ! desert biome
+is_a: ENVO:01001830 ! tropical biome
+created_by: ORCID:0000-0002-4366-3088
+creation_date: 2013-04-07T14:28:08Z
+
+[Term]
+id: ENVO:01000184
+name: subtropical desert biome
+def: "A subtropical desert biome is a desert biome which has communities adapted to temperatures above a monthly average of 18 degrees Celsius, high daily temperature ranges of approximately 20 degrees Celsius, high insolation (but lower than that of a tropical desert biome), inhibited cloud formation, and very low precipitation. Subtropical desert biomes located near coasts with cold upwellings may have cooler temperatures and reduced insolution due to fog." [https://en.wikipedia.org/wiki/Subtropical#Semi-desert.2Fdesert_climate, WWW:http\://www.earthonlinemedia.com/ebooks/tpe_3e/title_page.html]
+comment: Preliminary definition. The semantics and definitions of "mediterranean", "subtropical", "tropical", "temperate", "polar", and similar climate types may be transferred to an "environmental condition" class once the semantics of this class have been established.
+is_a: ENVO:01000179 ! desert biome
+is_a: ENVO:01001832 ! subtropical biome
+created_by: ORCID:0000-0002-4366-3088
+creation_date: 2013-04-07T14:28:08Z
+
+[Term]
+id: ENVO:01000185
+name: montane desert biome
+def: "A montane desert biome is a desert biome which occurs in regions elevated above sea level and which has community structure determined by elevation-dependent environmental conditions." []
+comment: Preliminary definition.
+is_a: ENVO:01000179 ! desert biome
+is_a: ENVO:01001836 ! montane biome
+created_by: ORCID:0000-0002-4366-3088
+creation_date: 2013-04-07T14:28:08Z
+
+[Term]
+id: ENVO:01000186
+name: polar desert biome
+def: "A polar desert biome is a desert biome which is subject to low levels of insolation, annual precipitation less than 250 millimeters, and a mean temperature less than 10 degrees Celsius during its warmest month. Temperature changes in polar deserts frequently cross the freezing point of water." [https://en.wikipedia.org/wiki/Polar_desert]
+comment: Preliminary definition. The semantics and definitions of "mediterranean", "subtropical", "tropical", "temperate", "polar", and similar climate types may be transferred to an "environmental condition" class once the semantics of this class have been established.
+subset: envoPolar
+is_a: ENVO:01000179 ! desert biome
+is_a: ENVO:01000339 ! polar biome
+created_by: ORCID:0000-0002-4366-3088
+creation_date: 2013-04-07T14:28:08Z
 
 [Term]
 id: ENVO:01000187
@@ -518,6 +597,119 @@ created_by: ORCID:0000-0002-4366-3088
 creation_date: 2013-04-07T14:28:51Z
 
 [Term]
+id: ENVO:01000191
+name: subtropical grassland biome
+def: "A subtropical grassland in which dominant ecological communities have reached their climax successional state." []
+subset: wwfBiome
+is_a: ENVO:01000177 ! grassland biome
+is_a: ENVO:01001832 ! subtropical biome
+creation_date: 2013-04-07T14:29:48Z
+
+[Term]
+id: ENVO:01000192
+name: tropical grassland biome
+comment: Preliminary definition. The semantics and definitions of "mediterranean", "subtropical", "tropical", "temperate", "polar", and similar climate types may be transferred to an "environmental condition" class once the semantics of this class have been established.
+subset: wwfBiome
+is_a: ENVO:01000177 ! grassland biome
+is_a: ENVO:01001830 ! tropical biome
+created_by: ORCID:0000-0002-4366-3088
+creation_date: 2013-04-07T14:29:48Z
+
+[Term]
+id: ENVO:01000193
+name: temperate grassland biome
+comment: Preliminary definition. The semantics and definitions of "mediterranean", "subtropical", "tropical", "temperate", "polar", and similar climate types may be transferred to an "environmental condition" class once the semantics of this class have been established.
+synonym: "prairie biome" BROAD []
+is_a: ENVO:01000177 ! grassland biome
+is_a: ENVO:01001831 ! temperate biome
+created_by: ORCID:0000-0002-4366-3088
+creation_date: 2013-04-07T14:29:48Z
+
+[Term]
+id: ENVO:01000194
+name: montane grassland biome
+def: "A montane grassland biome is a grassland biome which occurs in regions elevated above sea level and which has community structure determined by elevation-dependent environmental conditions." []
+comment: Preliminary definition.
+subset: wwfBiome
+is_a: ENVO:01000177 ! grassland biome
+is_a: ENVO:01001836 ! montane biome
+created_by: ORCID:0000-0002-4366-3088
+creation_date: 2013-04-07T14:29:48Z
+
+[Term]
+id: ENVO:01000195
+name: flooded grassland biome
+subset: wwfBiome
+is_a: ENVO:01000177 ! grassland biome
+created_by: ORCID:0000-0002-4366-3088
+creation_date: 2013-04-07T14:29:48Z
+
+[Term]
+id: ENVO:01000196
+name: coniferous forest biome
+namespace: ENVO
+def: "A coniferous forest biome is a forest biome which contains densely packed populations or communities of coniferous trees, strongly limiting light penetration to the forest floor." []
+comment: Preliminary definition.
+is_a: ENVO:01000174 ! forest biome
+created_by: ORCID:0000-0002-4366-3088
+creation_date: 2013-04-07T14:31:01Z
+
+[Term]
+id: ENVO:01000197
+name: broadleaf forest biome
+def: "A broadleaf forest ecosystem which is undergoing climactic ecological succession." []
+is_a: ENVO:01000174 ! forest biome
+created_by: ORCID:0000-0002-4366-3088
+creation_date: 2013-04-07T14:31:01Z
+
+[Term]
+id: ENVO:01000198
+name: mixed forest biome
+def: "A mixed forest in which dominant ecological communities have reached their climax successional state." []
+subset: wwfBiome
+is_a: ENVO:01000174 ! forest biome
+created_by: ORCID:0000-0002-4366-3088
+creation_date: 2013-04-07T14:31:01Z
+
+[Term]
+id: ENVO:01000199
+name: mediterranean forest biome
+def: "A mediterranean forest in which dominant ecological communities have reached their climax successional state." []
+subset: wwfBiome
+is_a: ENVO:01000174 ! forest biome
+is_a: ENVO:01001833 ! mediterranean biome
+created_by: ORCID:0000-0002-4366-3088
+creation_date: 2013-04-07T14:31:01Z
+
+[Term]
+id: ENVO:01000200
+name: tropical broadleaf forest biome
+def: "A tropical broadleaf forest in which dominant ecological communities have reached their climax successional state." []
+is_a: ENVO:01000197 ! broadleaf forest biome
+is_a: ENVO:01001830 ! tropical biome
+created_by: ORCID:0000-0002-4366-3088
+creation_date: 2013-04-07T14:32:28Z
+
+[Term]
+id: ENVO:01000201
+name: subtropical broadleaf forest biome
+def: "A subtropical broadleaf forest in which dominant ecological communities have reached their climax successional state." []
+is_a: ENVO:01000197 ! broadleaf forest biome
+is_a: ENVO:01001832 ! subtropical biome
+created_by: ORCID:0000-0002-4366-3088
+creation_date: 2013-04-07T14:32:28Z
+
+[Term]
+id: ENVO:01000202
+name: temperate broadleaf forest biome
+def: "A broadleaf forest which is subject to temperate climate patterns." []
+subset: wwfBiome
+is_a: ENVO:01000197 ! broadleaf forest biome
+is_a: ENVO:01001831 ! temperate biome
+created_by: ORCID:0000-0002-4366-3088
+creation_date: 2013-04-07T14:32:28Z
+
+[Term]
 id: ENVO:01000208
 name: mediterranean woodland biome
 def: "A subtropical woodland biome which includes communities adapted to hot to warm, dry summers, mild to cold, rainy winters, and the influence of large, usually marine, bodies of water." []
@@ -526,6 +718,49 @@ is_a: ENVO:01000222 ! subtropical woodland biome
 is_a: ENVO:01001833 ! mediterranean biome
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2013-04-07T15:01:04Z
+
+[Term]
+id: ENVO:01000209
+name: subtropical coniferous forest biome
+def: "A coniferous forest biome which is subject to subtropical climate patterns." []
+comment: Preliminary definition. The semantics and definitions of "mediterranean", "subtropical", "tropical", "temperate", "polar", and similar climate types may be transferred to an "environmental condition" class once the semantics of this class have been established.
+subset: wwfBiome
+is_a: ENVO:01000196 ! coniferous forest biome
+is_a: ENVO:01001832 ! subtropical biome
+created_by: ORCID:0000-0002-4366-3088
+creation_date: 2013-04-07T14:39:14Z
+
+[Term]
+id: ENVO:01000210
+name: tropical coniferous forest biome
+def: "A coniferous forest biome which is subject to tropical climate patterns." []
+comment: Preliminary definition. The semantics and definitions of "mediterranean", "subtropical", "tropical", "temperate", "polar", and similar climate types may be transferred to an "environmental condition" class once the semantics of this class have been established.
+subset: wwfBiome
+is_a: ENVO:01000196 ! coniferous forest biome
+is_a: ENVO:01001830 ! tropical biome
+created_by: ORCID:0000-0002-4366-3088
+creation_date: 2013-04-07T14:39:14Z
+
+[Term]
+id: ENVO:01000211
+name: temperate coniferous forest biome
+def: "A coniferous forest biome which is subject to temperate climate patterns." []
+comment: Preliminary definition. The semantics and definitions of "mediterranean", "subtropical", "tropical", "temperate", "polar", and similar climate types may be transferred to an "environmental condition" class once the semantics of this class have been established.
+subset: wwfBiome
+is_a: ENVO:01000196 ! coniferous forest biome
+is_a: ENVO:01001831 ! temperate biome
+created_by: ORCID:0000-0002-4366-3088
+creation_date: 2013-04-07T14:39:14Z
+
+[Term]
+id: ENVO:01000212
+name: temperate mixed forest biome
+def: "A temperate mixed forest in which dominant ecological communities have reached their climax successional state." []
+subset: wwfBiome
+is_a: ENVO:01000198 ! mixed forest biome
+is_a: ENVO:01001831 ! temperate biome
+created_by: ORCID:0000-0002-4366-3088
+creation_date: 2013-04-07T14:39:30Z
 
 [Term]
 id: ENVO:01000213
@@ -644,6 +879,56 @@ created_by: ORCID:0000-0002-4366-3088
 creation_date: 2013-04-07T16:50:01Z
 
 [Term]
+id: ENVO:01000224
+name: mediterranean grassland biome
+def: "A subtropical grassland biome which includes communities adapted to hot to warm, dry summers, mild to cold, rainy winters, and the influence of large, usually marine, bodies of water." []
+comment: Preliminary definition. The semantics and definitions of "mediterranean", "subtropical", "tropical", "temperate", "polar", and similar climate types may be transferred to an "environmental condition" class once the semantics of this class have been established.
+is_a: ENVO:01000191 ! subtropical grassland biome
+is_a: ENVO:01001833 ! mediterranean biome
+created_by: ORCID:0000-0002-4366-3088
+creation_date: 2013-04-19T11:42:48Z
+
+[Term]
+id: ENVO:01000225
+name: subtropical dry broadleaf forest biome
+def: "A subtropical dry broadleaf forest in which dominant ecological communities have reached their climax successional state." []
+subset: wwfBiome
+xref: https://www.worldwildlife.org/biomes/tropical-and-subtropical-dry-broadleaf-forests
+is_a: ENVO:01000201 ! subtropical broadleaf forest biome
+created_by: ORCID:0000-0002-4366-3088
+creation_date: 2013-04-24T12:04:53Z
+
+[Term]
+id: ENVO:01000226
+name: subtropical moist broadleaf forest biome
+def: "A subtropical moist broadleaf forest in which dominant ecological communities have reached their climax successional state." []
+subset: wwfBiome
+is_a: ENVO:01000201 ! subtropical broadleaf forest biome
+created_by: ORCID:0000-0002-4366-3088
+creation_date: 2013-04-24T12:04:53Z
+
+[Term]
+id: ENVO:01000227
+name: tropical dry broadleaf forest biome
+def: "A tropical dry broadleaf forest in which dominant ecological communities have reached their climax successional state." []
+subset: wwfBiome
+xref: https://www.worldwildlife.org/biomes/tropical-and-subtropical-dry-broadleaf-forests
+is_a: ENVO:01000200 ! tropical broadleaf forest biome
+created_by: ORCID:0000-0002-4366-3088
+creation_date: 2013-04-24T12:05:25Z
+
+[Term]
+id: ENVO:01000228
+name: tropical moist broadleaf forest biome
+def: "A tropical moist broadleaf forest in which dominant ecological communities have reached their climax successional state." []
+subset: wwfBiome
+synonym: "rainforest biome" RELATED []
+xref: SPIRE:Rainforest
+is_a: ENVO:01000200 ! tropical broadleaf forest biome
+created_by: ORCID:0000-0002-4366-3088
+creation_date: 2013-04-24T12:05:25Z
+
+[Term]
 id: ENVO:01000229
 name: mediterranean savanna biome
 def: "A savanna biome which is subject to mediterranean climate patterns." []
@@ -654,11 +939,19 @@ created_by: ORCID:0000-0002-4366-3088
 creation_date: 2013-04-24T12:20:42Z
 
 [Term]
+id: ENVO:01000245
+name: cropland biome
+def: "A cropland ecosystem which is undergoing climactic ecological succession." [http://dx.doi.org/10.1111/j.1466-8238.2010.00540.x, http://dx.doi.org/10.1890/070062]
+is_a: ENVO:01000219 ! anthropogenic terrestrial biome
+created_by: ORCID:0000-0002-4366-3088
+creation_date: 2013-06-14T11:45:47Z
+
+[Term]
 id: ENVO:01000246
 name: village biome
 def: "A village biome is an anthropogenic terrestrial biome which contains settlements such as villages, towns, and/or small cities and which is primarily used for agricultural activity." [DOI:10.1111/j.1466-8238.2010.00540.x, DOI:10.1890/070062]
 comment: Villages are also described as agricultural settlements with greater than 100 persons per square kilometre; however, no upper limit is defined.
-is_a: ENVO:01000219 ! anthropogenic terrestrial biome
+is_a: ENVO:00000428 ! biome
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2013-06-14T11:45:47Z
 
@@ -673,9 +966,8 @@ creation_date: 2013-06-14T11:45:47Z
 [Term]
 id: ENVO:01000248
 name: dense settlement biome
-namespace: ENVO
 def: "A dense settlement biome is an anthropogenic terrestrial biome which is primarily used for human habitation, recreation, and industry within built structures with little other land use." [DOI:10.1111/j.1466-8238.2010.00540.x, DOI:10.1890/070062]
-is_a: ENVO:01000219 ! anthropogenic terrestrial biome
+is_a: ENVO:00000428 ! biome
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2013-06-14T11:45:47Z
 
@@ -688,6 +980,20 @@ xref: SPIRE:Urban
 is_a: ENVO:01000248 ! dense settlement biome
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2013-06-14T11:45:47Z
+
+[Term]
+id: ENVO:01000250
+name: subpolar coniferous forest biome
+def: "A  coniferous forest biome which includes communities adapted to subpolar conditions." []
+subset: wwfBiome
+synonym: "boreal forest" NARROW []
+synonym: "taiga" NARROW []
+xref: EcoLexicon:taiga
+xref: LTER:72
+xref: SPIRE:Taiga
+is_a: ENVO:01000196 ! coniferous forest biome
+is_a: ENVO:01001834 ! subpolar biome
+creation_date: 2013-09-04T06:41:53Z
 
 [Term]
 id: ENVO:01000252
@@ -768,11 +1074,11 @@ property_value: IAO:0000116 "A class which is complementary to the WWF Temperate
 [Term]
 id: ENVO:01001369
 name: tidal mangrove shrubland
-alt_id: CMECS:577
 def: "A shrubland biome which is densely vegetated by dwarf or short mangroves (and associates) that are generally less than 6 meters in height, is tidally influenced,  is located in tropical or subtropical areas." []
 comment: This class aligns to the Coastal and Marine Ecological Classification Standard (CMECS). In ENVO, we may adapt the definition for consistency, but the semantics (meaning) of the term should be unaffected. Please consult the CMECS catalogue (https://cmecscatalog.org/) for authoritative and semantically unconstrained definitions. CMECS provides the following notes: "Commonly found on intertidal mud flats along the shores of estuaries. Tidal mangrove shrublands may include immature stands or stunted mature trees that indicate a harsh growing environment. Areas characterized by tall mangroves (> 6 meters) are placed in the Tidal Mangrove Forest Biotic Group. Where tidal amplitude is relatively low, the vegetation forms narrow bands along the coastal plains, and it rarely penetrates inland more than several kilometers along rivers. Where tidal amplitude is greater, mangroves extend further inland along river courses, forming extensive stands in the major river deltas. Also, mangrove cays may occur within the lagoon complex of barrier reefs. The list of biotic communities for this group is long: a few examples are provided below, and the complete list is available in Appendix F"
 subset: envoCmecs
 subset: envoMarine
+xref: CMECS:577
 xref: https://cmecscatalog.org/cmecs/classification/unit/577.html
 is_a: ENVO:01000176 ! shrubland biome
 created_by: https://orcid.org/0000-0002-4366-3088
@@ -790,6 +1096,16 @@ is_a: ENVO:01000180 ! tundra biome
 is_a: ENVO:01001835 ! alpine biome
 created_by: https://orcid.org/0000-0002-4366-3088
 creation_date: 2019-01-14T16:26:18Z
+
+[Term]
+id: ENVO:01001798
+name: tropical mixed forest biome
+def: "A tropical mixed forest in which dominant ecological communities have reached their climax successional state." []
+subset: wwfBiome
+is_a: ENVO:01000198 ! mixed forest biome
+is_a: ENVO:01001830 ! tropical biome
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-10-27T16:05:39Z xsd:dateTime
 
 [Term]
 id: ENVO:01001830
@@ -862,4 +1178,12 @@ def: "A biome which is subject to arid environmental conditions." []
 is_a: ENVO:00000428 ! biome
 property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-4366-3088
 property_value: http://purl.org/dc/elements/1.1/date 2019-11-06T16:06:47Z xsd:dateTime
+
+[Term]
+id: ENVO:03605008
+name: freshwater stream biome
+def: "A freshwater stream ecosystem which is undergoing climactic ecological succession." []
+is_a: ENVO:00000873 ! freshwater biome
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0001-9076-6066
+property_value: http://purl.org/dc/elements/1.1/date 2024-01-10T19:19:00Z xsd:dateTime
 

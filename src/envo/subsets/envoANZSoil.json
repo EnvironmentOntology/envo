@@ -4,9 +4,9 @@
     "meta" : {
       "basicPropertyValues" : [ {
         "pred" : "http://www.w3.org/2002/07/owl#versionInfo",
-        "val" : "2023-02-13"
+        "val" : "2024-02-05"
       } ],
-      "version" : "http://purl.obolibrary.org/obo/envo/releases/2023-02-13/subsets/envoANZSoil.owl"
+      "version" : "http://purl.obolibrary.org/obo/envo/releases/2024-02-05/subsets/envoANZSoil.owl"
     },
     "nodes" : [ {
       "id" : "http://purl.obolibrary.org/obo/BFO_0000050",
@@ -171,6 +171,29 @@
         } ]
       }
     }, {
+      "id" : "http://purl.obolibrary.org/obo/ENVO_02000200",
+      "lbl" : "has increased levels of",
+      "type" : "PROPERTY",
+      "meta" : {
+        "definition" : {
+          "val" : "A has part relationship between a whole and a part, where the number of parts present in the whole is higher than in comparable entities."
+        },
+        "comments" : [ "This relation is present in ENVO to support compositional classes such as \"X-enriched soil\". These will later be formalized, and a different relation from RO may be chosen." ],
+        "xrefs" : [ {
+          "val" : "ENVO:02000200"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/subsets/envo-basic.obo#seeAlso",
+          "val" : "https://github.com/EnvironmentOntology/envo/issues/1380"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "ENVO"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#shorthand",
+          "val" : "has_increased_levels_of"
+        } ]
+      }
+    }, {
       "id" : "http://purl.obolibrary.org/obo/ENVO_02500006",
       "lbl" : "results in transformation into",
       "type" : "PROPERTY",
@@ -298,6 +321,10 @@
     }, {
       "id" : "http://purl.obolibrary.org/obo/IAO_0100001",
       "lbl" : "term replaced by",
+      "type" : "PROPERTY"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/OMO_0003004",
+      "lbl" : "plural form",
       "type" : "PROPERTY"
     }, {
       "id" : "http://purl.obolibrary.org/obo/RO_0000052",
@@ -477,21 +504,6 @@
         }, {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#shorthand",
           "val" : "location_of"
-        } ]
-      }
-    }, {
-      "id" : "http://purl.obolibrary.org/obo/RO_0001018",
-      "type" : "PROPERTY",
-      "meta" : {
-        "xrefs" : [ {
-          "val" : "RO:0001018"
-        } ],
-        "basicPropertyValues" : [ {
-          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
-          "val" : "ENVO"
-        }, {
-          "pred" : "http://www.geneontology.org/formats/oboInOwl#shorthand",
-          "val" : "contained_in"
         } ]
       }
     }, {
@@ -1174,10 +1186,6 @@
         } ]
       }
     }, {
-      "id" : "http://purl.obolibrary.org/obo/subsets/envo-basic.obo#PLURAL",
-      "lbl" : "plurals",
-      "type" : "PROPERTY"
-    }, {
       "id" : "http://purl.obolibrary.org/obo/subsets/envo-basic.obo#disconnected_from",
       "lbl" : "disconnected_from",
       "type" : "PROPERTY",
@@ -1202,35 +1210,6 @@
         }, {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#is_metadata_tag",
           "val" : "true"
-        } ]
-      }
-    }, {
-      "id" : "http://purl.obolibrary.org/obo/subsets/envo-basic.obo#has_condition",
-      "lbl" : "has_condition",
-      "type" : "PROPERTY",
-      "meta" : {
-        "comments" : [ "Experimental relation used in EnvO. A condition defines a restricted range of a given quality or combination of qualities. If an environment class, E, has_condition C, then all qualities listed in C are restricted to the ranges defined in C in E. This is not intended as a logical conditional." ],
-        "xrefs" : [ {
-          "val" : "has_condition"
-        } ],
-        "basicPropertyValues" : [ {
-          "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
-          "val" : "2013-05-08T07:33:05Z"
-        }, {
-          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
-          "val" : "ENVO"
-        } ]
-      }
-    }, {
-      "id" : "http://purl.obolibrary.org/obo/subsets/envo-basic.obo#has_increased_levels_of",
-      "type" : "PROPERTY",
-      "meta" : {
-        "xrefs" : [ {
-          "val" : "has_increased_levels_of"
-        } ],
-        "basicPropertyValues" : [ {
-          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
-          "val" : "ENVO"
         } ]
       }
     }, {
@@ -1291,6 +1270,10 @@
       "type" : "PROPERTY"
     } ],
     "edges" : [ {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_02000200",
+      "pred" : "subPropertyOf",
+      "obj" : "http://purl.obolibrary.org/obo/RO_0002180"
+    }, {
       "sub" : "http://purl.obolibrary.org/obo/RO_0001000",
       "pred" : "subPropertyOf",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_01003004"
