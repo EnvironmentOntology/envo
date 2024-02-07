@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: envo/releases/2023-02-13/subsets/envoEmpo.owl
+data-version: envo/releases/2024-02-05/subsets/envoEmpo.owl
 subsetdef: disposition_slim "Disposition slim"
 subsetdef: environmental_hazards "environmental_hazards"
 subsetdef: EnvO-Lite-GSC "EnvO-Lite-GSC"
@@ -23,9 +23,57 @@ subsetdef: ro-eco "ro-eco"
 subsetdef: scalar_slim "Scalar slim"
 subsetdef: value_slim "Value slim"
 subsetdef: wwfBiome "wwfBiome"
-synonymtypedef: PLURAL "plurals"
+synonymtypedef: OMO:0003004 "plural form"
 ontology: envo/subsets/envoEmpo
-property_value: owl:versionInfo "2023-02-13" xsd:string
+property_value: owl:versionInfo "2024-02-05" xsd:string
+
+[Term]
+id: ENVO:00000340
+name: particle of sand
+namespace: ENVO
+def: "A particle which 1) is composed primarily of and derived from rock or mineral sources and 2) is or was part of a portion of sand." [https://en.wikipedia.org/wiki/Sand]
+comment: In general, sand grains are larger than those of silt, but finer than those of gravel.
+synonym: "grain of sand" EXACT []
+synonym: "granule of sand" EXACT []
+synonym: "sand granule" EXACT []
+is_a: ENVO:01003002 ! particle
+disjoint_from: ENVO:01000017 ! sand
+
+[Term]
+id: ENVO:00000343
+name: particle of silt
+namespace: ENVO
+def: "A particle which 1) is primarily composed of quartz or feldspar and 2) is or was part of a portion of silt." []
+comment: The distinction between silt and clay varies by discipline. Geologists and soil scientists usually consider the separation to occur at a particle size of 2 μm (clays being finer than silts), sedimentologists often use 4–5 μm, and colloid chemists use 1 μm. Geotechnical engineers distinguish between silts and clays based on the plasticity properties of the soil, as measured by the soils' Atterberg limits. ISO 14688 grades clay particles as being smaller than 2 μm and silt particles as being larger. Mixtures of sand, silt and less than 40% clay are called loam. {xref="Properties"}
+synonym: "grain of silt" EXACT []
+synonym: "granule of silt" EXACT []
+is_a: ENVO:01003002 ! particle
+
+[Term]
+id: ENVO:00000369
+alt_id: ENVO:01000060
+
+[Term]
+id: ENVO:00001998
+name: soil
+namespace: ENVO
+def: "An environmental material which is primarily composed of minerals, varying proportions of sand, silt, and clay, organic material such as humus, interstitial gases, liquids, and a broad range of resident micro- and macroorganisms." [https://en.wikipedia.org/wiki/Soil]
+comment: 'In engineering terms, soil is referred to as regolith, or loose rock material that lies above the 'solid geology'. Soil is commonly referred to as "earth" or "dirt"; technically, the term "dirt" should be restricted to displaced soil.' https://en.wikipedia.org/wiki/Soil\n\n" The upper limit of soil is the boundary between soil and air, shallow water, live plants, or plant materials that have not begun to decompose. Areas are not considered to have soil if the surface is permanently covered by water too deep (typically more than 2.5 meters) for the growth of rooted plants.\n\nThe lower boundary that separates soil from the nonsoil underneath is most difficult to define. Soil consists of horizons near the Earth's surface that, in contrast to the underlying parent material, have been altered by the interactions of climate, relief, and living organisms over time. Commonly, soil grades at its lower boundary to hard rock or to earthy materials virtually devoid of animals, roots, or other marks of biological activity. For purposes of classification, the lower boundary of soil is arbitrarily set at 200 cm."  Soil taxonomy, 2nd Ed., quoted in http://www.nrcs.usda.gov/wps/portal/nrcs/detail/soils/edu/?cid=nrcs142p2_054280
+subset: EnvO-Lite-GSC
+synonym: "regolith" BROAD []
+xref: https://en.wikipedia.org/wiki/Soil
+xref: LTER:535
+xref: SPIRE:Soil
+xref: SWEETRealm:Soil
+is_a: ENVO:00010483 ! environmental material
+relationship: has_disposition ENVO:06105304 ! water-holding capacity of soil
+relationship: has_part ENVO:00002982 ! clay
+relationship: has_part ENVO:01000016 ! silt
+relationship: has_part ENVO:01000017 ! sand
+relationship: has_part ENVO:01000155 ! organic material
+relationship: has_part ENVO:01000256 ! mineral material
+relationship: part_of ENVO:01000820 ! pedosphere
+property_value: IAO:0000116 "The various 'has part' and 'has quality' relations may not hold true for all soils; however, I have yet to find counter examples. Require input from a pedologist or similar. [pbuttigieg]" xsd:string
 
 [Term]
 id: ENVO:00002006
@@ -42,8 +90,8 @@ is_a: ENVO:01000815 ! liquid environmental material
 id: ENVO:00002007
 name: sediment
 namespace: ENVO
-def: "Sediment is an environmental substance comprised of any particulate matter that can be transported by fluid flow and which eventually is deposited as a layer of solid particles on the bedor bottom of a body of water or other liquid." [https://en.wikipedia.org/wiki/Sediment]
-comment: It is recommended to use a combination of sediment terms to describe a more specific sediment type.
+def: "Particulate environmental material which is formed as a result of the transport and deposition of particles by flowing liquid." [https://en.wikipedia.org/wiki/Sediment]
+comment: Sediment is typically deposited on the bed or bottom of a body of water or other liquid.
 subset: EnvO-Lite-GSC
 subset: envoPolar
 xref: EcoLexicon:sediment
@@ -52,7 +100,7 @@ xref: https://en.wikipedia.org/wiki/Sediment
 xref: LTER:492
 xref: LTER:493
 xref: SWEETRealm:Sediment
-is_a: ENVO:00010483 ! environmental material
+is_a: ENVO:01000060
 
 [Term]
 id: ENVO:00002010
@@ -84,6 +132,19 @@ xref: SWEETRealm:FreshWater
 is_a: ENVO:00002006 ! liquid water
 
 [Term]
+id: ENVO:00002982
+name: clay
+namespace: ENVO
+def: "Particulate environmental material which 1) is composed primarily of clay particles, with only minor proportions of other materials, 2) demonstrates plasticity when wet, and 3) is capable of hardening when dried or fired." [https://en.wikipedia.org/wiki/Clay]
+comment: This definition is intentionally ambiguous to support the multiple thresholds set by different authorities.The distinction between silt and clay varies by discipline. Geologists and soil scientists usually consider the separation to occur at a particle size of 2 μm (clays being finer than silts), sedimentologists often use 4–5 μm, and colloid chemists use 1 μm. Geotechnical engineers distinguish between silts and clays based on the plasticity properties of the soil, as measured by the soils' Atterberg limits. ISO 14688 grades clay particles as being smaller than 2 μm and silt particles as being larger. Mixtures of sand, silt and less than 40% clay are called loam. Similar mixtures with greater than 40% clay are often considered clay soils. {xref="https://en.wikipedia.org/wiki/Clay"}
+xref: EcoLexicon:clay
+xref: SWEETRealm:Clay
+is_a: ENVO:01000060
+disjoint_from: ENVO:01000016 ! silt
+relationship: has_part ENVO:01003003 ! particle of clay
+property_value: IAO:0000116 "Do not oversimplify the particulate environmental material subclasses with design patterns or similar. The materials have properties that their components do not - write full definitions including these where possible." xsd:string
+
+[Term]
 id: ENVO:00005791
 name: sterile water
 namespace: ENVO
@@ -96,15 +157,50 @@ name: rhizosphere
 namespace: ENVO
 def: "The narrow region of soil that is directly influenced by root secretions and associated soil microorganisms." [https://en.wikipedia.org/wiki/Rhizosphere_%28ecology%29]
 xref: LTER:472
-is_a: ENVO:01000408 ! environmental zone
+is_a: ENVO:01001110 ! ecosystem
+relationship: part_of ENVO:00001998 ! soil
 
 [Term]
 id: ENVO:00010483
 name: environmental material
 namespace: ENVO
-def: "A portion of environmental material is a fiat object part which forms the medium or part of the medium of an environmental system." [DOI:10.1186/2041-1480-4-43, MA:ma, ORCID:0000-0002-4366-3088, URL:http\://ontology.buffalo.edu/smith/articles/niches.html]
-comment: Everything under this parent must be a mass noun. All subclasses are to be understood as being composed primarily of the named entity, rather than restricted to that entity. For example, "ENVO:water" is to be understood as "environmental material composed primarly of some CHEBI:water". This class is currently being aligned to the Basic Formal Ontology. Following this alignment, its definition and the definitions of its subclasses will be revised.
+def: "A material entity which other material entities in an environmental system are primarily or partially composed of." [http://ontology.buffalo.edu/smith/articles/niches.html, https://dx.doi.org/10.1186/2041-1480-4-43, https://en.wikipedia.org/wiki/Material]
+comment: Everything under this parent must be a mass noun (i.e. not countable). All subclasses are to be understood as being composed primarily of the named entity, rather than restricted to that entity. For example, "ENVO:water" is to be understood as "environmental material composed primarly of some CHEBI:water".
+comment: Instances of this class are portions of environmental materials, such as seawater in bucket, a water parcel in the photic zone of a lake, or the concrete that composes a building part. Instances of these portions may have fiat or non-fiat boundaries. For example, a water parcel has not physical boundaries, while the seawater in a bucket is bounded by the internal surfaces of the bucket.
 synonym: "portion of environmental material" EXACT []
+
+[Term]
+id: ENVO:01000016
+name: silt
+namespace: ENVO
+def: "Particulate environmental material which is primarily composed of silt particles." [https://en.wikipedia.org/wiki/Silt]
+comment: This definition is intentionally ambiguous to support the multiple thresholds set by different authorities. Some authorities consider this soil material that contains 80% or more silt and less than 12% clay. In the Udden-Wentworth scale (due to Krumbein), silt particles range between 0.0039 to 0.0625 mm, larger than clay but smaller than sand particles. ISO 14688 grades silts between 0.002 mm and 0.063 mm. In actuality, silt is chemically distinct from clay, and unlike clay, grains of silt are approximately the same size in all dimensions; furthermore, their size ranges overlap. Clays are formed from thin plate-shaped particles held together by electrostatic forces, so present a cohesion. According to the U.S. Department of Agriculture Soil Texture Classification system, the sand-silt distinction is made at the 0.05 mm particle size. The USDA system has been adopted by the Food and Agriculture Organization (FAO). In the Unified Soil Classification System (USCS) and the AASHTO Soil Classification system, the sand-silt distinction is made at the 0.075 mm particle size (i.e., material passing the #200 sieve). Silts and clays are distinguished mechanically by their plasticity. {xref="https://sis.agr.gc.ca/cansis/glossary/t/index.html", xref="https://en.wikipedia.org/wiki/Silt"}
+xref: EcoLexicon:silt
+xref: https://en.wikipedia.org/wiki/Silt
+xref: SWEETRealm:Silt
+is_a: ENVO:01000060
+disjoint_from: ENVO:01000017 ! sand
+relationship: has_part ENVO:00000343 ! particle of silt
+property_value: IAO:0000116 "Do not oversimplify the particulate environmental material subclasses with design patterns or similar. The materials have properties that their components do not - write full definitions including these where possible." xsd:string
+
+[Term]
+id: ENVO:01000017
+name: sand
+namespace: ENVO
+def: "Particulate environmental material which is composed primarily of particles of sand with only minor proportions of other substances." [https://en.wikipedia.org/wiki/Sand]
+comment: This definition is intentionally ambiguous to support the multiple thresholds set by different authorities. Some authorities consider as sands soil material that contains 85% or more sand; the percentage of silt plus 1.5 times the percentage of clay does not exceed 15. coarse sand (sable grossier) 25% or more very coarse and coarse sand, and less than 50% any other one grade of sand. {xref="https://sis.agr.gc.ca/cansis/glossary/t/index.html"}
+xref: EcoLexicon:sand
+xref: https://en.wikipedia.org/wiki/Sand
+xref: LTER:484
+xref: SWEETRealm:Sand
+is_a: ENVO:01000060
+relationship: has_part ENVO:00000340 ! particle of sand
+property_value: IAO:0000116 "Do not oversimplify the particulate environmental material subclasses with design patterns or similar. The materials have properties that their components do not - write full definitions including these where possible." xsd:string
+
+[Term]
+id: ENVO:01000060
+is_a: ENVO:00010483 ! environmental material
+relationship: has_part ENVO:01003002 ! particle
 
 [Term]
 id: ENVO:01000155
@@ -126,6 +222,37 @@ comment: In ENVO's alignment with the Basic Formal Ontology, this class is being
 synonym: "environment" EXACT []
 xref: EcoLexicon:environment
 creation_date: 2013-09-23T16:04:08Z
+
+[Term]
+id: ENVO:01000256
+name: mineral material
+namespace: ENVO
+def: "A mineral material is an environmental material which is primarily composed of some substance that is naturally occurring, solid and stable at room temperature, representable by a chemical formula, usually abiogenic, and that has an ordered atomic structure." [https://en.wikipedia.org/wiki/Mineral]
+xref: LTER:341
+is_a: ENVO:00010483 ! environmental material
+property_value: IAO:0000116 "Look for \"mineral\" in a chemical or geochemical ontology to formalise the composed primarily of link.\nFrom https://en.wikipedia.org/wiki/ [A mineral] is different from a rock, which can be an aggregate of minerals or non-minerals and does not have a specific chemical composition. The exact definition of a mineral is under debate, especially with respect to the requirement a valid species be abiogenic, and to a lesser extent with regards to it having an ordered atomic structure." xsd:string
+created_by: ORCID:0000-0002-4366-3088
+creation_date: 2013-10-05T12:37:41Z
+
+[Term]
+id: ENVO:01000267
+name: atmosphere
+namespace: ENVO
+def: "An atmosphere is a layer of gases surrounding a material body of sufficient mass that is held in place by the gravity of the body." [https://en.wikipedia.org/wiki/Atmosphere, https://en.wikipedia.org/wiki/Physical_geography]
+xref: LTER:48
+is_a: ENVO:01001678 ! fluid layer
+relationship: adjacent_to ENVO:01000799 ! astronomical body
+created_by: ORCID:0000-0002-4366-3088
+creation_date: 2013-10-10T08:14:50Z
+
+[Term]
+id: ENVO:01000281
+name: layer
+namespace: ENVO
+def: "A material entity which 1) is spatially continuous, 2) is composed of material of comparable thickness, composition, and physical properties, and 3) is physically distinct from adjacent portions of environmental material." [https://en.wiktionary.org/wiki/layer]
+subset: envoPolar
+created_by: https://orcid.org/0000-0002-4366-3088
+creation_date: 2013-10-15T16:42:02Z
 
 [Term]
 id: ENVO:01000306
@@ -164,14 +291,94 @@ intersection_of: ENVO:01000254 ! environmental system
 intersection_of: determined_by ENVO:00002006 ! liquid water
 
 [Term]
-id: ENVO:01000408
-name: environmental zone
+id: ENVO:01000637
+name: outer space
 namespace: ENVO
-def: "A site which has its extent determined by the presence or influence of one or more components of an environmental system or the processes occurring therein." []
-comment: Formerly, this class was an experimental class and a subclass of "environmental feature". It is now aligned to BFO. The class was not obsoleted as the core semantics maintained their stability through its transition.
+def: "Outer space is a hard vacuum containing a low density of particles, predominantly a plasma of hydrogen and helium as well as electromagnetic radiation, magnetic fields, neutrinos, dust and cosmic rays that exists between celestial bodies." [https://en.wikipedia.org/wiki/Outer_space]
+subset: envoAstro
+synonym: "space" BROAD []
+is_a: ENVO:00010483 ! environmental material
+
+[Term]
+id: ENVO:01000638
+name: planetary crust
+namespace: ENVO
+def: "A planetary crust is the outermost solid shell of a rocky planet or natural satellite, which is chemically distinct from the underlying mantle." [https://en.wikipedia.org/wiki/Crust_(geology)]
+comment: This class is meant to be applicable accross planets. Earth's crust would be an instance.
+synonym: "crust" BROAD []
+is_a: ENVO:01000639 ! planetary structural layer
+
+[Term]
+id: ENVO:01000639
+name: planetary structural layer
+namespace: ENVO
+def: "A planetary structural layer is laminar part of a terrestrial planet or other rocky body large enough to have differentiation by density. Planetary layers have differing physicochemical properties and composition." []
+is_a: ENVO:01000281 ! layer
+relationship: part_of ENVO:01000800 ! planet
+property_value: IAO:0000116 "Label should be improved to match definition." xsd:string
+
+[Term]
+id: ENVO:01000646
+name: lithosphere
+namespace: ENVO
+def: "A lithosphere is the outermost shell of a terrestrial-type planet or natural satellite that is defined by its rigid mechanical properties." [https://en.wikipedia.org/wiki/Lithosphere]
+comment: Earth's lithosphere includes the crust and uppermost mantle.
+is_a: ENVO:01000639 ! planetary structural layer
+relationship: composed_primarily_of ENVO:01000814 ! solid environmental material
+relationship: has_part ENVO:01000638 ! planetary crust
+
+[Term]
+id: ENVO:01000799
+name: astronomical body
+namespace: ENVO
+def: "An object which is naturally occuring, bound together by gravitational or electromagnetic forces, and surrounded by space." [https://en.wikipedia.org/wiki/Astronomical_object]
+comment: Astronomical bodies are usually cohesive, thus the use of the term 'object' sensu BFO 'object'.
+subset: envoAstro
+synonym: "celestial body" RELATED []
+is_a: ENVO:01000804 ! astronomical object
+
+[Term]
+id: ENVO:01000800
+name: planet
+namespace: ENVO
+def: "A planet is an astronomical body orbiting a star or stellar remnant that is massive enough to be rounded by its own gravity, is not massive enough to cause thermonuclear fusion, and has cleared its neighbouring region of planetesimals." [http://solarsystem.nasa.gov/planets/whatisaplanet, https://en.wikipedia.org/wiki/Planet]
+comment: Considerable debate on the definition of planet exists.
+subset: envoAstro
 subset: envoPolar
-synonym: "environmental area" RELATED []
-relationship: part_of ENVO:01000254 ! environmental system
+is_a: ENVO:01000799 ! astronomical body
+
+[Term]
+id: ENVO:01000804
+name: astronomical object
+namespace: ENVO
+def: "An object which is composed of one or more gravitationally bound structures that are associated with a position in space." [https://en.wikipedia.org/wiki/Astronomical_object]
+comment: If there is only one astronomical body involved, this class is equivalent to ENVO:01000799. This may be problematic with reasoning, but it seems to be true to the rather fuzzy definitions found thus far.
+subset: envoAstro
+synonym: "celestial object" RELATED []
+relationship: has_part ENVO:01000799 ! astronomical body
+relationship: has_quality ENVO:01001164 ! geodiversity
+relationship: surrounded_by ENVO:01000637 ! outer space
+
+[Term]
+id: ENVO:01000813
+name: astronomical body part
+namespace: ENVO
+def: "A material part of an astronomical body." []
+comment: Material parts of astronomical bodies generally have boundaries formed by discontinuities in qualities, composition, or other physical characterisitcs. These boundaries are sometimes sharp, and sometimes diffuse, with different classification systems and communities declaring varying thresholds (e.g. for where a shoreline, forest, or other entity begins and ends). However, some boundaries are declared by fiat - that is, by arbitrary human convention or decree - particularly by regulatory or other authorities and communities of practice. The classes in this hierarchy attempt to offer generalisable definitions that allow multiple classfiication systems to map to and interoperate through. If desired, we can create classes that declare thresholds used by a given authority or community under the more generic ones, annotated with source information.
+subset: envoAstro
+subset: envoPolar
+relationship: part_of ENVO:01000799 ! astronomical body
+property_value: IAO:0000116 "Also note that some astronomical body parts (ABPs) may have fiat boundaries: if there's strong debate about where an ABP begins or ends (over and above fuzzy boundaries), with different official classifications setting different thresholds or limits, axiomatise the class with fiat boundaries of the appropriate dimension." xsd:string
+property_value: IAO:0000116 "Note that material entities may have immaterial entities (e.g. sites) as parts." xsd:string
+property_value: IAO:0000116 "This class includes material parts of astronomical bodies. Immaterial parts, such as magnetospheres, are represented as sites under the influence of magnetic fields.Please post countercases in the ENVO tracker for revision of this hierarchy if needed." xsd:string
+
+[Term]
+id: ENVO:01000814
+name: solid environmental material
+namespace: ENVO
+def: "An environmental material which is in a solid state." []
+comment: This is a defined class: its subclasses will not be asserted, but filled by inference.
+is_a: ENVO:00010483 ! environmental material
 
 [Term]
 id: ENVO:01000815
@@ -181,6 +388,42 @@ def: "An environmental material which is in a liquid state." []
 comment: This is a defined class: most of its subclasses will not be asserted, but filled by inference.
 subset: envoPolar
 is_a: ENVO:02000140 ! fluid environmental material
+
+[Term]
+id: ENVO:01000817
+name: biosphere
+namespace: ENVO
+def: "An astronomical body part which includes all the living entities within the gravitational sphere of influence of that body, as well as the non-living and dead entities with which they interact." [http://www.biology-online.org/dictionary/Biosphere, https://en.wikipedia.org/wiki/Biosphere]
+comment: The gravitational sphere of influence referenced in this class' definition is the Hill sphere: a region in which an object dominates the attraction of satellites despite gravitational perturbations.
+subset: envoAstro
+subset: envoPolar
+is_a: ENVO:01000813 ! astronomical body part
+property_value: IAO:0000116 "Whether this class should be grouped with classes such as \"hydrosphere\" and \"cryosphere\" requires some discussion." xsd:string
+
+[Term]
+id: ENVO:01000819
+name: hydrosphere
+namespace: ENVO
+def: "An astronomical body part which is composed of the combined mass of water found on, under, and over the surface of a planet." [https://en.wikipedia.org/wiki/Hydrosphere]
+comment: This is a very broad and, in practice, poorly defined term. Please consider using or requesting a more specific class.
+subset: envoAstro
+subset: envoPolar
+is_a: ENVO:01001477 ! liquid astronomical body part
+relationship: composed_primarily_of ENVO:00002006 ! liquid water
+
+[Term]
+id: ENVO:01000820
+name: pedosphere
+namespace: ENVO
+def: "An astronomical body part which is composed of soil, subject to soil formation processes, and found on the surface of a lithosphere." [https://en.wikipedia.org/wiki/Pedosphere]
+comment: This is a very broad and, in practice, poorly defined term. Please consider using or requesting a more specific class.
+subset: envoAstro
+is_a: ENVO:01000813 ! astronomical body part
+relationship: composed_primarily_of ENVO:00001998 ! soil
+relationship: overlaps ENVO:01000267 ! atmosphere
+relationship: overlaps ENVO:01000646 ! lithosphere
+relationship: overlaps ENVO:01000817 ! biosphere
+relationship: overlaps ENVO:01000819 ! hydrosphere
 
 [Term]
 id: ENVO:01000997
@@ -395,6 +638,8 @@ def: "An environmental system which has its properties and dynamics determined b
 subset: envoEmpo
 subset: envoOmics
 is_a: ENVO:01000254 ! environmental system
+intersection_of: ENVO:01000254 ! environmental system
+intersection_of: determined_by ENVO:00001998 ! soil
 property_value: IAO:0000118 "Soil (non-saline)" xsd:string {xref="http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/"}
 
 [Term]
@@ -558,10 +803,93 @@ property_value: IAO:0000118 "Single strain" xsd:string {xref="http://press.igsb.
 id: ENVO:01001110
 name: ecosystem
 namespace: ENVO
-alt_id: LTER:173 {xref="https://vocab.lternet.edu/vocab/vocab/index.php?tema=173&/ecosystems"}
 def: "An environmental system which includes both living and non-living components." [https://en.wikipedia.org/wiki/Ecosystem]
 comment: This class will be primarily filled by inference, any environmental system which necessarily includes living parts should be autoclassified here.
+xref: LTER:173 {xref="https://vocab.lternet.edu/vocab/vocab/index.php?tema=173&/ecosystems"}
 is_a: ENVO:01000254 ! environmental system
+
+[Term]
+id: ENVO:01001164
+name: geodiversity
+namespace: ENVO
+def: "A quality which inheres in a astronomical body or astronomical body part by virtue of the variation in its material composition, participation in geological processes, and the variation in is land- and hydroforms." [https://en.wikipedia.org/wiki/Geodiversity]
+comment: Materials which are usually assessed when appraising geodiversity include minerals, rocks, sediments, fossils, soils and water. Landforms factored into geodiversity metrics typically include folds, faults, and other expressions of morphology or relations between units of earth material. Natural processes that are included in measures of geodiversity are those which either maintain or change materials or geoforms, including tectonics, sediment transport, and pedogenesis. Geodiversity does not usually factor in anthropogenic entities. {xref=""}
+
+[Term]
+id: ENVO:01001477
+name: liquid astronomical body part
+namespace: ENVO
+def: "A part of an astronomical body which is primarily composed of liquid material." []
+is_a: ENVO:01001479 ! fluid astronomical body part
+intersection_of: ENVO:01001479 ! fluid astronomical body part
+intersection_of: composed_primarily_of ENVO:01000815 ! liquid environmental material
+created_by: https://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:01001479
+name: fluid astronomical body part
+namespace: ENVO
+def: "A part of an astronomical body which is primarily composed of fluid." [https://en.wikipedia.org/wiki/Fluid]
+is_a: ENVO:01000813 ! astronomical body part
+intersection_of: ENVO:01000813 ! astronomical body part
+intersection_of: composed_primarily_of ENVO:02000140 ! fluid environmental material
+created_by: https://orcid.org/0000-0002-4366-3088
+creation_date: 2018-10-04T13:59:22Z
+
+[Term]
+id: ENVO:01001678
+name: fluid layer
+namespace: ENVO
+def: "A layer which is composed primarily of some fluid." []
+is_a: ENVO:01000281 ! layer
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-07-22T17:35:08Z xsd:dateTime
+
+[Term]
+id: ENVO:01001686
+name: mass of environmental material
+namespace: ENVO
+def: "An object which is composed primarily of an environmental material" []
+comment: This class and its subclasses refer to objects that are discrete accumulations of environmental materials, generally primarily composed of one or a few main material types.
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-08-20T09:38:29Z xsd:dateTime
+
+[Term]
+id: ENVO:01001687
+name: mass of solid material
+namespace: ENVO
+def: "An mass of environmental material which is composed primarily of a solid environmental material" []
+comment: This class and its subclasses refer to objects that are discrete accumulations of environmental materials, generally primarily composed of one or a few main material types.
+is_a: ENVO:01001686 ! mass of environmental material
+intersection_of: ENVO:01001686 ! mass of environmental material
+intersection_of: composed_primarily_of ENVO:01000814 ! solid environmental material
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2019-08-20T09:41:27Z xsd:dateTime
+
+[Term]
+id: ENVO:01003001
+name: water-holding capacity
+namespace: ENVO
+def: "A disposition of a material entity which is realised when it is saturated with liquid water." []
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-4366-3088
+
+[Term]
+id: ENVO:01003002
+name: particle
+namespace: ENVO
+def: "A mass of solid material which is either 1) a minute fragment of a larger mass or 2) one of a collection of small masses composing an aggregate." [https://en.wiktionary.org/wiki/particle]
+synonym: "grain" RELATED []
+is_a: ENVO:01001687 ! mass of solid material
+relationship: part_of ENVO:01000060
+
+[Term]
+id: ENVO:01003003
+name: particle of clay
+namespace: ENVO
+def: "A particle which 1) is composed primarily of hydrous aluminium phyllosilicate minerals, in turn composed of aluminium and silicon ions bonded into tiny, thin plates by interconnecting oxygen and hydroxide ions, and 2) is or was part of a portion of clay." [https://en.wikipedia.org/wiki/Clay#Properties]
+comment: The distinction between silt and clay varies by discipline. Geologists and soil scientists usually consider the separation to occur at a particle size of 2 μm (clays being finer than silts), sedimentologists often use 4–5 μm, and colloid chemists use 1 μm. Geotechnical engineers distinguish between silts and clays based on the plasticity properties of the soil, as measured by the soils' Atterberg limits. ISO 14688 grades clay particles as being smaller than 2 μm and silt particles as being larger. Mixtures of sand, silt and less than 40% clay are called loam. {xref="Properties"}
+synonym: "clay particle" EXACT []
+is_a: ENVO:01003002 ! particle
 
 [Term]
 id: ENVO:02000008
@@ -575,9 +903,20 @@ is_a: ENVO:01000155 ! organic material
 id: ENVO:02000140
 name: fluid environmental material
 namespace: ENVO
-def: "A liquid or a gas." [https://github.com/EnvironmentOntology/envo/issues/940]
+def: "An environmental material which is unable to resist shear forces and continuously deforms when subject to them." [https://en.wikipedia.org/wiki/Fluid, https://github.com/EnvironmentOntology/envo/issues/940]
 synonym: "fluid" NARROW []
 is_a: ENVO:00010483 ! environmental material
+
+[Term]
+id: ENVO:06105304
+name: water-holding capacity of soil
+namespace: ENVO
+def: "Water-holding capacity which inheres in some soil." [https://www.canr.msu.edu/news/why_is_soil_water_holding_capacity_important]
+synonym: "soil water-holding capacity" EXACT []
+is_a: ENVO:01003001 ! water-holding capacity
+relationship: characteristic_of ENVO:00001998 ! soil
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-8461-9745
+property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0001-6284-4821
 
 [Term]
 id: ENVO:2100000
@@ -657,11 +996,6 @@ id: connects
 name: connects
 namespace: ENVO
 xref: RO:0002176
-
-[Typedef]
-id: contained_in
-namespace: ENVO
-xref: RO:0001018
 
 [Typedef]
 id: contains
@@ -762,15 +1096,6 @@ namespace: ENVO
 xref: RO:0002180
 
 [Typedef]
-id: has_condition
-name: has_condition
-namespace: ENVO
-comment: Experimental relation used in EnvO. A condition defines a restricted range of a given quality or combination of qualities. If an environment class, E, has_condition C, then all qualities listed in C are restricted to the ranges defined in C in E. This is not intended as a logical conditional.
-xref: has_condition
-is_inverse_functional: true
-creation_date: 2013-05-08T07:33:05Z
-
-[Typedef]
 id: has_disposition
 namespace: ENVO
 xref: RO:0000091
@@ -793,8 +1118,13 @@ xref: RO:0002303
 
 [Typedef]
 id: has_increased_levels_of
+name: has increased levels of
 namespace: ENVO
-xref: has_increased_levels_of
+def: "A has part relationship between a whole and a part, where the number of parts present in the whole is higher than in comparable entities." []
+comment: This relation is present in ENVO to support compositional classes such as "X-enriched soil". These will later be formalized, and a different relation from RO may be chosen.
+xref: ENVO:02000200
+property_value: seeAlso https://github.com/EnvironmentOntology/envo/issues/1380
+is_a: has_component
 
 [Typedef]
 id: has_input

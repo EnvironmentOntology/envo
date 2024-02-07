@@ -4,9 +4,9 @@
     "meta" : {
       "basicPropertyValues" : [ {
         "pred" : "http://www.w3.org/2002/07/owl#versionInfo",
-        "val" : "subsets/biome-hierarchy.owl 2023-02-13"
+        "val" : "subsets/biome-hierarchy.owl 2024-02-05"
       } ],
-      "version" : "http://purl.obolibrary.org/obo/envo/releases/2023-02-13/subsets/biome-hierarchy.owl"
+      "version" : "http://purl.obolibrary.org/obo/envo/releases/2024-02-05/subsets/biome-hierarchy.owl"
     },
     "nodes" : [ {
       "id" : "http://purl.obolibrary.org/obo/ENVO_00000428",
@@ -14,10 +14,10 @@
       "type" : "CLASS",
       "meta" : {
         "definition" : {
-          "val" : "A biome is an ecosystem to which resident ecological communities have evolved adaptations.",
+          "val" : "A biome is an ecosystem which is undergoing climactic ecological succession.",
           "xrefs" : [ "DOI:10.1186/2041-1480-4-43", "https://en.wikipedia.org/wiki/Biome" ]
         },
-        "comments" : [ "There has been some concern raised (see Issue #143) about the usefulness of the assertion that organisms have evolved within a given biome. They may have evolved adaptations elsewhere and demonstrating one or the other is often not feasible. Consider relabelling to \"environmental system determined by an ecological community\" or similar." ],
+        "comments" : [ "In this definition, there is an assumption that no major perturbations are occurring or have occurred in a time frame affects the successional dynamics of the ecosystem. A \"major\" perturbation is one which disrupts the community's ability to restore its (near) equilibrium. Usually, pioneer or early secondary successional processes would be in effect in such scenarios." ],
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "major habitat type",
@@ -29,9 +29,7 @@
         } ],
         "xrefs" : [ {
           "val" : "EcoLexicon:biome"
-        } ],
-        "basicPropertyValues" : [ {
-          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasAlternativeId",
+        }, {
           "val" : "LTER:809"
         } ]
       }
@@ -874,6 +872,27 @@
         } ]
       }
     }, {
+      "id" : "http://purl.obolibrary.org/obo/ENVO_01000174",
+      "lbl" : "forest biome",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A forest ecosystem which is undergoing climactic ecological succession."
+        },
+        "xrefs" : [ {
+          "val" : "LTER:212"
+        }, {
+          "val" : "SPIRE:Forest"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "ORCID:0000-0002-4366-3088"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
+          "val" : "2013-04-07T14:26:46Z"
+        } ]
+      }
+    }, {
       "id" : "http://purl.obolibrary.org/obo/ENVO_01000175",
       "lbl" : "woodland biome",
       "type" : "CLASS",
@@ -908,6 +927,25 @@
         } ]
       }
     }, {
+      "id" : "http://purl.obolibrary.org/obo/ENVO_01000177",
+      "lbl" : "grassland biome",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A grassland ecosystem in which dominant ecological communities have reached their climax successional state."
+        },
+        "xrefs" : [ {
+          "val" : "SPIRE:Savannah_or_grassland"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "ORCID:0000-0002-4366-3088"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
+          "val" : "2013-04-07T14:26:46Z"
+        } ]
+      }
+    }, {
       "id" : "http://purl.obolibrary.org/obo/ENVO_01000178",
       "lbl" : "savanna biome",
       "type" : "CLASS",
@@ -927,14 +965,33 @@
         } ]
       }
     }, {
+      "id" : "http://purl.obolibrary.org/obo/ENVO_01000179",
+      "lbl" : "desert biome",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A desert ecosystem which is undergoing climactic ecological succession."
+        },
+        "subsets" : [ "\"wwfBiome\"" ],
+        "xrefs" : [ {
+          "val" : "SPIRE:Desert_or_dune"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "ORCID:0000-0002-4366-3088"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
+          "val" : "2013-04-07T14:26:46Z"
+        } ]
+      }
+    }, {
       "id" : "http://purl.obolibrary.org/obo/ENVO_01000180",
       "lbl" : "tundra biome",
       "type" : "CLASS",
       "meta" : {
         "definition" : {
-          "val" : "A terrestrial biome which comprises a tundra ecosystem that has reached its climax community."
+          "val" : "A tundra ecosystem which is undergoing climactic ecological succession."
         },
-        "comments" : [ "Preliminary definition." ],
         "subsets" : [ "\"envoPolar\"", "\"wwfBiome\"" ],
         "xrefs" : [ {
           "val" : "SPIRE:Tundra"
@@ -967,6 +1024,96 @@
         }, {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
           "val" : "2013-04-07T14:26:46Z"
+        } ]
+      }
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/ENVO_01000182",
+      "lbl" : "temperate desert biome",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A temperate desert biome is a desert biome which has communities adapted to intermediate insolation, low rainfall, and large temperature variations between winter and summer. Winter temperatures may fall below 0 degrees Celsius. Some precipitation in this biome may fall as snow.",
+          "xrefs" : [ "WWW:http://www.fs.fed.us/land/ecosysmgmt/colorimagemap/images/340.html" ]
+        },
+        "comments" : [ "Preliminary definition. The semantics and definitions of \"mediterranean\", \"subtropical\", \"tropical\", \"temperate\", \"polar\", and similar climate types may be transferred to an \"environmental condition\" class once the semantics of this class have been established." ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "ORCID:0000-0002-4366-3088"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
+          "val" : "2013-04-07T14:28:08Z"
+        } ]
+      }
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/ENVO_01000183",
+      "lbl" : "tropical desert biome",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A tropical desert biome is a desert biome which has communities adapted to temperatures above a monthly average of 18 degrees Celsius, high daily temperature ranges of approximately 20 degrees Celsius, very high insolation due to inhibited cloud formation, and very low precipitation. Tropical desert biomes located near coasts with cold upwellings may have cooler temperatures and reduced insolution due to fog.",
+          "xrefs" : [ "WWW:http://www.earthonlinemedia.com/ebooks/tpe_3e/title_page.html" ]
+        },
+        "comments" : [ "Preliminary definition. The semantics and definitions of \"mediterranean\", \"subtropical\", \"tropical\", \"temperate\", \"polar\", and similar climate types may be transferred to an \"environmental condition\" class once the semantics of this class have been established." ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "ORCID:0000-0002-4366-3088"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
+          "val" : "2013-04-07T14:28:08Z"
+        } ]
+      }
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/ENVO_01000184",
+      "lbl" : "subtropical desert biome",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A subtropical desert biome is a desert biome which has communities adapted to temperatures above a monthly average of 18 degrees Celsius, high daily temperature ranges of approximately 20 degrees Celsius, high insolation (but lower than that of a tropical desert biome), inhibited cloud formation, and very low precipitation. Subtropical desert biomes located near coasts with cold upwellings may have cooler temperatures and reduced insolution due to fog.",
+          "xrefs" : [ "WWW:http://www.earthonlinemedia.com/ebooks/tpe_3e/title_page.html", "https://en.wikipedia.org/wiki/Subtropical#Semi-desert.2Fdesert_climate" ]
+        },
+        "comments" : [ "Preliminary definition. The semantics and definitions of \"mediterranean\", \"subtropical\", \"tropical\", \"temperate\", \"polar\", and similar climate types may be transferred to an \"environmental condition\" class once the semantics of this class have been established." ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "ORCID:0000-0002-4366-3088"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
+          "val" : "2013-04-07T14:28:08Z"
+        } ]
+      }
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/ENVO_01000185",
+      "lbl" : "montane desert biome",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A montane desert biome is a desert biome which occurs in regions elevated above sea level and which has community structure determined by elevation-dependent environmental conditions."
+        },
+        "comments" : [ "Preliminary definition." ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "ORCID:0000-0002-4366-3088"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
+          "val" : "2013-04-07T14:28:08Z"
+        } ]
+      }
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/ENVO_01000186",
+      "lbl" : "polar desert biome",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A polar desert biome is a desert biome which is subject to low levels of insolation, annual precipitation less than 250 millimeters, and a mean temperature less than 10 degrees Celsius during its warmest month. Temperature changes in polar deserts frequently cross the freezing point of water.",
+          "xrefs" : [ "https://en.wikipedia.org/wiki/Polar_desert" ]
+        },
+        "comments" : [ "Preliminary definition. The semantics and definitions of \"mediterranean\", \"subtropical\", \"tropical\", \"temperate\", \"polar\", and similar climate types may be transferred to an \"environmental condition\" class once the semantics of this class have been established." ],
+        "subsets" : [ "\"envoPolar\"" ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "ORCID:0000-0002-4366-3088"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
+          "val" : "2013-04-07T14:28:08Z"
         } ]
       }
     }, {
@@ -1052,6 +1199,204 @@
         } ]
       }
     }, {
+      "id" : "http://purl.obolibrary.org/obo/ENVO_01000191",
+      "lbl" : "subtropical grassland biome",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A subtropical grassland in which dominant ecological communities have reached their climax successional state."
+        },
+        "subsets" : [ "\"wwfBiome\"" ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
+          "val" : "2013-04-07T14:29:48Z"
+        } ]
+      }
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/ENVO_01000192",
+      "lbl" : "tropical grassland biome",
+      "type" : "CLASS",
+      "meta" : {
+        "comments" : [ "Preliminary definition. The semantics and definitions of \"mediterranean\", \"subtropical\", \"tropical\", \"temperate\", \"polar\", and similar climate types may be transferred to an \"environmental condition\" class once the semantics of this class have been established." ],
+        "subsets" : [ "\"wwfBiome\"" ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "ORCID:0000-0002-4366-3088"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
+          "val" : "2013-04-07T14:29:48Z"
+        } ]
+      }
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/ENVO_01000193",
+      "lbl" : "temperate grassland biome",
+      "type" : "CLASS",
+      "meta" : {
+        "comments" : [ "Preliminary definition. The semantics and definitions of \"mediterranean\", \"subtropical\", \"tropical\", \"temperate\", \"polar\", and similar climate types may be transferred to an \"environmental condition\" class once the semantics of this class have been established." ],
+        "synonyms" : [ {
+          "pred" : "hasBroadSynonym",
+          "val" : "prairie biome"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "ORCID:0000-0002-4366-3088"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
+          "val" : "2013-04-07T14:29:48Z"
+        } ]
+      }
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/ENVO_01000194",
+      "lbl" : "montane grassland biome",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A montane grassland biome is a grassland biome which occurs in regions elevated above sea level and which has community structure determined by elevation-dependent environmental conditions."
+        },
+        "comments" : [ "Preliminary definition." ],
+        "subsets" : [ "\"wwfBiome\"" ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "ORCID:0000-0002-4366-3088"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
+          "val" : "2013-04-07T14:29:48Z"
+        } ]
+      }
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/ENVO_01000195",
+      "lbl" : "flooded grassland biome",
+      "type" : "CLASS",
+      "meta" : {
+        "subsets" : [ "\"wwfBiome\"" ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "ORCID:0000-0002-4366-3088"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
+          "val" : "2013-04-07T14:29:48Z"
+        } ]
+      }
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/ENVO_01000196",
+      "lbl" : "coniferous forest biome",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A coniferous forest biome is a forest biome which contains densely packed populations or communities of coniferous trees, strongly limiting light penetration to the forest floor."
+        },
+        "comments" : [ "Preliminary definition." ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "ORCID:0000-0002-4366-3088"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
+          "val" : "2013-04-07T14:31:01Z"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "ENVO"
+        } ]
+      }
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/ENVO_01000197",
+      "lbl" : "broadleaf forest biome",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A broadleaf forest ecosystem which is undergoing climactic ecological succession."
+        },
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "ORCID:0000-0002-4366-3088"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
+          "val" : "2013-04-07T14:31:01Z"
+        } ]
+      }
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/ENVO_01000198",
+      "lbl" : "mixed forest biome",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A mixed forest in which dominant ecological communities have reached their climax successional state."
+        },
+        "subsets" : [ "\"wwfBiome\"" ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "ORCID:0000-0002-4366-3088"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
+          "val" : "2013-04-07T14:31:01Z"
+        } ]
+      }
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/ENVO_01000199",
+      "lbl" : "mediterranean forest biome",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A mediterranean forest in which dominant ecological communities have reached their climax successional state."
+        },
+        "subsets" : [ "\"wwfBiome\"" ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "ORCID:0000-0002-4366-3088"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
+          "val" : "2013-04-07T14:31:01Z"
+        } ]
+      }
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/ENVO_01000200",
+      "lbl" : "tropical broadleaf forest biome",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A tropical broadleaf forest in which dominant ecological communities have reached their climax successional state."
+        },
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "ORCID:0000-0002-4366-3088"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
+          "val" : "2013-04-07T14:32:28Z"
+        } ]
+      }
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/ENVO_01000201",
+      "lbl" : "subtropical broadleaf forest biome",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A subtropical broadleaf forest in which dominant ecological communities have reached their climax successional state."
+        },
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "ORCID:0000-0002-4366-3088"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
+          "val" : "2013-04-07T14:32:28Z"
+        } ]
+      }
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/ENVO_01000202",
+      "lbl" : "temperate broadleaf forest biome",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A broadleaf forest which is subject to temperate climate patterns."
+        },
+        "subsets" : [ "\"wwfBiome\"" ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "ORCID:0000-0002-4366-3088"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
+          "val" : "2013-04-07T14:32:28Z"
+        } ]
+      }
+    }, {
       "id" : "http://purl.obolibrary.org/obo/ENVO_01000208",
       "lbl" : "mediterranean woodland biome",
       "type" : "CLASS",
@@ -1066,6 +1411,77 @@
         }, {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
           "val" : "2013-04-07T15:01:04Z"
+        } ]
+      }
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/ENVO_01000209",
+      "lbl" : "subtropical coniferous forest biome",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A coniferous forest biome which is subject to subtropical climate patterns."
+        },
+        "comments" : [ "Preliminary definition. The semantics and definitions of \"mediterranean\", \"subtropical\", \"tropical\", \"temperate\", \"polar\", and similar climate types may be transferred to an \"environmental condition\" class once the semantics of this class have been established." ],
+        "subsets" : [ "\"wwfBiome\"" ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "ORCID:0000-0002-4366-3088"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
+          "val" : "2013-04-07T14:39:14Z"
+        } ]
+      }
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/ENVO_01000210",
+      "lbl" : "tropical coniferous forest biome",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A coniferous forest biome which is subject to tropical climate patterns."
+        },
+        "comments" : [ "Preliminary definition. The semantics and definitions of \"mediterranean\", \"subtropical\", \"tropical\", \"temperate\", \"polar\", and similar climate types may be transferred to an \"environmental condition\" class once the semantics of this class have been established." ],
+        "subsets" : [ "\"wwfBiome\"" ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "ORCID:0000-0002-4366-3088"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
+          "val" : "2013-04-07T14:39:14Z"
+        } ]
+      }
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/ENVO_01000211",
+      "lbl" : "temperate coniferous forest biome",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A coniferous forest biome which is subject to temperate climate patterns."
+        },
+        "comments" : [ "Preliminary definition. The semantics and definitions of \"mediterranean\", \"subtropical\", \"tropical\", \"temperate\", \"polar\", and similar climate types may be transferred to an \"environmental condition\" class once the semantics of this class have been established." ],
+        "subsets" : [ "\"wwfBiome\"" ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "ORCID:0000-0002-4366-3088"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
+          "val" : "2013-04-07T14:39:14Z"
+        } ]
+      }
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/ENVO_01000212",
+      "lbl" : "temperate mixed forest biome",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A temperate mixed forest in which dominant ecological communities have reached their climax successional state."
+        },
+        "subsets" : [ "\"wwfBiome\"" ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "ORCID:0000-0002-4366-3088"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
+          "val" : "2013-04-07T14:39:30Z"
         } ]
       }
     }, {
@@ -1273,6 +1689,98 @@
         } ]
       }
     }, {
+      "id" : "http://purl.obolibrary.org/obo/ENVO_01000224",
+      "lbl" : "mediterranean grassland biome",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A subtropical grassland biome which includes communities adapted to hot to warm, dry summers, mild to cold, rainy winters, and the influence of large, usually marine, bodies of water."
+        },
+        "comments" : [ "Preliminary definition. The semantics and definitions of \"mediterranean\", \"subtropical\", \"tropical\", \"temperate\", \"polar\", and similar climate types may be transferred to an \"environmental condition\" class once the semantics of this class have been established." ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "ORCID:0000-0002-4366-3088"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
+          "val" : "2013-04-19T11:42:48Z"
+        } ]
+      }
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/ENVO_01000225",
+      "lbl" : "subtropical dry broadleaf forest biome",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A subtropical dry broadleaf forest in which dominant ecological communities have reached their climax successional state."
+        },
+        "subsets" : [ "\"wwfBiome\"" ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "ORCID:0000-0002-4366-3088"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
+          "val" : "2013-04-24T12:04:53Z"
+        } ]
+      }
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/ENVO_01000226",
+      "lbl" : "subtropical moist broadleaf forest biome",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A subtropical moist broadleaf forest in which dominant ecological communities have reached their climax successional state."
+        },
+        "subsets" : [ "\"wwfBiome\"" ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "ORCID:0000-0002-4366-3088"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
+          "val" : "2013-04-24T12:04:53Z"
+        } ]
+      }
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/ENVO_01000227",
+      "lbl" : "tropical dry broadleaf forest biome",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A tropical dry broadleaf forest in which dominant ecological communities have reached their climax successional state."
+        },
+        "subsets" : [ "\"wwfBiome\"" ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "ORCID:0000-0002-4366-3088"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
+          "val" : "2013-04-24T12:05:25Z"
+        } ]
+      }
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/ENVO_01000228",
+      "lbl" : "tropical moist broadleaf forest biome",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A tropical moist broadleaf forest in which dominant ecological communities have reached their climax successional state."
+        },
+        "subsets" : [ "\"wwfBiome\"" ],
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "rainforest biome"
+        } ],
+        "xrefs" : [ {
+          "val" : "SPIRE:Rainforest"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "ORCID:0000-0002-4366-3088"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
+          "val" : "2013-04-24T12:05:25Z"
+        } ]
+      }
+    }, {
       "id" : "http://purl.obolibrary.org/obo/ENVO_01000229",
       "lbl" : "mediterranean savanna biome",
       "type" : "CLASS",
@@ -1287,6 +1795,23 @@
         }, {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
           "val" : "2013-04-24T12:20:42Z"
+        } ]
+      }
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/ENVO_01000245",
+      "lbl" : "cropland biome",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A cropland ecosystem which is undergoing climactic ecological succession.",
+          "xrefs" : [ "http://dx.doi.org/10.1111/j.1466-8238.2010.00540.x", "http://dx.doi.org/10.1890/070062" ]
+        },
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "ORCID:0000-0002-4366-3088"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
+          "val" : "2013-06-14T11:45:47Z"
         } ]
       }
     }, {
@@ -1339,9 +1864,6 @@
         }, {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
           "val" : "2013-06-14T11:45:47Z"
-        }, {
-          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
-          "val" : "ENVO"
         } ]
       }
     }, {
@@ -1365,6 +1887,34 @@
         }, {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "ENVO"
+        } ]
+      }
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/ENVO_01000250",
+      "lbl" : "subpolar coniferous forest biome",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A  coniferous forest biome which includes communities adapted to subpolar conditions."
+        },
+        "subsets" : [ "\"wwfBiome\"" ],
+        "synonyms" : [ {
+          "pred" : "hasNarrowSynonym",
+          "val" : "boreal forest"
+        }, {
+          "pred" : "hasNarrowSynonym",
+          "val" : "taiga"
+        } ],
+        "xrefs" : [ {
+          "val" : "EcoLexicon:taiga"
+        }, {
+          "val" : "LTER:72"
+        }, {
+          "val" : "SPIRE:Taiga"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
+          "val" : "2013-09-04T06:41:53Z"
         } ]
       }
     }, {
@@ -1491,14 +2041,13 @@
         "comments" : [ "This class aligns to the Coastal and Marine Ecological Classification Standard (CMECS). In ENVO, we may adapt the definition for consistency, but the semantics (meaning) of the term should be unaffected. Please consult the CMECS catalogue (https://cmecscatalog.org/) for authoritative and semantically unconstrained definitions. CMECS provides the following notes: \"Commonly found on intertidal mud flats along the shores of estuaries. Tidal mangrove shrublands may include immature stands or stunted mature trees that indicate a harsh growing environment. Areas characterized by tall mangroves (> 6 meters) are placed in the Tidal Mangrove Forest Biotic Group. Where tidal amplitude is relatively low, the vegetation forms narrow bands along the coastal plains, and it rarely penetrates inland more than several kilometers along rivers. Where tidal amplitude is greater, mangroves extend further inland along river courses, forming extensive stands in the major river deltas. Also, mangrove cays may occur within the lagoon complex of barrier reefs. The list of biotic communities for this group is long: a few examples are provided below, and the complete list is available in Appendix F\"" ],
         "subsets" : [ "\"envoCmecs\"", "\"envoMarine\"" ],
         "xrefs" : [ {
+          "val" : "CMECS:577"
+        }, {
           "val" : "https://cmecscatalog.org/cmecs/classification/unit/577.html"
         } ],
         "basicPropertyValues" : [ {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
           "val" : "https://orcid.org/0000-0002-4366-3088"
-        }, {
-          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasAlternativeId",
-          "val" : "CMECS:577"
         } ]
       }
     }, {
@@ -1528,6 +2077,23 @@
         }, {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
           "val" : "2019-01-14T16:26:18Z"
+        } ]
+      }
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/ENVO_01001798",
+      "lbl" : "tropical mixed forest biome",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A tropical mixed forest in which dominant ecological communities have reached their climax successional state."
+        },
+        "subsets" : [ "\"wwfBiome\"" ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.org/dc/elements/1.1/creator",
+          "val" : "https://orcid.org/0000-0002-4366-3088"
+        }, {
+          "pred" : "http://purl.org/dc/elements/1.1/date",
+          "val" : "2019-10-27T16:05:39Z"
         } ]
       }
     }, {
@@ -1672,6 +2238,22 @@
         }, {
           "pred" : "http://purl.org/dc/elements/1.1/date",
           "val" : "2019-11-06T16:06:47Z"
+        } ]
+      }
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/ENVO_03605008",
+      "lbl" : "freshwater stream biome",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A freshwater stream ecosystem which is undergoing climactic ecological succession."
+        },
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.org/dc/elements/1.1/creator",
+          "val" : "https://orcid.org/0000-0001-9076-6066"
+        }, {
+          "pred" : "http://purl.org/dc/elements/1.1/date",
+          "val" : "2024-01-10T19:19:00Z"
         } ]
       }
     }, {
@@ -1872,6 +2454,10 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_01000047"
     }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000174",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_00000446"
+    }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01000175",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_00000446"
@@ -1880,9 +2466,17 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_00000446"
     }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000177",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_00000446"
+    }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01000178",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_01000175"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000179",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_00000428"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01000180",
       "pred" : "is_a",
@@ -1891,6 +2485,46 @@
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01000181",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_00000446"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000182",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01000179"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000182",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01001831"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000183",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01000179"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000183",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01001830"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000184",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01000179"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000184",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01001832"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000185",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01000179"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000185",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01001836"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000186",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01000179"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000186",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01000339"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01000187",
       "pred" : "is_a",
@@ -1920,6 +2554,86 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_01000178"
     }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000191",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01000177"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000191",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01001832"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000192",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01000177"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000192",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01001830"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000193",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01000177"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000193",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01001831"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000194",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01000177"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000194",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01001836"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000195",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01000177"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000196",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01000174"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000197",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01000174"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000198",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01000174"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000199",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01000174"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000199",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01001833"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000200",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01000197"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000200",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01001830"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000201",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01000197"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000201",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01001832"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000202",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01000197"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000202",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01001831"
+    }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01000208",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_01000222"
@@ -1927,6 +2641,38 @@
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01000208",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_01001833"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000209",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01000196"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000209",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01001832"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000210",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01000196"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000210",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01001830"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000211",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01000196"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000211",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01001831"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000212",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01000198"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000212",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01001831"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01000213",
       "pred" : "is_a",
@@ -2008,6 +2754,30 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_01001836"
     }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000224",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01000191"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000224",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01001833"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000225",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01000201"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000226",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01000201"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000227",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01000200"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000228",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01000200"
+    }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01000229",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_01000187"
@@ -2016,9 +2786,13 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_01001833"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000246",
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000245",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_01000219"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000246",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_00000428"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01000247",
       "pred" : "is_a",
@@ -2026,11 +2800,19 @@
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01000248",
       "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/ENVO_01000219"
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_00000428"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01000249",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_01000248"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000250",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01000196"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000250",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01001834"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01000252",
       "pred" : "is_a",
@@ -2104,6 +2886,14 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_01001835"
     }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01001798",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01000198"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01001798",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01001830"
+    }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01001830",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_00000428"
@@ -2139,6 +2929,10 @@
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01001838",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_00000428"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_03605008",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_00000873"
     } ]
   } ]
 }

@@ -4,9 +4,9 @@
     "meta" : {
       "basicPropertyValues" : [ {
         "pred" : "http://www.w3.org/2002/07/owl#versionInfo",
-        "val" : "2023-02-13"
+        "val" : "2024-02-05"
       } ],
-      "version" : "http://purl.obolibrary.org/obo/envo/releases/2023-02-13/subsets/EnvO-Lite-GSC.owl"
+      "version" : "http://purl.obolibrary.org/obo/envo/releases/2024-02-05/subsets/EnvO-Lite-GSC.owl"
     },
     "nodes" : [ {
       "id" : "http://purl.obolibrary.org/obo/BFO_0000050",
@@ -224,7 +224,7 @@
       "type" : "CLASS",
       "meta" : {
         "definition" : {
-          "val" : "A part of an astronomical body which is primarily composed of a continuous volume of solid material, shaped by one or more environmental processes.",
+          "val" : "A part of an astronomical body which is primarily composed of solid material.",
           "xrefs" : [ "https://en.wikipedia.org/wiki/Landform" ]
         },
         "synonyms" : [ {
@@ -478,10 +478,10 @@
       "type" : "CLASS",
       "meta" : {
         "definition" : {
-          "val" : "Sediment is an environmental substance comprised of any particulate matter that can be transported by fluid flow and which eventually is deposited as a layer of solid particles on the bedor bottom of a body of water or other liquid.",
+          "val" : "Particulate environmental material which is formed as a result of the transport and deposition of particles by flowing liquid.",
           "xrefs" : [ "https://en.wikipedia.org/wiki/Sediment" ]
         },
-        "comments" : [ "It is recommended to use a combination of sediment terms to describe a more specific sediment type." ],
+        "comments" : [ "Sediment is typically deposited on the bed or bottom of a body of water or other liquid." ],
         "subsets" : [ "http://purl.obolibrary.org/obo/subsets/envo-basic.obo#EnvO-Lite-GSC", "http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar" ],
         "xrefs" : [ {
           "val" : "EcoLexicon:sediment"
@@ -696,10 +696,10 @@
       "type" : "CLASS",
       "meta" : {
         "definition" : {
-          "val" : "A portion of environmental material is a fiat object part which forms the medium or part of the medium of an environmental system.",
-          "xrefs" : [ "DOI:10.1186/2041-1480-4-43", "MA:ma", "ORCID:0000-0002-4366-3088", "URL:http://ontology.buffalo.edu/smith/articles/niches.html" ]
+          "val" : "A material entity which other material entities in an environmental system are primarily or partially composed of.",
+          "xrefs" : [ "http://ontology.buffalo.edu/smith/articles/niches.html", "https://dx.doi.org/10.1186/2041-1480-4-43", "https://en.wikipedia.org/wiki/Material" ]
         },
-        "comments" : [ "Everything under this parent must be a mass noun. All subclasses are to be understood as being composed primarily of the named entity, rather than restricted to that entity. For example, \"ENVO:water\" is to be understood as \"environmental material composed primarly of some CHEBI:water\". This class is currently being aligned to the Basic Formal Ontology. Following this alignment, its definition and the definitions of its subclasses will be revised." ],
+        "comments" : [ "Everything under this parent must be a mass noun (i.e. not countable). All subclasses are to be understood as being composed primarily of the named entity, rather than restricted to that entity. For example, \"ENVO:water\" is to be understood as \"environmental material composed primarly of some CHEBI:water\".", "Instances of this class are portions of environmental materials, such as seawater in bucket, a water parcel in the photic zone of a lake, or the concrete that composes a building part. Instances of these portions may have fiat or non-fiat boundaries. For example, a water parcel has not physical boundaries, while the seawater in a bucket is bounded by the internal surfaces of the bucket." ],
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "portion of environmental material"
@@ -959,14 +959,13 @@
       "type" : "CLASS",
       "meta" : {
         "definition" : {
-          "val" : "A layer is a quantity of some material which is spatially continuous, has comparable thickness, and usually covers some surface.",
-          "xrefs" : [ "Wiktionary:layer" ]
+          "val" : "A material entity which 1) is spatially continuous, 2) is composed of material of comparable thickness, composition, and physical properties, and 3) is physically distinct from adjacent portions of environmental material.",
+          "xrefs" : [ "https://en.wiktionary.org/wiki/layer" ]
         },
-        "comments" : [ "Preliminary definition." ],
         "subsets" : [ "http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar" ],
         "basicPropertyValues" : [ {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
-          "val" : "ORCID:0000-0002-4366-3088"
+          "val" : "https://orcid.org/0000-0002-4366-3088"
         }, {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
           "val" : "2013-10-15T16:42:02Z"
@@ -1155,8 +1154,18 @@
         "definition" : {
           "val" : "A material part of an astronomical body."
         },
+        "comments" : [ "Material parts of astronomical bodies generally have boundaries formed by discontinuities in qualities, composition, or other physical characterisitcs. These boundaries are sometimes sharp, and sometimes diffuse, with different classification systems and communities declaring varying thresholds (e.g. for where a shoreline, forest, or other entity begins and ends). However, some boundaries are declared by fiat - that is, by arbitrary human convention or decree - particularly by regulatory or other authorities and communities of practice. The classes in this hierarchy attempt to offer generalisable definitions that allow multiple classfiication systems to map to and interoperate through. If desired, we can create classes that declare thresholds used by a given authority or community under the more generic ones, annotated with source information." ],
         "subsets" : [ "http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoAstro", "http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar" ],
         "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000116",
+          "val" : "Also note that some astronomical body parts (ABPs) may have fiat boundaries: if there's strong debate about where an ABP begins or ends (over and above fuzzy boundaries), with different official classifications setting different thresholds or limits, axiomatise the class with fiat boundaries of the appropriate dimension."
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000116",
+          "val" : "Note that material entities may have immaterial entities (e.g. sites) as parts."
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000116",
+          "val" : "This class includes material parts of astronomical bodies. Immaterial parts, such as magnetospheres, are represented as sites under the influence of magnetic fields.Please post countercases in the ENVO tracker for revision of this hierarchy if needed."
+        }, {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "ENVO"
         } ]
@@ -1196,7 +1205,7 @@
       "type" : "CLASS",
       "meta" : {
         "definition" : {
-          "val" : "A biosphere is a part of an astronomical body which includes, as parts, all the living entities within the gravitational sphere of influence of that body, as well as the non-living and dead entities with which they interact.",
+          "val" : "An astronomical body part which includes all the living entities within the gravitational sphere of influence of that body, as well as the non-living and dead entities with which they interact.",
           "xrefs" : [ "http://www.biology-online.org/dictionary/Biosphere", "https://en.wikipedia.org/wiki/Biosphere" ]
         },
         "comments" : [ "The gravitational sphere of influence referenced in this class' definition is the Hill sphere: a region in which an object dominates the attraction of satellites despite gravitational perturbations." ],
@@ -1316,8 +1325,7 @@
       "type" : "CLASS",
       "meta" : {
         "definition" : {
-          "val" : "A part of an astronomical body which is primarily composed of a continuous volume of liquid material, shaped by one or more environmental processes.",
-          "xrefs" : [ "https://en.wikipedia.org/wiki/Landform" ]
+          "val" : "A part of an astronomical body which is primarily composed of liquid material."
         },
         "basicPropertyValues" : [ {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
@@ -1333,8 +1341,8 @@
       "type" : "CLASS",
       "meta" : {
         "definition" : {
-          "val" : "A part of an astronomical body which is primarily composed of a continuous volume of liquid or gaseous material, shaped by one or more environmental processes.",
-          "xrefs" : [ "https://en.wikipedia.org/wiki/Landform" ]
+          "val" : "A part of an astronomical body which is primarily composed of fluid.",
+          "xrefs" : [ "https://en.wikipedia.org/wiki/Fluid" ]
         },
         "basicPropertyValues" : [ {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
@@ -1439,26 +1447,6 @@
         }, {
           "pred" : "http://purl.org/dc/elements/1.1/date",
           "val" : "2019-08-20T09:47:10Z"
-        }, {
-          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
-          "val" : "ENVO"
-        } ]
-      }
-    }, {
-      "id" : "http://purl.obolibrary.org/obo/ENVO_01001784",
-      "lbl" : "compound astronomical body part",
-      "type" : "CLASS",
-      "meta" : {
-        "definition" : {
-          "val" : "A part of an astronomical body which is composed of a continuous medium bearing liquid, gaseous, and solid material in variable quantities.",
-          "xrefs" : [ "https://en.wikipedia.org/wiki/Landform" ]
-        },
-        "basicPropertyValues" : [ {
-          "pred" : "http://purl.org/dc/elements/1.1/creator",
-          "val" : "https://orcid.org/0000-0002-4366-3088"
-        }, {
-          "pred" : "http://purl.org/dc/elements/1.1/date",
-          "val" : "2019-10-17T08:36:00Z"
         }, {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "ENVO"
@@ -1606,8 +1594,8 @@
       "type" : "CLASS",
       "meta" : {
         "definition" : {
-          "val" : "A liquid or a gas.",
-          "xrefs" : [ "https://github.com/EnvironmentOntology/envo/issues/940" ]
+          "val" : "An environmental material which is unable to resist shear forces and continuously deforms when subject to them.",
+          "xrefs" : [ "https://en.wikipedia.org/wiki/Fluid", "https://github.com/EnvironmentOntology/envo/issues/940" ]
         },
         "synonyms" : [ {
           "pred" : "hasNarrowSynonym",
@@ -1616,6 +1604,29 @@
         "basicPropertyValues" : [ {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "ENVO"
+        } ]
+      }
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/ENVO_02000200",
+      "lbl" : "has increased levels of",
+      "type" : "PROPERTY",
+      "meta" : {
+        "definition" : {
+          "val" : "A has part relationship between a whole and a part, where the number of parts present in the whole is higher than in comparable entities."
+        },
+        "comments" : [ "This relation is present in ENVO to support compositional classes such as \"X-enriched soil\". These will later be formalized, and a different relation from RO may be chosen." ],
+        "xrefs" : [ {
+          "val" : "ENVO:02000200"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/subsets/envo-basic.obo#seeAlso",
+          "val" : "https://github.com/EnvironmentOntology/envo/issues/1380"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "ENVO"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#shorthand",
+          "val" : "has_increased_levels_of"
         } ]
       }
     }, {
@@ -1784,6 +1795,10 @@
     }, {
       "id" : "http://purl.obolibrary.org/obo/IAO_0100001",
       "lbl" : "term replaced by",
+      "type" : "PROPERTY"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/OMO_0003004",
+      "lbl" : "plural form",
       "type" : "PROPERTY"
     }, {
       "id" : "http://purl.obolibrary.org/obo/RO_0000052",
@@ -1963,21 +1978,6 @@
         }, {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#shorthand",
           "val" : "location_of"
-        } ]
-      }
-    }, {
-      "id" : "http://purl.obolibrary.org/obo/RO_0001018",
-      "type" : "PROPERTY",
-      "meta" : {
-        "xrefs" : [ {
-          "val" : "RO:0001018"
-        } ],
-        "basicPropertyValues" : [ {
-          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
-          "val" : "ENVO"
-        }, {
-          "pred" : "http://www.geneontology.org/formats/oboInOwl#shorthand",
-          "val" : "contained_in"
         } ]
       }
     }, {
@@ -2660,10 +2660,6 @@
         } ]
       }
     }, {
-      "id" : "http://purl.obolibrary.org/obo/subsets/envo-basic.obo#PLURAL",
-      "lbl" : "plurals",
-      "type" : "PROPERTY"
-    }, {
       "id" : "http://purl.obolibrary.org/obo/subsets/envo-basic.obo#disconnected_from",
       "lbl" : "disconnected_from",
       "type" : "PROPERTY",
@@ -2688,35 +2684,6 @@
         }, {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#is_metadata_tag",
           "val" : "true"
-        } ]
-      }
-    }, {
-      "id" : "http://purl.obolibrary.org/obo/subsets/envo-basic.obo#has_condition",
-      "lbl" : "has_condition",
-      "type" : "PROPERTY",
-      "meta" : {
-        "comments" : [ "Experimental relation used in EnvO. A condition defines a restricted range of a given quality or combination of qualities. If an environment class, E, has_condition C, then all qualities listed in C are restricted to the ranges defined in C in E. This is not intended as a logical conditional." ],
-        "xrefs" : [ {
-          "val" : "has_condition"
-        } ],
-        "basicPropertyValues" : [ {
-          "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
-          "val" : "2013-05-08T07:33:05Z"
-        }, {
-          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
-          "val" : "ENVO"
-        } ]
-      }
-    }, {
-      "id" : "http://purl.obolibrary.org/obo/subsets/envo-basic.obo#has_increased_levels_of",
-      "type" : "PROPERTY",
-      "meta" : {
-        "xrefs" : [ {
-          "val" : "has_increased_levels_of"
-        } ],
-        "basicPropertyValues" : [ {
-          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
-          "val" : "ENVO"
         } ]
       }
     }, {
@@ -2859,7 +2826,7 @@
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_00002007",
       "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/ENVO_00010483"
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01000060"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_00002034",
       "pred" : "is_a",
@@ -3011,7 +2978,7 @@
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01000817",
       "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/ENVO_01001784"
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01000813"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01000819",
       "pred" : "is_a",
@@ -3023,7 +2990,7 @@
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01000820",
       "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/ENVO_01001784"
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01000813"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01000820",
       "pred" : "http://purl.obolibrary.org/obo/RO_0002131",
@@ -3085,10 +3052,6 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_01001686"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/ENVO_01001784",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/ENVO_01000813"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01001884",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_01001886"
@@ -3121,6 +3084,10 @@
       "pred" : "http://purl.obolibrary.org/obo/RO_0000052",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_00001998"
     }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_02000200",
+      "pred" : "subPropertyOf",
+      "obj" : "http://purl.obolibrary.org/obo/RO_0002180"
+    }, {
       "sub" : "http://purl.obolibrary.org/obo/RO_0001000",
       "pred" : "subPropertyOf",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_01003004"
@@ -3145,6 +3112,13 @@
       "restrictions" : [ {
         "propertyId" : "http://purl.obolibrary.org/obo/RO_0002473",
         "fillerId" : "http://purl.obolibrary.org/obo/ENVO_01000815"
+      } ]
+    }, {
+      "definedClassId" : "http://purl.obolibrary.org/obo/ENVO_01001479",
+      "genusIds" : [ "http://purl.obolibrary.org/obo/ENVO_01000813" ],
+      "restrictions" : [ {
+        "propertyId" : "http://purl.obolibrary.org/obo/RO_0002473",
+        "fillerId" : "http://purl.obolibrary.org/obo/ENVO_02000140"
       } ]
     }, {
       "definedClassId" : "http://purl.obolibrary.org/obo/ENVO_01001687",
