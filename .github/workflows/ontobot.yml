@@ -69,7 +69,9 @@ jobs:
       - name: Get jar & enable plugin.
         run: |
           mkdir -p robot-plugins
-          wget https://github.com/gouttegd/kgcl-java/releases/download/kgcl-java-0.3.2/kgcl-robot-plugin-0.3.2.jar -O robot-plugins/kgcl.jar
+          # wget https://github.com/gouttegd/kgcl-java/releases/download/kgcl-java-0.3.2/kgcl-robot-plugin-0.3.2.jar -O robot-plugins/kgcl.jar
+          LATEST_RELEASE=$(curl -s https://api.github.com/repos/gouttegd/kgcl-java/releases/latest)
+          ASSET_URL=$(echo $LATEST_RELEASE | jq -r '.assets[] | select(.name | contains("kgcl-robot-plugin")) | .browser_download_url')
           echo "ROBOT_PLUGINS_DIRECTORY=$(pwd)/robot-plugins/" >> "$GITHUB_ENV"
       
       - name: Install dependencies
