@@ -70,7 +70,7 @@ jobs:
         run: |
           mkdir -p robot-plugins
           LATEST_RELEASE=$(curl -s https://api.github.com/repos/gouttegd/kgcl-java/releases/latest)
-          ASSET_URL=$(echo $LATEST_RELEASE | jq -r '.assets[] | select(.name | contains("kgcl-robot-plugin")) | .browser_download_url')
+          ASSET_URL=$(echo $LATEST_RELEASE | jq -r '.assets[] | select(.name | contains(\"kgcl-robot-plugin\")) | .browser_download_url')
           echo "ROBOT_PLUGINS_DIRECTORY=$(pwd)/robot-plugins/" >> "$GITHUB_ENV"
       
       - name: Install dependencies
