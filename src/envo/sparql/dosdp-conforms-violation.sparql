@@ -1,0 +1,12 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix MONDO: <http://purl.obolibrary.org/obo/MONDO_>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix oio: <http://www.geneontology.org/formats/oboInOwl#>
+
+SELECT ?envo_id ?label WHERE {
+  ?envo_id rdfs:subClassOf+ <http://purl.obolibrary.org/obo/ENVO_00000428> .
+  ?envo_id rdfs:label ?label .
+  FILTER NOT EXISTS {
+  	?envo_id <http://purl.org/dc/terms/conformsTo> <http://purl.obolibrary.org/obo/envo/patterns/biome.yaml> . 
+  }
+}
