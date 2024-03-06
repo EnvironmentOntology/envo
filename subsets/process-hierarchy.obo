@@ -1,7 +1,7 @@
 format-version: 1.2
-data-version: envo/releases/2023-02-13/subsets/process-hierarchy.owl
+data-version: envo/releases/2024-02-16/subsets/process-hierarchy.owl
 ontology: envo/subsets/process-hierarchy
-property_value: owl:versionInfo "subsets/process-hierarchy.owl 2023-02-13" xsd:string
+property_value: owl:versionInfo "subsets/process-hierarchy.owl 2024-02-16" xsd:string
 
 [Term]
 id: ENVO:01000622
@@ -45,11 +45,10 @@ is_a: ENVO:02500000 ! environmental system process
 [Term]
 id: ENVO:01000631
 name: ocean acidification
-alt_id: LTER:962 {xref="https://vocab.lternet.edu/vocab/vocab/index.php?tema=962&/ocean-acidification"}
 def: "Ocean acidification is a process during which the pH of a sea or ocean is lowered." []
 comment: On Earth, the major cause of ocean acidification is the update of carbon dioxide from the atmosphere.
 subset: envoPolar
-xref: LTER:962
+xref: LTER:962 {xref="https://vocab.lternet.edu/vocab/vocab/index.php?tema=962&/ocean-acidification"}
 is_a: ENVO:01000630 ! acidification of an aquatic environment
 
 [Term]
@@ -725,7 +724,6 @@ creation_date: 2021-04-14T18:57:18.275Z
 [Term]
 id: ENVO:01000896
 name: freezing rainfall
-alt_id: METAR:FZRA
 def: "Water-based rainfall which freezes either 1) on impact with a surface to form a coating of clear ice (glaze) or 2) after percolating through surface layers." [https://orcid.org/0000-0003-4808-4736]
 comment: A surface temperature inversion is usually required. In such an inversion, the surface must have a temperature below freezing, while the temperature of the atmosphere where the precipitation forms is above freezing. Alternately, if the temperature of the ground surface and glazed objects is typically near or below freezing (0C or 32F), it is necessary that the water drops be supercooled before striking. Freezing rain can sometimes occur on surfaces exposed to the air (such as tree limbs) with air temperatures slightly above freezing in strong winds. Local evaporational cooling may result in freezing. Freezing rain frequently occurs, therefore, as a transient condition between the occurrence of rain and ice pellets (sleet). When encountered by an aircraft in flight, freezing rain can cause a dangerous accretion of clear icing. In aviation weather observations, this hydrometeor is encoded ZR by NOAA. {xref="https://orcid.org/0000-0003-4808-4736"}
 subset: environmental_hazards
@@ -734,6 +732,7 @@ subset: envoPolar
 synonym: "freezing rain" BROAD []
 synonym: "freezing rain fall" BROAD []
 xref: http://sweetontology.net/phenAtmoPrecipitation/FreezingRain
+xref: METAR:FZRA
 is_a: ENVO:01000830 ! water-based rainfall
 property_value: IAO:0000116 "This term exists, we're revising the definition with ESIP semantic Harmonization group, delete the old one.\n\nConsider adding axioms like PATO:\"decreased temperature\" to this and other cold forms of precipitation, such that we can create a grouping class to be filled by inference (with hail, sleet, snow, freezing rain). Something like precipitation below the liquid-solid phase transition point of water." xsd:string
 created_by: https://orcid.org/0000-0002-0337-8610
@@ -875,7 +874,6 @@ id: ENVO:01000919
 name: glacial ice ablation process
 def: "An ice loss process which occurs in the low-altitude area of a glacier or ice sheet below the firn layer." [http://dx.doi.org/10.1038/nrmicro3522]
 subset: envoPolar
-is_a: ENVO:01001622 ! englacial process
 is_a: ENVO:03000017 ! glacial ice loss
 property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
 property_value: IAO:0000117 https://orcid.org/0000-0002-4366-3088
@@ -921,6 +919,21 @@ def: "A material transport process during which a volume of liquid water is tran
 subset: environmental_hazards
 is_a: ENVO:02500031 ! hydrological process
 is_a: ENVO:03000010 ! material transport process
+
+[Term]
+id: ENVO:01000993
+name: manufacturing process
+def: "A planned process during which raw or recycled materials are transformed into products for use or sale using labour and machines, tools, chemical and biological processing, or formulation." [https://en.wikipedia.org/wiki/Manufacturing]
+comment: The term may refer to a range of human activity, from handicraft to high tech, but is most commonly applied to industrial production, in which raw materials are transformed into finished goods on a large scale. {xref="https://en.wikipedia.org/wiki/Manufacturing"}
+is_a: ENVO:02500027 ! anthropogenic environmental process
+
+[Term]
+id: ENVO:01000994
+name: planetary manufacturing process
+def: "A manufacturing process which occurs on a planet." []
+comment: See https://github.com/EnvironmentOntology/envo/issues/513 for discussion.
+is_a: ENVO:01000993 ! manufacturing process
+property_value: IAO:0000116 "Whether this is within the planet's Hill sphere, the region which extends from its exosphere to its core, or some other planetary region is not clear." xsd:string
 
 [Term]
 id: ENVO:01000996
@@ -1286,6 +1299,15 @@ is_a: ENVO:01001856 ! liquid accumulation process
 is_a: ENVO:02500031 ! hydrological process
 
 [Term]
+id: ENVO:01001223
+name: lumber production process
+def: "A process during which wood is processed into beams or planks." [https://en.wikipedia.org/wiki/Lumber]
+synonym: "lumber production" EXACT []
+synonym: "timber production" EXACT []
+synonym: "timber production process" EXACT []
+is_a: ENVO:01000994 ! planetary manufacturing process
+
+[Term]
 id: ENVO:01001246
 name: agricultural process
 def: "A process during which humans rear animals or plants on land for harvest and consumption." [] {comment="http://www.fao.org/docrep/003/x6941e/x6941e04.htm#bm04"}
@@ -1519,12 +1541,12 @@ is_a: ENVO:02500009 ! biogeochemical cycling
 [Term]
 id: ENVO:01001333
 name: marine tidal flow process
-alt_id: CMECS:643
 def: "A tidal flow process which occurs in an ocean or sea and during which tidal movements generate advective flows, often amplified in velocity when moving through an inlet, pass or channel." []
 comment: This class aligns to the Coastal and Marine Ecological Classification Standard (CMECS). In ENVO, we may adapt the definition for consistency, but the semantics (meaning) of the term should be unaffected. Please consult the CMECS catalogue (https://cmecscatalog.org/) for authoritative and semantically unconstrained definitions.
 subset: envoCmecs
 subset: envoMarine
 synonym: "tidal flow" RELATED []
+xref: CMECS:643
 xref: https://cmecscatalog.org/cmecs/classification/unit/643.html
 is_a: ENVO:01001342 ! tidal flow process
 
@@ -1733,7 +1755,6 @@ id: ENVO:01001433
 name: terrestrial mining
 def: "A land use process during which materials of economic value are extracted from a planet, usually from an orebody, lode, vein, seam, reef or placer deposit." [https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/11493/144275.pdf, https://en.wikipedia.org/wiki/Land_use, https://en.wikipedia.org/wiki/Mining, https://www.eionet.europa.eu/gemet/en/concept/14837]
 synonym: "mining" BROAD []
-is_a: ENVO:01001431 ! land use process
 is_a: ENVO:01001437 ! mining
 created_by: https://orcid.org/0000-0002-4366-3088
 
@@ -2812,6 +2833,22 @@ property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0
 property_value: http://purl.org/dc/elements/1.1/date 2019-10-21T11:52:55Z xsd:dateTime
 
 [Term]
+id: ENVO:01001824
+name: ecological succession
+def: "An ecosystem process during which the species composition of an ecosystem gradually changes as species which are more adapted to the prevailing conditions in the ecosystem replace those which are less adapted." [https://en.wikipedia.org/wiki/Ecological_succession]
+is_a: ENVO:01001795 ! ecosystem process
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2023-09-07T13:10:32Z xsd:dateTime
+
+[Term]
+id: ENVO:01001827
+name: climactic ecological succession
+def: "An ecological succession process during which 1) organisms in ecological communities possess high adaptation to the conditions in the ecosystem, 2) participant communities largely fill available niches, 3) individual organisms are typically replaced by others of the same species, 4) a near equilibrium is maintained between gross primary production and total respiration and across biogeochemical cycles." [https://en.wikipedia.org/wiki/Ecological_succession]
+is_a: ENVO:01001824 ! ecological succession
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2023-09-07T13:35:09Z xsd:dateTime
+
+[Term]
 id: ENVO:01001842
 name: momentum transfer process
 def: "An environmental process during which momentum is transferred from one material entity to another." []
@@ -2888,6 +2925,23 @@ property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0
 property_value: http://purl.org/dc/elements/1.1/date 2020-05-19T22:41:55Z xsd:dateTime
 
 [Term]
+id: ENVO:01001866
+name: well intervention
+def: "A planned process during which an oil or gas well is modified." [https://en.wikipedia.org/wiki/Well_intervention]
+comment: Interventions may change state of the well or well geometry, provide well diagnostics, or manage the production of the well. {xref="Well:intervention"}
+is_a: ENVO:02500027 ! anthropogenic environmental process
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2020-06-02T13:21:28Z xsd:dateTime
+
+[Term]
+id: ENVO:01001867
+name: well stimulation
+def: "A well intervention during which the production of an oil or gas well is increased by improving the flow of hydrocarbons from the reservoir into the well bore." [https://en.wikipedia.org/wiki/Well_stimulation]
+is_a: ENVO:01001866 ! well intervention
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2020-06-02T13:52:57Z xsd:dateTime
+
+[Term]
 id: ENVO:01001868
 name: hydraulic fracturing
 def: "A well stimulation technique during which bedrock formations are fractured through the injection of pressurized proppant-bearing liquid into a well-bore." [https://en.wikipedia.org/wiki/Fracking]
@@ -2898,7 +2952,7 @@ synonym: "fracing" EXACT []
 synonym: "fracking" EXACT []
 synonym: "hydrofracking" EXACT []
 synonym: "hydrofracturing" EXACT []
-is_a: ENVO:02500027 ! anthropogenic environmental process
+is_a: ENVO:01001867 ! well stimulation
 property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-4366-3088
 property_value: http://purl.org/dc/elements/1.1/date 2020-06-02T13:54:58Z xsd:dateTime
 
@@ -4195,7 +4249,7 @@ synonym: "plastic production" EXACT []
 synonym: "Plastikherstellung" EXACT []
 synonym: "producción de plástico" EXACT []
 synonym: "produzione di plastica" EXACT []
-is_a: ENVO:02500027 ! anthropogenic environmental process
+is_a: ENVO:01000993 ! manufacturing process
 property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-2996-719X
 property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-8166-0486
 property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0003-1072-8081
@@ -4211,6 +4265,14 @@ property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/00
 property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-8166-0486
 property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0003-1072-8081
 property_value: http://purl.org/dc/elements/1.1/date 2021-05-12T14:28:52Z xsd:dateTime
+
+[Term]
+id: ENVO:06105202
+name: soil compaction process
+def: "Soil compaction is a compaction process during which the bulk density of soil increases and/or its porosity decreases due to externally or internally applied loads." []
+is_a: ENVO:03000008 ! compaction process
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0001-6284-4821
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-8461-9745
 
 [Term]
 id: ENVO:06105230

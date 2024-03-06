@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: envo/releases/2023-02-13/subsets/EnvO-Lite-GSC.owl
+data-version: envo/releases/2024-02-16/subsets/EnvO-Lite-GSC.owl
 subsetdef: disposition_slim "Disposition slim"
 subsetdef: environmental_hazards "environmental_hazards"
 subsetdef: EnvO-Lite-GSC "EnvO-Lite-GSC"
@@ -23,9 +23,9 @@ subsetdef: ro-eco "ro-eco"
 subsetdef: scalar_slim "Scalar slim"
 subsetdef: value_slim "Value slim"
 subsetdef: wwfBiome "wwfBiome"
-synonymtypedef: PLURAL "plurals"
+synonymtypedef: OMO:0003004 "plural form"
 ontology: envo/subsets/EnvO-Lite-GSC
-property_value: owl:versionInfo "2023-02-13" xsd:string
+property_value: owl:versionInfo "2024-02-16" xsd:string
 
 [Term]
 id: ENVO:00000027
@@ -72,7 +72,7 @@ replaced_by: ENVO:01000317
 id: ENVO:00000191
 name: solid astronomical body part
 namespace: ENVO
-def: "A part of an astronomical body which is primarily composed of a continuous volume of solid material, shaped by one or more environmental processes." [https://en.wikipedia.org/wiki/Landform]
+def: "A part of an astronomical body which is primarily composed of solid material." [https://en.wikipedia.org/wiki/Landform]
 synonym: "geological feature" RELATED [ADL:FTT]
 synonym: "landform" RELATED []
 synonym: "physiographic feature" RELATED []
@@ -207,8 +207,8 @@ is_a: ENVO:01000815 ! liquid environmental material
 id: ENVO:00002007
 name: sediment
 namespace: ENVO
-def: "Sediment is an environmental substance comprised of any particulate matter that can be transported by fluid flow and which eventually is deposited as a layer of solid particles on the bedor bottom of a body of water or other liquid." [https://en.wikipedia.org/wiki/Sediment]
-comment: It is recommended to use a combination of sediment terms to describe a more specific sediment type.
+def: "Particulate environmental material which is formed as a result of the transport and deposition of particles by flowing liquid." [https://en.wikipedia.org/wiki/Sediment]
+comment: Sediment is typically deposited on the bed or bottom of a body of water or other liquid.
 subset: EnvO-Lite-GSC
 subset: envoPolar
 xref: EcoLexicon:sediment
@@ -217,7 +217,7 @@ xref: https://en.wikipedia.org/wiki/Sediment
 xref: LTER:492
 xref: LTER:493
 xref: SWEETRealm:Sediment
-is_a: ENVO:00010483 ! environmental material
+is_a: ENVO:01000060
 
 [Term]
 id: ENVO:00002009
@@ -318,8 +318,9 @@ is_obsolete: true
 id: ENVO:00010483
 name: environmental material
 namespace: ENVO
-def: "A portion of environmental material is a fiat object part which forms the medium or part of the medium of an environmental system." [DOI:10.1186/2041-1480-4-43, MA:ma, ORCID:0000-0002-4366-3088, URL:http\://ontology.buffalo.edu/smith/articles/niches.html]
-comment: Everything under this parent must be a mass noun. All subclasses are to be understood as being composed primarily of the named entity, rather than restricted to that entity. For example, "ENVO:water" is to be understood as "environmental material composed primarly of some CHEBI:water". This class is currently being aligned to the Basic Formal Ontology. Following this alignment, its definition and the definitions of its subclasses will be revised.
+def: "A material entity which other material entities in an environmental system are primarily or partially composed of." [http://ontology.buffalo.edu/smith/articles/niches.html, https://dx.doi.org/10.1186/2041-1480-4-43, https://en.wikipedia.org/wiki/Material]
+comment: Everything under this parent must be a mass noun (i.e. not countable). All subclasses are to be understood as being composed primarily of the named entity, rather than restricted to that entity. For example, "ENVO:water" is to be understood as "environmental material composed primarly of some CHEBI:water".
+comment: Instances of this class are portions of environmental materials, such as seawater in bucket, a water parcel in the photic zone of a lake, or the concrete that composes a building part. Instances of these portions may have fiat or non-fiat boundaries. For example, a water parcel has not physical boundaries, while the seawater in a bucket is bounded by the internal surfaces of the bucket.
 synonym: "portion of environmental material" EXACT []
 
 [Term]
@@ -432,10 +433,9 @@ creation_date: 2013-10-10T08:14:50Z
 id: ENVO:01000281
 name: layer
 namespace: ENVO
-def: "A layer is a quantity of some material which is spatially continuous, has comparable thickness, and usually covers some surface." [Wiktionary:layer]
-comment: Preliminary definition.
+def: "A material entity which 1) is spatially continuous, 2) is composed of material of comparable thickness, composition, and physical properties, and 3) is physically distinct from adjacent portions of environmental material." [https://en.wiktionary.org/wiki/layer]
 subset: envoPolar
-created_by: ORCID:0000-0002-4366-3088
+created_by: https://orcid.org/0000-0002-4366-3088
 creation_date: 2013-10-15T16:42:02Z
 
 [Term]
@@ -534,9 +534,13 @@ id: ENVO:01000813
 name: astronomical body part
 namespace: ENVO
 def: "A material part of an astronomical body." []
+comment: Material parts of astronomical bodies generally have boundaries formed by discontinuities in qualities, composition, or other physical characterisitcs. These boundaries are sometimes sharp, and sometimes diffuse, with different classification systems and communities declaring varying thresholds (e.g. for where a shoreline, forest, or other entity begins and ends). However, some boundaries are declared by fiat - that is, by arbitrary human convention or decree - particularly by regulatory or other authorities and communities of practice. The classes in this hierarchy attempt to offer generalisable definitions that allow multiple classfiication systems to map to and interoperate through. If desired, we can create classes that declare thresholds used by a given authority or community under the more generic ones, annotated with source information.
 subset: envoAstro
 subset: envoPolar
 relationship: part_of ENVO:01000799 ! astronomical body
+property_value: IAO:0000116 "Also note that some astronomical body parts (ABPs) may have fiat boundaries: if there's strong debate about where an ABP begins or ends (over and above fuzzy boundaries), with different official classifications setting different thresholds or limits, axiomatise the class with fiat boundaries of the appropriate dimension." xsd:string
+property_value: IAO:0000116 "Note that material entities may have immaterial entities (e.g. sites) as parts." xsd:string
+property_value: IAO:0000116 "This class includes material parts of astronomical bodies. Immaterial parts, such as magnetospheres, are represented as sites under the influence of magnetic fields.Please post countercases in the ENVO tracker for revision of this hierarchy if needed." xsd:string
 
 [Term]
 id: ENVO:01000814
@@ -559,11 +563,11 @@ is_a: ENVO:02000140 ! fluid environmental material
 id: ENVO:01000817
 name: biosphere
 namespace: ENVO
-def: "A biosphere is a part of an astronomical body which includes, as parts, all the living entities within the gravitational sphere of influence of that body, as well as the non-living and dead entities with which they interact." [http://www.biology-online.org/dictionary/Biosphere, https://en.wikipedia.org/wiki/Biosphere]
+def: "An astronomical body part which includes all the living entities within the gravitational sphere of influence of that body, as well as the non-living and dead entities with which they interact." [http://www.biology-online.org/dictionary/Biosphere, https://en.wikipedia.org/wiki/Biosphere]
 comment: The gravitational sphere of influence referenced in this class' definition is the Hill sphere: a region in which an object dominates the attraction of satellites despite gravitational perturbations.
 subset: envoAstro
 subset: envoPolar
-is_a: ENVO:01001784 ! compound astronomical body part
+is_a: ENVO:01000813 ! astronomical body part
 property_value: IAO:0000116 "Whether this class should be grouped with classes such as \"hydrosphere\" and \"cryosphere\" requires some discussion." xsd:string
 
 [Term]
@@ -584,7 +588,7 @@ namespace: ENVO
 def: "An astronomical body part which is composed of soil, subject to soil formation processes, and found on the surface of a lithosphere." [https://en.wikipedia.org/wiki/Pedosphere]
 comment: This is a very broad and, in practice, poorly defined term. Please consider using or requesting a more specific class.
 subset: envoAstro
-is_a: ENVO:01001784 ! compound astronomical body part
+is_a: ENVO:01000813 ! astronomical body part
 relationship: composed_primarily_of ENVO:00001998 ! soil
 relationship: overlaps ENVO:01000267 ! atmosphere
 relationship: overlaps ENVO:01000646 ! lithosphere
@@ -621,7 +625,7 @@ intersection_of: composed_primarily_of ENVO:01000814 ! solid environmental mater
 id: ENVO:01001477
 name: liquid astronomical body part
 namespace: ENVO
-def: "A part of an astronomical body which is primarily composed of a continuous volume of liquid material, shaped by one or more environmental processes." [https://en.wikipedia.org/wiki/Landform]
+def: "A part of an astronomical body which is primarily composed of liquid material." []
 is_a: ENVO:01001479 ! fluid astronomical body part
 intersection_of: ENVO:01001479 ! fluid astronomical body part
 intersection_of: composed_primarily_of ENVO:01000815 ! liquid environmental material
@@ -631,8 +635,10 @@ created_by: https://orcid.org/0000-0002-4366-3088
 id: ENVO:01001479
 name: fluid astronomical body part
 namespace: ENVO
-def: "A part of an astronomical body which is primarily composed of a continuous volume of liquid or gaseous material, shaped by one or more environmental processes." [https://en.wikipedia.org/wiki/Landform]
+def: "A part of an astronomical body which is primarily composed of fluid." [https://en.wikipedia.org/wiki/Fluid]
 is_a: ENVO:01000813 ! astronomical body part
+intersection_of: ENVO:01000813 ! astronomical body part
+intersection_of: composed_primarily_of ENVO:02000140 ! fluid environmental material
 created_by: https://orcid.org/0000-0002-4366-3088
 creation_date: 2018-10-04T13:59:22Z
 
@@ -685,15 +691,6 @@ intersection_of: ENVO:01001686 ! mass of environmental material
 intersection_of: composed_primarily_of ENVO:00010483 {minCardinality="2"} ! environmental material
 property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-4366-3088
 property_value: http://purl.org/dc/elements/1.1/date 2019-08-20T09:47:10Z xsd:dateTime
-
-[Term]
-id: ENVO:01001784
-name: compound astronomical body part
-namespace: ENVO
-def: "A part of an astronomical body which is composed of a continuous medium bearing liquid, gaseous, and solid material in variable quantities." [https://en.wikipedia.org/wiki/Landform]
-is_a: ENVO:01000813 ! astronomical body part
-property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-4366-3088
-property_value: http://purl.org/dc/elements/1.1/date 2019-10-17T08:36:00Z xsd:dateTime
 
 [Term]
 id: ENVO:01001884
@@ -754,7 +751,7 @@ replaced_by: ENVO:01000312
 id: ENVO:02000140
 name: fluid environmental material
 namespace: ENVO
-def: "A liquid or a gas." [https://github.com/EnvironmentOntology/envo/issues/940]
+def: "An environmental material which is unable to resist shear forces and continuously deforms when subject to them." [https://en.wikipedia.org/wiki/Fluid, https://github.com/EnvironmentOntology/envo/issues/940]
 synonym: "fluid" NARROW []
 is_a: ENVO:00010483 ! environmental material
 
@@ -846,11 +843,6 @@ id: connects
 name: connects
 namespace: ENVO
 xref: RO:0002176
-
-[Typedef]
-id: contained_in
-namespace: ENVO
-xref: RO:0001018
 
 [Typedef]
 id: contains
@@ -951,15 +943,6 @@ namespace: ENVO
 xref: RO:0002180
 
 [Typedef]
-id: has_condition
-name: has_condition
-namespace: ENVO
-comment: Experimental relation used in EnvO. A condition defines a restricted range of a given quality or combination of qualities. If an environment class, E, has_condition C, then all qualities listed in C are restricted to the ranges defined in C in E. This is not intended as a logical conditional.
-xref: has_condition
-is_inverse_functional: true
-creation_date: 2013-05-08T07:33:05Z
-
-[Typedef]
 id: has_disposition
 namespace: ENVO
 xref: RO:0000091
@@ -982,8 +965,13 @@ xref: RO:0002303
 
 [Typedef]
 id: has_increased_levels_of
+name: has increased levels of
 namespace: ENVO
-xref: has_increased_levels_of
+def: "A has part relationship between a whole and a part, where the number of parts present in the whole is higher than in comparable entities." []
+comment: This relation is present in ENVO to support compositional classes such as "X-enriched soil". These will later be formalized, and a different relation from RO may be chosen.
+xref: ENVO:02000200
+property_value: seeAlso https://github.com/EnvironmentOntology/envo/issues/1380
+is_a: has_component
 
 [Typedef]
 id: has_input

@@ -4,9 +4,9 @@
     "meta" : {
       "basicPropertyValues" : [ {
         "pred" : "http://www.w3.org/2002/07/owl#versionInfo",
-        "val" : "subsets/material-hierarchy.owl 2023-02-13"
+        "val" : "subsets/material-hierarchy.owl 2024-02-16"
       } ],
-      "version" : "http://purl.obolibrary.org/obo/envo/releases/2023-02-13/subsets/material-hierarchy.owl"
+      "version" : "http://purl.obolibrary.org/obo/envo/releases/2024-02-16/subsets/material-hierarchy.owl"
     },
     "nodes" : [ {
       "id" : "http://purl.obolibrary.org/obo/ENVO_00000003",
@@ -81,10 +81,6 @@
           "val" : "TGN:21508"
         }, {
           "val" : "https://en.wikipedia.org/wiki/Scree"
-        } ],
-        "basicPropertyValues" : [ {
-          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
-          "val" : "ENVO"
         } ]
       }
     }, {
@@ -273,10 +269,10 @@
       "type" : "CLASS",
       "meta" : {
         "definition" : {
-          "val" : "Sediment is an environmental substance comprised of any particulate matter that can be transported by fluid flow and which eventually is deposited as a layer of solid particles on the bedor bottom of a body of water or other liquid.",
+          "val" : "Particulate environmental material which is formed as a result of the transport and deposition of particles by flowing liquid.",
           "xrefs" : [ "https://en.wikipedia.org/wiki/Sediment" ]
         },
-        "comments" : [ "It is recommended to use a combination of sediment terms to describe a more specific sediment type." ],
+        "comments" : [ "Sediment is typically deposited on the bed or bottom of a body of water or other liquid." ],
         "subsets" : [ "http://purl.obolibrary.org/obo/envo#EnvO-Lite-GSC", "\"envoPolar\"" ],
         "xrefs" : [ {
           "val" : "EcoLexicon:sediment"
@@ -3325,10 +3321,10 @@
       "type" : "CLASS",
       "meta" : {
         "definition" : {
-          "val" : "A portion of environmental material is a fiat object part which forms the medium or part of the medium of an environmental system.",
-          "xrefs" : [ "DOI:10.1186/2041-1480-4-43", "MA:ma", "ORCID:0000-0002-4366-3088", "URL:http://ontology.buffalo.edu/smith/articles/niches.html" ]
+          "val" : "A material entity which other material entities in an environmental system are primarily or partially composed of.",
+          "xrefs" : [ "http://ontology.buffalo.edu/smith/articles/niches.html", "https://dx.doi.org/10.1186/2041-1480-4-43", "https://en.wikipedia.org/wiki/Material" ]
         },
-        "comments" : [ "Everything under this parent must be a mass noun. All subclasses are to be understood as being composed primarily of the named entity, rather than restricted to that entity. For example, \"ENVO:water\" is to be understood as \"environmental material composed primarly of some CHEBI:water\". This class is currently being aligned to the Basic Formal Ontology. Following this alignment, its definition and the definitions of its subclasses will be revised." ],
+        "comments" : [ "Everything under this parent must be a mass noun (i.e. not countable). All subclasses are to be understood as being composed primarily of the named entity, rather than restricted to that entity. For example, \"ENVO:water\" is to be understood as \"environmental material composed primarly of some CHEBI:water\".", "Instances of this class are portions of environmental materials, such as seawater in bucket, a water parcel in the photic zone of a lake, or the concrete that composes a building part. Instances of these portions may have fiat or non-fiat boundaries. For example, a water parcel has not physical boundaries, while the seawater in a bucket is bounded by the internal surfaces of the bucket." ],
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "portion of environmental material"
@@ -5507,7 +5503,7 @@
           "xrefs" : [ "https://en.wikipedia.org/wiki/Fog" ]
         },
         "comments" : [ "Fog is more opaque than mist, reducing visibility to under one kilometre. This class refers only to fog formed by materials primarily composed of water. \"Fog can be considered a type of low-lying cloud and is heavily influenced by nearby bodies of water, topography, and wind conditions. In turn, fog has affected many human activities, such as shipping, travel, and warfare.\" https://en.wikipedia.org/wiki/Fog" ],
-        "subsets" : [ "uk.ac.manchester.cs.owl.owlapi.OWLLiteralImplString@24a5fce3" ],
+        "subsets" : [ "\"envoCryo\"" ],
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "haar"
@@ -7174,7 +7170,7 @@
           "xrefs" : [ "https://orcid.org/0000-0003-4808-4736" ]
         },
         "comments" : [ "Rime is denser and harder than hoarfrost, but lighter, softer, and less transparent than glaze. Rime is composed essentially of discrete ice granules and has densities as low as 0.2-0.3 g cm-3. Glaze is generally continuous but with some air pockets and has much higher densities. Factors that favor rime formation are small drop size, slow accretion, a high degree of supercooling, and rapid dissipation of latent heat of fusion. The opposite effects favor glaze formation. Both rime and glaze occur when supercooled water drops strike an object at a temperature below freezing. Such formation on terrestrial objects constitutes an ice storm; on aircraft, it is called aircraft icing (where rime is known as rime ice). Either rime or glaze may form on snow crystals, droxtals, or other ice particles in the atmosphere. When such a deposit is wholly or chiefly of rime, snow pellets result; when most or all of the deposit is glaze, ordinary hail or ice pellets result. The alternating clear and opaque layers of some hailstones represent glaze and rime, deposited under varying conditions around the growing hailstone." ],
-        "subsets" : [ "uk.ac.manchester.cs.owl.owlapi.OWLLiteralImplString@24a5fce3", "uk.ac.manchester.cs.owl.owlapi.OWLLiteralImplString@7fdafce3" ],
+        "subsets" : [ "\"envoCryo\"", "\"envoPolar\"" ],
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000116",
           "val" : "The previously use definition was: Frost which is 1) composed primarily of granular ice tufts, 2) formed on the windward sides of exposed objects through contact with supercooled fog or cloud, and 3) built out directly against the wind."
@@ -8268,8 +8264,8 @@
       "type" : "CLASS",
       "meta" : {
         "definition" : {
-          "val" : "A liquid or a gas.",
-          "xrefs" : [ "https://github.com/EnvironmentOntology/envo/issues/940" ]
+          "val" : "An environmental material which is unable to resist shear forces and continuously deforms when subject to them.",
+          "xrefs" : [ "https://en.wikipedia.org/wiki/Fluid", "https://github.com/EnvironmentOntology/envo/issues/940" ]
         },
         "synonyms" : [ {
           "pred" : "hasNarrowSynonym",
@@ -8737,7 +8733,7 @@
           "xrefs" : [ "http://glossary.ametsoc.org/wiki/Main_Page", "https://orcid.org/0000-0003-4808-4736" ]
         },
         "comments" : [ "Freezing fog forms when the air temperature is below freezing and the water droplets in the fog become supercooled." ],
-        "subsets" : [ "uk.ac.manchester.cs.owl.owlapi.OWLLiteralImplString@24a5fce3", "uk.ac.manchester.cs.owl.owlapi.OWLLiteralImplString@7fdafce3" ],
+        "subsets" : [ "\"envoCryo\"", "\"envoPolar\"" ],
         "basicPropertyValues" : [ {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
           "val" : "https://orcid.org/0000-0002-0337-8610"
@@ -8771,7 +8767,7 @@
           "xrefs" : [ "https://orcid.org/0000-0003-4808-4736" ]
         },
         "comments" : [ "The suspended particles may be partly ice crystals 20 to 100 micron in diameter, but chiefly, especially when dense, droxtals 12-20 micron in diameter. Ice fog is formed by direct freezing of supercooled water droplets with little growth directly from the vapor. It occurs at very low temperatures, and usually in clear, calm weather in high latitudes. The sun is usually visible and may cause halo phenomena or luminous pillars. Ice fog is rare at temperatures warmer than -30 °C, and increases in frequency with decreasing temperature until it is almost always present at air temperatures of -45 °C in the vicinity of a source of water vapor. Such sources are the open water of fast-flowing streams or of the sea, herds of animals, volcanoes, and especially products of combustion for heating or propulsion. At temperatures warmer than -30 °C, these sources can cause steam fog of liquid water droplets, which may turn into ice fog when cooled." ],
-        "subsets" : [ "uk.ac.manchester.cs.owl.owlapi.OWLLiteralImplString@24a5fce3", "uk.ac.manchester.cs.owl.owlapi.OWLLiteralImplString@7fdafce3" ],
+        "subsets" : [ "\"envoCryo\"", "\"envoPolar\"" ],
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "frozen fog"
@@ -9972,6 +9968,87 @@
         } ]
       }
     }, {
+      "id" : "http://purl.obolibrary.org/obo/ENVO_03605000",
+      "lbl" : "periphytic biofilm",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "Biofilm consisting of a mixture of algae, cyanobacteria, microbes, and detritus.",
+          "xrefs" : [ "https://data.neonscience.org/documents/10179/1883159/NEON.DOC.003044vE/05ca8fcc-33ba-a5b2-0e93-8f4001f38c37", "https://www.frontiersin.org/articles/10.3389/fmicb.2021.684903/full" ]
+        },
+        "comments" : [ "Periphytic biofilm coats the submerged surfaces in most bodies of water" ],
+        "synonyms" : [ {
+          "pred" : "hasRelatedSynonym",
+          "val" : "Periphyton"
+        } ]
+      }
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/ENVO_03605001",
+      "lbl" : "epilithon",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "Periphyton colonizing rock substrata",
+          "xrefs" : [ "https://data.neonscience.org/documents/10179/1883159/NEON.DOC.003044vE/05ca8fcc-33ba-a5b2-0e93-8f4001f38c37" ]
+        }
+      }
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/ENVO_03605002",
+      "lbl" : "epipelon",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "Periphyton colonizing silt substrata",
+          "xrefs" : [ "https://data.neonscience.org/documents/10179/1883159/NEON.DOC.003044vE/05ca8fcc-33ba-a5b2-0e93-8f4001f38c37" ]
+        }
+      }
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/ENVO_03605003",
+      "lbl" : "epiphyton",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "Periphyton colonizing surface of aquatic plants",
+          "xrefs" : [ "https://data.neonscience.org/documents/10179/1883159/NEON.DOC.003044vE/05ca8fcc-33ba-a5b2-0e93-8f4001f38c37" ]
+        }
+      }
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/ENVO_03605004",
+      "lbl" : "epipsammon",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "Periphyton colonizing sand substrata",
+          "xrefs" : [ "https://data.neonscience.org/documents/10179/1883159/NEON.DOC.003044vE/05ca8fcc-33ba-a5b2-0e93-8f4001f38c37" ]
+        }
+      }
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/ENVO_03605005",
+      "lbl" : "epixylon",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "Periphyton colonizing woody substrata",
+          "xrefs" : [ "https://data.neonscience.org/documents/10179/1883159/NEON.DOC.003044vE/05ca8fcc-33ba-a5b2-0e93-8f4001f38c37" ]
+        }
+      }
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/ENVO_03605006",
+      "lbl" : "stream water",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "Water which is part of a stream."
+        },
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.org/dc/elements/1.1/creator",
+          "val" : "https://orcid.org/0000-0001-9076-6066"
+        }, {
+          "pred" : "http://purl.org/dc/elements/1.1/date",
+          "val" : "2024-01-12T13:48:00Z"
+        } ]
+      }
+    }, {
       "id" : "http://purl.obolibrary.org/obo/ENVO_04000007",
       "lbl" : "lake water",
       "type" : "CLASS",
@@ -10215,6 +10292,22 @@
         }, {
           "pred" : "http://purl.org/dc/elements/1.1/date",
           "val" : "2021-05-07T09:12:35Z"
+        } ]
+      }
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/ENVO_06105205",
+      "lbl" : "compacted soil",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A soil which has a high bulk density and/or a low porosity. A compacted soil has a reduced rate of both water infiltration and drainage"
+        },
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.org/dc/elements/1.1/creator",
+          "val" : "https://orcid.org/0000-0001-6284-4821"
+        }, {
+          "pred" : "http://purl.org/dc/elements/1.1/creator",
+          "val" : "https://orcid.org/0000-0002-8461-9745"
         } ]
       }
     }, {
@@ -12690,10 +12783,10 @@
           "val" : "legume"
         }, {
           "pred" : "hasNarrowSynonym",
-          "val" : "http://purl.obolibrary.org/obo/FOODON_03411254"
+          "val" : "http://purl.obolibrary.org/obo/FOODON_03411338"
         }, {
           "pred" : "hasNarrowSynonym",
-          "val" : "http://purl.obolibrary.org/obo/FOODON_03411338"
+          "val" : "http://purl.obolibrary.org/obo/FOODON_03411254"
         } ],
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000119",
@@ -12990,13 +13083,13 @@
           "val" : "Damion Dooley"
         }, {
           "pred" : "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+          "val" : "https://oconto.extension.wisc.edu/files/2011/02/The-Importance-of-Dry-Beans-in-Your-Diet.pdf"
+        }, {
+          "pred" : "http://www.w3.org/2000/01/rdf-schema#seeAlso",
           "val" : "http://purl.obolibrary.org/obo/FOODON_00002428"
         }, {
           "pred" : "http://www.w3.org/2000/01/rdf-schema#seeAlso",
           "val" : "http://www.fao.org/es/faodef/fdef04e.htm#4.02"
-        }, {
-          "pred" : "http://www.w3.org/2000/01/rdf-schema#seeAlso",
-          "val" : "https://oconto.extension.wisc.edu/files/2011/02/The-Importance-of-Dry-Beans-in-Your-Diet.pdf"
         } ]
       }
     }, {
@@ -13745,10 +13838,10 @@
           "val" : "Damion Dooley"
         }, {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000119",
-          "val" : "http://en.wikipedia.org/wiki/Legume"
+          "val" : "https://en.wikipedia.org/wiki/Mucuna_pruriens"
         }, {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000119",
-          "val" : "https://en.wikipedia.org/wiki/Mucuna_pruriens"
+          "val" : "http://en.wikipedia.org/wiki/Legume"
         }, {
           "pred" : "http://purl.org/dc/elements/1.1/date",
           "val" : "2019-07-10T00:00:22"
@@ -15525,7 +15618,7 @@
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_00000194",
       "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/ENVO_00010483"
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01000814"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_00000338",
       "pred" : "is_a",
@@ -15565,7 +15658,7 @@
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_00002007",
       "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/ENVO_00010483"
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01000060"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_00002008",
       "pred" : "is_a",
@@ -16581,7 +16674,7 @@
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01000018",
       "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/ENVO_00010483"
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01000814"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01000060",
       "pred" : "is_a",
@@ -16705,7 +16798,7 @@
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01000231",
       "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/ENVO_00010483"
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_02000140"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01000232",
       "pred" : "is_a",
@@ -16762,10 +16855,6 @@
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01000274",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_00002017"
-    }, {
-      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000277",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/ENVO_01000814"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01000277",
       "pred" : "is_a",
@@ -17005,7 +17094,7 @@
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01000599",
       "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/ENVO_00002006"
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_03605006"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01000600",
       "pred" : "is_a",
@@ -17021,11 +17110,11 @@
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01000648",
       "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/ENVO_00010483"
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_02000140"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01000660",
       "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/ENVO_00010483"
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01000814"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01000661",
       "pred" : "is_a",
@@ -17207,6 +17296,10 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_00010505"
     }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01001088",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_02000140"
+    }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01001089",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_00010505"
@@ -17245,7 +17338,7 @@
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01001125",
       "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/ENVO_00010483"
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01000814"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01001126",
       "pred" : "is_a",
@@ -17439,6 +17532,10 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_01000277"
     }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01001511",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_02000140"
+    }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01001512",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_00002200"
@@ -17589,7 +17686,7 @@
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01001850",
       "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/ENVO_00010483"
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01000814"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01001869",
       "pred" : "is_a",
@@ -18259,6 +18356,34 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_01000155"
     }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_03605000",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01000156"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_03605001",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_03605000"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_03605002",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_03605000"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_03605003",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_03605000"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_03605004",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_03605000"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_03605005",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_03605000"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_03605006",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_00002006"
+    }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_04000007",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_00002006"
@@ -18298,6 +18423,10 @@
       "sub" : "http://purl.obolibrary.org/obo/ENVO_06105112",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_06105101"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_06105205",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_00001998"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_06105211",
       "pred" : "is_a",

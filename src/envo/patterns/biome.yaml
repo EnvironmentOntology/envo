@@ -1,0 +1,38 @@
+pattern_name: biome patterns
+pattern_iri: http://purl.obolibrary.org/obo/envo/biome
+
+description: >-
+  This template is for representing biome classes, where a biome is an ecosystem which has, effectively, reached a state where its niche space is largely filled and where organisms are generally replaced by members of the same species. In other words, the ecosystem is participating in a climactic ecological succession (i.e. is maintained in its climax successional state).
+  (i.e. it is resilient to perturbations).
+  Biome classes are defined by refining a more general "ecosystem" class and adding a climactic succession differentia.
+  When creating a new biome class, there must be an existing ecosystem class, where that ecosystem class is defined
+  by the ecosystem template.
+
+  For example, the class "desert biome" is defined in terms of "desert ecosystem", and "desert ecosystem" is defined in terms
+  of "desert".
+
+classes: 
+  biome: ENVO:00000428
+  ecosystem: ENVO:01001110
+  climactic ecological succession: ENVO:01001827
+
+relations:
+  participates in: RO:0000056
+
+vars:
+  participant: "'ecosystem'"
+
+name:
+  text: "%s biome"
+  vars:
+    - participant
+
+def:
+  text: "An %s that is undergoing climactic ecological succession."
+  vars:
+    - participant
+
+equivalentTo: 
+  text: "%s and ('participates in' some 'climactic ecological succession')"
+  vars:
+    - participant
