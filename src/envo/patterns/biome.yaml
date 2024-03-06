@@ -2,10 +2,14 @@ pattern_name: biome patterns
 pattern_iri: http://purl.obolibrary.org/obo/envo/biome
 
 description: >-
+  This template is for representing biome classes, where a biome is an ecosystem which has, effectively, reached a state where its niche space is largely filled and where organisms are generally replaced by members of the same species. In other words, the ecosystem is participating in a climactic ecological succession (i.e. is maintained in its climax successional state).
+  (i.e. it is resilient to perturbations).
+  Biome classes are defined by refining a more general "ecosystem" class and adding a climactic succession differentia.
+  When creating a new biome class, there must be an existing ecosystem class, where that ecosystem class is defined
+  by the ecosystem template.
 
-  A biome is an ecosystem that participates in some climactic ecological succession, ie it is resilient to perturbations
-  It should be possible to infer that class with "biome" in its label should be classified as a 'biome'.
-  Does this pattern generate biomes from all ecosystems, or does it check the patterns of classes that are already present?
+  For example, the class "desert biome" is defined in terms of "desert ecosystem", and "desert ecosystem" is defined in terms
+  of "desert".
 
 classes: 
   biome: ENVO:00000428
@@ -18,8 +22,6 @@ relations:
 vars:
   participant: "'ecosystem'"
 
-# TODO: this will create names that include 'ecosystem' in the label, like 'desert ecosystem biome'
-#  we would prefer to REPLACE 'ecosystem' with 'biome'
 name:
   text: "%s biome"
   vars:
