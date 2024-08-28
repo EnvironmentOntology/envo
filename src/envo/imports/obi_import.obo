@@ -26,25 +26,18 @@ def: "A continuant that is a bearer of quality and realizable entity entities, i
 def: "b is an independent continuant = Def. b is a continuant which is such that there is no c and no t such that b s-depends_on c at t. (axiom label in BFO2 Reference: [017-002])" []
 is_a: BFO:0000002 ! continuant
 disjoint_from: BFO:0000020 ! specifically dependent continuant
-disjoint_from: BFO:0000020 ! specifically dependent continuant
-disjoint_from: BFO:0000031 ! generically dependent continuant
 
 [Term]
 id: BFO:0000006
 name: spatial region
 is_a: BFO:0000141 ! immaterial entity
 disjoint_from: BFO:0000029 ! site
-disjoint_from: BFO:0000029 ! site
-disjoint_from: BFO:0000140 ! continuant fiat boundary
 
 [Term]
 id: BFO:0000008
 name: temporal region
 is_a: BFO:0000003 ! occurrent
 disjoint_from: BFO:0000011 ! spatiotemporal region
-disjoint_from: BFO:0000011 ! spatiotemporal region
-disjoint_from: BFO:0000015 ! process
-disjoint_from: BFO:0000035 ! process boundary
 
 [Term]
 id: BFO:0000011
@@ -83,7 +76,6 @@ def: "A continuant that inheres in or is borne by other entities. Every instance
 def: "b is a relational specifically dependent continuant = Def. b is a specifically dependent continuant and there are n &gt; 1 independent continuants c1, … cn which are not spatial regions are such that for all 1  i &lt; j  n, ci  and cj share no common parts, are such that for each 1  i  n, b s-depends_on ci at every time t during the course of b’s existence (axiom label in BFO2 Reference: [131-004])" []
 def: "b is a specifically dependent continuant = Def. b is a continuant & there is some independent continuant c which is not a spatial region and which is such that b s-depends_on c at every time t during the course of b’s existence. (axiom label in BFO2 Reference: [050-003])" []
 is_a: BFO:0000002 ! continuant
-disjoint_from: BFO:0000031 ! generically dependent continuant
 
 [Term]
 id: BFO:0000023
@@ -94,7 +86,6 @@ is_a: BFO:0000017 ! realizable entity
 [Term]
 id: BFO:0000024
 name: fiat object
-name: fiat object part
 is_a: BFO:0000040 ! material entity
 
 [Term]
@@ -179,7 +170,7 @@ is_a: IAO:0000308 ! figure
 [Term]
 id: IAO:0000104
 name: plan specification
-def: "A directive information entity with action specifications and objective specifications as parts that, when concretized, is realized in a process in which the bearer tries to achieve the objectives by taking the actions specified." []
+def: "A directive information entity with action specifications and objective specifications as parts, and that may be concretized as a realizable entity that, if realized, is realized in a process in which the bearer tries to achieve the objectives by taking the actions specified." []
 is_a: IAO:0000033 ! directive information entity
 
 [Term]
@@ -377,12 +368,6 @@ def: "A quality which inheres in a continuant." []
 is_a: BFO:0000019 ! quality
 
 [Term]
-id: PATO:0001291
-name: electromagnetic (EM) radiation quality
-def: "A physical quality that inheres in an bearer by virtue of how that bearer interacts with electromagnetic radiation." []
-is_a: PATO:0001739 ! radiation quality
-
-[Term]
 id: PATO:0001296
 name: luminous flux
 def: "A scalar optical quality which obtains by the magnitude of the light emitted by the bearer." []
@@ -392,7 +377,7 @@ is_a: PATO:0001300 ! optical quality
 id: PATO:0001300
 name: optical quality
 def: "An EM radiation quality in which the EM radiation is within the fiat range of the spectrum visible deemed to be light." []
-is_a: PATO:0001291 ! electromagnetic (EM) radiation quality
+is_a: PATO:0070060 ! quality of interaction of a substance with electromagnetic radiation
 
 [Term]
 id: PATO:0001422
@@ -425,16 +410,10 @@ def: "A size quality inhering in an bearer by virtue of the bearer's extension i
 is_a: PATO:0000117 ! size
 
 [Term]
-id: PATO:0001739
-name: radiation quality
-def: "A quality that inheres in an bearer by virtue of how that bearer interacts with radiation." []
-is_a: PATO:0001018 ! physical quality
-
-[Term]
 id: PATO:0001740
 name: activity (of a radionuclide)
 def: "A radiation quality inhering in a radioactive substance by virtue of its transformation (disintegration) rate." []
-is_a: PATO:0001739 ! radiation quality
+is_a: PATO:0002198 ! quality of a substance
 
 [Term]
 id: PATO:0001741
@@ -465,4 +444,10 @@ id: PATO:0002198
 name: quality of a substance
 def: "A quality inhering in a bearer by virtue of its constitution." []
 is_a: PATO:0001018 ! physical quality
+
+[Term]
+id: PATO:0070060
+name: quality of interaction of a substance with electromagnetic radiation
+def: "A quality of a substance on which or through which electromagnetic radiation impinges or traverses with respect to radiation. This substance quality changes the quality of the incident radiation with respect to any of: intensity, direction, scatter and wavelength." []
+is_a: PATO:0002198 ! quality of a substance
 
