@@ -1,7 +1,7 @@
 format-version: 1.2
-data-version: envo/releases/2023-02-13/subsets/material-hierarchy.owl
+data-version: envo/releases/2024-07-01/subsets/material-hierarchy.owl
 ontology: envo/subsets/material-hierarchy
-property_value: owl:versionInfo "subsets/material-hierarchy.owl 2023-02-13" xsd:string
+property_value: owl:versionInfo "subsets/material-hierarchy.owl 2024-07-01" xsd:string
 
 [Term]
 id: ENVO:00000003
@@ -26,11 +26,10 @@ is_a: ENVO:00010483 ! environmental material
 [Term]
 id: ENVO:00000194
 name: scree
-namespace: ENVO
 def: "Broken rock that appears at the bottom of crags, mountain cliffs or valley shoulders." [https://en.wikipedia.org/wiki/Scree]
 synonym: "TALUS" RELATED [USGS:SDTS]
-synonym: "talus slope" RELATED [Geonames:feature]
 synonym: "talus slope" RELATED [Getty:TGN]
+synonym: "talus slope" RELATED [Geonames:feature]
 xref: EcoLexicon:scree
 xref: FTT:1078
 xref: FTT:96
@@ -38,7 +37,7 @@ xref: Geonames:T.TAL
 xref: https://en.wikipedia.org/wiki/Scree
 xref: SWEETRealm:Talus
 xref: TGN:21508
-is_a: ENVO:00010483 ! environmental material
+is_a: ENVO:01000814 ! solid environmental material
 
 [Term]
 id: ENVO:00000338
@@ -137,8 +136,8 @@ is_a: ENVO:01000815 ! liquid environmental material
 [Term]
 id: ENVO:00002007
 name: sediment
-def: "Sediment is an environmental substance comprised of any particulate matter that can be transported by fluid flow and which eventually is deposited as a layer of solid particles on the bedor bottom of a body of water or other liquid." [https://en.wikipedia.org/wiki/Sediment]
-comment: It is recommended to use a combination of sediment terms to describe a more specific sediment type.
+def: "Particulate environmental material which is formed as a result of the transport and deposition of particles by flowing liquid." [https://en.wikipedia.org/wiki/Sediment]
+comment: Sediment is typically deposited on the bed or bottom of a body of water or other liquid.
 subset: EnvO-Lite-GSC
 subset: envoPolar
 xref: EcoLexicon:sediment
@@ -147,7 +146,7 @@ xref: https://en.wikipedia.org/wiki/Sediment
 xref: LTER:492
 xref: LTER:493
 xref: SWEETRealm:Sediment
-is_a: ENVO:00010483 ! environmental material
+is_a: ENVO:01000060 ! particulate environmental material
 
 [Term]
 id: ENVO:00002008
@@ -650,6 +649,7 @@ is_a: ENVO:00002191 ! animal litter
 id: ENVO:00002193
 name: pulp-bleaching waste water
 namespace: ENVO
+synonym: "pulp and paper wastewater" RELATED []
 is_a: ENVO:00002001 ! waste water
 
 [Term]
@@ -1831,8 +1831,9 @@ is_a: ENVO:00001998 ! soil
 [Term]
 id: ENVO:00010483
 name: environmental material
-def: "A portion of environmental material is a fiat object part which forms the medium or part of the medium of an environmental system." [DOI:10.1186/2041-1480-4-43, MA:ma, ORCID:0000-0002-4366-3088, URL:http\://ontology.buffalo.edu/smith/articles/niches.html]
-comment: Everything under this parent must be a mass noun. All subclasses are to be understood as being composed primarily of the named entity, rather than restricted to that entity. For example, "ENVO:water" is to be understood as "environmental material composed primarly of some CHEBI:water". This class is currently being aligned to the Basic Formal Ontology. Following this alignment, its definition and the definitions of its subclasses will be revised.
+def: "A material entity which other material entities in an environmental system are primarily or partially composed of." [http://ontology.buffalo.edu/smith/articles/niches.html, https://dx.doi.org/10.1186/2041-1480-4-43, https://en.wikipedia.org/wiki/Material]
+comment: Everything under this parent must be a mass noun (i.e. not countable). All subclasses are to be understood as being composed primarily of the named entity, rather than restricted to that entity. For example, "ENVO:water" is to be understood as "environmental material composed primarly of some CHEBI:water".
+comment: Instances of this class are portions of environmental materials, such as seawater in bucket, a water parcel in the photic zone of a lake, or the concrete that composes a building part. Instances of these portions may have fiat or non-fiat boundaries. For example, a water parcel has not physical boundaries, while the seawater in a bucket is bounded by the internal surfaces of the bucket.
 synonym: "portion of environmental material" EXACT []
 
 [Term]
@@ -1925,7 +1926,7 @@ def: "An environmental material which is composed primarily of pieces of gravel.
 comment: As with all size-based classifications, there is considerable variation in what is considered gravel.
 xref: EcoLexicon:gravel
 xref: SWEETRealm:Gravel
-is_a: ENVO:00010483 ! environmental material
+is_a: ENVO:01000814 ! solid environmental material
 
 [Term]
 id: ENVO:01000060
@@ -1942,6 +1943,8 @@ id: ENVO:01000063
 name: planktonic material
 def: "A portion of planktonic material is a portion of environmental material primarily composed of plankton." []
 subset: envoPolar
+synonym: "mass of plankton" EXACT []
+synonym: "plankton" RELATED []
 is_a: ENVO:01000155 ! organic material
 property_value: IAO:0000116 "See Issue #251. Awaiting class creation in PCO to attempt logical definitions." xsd:string
 
@@ -2209,7 +2212,7 @@ def: "Lava is a mixture of molten or semi-molten rock, volatiles, and solids whi
 comment: Some use 'lava' to refer to rock that is formed when lava cools. This is not the intended meaning of this class. See 'igneous rock' or similar.
 xref: EcoLexicon:lava
 xref: SWEETRealm:Lava
-is_a: ENVO:00010483 ! environmental material
+is_a: ENVO:02000140 ! fluid environmental material
 created_by: PLB
 creation_date: 2013-05-05T16:52:47Z
 
@@ -2361,7 +2364,6 @@ subset: envoPolar
 synonym: "ice" RELATED [http://www.eionet.europa.eu/gemet/concept/4131]
 xref: http://sweetontology.net/matrWater/Ice
 xref: LTER:262
-is_a: ENVO:01000814 ! solid environmental material
 is_a: ENVO:01001125 ! ice
 created_by: https://orcid.org/0000-0002-4366-3088
 creation_date: 2013-10-13T12:01:28Z
@@ -2767,7 +2769,7 @@ is_a: ENVO:00010483 ! environmental material
 [Term]
 id: ENVO:01000599
 name: river water
-is_a: ENVO:00002006 ! liquid water
+is_a: ENVO:03605006 ! stream water
 
 [Term]
 id: ENVO:01000600
@@ -2798,13 +2800,13 @@ is_a: ENVO:00010483 ! environmental material
 id: ENVO:01000648
 name: magma
 def: "Magma is a mixture of molten or semi-molten rock, volatiles, and solids that is found beneath the uppermost solid layer of a planetary body. Besides molten rock, magma may also contain suspended crystals, dissolved gas and sometimes gas bubbles." [https://en.wikipedia.org/wiki/Magma]
-is_a: ENVO:00010483 ! environmental material
+is_a: ENVO:02000140 ! fluid environmental material
 
 [Term]
 id: ENVO:01000660
 name: tephra
 def: "Tephra is fragmental material produced by a volcanic eruption regardless of composition, fragment size or emplacement mechanism." [https://en.wikipedia.org/wiki/Tephra]
-is_a: ENVO:00010483 ! environmental material
+is_a: ENVO:01000814 ! solid environmental material
 
 [Term]
 id: ENVO:01000661
@@ -3169,6 +3171,7 @@ subset: envoAtmo
 synonym: "liquid aerosol" EXACT []
 xref: SWEETRealm:Aerosol
 is_a: ENVO:00010505 ! aerosol
+is_a: ENVO:02000140 ! fluid environmental material
 
 [Term]
 id: ENVO:01001089
@@ -3228,7 +3231,7 @@ id: ENVO:01001125
 name: ice
 def: "An ice is an environmental material which is either frozen or which is maintained in a solid state by gravitational forces or pressure." []
 comment: Note that ice may be formed at very high temperatures, due to gravitational effects and/or pressure.
-is_a: ENVO:00010483 ! environmental material
+is_a: ENVO:01000814 ! solid environmental material
 
 [Term]
 id: ENVO:01001126
@@ -3535,6 +3538,7 @@ id: ENVO:01001511
 name: freshwater ice
 comment: Water ice which is formed by the freezing of fresh water.
 is_a: ENVO:01000277 ! water ice
+is_a: ENVO:02000140 ! fluid environmental material
 created_by: https://orcid.org/0000-0002-4366-3088
 creation_date: 2019-01-14T18:55:42Z
 
@@ -3870,7 +3874,7 @@ name: frost
 def: "An environmental material which is primarily composed of minute ice crystals forming a fuzzy layer over a cold surface by direct deposition of water vapor." [https://orcid.org/0000-0003-4808-4736, https://www.merriam-webster.com/dictionary/frost]
 comment: In British usage, a day on which the minimum temperature at the level of the ground or on the tops of low, close-growing vegetation falls to -0.9C (30.4F) or below (also called a "day with ground frost").  In more general usage, "frost" can refer to the condition that exists when the temperature of the Earth's surface and Earthbound objects fall below the melting point of water (0 degrees Celsius or 32 degrees Fahrenheit). Depending upon the actual values of ambient-air temperature, dewpoint, and the temperature attained by surface objects, frost may occur in a variety of forms. These include a general freeze, hoarfrost (or white frost), and dry freeze (or black frost). If a frost period is sufficiently severe to end the growing season (or delay its beginning), it is commonly referred to as a killing frost.
 xref: http://sweetontology.net/matrWater/Frost
-is_a: ENVO:00010483 ! environmental material
+is_a: ENVO:01000814 ! solid environmental material
 property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-4366-3088
 property_value: http://purl.org/dc/elements/1.1/date 2020-02-12T21:05:54Z xsd:dateTime
 
@@ -4440,12 +4444,45 @@ property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0
 [Term]
 id: ENVO:02000140
 name: fluid environmental material
-def: "A liquid or a gas." [https://github.com/EnvironmentOntology/envo/issues/940]
+def: "An environmental material which is unable to resist shear forces and continuously deforms when subject to them." [https://en.wikipedia.org/wiki/Fluid, https://github.com/EnvironmentOntology/envo/issues/940]
 synonym: "fluid" NARROW []
 is_a: ENVO:00010483 ! environmental material
-union_of: ENVO:01000797 ! gaseous environmental material
-union_of: ENVO:01000798 ! plasma
-union_of: ENVO:01000815 ! liquid environmental material
+
+[Term]
+id: ENVO:02000145
+name: subterranean lake
+def: "A lake underneath the surface of the Earth." [https://en.wikipedia.org/wiki/Underground_lake]
+is_a: ENVO:00005792 ! underground water
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0002-6601-2165
+property_value: http://purl.org/dc/terms/created 2024-05-18T06:05:30Z xsd:dateTime
+
+[Term]
+id: ENVO:02000152
+name: mangrove biome sediment
+def: "Sediment that is part of a mangrove biome." []
+comment: Mangroves are widely recognised as key ecosystems for climate change mitigation as they capture and store significant amounts of sediment organic carbon (SOC).
+synonym: "mangrove sediment" EXACT []
+is_a: ENVO:00002007 ! sediment
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0002-6601-2165
+property_value: http://purl.org/dc/terms/created 2024-05-18T06:13:48Z xsd:dateTime
+
+[Term]
+id: ENVO:02000153
+name: marine salt marsh sediment
+def: "Sediment that is part of a salt marsh." []
+is_a: ENVO:03000033 ! marine sediment
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0002-6601-2165
+property_value: http://purl.org/dc/terms/created 2024-05-18T06:21:33Z xsd:dateTime
+
+[Term]
+id: ENVO:02000155
+name: solid waste material
+def: "Solid material that has a waste role." []
+synonym: "solid waste" RELATED []
+is_a: ENVO:00002264 ! waste material
+is_a: ENVO:01000814 ! solid environmental material
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0002-6601-2165
+property_value: http://purl.org/dc/terms/created 2024-05-19T05:18:16Z xsd:dateTime
 
 [Term]
 id: ENVO:03000000
@@ -4709,6 +4746,62 @@ created_by: https://orcid.org/0000-0002-4366-3088
 created_by: https://orcid.org/0000-0003-0632-7576
 created_by: https://orcid.org/0000-0003-4808-4736
 creation_date: 2020-11-18T20:48:37.965Z
+
+[Term]
+id: ENVO:03500016
+name: electroplating fume
+def: "A fume containing volatile organic compounds produced through the process of electroplating" []
+is_a: ENVO:02000112 ! fume
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-2908-3327
+property_value: http://purl.org/dc/elements/1.1/date 2024-01-19T18:28:58Z xsd:dateTime
+
+[Term]
+id: ENVO:03500017
+name: soldering fumes
+def: "A fume containing solid particles of solder, produced through the process of melting solder to join multiple metals together." []
+is_a: ENVO:02000112 ! fume
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-2908-3327
+property_value: http://purl.org/dc/elements/1.1/date 2024-01-19T18:31:53Z xsd:dateTime
+
+[Term]
+id: ENVO:03500018
+name: solder
+def: "A metallic material which is composed of two or more metals and used to create a permanent bond between metal workpieces." [https://www.wikidata.org/wiki/Q866612]
+is_a: ENVO:01001069 ! metallic material
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-2908-3327
+property_value: http://purl.org/dc/elements/1.1/date 2024-01-19T18:33:47Z xsd:dateTime
+
+[Term]
+id: ENVO:03500019
+name: lead solder
+def: "A solder which includes lead." []
+is_a: ENVO:03500018 ! solder
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-2908-3327
+property_value: http://purl.org/dc/elements/1.1/date 2024-01-19T18:34:02Z xsd:dateTime
+
+[Term]
+id: ENVO:03500020
+name: non-lead solder
+def: "A solder which is composed without lead." []
+is_a: ENVO:03500018 ! solder
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-2908-3327
+property_value: http://purl.org/dc/elements/1.1/date 2024-01-19T18:34:10Z xsd:dateTime
+
+[Term]
+id: ENVO:03500021
+name: gasoline vapor
+def: "A fume produced by liquid gasoline, containing aerosolized components of the gasoline." []
+is_a: ENVO:02000112 ! fume
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-2908-3327
+property_value: http://purl.org/dc/elements/1.1/date 2024-01-19T18:39:48Z xsd:dateTime
+
+[Term]
+id: ENVO:03500025
+name: secondhand smoke
+def: "A smoke which is inhaled involuntarily from a tobacco product smoked by another individual." []
+is_a: ENVO:01000838 ! smoke
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0002-2908-3327
+property_value: http://purl.org/dc/elements/1.1/date 2024-01-19T18:57:57Z xsd:dateTime
 
 [Term]
 id: ENVO:03501252
@@ -5235,6 +5328,52 @@ created_by: https://orcid.org/0000-0002-6670-9157
 creation_date: 2021-07-03T00:22:16.764Z
 
 [Term]
+id: ENVO:03605000
+name: periphytic biofilm
+def: "Biofilm consisting of a mixture of algae, cyanobacteria, microbes, and detritus." [https://data.neonscience.org/documents/10179/1883159/NEON.DOC.003044vE/05ca8fcc-33ba-a5b2-0e93-8f4001f38c37, https://www.frontiersin.org/articles/10.3389/fmicb.2021.684903/full]
+comment: Periphytic biofilm coats the submerged surfaces in most bodies of water
+synonym: "Periphyton" RELATED []
+is_a: ENVO:01000156 ! biofilm material
+
+[Term]
+id: ENVO:03605001
+name: epilithon
+def: "Periphyton colonizing rock substrata" [https://data.neonscience.org/documents/10179/1883159/NEON.DOC.003044vE/05ca8fcc-33ba-a5b2-0e93-8f4001f38c37]
+is_a: ENVO:03605000 ! periphytic biofilm
+
+[Term]
+id: ENVO:03605002
+name: epipelon
+def: "Periphyton colonizing silt substrata" [https://data.neonscience.org/documents/10179/1883159/NEON.DOC.003044vE/05ca8fcc-33ba-a5b2-0e93-8f4001f38c37]
+is_a: ENVO:03605000 ! periphytic biofilm
+
+[Term]
+id: ENVO:03605003
+name: epiphyton
+def: "Periphyton colonizing surface of aquatic plants" [https://data.neonscience.org/documents/10179/1883159/NEON.DOC.003044vE/05ca8fcc-33ba-a5b2-0e93-8f4001f38c37]
+is_a: ENVO:03605000 ! periphytic biofilm
+
+[Term]
+id: ENVO:03605004
+name: epipsammon
+def: "Periphyton colonizing sand substrata" [https://data.neonscience.org/documents/10179/1883159/NEON.DOC.003044vE/05ca8fcc-33ba-a5b2-0e93-8f4001f38c37]
+is_a: ENVO:03605000 ! periphytic biofilm
+
+[Term]
+id: ENVO:03605005
+name: epixylon
+def: "Periphyton colonizing woody substrata" [https://data.neonscience.org/documents/10179/1883159/NEON.DOC.003044vE/05ca8fcc-33ba-a5b2-0e93-8f4001f38c37]
+is_a: ENVO:03605000 ! periphytic biofilm
+
+[Term]
+id: ENVO:03605006
+name: stream water
+def: "Water which is part of a stream." []
+is_a: ENVO:00002006 ! liquid water
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0001-9076-6066
+property_value: http://purl.org/dc/elements/1.1/date 2024-01-12T13:48:00Z xsd:dateTime
+
+[Term]
 id: ENVO:04000007
 name: lake water
 def: "Water which is part of a lake." []
@@ -5349,6 +5488,14 @@ property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/00
 property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0003-1072-8081
 property_value: http://purl.org/dc/elements/1.1/date 2021-05-07T09:12:35Z xsd:dateTime
 property_value: IAO:0000116 "The corresponding subclass axiom will be added in the second phase of this project." xsd:string
+
+[Term]
+id: ENVO:06105205
+name: compacted soil
+def: "A soil which has a high bulk density and/or a low porosity. A compacted soil has a reduced rate of both water infiltration and drainage" [] {comment="https://extension.umn.edu/soil-management-and-health/soil-compaction"}
+is_a: ENVO:00001998 ! soil
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0001-6284-4821
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-8461-9745
 
 [Term]
 id: ENVO:06105211

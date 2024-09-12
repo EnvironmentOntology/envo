@@ -15,7 +15,7 @@ def: "An entity that has temporal parts and that happens, unfolds or develops th
 [Term]
 id: BFO:0000004
 name: independent continuant
-def: "A continuant that is a bearer of quality and realizable entity entities, in which other entities inhere and which itself cannot inhere in anything." []
+def: "b is an independent continuant = Def. b is a continuant which is such that there is no c and no t such that b s-depends_on c at t. (axiom label in BFO2 Reference: [017-002])" []
 is_a: BFO:0000002 ! continuant
 disjoint_from: BFO:0000020 ! specifically dependent continuant
 
@@ -27,7 +27,7 @@ is_a: BFO:0000141 ! immaterial entity
 [Term]
 id: BFO:0000015
 name: process
-def: "An occurrent that has temporal proper parts and for some time t, p s-depends_on some material entity at t." []
+def: "p is a process = Def. p is an occurrent that has temporal proper parts and for some time t, p s-depends_on some material entity at t. (axiom label in BFO2 Reference: [083-003])" []
 is_a: BFO:0000003 ! occurrent
 
 [Term]
@@ -45,15 +45,14 @@ is_a: BFO:0000020 ! specifically dependent continuant
 [Term]
 id: BFO:0000020
 name: specifically dependent continuant
-def: "A continuant that inheres in or is borne by other entities. Every instance of A requires some specific instance of B which must always be the same." []
+def: "b is a specifically dependent continuant = Def. b is a continuant & there is some independent continuant c which is not a spatial region and which is such that b s-depends_on c at every time t during the course of b’s existence. (axiom label in BFO2 Reference: [050-003])" []
 is_a: BFO:0000002 ! continuant
 
 [Term]
 id: BFO:0000023
 name: role
 def: "A realizable entity  the manifestation of which brings about some result or end that is not essential to a continuant  in virtue of the kind of thing that it is but that can be served or participated in by that kind of continuant  in some kinds of natural, social or institutional contexts." []
-is_a: CHEBI:50906 ! role
-equivalent_to: CHEBI:50906 ! role
+is_a: BFO:0000017 ! realizable entity
 
 [Term]
 id: BFO:0000034
@@ -186,21 +185,6 @@ is_a: CHEBI:167559 ! glycan
 is_a: CHEBI:33694 ! biomacromolecule
 
 [Term]
-id: CHEBI:18248
-name: iron atom
-def: "An iron group element atom that has atomic number 26." []
-synonym: "26Fe" RELATED []
-synonym: "Eisen" RELATED []
-synonym: "Fe" RELATED []
-synonym: "fer" RELATED []
-synonym: "ferrum" RELATED []
-synonym: "hierro" RELATED []
-synonym: "Iron" RELATED []
-synonym: "iron" EXACT []
-synonym: "iron" RELATED []
-is_a: CHEBI:33356 ! iron group element atom
-
-[Term]
 id: CHEBI:22563
 name: anion
 def: "A monoatomic or polyatomic species having one or more elementary charges of the electron." []
@@ -235,7 +219,6 @@ id: CHEBI:24432
 name: biological role
 def: "A role played by the molecular entity or part thereof within a biological context." []
 synonym: "biological function" RELATED []
-is_a: BFO:0000023 ! role
 is_a: CHEBI:50906 ! role
 
 [Term]
@@ -285,22 +268,6 @@ is_a: CHEBI:24835 ! inorganic molecular entity
 is_a: CHEBI:25741 ! oxide
 
 [Term]
-id: CHEBI:24866
-name: salt
-def: "A salt is an assembly of cations and anions." []
-synonym: "ionic compound" RELATED []
-synonym: "ionic compounds" RELATED []
-synonym: "sal" RELATED []
-synonym: "sales" RELATED []
-synonym: "salt" EXACT []
-synonym: "salts" RELATED []
-synonym: "Salz" RELATED []
-synonym: "Salze" RELATED []
-synonym: "sel" RELATED []
-synonym: "sels" RELATED []
-is_a: CHEBI:37577 ! heteroatomic molecular entity
-
-[Term]
 id: CHEBI:24870
 name: ion
 def: "A molecular entity having a net electric charge." []
@@ -310,14 +277,6 @@ synonym: "Ionen" RELATED []
 synonym: "iones" RELATED []
 synonym: "ions" RELATED []
 is_a: CHEBI:23367 ! molecular entity
-
-[Term]
-id: CHEBI:24873
-name: iron molecular entity
-synonym: "iron compounds" RELATED []
-synonym: "iron molecular entities" RELATED []
-synonym: "iron molecular entity" EXACT []
-is_a: CHEBI:33744 ! iron group molecular entity
 
 [Term]
 id: CHEBI:25362
@@ -402,13 +361,6 @@ synonym: "phosphorus molecular entities" RELATED []
 is_a: CHEBI:33302 ! pnictogen molecular entity
 
 [Term]
-id: CHEBI:26712
-name: sodium molecular entity
-synonym: "sodium compounds" RELATED []
-synonym: "sodium molecular entities" RELATED []
-is_a: CHEBI:33296 ! alkali metal molecular entity
-
-[Term]
 id: CHEBI:26833
 name: sulfur atom
 synonym: "16S" RELATED []
@@ -451,23 +403,6 @@ synonym: "sulfuric acid" EXACT []
 synonym: "sulphuric acid" RELATED []
 synonym: "tetraoxosulfuric acid" EXACT []
 is_a: CHEBI:33402 ! sulfur oxoacid
-
-[Term]
-id: CHEBI:27081
-name: transition element atom
-def: "An element whose atom has an incomplete d sub-shell, or which can give rise to cations with an incomplete d sub-shell." []
-synonym: "metal de transicion" RELATED []
-synonym: "metal de transition" RELATED []
-synonym: "metales de transicion" RELATED []
-synonym: "metaux de transition" RELATED []
-synonym: "transition element" EXACT []
-synonym: "transition element" RELATED []
-synonym: "transition elements" RELATED []
-synonym: "transition metal" RELATED []
-synonym: "transition metals" RELATED []
-synonym: "Uebergangselement" RELATED []
-synonym: "Uebergangsmetalle" RELATED []
-is_a: CHEBI:33521 ! metal atom
 
 [Term]
 id: CHEBI:27594
@@ -518,7 +453,6 @@ is_a: CHEBI:60242 ! monovalent inorganic cation
 id: CHEBI:33232
 name: application
 def: "Intended use of the molecular entity or part thereof by humans." []
-is_a: BFO:0000023 ! role
 is_a: CHEBI:50906 ! role
 
 [Term]
@@ -610,13 +544,6 @@ synonym: "fertilizers" RELATED []
 is_a: CHEBI:33286 ! agrochemical
 
 [Term]
-id: CHEBI:33296
-name: alkali metal molecular entity
-def: "A molecular entity containing one or more atoms of an alkali metal." []
-synonym: "alkali metal molecular entities" RELATED []
-is_a: CHEBI:33674 ! s-block molecular entity
-
-[Term]
 id: CHEBI:33300
 name: pnictogen
 def: "Any p-block element atom that is in group 15 of the periodic table: nitrogen, phosphorus, arsenic, antimony and bismuth." []
@@ -687,14 +614,6 @@ synonym: "main group elements" EXACT []
 is_a: CHEBI:33250 ! atom
 
 [Term]
-id: CHEBI:33356
-name: iron group element atom
-synonym: "group 8 elements" EXACT []
-synonym: "iron group element" RELATED []
-synonym: "iron group elements" RELATED []
-is_a: CHEBI:33561 ! d-block element atom
-
-[Term]
 id: CHEBI:33402
 name: sulfur oxoacid
 synonym: "oxoacids of sulfur" RELATED []
@@ -726,38 +645,12 @@ synonym: "chalcogen oxoanions" RELATED []
 is_a: CHEBI:35406 ! oxoanion
 
 [Term]
-id: CHEBI:33497
-name: transition element molecular entity
-def: "A molecular entity containing one or more atoms of a transition element." []
-synonym: "transition element molecular entities" RELATED []
-synonym: "transition metal molecular entity" RELATED []
-is_a: CHEBI:23367 ! molecular entity
-
-[Term]
-id: CHEBI:33521
-name: metal atom
-def: "An atom of an element that exhibits typical metallic properties, being typically shiny, with high electrical and thermal conductivity." []
-synonym: "elemental metal" RELATED []
-synonym: "elemental metals" RELATED []
-synonym: "metal element" RELATED []
-synonym: "metal elements" RELATED []
-synonym: "metals" RELATED []
-is_a: CHEBI:33250 ! atom
-
-[Term]
 id: CHEBI:33560
 name: p-block element atom
 def: "Any main group element atom belonging to the p-block of the periodic table." []
 synonym: "p-block element" RELATED []
 synonym: "p-block elements" RELATED []
 is_a: CHEBI:33318 ! main group element atom
-
-[Term]
-id: CHEBI:33561
-name: d-block element atom
-synonym: "d-block element" RELATED []
-synonym: "d-block elements" RELATED []
-is_a: CHEBI:27081 ! transition element atom
 
 [Term]
 id: CHEBI:33579
@@ -817,15 +710,6 @@ synonym: "p-block molecular entitiy" RELATED []
 is_a: CHEBI:33579 ! main group molecular entity
 
 [Term]
-id: CHEBI:33676
-name: d-block molecular entity
-def: "A d-block molecular entity is a molecular entity containing one or more atoms of a d-block element." []
-synonym: "d-block compounds" RELATED []
-synonym: "d-block molecular entities" RELATED []
-synonym: "d-block molecular entity" EXACT []
-is_a: CHEBI:33497 ! transition element molecular entity
-
-[Term]
 id: CHEBI:33692
 name: hydrides
 def: "Hydrides are chemical compounds of hydrogen with other chemical elements." []
@@ -842,13 +726,6 @@ synonym: "Biopolymere" RELATED []
 synonym: "biopolymers" RELATED []
 is_a: CHEBI:33839 ! macromolecule
 is_a: CHEBI:50860 ! organic molecular entity
-
-[Term]
-id: CHEBI:33744
-name: iron group molecular entity
-synonym: "iron group molecular entities" RELATED []
-synonym: "iron group molecular entity" EXACT []
-is_a: CHEBI:33676 ! d-block molecular entity
 
 [Term]
 id: CHEBI:33839
@@ -1051,13 +928,12 @@ is_a: CHEBI:33582 ! carbon group molecular entity
 id: CHEBI:50906
 name: role
 def: "A role is particular behaviour which a material entity may exhibit." []
-is_a: BFO:0000023 ! role
+is_a: PATO:0000001 ! quality
 
 [Term]
 id: CHEBI:51086
 name: chemical role
 def: "A role played by the molecular entity or part thereof within a chemical context." []
-is_a: BFO:0000023 ! role
 is_a: CHEBI:50906 ! role
 
 [Term]
@@ -1175,35 +1051,14 @@ synonym: "divalent inorganic anions" RELATED []
 is_a: CHEBI:24834 ! inorganic anion
 
 [Term]
-id: GO:0003008
-name: system process
-def: "A multicellular organismal process carried out by any of the organs or tissues in an organ system. An organ system is a regularly interacting or interdependent group of organs or tissues that work together to carry out a biological objective." []
-synonym: "organ system process" EXACT []
-is_a: GO:0032501 ! multicellular organismal process
-
-[Term]
-id: GO:0007588
-name: excretion
-def: "The elimination by an organism of the waste products that arise as a result of metabolic activity. These products include water, carbon dioxide (CO2), and nitrogenous compounds." []
-is_a: GO:0003008 ! system process
-
-[Term]
 id: GO:0008150
 name: biological_process
-def: "A biological process represents a specific objective that the organism is genetically programmed to achieve. Biological processes are often described by their outcome or ending state, e.g., the biological process of cell division results in the creation of two daughter cells (a divided cell) from a single parent cell. A biological process is accomplished by a particular set of molecular functions carried out by specific gene products (or macromolecular complexes), often in a highly regulated manner and in a particular temporal sequence." []
+def: "A biological process is the execution of a genetically-encoded biological module or program. It consists of all the steps required to achieve the specific biological objective of the module. A biological process is accomplished by a particular set of molecular functions carried out by specific gene products (or macromolecular complexes), often in a highly regulated manner and in a particular temporal sequence." []
 synonym: "biological process" EXACT []
 synonym: "physiological process" EXACT []
 synonym: "single organism process" RELATED []
 synonym: "single-organism process" RELATED []
 is_a: BFO:0000015 ! process
-
-[Term]
-id: GO:0032501
-name: multicellular organismal process
-def: "Any biological process, occurring at the level of a multicellular organism, pertinent to its function." []
-synonym: "organismal physiological process" EXACT []
-synonym: "single-multicellular organism process" RELATED []
-is_a: GO:0008150 ! biological_process
 
 [Term]
 id: NCBITaxon:1
@@ -4243,6 +4098,16 @@ def: "A material entity that is one or more organisms, viruses or viroids." []
 is_a: BFO:0000040 ! material entity
 
 [Term]
+id: PR:000050567
+name: protein-containing material entity
+def: "A material entity that minimally consists of a protein." []
+synonym: "protein" NARROW []
+synonym: "protein aggregate" NARROW []
+synonym: "protein complex" NARROW []
+synonym: "protein-containing complex" NARROW []
+is_a: BFO:0000040 ! material entity
+
+[Term]
 id: RO:0002577
 name: system
 def: "A material entity consisting of multiple components that are causally integrated." []
@@ -4257,6 +4122,8 @@ synonym: "region of skin" EXACT []
 synonym: "skin" EXACT []
 synonym: "skin region" EXACT []
 synonym: "skin zone" EXACT []
+is_a: PR:000050567 ! protein-containing material entity
+is_a: UBERON:0004121 ! ectoderm-derived structure
 is_a: UBERON:0034944 ! zone of organ
 
 [Term]
@@ -4293,14 +4160,6 @@ synonym: "regional part of organ" RELATED []
 is_a: UBERON:0010000 ! multicellular anatomical structure
 
 [Term]
-id: UBERON:0000160
-name: intestine
-def: "Segment of the alimentary canal extending from the stomach to the anus and, in humans and other mammals, consists of two segments, the small intestine and the large intestine." []
-synonym: "bowel" EXACT []
-synonym: "intestinal tract" RELATED []
-is_a: UBERON:0004921 ! subdivision of digestive tract
-
-[Term]
 id: UBERON:0000165
 name: mouth
 def: "The proximal portion of the digestive tract, containing the oral cavity and bounded by the oral opening. In vertebrates, this extends to the pharynx and includes gums, lips, tongue and parts of the palate. Typically also includes the teeth, except where these occur elsewhere (e.g. pharyngeal jaws) or protrude from the mouth (tusks)." []
@@ -4321,22 +4180,13 @@ synonym: "vestibulum oris" RELATED []
 is_a: UBERON:0004921 ! subdivision of digestive tract
 
 [Term]
-id: UBERON:0000174
-name: excreta
-def: "A portion of organism substance that is the product of an excretion process that will be eliminated from the body. An excretion process is elimination by an organism of the waste products that arise as a result of metabolic activity." []
-synonym: "excreted substance" EXACT []
-synonym: "excretion" RELATED []
-synonym: "portion of excreted substance" EXACT []
-synonym: "waste substance" EXACT []
-is_a: UBERON:0000463 ! organism substance
-
-[Term]
 id: UBERON:0000178
 name: blood
 def: "A fluid that is composed of blood plasma and erythrocytes." []
 synonym: "portion of blood" EXACT []
 synonym: "vertebrate blood" EXACT []
 synonym: "whole blood" RELATED []
+is_a: PR:000050567 ! protein-containing material entity
 is_a: UBERON:0000179 ! haemolymphatic fluid
 
 [Term]
@@ -4398,13 +4248,6 @@ synonym: "portion of tissue" EXACT []
 synonym: "simple tissue" NARROW []
 synonym: "tissue portion" EXACT []
 is_a: UBERON:0010000 ! multicellular anatomical structure
-
-[Term]
-id: UBERON:0000912
-name: mucus
-def: "Mucus is a bodily fluid consisting of a slippery secretion of the lining of the mucous membranes in the body. It is a viscous colloid containing antiseptic enzymes (such as lysozyme) and immunoglobulins. Mucus is produced by goblet cells in the mucous membranes that cover the surfaces of the membranes. It is made up of mucins and inorganic salts suspended in water." []
-is_a: UBERON:0000456 ! secretion of exocrine gland
-is_a: UBERON:0006314 ! bodily fluid
 
 [Term]
 id: UBERON:0001062
@@ -4470,49 +4313,8 @@ synonym: "blood plasm" EXACT []
 synonym: "plasma" BROAD []
 synonym: "portion of blood plasma" EXACT []
 synonym: "portion of plasma" BROAD []
+is_a: PR:000050567 ! protein-containing material entity
 is_a: UBERON:0000179 ! haemolymphatic fluid
-
-[Term]
-id: UBERON:0001970
-name: bile
-def: "Vital aqueous secretion of the liver that is formed by hepatocytes and modified down stream by absorptive and secretory properties of the bile duct epithelium." []
-synonym: "fel" RELATED []
-synonym: "gall" RELATED []
-is_a: UBERON:0000456 ! secretion of exocrine gland
-is_a: UBERON:0006314 ! bodily fluid
-
-[Term]
-id: UBERON:0001988
-name: feces
-def: "Portion of semisolid bodily waste discharged through the anus[MW,modified]." []
-synonym: "cow dung" NARROW []
-synonym: "cow pat" NARROW []
-synonym: "droppings" RELATED []
-synonym: "dung" NARROW []
-synonym: "excrement" RELATED []
-synonym: "excreta" BROAD []
-synonym: "faeces" EXACT []
-synonym: "fecal material" EXACT []
-synonym: "fecal matter" EXACT []
-synonym: "fewmet" NARROW []
-synonym: "frass" NARROW []
-synonym: "guano" NARROW []
-synonym: "ordure" RELATED []
-synonym: "piece of shit" EXACT []
-synonym: "portion of dung" NARROW []
-synonym: "portion of excrement" EXACT []
-synonym: "portion of faeces" EXACT []
-synonym: "portion of fecal material" EXACT []
-synonym: "portion of fecal matter" EXACT []
-synonym: "portion of feces" EXACT []
-synonym: "portion of guano" NARROW []
-synonym: "portion of scat" NARROW []
-synonym: "portionem cacas" EXACT []
-synonym: "scat" NARROW []
-synonym: "spoor" RELATED []
-synonym: "spraint" NARROW []
-synonym: "stool" EXACT []
-is_a: UBERON:0000174 ! excreta
 
 [Term]
 id: UBERON:0002416
@@ -4525,6 +4327,7 @@ synonym: "integumentary system" EXACT []
 synonym: "integumentum commune" RELATED []
 synonym: "organism surface" RELATED []
 synonym: "surface" RELATED []
+is_a: PR:000050567 ! protein-containing material entity
 is_a: UBERON:0000467 ! anatomical system
 
 [Term]
@@ -4539,6 +4342,13 @@ synonym: "ostium" RELATED []
 is_a: UBERON:0010000 ! multicellular anatomical structure
 
 [Term]
+id: UBERON:0004121
+name: ectoderm-derived structure
+def: "An anatomical structure that develops (entirely or partially) from the ectoderm." []
+synonym: "ectodermal deriviative" EXACT []
+is_a: UBERON:0000061 ! anatomical structure
+
+[Term]
 id: UBERON:0004765
 name: skeletal element
 def: "Organ consisting of skeletal tissue. Encompasses whole bones, fused bones, cartilaginious elements, teeth, dermal denticles." []
@@ -4549,6 +4359,7 @@ id: UBERON:0004921
 name: subdivision of digestive tract
 def: "A proximal-distal subdivision of the digestive tract." []
 synonym: "alimentary system subdivision" RELATED []
+synonym: "gut section" RELATED []
 synonym: "intestinal tract" RELATED []
 synonym: "segment of intestinal tract" RELATED []
 synonym: "subdivision of alimentary system" RELATED []

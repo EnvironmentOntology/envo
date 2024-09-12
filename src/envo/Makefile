@@ -338,8 +338,8 @@ imports/%_combined_seed.tsv: imports/%_terms.txt imports/seed.txt
 # We use the standard catalog, but rewrite the import to X to be a local mirror of ALL of X.
 # After extraction, we further reduce the ontology by creating a "mingraph" (removes all annotations except label) and by
 imports/%_import.owl: mirror/%.owl envo-edit.owl imports/%_combined_seed.tsv
-	echo "Skipping"
-	#$(ROBOT) extract -i $< -T imports/$*_combined_seed.tsv -m BOT -O $(ENVO_IMPORTS_BASE_URI)/$@ -o $@.tmp.owl && mv $@.tmp.owl $@
+	$(ROBOT) extract -i $< -T imports/$*_combined_seed.tsv -m BOT -O $(ENVO_IMPORTS_BASE_URI)/$@ \
+		remove --select "<http://purl.obolibrary.org/obo/CL_*>" remove --select "<http://purl.obolibrary.org/obo/CARO_*>"  -o $@.tmp.owl && mv $@.tmp.owl $@
 
 imports/%_import.obo: imports/%_import.owl
 	$(OWLTOOLS) $(USECAT) $< -o -f obo --no-check $@
@@ -368,9 +368,10 @@ mirror/obi.owl: envo-edit.owl
 	$(OWLTOOLS) $(OBO)/obi.owl --remove-classes-in-idspace GO --remove-classes-in-idspace ENVO --remove-classes-in-idspace CHEBI --remove-classes-in-idspace UBERON --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/obi.owl -o $@
 .PRECIOUS: mirror/%.owl
 
-# chebi.owl is large and the owlapi often times out when reading it; use the obo instead
+CHEBI_MIRROR=https://raw.githubusercontent.com/obophenotype/chebi_obo_slim/main/chebi_slim.owl
+# chebi.owl is large. Using OBO Chebi Slim instead (https://github.com/obophenotype/chebi_obo_slim)
 mirror/chebi-local.owl: 
-	wget --no-check-certificate $(OBO)/chebi.owl -O $@ && touch $@
+	wget --no-check-certificate $(CHEBI_MIRROR) -O $@ && touch $@
 mirror/chebi.owl: mirror/chebi-local.owl
 	$(OWLTOOLS) --no-debug $< --log-debug --remove-annotation-assertions -l --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS)  -o $@
 .PRECIOUS: mirror/%.owl
@@ -410,12 +411,10 @@ mirror/fao.owl: envo-edit.owl
 	$(OWLTOOLS) $(OBO)/fao.owl --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/fao.owl -o $@
 .PRECIOUS: mirror/%.owl
 
-ncbitaxon.obo:
-	wget $(OBO)/ncbitaxon.obo -O $@.tmp && mv $@.tmp $@
-.PRECIOUS: ncbitaxon.obo
-
-mirror/ncbitaxon.owl: ncbitaxon.obo
-	OWLTOOLS_MEMORY=16G $(OWLTOOLS) $< --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations  --set-ontology-id $(OBO)/ncbitaxon.owl -o $@
+mirror/ncbitaxon.owl:
+	wget http://purl.obolibrary.org/obo/ncbitaxon/subsets/taxslim.owl -O $@.tmp
+	OWLTOOLS_MEMORY=16G $(OWLTOOLS) $@.tmp --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations  --set-ontology-id $(OBO)/ncbitaxon.owl -o $@
+	rm $@.tmp
 .PRECIOUS: mirror/ncbitaxon.owl
 
 # PCO woes:
@@ -578,3 +577,5 @@ fill: envo-edit.csv
 
 #modules/%.tsv:
 #	blip-findall -i patterns/spec.obo  -consult pmaker.pro -r envo -r chebi -r pato pattern_$*/3 -no_pred -label -use_tabs > $@
+
+include envo.Makefile

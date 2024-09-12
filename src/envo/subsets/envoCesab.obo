@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: envo/releases/2023-02-13/subsets/envoCesab.owl
+data-version: envo/releases/2024-07-01/subsets/envoCesab.owl
 subsetdef: disposition_slim "Disposition slim"
 subsetdef: environmental_hazards "environmental_hazards"
 subsetdef: EnvO-Lite-GSC "EnvO-Lite-GSC"
@@ -23,15 +23,15 @@ subsetdef: ro-eco "ro-eco"
 subsetdef: scalar_slim "Scalar slim"
 subsetdef: value_slim "Value slim"
 subsetdef: wwfBiome "wwfBiome"
-synonymtypedef: PLURAL "plurals"
+synonymtypedef: OMO:0003004 "plural form"
 ontology: envo/subsets/envoCesab
-property_value: owl:versionInfo "2023-02-13" xsd:string
+property_value: owl:versionInfo "2024-07-01" xsd:string
 
 [Term]
 id: ENVO:00000191
 name: solid astronomical body part
 namespace: ENVO
-def: "A part of an astronomical body which is primarily composed of a continuous volume of solid material, shaped by one or more environmental processes." [https://en.wikipedia.org/wiki/Landform]
+def: "A part of an astronomical body which is primarily composed of solid material." [https://en.wikipedia.org/wiki/Landform]
 synonym: "geological feature" RELATED [ADL:FTT]
 synonym: "landform" RELATED []
 synonym: "physiographic feature" RELATED []
@@ -68,8 +68,9 @@ relationship: output_of ENVO:01000993 ! manufacturing process
 id: ENVO:00010483
 name: environmental material
 namespace: ENVO
-def: "A portion of environmental material is a fiat object part which forms the medium or part of the medium of an environmental system." [DOI:10.1186/2041-1480-4-43, MA:ma, ORCID:0000-0002-4366-3088, URL:http\://ontology.buffalo.edu/smith/articles/niches.html]
-comment: Everything under this parent must be a mass noun. All subclasses are to be understood as being composed primarily of the named entity, rather than restricted to that entity. For example, "ENVO:water" is to be understood as "environmental material composed primarly of some CHEBI:water". This class is currently being aligned to the Basic Formal Ontology. Following this alignment, its definition and the definitions of its subclasses will be revised.
+def: "A material entity which other material entities in an environmental system are primarily or partially composed of." [http://ontology.buffalo.edu/smith/articles/niches.html, https://dx.doi.org/10.1186/2041-1480-4-43, https://en.wikipedia.org/wiki/Material]
+comment: Everything under this parent must be a mass noun (i.e. not countable). All subclasses are to be understood as being composed primarily of the named entity, rather than restricted to that entity. For example, "ENVO:water" is to be understood as "environmental material composed primarly of some CHEBI:water".
+comment: Instances of this class are portions of environmental materials, such as seawater in bucket, a water parcel in the photic zone of a lake, or the concrete that composes a building part. Instances of these portions may have fiat or non-fiat boundaries. For example, a water parcel has not physical boundaries, while the seawater in a bucket is bounded by the internal surfaces of the bucket.
 synonym: "portion of environmental material" EXACT []
 
 [Term]
@@ -108,9 +109,22 @@ id: ENVO:01000813
 name: astronomical body part
 namespace: ENVO
 def: "A material part of an astronomical body." []
+comment: Material parts of astronomical bodies generally have boundaries formed by discontinuities in qualities, composition, or other physical characterisitcs. These boundaries are sometimes sharp, and sometimes diffuse, with different classification systems and communities declaring varying thresholds (e.g. for where a shoreline, forest, or other entity begins and ends). However, some boundaries are declared by fiat - that is, by arbitrary human convention or decree - particularly by regulatory or other authorities and communities of practice. The classes in this hierarchy attempt to offer generalisable definitions that allow multiple classfiication systems to map to and interoperate through. If desired, we can create classes that declare thresholds used by a given authority or community under the more generic ones, annotated with source information.
 subset: envoAstro
 subset: envoPolar
 relationship: part_of ENVO:01000799 ! astronomical body
+property_value: IAO:0000116 "Also note that some astronomical body parts (ABPs) may have fiat boundaries: if there's strong debate about where an ABP begins or ends (over and above fuzzy boundaries), with different official classifications setting different thresholds or limits, axiomatise the class with fiat boundaries of the appropriate dimension." xsd:string
+property_value: IAO:0000116 "Note that material entities may have immaterial entities (e.g. sites) as parts." xsd:string
+property_value: IAO:0000116 "This class includes material parts of astronomical bodies. Immaterial parts, such as magnetospheres, are represented as sites under the influence of magnetic fields.Please post countercases in the ENVO tracker for revision of this hierarchy if needed." xsd:string
+
+[Term]
+id: ENVO:01000952
+name: anthropisation
+namespace: ENVO
+def: "A process during which a natural environmental system is altered by human action." [https://en.wikipedia.org/wiki/Anthropization]
+comment: An area may be classified as anthropized even though it looks natural, such as grasslands that have been deforested by humans. It can be difficult to determine how much a site has been anthropized in the case of urbanization because one must be able to estimate the state of the landscape before significant human action. {xref="https://en.wikipedia.org/wiki/Anthropization"}
+synonym: "anthropization" EXACT []
+is_a: ENVO:01001434 ! anthropogenic ecosystem conversion process
 
 [Term]
 id: ENVO:01000975
@@ -170,6 +184,7 @@ name: manufacturing process
 namespace: ENVO
 def: "A planned process during which raw or recycled materials are transformed into products for use or sale using labour and machines, tools, chemical and biological processing, or formulation." [https://en.wikipedia.org/wiki/Manufacturing]
 comment: The term may refer to a range of human activity, from handicraft to high tech, but is most commonly applied to industrial production, in which raw materials are transformed into finished goods on a large scale. {xref="https://en.wikipedia.org/wiki/Manufacturing"}
+relationship: has_part ENVO:01000952 ! anthropisation
 
 [Term]
 id: ENVO:01001164
@@ -177,6 +192,14 @@ name: geodiversity
 namespace: ENVO
 def: "A quality which inheres in a astronomical body or astronomical body part by virtue of the variation in its material composition, participation in geological processes, and the variation in is land- and hydroforms." [https://en.wikipedia.org/wiki/Geodiversity]
 comment: Materials which are usually assessed when appraising geodiversity include minerals, rocks, sediments, fossils, soils and water. Landforms factored into geodiversity metrics typically include folds, faults, and other expressions of morphology or relations between units of earth material. Natural processes that are included in measures of geodiversity are those which either maintain or change materials or geoforms, including tectonics, sediment transport, and pedogenesis. Geodiversity does not usually factor in anthropogenic entities. {xref=""}
+
+[Term]
+id: ENVO:01001434
+name: anthropogenic ecosystem conversion process
+namespace: ENVO
+def: "A process during which an ecosystem - natural or anthropised - is changed by the actions of humans." []
+is_a: ENVO:02500027 ! anthropogenic environmental process
+created_by: https://orcid.org/0000-0002-4366-3088
 
 [Term]
 id: ENVO:01001884
@@ -198,6 +221,20 @@ comment: Landforms may be natural or anthropogenic. This term has often has loos
 is_a: ENVO:00000191 ! solid astronomical body part
 property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-4366-3088
 property_value: http://purl.org/dc/elements/1.1/date 2021-05-15T09:40:37Z xsd:dateTime
+
+[Term]
+id: ENVO:02500000
+name: environmental system process
+namespace: ENVO
+def: "A process in which includes the components of an environmental system as participants." []
+comment: This is a convenience class for organisation and should not be used for annotation.
+
+[Term]
+id: ENVO:02500027
+name: anthropogenic environmental process
+namespace: ENVO
+def: "An environmental process which is driven by the action of humans." []
+is_a: ENVO:02500000 ! environmental system process
 
 [Typedef]
 id: adjacent_to
@@ -269,11 +306,6 @@ id: connects
 name: connects
 namespace: ENVO
 xref: RO:0002176
-
-[Typedef]
-id: contained_in
-namespace: ENVO
-xref: RO:0001018
 
 [Typedef]
 id: contains
@@ -374,15 +406,6 @@ namespace: ENVO
 xref: RO:0002180
 
 [Typedef]
-id: has_condition
-name: has_condition
-namespace: ENVO
-comment: Experimental relation used in EnvO. A condition defines a restricted range of a given quality or combination of qualities. If an environment class, E, has_condition C, then all qualities listed in C are restricted to the ranges defined in C in E. This is not intended as a logical conditional.
-xref: has_condition
-is_inverse_functional: true
-creation_date: 2013-05-08T07:33:05Z
-
-[Typedef]
 id: has_disposition
 namespace: ENVO
 xref: RO:0000091
@@ -405,8 +428,13 @@ xref: RO:0002303
 
 [Typedef]
 id: has_increased_levels_of
+name: has increased levels of
 namespace: ENVO
-xref: has_increased_levels_of
+def: "A has part relationship between a whole and a part, where the number of parts present in the whole is higher than in comparable entities." []
+comment: This relation is present in ENVO to support compositional classes such as "X-enriched soil". These will later be formalized, and a different relation from RO may be chosen.
+xref: ENVO:02000200
+property_value: seeAlso https://github.com/EnvironmentOntology/envo/issues/1380
+is_a: has_component
 
 [Typedef]
 id: has_input
