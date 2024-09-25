@@ -53,32 +53,24 @@ jobs:
             
               return result;
             }
-              
-              // Check each comment
 
-            for (let comment of comments.reverse()) { // Reverse to give precedence to the latest comment
-                if (comment.body.toLowerCase().includes(phrase)) {
+            // Check each comment
+            let result = false;
+            for (let comment of comments.data.reverse()) { // Reverse to give precedence to the latest comment
+              if (comment.body.toLowerCase().includes('hey ontobot')) {
                 result = true;
                 commentId = comment.id;
                 break;
-                }
-            }
-
-
-              return {
-                result: result,
-                commentId: result ? commentId : null
-              };
+              }
             }
 
             const checkResult = checkForPhrase(bodyText, comments.data);
 
-            console.log(`Result: ${checkResult.result}`);
-            console.log(`Comment ID: ${checkResult.commentId}`);
-            console.log(`Check Result: ${JSON.stringify(checkResult)}`);
+            console.log(`Result: ${checkResult}`);
+            console.log(`Comment ID: ${commentId}`);
 
-            core.setOutput('phraseExists', checkResult.result);
-            core.setOutput('commentId', checkResult.commentId);
+            core.setOutput('phraseExists', checkResult);
+            core.setOutput('commentId', commentId);
 
       - name: Log phraseExists output
         run: |
