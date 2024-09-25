@@ -10,13 +10,13 @@ on:
 jobs:
   check:
     runs-on: ubuntu-latest
-    # outputs:
-    #   phraseExists: ${{ steps.check-body.outputs.result }}
-    #   commentId: ${{ steps.check-body.outputs.commentId }}
+    outputs:
+      phraseExists: ${{ steps.check-body.outputs.result }}
+      commentId: ${{ steps.check-body.outputs.commentId }}
     steps:
       - name: Check if issue body or any comment contains 'Hey ontobot'
         id: check-body
-        uses: actions/github-script@v7
+        uses: actions/github-script@v6
         with:
           script: |
             const issue = await github.rest.issues.get({
@@ -26,14 +26,14 @@ jobs:
             });
             let bodyText = issue.data.body ? issue.data.body.toLowerCase() : '';
             let commentId = null;
-      
+
             // Fetch all comments for the issue
             const comments = await github.rest.issues.listComments({
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: context.issue.number
             });
-      
+
             // Function to check for the phrase in bodyText and comments
             function checkForPhrase(bodyText, comments) {
               const regex = /hey\s*[^a-zA-Z0-9]*\s*ontobot/i;
@@ -53,25 +53,32 @@ jobs:
             
               return result;
             }
-      
-            // Check each comment
-            let result = false;
-            for (let comment of comments.data.reverse()) { // Reverse to give precedence to the latest comment
-              if (comment.body.toLowerCase().includes('hey ontobot')) {
+              
+              // Check each comment
+
+            for (let comment of comments.reverse()) { // Reverse to give precedence to the latest comment
+                if (comment.body.toLowerCase().includes(phrase)) {
                 result = true;
                 commentId = comment.id;
                 break;
-              }
+                }
             }
-      
+
+
+              return {
+                result: result,
+                commentId: result ? commentId : null
+              };
+            }
+
             const checkResult = checkForPhrase(bodyText, comments.data);
-      
-            console.log(`Result: ${checkResult}`);
-            console.log(`Comment ID: ${commentId}`);
-      
-            core.setOutput('phraseExists', checkResult);
-            core.setOutput('commentId', commentId);
-      
+
+            console.log(`Result: ${checkResult.result}`);
+            console.log(`Comment ID: ${checkResult.commentId}`);
+            console.log(`Check Result: ${JSON.stringify(checkResult)}`);
+
+            core.setOutput('phraseExists', checkResult.result);
+            core.setOutput('commentId', checkResult.commentId);
 
       - name: Log phraseExists output
         run: |
