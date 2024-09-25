@@ -84,7 +84,7 @@ jobs:
 
   build:
     needs: check
-    if: needs.check.outputs.phraseExists == 'true'
+    if: ${{ needs.check.outputs.phraseExists == 'true' }}
     runs-on: ${{ matrix.os }}
     container: obolibrary/odkfull:v1.4.3
     strategy:
@@ -93,6 +93,9 @@ jobs:
         os: [ubuntu-latest]
 
     steps:
+      - name: Log phraseExists from needs
+        run: echo "needs.check.outputs.phraseExists: ${{ needs.check.outputs.phraseExists }}"
+
       - name: Checkout main branch
         uses: actions/checkout@v3
 
