@@ -26,14 +26,14 @@ jobs:
             });
             let bodyText = issue.data.body ? issue.data.body.toLowerCase() : '';
             let commentId = null;
-
+      
             // Fetch all comments for the issue
             const comments = await github.rest.issues.listComments({
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: context.issue.number
             });
-
+      
             // Function to check for the phrase in bodyText and comments
             function checkForPhrase(bodyText, comments) {
               const regex = /hey\s*[^a-zA-Z0-9]*\s*ontobot/i;
@@ -53,32 +53,25 @@ jobs:
             
               return result;
             }
-              
-              // Check each comment
-
-            for (let comment of comments.reverse()) { // Reverse to give precedence to the latest comment
-                if (comment.body.toLowerCase().includes(phrase)) {
+      
+            // Check each comment
+            let result = false;
+            for (let comment of comments.data.reverse()) { // Reverse to give precedence to the latest comment
+              if (comment.body.toLowerCase().includes('hey ontobot')) {
                 result = true;
                 commentId = comment.id;
                 break;
-                }
+              }
             }
-
-
-              return {
-                result: result,
-                commentId: result ? commentId : null
-              };
-            }
-
+      
             const checkResult = checkForPhrase(bodyText, comments.data);
-
-            console.log(`Result: ${checkResult.result}`);
-            console.log(`Comment ID: ${checkResult.commentId}`);
-            console.log(`Check Result: ${JSON.stringify(checkResult)}`);
-
-            core.setOutput('phraseExists', checkResult.result);
-            core.setOutput('commentId', checkResult.commentId);
+      
+            console.log(`Result: ${checkResult}`);
+            console.log(`Comment ID: ${commentId}`);
+      
+            core.setOutput('phraseExists', checkResult);
+            core.setOutput('commentId', commentId);
+      
 
       - name: Log phraseExists output
         run: |
