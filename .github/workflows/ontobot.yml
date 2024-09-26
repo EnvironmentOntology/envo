@@ -80,11 +80,13 @@ jobs:
     
       - name: Conditional step based on result
         if: ${{ steps.check-body.outputs.phraseExists == 'true' }}
-        run: echo "The phrase 'Hey ontobot' was found."
+        run: |
+          echo "The phrase 'Hey ontobot' was found."
+          echo "phraseExists=${{ steps.check-body.outputs.phraseExists }}" >> $GITHUB_ENV
 
   build:
     needs: check
-    if: ${{ needs.outputs.phraseExists == 'true' }}
+    if: ${{ env.phraseExists == 'true' }}
     runs-on: ${{ matrix.os }}
     container: obolibrary/odkfull:v1.4.3
     strategy:
