@@ -53,24 +53,32 @@ jobs:
             
               return result;
             }
+              
+              // Check each comment
 
-            // Check each comment
-            let result = false;
-            for (let comment of comments.data.reverse()) { // Reverse to give precedence to the latest comment
-              if (comment.body.toLowerCase().includes('hey ontobot')) {
+            for (let comment of comments.reverse()) { // Reverse to give precedence to the latest comment
+                if (comment.body.toLowerCase().includes(phrase)) {
                 result = true;
                 commentId = comment.id;
                 break;
-              }
+                }
+            }
+
+
+              return {
+                result: result,
+                commentId: result ? commentId : null
+              };
             }
 
             const checkResult = checkForPhrase(bodyText, comments.data);
 
-            console.log(`Result: ${checkResult}`);
-            console.log(`Comment ID: ${commentId}`);
+            console.log(`Result: ${checkResult.result}`);
+            console.log(`Comment ID: ${checkResult.commentId}`);
+            console.log(`Check Result: ${JSON.stringify(checkResult)}`);
 
-            core.setOutput('phraseExists', checkResult);
-            core.setOutput('commentId', commentId);
+            core.setOutput('phraseExists', checkResult.result);
+            core.setOutput('commentId', checkResult.commentId);
 
       - name: Log phraseExists output
         run: |
@@ -93,9 +101,6 @@ jobs:
         os: [ubuntu-latest]
 
     steps:
-      - name: Log phraseExists from needs
-        run: echo "needs.check.outputs.phraseExists: ${{ needs.check.outputs.phraseExists }}"
-
       - name: Checkout main branch
         uses: actions/checkout@v3
 
