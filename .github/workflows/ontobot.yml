@@ -134,24 +134,20 @@ jobs:
         run: |
           pip install ontobot-change-agent
 
-      - name: Run ochange with comment-id
-        if: ${{ env.comment-id != '' }}
-        id: ochange_with_comment
+      - name: Run ochange
+        id: ochange
         run: |
-          ochange process-issue ${{ env.resource }} \
+          cmd="ochange process-issue ${{ env.resource }} \
           -r ${{ steps.gh-script-repo.outputs.result }} \
           -n ${{ steps.gh-script-issue.outputs.result }} \
-          -g ${{ secrets.GH_TOKEN }} \
-          -c ${{ env.comment-id }}
-      
-      - name: Run ochange without comment-id
-        if: ${{ env.comment-id == '' }}
-        id: ochange_without_comment
-        run: |
-          ochange process-issue ${{ env.resource }} \
-          -r ${{ steps.gh-script-repo.outputs.result }} \
-          -n ${{ steps.gh-script-issue.outputs.result }} \
-          -g ${{ secrets.GH_TOKEN }} 
+          -g ${{ secrets.GH_TOKEN }}"
+
+          if [ "${{ needs.check.outputs.commentId }}" != "null" ]; then
+            cmd="$cmd -c ${{ needs.check.outputs.commentId }}"
+          fi
+
+          echo "Running command: $cmd"
+          eval $cmd
 
       - name: Clean-up
         run: rm -rf robot-plugins
