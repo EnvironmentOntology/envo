@@ -100,7 +100,9 @@ jobs:
 
     steps:
       - name: Verify the value of phraseExists
-        run: echo "phraseExists = ${{ env.phraseExists }}"
+        run: |
+          echo "gh-phraseExists = ${{ env.phraseExists }}"
+          echo "phraseExists = ${{ needs.check.outputs.phraseExists }}"
 
       - name: Checkout main branch
         uses: actions/checkout@v3
