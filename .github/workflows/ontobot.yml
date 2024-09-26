@@ -86,12 +86,11 @@ jobs:
         run: echo "The phrase 'Hey ontobot' was found."
 
       - name: Check if github env was set
-        if: ${{ env.phraseExists == 'true' }}
         run: "echo phraseExists: ${{ env.phraseExists }}"
 
   build:
-    needs: check
-    if: ${{ env.phraseExists == 'true' }}
+    # needs: check
+    # if: ${{ env.phraseExists == 'true' }}
     runs-on: ${{ matrix.os }}
     container: obolibrary/odkfull:v1.4.3
     strategy:
