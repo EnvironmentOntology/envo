@@ -79,7 +79,7 @@ jobs:
           echo "Outputs: $(echo '${{ toJSON(steps.check-body.outputs) }}')"
     
       - name: Conditional step based on result
-        if: ${{ steps.check-body.outputs.phraseExists == 'true' }}
+        if: ${{ steps.check-body.outputs.phraseExists == true }}
         run: echo "The phrase 'Hey ontobot' was found."
 
   build:
@@ -93,6 +93,9 @@ jobs:
         os: [ubuntu-latest]
 
     steps:
+      - name: Verify the value of phraseExists
+        run: "echo phraseExists: ${{ needs.check.outputs.phraseExists }}"
+
       - name: Checkout main branch
         uses: actions/checkout@v3
 
