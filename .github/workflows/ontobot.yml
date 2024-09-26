@@ -146,8 +146,7 @@ jobs:
           ochange process-issue ${{ env.resource }} \
           -r ${{ steps.gh-script-repo.outputs.result }} \
           -n ${{ steps.gh-script-issue.outputs.result }} \
-          -g ${{ secrets.GH_TOKEN }} \
-          -c ${{ env.comment-id }}
+          -g ${{ secrets.GH_TOKEN }} 
 
       - name: Clean-up
         run: rm -rf robot-plugins
