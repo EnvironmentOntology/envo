@@ -83,8 +83,8 @@ jobs:
         run: echo "The phrase 'Hey ontobot' was found."
 
   build:
-    # needs: check
-    # if: ${{ needs.check.outputs.phraseExists == 'true' }}
+    needs: check
+    if: ${{ needs.check.outputs.phraseExists == 'false' }}
     runs-on: ${{ matrix.os }}
     container: obolibrary/odkfull:v1.4.3
     strategy:
