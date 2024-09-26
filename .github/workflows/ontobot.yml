@@ -77,20 +77,15 @@ jobs:
           echo "phraseExists: ${{ steps.check-body.outputs.phraseExists }}"
           echo "commentId: ${{ steps.check-body.outputs.commentId }}"
           echo "Outputs: $(echo '${{ toJSON(steps.check-body.outputs) }}')"
-
-      - name: Set environment variable
-        run: echo "phraseExists=${{ steps.check-body.outputs.phraseExists }}" >> $GITHUB_ENV
     
       - name: Conditional step based on result
         if: ${{ steps.check-body.outputs.phraseExists == 'true' }}
         run: echo "The phrase 'Hey ontobot' was found."
 
-      - name: Check if github env was set
-        run: "echo phraseExists: ${{ env.phraseExists }}"
 
   build:
-    # needs: check
-    # if: ${{ env.phraseExists == 'true' }}
+    needs: check
+    if: ${{ needs.check.outputs.phraseExists == 'true' }}
     runs-on: ${{ matrix.os }}
     container: obolibrary/odkfull:v1.4.3
     strategy:
@@ -101,7 +96,6 @@ jobs:
     steps:
       - name: Verify the value of phraseExists
         run: |
-          echo "gh-phraseExists = ${{ env.phraseExists }}"
           echo "phraseExists = ${{ needs.check.outputs.phraseExists }}"
 
       - name: Checkout main branch
