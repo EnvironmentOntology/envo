@@ -11,7 +11,7 @@ jobs:
   check:
     runs-on: ubuntu-latest
     outputs:
-      phraseExists: ${{ steps.check-body.outputs.result }}
+      phraseExists: ${{ steps.check-body.outputs.phraseExists }}
       commentId: ${{ steps.check-body.outputs.commentId }}
     steps:
       - name: Check if issue body or any comment contains 'Hey ontobot'
@@ -53,32 +53,24 @@ jobs:
             
               return result;
             }
-              
-              // Check each comment
 
-            for (let comment of comments.reverse()) { // Reverse to give precedence to the latest comment
-                if (comment.body.toLowerCase().includes(phrase)) {
+            // Check each comment
+            let result = false;
+            for (let comment of comments.data.reverse()) { // Reverse to give precedence to the latest comment
+              if (comment.body.toLowerCase().includes('hey ontobot')) {
                 result = true;
                 commentId = comment.id;
                 break;
-                }
-            }
-
-
-              return {
-                result: result,
-                commentId: result ? commentId : null
-              };
+              }
             }
 
             const checkResult = checkForPhrase(bodyText, comments.data);
 
-            console.log(`Result: ${checkResult.result}`);
-            console.log(`Comment ID: ${checkResult.commentId}`);
-            console.log(`Check Result: ${JSON.stringify(checkResult)}`);
+            console.log(`Result: ${checkResult}`);
+            console.log(`Comment ID: ${commentId}`);
 
-            core.setOutput('phraseExists', checkResult.result);
-            core.setOutput('commentId', checkResult.commentId);
+            core.setOutput('phraseExists', checkResult);
+            core.setOutput('commentId', commentId);
 
       - name: Log phraseExists output
         run: |
@@ -90,9 +82,10 @@ jobs:
         if: ${{ steps.check-body.outputs.phraseExists == 'true' }}
         run: echo "The phrase 'Hey ontobot' was found."
 
+
   build:
     needs: check
-    if: needs.check.outputs.phraseExists == 'true'
+    if: ${{ needs.check.outputs.phraseExists == 'true' }}
     runs-on: ${{ matrix.os }}
     container: obolibrary/odkfull:v1.4.3
     strategy:
@@ -101,12 +94,16 @@ jobs:
         os: [ubuntu-latest]
 
     steps:
+      - name: Verify the value of phraseExists
+        run: |
+          echo "phraseExists = ${{ needs.check.outputs.phraseExists }}"
+
       - name: Checkout main branch
         uses: actions/checkout@v3
 
       - name: Return issue number
         id: gh-script-issue
-        uses: actions/github-script@v6
+        uses: actions/github-script@v7
         with:
           script: |
             const issue_number = context.issue.number;
@@ -114,7 +111,7 @@ jobs:
 
       - name: Return repository name
         id: gh-script-repo
-        uses: actions/github-script@v6
+        uses: actions/github-script@v7
         with:
           script: |
             const repo = context.repo.owner + "/" + context.repo.repo;
@@ -137,14 +134,24 @@ jobs:
         run: |
           pip install ontobot-change-agent
 
-      - name: Run ochange
-        id: ochange
+      - name: Run ochange with comment-id
+        if: ${{ env.comment-id != '' }}
+        id: ochange_with_comment
         run: |
           ochange process-issue ${{ env.resource }} \
           -r ${{ steps.gh-script-repo.outputs.result }} \
           -n ${{ steps.gh-script-issue.outputs.result }} \
           -g ${{ secrets.GH_TOKEN }} \
           -c ${{ env.comment-id }}
+      
+      - name: Run ochange without comment-id
+        if: ${{ env.comment-id == '' }}
+        id: ochange_without_comment
+        run: |
+          ochange process-issue ${{ env.resource }} \
+          -r ${{ steps.gh-script-repo.outputs.result }} \
+          -n ${{ steps.gh-script-issue.outputs.result }} \
+          -g ${{ secrets.GH_TOKEN }} 
 
       - name: Clean-up
         run: rm -rf robot-plugins
