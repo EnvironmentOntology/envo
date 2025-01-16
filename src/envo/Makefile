@@ -567,6 +567,9 @@ modules/%.obo: modules/%.owl
 modules/ebi_biomes.owl: modules/ebi_biomes.csv
 	$(ROBOT) template --template $< -i imports/ro_import.owl -o $@.tmp.owl && mv $@.tmp.owl $@
 
+modules/nmdc_env_context_subset_membership.owl: modules/nmdc_env_context_subset_membership.csv # this CSV will be built in https://github.com/microbiomedata/submission-schema
+	$(ROBOT) template --template $< -o $@.tmp.owl && mv $@.tmp.owl $@ # why not just output to $@ ?
+
 envo-edit.csv: envo-edit.owl
 	$(OWLTOOLS) $(USECAT) $< --merge-support-ontologies --export-table $@.tmp && cut -f1 $@.tmp | grep ENVO_ | perl -npe 's@https@http@' > $@
 
