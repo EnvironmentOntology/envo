@@ -119,7 +119,7 @@ ALL_MODS_CSV = $(patsubst %, modules/%.csv, $(MODS))
 # Merge in all module files, whilst removing the corresponding import
 $(SRC): $(PRE_SRC)
 	$(OWLTOOLS) $(USECAT) $<  $(patsubst %, --remove-import-declaration $(OBO)/envo/modules/%.owl, $(MODS)) -o $@.tmp
-	$(OWLTOOLS) $(USECAT) $@.tmp  $(ALL_MODS_OWL) --merge-support-ontologies -o $@
+	$(OWLTOOLS) $(USECAT) $@.tmp  $(ALL_MODS_OWL) modules/nmdc_env_context_subset_membership.owl --merge-support-ontologies -o $@
 
 # ----------------------------------------
 # Export formats
@@ -567,8 +567,10 @@ modules/%.obo: modules/%.owl
 modules/ebi_biomes.owl: modules/ebi_biomes.csv
 	$(ROBOT) template --template $< -i imports/ro_import.owl -o $@.tmp.owl && mv $@.tmp.owl $@
 
-modules/nmdc_env_context_subset_membership.owl: modules/nmdc_env_context_subset_membership.csv # this CSV will be built in https://github.com/microbiomedata/submission-schema
+modules/nmdc_env_context_subset_membership.owl: modules/nmdc_env_context_subset_membership.tsv # this TSV will be built in https://github.com/microbiomedata/submission-schema
+	# not called by all or all_modules yet since it's a TSV not CSV. won't work for all_modules anyway since it's a ROBOT not DOSDP template
 	$(ROBOT) template --template $< -o $@.tmp.owl && mv $@.tmp.owl $@ # why not just output to $@ ?
+
 
 envo-edit.csv: envo-edit.owl
 	$(OWLTOOLS) $(USECAT) $< --merge-support-ontologies --export-table $@.tmp && cut -f1 $@.tmp | grep ENVO_ | perl -npe 's@https@http@' > $@
