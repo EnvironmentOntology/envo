@@ -568,6 +568,13 @@ modules/%.obo: modules/%.owl
 modules/ebi_biomes.owl: modules/ebi_biomes.csv
 	$(ROBOT) template --template $< -i imports/ro_import.owl -o $@.tmp.owl && mv $@.tmp.owl $@
 
+.PHONY: nmdc-robot-clean nmdc-robot-all
+
+nmdc-robot-clean:
+	rm -rf modules/nmdc_env_context_subset_membership.owl
+
+nmdc-robot-all: nmdc-robot-clean modules/nmdc_env_context_subset_membership.owl
+
 modules/nmdc_env_context_subset_membership.owl: modules/nmdc_env_context_subset_membership.tsv # this TSV will be built in https://github.com/microbiomedata/submission-schema
 	# not called by all or all_modules yet since it's a TSV not CSV. won't work for all_modules anyway since it's a ROBOT not DOSDP template
 	$(ROBOT) template --template $< -o $@.tmp.owl && mv $@.tmp.owl $@ # why not just output to $@ ?
