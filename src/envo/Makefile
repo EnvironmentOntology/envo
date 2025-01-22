@@ -119,7 +119,8 @@ ALL_MODS_CSV = $(patsubst %, modules/%.csv, $(MODS))
 # Merge in all module files, whilst removing the corresponding import
 $(SRC): $(PRE_SRC)
 	$(OWLTOOLS) $(USECAT) $<  $(patsubst %, --remove-import-declaration $(OBO)/envo/modules/%.owl, $(MODS)) -o $@.tmp
-	$(OWLTOOLS) $(USECAT) $@.tmp  $(ALL_MODS_OWL) modules/nmdc_env_context_subset_membership.owl --merge-support-ontologies -o $@
+	$(OWLTOOLS) $(USECAT) $@.tmp  $(ALL_MODS_OWL) --merge-support-ontologies -o $@
+	# modules/nmdc_env_context_subset_membership.owl
 
 # ----------------------------------------
 # Export formats
