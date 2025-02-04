@@ -574,7 +574,9 @@ nmdc-robot-clean:
 
 nmdc-robot-all: nmdc-robot-clean robot_templates/nmdc_env_context_subset_membership.owl
 
-robot_templates/nmdc_env_context_subset_membership.owl: robot_templates/nmdc_env_context_subset_membership.tsv # this TSV will be built in https://github.com/microbiomedata/submission-schema
+robot_templates/nmdc_env_context_subset_membership.owl: robot_templates/nmdc_env_context_subset_membership.tsv
+	# this TSV will be built with `make env-triad-robot-all` in https://github.com/microbiomedata/submission-schema
+	# which currently requires the latest envo.owl even if it is pre-release
 	$(ROBOT) template --template $< -o $@.tmp.owl && mv $@.tmp.owl $@ # why not just output to $@ ?
 
 
