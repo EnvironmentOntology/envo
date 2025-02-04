@@ -14,8 +14,8 @@
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
      xmlns:envo-basic="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/envo/subsets/environmental_hazards.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/envo/releases/2024-07-01/subsets/environmental_hazards.owl"/>
-        <owl:versionInfo>2024-07-01</owl:versionInfo>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/envo/releases/2025-02-04/subsets/environmental_hazards.owl"/>
+        <owl:versionInfo>2025-02-04</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -28,6 +28,15 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ENVO_03605010 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/ENVO_03605010">
+        <rdfs:comment>Root of the NMDC environmental context value set hierarchy. This property organizes subset properties used to annotate EnvO classes relevant for MIxS environmental context fields (e.g., env_broad_scale, env_local_scale, env_medium_scale). This structure guides data annotation in systems like NCBI BioSample, refining recommendations from the ENVO-MIxS integration guide, addressing questions such as &apos;Which EnvO classes are reasonable for populating the env_broad_scale field in a soil sample versus a water sample.&quot;</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#SubsetProperty"/>
+    </owl:AnnotationProperty>
     
 
 
@@ -512,6 +521,12 @@
     
 
 
+    <!-- http://www.geneontology.org/formats/oboInOwl#http://purl.org/dc/elements/1.1/contributor -->
+
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#http://purl.org/dc/elements/1.1/contributor"/>
+    
+
+
     <!-- http://www.geneontology.org/formats/oboInOwl#http://purl.org/dc/elements/1.1/source -->
 
     <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#http://purl.org/dc/elements/1.1/source"/>
@@ -815,6 +830,17 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/RO_0000080 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0000080">
+        <oboInOwl:hasDbXref>RO:0000080</oboInOwl:hasDbXref>
+        <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>quality_of</oboInOwl:id>
+        <oboInOwl:shorthand>quality_of</oboInOwl:shorthand>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/RO_0000085 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0000085">
@@ -898,8 +924,8 @@
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0001019">
         <oboInOwl:hasDbXref>RO:0001019</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>contains</oboInOwl:id>
-        <oboInOwl:shorthand>contains</oboInOwl:shorthand>
+        <oboInOwl:id>obsolete_contains</oboInOwl:id>
+        <oboInOwl:shorthand>obsolete_contains</oboInOwl:shorthand>
     </owl:ObjectProperty>
     
 
@@ -1143,8 +1169,8 @@
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002297">
         <oboInOwl:hasDbXref>RO:0002297</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>results_in_formation_of</oboInOwl:id>
-        <oboInOwl:shorthand>results_in_formation_of</oboInOwl:shorthand>
+        <oboInOwl:id>results_in_formation_of_anatomical_entity</oboInOwl:id>
+        <oboInOwl:shorthand>results_in_formation_of_anatomical_entity</oboInOwl:shorthand>
     </owl:ObjectProperty>
     
 
@@ -3168,18 +3194,17 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_00000446">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000428"/>
-        <obo1:IAO_0000115>A biome which is  primarily or completely situated on a landmass.</obo1:IAO_0000115>
+        <obo1:IAO_0000115>A terrestrial ecosystem which is in its climactic successional state.</obo1:IAO_0000115>
         <oboInOwl:hasDbXref>LTER:798</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>SPIRE:Terrestrial</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
-        <oboInOwl:hasRelatedSynonym>terrestrial realm</oboInOwl:hasRelatedSynonym>
         <oboInOwl:id>ENVO:00000446</oboInOwl:id>
         <rdfs:label>terrestrial biome</rdfs:label>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000446"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>A biome which is  primarily or completely situated on a landmass.</owl:annotatedTarget>
+        <owl:annotatedTarget>A terrestrial ecosystem which is in its climactic successional state.</owl:annotatedTarget>
         <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Biome#Terrestrial_biomes</oboInOwl:hasDbXref>
     </owl:Axiom>
     
@@ -7242,11 +7267,11 @@ Consider adding axioms like PATO:&quot;decreased temperature&quot; to this and o
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo1:IAO_0000115>An ecosystem which is determined by communities of plants with a tree growth form and in which members of those communities form continuous or discontinuous regions of canopy cover.</obo1:IAO_0000115>
-        <obo1:IAO_0000116>The correct usage of FLOPO terms in the axiomatisation needs to be confirmed.</obo1:IAO_0000116>
+        <oboInOwl:hasExactSynonym>forest ecosystem</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:01001243</oboInOwl:id>
         <rdfs:comment>The definitions of forest can vary greatly, and different classes will be needed to support the major categories. Tree cover alone is not enough to distinguish between forests and plantations. The international definition proposed by the 2010 FAO Forestry Resource Assessment: &quot;land spanning more than 0.5 ha with trees higher than 5 metres and canopy cover of more than 10 percent, or trees able to reach these thresholds in situ . It does not include land that is predominantly under agricultural or urban land use.&quot; - FAO.  2010. Global forest resources assessment 2010, Main report, FAO Forestry Paper 163. Rome.</rdfs:comment>
-        <rdfs:label>forest ecosystem</rdfs:label>
+        <rdfs:label>forest</rdfs:label>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001243"/>

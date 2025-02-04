@@ -4,9 +4,9 @@
     "meta" : {
       "basicPropertyValues" : [ {
         "pred" : "http://www.w3.org/2002/07/owl#versionInfo",
-        "val" : "2024-07-01"
+        "val" : "2025-02-04"
       } ],
-      "version" : "http://purl.obolibrary.org/obo/envo/releases/2024-07-01/subsets/envoPolar.owl"
+      "version" : "http://purl.obolibrary.org/obo/envo/releases/2025-02-04/subsets/envoPolar.owl"
     },
     "nodes" : [ {
       "id" : "http://purl.obolibrary.org/obo/ENVO_00000000",
@@ -79,8 +79,9 @@
       "type" : "CLASS",
       "meta" : {
         "definition" : {
-          "val" : "A marine water body which is constitutes the majority of an astronomical body's hydrosphere."
+          "val" : "A lentic water body which has been formed as a result of oceanogenesis and constitutes the majority of an astronomical body's hydrosphere."
         },
+        "comments" : [ "As evidence for oceans differing from that of Earth emerge, the label \"ocean\" may be used for a more general class, with this class being relabelled as \"salt-water ocean\" or similar. The PURL/PID of this class will remain unchanged. See https://en.wikipedia.org/wiki/Planetary_oceanography" ],
         "subsets" : [ "http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoMarine", "http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar" ],
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
@@ -115,7 +116,7 @@
       "type" : "CLASS",
       "meta" : {
         "definition" : {
-          "val" : "A large expanse of saline water usually connected with an ocean.",
+          "val" : "A lentic water body which is wholly or partly surrounded by land and either connected to or derived from a part of an ocean.",
           "xrefs" : [ "https://en.wikipedia.org/wiki/Sea" ]
         },
         "subsets" : [ "http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoMarine", "http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar" ],
@@ -3745,13 +3746,9 @@
       "type" : "CLASS",
       "meta" : {
         "definition" : {
-          "val" : "A biome which is  primarily or completely situated on a landmass.",
+          "val" : "A terrestrial ecosystem which is in its climactic successional state.",
           "xrefs" : [ "https://en.wikipedia.org/wiki/Biome#Terrestrial_biomes" ]
         },
-        "synonyms" : [ {
-          "pred" : "hasRelatedSynonym",
-          "val" : "terrestrial realm"
-        } ],
         "xrefs" : [ {
           "val" : "LTER:798"
         }, {
@@ -3768,15 +3765,11 @@
       "type" : "CLASS",
       "meta" : {
         "definition" : {
-          "val" : "An aquatic biome which is determined by a marine water body.",
+          "val" : "A marine ecosystem which is in its climactic successional state.",
           "xrefs" : [ "ISBN:978-0-618-45504-1", "MA:ma", "https://en.wikipedia.org/wiki/Ocean", "https://orcid.org/0000-0002-4366-3088" ]
         },
         "comments" : [ "This biome includes open-ocean and unprotected coastal ecosystems, characterized by exposure to wave action, tidal fluctuation, and ocean currents as well as systems that largely resemble these. Water in the marine biome is generally within the salinity range of seawater: 30 to 38 ppt." ],
         "subsets" : [ "http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar" ],
-        "synonyms" : [ {
-          "pred" : "hasRelatedSynonym",
-          "val" : "marine realm"
-        } ],
         "xrefs" : [ {
           "val" : "SPIRE:Marine"
         } ],
@@ -4078,7 +4071,7 @@
       }
     }, {
       "id" : "http://purl.obolibrary.org/obo/ENVO_00000479",
-      "lbl" : "mouth",
+      "lbl" : "mouth of a watercourse",
       "type" : "CLASS",
       "meta" : {
         "definition" : {
@@ -4086,7 +4079,7 @@
           "xrefs" : [ "USGS:SDTS" ]
         },
         "synonyms" : [ {
-          "pred" : "hasExactSynonym",
+          "pred" : "hasBroadSynonym",
           "val" : "MOUTH",
           "xrefs" : [ "USGS:SDTS" ]
         }, {
@@ -4099,7 +4092,7 @@
         }, {
           "val" : "SWEETRealm:Mouth"
         }, {
-          "val" : "https://en.wikipedia.org/wiki/Mouth"
+          "val" : "https://en.wikipedia.org/wiki/River_mouth"
         } ],
         "basicPropertyValues" : [ {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
@@ -4521,14 +4514,10 @@
       "type" : "CLASS",
       "meta" : {
         "definition" : {
-          "val" : "An aquatic biome which is determined by a body of freshwater.",
+          "val" : "An freshwater ecosystem which is in its climactic successional state.",
           "xrefs" : [ "MA:ma", "https://orcid.org/0000-0002-4366-3088" ]
         },
         "subsets" : [ "http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar" ],
-        "synonyms" : [ {
-          "pred" : "hasRelatedSynonym",
-          "val" : "freshwater realm"
-        } ],
         "xrefs" : [ {
           "val" : "SPIRE:Freshwater"
         } ],
@@ -4597,26 +4586,6 @@
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000116",
           "val" : "The various 'has part' and 'has quality' relations may not hold true for all soils; however, I have yet to find counter examples. Require input from a pedologist or similar. [pbuttigieg]"
         }, {
-          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
-          "val" : "ENVO"
-        } ]
-      }
-    }, {
-      "id" : "http://purl.obolibrary.org/obo/ENVO_00001999",
-      "lbl" : "marine water body",
-      "type" : "CLASS",
-      "meta" : {
-        "definition" : {
-          "val" : "A lentic water body which is composed primarily of marine water."
-        },
-        "synonyms" : [ {
-          "pred" : "hasExactSynonym",
-          "val" : "body of marine water"
-        }, {
-          "pred" : "hasExactSynonym",
-          "val" : "marine waterbody"
-        } ],
-        "basicPropertyValues" : [ {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "ENVO"
         } ]
@@ -4855,22 +4824,6 @@
         } ]
       }
     }, {
-      "id" : "http://purl.obolibrary.org/obo/ENVO_00002030",
-      "lbl" : "aquatic biome",
-      "type" : "CLASS",
-      "meta" : {
-        "definition" : {
-          "val" : "A biome which is determined by a water body and which has ecological climax communities adapted to life in or on water."
-        },
-        "xrefs" : [ {
-          "val" : "LTER:41"
-        } ],
-        "basicPropertyValues" : [ {
-          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
-          "val" : "ENVO"
-        } ]
-      }
-    }, {
       "id" : "http://purl.obolibrary.org/obo/ENVO_00002045",
       "lbl" : "anaerobic sediment",
       "type" : "CLASS",
@@ -4949,19 +4902,19 @@
       }
     }, {
       "id" : "http://purl.obolibrary.org/obo/ENVO_00002149",
-      "lbl" : "sea water",
+      "lbl" : "ocean water",
       "type" : "CLASS",
       "meta" : {
         "definition" : {
-          "val" : "Water which has physicochemical properties that have been determined by the processes occuring in a sea or ocean."
+          "val" : "Saline water which has has been formed as a result of oceanogenesis and which has its composition and properties maintained through processes including hydrological cycling, continental weathering, porewater burial, mineral deposition, ion exchange reactions, and ecological processes."
         },
-        "comments" : [ "This definition refers to water that is actually in a sea or ocean. This water may have a wide range of salinity levels." ],
+        "comments" : [ "This definition is scoped to Earth's ocean, although it may also be applied to other telluric planets, moons, and similar astronomical bodies. As more evidence of other ocean types (and thus ocean water) emerge, this class may be made a subclass of a more general \"ocean\" class, and its label changed accordingly. This classes PURL / PID will remain stable. https://en.wikipedia.org/wiki/Planetary_oceanography" ],
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
-          "val" : "ocean water"
-        }, {
-          "pred" : "hasExactSynonym",
           "val" : "seawater"
+        }, {
+          "pred" : "hasNarrowSynonym",
+          "val" : "sea water"
         } ],
         "xrefs" : [ {
           "val" : "EcoLexicon:sea_water"
@@ -4975,6 +4928,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000116",
           "val" : "When we have more classes representing the various processes which make seawater seawater, we can further axiomatise this class."
+        }, {
+          "pred" : "http://purl.org/dc/terms/contributor",
+          "val" : "https://orcid.org/0000-0002-4366-3088"
         }, {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "ENVO"
@@ -4995,13 +4951,13 @@
           "val" : "coastal water"
         }, {
           "pred" : "hasExactSynonym",
+          "val" : "coastal seawater"
+        }, {
+          "pred" : "hasRelatedSynonym",
           "val" : "coastal ocean water"
         }, {
-          "pred" : "hasExactSynonym",
+          "pred" : "hasRelatedSynonym",
           "val" : "coastal oceanic water"
-        }, {
-          "pred" : "hasExactSynonym",
-          "val" : "coastal seawater"
         } ],
         "basicPropertyValues" : [ {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
@@ -5119,7 +5075,7 @@
           "val" : "A structural basin that is below sea level.",
           "xrefs" : [ "https://en.wikipedia.org/wiki/Ocean_basin" ]
         },
-        "comments" : [ "This class is defined in its geological sense:\nhttps://en.wikipedia.org/wiki/ Hydrologically, an oceanic basin may be anywhere on Earth that is covered by seawater, but geologically ocean basins are large geologic basins that are below sea level. Geologically, there are other undersea geomorphological features such as the continental shelves, the deep ocean trenches, and the undersea mountain ranges (for example, the mid-Atlantic ridge) which are not considered to be part of the ocean basins; while hydrologically, oceanic basins include the flanking continental shelves and shallow, epeiric seas." ],
+        "comments" : [ "This class is defined in its geological sense. See https://en.wikipedia.org/wiki/Oceanic_basin. Hydrologically, an oceanic basin may be anywhere on Earth that is covered by seawater, but geologically ocean basins are large geologic basins that are below sea level. Geologically, there are other undersea geomorphological features such as the continental shelves, the deep ocean trenches, and the undersea mountain ranges (for example, the mid-Atlantic ridge) which are not considered to be part of the ocean basins; while hydrologically, oceanic basins include the flanking continental shelves and shallow, epeiric seas." ],
         "subsets" : [ "http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar" ],
         "xrefs" : [ {
           "val" : "EcoLexicon:ocean_basin"
@@ -5873,7 +5829,7 @@
       "type" : "CLASS",
       "meta" : {
         "definition" : {
-          "val" : "A pycnocline which is part of a marine water body and composed primarily of sea water.",
+          "val" : "A pycnocline which is part of a marine water body and composed primarily of ocean water.",
           "xrefs" : [ "ORCID:0000-0002-4366-3088", "https://en.wikipedia.org/wiki/Mixed_layer" ]
         },
         "comments" : [ "Marine pycnoclines are usually associated with rapid changes in water temperature and salinity." ],
@@ -6298,43 +6254,20 @@
         } ]
       }
     }, {
-      "id" : "http://purl.obolibrary.org/obo/ENVO_01000179",
-      "lbl" : "desert biome",
-      "type" : "CLASS",
-      "meta" : {
-        "definition" : {
-          "val" : "A desert ecosystem which is undergoing climactic ecological succession."
-        },
-        "subsets" : [ "http://purl.obolibrary.org/obo/subsets/envo-basic.obo#wwfBiome" ],
-        "xrefs" : [ {
-          "val" : "SPIRE:Desert_or_dune"
-        } ],
-        "basicPropertyValues" : [ {
-          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
-          "val" : "ORCID:0000-0002-4366-3088"
-        }, {
-          "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
-          "val" : "2013-04-07T14:26:46Z"
-        }, {
-          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
-          "val" : "ENVO"
-        } ]
-      }
-    }, {
       "id" : "http://purl.obolibrary.org/obo/ENVO_01000180",
       "lbl" : "tundra biome",
       "type" : "CLASS",
       "meta" : {
         "definition" : {
-          "val" : "A tundra ecosystem which is undergoing climactic ecological succession."
+          "val" : "A tundra ecosystem which is in its climactic successional state."
         },
         "subsets" : [ "http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar", "http://purl.obolibrary.org/obo/subsets/envo-basic.obo#wwfBiome" ],
         "xrefs" : [ {
           "val" : "SPIRE:Tundra"
         } ],
         "basicPropertyValues" : [ {
-          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
-          "val" : "ORCID:0000-0002-4366-3088"
+          "pred" : "http://purl.org/dc/terms/creator",
+          "val" : "https://orcid.org/0000-0002-4366-3088"
         }, {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
           "val" : "2013-04-07T14:26:46Z"
@@ -6349,10 +6282,9 @@
       "type" : "CLASS",
       "meta" : {
         "definition" : {
-          "val" : "A polar desert biome is a desert biome which is subject to low levels of insolation, annual precipitation less than 250 millimeters, and a mean temperature less than 10 degrees Celsius during its warmest month. Temperature changes in polar deserts frequently cross the freezing point of water.",
+          "val" : ".A polar desert ecosytem which is in its climactic successional state.",
           "xrefs" : [ "https://en.wikipedia.org/wiki/Polar_desert" ]
         },
-        "comments" : [ "Preliminary definition. The semantics and definitions of \"mediterranean\", \"subtropical\", \"tropical\", \"temperate\", \"polar\", and similar climate types may be transferred to an \"environmental condition\" class once the semantics of this class have been established." ],
         "subsets" : [ "http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar" ],
         "basicPropertyValues" : [ {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
@@ -6371,11 +6303,11 @@
       "type" : "CLASS",
       "meta" : {
         "definition" : {
-          "val" : "A broadleaf forest ecosystem which is undergoing climactic ecological succession."
+          "val" : "A broadleaf forest ecosystem which is in its climactic successional state."
         },
         "basicPropertyValues" : [ {
-          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
-          "val" : "ORCID:0000-0002-4366-3088"
+          "pred" : "http://purl.org/dc/elements/1.1/creator",
+          "val" : "https://orcid.org/0000-0002-4366-3088"
         }, {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
           "val" : "2013-04-07T14:31:01Z"
@@ -6399,8 +6331,8 @@
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000114",
           "val" : "http://purl.obolibrary.org/obo/IAO_0000121"
         }, {
-          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
-          "val" : "ORCID:0000-0002-4366-3088"
+          "pred" : "http://purl.org/dc/elements/1.1/creator",
+          "val" : "https://orcid.org/0000-0002-4366-3088"
         }, {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
           "val" : "2013-04-07T14:35:18Z"
@@ -6422,8 +6354,8 @@
           "val" : "EcoLexicon:aridity"
         } ],
         "basicPropertyValues" : [ {
-          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
-          "val" : "ORCID:0000-0002-4366-3088"
+          "pred" : "http://purl.org/dc/elements/1.1/creator",
+          "val" : "https://orcid.org/0000-0002-4366-3088"
         }, {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
           "val" : "2013-04-24T13:28:18Z"
@@ -6454,8 +6386,8 @@
           "val" : "SWEETRealm:Polarization"
         } ],
         "basicPropertyValues" : [ {
-          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
-          "val" : "ORCID:0000-0002-4366-3088"
+          "pred" : "http://purl.org/dc/elements/1.1/creator",
+          "val" : "https://orcid.org/0000-0002-4366-3088"
         }, {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
           "val" : "2013-05-08T07:49:36Z"
@@ -6485,8 +6417,8 @@
           "xrefs" : [ "https://en.wikipedia.org/wiki/Subarctic_climate" ]
         } ],
         "basicPropertyValues" : [ {
-          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
-          "val" : "ORCID:0000-0002-4366-3088"
+          "pred" : "http://purl.org/dc/elements/1.1/creator",
+          "val" : "https://orcid.org/0000-0002-4366-3088"
         }, {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
           "val" : "2013-09-04T07:08:34Z"
@@ -6709,11 +6641,11 @@
           "val" : "A large unit of land or water containing a geographically distinct assemblage of species, natural communities, and environmental conditions.",
           "xrefs" : [ "DOI:10.1641/0006-3568(2001)051[0933:TEOTWA]2.0.CO;2", "URL:http://worldwildlife.org/biomes" ]
         },
-        "comments" : [ "Unlike biomes, ecoregions are geographically defined entities. ENVO's sister project, GAZ, contains terms for instances of ecoregions (e.g. Beringia lowland tundra). Requests for new terms should be directed to GAZ. ENVO will only contain this top-level class. The class' definition is preliminary and will be aligned to BFO." ],
+        "comments" : [ "Specific ecoregions are geographically defined and instantiated entities (e.g. Beringia lowland tundra), and should be represented as instances / named individuals of ENVO:ecoregion or an appropriate subclass." ],
         "subsets" : [ "http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar" ],
         "basicPropertyValues" : [ {
-          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
-          "val" : "ORCID:0000-0002-4366-3088"
+          "pred" : "http://purl.org/dc/elements/1.1/creator",
+          "val" : "https://orcid.org/0000-0002-4366-3088"
         }, {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
           "val" : "2013-10-12T17:21:09Z"
@@ -7014,7 +6946,7 @@
       "type" : "CLASS",
       "meta" : {
         "definition" : {
-          "val" : "A marine environment and enviroment which is determined by a marine water body.",
+          "val" : "An enviroment system which is determined by an ocean or sea.",
           "xrefs" : [ "NM:nm" ]
         },
         "subsets" : [ "http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar" ],
@@ -7162,8 +7094,8 @@
           "val" : "LTER:26"
         } ],
         "basicPropertyValues" : [ {
-          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
-          "val" : "ORCID:0000-0002-4366-3088"
+          "pred" : "http://purl.org/dc/elements/1.1/creator",
+          "val" : "https://orcid.org/0000-0002-4366-3088"
         }, {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "ENVO"
@@ -7177,11 +7109,13 @@
         "definition" : {
           "val" : "An altitudinal condition which inheres in a bearer by virtue of the bearer being located at an altitude immediately below the tree line of an elevation."
         },
-        "comments" : [ "Requested in Issue 33 of our tracker. The lower boundry of this condition's range, that is, the lower altitudinal limit of an elevation that is considuered subalpine, is not clear in this definition." ],
         "subsets" : [ "http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar" ],
         "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000116",
+          "val" : "Requested in Issue 33 of our tracker. The lower boundry of this condition's range, that is, the lower altitudinal limit of an elevation that is considuered subalpine, is not clear in this definition."
+        }, {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
-          "val" : "ORCID:0000-0002-4366-3088"
+          "val" : "https://orcid.org/0000-0002-4366-3088"
         }, {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "ENVO"
@@ -7202,8 +7136,8 @@
           "val" : "LTER:350"
         } ],
         "basicPropertyValues" : [ {
-          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
-          "val" : "ORCID:0000-0002-4366-3088"
+          "pred" : "http://purl.org/dc/elements/1.1/creator",
+          "val" : "https://orcid.org/0000-0002-4366-3088"
         }, {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "ENVO"
@@ -7221,8 +7155,8 @@
         "comments" : [ "Depending on the latitude (and, to a lesser extent, other factors), the actual location of the zones where these conditions are in effect will change." ],
         "subsets" : [ "http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar" ],
         "basicPropertyValues" : [ {
-          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
-          "val" : "ORCID:0000-0002-4366-3088"
+          "pred" : "http://purl.org/dc/elements/1.1/creator",
+          "val" : "https://orcid.org/0000-0002-4366-3088"
         }, {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "ENVO"
@@ -7239,8 +7173,8 @@
         },
         "subsets" : [ "http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar" ],
         "basicPropertyValues" : [ {
-          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
-          "val" : "ORCID:0000-0002-4366-3088"
+          "pred" : "http://purl.org/dc/elements/1.1/creator",
+          "val" : "https://orcid.org/0000-0002-4366-3088"
         }, {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "ENVO"
@@ -7257,8 +7191,8 @@
         "comments" : [ "This definition is somewhat odd in that it doesn't clearly define a lower boundary." ],
         "subsets" : [ "http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar" ],
         "basicPropertyValues" : [ {
-          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
-          "val" : "ORCID:0000-0002-4366-3088"
+          "pred" : "http://purl.org/dc/terms/creator",
+          "val" : "https://orcid.org/0000-0002-4366-3088"
         }, {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "ENVO"
@@ -7275,8 +7209,8 @@
         "comments" : [ "This definition does not define an upper boundary." ],
         "subsets" : [ "http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar" ],
         "basicPropertyValues" : [ {
-          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
-          "val" : "ORCID:0000-0002-4366-3088"
+          "pred" : "http://purl.org/dc/elements/1.1/creator",
+          "val" : "https://orcid.org/0000-0002-4366-3088"
         }, {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "ENVO"
@@ -7312,8 +7246,8 @@
         },
         "subsets" : [ "http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar" ],
         "basicPropertyValues" : [ {
-          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
-          "val" : "ORCID:0000-0002-4366-3088"
+          "pred" : "http://purl.org/dc/elements/1.1/creator",
+          "val" : "https://orcid.org/0000-0002-4366-3088"
         }, {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "ENVO"
@@ -8264,7 +8198,7 @@
       "type" : "CLASS",
       "meta" : {
         "definition" : {
-          "val" : "Sublimation is a process during which a portion of some solid undergoes a phase transition into a portion of some gas.",
+          "val" : "A material transformation process during which a solid material transitions into a gas phase.",
           "xrefs" : [ "https://en.wikipedia.org/wiki/Sublimation_(phase_transition)" ]
         },
         "basicPropertyValues" : [ {
@@ -10461,7 +10395,7 @@
       }
     }, {
       "id" : "http://purl.obolibrary.org/obo/ENVO_01001243",
-      "lbl" : "forest ecosystem",
+      "lbl" : "forest",
       "type" : "CLASS",
       "meta" : {
         "definition" : {
@@ -10469,10 +10403,11 @@
           "xrefs" : [ "http://www.fao.org/docrep/017/ap862e/ap862e00.pdf" ]
         },
         "comments" : [ "The definitions of forest can vary greatly, and different classes will be needed to support the major categories. Tree cover alone is not enough to distinguish between forests and plantations. The international definition proposed by the 2010 FAO Forestry Resource Assessment: \"land spanning more than 0.5 ha with trees higher than 5 metres and canopy cover of more than 10 percent, or trees able to reach these thresholds in situ . It does not include land that is predominantly under agricultural or urban land use.\" - FAO.  2010. Global forest resources assessment 2010, Main report, FAO Forestry Paper 163. Rome." ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "forest ecosystem"
+        } ],
         "basicPropertyValues" : [ {
-          "pred" : "http://purl.obolibrary.org/obo/IAO_0000116",
-          "val" : "The correct usage of FLOPO terms in the axiomatisation needs to be confirmed."
-        }, {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "ENVO"
         } ]
@@ -10796,9 +10731,10 @@
       "type" : "CLASS",
       "meta" : {
         "definition" : {
-          "val" : "A tundra ecosystem which exists at high altitudes and where vegetation is stunted due to low temperatures and high winds.",
+          "val" : "A tundra ecosystem which 1) exists at high altitudes and where vegetation is stunted due to low temperatures and high winds, 2) where vegetation is dominated by a few species of dwarf shrubs, grasses, sedges, lichens, and mosses.",
           "xrefs" : [ "https://en.wikipedia.org/wiki/Alpine_tundra" ]
         },
+        "comments" : [ "The absence of trees in this biome is primarily due to high altitude rather than high latitude. On Earth, it lies roughly between the summer isotherm of 10 degrees Centigrade and the snow line. Primary productivity is low in this biome because of the extremes of climate." ],
         "subsets" : [ "http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar" ],
         "xrefs" : [ {
           "val" : "SPIRE:Tundra"
@@ -11000,10 +10936,9 @@
       "type" : "CLASS",
       "meta" : {
         "definition" : {
-          "val" : "A tundra biome which exists at high altitudes and where vegetation - dominated by a few species of dwarf shrubs, a few grasses, sedges, lichens, and mosses - is stunted due to low temperatures and high winds.",
+          "val" : "An alpine tundra ecosystem which is in its climactic successional state.",
           "xrefs" : [ "https://en.wikipedia.org/wiki/Alpine_tundra" ]
         },
-        "comments" : [ "The absence of trees in this biome is primarily due to high altitude rather than high latitude. On Earth, it lies roughly between the summer isotherm of 10 degrees Centigrade and the snow line. Primary productivity is low in this biome because of the extremes of climate." ],
         "subsets" : [ "http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar" ],
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
@@ -12719,6 +12654,60 @@
         } ]
       }
     }, {
+      "id" : "http://purl.obolibrary.org/obo/ENVO_01001787",
+      "lbl" : "aquatic ecosystem",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "An ecosystem which has its functions and composition determined by a water body."
+        },
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.org/dc/elements/1.1/creator",
+          "val" : "https://orcid.org/0000-0002-4366-3088"
+        }, {
+          "pred" : "http://purl.org/dc/elements/1.1/date",
+          "val" : "2019-10-21T11:05:45Z"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "ENVO"
+        } ]
+      }
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/ENVO_01001788",
+      "lbl" : "marine ecosystem",
+      "type" : "CLASS",
+      "meta" : {
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.org/dc/elements/1.1/creator",
+          "val" : "https://orcid.org/0000-0002-4366-3088"
+        }, {
+          "pred" : "http://purl.org/dc/elements/1.1/date",
+          "val" : "2019-10-21T11:06:11Z"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "ENVO"
+        } ]
+      }
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/ENVO_01001789",
+      "lbl" : "freshwater ecosystem",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "An aquatic ecosystem which has its functions and composition determined by a body of fresh water."
+        },
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.org/dc/elements/1.1/creator",
+          "val" : "https://orcid.org/0000-0002-4366-3088"
+        }, {
+          "pred" : "http://purl.org/dc/elements/1.1/date",
+          "val" : "2019-10-21T11:06:34Z"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "ENVO"
+        } ]
+      }
+    }, {
       "id" : "http://purl.obolibrary.org/obo/ENVO_01001790",
       "lbl" : "terrestrial ecosystem",
       "type" : "CLASS",
@@ -12913,6 +12902,45 @@
         } ]
       }
     }, {
+      "id" : "http://purl.obolibrary.org/obo/ENVO_01001904",
+      "lbl" : "polar desert ecosystem",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A desert ecosystem which is subject to polar environmental conditions."
+        },
+        "comments" : [ "On Earth, polar deserts typically have low levels of insolation, annual precipitation less than 250 millimeters, and a mean temperature less than 10 degrees Celsius during its warmest month. Temperature changes in polar deserts frequently cross the freezing point of water" ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.org/dc/elements/1.1/creator",
+          "val" : "https://orcid.org/0000-0002-4366-3088"
+        }, {
+          "pred" : "http://purl.org/dc/elements/1.1/date",
+          "val" : "2024-12-06T12:26:58Z"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "ENVO"
+        } ]
+      }
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/ENVO_01001964",
+      "lbl" : "seawater",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "Ocean water which is part of a sea and which has its properties and composition more strongly influenced by terrestrial processes - such as river runoff, groundwater seepage, aeolian transport of dust - than waters of the open ocean."
+        },
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.org/dc/elements/1.1/creator",
+          "val" : "https://orcid.org/0000-0002-4366-3088"
+        }, {
+          "pred" : "http://purl.org/dc/elements/1.1/date",
+          "val" : "2024-12-09T18:37:03Z"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "ENVO"
+        } ]
+      }
+    }, {
       "id" : "http://purl.obolibrary.org/obo/ENVO_01003001",
       "lbl" : "water-holding capacity",
       "type" : "CLASS",
@@ -13020,7 +13048,7 @@
       "type" : "CLASS",
       "meta" : {
         "definition" : {
-          "val" : "Coastal water is a marine water body bordering a coast.",
+          "val" : "A lentic water body which is adjacent to a coast.",
           "xrefs" : [ "https://en.wikipedia.org/wiki/Coastal" ]
         },
         "subsets" : [ "http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar" ],
@@ -17833,6 +17861,22 @@
         } ]
       }
     }, {
+      "id" : "http://purl.obolibrary.org/obo/RO_0000080",
+      "type" : "PROPERTY",
+      "propertyType" : "OBJECT",
+      "meta" : {
+        "xrefs" : [ {
+          "val" : "RO:0000080"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "ENVO"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#shorthand",
+          "val" : "quality_of"
+        } ]
+      }
+    }, {
       "id" : "http://purl.obolibrary.org/obo/RO_0000085",
       "type" : "PROPERTY",
       "propertyType" : "OBJECT",
@@ -17957,7 +18001,7 @@
           "val" : "ENVO"
         }, {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#shorthand",
-          "val" : "contains"
+          "val" : "obsolete_contains"
         } ]
       }
     }, {
@@ -18312,7 +18356,7 @@
           "val" : "ENVO"
         }, {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#shorthand",
-          "val" : "results_in_formation_of"
+          "val" : "results_in_formation_of_anatomical_entity"
         } ]
       }
     }, {
@@ -18669,6 +18713,13 @@
         } ]
       }
     }, {
+      "id" : "http://purl.obolibrary.org/obo/ENVO_03605010",
+      "type" : "PROPERTY",
+      "propertyType" : "ANNOTATION",
+      "meta" : {
+        "comments" : [ "Root of the NMDC environmental context value set hierarchy. This property organizes subset properties used to annotate EnvO classes relevant for MIxS environmental context fields (e.g., env_broad_scale, env_local_scale, env_medium_scale). This structure guides data annotation in systems like NCBI BioSample, refining recommendations from the ENVO-MIxS integration guide, addressing questions such as 'Which EnvO classes are reasonable for populating the env_broad_scale field in a soil sample versus a water sample.\"" ]
+      }
+    }, {
       "id" : "http://purl.obolibrary.org/obo/IAO_0000112",
       "type" : "PROPERTY",
       "propertyType" : "ANNOTATION"
@@ -18918,6 +18969,10 @@
       "type" : "PROPERTY",
       "propertyType" : "ANNOTATION"
     }, {
+      "id" : "http://purl.org/dc/terms/contributor",
+      "type" : "PROPERTY",
+      "propertyType" : "ANNOTATION"
+    }, {
       "id" : "http://purl.org/dc/terms/creator",
       "type" : "PROPERTY",
       "propertyType" : "ANNOTATION"
@@ -19028,6 +19083,10 @@
       "type" : "PROPERTY",
       "propertyType" : "ANNOTATION"
     }, {
+      "id" : "http://www.geneontology.org/formats/oboInOwl#http://purl.org/dc/elements/1.1/contributor",
+      "type" : "PROPERTY",
+      "propertyType" : "ANNOTATION"
+    }, {
       "id" : "http://www.geneontology.org/formats/oboInOwl#http://purl.org/dc/elements/1.1/source",
       "type" : "PROPERTY",
       "propertyType" : "ANNOTATION"
@@ -19059,7 +19118,7 @@
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_00000015",
       "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/ENVO_00001999"
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01000617"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_00000015",
       "pred" : "http://purl.obolibrary.org/obo/RO_0002473",
@@ -19067,7 +19126,7 @@
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_00000016",
       "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/ENVO_00001999"
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01000617"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_00000016",
       "pred" : "http://purl.obolibrary.org/obo/BFO_0000050",
@@ -19075,7 +19134,7 @@
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_00000016",
       "pred" : "http://purl.obolibrary.org/obo/RO_0002473",
-      "obj" : "http://purl.obolibrary.org/obo/ENVO_00002149"
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01001964"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_00000020",
       "pred" : "is_a",
@@ -19586,10 +19645,6 @@
       "obj" : "http://purl.obolibrary.org/obo/ENVO_01000267"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_00000380",
-      "pred" : "http://purl.obolibrary.org/obo/RO_0002220",
-      "obj" : "http://purl.obolibrary.org/obo/ENVO_00001999"
-    }, {
-      "sub" : "http://purl.obolibrary.org/obo/ENVO_00000380",
       "pred" : "http://purl.obolibrary.org/obo/RO_0002354",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_01000895"
     }, {
@@ -19707,7 +19762,7 @@
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_00000447",
       "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/ENVO_00002030"
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01001788"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_00000455",
       "pred" : "is_a",
@@ -19875,7 +19930,7 @@
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_00000873",
       "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/ENVO_00002030"
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01001789"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_00001995",
       "pred" : "is_a",
@@ -19912,14 +19967,6 @@
       "sub" : "http://purl.obolibrary.org/obo/ENVO_00001998",
       "pred" : "http://purl.obolibrary.org/obo/RO_0000091",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_06105304"
-    }, {
-      "sub" : "http://purl.obolibrary.org/obo/ENVO_00001999",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/ENVO_01000617"
-    }, {
-      "sub" : "http://purl.obolibrary.org/obo/ENVO_00001999",
-      "pred" : "http://purl.obolibrary.org/obo/BFO_0000050",
-      "obj" : "http://purl.obolibrary.org/obo/ENVO_01000819"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_00002000",
       "pred" : "is_a",
@@ -19965,10 +20012,6 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_00002010"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/ENVO_00002030",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/ENVO_00000428"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_00002045",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_00002007"
@@ -19999,7 +20042,7 @@
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_00002150",
       "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/ENVO_00002149"
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01001964"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_00002200",
       "pred" : "is_a",
@@ -20173,10 +20216,6 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_00000447"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000023",
-      "pred" : "http://purl.obolibrary.org/obo/BFO_0000051",
-      "obj" : "http://purl.obolibrary.org/obo/ENVO_00001999"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01000024",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_00000447"
@@ -20213,17 +20252,9 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_01000686"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000065",
-      "pred" : "http://purl.obolibrary.org/obo/BFO_0000050",
-      "obj" : "http://purl.obolibrary.org/obo/ENVO_00001999"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01000066",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_01001201"
-    }, {
-      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000066",
-      "pred" : "http://purl.obolibrary.org/obo/BFO_0000050",
-      "obj" : "http://purl.obolibrary.org/obo/ENVO_00001999"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01000067",
       "pred" : "is_a",
@@ -20252,10 +20283,6 @@
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01000078",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_01001675"
-    }, {
-      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000078",
-      "pred" : "http://purl.obolibrary.org/obo/BFO_0000050",
-      "obj" : "http://purl.obolibrary.org/obo/ENVO_00001999"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01000079",
       "pred" : "is_a",
@@ -20377,25 +20404,13 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_00000514"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000179",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/ENVO_01001780"
-    }, {
-      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000179",
-      "pred" : "http://purl.obolibrary.org/obo/RO_0002131",
-      "obj" : "http://purl.obolibrary.org/obo/ENVO_00000097"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01000180",
       "pred" : "http://purl.obolibrary.org/obo/RO_0002131",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_00000112"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01000186",
       "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/ENVO_01000179"
-    }, {
-      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000186",
-      "pred" : "http://purl.obolibrary.org/obo/RO_0000086",
-      "obj" : "http://purl.obolibrary.org/obo/ENVO_01000238"
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01001904"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01000197",
       "pred" : "is_a",
@@ -20484,10 +20499,6 @@
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01000295",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_01000325"
-    }, {
-      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000295",
-      "pred" : "http://purl.obolibrary.org/obo/BFO_0000050",
-      "obj" : "http://purl.obolibrary.org/obo/ENVO_00001999"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01000295",
       "pred" : "http://purl.obolibrary.org/obo/RO_0002473",
@@ -20868,10 +20879,6 @@
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01000686",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_01000685"
-    }, {
-      "sub" : "http://purl.obolibrary.org/obo/ENVO_01000686",
-      "pred" : "http://purl.obolibrary.org/obo/RO_0002473",
-      "obj" : "http://purl.obolibrary.org/obo/ENVO_00002149"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01000687",
       "pred" : "http://purl.obolibrary.org/obo/RO_0002131",
@@ -21746,20 +21753,12 @@
       "obj" : "http://purl.obolibrary.org/obo/ENVO_01001370"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01001371",
-      "pred" : "http://purl.obolibrary.org/obo/RO_0000086",
-      "obj" : "http://purl.obolibrary.org/obo/ENVO_01000340"
-    }, {
-      "sub" : "http://purl.obolibrary.org/obo/ENVO_01001371",
       "pred" : "http://purl.obolibrary.org/obo/RO_0002131",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_03400001"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01001378",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_00000501"
-    }, {
-      "sub" : "http://purl.obolibrary.org/obo/ENVO_01001378",
-      "pred" : "http://purl.obolibrary.org/obo/RO_0002220",
-      "obj" : "http://purl.obolibrary.org/obo/ENVO_00001999"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01001428",
       "pred" : "is_a",
@@ -21799,11 +21798,7 @@
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01001505",
       "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/ENVO_01000180"
-    }, {
-      "sub" : "http://purl.obolibrary.org/obo/ENVO_01001505",
-      "pred" : "http://purl.obolibrary.org/obo/RO_0000086",
-      "obj" : "http://purl.obolibrary.org/obo/ENVO_01000340"
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01001371"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01001510",
       "pred" : "is_a",
@@ -22225,6 +22220,18 @@
       "pred" : "http://purl.obolibrary.org/obo/RO_0002473",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_01000814"
     }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01001787",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01001110"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01001788",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01001787"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01001789",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01001787"
+    }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01001790",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_01001110"
@@ -22265,6 +22272,14 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_00000191"
     }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01001904",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01001780"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_01001964",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_00002149"
+    }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_01003002",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_01001687"
@@ -22287,7 +22302,11 @@
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_02000049",
       "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/ENVO_00001999"
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01000617"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/ENVO_02000049",
+      "pred" : "http://purl.obolibrary.org/obo/RO_0002220",
+      "obj" : "http://purl.obolibrary.org/obo/ENVO_01000687"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_02000140",
       "pred" : "is_a",
@@ -22564,10 +22583,6 @@
       "sub" : "http://purl.obolibrary.org/obo/ENVO_03000033",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_00002007"
-    }, {
-      "sub" : "http://purl.obolibrary.org/obo/ENVO_03000033",
-      "pred" : "http://purl.obolibrary.org/obo/RO_0002220",
-      "obj" : "http://purl.obolibrary.org/obo/ENVO_00001999"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_03000033",
       "pred" : "http://purl.obolibrary.org/obo/RO_0002353",
@@ -22885,14 +22900,6 @@
       "pred" : "http://purl.obolibrary.org/obo/RO_0002234",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_03000072"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/ENVO_03000062",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/ENVO_03000044"
-    }, {
-      "sub" : "http://purl.obolibrary.org/obo/ENVO_03000062",
-      "pred" : "http://purl.obolibrary.org/obo/RO_0002234",
-      "obj" : "http://purl.obolibrary.org/obo/ENVO_03000073"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_03000063",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_01000277"
@@ -22922,10 +22929,6 @@
       "obj" : "http://purl.obolibrary.org/obo/ENVO_03000065"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_03000066",
-      "pred" : "http://purl.obolibrary.org/obo/RO_0002220",
-      "obj" : "http://purl.obolibrary.org/obo/ENVO_00001999"
-    }, {
-      "sub" : "http://purl.obolibrary.org/obo/ENVO_03000066",
       "pred" : "http://purl.obolibrary.org/obo/RO_0002354",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_03000044"
     }, {
@@ -22938,10 +22941,6 @@
       "obj" : "http://purl.obolibrary.org/obo/ENVO_03000066"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_03000067",
-      "pred" : "http://purl.obolibrary.org/obo/RO_0002220",
-      "obj" : "http://purl.obolibrary.org/obo/ENVO_00001999"
-    }, {
-      "sub" : "http://purl.obolibrary.org/obo/ENVO_03000067",
       "pred" : "http://purl.obolibrary.org/obo/RO_0002354",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_03000044"
     }, {
@@ -22952,10 +22951,6 @@
       "sub" : "http://purl.obolibrary.org/obo/ENVO_03000068",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_03000066"
-    }, {
-      "sub" : "http://purl.obolibrary.org/obo/ENVO_03000068",
-      "pred" : "http://purl.obolibrary.org/obo/RO_0002220",
-      "obj" : "http://purl.obolibrary.org/obo/ENVO_00001999"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_03000068",
       "pred" : "http://purl.obolibrary.org/obo/RO_0002354",
@@ -22968,10 +22963,6 @@
       "sub" : "http://purl.obolibrary.org/obo/ENVO_03000069",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_03000066"
-    }, {
-      "sub" : "http://purl.obolibrary.org/obo/ENVO_03000069",
-      "pred" : "http://purl.obolibrary.org/obo/RO_0002220",
-      "obj" : "http://purl.obolibrary.org/obo/ENVO_00001999"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_03000069",
       "pred" : "http://purl.obolibrary.org/obo/RO_0002354",
@@ -23639,13 +23630,6 @@
         "fillerId" : "http://purl.obolibrary.org/obo/ENVO_00000020"
       } ]
     }, {
-      "definedClassId" : "http://purl.obolibrary.org/obo/ENVO_00000447",
-      "genusIds" : [ "http://purl.obolibrary.org/obo/ENVO_00002030" ],
-      "restrictions" : [ {
-        "propertyId" : "http://purl.obolibrary.org/obo/RO_0002507",
-        "fillerId" : "http://purl.obolibrary.org/obo/ENVO_00001999"
-      } ]
-    }, {
       "definedClassId" : "http://purl.obolibrary.org/obo/ENVO_00000476",
       "genusIds" : [ "http://purl.obolibrary.org/obo/ENVO_00000475" ],
       "restrictions" : [ {
@@ -23660,15 +23644,8 @@
         "fillerId" : "http://purl.obolibrary.org/obo/ENVO_00000145"
       } ]
     }, {
-      "definedClassId" : "http://purl.obolibrary.org/obo/ENVO_00002030",
-      "genusIds" : [ "http://purl.obolibrary.org/obo/ENVO_00000428" ],
-      "restrictions" : [ {
-        "propertyId" : "http://purl.obolibrary.org/obo/RO_0002507",
-        "fillerId" : "http://purl.obolibrary.org/obo/ENVO_00000063"
-      } ]
-    }, {
       "definedClassId" : "http://purl.obolibrary.org/obo/ENVO_00002150",
-      "genusIds" : [ "http://purl.obolibrary.org/obo/ENVO_00002149" ],
+      "genusIds" : [ "http://purl.obolibrary.org/obo/ENVO_01001964" ],
       "restrictions" : [ {
         "propertyId" : "http://purl.obolibrary.org/obo/RO_0002220",
         "fillerId" : "http://purl.obolibrary.org/obo/ENVO_00000303"
@@ -23693,27 +23670,6 @@
       "restrictions" : [ {
         "propertyId" : "http://purl.obolibrary.org/obo/RO_0001025",
         "fillerId" : "http://purl.obolibrary.org/obo/ENVO_00000447"
-      } ]
-    }, {
-      "definedClassId" : "http://purl.obolibrary.org/obo/ENVO_01000075",
-      "genusIds" : [ "http://purl.obolibrary.org/obo/ENVO_00002269" ],
-      "restrictions" : [ {
-        "propertyId" : "http://purl.obolibrary.org/obo/BFO_0000050",
-        "fillerId" : "http://purl.obolibrary.org/obo/ENVO_00001999"
-      } ]
-    }, {
-      "definedClassId" : "http://purl.obolibrary.org/obo/ENVO_01000076",
-      "genusIds" : [ "http://purl.obolibrary.org/obo/ENVO_00002270" ],
-      "restrictions" : [ {
-        "propertyId" : "http://purl.obolibrary.org/obo/BFO_0000050",
-        "fillerId" : "http://purl.obolibrary.org/obo/ENVO_00001999"
-      } ]
-    }, {
-      "definedClassId" : "http://purl.obolibrary.org/obo/ENVO_01000077",
-      "genusIds" : [ "http://purl.obolibrary.org/obo/ENVO_01000259" ],
-      "restrictions" : [ {
-        "propertyId" : "http://purl.obolibrary.org/obo/BFO_0000050",
-        "fillerId" : "http://purl.obolibrary.org/obo/ENVO_00001999"
       } ]
     }, {
       "definedClassId" : "http://purl.obolibrary.org/obo/ENVO_01000268",
@@ -23756,13 +23712,6 @@
       "restrictions" : [ {
         "propertyId" : "http://purl.obolibrary.org/obo/RO_0002507",
         "fillerId" : "http://purl.obolibrary.org/obo/ENVO_00002006"
-      } ]
-    }, {
-      "definedClassId" : "http://purl.obolibrary.org/obo/ENVO_01000320",
-      "genusIds" : [ "http://purl.obolibrary.org/obo/ENVO_01000254" ],
-      "restrictions" : [ {
-        "propertyId" : "http://purl.obolibrary.org/obo/RO_0002507",
-        "fillerId" : "http://purl.obolibrary.org/obo/ENVO_00001999"
       } ]
     }, {
       "definedClassId" : "http://purl.obolibrary.org/obo/ENVO_01000321",
@@ -23911,6 +23860,20 @@
         "fillerId" : "http://purl.obolibrary.org/obo/ENVO_01000814"
       } ]
     }, {
+      "definedClassId" : "http://purl.obolibrary.org/obo/ENVO_01001370",
+      "genusIds" : [ "http://purl.obolibrary.org/obo/ENVO_01001790" ],
+      "restrictions" : [ {
+        "propertyId" : "http://purl.obolibrary.org/obo/RO_0000086",
+        "fillerId" : "http://purl.obolibrary.org/obo/ENVO_01000370"
+      } ]
+    }, {
+      "definedClassId" : "http://purl.obolibrary.org/obo/ENVO_01001371",
+      "genusIds" : [ "http://purl.obolibrary.org/obo/ENVO_01001370" ],
+      "restrictions" : [ {
+        "propertyId" : "http://purl.obolibrary.org/obo/RO_0000086",
+        "fillerId" : "http://purl.obolibrary.org/obo/ENVO_01000340"
+      } ]
+    }, {
       "definedClassId" : "http://purl.obolibrary.org/obo/ENVO_01001477",
       "genusIds" : [ "http://purl.obolibrary.org/obo/ENVO_01001479" ],
       "restrictions" : [ {
@@ -23984,6 +23947,13 @@
         "fillerId" : "http://purl.obolibrary.org/obo/ENVO_01000815"
       } ]
     }, {
+      "definedClassId" : "http://purl.obolibrary.org/obo/ENVO_01001787",
+      "genusIds" : [ "http://purl.obolibrary.org/obo/ENVO_01001110" ],
+      "restrictions" : [ {
+        "propertyId" : "http://purl.obolibrary.org/obo/RO_0002507",
+        "fillerId" : "http://purl.obolibrary.org/obo/ENVO_00000063"
+      } ]
+    }, {
       "definedClassId" : "http://purl.obolibrary.org/obo/ENVO_01001790",
       "genusIds" : [ "http://purl.obolibrary.org/obo/ENVO_01001110" ],
       "restrictions" : [ {
@@ -24005,11 +23975,18 @@
         "fillerId" : "http://purl.obolibrary.org/obo/ENVO_01000815"
       } ]
     }, {
-      "definedClassId" : "http://purl.obolibrary.org/obo/ENVO_02000049",
-      "genusIds" : [ "http://purl.obolibrary.org/obo/ENVO_00001999" ],
+      "definedClassId" : "http://purl.obolibrary.org/obo/ENVO_01001904",
+      "genusIds" : [ "http://purl.obolibrary.org/obo/ENVO_01001780" ],
       "restrictions" : [ {
-        "propertyId" : "http://purl.obolibrary.org/obo/RO_0002220",
-        "fillerId" : "http://purl.obolibrary.org/obo/ENVO_00000303"
+        "propertyId" : "http://purl.obolibrary.org/obo/RO_0000086",
+        "fillerId" : "http://purl.obolibrary.org/obo/ENVO_01000238"
+      } ]
+    }, {
+      "definedClassId" : "http://purl.obolibrary.org/obo/ENVO_01001964",
+      "genusIds" : [ "http://purl.obolibrary.org/obo/ENVO_00002149" ],
+      "restrictions" : [ {
+        "propertyId" : "http://purl.obolibrary.org/obo/BFO_0000050",
+        "fillerId" : "http://purl.obolibrary.org/obo/ENVO_00000016"
       } ]
     }, {
       "definedClassId" : "http://purl.obolibrary.org/obo/ENVO_02500003",

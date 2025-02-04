@@ -1,8 +1,9 @@
 format-version: 1.2
-data-version: envo/releases/2024-07-01/subsets/environmental_hazards.owl
+data-version: envo/releases/2025-02-04/subsets/environmental_hazards.owl
 subsetdef: disposition_slim "Disposition slim"
 subsetdef: environmental_hazards "environmental_hazards"
 subsetdef: EnvO-Lite-GSC "EnvO-Lite-GSC"
+subsetdef: ENVO:03605010 "Root of the NMDC environmental context value set hierarchy. This property organizes subset properties used to annotate EnvO classes relevant for MIxS environmental context fields (e.g., env_broad_scale, env_local_scale, env_medium_scale). This structure guides data annotation in systems like NCBI BioSample, refining recommendations from the ENVO-MIxS integration guide, addressing questions such as 'Which EnvO classes are reasonable for populating the env_broad_scale field in a soil sample versus a water sample.\""
 subsetdef: envoANZSoil "envoANZSoil"
 subsetdef: envoAstro "envoAstro"
 subsetdef: envoAtmo "envoAtmo"
@@ -25,7 +26,7 @@ subsetdef: value_slim "Value slim"
 subsetdef: wwfBiome "wwfBiome"
 synonymtypedef: OMO:0003004 "plural form"
 ontology: envo/subsets/environmental_hazards
-property_value: owl:versionInfo "2024-07-01" xsd:string
+property_value: owl:versionInfo "2025-02-04" xsd:string
 
 [Term]
 id: ENVO:00000020
@@ -359,7 +360,7 @@ xref: TGN:21642
 xref: TGN:21645
 is_a: ENVO:00000109 ! woodland area
 intersection_of: ENVO:00000109 ! woodland area
-intersection_of: overlaps ENVO:01001243 ! forest ecosystem
+intersection_of: overlaps ENVO:01001243 ! forest
 
 [Term]
 id: ENVO:00000134
@@ -543,8 +544,7 @@ relationship: part_of ENVO:01000817 ! biosphere
 id: ENVO:00000446
 name: terrestrial biome
 namespace: ENVO
-def: "A biome which is  primarily or completely situated on a landmass." [https://en.wikipedia.org/wiki/Biome#Terrestrial_biomes]
-synonym: "terrestrial realm" RELATED []
+def: "A terrestrial ecosystem which is in its climactic successional state." [https://en.wikipedia.org/wiki/Biome#Terrestrial_biomes]
 xref: LTER:798
 xref: SPIRE:Terrestrial
 is_a: ENVO:00000428 ! biome
@@ -1462,7 +1462,7 @@ namespace: ENVO
 def: "A wildfire which occurs in a forest, primarily consuming vegetation as fuel." [http://www.emdat.be/Glossary]
 subset: environmental_hazards
 is_a: ENVO:01001292 ! land fire
-relationship: has_participant ENVO:01001243 ! forest ecosystem
+relationship: has_participant ENVO:01001243 ! forest
 relationship: occurs_in ENVO:00000111 ! forested area
 
 [Term]
@@ -2191,7 +2191,7 @@ xref: https://en.wikipedia.org/wiki/Canopy
 xref: LTER:82
 xref: SWEETRealm:Canopy
 is_a: ENVO:01001242 ! canopy
-relationship: part_of ENVO:01001243 ! forest ecosystem
+relationship: part_of ENVO:01001243 ! forest
 
 [Term]
 id: ENVO:01001242
@@ -2206,13 +2206,13 @@ is_a: ENVO:01000355 ! vegetation layer
 
 [Term]
 id: ENVO:01001243
-name: forest ecosystem
+name: forest
 namespace: ENVO
 def: "An ecosystem which is determined by communities of plants with a tree growth form and in which members of those communities form continuous or discontinuous regions of canopy cover." [http://www.fao.org/docrep/017/ap862e/ap862e00.pdf] {comment="https://www1.usgs.gov/csas/nvcs/nvcsGetUnitDetails?elementGlobalId=860217"}
 comment: The definitions of forest can vary greatly, and different classes will be needed to support the major categories. Tree cover alone is not enough to distinguish between forests and plantations. The international definition proposed by the 2010 FAO Forestry Resource Assessment: "land spanning more than 0.5 ha with trees higher than 5 metres and canopy cover of more than 10 percent, or trees able to reach these thresholds in situ . It does not include land that is predominantly under agricultural or urban land use." - FAO.  2010. Global forest resources assessment 2010, Main report, FAO Forestry Paper 163. Rome.
+synonym: "forest ecosystem" EXACT []
 is_a: ENVO:01001790 ! terrestrial ecosystem
 relationship: has_part ENVO:01001239 ! forest canopy
-property_value: IAO:0000116 "The correct usage of FLOPO terms in the axiomatisation needs to be confirmed." xsd:string
 
 [Term]
 id: ENVO:01001276
@@ -3070,11 +3070,6 @@ namespace: ENVO
 xref: RO:0002176
 
 [Typedef]
-id: contains
-namespace: ENVO
-xref: RO:0001019
-
-[Typedef]
 id: contains_process
 namespace: ENVO
 xref: BFO:0000067
@@ -3274,6 +3269,11 @@ namespace: ENVO
 xref: RO:0002212
 
 [Typedef]
+id: obsolete_contains
+namespace: ENVO
+xref: RO:0001019
+
+[Typedef]
 id: obsolete_determined_by
 name: obsolete determined by
 namespace: ENVO
@@ -3347,6 +3347,11 @@ namespace: ENVO
 xref: RO:0002608
 
 [Typedef]
+id: quality_of
+namespace: ENVO
+xref: RO:0000080
+
+[Typedef]
 id: realized_in
 namespace: ENVO
 xref: BFO:0000054
@@ -3371,7 +3376,7 @@ xref: ENVO:02500016
 property_value: IAO:0000112 "Afforestation results in the expansion of a forest." xsd:string
 
 [Typedef]
-id: results_in_formation_of
+id: results_in_formation_of_anatomical_entity
 namespace: ENVO
 xref: RO:0002297
 
