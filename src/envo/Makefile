@@ -120,7 +120,6 @@ ALL_MODS_CSV = $(patsubst %, modules/%.csv, $(MODS))
 $(SRC): $(PRE_SRC)
 	$(OWLTOOLS) $(USECAT) $<  $(patsubst %, --remove-import-declaration $(OBO)/envo/modules/%.owl, $(MODS)) -o $@.tmp
 	$(OWLTOOLS) $(USECAT) $@.tmp  $(ALL_MODS_OWL) --merge-support-ontologies -o $@
-	# modules/nmdc_env_context_subset_membership.owl
 
 # ----------------------------------------
 # Export formats
@@ -156,7 +155,7 @@ $(ONT).json: $(ONT)-full.owl
 # by default we use ELK to perform a reason-relax-reduce chain
 # after that we annotate the ontology with the release versionInfo
 
-OTHER_SRC = 
+OTHER_SRC = robot_templates/nmdc_env_context_subset_membership.owl
 
 
 $(ONTOLOGYTERMS): $(SRC) $(OTHER_SRC)
@@ -571,12 +570,11 @@ modules/ebi_biomes.owl: modules/ebi_biomes.csv
 .PHONY: nmdc-robot-clean nmdc-robot-all
 
 nmdc-robot-clean:
-	rm -rf modules/nmdc_env_context_subset_membership.owl
+	rm -rf robot_templates/nmdc_env_context_subset_membership.owl
 
-nmdc-robot-all: nmdc-robot-clean modules/nmdc_env_context_subset_membership.owl
+nmdc-robot-all: nmdc-robot-clean robot_templates/nmdc_env_context_subset_membership.owl
 
-modules/nmdc_env_context_subset_membership.owl: modules/nmdc_env_context_subset_membership.tsv # this TSV will be built in https://github.com/microbiomedata/submission-schema
-	# not called by all or all_modules yet since it's a TSV not CSV. won't work for all_modules anyway since it's a ROBOT not DOSDP template
+robot_templates/nmdc_env_context_subset_membership.owl: robot_templates/nmdc_env_context_subset_membership.tsv # this TSV will be built in https://github.com/microbiomedata/submission-schema
 	$(ROBOT) template --template $< -o $@.tmp.owl && mv $@.tmp.owl $@ # why not just output to $@ ?
 
 
