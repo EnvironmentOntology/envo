@@ -9,12 +9,13 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:obo1="http://purl.obolibrary.org/obo/"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:terms="http://purl.org/dc/terms/"
      xmlns:elements="http://www.geneontology.org/formats/oboInOwl#http://purl.org/dc/elements/1.1/"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
      xmlns:envo-basic="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/envo/subsets/envoPlastics.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/envo/releases/2024-07-01/subsets/envoPlastics.owl"/>
-        <owl:versionInfo>2024-07-01</owl:versionInfo>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/envo/releases/2025-02-05/subsets/envoPlastics.owl"/>
+        <owl:versionInfo>2025-02-05</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -27,6 +28,15 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ENVO_03605010 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/ENVO_03605010">
+        <rdfs:comment>Root of the NMDC environmental context value set hierarchy. This property organizes subset properties used to annotate EnvO classes relevant for MIxS environmental context fields (e.g., env_broad_scale, env_local_scale, env_medium_scale). This structure guides data annotation in systems like NCBI BioSample, refining recommendations from the ENVO-MIxS integration guide, addressing questions such as &apos;Which EnvO classes are reasonable for populating the env_broad_scale field in a soil sample versus a water sample.&quot;</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#SubsetProperty"/>
+    </owl:AnnotationProperty>
     
 
 
@@ -333,6 +343,18 @@
     
 
 
+    <!-- http://purl.org/dc/terms/contributor -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/contributor"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/created -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/created"/>
+    
+
+
     <!-- http://www.geneontology.org/formats/oboInOwl#SubsetProperty -->
 
     <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#SubsetProperty">
@@ -496,6 +518,12 @@
     <!-- http://www.geneontology.org/formats/oboInOwl#http://purl.obolibrary.org/obo/IAO_0000119 -->
 
     <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#http://purl.obolibrary.org/obo/IAO_0000119"/>
+    
+
+
+    <!-- http://www.geneontology.org/formats/oboInOwl#http://purl.org/dc/elements/1.1/contributor -->
+
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#http://purl.org/dc/elements/1.1/contributor"/>
     
 
 
@@ -802,6 +830,17 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/RO_0000080 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0000080">
+        <oboInOwl:hasDbXref>RO:0000080</oboInOwl:hasDbXref>
+        <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>quality_of</oboInOwl:id>
+        <oboInOwl:shorthand>quality_of</oboInOwl:shorthand>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/RO_0000085 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0000085">
@@ -885,8 +924,8 @@
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0001019">
         <oboInOwl:hasDbXref>RO:0001019</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>contains</oboInOwl:id>
-        <oboInOwl:shorthand>contains</oboInOwl:shorthand>
+        <oboInOwl:id>obsolete_contains</oboInOwl:id>
+        <oboInOwl:shorthand>obsolete_contains</oboInOwl:shorthand>
     </owl:ObjectProperty>
     
 
@@ -1130,8 +1169,8 @@
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002297">
         <oboInOwl:hasDbXref>RO:0002297</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>results_in_formation_of</oboInOwl:id>
-        <oboInOwl:shorthand>results_in_formation_of</oboInOwl:shorthand>
+        <oboInOwl:id>results_in_formation_of_anatomical_entity</oboInOwl:id>
+        <oboInOwl:shorthand>results_in_formation_of_anatomical_entity</oboInOwl:shorthand>
     </owl:ObjectProperty>
     
 
@@ -1393,7 +1432,7 @@
     <!-- http://purl.obolibrary.org/obo/ENVO_00000016 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_00000016">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_00001999"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000617"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
@@ -1403,10 +1442,10 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002473"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00002149"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001964"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo1:IAO_0000115>A large expanse of saline water usually connected with an ocean.</obo1:IAO_0000115>
+        <obo1:IAO_0000115>A lentic water body which is wholly or partly surrounded by land and either connected to or derived from a part of an ocean.</obo1:IAO_0000115>
         <oboInOwl:hasDbXref>EcoLexicon:sea</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>FTT:233</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>FTT:830</oboInOwl:hasDbXref>
@@ -1421,6 +1460,7 @@
         <oboInOwl:hasNarrowSynonym>open water</oboInOwl:hasNarrowSynonym>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:00000016</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605018"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoMarine"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar"/>
         <rdfs:label>sea</rdfs:label>
@@ -1428,7 +1468,7 @@
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000016"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>A large expanse of saline water usually connected with an ocean.</owl:annotatedTarget>
+        <owl:annotatedTarget>A lentic water body which is wholly or partly surrounded by land and either connected to or derived from a part of an ocean.</owl:annotatedTarget>
         <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Sea</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
@@ -1612,6 +1652,7 @@
         <oboInOwl:hasRelatedSynonym>seashore</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>strand</oboInOwl:hasRelatedSynonym>
         <oboInOwl:id>ENVO:00000304</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605023"/>
         <rdfs:label>shore</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -1844,6 +1885,7 @@
         <oboInOwl:hasRelatedSynonym>SHOR</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>coastline</oboInOwl:hasRelatedSynonym>
         <oboInOwl:id>ENVO:00000486</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605014"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPlastics"/>
         <rdfs:comment>1) this term is usually used for larger water bodies like lakes and oceans, 2) that the actual spatial extent of a shoreline, and the sharpness of its boundaries, is often arbitrarily or operationally defined, and 3) this term is for the physical shoreline, not the one- or two-dimensional representation of shorelines.</rdfs:comment>
         <rdfs:label>shoreline</rdfs:label>
@@ -1901,6 +1943,7 @@
         <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Stream_bed</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:00000501</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605023"/>
         <rdfs:label>submerged bed</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -1937,6 +1980,7 @@
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:hasRelatedSynonym>disposal site</oboInOwl:hasRelatedSynonym>
         <oboInOwl:id>ENVO:00000533</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605014"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPlastics"/>
         <rdfs:label>landfill</rdfs:label>
     </owl:Class>
@@ -1954,26 +1998,6 @@
         <owl:annotatedTarget>disposal site</owl:annotatedTarget>
         <oboInOwl:hasDbXref>ADL:FTT</oboInOwl:hasDbXref>
     </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/ENVO_00001999 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_00001999">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000617"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000819"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo1:IAO_0000115>A lentic water body which is composed primarily of marine water.</obo1:IAO_0000115>
-        <oboInOwl:hasExactSynonym>body of marine water</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym>marine waterbody</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>ENVO:00001999</oboInOwl:id>
-        <rdfs:label>marine water body</rdfs:label>
-    </owl:Class>
     
 
 
@@ -1995,6 +2019,7 @@
         <oboInOwl:hasRelatedSynonym>flank</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>side</oboInOwl:hasRelatedSynonym>
         <oboInOwl:id>ENVO:00002000</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605014"/>
         <rdfs:label>slope</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -2017,6 +2042,7 @@
         <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Water</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:00002006</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605019"/>
         <rdfs:label>liquid water</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -2040,6 +2066,7 @@
         <oboInOwl:hasExactSynonym>salt water</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:00002010</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605019"/>
         <rdfs:comment>The threshold salt concentration for classifying water as saline varies, but typically begins at about 1,000 to 3,000 parts salt per million parts water or 0.1–0.3% salt by weight.</rdfs:comment>
         <rdfs:label>saline water</rdfs:label>
     </owl:Class>
@@ -2050,18 +2077,20 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_00002149">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_00002010"/>
-        <obo1:IAO_0000115>Water which has physicochemical properties that have been determined by the processes occuring in a sea or ocean.</obo1:IAO_0000115>
+        <obo1:IAO_0000115>Saline water which has has been formed as a result of oceanogenesis and which has its composition and properties maintained through processes including hydrological cycling, continental weathering, porewater burial, mineral deposition, ion exchange reactions, and ecological processes.</obo1:IAO_0000115>
         <obo1:IAO_0000116>When we have more classes representing the various processes which make seawater seawater, we can further axiomatise this class.</obo1:IAO_0000116>
+        <terms:contributor rdf:resource="https://orcid.org/0000-0002-4366-3088"/>
         <oboInOwl:hasDbXref>EcoLexicon:sea_water</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>LTER:701</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>SWEETRealm:SeaWater</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Sea_water</oboInOwl:hasDbXref>
-        <oboInOwl:hasExactSynonym>ocean water</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>seawater</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasNarrowSynonym>sea water</oboInOwl:hasNarrowSynonym>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:00002149</oboInOwl:id>
-        <rdfs:comment>This definition refers to water that is actually in a sea or ocean. This water may have a wide range of salinity levels.</rdfs:comment>
-        <rdfs:label>sea water</rdfs:label>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605019"/>
+        <rdfs:comment>This definition is scoped to Earth&apos;s ocean, although it may also be applied to other telluric planets, moons, and similar astronomical bodies. As more evidence of other ocean types (and thus ocean water) emerge, this class may be made a subclass of a more general &quot;ocean&quot; class, and its label changed accordingly. This classes PURL / PID will remain stable. https://en.wikipedia.org/wiki/Planetary_oceanography</rdfs:comment>
+        <rdfs:label>ocean water</rdfs:label>
     </owl:Class>
     
 
@@ -2204,18 +2233,7 @@
     <!-- http://purl.obolibrary.org/obo/ENVO_01000320 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000320">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/ENVO_01000254"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002507"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00001999"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <obo1:IAO_0000115>A marine environment and enviroment which is determined by a marine water body.</obo1:IAO_0000115>
+        <obo1:IAO_0000115>An enviroment system which is determined by an ocean or sea.</obo1:IAO_0000115>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:01000320</oboInOwl:id>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar"/>
@@ -2224,8 +2242,9 @@
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000320"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>A marine environment and enviroment which is determined by a marine water body.</owl:annotatedTarget>
+        <owl:annotatedTarget>An enviroment system which is determined by an ocean or sea.</owl:annotatedTarget>
         <oboInOwl:hasDbXref>NM:nm</oboInOwl:hasDbXref>
+        <elements:contributor>https://orcid.org/0000-0002-4366-3088</elements:contributor>
     </owl:Axiom>
     
 
@@ -2336,6 +2355,8 @@
         <obo1:IAO_0000115>A coast is the area where land meets the sea, ocean, or lake.</obo1:IAO_0000115>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:01000687</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605018"/>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605023"/>
         <rdfs:comment>Used for both marine and lake coasts. The boundary of the coast is fuzzy and it overlaps both the water body and land in quesiton. Compared to &apos;shore&apos;</rdfs:comment>
         <rdfs:label>coast</rdfs:label>
     </owl:Class>
@@ -2351,7 +2372,7 @@
     <!-- http://purl.obolibrary.org/obo/ENVO_01000741 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000741">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_02500000"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001260"/>
         <obo1:IAO_0000115>A process during which materials deemed as waste are separated and converted into a form which can be used as input by the same processes which generated them.</obo1:IAO_0000115>
         <dc:contributor rdf:resource="https://orcid.org/0000-0002-2996-719X"/>
         <dc:contributor rdf:resource="https://orcid.org/0000-0002-8166-0486"/>
@@ -2364,7 +2385,7 @@
         <oboInOwl:id>ENVO:01000741</oboInOwl:id>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPlastics"/>
         <rdfs:comment>This has been created for SDGIO. Revision is likely, but the general meaning should be stable. The frame of reference for determining what is &apos;waste&apos; and what is a  &apos;resource&apos; is unclear.</rdfs:comment>
-        <rdfs:label>recycling process</rdfs:label>
+        <rdfs:label>waste recycling process</rdfs:label>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000741"/>
@@ -2827,6 +2848,7 @@
         <oboInOwl:hasExactSynonym>water body surface</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:01001191</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605018"/>
         <rdfs:label>water surface</rdfs:label>
     </owl:Class>
     
@@ -2943,12 +2965,6 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01001378">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000501"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002220"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00001999"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <obo1:IAO_0000115>A submerged bed which underlies a marine water body.</obo1:IAO_0000115>
         <dc:contributor rdf:resource="https://orcid.org/0000-0002-2996-719X"/>
         <dc:contributor rdf:resource="https://orcid.org/0000-0002-8166-0486"/>
@@ -3282,6 +3298,31 @@ Sea surface layer is also used to refer to the surfaces of oceans.</rdfs:comment
     
 
 
+    <!-- http://purl.obolibrary.org/obo/ENVO_01001964 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01001964">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/ENVO_00002149"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000016"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_00002149"/>
+        <obo1:IAO_0000115>Ocean water which is part of a sea and which has its properties and composition more strongly influenced by terrestrial processes - such as river runoff, groundwater seepage, aeolian transport of dust - than waters of the open ocean.</obo1:IAO_0000115>
+        <dc:creator rdf:resource="https://orcid.org/0000-0002-4366-3088"/>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-12-09T18:37:03Z</dc:date>
+        <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>ENVO:01001964</oboInOwl:id>
+        <rdfs:label>seawater</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/ENVO_02000140 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_02000140">
@@ -3299,6 +3340,19 @@ Sea surface layer is also used to refer to the surfaces of oceans.</rdfs:comment
         <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Fluid</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>https://github.com/EnvironmentOntology/envo/issues/940</oboInOwl:hasDbXref>
     </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ENVO_02000178 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_02000178">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_02500026"/>
+        <terms:contributor rdf:resource="https://orcid.org/0000-0002-6601-2165"/>
+        <terms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-08-05T21:21:15Z</terms:created>
+        <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>ENVO:02000178</oboInOwl:id>
+        <rdfs:label>anthropogenic modulation of pollution</rdfs:label>
+    </owl:Class>
     
 
 
@@ -3394,6 +3448,7 @@ Sea surface layer is also used to refer to the surfaces of oceans.</rdfs:comment
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_02000178"/>
         <obo1:IAO_0000115>A planned process during which the amount of pollutants released into an environmental system is regulated.</obo1:IAO_0000115>
         <oboInOwl:hasNarrowSynonym>pollution prevention</oboInOwl:hasNarrowSynonym>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
@@ -3493,6 +3548,7 @@ Sea surface layer is also used to refer to the surfaces of oceans.</rdfs:comment
         <oboInOwl:hasExactSynonym>menschengemachter Abfall</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:03500005</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605014"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPlastics"/>
         <rdfs:comment>Very large objects that are discarded are typically considered &quot;debris&quot;, but this term is loosely defined and there are no standard size classifications which can be used to distinguish debris from litter.</rdfs:comment>
         <rdfs:label>anthropogenic litter</rdfs:label>

@@ -22,10 +22,11 @@ is_a: BFO:0000001 ! entity
 [Term]
 id: BFO:0000004
 name: independent continuant
-def: "A continuant that is a bearer of quality and realizable entity entities, in which other entities inhere and which itself cannot inhere in anything." []
 def: "b is an independent continuant = Def. b is a continuant which is such that there is no c and no t such that b s-depends_on c at t. (axiom label in BFO2 Reference: [017-002])" []
 is_a: BFO:0000002 ! continuant
 disjoint_from: BFO:0000020 ! specifically dependent continuant
+disjoint_from: BFO:0000020 ! specifically dependent continuant
+disjoint_from: BFO:0000031 ! generically dependent continuant
 
 [Term]
 id: BFO:0000006
@@ -47,7 +48,6 @@ is_a: BFO:0000003 ! occurrent
 [Term]
 id: BFO:0000015
 name: process
-def: "An occurrent that has temporal proper parts and for some time t, p s-depends_on some material entity at t." []
 def: "p is a process = Def. p is an occurrent that has temporal proper parts and for some time t, p s-depends_on some material entity at t. (axiom label in BFO2 Reference: [083-003])" []
 is_a: BFO:0000003 ! occurrent
 
@@ -72,10 +72,10 @@ is_a: BFO:0000020 ! specifically dependent continuant
 [Term]
 id: BFO:0000020
 name: specifically dependent continuant
-def: "A continuant that inheres in or is borne by other entities. Every instance of A requires some specific instance of B which must always be the same." []
 def: "b is a relational specifically dependent continuant = Def. b is a specifically dependent continuant and there are n &gt; 1 independent continuants c1, … cn which are not spatial regions are such that for all 1  i &lt; j  n, ci  and cj share no common parts, are such that for each 1  i  n, b s-depends_on ci at every time t during the course of b’s existence (axiom label in BFO2 Reference: [131-004])" []
 def: "b is a specifically dependent continuant = Def. b is a continuant & there is some independent continuant c which is not a spatial region and which is such that b s-depends_on c at every time t during the course of b’s existence. (axiom label in BFO2 Reference: [050-003])" []
 is_a: BFO:0000002 ! continuant
+disjoint_from: BFO:0000031 ! generically dependent continuant
 
 [Term]
 id: BFO:0000023
@@ -106,7 +106,6 @@ is_a: BFO:0000040 ! material entity
 [Term]
 id: BFO:0000031
 name: generically dependent continuant
-def: "A continuant that is dependent on one or other independent continuant bearers. For every instance of A requires some instance of (an independent continuant type) B but which instance of B serves can change from time to time." []
 def: "b is a generically dependent continuant = Def. b is a continuant that g-depends_on one or more other entities. (axiom label in BFO2 Reference: [074-001])" []
 is_a: BFO:0000002 ! continuant
 
@@ -420,6 +419,12 @@ id: PATO:0001741
 name: radioactive
 def: "A radiation quality inhering in bearer by virtue of the bearer's exhibiting or being caused by radioactivity." []
 is_a: PATO:0001740 ! activity (of a radionuclide)
+
+[Term]
+id: PATO:0001906
+name: movement quality
+def: "A physical quality inhering in a bearer by virtue of the bearer's participation in movement." []
+is_a: PATO:0001018 ! physical quality
 
 [Term]
 id: PATO:0001985
