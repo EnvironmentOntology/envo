@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: envo/releases/2025-02-04/subsets/envoPolar.owl
+data-version: envo/releases/2025-02-05/subsets/envoPolar.owl
 subsetdef: disposition_slim "Disposition slim"
 subsetdef: environmental_hazards "environmental_hazards"
 subsetdef: EnvO-Lite-GSC "EnvO-Lite-GSC"
@@ -26,7 +26,7 @@ subsetdef: value_slim "Value slim"
 subsetdef: wwfBiome "wwfBiome"
 synonymtypedef: OMO:0003004 "plural form"
 ontology: envo/subsets/envoPolar
-property_value: owl:versionInfo "2025-02-04" xsd:string
+property_value: owl:versionInfo "2025-02-05" xsd:string
 
 [Term]
 id: ENVO:00000000
@@ -66,6 +66,8 @@ name: ocean
 namespace: ENVO
 def: "A lentic water body which has been formed as a result of oceanogenesis and constitutes the majority of an astronomical body's hydrosphere." []
 comment: As evidence for oceans differing from that of Earth emerge, the label "ocean" may be used for a more general class, with this class being relabelled as "salt-water ocean" or similar. The PURL/PID of this class will remain unchanged. See https://en.wikipedia.org/wiki/Planetary_oceanography
+subset: ENVO:03605018
+subset: ENVO:03605023
 subset: envoMarine
 subset: envoPolar
 synonym: "ocean region" RELATED [ADL:FTT]
@@ -85,6 +87,7 @@ id: ENVO:00000016
 name: sea
 namespace: ENVO
 def: "A lentic water body which is wholly or partly surrounded by land and either connected to or derived from a part of an ocean." [https://en.wikipedia.org/wiki/Sea]
+subset: ENVO:03605018
 subset: envoMarine
 subset: envoPolar
 synonym: "channel" NARROW []
@@ -108,6 +111,8 @@ id: ENVO:00000020
 name: lake
 namespace: ENVO
 def: "A body of water or other liquid of considerable size contained in a depression on a landmass." [https://en.wikipedia.org/wiki/Lake]
+subset: ENVO:03605014
+subset: ENVO:03605018
 subset: envoPolar
 synonym: "broad" RELATED []
 synonym: "catch basin" NARROW [USGS:SDTS]
@@ -141,6 +146,7 @@ id: ENVO:00000021
 name: freshwater lake
 namespace: ENVO
 def: "A lake of whose water contains low concentrations of salts." [https://en.wikipedia.org/wiki/Freshwater]
+subset: ENVO:03605018
 subset: envoPolar
 synonym: "FreshwaterLake" EXACT [NASA:earthrealm]
 xref: SWEETRealm:FreshwaterLake
@@ -152,6 +158,8 @@ id: ENVO:00000023
 name: stream
 namespace: ENVO
 def: "A watercourse which is linear and flows across the solid portion of a planetary surface." [USGS:http\://mapping.usgs.gov/www/ti/GNIS/gnis_users_guide_appendixc.html]
+subset: ENVO:03605014
+subset: ENVO:03605018
 synonym: "beck" RELATED [USGS:SDTS]
 synonym: "braided stream" NARROW [USGS:SDTS]
 synonym: "brook" RELATED [ADL:FTT]
@@ -268,6 +276,8 @@ id: ENVO:00000039
 name: fjord
 namespace: ENVO
 def: "A long and narrow sea inlet with high steeply sloped walled sides. A fjord is a landform created during a period of glaciation." [https://en.wikipedia.org/wiki/Fjord]
+subset: ENVO:03605014
+subset: ENVO:03605018
 subset: envoPolar
 xref: EcoLexicon:fiord
 xref: FTT:231
@@ -288,6 +298,8 @@ id: ENVO:00000044
 name: peatland
 namespace: ENVO
 def: "A wetland ecosystem which accumulates acidic peat, a deposit of dead plant material." [https://en.wikipedia.org/wiki/Bog]
+subset: ENVO:03605014
+subset: ENVO:03605018
 subset: envoPolar
 synonym: "bog" RELATED [USGS:SDTS]
 synonym: "bog" RELATED [Geonames:feature]
@@ -319,6 +331,8 @@ id: ENVO:00000045
 name: estuary
 namespace: ENVO
 def: "A semi-enclosed coastal body of water with one or more rivers or streams flowing into it, and with a free connection to the open sea." [https://en.wikipedia.org/wiki/Estuary]
+subset: ENVO:03605014
+subset: ENVO:03605018
 synonym: "inlet" RELATED [USGS:SDTS]
 synonym: "mouth" BROAD [USGS:SDTS]
 xref: EcoLexicon:estuary
@@ -383,6 +397,8 @@ id: ENVO:00000067
 name: cave
 namespace: ENVO
 def: "Naturally formed, subterranean open area or chamber." [USGS:SDTS]
+subset: ENVO:03605014
+subset: ENVO:03605018
 synonym: "cavern" RELATED [ADL:FTT]
 synonym: "cavern" RELATED [USGS:SDTS]
 synonym: "grotto" RELATED [USGS:SDTS]
@@ -430,6 +446,8 @@ name: mountain
 namespace: ENVO
 def: "A landform that extends above the surrounding terrain in a limited area." [https://en.wikipedia.org/wiki/Mountain#United_Kingdom, https://www.unep-wcmc.org/resources-and-data/mountain-watch--environmental-change-sustainable-development-in-mountains, https://www.usgs.gov/faqs/what-difference-between-mountain-hill-and-peak-lake-and-pond-or-river-and-creek]
 comment: A mountain is generally steeper than a hill, but there is no universally accepted standard definition for the height of a mountain or a hill although a mountain usually has an identifiable summit. The USGS had previously defined mountains as localised elevations of more than 300 meters; however, the organisation has accepted there are no technical definitions in the US. In ENVO, we primarily use the UNEP-WCMC classification to be compliant with SDG monitoring, but we can host other classifications on request: http://www.fao.org/sustainable-development-goals/indicators/1542/en/
+subset: ENVO:03605014
+subset: ENVO:03605023
 subset: envoPolar
 synonym: "Mountain" EXACT [NASA:earthrealm]
 synonym: "mountains" RELATED [Geonames:feature]
@@ -503,6 +521,8 @@ id: ENVO:00000087
 name: cliff
 namespace: ENVO
 def: "A slope which is part of a rocky elevation and which has a high degree of steepness." [USGS:SDTS]
+subset: ENVO:03605014
+subset: ENVO:03605023
 synonym: "beach scarp" RELATED [USGS:SDTS]
 synonym: "bluff" RELATED [ADL:FTT]
 synonym: "bluff" RELATED [USGS:SDTS]
@@ -563,6 +583,7 @@ id: ENVO:00000098
 name: island
 namespace: ENVO
 def: "Area of dry or relatively dry land surrounded by water or low wetland." [USGS:SDTS]
+subset: ENVO:03605023
 subset: envoPolar
 synonym: "eyot" RELATED []
 synonym: "holm" RELATED []
@@ -594,6 +615,7 @@ name: valley
 namespace: ENVO
 def: "A depression which has been formed as a result of erosion by water or ice and which is low-lying, bordered by higher ground, and especially elongate." [ADL:FTT, https://en.wikipedia.org/wiki/Valley]
 comment: Valleys are typically located between hills our mountains.
+subset: ENVO:03605023
 synonym: "chasm" NARROW [USGS:SDTS]
 synonym: "coulee" NARROW [USGS:SDTS]
 synonym: "dale" NARROW [USGS:SDTS]
@@ -707,6 +729,8 @@ name: glacier
 namespace: ENVO
 def: "An ice mass which is of sufficient mass that the action of gravity upon it overcomes the frictional forces holding it in place, causing it to deform and flow towards lower elevation." [https://en.wikipedia.org/wiki/Glacier]
 comment: The definition of glacier is highly variable. Two main issues exist: 1) Whether or not a mass of ice must currently show movement to be considered a glacier or not and 2) What is the relationship between ice sheets and glaciers (i.e., which is the parent in a parent/child relationship or whether they are distinct terms). {xref="https://orcid.org/0000-0003-4808-4736"}
+subset: ENVO:03605014
+subset: ENVO:03605018
 subset: envoPolar
 synonym: "glacial feature" BROAD [ADL:FTT]
 synonym: "rock glacier" RELATED [USGS:SDTS]
@@ -753,6 +777,7 @@ id: ENVO:00000141
 name: bank
 namespace: ENVO
 def: "The sloping margin of a watercourse, serving to confine it to its natural channel." [MA:ma]
+subset: ENVO:03605014
 synonym: "mount" BROAD [USGS:SDTS]
 synonym: "shore" RELATED [USGS:SDTS]
 xref: EcoLexicon:bank
@@ -800,6 +825,7 @@ id: ENVO:00000155
 name: cirque
 namespace: ENVO
 def: "A depression which is semicircular or crescent-shaped, found towards the crest of a mountain, and formed by the erosional processes caused by the motion of a glacier." [http://www.antarctica.ac.uk/apc/genericterms.html, http://www.thefreedictionary.com/Glacial+cirque, USGS:SDTS]
+subset: ENVO:03605014
 subset: envoPolar
 synonym: "cirque basin" EXACT []
 synonym: "cirques" EXACT [Geonames:feature]
@@ -823,6 +849,7 @@ id: ENVO:00000174
 name: isthmus
 namespace: ENVO
 def: "Narrow section of land in a body of water connecting two larger land areas." [USGS:SDTS]
+subset: ENVO:03605014
 subset: envoPolar
 synonym: "land bridge" RELATED [Getty:TGN]
 synonym: "neck" RELATED [USGS:SDTS]
@@ -892,6 +919,8 @@ id: ENVO:00000182
 name: plateau
 namespace: ENVO
 def: "An elevated and comparatively level expanse of land." [USGS:SDTS]
+subset: ENVO:03605014
+subset: ENVO:03605023
 synonym: "highland" RELATED [Getty:TGN]
 synonym: "intermontane plateau" RELATED [USGS:SDTS]
 synonym: "PLATEAU" EXACT [USGS:SDTS]
@@ -995,6 +1024,7 @@ id: ENVO:00000206
 name: marine neritic zone
 namespace: ENVO
 def: "The water mass of an ocean directly above a continental shelf." [https://en.wikipedia.org/wiki/Ocean]
+subset: ENVO:03605018
 subset: envoMarine
 subset: envoPolar
 xref: EcoLexicon:neritic_zone
@@ -1020,6 +1050,7 @@ id: ENVO:00000208
 name: marine pelagic zone
 namespace: ENVO
 def: "An open ocean region." [https://en.wikipedia.org/wiki/Ocean]
+subset: ENVO:03605018
 subset: envoMarine
 subset: envoPolar
 xref: EcoLexicon:pelagic_zone
@@ -1033,6 +1064,7 @@ id: ENVO:00000209
 name: marine photic zone
 namespace: ENVO
 def: "The zone of an ocean from the surface to where photosynthesis can occur, due to the penetration of light." [https://en.wikipedia.org/wiki/Ocean]
+subset: ENVO:03605018
 subset: envoMarine
 subset: envoPolar
 synonym: "epipelagic zone" EXACT []
@@ -1049,6 +1081,7 @@ id: ENVO:00000210
 name: marine aphotic zone
 namespace: ENVO
 def: "The zone of an ocean below 200m, in which photosynthesis cannot occur due to the lack of light." [https://en.wikipedia.org/wiki/Ocean]
+subset: ENVO:03605018
 subset: envoMarine
 subset: envoPolar
 synonym: "AphoticZone" EXACT [NASA:earthrealm]
@@ -1166,6 +1199,7 @@ id: ENVO:00000283
 name: ridge
 namespace: ENVO
 def: "A long and narrow elevation with steep sides." [USGS:SDTS]
+subset: ENVO:03605014
 synonym: "arete" RELATED [ADL:FTT]
 synonym: "arete" RELATED [USGS:SDTS]
 synonym: "beach cusp" NARROW [USGS:SDTS]
@@ -1272,6 +1306,7 @@ id: ENVO:00000304
 name: shore
 namespace: ENVO
 def: "That part of the land in immediate contact with a body of water including the area between high and low water lines." [USGS:SDTS]
+subset: ENVO:03605023
 synonym: "beach face" RELATED [USGS:SDTS]
 synonym: "coastal zone" BROAD [ADL:FTT]
 synonym: "foreshore" RELATED [USGS:SDTS]
@@ -1362,6 +1397,7 @@ name: vadose zone
 namespace: ENVO
 def: "An interface layer which 1) is primarily composed of solid materials, 2) separates the land surface and phreatic zone, and 3) contains groundwater at atmospheric pressure." [http://wasg.iinet.net.au/terminol.html, https://en.wikipedia.org/wiki/Vadose_zone]
 comment: If the vadose zone includes portions of soil, the water contained therein is termed soil moisture. In fine grained soils, capillary action can cause the pores of the soil to be fully saturated above the water table at a pressure less than atmospheric. In such soils, therefore, the unsaturated zone is the upper section of the vadose zone and not identical to it.
+subset: ENVO:03605014
 synonym: "unsaturated zone" EXACT [https://en.wikipedia.org/wiki/Vadose_zone]
 is_a: ENVO:01001684 ! interface layer
 relationship: adjacent_to ENVO:00000329 ! phreatic zone
@@ -1500,6 +1536,7 @@ id: ENVO:00000394
 name: strait
 namespace: ENVO
 def: "A narrow channel of water that connects two larger bodies of water, and thus lies between two land masses." [https://en.wikipedia.org/wiki/Strait]
+subset: ENVO:03605018
 synonym: "channel" BROAD [ADL:FTT]
 synonym: "watercourse" BROAD [USGS:SDTS]
 xref: EcoLexicon:strait
@@ -1659,6 +1696,8 @@ id: ENVO:00000446
 name: terrestrial biome
 namespace: ENVO
 def: "A terrestrial ecosystem which is in its climactic successional state." [https://en.wikipedia.org/wiki/Biome#Terrestrial_biomes]
+subset: ENVO:03605013
+subset: ENVO:03605022
 xref: LTER:798
 xref: SPIRE:Terrestrial
 is_a: ENVO:00000428 ! biome
@@ -1669,6 +1708,8 @@ name: marine biome
 namespace: ENVO
 def: "A marine ecosystem which is in its climactic successional state." [https://en.wikipedia.org/wiki/Ocean, https://orcid.org/0000-0002-4366-3088, ISBN:978-0-618-45504-1, MA:ma]
 comment: This biome includes open-ocean and unprotected coastal ecosystems, characterized by exposure to wave action, tidal fluctuation, and ocean currents as well as systems that largely resemble these. Water in the marine biome is generally within the salinity range of seawater: 30 to 38 ppt.
+subset: ENVO:03605017
+subset: ENVO:03605022
 subset: envoPolar
 xref: SPIRE:Marine
 is_a: ENVO:01001788 ! marine ecosystem
@@ -1728,6 +1769,9 @@ name: harbour
 namespace: ENVO
 def: "A landform which provides shelter from atmospheric weather and marine currents, waves, and other dynamics." [https://en.wikipedia.org/wiki/Harbor]
 comment: Harbours are often used to store or shelter ships.
+subset: ENVO:03605014
+subset: ENVO:03605018
+subset: ENVO:03605023
 subset: envoPolar
 synonym: "harbor" EXACT []
 xref: https://en.wikipedia.org/wiki/Harbor
@@ -1760,6 +1804,7 @@ id: ENVO:00000475
 name: inlet
 namespace: ENVO
 def: "An opening of the sea into the land, or of a lake into its shore." [https://en.wikipedia.org/wiki/Inlet, USGS:SDTS]
+subset: ENVO:03605018
 subset: envoPolar
 synonym: "anse" RELATED [USGS:SDTS]
 synonym: "arm" RELATED [USGS:SDTS]
@@ -1931,6 +1976,7 @@ id: ENVO:00000488
 name: glacial lake
 namespace: ENVO
 def: "A lake which is primarily composed of glacial meltwater and which fills a depression formed as a result of a glacial erosion process." [https://en.wikipedia.org/wiki/Glacial_lake]
+subset: ENVO:03605018
 subset: envoPolar
 xref: https://en.wikipedia.org/wiki/Glacial_lake
 is_a: ENVO:00000020 ! lake
@@ -1944,6 +1990,7 @@ id: ENVO:00000501
 name: submerged bed
 namespace: ENVO
 def: "The portion of the ground surface which lies below water." [USGS:SDTS]
+subset: ENVO:03605023
 synonym: "BOTTOM" BROAD [USGS:SDTS]
 xref: EcoLexicon:bed
 xref: FTT:804
@@ -1958,6 +2005,7 @@ id: ENVO:00000514
 name: crater
 namespace: ENVO
 def: "A generally circular saucer or bowl-shaped depression caused by explosive action." [Geonames:feature]
+subset: ENVO:03605014
 synonym: "CRATER" EXACT [USGS:SDTS]
 xref: FTT:219
 xref: Geonames:T.CRTR
@@ -1971,6 +2019,7 @@ id: ENVO:00000516
 name: hummock
 namespace: ENVO
 def: "A patch of ground, distinct from and slightly above the surrounding plain or wetland. Often occurs in groups." [Geonames:feature]
+subset: ENVO:03605014
 xref: FTT:783
 xref: Geonames:T.HMCK
 xref: SWEETRealm:Hummock
@@ -2011,6 +2060,8 @@ id: ENVO:00000873
 name: freshwater biome
 namespace: ENVO
 def: "An freshwater ecosystem which is in its climactic successional state." [https://orcid.org/0000-0002-4366-3088, MA:ma]
+subset: ENVO:03605017
+subset: ENVO:03605022
 subset: envoPolar
 xref: SPIRE:Freshwater
 is_a: ENVO:01001789 ! freshwater ecosystem
@@ -2039,6 +2090,7 @@ namespace: ENVO
 def: "An environmental material which is primarily composed of minerals, varying proportions of sand, silt, and clay, organic material such as humus, interstitial gases, liquids, and a broad range of resident micro- and macroorganisms." [https://en.wikipedia.org/wiki/Soil]
 comment: 'In engineering terms, soil is referred to as regolith, or loose rock material that lies above the 'solid geology'. Soil is commonly referred to as "earth" or "dirt"; technically, the term "dirt" should be restricted to displaced soil.' https://en.wikipedia.org/wiki/Soil\n\n" The upper limit of soil is the boundary between soil and air, shallow water, live plants, or plant materials that have not begun to decompose. Areas are not considered to have soil if the surface is permanently covered by water too deep (typically more than 2.5 meters) for the growth of rooted plants.\n\nThe lower boundary that separates soil from the nonsoil underneath is most difficult to define. Soil consists of horizons near the Earth's surface that, in contrast to the underlying parent material, have been altered by the interactions of climate, relief, and living organisms over time. Commonly, soil grades at its lower boundary to hard rock or to earthy materials virtually devoid of animals, roots, or other marks of biological activity. For purposes of classification, the lower boundary of soil is arbitrarily set at 200 cm."  Soil taxonomy, 2nd Ed., quoted in http://www.nrcs.usda.gov/wps/portal/nrcs/detail/soils/edu/?cid=nrcs142p2_054280
 subset: EnvO-Lite-GSC
+subset: ENVO:03605015
 synonym: "regolith" BROAD []
 xref: https://en.wikipedia.org/wiki/Soil
 xref: LTER:535
@@ -2059,6 +2111,7 @@ id: ENVO:00002000
 name: slope
 namespace: ENVO
 def: "A solid astronomical body part which is part of the planetary surface between the peak of an elevation or the bottom of a depression and relatively flat surrounding land." [MA:ma]
+subset: ENVO:03605014
 synonym: "flank" RELATED []
 synonym: "side" RELATED []
 xref: EcoLexicon:slope
@@ -2086,6 +2139,7 @@ id: ENVO:00002006
 name: liquid water
 namespace: ENVO
 def: "An environmental material primarily composed of dihydrogen oxide in its liquid form." [MA:ma]
+subset: ENVO:03605019
 synonym: "water" BROAD []
 xref: EcoLexicon:water
 xref: https://en.wikipedia.org/wiki/Water
@@ -2127,6 +2181,7 @@ name: saline water
 namespace: ENVO
 def: "Water which contains a significant concentration of dissolved salts." []
 comment: The threshold salt concentration for classifying water as saline varies, but typically begins at about 1,000 to 3,000 parts salt per million parts water or 0.1–0.3% salt by weight.
+subset: ENVO:03605019
 synonym: "salt water" EXACT []
 xref: EcoLexicon:saltwater
 xref: https://en.wikipedia.org/wiki/Saline_water
@@ -2140,6 +2195,7 @@ name: fresh water
 namespace: ENVO
 def: "Water which has a low concentration of dissolved solutes, particularly that of sodium chloride." []
 comment: The lower bound of solute concentration required for water to be considered freshwater is variable, but is always less than that of seawater, and often cited as less than 1 gram of solutes per 1 litre of water.
+subset: ENVO:03605019
 subset: envoEmpo
 subset: envoPolar
 synonym: "freshwater" EXACT []
@@ -2156,6 +2212,7 @@ name: hypersaline water
 namespace: ENVO
 def: "Water which contains a highly increased concentration of dissolved salts, surpassing the average salinity of seawater." []
 comment: The average salinity of sea water is assumed to be around 35,000 ppm, equivalent to 35 grams of salt per one liter (or kilogram) of water.
+subset: ENVO:03605019
 subset: envoPolar
 is_a: ENVO:00002010 ! saline water
 property_value: IAO:0000116 "We make no commitment to a particular threshold; this should be described on the data/information layer according to the norms of a discipline, accepted standard, or similar reference." xsd:string
@@ -2165,6 +2222,7 @@ id: ENVO:00002019
 name: brackish water
 namespace: ENVO
 def: "Water which has a higher salinity than fresh water but a lower salinity than marine water." []
+subset: ENVO:03605019
 subset: envoPolar
 xref: EcoLexicon:brackish_water
 xref: https://en.wikipedia.org/wiki/Brackish_water
@@ -2219,6 +2277,7 @@ name: ocean water
 namespace: ENVO
 def: "Saline water which has has been formed as a result of oceanogenesis and which has its composition and properties maintained through processes including hydrological cycling, continental weathering, porewater burial, mineral deposition, ion exchange reactions, and ecological processes." []
 comment: This definition is scoped to Earth's ocean, although it may also be applied to other telluric planets, moons, and similar astronomical bodies. As more evidence of other ocean types (and thus ocean water) emerge, this class may be made a subclass of a more general "ocean" class, and its label changed accordingly. This classes PURL / PID will remain stable. https://en.wikipedia.org/wiki/Planetary_oceanography
+subset: ENVO:03605019
 synonym: "sea water" NARROW []
 synonym: "seawater" EXACT []
 xref: EcoLexicon:sea_water
@@ -2235,6 +2294,7 @@ name: coastal sea water
 namespace: ENVO
 def: "Coastal sea water is sea water that is adjacent to a coast." []
 comment: The limits of what qualifies as "adjacent to" vary greatly. This should be defined on a data level and is left intentionally fuzzy here. The label is "coastal sea water" rather than "coastal water" as some large lakes are often said to have coasts.
+subset: ENVO:03605019
 subset: envoPolar
 synonym: "coastal ocean water" RELATED []
 synonym: "coastal oceanic water" RELATED []
@@ -2250,6 +2310,7 @@ name: sea ice
 namespace: ENVO
 def: "Water ice which has formed by the freezing of sea water." []
 comment: In the United States, NOAA sea ice operations does not include superstructure icing as being sea ice. In sea ice operations however, sea ice is any form of ice found at sea which has originated from the freezing of sea water. It presents the main kind of floating ice encountered at sea. Except where it forms ridges, sea ice is up to a few metres thick, in which respect it differs from shelf ice.  Sea ice may be discontinuous pieces (ice floes) moved on the ocean surface by wind and currents (pack ice), or a motionless sheet attached to the coast (land-fast ice). In brief, it forms first as lolly ice (frazil crystals), thickens into sludge, and coagulates into sheet ice, pancake ice, or into floes of various shapes and sizes. Thereafter, sea ice may develop into pack ice and/or become a form of pressure ice.  Sea ice less than one year old is called first-year ice. Perennial ice is sea ice that survives at least one summer. It may be subdivided into second-year ice and multi-year ice, where multiyear ice has survived at least two summers. {comment="https://orcid.org/0000-0003-4808-4736"}
+subset: ENVO:03605019
 subset: envoPolar
 xref: http://sweetontology.net/realmCryo/SeaIce
 xref: https://en.wikipedia.org/wiki/Sea_ice
@@ -2262,6 +2323,7 @@ id: ENVO:00002236
 name: cryosol
 namespace: ENVO
 def: "Cryosols comprise mineral soils formed in a permafrost environment. Where water is present, it occurs primarily in the form of ice. Cryogenic processes are the dominant soil-forming processes." [FAO:http\://fao.org/ag/agl/agll/wrb/doc/wrb2006final.pdf]
+subset: ENVO:03605015
 subset: envoPolar
 synonym: "gelisol" RELATED []
 xref: https://en.wikipedia.org/wiki/Cryosol
@@ -2273,6 +2335,7 @@ id: ENVO:00002243
 name: histosol
 namespace: ENVO
 def: "Histosols comprise soils formed in organic material. These vary from soils developed in predominantly moss peat in boreal, arctic and subarctic regions, via moss peat, reeds/ sedge peat (fen) and forest peat in temperate regions to mangrove peat and swamp forest peat in the humid tropics. Histosols are found at all altitudes, but the vast majority occurs in lowlands." [FAO:http\://fao.org/ag/agl/agll/wrb/doc/wrb2006final.pdf]
+subset: ENVO:03605015
 xref: https://en.wikipedia.org/wiki/Histosol
 is_a: ENVO:00001998 ! soil
 
@@ -2327,6 +2390,7 @@ name: brine
 namespace: ENVO
 def: "Water saturated or nearly saturated with salt (NaCl)." [https://en.wikipedia.org/wiki/Brine]
 comment: It is used (now less popular than historically) to preserve vegetables, fish, and meat.
+subset: ENVO:03605019
 subset: envoPolar
 xref: EcoLexicon:brine
 xref: https://en.wikipedia.org/wiki/Brine
@@ -2346,6 +2410,7 @@ id: ENVO:00005741
 name: alpine soil
 namespace: ENVO
 def: "Soil which is part of an alpine environment." []
+subset: ENVO:03605015
 subset: envoPolar
 is_a: ENVO:00001998 ! soil
 relationship: has_quality ENVO:01000340 ! alpine
@@ -2368,6 +2433,7 @@ name: underground water
 namespace: ENVO
 def: "Water which has physicochemical properties determined by processes which occur beneath the planetary crust." []
 comment: This class references any water that's under a planetary surface. For water that is in an aquifer, see "groundwater" (ENVO:01001004). Previously, this class included both.
+subset: ENVO:03605019
 subset: envoPolar
 synonym: "subterranean water" RELATED []
 xref: SWEETRealm:UndergroundWater
@@ -2447,6 +2513,8 @@ id: ENVO:00012408
 name: aquifer
 namespace: ENVO
 def: "An underground layer of water-bearing permeable rock or unconsolidated materials (gravel, sand, silt, or clay) from which groundwater can be usefully extracted using a water well." [https://en.wikipedia.org/wiki/Aquifer]
+subset: ENVO:03605014
+subset: ENVO:03605018
 subset: envoPolar
 xref: EcoLexicon:aquifer
 xref: https://en.wikipedia.org/wiki/Aquifer
@@ -2526,6 +2594,7 @@ id: ENVO:01000023
 name: marine pelagic biome
 namespace: ENVO
 def: "The marine pelagic biome (pelagic meaning open sea) is that of the marine water column, from the surface to the greatest depths." [ISBN:978-0-7506-3384-0]
+subset: ENVO:03605017
 subset: envoPolar
 is_a: ENVO:00000447 ! marine biome
 created_by: ORCID:0000-0002-4366-3088
@@ -2536,6 +2605,7 @@ id: ENVO:01000024
 name: marine benthic biome
 namespace: ENVO
 def: "The marine benthic biome (benthic meaning 'bottom') encompasses the seafloor and includes such areas as shores, littoral or intertidal areas, marine coral reefs, and the deep seabed." [ISBN:978-0-7506-3384-0, ORCID:0000-0002-4366-3088]
+subset: ENVO:03605017
 subset: envoPolar
 xref: SPIRE:Benthic
 is_a: ENVO:00000447 ! marine biome
@@ -2547,6 +2617,8 @@ id: ENVO:01000025
 name: marine neritic benthic zone biome
 namespace: ENVO
 def: "The marine neritic zone biome comprises sea floor from the high tide mark to a continental shelf break. This zone generally extends to 200 m below average sea level." [ISBN:978-0-444-82619-0, ISBN:978-0-7506-3384-0, ORCID:0000-0002-4366-3088]
+subset: ENVO:03605017
+subset: ENVO:03605022
 subset: envoPolar
 is_a: ENVO:01000024 ! marine benthic biome
 created_by: ORCID:0000-0002-4366-3088
@@ -2573,6 +2645,7 @@ name: ocean biome
 namespace: ENVO
 def: "A marine biome which is determined by an ocean." [https://en.wikipedia.org/wiki/Ocean, ORCID:0000-0002-4366-3088]
 comment: Ocean biomes are determined by major bodies of saline water, principal components of the hydrosphere. Approximately 71% of the Earth's surface is covered by ocean, a continuous body of water that is customarily divided into several principal oceans and smaller seas. More than half of this area is over 3,000 metres (9,800 ft) deep. Average oceanic salinity is around 35 parts per thousand (ppt) (3.5%), and nearly all seawater has a salinity in the range of 30 to 38 ppt.
+subset: ENVO:03605017
 subset: envoPolar
 intersection_of: ENVO:00000428 ! biome
 intersection_of: determined_by ENVO:00000015 ! ocean
@@ -2873,6 +2946,7 @@ id: ENVO:01000158
 name: marine snow
 namespace: ENVO
 def: "Marine snow is a continuous shower of mostly organic detritus falling from the upper layers of the water column. Its origin lies in activities within the productive photic zone." [https://en.wikipedia.org/wiki/Marine_snow, ORCID:0000-0002-4366-3088]
+subset: ENVO:03605019
 subset: envoPolar
 xref: EcoLexicon:marine_snow
 is_a: ENVO:01001103 ! detritus
@@ -2894,6 +2968,8 @@ id: ENVO:01000180
 name: tundra biome
 namespace: ENVO
 def: "A tundra ecosystem which is in its climactic successional state." []
+subset: ENVO:03605013
+subset: ENVO:03605022
 subset: envoPolar
 subset: wwfBiome
 xref: SPIRE:Tundra
@@ -2916,6 +2992,8 @@ id: ENVO:01000197
 name: broadleaf forest biome
 namespace: ENVO
 def: "A broadleaf forest ecosystem which is in its climactic successional state." []
+subset: ENVO:03605013
+subset: ENVO:03605022
 is_a: ENVO:01000430 ! broadleaf forest
 property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-4366-3088
 creation_date: 2013-04-07T14:31:01Z
@@ -3076,6 +3154,7 @@ name: water ice
 namespace: ENVO
 def: "Ice which is formed from water." [https://en.wikipedia.org/wiki/Ice]
 comment: Water ice can appear transparent or opaque bluish-white color, depending on the presence of impurities or air inclusions. The addition of other materials such as soil may further alter its appearance.\n\nWhen speaking about ice on Earth, usually water ice is meant - the solid, crystalline form of water found in the atmosphere as snow crystals, hail, ice pellets, etc., and on the earth's surface in forms such as hoarfrost, rime, glaze, sea ice, glacier ice, ground ice, frazil, anchor ice, etc.\n\nThis form of water is, strictly speaking, called ice Ih, the Roman numeral I distinguishing it from more than a dozen other phases and the letter h distinguishing it from the metastable cubic phase ice Ic. Ice Ih is the only one of the several known phases of water ice that is stable at commonly occurring temperatures and pressures. (Some of the other forms have very unusual properties, ice VII, for example, being stable only at pressures above 22 400 kg/cm^2, but then existing at temperatures up to about 100C.)\n\nIt has an open structure with a specific gravity of 0.9166 which is slightly less than water; because the water molecules bond to their neighbors covalently only in four directions; it therefore floats on higher density water, where broken molecular bonds permit closer packing. All commonly occurring forms of ice are crystalline, although large single crystals are relatively rare except in glaciers. The ice crystal lattice possesses hexagonal symmetry that manifests itself in the gross forms of such single crystals as are sometimes found in snow. At an air pressure of one atmosphere, ice melts at 0 C by definition of the Celsius temperature scale. (Strictly speaking the equilibrium point among water, ice, and vapor occurs at +0.01C, the triple point.) On the other hand, ice does not invariably form in liquid water cooled below this temperature; it has a tendency to supercool, more so in the absence of ice nuclei.\n\nIn permafrost regions, ice may occupy voids in soils and rocks and may develop in a variety of forms. Ice may be colourless to pale blue or greenish-blue. It may appear white due to included gas bubbles; in exposures, ground ice may also appear black.\n\nIn nature ice is formed either by: (a) the freezing of water, (b) the condensation of atmospheric water vapour direct into ice crystals, (c) the compaction of snow with or without the motion of a glacier, or (d) the impregnation of porous snow masses with water which subsequently freeze.
+subset: ENVO:03605019
 subset: envoPolar
 synonym: "ice" RELATED [http://www.eionet.europa.eu/gemet/concept/4131]
 xref: http://sweetontology.net/matrWater/Ice
@@ -3163,6 +3242,7 @@ name: continental margin
 namespace: ENVO
 def: "A slope which is part of the seafloor, descends from the continental crust to the oceanic crust, and comprises the continental shelf, continental slope, and continental rise." [https://en.wikipedia.org/wiki/Continental_margin]
 comment: On Earth, continental margins constitute about 28% of the oceanic area.
+subset: ENVO:03605018
 subset: envoPolar
 xref: EcoLexicon:continental_margin
 xref: SWEETRealm:ContinentalMargin
@@ -3178,6 +3258,7 @@ id: ENVO:01000301
 name: estuarine water
 namespace: ENVO
 def: "Brackish water which is part of an estuary." [https://en.wikipedia.org/wiki/Estuary]
+subset: ENVO:03605019
 is_a: ENVO:00002019 ! brackish water
 created_by: ORCID:0000-0002-4366-3088
 creation_date: 2013-10-19T11:30:46Z
@@ -3444,6 +3525,7 @@ id: ENVO:01000406
 name: snow
 namespace: ENVO
 def: "Snow is an environmental material which is primarily composed of flakes of crystalline water ice." [http://www.eionet.europa.eu/gemet/concept/7769, https://en.wikipedia.org/wiki/Snow]
+subset: ENVO:03605019
 subset: envoPolar
 is_a: ENVO:00010483 ! environmental material
 relationship: composed_primarily_of ENVO:01000277 ! water ice
@@ -3695,6 +3777,7 @@ name: area of open water
 namespace: ENVO
 def: "An area of a planet's surface which is primarily composed of water in contact with an atmospheric column extending from the planetary boundary layer to the planet's exosphere with little to no physical obstruction." [https://en.wikipedia.org/wiki/Exosphere, https://en.wikipedia.org/wiki/Planetary_surface, https://www.mrlc.gov/nlcd11_leg.php]
 comment: According to the NLCD 2011, areas of open water generally have less than 25% cover of vegetation or soil. A specific threshold is not asserted in this definition.
+subset: ENVO:03605023
 subset: envoPolar
 subset: nlcd2011
 xref: NLCD:11
@@ -3794,6 +3877,8 @@ name: coast
 namespace: ENVO
 def: "A coast is the area where land meets the sea, ocean, or lake." [https://en.wikipedia.org/wiki/Coast]
 comment: Used for both marine and lake coasts. The boundary of the coast is fuzzy and it overlaps both the water body and land in quesiton. Compared to 'shore'
+subset: ENVO:03605018
+subset: ENVO:03605023
 relationship: overlaps ENVO:01000635 ! planetary landmass
 
 [Term]
@@ -3889,6 +3974,7 @@ id: ENVO:01000722
 name: meltwater
 namespace: ENVO
 def: "Meltwater is the water released by the melting of snow or ice, including glacial ice, tabular icebergs and ice shelves over oceans." [https://en.wikipedia.org/wiki/Meltwater]
+subset: ENVO:03605019
 is_a: ENVO:00002006 ! liquid water
 relationship: formed_as_result_of ENVO:01000720 ! hydrological melting process
 
@@ -3933,6 +4019,7 @@ name: area of perennial water ice
 namespace: ENVO
 def: "An area of a planet's surface which is primarily composed of water ice, present throughout multiple years, in contact with an atmospheric column extending from the planetary boundary layer to the planet's exosphere with little to no physical obstruction." [https://www.mrlc.gov/nlcd11_leg.php]
 comment: This class covers part of the NLCD "Perennial Ice/Snow" class.
+subset: ENVO:03605023
 subset: envoPolar
 subset: nlcd2011
 is_a: ENVO:01000746 ! area of perennial ice or snow
@@ -3954,6 +4041,7 @@ name: area of perennial ice or snow
 namespace: ENVO
 def: "An area of a planet's surface which is primarily composed of snow or water ice, present throughout multiple years, in contact with an atmospheric column extending from the planetary boundary layer to the planet's exosphere with little to no physical obstruction." [https://en.wikipedia.org/wiki/Exosphere, https://en.wikipedia.org/wiki/Planetary_surface, https://www.mrlc.gov/nlcd11_leg.php]
 comment: According to the NLCD 2011, these areas are characterised by ice and/or snow cover generally greater than 25% of total cover. The definition of perennial needs clarification.
+subset: ENVO:03605023
 subset: nlcd2011
 xref: NLCD:12
 is_a: ENVO:01003020 ! fiat part of an astronomical object
@@ -3977,6 +4065,7 @@ id: ENVO:01000749
 name: oceanic crust
 namespace: ENVO
 def: "Oceanic crust is the uppermost layer of the oceanic portion of a tectonic plate." [https://en.wikipedia.org/wiki/Crust_(geology)]
+subset: ENVO:03605018
 subset: envoPolar
 is_a: ENVO:01000639 ! planetary structural layer
 relationship: part_of ENVO:01000638 ! planetary crust
@@ -3987,6 +4076,7 @@ name: area of barren land
 namespace: ENVO
 def: "An area of a planet's surface which is primarily composed of bedrock, desert pavement, scarp rock, talus, material exposed by slides, volcanic material, glacial debris, sand, material exposed during strip mining, gravel, and other accumulations of earthen material in contact with an atmospheric column extending from the planetary boundary layer to the planet's exosphere with little to no physical obstruction." [https://en.wikipedia.org/wiki/Exosphere, https://en.wikipedia.org/wiki/Planetary_surface, https://www.mrlc.gov/nlcd11_leg.php]
 comment: According to the NLCD 2011, areas of barren land generally have less than 15% cover of vegetation. A specific threshold is not asserted in this definition.
+subset: ENVO:03605023
 subset: envoPolar
 subset: nlcd2011
 xref: NLCD:31
@@ -4393,6 +4483,7 @@ id: ENVO:01000847
 name: hair ice
 namespace: ENVO
 def: "A type of water ice that forms on dead wood with the assistance of the fungus Exidiopsis effusa and takes the shape of fine, silky hair." [https://en.wikipedia.org/wiki/Hair_ice]
+subset: ENVO:03605019
 subset: envoPolar
 synonym: "frost beard" EXACT []
 synonym: "ice wool" EXACT []
@@ -4531,6 +4622,7 @@ name: area of lichen-dominated vegetation
 namespace: ENVO
 def: "An area of a planet's surface which is primarily covered by fruticose or foliose lichens and which is in contact with an atmospheric column extending from the planetary boundary layer to the planet's exosphere with little to no physical obstruction." [https://en.wikipedia.org/wiki/Exosphere, https://en.wikipedia.org/wiki/Planetary_surface, https://www.mrlc.gov/nlcd11_leg.php]
 comment: According to the NLCD 2011, at least 80% of these areas are covered by lichens.  Such thresholds - which are themselves fuzzy - are not strictly asserted in this definition. The original definition notes that this is intended as an "Alaska only" category.
+subset: ENVO:03605023
 subset: envoPolar
 subset: nlcd2011
 xref: NLCD:73
@@ -4794,6 +4886,7 @@ name: groundwater
 namespace: ENVO
 def: "Underground water which is located in pore spaces found in rock or unconsolidated deposits such as soil, clay, or gravel." [https://en.wikipedia.org/wiki/Groundwater]
 comment: The definition of aquifer is quite permissive, referencing any water bearing rock or unconsolidated material.
+subset: ENVO:03605019
 synonym: "ground water" EXACT []
 is_a: ENVO:00005792 ! underground water
 relationship: located_in ENVO:00012408 ! aquifer
@@ -4925,6 +5018,7 @@ id: ENVO:01001191
 name: water surface
 namespace: ENVO
 def: "The surface layer of a volume of water." []
+subset: ENVO:03605018
 synonym: "surface of a body of water" EXACT []
 synonym: "water body surface" EXACT []
 xref: EcoLexicon:surface_water
@@ -4959,6 +5053,7 @@ id: ENVO:01001209
 name: wetland ecosystem
 namespace: ENVO
 def: "A terrestrial ecosystem which is inundated or saturated by surface or ground water at a frequency and duration sufficient to support, and that under normal circumstances does support, a prevalence of vegetation typically adapted for life in saturated soil conditions." [https://en.wikipedia.org/wiki/Wetland]
+subset: ENVO:03605018
 synonym: "back marsh" NARROW [USGS:SDTS]
 synonym: "backswamp" NARROW [USGS:SDTS]
 synonym: "backwater" NARROW [ADL:FTT]
@@ -5366,6 +5461,8 @@ id: ENVO:01001505
 name: alpine tundra biome
 namespace: ENVO
 def: "An alpine tundra ecosystem which is in its climactic successional state." [https://en.wikipedia.org/wiki/Alpine_tundra]
+subset: ENVO:03605013
+subset: ENVO:03605022
 subset: envoPolar
 synonym: "mountain tundra" EXACT [https://orcid.org/0000-0003-4808-4736]
 xref: http://sweetontology.net/realmCryo/AlpineTundra
@@ -5415,6 +5512,7 @@ name: frazil
 namespace: ENVO
 def: "Small, needle-like (spicules), plate-like, or discoid crystals derived from nearly pure fresh water, suspended in a water body." [https://nsidc.org/cryosphere/glossary/term/frazil]
 comment: Typically 3 to 4 millimeters in diameter. These may form in both marine water and fresh water. They represent the first stages of sea ice growth; they merge under calm conditions to form thin sheets of ice on the surface (frazil ice), and consist of nearly pure fresh water. In fresh water, they form in supercooled water that is too turbulent to permit coagulation into sheet ice.  This is most common in swiftly flowing streams. They may accumulate as anchor ice on submerged objects obstructing the water flow. {xref="https://orcid.org/0000-0003-4808-4736"}
+subset: ENVO:03605019
 subset: envoPolar
 synonym: "frazil crystals" EXACT []
 synonym: "needle ice" EXACT []
@@ -5442,6 +5540,7 @@ id: ENVO:01001526
 name: frozen soil
 namespace: ENVO
 def: "Soil which is below the freezing point of water." []
+subset: ENVO:03605015
 is_a: ENVO:00001998 ! soil
 relationship: part_of ENVO:01001524 ! frozen land
 created_by: https://orcid.org/0000-0002-4366-3088
@@ -5672,6 +5771,7 @@ name: water-body-derived ice
 namespace: ENVO
 def: "Ice which has formed as the result of freezing of water which was part of a water body." [https://orcid.org/0000-0003-4808-4736]
 comment: In the United States, NOAA considers ice formed from the freezing of the waters of the Great Lakes as being the same as sea ice. This class attempts to provide a distinction for clarity. {xref="https://orcid.org/0000-0003-4808-4736"}
+subset: ENVO:03605019
 is_a: ENVO:01000277 ! water ice
 created_by: https://orcid.org/0000-0002-4366-3088
 creation_date: 2019-02-27T20:07:15Z
@@ -5725,6 +5825,7 @@ id: ENVO:01001568
 name: frost heave
 namespace: ENVO
 def: "An elevation which is formed as an ice mass forms under soil, resulting in upwards deformation of the land surface." [https://en.wikipedia.org/wiki/Frost_heaving]
+subset: ENVO:03605014
 subset: envoNceas
 subset: envoPolar
 synonym: "frost heaving" EXACT []
@@ -6621,6 +6722,7 @@ id: ENVO:03000004
 name: glacial ice
 namespace: ENVO
 def: "Any water ice that is part of a glacier." [https://en.wikipedia.org/wiki/Glacier]
+subset: ENVO:03605019
 subset: envoPolar
 is_a: ENVO:01000277 ! water ice
 intersection_of: ENVO:01000277 ! water ice
@@ -6634,6 +6736,7 @@ id: ENVO:03000005
 name: erosionally enriched glacial ice
 namespace: ENVO
 def: "Glacial ice which contains material liberated during a glacial erosion process." [https://www.asf.alaska.edu/blog/why-is-glacier-ice-blue/]
+subset: ENVO:03605019
 subset: envoPolar
 is_a: ENVO:03000025 ! erosionally enriched ice
 relationship: output_of ENVO:03000006 ! glacial erosion process
@@ -6660,6 +6763,7 @@ name: blue ice
 namespace: ENVO
 def: "Water ice containing little to no air bubbles resulting in a reduction of internal light scattering and, given sufficient volume, a blue appearance." [https://en.wikipedia.org/wiki/Blue_ice_(glacial), https://en.wikipedia.org/wiki/Glacier]
 comment: The blue 'appearance' is to be understood as that within the visual range of humans.
+subset: ENVO:03605019
 subset: envoPolar
 is_a: ENVO:01000277 ! water ice
 property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
@@ -6815,6 +6919,7 @@ id: ENVO:03000025
 name: erosionally enriched ice
 namespace: ENVO
 def: "Water ice which contains material liberated during an erosion process." [https://www.asf.alaska.edu/blog/why-is-glacier-ice-blue/]
+subset: ENVO:03605019
 subset: envoPolar
 is_a: ENVO:01000277 ! water ice
 property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
@@ -6826,6 +6931,7 @@ name: powdery snow
 namespace: ENVO
 def: "Uncompacted snow containing trapped atmospheric gases." [https://en.wikipedia.org/wiki/Types_of_snow, https://nsidc.org/cryosphere/snow/science/characteristics.html]
 comment: Described as having a fluffy appearance.
+subset: ENVO:03605019
 subset: envoPolar
 is_a: ENVO:01000406 ! snow
 property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
@@ -6990,6 +7096,7 @@ id: ENVO:03000040
 name: melt pond
 namespace: ENVO
 def: "A water body which forms as a result of localised melting taking place on the surface of a glacier or a mass of sea ice and which is contained in the cavity formed by such melting." [https://en.wikipedia.org/wiki/Melt_pond]
+subset: ENVO:03605018
 subset: envoPolar
 synonym: "melt ponds" EXACT []
 synonym: "meltpond" EXACT []
@@ -7077,6 +7184,7 @@ name: frazil ice
 namespace: ENVO
 def: "New ice which is composed frazil which has congealed into a thin sheet." [https://nsidc.org/cryosphere/glossary/term/frazil]
 comment: Typically 3 to 4 millimeters in diameter. These new ice classes refer to both marine water and fresh water ice. If using this term for annotation, use it in conjunction with another envo term to express whether the ice is in a marine, freshwater, or other system.
+subset: ENVO:03605019
 subset: envoPolar
 xref: http://sweetontology.net/realmCryo/FrazilIce
 is_a: ENVO:03000063 ! new ice
@@ -7263,6 +7371,7 @@ name: new ice
 namespace: ENVO
 def: "Water ice which is formed from freezing water and is suspended in a water body." [] {comment="https://nsidc.org/cryosphere/glossary/term/new-ice"}
 comment: sea ice types include frazil, grease ice, slush, and shuga. These new ice classes refer to both marine water and fresh water ice. If using this term for annotation, use it in conjunction with another envo term to express whether the ice is in a marine, freshwater, or other system.
+subset: ENVO:03605019
 subset: envoPolar
 is_a: ENVO:01000277 ! water ice
 relationship: adjacent_to ENVO:00000063 ! water body
@@ -7341,6 +7450,7 @@ name: first year ice
 namespace: ENVO
 def: "Sea ice which has formed over a single freezing season." [http://nsidc.org/arcticseaicenews/tag/first-year-ice/, https://en.wikipedia.org/wiki/Sea_ice#New_ice.2C_nilas_and_young_ice, https://orcid.org/0000-0003-4808-4736]
 comment: Sea ice develops from young ice; thickness from 0.3 to 2 meters (1 to 6.6 feet).  Sea ice be subdivided into thin first-year ice (white ice), medium first-year ice, and thick first-year ice.  First-year ice is distinguished from older ice primarily by having a higher salinity. Undeformed first-year ice differs from older ice in that it is smoother and lacks refrozen melt ponds. Characteristically level where undisturbed by pressure, but where ridges occur, they  distinguished by being larger, more angular, and more porous than multiyear ridges. {xref="https://orcid.org/0000-0003-4808-4736"}
+subset: ENVO:03605019
 subset: envoPolar
 synonym: "seasonal ice" RELATED [] {comment="First year ice which melts before the next freezing season is often referred to as seasonal ice. By definition, seasonal ice cannot become second year ice."}
 xref: http://sweetontology.net/realmCryo/SeasonalIce
@@ -7355,6 +7465,7 @@ id: ENVO:03000072
 name: second year ice
 namespace: ENVO
 def: "Sea ice which is thicker than first year ice, and has survived a seasonal melting process." [https://en.wikipedia.org/wiki/Sea_ice#New_ice.2C_nilas_and_young_ice]
+subset: ENVO:03605019
 subset: envoPolar
 is_a: ENVO:00002200 ! sea ice
 relationship: output_of ENVO:03000061 ! second year ice formation
@@ -7366,6 +7477,7 @@ id: ENVO:03000073
 name: multiyear ice
 namespace: ENVO
 def: "Sea ice which is thicker than second year ice, and has survived more than two seasonal melting process." [https://en.wikipedia.org/wiki/Sea_ice#New_ice.2C_nilas_and_young_ice]
+subset: ENVO:03605019
 subset: envoPolar
 is_a: ENVO:00002200 ! sea ice
 relationship: output_of ENVO:03000062 ! multiyear ice formation process
@@ -7390,6 +7502,7 @@ name: shuga
 namespace: ENVO
 def: "New ice, which is spongy, lumpy and opaque, and forms from water which freezes in an agitated water body." [http://encyclopedia2.thefreedictionary.com/shuga, https://nsidc.org/cryosphere/glossary/term/shuga]
 comment: These new ice classes refer to both marine water and fresh water ice. If using this term for annotation, use it in conjunction with another envo term to express whether the ice is in a marine, freshwater, or other system.
+subset: ENVO:03605019
 subset: envoPolar
 is_a: ENVO:03000063 ! new ice
 property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
@@ -7744,6 +7857,7 @@ id: ENVO:03000108
 name: slab snow
 namespace: ENVO
 def: "Snow which is cohesive, hard and overlies weaker snow." [http://www.fsavalanche.org/slab]
+subset: ENVO:03605019
 subset: envoPolar
 is_a: ENVO:01000406 ! snow
 property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
@@ -7863,6 +7977,7 @@ id: ENVO:03000117
 name: channel
 namespace: ENVO
 def: "A structure which traverses a mass of one or more environmental materials, and encloses a roughly tubular site." [https://www.merriam-webster.com/dictionary/channel]
+subset: ENVO:03605014
 subset: envoPolar
 is_a: ENVO:01001886 ! landform
 property_value: IAO:0000116 "Intended to be a top level class for wide variety of channel-like entities. It’s particulars may change once more subclasses are accumulated. This is distinct from 'channel of a watercourse', which is a depression." xsd:string
@@ -7900,6 +8015,7 @@ id: ENVO:03000120
 name: subglacial lake
 namespace: ENVO
 def: "A lake which is situated beneath a glacier." [https://en.wikipedia.org/wiki/Subglacial_lake]
+subset: ENVO:03605018
 subset: envoPolar
 synonym: "subglacial lakes" EXACT []
 is_a: ENVO:00000198 ! ice-covered lake
@@ -8505,6 +8621,7 @@ id: ENVO:04000009
 name: active permafrost layer
 namespace: ENVO
 def: "A layer which is composed of ground that is 1) subject to annual thawing and freezing and 2) present in areas underlain by permafrost." [https://nsidc.org/cryosphere/glossary/term/active-layer]
+subset: ENVO:03605014
 subset: envoNceas
 subset: envoPolar
 synonym: "active layer of permafrost" EXACT []
@@ -8554,6 +8671,7 @@ id: ENVO:06105205
 name: compacted soil
 namespace: ENVO
 def: "A soil which has a high bulk density and/or a low porosity. A compacted soil has a reduced rate of both water infiltration and drainage" [] {comment="https://extension.umn.edu/soil-management-and-health/soil-compaction"}
+subset: ENVO:03605015
 is_a: ENVO:00001998 ! soil
 property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0001-6284-4821
 property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-8461-9745

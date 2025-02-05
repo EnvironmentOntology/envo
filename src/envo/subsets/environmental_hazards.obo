@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: envo/releases/2025-02-04/subsets/environmental_hazards.owl
+data-version: envo/releases/2025-02-05/subsets/environmental_hazards.owl
 subsetdef: disposition_slim "Disposition slim"
 subsetdef: environmental_hazards "environmental_hazards"
 subsetdef: EnvO-Lite-GSC "EnvO-Lite-GSC"
@@ -26,13 +26,15 @@ subsetdef: value_slim "Value slim"
 subsetdef: wwfBiome "wwfBiome"
 synonymtypedef: OMO:0003004 "plural form"
 ontology: envo/subsets/environmental_hazards
-property_value: owl:versionInfo "2025-02-04" xsd:string
+property_value: owl:versionInfo "2025-02-05" xsd:string
 
 [Term]
 id: ENVO:00000020
 name: lake
 namespace: ENVO
 def: "A body of water or other liquid of considerable size contained in a depression on a landmass." [https://en.wikipedia.org/wiki/Lake]
+subset: ENVO:03605014
+subset: ENVO:03605018
 subset: envoPolar
 synonym: "broad" RELATED []
 synonym: "catch basin" NARROW [USGS:SDTS]
@@ -67,6 +69,8 @@ name: river
 namespace: ENVO
 def: "A stream which, through permanent or seasonal flow processes, moves from elevated land towards lower elevations through a definite channel and empties either into a sea, lake, or another river or ends on land as bed seepage and evapotranspiration exceed water supply." [ADL:FTT, https://orcid.org/0000-0002-4366-3088] {comment="https://en.wikipedia.org/wiki/River"}
 comment: "There are no official definitions for the generic term river as applied to geographic features, although in some countries or communities a stream is defined by its size. Many names for small rivers are specific to geographic location; examples are "run" in some parts of the United States, "burn" in Scotland and northeast England, and "beck" in northern England. Sometimes a river is defined as being larger than a creek, but not always: the language is vague." {comment="https://en.wikipedia.org/wiki/River"}
+subset: ENVO:03605014
+subset: ENVO:03605018
 synonym: "braided river" NARROW [USGS:SDTS]
 synonym: "rio" EXACT [USGS:SDTS]
 synonym: "rio" EXACT [ADL:FTT]
@@ -86,6 +90,8 @@ id: ENVO:00000023
 name: stream
 namespace: ENVO
 def: "A watercourse which is linear and flows across the solid portion of a planetary surface." [USGS:http\://mapping.usgs.gov/www/ti/GNIS/gnis_users_guide_appendixc.html]
+subset: ENVO:03605014
+subset: ENVO:03605018
 synonym: "beck" RELATED [USGS:SDTS]
 synonym: "braided stream" NARROW [USGS:SDTS]
 synonym: "brook" RELATED [ADL:FTT]
@@ -227,6 +233,7 @@ name: valley
 namespace: ENVO
 def: "A depression which has been formed as a result of erosion by water or ice and which is low-lying, bordered by higher ground, and especially elongate." [ADL:FTT, https://en.wikipedia.org/wiki/Valley]
 comment: Valleys are typically located between hills our mountains.
+subset: ENVO:03605023
 synonym: "chasm" NARROW [USGS:SDTS]
 synonym: "coulee" NARROW [USGS:SDTS]
 synonym: "dale" NARROW [USGS:SDTS]
@@ -289,6 +296,7 @@ id: ENVO:00000109
 name: woodland area
 namespace: ENVO
 def: "Land having a cover of trees, shrubs, or both." [USGS:SDTS]
+subset: ENVO:03605014
 synonym: "brigalow" NARROW [USGS:SDTS]
 synonym: "caatinga" RELATED [USGS:SDTS]
 synonym: "chanaral" RELATED [USGS:SDTS]
@@ -379,6 +387,7 @@ id: ENVO:00000141
 name: bank
 namespace: ENVO
 def: "The sloping margin of a watercourse, serving to confine it to its natural channel." [MA:ma]
+subset: ENVO:03605014
 synonym: "mount" BROAD [USGS:SDTS]
 synonym: "shore" RELATED [USGS:SDTS]
 xref: EcoLexicon:bank
@@ -405,6 +414,7 @@ id: ENVO:00000143
 name: river bank
 namespace: ENVO
 def: "The sloping margin of a river, serving to confine it to its natural channel." [MA:ma]
+subset: ENVO:03605023
 synonym: "riverbank" EXACT [Getty:TGN]
 xref: https://en.wikipedia.org/wiki/River_bank
 xref: TGN:21155
@@ -434,6 +444,8 @@ id: ENVO:00000247
 name: volcano
 namespace: ENVO
 def: "An opening, or rupture, in the Earth's surface or crust, which allows hot, molten rock, ash and gases to escape from deep below the surface." [https://en.wikipedia.org/wiki/Volcano]
+subset: ENVO:03605014
+subset: ENVO:03605018
 synonym: "mount" BROAD [USGS:SDTS]
 xref: EcoLexicon:volcano
 xref: FTT:592
@@ -545,6 +557,8 @@ id: ENVO:00000446
 name: terrestrial biome
 namespace: ENVO
 def: "A terrestrial ecosystem which is in its climactic successional state." [https://en.wikipedia.org/wiki/Biome#Terrestrial_biomes]
+subset: ENVO:03605013
+subset: ENVO:03605022
 xref: LTER:798
 xref: SPIRE:Terrestrial
 is_a: ENVO:00000428 ! biome
@@ -554,6 +568,7 @@ id: ENVO:00000501
 name: submerged bed
 namespace: ENVO
 def: "The portion of the ground surface which lies below water." [USGS:SDTS]
+subset: ENVO:03605023
 synonym: "BOTTOM" BROAD [USGS:SDTS]
 xref: EcoLexicon:bed
 xref: FTT:804
@@ -587,6 +602,7 @@ namespace: ENVO
 def: "An environmental material which is primarily composed of minerals, varying proportions of sand, silt, and clay, organic material such as humus, interstitial gases, liquids, and a broad range of resident micro- and macroorganisms." [https://en.wikipedia.org/wiki/Soil]
 comment: 'In engineering terms, soil is referred to as regolith, or loose rock material that lies above the 'solid geology'. Soil is commonly referred to as "earth" or "dirt"; technically, the term "dirt" should be restricted to displaced soil.' https://en.wikipedia.org/wiki/Soil\n\n" The upper limit of soil is the boundary between soil and air, shallow water, live plants, or plant materials that have not begun to decompose. Areas are not considered to have soil if the surface is permanently covered by water too deep (typically more than 2.5 meters) for the growth of rooted plants.\n\nThe lower boundary that separates soil from the nonsoil underneath is most difficult to define. Soil consists of horizons near the Earth's surface that, in contrast to the underlying parent material, have been altered by the interactions of climate, relief, and living organisms over time. Commonly, soil grades at its lower boundary to hard rock or to earthy materials virtually devoid of animals, roots, or other marks of biological activity. For purposes of classification, the lower boundary of soil is arbitrarily set at 200 cm."  Soil taxonomy, 2nd Ed., quoted in http://www.nrcs.usda.gov/wps/portal/nrcs/detail/soils/edu/?cid=nrcs142p2_054280
 subset: EnvO-Lite-GSC
+subset: ENVO:03605015
 synonym: "regolith" BROAD []
 xref: https://en.wikipedia.org/wiki/Soil
 xref: LTER:535
@@ -607,6 +623,7 @@ id: ENVO:00002000
 name: slope
 namespace: ENVO
 def: "A solid astronomical body part which is part of the planetary surface between the peak of an elevation or the bottom of a depression and relatively flat surrounding land." [MA:ma]
+subset: ENVO:03605014
 synonym: "flank" RELATED []
 synonym: "side" RELATED []
 xref: EcoLexicon:slope
@@ -634,6 +651,7 @@ id: ENVO:00002006
 name: liquid water
 namespace: ENVO
 def: "An environmental material primarily composed of dihydrogen oxide in its liquid form." [MA:ma]
+subset: ENVO:03605019
 synonym: "water" BROAD []
 xref: EcoLexicon:water
 xref: https://en.wikipedia.org/wiki/Water
@@ -827,6 +845,7 @@ name: water ice
 namespace: ENVO
 def: "Ice which is formed from water." [https://en.wikipedia.org/wiki/Ice]
 comment: Water ice can appear transparent or opaque bluish-white color, depending on the presence of impurities or air inclusions. The addition of other materials such as soil may further alter its appearance.\n\nWhen speaking about ice on Earth, usually water ice is meant - the solid, crystalline form of water found in the atmosphere as snow crystals, hail, ice pellets, etc., and on the earth's surface in forms such as hoarfrost, rime, glaze, sea ice, glacier ice, ground ice, frazil, anchor ice, etc.\n\nThis form of water is, strictly speaking, called ice Ih, the Roman numeral I distinguishing it from more than a dozen other phases and the letter h distinguishing it from the metastable cubic phase ice Ic. Ice Ih is the only one of the several known phases of water ice that is stable at commonly occurring temperatures and pressures. (Some of the other forms have very unusual properties, ice VII, for example, being stable only at pressures above 22 400 kg/cm^2, but then existing at temperatures up to about 100C.)\n\nIt has an open structure with a specific gravity of 0.9166 which is slightly less than water; because the water molecules bond to their neighbors covalently only in four directions; it therefore floats on higher density water, where broken molecular bonds permit closer packing. All commonly occurring forms of ice are crystalline, although large single crystals are relatively rare except in glaciers. The ice crystal lattice possesses hexagonal symmetry that manifests itself in the gross forms of such single crystals as are sometimes found in snow. At an air pressure of one atmosphere, ice melts at 0 C by definition of the Celsius temperature scale. (Strictly speaking the equilibrium point among water, ice, and vapor occurs at +0.01C, the triple point.) On the other hand, ice does not invariably form in liquid water cooled below this temperature; it has a tendency to supercool, more so in the absence of ice nuclei.\n\nIn permafrost regions, ice may occupy voids in soils and rocks and may develop in a variety of forms. Ice may be colourless to pale blue or greenish-blue. It may appear white due to included gas bubbles; in exposures, ground ice may also appear black.\n\nIn nature ice is formed either by: (a) the freezing of water, (b) the condensation of atmospheric water vapour direct into ice crystals, (c) the compaction of snow with or without the motion of a glacier, or (d) the impregnation of porous snow masses with water which subsequently freeze.
+subset: ENVO:03605019
 subset: envoPolar
 synonym: "ice" RELATED [http://www.eionet.europa.eu/gemet/concept/4131]
 xref: http://sweetontology.net/matrWater/Ice
@@ -888,6 +907,7 @@ id: ENVO:01000406
 name: snow
 namespace: ENVO
 def: "Snow is an environmental material which is primarily composed of flakes of crystalline water ice." [http://www.eionet.europa.eu/gemet/concept/7769, https://en.wikipedia.org/wiki/Snow]
+subset: ENVO:03605019
 subset: envoPolar
 is_a: ENVO:00010483 ! environmental material
 relationship: composed_primarily_of ENVO:01000277 ! water ice
@@ -1136,6 +1156,8 @@ name: coast
 namespace: ENVO
 def: "A coast is the area where land meets the sea, ocean, or lake." [https://en.wikipedia.org/wiki/Coast]
 comment: Used for both marine and lake coasts. The boundary of the coast is fuzzy and it overlaps both the water body and land in quesiton. Compared to 'shore'
+subset: ENVO:03605018
+subset: ENVO:03605023
 relationship: overlaps ENVO:01000635 ! planetary landmass
 
 [Term]
@@ -2796,6 +2818,7 @@ name: powdery snow
 namespace: ENVO
 def: "Uncompacted snow containing trapped atmospheric gases." [https://en.wikipedia.org/wiki/Types_of_snow, https://nsidc.org/cryosphere/snow/science/characteristics.html]
 comment: Described as having a fluffy appearance.
+subset: ENVO:03605019
 subset: envoPolar
 is_a: ENVO:01000406 ! snow
 property_value: IAO:0000117 http://orcid.org/0000-0002-3410-4655 xsd:string
