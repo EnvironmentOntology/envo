@@ -155,7 +155,7 @@ $(ONT).json: $(ONT)-full.owl
 # by default we use ELK to perform a reason-relax-reduce chain
 # after that we annotate the ontology with the release versionInfo
 
-OTHER_SRC = 
+OTHER_SRC = robot_templates/nmdc_env_context_subset_membership.owl
 
 
 $(ONTOLOGYTERMS): $(SRC) $(OTHER_SRC)
@@ -566,6 +566,19 @@ modules/%.obo: modules/%.owl
 
 modules/ebi_biomes.owl: modules/ebi_biomes.csv
 	$(ROBOT) template --template $< -i imports/ro_import.owl -o $@.tmp.owl && mv $@.tmp.owl $@
+
+.PHONY: nmdc-robot-clean nmdc-robot-all
+
+nmdc-robot-clean:
+	rm -rf robot_templates/nmdc_env_context_subset_membership.owl
+
+nmdc-robot-all: nmdc-robot-clean robot_templates/nmdc_env_context_subset_membership.owl
+
+robot_templates/nmdc_env_context_subset_membership.owl: robot_templates/nmdc_env_context_subset_membership.tsv
+	# this TSV will be built with `make env-triad-robot-all` in https://github.com/microbiomedata/submission-schema
+	# which currently requires the latest envo.owl even if it is pre-release
+	$(ROBOT) template --template $< -o $@.tmp.owl && mv $@.tmp.owl $@ # why not just output to $@ ?
+
 
 envo-edit.csv: envo-edit.owl
 	$(OWLTOOLS) $(USECAT) $< --merge-support-ontologies --export-table $@.tmp && cut -f1 $@.tmp | grep ENVO_ | perl -npe 's@https@http@' > $@
