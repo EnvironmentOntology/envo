@@ -14,8 +14,8 @@
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
      xmlns:envo-basic="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/envo/subsets/environmental_hazards.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/envo/releases/2024-07-01/subsets/environmental_hazards.owl"/>
-        <owl:versionInfo>2024-07-01</owl:versionInfo>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/envo/releases/2025-02-05/subsets/environmental_hazards.owl"/>
+        <owl:versionInfo>2025-02-05</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -28,6 +28,15 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ENVO_03605010 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/ENVO_03605010">
+        <rdfs:comment>Root of the NMDC environmental context value set hierarchy. This property organizes subset properties used to annotate EnvO classes relevant for MIxS environmental context fields (e.g., env_broad_scale, env_local_scale, env_medium_scale). This structure guides data annotation in systems like NCBI BioSample, refining recommendations from the ENVO-MIxS integration guide, addressing questions such as &apos;Which EnvO classes are reasonable for populating the env_broad_scale field in a soil sample versus a water sample.&quot;</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#SubsetProperty"/>
+    </owl:AnnotationProperty>
     
 
 
@@ -512,6 +521,12 @@
     
 
 
+    <!-- http://www.geneontology.org/formats/oboInOwl#http://purl.org/dc/elements/1.1/contributor -->
+
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#http://purl.org/dc/elements/1.1/contributor"/>
+    
+
+
     <!-- http://www.geneontology.org/formats/oboInOwl#http://purl.org/dc/elements/1.1/source -->
 
     <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#http://purl.org/dc/elements/1.1/source"/>
@@ -815,6 +830,17 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/RO_0000080 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0000080">
+        <oboInOwl:hasDbXref>RO:0000080</oboInOwl:hasDbXref>
+        <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>quality_of</oboInOwl:id>
+        <oboInOwl:shorthand>quality_of</oboInOwl:shorthand>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/RO_0000085 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0000085">
@@ -898,8 +924,8 @@
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0001019">
         <oboInOwl:hasDbXref>RO:0001019</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>contains</oboInOwl:id>
-        <oboInOwl:shorthand>contains</oboInOwl:shorthand>
+        <oboInOwl:id>obsolete_contains</oboInOwl:id>
+        <oboInOwl:shorthand>obsolete_contains</oboInOwl:shorthand>
     </owl:ObjectProperty>
     
 
@@ -1143,8 +1169,8 @@
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002297">
         <oboInOwl:hasDbXref>RO:0002297</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>results_in_formation_of</oboInOwl:id>
-        <oboInOwl:shorthand>results_in_formation_of</oboInOwl:shorthand>
+        <oboInOwl:id>results_in_formation_of_anatomical_entity</oboInOwl:id>
+        <oboInOwl:shorthand>results_in_formation_of_anatomical_entity</oboInOwl:shorthand>
     </owl:ObjectProperty>
     
 
@@ -1450,6 +1476,8 @@
         <oboInOwl:hasRelatedSynonym>mortlake</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>pasteuer lake</oboInOwl:hasRelatedSynonym>
         <oboInOwl:id>ENVO:00000020</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605014"/>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605018"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar"/>
         <rdfs:label>lake</rdfs:label>
     </owl:Class>
@@ -1532,6 +1560,8 @@
         <oboInOwl:hasNarrowSynonym>braided river</oboInOwl:hasNarrowSynonym>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:00000022</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605014"/>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605018"/>
         <rdfs:comment>&quot;There are no official definitions for the generic term river as applied to geographic features, although in some countries or communities a stream is defined by its size. Many names for small rivers are specific to geographic location; examples are &quot;run&quot; in some parts of the United States, &quot;burn&quot; in Scotland and northeast England, and &quot;beck&quot; in northern England. Sometimes a river is defined as being larger than a creek, but not always: the language is vague.&quot;</rdfs:comment>
         <rdfs:label>river</rdfs:label>
     </owl:Class>
@@ -1622,6 +1652,8 @@
         <oboInOwl:hasRelatedSynonym>creek</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>rivulet</oboInOwl:hasRelatedSynonym>
         <oboInOwl:id>ENVO:00000023</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605014"/>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605018"/>
         <rdfs:label>stream</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -2198,6 +2230,7 @@
         <oboInOwl:hasRelatedSynonym>vale</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>water gap</oboInOwl:hasRelatedSynonym>
         <oboInOwl:id>ENVO:00000100</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605023"/>
         <rdfs:comment>Valleys are typically located between hills our mountains.</rdfs:comment>
         <rdfs:label>valley</rdfs:label>
     </owl:Class>
@@ -2462,6 +2495,7 @@
         <oboInOwl:hasRelatedSynonym>wood</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>wooded area</oboInOwl:hasRelatedSynonym>
         <oboInOwl:id>ENVO:00000109</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605014"/>
         <rdfs:label>woodland area</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -2770,6 +2804,7 @@
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:hasRelatedSynonym>shore</oboInOwl:hasRelatedSynonym>
         <oboInOwl:id>ENVO:00000141</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605014"/>
         <rdfs:label>bank</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -2832,6 +2867,7 @@
         <oboInOwl:hasExactSynonym>riverbank</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:00000143</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605023"/>
         <rdfs:label>river bank</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -2913,6 +2949,8 @@
         <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Volcano</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:00000247</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605014"/>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605018"/>
         <rdfs:label>volcano</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -3168,18 +3206,19 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_00000446">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000428"/>
-        <obo1:IAO_0000115>A biome which is  primarily or completely situated on a landmass.</obo1:IAO_0000115>
+        <obo1:IAO_0000115>A terrestrial ecosystem which is in its climactic successional state.</obo1:IAO_0000115>
         <oboInOwl:hasDbXref>LTER:798</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>SPIRE:Terrestrial</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
-        <oboInOwl:hasRelatedSynonym>terrestrial realm</oboInOwl:hasRelatedSynonym>
         <oboInOwl:id>ENVO:00000446</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605013"/>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605022"/>
         <rdfs:label>terrestrial biome</rdfs:label>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000446"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>A biome which is  primarily or completely situated on a landmass.</owl:annotatedTarget>
+        <owl:annotatedTarget>A terrestrial ecosystem which is in its climactic successional state.</owl:annotatedTarget>
         <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Biome#Terrestrial_biomes</oboInOwl:hasDbXref>
     </owl:Axiom>
     
@@ -3209,6 +3248,7 @@
         <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Stream_bed</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:00000501</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605023"/>
         <rdfs:label>submerged bed</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -3310,6 +3350,7 @@
         <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Soil</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:00001998</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605015"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#EnvO-Lite-GSC"/>
         <rdfs:comment>&apos;In engineering terms, soil is referred to as regolith, or loose rock material that lies above the &apos;solid geology&apos;. Soil is commonly referred to as &quot;earth&quot; or &quot;dirt&quot;; technically, the term &quot;dirt&quot; should be restricted to displaced soil.&apos; https://en.wikipedia.org/wiki/Soil
 
@@ -3345,6 +3386,7 @@ The lower boundary that separates soil from the nonsoil underneath is most diffi
         <oboInOwl:hasRelatedSynonym>flank</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>side</oboInOwl:hasRelatedSynonym>
         <oboInOwl:id>ENVO:00002000</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605014"/>
         <rdfs:label>slope</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -3397,6 +3439,7 @@ The lower boundary that separates soil from the nonsoil underneath is most diffi
         <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Water</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:00002006</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605019"/>
         <rdfs:label>liquid water</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -3858,6 +3901,7 @@ From https://en.wikipedia.org/wiki/ [A mineral] is different from a rock, which 
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:hasRelatedSynonym>ice</oboInOwl:hasRelatedSynonym>
         <oboInOwl:id>ENVO:01000277</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605019"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar"/>
         <rdfs:comment>Water ice can appear transparent or opaque bluish-white color, depending on the presence of impurities or air inclusions. The addition of other materials such as soil may further alter its appearance.
 
@@ -4020,6 +4064,7 @@ In nature ice is formed either by: (a) the freezing of water, (b) the condensati
         <obo1:IAO_0000115>Snow is an environmental material which is primarily composed of flakes of crystalline water ice.</obo1:IAO_0000115>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:01000406</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605019"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar"/>
         <rdfs:label>snow</rdfs:label>
     </owl:Class>
@@ -4649,6 +4694,8 @@ In nature ice is formed either by: (a) the freezing of water, (b) the condensati
         <obo1:IAO_0000115>A coast is the area where land meets the sea, ocean, or lake.</obo1:IAO_0000115>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:01000687</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605018"/>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605023"/>
         <rdfs:comment>Used for both marine and lake coasts. The boundary of the coast is fuzzy and it overlaps both the water body and land in quesiton. Compared to &apos;shore&apos;</rdfs:comment>
         <rdfs:label>coast</rdfs:label>
     </owl:Class>
@@ -7242,11 +7289,11 @@ Consider adding axioms like PATO:&quot;decreased temperature&quot; to this and o
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo1:IAO_0000115>An ecosystem which is determined by communities of plants with a tree growth form and in which members of those communities form continuous or discontinuous regions of canopy cover.</obo1:IAO_0000115>
-        <obo1:IAO_0000116>The correct usage of FLOPO terms in the axiomatisation needs to be confirmed.</obo1:IAO_0000116>
+        <oboInOwl:hasExactSynonym>forest ecosystem</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:01001243</oboInOwl:id>
         <rdfs:comment>The definitions of forest can vary greatly, and different classes will be needed to support the major categories. Tree cover alone is not enough to distinguish between forests and plantations. The international definition proposed by the 2010 FAO Forestry Resource Assessment: &quot;land spanning more than 0.5 ha with trees higher than 5 metres and canopy cover of more than 10 percent, or trees able to reach these thresholds in situ . It does not include land that is predominantly under agricultural or urban land use.&quot; - FAO.  2010. Global forest resources assessment 2010, Main report, FAO Forestry Paper 163. Rome.</rdfs:comment>
-        <rdfs:label>forest ecosystem</rdfs:label>
+        <rdfs:label>forest</rdfs:label>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001243"/>
@@ -8552,6 +8599,7 @@ Consider adding axioms like PATO:&quot;decreased temperature&quot; to this and o
         <obo1:IAO_0000117>http://orcid.org/0000-0002-3410-4655</obo1:IAO_0000117>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:03000027</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605019"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar"/>
         <rdfs:comment>Described as having a fluffy appearance.</rdfs:comment>
         <rdfs:label>powdery snow</rdfs:label>

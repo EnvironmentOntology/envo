@@ -1,8 +1,9 @@
 format-version: 1.2
-data-version: envo/releases/2024-07-01/subsets/envoAstro.owl
+data-version: envo/releases/2025-02-05/subsets/envoAstro.owl
 subsetdef: disposition_slim "Disposition slim"
 subsetdef: environmental_hazards "environmental_hazards"
 subsetdef: EnvO-Lite-GSC "EnvO-Lite-GSC"
+subsetdef: ENVO:03605010 "Root of the NMDC environmental context value set hierarchy. This property organizes subset properties used to annotate EnvO classes relevant for MIxS environmental context fields (e.g., env_broad_scale, env_local_scale, env_medium_scale). This structure guides data annotation in systems like NCBI BioSample, refining recommendations from the ENVO-MIxS integration guide, addressing questions such as 'Which EnvO classes are reasonable for populating the env_broad_scale field in a soil sample versus a water sample.\""
 subsetdef: envoANZSoil "envoANZSoil"
 subsetdef: envoAstro "envoAstro"
 subsetdef: envoAtmo "envoAtmo"
@@ -25,17 +26,19 @@ subsetdef: value_slim "Value slim"
 subsetdef: wwfBiome "wwfBiome"
 synonymtypedef: OMO:0003004 "plural form"
 ontology: envo/subsets/envoAstro
-property_value: owl:versionInfo "2024-07-01" xsd:string
+property_value: owl:versionInfo "2025-02-05" xsd:string
 
 [Term]
 id: ENVO:00000070
 name: human construction
 namespace: ENVO
 def: "A construction that has been assembled by deliberate human effort." [MA:ma]
+comment: Some human constructions (such as the extra-planetary probes built for the Voyager missions) exist outside of Earth's (or any other astrononomical body's) technosphere, and are thus not astronomical body parts. Assertions regarding whether a construction is part of the technosphere of an astronomical body (e.g. Earth) should be made at the instance level, if needed / useful for the application case.
 synonym: "constructed feature" EXACT []
 is_a: ENVO:01001813 ! construction
+intersection_of: ENVO:01001813 ! construction
+intersection_of: output_of ENVO:01000996 ! human-directed construction process
 relationship: output_of ENVO:01000996 ! human-directed construction process
-relationship: part_of ENVO:01000983 ! technosphere
 property_value: IAO:0000116 "\"constructed\" should probably be made something like a quality and this class obsoleted or filled only by inference" xsd:string
 
 [Term]
@@ -71,6 +74,7 @@ namespace: ENVO
 def: "An environmental material which is primarily composed of minerals, varying proportions of sand, silt, and clay, organic material such as humus, interstitial gases, liquids, and a broad range of resident micro- and macroorganisms." [https://en.wikipedia.org/wiki/Soil]
 comment: 'In engineering terms, soil is referred to as regolith, or loose rock material that lies above the 'solid geology'. Soil is commonly referred to as "earth" or "dirt"; technically, the term "dirt" should be restricted to displaced soil.' https://en.wikipedia.org/wiki/Soil\n\n" The upper limit of soil is the boundary between soil and air, shallow water, live plants, or plant materials that have not begun to decompose. Areas are not considered to have soil if the surface is permanently covered by water too deep (typically more than 2.5 meters) for the growth of rooted plants.\n\nThe lower boundary that separates soil from the nonsoil underneath is most difficult to define. Soil consists of horizons near the Earth's surface that, in contrast to the underlying parent material, have been altered by the interactions of climate, relief, and living organisms over time. Commonly, soil grades at its lower boundary to hard rock or to earthy materials virtually devoid of animals, roots, or other marks of biological activity. For purposes of classification, the lower boundary of soil is arbitrarily set at 200 cm."  Soil taxonomy, 2nd Ed., quoted in http://www.nrcs.usda.gov/wps/portal/nrcs/detail/soils/edu/?cid=nrcs142p2_054280
 subset: EnvO-Lite-GSC
+subset: ENVO:03605015
 synonym: "regolith" BROAD []
 xref: https://en.wikipedia.org/wiki/Soil
 xref: LTER:535
@@ -91,6 +95,7 @@ id: ENVO:00002006
 name: liquid water
 namespace: ENVO
 def: "An environmental material primarily composed of dihydrogen oxide in its liquid form." [MA:ma]
+subset: ENVO:03605019
 synonym: "water" BROAD []
 xref: EcoLexicon:water
 xref: https://en.wikipedia.org/wiki/Water
@@ -1085,6 +1090,8 @@ id: ENVO:01001813
 name: construction
 namespace: ENVO
 def: "A material entity which has been assembled through the intentional, instinctual, or deliberately programmed efforts of an organism or machine." []
+comment: Constructions differ from manufactured products in that they are the output of individual and tailored projects, rather than repetitive processes. {xref="http://ascpro0.ascweb.org/archives/cd/2009/paper/CERT136002009.pdf", xref="comparing-construction-and-manufacturing", xref="https://www.autodesk.com/design-make/articles/manufacturing-and-construction"}
+synonym: "assembled material entity" BROAD []
 property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-4366-3088
 property_value: http://purl.org/dc/elements/1.1/date 2019-10-29T14:50:34Z xsd:dateTime
 
@@ -1261,11 +1268,6 @@ id: connects
 name: connects
 namespace: ENVO
 xref: RO:0002176
-
-[Typedef]
-id: contains
-namespace: ENVO
-xref: RO:0001019
 
 [Typedef]
 id: contains_process
@@ -1467,6 +1469,11 @@ namespace: ENVO
 xref: RO:0002212
 
 [Typedef]
+id: obsolete_contains
+namespace: ENVO
+xref: RO:0001019
+
+[Typedef]
 id: obsolete_determined_by
 name: obsolete determined by
 namespace: ENVO
@@ -1540,6 +1547,11 @@ namespace: ENVO
 xref: RO:0002608
 
 [Typedef]
+id: quality_of
+namespace: ENVO
+xref: RO:0000080
+
+[Typedef]
 id: realized_in
 namespace: ENVO
 xref: BFO:0000054
@@ -1564,7 +1576,7 @@ xref: ENVO:02500016
 property_value: IAO:0000112 "Afforestation results in the expansion of a forest." xsd:string
 
 [Typedef]
-id: results_in_formation_of
+id: results_in_formation_of_anatomical_entity
 namespace: ENVO
 xref: RO:0002297
 

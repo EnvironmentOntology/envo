@@ -1,8 +1,9 @@
 format-version: 1.2
-data-version: envo/releases/2024-07-01/subsets/envoPlastics.owl
+data-version: envo/releases/2025-02-05/subsets/envoPlastics.owl
 subsetdef: disposition_slim "Disposition slim"
 subsetdef: environmental_hazards "environmental_hazards"
 subsetdef: EnvO-Lite-GSC "EnvO-Lite-GSC"
+subsetdef: ENVO:03605010 "Root of the NMDC environmental context value set hierarchy. This property organizes subset properties used to annotate EnvO classes relevant for MIxS environmental context fields (e.g., env_broad_scale, env_local_scale, env_medium_scale). This structure guides data annotation in systems like NCBI BioSample, refining recommendations from the ENVO-MIxS integration guide, addressing questions such as 'Which EnvO classes are reasonable for populating the env_broad_scale field in a soil sample versus a water sample.\""
 subsetdef: envoANZSoil "envoANZSoil"
 subsetdef: envoAstro "envoAstro"
 subsetdef: envoAtmo "envoAtmo"
@@ -25,13 +26,14 @@ subsetdef: value_slim "Value slim"
 subsetdef: wwfBiome "wwfBiome"
 synonymtypedef: OMO:0003004 "plural form"
 ontology: envo/subsets/envoPlastics
-property_value: owl:versionInfo "2024-07-01" xsd:string
+property_value: owl:versionInfo "2025-02-05" xsd:string
 
 [Term]
 id: ENVO:00000016
 name: sea
 namespace: ENVO
-def: "A large expanse of saline water usually connected with an ocean." [https://en.wikipedia.org/wiki/Sea]
+def: "A lentic water body which is wholly or partly surrounded by land and either connected to or derived from a part of an ocean." [https://en.wikipedia.org/wiki/Sea]
+subset: ENVO:03605018
 subset: envoMarine
 subset: envoPolar
 synonym: "channel" NARROW []
@@ -46,8 +48,8 @@ xref: FTT:830
 xref: Geonames:H.SEA
 xref: https://en.wikipedia.org/wiki/Sea
 xref: TGN:21103
-is_a: ENVO:00001999 ! marine water body
-relationship: composed_primarily_of ENVO:00002149 ! sea water
+is_a: ENVO:01000617 ! lentic water body
+relationship: composed_primarily_of ENVO:01001964 ! seawater
 relationship: part_of ENVO:01000819 ! hydrosphere
 
 [Term]
@@ -98,6 +100,7 @@ id: ENVO:00000304
 name: shore
 namespace: ENVO
 def: "That part of the land in immediate contact with a body of water including the area between high and low water lines." [USGS:SDTS]
+subset: ENVO:03605023
 synonym: "beach face" RELATED [USGS:SDTS]
 synonym: "coastal zone" BROAD [ADL:FTT]
 synonym: "foreshore" RELATED [USGS:SDTS]
@@ -178,6 +181,7 @@ name: shoreline
 namespace: ENVO
 def: "A two-dimensional continuant fiat boundary which is located between a landmass and a water body." [USGS:SDTS] {comment="https://en.wikipedia.org/wiki/Shore"}
 comment: 1) this term is usually used for larger water bodies like lakes and oceans, 2) that the actual spatial extent of a shoreline, and the sharpness of its boundaries, is often arbitrarily or operationally defined, and 3) this term is for the physical shoreline, not the one- or two-dimensional representation of shorelines.
+subset: ENVO:03605014
 subset: envoPlastics
 synonym: "coastline" RELATED [USGS:SDTS] {http://purl.obolibrary.org/obo/IAO_0000116="The distinction between shoreline and coastline needs more thought."}
 synonym: "Küstenlinie" EXACT []
@@ -201,6 +205,7 @@ id: ENVO:00000501
 name: submerged bed
 namespace: ENVO
 def: "The portion of the ground surface which lies below water." [USGS:SDTS]
+subset: ENVO:03605023
 synonym: "BOTTOM" BROAD [USGS:SDTS]
 xref: EcoLexicon:bed
 xref: FTT:804
@@ -215,6 +220,7 @@ id: ENVO:00000533
 name: landfill
 namespace: ENVO
 def: "A depression which contains objects and materials discarded by humans or their technologies." [https://doi.org/10.1177%2F0734242X0202000209, https://en.wikipedia.org/wiki/Landfill, MA:ma]
+subset: ENVO:03605014
 subset: envoPlastics
 synonym: "Deponie" EXACT []
 synonym: "discarica" EXACT []
@@ -231,20 +237,11 @@ property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/00
 property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0003-1072-8081
 
 [Term]
-id: ENVO:00001999
-name: marine water body
-namespace: ENVO
-def: "A lentic water body which is composed primarily of marine water." []
-synonym: "body of marine water" EXACT []
-synonym: "marine waterbody" EXACT []
-is_a: ENVO:01000617 ! lentic water body
-relationship: part_of ENVO:01000819 ! hydrosphere
-
-[Term]
 id: ENVO:00002000
 name: slope
 namespace: ENVO
 def: "A solid astronomical body part which is part of the planetary surface between the peak of an elevation or the bottom of a depression and relatively flat surrounding land." [MA:ma]
+subset: ENVO:03605014
 synonym: "flank" RELATED []
 synonym: "side" RELATED []
 xref: EcoLexicon:slope
@@ -258,6 +255,7 @@ id: ENVO:00002006
 name: liquid water
 namespace: ENVO
 def: "An environmental material primarily composed of dihydrogen oxide in its liquid form." [MA:ma]
+subset: ENVO:03605019
 synonym: "water" BROAD []
 xref: EcoLexicon:water
 xref: https://en.wikipedia.org/wiki/Water
@@ -270,6 +268,7 @@ name: saline water
 namespace: ENVO
 def: "Water which contains a significant concentration of dissolved salts." []
 comment: The threshold salt concentration for classifying water as saline varies, but typically begins at about 1,000 to 3,000 parts salt per million parts water or 0.1–0.3% salt by weight.
+subset: ENVO:03605019
 synonym: "salt water" EXACT []
 xref: EcoLexicon:saltwater
 xref: https://en.wikipedia.org/wiki/Saline_water
@@ -279,17 +278,19 @@ is_a: ENVO:00002006 ! liquid water
 
 [Term]
 id: ENVO:00002149
-name: sea water
+name: ocean water
 namespace: ENVO
-def: "Water which has physicochemical properties that have been determined by the processes occuring in a sea or ocean." []
-comment: This definition refers to water that is actually in a sea or ocean. This water may have a wide range of salinity levels.
-synonym: "ocean water" EXACT []
+def: "Saline water which has has been formed as a result of oceanogenesis and which has its composition and properties maintained through processes including hydrological cycling, continental weathering, porewater burial, mineral deposition, ion exchange reactions, and ecological processes." []
+comment: This definition is scoped to Earth's ocean, although it may also be applied to other telluric planets, moons, and similar astronomical bodies. As more evidence of other ocean types (and thus ocean water) emerge, this class may be made a subclass of a more general "ocean" class, and its label changed accordingly. This classes PURL / PID will remain stable. https://en.wikipedia.org/wiki/Planetary_oceanography
+subset: ENVO:03605019
+synonym: "sea water" NARROW []
 synonym: "seawater" EXACT []
 xref: EcoLexicon:sea_water
 xref: https://en.wikipedia.org/wiki/Sea_water
 xref: LTER:701
 xref: SWEETRealm:SeaWater
 is_a: ENVO:00002010 ! saline water
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0002-4366-3088
 property_value: IAO:0000116 "When we have more classes representing the various processes which make seawater seawater, we can further axiomatise this class." xsd:string
 
 [Term]
@@ -355,10 +356,8 @@ creation_date: 2013-10-15T16:42:02Z
 id: ENVO:01000320
 name: marine environment
 namespace: ENVO
-def: "A marine environment and enviroment which is determined by a marine water body." [NM:nm]
+def: "An enviroment system which is determined by an ocean or sea." [NM:nm] {http://purl.org/dc/elements/1.1/contributor="https://orcid.org/0000-0002-4366-3088"}
 subset: envoPolar
-intersection_of: ENVO:01000254 ! environmental system
-intersection_of: determined_by ENVO:00001999 ! marine water body
 
 [Term]
 id: ENVO:01000617
@@ -408,11 +407,13 @@ name: coast
 namespace: ENVO
 def: "A coast is the area where land meets the sea, ocean, or lake." [https://en.wikipedia.org/wiki/Coast]
 comment: Used for both marine and lake coasts. The boundary of the coast is fuzzy and it overlaps both the water body and land in quesiton. Compared to 'shore'
+subset: ENVO:03605018
+subset: ENVO:03605023
 relationship: overlaps ENVO:01000635 ! planetary landmass
 
 [Term]
 id: ENVO:01000741
-name: recycling process
+name: waste recycling process
 namespace: ENVO
 def: "A process during which materials deemed as waste are separated and converted into a form which can be used as input by the same processes which generated them." [https://stats.oecd.org/glossary/detail.asp?ID=2260]
 comment: This has been created for SDGIO. Revision is likely, but the general meaning should be stable. The frame of reference for determining what is 'waste' and what is a  'resource' is unclear.
@@ -421,7 +422,7 @@ synonym: "proceso de reciclaje" EXACT []
 synonym: "processo di riciclo" EXACT []
 synonym: "Recycling-Prozess" EXACT []
 synonym: "資源回收" EXACT []
-is_a: ENVO:02500000 ! environmental system process
+is_a: ENVO:01001260 ! waste disposal process
 property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-2996-719X
 property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-8166-0486
 property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0003-1072-8081
@@ -615,6 +616,7 @@ id: ENVO:01001191
 name: water surface
 namespace: ENVO
 def: "The surface layer of a volume of water." []
+subset: ENVO:03605018
 synonym: "surface of a body of water" EXACT []
 synonym: "water body surface" EXACT []
 xref: EcoLexicon:surface_water
@@ -675,7 +677,6 @@ namespace: ENVO
 def: "A submerged bed which underlies a marine water body." []
 synonym: "sea bottom" NARROW []
 is_a: ENVO:00000501 ! submerged bed
-relationship: adjacent_to ENVO:00001999 ! marine water body
 property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-2996-719X
 property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-8166-0486
 property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0003-1072-8081
@@ -837,12 +838,31 @@ property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0
 property_value: http://purl.org/dc/elements/1.1/date 2021-05-15T09:40:37Z xsd:dateTime
 
 [Term]
+id: ENVO:01001964
+name: seawater
+namespace: ENVO
+def: "Ocean water which is part of a sea and which has its properties and composition more strongly influenced by terrestrial processes - such as river runoff, groundwater seepage, aeolian transport of dust - than waters of the open ocean." []
+is_a: ENVO:00002149 ! ocean water
+intersection_of: ENVO:00002149 ! ocean water
+intersection_of: part_of ENVO:00000016 ! sea
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2024-12-09T18:37:03Z xsd:dateTime
+
+[Term]
 id: ENVO:02000140
 name: fluid environmental material
 namespace: ENVO
 def: "An environmental material which is unable to resist shear forces and continuously deforms when subject to them." [https://en.wikipedia.org/wiki/Fluid, https://github.com/EnvironmentOntology/envo/issues/940]
 synonym: "fluid" NARROW []
 is_a: ENVO:00010483 ! environmental material
+
+[Term]
+id: ENVO:02000178
+name: anthropogenic modulation of pollution
+namespace: ENVO
+is_a: ENVO:02500026 ! anthropogenic modulatory intervention process
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0002-6601-2165
+property_value: http://purl.org/dc/terms/created 2024-08-05T21:21:15Z xsd:dateTime
 
 [Term]
 id: ENVO:02500000
@@ -891,6 +911,7 @@ name: pollution control
 namespace: ENVO
 def: "A planned process during which the amount of pollutants released into an environmental system is regulated." []
 synonym: "pollution prevention" NARROW []
+is_a: ENVO:02000178 ! anthropogenic modulation of pollution
 intersection_of: ENVO:02500026 ! anthropogenic modulatory intervention process
 intersection_of: regulates_(processual) ENVO:02500036 ! environmental pollution
 
@@ -936,6 +957,7 @@ name: anthropogenic litter
 namespace: ENVO
 def: "A material entity which has been discarded outside waste management systems by humans or their technologies." []
 comment: Very large objects that are discarded are typically considered "debris", but this term is loosely defined and there are no standard size classifications which can be used to distinguish debris from litter.
+subset: ENVO:03605014
 subset: envoPlastics
 synonym: "anthropogener Abfall" EXACT []
 synonym: "basura antropogénica" BROAD []
@@ -1761,11 +1783,6 @@ namespace: ENVO
 xref: RO:0002176
 
 [Typedef]
-id: contains
-namespace: ENVO
-xref: RO:0001019
-
-[Typedef]
 id: contains_process
 namespace: ENVO
 xref: BFO:0000067
@@ -1965,6 +1982,11 @@ namespace: ENVO
 xref: RO:0002212
 
 [Typedef]
+id: obsolete_contains
+namespace: ENVO
+xref: RO:0001019
+
+[Typedef]
 id: obsolete_determined_by
 name: obsolete determined by
 namespace: ENVO
@@ -2038,6 +2060,11 @@ namespace: ENVO
 xref: RO:0002608
 
 [Typedef]
+id: quality_of
+namespace: ENVO
+xref: RO:0000080
+
+[Typedef]
 id: realized_in
 namespace: ENVO
 xref: BFO:0000054
@@ -2062,7 +2089,7 @@ xref: ENVO:02500016
 property_value: IAO:0000112 "Afforestation results in the expansion of a forest." xsd:string
 
 [Typedef]
-id: results_in_formation_of
+id: results_in_formation_of_anatomical_entity
 namespace: ENVO
 xref: RO:0002297
 

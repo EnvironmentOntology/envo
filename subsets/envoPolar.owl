@@ -14,8 +14,8 @@
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
      xmlns:envo-basic="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/envo/subsets/envoPolar.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/envo/releases/2024-07-01/subsets/envoPolar.owl"/>
-        <owl:versionInfo>2024-07-01</owl:versionInfo>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/envo/releases/2025-02-05/subsets/envoPolar.owl"/>
+        <owl:versionInfo>2025-02-05</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -28,6 +28,15 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ENVO_03605010 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/ENVO_03605010">
+        <rdfs:comment>Root of the NMDC environmental context value set hierarchy. This property organizes subset properties used to annotate EnvO classes relevant for MIxS environmental context fields (e.g., env_broad_scale, env_local_scale, env_medium_scale). This structure guides data annotation in systems like NCBI BioSample, refining recommendations from the ENVO-MIxS integration guide, addressing questions such as &apos;Which EnvO classes are reasonable for populating the env_broad_scale field in a soil sample versus a water sample.&quot;</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#SubsetProperty"/>
+    </owl:AnnotationProperty>
     
 
 
@@ -352,6 +361,12 @@
     
 
 
+    <!-- http://purl.org/dc/terms/contributor -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/contributor"/>
+    
+
+
     <!-- http://purl.org/dc/terms/creator -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator"/>
@@ -521,6 +536,12 @@
     <!-- http://www.geneontology.org/formats/oboInOwl#http://purl.obolibrary.org/obo/IAO_0000119 -->
 
     <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#http://purl.obolibrary.org/obo/IAO_0000119"/>
+    
+
+
+    <!-- http://www.geneontology.org/formats/oboInOwl#http://purl.org/dc/elements/1.1/contributor -->
+
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#http://purl.org/dc/elements/1.1/contributor"/>
     
 
 
@@ -827,6 +848,17 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/RO_0000080 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0000080">
+        <oboInOwl:hasDbXref>RO:0000080</oboInOwl:hasDbXref>
+        <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>quality_of</oboInOwl:id>
+        <oboInOwl:shorthand>quality_of</oboInOwl:shorthand>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/RO_0000085 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0000085">
@@ -910,8 +942,8 @@
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0001019">
         <oboInOwl:hasDbXref>RO:0001019</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>contains</oboInOwl:id>
-        <oboInOwl:shorthand>contains</oboInOwl:shorthand>
+        <oboInOwl:id>obsolete_contains</oboInOwl:id>
+        <oboInOwl:shorthand>obsolete_contains</oboInOwl:shorthand>
     </owl:ObjectProperty>
     
 
@@ -1155,8 +1187,8 @@
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002297">
         <oboInOwl:hasDbXref>RO:0002297</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>results_in_formation_of</oboInOwl:id>
-        <oboInOwl:shorthand>results_in_formation_of</oboInOwl:shorthand>
+        <oboInOwl:id>results_in_formation_of_anatomical_entity</oboInOwl:id>
+        <oboInOwl:shorthand>results_in_formation_of_anatomical_entity</oboInOwl:shorthand>
     </owl:ObjectProperty>
     
 
@@ -1477,14 +1509,14 @@
     <!-- http://purl.obolibrary.org/obo/ENVO_00000015 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_00000015">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_00001999"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000617"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002473"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00002149"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo1:IAO_0000115>A marine water body which is constitutes the majority of an astronomical body&apos;s hydrosphere.</obo1:IAO_0000115>
+        <obo1:IAO_0000115>A lentic water body which has been formed as a result of oceanogenesis and constitutes the majority of an astronomical body&apos;s hydrosphere.</obo1:IAO_0000115>
         <oboInOwl:hasDbXref>EcoLexicon:ocean</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>FTT:1019</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>FTT:943</oboInOwl:hasDbXref>
@@ -1496,8 +1528,11 @@
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:hasRelatedSynonym>ocean region</oboInOwl:hasRelatedSynonym>
         <oboInOwl:id>ENVO:00000015</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605018"/>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605023"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoMarine"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar"/>
+        <rdfs:comment>As evidence for oceans differing from that of Earth emerge, the label &quot;ocean&quot; may be used for a more general class, with this class being relabelled as &quot;salt-water ocean&quot; or similar. The PURL/PID of this class will remain unchanged. See https://en.wikipedia.org/wiki/Planetary_oceanography</rdfs:comment>
         <rdfs:label>ocean</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -1518,7 +1553,7 @@
     <!-- http://purl.obolibrary.org/obo/ENVO_00000016 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_00000016">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_00001999"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000617"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
@@ -1528,10 +1563,10 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002473"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00002149"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001964"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo1:IAO_0000115>A large expanse of saline water usually connected with an ocean.</obo1:IAO_0000115>
+        <obo1:IAO_0000115>A lentic water body which is wholly or partly surrounded by land and either connected to or derived from a part of an ocean.</obo1:IAO_0000115>
         <oboInOwl:hasDbXref>EcoLexicon:sea</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>FTT:233</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>FTT:830</oboInOwl:hasDbXref>
@@ -1546,6 +1581,7 @@
         <oboInOwl:hasNarrowSynonym>open water</oboInOwl:hasNarrowSynonym>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:00000016</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605018"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoMarine"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar"/>
         <rdfs:label>sea</rdfs:label>
@@ -1553,7 +1589,7 @@
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000016"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>A large expanse of saline water usually connected with an ocean.</owl:annotatedTarget>
+        <owl:annotatedTarget>A lentic water body which is wholly or partly surrounded by land and either connected to or derived from a part of an ocean.</owl:annotatedTarget>
         <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Sea</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
@@ -1636,6 +1672,8 @@
         <oboInOwl:hasRelatedSynonym>mortlake</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>pasteuer lake</oboInOwl:hasRelatedSynonym>
         <oboInOwl:id>ENVO:00000020</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605014"/>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605018"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar"/>
         <rdfs:label>lake</rdfs:label>
     </owl:Class>
@@ -1705,6 +1743,7 @@
         <oboInOwl:hasExactSynonym>FreshwaterLake</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:00000021</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605018"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar"/>
         <rdfs:label>freshwater lake</rdfs:label>
     </owl:Class>
@@ -1769,6 +1808,8 @@
         <oboInOwl:hasRelatedSynonym>creek</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>rivulet</oboInOwl:hasRelatedSynonym>
         <oboInOwl:id>ENVO:00000023</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605014"/>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605018"/>
         <rdfs:label>stream</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -2255,6 +2296,8 @@
         <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Fjord</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:00000039</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605014"/>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605018"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar"/>
         <rdfs:label>fjord</rdfs:label>
     </owl:Class>
@@ -2299,6 +2342,8 @@
         <oboInOwl:hasRelatedSynonym>muskeg</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>peat bog</oboInOwl:hasRelatedSynonym>
         <oboInOwl:id>ENVO:00000044</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605014"/>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605018"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar"/>
         <rdfs:label>peatland</rdfs:label>
     </owl:Class>
@@ -2394,6 +2439,8 @@
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:hasRelatedSynonym>inlet</oboInOwl:hasRelatedSynonym>
         <oboInOwl:id>ENVO:00000045</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605014"/>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605018"/>
         <rdfs:label>estuary</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -2567,6 +2614,8 @@
         <oboInOwl:hasRelatedSynonym>grotto</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>notch</oboInOwl:hasRelatedSynonym>
         <oboInOwl:id>ENVO:00000067</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605014"/>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605018"/>
         <rdfs:label>cave</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -2676,6 +2725,8 @@
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:hasRelatedSynonym>mountains</oboInOwl:hasRelatedSynonym>
         <oboInOwl:id>ENVO:00000081</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605014"/>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605023"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar"/>
         <rdfs:comment>A mountain is generally steeper than a hill, but there is no universally accepted standard definition for the height of a mountain or a hill although a mountain usually has an identifiable summit. The USGS had previously defined mountains as localised elevations of more than 300 meters; however, the organisation has accepted there are no technical definitions in the US. In ENVO, we primarily use the UNEP-WCMC classification to be compliant with SDG monitoring, but we can host other classifications on request: http://www.fao.org/sustainable-development-goals/indicators/1542/en/</rdfs:comment>
         <rdfs:label>mountain</rdfs:label>
@@ -2892,6 +2943,8 @@
         <oboInOwl:hasRelatedSynonym>scaw</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>scraps</oboInOwl:hasRelatedSynonym>
         <oboInOwl:id>ENVO:00000087</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605014"/>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605023"/>
         <rdfs:label>cliff</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -3085,6 +3138,7 @@
         <oboInOwl:hasRelatedSynonym>isle</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>islet</oboInOwl:hasRelatedSynonym>
         <oboInOwl:id>ENVO:00000098</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605023"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar"/>
         <rdfs:label>island</rdfs:label>
     </owl:Class>
@@ -3178,6 +3232,7 @@
         <oboInOwl:hasRelatedSynonym>vale</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>water gap</oboInOwl:hasRelatedSynonym>
         <oboInOwl:id>ENVO:00000100</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605023"/>
         <rdfs:comment>Valleys are typically located between hills our mountains.</rdfs:comment>
         <rdfs:label>valley</rdfs:label>
     </owl:Class>
@@ -3557,6 +3612,8 @@ which ended up making incorrect inference. We chose to obsolete this now.</obo1:
         <oboInOwl:hasRelatedSynonym>RockGlacier</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>rock glacier</oboInOwl:hasRelatedSynonym>
         <oboInOwl:id>ENVO:00000133</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605014"/>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605018"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar"/>
         <rdfs:comment>The definition of glacier is highly variable. Two main issues exist: 1) Whether or not a mass of ice must currently show movement to be considered a glacier or not and 2) What is the relationship between ice sheets and glaciers (i.e., which is the parent in a parent/child relationship or whether they are distinct terms).</rdfs:comment>
         <rdfs:label>glacier</rdfs:label>
@@ -3665,6 +3722,7 @@ which ended up making incorrect inference. We chose to obsolete this now.</obo1:
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:hasRelatedSynonym>shore</oboInOwl:hasRelatedSynonym>
         <oboInOwl:id>ENVO:00000141</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605014"/>
         <rdfs:label>bank</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -3811,6 +3869,7 @@ which ended up making incorrect inference. We chose to obsolete this now.</obo1:
         <oboInOwl:hasExactSynonym>cwm</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:00000155</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605014"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar"/>
         <rdfs:label>cirque</rdfs:label>
     </owl:Class>
@@ -3854,6 +3913,7 @@ which ended up making incorrect inference. We chose to obsolete this now.</obo1:
         <oboInOwl:hasRelatedSynonym>neck</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>submarine isthmus</oboInOwl:hasRelatedSynonym>
         <oboInOwl:id>ENVO:00000174</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605014"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar"/>
         <rdfs:label>isthmus</rdfs:label>
     </owl:Class>
@@ -4058,6 +4118,8 @@ which ended up making incorrect inference. We chose to obsolete this now.</obo1:
         <oboInOwl:hasRelatedSynonym>tablemount</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>upland</oboInOwl:hasRelatedSynonym>
         <oboInOwl:id>ENVO:00000182</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605014"/>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605023"/>
         <rdfs:label>plateau</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -4331,6 +4393,7 @@ which ended up making incorrect inference. We chose to obsolete this now.</obo1:
         <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Neritic_zone</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:00000206</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605018"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoMarine"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar"/>
         <rdfs:label>marine neritic zone</rdfs:label>
@@ -4389,6 +4452,7 @@ which ended up making incorrect inference. We chose to obsolete this now.</obo1:
         <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Pelagic_zone</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:00000208</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605018"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoMarine"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar"/>
         <rdfs:label>marine pelagic zone</rdfs:label>
@@ -4421,6 +4485,7 @@ which ended up making incorrect inference. We chose to obsolete this now.</obo1:
         <oboInOwl:hasExactSynonym>epipelagic zone</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:00000209</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605018"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoMarine"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar"/>
         <rdfs:label>marine photic zone</rdfs:label>
@@ -4451,6 +4516,7 @@ which ended up making incorrect inference. We chose to obsolete this now.</obo1:
         <oboInOwl:hasExactSynonym>AphoticZone</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:00000210</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605018"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoMarine"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar"/>
         <rdfs:label>marine aphotic zone</rdfs:label>
@@ -4797,6 +4863,7 @@ which ended up making incorrect inference. We chose to obsolete this now.</obo1:
         <oboInOwl:hasRelatedSynonym>spur</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>spur (physiographic)</oboInOwl:hasRelatedSynonym>
         <oboInOwl:id>ENVO:00000283</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605014"/>
         <rdfs:label>ridge</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -5151,6 +5218,7 @@ which ended up making incorrect inference. We chose to obsolete this now.</obo1:
         <oboInOwl:hasRelatedSynonym>seashore</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>strand</oboInOwl:hasRelatedSynonym>
         <oboInOwl:id>ENVO:00000304</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605023"/>
         <rdfs:label>shore</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -5424,6 +5492,7 @@ which ended up making incorrect inference. We chose to obsolete this now.</obo1:
         <oboInOwl:hasExactSynonym>unsaturated zone</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:00000328</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605014"/>
         <rdfs:comment>If the vadose zone includes portions of soil, the water contained therein is termed soil moisture. In fine grained soils, capillary action can cause the pores of the soil to be fully saturated above the water table at a pressure less than atmospheric. In such soils, therefore, the unsaturated zone is the upper section of the vadose zone and not identical to it.</rdfs:comment>
         <rdfs:label>vadose zone</rdfs:label>
     </owl:Class>
@@ -5636,12 +5705,6 @@ SOURCE DEFINITION: Marine brine pools are large areas of brine on the ocean basi
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002220"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00001999"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002354"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000895"/>
             </owl:Restriction>
@@ -5816,6 +5879,7 @@ SOURCE DEFINITION: Marine brine pools are large areas of brine on the ocean basi
         <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Strait</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:00000394</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605018"/>
         <rdfs:label>strait</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -6183,18 +6247,19 @@ SOURCE DEFINITION: Marine brine pools are large areas of brine on the ocean basi
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_00000446">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000428"/>
-        <obo1:IAO_0000115>A biome which is  primarily or completely situated on a landmass.</obo1:IAO_0000115>
+        <obo1:IAO_0000115>A terrestrial ecosystem which is in its climactic successional state.</obo1:IAO_0000115>
         <oboInOwl:hasDbXref>LTER:798</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>SPIRE:Terrestrial</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
-        <oboInOwl:hasRelatedSynonym>terrestrial realm</oboInOwl:hasRelatedSynonym>
         <oboInOwl:id>ENVO:00000446</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605013"/>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605022"/>
         <rdfs:label>terrestrial biome</rdfs:label>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000446"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>A biome which is  primarily or completely situated on a landmass.</owl:annotatedTarget>
+        <owl:annotatedTarget>A terrestrial ecosystem which is in its climactic successional state.</owl:annotatedTarget>
         <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Biome#Terrestrial_biomes</oboInOwl:hasDbXref>
     </owl:Axiom>
     
@@ -6203,23 +6268,13 @@ SOURCE DEFINITION: Marine brine pools are large areas of brine on the ocean basi
     <!-- http://purl.obolibrary.org/obo/ENVO_00000447 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_00000447">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/ENVO_00002030"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002507"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00001999"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_00002030"/>
-        <obo1:IAO_0000115>An aquatic biome which is determined by a marine water body.</obo1:IAO_0000115>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001788"/>
+        <obo1:IAO_0000115>A marine ecosystem which is in its climactic successional state.</obo1:IAO_0000115>
         <oboInOwl:hasDbXref>SPIRE:Marine</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
-        <oboInOwl:hasRelatedSynonym>marine realm</oboInOwl:hasRelatedSynonym>
         <oboInOwl:id>ENVO:00000447</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605017"/>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605022"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar"/>
         <rdfs:comment>This biome includes open-ocean and unprotected coastal ecosystems, characterized by exposure to wave action, tidal fluctuation, and ocean currents as well as systems that largely resemble these. Water in the marine biome is generally within the salinity range of seawater: 30 to 38 ppt.</rdfs:comment>
         <rdfs:label>marine biome</rdfs:label>
@@ -6227,7 +6282,7 @@ SOURCE DEFINITION: Marine brine pools are large areas of brine on the ocean basi
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000447"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>An aquatic biome which is determined by a marine water body.</owl:annotatedTarget>
+        <owl:annotatedTarget>A marine ecosystem which is in its climactic successional state.</owl:annotatedTarget>
         <oboInOwl:hasDbXref>ISBN:978-0-618-45504-1</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>MA:ma</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Ocean</oboInOwl:hasDbXref>
@@ -6384,6 +6439,9 @@ SOURCE DEFINITION: Marine brine pools are large areas of brine on the ocean basi
         <oboInOwl:hasExactSynonym>harbor</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:00000463</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605014"/>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605018"/>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605023"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar"/>
         <rdfs:comment>Harbours are often used to store or shelter ships.</rdfs:comment>
         <rdfs:label>harbour</rdfs:label>
@@ -6475,6 +6533,7 @@ SOURCE DEFINITION: Marine brine pools are large areas of brine on the ocean basi
         <oboInOwl:hasRelatedSynonym>firth</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>ria</oboInOwl:hasRelatedSynonym>
         <oboInOwl:id>ENVO:00000475</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605018"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar"/>
         <rdfs:label>inlet</rdfs:label>
     </owl:Class>
@@ -6664,14 +6723,14 @@ SOURCE DEFINITION: Marine brine pools are large areas of brine on the ocean basi
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo1:IAO_0000115>The exit or point of discharge of a stream into another stream, lake or sea.</obo1:IAO_0000115>
+        <oboInOwl:hasBroadSynonym>MOUTH</oboInOwl:hasBroadSynonym>
         <oboInOwl:hasDbXref>EcoLexicon:outlet</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>SWEETRealm:Mouth</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Mouth</oboInOwl:hasDbXref>
-        <oboInOwl:hasExactSynonym>MOUTH</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/River_mouth</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:hasRelatedSynonym>outlet</oboInOwl:hasRelatedSynonym>
         <oboInOwl:id>ENVO:00000479</oboInOwl:id>
-        <rdfs:label>mouth</rdfs:label>
+        <rdfs:label>mouth of a watercourse</rdfs:label>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000479"/>
@@ -6681,7 +6740,7 @@ SOURCE DEFINITION: Marine brine pools are large areas of brine on the ocean basi
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000479"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym"/>
         <owl:annotatedTarget>MOUTH</owl:annotatedTarget>
         <oboInOwl:hasDbXref>USGS:SDTS</oboInOwl:hasDbXref>
     </owl:Axiom>
@@ -7003,6 +7062,7 @@ From the remote sensing/sea ice standpoint a polynya is a hole in the ice that o
         <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Glacial_lake</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:00000488</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605018"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar"/>
         <rdfs:label>glacial lake</rdfs:label>
     </owl:Class>
@@ -7039,6 +7099,7 @@ From the remote sensing/sea ice standpoint a polynya is a hole in the ice that o
         <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Stream_bed</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:00000501</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605023"/>
         <rdfs:label>submerged bed</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -7069,6 +7130,7 @@ From the remote sensing/sea ice standpoint a polynya is a hole in the ice that o
         <oboInOwl:hasExactSynonym>CRATER</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:00000514</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605014"/>
         <rdfs:label>crater</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -7096,6 +7158,7 @@ From the remote sensing/sea ice standpoint a polynya is a hole in the ice that o
         <oboInOwl:hasDbXref>SWEETRealm:Hummock</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:00000516</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605014"/>
         <rdfs:label>hummock</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -7199,19 +7262,20 @@ From the remote sensing/sea ice standpoint a polynya is a hole in the ice that o
     <!-- http://purl.obolibrary.org/obo/ENVO_00000873 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_00000873">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_00002030"/>
-        <obo1:IAO_0000115>An aquatic biome which is determined by a body of freshwater.</obo1:IAO_0000115>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001789"/>
+        <obo1:IAO_0000115>An freshwater ecosystem which is in its climactic successional state.</obo1:IAO_0000115>
         <oboInOwl:hasDbXref>SPIRE:Freshwater</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
-        <oboInOwl:hasRelatedSynonym>freshwater realm</oboInOwl:hasRelatedSynonym>
         <oboInOwl:id>ENVO:00000873</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605017"/>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605022"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar"/>
         <rdfs:label>freshwater biome</rdfs:label>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000873"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>An aquatic biome which is determined by a body of freshwater.</owl:annotatedTarget>
+        <owl:annotatedTarget>An freshwater ecosystem which is in its climactic successional state.</owl:annotatedTarget>
         <oboInOwl:hasDbXref>MA:ma</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>https://orcid.org/0000-0002-4366-3088</oboInOwl:hasDbXref>
     </owl:Axiom>
@@ -7302,6 +7366,7 @@ From the remote sensing/sea ice standpoint a polynya is a hole in the ice that o
         <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Soil</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:00001998</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605015"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#EnvO-Lite-GSC"/>
         <rdfs:comment>&apos;In engineering terms, soil is referred to as regolith, or loose rock material that lies above the &apos;solid geology&apos;. Soil is commonly referred to as &quot;earth&quot; or &quot;dirt&quot;; technically, the term &quot;dirt&quot; should be restricted to displaced soil.&apos; https://en.wikipedia.org/wiki/Soil
 
@@ -7316,26 +7381,6 @@ The lower boundary that separates soil from the nonsoil underneath is most diffi
         <owl:annotatedTarget>An environmental material which is primarily composed of minerals, varying proportions of sand, silt, and clay, organic material such as humus, interstitial gases, liquids, and a broad range of resident micro- and macroorganisms.</owl:annotatedTarget>
         <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Soil</oboInOwl:hasDbXref>
     </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/ENVO_00001999 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_00001999">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000617"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000819"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo1:IAO_0000115>A lentic water body which is composed primarily of marine water.</obo1:IAO_0000115>
-        <oboInOwl:hasExactSynonym>body of marine water</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym>marine waterbody</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>ENVO:00001999</oboInOwl:id>
-        <rdfs:label>marine water body</rdfs:label>
-    </owl:Class>
     
 
 
@@ -7357,6 +7402,7 @@ The lower boundary that separates soil from the nonsoil underneath is most diffi
         <oboInOwl:hasRelatedSynonym>flank</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>side</oboInOwl:hasRelatedSynonym>
         <oboInOwl:id>ENVO:00002000</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605014"/>
         <rdfs:label>slope</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -7409,6 +7455,7 @@ The lower boundary that separates soil from the nonsoil underneath is most diffi
         <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Water</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:00002006</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605019"/>
         <rdfs:label>liquid water</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -7483,6 +7530,7 @@ The lower boundary that separates soil from the nonsoil underneath is most diffi
         <oboInOwl:hasExactSynonym>salt water</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:00002010</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605019"/>
         <rdfs:comment>The threshold salt concentration for classifying water as saline varies, but typically begins at about 1,000 to 3,000 parts salt per million parts water or 0.1–0.3% salt by weight.</rdfs:comment>
         <rdfs:label>saline water</rdfs:label>
     </owl:Class>
@@ -7502,6 +7550,7 @@ The lower boundary that separates soil from the nonsoil underneath is most diffi
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:hasRelatedSynonym>sweet water</oboInOwl:hasRelatedSynonym>
         <oboInOwl:id>ENVO:00002011</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605019"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoEmpo"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar"/>
         <rdfs:comment>The lower bound of solute concentration required for water to be considered freshwater is variable, but is always less than that of seawater, and often cited as less than 1 gram of solutes per 1 litre of water.</rdfs:comment>
@@ -7518,6 +7567,7 @@ The lower boundary that separates soil from the nonsoil underneath is most diffi
         <obo1:IAO_0000116>We make no commitment to a particular threshold; this should be described on the data/information layer according to the norms of a discipline, accepted standard, or similar reference.</obo1:IAO_0000116>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:00002012</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605019"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar"/>
         <rdfs:comment>The average salinity of sea water is assumed to be around 35,000 ppm, equivalent to 35 grams of salt per one liter (or kilogram) of water.</rdfs:comment>
         <rdfs:label>hypersaline water</rdfs:label>
@@ -7537,32 +7587,9 @@ The lower boundary that separates soil from the nonsoil underneath is most diffi
         <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Brackish_water</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:00002019</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605019"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar"/>
         <rdfs:label>brackish water</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/ENVO_00002030 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_00002030">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/ENVO_00000428"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002507"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000063"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000428"/>
-        <obo1:IAO_0000115>A biome which is determined by a water body and which has ecological climax communities adapted to life in or on water.</obo1:IAO_0000115>
-        <oboInOwl:hasDbXref>LTER:41</oboInOwl:hasDbXref>
-        <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>ENVO:00002030</oboInOwl:id>
-        <rdfs:label>aquatic biome</rdfs:label>
     </owl:Class>
     
 
@@ -7653,18 +7680,20 @@ The lower boundary that separates soil from the nonsoil underneath is most diffi
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_00002149">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_00002010"/>
-        <obo1:IAO_0000115>Water which has physicochemical properties that have been determined by the processes occuring in a sea or ocean.</obo1:IAO_0000115>
+        <obo1:IAO_0000115>Saline water which has has been formed as a result of oceanogenesis and which has its composition and properties maintained through processes including hydrological cycling, continental weathering, porewater burial, mineral deposition, ion exchange reactions, and ecological processes.</obo1:IAO_0000115>
         <obo1:IAO_0000116>When we have more classes representing the various processes which make seawater seawater, we can further axiomatise this class.</obo1:IAO_0000116>
+        <terms:contributor rdf:resource="https://orcid.org/0000-0002-4366-3088"/>
         <oboInOwl:hasDbXref>EcoLexicon:sea_water</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>LTER:701</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>SWEETRealm:SeaWater</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Sea_water</oboInOwl:hasDbXref>
-        <oboInOwl:hasExactSynonym>ocean water</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>seawater</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasNarrowSynonym>sea water</oboInOwl:hasNarrowSynonym>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:00002149</oboInOwl:id>
-        <rdfs:comment>This definition refers to water that is actually in a sea or ocean. This water may have a wide range of salinity levels.</rdfs:comment>
-        <rdfs:label>sea water</rdfs:label>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605019"/>
+        <rdfs:comment>This definition is scoped to Earth&apos;s ocean, although it may also be applied to other telluric planets, moons, and similar astronomical bodies. As more evidence of other ocean types (and thus ocean water) emerge, this class may be made a subclass of a more general &quot;ocean&quot; class, and its label changed accordingly. This classes PURL / PID will remain stable. https://en.wikipedia.org/wiki/Planetary_oceanography</rdfs:comment>
+        <rdfs:label>ocean water</rdfs:label>
     </owl:Class>
     
 
@@ -7675,7 +7704,7 @@ The lower boundary that separates soil from the nonsoil underneath is most diffi
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/ENVO_00002149"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/ENVO_01001964"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002220"/>
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000303"/>
@@ -7683,14 +7712,15 @@ The lower boundary that separates soil from the nonsoil underneath is most diffi
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_00002149"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001964"/>
         <obo1:IAO_0000115>Coastal sea water is sea water that is adjacent to a coast.</obo1:IAO_0000115>
         <oboInOwl:hasBroadSynonym>coastal water</oboInOwl:hasBroadSynonym>
-        <oboInOwl:hasExactSynonym>coastal ocean water</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym>coastal oceanic water</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>coastal seawater</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasRelatedSynonym>coastal ocean water</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>coastal oceanic water</oboInOwl:hasRelatedSynonym>
         <oboInOwl:id>ENVO:00002150</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605019"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar"/>
         <rdfs:comment>The limits of what qualifies as &quot;adjacent to&quot; vary greatly. This should be defined on a data level and is left intentionally fuzzy here. The label is &quot;coastal sea water&quot; rather than &quot;coastal water&quot; as some large lakes are often said to have coasts.</rdfs:comment>
         <rdfs:label>coastal sea water</rdfs:label>
@@ -7714,6 +7744,7 @@ The lower boundary that separates soil from the nonsoil underneath is most diffi
         <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Sea_ice</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:00002200</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605019"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar"/>
         <rdfs:comment>In the United States, NOAA sea ice operations does not include superstructure icing as being sea ice. In sea ice operations however, sea ice is any form of ice found at sea which has originated from the freezing of sea water. It presents the main kind of floating ice encountered at sea. Except where it forms ridges, sea ice is up to a few metres thick, in which respect it differs from shelf ice.  Sea ice may be discontinuous pieces (ice floes) moved on the ocean surface by wind and currents (pack ice), or a motionless sheet attached to the coast (land-fast ice). In brief, it forms first as lolly ice (frazil crystals), thickens into sludge, and coagulates into sheet ice, pancake ice, or into floes of various shapes and sizes. Thereafter, sea ice may develop into pack ice and/or become a form of pressure ice.  Sea ice less than one year old is called first-year ice. Perennial ice is sea ice that survives at least one summer. It may be subdivided into second-year ice and multi-year ice, where multiyear ice has survived at least two summers.</rdfs:comment>
         <rdfs:label>sea ice</rdfs:label>
@@ -7742,6 +7773,7 @@ The lower boundary that separates soil from the nonsoil underneath is most diffi
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:hasRelatedSynonym>gelisol</oboInOwl:hasRelatedSynonym>
         <oboInOwl:id>ENVO:00002236</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605015"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar"/>
         <rdfs:label>cryosol</rdfs:label>
     </owl:Class>
@@ -7762,6 +7794,7 @@ The lower boundary that separates soil from the nonsoil underneath is most diffi
         <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Histosol</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:00002243</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605015"/>
         <rdfs:label>histosol</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -7831,8 +7864,7 @@ The lower boundary that separates soil from the nonsoil underneath is most diffi
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:00002450</oboInOwl:id>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar"/>
-        <rdfs:comment>This class is defined in its geological sense:
-https://en.wikipedia.org/wiki/ Hydrologically, an oceanic basin may be anywhere on Earth that is covered by seawater, but geologically ocean basins are large geologic basins that are below sea level. Geologically, there are other undersea geomorphological features such as the continental shelves, the deep ocean trenches, and the undersea mountain ranges (for example, the mid-Atlantic ridge) which are not considered to be part of the ocean basins; while hydrologically, oceanic basins include the flanking continental shelves and shallow, epeiric seas.</rdfs:comment>
+        <rdfs:comment>This class is defined in its geological sense. See https://en.wikipedia.org/wiki/Oceanic_basin. Hydrologically, an oceanic basin may be anywhere on Earth that is covered by seawater, but geologically ocean basins are large geologic basins that are below sea level. Geologically, there are other undersea geomorphological features such as the continental shelves, the deep ocean trenches, and the undersea mountain ranges (for example, the mid-Atlantic ridge) which are not considered to be part of the ocean basins; while hydrologically, oceanic basins include the flanking continental shelves and shallow, epeiric seas.</rdfs:comment>
         <rdfs:label>ocean basin</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -7889,6 +7921,7 @@ https://en.wikipedia.org/wiki/ Hydrologically, an oceanic basin may be anywhere 
         <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Brine</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:00003044</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605019"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar"/>
         <rdfs:comment>It is used (now less popular than historically) to preserve vegetables, fish, and meat.</rdfs:comment>
         <rdfs:label>brine</rdfs:label>
@@ -7934,6 +7967,7 @@ https://en.wikipedia.org/wiki/ Hydrologically, an oceanic basin may be anywhere 
         <obo1:IAO_0000115>Soil which is part of an alpine environment.</obo1:IAO_0000115>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:00005741</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605015"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar"/>
         <rdfs:label>alpine soil</rdfs:label>
     </owl:Class>
@@ -7983,6 +8017,7 @@ https://en.wikipedia.org/wiki/ Hydrologically, an oceanic basin may be anywhere 
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:hasRelatedSynonym>subterranean water</oboInOwl:hasRelatedSynonym>
         <oboInOwl:id>ENVO:00005792</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605019"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar"/>
         <rdfs:comment>This class references any water that&apos;s under a planetary surface. For water that is in an aquifer, see &quot;groundwater&quot; (ENVO:01001004). Previously, this class included both.</rdfs:comment>
         <rdfs:label>underground water</rdfs:label>
@@ -8173,6 +8208,8 @@ https://en.wikipedia.org/wiki/ Hydrologically, an oceanic basin may be anywhere 
         <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Aquifer</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:00012408</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605014"/>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605018"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar"/>
         <rdfs:label>aquifer</rdfs:label>
     </owl:Class>
@@ -8342,17 +8379,12 @@ https://en.wikipedia.org/wiki/ Hydrologically, an oceanic basin may be anywhere 
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000023">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000447"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00001999"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <obo1:IAO_0000115>The marine pelagic biome (pelagic meaning open sea) is that of the marine water column, from the surface to the greatest depths.</obo1:IAO_0000115>
         <oboInOwl:created_by>ORCID:0000-0002-4366-3088</oboInOwl:created_by>
         <oboInOwl:creation_date>2010-03-15T11:17:06Z</oboInOwl:creation_date>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:01000023</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605017"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar"/>
         <rdfs:label>marine pelagic biome</rdfs:label>
     </owl:Class>
@@ -8375,6 +8407,7 @@ https://en.wikipedia.org/wiki/ Hydrologically, an oceanic basin may be anywhere 
         <oboInOwl:hasDbXref>SPIRE:Benthic</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:01000024</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605017"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar"/>
         <rdfs:label>marine benthic biome</rdfs:label>
     </owl:Class>
@@ -8397,6 +8430,8 @@ https://en.wikipedia.org/wiki/ Hydrologically, an oceanic basin may be anywhere 
         <oboInOwl:creation_date>2010-03-15T11:18:40Z</oboInOwl:creation_date>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:01000025</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605017"/>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605022"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar"/>
         <rdfs:label>marine neritic benthic zone biome</rdfs:label>
     </owl:Class>
@@ -8457,6 +8492,7 @@ https://en.wikipedia.org/wiki/ Hydrologically, an oceanic basin may be anywhere 
         <oboInOwl:creation_date>2010-03-15T11:23:23Z</oboInOwl:creation_date>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:01000048</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605017"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar"/>
         <rdfs:comment>Ocean biomes are determined by major bodies of saline water, principal components of the hydrosphere. Approximately 71% of the Earth&apos;s surface is covered by ocean, a continuous body of water that is customarily divided into several principal oceans and smaller seas. More than half of this area is over 3,000 metres (9,800 ft) deep. Average oceanic salinity is around 35 parts per thousand (ppt) (3.5%), and nearly all seawater has a salinity in the range of 30 to 38 ppt.</rdfs:comment>
         <rdfs:label>ocean biome</rdfs:label>
@@ -8590,12 +8626,6 @@ https://en.wikipedia.org/wiki/ Hydrologically, an oceanic basin may be anywhere 
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000065">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000686"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00001999"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <obo1:IAO_0000115>A marine water mass which is characterized by having much lower than normal dissolved oxygen concentrations persistently.</obo1:IAO_0000115>
         <obo1:IAO_0000117>http://orcid.org/0000-0002-3410-4655</obo1:IAO_0000117>
         <obo1:IAO_0000117>https://orcid.org/0000-0002-2908-3327</obo1:IAO_0000117>
@@ -8620,12 +8650,6 @@ https://en.wikipedia.org/wiki/ Hydrologically, an oceanic basin may be anywhere 
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000066">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001201"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00001999"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <obo1:IAO_0000115>Marine anoxic zones are areas of marine water that are depleted of dissolved oxygen. This condition is generally found in areas that have restricted water exchange. In most cases, oxygen is prevented from reaching the deeper levels by a physical barrier (sill) as well as by a pronounced density stratification. Anoxic conditions will occur if the rate of oxidation of organic matter by bacteria is greater than the supply of dissolved oxygen.</obo1:IAO_0000115>
         <oboInOwl:created_by>ORCID:0000-0002-4366-3088</oboInOwl:created_by>
         <oboInOwl:creation_date>2010-03-16T12:16:11Z</oboInOwl:creation_date>
@@ -8678,17 +8702,6 @@ https://en.wikipedia.org/wiki/ Hydrologically, an oceanic basin may be anywhere 
     <!-- http://purl.obolibrary.org/obo/ENVO_01000075 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000075">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/ENVO_00002269"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00001999"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_00002269"/>
         <obo1:IAO_0000115>A thermocline which is part of a marine water body.</obo1:IAO_0000115>
         <oboInOwl:created_by>ORCID:0000-0002-4366-3088</oboInOwl:created_by>
@@ -8712,17 +8725,6 @@ https://en.wikipedia.org/wiki/ Hydrologically, an oceanic basin may be anywhere 
     <!-- http://purl.obolibrary.org/obo/ENVO_01000076 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000076">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/ENVO_00002270"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00001999"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_00002270"/>
         <obo1:IAO_0000115>A marine chemocline is a marine cline caused by a strong, vertical chemistry gradient within a body of marine water. Chemoclines most commonly occur where local conditions favor the formations of anoxic bottom water.</obo1:IAO_0000115>
         <oboInOwl:created_by>ORCID:0000-0002-4366-3088</oboInOwl:created_by>
@@ -8745,17 +8747,6 @@ https://en.wikipedia.org/wiki/ Hydrologically, an oceanic basin may be anywhere 
     <!-- http://purl.obolibrary.org/obo/ENVO_01000077 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000077">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/ENVO_01000259"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00001999"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000259"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -8763,7 +8754,7 @@ https://en.wikipedia.org/wiki/ Hydrologically, an oceanic basin may be anywhere 
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00002149"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo1:IAO_0000115>A pycnocline which is part of a marine water body and composed primarily of sea water.</obo1:IAO_0000115>
+        <obo1:IAO_0000115>A pycnocline which is part of a marine water body and composed primarily of ocean water.</obo1:IAO_0000115>
         <oboInOwl:created_by>ORCID:0000-0002-4366-3088</oboInOwl:created_by>
         <oboInOwl:creation_date>2010-03-16T12:16:11Z</oboInOwl:creation_date>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
@@ -8775,7 +8766,7 @@ https://en.wikipedia.org/wiki/ Hydrologically, an oceanic basin may be anywhere 
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000077"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>A pycnocline which is part of a marine water body and composed primarily of sea water.</owl:annotatedTarget>
+        <owl:annotatedTarget>A pycnocline which is part of a marine water body and composed primarily of ocean water.</owl:annotatedTarget>
         <oboInOwl:hasDbXref>ORCID:0000-0002-4366-3088</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Mixed_layer</oboInOwl:hasDbXref>
     </owl:Axiom>
@@ -8786,12 +8777,6 @@ https://en.wikipedia.org/wiki/ Hydrologically, an oceanic basin may be anywhere 
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000078">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001675"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00001999"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <obo1:IAO_0000115>A nutricline which is part of a marine water body.</obo1:IAO_0000115>
         <oboInOwl:created_by>ORCID:0000-0002-4366-3088</oboInOwl:created_by>
         <oboInOwl:creation_date>2010-03-16T12:16:11Z</oboInOwl:creation_date>
@@ -9236,6 +9221,7 @@ https://en.wikipedia.org/wiki/ Hydrologically, an oceanic basin may be anywhere 
         <oboInOwl:hasDbXref>EcoLexicon:marine_snow</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:01000158</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605019"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar"/>
         <rdfs:label>marine snow</rdfs:label>
     </owl:Class>
@@ -9271,28 +9257,6 @@ https://en.wikipedia.org/wiki/ Hydrologically, an oceanic basin may be anywhere 
     
 
 
-    <!-- http://purl.obolibrary.org/obo/ENVO_01000179 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000179">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001780"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002131"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000097"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo1:IAO_0000115>A desert ecosystem which is undergoing climactic ecological succession.</obo1:IAO_0000115>
-        <oboInOwl:created_by>ORCID:0000-0002-4366-3088</oboInOwl:created_by>
-        <oboInOwl:creation_date>2013-04-07T14:26:46Z</oboInOwl:creation_date>
-        <oboInOwl:hasDbXref>SPIRE:Desert_or_dune</oboInOwl:hasDbXref>
-        <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>ENVO:01000179</oboInOwl:id>
-        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#wwfBiome"/>
-        <rdfs:label>desert biome</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/ENVO_01000180 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000180">
@@ -9302,12 +9266,14 @@ https://en.wikipedia.org/wiki/ Hydrologically, an oceanic basin may be anywhere 
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000112"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo1:IAO_0000115>A tundra ecosystem which is undergoing climactic ecological succession.</obo1:IAO_0000115>
-        <oboInOwl:created_by>ORCID:0000-0002-4366-3088</oboInOwl:created_by>
+        <obo1:IAO_0000115>A tundra ecosystem which is in its climactic successional state.</obo1:IAO_0000115>
+        <terms:creator rdf:resource="https://orcid.org/0000-0002-4366-3088"/>
         <oboInOwl:creation_date>2013-04-07T14:26:46Z</oboInOwl:creation_date>
         <oboInOwl:hasDbXref>SPIRE:Tundra</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:01000180</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605013"/>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605022"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#wwfBiome"/>
         <rdfs:label>tundra biome</rdfs:label>
@@ -9318,26 +9284,19 @@ https://en.wikipedia.org/wiki/ Hydrologically, an oceanic basin may be anywhere 
     <!-- http://purl.obolibrary.org/obo/ENVO_01000186 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000186">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000179"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000086"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000238"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo1:IAO_0000115>A polar desert biome is a desert biome which is subject to low levels of insolation, annual precipitation less than 250 millimeters, and a mean temperature less than 10 degrees Celsius during its warmest month. Temperature changes in polar deserts frequently cross the freezing point of water.</obo1:IAO_0000115>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001904"/>
+        <obo1:IAO_0000115>.A polar desert ecosytem which is in its climactic successional state.</obo1:IAO_0000115>
         <oboInOwl:created_by>ORCID:0000-0002-4366-3088</oboInOwl:created_by>
         <oboInOwl:creation_date>2013-04-07T14:28:08Z</oboInOwl:creation_date>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:01000186</oboInOwl:id>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar"/>
-        <rdfs:comment>Preliminary definition. The semantics and definitions of &quot;mediterranean&quot;, &quot;subtropical&quot;, &quot;tropical&quot;, &quot;temperate&quot;, &quot;polar&quot;, and similar climate types may be transferred to an &quot;environmental condition&quot; class once the semantics of this class have been established.</rdfs:comment>
         <rdfs:label>polar desert biome</rdfs:label>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000186"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>A polar desert biome is a desert biome which is subject to low levels of insolation, annual precipitation less than 250 millimeters, and a mean temperature less than 10 degrees Celsius during its warmest month. Temperature changes in polar deserts frequently cross the freezing point of water.</owl:annotatedTarget>
+        <owl:annotatedTarget>.A polar desert ecosytem which is in its climactic successional state.</owl:annotatedTarget>
         <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Polar_desert</oboInOwl:hasDbXref>
     </owl:Axiom>
     
@@ -9347,11 +9306,13 @@ https://en.wikipedia.org/wiki/ Hydrologically, an oceanic basin may be anywhere 
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000197">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000430"/>
-        <obo1:IAO_0000115>A broadleaf forest ecosystem which is undergoing climactic ecological succession.</obo1:IAO_0000115>
-        <oboInOwl:created_by>ORCID:0000-0002-4366-3088</oboInOwl:created_by>
+        <obo1:IAO_0000115>A broadleaf forest ecosystem which is in its climactic successional state.</obo1:IAO_0000115>
+        <dc:creator rdf:resource="https://orcid.org/0000-0002-4366-3088"/>
         <oboInOwl:creation_date>2013-04-07T14:31:01Z</oboInOwl:creation_date>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:01000197</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605013"/>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605022"/>
         <rdfs:label>broadleaf forest biome</rdfs:label>
     </owl:Class>
     
@@ -9362,7 +9323,7 @@ https://en.wikipedia.org/wiki/ Hydrologically, an oceanic basin may be anywhere 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000203">
         <obo1:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000121"/>
         <obo1:IAO_0000115>An environmental condition is a range of a determinate quality or combination of qualities that are present in an environmental system.</obo1:IAO_0000115>
-        <oboInOwl:created_by>ORCID:0000-0002-4366-3088</oboInOwl:created_by>
+        <dc:creator rdf:resource="https://orcid.org/0000-0002-4366-3088"/>
         <oboInOwl:creation_date>2013-04-07T14:35:18Z</oboInOwl:creation_date>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:01000203</oboInOwl:id>
@@ -9384,7 +9345,7 @@ https://en.wikipedia.org/wiki/ Hydrologically, an oceanic basin may be anywhere 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000230">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000203"/>
         <obo1:IAO_0000115>An environmental condition in which annual precipitation is less than half of annual potential evapotranspiration.</obo1:IAO_0000115>
-        <oboInOwl:created_by>ORCID:0000-0002-4366-3088</oboInOwl:created_by>
+        <dc:creator rdf:resource="https://orcid.org/0000-0002-4366-3088"/>
         <oboInOwl:creation_date>2013-04-24T13:28:18Z</oboInOwl:creation_date>
         <oboInOwl:hasDbXref>EcoLexicon:aridity</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
@@ -9400,7 +9361,7 @@ https://en.wikipedia.org/wiki/ Hydrologically, an oceanic basin may be anywhere 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000238">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000203"/>
         <obo1:IAO_0000115>A polar condition is an environmental condition in which an environmental system receives low, yearly solar irradiance per unit area, resulting in colder climatic conditions.</obo1:IAO_0000115>
-        <oboInOwl:created_by>ORCID:0000-0002-4366-3088</oboInOwl:created_by>
+        <dc:creator rdf:resource="https://orcid.org/0000-0002-4366-3088"/>
         <oboInOwl:creation_date>2013-05-08T07:49:36Z</oboInOwl:creation_date>
         <oboInOwl:hasDbXref>SPIRE:Polar</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>SWEETRealm:Polarization</oboInOwl:hasDbXref>
@@ -9431,7 +9392,7 @@ https://en.wikipedia.org/wiki/ Hydrologically, an oceanic basin may be anywhere 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000251">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000203"/>
         <obo1:IAO_0000115>A subpolar condition is an environmental condition in which an environmental system receives low, yearly solar irradiance per unit area and is surrounded by large land masses. This results in very cold winters with temperatures potentially falling to around -40 degrees Celsius and summers which last no more than 3 months of the year with a 24-hour average temperature of at least 10 degrees Celsius.</obo1:IAO_0000115>
-        <oboInOwl:created_by>ORCID:0000-0002-4366-3088</oboInOwl:created_by>
+        <dc:creator rdf:resource="https://orcid.org/0000-0002-4366-3088"/>
         <oboInOwl:creation_date>2013-09-04T07:08:34Z</oboInOwl:creation_date>
         <oboInOwl:hasExactSynonym>boreal</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>subarctic</oboInOwl:hasExactSynonym>
@@ -9696,12 +9657,12 @@ From https://en.wikipedia.org/wiki/ [A mineral] is different from a rock, which 
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo1:IAO_0000115>A large unit of land or water containing a geographically distinct assemblage of species, natural communities, and environmental conditions.</obo1:IAO_0000115>
-        <oboInOwl:created_by>ORCID:0000-0002-4366-3088</oboInOwl:created_by>
+        <dc:creator rdf:resource="https://orcid.org/0000-0002-4366-3088"/>
         <oboInOwl:creation_date>2013-10-12T17:21:09Z</oboInOwl:creation_date>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:01000276</oboInOwl:id>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar"/>
-        <rdfs:comment>Unlike biomes, ecoregions are geographically defined entities. ENVO&apos;s sister project, GAZ, contains terms for instances of ecoregions (e.g. Beringia lowland tundra). Requests for new terms should be directed to GAZ. ENVO will only contain this top-level class. The class&apos; definition is preliminary and will be aligned to BFO.</rdfs:comment>
+        <rdfs:comment>Specific ecoregions are geographically defined and instantiated entities (e.g. Beringia lowland tundra), and should be represented as instances / named individuals of ENVO:ecoregion or an appropriate subclass.</rdfs:comment>
         <rdfs:label>ecoregion</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -9725,6 +9686,7 @@ From https://en.wikipedia.org/wiki/ [A mineral] is different from a rock, which 
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:hasRelatedSynonym>ice</oboInOwl:hasRelatedSynonym>
         <oboInOwl:id>ENVO:01000277</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605019"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar"/>
         <rdfs:comment>Water ice can appear transparent or opaque bluish-white color, depending on the presence of impurities or air inclusions. The addition of other materials such as soil may further alter its appearance.
 
@@ -9911,12 +9873,6 @@ https://en.wikipedia.org/wiki/  Ecozones correspond to the floristic kingdoms of
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000325"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00001999"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002473"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00002149"/>
             </owl:Restriction>
@@ -9967,6 +9923,7 @@ https://en.wikipedia.org/wiki/  Ecozones correspond to the floristic kingdoms of
         <oboInOwl:hasDbXref>SWEETRealm:ContinentalMargin</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:01000298</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605018"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar"/>
         <rdfs:comment>On Earth, continental margins constitute about 28% of the oceanic area.</rdfs:comment>
         <rdfs:label>continental margin</rdfs:label>
@@ -9989,6 +9946,7 @@ https://en.wikipedia.org/wiki/  Ecozones correspond to the floristic kingdoms of
         <oboInOwl:creation_date>2013-10-19T11:30:46Z</oboInOwl:creation_date>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:01000301</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605019"/>
         <rdfs:label>estuarine water</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -10107,18 +10065,7 @@ https://en.wikipedia.org/wiki/  Ecozones correspond to the floristic kingdoms of
     <!-- http://purl.obolibrary.org/obo/ENVO_01000320 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000320">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/ENVO_01000254"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002507"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00001999"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <obo1:IAO_0000115>A marine environment and enviroment which is determined by a marine water body.</obo1:IAO_0000115>
+        <obo1:IAO_0000115>An enviroment system which is determined by an ocean or sea.</obo1:IAO_0000115>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:01000320</oboInOwl:id>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar"/>
@@ -10127,8 +10074,9 @@ https://en.wikipedia.org/wiki/  Ecozones correspond to the floristic kingdoms of
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000320"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>A marine environment and enviroment which is determined by a marine water body.</owl:annotatedTarget>
+        <owl:annotatedTarget>An enviroment system which is determined by an ocean or sea.</owl:annotatedTarget>
         <oboInOwl:hasDbXref>NM:nm</oboInOwl:hasDbXref>
+        <elements:contributor>https://orcid.org/0000-0002-4366-3088</elements:contributor>
     </owl:Axiom>
     
 
@@ -10323,7 +10271,7 @@ Further discussion in Issue #126.</obo1:IAO_0000116>
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000340">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000343"/>
         <obo1:IAO_0000115>An altitudinal condition which inheres in a bearer by virtue of the bearer having a monthly mean temperature is less than 10 degrees Celsius and being located at altitudes above the tree line and below the snowline.</obo1:IAO_0000115>
-        <oboInOwl:created_by>ORCID:0000-0002-4366-3088</oboInOwl:created_by>
+        <dc:creator rdf:resource="https://orcid.org/0000-0002-4366-3088"/>
         <oboInOwl:hasDbXref>LTER:26</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:01000340</oboInOwl:id>
@@ -10345,11 +10293,11 @@ Further discussion in Issue #126.</obo1:IAO_0000116>
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000341">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000343"/>
         <obo1:IAO_0000115>An altitudinal condition which inheres in a bearer by virtue of the bearer being located at an altitude immediately below the tree line of an elevation.</obo1:IAO_0000115>
-        <oboInOwl:created_by>ORCID:0000-0002-4366-3088</oboInOwl:created_by>
+        <obo1:IAO_0000116>Requested in Issue 33 of our tracker. The lower boundry of this condition&apos;s range, that is, the lower altitudinal limit of an elevation that is considuered subalpine, is not clear in this definition.</obo1:IAO_0000116>
+        <oboInOwl:created_by>https://orcid.org/0000-0002-4366-3088</oboInOwl:created_by>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:01000341</oboInOwl:id>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar"/>
-        <rdfs:comment>Requested in Issue 33 of our tracker. The lower boundry of this condition&apos;s range, that is, the lower altitudinal limit of an elevation that is considuered subalpine, is not clear in this definition.</rdfs:comment>
         <rdfs:label>subalpine</rdfs:label>
     </owl:Class>
     
@@ -10360,7 +10308,7 @@ Further discussion in Issue #126.</obo1:IAO_0000116>
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000342">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000343"/>
         <obo1:IAO_0000115>An altitudinal condition which inheres in a bearer by virtue of the bearer being located at an altitude between mid-altitude forests and the tree line.</obo1:IAO_0000115>
-        <oboInOwl:created_by>ORCID:0000-0002-4366-3088</oboInOwl:created_by>
+        <dc:creator rdf:resource="https://orcid.org/0000-0002-4366-3088"/>
         <oboInOwl:hasDbXref>LTER:350</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:01000342</oboInOwl:id>
@@ -10388,7 +10336,7 @@ Further discussion in Issue #126.</obo1:IAO_0000116>
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000343">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000203"/>
         <obo1:IAO_0000115>An altitudinal condition is an environmental condition in which ranges of factors such as temperature, humidity, soil composition, solar irradiation, and tree density vary with ranges in altitude.</obo1:IAO_0000115>
-        <oboInOwl:created_by>ORCID:0000-0002-4366-3088</oboInOwl:created_by>
+        <dc:creator rdf:resource="https://orcid.org/0000-0002-4366-3088"/>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:01000343</oboInOwl:id>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar"/>
@@ -10409,7 +10357,7 @@ Further discussion in Issue #126.</obo1:IAO_0000116>
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000344">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000343"/>
         <obo1:IAO_0000115>An altitudinal condition which inheres in a bearer by virtue of the bearer having extremely limited vegetation cover, silica-enriched soils, and ground cover dominated by snow and ice at altitudes above the snowline.</obo1:IAO_0000115>
-        <oboInOwl:created_by>ORCID:0000-0002-4366-3088</oboInOwl:created_by>
+        <dc:creator rdf:resource="https://orcid.org/0000-0002-4366-3088"/>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:01000344</oboInOwl:id>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar"/>
@@ -10429,7 +10377,7 @@ Further discussion in Issue #126.</obo1:IAO_0000116>
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000345">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000342"/>
         <obo1:IAO_0000115>An upper montane condition is a montane condition in which an altitude range falls immediately below the tree line.</obo1:IAO_0000115>
-        <oboInOwl:created_by>ORCID:0000-0002-4366-3088</oboInOwl:created_by>
+        <terms:creator rdf:resource="https://orcid.org/0000-0002-4366-3088"/>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:01000345</oboInOwl:id>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar"/>
@@ -10444,7 +10392,7 @@ Further discussion in Issue #126.</obo1:IAO_0000116>
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000346">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000342"/>
         <obo1:IAO_0000115>A lower montane condition is a montane condition in which an altitude range falls immediately above mid-altitude forests.</obo1:IAO_0000115>
-        <oboInOwl:created_by>ORCID:0000-0002-4366-3088</oboInOwl:created_by>
+        <dc:creator rdf:resource="https://orcid.org/0000-0002-4366-3088"/>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:01000346</oboInOwl:id>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar"/>
@@ -10480,7 +10428,7 @@ Further discussion in Issue #126.</obo1:IAO_0000116>
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000354">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000238"/>
         <obo1:IAO_0000115>An ice cap climatic condition is a polar condition in which the montly average temperature does not exceed 0 degrees Celsius.</obo1:IAO_0000115>
-        <oboInOwl:created_by>ORCID:0000-0002-4366-3088</oboInOwl:created_by>
+        <dc:creator rdf:resource="https://orcid.org/0000-0002-4366-3088"/>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:01000354</oboInOwl:id>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar"/>
@@ -10595,6 +10543,7 @@ Further discussion in Issue #126.</obo1:IAO_0000116>
         <obo1:IAO_0000115>Snow is an environmental material which is primarily composed of flakes of crystalline water ice.</obo1:IAO_0000115>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:01000406</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605019"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar"/>
         <rdfs:label>snow</rdfs:label>
     </owl:Class>
@@ -11175,6 +11124,7 @@ Further discussion in Issue #126.</obo1:IAO_0000116>
         <oboInOwl:hasDbXref>NLCD:11</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:01000666</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605023"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#nlcd2011"/>
         <rdfs:comment>According to the NLCD 2011, areas of open water generally have less than 25% cover of vegetation or soil. A specific threshold is not asserted in this definition.</rdfs:comment>
@@ -11392,12 +11342,6 @@ Further discussion in Issue #126.</obo1:IAO_0000116>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000686">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000685"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002473"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00002149"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <obo1:IAO_0000115>A mass of marine water.</obo1:IAO_0000115>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:01000686</oboInOwl:id>
@@ -11419,6 +11363,8 @@ Further discussion in Issue #126.</obo1:IAO_0000116>
         <obo1:IAO_0000115>A coast is the area where land meets the sea, ocean, or lake.</obo1:IAO_0000115>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:01000687</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605018"/>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605023"/>
         <rdfs:comment>Used for both marine and lake coasts. The boundary of the coast is fuzzy and it overlaps both the water body and land in quesiton. Compared to &apos;shore&apos;</rdfs:comment>
         <rdfs:label>coast</rdfs:label>
     </owl:Class>
@@ -11653,6 +11599,7 @@ Further discussion in Issue #126.</obo1:IAO_0000116>
         <obo1:IAO_0000115>Meltwater is the water released by the melting of snow or ice, including glacial ice, tabular icebergs and ice shelves over oceans.</obo1:IAO_0000115>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:01000722</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605019"/>
         <rdfs:label>meltwater</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -11729,7 +11676,7 @@ Further discussion in Issue #126.</obo1:IAO_0000116>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000727">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_03000043"/>
-        <obo1:IAO_0000115>Sublimation is a process during which a portion of some solid undergoes a phase transition into a portion of some gas.</obo1:IAO_0000115>
+        <obo1:IAO_0000115>A material transformation process during which a solid material transitions into a gas phase.</obo1:IAO_0000115>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:01000727</oboInOwl:id>
         <rdfs:label>sublimation process</rdfs:label>
@@ -11737,7 +11684,7 @@ Further discussion in Issue #126.</obo1:IAO_0000116>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000727"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Sublimation is a process during which a portion of some solid undergoes a phase transition into a portion of some gas.</owl:annotatedTarget>
+        <owl:annotatedTarget>A material transformation process during which a solid material transitions into a gas phase.</owl:annotatedTarget>
         <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Sublimation_(phase_transition)</oboInOwl:hasDbXref>
     </owl:Axiom>
     
@@ -11756,6 +11703,7 @@ Further discussion in Issue #126.</obo1:IAO_0000116>
         <obo1:IAO_0000115>An area of a planet&apos;s surface which is primarily composed of water ice, present throughout multiple years, in contact with an atmospheric column extending from the planetary boundary layer to the planet&apos;s exosphere with little to no physical obstruction.</obo1:IAO_0000115>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:01000740</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605023"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#nlcd2011"/>
         <rdfs:comment>This class covers part of the NLCD &quot;Perennial Ice/Snow&quot; class.</rdfs:comment>
@@ -11801,6 +11749,7 @@ Further discussion in Issue #126.</obo1:IAO_0000116>
         <oboInOwl:hasDbXref>NLCD:12</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:01000746</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605023"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#nlcd2011"/>
         <rdfs:comment>According to the NLCD 2011, these areas are characterised by ice and/or snow cover generally greater than 25% of total cover. The definition of perennial needs clarification.</rdfs:comment>
         <rdfs:label>area of perennial ice or snow</rdfs:label>
@@ -11862,6 +11811,7 @@ Further discussion in Issue #126.</obo1:IAO_0000116>
         <obo1:IAO_0000115>Oceanic crust is the uppermost layer of the oceanic portion of a tectonic plate.</obo1:IAO_0000115>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:01000749</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605018"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar"/>
         <rdfs:label>oceanic crust</rdfs:label>
     </owl:Class>
@@ -11896,6 +11846,7 @@ Further discussion in Issue #126.</obo1:IAO_0000116>
         <oboInOwl:hasDbXref>NLCD:31</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:01000752</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605023"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#nlcd2011"/>
         <rdfs:comment>According to the NLCD 2011, areas of barren land generally have less than 15% cover of vegetation. A specific threshold is not asserted in this definition.</rdfs:comment>
@@ -12817,6 +12768,7 @@ Further discussion in Issue #126.</obo1:IAO_0000116>
         <oboInOwl:hasExactSynonym>ice wool</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:01000847</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605019"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar"/>
         <rdfs:label>hair ice</rdfs:label>
     </owl:Class>
@@ -13105,6 +13057,7 @@ Further discussion in Issue #126.</obo1:IAO_0000116>
         <oboInOwl:hasDbXref>NLCD:73</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:01000889</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605023"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#nlcd2011"/>
         <rdfs:comment>According to the NLCD 2011, at least 80% of these areas are covered by lichens.  Such thresholds - which are themselves fuzzy - are not strictly asserted in this definition. The original definition notes that this is intended as an &quot;Alaska only&quot; category.</rdfs:comment>
@@ -13707,6 +13660,7 @@ Consider adding axioms like PATO:&quot;decreased temperature&quot; to this and o
         <oboInOwl:hasExactSynonym>ground water</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:01001004</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605019"/>
         <rdfs:comment>The definition of aquifer is quite permissive, referencing any water bearing rock or unconsolidated material.</rdfs:comment>
         <rdfs:label>groundwater</rdfs:label>
     </owl:Class>
@@ -14090,6 +14044,7 @@ Consider adding axioms like PATO:&quot;decreased temperature&quot; to this and o
         <oboInOwl:hasExactSynonym>water body surface</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:01001191</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605018"/>
         <rdfs:label>water surface</rdfs:label>
     </owl:Class>
     
@@ -14213,6 +14168,7 @@ Consider adding axioms like PATO:&quot;decreased temperature&quot; to this and o
         <oboInOwl:hasRelatedSynonym>morass</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>muskeg</oboInOwl:hasRelatedSynonym>
         <oboInOwl:id>ENVO:01001209</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605018"/>
         <rdfs:label>wetland ecosystem</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -14542,11 +14498,11 @@ Consider adding axioms like PATO:&quot;decreased temperature&quot; to this and o
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo1:IAO_0000115>An ecosystem which is determined by communities of plants with a tree growth form and in which members of those communities form continuous or discontinuous regions of canopy cover.</obo1:IAO_0000115>
-        <obo1:IAO_0000116>The correct usage of FLOPO terms in the axiomatisation needs to be confirmed.</obo1:IAO_0000116>
+        <oboInOwl:hasExactSynonym>forest ecosystem</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:01001243</oboInOwl:id>
         <rdfs:comment>The definitions of forest can vary greatly, and different classes will be needed to support the major categories. Tree cover alone is not enough to distinguish between forests and plantations. The international definition proposed by the 2010 FAO Forestry Resource Assessment: &quot;land spanning more than 0.5 ha with trees higher than 5 metres and canopy cover of more than 10 percent, or trees able to reach these thresholds in situ . It does not include land that is predominantly under agricultural or urban land use.&quot; - FAO.  2010. Global forest resources assessment 2010, Main report, FAO Forestry Paper 163. Rome.</rdfs:comment>
-        <rdfs:label>forest ecosystem</rdfs:label>
+        <rdfs:label>forest</rdfs:label>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001243"/>
@@ -14958,6 +14914,17 @@ Consider adding axioms like PATO:&quot;decreased temperature&quot; to this and o
     <!-- http://purl.obolibrary.org/obo/ENVO_01001370 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01001370">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/ENVO_01001790"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000086"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000370"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001790"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -14988,32 +14955,38 @@ Consider adding axioms like PATO:&quot;decreased temperature&quot; to this and o
     <!-- http://purl.obolibrary.org/obo/ENVO_01001371 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01001371">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/ENVO_01001370"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000086"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000340"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001370"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000086"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000340"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002131"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_03400001"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo1:IAO_0000115>A tundra ecosystem which exists at high altitudes and where vegetation is stunted due to low temperatures and high winds.</obo1:IAO_0000115>
+        <obo1:IAO_0000115>A tundra ecosystem which 1) exists at high altitudes and where vegetation is stunted due to low temperatures and high winds, 2) where vegetation is dominated by a few species of dwarf shrubs, grasses, sedges, lichens, and mosses.</obo1:IAO_0000115>
         <oboInOwl:created_by>https://orcid.org/0000-0002-4366-3088</oboInOwl:created_by>
         <oboInOwl:hasDbXref>SPIRE:Tundra</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>http://sweetontology.net/realmCryo/AlpineTundra</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:01001371</oboInOwl:id>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar"/>
+        <rdfs:comment>The absence of trees in this biome is primarily due to high altitude rather than high latitude. On Earth, it lies roughly between the summer isotherm of 10 degrees Centigrade and the snow line. Primary productivity is low in this biome because of the extremes of climate.</rdfs:comment>
         <rdfs:label>alpine tundra ecosystem</rdfs:label>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001371"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>A tundra ecosystem which exists at high altitudes and where vegetation is stunted due to low temperatures and high winds.</owl:annotatedTarget>
+        <owl:annotatedTarget>A tundra ecosystem which 1) exists at high altitudes and where vegetation is stunted due to low temperatures and high winds, 2) where vegetation is dominated by a few species of dwarf shrubs, grasses, sedges, lichens, and mosses.</owl:annotatedTarget>
         <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Alpine_tundra</oboInOwl:hasDbXref>
     </owl:Axiom>
     
@@ -15023,12 +14996,6 @@ Consider adding axioms like PATO:&quot;decreased temperature&quot; to this and o
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01001378">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000501"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002220"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00001999"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <obo1:IAO_0000115>A submerged bed which underlies a marine water body.</obo1:IAO_0000115>
         <dc:contributor rdf:resource="https://orcid.org/0000-0002-2996-719X"/>
         <dc:contributor rdf:resource="https://orcid.org/0000-0002-8166-0486"/>
@@ -15216,14 +15183,8 @@ Consider adding axioms like PATO:&quot;decreased temperature&quot; to this and o
     <!-- http://purl.obolibrary.org/obo/ENVO_01001505 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01001505">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000180"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000086"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000340"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo1:IAO_0000115>A tundra biome which exists at high altitudes and where vegetation - dominated by a few species of dwarf shrubs, a few grasses, sedges, lichens, and mosses - is stunted due to low temperatures and high winds.</obo1:IAO_0000115>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001371"/>
+        <obo1:IAO_0000115>An alpine tundra ecosystem which is in its climactic successional state.</obo1:IAO_0000115>
         <oboInOwl:created_by>https://orcid.org/0000-0002-4366-3088</oboInOwl:created_by>
         <oboInOwl:creation_date>2019-01-14T16:26:18Z</oboInOwl:creation_date>
         <oboInOwl:hasDbXref>SPIRE:Tundra</oboInOwl:hasDbXref>
@@ -15231,26 +15192,21 @@ Consider adding axioms like PATO:&quot;decreased temperature&quot; to this and o
         <oboInOwl:hasExactSynonym>mountain tundra</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:01001505</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605013"/>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605022"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar"/>
-        <rdfs:comment>The absence of trees in this biome is primarily due to high altitude rather than high latitude. On Earth, it lies roughly between the summer isotherm of 10 degrees Centigrade and the snow line. Primary productivity is low in this biome because of the extremes of climate.</rdfs:comment>
         <rdfs:label>alpine tundra biome</rdfs:label>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001505"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>A tundra biome which exists at high altitudes and where vegetation - dominated by a few species of dwarf shrubs, a few grasses, sedges, lichens, and mosses - is stunted due to low temperatures and high winds.</owl:annotatedTarget>
+        <owl:annotatedTarget>An alpine tundra ecosystem which is in its climactic successional state.</owl:annotatedTarget>
         <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Alpine_tundra</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001505"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>mountain tundra</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>https://orcid.org/0000-0003-4808-4736</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001505"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#comment"/>
-        <owl:annotatedTarget>The absence of trees in this biome is primarily due to high altitude rather than high latitude. On Earth, it lies roughly between the summer isotherm of 10 degrees Centigrade and the snow line. Primary productivity is low in this biome because of the extremes of climate.</owl:annotatedTarget>
         <oboInOwl:hasDbXref>https://orcid.org/0000-0003-4808-4736</oboInOwl:hasDbXref>
     </owl:Axiom>
     
@@ -15362,6 +15318,7 @@ Currently the new ice classes are not specific to sea water as they may form in 
         <oboInOwl:hasExactSynonym>needle ice</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:01001523</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605019"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar"/>
         <rdfs:comment>Typically 3 to 4 millimeters in diameter. These may form in both marine water and fresh water. They represent the first stages of sea ice growth; they merge under calm conditions to form thin sheets of ice on the surface (frazil ice), and consist of nearly pure fresh water. In fresh water, they form in supercooled water that is too turbulent to permit coagulation into sheet ice.  This is most common in swiftly flowing streams. They may accumulate as anchor ice on submerged objects obstructing the water flow.</rdfs:comment>
         <rdfs:label>frazil</rdfs:label>
@@ -15425,6 +15382,7 @@ Currently the new ice classes are not specific to sea water as they may form in 
         <oboInOwl:creation_date>2019-01-14T21:26:59Z</oboInOwl:creation_date>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:01001526</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605015"/>
         <rdfs:label>frozen soil</rdfs:label>
     </owl:Class>
     
@@ -15981,6 +15939,7 @@ Currently the new ice classes are not specific to sea water as they may form in 
         <oboInOwl:creation_date>2019-02-27T20:07:15Z</oboInOwl:creation_date>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:01001557</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605019"/>
         <rdfs:comment>In the United States, NOAA considers ice formed from the freezing of the waters of the Great Lakes as being the same as sea ice. This class attempts to provide a distinction for clarity.</rdfs:comment>
         <rdfs:label>water-body-derived ice</rdfs:label>
     </owl:Class>
@@ -16114,6 +16073,7 @@ Currently the new ice classes are not specific to sea water as they may form in 
         <oboInOwl:hasExactSynonym>frost heaving</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:01001568</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605014"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoNceas"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar"/>
         <rdfs:label>frost heave</rdfs:label>
@@ -17148,6 +17108,58 @@ Some definitions include additional discussion of the the physics involved which
     
 
 
+    <!-- http://purl.obolibrary.org/obo/ENVO_01001787 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01001787">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/ENVO_01001110"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002507"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000063"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001110"/>
+        <obo1:IAO_0000115>An ecosystem which has its functions and composition determined by a water body.</obo1:IAO_0000115>
+        <dc:creator rdf:resource="https://orcid.org/0000-0002-4366-3088"/>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-10-21T11:05:45Z</dc:date>
+        <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>ENVO:01001787</oboInOwl:id>
+        <rdfs:label>aquatic ecosystem</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ENVO_01001788 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01001788">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001787"/>
+        <dc:creator rdf:resource="https://orcid.org/0000-0002-4366-3088"/>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-10-21T11:06:11Z</dc:date>
+        <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>ENVO:01001788</oboInOwl:id>
+        <rdfs:label>marine ecosystem</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ENVO_01001789 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01001789">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001787"/>
+        <obo1:IAO_0000115>An aquatic ecosystem which has its functions and composition determined by a body of fresh water.</obo1:IAO_0000115>
+        <dc:creator rdf:resource="https://orcid.org/0000-0002-4366-3088"/>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-10-21T11:06:34Z</dc:date>
+        <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>ENVO:01001789</oboInOwl:id>
+        <rdfs:label>freshwater ecosystem</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/ENVO_01001790 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01001790">
@@ -17352,6 +17364,57 @@ Some definitions include additional discussion of the the physics involved which
     
 
 
+    <!-- http://purl.obolibrary.org/obo/ENVO_01001904 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01001904">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/ENVO_01001780"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000086"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000238"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001780"/>
+        <obo1:IAO_0000115>A desert ecosystem which is subject to polar environmental conditions.</obo1:IAO_0000115>
+        <dc:creator rdf:resource="https://orcid.org/0000-0002-4366-3088"/>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-12-06T12:26:58Z</dc:date>
+        <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>ENVO:01001904</oboInOwl:id>
+        <rdfs:comment>On Earth, polar deserts typically have low levels of insolation, annual precipitation less than 250 millimeters, and a mean temperature less than 10 degrees Celsius during its warmest month. Temperature changes in polar deserts frequently cross the freezing point of water</rdfs:comment>
+        <rdfs:label>polar desert ecosystem</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ENVO_01001964 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01001964">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/ENVO_00002149"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000016"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_00002149"/>
+        <obo1:IAO_0000115>Ocean water which is part of a sea and which has its properties and composition more strongly influenced by terrestrial processes - such as river runoff, groundwater seepage, aeolian transport of dust - than waters of the open ocean.</obo1:IAO_0000115>
+        <dc:creator rdf:resource="https://orcid.org/0000-0002-4366-3088"/>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-12-09T18:37:03Z</dc:date>
+        <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>ENVO:01001964</oboInOwl:id>
+        <rdfs:label>seawater</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/ENVO_01003001 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01003001">
@@ -17474,19 +17537,14 @@ Some definitions include additional discussion of the the physics involved which
     <!-- http://purl.obolibrary.org/obo/ENVO_02000049 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_02000049">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/ENVO_00001999"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002220"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000303"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_00001999"/>
-        <obo1:IAO_0000115>Coastal water is a marine water body bordering a coast.</obo1:IAO_0000115>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000617"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002220"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000687"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo1:IAO_0000115>A lentic water body which is adjacent to a coast.</obo1:IAO_0000115>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:02000049</oboInOwl:id>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar"/>
@@ -17495,7 +17553,7 @@ Some definitions include additional discussion of the the physics involved which
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_02000049"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Coastal water is a marine water body bordering a coast.</owl:annotatedTarget>
+        <owl:annotatedTarget>A lentic water body which is adjacent to a coast.</owl:annotatedTarget>
         <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Coastal</oboInOwl:hasDbXref>
     </owl:Axiom>
     
@@ -17976,6 +18034,7 @@ Some definitions include additional discussion of the the physics involved which
         <obo1:IAO_0000117>http://orcid.org/0000-0002-3410-4655</obo1:IAO_0000117>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:03000004</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605019"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar"/>
         <rdfs:label>glacial ice</rdfs:label>
     </owl:Class>
@@ -18009,6 +18068,7 @@ Some definitions include additional discussion of the the physics involved which
         <obo1:IAO_0000117>http://orcid.org/0000-0002-3410-4655</obo1:IAO_0000117>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:03000005</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605019"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar"/>
         <rdfs:label>erosionally enriched glacial ice</rdfs:label>
     </owl:Class>
@@ -18058,6 +18118,7 @@ Some definitions include additional discussion of the the physics involved which
         <obo1:IAO_0000117>http://orcid.org/0000-0002-3410-4655</obo1:IAO_0000117>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:03000007</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605019"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar"/>
         <rdfs:comment>The blue &apos;appearance&apos; is to be understood as that within the visual range of humans.</rdfs:comment>
         <rdfs:label>blue ice</rdfs:label>
@@ -18394,6 +18455,7 @@ Some definitions include additional discussion of the the physics involved which
         <obo1:IAO_0000117>http://orcid.org/0000-0002-3410-4655</obo1:IAO_0000117>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:03000025</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605019"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar"/>
         <rdfs:label>erosionally enriched ice</rdfs:label>
     </owl:Class>
@@ -18415,6 +18477,7 @@ Some definitions include additional discussion of the the physics involved which
         <obo1:IAO_0000117>http://orcid.org/0000-0002-3410-4655</obo1:IAO_0000117>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:03000027</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605019"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar"/>
         <rdfs:comment>Described as having a fluffy appearance.</rdfs:comment>
         <rdfs:label>powdery snow</rdfs:label>
@@ -18542,12 +18605,6 @@ Some definitions include additional discussion of the the physics involved which
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_03000033">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_00002007"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002220"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00001999"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002353"/>
@@ -18833,6 +18890,7 @@ Some definitions include additional discussion of the the physics involved which
         <oboInOwl:hasExactSynonym>meltponds</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:03000040</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605018"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar"/>
         <rdfs:label>melt pond</rdfs:label>
     </owl:Class>
@@ -19058,6 +19116,7 @@ Currently the new ice classes are not specific to sea water as they may form in 
         <oboInOwl:hasDbXref>http://sweetontology.net/realmCryo/FrazilIce</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:03000046</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605019"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar"/>
         <rdfs:comment>Typically 3 to 4 millimeters in diameter. These new ice classes refer to both marine water and fresh water ice. If using this term for annotation, use it in conjunction with another envo term to express whether the ice is in a marine, freshwater, or other system.</rdfs:comment>
         <rdfs:label>frazil ice</rdfs:label>
@@ -19480,13 +19539,6 @@ Currently the new ice classes are not specific to sea water as they may form in 
     <!-- http://purl.obolibrary.org/obo/ENVO_03000062 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_03000062">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_03000044"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002234"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_03000073"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <obo1:IAO_0000115>A sea ice formation process during which seawater freezes into second year ice during the cold season, forming multiyear ice.</obo1:IAO_0000115>
         <obo1:IAO_0000117 rdf:resource="https://orcid.org/0000-0002-4366-3088"/>
         <obo1:IAO_0000117>http://orcid.org/0000-0002-3410-4655</obo1:IAO_0000117>
@@ -19527,6 +19579,7 @@ Currently the new ice classes are not specific to sea water as they may form in 
         <obo1:IAO_0000117>http://orcid.org/0000-0002-3410-4655</obo1:IAO_0000117>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:03000063</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605019"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar"/>
         <rdfs:comment>sea ice types include frazil, grease ice, slush, and shuga. These new ice classes refer to both marine water and fresh water ice. If using this term for annotation, use it in conjunction with another envo term to express whether the ice is in a marine, freshwater, or other system.</rdfs:comment>
         <rdfs:label>new ice</rdfs:label>
@@ -19589,12 +19642,6 @@ Floe vast: 2-10 km across. Floe big: 500-2000 m across. Floe medium: 100-500 m a
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_03000065"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002220"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00001999"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002354"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_03000044"/>
             </owl:Restriction>
@@ -19628,12 +19675,6 @@ Floe vast: 2-10 km across. Floe big: 500-2000 m across. Floe medium: 100-500 m a
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_03000067">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_03000066"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002220"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00001999"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002354"/>
@@ -19670,12 +19711,6 @@ Floe vast: 2-10 km across. Floe big: 500-2000 m across. Floe medium: 100-500 m a
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_03000066"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002220"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00001999"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002354"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_03000058"/>
             </owl:Restriction>
@@ -19709,12 +19744,6 @@ Floe vast: 2-10 km across. Floe big: 500-2000 m across. Floe medium: 100-500 m a
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_03000069">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_03000066"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002220"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00001999"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002354"/>
@@ -19767,6 +19796,7 @@ Floe vast: 2-10 km across. Floe big: 500-2000 m across. Floe medium: 100-500 m a
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:hasRelatedSynonym>seasonal ice</oboInOwl:hasRelatedSynonym>
         <oboInOwl:id>ENVO:03000071</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605019"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar"/>
         <rdfs:comment>Sea ice develops from young ice; thickness from 0.3 to 2 meters (1 to 6.6 feet).  Sea ice be subdivided into thin first-year ice (white ice), medium first-year ice, and thick first-year ice.  First-year ice is distinguished from older ice primarily by having a higher salinity. Undeformed first-year ice differs from older ice in that it is smoother and lacks refrozen melt ponds. Characteristically level where undisturbed by pressure, but where ridges occur, they  distinguished by being larger, more angular, and more porous than multiyear ridges.</rdfs:comment>
         <rdfs:label>first year ice</rdfs:label>
@@ -19809,6 +19839,7 @@ Floe vast: 2-10 km across. Floe big: 500-2000 m across. Floe medium: 100-500 m a
         <obo1:IAO_0000117>http://orcid.org/0000-0002-3410-4655</obo1:IAO_0000117>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:03000072</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605019"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar"/>
         <rdfs:label>second year ice</rdfs:label>
     </owl:Class>
@@ -19836,6 +19867,7 @@ Floe vast: 2-10 km across. Floe big: 500-2000 m across. Floe medium: 100-500 m a
         <obo1:IAO_0000117>http://orcid.org/0000-0002-3410-4655</obo1:IAO_0000117>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:03000073</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605019"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar"/>
         <rdfs:label>multiyear ice</rdfs:label>
     </owl:Class>
@@ -19885,6 +19917,7 @@ Floe vast: 2-10 km across. Floe big: 500-2000 m across. Floe medium: 100-500 m a
         <obo1:IAO_0000117>http://orcid.org/0000-0002-3410-4655</obo1:IAO_0000117>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:03000075</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605019"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar"/>
         <rdfs:comment>These new ice classes refer to both marine water and fresh water ice. If using this term for annotation, use it in conjunction with another envo term to express whether the ice is in a marine, freshwater, or other system.</rdfs:comment>
         <rdfs:label>shuga</rdfs:label>
@@ -20688,6 +20721,7 @@ Additional axioms could also refer to object aggregates becoming objects within 
         <obo1:IAO_0000117>http://orcid.org/0000-0002-3410-4655</obo1:IAO_0000117>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:03000108</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605019"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar"/>
         <rdfs:label>slab snow</rdfs:label>
     </owl:Class>
@@ -20940,6 +20974,7 @@ Additional axioms could also refer to object aggregates becoming objects within 
         <obo1:IAO_0000117>http://orcid.org/0000-0002-3410-4655</obo1:IAO_0000117>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:03000117</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605014"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar"/>
         <rdfs:label>channel</rdfs:label>
     </owl:Class>
@@ -21015,6 +21050,7 @@ Additional axioms could also refer to object aggregates becoming objects within 
         <oboInOwl:hasExactSynonym>subglacial lakes</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:03000120</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605018"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar"/>
         <rdfs:label>subglacial lake</rdfs:label>
     </owl:Class>
@@ -22176,6 +22212,7 @@ WMO, METEOTERM is available at https://www.wmo.int/pages/prog/lsp/meteoterm_wmo_
         <oboInOwl:hasExactSynonym>active layer of permafrost</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:04000009</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605014"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoNceas"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#envoPolar"/>
         <rdfs:label>active permafrost layer</rdfs:label>
@@ -22256,6 +22293,7 @@ WMO, METEOTERM is available at https://www.wmo.int/pages/prog/lsp/meteoterm_wmo_
         <dc:creator rdf:resource="https://orcid.org/0000-0002-8461-9745"/>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:06105205</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605015"/>
         <rdfs:label>compacted soil</rdfs:label>
     </owl:Class>
     <owl:Axiom>
