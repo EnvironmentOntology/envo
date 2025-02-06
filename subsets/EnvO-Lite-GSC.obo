@@ -1,8 +1,9 @@
 format-version: 1.2
-data-version: envo/releases/2024-07-01/subsets/EnvO-Lite-GSC.owl
+data-version: envo/releases/2025-02-05/subsets/EnvO-Lite-GSC.owl
 subsetdef: disposition_slim "Disposition slim"
 subsetdef: environmental_hazards "environmental_hazards"
 subsetdef: EnvO-Lite-GSC "EnvO-Lite-GSC"
+subsetdef: ENVO:03605010 "Root of the NMDC environmental context value set hierarchy. This property organizes subset properties used to annotate EnvO classes relevant for MIxS environmental context fields (e.g., env_broad_scale, env_local_scale, env_medium_scale). This structure guides data annotation in systems like NCBI BioSample, refining recommendations from the ENVO-MIxS integration guide, addressing questions such as 'Which EnvO classes are reasonable for populating the env_broad_scale field in a soil sample versus a water sample.\""
 subsetdef: envoANZSoil "envoANZSoil"
 subsetdef: envoAstro "envoAstro"
 subsetdef: envoAtmo "envoAtmo"
@@ -25,7 +26,7 @@ subsetdef: value_slim "Value slim"
 subsetdef: wwfBiome "wwfBiome"
 synonymtypedef: OMO:0003004 "plural form"
 ontology: envo/subsets/EnvO-Lite-GSC
-property_value: owl:versionInfo "2024-07-01" xsd:string
+property_value: owl:versionInfo "2025-02-05" xsd:string
 
 [Term]
 id: ENVO:00000027
@@ -33,6 +34,8 @@ name: spring
 namespace: ENVO
 def: "A surface landform which provides an egress for groundwater or steam to flow out of the ground." [https://en.wikipedia.org/wiki/Spring_%28hydrosphere%29#Classification]
 comment: Springs are typically where an aquifer surface meets the ground surface or where there is a fissure.
+subset: ENVO:03605014
+subset: ENVO:03605018
 synonym: "seep" RELATED [USGS:SDTS]
 xref: EcoLexicon:spring
 xref: FTT:982
@@ -48,6 +51,8 @@ name: hot spring
 namespace: ENVO
 def: "A spring through which groundwater, heated by geothermal energy, flows." [https://en.wikipedia.org/wiki/Hot_spring]
 subset: EnvO-Lite-GSC
+subset: ENVO:03605014
+subset: ENVO:03605018
 synonym: "hotspring" EXACT []
 synonym: "spring" BROAD [USGS:SDTS]
 synonym: "thermal spring" EXACT []
@@ -93,6 +98,7 @@ name: hydrothermal vent
 namespace: ENVO
 def: "A fissure in the Earths's surface from which geothermally heated water issues." [https://en.wikipedia.org/wiki/Hydrothermal_vents]
 subset: EnvO-Lite-GSC
+subset: ENVO:03605018
 synonym: "HydrothermalVents" EXACT [NASA:earthrealm]
 xref: EcoLexicon:hydrothermal_vent
 xref: FTT:834
@@ -141,6 +147,7 @@ namespace: ENVO
 def: "An environmental material which is primarily composed of minerals, varying proportions of sand, silt, and clay, organic material such as humus, interstitial gases, liquids, and a broad range of resident micro- and macroorganisms." [https://en.wikipedia.org/wiki/Soil]
 comment: 'In engineering terms, soil is referred to as regolith, or loose rock material that lies above the 'solid geology'. Soil is commonly referred to as "earth" or "dirt"; technically, the term "dirt" should be restricted to displaced soil.' https://en.wikipedia.org/wiki/Soil\n\n" The upper limit of soil is the boundary between soil and air, shallow water, live plants, or plant materials that have not begun to decompose. Areas are not considered to have soil if the surface is permanently covered by water too deep (typically more than 2.5 meters) for the growth of rooted plants.\n\nThe lower boundary that separates soil from the nonsoil underneath is most difficult to define. Soil consists of horizons near the Earth's surface that, in contrast to the underlying parent material, have been altered by the interactions of climate, relief, and living organisms over time. Commonly, soil grades at its lower boundary to hard rock or to earthy materials virtually devoid of animals, roots, or other marks of biological activity. For purposes of classification, the lower boundary of soil is arbitrarily set at 200 cm."  Soil taxonomy, 2nd Ed., quoted in http://www.nrcs.usda.gov/wps/portal/nrcs/detail/soils/edu/?cid=nrcs142p2_054280
 subset: EnvO-Lite-GSC
+subset: ENVO:03605015
 synonym: "regolith" BROAD []
 xref: https://en.wikipedia.org/wiki/Soil
 xref: LTER:535
@@ -162,6 +169,7 @@ name: waste water
 namespace: ENVO
 def: "Water that has been adversely affected in quality by anthropogenic influence." [https://en.wikipedia.org/wiki/Wastewater]
 subset: EnvO-Lite-GSC
+subset: ENVO:03605019
 xref: EcoLexicon:waste_water
 xref: https://en.wikipedia.org/wiki/Waste_water
 xref: SWEETRealm:Wastewater
@@ -199,6 +207,7 @@ id: ENVO:00002006
 name: liquid water
 namespace: ENVO
 def: "An environmental material primarily composed of dihydrogen oxide in its liquid form." [MA:ma]
+subset: ENVO:03605019
 synonym: "water" BROAD []
 xref: EcoLexicon:water
 xref: https://en.wikipedia.org/wiki/Water
@@ -252,6 +261,7 @@ name: biofilm
 namespace: ENVO
 def: "A complex aggregation of microorganisms marked by the excretion of a protective and adhesive matrix; usually adhering to a substratum." [https://en.wikipedia.org/wiki/Biofilm]
 subset: EnvO-Lite-GSC
+subset: ENVO:03605018
 xref: EcoLexicon:biofilm
 xref: https://en.wikipedia.org/wiki/Biofilm
 is_a: ENVO:01000549 ! mass of biological material
@@ -349,6 +359,7 @@ name: microbial mat
 namespace: ENVO
 def: "A multi-layered sheet of micro-organisms, mainly bacteria and archaea. Microbial mats grow at interfaces between different types of material, mostly on submerged or moist surfaces but a few survive in deserts." [https://en.wikipedia.org/wiki/Microbial_mat]
 subset: EnvO-Lite-GSC
+subset: ENVO:03605018
 xref: https://en.wikipedia.org/wiki/Microbial_mat
 is_a: ENVO:01000549 ! mass of biological material
 
@@ -847,11 +858,6 @@ namespace: ENVO
 xref: RO:0002176
 
 [Typedef]
-id: contains
-namespace: ENVO
-xref: RO:0001019
-
-[Typedef]
 id: contains_process
 namespace: ENVO
 xref: BFO:0000067
@@ -1051,6 +1057,11 @@ namespace: ENVO
 xref: RO:0002212
 
 [Typedef]
+id: obsolete_contains
+namespace: ENVO
+xref: RO:0001019
+
+[Typedef]
 id: obsolete_determined_by
 name: obsolete determined by
 namespace: ENVO
@@ -1124,6 +1135,11 @@ namespace: ENVO
 xref: RO:0002608
 
 [Typedef]
+id: quality_of
+namespace: ENVO
+xref: RO:0000080
+
+[Typedef]
 id: realized_in
 namespace: ENVO
 xref: BFO:0000054
@@ -1148,7 +1164,7 @@ xref: ENVO:02500016
 property_value: IAO:0000112 "Afforestation results in the expansion of a forest." xsd:string
 
 [Typedef]
-id: results_in_formation_of
+id: results_in_formation_of_anatomical_entity
 namespace: ENVO
 xref: RO:0002297
 
