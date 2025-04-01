@@ -4,9 +4,9 @@
     "meta" : {
       "basicPropertyValues" : [ {
         "pred" : "http://www.w3.org/2002/07/owl#versionInfo",
-        "val" : "2024-07-01"
+        "val" : "2025-02-05"
       } ],
-      "version" : "http://purl.obolibrary.org/obo/envo/releases/2024-07-01/subsets/envoAstro.owl"
+      "version" : "http://purl.obolibrary.org/obo/envo/releases/2025-02-05/subsets/envoAstro.owl"
     },
     "nodes" : [ {
       "id" : "http://purl.obolibrary.org/obo/ENVO_00000070",
@@ -17,6 +17,7 @@
           "val" : "A construction that has been assembled by deliberate human effort.",
           "xrefs" : [ "MA:ma" ]
         },
+        "comments" : [ "Some human constructions (such as the extra-planetary probes built for the Voyager missions) exist outside of Earth's (or any other astrononomical body's) technosphere, and are thus not astronomical body parts. Assertions regarding whether a construction is part of the technosphere of an astronomical body (e.g. Earth) should be made at the instance level, if needed / useful for the application case." ],
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "constructed feature"
@@ -85,7 +86,7 @@
           "xrefs" : [ "https://en.wikipedia.org/wiki/Soil" ]
         },
         "comments" : [ "'In engineering terms, soil is referred to as regolith, or loose rock material that lies above the 'solid geology'. Soil is commonly referred to as \"earth\" or \"dirt\"; technically, the term \"dirt\" should be restricted to displaced soil.' https://en.wikipedia.org/wiki/Soil\n\n\" The upper limit of soil is the boundary between soil and air, shallow water, live plants, or plant materials that have not begun to decompose. Areas are not considered to have soil if the surface is permanently covered by water too deep (typically more than 2.5 meters) for the growth of rooted plants.\n\nThe lower boundary that separates soil from the nonsoil underneath is most difficult to define. Soil consists of horizons near the Earth's surface that, in contrast to the underlying parent material, have been altered by the interactions of climate, relief, and living organisms over time. Commonly, soil grades at its lower boundary to hard rock or to earthy materials virtually devoid of animals, roots, or other marks of biological activity. For purposes of classification, the lower boundary of soil is arbitrarily set at 200 cm.\"  Soil taxonomy, 2nd Ed., quoted in http://www.nrcs.usda.gov/wps/portal/nrcs/detail/soils/edu/?cid=nrcs142p2_054280" ],
-        "subsets" : [ "http://purl.obolibrary.org/obo/subsets/envo-basic.obo#EnvO-Lite-GSC" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/ENVO_03605015", "http://purl.obolibrary.org/obo/subsets/envo-basic.obo#EnvO-Lite-GSC" ],
         "synonyms" : [ {
           "pred" : "hasBroadSynonym",
           "val" : "regolith"
@@ -116,6 +117,7 @@
           "val" : "An environmental material primarily composed of dihydrogen oxide in its liquid form.",
           "xrefs" : [ "MA:ma" ]
         },
+        "subsets" : [ "http://purl.obolibrary.org/obo/ENVO_03605019" ],
         "synonyms" : [ {
           "pred" : "hasBroadSynonym",
           "val" : "water"
@@ -2030,6 +2032,11 @@
         "definition" : {
           "val" : "A material entity which has been assembled through the intentional, instinctual, or deliberately programmed efforts of an organism or machine."
         },
+        "comments" : [ "Constructions differ from manufactured products in that they are the output of individual and tailored projects, rather than repetitive processes." ],
+        "synonyms" : [ {
+          "pred" : "hasBroadSynonym",
+          "val" : "assembled material entity"
+        } ],
         "basicPropertyValues" : [ {
           "pred" : "http://purl.org/dc/elements/1.1/creator",
           "val" : "https://orcid.org/0000-0002-4366-3088"
@@ -2650,6 +2657,22 @@
         } ]
       }
     }, {
+      "id" : "http://purl.obolibrary.org/obo/RO_0000080",
+      "type" : "PROPERTY",
+      "propertyType" : "OBJECT",
+      "meta" : {
+        "xrefs" : [ {
+          "val" : "RO:0000080"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "ENVO"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#shorthand",
+          "val" : "quality_of"
+        } ]
+      }
+    }, {
       "id" : "http://purl.obolibrary.org/obo/RO_0000085",
       "type" : "PROPERTY",
       "propertyType" : "OBJECT",
@@ -2774,7 +2797,7 @@
           "val" : "ENVO"
         }, {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#shorthand",
-          "val" : "contains"
+          "val" : "obsolete_contains"
         } ]
       }
     }, {
@@ -3129,7 +3152,7 @@
           "val" : "ENVO"
         }, {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#shorthand",
-          "val" : "results_in_formation_of"
+          "val" : "results_in_formation_of_anatomical_entity"
         } ]
       }
     }, {
@@ -3486,6 +3509,13 @@
         } ]
       }
     }, {
+      "id" : "http://purl.obolibrary.org/obo/ENVO_03605010",
+      "type" : "PROPERTY",
+      "propertyType" : "ANNOTATION",
+      "meta" : {
+        "comments" : [ "Root of the NMDC environmental context value set hierarchy. This property organizes subset properties used to annotate EnvO classes relevant for MIxS environmental context fields (e.g., env_broad_scale, env_local_scale, env_medium_scale). This structure guides data annotation in systems like NCBI BioSample, refining recommendations from the ENVO-MIxS integration guide, addressing questions such as 'Which EnvO classes are reasonable for populating the env_broad_scale field in a soil sample versus a water sample.\"" ]
+      }
+    }, {
       "id" : "http://purl.obolibrary.org/obo/IAO_0000112",
       "type" : "PROPERTY",
       "propertyType" : "ANNOTATION"
@@ -3837,6 +3867,10 @@
       "type" : "PROPERTY",
       "propertyType" : "ANNOTATION"
     }, {
+      "id" : "http://www.geneontology.org/formats/oboInOwl#http://purl.org/dc/elements/1.1/contributor",
+      "type" : "PROPERTY",
+      "propertyType" : "ANNOTATION"
+    }, {
       "id" : "http://www.geneontology.org/formats/oboInOwl#http://purl.org/dc/elements/1.1/source",
       "type" : "PROPERTY",
       "propertyType" : "ANNOTATION"
@@ -3857,10 +3891,6 @@
       "sub" : "http://purl.obolibrary.org/obo/ENVO_00000070",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/ENVO_01001813"
-    }, {
-      "sub" : "http://purl.obolibrary.org/obo/ENVO_00000070",
-      "pred" : "http://purl.obolibrary.org/obo/BFO_0000050",
-      "obj" : "http://purl.obolibrary.org/obo/ENVO_01000983"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/ENVO_00000070",
       "pred" : "http://purl.obolibrary.org/obo/RO_0002353",
@@ -4443,6 +4473,13 @@
       "obj" : "http://purl.obolibrary.org/obo/ENVO_01003004"
     } ],
     "logicalDefinitionAxioms" : [ {
+      "definedClassId" : "http://purl.obolibrary.org/obo/ENVO_00000070",
+      "genusIds" : [ "http://purl.obolibrary.org/obo/ENVO_01001813" ],
+      "restrictions" : [ {
+        "propertyId" : "http://purl.obolibrary.org/obo/RO_0002353",
+        "fillerId" : "http://purl.obolibrary.org/obo/ENVO_01000996"
+      } ]
+    }, {
       "definedClassId" : "http://purl.obolibrary.org/obo/ENVO_01001127",
       "genusIds" : [ "http://purl.obolibrary.org/obo/ENVO_01000800" ],
       "restrictions" : [ {

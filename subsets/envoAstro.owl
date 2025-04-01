@@ -14,8 +14,8 @@
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
      xmlns:envo-basic="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/envo/subsets/envoAstro.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/envo/releases/2024-07-01/subsets/envoAstro.owl"/>
-        <owl:versionInfo>2024-07-01</owl:versionInfo>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/envo/releases/2025-02-05/subsets/envoAstro.owl"/>
+        <owl:versionInfo>2025-02-05</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -28,6 +28,15 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ENVO_03605010 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/ENVO_03605010">
+        <rdfs:comment>Root of the NMDC environmental context value set hierarchy. This property organizes subset properties used to annotate EnvO classes relevant for MIxS environmental context fields (e.g., env_broad_scale, env_local_scale, env_medium_scale). This structure guides data annotation in systems like NCBI BioSample, refining recommendations from the ENVO-MIxS integration guide, addressing questions such as &apos;Which EnvO classes are reasonable for populating the env_broad_scale field in a soil sample versus a water sample.&quot;</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#SubsetProperty"/>
+    </owl:AnnotationProperty>
     
 
 
@@ -512,6 +521,12 @@
     
 
 
+    <!-- http://www.geneontology.org/formats/oboInOwl#http://purl.org/dc/elements/1.1/contributor -->
+
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#http://purl.org/dc/elements/1.1/contributor"/>
+    
+
+
     <!-- http://www.geneontology.org/formats/oboInOwl#http://purl.org/dc/elements/1.1/source -->
 
     <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#http://purl.org/dc/elements/1.1/source"/>
@@ -815,6 +830,17 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/RO_0000080 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0000080">
+        <oboInOwl:hasDbXref>RO:0000080</oboInOwl:hasDbXref>
+        <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>quality_of</oboInOwl:id>
+        <oboInOwl:shorthand>quality_of</oboInOwl:shorthand>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/RO_0000085 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0000085">
@@ -898,8 +924,8 @@
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0001019">
         <oboInOwl:hasDbXref>RO:0001019</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>contains</oboInOwl:id>
-        <oboInOwl:shorthand>contains</oboInOwl:shorthand>
+        <oboInOwl:id>obsolete_contains</oboInOwl:id>
+        <oboInOwl:shorthand>obsolete_contains</oboInOwl:shorthand>
     </owl:ObjectProperty>
     
 
@@ -1143,8 +1169,8 @@
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002297">
         <oboInOwl:hasDbXref>RO:0002297</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>results_in_formation_of</oboInOwl:id>
-        <oboInOwl:shorthand>results_in_formation_of</oboInOwl:shorthand>
+        <oboInOwl:id>results_in_formation_of_anatomical_entity</oboInOwl:id>
+        <oboInOwl:shorthand>results_in_formation_of_anatomical_entity</oboInOwl:shorthand>
     </owl:ObjectProperty>
     
 
@@ -1406,13 +1432,18 @@
     <!-- http://purl.obolibrary.org/obo/ENVO_00000070 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_00000070">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/ENVO_01001813"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002353"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000996"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001813"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000983"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002353"/>
@@ -1424,6 +1455,7 @@
         <oboInOwl:hasExactSynonym>constructed feature</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:00000070</oboInOwl:id>
+        <rdfs:comment>Some human constructions (such as the extra-planetary probes built for the Voyager missions) exist outside of Earth&apos;s (or any other astrononomical body&apos;s) technosphere, and are thus not astronomical body parts. Assertions regarding whether a construction is part of the technosphere of an astronomical body (e.g. Earth) should be made at the instance level, if needed / useful for the application case.</rdfs:comment>
         <rdfs:label>human construction</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -1534,6 +1566,7 @@
         <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Soil</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:00001998</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605015"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subsets/envo-basic.obo#EnvO-Lite-GSC"/>
         <rdfs:comment>&apos;In engineering terms, soil is referred to as regolith, or loose rock material that lies above the &apos;solid geology&apos;. Soil is commonly referred to as &quot;earth&quot; or &quot;dirt&quot;; technically, the term &quot;dirt&quot; should be restricted to displaced soil.&apos; https://en.wikipedia.org/wiki/Soil
 
@@ -1562,6 +1595,7 @@ The lower boundary that separates soil from the nonsoil underneath is most diffi
         <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Water</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:00002006</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ENVO_03605019"/>
         <rdfs:label>liquid water</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -4000,10 +4034,20 @@ From https://en.wikipedia.org/wiki/ [A mineral] is different from a rock, which 
         <obo1:IAO_0000115>A material entity which has been assembled through the intentional, instinctual, or deliberately programmed efforts of an organism or machine.</obo1:IAO_0000115>
         <dc:creator rdf:resource="https://orcid.org/0000-0002-4366-3088"/>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-10-29T14:50:34Z</dc:date>
+        <oboInOwl:hasBroadSynonym>assembled material entity</oboInOwl:hasBroadSynonym>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:01001813</oboInOwl:id>
+        <rdfs:comment>Constructions differ from manufactured products in that they are the output of individual and tailored projects, rather than repetitive processes.</rdfs:comment>
         <rdfs:label>construction</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001813"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#comment"/>
+        <owl:annotatedTarget>Constructions differ from manufactured products in that they are the output of individual and tailored projects, rather than repetitive processes.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>comparing-construction-and-manufacturing</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>http://ascpro0.ascweb.org/archives/cd/2009/paper/CERT136002009.pdf</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>https://www.autodesk.com/design-make/articles/manufacturing-and-construction</oboInOwl:hasDbXref>
+    </owl:Axiom>
     
 
 

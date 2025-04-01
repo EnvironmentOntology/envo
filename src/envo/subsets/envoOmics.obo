@@ -1,8 +1,9 @@
 format-version: 1.2
-data-version: envo/releases/2024-07-01/subsets/envoOmics.owl
+data-version: envo/releases/2025-02-05/subsets/envoOmics.owl
 subsetdef: disposition_slim "Disposition slim"
 subsetdef: environmental_hazards "environmental_hazards"
 subsetdef: EnvO-Lite-GSC "EnvO-Lite-GSC"
+subsetdef: ENVO:03605010 "Root of the NMDC environmental context value set hierarchy. This property organizes subset properties used to annotate EnvO classes relevant for MIxS environmental context fields (e.g., env_broad_scale, env_local_scale, env_medium_scale). This structure guides data annotation in systems like NCBI BioSample, refining recommendations from the ENVO-MIxS integration guide, addressing questions such as 'Which EnvO classes are reasonable for populating the env_broad_scale field in a soil sample versus a water sample.\""
 subsetdef: envoANZSoil "envoANZSoil"
 subsetdef: envoAstro "envoAstro"
 subsetdef: envoAtmo "envoAtmo"
@@ -25,7 +26,7 @@ subsetdef: value_slim "Value slim"
 subsetdef: wwfBiome "wwfBiome"
 synonymtypedef: OMO:0003004 "plural form"
 ontology: envo/subsets/envoOmics
-property_value: owl:versionInfo "2024-07-01" xsd:string
+property_value: owl:versionInfo "2025-02-05" xsd:string
 
 [Term]
 id: ENVO:00000340
@@ -60,6 +61,7 @@ namespace: ENVO
 def: "An environmental material which is primarily composed of minerals, varying proportions of sand, silt, and clay, organic material such as humus, interstitial gases, liquids, and a broad range of resident micro- and macroorganisms." [https://en.wikipedia.org/wiki/Soil]
 comment: 'In engineering terms, soil is referred to as regolith, or loose rock material that lies above the 'solid geology'. Soil is commonly referred to as "earth" or "dirt"; technically, the term "dirt" should be restricted to displaced soil.' https://en.wikipedia.org/wiki/Soil\n\n" The upper limit of soil is the boundary between soil and air, shallow water, live plants, or plant materials that have not begun to decompose. Areas are not considered to have soil if the surface is permanently covered by water too deep (typically more than 2.5 meters) for the growth of rooted plants.\n\nThe lower boundary that separates soil from the nonsoil underneath is most difficult to define. Soil consists of horizons near the Earth's surface that, in contrast to the underlying parent material, have been altered by the interactions of climate, relief, and living organisms over time. Commonly, soil grades at its lower boundary to hard rock or to earthy materials virtually devoid of animals, roots, or other marks of biological activity. For purposes of classification, the lower boundary of soil is arbitrarily set at 200 cm."  Soil taxonomy, 2nd Ed., quoted in http://www.nrcs.usda.gov/wps/portal/nrcs/detail/soils/edu/?cid=nrcs142p2_054280
 subset: EnvO-Lite-GSC
+subset: ENVO:03605015
 synonym: "regolith" BROAD []
 xref: https://en.wikipedia.org/wiki/Soil
 xref: LTER:535
@@ -80,6 +82,7 @@ id: ENVO:00002006
 name: liquid water
 namespace: ENVO
 def: "An environmental material primarily composed of dihydrogen oxide in its liquid form." [MA:ma]
+subset: ENVO:03605019
 synonym: "water" BROAD []
 xref: EcoLexicon:water
 xref: https://en.wikipedia.org/wiki/Water
@@ -108,6 +111,7 @@ name: saline water
 namespace: ENVO
 def: "Water which contains a significant concentration of dissolved salts." []
 comment: The threshold salt concentration for classifying water as saline varies, but typically begins at about 1,000 to 3,000 parts salt per million parts water or 0.1–0.3% salt by weight.
+subset: ENVO:03605019
 synonym: "salt water" EXACT []
 xref: EcoLexicon:saltwater
 xref: https://en.wikipedia.org/wiki/Saline_water
@@ -121,6 +125,7 @@ name: fresh water
 namespace: ENVO
 def: "Water which has a low concentration of dissolved solutes, particularly that of sodium chloride." []
 comment: The lower bound of solute concentration required for water to be considered freshwater is variable, but is always less than that of seawater, and often cited as less than 1 gram of solutes per 1 litre of water.
+subset: ENVO:03605019
 subset: envoEmpo
 subset: envoPolar
 synonym: "freshwater" EXACT []
@@ -149,6 +154,7 @@ id: ENVO:00005791
 name: sterile water
 namespace: ENVO
 def: "Sterile water is water which does not contain lliving organisms." []
+subset: ENVO:03605019
 is_a: ENVO:00002006 ! liquid water
 
 [Term]
@@ -156,6 +162,8 @@ id: ENVO:00005801
 name: rhizosphere
 namespace: ENVO
 def: "The narrow region of soil that is directly influenced by root secretions and associated soil microorganisms." [https://en.wikipedia.org/wiki/Rhizosphere_%28ecology%29]
+subset: ENVO:03605014
+subset: ENVO:03605024
 xref: LTER:472
 is_a: ENVO:01001110 ! ecosystem
 relationship: part_of ENVO:00001998 ! soil
@@ -759,7 +767,7 @@ def: "A cell culture which is composed of a microbial community of known composi
 comment: Mock communities are typically used as positive controls in experiments.
 subset: envoEmpo
 subset: envoOmics
-is_a: ENVO:02000008 ! cell culture
+is_a: ENVO:01001968 ! microbial cell culture
 property_value: IAO:0000118 "Mock community" xsd:string {xref="http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/"}
 
 [Term]
@@ -769,7 +777,7 @@ namespace: ENVO
 def: "A cell culture which is composed of a single population of bacterial or archaeal cells." []
 subset: envoEmpo
 subset: envoOmics
-is_a: ENVO:02000008 ! cell culture
+is_a: ENVO:01001968 ! microbial cell culture
 property_value: IAO:0000118 "Single strain" xsd:string {xref="http://press.igsb.anl.gov/earthmicrobiome/protocols-and-standards/emp-ontology-empo/"}
 
 [Term]
@@ -849,6 +857,17 @@ property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0
 property_value: http://purl.org/dc/elements/1.1/date 2019-08-20T09:41:27Z xsd:dateTime
 
 [Term]
+id: ENVO:01001968
+name: microbial cell culture
+namespace: ENVO
+def: "A cell culture which supports the growth and proliferation of microorganisms." []
+synonym: "culture of microorganismal cells" EXACT []
+synonym: "microbiological culture" BROAD []
+is_a: ENVO:02000008 ! cell culture
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2024-12-09T21:18:25Z xsd:dateTime
+
+[Term]
 id: ENVO:01003001
 name: water-holding capacity
 namespace: ENVO
@@ -877,7 +896,7 @@ is_a: ENVO:01003002 ! particle
 id: ENVO:02000008
 name: cell culture
 namespace: ENVO
-def: "A cell culture is a growth of cells in vitro in an artificial medium for experimental research." [URL:http\://stemcells.nih.gov/StemCells/Templates/StemCellContentPage.aspx?NRMODE=Published&NRNODEGUID=%7b3C35BAB6-0FE6-4C4E-95F2-2CB61B58D96D%7d&NRORIGINALURL=%2finfo%2fglossary%2easp&NRCACHEHINT=NoModifyGuest#cellculture]
+def: "Organic material which is composed primarily of a growth of cells in an artificial medium for experimental research." [http://stemcells.nih.gov/StemCells/Templates/StemCellContentPage.aspx?NRMODE=Published&NRNODEGUID=%7b3C35BAB6-0FE6-4C4E-95F2-2CB61B58D96D%7d&NRORIGINALURL=%2finfo%2fglossary%2easp&NRCACHEHINT=NoModifyGuest#cellculture]
 xref: https://en.wikipedia.org/wiki/Cell_culture
 is_a: ENVO:01000155 ! organic material
 
@@ -978,11 +997,6 @@ id: connects
 name: connects
 namespace: ENVO
 xref: RO:0002176
-
-[Typedef]
-id: contains
-namespace: ENVO
-xref: RO:0001019
 
 [Typedef]
 id: contains_process
@@ -1184,6 +1198,11 @@ namespace: ENVO
 xref: RO:0002212
 
 [Typedef]
+id: obsolete_contains
+namespace: ENVO
+xref: RO:0001019
+
+[Typedef]
 id: obsolete_determined_by
 name: obsolete determined by
 namespace: ENVO
@@ -1257,6 +1276,11 @@ namespace: ENVO
 xref: RO:0002608
 
 [Typedef]
+id: quality_of
+namespace: ENVO
+xref: RO:0000080
+
+[Typedef]
 id: realized_in
 namespace: ENVO
 xref: BFO:0000054
@@ -1281,7 +1305,7 @@ xref: ENVO:02500016
 property_value: IAO:0000112 "Afforestation results in the expansion of a forest." xsd:string
 
 [Typedef]
-id: results_in_formation_of
+id: results_in_formation_of_anatomical_entity
 namespace: ENVO
 xref: RO:0002297
 
