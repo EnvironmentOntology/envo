@@ -2,77 +2,6 @@ format-version: 1.2
 ontology: envo/imports/pato_import
 
 [Term]
-id: BFO:0000002
-name: continuant
-def: "An entity that exists in full at any time in which it exists at all, persists through time while maintaining its identity and has no temporal parts." []
-disjoint_from: BFO:0000003 ! occurrent
-
-[Term]
-id: BFO:0000003
-name: occurrent
-def: "An entity that has temporal parts and that happens, unfolds or develops through time." []
-
-[Term]
-id: BFO:0000004
-name: independent continuant
-def: "A continuant that is a bearer of quality and realizable entity entities, in which other entities inhere and which itself cannot inhere in anything." []
-is_a: BFO:0000002 ! continuant
-disjoint_from: BFO:0000020 ! specifically dependent continuant
-
-[Term]
-id: BFO:0000006
-name: spatial region
-is_a: BFO:0000141 ! immaterial entity
-
-[Term]
-id: BFO:0000015
-name: process
-def: "An occurrent that has temporal proper parts and for some time t, p s-depends_on some material entity at t." []
-is_a: BFO:0000003 ! occurrent
-
-[Term]
-id: BFO:0000016
-name: disposition
-is_a: BFO:0000017 ! realizable entity
-disjoint_from: BFO:0000023 ! role
-
-[Term]
-id: BFO:0000017
-name: realizable entity
-def: "A specifically dependent continuant  that inheres in continuant  entities and are not exhibited in full at every time in which it inheres in an entity or group of entities. The exhibition or actualization of a realizable entity is a particular manifestation, functioning or process that occurs under certain circumstances." []
-is_a: BFO:0000020 ! specifically dependent continuant
-
-[Term]
-id: BFO:0000020
-name: specifically dependent continuant
-def: "A continuant that inheres in or is borne by other entities. Every instance of A requires some specific instance of B which must always be the same." []
-is_a: BFO:0000002 ! continuant
-
-[Term]
-id: BFO:0000023
-name: role
-def: "A realizable entity  the manifestation of which brings about some result or end that is not essential to a continuant  in virtue of the kind of thing that it is but that can be served or participated in by that kind of continuant  in some kinds of natural, social or institutional contexts." []
-is_a: CHEBI:50906 ! role
-equivalent_to: CHEBI:50906 ! role
-
-[Term]
-id: BFO:0000034
-name: function
-is_a: BFO:0000016 ! disposition
-
-[Term]
-id: BFO:0000040
-name: material entity
-def: "An independent continuant that is spatially extended whose identity is independent of that of other entities and can be maintained through time." []
-is_a: BFO:0000004 ! independent continuant
-disjoint_from: BFO:0000141 ! immaterial entity
-
-[Term]
-id: BFO:0000141
-name: immaterial entity
-is_a: BFO:0000004 ! independent continuant
-
-[Term]
 id: CHEBI:138675
 name: gas molecular entity
 def: "Any main group molecular entity that is gaseous at standard temperature and pressure (STP; 0degreeC and 100 kPa)." []
@@ -85,7 +14,6 @@ is_a: CHEBI:33579 ! main group molecular entity
 id: CHEBI:15379
 name: dioxygen
 synonym: "[OO]" RELATED []
-synonym: "dioxygen" EXACT []
 synonym: "dioxygene" RELATED []
 synonym: "Disauerstoff" RELATED []
 synonym: "E 948" RELATED []
@@ -106,11 +34,9 @@ def: "An azane that consists of a single nitrogen atom covelently bonded to thre
 synonym: "[NH3]" RELATED []
 synonym: "AMMONIA" EXACT []
 synonym: "Ammonia" EXACT []
-synonym: "ammonia" EXACT []
 synonym: "ammoniac" RELATED []
 synonym: "Ammoniak" RELATED []
 synonym: "amoniaco" RELATED []
-synonym: "azane" EXACT []
 synonym: "NH3" RELATED []
 synonym: "R-717" RELATED []
 synonym: "spirit of hartshorn" RELATED []
@@ -133,9 +59,6 @@ synonym: "Sulfate(2-)" RELATED []
 synonym: "Sulfuric acid ion(2-)" RELATED []
 synonym: "sulphate" RELATED []
 synonym: "sulphate ion" RELATED []
-synonym: "tetraoxidosulfate(2-)" EXACT []
-synonym: "tetraoxosulfate(2-)" EXACT []
-synonym: "tetraoxosulfate(VI)" EXACT []
 is_a: CHEBI:33482 ! sulfur oxoanion
 is_a: CHEBI:48154 ! sulfur oxide
 is_a: CHEBI:79388 ! divalent inorganic anion
@@ -147,8 +70,6 @@ def: "Any member of the class of organooxygen compounds that is a polyhydroxy-al
 synonym: "a carbohydrate" RELATED []
 synonym: "carbohidrato" RELATED []
 synonym: "carbohidratos" RELATED []
-synonym: "carbohydrate" EXACT []
-synonym: "carbohydrates" EXACT []
 synonym: "glucide" RELATED []
 synonym: "glucides" RELATED []
 synonym: "glucido" RELATED []
@@ -180,25 +101,9 @@ synonym: "Glykane" RELATED []
 synonym: "polisacarido" RELATED []
 synonym: "polisacaridos" RELATED []
 synonym: "Polysaccharide" EXACT []
-synonym: "polysaccharides" EXACT []
 is_a: CHEBI:16646 ! carbohydrate
 is_a: CHEBI:167559 ! glycan
 is_a: CHEBI:33694 ! biomacromolecule
-
-[Term]
-id: CHEBI:18248
-name: iron atom
-def: "An iron group element atom that has atomic number 26." []
-synonym: "26Fe" RELATED []
-synonym: "Eisen" RELATED []
-synonym: "Fe" RELATED []
-synonym: "fer" RELATED []
-synonym: "ferrum" RELATED []
-synonym: "hierro" RELATED []
-synonym: "Iron" RELATED []
-synonym: "iron" EXACT []
-synonym: "iron" RELATED []
-is_a: CHEBI:33356 ! iron group element atom
 
 [Term]
 id: CHEBI:22563
@@ -219,7 +124,6 @@ synonym: "entidad molecular" RELATED []
 synonym: "entidades moleculares" RELATED []
 synonym: "entite moleculaire" RELATED []
 synonym: "molecular entities" RELATED []
-synonym: "molecular entity" EXACT []
 synonym: "molekulare Entitaet" RELATED []
 is_a: CHEBI:24431 ! chemical entity
 
@@ -228,14 +132,12 @@ id: CHEBI:24431
 name: chemical entity
 def: "A chemical entity is a physical entity of interest in chemistry including molecular entities, parts thereof, and chemical substances." []
 synonym: "chemical entity" EXACT []
-is_a: BFO:0000040 ! material entity
 
 [Term]
 id: CHEBI:24432
 name: biological role
 def: "A role played by the molecular entity or part thereof within a biological context." []
 synonym: "biological function" RELATED []
-is_a: BFO:0000023 ! role
 is_a: CHEBI:50906 ! role
 
 [Term]
@@ -253,8 +155,6 @@ def: "A compound which contains oxygen, at least one other element, and at least
 synonym: "oxacids" RELATED []
 synonym: "oxiacids" RELATED []
 synonym: "oxo acid" RELATED []
-synonym: "oxoacid" EXACT []
-synonym: "oxoacids" EXACT []
 synonym: "oxy-acids" RELATED []
 synonym: "oxyacids" RELATED []
 is_a: CHEBI:24651 ! hydroxides
@@ -285,22 +185,6 @@ is_a: CHEBI:24835 ! inorganic molecular entity
 is_a: CHEBI:25741 ! oxide
 
 [Term]
-id: CHEBI:24866
-name: salt
-def: "A salt is an assembly of cations and anions." []
-synonym: "ionic compound" RELATED []
-synonym: "ionic compounds" RELATED []
-synonym: "sal" RELATED []
-synonym: "sales" RELATED []
-synonym: "salt" EXACT []
-synonym: "salts" RELATED []
-synonym: "Salz" RELATED []
-synonym: "Salze" RELATED []
-synonym: "sel" RELATED []
-synonym: "sels" RELATED []
-is_a: CHEBI:37577 ! heteroatomic molecular entity
-
-[Term]
 id: CHEBI:24870
 name: ion
 def: "A molecular entity having a net electric charge." []
@@ -310,14 +194,6 @@ synonym: "Ionen" RELATED []
 synonym: "iones" RELATED []
 synonym: "ions" RELATED []
 is_a: CHEBI:23367 ! molecular entity
-
-[Term]
-id: CHEBI:24873
-name: iron molecular entity
-synonym: "iron compounds" RELATED []
-synonym: "iron molecular entities" RELATED []
-synonym: "iron molecular entity" EXACT []
-is_a: CHEBI:33744 ! iron group molecular entity
 
 [Term]
 id: CHEBI:25362
@@ -345,7 +221,6 @@ name: nitrogen atom
 synonym: "7N" RELATED []
 synonym: "azote" RELATED []
 synonym: "N" RELATED []
-synonym: "nitrogen" EXACT []
 synonym: "nitrogen" RELATED []
 synonym: "nitrogeno" RELATED []
 synonym: "Stickstoff" RELATED []
@@ -361,7 +236,6 @@ synonym: "no metal" RELATED []
 synonym: "no metales" RELATED []
 synonym: "non-metal" RELATED []
 synonym: "non-metaux" RELATED []
-synonym: "nonmetal" EXACT []
 synonym: "nonmetal" RELATED []
 synonym: "nonmetals" RELATED []
 is_a: CHEBI:33250 ! atom
@@ -383,32 +257,6 @@ synonym: "oxygen molecular entity" EXACT []
 is_a: CHEBI:33304 ! chalcogen molecular entity
 
 [Term]
-id: CHEBI:26020
-name: phosphate
-def: "Salts and esters of phosphoric and oligophosphoric acids and their chalcogen analogues. In inorganic chemistry, the term is also used to describe anionic coordination entities with phosphorus as central atom." []
-synonym: "phosphates" EXACT []
-synonym: "phosphates" RELATED []
-is_a: CHEBI:26079 ! phosphoric acid derivative
-
-[Term]
-id: CHEBI:26079
-name: phosphoric acid derivative
-is_a: CHEBI:36359 ! phosphorus oxoacid derivative
-
-[Term]
-id: CHEBI:26082
-name: phosphorus molecular entity
-synonym: "phosphorus molecular entities" RELATED []
-is_a: CHEBI:33302 ! pnictogen molecular entity
-
-[Term]
-id: CHEBI:26712
-name: sodium molecular entity
-synonym: "sodium compounds" RELATED []
-synonym: "sodium molecular entities" RELATED []
-is_a: CHEBI:33296 ! alkali metal molecular entity
-
-[Term]
 id: CHEBI:26833
 name: sulfur atom
 synonym: "16S" RELATED []
@@ -417,7 +265,6 @@ synonym: "Elemental sulfur" RELATED []
 synonym: "S" RELATED []
 synonym: "Schwefel" RELATED []
 synonym: "soufre" RELATED []
-synonym: "sulfur" EXACT []
 synonym: "sulfur" RELATED []
 synonym: "sulphur" RELATED []
 synonym: "theion" RELATED []
@@ -440,34 +287,12 @@ synonym: "[SO2(OH)2]" RELATED []
 synonym: "Acide sulfurique" RELATED []
 synonym: "Acido sulfurico" RELATED []
 synonym: "Acidum sulfuricum" RELATED []
-synonym: "dihydrogen tetraoxosulfate" EXACT []
-synonym: "dihydroxidodioxidosulfur" EXACT []
 synonym: "H2SO4" RELATED []
-synonym: "hydrogen tetraoxosulfate(2-)" EXACT []
-synonym: "hydrogen tetraoxosulfate(VI)" EXACT []
 synonym: "Schwefelsaeureloesungen" RELATED []
 synonym: "Sulfuric acid" EXACT []
 synonym: "sulfuric acid" EXACT []
 synonym: "sulphuric acid" RELATED []
-synonym: "tetraoxosulfuric acid" EXACT []
 is_a: CHEBI:33402 ! sulfur oxoacid
-
-[Term]
-id: CHEBI:27081
-name: transition element atom
-def: "An element whose atom has an incomplete d sub-shell, or which can give rise to cations with an incomplete d sub-shell." []
-synonym: "metal de transicion" RELATED []
-synonym: "metal de transition" RELATED []
-synonym: "metales de transicion" RELATED []
-synonym: "metaux de transition" RELATED []
-synonym: "transition element" EXACT []
-synonym: "transition element" RELATED []
-synonym: "transition elements" RELATED []
-synonym: "transition metal" RELATED []
-synonym: "transition metals" RELATED []
-synonym: "Uebergangselement" RELATED []
-synonym: "Uebergangsmetalle" RELATED []
-is_a: CHEBI:33521 ! metal atom
 
 [Term]
 id: CHEBI:27594
@@ -475,7 +300,6 @@ name: carbon atom
 synonym: "6C" RELATED []
 synonym: "C" RELATED []
 synonym: "Carbon" RELATED []
-synonym: "carbon" EXACT []
 synonym: "carbon" RELATED []
 synonym: "carbone" RELATED []
 synonym: "carbonium" RELATED []
@@ -483,20 +307,6 @@ synonym: "carbono" RELATED []
 synonym: "Kohlenstoff" RELATED []
 is_a: CHEBI:25585 ! nonmetal atom
 is_a: CHEBI:33306 ! carbon group element atom
-
-[Term]
-id: CHEBI:28659
-name: phosphorus atom
-synonym: "15P" RELATED []
-synonym: "fosforo" RELATED []
-synonym: "P" RELATED []
-synonym: "Phosphor" RELATED []
-synonym: "phosphore" RELATED []
-synonym: "Phosphorus" RELATED []
-synonym: "phosphorus" EXACT []
-synonym: "phosphorus" RELATED []
-is_a: CHEBI:25585 ! nonmetal atom
-is_a: CHEBI:33300 ! pnictogen
 
 [Term]
 id: CHEBI:28938
@@ -507,7 +317,6 @@ synonym: "ammonium" EXACT []
 synonym: "ammonium cation" RELATED []
 synonym: "ammonium ion" RELATED []
 synonym: "Ammonium(1+)" RELATED []
-synonym: "azanium" EXACT []
 synonym: "NH4(+)" RELATED []
 synonym: "NH4+" RELATED []
 is_a: CHEBI:35106 ! nitrogen hydride
@@ -518,14 +327,7 @@ is_a: CHEBI:60242 ! monovalent inorganic cation
 id: CHEBI:33232
 name: application
 def: "Intended use of the molecular entity or part thereof by humans." []
-is_a: BFO:0000023 ! role
 is_a: CHEBI:50906 ! role
-
-[Term]
-id: CHEBI:33241
-name: oxoacid derivative
-synonym: "oxoacid derivatives" RELATED []
-is_a: CHEBI:37577 ! heteroatomic molecular entity
 
 [Term]
 id: CHEBI:33242
@@ -538,7 +340,6 @@ is_a: CHEBI:33692 ! hydrides
 id: CHEBI:33250
 name: atom
 def: "A chemical entity constituting the smallest component of an element having the chemical properties of the element." []
-synonym: "atom" EXACT []
 synonym: "atome" RELATED []
 synonym: "atomo" RELATED []
 synonym: "atoms" RELATED []
@@ -592,31 +393,6 @@ synonym: "organoelement compounds" RELATED []
 is_a: CHEBI:50860 ! organic molecular entity
 
 [Term]
-id: CHEBI:33286
-name: agrochemical
-def: "An agrochemical is a substance that is used in agriculture or horticulture." []
-synonym: "agrichemical" RELATED []
-synonym: "agrichemicals" RELATED []
-synonym: "agricultural chemicals" RELATED []
-synonym: "agrochemicals" RELATED []
-is_a: CHEBI:33232 ! application
-
-[Term]
-id: CHEBI:33287
-name: fertilizer
-def: "A fertilizer is any substance that is added to soil or water to assist the growth of plants." []
-synonym: "fertiliser" RELATED []
-synonym: "fertilizers" RELATED []
-is_a: CHEBI:33286 ! agrochemical
-
-[Term]
-id: CHEBI:33296
-name: alkali metal molecular entity
-def: "A molecular entity containing one or more atoms of an alkali metal." []
-synonym: "alkali metal molecular entities" RELATED []
-is_a: CHEBI:33674 ! s-block molecular entity
-
-[Term]
 id: CHEBI:33300
 name: pnictogen
 def: "Any p-block element atom that is in group 15 of the periodic table: nitrogen, phosphorus, arsenic, antimony and bismuth." []
@@ -626,7 +402,6 @@ synonym: "nitrogenoideos" RELATED []
 synonym: "nitrogenoides" RELATED []
 synonym: "pnictogene" RELATED []
 synonym: "pnictogenes" RELATED []
-synonym: "pnictogens" EXACT []
 is_a: CHEBI:33560 ! p-block element atom
 
 [Term]
@@ -645,10 +420,8 @@ synonym: "anfigeno" RELATED []
 synonym: "anfigenos" RELATED []
 synonym: "calcogeno" RELATED []
 synonym: "calcogenos" RELATED []
-synonym: "chalcogen" EXACT []
 synonym: "chalcogene" RELATED []
 synonym: "chalcogenes" RELATED []
-synonym: "chalcogens" EXACT []
 synonym: "Chalkogen" RELATED []
 synonym: "Chalkogene" RELATED []
 synonym: "group 16 elements" RELATED []
@@ -672,7 +445,6 @@ synonym: "carbon group elements" RELATED []
 synonym: "carbonoides" RELATED []
 synonym: "cristallogene" RELATED []
 synonym: "cristallogenes" RELATED []
-synonym: "group 14 elements" EXACT []
 synonym: "group IV elements" RELATED []
 is_a: CHEBI:33560 ! p-block element atom
 
@@ -683,16 +455,7 @@ def: "An atom belonging to one of the main groups (found in the s- and p- blocks
 synonym: "Hauptgruppenelement" RELATED []
 synonym: "Hauptgruppenelemente" RELATED []
 synonym: "main group element" RELATED []
-synonym: "main group elements" EXACT []
 is_a: CHEBI:33250 ! atom
-
-[Term]
-id: CHEBI:33356
-name: iron group element atom
-synonym: "group 8 elements" EXACT []
-synonym: "iron group element" RELATED []
-synonym: "iron group elements" RELATED []
-is_a: CHEBI:33561 ! d-block element atom
 
 [Term]
 id: CHEBI:33402
@@ -726,38 +489,12 @@ synonym: "chalcogen oxoanions" RELATED []
 is_a: CHEBI:35406 ! oxoanion
 
 [Term]
-id: CHEBI:33497
-name: transition element molecular entity
-def: "A molecular entity containing one or more atoms of a transition element." []
-synonym: "transition element molecular entities" RELATED []
-synonym: "transition metal molecular entity" RELATED []
-is_a: CHEBI:23367 ! molecular entity
-
-[Term]
-id: CHEBI:33521
-name: metal atom
-def: "An atom of an element that exhibits typical metallic properties, being typically shiny, with high electrical and thermal conductivity." []
-synonym: "elemental metal" RELATED []
-synonym: "elemental metals" RELATED []
-synonym: "metal element" RELATED []
-synonym: "metal elements" RELATED []
-synonym: "metals" RELATED []
-is_a: CHEBI:33250 ! atom
-
-[Term]
 id: CHEBI:33560
 name: p-block element atom
 def: "Any main group element atom belonging to the p-block of the periodic table." []
 synonym: "p-block element" RELATED []
 synonym: "p-block elements" RELATED []
 is_a: CHEBI:33318 ! main group element atom
-
-[Term]
-id: CHEBI:33561
-name: d-block element atom
-synonym: "d-block element" RELATED []
-synonym: "d-block elements" RELATED []
-is_a: CHEBI:27081 ! transition element atom
 
 [Term]
 id: CHEBI:33579
@@ -792,8 +529,6 @@ is_a: CHEBI:33674 ! s-block molecular entity
 id: CHEBI:33655
 name: aromatic compound
 def: "A cyclically conjugated molecular entity with a stability (due to delocalization) significantly greater than that of a hypothetical localized structure (e.g. Kekule structure) is said to possess aromatic character." []
-synonym: "aromatic compounds" EXACT []
-synonym: "aromatic molecular entity" EXACT []
 synonym: "aromatics" RELATED []
 synonym: "aromatische Verbindungen" RELATED []
 is_a: CHEBI:33595 ! cyclic compound
@@ -817,15 +552,6 @@ synonym: "p-block molecular entitiy" RELATED []
 is_a: CHEBI:33579 ! main group molecular entity
 
 [Term]
-id: CHEBI:33676
-name: d-block molecular entity
-def: "A d-block molecular entity is a molecular entity containing one or more atoms of a d-block element." []
-synonym: "d-block compounds" RELATED []
-synonym: "d-block molecular entities" RELATED []
-synonym: "d-block molecular entity" EXACT []
-is_a: CHEBI:33497 ! transition element molecular entity
-
-[Term]
 id: CHEBI:33692
 name: hydrides
 def: "Hydrides are chemical compounds of hydrogen with other chemical elements." []
@@ -837,24 +563,15 @@ id: CHEBI:33694
 name: biomacromolecule
 def: "A macromolecule formed by a living organism." []
 synonym: "biomacromolecules" RELATED []
-synonym: "biopolymer" EXACT []
 synonym: "Biopolymere" RELATED []
 synonym: "biopolymers" RELATED []
 is_a: CHEBI:33839 ! macromolecule
 is_a: CHEBI:50860 ! organic molecular entity
 
 [Term]
-id: CHEBI:33744
-name: iron group molecular entity
-synonym: "iron group molecular entities" RELATED []
-synonym: "iron group molecular entity" EXACT []
-is_a: CHEBI:33676 ! d-block molecular entity
-
-[Term]
 id: CHEBI:33839
 name: macromolecule
 def: "A macromolecule is a molecule of high relative molecular mass, the structure of which essentially comprises the multiple repetition of units derived, actually or conceptually, from molecules of low relative molecular mass." []
-synonym: "macromolecule" EXACT []
 synonym: "macromolecules" RELATED []
 synonym: "polymer" RELATED []
 synonym: "polymer molecule" RELATED []
@@ -922,18 +639,6 @@ is_a: CHEBI:24870 ! ion
 is_a: CHEBI:36357 ! polyatomic entity
 
 [Term]
-id: CHEBI:36359
-name: phosphorus oxoacid derivative
-synonym: "phosphorus oxoacid derivative" EXACT []
-is_a: CHEBI:33241 ! oxoacid derivative
-is_a: CHEBI:36360 ! phosphorus oxoacids and derivatives
-
-[Term]
-id: CHEBI:36360
-name: phosphorus oxoacids and derivatives
-is_a: CHEBI:26082 ! phosphorus molecular entity
-
-[Term]
 id: CHEBI:36914
 name: inorganic ion
 synonym: "inorganic ions" RELATED []
@@ -982,7 +687,6 @@ id: CHEBI:37176
 name: mononuclear parent hydride
 synonym: "mononuclear hydride" RELATED []
 synonym: "mononuclear hydrides" RELATED []
-synonym: "mononuclear parent hydrides" EXACT []
 is_a: CHEBI:33692 ! hydrides
 
 [Term]
@@ -1032,7 +736,6 @@ is_a: CHEBI:37577 ! heteroatomic molecular entity
 id: CHEBI:50313
 name: onium cation
 def: "Mononuclear cations derived by addition of a hydron to a mononuclear parent hydride of the pnictogen, chalcogen and halogen families." []
-synonym: "onium cations" EXACT []
 synonym: "onium cations" RELATED []
 synonym: "onium ion" RELATED []
 synonym: "onium ions" RELATED []
@@ -1051,13 +754,11 @@ is_a: CHEBI:33582 ! carbon group molecular entity
 id: CHEBI:50906
 name: role
 def: "A role is particular behaviour which a material entity may exhibit." []
-is_a: BFO:0000023 ! role
 
 [Term]
 id: CHEBI:51086
 name: chemical role
 def: "A role played by the molecular entity or part thereof within a chemical context." []
-is_a: BFO:0000023 ! role
 is_a: CHEBI:50906 ! role
 
 [Term]
@@ -1175,40 +876,17 @@ synonym: "divalent inorganic anions" RELATED []
 is_a: CHEBI:24834 ! inorganic anion
 
 [Term]
-id: GO:0003008
-name: system process
-def: "A multicellular organismal process carried out by any of the organs or tissues in an organ system. An organ system is a regularly interacting or interdependent group of organs or tissues that work together to carry out a biological objective." []
-synonym: "organ system process" EXACT []
-is_a: GO:0032501 ! multicellular organismal process
-
-[Term]
-id: GO:0007588
-name: excretion
-def: "The elimination by an organism of the waste products that arise as a result of metabolic activity. These products include water, carbon dioxide (CO2), and nitrogenous compounds." []
-is_a: GO:0003008 ! system process
-
-[Term]
 id: GO:0008150
 name: biological_process
-def: "A biological process represents a specific objective that the organism is genetically programmed to achieve. Biological processes are often described by their outcome or ending state, e.g., the biological process of cell division results in the creation of two daughter cells (a divided cell) from a single parent cell. A biological process is accomplished by a particular set of molecular functions carried out by specific gene products (or macromolecular complexes), often in a highly regulated manner and in a particular temporal sequence." []
+def: "A biological process is the execution of a genetically-encoded biological module or program. It consists of all the steps required to achieve the specific biological objective of the module. A biological process is accomplished by a particular set of molecular functions carried out by specific gene products (or macromolecular complexes), often in a highly regulated manner and in a particular temporal sequence." []
 synonym: "biological process" EXACT []
 synonym: "physiological process" EXACT []
 synonym: "single organism process" RELATED []
 synonym: "single-organism process" RELATED []
-is_a: BFO:0000015 ! process
-
-[Term]
-id: GO:0032501
-name: multicellular organismal process
-def: "Any biological process, occurring at the level of a multicellular organism, pertinent to its function." []
-synonym: "organismal physiological process" EXACT []
-synonym: "single-multicellular organism process" RELATED []
-is_a: GO:0008150 ! biological_process
 
 [Term]
 id: NCBITaxon:1
 name: root
-synonym: "all" RELATED []
 
 [Term]
 id: NCBITaxon:117570
@@ -1218,7 +896,6 @@ is_a: NCBITaxon:7776 ! Gnathostomata <vertebrates>
 [Term]
 id: NCBITaxon:117571
 name: Euteleostomi
-synonym: "bony vertebrates" EXACT []
 is_a: NCBITaxon:117570 ! Teleostomi
 
 [Term]
@@ -1229,14 +906,11 @@ is_a: NCBITaxon:33317 ! Protostomia
 [Term]
 id: NCBITaxon:131567
 name: cellular organisms
-synonym: "biota" RELATED []
 is_a: NCBITaxon:1 ! root
 
 [Term]
 id: NCBITaxon:1329799
 name: Archelosauria
-synonym: "Archosauria-Testudines" RELATED []
-synonym: "Testudines + Archosauria group" RELATED []
 is_a: NCBITaxon:32561 ! Sauria
 
 [Term]
@@ -1252,65 +926,41 @@ is_a: NCBITaxon:197563 ! Mandibulata
 [Term]
 id: NCBITaxon:197563
 name: Mandibulata
-synonym: "mandibulates" EXACT []
 is_a: NCBITaxon:6656 ! Arthropoda
 
 [Term]
 id: NCBITaxon:2759
 name: Eukaryota
-synonym: "Eucarya" RELATED []
-synonym: "Eucaryotae" RELATED []
-synonym: "eucaryotes" EXACT []
-synonym: "Eukarya" RELATED []
-synonym: "Eukaryotae" RELATED []
-synonym: "eukaryotes" EXACT []
-synonym: "eukaryotes" RELATED []
 is_a: NCBITaxon:131567 ! cellular organisms
 
 [Term]
 id: NCBITaxon:32523
 name: Tetrapoda
-synonym: "tetrapods" EXACT []
 is_a: NCBITaxon:1338369 ! Dipnotetrapodomorpha
 
 [Term]
 id: NCBITaxon:32524
 name: Amniota
-synonym: "amniotes" EXACT []
 is_a: NCBITaxon:32523 ! Tetrapoda
 
 [Term]
 id: NCBITaxon:32561
 name: Sauria
-synonym: "Diapsida" RELATED []
-synonym: "diapsids" EXACT []
 is_a: NCBITaxon:8457 ! Sauropsida
 
 [Term]
 id: NCBITaxon:33090
 name: Viridiplantae
-synonym: "Chlorobionta" RELATED []
-synonym: "Chlorophyta/Embryophyta group" EXACT []
-synonym: "chlorophyte/embryophyte group" EXACT []
-synonym: "Chloroplastida" RELATED []
-synonym: "green plants" EXACT []
-synonym: "green plants" RELATED []
 is_a: NCBITaxon:2759 ! Eukaryota
 
 [Term]
 id: NCBITaxon:33154
 name: Opisthokonta
-synonym: "Fungi/Metazoa group" RELATED []
-synonym: "opisthokonts" RELATED []
 is_a: NCBITaxon:2759 ! Eukaryota
 
 [Term]
 id: NCBITaxon:33208
 name: Metazoa
-synonym: "Animalia" RELATED []
-synonym: "animals" RELATED []
-synonym: "metazoans" EXACT []
-synonym: "multicellular animals" EXACT []
 is_a: NCBITaxon:33154 ! Opisthokonta
 
 [Term]
@@ -1326,14 +976,11 @@ is_a: NCBITaxon:33213 ! Bilateria
 [Term]
 id: NCBITaxon:33511
 name: Deuterostomia
-synonym: "deuterostomes" EXACT []
 is_a: NCBITaxon:33213 ! Bilateria
 
 [Term]
 id: NCBITaxon:436486
 name: Dinosauria
-synonym: "dinosaur" EXACT []
-synonym: "dinosaurs" EXACT []
 is_a: NCBITaxon:8492 ! Archosauria
 
 [Term]
@@ -1354,15 +1001,11 @@ is_a: NCBITaxon:436491 ! Theropoda
 [Term]
 id: NCBITaxon:4751
 name: Fungi
-synonym: "fungi" RELATED []
-synonym: "Mycota" RELATED []
 is_a: NCBITaxon:33154 ! Opisthokonta
 
 [Term]
 id: NCBITaxon:50557
 name: Insecta
-synonym: "insects" RELATED []
-synonym: "true insects" EXACT []
 is_a: NCBITaxon:6960 ! Hexapoda
 
 [Term]
@@ -1373,40 +1016,26 @@ is_a: NCBITaxon:33208 ! Metazoa
 [Term]
 id: NCBITaxon:6656
 name: Arthropoda
-synonym: "arthropods" EXACT []
-synonym: "arthropods" RELATED []
 is_a: NCBITaxon:88770 ! Panarthropoda
 
 [Term]
 id: NCBITaxon:6960
 name: Hexapoda
-synonym: "Atelocerata" RELATED []
-synonym: "hexapods" RELATED []
-synonym: "insects" EXACT []
-synonym: "Tracheata" RELATED []
-synonym: "Uniramia" RELATED []
 is_a: NCBITaxon:197562 ! Pancrustacea
 
 [Term]
 id: NCBITaxon:7711
 name: Chordata
-synonym: "chordates" EXACT []
-synonym: "chordates" RELATED []
 is_a: NCBITaxon:33511 ! Deuterostomia
 
 [Term]
 id: NCBITaxon:7742
 name: Vertebrata <vertebrates>
-synonym: "Vertebrata" EXACT []
-synonym: "vertebrates" EXACT []
-synonym: "vertebrates" RELATED []
 is_a: NCBITaxon:89593 ! Craniata <chordates>
 
 [Term]
 id: NCBITaxon:7776
 name: Gnathostomata <vertebrates>
-synonym: "Gnathostomata" EXACT []
-synonym: "jawed vertebrates" EXACT []
 is_a: NCBITaxon:7742 ! Vertebrata <vertebrates>
 
 [Term]
@@ -1417,7 +1046,6 @@ is_a: NCBITaxon:117571 ! Euteleostomi
 [Term]
 id: NCBITaxon:8457
 name: Sauropsida
-synonym: "sauropsids" EXACT []
 is_a: NCBITaxon:32524 ! Amniota
 
 [Term]
@@ -1428,9 +1056,6 @@ is_a: NCBITaxon:1329799 ! Archelosauria
 [Term]
 id: NCBITaxon:8782
 name: Aves
-synonym: "avian" RELATED []
-synonym: "birds" EXACT []
-synonym: "birds" RELATED []
 is_a: NCBITaxon:436492 ! Coelurosauria
 
 [Term]
@@ -1441,14 +1066,12 @@ is_a: NCBITaxon:1206794 ! Ecdysozoa
 [Term]
 id: NCBITaxon:89593
 name: Craniata <chordates>
-synonym: "Craniata" EXACT []
 is_a: NCBITaxon:7711 ! Chordata
 
 [Term]
 id: PATO:0000001
 name: quality
 def: "A dependent entity that inheres in a bearer by virtue of how the bearer is related to other entities" []
-is_a: BFO:0000020 ! specifically dependent continuant
 
 [Term]
 id: PATO:0000008
@@ -1499,7 +1122,7 @@ id: PATO:0000033
 name: concentration of
 def: "A quality inhering in a substance by virtue of the amount of the bearer's there is mixed with another substance." []
 synonym: "concentration" EXACT []
-is_a: PATO:0002182 ! molecular quality
+is_a: PATO:0000070 ! amount
 
 [Term]
 id: PATO:0000039
@@ -1565,6 +1188,7 @@ is_a: PATO:0000051 ! morphology
 [Term]
 id: PATO:0000068
 name: qualitative
+def: "A quality of an entity that is descriptive or observational, typically not represented numerically." []
 is_a: PATO:0000001 ! quality
 
 [Term]
@@ -1582,7 +1206,7 @@ synonym: "number" RELATED []
 synonym: "presence" RELATED []
 synonym: "presence or absence in organism" EXACT []
 synonym: "quantitative" EXACT []
-is_a: PATO:0000068 ! qualitative
+is_a: PATO:0103000 ! quantitative
 
 [Term]
 id: PATO:0000080
@@ -1850,6 +1474,18 @@ name: present
 def: "A quality inhering in a bearer by virtue of the bearer's existence." []
 synonym: "present in organism" RELATED []
 is_a: PATO:0000070 ! amount
+
+[Term]
+id: PATO:0000470
+name: increased amount
+def: "An amount which is relatively high." []
+synonym: "accessory" RELATED []
+synonym: "increased" RELATED []
+synonym: "increased number" EXACT []
+synonym: "present in greater numbers in organism" EXACT []
+synonym: "supernumerary" EXACT []
+is_a: PATO:0000467 ! present
+is_a: PATO:0002300 ! increased quality
 
 [Term]
 id: PATO:0000573
@@ -2257,6 +1893,7 @@ id: PATO:0001162
 name: increased concentration
 def: "A concentration which is higher relative to the normal or average." []
 synonym: "high concentration" EXACT []
+is_a: PATO:0000470 ! increased amount
 is_a: PATO:0001159 ! concentrated
 is_a: PATO:0002305 ! increased object quality
 
@@ -2266,6 +1903,7 @@ name: decreased concentration
 def: "A concentration which is lower relative to the normal or average." []
 synonym: "low concentration" EXACT []
 is_a: PATO:0001159 ! concentrated
+is_a: PATO:0001997 ! decreased amount
 is_a: PATO:0002303 ! decreased object quality
 
 [Term]
@@ -2634,6 +2272,12 @@ synonym: "squashed" EXACT []
 is_a: PATO:0000141 ! structure
 
 [Term]
+id: PATO:0001486
+name: chronological age
+def: "An age quality that exists by virtue of the time (years and months) that the bearer has existed." []
+is_a: PATO:0000011 ! age
+
+[Term]
 id: PATO:0001499
 name: spherical
 def: "A spheroid quality inhering in a bearer by virtue of the bearer's resembling a ball (a sphere whose equatorial diameter is equal to the polar diameter)." []
@@ -2931,6 +2575,7 @@ id: PATO:0001657
 name: increased osmolarity
 def: "A osmolarity which is relatively high." []
 synonym: "high osmolarity" EXACT []
+is_a: PATO:0000470 ! increased amount
 is_a: PATO:0001655 ! osmolarity
 is_a: PATO:0002305 ! increased object quality
 
@@ -3093,6 +2738,12 @@ def: "A quality inhering in a plant by virtue of the bearer's disposition to bei
 is_a: PATO:0001729 ! shedability
 
 [Term]
+id: PATO:0001739
+name: radiation quality
+def: "A quality of radiation that reflects the fluence spectrum of charged and neutral particles within the material or medium where dose is being deposited." []
+is_a: PATO:0001018 ! physical quality
+
+[Term]
 id: PATO:0001740
 name: activity (of a radionuclide)
 def: "A radiation quality inhering in a radioactive substance by virtue of its transformation (disintegration) rate." []
@@ -3246,6 +2897,7 @@ id: PATO:0001844
 name: increased acidity
 def: "An acidity which is relatively high." []
 synonym: "high acidity" EXACT []
+is_a: PATO:0000470 ! increased amount
 is_a: PATO:0001842 ! acidity
 is_a: PATO:0002305 ! increased object quality
 
@@ -4207,6 +3859,12 @@ def: "A quality of a substance on which or through which electromagnetic radiati
 is_a: PATO:0002198 ! quality of a substance
 
 [Term]
+id: PATO:0103000
+name: quantitative
+def: "A quality of an entity that can be represented numerically, including anything that can be counted, measured, or given a numerical value." []
+is_a: PATO:0000001 ! quality
+
+[Term]
 id: PCO:0000000
 name: collection of organisms
 def: "A material entity that consists of two or more organisms, viruses, or viroids." []
@@ -4240,13 +3898,11 @@ is_a: PCO:0000000 ! collection of organisms
 id: PCO:0000031
 name: organismal entity
 def: "A material entity that is one or more organisms, viruses or viroids." []
-is_a: BFO:0000040 ! material entity
 
 [Term]
 id: RO:0002577
 name: system
 def: "A material entity consisting of multiple components that are causally integrated." []
-is_a: BFO:0000040 ! material entity
 
 [Term]
 id: UBERON:0000014
@@ -4257,6 +3913,7 @@ synonym: "region of skin" EXACT []
 synonym: "skin" EXACT []
 synonym: "skin region" EXACT []
 synonym: "skin zone" EXACT []
+is_a: UBERON:0004121 ! ectoderm-derived structure
 is_a: UBERON:0034944 ! zone of organ
 
 [Term]
@@ -4293,25 +3950,15 @@ synonym: "regional part of organ" RELATED []
 is_a: UBERON:0010000 ! multicellular anatomical structure
 
 [Term]
-id: UBERON:0000160
-name: intestine
-def: "Segment of the alimentary canal extending from the stomach to the anus and, in humans and other mammals, consists of two segments, the small intestine and the large intestine." []
-synonym: "bowel" EXACT []
-synonym: "intestinal tract" RELATED []
-is_a: UBERON:0004921 ! subdivision of digestive tract
-
-[Term]
 id: UBERON:0000165
 name: mouth
 def: "The proximal portion of the digestive tract, containing the oral cavity and bounded by the oral opening. In vertebrates, this extends to the pharynx and includes gums, lips, tongue and parts of the palate. Typically also includes the teeth, except where these occur elsewhere (e.g. pharyngeal jaws) or protrude from the mouth (tusks)." []
 synonym: "adult mouth" NARROW []
-synonym: "cavital oralis" RELATED []
 synonym: "cavitas oris" RELATED []
 synonym: "cavum oris" RELATED []
 synonym: "mouth cavity" RELATED []
 synonym: "oral region" RELATED []
 synonym: "oral vestibule" RELATED []
-synonym: "regio oralis" EXACT []
 synonym: "rima oris" RELATED []
 synonym: "stoma" RELATED []
 synonym: "stomatodaeum" RELATED []
@@ -4319,16 +3966,6 @@ synonym: "trophic apparatus" RELATED []
 synonym: "vestibule of mouth" RELATED []
 synonym: "vestibulum oris" RELATED []
 is_a: UBERON:0004921 ! subdivision of digestive tract
-
-[Term]
-id: UBERON:0000174
-name: excreta
-def: "A portion of organism substance that is the product of an excretion process that will be eliminated from the body. An excretion process is elimination by an organism of the waste products that arise as a result of metabolic activity." []
-synonym: "excreted substance" EXACT []
-synonym: "excretion" RELATED []
-synonym: "portion of excreted substance" EXACT []
-synonym: "waste substance" EXACT []
-is_a: UBERON:0000463 ! organism substance
 
 [Term]
 id: UBERON:0000178
@@ -4376,14 +4013,12 @@ is_a: UBERON:0000465 ! material anatomical entity
 id: UBERON:0000465
 name: material anatomical entity
 def: "Anatomical entity that has mass." []
-is_a: BFO:0000040 ! material entity
 is_a: UBERON:0001062 ! anatomical entity
 
 [Term]
 id: UBERON:0000467
 name: anatomical system
 def: "Multicellular, connected anatomical structure that has multiple organs as parts and whose parts work together to achieve some shared function." []
-synonym: "anatomical systems" RELATED []
 synonym: "body system" EXACT []
 synonym: "connected anatomical system" EXACT []
 synonym: "organ system" EXACT []
@@ -4398,13 +4033,6 @@ synonym: "portion of tissue" EXACT []
 synonym: "simple tissue" NARROW []
 synonym: "tissue portion" EXACT []
 is_a: UBERON:0010000 ! multicellular anatomical structure
-
-[Term]
-id: UBERON:0000912
-name: mucus
-def: "Mucus is a bodily fluid consisting of a slippery secretion of the lining of the mucous membranes in the body. It is a viscous colloid containing antiseptic enzymes (such as lysozyme) and immunoglobulins. Mucus is produced by goblet cells in the mucous membranes that cover the surfaces of the membranes. It is made up of mucins and inorganic salts suspended in water." []
-is_a: UBERON:0000456 ! secretion of exocrine gland
-is_a: UBERON:0006314 ! bodily fluid
 
 [Term]
 id: UBERON:0001062
@@ -4436,7 +4064,6 @@ name: bone element
 def: "Skeletal element that is composed of bone tissue." []
 synonym: "bone" RELATED []
 synonym: "bone organ" EXACT []
-synonym: "bones" RELATED []
 is_a: UBERON:0004765 ! skeletal element
 
 [Term]
@@ -4458,7 +4085,6 @@ name: aqueous humor of eyeball
 def: "A thick watery refractive medium that fills the space between the lens and the cornea[WP]." []
 synonym: "aqueous humor" EXACT []
 synonym: "aqueous humour" EXACT []
-synonym: "humor aquosus" EXACT []
 is_a: UBERON:0006312 ! ocular refractive media
 is_a: UBERON:0006314 ! bodily fluid
 
@@ -4473,48 +4099,6 @@ synonym: "portion of plasma" BROAD []
 is_a: UBERON:0000179 ! haemolymphatic fluid
 
 [Term]
-id: UBERON:0001970
-name: bile
-def: "Vital aqueous secretion of the liver that is formed by hepatocytes and modified down stream by absorptive and secretory properties of the bile duct epithelium." []
-synonym: "fel" RELATED []
-synonym: "gall" RELATED []
-is_a: UBERON:0000456 ! secretion of exocrine gland
-is_a: UBERON:0006314 ! bodily fluid
-
-[Term]
-id: UBERON:0001988
-name: feces
-def: "Portion of semisolid bodily waste discharged through the anus[MW,modified]." []
-synonym: "cow dung" NARROW []
-synonym: "cow pat" NARROW []
-synonym: "droppings" RELATED []
-synonym: "dung" NARROW []
-synonym: "excrement" RELATED []
-synonym: "excreta" BROAD []
-synonym: "faeces" EXACT []
-synonym: "fecal material" EXACT []
-synonym: "fecal matter" EXACT []
-synonym: "fewmet" NARROW []
-synonym: "frass" NARROW []
-synonym: "guano" NARROW []
-synonym: "ordure" RELATED []
-synonym: "piece of shit" EXACT []
-synonym: "portion of dung" NARROW []
-synonym: "portion of excrement" EXACT []
-synonym: "portion of faeces" EXACT []
-synonym: "portion of fecal material" EXACT []
-synonym: "portion of fecal matter" EXACT []
-synonym: "portion of feces" EXACT []
-synonym: "portion of guano" NARROW []
-synonym: "portion of scat" NARROW []
-synonym: "portionem cacas" EXACT []
-synonym: "scat" NARROW []
-synonym: "spoor" RELATED []
-synonym: "spraint" NARROW []
-synonym: "stool" EXACT []
-is_a: UBERON:0000174 ! excreta
-
-[Term]
 id: UBERON:0002416
 name: integumental system
 def: "Connected anatomical system that forms a barrier between an animal and its environment. In vertebrates, the integumental system consists of the epidermis, dermis plus associated glands and adnexa such as hair and scales. In invertebrates, the integumental system may include cuticle." []
@@ -4522,7 +4106,6 @@ synonym: "body surface" RELATED []
 synonym: "dermal system" RELATED []
 synonym: "external covering of organism" RELATED []
 synonym: "integumentary system" EXACT []
-synonym: "integumentum commune" RELATED []
 synonym: "organism surface" RELATED []
 synonym: "surface" RELATED []
 is_a: UBERON:0000467 ! anatomical system
@@ -4532,11 +4115,16 @@ id: UBERON:0004111
 name: anatomical conduit
 def: "Any tube, opening or passage that connects two distinct anatomical spaces." []
 synonym: "foramen" NARROW []
-synonym: "foramina" NARROW []
 synonym: "opening" RELATED []
-synonym: "ostia" RELATED []
 synonym: "ostium" RELATED []
 is_a: UBERON:0010000 ! multicellular anatomical structure
+
+[Term]
+id: UBERON:0004121
+name: ectoderm-derived structure
+def: "An anatomical structure that develops (entirely or partially) from the ectoderm." []
+synonym: "ectodermal deriviative" EXACT []
+is_a: UBERON:0000061 ! anatomical structure
 
 [Term]
 id: UBERON:0004765
@@ -4549,6 +4137,7 @@ id: UBERON:0004921
 name: subdivision of digestive tract
 def: "A proximal-distal subdivision of the digestive tract." []
 synonym: "alimentary system subdivision" RELATED []
+synonym: "gut section" RELATED []
 synonym: "intestinal tract" RELATED []
 synonym: "segment of intestinal tract" RELATED []
 synonym: "subdivision of alimentary system" RELATED []

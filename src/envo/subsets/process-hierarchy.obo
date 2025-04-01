@@ -1,12 +1,12 @@
 format-version: 1.2
-data-version: envo/releases/2024-07-01/subsets/process-hierarchy.owl
+data-version: envo/releases/2025-02-05/subsets/process-hierarchy.owl
 ontology: envo/subsets/process-hierarchy
-property_value: owl:versionInfo "subsets/process-hierarchy.owl 2024-07-01" xsd:string
+property_value: owl:versionInfo "subsets/process-hierarchy.owl 2025-02-05" xsd:string
 
 [Term]
 id: ENVO:01000622
-name: vaporisation
-def: "Vaporisation of an element or compound is process whereby that element or compound undergoes a phase transition from the liquid to vapor." []
+name: vapourisation
+def: "A material transformation process during which a liquid material transitions into a gas phase." []
 comment: Note that a vapor describes an element or compound in the gas phase at a temperature lower than its critical point,
 synonym: "vaporization" EXACT []
 is_a: ENVO:03000043 ! material transformation process
@@ -15,7 +15,7 @@ is_a: ENVO:03000043 ! material transformation process
 id: ENVO:01000623
 name: boiling
 def: "Boiling is a form of vaporisation which occurs when a liquid is heated to a temperature at which the vapor pressure of the liquid is equal to the pressure exerted on the liquid by the surrounding environmental pressure." [https://en.wikipedia.org/wiki/Boiling]
-is_a: ENVO:01000622 ! vaporisation
+is_a: ENVO:01000622 ! vapourisation
 
 [Term]
 id: ENVO:01000624
@@ -388,7 +388,7 @@ is_a: ENVO:01001510 ! material congelation process
 [Term]
 id: ENVO:01000727
 name: sublimation process
-def: "Sublimation is a process during which a portion of some solid undergoes a phase transition into a portion of some gas." [https://en.wikipedia.org/wiki/Sublimation_(phase_transition)]
+def: "A material transformation process during which a solid material transitions into a gas phase." [https://en.wikipedia.org/wiki/Sublimation_(phase_transition)]
 is_a: ENVO:03000043 ! material transformation process
 
 [Term]
@@ -420,7 +420,7 @@ is_a: ENVO:03000010 ! material transport process
 
 [Term]
 id: ENVO:01000741
-name: recycling process
+name: waste recycling process
 def: "A process during which materials deemed as waste are separated and converted into a form which can be used as input by the same processes which generated them." [https://stats.oecd.org/glossary/detail.asp?ID=2260]
 comment: This has been created for SDGIO. Revision is likely, but the general meaning should be stable. The frame of reference for determining what is 'waste' and what is a  'resource' is unclear.
 subset: envoPlastics
@@ -428,7 +428,7 @@ synonym: "proceso de reciclaje" EXACT []
 synonym: "processo di riciclo" EXACT []
 synonym: "Recycling-Prozess" EXACT []
 synonym: "資源回收" EXACT []
-is_a: ENVO:02500027 ! anthropogenic environmental process
+is_a: ENVO:01001260 ! waste disposal process
 property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-2996-719X
 property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-8166-0486
 property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0003-1072-8081
@@ -1003,9 +1003,10 @@ id: ENVO:01001083
 name: cloud formation process
 def: "A process during which water vapour condensing in the atmosphere aggregates into clouds." [https://en.wikipedia.org/wiki/Cloud_condensation_nuclei]
 synonym: "cloud formation" EXACT []
+is_a: ENVO:01001856 ! liquid accumulation process
 is_a: ENVO:02500003 ! atmospheric process
 is_a: ENVO:02500031 ! hydrological process
-is_a: ENVO:03000009 ! material accumulation process
+property_value: IAO:0000116 "Currently tied to water-based clouds. This can be generalised to othe clouds if needed." xsd:string
 
 [Term]
 id: ENVO:01001084
@@ -1394,6 +1395,7 @@ id: ENVO:01001259
 name: transport of waste to a designated storage site
 def: "A process during which materials deemed to be waste are removed from a site and transported to another site designated for its storage." [https://eupathdb.org/eupathdb/]
 is_a: ENVO:01001260 ! waste disposal process
+is_a: ENVO:03000010 ! material transport process
 
 [Term]
 id: ENVO:01001260
@@ -2969,6 +2971,58 @@ property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0
 property_value: http://purl.org/dc/elements/1.1/date 2020-07-13T18:44:15Z xsd:dateTime
 
 [Term]
+id: ENVO:01001937
+name: distillation
+def: "A process during which a liquid or solid material is separated into component materials by vaporisation and the condensation of the resulting vapour into a different container." [https://en.wikipedia.org/wiki/Distillation]
+comment: This class is not in the planned process branch, as distillation can occur without human intervention. Separate classes can be created for planned processes.
+is_a: ENVO:03000043 ! material transformation process
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2024-12-09T16:15:21Z xsd:dateTime
+
+[Term]
+id: ENVO:01001943
+name: dry distillation
+def: "Distillation during which a solid material is vapourised and the resulting vapours condensed into either solid or liquid component materials." [https://en.wikipedia.org/wiki/Distillation]
+comment: This class is not in the planned process branch, as distillation can occur without human intervention. Separate classes can be created for planned processes.
+is_a: ENVO:01001937 ! distillation
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2024-12-09T16:23:31Z xsd:dateTime
+
+[Term]
+id: ENVO:01001944
+name: classical distillation
+def: "Distillation during which a liquid material is vapourised and the resulting vapours condensed into liquid component materials." [https://en.wikipedia.org/wiki/Distillation]
+comment: This class is not in the planned process branch, as distillation can occur without human intervention. Separate classes can be created for planned processes.
+is_a: ENVO:01001937 ! distillation
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2024-12-09T16:26:23Z xsd:dateTime
+
+[Term]
+id: ENVO:01001945
+name: deionisation
+def: "A process during which ion exchange chemistry is used to replace one class of ions with another." []
+synonym: "deionization" EXACT []
+is_a: ENVO:03000043 ! material transformation process
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2024-12-09T16:37:52Z xsd:dateTime
+
+[Term]
+id: ENVO:01001946
+name: mineral-to-(proton/hydroxide ion) exchange
+def: "A deionisation process during which mineral ions are replaced with either protons or hydroxide ions." [https://en.wikipedia.org/wiki/Purified_water#Deionization]
+is_a: ENVO:01001945 ! deionisation
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2024-12-09T16:39:12Z xsd:dateTime
+
+[Term]
+id: ENVO:01001967
+name: oceanogenesis
+def: "A water accumulation process which results in the formation of an ocean by the outgassing, capture, and subsequent condensation of water vapour during the formation of an astronomical body." []
+is_a: ENVO:01001220 ! water accumulation process
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-4366-3088
+property_value: http://purl.org/dc/elements/1.1/date 2024-12-09T18:52:57Z xsd:dateTime
+
+[Term]
 id: ENVO:01003007
 name: percolation of water through soil
 def: "Percolation during which water moves through the interstices of soil." []
@@ -3062,6 +3116,7 @@ property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0
 id: ENVO:02000125
 name: transportation
 def: "A planned process that is the movement of people, animals and goods from one location to another." [https://en.wikipedia.org/wiki/Transport]
+synonym: "locomotion" RELATED []
 is_a: ENVO:03000010 ! material transport process
 property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-6601-2165
 
@@ -3069,7 +3124,7 @@ property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0
 id: ENVO:02000158
 name: biological nutrient removal during wastewater treatment
 def: "A recycling process that uses microbes for the uptake of nitrogen and phosphorus during wastewater treatment." []
-is_a: ENVO:01000741 ! recycling process
+is_a: ENVO:01000741 ! waste recycling process
 property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0002-6601-2165
 property_value: http://purl.org/dc/terms/created 2024-05-19T05:34:58Z xsd:dateTime
 
@@ -3263,7 +3318,7 @@ is_a: ENVO:01000982 ! water flow process
 id: ENVO:02500034
 name: evaporation
 def: "Evaporation is a form of vaporisation which occurs when a portion of the surface layer of a liquid in contact with a gaseous material, which is not saturated with the evaporating substance, vaporises." [https://en.wikipedia.org/wiki/Evaporation]
-is_a: ENVO:01000622 ! vaporisation
+is_a: ENVO:01000622 ! vapourisation
 
 [Term]
 id: ENVO:02500035
@@ -4343,7 +4398,7 @@ property_value: http://purl.org/dc/elements/1.1/date 2021-12-22T17:12:04Z xsd:da
 id: ENVO:06105300
 name: wastewater treatment process
 def: "A recycling process during which wastewater is treated" []
-is_a: ENVO:01000741 ! recycling process
+is_a: ENVO:01000741 ! waste recycling process
 property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0001-6284-4821
 property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-8461-9745
 
@@ -4351,7 +4406,7 @@ property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0
 id: ENVO:06105301
 name: desalination process
 def: "A recycling process during which the dissolved mineral salts in water are removed" []
-is_a: ENVO:01000741 ! recycling process
+is_a: ENVO:01000741 ! waste recycling process
 property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0001-6284-4821
 property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0002-8461-9745
 
