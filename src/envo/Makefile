@@ -50,8 +50,32 @@ FORMATS_INCL_TSV = $(sort $(FORMATS) tsv)
 # Top-level targets
 # ----------------------------------------
 
-.PHONY: .FORCE
-all: all_imports all_main all_subsets sparql_test all_reports all_assets
+.PHONY: .FORCE all test continuous_integration_test travis_test full_test test_python validate-dl-profile all_main base release copy-release debug.owl obo-check all_imports all_modules all_modules_owl all_modules_obo all_subsets sparql_test all_reports all_robot_reports all_assets show_assets is_utf nmdc-robot-clean nmdc-robot-all fill clean clean-dry-run clean-tmp clean-imports clean-modules clean-reports clean-subsets clean-main clean-nmdc clean-mirror rebuild
+
+# Directory creation targets
+$(TMPDIR):
+	mkdir -p $(TMPDIR)
+
+imports:
+	mkdir -p imports
+
+modules:
+	mkdir -p modules
+
+reports:
+	mkdir -p reports
+
+subsets:
+	mkdir -p subsets
+
+mirror:
+	mkdir -p mirror
+
+robot_templates:
+	mkdir -p robot_templates
+
+# A target that performs a complete rebuild from scratch
+rebuild: clean all
 
 # complete tests
 test: all_modules all_imports envo.owl all_reports validate-dl-profile
@@ -72,12 +96,11 @@ test_python:
 # validates the DL profile for envo-edit merged with RO.
 # Note that it's necessary to merge the ontology first;
 #       see https://github.com/ontodev/robot/issues/1040
-validate-dl-profile: $(PRE_SRC)
+validate-dl-profile: $(PRE_SRC) | $(TMPDIR)
 	$(ROBOT) merge -i $< -I http://purl.obolibrary.org/obo/ro.owl convert -f ofn -o $(TMPDIR)/validate.ofn
 	$(ROBOT) validate-profile --profile DL -i $(TMPDIR)/validate.ofn
 
-test: validate-dl-profile
-travis_test: validate-dl-profile
+# These were redundant definitions now removed to avoid conflicts
 
 ## -- main targets --
 ##
@@ -338,9 +361,13 @@ imports/%_combined_seed.tsv: imports/%_terms.txt imports/seed.txt
 # Create an import module using the OWLAPI module extraction code via OWLTools.
 # We use the standard catalog, but rewrite the import to X to be a local mirror of ALL of X.
 # After extraction, we further reduce the ontology by creating a "mingraph" (removes all annotations except label) and by
-imports/%_import.owl: mirror/%.owl envo-edit.owl imports/%_combined_seed.tsv
+imports/%_import.owl: mirror/%.owl envo-edit.owl imports/%_combined_seed.tsv | ensure-importsdir
 	$(ROBOT) extract -i $< -T imports/$*_combined_seed.tsv -m BOT -O $(ENVO_IMPORTS_BASE_URI)/$@ \
 		remove --select "<http://purl.obolibrary.org/obo/CL_*>" remove --select "<http://purl.obolibrary.org/obo/CARO_*>"  -o $@.tmp.owl && mv $@.tmp.owl $@
+
+# Ensures the imports directory exists
+ensure-importsdir:
+	mkdir -p imports
 
 imports/%_import.obo: imports/%_import.owl
 	$(OWLTOOLS) $(USECAT) $< -o -f obo --no-check $@
@@ -349,8 +376,12 @@ imports/%_import.obo: imports/%_import.owl
 # --remove-classes-in-idspace ENVO
 
 # clone remote ontology locally, perfoming some excision of relations and annotations
-mirror/%-local.owl:
+mirror/%-local.owl: | ensure-mirrordir
 	wget --no-check-certificate $(OBO)/$*.owl -O $@
+
+# Ensures the mirror directory exists
+ensure-mirrordir:
+	mkdir -p mirror
 .PRECIOUS: mirror/%-local.owl
 
 mirror/%.owl: mirror/%-local.owl
@@ -489,10 +520,14 @@ GO.xrf_abbs: envo-edit.owl
 # Update to use full ENVO graph, as other ontology terms may be included
 
 
-subsets/%.owl: subsets/envo-basic.obo
+subsets/%.owl: subsets/envo-basic.obo | ensure-subsetsdir
 	$(OWLTOOLS) $< --extract-ontology-subset --fill-gaps --subset $* -o $@.tmp && \
 	$(ROBOT) annotate -i $@.tmp --ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@  -a owl:versionInfo $(TODAY) \
 	  --output $@
+
+# Ensures the subsets directory exists
+ensure-subsetsdir:
+	mkdir -p subsets
 .PRECIOUS: subsets/%.owl
 subsets/%.obo: subsets/%.owl
 	$(OWLTOOLS) $< -o -f obo --no-check $@.tmp && grep -v ^owl-axioms: $@.tmp > $@
@@ -505,8 +540,12 @@ subsets/%.obo: subsets/%.owl
 REPORTS=edges basicReport termTable tags stats subsetTable
 all_reports: $(patsubst %, reports/envo-%.tsv, $(REPORTS)) all_robot_reports
 
-reports/envo-%.tsv: envo.owl sparql/%.sparql
+reports/envo-%.tsv: envo.owl sparql/%.sparql | ensure-reportdir
 	robot query -f tsv -i $< -q  sparql/$*.sparql $@.tmp && mv $@.tmp $@
+
+# Ensures the reports directory exists
+ensure-reportdir:
+	mkdir -p $(REPORTDIR)
 
 # ----------------------------------------
 # Sparql queries: Q/C
@@ -518,7 +557,7 @@ reports/envo-%.tsv: envo.owl sparql/%.sparql
 
 #  run all violation checks
 SPARQL_VALIDATION_QUERIES = $(foreach V,$(SPARQL_VALIDATION_CHECKS),$(SPARQLDIR)/$V-violation.sparql)
-sparql_test: $(SRC)
+sparql_test: $(SRC) | ensure-reportdir
 	$(ROBOT) verify  --catalog catalog-v001.xml -i $< --queries $(SPARQL_VALIDATION_QUERIES) -O reports/
 
 # ----------------------------------------
@@ -528,15 +567,15 @@ all_robot_reports: reports/envo-edit-robot-report.tsv reports/envo-base-robot-re
 
 # we use a modified profile that allows missing labels, as we sometimes declare properties on
 # an auto-class from modules (e.g ENVO:09200020)
-reports/envo-edit-robot-report.tsv: $(PRE_SRC)
+reports/envo-edit-robot-report.tsv: $(PRE_SRC) | ensure-reportdir
 	$(ROBOT) report -p reports/report_profile_edit.txt -l true -i $< --fail-on ERROR --print 5 -o $@
 
 # default profile
-reports/envo-src-robot-report.tsv: $(SRC)
+reports/envo-src-robot-report.tsv: $(SRC) | ensure-reportdir
 	$(ROBOT) report -l true -i $< --fail-on $(REPORT_FAIL_ON) --print 5 -o $@
 
 # default profile
-reports/envo-base-robot-report.tsv: envo-base.owl
+reports/envo-base-robot-report.tsv: envo-base.owl | ensure-reportdir
 	$(ROBOT) report -l true -i $< --fail-on $(REPORT_FAIL_ON) --print 5 -o $@
 
 
@@ -557,10 +596,14 @@ all_modules: all_modules_owl all_modules_obo
 all_modules_owl: $(ALL_MODS_OWL)
 all_modules_obo: $(patsubst %, modules/%.obo, $(MODS))
 
-modules/%.owl: modules/%.csv patterns/%.yaml curie_map.yaml 
+modules/%.owl: modules/%.csv patterns/%.yaml curie_map.yaml | ensure-modulesdir
 	@perl -pe 's/\r\n/\n/' $< > $<.tmp && mv $<.tmp $< # replace crlf with lf
 	if [ true = true ]; then dosdp-tools generate --table-format=csv --template=./patterns/$*.yaml --outfile=modules/$*.tmp.owl --obo-prefixes=true --infile=modules/$*.csv; fi
 	$(ROBOT) annotate --input modules/$*.tmp.owl -O http://purl.obolibrary.org/obo/envo/modules/$*.owl --output modules/$*.owl && rm modules/$*.tmp.owl
+
+# Ensures the modules directory exists
+ensure-modulesdir:
+	mkdir -p modules
 
 modules/%.obo: modules/%.owl
 	$(OWLTOOLS) $< -o -f obo $@.tmp && grep -v ^owl-axioms $@.tmp > $@
@@ -575,10 +618,14 @@ nmdc-robot-clean:
 
 nmdc-robot-all: nmdc-robot-clean robot_templates/nmdc_env_context_subset_membership.owl
 
-robot_templates/nmdc_env_context_subset_membership.owl: robot_templates/nmdc_env_context_subset_membership.tsv
+robot_templates/nmdc_env_context_subset_membership.owl: robot_templates/nmdc_env_context_subset_membership.tsv | ensure-robot-templatesdir
 	# this TSV will be built with `make env-triad-robot-all` in https://github.com/microbiomedata/submission-schema
 	# which currently requires the latest envo.owl even if it is pre-release
 	$(ROBOT) template --template $< -o $@.tmp.owl && mv $@.tmp.owl $@ # why not just output to $@ ?
+
+# Ensures the robot_templates directory exists
+ensure-robot-templatesdir:
+	mkdir -p robot_templates
 
 
 envo-edit.csv: envo-edit.owl
@@ -586,6 +633,64 @@ envo-edit.csv: envo-edit.owl
 
 fill: envo-edit.csv
 	fill-col1-ids.pl --min 9000000 -m 10000000  $(ALL_MODS_CSV) $<
+
+# ----------------------------------------
+# Cleanup targets
+# ----------------------------------------
+
+# Primary clean target - removes all generated files that can be rebuilt
+clean: clean-tmp clean-imports clean-modules clean-reports clean-subsets clean-main clean-mirror
+
+# Show what would be deleted without actually cleaning
+clean-dry-run:
+	@echo "Files that would be deleted by clean:"
+	@echo "======================================"
+	@echo "* Generated and intermediate files (.owl, .obo, .json, .tsv, .tmp)"
+	@echo "* Downloaded ontologies (in mirror directory)"
+	@echo "* Build artifacts in tmp directory"
+	@echo "* WARNING: Don't run 'make clean' if you have uncommitted changes"
+	@echo "======================================"
+	@echo "To see exactly what would be deleted, run: find . -name '*.owl' -o -name '*.obo' -o -name '*.json' -o -name '*.tsv' -o -name '*.tmp' | grep -v 'README' | grep -v '.git'"
+	@echo "No files were deleted - this was a dry run."
+
+# A target that performs a complete rebuild from scratch
+rebuild: clean all
+
+# Clean files in the temporary directory
+clean-tmp: | $(TMPDIR)
+	@rm -f $(TMPDIR)/*.tmp $(TMPDIR)/*.owl $(TMPDIR)/*.ofn 2>/dev/null || true
+
+# Clean imports - only remove generated import files, not source files
+clean-imports: | imports
+	@rm -f imports/*_import.owl imports/*_import.obo imports/*_combined_seed.tsv imports/*.tmp* 2>/dev/null || true
+
+# Clean all generated module files
+clean-modules: | modules
+	@rm -f modules/*.tmp* modules/*.owl modules/*.obo 2>/dev/null || true
+
+# Clean generated report files
+clean-reports: | reports
+	@rm -f reports/*.tsv reports/*.tmp 2>/dev/null || true
+
+# Clean subset files
+clean-subsets: | subsets
+	@for file in $(SUBSET_FILES); do rm -f $$file 2>/dev/null || true; done
+
+# Clean main build artifacts
+clean-main:
+	@rm -f envo.owl envo.obo envo.json
+	@rm -f envo-base.owl envo-base.obo envo-base.json
+	@rm -f envo-full.owl envo-full.obo envo-full.json
+	@rm -f envo-simple.owl
+	@rm -f $(SRC) $(SRC).tmp
+	@rm -f *.tmp *.tmp.owl *.tmp.obo *.tmp.json 2>/dev/null || true
+
+# Clean NMDC-related files (reuses existing target)
+clean-nmdc: nmdc-robot-clean
+
+# Clean downloaded ontologies in mirror directory, preserving README and .git* files
+clean-mirror: | mirror
+	@rm -f mirror/*.owl mirror/*.obo 2>/dev/null || true
 
 # meta
 
