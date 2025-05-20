@@ -43,7 +43,7 @@ ODK_VERSION =               "Unknown"
 # ----------------------------------------
 # These files must NEVER be deleted by clean targets
 # They are either manually edited or otherwise not easily replaceable
-PROTECTED_SOURCE_FILES = $(PRE_SRC) imports/envo_bridge.owl
+PROTECTED_SOURCE_FILES = envo-edit.owl imports/envo_bridge.owl
 
 TODAY ?= $(shell date +%Y-%m-%d)
 OBODATE ?= $(shell date +'%d:%m:%Y %H:%M')
