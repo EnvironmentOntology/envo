@@ -38,6 +38,13 @@ SPARQL_VALIDATION_CHECKS =  equivalent-classes trailing-whitespace owldef-self-r
 SPARQL_EXPORTS =            basic-report class-count-by-prefix edges xrefs obsoletes synonyms
 ODK_VERSION =               "Unknown"
 
+# ----------------------------------------
+# Critical Source Files
+# ----------------------------------------
+# These files must NEVER be deleted by clean targets
+# They are either manually edited or otherwise not easily replaceable
+PROTECTED_SOURCE_FILES = $(PRE_SRC) imports/envo_bridge.owl
+
 TODAY ?= $(shell date +%Y-%m-%d)
 OBODATE ?= $(shell date +'%d:%m:%Y %H:%M')
 VERSIONINFO ?= $(TODAY)
@@ -692,8 +699,8 @@ clean-tmp: | $(TMPDIR)
 
 # Clean imports - only remove generated import files, not source files
 clean-imports: | imports
-	# We must preserve envo_bridge.owl as it's a source file
-	find imports -name "*_import.owl" -o -name "*_import.obo" -o -name "*_combined_seed.tsv" -o -name "*.tmp*" | grep -v "envo_bridge.owl" | xargs rm -f
+	# We must preserve important source files like envo_bridge.owl
+	rm -f $(filter-out $(PROTECTED_SOURCE_FILES), $(wildcard imports/*_import.owl imports/*_import.obo imports/*_combined_seed.tsv imports/*.tmp*))
 
 # Clean all generated module files
 clean-modules: | modules
@@ -713,22 +720,42 @@ clean-main:
 	rm -f envo-base.owl envo-base.obo envo-base.json
 	rm -f envo-full.owl envo-full.obo envo-full.json
 	rm -f envo-simple.owl
-	rm -f $(SRC) $(SRC).tmp
+	rm -f $(filter-out $(PROTECTED_SOURCE_FILES), $(SRC) $(SRC).tmp)
 	rm -f *.tmp *.tmp.owl *.tmp.obo *.tmp.json *.tmp.*
-	# Clean up numbered ontology download files from wget, but never delete envo-edit.owl
-	find . -maxdepth 1 -name "*.obo.*" -o -name "*.owl.*" | grep -v "envo-edit.owl" | xargs rm -f 2>/dev/null || true
+	# Clean up numbered ontology download files from wget, but never delete source files
+	for f in *.obo.* *.owl.*; do \
+		if echo "$(PROTECTED_SOURCE_FILES)" | grep -q "$$f"; then \
+			echo "Preserving protected file: $$f"; \
+		else \
+			rm -f "$$f"; \
+		fi; \
+	done 2>/dev/null || true
 
 # Clean NMDC-related files (reuses existing target)
 clean-nmdc: nmdc-robot-clean
 
 # Clean downloaded ontologies in mirror directory, preserving README and .git* files
 clean-mirror: | mirror
+	# The mirror directory should only contain generated files, so it's safe to clean aggressively
 	rm -f mirror/*.owl mirror/*.obo mirror/*.tmp* mirror/*.tmp.*
-	# Clean up numbered download files
 	rm -f mirror/*.owl.* mirror/*.obo.*
-	# Clean up ontology files that might be downloaded to the working directory, but NEVER delete envo-edit.owl
-	rm -f $(shell pwd)/*.obo $(shell pwd)/*.obo.* 
-	find $(shell pwd) -name "*.owl" -o -name "*.owl.*" | grep -v "envo-edit.owl" | xargs rm -f 2>/dev/null || true
+	
+	# Clean up ontology files that might be downloaded to the working directory, but never delete protected files
+	for f in $(shell pwd)/*.obo $(shell pwd)/*.obo.*; do \
+		if echo "$(PROTECTED_SOURCE_FILES)" | grep -q "$$f"; then \
+			echo "Preserving protected file: $$f"; \
+		else \
+			rm -f "$$f"; \
+		fi; \
+	done 2>/dev/null || true
+	
+	for f in $(shell pwd)/*.owl $(shell pwd)/*.owl.*; do \
+		if echo "$(PROTECTED_SOURCE_FILES)" | grep -q "$$f"; then \
+			echo "Preserving protected file: $$f"; \
+		else \
+			rm -f "$$f"; \
+		fi; \
+	done 2>/dev/null || true
 
 # meta
 
