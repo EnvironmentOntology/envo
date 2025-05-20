@@ -50,7 +50,7 @@ FORMATS_INCL_TSV = $(sort $(FORMATS) tsv)
 # Top-level targets
 # ----------------------------------------
 
-.PHONY: .FORCE all test continuous_integration_test travis_test full_test test_python validate-dl-profile all_main base release copy-release debug.owl obo-check all_imports all_modules all_modules_owl all_modules_obo all_subsets sparql_test all_reports all_robot_reports all_assets show_assets is_utf nmdc-robot-clean nmdc-robot-all fill clean clean-dry-run clean-tmp clean-imports clean-modules clean-reports clean-subsets clean-main clean-nmdc clean-mirror rebuild
+.PHONY: .FORCE all test continuous_integration_test travis_test full_test test_python validate-dl-profile all_main base release copy-release obo-check all_imports all_modules all_modules_owl all_modules_obo all_subsets sparql_test all_reports all_robot_reports all_assets show_assets nmdc-robot-clean nmdc-robot-all fill clean clean-tmp clean-imports clean-modules clean-reports clean-subsets clean-main clean-nmdc clean-mirror rebuild
 
 # Directory creation targets
 $(TMPDIR):
@@ -617,56 +617,45 @@ fill: envo-edit.csv
 # Primary clean target - removes all generated files that can be rebuilt
 clean: clean-tmp clean-imports clean-modules clean-reports clean-subsets clean-main clean-mirror
 
-# Show what would be deleted without actually cleaning
-clean-dry-run:
-	@echo "Files that would be deleted by clean:"
-	@echo "======================================"
-	@echo "* Generated and intermediate files (.owl, .obo, .json, .tsv, .tmp)"
-	@echo "* Downloaded ontologies (in mirror directory)"
-	@echo "* Build artifacts in tmp directory"
-	@echo "* WARNING: Don't run 'make clean' if you have uncommitted changes"
-	@echo "======================================"
-	@echo "To see exactly what would be deleted, run: find . -name '*.owl' -o -name '*.obo' -o -name '*.json' -o -name '*.tsv' -o -name '*.tmp' | grep -v 'README' | grep -v '.git'"
-	@echo "No files were deleted - this was a dry run."
 
 # A target that performs a complete rebuild from scratch
 rebuild: clean all
 
 # Clean files in the temporary directory
 clean-tmp: | $(TMPDIR)
-	@rm -f $(TMPDIR)/*.tmp $(TMPDIR)/*.owl $(TMPDIR)/*.ofn 2>/dev/null || true
+	rm -f $(TMPDIR)/*.tmp $(TMPDIR)/*.owl $(TMPDIR)/*.ofn 2>/dev/null || true
 
 # Clean imports - only remove generated import files, not source files
 clean-imports: | imports
-	@rm -f imports/*_import.owl imports/*_import.obo imports/*_combined_seed.tsv imports/*.tmp* 2>/dev/null || true
+	rm -f imports/*_import.owl imports/*_import.obo imports/*_combined_seed.tsv imports/*.tmp* 2>/dev/null || true
 
 # Clean all generated module files
 clean-modules: | modules
-	@rm -f modules/*.tmp* modules/*.owl modules/*.obo 2>/dev/null || true
+	rm -f modules/*.tmp* modules/*.owl modules/*.obo 2>/dev/null || true
 
 # Clean generated report files
 clean-reports: | reports
-	@rm -f reports/*.tsv reports/*.tmp 2>/dev/null || true
+	rm -f reports/*.tsv reports/*.tmp 2>/dev/null || true
 
 # Clean subset files
 clean-subsets: | subsets
-	@for file in $(SUBSET_FILES); do rm -f $$file 2>/dev/null || true; done
+	for file in $(SUBSET_FILES); do rm -f $$file 2>/dev/null || true; done
 
 # Clean main build artifacts
 clean-main:
-	@rm -f envo.owl envo.obo envo.json
-	@rm -f envo-base.owl envo-base.obo envo-base.json
-	@rm -f envo-full.owl envo-full.obo envo-full.json
-	@rm -f envo-simple.owl
-	@rm -f $(SRC) $(SRC).tmp
-	@rm -f *.tmp *.tmp.owl *.tmp.obo *.tmp.json 2>/dev/null || true
+	rm -f envo.owl envo.obo envo.json
+	rm -f envo-base.owl envo-base.obo envo-base.json
+	rm -f envo-full.owl envo-full.obo envo-full.json
+	rm -f envo-simple.owl
+	rm -f $(SRC) $(SRC).tmp
+	rm -f *.tmp *.tmp.owl *.tmp.obo *.tmp.json 2>/dev/null || true
 
 # Clean NMDC-related files (reuses existing target)
 clean-nmdc: nmdc-robot-clean
 
 # Clean downloaded ontologies in mirror directory, preserving README and .git* files
 clean-mirror: | mirror
-	@rm -f mirror/*.owl mirror/*.obo 2>/dev/null || true
+	rm -f mirror/*.owl mirror/*.obo 2>/dev/null || true
 
 # meta
 
