@@ -50,7 +50,7 @@ FORMATS_INCL_TSV = $(sort $(FORMATS) tsv)
 # Top-level targets
 # ----------------------------------------
 
-.PHONY: .FORCE all test continuous_integration_test travis_test full_test test_python validate-dl-profile all_main base release copy-release obo-check all_imports all_modules all_modules_owl all_modules_obo all_subsets sparql_test all_reports all_robot_reports all_assets show_assets nmdc-robot-clean nmdc-robot-all fill clean clean-tmp clean-imports clean-modules clean-reports clean-subsets clean-main clean-nmdc clean-mirror rebuild
+.PHONY: .FORCE all all_build all_mirror all_mirror_safe bootstrap test continuous_integration_test travis_test full_test test_python validate-dl-profile all_main base release copy-release obo-check all_imports all_modules all_modules_owl all_modules_obo all_subsets sparql_test all_reports all_robot_reports all_assets show_assets nmdc-robot-clean nmdc-robot-all fill clean clean-tmp clean-imports clean-modules clean-reports clean-subsets clean-main clean-nmdc clean-mirror rebuild rebuild_no_test
 
 # Directory creation targets
 $(TMPDIR):
@@ -73,12 +73,67 @@ mirror:
 
 robot_templates:
 	mkdir -p robot_templates
+	
+# Create all mirror files with less concurrent downloads to avoid rate limiting
+all_mirror_safe:
+	# Download ontologies in groups with delays to avoid GitHub rate limits
+	$(MAKE) mirror/bfo.owl mirror/ro.owl
+	sleep 5
+	$(MAKE) mirror/pato.owl mirror/po.owl
+	sleep 5
+	$(MAKE) mirror/uberon.owl
+	sleep 5
+	$(MAKE) mirror/chebi.owl
+	sleep 5
+	$(MAKE) mirror/iao.owl
+	sleep 5
+	$(MAKE) mirror/obi.owl
+	sleep 5
+	$(MAKE) mirror/ncbitaxon.owl
+	sleep 5
+	$(MAKE) mirror/pco.owl
+	sleep 5
+	$(MAKE) mirror/foodon.owl
+	sleep 5
+	$(MAKE) mirror/fao.owl
+
+# Create all mirror files (may hit GitHub rate limits)
+all_mirror: mirror/bfo.owl mirror/pato.owl mirror/uberon.owl mirror/chebi.owl mirror/ro.owl mirror/iao.owl mirror/obi.owl mirror/ncbitaxon.owl mirror/pco.owl mirror/foodon.owl mirror/po.owl mirror/fao.owl
 
 # A target that performs a complete rebuild from scratch
 rebuild: clean all
 
+# Bootstrap target to break circular dependency by creating minimal import files
+bootstrap:
+	# Make sure directories exist
+	mkdir -p imports mirror tmp
+	# Download BFO directly
+	wget -q http://purl.obolibrary.org/obo/bfo.owl -O mirror/bfo.owl
+	# Create minimal BFO import using robot with specific terms
+	$(ROBOT) extract -i mirror/bfo.owl --method BOT \
+		--term BFO:0000001 --term BFO:0000002 --term BFO:0000003 \
+		--term BFO:0000004 --term BFO:0000006 --term BFO:0000141 \
+		--term BFO:0000015 --term BFO:0000019 --term BFO:0000020 \
+		-O $(ENVO_IMPORTS_BASE_URI)/imports/bfo_import.owl -o imports/bfo_import.owl
+	
+	# Download CHEBI minimal file
+	wget -q https://raw.githubusercontent.com/obophenotype/chebi_obo_slim/main/chebi_slim.owl -O mirror/chebi-local.owl
+	# Create minimal CHEBI import for bootstrapping
+	$(ROBOT) extract -i mirror/chebi-local.owl --method BOT \
+		--term CHEBI:24431 --term CHEBI:33232 --term CHEBI:33292 \
+		--term CHEBI:78295 --term CHEBI:78675 --term CHEBI:24432 \
+		-O $(ENVO_IMPORTS_BASE_URI)/imports/chebi_import.owl -o imports/chebi_import.owl
+
+# Build everything needed without testing or release preparation
+# Use this target to build all necessary files in the correct order without running tests or release steps
+# Solves circular dependencies by executing steps in the right sequence
+all_build: bootstrap all_mirror_safe imports/seed.txt all_imports all_modules $(ONT).owl $(ONT).obo $(ONT).json $(ONT)-base.owl $(ONT)-full.owl
+
+# Complete clean and rebuild without testing or release steps
+rebuild_no_test: clean all_build
+
 # complete tests
-test: all_modules all_imports envo.owl all_reports validate-dl-profile
+test: all_modules all_imports envo.owl all_reports validate-dl-profile sparql_test2
 
 # a more limited set of tests that can be run using github actions
 continuous_integration_test: test_python all_reports envo.owl validate-dl-profile
@@ -140,7 +195,7 @@ ALL_MODS_OWL = $(patsubst %, modules/%.owl, $(MODS))
 ALL_MODS_CSV = $(patsubst %, modules/%.csv, $(MODS))
 
 # Merge in all module files, whilst removing the corresponding import
-$(SRC): $(PRE_SRC)
+$(SRC): $(PRE_SRC) | imports all_modules
 	$(OWLTOOLS) $(USECAT) $<  $(patsubst %, --remove-import-declaration $(OBO)/envo/modules/%.owl, $(MODS)) -o $@.tmp
 	$(OWLTOOLS) $(USECAT) $@.tmp  $(ALL_MODS_OWL) --merge-support-ontologies -o $@
 
@@ -349,7 +404,7 @@ SEEDS= $(patsubst %, imports/%_terms.txt,$(IMPORTS))
 KEEPRELS = BFO:0000050 BFO:0000051 RO:0002202 immediate_transformation_of RO:0002176 IAO:0000136
 
 # See https://github.com/EnvironmentOntology/envo/issues/521
-imports/seed.txt: $(SRC)
+imports/seed.txt: envo-edit.owl | imports
 	$(ROBOT) query -f csv -i $< --query ./sparql/terms.sparql $@.tmp &&\
 	cat $@.tmp | sort | uniq >  $@
 #imports/seed.tsv: envo-edit.owl $(ALL_MODS_OWL)
@@ -389,6 +444,8 @@ mirror/sdgio.owl: envo-edit.owl
 .PRECIOUS: mirror/%.owl
 
 mirror/obi.owl: envo-edit.owl
+	# Sleep for 5 seconds to avoid GitHub rate-limiting (429 error)
+	sleep 5
 	$(OWLTOOLS) $(OBO)/obi.owl --remove-classes-in-idspace GO --remove-classes-in-idspace ENVO --remove-classes-in-idspace CHEBI --remove-classes-in-idspace UBERON --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/obi.owl -o $@
 .PRECIOUS: mirror/%.owl
 
@@ -401,6 +458,8 @@ mirror/chebi.owl: mirror/chebi-local.owl
 .PRECIOUS: mirror/%.owl
 
 mirror/foodon.owl: 
+	# Sleep for 5 seconds to avoid GitHub rate-limiting (429 error)
+	sleep 5
 	$(ROBOT) merge -I $(OBO)/foodon.owl \
 	 remove --base-iri FOODON --axioms external \
 	  relax reduce \
@@ -451,6 +510,8 @@ mirror/ncbitaxon.owl:
 #
 # https://github.com/ontodev/robot/issues/693
 mirror/pco.owl: envo-edit.owl
+	# Sleep for 5 seconds to avoid GitHub rate-limiting (429 error)
+	sleep 5
 	$(ROBOT) reason -r HERMIT -I $(OBO)/pco.owl relax \
 	 remove --base-iri PCO --axioms external \
 	 remove --term https://purl.obolibrary.org/obo/PCO_0000044 -o $@.tmp.owl && \
@@ -458,10 +519,14 @@ mirror/pco.owl: envo-edit.owl
 .PRECIOUS: mirror/%.owl
 
 mirror/iao.owl: envo-edit.owl
+	# Sleep for 5 seconds to avoid GitHub rate-limiting (429 error)
+	sleep 5
 	$(OWLTOOLS) $(OBO)/iao.owl --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/iao.owl -o $@
 .PRECIOUS: mirror/%.owl
 
 mirror/omp.owl: envo-edit.owl
+	# Sleep for 5 seconds to avoid GitHub rate-limiting (429 error)
+	sleep 5
 	$(OWLTOOLS) $(OBO)/omp.owl --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/omp.owl -o $@
 .PRECIOUS: mirror/%.owl
 
@@ -623,39 +688,47 @@ rebuild: clean all
 
 # Clean files in the temporary directory
 clean-tmp: | $(TMPDIR)
-	rm -f $(TMPDIR)/*.tmp $(TMPDIR)/*.owl $(TMPDIR)/*.ofn 2>/dev/null || true
+	rm -f $(TMPDIR)/*.tmp $(TMPDIR)/*.owl $(TMPDIR)/*.ofn
 
 # Clean imports - only remove generated import files, not source files
 clean-imports: | imports
-	rm -f imports/*_import.owl imports/*_import.obo imports/*_combined_seed.tsv imports/*.tmp* 2>/dev/null || true
+	# We must preserve envo_bridge.owl as it's a source file
+	find imports -name "*_import.owl" -o -name "*_import.obo" -o -name "*_combined_seed.tsv" -o -name "*.tmp*" | grep -v "envo_bridge.owl" | xargs rm -f
 
 # Clean all generated module files
 clean-modules: | modules
-	rm -f modules/*.tmp* modules/*.owl modules/*.obo 2>/dev/null || true
+	rm -f modules/*.tmp* modules/*.owl modules/*.obo
 
 # Clean generated report files
 clean-reports: | reports
-	rm -f reports/*.tsv reports/*.tmp 2>/dev/null || true
+	rm -f reports/*.tsv reports/*.tmp
 
 # Clean subset files
 clean-subsets: | subsets
-	for file in $(SUBSET_FILES); do rm -f $$file 2>/dev/null || true; done
+	for file in $(SUBSET_FILES); do rm -f $$file; done
 
-# Clean main build artifacts
+# Clean main build artifacts (but never delete source files)
 clean-main:
 	rm -f envo.owl envo.obo envo.json
 	rm -f envo-base.owl envo-base.obo envo-base.json
 	rm -f envo-full.owl envo-full.obo envo-full.json
 	rm -f envo-simple.owl
 	rm -f $(SRC) $(SRC).tmp
-	rm -f *.tmp *.tmp.owl *.tmp.obo *.tmp.json 2>/dev/null || true
+	rm -f *.tmp *.tmp.owl *.tmp.obo *.tmp.json *.tmp.*
+	# Clean up numbered ontology download files from wget, but never delete envo-edit.owl
+	find . -maxdepth 1 -name "*.obo.*" -o -name "*.owl.*" | grep -v "envo-edit.owl" | xargs rm -f 2>/dev/null || true
 
 # Clean NMDC-related files (reuses existing target)
 clean-nmdc: nmdc-robot-clean
 
 # Clean downloaded ontologies in mirror directory, preserving README and .git* files
 clean-mirror: | mirror
-	rm -f mirror/*.owl mirror/*.obo 2>/dev/null || true
+	rm -f mirror/*.owl mirror/*.obo mirror/*.tmp* mirror/*.tmp.*
+	# Clean up numbered download files
+	rm -f mirror/*.owl.* mirror/*.obo.*
+	# Clean up ontology files that might be downloaded to the working directory, but NEVER delete envo-edit.owl
+	rm -f $(shell pwd)/*.obo $(shell pwd)/*.obo.* 
+	find $(shell pwd) -name "*.owl" -o -name "*.owl.*" | grep -v "envo-edit.owl" | xargs rm -f 2>/dev/null || true
 
 # meta
 
