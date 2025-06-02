@@ -289,6 +289,18 @@ union_of: NCBITaxon:2157 ! Archaea
 union_of: NCBITaxon:2759 ! Eukaryota
 
 [Term]
+id: PATO:0000001
+name: quality
+def: "A dependent entity that inheres in a bearer by virtue of how the bearer is related to other entities" []
+is_a: BFO:0000020 ! specifically dependent continuant
+
+[Term]
+id: PATO:0000011
+name: age
+def: "A time quality inhering in a bearer by virtue of how long the bearer has existed." []
+is_a: PATO:0000165 ! time
+
+[Term]
 id: PATO:0000018
 name: fluorescence
 def: "A luminous flux quality inhering in a bearer by virtue of the bearer's emitting longer wavelength light following the absorption of shorter wavelength radiation; fluorescence is common with aromatic compounds with several rings joined together." []
@@ -304,13 +316,19 @@ is_a: PATO:0000141 ! structure
 id: PATO:0000033
 name: concentration of
 def: "A quality inhering in a substance by virtue of the amount of the bearer's there is mixed with another substance." []
-is_a: PATO:0002182 ! molecular quality
+is_a: PATO:0000070 ! amount
 
 [Term]
 id: PATO:0000051
 name: morphology
 def: "A quality of a single physical entity inhering in the bearer by virtue of the bearer's size or shape or structure." []
 is_a: PATO:0001241 ! physical object quality
+
+[Term]
+id: PATO:0000070
+name: amount
+def: "The number of entities of this type that are part of the whole organism." []
+is_a: PATO:0103000 ! quantitative
 
 [Term]
 id: PATO:0000117
@@ -334,6 +352,12 @@ is_a: PATO:0000051 ! morphology
 id: PATO:0000146
 name: temperature
 def: "A physical quality of the thermal energy of a system." []
+is_a: PATO:0001018 ! physical quality
+
+[Term]
+id: PATO:0000165
+name: time
+def: "A quality in which events occur in sequence." []
 is_a: PATO:0001018 ! physical quality
 
 [Term]
@@ -439,12 +463,6 @@ def: "A quality that inheres in an entire organism or part of an organism." []
 is_a: PATO:0001241 ! physical object quality
 
 [Term]
-id: PATO:0002182
-name: molecular quality
-def: "A quality which inheres in a molecular entity, a single molecule, atom, ion, radical etc." []
-is_a: PATO:0001241 ! physical object quality
-
-[Term]
 id: PATO:0002198
 name: quality of a substance
 def: "A quality inhering in a bearer by virtue of its constitution." []
@@ -455,4 +473,10 @@ id: PATO:0070060
 name: quality of interaction of a substance with electromagnetic radiation
 def: "A quality of a substance on which or through which electromagnetic radiation impinges or traverses with respect to radiation. This substance quality changes the quality of the incident radiation with respect to any of: intensity, direction, scatter and wavelength." []
 is_a: PATO:0002198 ! quality of a substance
+
+[Term]
+id: PATO:0103000
+name: quantitative
+def: "A quality of an entity that can be represented numerically, including anything that can be counted, measured, or given a numerical value." []
+is_a: PATO:0000001 ! quality
 

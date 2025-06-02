@@ -20,7 +20,7 @@ synonym: "region of skin" EXACT []
 synonym: "skin" EXACT []
 synonym: "skin region" EXACT []
 synonym: "skin zone" EXACT []
-is_a: UBERON:0004121 ! ectoderm-derived structure
+is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
 is_a: UBERON:0034944 ! zone of organ
 relationship: BFO:0000050 UBERON:0002097 ! skin of body
 relationship: BFO:0000051 UBERON:0001003 ! skin epidermis
@@ -79,7 +79,6 @@ id: UBERON:0000022
 name: feather
 def: "One of the epidermal growths that form the distinctive outer covering, or plumage, on birds. Feathers are formed in tiny follicles in the epidermis, or outer skin layer, that produce keratin proteins." []
 is_a: UBERON:0000021 ! cutaneous appendage
-is_a: UBERON:0004121 ! ectoderm-derived structure
 relationship: RO:0002202 UBERON:0001003 ! skin epidermis
 
 [Term]
@@ -318,7 +317,6 @@ synonym: "trophic apparatus" RELATED []
 synonym: "vestibule of mouth" RELATED []
 synonym: "vestibulum oris" RELATED []
 is_a: UBERON:0004921 ! subdivision of digestive tract
-relationship: BFO:0000050 UBERON:0000033 ! head
 relationship: BFO:0000050 UBERON:0001555 ! digestive tract
 relationship: RO:0002202 UBERON:0035804 ! future mouth
 
@@ -388,6 +386,7 @@ synonym: "whole blood" RELATED []
 is_a: UBERON:0000179 ! haemolymphatic fluid
 relationship: BFO:0000050 UBERON:0002390 ! hematopoietic system
 relationship: BFO:0000051 UBERON:0001969 ! blood plasma
+relationship: RO:0002202 UBERON:0000922 ! embryo
 relationship: RO:0002202 UBERON:0006596 ! presumptive blood
 relationship: RO:0002495 UBERON:0006596 ! presumptive blood
 
@@ -453,7 +452,6 @@ id: UBERON:0000349
 name: limbic system
 def: "A set of midline structures surrounding the brainstem of the mammalian brain, originally described anatomically, e.g., hippocampal formation, amygdala, hypothalamus, cingulate cortex. Although the original designation was anatomical, the limbic system has come to be associated with the system in the brain subserving emotional functions. As such, it is very poorly defined and doesn't correspond closely to the anatomical meaning any longer. [BirnLex]." []
 synonym: "visceral brain" RELATED []
-is_a: UBERON:0004121 ! ectoderm-derived structure
 is_a: UBERON:0011216 ! organ system subdivision
 relationship: BFO:0000050 UBERON:0001890 ! forebrain
 
@@ -569,7 +567,7 @@ disjoint_from: UBERON:0010000 ! multicellular anatomical structure
 [Term]
 id: UBERON:0000477
 name: anatomical cluster
-def: "Anatomical group that has its parts adjacent to one another." []
+def: "Anatomical group whose component anatomical structures lie in close proximity to each other." []
 is_a: UBERON:0034923 ! disconnected anatomical group
 
 [Term]
@@ -740,6 +738,7 @@ name: ectoderm
 def: "Primary germ layer that is the outer of the embryo's three germ layers and gives rise to epidermis and neural tissue." []
 synonym: "embryonic ectoderm" EXACT []
 is_a: UBERON:0000923 ! germ layer
+relationship: RO:0002202 UBERON:0000307 ! blastula
 relationship: RO:0002202 UBERON:0006601 ! presumptive ectoderm
 relationship: RO:0002495 UBERON:0006601 ! presumptive ectoderm
 
@@ -749,6 +748,7 @@ name: endoderm
 def: "Primary germ layer that lies remote from the surface of the embryo and gives rise to internal tissues such as gut." []
 synonym: "entoderm" RELATED []
 is_a: UBERON:0000923 ! germ layer
+relationship: RO:0002202 UBERON:0000307 ! blastula
 relationship: RO:0002202 UBERON:0006595 ! presumptive endoderm
 relationship: RO:0002495 UBERON:0006595 ! presumptive endoderm
 
@@ -760,6 +760,7 @@ synonym: "embryonic mesoderm" RELATED []
 synonym: "entire mesoderm" RELATED []
 synonym: "mesodermal mantle" RELATED []
 is_a: UBERON:0000923 ! germ layer
+relationship: RO:0002202 UBERON:0000307 ! blastula
 relationship: RO:0002202 UBERON:0006603 ! presumptive mesoderm
 relationship: RO:0002495 UBERON:0006603 ! presumptive mesoderm
 
@@ -810,13 +811,14 @@ is_a: UBERON:0000062 ! organ
 is_a: UBERON:0004121 ! ectoderm-derived structure
 relationship: BFO:0000050 UBERON:0000468 ! multicellular organism
 relationship: BFO:0000050 UBERON:0001017 ! central nervous system
+relationship: RO:0002202 UBERON:0002346 ! neurectoderm
 relationship: RO:0002202 UBERON:0006238 ! future brain
 relationship: RO:0002495 UBERON:0006238 ! future brain
 
 [Term]
 id: UBERON:0000965
 name: lens of camera-type eye
-def: "Transparent part of camera-type eye that helps to refract light to be focused on the retina." []
+def: "A transparent and refractive lens located posterior to the iris. The lens of camera-type eye refracts light to be focused on the retina." []
 synonym: "camera-type eye lens" EXACT []
 synonym: "crystalline lens" RELATED []
 synonym: "eye lens" EXACT []
@@ -824,7 +826,6 @@ synonym: "lens" EXACT []
 synonym: "lens crystallina" EXACT []
 synonym: "lenses" RELATED []
 synonym: "ocular lens" RELATED []
-is_a: UBERON:0004121 ! ectoderm-derived structure
 is_a: UBERON:0005389 ! transparent eye structure
 relationship: BFO:0000050 UBERON:0001801 ! anterior segment of eyeball
 relationship: RO:0002202 UBERON:0003073 ! lens placode
@@ -857,7 +858,7 @@ relationship: BFO:0000050 UBERON:0002104 ! visual system
 [Term]
 id: UBERON:0000982
 name: skeletal joint
-def: "Anatomical cluster that consists of two or more adjacent skeletal structures, which may be interconnected by various types of tissue[VSAO]." []
+def: "Anatomical structure that consists of two or more adjacent skeletal structures, which may be interconnected by various types of tissue[VSAO]." []
 synonym: "articular joint" RELATED []
 synonym: "articulation" BROAD []
 synonym: "joint" BROAD []
@@ -1032,6 +1033,7 @@ disjoint_from: UBERON:0002405 ! immune system
 disjoint_from: UBERON:0002416 ! integumental system
 disjoint_from: UBERON:0004456 ! entire sense organ system
 disjoint_from: UBERON:8450002 ! excretory system
+relationship: RO:0002202 UBERON:0000922 ! embryo
 relationship: RO:0002202 UBERON:0016880 ! future nervous system
 relationship: RO:0002495 UBERON:0016880 ! future nervous system
 
@@ -1047,6 +1049,7 @@ is_a: UBERON:0004121 ! ectoderm-derived structure
 is_a: UBERON:0011216 ! organ system subdivision
 relationship: BFO:0000050 UBERON:0001016 ! nervous system
 relationship: RO:0002202 UBERON:0016879 ! future central nervous system
+relationship: RO:0002202 UBERON:0016880 ! future nervous system
 relationship: RO:0002495 UBERON:0016879 ! future central nervous system
 
 [Term]
@@ -1373,7 +1376,6 @@ def: "A subdivision of the head that has as parts the layers deep to the surface
 synonym: "facia/facies" RELATED []
 synonym: "visage" RELATED []
 is_a: UBERON:0001444 ! subdivision of head
-relationship: BFO:0000051 UBERON:0000165 ! mouth
 
 [Term]
 id: UBERON:0001473
@@ -1416,6 +1418,7 @@ synonym: "gut tube" RELATED []
 is_a: UBERON:0000025 ! tube
 relationship: BFO:0000050 UBERON:0001007 ! digestive system
 relationship: RO:0002176 UBERON:0000165 ! mouth
+relationship: RO:0002202 UBERON:0000922 ! embryo
 relationship: RO:0002202 UBERON:0007026 ! presumptive gut
 relationship: RO:0002495 UBERON:0007026 ! presumptive gut
 
@@ -1466,7 +1469,7 @@ synonym: "mandibular arch skeleton" EXACT []
 synonym: "oral jaw skeleton" RELATED []
 synonym: "pharyngeal arch 1 skeleton" RELATED []
 synonym: "visceral arch 1" RELATED []
-is_a: UBERON:0010313 ! neural crest-derived structure
+is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
 is_a: UBERON:0010912 ! subdivision of skeleton
 relationship: BFO:0000050 UBERON:0011156 ! facial skeleton
 relationship: BFO:0000050 UBERON:0011595 ! jaw region
@@ -1479,7 +1482,6 @@ synonym: "lower part of mouth" RELATED []
 synonym: "mandibular part of mouth" EXACT []
 synonym: "mandibular series" RELATED []
 is_a: UBERON:0000475 ! organism subdivision
-is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
 relationship: BFO:0000050 UBERON:0011595 ! jaw region
 relationship: BFO:0000051 UBERON:0003278 ! skeleton of lower jaw
 relationship: RO:0002202 UBERON:0005867 ! mandibular prominence
@@ -1509,10 +1511,9 @@ synonym: "tunica vasculosa of eyeball" EXACT []
 synonym: "uvea" EXACT []
 synonym: "uveal tract" EXACT []
 synonym: "vascular layer of eyeball" RELATED []
-is_a: UBERON:0004121 ! ectoderm-derived structure
 is_a: UBERON:0004923 ! organ component layer
 is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
-relationship: BFO:0000050 UBERON:0001801 ! anterior segment of eyeball
+relationship: BFO:0000050 UBERON:0000019 ! camera-type eye
 relationship: BFO:0000051 UBERON:0001769 ! iris
 relationship: BFO:0000051 UBERON:0001775 ! ciliary body
 relationship: BFO:0000051 UBERON:0001776 ! optic choroid
@@ -1539,6 +1540,7 @@ synonym: "corpus ciliare" RELATED []
 synonym: "ocular ciliary body" EXACT []
 is_a: UBERON:0000481 ! multi-tissue structure
 is_a: UBERON:0004121 ! ectoderm-derived structure
+is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
 relationship: BFO:0000050 UBERON:0011892 ! anterior uvea
 relationship: BFO:0000051 UBERON:0001605 ! ciliary muscle
 relationship: BFO:0000051 UBERON:0010427 ! ciliary processes
@@ -1606,7 +1608,6 @@ id: UBERON:0001798
 name: vitreous body
 def: "Gelatinous mucoid tissue that is composed of vitreous humor and fills the cavity behind the crystalline lens of the eye and in front of the retina[MP,modified]." []
 is_a: UBERON:0003566 ! head connective tissue
-is_a: UBERON:0004121 ! ectoderm-derived structure
 is_a: UBERON:0011825 ! loose connective tissue
 relationship: BFO:0000050 UBERON:0001799 ! vitreous chamber of eyeball
 relationship: BFO:0000051 UBERON:0001797 ! vitreous humor
@@ -1637,7 +1638,6 @@ synonym: "eye anterior segment" EXACT []
 synonym: "segmentum anterius (bulbus oculi)" EXACT []
 synonym: "segmentum anterius bulbi oculi" RELATED []
 is_a: UBERON:0000063 ! organ subunit
-is_a: UBERON:0004121 ! ectoderm-derived structure
 disjoint_from: UBERON:0001802 ! posterior segment of eyeball
 relationship: BFO:0000050 UBERON:0010230 ! eyeball of camera-type eye
 
@@ -1653,7 +1653,6 @@ synonym: "posterior segment of the eye" EXACT []
 synonym: "segmentum posterius (bulbus oculi)" EXACT []
 synonym: "segmentum posterius bulbi oculi" RELATED []
 is_a: UBERON:0000063 ! organ subunit
-is_a: UBERON:0004121 ! ectoderm-derived structure
 relationship: BFO:0000050 UBERON:0010230 ! eyeball of camera-type eye
 
 [Term]
@@ -1714,8 +1713,11 @@ def: "The most anterior region of the brain including both the telencephalon and
 synonym: "FB" BROAD []
 synonym: "prosencephalon" RELATED []
 is_a: UBERON:0002616 ! regional part of brain
+is_a: UBERON:0004121 ! ectoderm-derived structure
 relationship: BFO:0000050 UBERON:0000955 ! brain
+relationship: RO:0002202 UBERON:0002346 ! neurectoderm
 relationship: RO:0002202 UBERON:0003080 ! anterior neural tube
+relationship: RO:0002202 UBERON:0006238 ! future brain
 relationship: RO:0002202 UBERON:0006240 ! future forebrain
 relationship: RO:0002495 UBERON:0006240 ! future forebrain
 
@@ -1727,8 +1729,11 @@ synonym: "cerebrum" EXACT []
 synonym: "endbrain" EXACT []
 synonym: "supratentorial region" BROAD []
 is_a: UBERON:0002616 ! regional part of brain
-is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
+is_a: UBERON:0004121 ! ectoderm-derived structure
 relationship: BFO:0000050 UBERON:0001890 ! forebrain
+relationship: RO:0002202 UBERON:0002346 ! neurectoderm
+relationship: RO:0002202 UBERON:0006238 ! future brain
+relationship: RO:0002202 UBERON:0006240 ! future forebrain
 relationship: RO:0002202 UBERON:0014371 ! future telencephalon
 relationship: RO:0002495 UBERON:0014371 ! future telencephalon
 
@@ -1744,9 +1749,13 @@ synonym: "interbrain" EXACT []
 synonym: "mature diencephalon" EXACT []
 synonym: "thalamencephalon" EXACT []
 is_a: UBERON:0002616 ! regional part of brain
+is_a: UBERON:0004121 ! ectoderm-derived structure
 is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
 relationship: BFO:0000050 UBERON:0001890 ! forebrain
+relationship: RO:0002202 UBERON:0002346 ! neurectoderm
 relationship: RO:0002202 UBERON:0006222 ! future diencephalon
+relationship: RO:0002202 UBERON:0006238 ! future brain
+relationship: RO:0002202 UBERON:0006240 ! future forebrain
 relationship: RO:0002495 UBERON:0006222 ! future diencephalon
 
 [Term]
@@ -1798,7 +1807,6 @@ synonym: "vas sanguineum" RELATED []
 synonym: "vascular element" BROAD []
 synonym: "vascular tree organ region" EXACT []
 is_a: UBERON:0000055 ! vessel
-is_a: UBERON:0004120 ! mesoderm-derived structure
 relationship: BFO:0000050 UBERON:0004537 ! blood vasculature
 relationship: BFO:0000051 UBERON:0007500 ! epithelial tube open at both ends
 relationship: RO:0002202 UBERON:0004872 ! splanchnic layer of lateral plate mesoderm
@@ -1884,13 +1892,14 @@ def: "The dermis is a layer of skin between the epidermis (with which it makes u
 synonym: "corium" RELATED []
 synonym: "cutis" RELATED []
 synonym: "vertebrate dermis" EXACT []
-is_a: UBERON:0004121 ! ectoderm-derived structure
 is_a: UBERON:0004923 ! organ component layer
 is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
 is_a: UBERON:0013754 ! integumentary system layer
 relationship: BFO:0000050 UBERON:0002097 ! skin of body
 relationship: BFO:0000051 UBERON:0002384 ! connective tissue
 relationship: BFO:0000051 UBERON:0011860 ! collection of collagen fibrils
+relationship: RO:0002202 UBERON:0002199 ! integument
+relationship: RO:0002202 UBERON:0002416 ! integumental system
 relationship: RO:0002202 UBERON:0010083 ! future dermis
 relationship: RO:0002495 UBERON:0010083 ! future dermis
 
@@ -1960,7 +1969,7 @@ synonym: "pelt" RELATED []
 synonym: "skin" RELATED []
 synonym: "skin organ" EXACT []
 is_a: UBERON:0000062 ! organ
-is_a: UBERON:0004121 ! ectoderm-derived structure
+is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
 relationship: BFO:0000050 UBERON:0002199 ! integument
 relationship: BFO:0000051 UBERON:0000014 ! zone of skin
 relationship: RO:0002202 UBERON:0011272 ! embryonic skin basal layer
@@ -1975,7 +1984,6 @@ synonym: "heart septum" EXACT []
 synonym: "septum of heart" EXACT []
 synonym: "spiral septa" RELATED []
 is_a: UBERON:0003037 ! septum
-is_a: UBERON:0004120 ! mesoderm-derived structure
 intersection_of: UBERON:0003037 ! septum
 intersection_of: BFO:0000050 UBERON:0000948 ! heart
 relationship: BFO:0000050 UBERON:0000948 ! heart
@@ -2012,7 +2020,6 @@ synonym: "panniculus adiposus telae subcutaneae" EXACT []
 synonym: "subcutaneous fat" RELATED []
 synonym: "subcutaneous fat layer" EXACT []
 is_a: UBERON:0001013 ! adipose tissue
-is_a: UBERON:0004120 ! mesoderm-derived structure
 intersection_of: UBERON:0001013 ! adipose tissue
 intersection_of: BFO:0000050 UBERON:0002072 ! hypodermis
 relationship: BFO:0000050 UBERON:0002072 ! hypodermis
@@ -2040,6 +2047,7 @@ synonym: "skin plus hypodermis" EXACT []
 synonym: "tegument" RELATED []
 synonym: "the integument" EXACT []
 synonym: "vertebrate integument" RELATED []
+is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
 is_a: UBERON:0011216 ! organ system subdivision
 relationship: BFO:0000050 UBERON:0000468 ! multicellular organism
 relationship: BFO:0000050 UBERON:0002416 ! integumental system
@@ -2129,7 +2137,6 @@ synonym: "hypothalamus periventricular zone" EXACT []
 synonym: "periventricular zone of the hypothalamus" RELATED []
 synonym: "zona periventricularis hypothalamicae" EXACT []
 is_a: UBERON:0000064 ! organ part
-is_a: UBERON:0004121 ! ectoderm-derived structure
 relationship: BFO:0000050 UBERON:0001898 ! hypothalamus
 
 [Term]
@@ -2146,7 +2153,6 @@ synonym: "telencephalic ventricles" RELATED []
 synonym: "telencephalic vesicle" RELATED []
 synonym: "telencephalon lateral ventricle" EXACT []
 is_a: UBERON:0004086 ! brain ventricle
-is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
 intersection_of: UBERON:0004086 ! brain ventricle
 intersection_of: BFO:0000050 UBERON:0001893 ! telencephalon
 relationship: BFO:0000050 UBERON:0001893 ! telencephalon
@@ -2170,7 +2176,6 @@ synonym: "choroid plexus telencephalic ventricle" EXACT []
 synonym: "lateral ventricle chorioid plexus of cerebral hemisphere" EXACT []
 synonym: "lateral ventricle choroid plexus" EXACT []
 is_a: UBERON:0001886 ! choroid plexus
-is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
 intersection_of: UBERON:0001886 ! choroid plexus
 intersection_of: BFO:0000050 UBERON:0002285 ! telencephalic ventricle
 relationship: BFO:0000050 UBERON:0002285 ! telencephalic ventricle
@@ -2210,7 +2215,6 @@ synonym: "crista neuralis" RELATED []
 synonym: "NC" EXACT []
 synonym: "neural crest material" RELATED []
 is_a: UBERON:0004121 ! ectoderm-derived structure
-is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
 is_a: UBERON:0010316 ! germ layer / neural crest
 relationship: BFO:0000050 UBERON:0002346 ! neurectoderm
 relationship: RO:0002202 UBERON:0003075 ! neural plate
@@ -2337,7 +2341,6 @@ synonym: "posterior uvea blood vessel" EXACT []
 synonym: "set of choroid blood vessels" RELATED []
 synonym: "vasa sanguinea choroideae" EXACT []
 is_a: UBERON:0003496 ! head blood vessel
-is_a: UBERON:0010313 ! neural crest-derived structure
 intersection_of: UBERON:0001981 ! blood vessel
 intersection_of: BFO:0000050 UBERON:0001776 ! optic choroid
 relationship: BFO:0000050 UBERON:0001776 ! optic choroid
@@ -2416,7 +2419,7 @@ is_a: UBERON:0000481 ! multi-tissue structure
 is_a: UBERON:0010188 ! protuberance
 is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
 relationship: BFO:0000050 UBERON:0008814 ! pharyngeal arch system
-relationship: BFO:0000050 UBERON:0008816 ! embryonic head
+relationship: BFO:0000050 UBERON:8450003 ! embryonic craniocervical region
 
 [Term]
 id: UBERON:0002546
@@ -2428,6 +2431,7 @@ synonym: "ectodermal placode" BROAD []
 synonym: "placode" BROAD []
 is_a: UBERON:0005085 ! ectodermal placode
 relationship: BFO:0000050 UBERON:0000033 ! head
+relationship: BFO:0000050 UBERON:8450003 ! embryonic craniocervical region
 
 [Term]
 id: UBERON:0002553
@@ -2449,7 +2453,6 @@ synonym: "neuraxis segment" EXACT []
 synonym: "neuroanatomical region" EXACT []
 synonym: "segment of brain" EXACT []
 is_a: UBERON:0000073 ! regional part of nervous system
-is_a: UBERON:0004121 ! ectoderm-derived structure
 intersection_of: UBERON:0000481 ! multi-tissue structure
 intersection_of: BFO:0000050 UBERON:0000955 ! brain
 relationship: BFO:0000050 UBERON:0000955 ! brain
@@ -2467,7 +2470,6 @@ id: UBERON:0003056
 name: pre-chordal neural plate
 def: "The portion of neural plate anterior to the mid-hindbrain junction." []
 synonym: "anterior neural plate" RELATED []
-is_a: UBERON:0004121 ! ectoderm-derived structure
 is_a: UBERON:0005291 ! embryonic tissue
 relationship: BFO:0000050 UBERON:0003075 ! neural plate
 
@@ -2484,6 +2486,7 @@ synonym: "unsegmented mesenchyme" RELATED []
 synonym: "unsegmented paraxial mesoderm" EXACT []
 is_a: UBERON:0006598 ! presumptive structure
 relationship: BFO:0000050 UBERON:0003077 ! paraxial mesoderm
+relationship: RO:0002202 UBERON:0000922 ! embryo
 relationship: RO:0002202 UBERON:0007282 ! presumptive segmental plate
 relationship: RO:0002495 UBERON:0007282 ! presumptive segmental plate
 
@@ -2555,7 +2558,6 @@ is_a: UBERON:0000490 ! unilaminar epithelium
 is_a: UBERON:0001048 ! primordium
 is_a: UBERON:0005291 ! embryonic tissue
 is_a: UBERON:0006598 ! presumptive structure
-is_a: UBERON:0010371 ! ecto-epithelium
 relationship: BFO:0000050 UBERON:0003056 ! pre-chordal neural plate
 relationship: RO:0002202 UBERON:0003056 ! pre-chordal neural plate
 
@@ -2580,7 +2582,6 @@ synonym: "lens placodes" RELATED []
 synonym: "placoda lentis" RELATED []
 is_a: UBERON:0002546 ! cranial placode
 is_a: UBERON:0006598 ! presumptive structure
-is_a: UBERON:0010312 ! immature eye
 is_a: UBERON:0011814 ! non-neurogenic ectodermal placode
 relationship: BFO:0000050 UBERON:0010312 ! immature eye
 
@@ -2594,7 +2595,9 @@ is_a: UBERON:0000483 ! epithelium
 is_a: UBERON:0005291 ! embryonic tissue
 is_a: UBERON:0010371 ! ecto-epithelium
 is_a: UBERON:0016879 ! future central nervous system
+relationship: RO:0002202 UBERON:0004734 ! gastrula
 relationship: RO:0002202 UBERON:0007284 ! presumptive neural plate
+relationship: RO:0002202 UBERON:0016880 ! future nervous system
 relationship: RO:0002495 UBERON:0007284 ! presumptive neural plate
 
 [Term]
@@ -2608,6 +2611,7 @@ is_a: UBERON:0005291 ! embryonic tissue
 is_a: UBERON:0007524 ! dense mesenchyme tissue
 is_a: UBERON:0015212 ! lateral structure
 relationship: BFO:0000050 UBERON:0000922 ! embryo
+relationship: RO:0002202 UBERON:0000307 ! blastula
 relationship: RO:0002202 UBERON:0007285 ! presumptive paraxial mesoderm
 relationship: RO:0002495 UBERON:0007285 ! presumptive paraxial mesoderm
 
@@ -2668,9 +2672,7 @@ synonym: "crista neuralis cranialis" RELATED []
 synonym: "head crest" RELATED []
 synonym: "head NCC population" EXACT []
 synonym: "head neural crest" RELATED []
-is_a: UBERON:0004121 ! ectoderm-derived structure
 is_a: UBERON:0005291 ! embryonic tissue
-is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
 relationship: BFO:0000050 UBERON:0002342 ! neural crest
 
 [Term]
@@ -2714,7 +2716,6 @@ synonym: "skeletal system of head" RELATED []
 synonym: "skull minus mandible" EXACT []
 synonym: "upper part of skull" EXACT []
 is_a: UBERON:0000075 ! subdivision of skeletal system
-relationship: BFO:0000050 UBERON:0003129 ! skull
 
 [Term]
 id: UBERON:0003129
@@ -2723,7 +2724,6 @@ def: "Anatomical structure that is part of the head consisting entirely of crani
 synonym: "cranial skeleton" RELATED []
 synonym: "skeletal system of head" RELATED []
 is_a: UBERON:0000075 ! subdivision of skeletal system
-is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
 relationship: BFO:0000050 UBERON:0000033 ! head
 relationship: BFO:0000050 UBERON:0010323 ! cranial skeletal system
 relationship: BFO:0000051 UBERON:0003128 ! cranium
@@ -2761,7 +2761,6 @@ synonym: "lower jaw epithelial tissue" EXACT []
 synonym: "lower jaw epithelium" EXACT []
 synonym: "ventral mandibular arch epithelial tissue" EXACT []
 synonym: "ventral mandibular arch epithelium" EXACT []
-is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
 is_a: UBERON:0035037 ! jaw epithelium
 intersection_of: UBERON:0000483 ! epithelium
 intersection_of: BFO:0000050 UBERON:0001710 ! lower jaw region
@@ -2804,7 +2803,6 @@ synonym: "lower jaw skeleton" EXACT []
 synonym: "mandible" BROAD []
 synonym: "mandibles" RELATED []
 synonym: "mandibular series" RELATED []
-is_a: UBERON:0010313 ! neural crest-derived structure
 is_a: UBERON:0010912 ! subdivision of skeleton
 relationship: BFO:0000050 UBERON:0001708 ! jaw skeleton
 relationship: BFO:0000050 UBERON:0001710 ! lower jaw region
@@ -2830,7 +2828,6 @@ id: UBERON:0003314
 name: eye mesenchyme
 def: "Mesenchyme that is part of a developing camera-type eye." []
 synonym: "mesenchyme of eye" EXACT []
-is_a: UBERON:0007213 ! mesenchyme derived from head neural crest
 is_a: UBERON:0009891 ! facial mesenchyme
 intersection_of: UBERON:0003104 ! mesenchyme
 intersection_of: BFO:0000050 UBERON:0000019 ! camera-type eye
@@ -2844,7 +2841,6 @@ def: "Mesenchyme that is part of a developing lower jaw [Automatically generated
 synonym: "lower jaw mesenchyme" EXACT []
 synonym: "mesenchyme of ventral mandibular arch" EXACT []
 synonym: "ventral mandibular arch mesenchyme" EXACT []
-is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
 is_a: UBERON:0034995 ! jaw mesenchyme
 intersection_of: UBERON:0003104 ! mesenchyme
 intersection_of: BFO:0000050 UBERON:0001710 ! lower jaw region
@@ -2920,7 +2916,6 @@ name: smooth muscle of eye
 def: "Any of the striated muscles that move the eye and include: superior rectus, inferior rectus, medial rectus, lateral rectus, superior oblique, inferior oblique, retractor bulbi." []
 synonym: "ocular smooth muscle" EXACT []
 is_a: UBERON:0001135 ! smooth muscle tissue
-is_a: UBERON:0004121 ! ectoderm-derived structure
 intersection_of: UBERON:0001135 ! smooth muscle tissue
 intersection_of: BFO:0000050 UBERON:0000019 ! camera-type eye
 relationship: BFO:0000050 UBERON:0000019 ! camera-type eye
@@ -2996,7 +2991,6 @@ synonym: "facial bone" EXACT []
 synonym: "facial skeleton bone" EXACT []
 synonym: "viscerocranium bone" RELATED []
 is_a: UBERON:0003457 ! head bone
-is_a: UBERON:0010313 ! neural crest-derived structure
 intersection_of: UBERON:0001474 ! bone element
 intersection_of: BFO:0000050 UBERON:0011156 ! facial skeleton
 relationship: BFO:0000050 UBERON:0011156 ! facial skeleton
@@ -3050,7 +3044,6 @@ name: brain blood vessel
 def: "A blood vessel that is part of a brain [Automatically generated definition]." []
 synonym: "blood vessel of brain" EXACT []
 is_a: UBERON:0001981 ! blood vessel
-is_a: UBERON:0004121 ! ectoderm-derived structure
 intersection_of: UBERON:0001981 ! blood vessel
 intersection_of: BFO:0000050 UBERON:0000955 ! brain
 relationship: BFO:0000050 UBERON:0000955 ! brain
@@ -3067,7 +3060,6 @@ synonym: "inner layer of eyeball blood vessel" EXACT []
 synonym: "retinal blood vessel" EXACT []
 synonym: "tunica interna of eyeball blood vessel" EXACT []
 is_a: UBERON:0003496 ! head blood vessel
-is_a: UBERON:0010313 ! neural crest-derived structure
 intersection_of: UBERON:0001981 ! blood vessel
 intersection_of: BFO:0000050 UBERON:0000966 ! retina
 relationship: BFO:0000050 UBERON:0000966 ! retina
@@ -3091,7 +3083,6 @@ name: iris blood vessel
 def: "A blood vessel that is part of a iris [Automatically generated definition]." []
 synonym: "blood vessel of iris" EXACT []
 is_a: UBERON:0003496 ! head blood vessel
-is_a: UBERON:0010313 ! neural crest-derived structure
 intersection_of: UBERON:0001981 ! blood vessel
 intersection_of: BFO:0000050 UBERON:0001769 ! iris
 relationship: BFO:0000050 UBERON:0001769 ! iris
@@ -3333,7 +3324,7 @@ synonym: "choroid plexus epithelial tissue" EXACT []
 synonym: "epithelial tissue of chorioid plexus of cerebral hemisphere" EXACT []
 synonym: "epithelial tissue of choroid plexus" EXACT []
 synonym: "epithelium of choroid plexus" EXACT []
-is_a: UBERON:0010371 ! ecto-epithelium
+is_a: UBERON:0000483 ! epithelium
 intersection_of: UBERON:0000483 ! epithelium
 intersection_of: BFO:0000050 UBERON:0001886 ! choroid plexus
 relationship: BFO:0000050 UBERON:0001886 ! choroid plexus
@@ -3368,7 +3359,6 @@ relationship: BFO:0000050 UBERON:0001555 ! digestive tract
 id: UBERON:0003947
 name: brain ventricle/choroid plexus
 def: "The brain ventricles or their associated choroid plexuses." []
-is_a: UBERON:0004121 ! ectoderm-derived structure
 is_a: UBERON:0010000 ! multicellular anatomical structure
 union_of: UBERON:0001886 ! choroid plexus
 union_of: UBERON:0004086 ! brain ventricle
@@ -3520,7 +3510,6 @@ synonym: "heart field" RELATED []
 synonym: "PHF" RELATED []
 synonym: "primary heart field" EXACT []
 is_a: UBERON:0002050 ! embryonic structure
-is_a: UBERON:0004120 ! mesoderm-derived structure
 is_a: UBERON:0005291 ! embryonic tissue
 is_a: UBERON:0007688 ! anlage
 relationship: BFO:0000050 UBERON:0003081 ! lateral plate mesoderm
@@ -3547,7 +3536,6 @@ def: "A cardiac chamber surrounds an enclosed cavity within the heart." []
 synonym: "chamber of heart" EXACT []
 synonym: "heart chamber" EXACT []
 is_a: UBERON:0000064 ! organ part
-is_a: UBERON:0004120 ! mesoderm-derived structure
 relationship: BFO:0000050 UBERON:0000948 ! heart
 
 [Term]
@@ -3567,7 +3555,6 @@ synonym: "organ of hematopoietic system" EXACT []
 synonym: "organ of organa haemopoietica" EXACT []
 synonym: "organa haemopoietica organ" EXACT []
 is_a: UBERON:0000062 ! organ
-is_a: UBERON:0004120 ! mesoderm-derived structure
 intersection_of: UBERON:0000062 ! organ
 intersection_of: BFO:0000050 UBERON:0002390 ! hematopoietic system
 relationship: BFO:0000050 UBERON:0002390 ! hematopoietic system
@@ -3761,7 +3748,6 @@ synonym: "lateral ventricle epithelial tissue of choroid plexus" EXACT []
 synonym: "lateral ventricle epithelium of chorioid plexus of cerebral hemisphere" EXACT []
 synonym: "lateral ventricle epithelium of choroid plexus" EXACT []
 is_a: UBERON:0003911 ! choroid plexus epithelium
-is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
 intersection_of: UBERON:0000483 ! epithelium
 intersection_of: BFO:0000050 UBERON:0002307 ! choroid plexus of lateral ventricle
 relationship: BFO:0000050 UBERON:0002307 ! choroid plexus of lateral ventricle
@@ -3771,7 +3757,6 @@ id: UBERON:0004277
 name: eye muscle
 def: "A muscle that is part of the eye region." []
 is_a: UBERON:0001630 ! muscle organ
-is_a: UBERON:0004121 ! ectoderm-derived structure
 intersection_of: UBERON:0001630 ! muscle organ
 intersection_of: BFO:0000050 UBERON:0000019 ! camera-type eye
 relationship: BFO:0000050 UBERON:0000019 ! camera-type eye
@@ -3963,6 +3948,7 @@ def: "Anatomical system that has as its parts the heart and blood vessels." []
 synonym: "CV system" RELATED []
 synonym: "Herz und Gefaesssystem" RELATED []
 is_a: UBERON:0000467 ! anatomical system
+is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
 intersection_of: UBERON:0000467 ! anatomical system
 intersection_of: BFO:0000050 UBERON:0001009 ! circulatory system
 intersection_of: BFO:0000051 UBERON:0000948 ! heart
@@ -4020,7 +4006,6 @@ synonym: "neural tube metameric segment" EXACT []
 synonym: "neural tube segment" EXACT []
 synonym: "neuromere" EXACT []
 synonym: "neuromeres" EXACT []
-is_a: UBERON:0004121 ! ectoderm-derived structure
 is_a: UBERON:0004732 ! segmental subdivision of nervous system
 intersection_of: UBERON:0004732 ! segmental subdivision of nervous system
 intersection_of: BFO:0000050 UBERON:0001049 ! neural tube
@@ -4064,9 +4049,7 @@ id: UBERON:0004756
 name: dermal skeletal element
 def: "Dermis-derived entity that is made of skeletal tissue." []
 synonym: "dermal element" EXACT []
-is_a: UBERON:0004121 ! ectoderm-derived structure
 is_a: UBERON:0004765 ! skeletal element
-is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
 intersection_of: UBERON:0004765 ! skeletal element
 intersection_of: BFO:0000051 UBERON:0004755 ! skeletal tissue
 intersection_of: RO:0002202 UBERON:0002067 ! dermis
@@ -4085,7 +4068,7 @@ id: UBERON:0004766
 name: cranial bone
 def: "A bone that is part of a cranium." []
 synonym: "cranium bone" EXACT []
-is_a: UBERON:0003457 ! head bone
+is_a: UBERON:0001474 ! bone element
 intersection_of: UBERON:0001474 ! bone element
 intersection_of: BFO:0000050 UBERON:0003128 ! cranium
 relationship: BFO:0000050 UBERON:0003128 ! cranium
@@ -4095,6 +4078,7 @@ id: UBERON:0004768
 name: bone of lower jaw
 def: "Any bone that is part of the lower jaw skeleton. This includes (when present): the dentary/mandible, the articular, the splenial, the suprangular." []
 synonym: "lower jaw bone" EXACT []
+is_a: UBERON:0010313 ! neural crest-derived structure
 is_a: UBERON:0012360 ! bone of jaw
 intersection_of: UBERON:0001474 ! bone element
 intersection_of: BFO:0000050 UBERON:0001710 ! lower jaw region
@@ -4155,7 +4139,6 @@ relationship: BFO:0000050 UBERON:0005409 ! alimentary part of gastrointestinal s
 id: UBERON:0004797
 name: blood vessel layer
 def: "Any of the tissue layers that comprise a blood vessel. Examples: tunica media, tunica adventitia." []
-is_a: UBERON:0004120 ! mesoderm-derived structure
 is_a: UBERON:0004923 ! organ component layer
 intersection_of: UBERON:0004923 ! organ component layer
 intersection_of: BFO:0000050 UBERON:0001981 ! blood vessel
@@ -4229,10 +4212,8 @@ name: urogenital sinus epithelium
 def: "The fetal urogenital sinus (from which the prostate derives) is a simple cylinder of stratified basal epithelium, surrounded by mesenchyme and positioned between the embryonic bladder and pelvic urethra." []
 synonym: "epithelium of urogenital sinus" EXACT []
 synonym: "UGE" EXACT []
-is_a: UBERON:0000077 ! mixed endoderm/mesoderm-derived structure
 is_a: UBERON:0000483 ! epithelium
 is_a: UBERON:0009846 ! embryonic cloacal epithelium
-is_a: UBERON:0012275 ! meso-epithelium
 intersection_of: UBERON:0000483 ! epithelium
 intersection_of: BFO:0000050 UBERON:0000164 ! primitive urogenital sinus
 relationship: BFO:0000050 UBERON:0000164 ! primitive urogenital sinus
@@ -4241,7 +4222,7 @@ relationship: RO:0002202 UBERON:0009846 ! embryonic cloacal epithelium
 [Term]
 id: UBERON:0004905
 name: articulation
-def: "Anatomical cluster that connects two or more adjacent skeletal elements or hardened body parts." []
+def: "Anatomical structure that connects two or more adjacent skeletal elements or hardened body parts." []
 synonym: "joint" NARROW []
 is_a: UBERON:0034921 ! multi organ part structure
 relationship: BFO:0000050 UBERON:0004770 ! articular system
@@ -4278,6 +4259,7 @@ id: UBERON:0004921
 name: subdivision of digestive tract
 def: "A proximal-distal subdivision of the digestive tract." []
 synonym: "alimentary system subdivision" RELATED []
+synonym: "gut section" RELATED []
 synonym: "intestinal tract" RELATED []
 synonym: "segment of intestinal tract" RELATED []
 synonym: "subdivision of alimentary system" RELATED []
@@ -4316,7 +4298,6 @@ synonym: "medullary fold" EXACT []
 is_a: UBERON:0002050 ! embryonic structure
 is_a: UBERON:0005157 ! epithelial fold
 is_a: UBERON:0005291 ! embryonic tissue
-is_a: UBERON:0010371 ! ecto-epithelium
 is_a: UBERON:0015212 ! lateral structure
 relationship: BFO:0000050 UBERON:0005061 ! neural groove
 
@@ -4415,6 +4396,7 @@ intersection_of: UBERON:0003104 ! mesenchyme
 intersection_of: BFO:0000050 UBERON:0000033 ! head
 relationship: BFO:0000050 UBERON:0000033 ! head
 relationship: BFO:0000050 UBERON:0009142 ! entire embryonic mesenchyme
+relationship: BFO:0000050 UBERON:8450003 ! embryonic craniocervical region
 
 [Term]
 id: UBERON:0005256
@@ -4440,7 +4422,6 @@ synonym: "ventricular system" EXACT []
 synonym: "ventricular system of neuraxis" EXACT []
 synonym: "ventriculi cerebri" RELATED []
 is_a: UBERON:0000467 ! anatomical system
-is_a: UBERON:0004121 ! ectoderm-derived structure
 relationship: BFO:0000050 UBERON:0001017 ! central nervous system
 
 [Term]
@@ -4448,7 +4429,6 @@ id: UBERON:0005282
 name: ventricular system of brain
 synonym: "brain ventricular system" EXACT []
 is_a: UBERON:0000467 ! anatomical system
-is_a: UBERON:0004121 ! ectoderm-derived structure
 relationship: BFO:0000050 UBERON:0000955 ! brain
 relationship: BFO:0000050 UBERON:0005281 ! ventricular system of central nervous system
 
@@ -4470,9 +4450,7 @@ synonym: "tela chorioidea telencephalic ventricle" EXACT []
 synonym: "tela choroidea (ventriculi lateralis)" EXACT []
 synonym: "tela choroidea of lateral ventricle" EXACT []
 synonym: "tela choroidea telencephalic ventricle" EXACT []
-is_a: UBERON:0004121 ! ectoderm-derived structure
 is_a: UBERON:0005283 ! tela choroidea
-is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
 intersection_of: UBERON:0005283 ! tela choroidea
 intersection_of: BFO:0000050 UBERON:0002285 ! telencephalic ventricle
 relationship: BFO:0000050 UBERON:0002285 ! telencephalic ventricle
@@ -4558,7 +4536,6 @@ synonym: "lens mass" RELATED []
 synonym: "presumptive lens" RELATED []
 synonym: "solid lens vesicle" NARROW []
 is_a: UBERON:0000479 ! tissue
-is_a: UBERON:0004121 ! ectoderm-derived structure
 relationship: RO:0002202 UBERON:0003073 ! lens placode
 
 [Term]
@@ -4615,7 +4592,7 @@ relationship: BFO:0000050 UBERON:0001766 ! anterior chamber of eyeball
 id: UBERON:0005656
 name: lens vesicle epithelium
 def: "An epithelium that is part of a lens vesicle." []
-is_a: UBERON:0010371 ! ecto-epithelium
+is_a: UBERON:0000483 ! epithelium
 intersection_of: UBERON:0000483 ! epithelium
 intersection_of: BFO:0000050 UBERON:0005426 ! lens vesicle
 relationship: BFO:0000050 UBERON:0005426 ! lens vesicle
@@ -4692,7 +4669,6 @@ relationship: RO:0002202 UBERON:0003089 ! sclerotome
 id: UBERON:0005983
 name: heart layer
 def: "The laminar structure of the heart." []
-is_a: UBERON:0004120 ! mesoderm-derived structure
 is_a: UBERON:0004923 ! organ component layer
 intersection_of: UBERON:0004923 ! organ component layer
 intersection_of: BFO:0000050 UBERON:0000948 ! heart
@@ -4703,7 +4679,6 @@ id: UBERON:0005985
 name: coronary vessel
 def: "Any of the arteries or veins that supply blood to the heart or return blood from the heart muscles to the circulation." []
 is_a: UBERON:0000055 ! vessel
-is_a: UBERON:0004120 ! mesoderm-derived structure
 intersection_of: UBERON:0000055 ! vessel
 intersection_of: BFO:0000050 UBERON:0000948 ! heart
 relationship: BFO:0000050 UBERON:0000948 ! heart
@@ -4789,7 +4764,6 @@ synonym: "chamber of eye" RELATED []
 synonym: "eye chamber" EXACT []
 synonym: "eyeball chamber" EXACT []
 is_a: UBERON:0000063 ! organ subunit
-is_a: UBERON:0004121 ! ectoderm-derived structure
 relationship: BFO:0000050 UBERON:0000019 ! camera-type eye
 
 [Term]
@@ -4946,7 +4920,6 @@ def: "Mesenchyme that is part of a mandibular prominence." []
 synonym: "mesenchyme of mandibular process" EXACT []
 synonym: "mesenchyme of mandibular prominence" EXACT []
 is_a: UBERON:0005253 ! head mesenchyme
-is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
 intersection_of: UBERON:0003104 ! mesenchyme
 intersection_of: BFO:0000050 UBERON:0005867 ! mandibular prominence
 relationship: BFO:0000050 UBERON:0005867 ! mandibular prominence
@@ -4967,7 +4940,6 @@ synonym: "cardiogenic mesoderm" RELATED []
 synonym: "cardiogenic region" RELATED []
 synonym: "cardiogenic splanchnopleure" EXACT []
 synonym: "heart primordia" RELATED []
-is_a: UBERON:0004120 ! mesoderm-derived structure
 is_a: UBERON:0005291 ! embryonic tissue
 relationship: BFO:0000050 UBERON:0004140 ! primary heart field
 relationship: BFO:0000050 UBERON:0009881 ! anterior lateral plate mesoderm
@@ -5030,7 +5002,6 @@ synonym: "head mesenchyme from cranial neural crest" EXACT []
 synonym: "head mesenchyme from neural crest" EXACT []
 synonym: "head neural crest derived mesenchyme" EXACT []
 is_a: UBERON:0005253 ! head mesenchyme
-is_a: UBERON:0014387 ! mesenchyme derived from neural crest
 intersection_of: UBERON:0003104 ! mesenchyme
 intersection_of: RO:0002202 UBERON:0003099 ! cranial neural crest
 relationship: RO:0002202 UBERON:0003099 ! cranial neural crest
@@ -5092,8 +5063,8 @@ synonym: "hypoderm" RELATED []
 synonym: "hypodermis" RELATED []
 synonym: "outer epidermal layer" EXACT []
 synonym: "outer epithelial layer" EXACT []
+is_a: UBERON:0000483 ! epithelium
 is_a: UBERON:0003102 ! surface structure
-is_a: UBERON:0010371 ! ecto-epithelium
 relationship: BFO:0000050 UBERON:0000468 ! multicellular organism
 relationship: RO:0002202 UBERON:0007383 ! enveloping layer of ectoderm
 
@@ -5105,7 +5076,6 @@ synonym: "enveloping layer" EXACT []
 synonym: "EVL" EXACT []
 is_a: UBERON:0000490 ! unilaminar epithelium
 is_a: UBERON:0005291 ! embryonic tissue
-is_a: UBERON:0010371 ! ecto-epithelium
 relationship: BFO:0000050 UBERON:0000922 ! embryo
 relationship: RO:0002202 UBERON:0000076 ! external ectoderm
 
@@ -5312,7 +5282,7 @@ synonym: "pharyngeal arch region" RELATED []
 synonym: "pharyngeal arches and clefts" RELATED []
 synonym: "pharyngeal complex" RELATED []
 synonym: "pharyngeal system" EXACT []
-is_a: UBERON:0000477 ! anatomical cluster
+is_a: UBERON:0034921 ! multi organ part structure
 relationship: BFO:0000050 UBERON:0000922 ! embryo
 relationship: BFO:0000050 UBERON:0009145 ! pharyngeal region of foregut
 
@@ -5324,6 +5294,7 @@ is_a: UBERON:0000033 ! head
 intersection_of: UBERON:0000033 ! head
 intersection_of: BFO:0000050 UBERON:0000922 ! embryo
 relationship: BFO:0000050 UBERON:0000922 ! embryo
+relationship: BFO:0000050 UBERON:8450003 ! embryonic craniocervical region
 
 [Term]
 id: UBERON:0008823
@@ -5405,9 +5376,8 @@ name: pharyngeal arch mesenchymal region
 def: "A portion of mesenchymal tissue associated with an individual pharyngeal arch." []
 synonym: "branchial arch mesenchyme" EXACT []
 synonym: "pharyngeal arch mesenchyme" EXACT []
-is_a: UBERON:0005253 ! head mesenchyme
+is_a: UBERON:0005291 ! embryonic tissue
 is_a: UBERON:0007524 ! dense mesenchyme tissue
-is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
 intersection_of: UBERON:0003104 ! mesenchyme
 intersection_of: BFO:0000050 UBERON:0002539 ! pharyngeal arch
 relationship: BFO:0000050 UBERON:0002539 ! pharyngeal arch
@@ -5480,7 +5450,6 @@ id: UBERON:0009663
 name: telencephalic nucleus
 def: "A nucleus of brain that is part of a telencephalon." []
 is_a: UBERON:0002308 ! nucleus of brain
-is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
 intersection_of: UBERON:0002308 ! nucleus of brain
 intersection_of: BFO:0000050 UBERON:0001893 ! telencephalon
 relationship: BFO:0000050 UBERON:0001893 ! telencephalon
@@ -5500,7 +5469,6 @@ name: cardiac mesenchyme
 def: "The embryonic connective tissue made up of loosely aggregated mesenchymal cells, supported by interlaminar jelly, that gives rise to the developing cardiac structures." []
 synonym: "heart mesenchyme" EXACT []
 is_a: UBERON:0003104 ! mesenchyme
-is_a: UBERON:0004120 ! mesoderm-derived structure
 intersection_of: UBERON:0003104 ! mesenchyme
 intersection_of: BFO:0000050 UBERON:0000948 ! heart
 relationship: BFO:0000050 UBERON:0000948 ! heart
@@ -5525,7 +5493,6 @@ id: UBERON:0009881
 name: anterior lateral plate mesoderm
 synonym: "ALPM" EXACT []
 is_a: UBERON:0000479 ! tissue
-is_a: UBERON:0004120 ! mesoderm-derived structure
 is_a: UBERON:0005291 ! embryonic tissue
 relationship: BFO:0000050 UBERON:0003081 ! lateral plate mesoderm
 
@@ -5543,7 +5510,7 @@ relationship: BFO:0000050 UBERON:0001456 ! face
 [Term]
 id: UBERON:0009920
 name: optic neural crest
-is_a: UBERON:0007213 ! mesenchyme derived from head neural crest
+is_a: UBERON:0005253 ! head mesenchyme
 is_a: UBERON:0007530 ! migrating mesenchyme population
 relationship: BFO:0000050 UBERON:0007213 ! mesenchyme derived from head neural crest
 
@@ -5573,14 +5540,7 @@ synonym: "entire branchial arch associated mesenchyme" EXACT []
 synonym: "pharyngeal arch associated mesenchyme" EXACT []
 is_a: UBERON:0005291 ! embryonic tissue
 is_a: UBERON:0007524 ! dense mesenchyme tissue
-is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
 relationship: BFO:0000050 UBERON:0008814 ! pharyngeal arch system
-
-[Term]
-id: UBERON:0010064
-name: open anatomical space
-def: "An anatomical space with at least one opening to another space or the exterior." []
-is_a: UBERON:0000464 ! anatomical space
 
 [Term]
 id: UBERON:0010077
@@ -5621,7 +5581,6 @@ synonym: "eye globe" EXACT []
 synonym: "eyeball" EXACT []
 synonym: "globe" RELATED []
 is_a: UBERON:0000020 ! sense organ
-is_a: UBERON:0004121 ! ectoderm-derived structure
 relationship: BFO:0000050 UBERON:0000019 ! camera-type eye
 
 [Term]
@@ -5643,6 +5602,7 @@ id: UBERON:0010258
 name: mesenchyme from rhombencephalic neural crest
 def: "Mesenchyme that develops_from a rhombencephalon neural crest." []
 is_a: UBERON:0007213 ! mesenchyme derived from head neural crest
+is_a: UBERON:0014387 ! mesenchyme derived from neural crest
 intersection_of: UBERON:0003104 ! mesenchyme
 intersection_of: RO:0002202 UBERON:0003852 ! rhombencephalon neural crest
 relationship: BFO:0000050 UBERON:0007213 ! mesenchyme derived from head neural crest
@@ -5781,7 +5741,6 @@ name: 1st arch mesenchyme from head mesenchyme
 def: "Mesenchyme that develops_from a head mesenchyme from mesoderm and is part of a 1st arch mesenchyme." []
 synonym: "mesenchyme derived from head mesoderm of mesenchyme of 1st arch" EXACT []
 is_a: UBERON:0003104 ! mesenchyme
-is_a: UBERON:0006904 ! head mesenchyme from mesoderm
 is_a: UBERON:0010042 ! 1st arch mesenchyme
 is_a: UBERON:0010360 ! pharyngeal arch mesenchyme from head mesenchyme
 intersection_of: UBERON:0003104 ! mesenchyme
@@ -5843,7 +5802,6 @@ synonym: "processus ciliares" EXACT []
 synonym: "processus ciliares" RELATED []
 synonym: "set of ciliary processes" EXACT []
 is_a: UBERON:0000481 ! multi-tissue structure
-is_a: UBERON:0004121 ! ectoderm-derived structure
 relationship: BFO:0000050 UBERON:0001775 ! ciliary body
 
 [Term]
@@ -5945,7 +5903,6 @@ name: axial skeletal system
 def: "Subdivision of the skeletal system which consists of the axial skeleton plus associated joints." []
 is_a: UBERON:0000075 ! subdivision of skeletal system
 relationship: BFO:0000051 UBERON:0000982 ! skeletal joint
-relationship: BFO:0000051 UBERON:0005944 ! axial skeleton plus cranial skeleton
 
 [Term]
 id: UBERON:0011138
@@ -5985,7 +5942,6 @@ name: central nervous system cell part cluster
 def: "A multi cell part structure that is part of a central nervous system." []
 synonym: "cell part cluster of neuraxis" EXACT []
 synonym: "neuraxis layer" EXACT []
-is_a: UBERON:0004121 ! ectoderm-derived structure
 is_a: UBERON:0005162 ! multi cell part structure
 intersection_of: UBERON:0005162 ! multi cell part structure
 intersection_of: BFO:0000050 UBERON:0001017 ! central nervous system
@@ -6004,7 +5960,6 @@ name: intra-ocular muscle
 synonym: "intrinsic muscle of eyeball" EXACT []
 synonym: "intrinsic ocular muscle" EXACT []
 is_a: UBERON:0001630 ! muscle organ
-is_a: UBERON:0004120 ! mesoderm-derived structure
 is_a: UBERON:0004277 ! eye muscle
 relationship: BFO:0000050 UBERON:0000019 ! camera-type eye
 relationship: BFO:0000050 UBERON:0003386 ! smooth muscle of eye
@@ -6023,7 +5978,6 @@ name: embryonic skin basal layer
 synonym: "basal cell layer of skin" RELATED []
 synonym: "outer epithelium of body" RELATED []
 is_a: UBERON:0000490 ! unilaminar epithelium
-is_a: UBERON:0010371 ! ecto-epithelium
 relationship: BFO:0000050 UBERON:0002199 ! integument
 relationship: RO:0002202 UBERON:0000076 ! external ectoderm
 
@@ -6032,7 +5986,6 @@ id: UBERON:0011300
 name: gray matter of telencephalon
 def: "A portion of gray matter that is part of a telencephalon." []
 synonym: "predominantly gray regional part of telencephalon" EXACT []
-is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
 is_a: UBERON:0019264 ! gray matter of forebrain
 intersection_of: UBERON:0002020 ! gray matter
 intersection_of: BFO:0000050 UBERON:0001893 ! telencephalon
@@ -6194,7 +6147,7 @@ synonym: "tunica vasculosa bulbosa" EXACT []
 synonym: "vasculosa oculi" RELATED []
 synonym: "ventral uveal tract" EXACT []
 is_a: UBERON:0000481 ! multi-tissue structure
-is_a: UBERON:0004121 ! ectoderm-derived structure
+is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
 relationship: BFO:0000050 UBERON:0001768 ! uvea
 relationship: BFO:0000050 UBERON:0001801 ! anterior segment of eyeball
 relationship: BFO:0000051 UBERON:0001769 ! iris
@@ -6243,6 +6196,7 @@ synonym: "primordium of face" RELATED []
 is_a: UBERON:0002050 ! embryonic structure
 relationship: BFO:0000050 UBERON:0000033 ! head
 relationship: BFO:0000050 UBERON:0000922 ! embryo
+relationship: BFO:0000050 UBERON:8450003 ! embryonic craniocervical region
 
 [Term]
 id: UBERON:0012360
@@ -6335,7 +6289,7 @@ synonym: "early brain vesicle" EXACT []
 synonym: "primary brain vesicle" NARROW []
 synonym: "primitive brain vesicle" EXACT []
 synonym: "secondary brain vesicle" NARROW []
-is_a: UBERON:0010064 ! open anatomical space
+is_a: UBERON:0010000 ! multicellular anatomical structure
 relationship: BFO:0000050 UBERON:0000922 ! embryo
 relationship: BFO:0000050 UBERON:0005281 ! ventricular system of central nervous system
 relationship: BFO:0000050 UBERON:0006238 ! future brain
@@ -6553,6 +6507,7 @@ id: UBERON:0015474
 name: axilla skin
 def: "A zone of skin that is part of a axilla." []
 synonym: "axillary skin" EXACT []
+synonym: "skin of armpit" EXACT []
 synonym: "skin of axilla" EXACT []
 is_a: UBERON:8480025 ! skin of clavicle region
 intersection_of: UBERON:0000014 ! zone of skin
@@ -6575,7 +6530,6 @@ id: UBERON:0015808
 name: eye epithelium
 def: "An epithelium that is part of a camera-type eye." []
 is_a: UBERON:0007625 ! pigment epithelium of eye
-is_a: UBERON:0010371 ! ecto-epithelium
 intersection_of: UBERON:0000483 ! epithelium
 intersection_of: BFO:0000050 UBERON:0000019 ! camera-type eye
 relationship: BFO:0000050 UBERON:0000019 ! camera-type eye
@@ -6654,7 +6608,7 @@ relationship: BFO:0000050 UBERON:0000990 ! reproductive system
 id: UBERON:0019204
 name: skin epithelium
 def: "Any region of epithelium that is part of a skin region." []
-is_a: UBERON:0010371 ! ecto-epithelium
+is_a: UBERON:0000483 ! epithelium
 intersection_of: UBERON:0000483 ! epithelium
 intersection_of: BFO:0000050 UBERON:0000014 ! zone of skin
 relationship: BFO:0000050 UBERON:0000014 ! zone of skin
@@ -6668,8 +6622,6 @@ synonym: "choroid and retina" EXACT []
 synonym: "retinachoroid" EXACT []
 synonym: "retinachoroidal region" EXACT []
 is_a: UBERON:0000481 ! multi-tissue structure
-is_a: UBERON:0004121 ! ectoderm-derived structure
-is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
 relationship: BFO:0000050 UBERON:0010230 ! eyeball of camera-type eye
 relationship: BFO:0000051 UBERON:0000966 ! retina
 relationship: BFO:0000051 UBERON:0001776 ! optic choroid
@@ -6740,6 +6692,7 @@ id: UBERON:0034929
 name: external soft tissue zone
 def: "A region or zone on the surface of an organism that encompasses skin and any adnexa, down through muscles and bounded by underlying skeletal support structures." []
 is_a: UBERON:0010000 ! multicellular anatomical structure
+is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
 relationship: BFO:0000050 UBERON:0000475 ! organism subdivision
 relationship: BFO:0000051 UBERON:0000014 ! zone of skin
 relationship: BFO:0000051 UBERON:0001015 ! musculature
@@ -6759,7 +6712,7 @@ is_a: UBERON:0000064 ! organ part
 id: UBERON:0034995
 name: jaw mesenchyme
 def: "Mesenchyme that is part of a developing jaw [Automatically generated definition]." []
-is_a: UBERON:0005253 ! head mesenchyme
+is_a: UBERON:0003104 ! mesenchyme
 intersection_of: UBERON:0003104 ! mesenchyme
 intersection_of: BFO:0000050 UBERON:0011595 ! jaw region
 relationship: BFO:0000050 UBERON:0011595 ! jaw region
@@ -6789,7 +6742,6 @@ name: wall of blood vessel
 synonym: "blood vessel wall" EXACT []
 synonym: "vascular wall" RELATED []
 is_a: UBERON:0000060 ! anatomical wall
-is_a: UBERON:0004120 ! mesoderm-derived structure
 intersection_of: UBERON:0000060 ! anatomical wall
 intersection_of: BFO:0000050 UBERON:0001981 ! blood vessel
 relationship: BFO:0000050 UBERON:0001981 ! blood vessel
@@ -6863,7 +6815,6 @@ relationship: BFO:0000050 UBERON:0001017 ! central nervous system
 id: UBERON:0036654
 name: wall of lateral ventricle
 is_a: UBERON:0005358 ! ventricle of nervous system
-is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
 is_a: UBERON:0036661 ! wall of ventricular system of brain
 intersection_of: UBERON:0000060 ! anatomical wall
 intersection_of: BFO:0000050 UBERON:0002285 ! telencephalic ventricle
@@ -6873,7 +6824,6 @@ relationship: BFO:0000050 UBERON:0002285 ! telencephalic ventricle
 id: UBERON:0036661
 name: wall of ventricular system of brain
 is_a: UBERON:0000060 ! anatomical wall
-is_a: UBERON:0004121 ! ectoderm-derived structure
 is_a: UBERON:0005358 ! ventricle of nervous system
 intersection_of: UBERON:0000060 ! anatomical wall
 intersection_of: BFO:0000050 UBERON:0005282 ! ventricular system of brain
@@ -6884,7 +6834,6 @@ id: UBERON:0036925
 name: wall of eyeball
 synonym: "eyeball wall" EXACT []
 is_a: UBERON:0000060 ! anatomical wall
-is_a: UBERON:0004121 ! ectoderm-derived structure
 intersection_of: UBERON:0000060 ! anatomical wall
 intersection_of: BFO:0000050 UBERON:0010230 ! eyeball of camera-type eye
 relationship: BFO:0000050 UBERON:0010230 ! eyeball of camera-type eye
@@ -6895,7 +6844,6 @@ name: wall of heart
 def: "Wall of organ which has as its parts the endocardium, myocardium , epicardium, and the cardiac septum, surrounded by the pericardial sac proper and is continuous with the walls of the systemic and pulmonary arterial and venous trees." []
 synonym: "cardiac wall" EXACT []
 is_a: UBERON:0000060 ! anatomical wall
-is_a: UBERON:0004120 ! mesoderm-derived structure
 intersection_of: UBERON:0000060 ! anatomical wall
 intersection_of: BFO:0000050 UBERON:0000948 ! heart
 relationship: BFO:0000050 UBERON:0000948 ! heart
@@ -6986,6 +6934,15 @@ def: "An anatomical system that eliminates waste products that arise as a result
 is_a: UBERON:0000467 ! anatomical system
 
 [Term]
+id: UBERON:8450003
+name: embryonic craniocervical region
+def: "A craniocervical region that is part of an embryo." []
+is_a: UBERON:0007811 ! craniocervical region
+intersection_of: UBERON:0007811 ! craniocervical region
+intersection_of: BFO:0000050 UBERON:0000922 ! embryo
+relationship: BFO:0000050 UBERON:0000922 ! embryo
+
+[Term]
 id: UBERON:8480025
 name: skin of clavicle region
 def: "A zone of skin that is above the clavicle zone in the pectoral girdle region." []
@@ -6993,6 +6950,16 @@ is_a: UBERON:0000014 ! zone of skin
 intersection_of: UBERON:0000014 ! zone of skin
 intersection_of: BFO:0000050 UBERON:0001421 ! pectoral girdle region
 relationship: BFO:0000050 UBERON:0001421 ! pectoral girdle region
+
+[Term]
+id: UBERON:8480074
+name: skin of gonad
+def: "A zone of skin part of some gonad." []
+is_a: UBERON:0000014 ! zone of skin
+is_a: UBERON:0005156 ! reproductive structure
+intersection_of: UBERON:0000014 ! zone of skin
+intersection_of: BFO:0000050 UBERON:0000991 ! gonad
+relationship: BFO:0000050 UBERON:0000991 ! gonad
 
 [Typedef]
 id: BFO:0000050
