@@ -889,16 +889,6 @@ id: NCBITaxon:1
 name: root
 
 [Term]
-id: NCBITaxon:117570
-name: Teleostomi
-is_a: NCBITaxon:7776 ! Gnathostomata <vertebrates>
-
-[Term]
-id: NCBITaxon:117571
-name: Euteleostomi
-is_a: NCBITaxon:117570 ! Teleostomi
-
-[Term]
 id: NCBITaxon:1206794
 name: Ecdysozoa
 is_a: NCBITaxon:33317 ! Protostomia
@@ -907,16 +897,6 @@ is_a: NCBITaxon:33317 ! Protostomia
 id: NCBITaxon:131567
 name: cellular organisms
 is_a: NCBITaxon:1 ! root
-
-[Term]
-id: NCBITaxon:1329799
-name: Archelosauria
-is_a: NCBITaxon:32561 ! Sauria
-
-[Term]
-id: NCBITaxon:1338369
-name: Dipnotetrapodomorpha
-is_a: NCBITaxon:8287 ! Sarcopterygii
 
 [Term]
 id: NCBITaxon:197562
@@ -932,26 +912,6 @@ is_a: NCBITaxon:6656 ! Arthropoda
 id: NCBITaxon:2759
 name: Eukaryota
 is_a: NCBITaxon:131567 ! cellular organisms
-
-[Term]
-id: NCBITaxon:32523
-name: Tetrapoda
-is_a: NCBITaxon:1338369 ! Dipnotetrapodomorpha
-
-[Term]
-id: NCBITaxon:32524
-name: Amniota
-is_a: NCBITaxon:32523 ! Tetrapoda
-
-[Term]
-id: NCBITaxon:32561
-name: Sauria
-is_a: NCBITaxon:8457 ! Sauropsida
-
-[Term]
-id: NCBITaxon:33090
-name: Viridiplantae
-is_a: NCBITaxon:2759 ! Eukaryota
 
 [Term]
 id: NCBITaxon:33154
@@ -977,31 +937,6 @@ is_a: NCBITaxon:33213 ! Bilateria
 id: NCBITaxon:33511
 name: Deuterostomia
 is_a: NCBITaxon:33213 ! Bilateria
-
-[Term]
-id: NCBITaxon:436486
-name: Dinosauria
-is_a: NCBITaxon:8492 ! Archosauria
-
-[Term]
-id: NCBITaxon:436489
-name: Saurischia
-is_a: NCBITaxon:436486 ! Dinosauria
-
-[Term]
-id: NCBITaxon:436491
-name: Theropoda
-is_a: NCBITaxon:436489 ! Saurischia
-
-[Term]
-id: NCBITaxon:436492
-name: Coelurosauria
-is_a: NCBITaxon:436491 ! Theropoda
-
-[Term]
-id: NCBITaxon:4751
-name: Fungi
-is_a: NCBITaxon:33154 ! Opisthokonta
 
 [Term]
 id: NCBITaxon:50557
@@ -1032,31 +967,6 @@ is_a: NCBITaxon:33511 ! Deuterostomia
 id: NCBITaxon:7742
 name: Vertebrata <vertebrates>
 is_a: NCBITaxon:89593 ! Craniata <chordates>
-
-[Term]
-id: NCBITaxon:7776
-name: Gnathostomata <vertebrates>
-is_a: NCBITaxon:7742 ! Vertebrata <vertebrates>
-
-[Term]
-id: NCBITaxon:8287
-name: Sarcopterygii
-is_a: NCBITaxon:117571 ! Euteleostomi
-
-[Term]
-id: NCBITaxon:8457
-name: Sauropsida
-is_a: NCBITaxon:32524 ! Amniota
-
-[Term]
-id: NCBITaxon:8492
-name: Archosauria
-is_a: NCBITaxon:1329799 ! Archelosauria
-
-[Term]
-id: NCBITaxon:8782
-name: Aves
-is_a: NCBITaxon:436492 ! Coelurosauria
 
 [Term]
 id: NCBITaxon:88770
@@ -2738,12 +2648,6 @@ def: "A quality inhering in a plant by virtue of the bearer's disposition to bei
 is_a: PATO:0001729 ! shedability
 
 [Term]
-id: PATO:0001739
-name: radiation quality
-def: "A quality of radiation that reflects the fluence spectrum of charged and neutral particles within the material or medium where dose is being deposited." []
-is_a: PATO:0001018 ! physical quality
-
-[Term]
 id: PATO:0001740
 name: activity (of a radionuclide)
 def: "A radiation quality inhering in a radioactive substance by virtue of its transformation (disintegration) rate." []
@@ -3913,7 +3817,7 @@ synonym: "region of skin" EXACT []
 synonym: "skin" EXACT []
 synonym: "skin region" EXACT []
 synonym: "skin zone" EXACT []
-is_a: UBERON:0004121 ! ectoderm-derived structure
+is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
 is_a: UBERON:0034944 ! zone of organ
 
 [Term]
@@ -4120,13 +4024,6 @@ synonym: "ostium" RELATED []
 is_a: UBERON:0010000 ! multicellular anatomical structure
 
 [Term]
-id: UBERON:0004121
-name: ectoderm-derived structure
-def: "An anatomical structure that develops (entirely or partially) from the ectoderm." []
-synonym: "ectodermal deriviative" EXACT []
-is_a: UBERON:0000061 ! anatomical structure
-
-[Term]
 id: UBERON:0004765
 name: skeletal element
 def: "Organ consisting of skeletal tissue. Encompasses whole bones, fused bones, cartilaginious elements, teeth, dermal denticles." []
@@ -4179,6 +4076,12 @@ id: UBERON:0010000
 name: multicellular anatomical structure
 def: "An anatomical structure that has more than one cell as a part." []
 synonym: "multicellular structure" EXACT []
+is_a: UBERON:0000061 ! anatomical structure
+
+[Term]
+id: UBERON:0010314
+name: structure with developmental contribution from neural crest
+def: "An anatomical structure that has some part that develops from the neural crest." []
 is_a: UBERON:0000061 ! anatomical structure
 
 [Term]

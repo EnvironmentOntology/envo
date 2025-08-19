@@ -9,6 +9,11 @@ is_a: GO:0032501 ! multicellular organismal process
 [Term]
 id: GO:0006091
 name: generation of precursor metabolites and energy
+is_a: GO:0044237 ! cellular metabolic process
+
+[Term]
+id: GO:0006807
+name: nitrogen compound metabolic process
 is_a: GO:0008152 ! metabolic process
 
 [Term]
@@ -33,7 +38,7 @@ name: biological_process
 [Term]
 id: GO:0008152
 name: metabolic process
-is_a: GO:0009987 ! cellular process
+is_a: GO:0008150 ! biological_process
 
 [Term]
 id: GO:0009058
@@ -58,7 +63,7 @@ is_a: GO:0008150 ! biological_process
 [Term]
 id: GO:0015947
 name: methane metabolic process
-is_a: GO:0043446 ! alkane metabolic process
+is_a: GO:0043446 ! cellular alkane metabolic process
 
 [Term]
 id: GO:0015948
@@ -76,7 +81,7 @@ is_a: GO:0006091 ! generation of precursor metabolites and energy
 [Term]
 id: GO:0015979
 name: photosynthesis
-is_a: GO:0008152 ! metabolic process
+is_a: GO:0044237 ! cellular metabolic process
 
 [Term]
 id: GO:0015980
@@ -86,6 +91,7 @@ is_a: GO:0006091 ! generation of precursor metabolites and energy
 [Term]
 id: GO:0019329
 name: ammonia oxidation
+is_a: GO:0006807 ! nitrogen compound metabolic process
 is_a: GO:0044281 ! small molecule metabolic process
 
 [Term]
@@ -94,12 +100,14 @@ name: anaerobic respiration, using ammonium as electron donor
 is_a: GO:0009061 ! anaerobic respiration
 is_a: GO:0015975 ! energy derivation by oxidation of reduced inorganic compounds
 is_a: GO:0019329 ! ammonia oxidation
+is_a: GO:0034641 ! cellular nitrogen compound metabolic process
 
 [Term]
 id: GO:0019332
 name: aerobic respiration, using nitrite as electron donor
 is_a: GO:0009060 ! aerobic respiration
 is_a: GO:0015975 ! energy derivation by oxidation of reduced inorganic compounds
+is_a: GO:0034641 ! cellular nitrogen compound metabolic process
 
 [Term]
 id: GO:0019409
@@ -107,6 +115,7 @@ name: aerobic respiration, using ammonia as electron donor
 is_a: GO:0009060 ! aerobic respiration
 is_a: GO:0015975 ! energy derivation by oxidation of reduced inorganic compounds
 is_a: GO:0019329 ! ammonia oxidation
+is_a: GO:0034641 ! cellular nitrogen compound metabolic process
 
 [Term]
 id: GO:0019410
@@ -154,19 +163,27 @@ name: multicellular organismal process
 is_a: GO:0008150 ! biological_process
 
 [Term]
+id: GO:0034641
+name: cellular nitrogen compound metabolic process
+is_a: GO:0006807 ! nitrogen compound metabolic process
+is_a: GO:0044237 ! cellular metabolic process
+
+[Term]
 id: GO:0042755
 name: eating behavior
 is_a: GO:0007631 ! feeding behavior
 
 [Term]
 id: GO:0043446
-name: alkane metabolic process
+name: cellular alkane metabolic process
+is_a: GO:0044237 ! cellular metabolic process
 is_a: GO:0120252 ! hydrocarbon metabolic process
 
 [Term]
 id: GO:0043447
 name: alkane biosynthetic process
-is_a: GO:0043446 ! alkane metabolic process
+is_a: GO:0043446 ! cellular alkane metabolic process
+is_a: GO:0044249 ! cellular biosynthetic process
 is_a: GO:0120251 ! hydrocarbon biosynthetic process
 
 [Term]
@@ -174,6 +191,18 @@ id: GO:0043554
 name: aerobic respiration, using arsenite as electron donor
 is_a: GO:0009060 ! aerobic respiration
 is_a: GO:0015975 ! energy derivation by oxidation of reduced inorganic compounds
+
+[Term]
+id: GO:0044237
+name: cellular metabolic process
+is_a: GO:0008152 ! metabolic process
+is_a: GO:0009987 ! cellular process
+
+[Term]
+id: GO:0044249
+name: cellular biosynthetic process
+is_a: GO:0009058 ! biosynthetic process
+is_a: GO:0044237 ! cellular metabolic process
 
 [Term]
 id: GO:0044281
@@ -186,13 +215,24 @@ name: cellular respiration
 is_a: GO:0015980 ! energy derivation by oxidation of organic compounds
 
 [Term]
+id: GO:0071704
+name: organic substance metabolic process
+is_a: GO:0008152 ! metabolic process
+
+[Term]
 id: GO:0120251
 name: hydrocarbon biosynthetic process
-is_a: GO:0009058 ! biosynthetic process
 is_a: GO:0120252 ! hydrocarbon metabolic process
+is_a: GO:1901576 ! organic substance biosynthetic process
 
 [Term]
 id: GO:0120252
 name: hydrocarbon metabolic process
-is_a: GO:0008152 ! metabolic process
+is_a: GO:0071704 ! organic substance metabolic process
+
+[Term]
+id: GO:1901576
+name: organic substance biosynthetic process
+is_a: GO:0009058 ! biosynthetic process
+is_a: GO:0071704 ! organic substance metabolic process
 
