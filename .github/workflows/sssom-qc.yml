@@ -17,12 +17,12 @@ on:
 jobs:
   sssom_validation:
     runs-on: ubuntu-latest
-    container: obolibrary/odkfull:v1.4
+    container: obolibrary/odkfull:v1.6
     steps:
-      - name: Install latest SSSOM
-        env:
-          DEFAULT_BRANCH: master
-        run: pip install --upgrade pip && pip install -U sssom 
+      #- name: Install latest SSSOM
+      #  env:
+      #    DEFAULT_BRANCH: master
+      #  run: pip install --upgrade pip && pip install -U sssom 
       - uses: actions/checkout@v2
       - name: Run Mapping QC checks
         env:
