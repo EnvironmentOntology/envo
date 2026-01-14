@@ -369,7 +369,7 @@ mirror/obi.owl: envo-edit.owl
 	$(OWLTOOLS) $(OBO)/obi.owl --remove-classes-in-idspace GO --remove-classes-in-idspace ENVO --remove-classes-in-idspace CHEBI --remove-classes-in-idspace UBERON --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/obi.owl -o $@
 .PRECIOUS: mirror/%.owl
 
-CHEBI_MIRROR=https://raw.githubusercontent.com/obophenotype/chebi_obo_slim/main/chebi_slim.owl
+CHEBI_MIRROR=http://purl.obolibrary.org/obo/upheno/chebi_slim.owl
 # chebi.owl is large. Using OBO Chebi Slim instead (https://github.com/obophenotype/chebi_obo_slim)
 mirror/chebi-local.owl: 
 	wget --no-check-certificate $(CHEBI_MIRROR) -O $@ && touch $@
