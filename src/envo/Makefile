@@ -457,11 +457,18 @@ ASSETS = \
   $(REPORT_FILES) \
   $(SUBSET_FILES)
 
-all_assets: $(ASSETS)
+.PHONY: all_assets
+all_assets: $(ASSETS) check_rdfxml_assets
 
 show_assets:
 	echo $(ASSETS)
 	du -sh $(ASSETS)
+
+check_rdfxml_%: %
+	@check-rdfxml  $<
+
+.PHONY: check_rdfxml_assets
+check_rdfxml_assets: $(foreach product,$(MAIN_PRODUCTS),check_rdfxml_$(product).owl)
 
 # ----------------------------------------
 # STYLE CHECKS
