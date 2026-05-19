@@ -34,7 +34,7 @@ SPARQLDIR =                 sparql
 REPORT_FAIL_ON =            NONE
 OBO_FORMAT_OPTIONS =        
 ###SPARQL_VALIDATION_CHECKS =  equivalent-classes trailing-whitespace owldef-self-reference xref-syntax nolabels
-SPARQL_VALIDATION_CHECKS =  equivalent-classes trailing-whitespace owldef-self-reference nolabels
+SPARQL_VALIDATION_CHECKS =  equivalent-classes trailing-whitespace owldef-self-reference nolabels boolean-property-value
 SPARQL_EXPORTS =            basic-report class-count-by-prefix edges xrefs obsoletes synonyms
 ODK_VERSION =               "Unknown"
 
