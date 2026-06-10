@@ -34,7 +34,7 @@ SPARQLDIR =                 sparql
 REPORT_FAIL_ON =            NONE
 OBO_FORMAT_OPTIONS =        
 ###SPARQL_VALIDATION_CHECKS =  equivalent-classes trailing-whitespace owldef-self-reference xref-syntax nolabels
-SPARQL_VALIDATION_CHECKS =  equivalent-classes trailing-whitespace owldef-self-reference nolabels
+SPARQL_VALIDATION_CHECKS =  equivalent-classes trailing-whitespace owldef-self-reference nolabels boolean-property-value
 SPARQL_EXPORTS =            basic-report class-count-by-prefix edges xrefs obsoletes synonyms
 ODK_VERSION =               "Unknown"
 
@@ -457,11 +457,18 @@ ASSETS = \
   $(REPORT_FILES) \
   $(SUBSET_FILES)
 
-all_assets: $(ASSETS)
+.PHONY: all_assets
+all_assets: $(ASSETS) check_rdfxml_assets
 
 show_assets:
 	echo $(ASSETS)
 	du -sh $(ASSETS)
+
+check_rdfxml_%: %
+	@check-rdfxml  $<
+
+.PHONY: check_rdfxml_assets
+check_rdfxml_assets: $(foreach product,$(MAIN_PRODUCTS),check_rdfxml_$(product).owl)
 
 # ----------------------------------------
 # STYLE CHECKS
