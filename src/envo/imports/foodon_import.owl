@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="http://purl.obolibrary.org/obo/envo/imports/foodon_import.owl#"
      xml:base="http://purl.obolibrary.org/obo/envo/imports/foodon_import.owl"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
      xmlns:obo="http://purl.obolibrary.org/obo/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -22,6 +23,12 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000111 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000111"/>
     
 
 
@@ -94,6 +101,12 @@
     <!-- http://purl.obolibrary.org/obo/RO_0001900 -->
 
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/RO_0001900"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/contributor -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/contributor"/>
     
 
 
@@ -241,7 +254,7 @@
         <obo:IAO_0000117 xml:lang="en">Damion Dooley</obo:IAO_0000117>
         <obo:IAO_0000118 xml:lang="en">Foodon product type</obo:IAO_0000118>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://en.wikipedia.org/wiki/Food</obo:IAO_0000119>
-        <rdfs:comment xml:lang="en">The FoodOn &quot;food product&quot; class is provided as a branch under which new food product categories and food products themselves can be placed. Here classes are provided to differentiate a food product by its food composition, processing and/or consumption characteristics. This avoids brand name products but it may include generic food dish categories. It has a much greater depth and polyhierarchy than other agency product type schemes have in an effort to group related products together.  The upper level basis of this tree originated in the environment ontology (ENVO) and from the US Code of Federal Regulations.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The FoodOn &quot;food product&quot;class is provided as a branch under which new food product categories and food products themselves can be placed. Here classes are provided to differentiate a food product by its food composition, processing and/or consumption characteristics. This avoids brand name products but it may include generic food dish categories. It has a much greater depth and polyhierarchy than other agency product type schemes have in an effort to group related products together.  The upper level basis of this tree originated in the environment ontology (ENVO) and from the US Code of Federal Regulations.</rdfs:comment>
         <rdfs:label xml:lang="en">food product</rdfs:label>
     </owl:Class>
     
@@ -282,6 +295,7 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00001006">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001092"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00005501"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
         <obo:IAO_0000115>A food product made of meat, the skeletal muscle and associated fat, and other edible tissues such as organs, livers, skin, brains, bone marrow, kidneys, or lungs, of mammals.</obo:IAO_0000115>
         <obo:IAO_0000119 rdf:resource="https://en.wikipedia.org/wiki/Meat"/>
@@ -395,9 +409,11 @@
     <!-- http://purl.obolibrary.org/obo/FOODON_00001015 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00001015">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001002"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00004331"/>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
-        <obo:IAO_0000115 xml:lang="en">This class includes food products which are derived from or produced by a plant.</obo:IAO_0000115>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
+        <obo:IAO_0000115 xml:lang="en">A food product which has as a defining ingredient some plant material.</obo:IAO_0000115>
+        <dc:contributor rdf:resource="https://orcid.org/0000-0002-8844-9165"/>
         <rdfs:label xml:lang="en">plant food product</rdfs:label>
     </owl:Class>
     
@@ -684,6 +700,7 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00001041">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001134"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_02020889"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
         <obo:IAO_0000115 xml:lang="en">A food product that is derived from some cow.</obo:IAO_0000115>
         <terms:contributor>https://orcid.org/0000-0001-5275-8866</terms:contributor>
@@ -1255,10 +1272,11 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00001092">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00004242"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00005502"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
         <obo:IAO_0000115 xml:lang="en">A food product which is derived from or produced by an animal that has a vertibrae.</obo:IAO_0000115>
         <terms:contributor>Damion Dooley</terms:contributor>
-        <rdfs:label xml:lang="en">vertebrate animal food product</rdfs:label>
+        <rdfs:label xml:lang="en">vertebrate food product</rdfs:label>
     </owl:Class>
     
 
@@ -1568,6 +1586,7 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00001132">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001006"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00005689"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
         <obo:IAO_0000115 xml:lang="en">Suidae is a family of artiodactyl mammals which are commonly called pigs, hogs or boars. In addition to numerous fossil species, 17 extant species are currently recognized (or 18 counting domestic pigs and wild boars separately), classified into between four and eight genera. The family includes the domestic pig, Sus scrofa domesticus or Sus domesticus, in addition to numerous species of wild pig, such as babirusas and warthogs. All suids, or swine, are native to the Old World, ranging from Asia to Europe and Africa.</obo:IAO_0000115>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://en.wikipedia.org/wiki/Suidae</obo:IAO_0000119>
@@ -1634,7 +1653,7 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00001138">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001255"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03316079"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00002275"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
         <obo:IAO_0000115 xml:lang="en">A beverage product derived from leaves of the tea plant (Camellia sinensis).</obo:IAO_0000115>
         <obo:IAO_0000119 rdf:resource="https://en.wikipedia.org/wiki/Tea"/>
@@ -1797,9 +1816,25 @@
     <!-- http://purl.obolibrary.org/obo/FOODON_00001155 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00001155">
-        <obo:IAO_0100001 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_3654"/>
-        <rdfs:label xml:lang="en">obsolete: watermelon plant</rdfs:label>
-        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411283"/>
+        <oboInOwl:hasDbXref rdf:resource="http://eol.org/pages/584423"/>
+        <oboInOwl:hasDbXref rdf:resource="http://www.ars-grin.gov/cgi-bin/npgs/html/taxon.pl?10675"/>
+        <oboInOwl:hasDbXref rdf:resource="http://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&amp;search_value=22356"/>
+        <oboInOwl:hasDbXref rdf:resource="http://www.langual.org/langual_thesaurus.asp?termid=B1391"/>
+        <oboInOwl:hasDbXref>MANSFELD:3905</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PLANTS:CILA3</oboInOwl:hasDbXref>
+        <oboInOwl:hasExactSynonym>watermelon</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>wild melon</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasSynonym xml:lang="en">citrullus lanatus</oboInOwl:hasSynonym>
+        <oboInOwl:hasSynonym xml:lang="en">citrullus vulgaris</oboInOwl:hasSynonym>
+        <oboInOwl:hasSynonym xml:lang="en">colocynthis citrullus</oboInOwl:hasSynonym>
+        <oboInOwl:hasSynonym xml:lang="en">cucurbita citrullus</oboInOwl:hasSynonym>
+        <oboInOwl:hasSynonym xml:lang="en">datiro</oboInOwl:hasSynonym>
+        <oboInOwl:hasSynonym xml:lang="en">edible seed melon</oboInOwl:hasSynonym>
+        <oboInOwl:hasSynonym xml:lang="en">equisi</oboInOwl:hasSynonym>
+        <oboInOwl:hasSynonym xml:lang="en">kaffir melon</oboInOwl:hasSynonym>
+        <oboInOwl:hasSynonym xml:lang="en">momordica lanata</oboInOwl:hasSynonym>
+        <rdfs:label xml:lang="en">watermelon plant</rdfs:label>
     </owl:Class>
     
 
@@ -2016,7 +2051,8 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00001176">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00004242"/>
-        <rdfs:label xml:lang="en">invertebrate animal food product</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00005522"/>
+        <rdfs:label xml:lang="en">invertebrate food product</rdfs:label>
     </owl:Class>
     
 
@@ -2102,9 +2138,9 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00001184">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03420116"/>
-        <obo:IAO_0000115 xml:lang="en">This food product type includes food products which are derived from a large, diverse group of photosynthetic organisms.</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="en">Material which derives from algae (including single-celled microalgae and  multicellular macroalgae).</obo:IAO_0000115>
         <oboInOwl:hasDbXref rdf:resource="https://bioregistry.io/reference/siren:F10419"/>
-        <rdfs:label xml:lang="en">algal food material</rdfs:label>
+        <rdfs:label xml:lang="en">algae material</rdfs:label>
         <rdfs:seeAlso rdf:resource="https://ungc-communications-assets.s3.amazonaws.com/docs/publications/The-Seaweed-Manifesto.pdf"/>
     </owl:Class>
     
@@ -2781,15 +2817,11 @@ FAO: The yam bean is a legume but unlike its close relatives the soybean and oth
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00001234">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001231"/>
-        <obo:IAO_0000115>A stable emulsion of oil, and vinegar or lemon juice, with many options for embellishment with other herbs and spices. Egg yolk is the traditional emulsifier.</obo:IAO_0000115>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
+        <obo:IAO_0000115 xml:lang="en">A food product made with mayonnaise as a defining ingredient.</obo:IAO_0000115>
+        <obo:IAO_0000119 rdf:resource="http://en.wikipedia.org/wiki/Mayonnaise"/>
         <rdfs:label xml:lang="en">mayonnaise food product</rdfs:label>
     </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001234"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>A stable emulsion of oil, and vinegar or lemon juice, with many options for embellishment with other herbs and spices. Egg yolk is the traditional emulsifier.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>http://en.wikipedia.org/wiki/Mayonnaise</oboInOwl:hasDbXref>
-    </owl:Axiom>
     
 
 
@@ -2798,15 +2830,11 @@ FAO: The yam bean is a legume but unlike its close relatives the soybean and oth
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00001235">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001078"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00002262"/>
-        <obo:IAO_0000115>A condiment produced by fermenting soybeans with Aspergillus oryzae and Aspergillus soyae molds  along with roasted grain, water, and salt.</obo:IAO_0000115>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
+        <obo:IAO_0000115 xml:lang="en">A condiment with soy sauce as a defining ingredient.</obo:IAO_0000115>
+        <obo:IAO_0000119 rdf:resource="http://en.wikipedia.org/wiki/Soy_sauce"/>
         <rdfs:label xml:lang="en">soy sauce food product</rdfs:label>
     </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001235"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>A condiment produced by fermenting soybeans with Aspergillus oryzae and Aspergillus soyae molds  along with roasted grain, water, and salt.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>http://en.wikipedia.org/wiki/Soy_sauce</oboInOwl:hasDbXref>
-    </owl:Axiom>
     
 
 
@@ -2948,11 +2976,12 @@ FAO: The yam bean is a legume but unlike its close relatives the soybean and oth
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00001251">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001092"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_02020050"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
         <obo:IAO_0000115 xml:lang="en">A food product that is derived from some avian animal.</obo:IAO_0000115>
         <terms:contributor>https://orcid.org/0000-0001-5275-8866</terms:contributor>
         <terms:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-02-01T09:59:11Z</terms:date>
-        <rdfs:label xml:lang="en">avian animal food product</rdfs:label>
+        <rdfs:label xml:lang="en">avian food product</rdfs:label>
     </owl:Class>
     
 
@@ -3009,6 +3038,7 @@ FAO: The yam bean is a legume but unlike its close relatives the soybean and oth
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00001256">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001092"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00005501"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
         <obo:IAO_0000115 xml:lang="en">A dairy food product has mammilian milk or a milk component as an ingredient.</obo:IAO_0000115>
         <terms:contributor xml:lang="en">Damion Dooley</terms:contributor>
@@ -3037,7 +3067,6 @@ FAO: The yam bean is a legume but unlike its close relatives the soybean and oth
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00002645"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
         <obo:IAO_0000115 xml:lang="en">Food material which has been fermented.</obo:IAO_0000115>
-        <obo:IAO_0000116 xml:lang="en">Are all fermented foods considered preserved to some extent?</obo:IAO_0000116>
         <obo:IAO_0000117 xml:lang="en">Damion Dooley</obo:IAO_0000117>
         <rdfs:label xml:lang="en">food (fermented)</rdfs:label>
     </owl:Class>
@@ -3149,6 +3178,7 @@ https://www.politico.com/agenda/story/2016/03/crazy-us-chicken-egg-regulation-gr
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00001275">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001105"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03315102"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
         <obo:IAO_0000115 xml:lang="en">An avian egg food product having chicken eggs or derivatives as a defining ingredient.</obo:IAO_0000115>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://en.wikipedia.org/wiki/Egg_as_food</obo:IAO_0000119>
@@ -3256,6 +3286,7 @@ https://www.politico.com/agenda/story/2016/03/crazy-us-chicken-egg-regulation-gr
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00001283">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001251"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_02020686"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
         <obo:IAO_0000115 xml:lang="en">A food product that is derived from some poultry.</obo:IAO_0000115>
         <obo:IAO_0000119 rdf:resource="https://en.wikipedia.org/wiki/Poultry"/>
@@ -3346,6 +3377,7 @@ https://www.politico.com/agenda/story/2016/03/crazy-us-chicken-egg-regulation-gr
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00001292">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00002044"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00005711"/>
         <rdfs:label xml:lang="en">oyster food product</rdfs:label>
     </owl:Class>
     
@@ -3559,6 +3591,16 @@ https://www.politico.com/agenda/story/2016/03/crazy-us-chicken-egg-regulation-gr
     
 
 
+    <!-- http://purl.obolibrary.org/obo/FOODON_00001761 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00001761">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001133"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001931"/>
+        <rdfs:label xml:lang="en">condiment sauce</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/FOODON_00001771 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00001771">
@@ -3691,6 +3733,15 @@ https://www.politico.com/agenda/story/2016/03/crazy-us-chicken-egg-regulation-gr
     
 
 
+    <!-- http://purl.obolibrary.org/obo/FOODON_00001931 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00001931">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001714"/>
+        <rdfs:label xml:lang="en">gravy or sauce</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/FOODON_00002012 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00002012">
@@ -3806,7 +3857,9 @@ https://www.politico.com/agenda/story/2016/03/crazy-us-chicken-egg-regulation-gr
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00002132">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00002219"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03316579"/>
-        <obo:IAO_0000115 xml:lang="en">A salad food product with one or more plant-based ingredients.</obo:IAO_0000115>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
+        <obo:IAO_0000115 xml:lang="en">A salad food product with one or more plant-based defining ingredients.</obo:IAO_0000115>
+        <terms:contributor rdf:resource="https://orcid.org/0009-0003-2086-0905"/>
         <rdfs:label xml:lang="en">plant based salad food product</rdfs:label>
     </owl:Class>
     
@@ -3969,7 +4022,7 @@ https://www.politico.com/agenda/story/2016/03/crazy-us-chicken-egg-regulation-gr
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001180"/>
         <obo:IAO_0000115 xml:lang="en">A prepared food product consisting of either a salad or a salad ingredient mixture to which a salad dressing is added.</obo:IAO_0000115>
         <obo:IAO_0000119 rdf:resource="https://en.wikipedia.org/wiki/Salad"/>
-        <terms:contributor rdf:resource="https://orcid.org/0000-0003-3480-8238"/>
+        <terms:contributor rdf:resource="https://orcid.org/0009-0003-2086-0905"/>
         <terms:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-07-31</terms:date>
         <rdfs:label xml:lang="en">salad food product</rdfs:label>
         <rdfs:seeAlso rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001290"/>
@@ -3989,7 +4042,7 @@ https://www.politico.com/agenda/story/2016/03/crazy-us-chicken-egg-regulation-gr
     <!-- http://purl.obolibrary.org/obo/FOODON_00002262 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00002262">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001133"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001761"/>
         <rdfs:label xml:lang="en">soybean condiment</rdfs:label>
     </owl:Class>
     
@@ -3998,7 +4051,7 @@ https://www.politico.com/agenda/story/2016/03/crazy-us-chicken-egg-regulation-gr
     <!-- http://purl.obolibrary.org/obo/FOODON_00002265 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00002265">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03304497"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001173"/>
         <rdfs:label xml:lang="en">soybean seed (field) food product</rdfs:label>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://purl.obolibrary.org/obo/FOODON_00002266</rdfs:seeAlso>
     </owl:Class>
@@ -4091,7 +4144,9 @@ https://www.politico.com/agenda/story/2016/03/crazy-us-chicken-egg-regulation-gr
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00002334">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00002132"/>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
         <obo:IAO_0000115 xml:lang="en">A salad food product which contains one or more vegetable ingredients.</obo:IAO_0000115>
+        <terms:contributor rdf:resource="https://orcid.org/0009-0003-2086-0905"/>
         <rdfs:label xml:lang="en">vegetable salad food product</rdfs:label>
     </owl:Class>
     
@@ -4125,8 +4180,8 @@ https://www.politico.com/agenda/story/2016/03/crazy-us-chicken-egg-regulation-gr
         <obo:IAO_0000119 rdf:resource="https://en.wikipedia.org/wiki/Food"/>
         <oboInOwl:hasExactSynonym xml:lang="en">food</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym xml:lang="en">foodstuff</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym xml:lang="en">nourishment</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym xml:lang="en">sustenance</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasNarrowSynonym xml:lang="en">nourishment</oboInOwl:hasNarrowSynonym>
+        <oboInOwl:hasNarrowSynonym xml:lang="en">sustenance</oboInOwl:hasNarrowSynonym>
         <rdfs:comment xml:lang="en">This class is the top of FOODON&apos;s main food product hierarchy which is described in the https://www.foodon.org website, and can be searched in lookup services like https://www.ebi.ac.uk/ols/</rdfs:comment>
         <rdfs:label xml:lang="en">food material</rdfs:label>
     </owl:Class>
@@ -4167,7 +4222,7 @@ https://www.politico.com/agenda/story/2016/03/crazy-us-chicken-egg-regulation-gr
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
         <obo:IAO_0000115 xml:lang="en">Food material which has been categorized by a characteristic such as granularity or temperature.</obo:IAO_0000115>
         <obo:IAO_0000117 xml:lang="en">Damion Dooley</obo:IAO_0000117>
-        <rdfs:comment xml:lang="en">This term was renamed from &quot;food product by quality&quot; to align better with COB &quot;characteristic&quot; label, and as well to disambiguate from other use of &quot;quality&quot; as a food grading. This term is useful for tasks like food inspection where little prior knowledge of how the food came to be is available. Some terms like &quot;food (frozen)&quot; are both a quality descriptor and the output of a process.</rdfs:comment>
+        <rdfs:comment xml:lang="en">This term was renamed from &quot;food product by quality&quot; to align better with COB &quot;characteristic&quot; label, and as well to disambiguate from other use of &quot;quality&quot; as a food grading. This term is useful for tasks like food inspection where little prior knowledge of how the food came to be is available. Some terms like &quot;food (frozen)&quot;are both a quality descriptor and the output of a process.</rdfs:comment>
         <rdfs:label xml:lang="en">food material by characteristic</rdfs:label>
     </owl:Class>
     
@@ -4219,6 +4274,7 @@ Namely, how to characterize the threshold of ingredients that make for multi-com
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00002663">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001132"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_02021649"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
         <obo:IAO_0000115 xml:lang="en">A food product that is derived from some pig.</obo:IAO_0000115>
         <terms:contributor>https://orcid.org/0000-0002-8844-9165</terms:contributor>
@@ -4491,6 +4547,7 @@ Namely, how to characterize the threshold of ingredients that make for multi-com
     <!-- http://purl.obolibrary.org/obo/FOODON_00004242 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00004242">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001002"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03420164"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
         <obo:IAO_0000115 xml:lang="en">A food product that is derived from some animal.</obo:IAO_0000115>
@@ -4556,6 +4613,107 @@ Namely, how to characterize the threshold of ingredients that make for multi-com
     
 
 
+    <!-- http://purl.obolibrary.org/obo/FOODON_00005501 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00005501">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00005502"/>
+        <obo:IAO_0000115 xml:lang="en">Material which derives from one or more mammals.</obo:IAO_0000115>
+        <terms:contributor rdf:resource="https://orcid.org/0000-0002-8844-9165"/>
+        <terms:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-08-26T00:35:09Z</terms:date>
+        <rdfs:label xml:lang="en">mammal material</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FOODON_00005502 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00005502">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03420164"/>
+        <obo:IAO_0000115 xml:lang="en">Material which derives from one or more vertebrate animals.</obo:IAO_0000115>
+        <terms:contributor rdf:resource="https://orcid.org/0000-0002-8844-9165"/>
+        <terms:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-08-26T00:38:18Z</terms:date>
+        <rdfs:label xml:lang="en">vertebrate material</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FOODON_00005522 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00005522">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03420164"/>
+        <terms:contributor rdf:resource="https://orcid.org/0000-0002-8844-9165"/>
+        <terms:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-08-26T00:44:21Z</terms:date>
+        <rdfs:label xml:lang="en">invertebrate material</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FOODON_00005680 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00005680">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00005501"/>
+        <terms:contributor rdf:resource="https://orcid.org/0000-0002-8844-9165"/>
+        <terms:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-11-07T17:38:08Z</terms:date>
+        <rdfs:label xml:lang="en">bovid material</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FOODON_00005683 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00005683">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00005522"/>
+        <terms:contributor rdf:resource="https://orcid.org/0000-0002-8844-9165"/>
+        <terms:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-11-07T22:08:12Z</terms:date>
+        <rdfs:label xml:lang="en">aquatic invertebrate material</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FOODON_00005689 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00005689">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00005501"/>
+        <terms:contributor rdf:resource="https://orcid.org/0000-0002-8844-9165"/>
+        <terms:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-11-10T19:46:00Z</terms:date>
+        <rdfs:label xml:lang="en">swine material</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FOODON_00005702 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00005702">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00005683"/>
+        <terms:contributor rdf:resource="https://orcid.org/0000-0002-8844-9165"/>
+        <terms:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-11-10T19:56:28Z</terms:date>
+        <rdfs:label xml:lang="en">mollusk material</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FOODON_00005705 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00005705">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00005702"/>
+        <terms:contributor rdf:resource="https://orcid.org/0000-0002-8844-9165"/>
+        <terms:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-11-10T20:09:51Z</terms:date>
+        <rdfs:label xml:lang="en">bivalve material</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FOODON_00005711 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00005711">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00005705"/>
+        <terms:contributor rdf:resource="https://orcid.org/0000-0002-8844-9165"/>
+        <terms:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-11-10T20:36:21Z</terms:date>
+        <rdfs:label xml:lang="en">oyster material</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/FOODON_02000412 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_02000412">
@@ -4569,7 +4727,7 @@ Namely, how to characterize the threshold of ingredients that make for multi-com
     <!-- http://purl.obolibrary.org/obo/FOODON_02020050 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_02020050">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03420164"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00005502"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
         <obo:IAO_0000115 xml:lang="en">Material that derives from some avian animal.</obo:IAO_0000115>
         <terms:contributor>https://orcid.org/0000-0001-5275-8866</terms:contributor>
@@ -4577,7 +4735,7 @@ Namely, how to characterize the threshold of ingredients that make for multi-com
         <terms:contributor>https://orcid.org/0000-0002-8844-9165</terms:contributor>
         <terms:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-02-12T14:11:19Z</terms:date>
         <rdfs:comment xml:lang="en">This branch isn&apos;t necessarily food material</rdfs:comment>
-        <rdfs:label xml:lang="en">avian animal material</rdfs:label>
+        <rdfs:label xml:lang="en">avian material</rdfs:label>
     </owl:Class>
     
 
@@ -4586,6 +4744,7 @@ Namely, how to characterize the threshold of ingredients that make for multi-com
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_02020114">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00004242"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_02020115"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
         <obo:IAO_0000115 xml:lang="en">A food product that is derived from some duck.</obo:IAO_0000115>
         <terms:contributor>https://orcid.org/0000-0001-5275-8866</terms:contributor>
@@ -4593,6 +4752,22 @@ Namely, how to characterize the threshold of ingredients that make for multi-com
         <terms:contributor>https://orcid.org/0000-0002-8844-9165</terms:contributor>
         <terms:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-02-12T14:11:19Z</terms:date>
         <rdfs:label xml:lang="en">duck food product</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FOODON_02020115 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_02020115">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_02020050"/>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
+        <obo:IAO_0000115 xml:lang="en">Material that derives from some duck.</obo:IAO_0000115>
+        <terms:contributor>https://orcid.org/0000-0001-5275-8866</terms:contributor>
+        <terms:contributor>https://orcid.org/0000-0002-3410-4655</terms:contributor>
+        <terms:contributor>https://orcid.org/0000-0002-8844-9165</terms:contributor>
+        <terms:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-02-12T14:11:19Z</terms:date>
+        <rdfs:comment xml:lang="en">This branch isn&apos;t necessarily food material</rdfs:comment>
+        <rdfs:label xml:lang="en">duck material</rdfs:label>
     </owl:Class>
     
 
@@ -4616,7 +4791,7 @@ Namely, how to characterize the threshold of ingredients that make for multi-com
     <!-- http://purl.obolibrary.org/obo/FOODON_02020150 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_02020150">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_02020050"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_02020686"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
         <obo:IAO_0000115 xml:lang="en">Material that derives from some chicken.</obo:IAO_0000115>
         <terms:contributor>https://orcid.org/0000-0001-5275-8866</terms:contributor>
@@ -4629,10 +4804,26 @@ Namely, how to characterize the threshold of ingredients that make for multi-com
     
 
 
+    <!-- http://purl.obolibrary.org/obo/FOODON_02020686 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_02020686">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_02020050"/>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
+        <obo:IAO_0000115 xml:lang="en">Material that derives from some poultry.</obo:IAO_0000115>
+        <terms:contributor>https://orcid.org/0000-0001-5275-8866</terms:contributor>
+        <terms:contributor>https://orcid.org/0000-0002-3410-4655</terms:contributor>
+        <terms:contributor>https://orcid.org/0000-0002-8844-9165</terms:contributor>
+        <terms:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-02-12T14:11:19Z</terms:date>
+        <rdfs:comment xml:lang="en">This branch isn&apos;t necessarily food material</rdfs:comment>
+        <rdfs:label xml:lang="en">poultry material</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/FOODON_02020889 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_02020889">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03420164"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00005680"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
         <obo:IAO_0000115 xml:lang="en">Material that derives from some cow.</obo:IAO_0000115>
         <terms:contributor>https://orcid.org/0000-0001-5275-8866</terms:contributor>
@@ -4641,6 +4832,22 @@ Namely, how to characterize the threshold of ingredients that make for multi-com
         <terms:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-02-12T14:11:19Z</terms:date>
         <rdfs:comment xml:lang="en">This branch isn&apos;t necessarily food material</rdfs:comment>
         <rdfs:label xml:lang="en">cow material</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FOODON_02021649 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_02021649">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00005689"/>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
+        <obo:IAO_0000115 xml:lang="en">Material that derives from some pig.</obo:IAO_0000115>
+        <terms:contributor>https://orcid.org/0000-0001-5275-8866</terms:contributor>
+        <terms:contributor>https://orcid.org/0000-0002-3410-4655</terms:contributor>
+        <terms:contributor>https://orcid.org/0000-0002-8844-9165</terms:contributor>
+        <terms:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-02-12T14:11:19Z</terms:date>
+        <rdfs:comment xml:lang="en">This branch isn&apos;t necessarily food material</rdfs:comment>
+        <rdfs:label xml:lang="en">pig material</rdfs:label>
     </owl:Class>
     
 
@@ -4806,20 +5013,6 @@ Namely, how to characterize the threshold of ingredients that make for multi-com
     
 
 
-    <!-- http://purl.obolibrary.org/obo/FOODON_03304497 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03304497">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001173"/>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
-        <oboInOwl:hasDbXref rdf:resource="https://bioregistry.io/reference/siren:F4497"/>
-        <rdfs:comment xml:lang="en">SIREN DB annotation:
-* whole, natural shape FOODON:03430150
-* seed (anatomical part) FOODON:03420155</rdfs:comment>
-        <rdfs:label xml:lang="en">edible seed food product</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/FOODON_03305536 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03305536">
@@ -4935,6 +5128,19 @@ Namely, how to characterize the threshold of ingredients that make for multi-com
     
 
 
+    <!-- http://purl.obolibrary.org/obo/FOODON_03315102 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03315102">
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
+        <obo:IAO_0000115 xml:lang="en">Food material derived from a chicken egg.</obo:IAO_0000115>
+        <oboInOwl:hasDbXref rdf:resource="https://bioregistry.io/reference/siren:F15102"/>
+        <rdfs:comment xml:lang="en">SIREN DB annotation:
+* egg FOODON:03420194</rdfs:comment>
+        <rdfs:label xml:lang="en">chicken egg material</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/FOODON_03315150 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03315150">
@@ -5020,22 +5226,6 @@ Namely, how to characterize the threshold of ingredients that make for multi-com
 * solid FOODON:03430151
 * meat part of animal FOODON:03420103</rdfs:comment>
         <rdfs:label xml:lang="en">pate</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/FOODON_03316079 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03316079">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00002275"/>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
-        <oboInOwl:hasDbXref rdf:resource="https://bioregistry.io/reference/siren:F16079"/>
-        <rdfs:comment xml:lang="en">SIREN DB annotation:
-* liquid FOODON:03430130
-* heat-treated FOODON:03440022
-* part of plant FOODON:03420174
-* steeping FOODON:03450036</rdfs:comment>
-        <rdfs:label xml:lang="en">herbal infusion</rdfs:label>
     </owl:Class>
     
 
@@ -5620,6 +5810,32 @@ The GS1 GPC classification in facet A is currently updated based on June 2017 re
     
 
 
+    <!-- http://purl.obolibrary.org/obo/FOODON_03411140 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03411140">
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
+        <oboInOwl:hasDbXref rdf:resource="http://www.langual.org/langual_thesaurus.asp?termid=B1140"/>
+        <rdfs:label xml:lang="en">fruit-producing plant</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FOODON_03411283 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03411283">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411140"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03414459"/>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
+        <obo:IAO_0000115 xml:lang="en">Melon is a name given to various members of the plant family *Cucurbitaceae* with sweet flavored, fleshy fruit e.g. gourds or cucurbits. Melon can be referred as a plant or a fruit. Many different cultivars have been produced, particularly of muskmelons.</obo:IAO_0000115>
+        <obo:IAO_0000119>WIKIPEDIA:Melon</obo:IAO_0000119>
+        <oboInOwl:hasDbXref rdf:resource="http://eol.org/pages/38795"/>
+        <oboInOwl:hasDbXref rdf:resource="http://www.langual.org/langual_thesaurus.asp?termid=B1283"/>
+        <oboInOwl:hasSynonym xml:lang="en">cucumis spp.</oboInOwl:hasSynonym>
+        <rdfs:label xml:lang="en">melon plant</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/FOODON_03412344 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03412344">
@@ -5647,6 +5863,48 @@ The GS1 GPC classification in facet A is currently updated based on June 2017 re
     
 
 
+    <!-- http://purl.obolibrary.org/obo/FOODON_03413357 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03413357">
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
+        <oboInOwl:hasDbXref rdf:resource="http://www.langual.org/langual_thesaurus.asp?termid=B3357"/>
+        <rdfs:comment xml:lang="en">LanguaL curation note: This term is for CLASSIFICATION ONLY; DO NOT USE term in indexing. Use a more precise narrower term.</rdfs:comment>
+        <rdfs:label xml:lang="en">plant by taxonomy</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FOODON_03414459 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03414459">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03414460"/>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
+        <obo:IAO_0000115 xml:lang="en">Cucumis is a genus of twining, tendril-bearing plants in the *Cucurbitaceae* family which includes the cucumber (*Cucumis sativus*), muskmelons (*Cucumis melo*, including cantaloupe and honeydew), the horned melon (*Cucumis metuliferus*), and the West Indian gherkin (*Cucumis anguria*). [https://en.wikipedia.org/wiki/Cucumis]</obo:IAO_0000115>
+        <oboInOwl:hasDbXref rdf:resource="http://www.langual.org/langual_thesaurus.asp?termid=B4459"/>
+        <rdfs:label xml:lang="en">cucumis species</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FOODON_03414460 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03414460">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03413357"/>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
+        <obo:IAO_0000115 xml:lang="en">The *Cucurbitaceae*, also called cucurbits and the gourd family, are a plant family consisting of about 965 species in around 95 genera, the most important of which are: 
+  *Cucurbita* - squash, pumpkin, zucchini, some gourds; 
+  *Lagenaria* - calabash, and others that are inedible; 
+  *Citrullus* - watermelon (*C. lanatus, C. colocynthis*) and others; 
+  *Cucumis* - cucumber (*C. sativus*), various melons; 
+  *Luffa* - luffa, loofah</obo:IAO_0000115>
+        <obo:IAO_0000119 rdf:resource="https://en.wikipedia.org/wiki/Cucurbitaceae"/>
+        <oboInOwl:hasDbXref rdf:resource="http://www.langual.org/langual_thesaurus.asp?termid=B4460"/>
+        <oboInOwl:hasSynonym xml:lang="en">cucurbitaceae</oboInOwl:hasSynonym>
+        <rdfs:label xml:lang="en">gourd/squash family</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/FOODON_03420108 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03420108">
@@ -5662,14 +5920,15 @@ The GS1 GPC classification in facet A is currently updated based on June 2017 re
     <!-- http://purl.obolibrary.org/obo/FOODON_03420116 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03420116">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00002403"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
-        <obo:IAO_0000115 xml:lang="en">Food material which is distinguished primarily by the organism(s) it derives from.</obo:IAO_0000115>
-        <obo:IAO_0000116 xml:lang="en">This was renamed from &quot;part of organism&quot; (and from LanguaL&apos;s original &quot;part of plant or animal&quot;) to encompass organism material that is produced by an animal or plant rather than &quot;part of&quot; it, such as an egg, and might not be countable per se, such as milk. Additionally the existing definition&apos;s &quot;from which a food product or its major ingredient is derived.&quot; was removed as an unnecessary constraint. [2023/03/02]</obo:IAO_0000116>
+        <obo:IAO_0000115 xml:lang="en">Material which is distinguished primarily by the organism(s) it derives from.</obo:IAO_0000115>
+        <obo:IAO_0000116 xml:lang="en">This was renamed from &quot;part of organism&quot; (and from LanguaL&apos;s original &quot;part of plant or animal&quot;) to encompass organism material that is produced by an animal or plant rather than &quot;part of&quot; it, such as an egg, and might not be countable per se, such as milk. Additionally the existing definition&apos;s &quot;from which a food product or its major ingredient is derived.&quot;was removed as an unnecessary constraint. [2023/03/02]</obo:IAO_0000116>
+        <oboInOwl:hasDbXref rdf:resource="http://www.langual.org/langual_thesaurus.asp?termid=B0001"/>
+        <oboInOwl:hasDbXref rdf:resource="http://www.langual.org/langual_thesaurus.asp?termid=B1564"/>
         <oboInOwl:hasDbXref rdf:resource="http://www.langual.org/langual_thesaurus.asp?termid=C0116"/>
         <rdfs:comment xml:lang="en">LanguaL curation note: &quot;e.g. *LEAF*, *ROOT OR TUBER*, *ORGAN MEAT*, *MILK* OR *EGG*; it also includes components of parts, such as *CREAM*, and extracts, concentrates or isolates, such as *PROTEIN EXTRACT* or *SUGAR*.&quot;</rdfs:comment>
         <rdfs:comment xml:lang="en">Old definition as of Feb 25, 2025: Anatomical or other part(s) or substances derived from plant or animal or fungal organisms.</rdfs:comment>
-        <rdfs:label xml:lang="en">food material by organism</rdfs:label>
+        <rdfs:label xml:lang="en">organism material</rdfs:label>
     </owl:Class>
     
 
@@ -5703,7 +5962,7 @@ The GS1 GPC classification in facet A is currently updated based on June 2017 re
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03420164">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03420116"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
-        <obo:IAO_0000115 xml:lang="en">Material that derives from some animal.</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="en">Material that derives from one or more animals</obo:IAO_0000115>
         <terms:contributor>https://orcid.org/0000-0001-5275-8866</terms:contributor>
         <terms:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2023-08-01T21:25:29Z</terms:date>
         <oboInOwl:hasDbXref rdf:resource="http://www.langual.org/langual_thesaurus.asp?termid=C0164"/>
