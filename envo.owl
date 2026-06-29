@@ -14,14 +14,13 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:skos="http://www.w3.org/2004/02/skos/core#"
      xmlns:chebi="http://purl.obolibrary.org/obo/chebi#"
-     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
      xmlns:terms="http://purl.org/dc/terms/"
      xmlns:schema="http://schema.org/"
      xmlns:taxslim="http://purl.obolibrary.org/obo/ncbitaxon/subsets/taxslim.obo#"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
      xmlns:process_attribute="http://purl.obolibrary.org/obo/envo-p/patterns/process_attribute/">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/envo.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/envo/releases/2025-10-20/envo.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/envo/releases/2026-06-26/envo.owl"/>
         <dc:contributor rdf:resource="https://orcid.org/0000-0002-2996-719X"/>
         <dc:creator rdf:resource="https://orcid.org/0000-0002-4366-3088"/>
         <dc:creator>http://orcid.org/0000-0002-6601-2165</dc:creator>
@@ -38,7 +37,7 @@
         <rdfs:comment>Includes Ontology(OntologyID(OntologyIRI(&lt;http://purl.obolibrary.org/obo/envo/modules/entity_attribute_location.owl&gt;) VersionIRI(&lt;null&gt;))) [Axioms: 168 Logical Axioms: 29]</rdfs:comment>
         <rdfs:comment>Includes Ontology(OntologyID(OntologyIRI(&lt;http://purl.obolibrary.org/obo/envo/modules/entity_quality_location.owl&gt;) VersionIRI(&lt;null&gt;))) [Axioms: 40 Logical Axioms: 6]</rdfs:comment>
         <rdfs:comment>Includes Ontology(OntologyID(OntologyIRI(&lt;http://purl.obolibrary.org/obo/envo/modules/process_attribute.owl&gt;) VersionIRI(&lt;null&gt;))) [Axioms: 21 Logical Axioms: 2]</rdfs:comment>
-        <owl:versionInfo>2025-10-20</owl:versionInfo>
+        <owl:versionInfo>2026-06-26</owl:versionInfo>
         <foaf:homepage rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://environmentontology.org/</foaf:homepage>
     </owl:Ontology>
     
@@ -259,24 +258,6 @@
     <!-- http://purl.obolibrary.org/obo/RO_0040042 -->
 
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/RO_0040042"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/chebi#BRAND_NAME -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/chebi#BRAND_NAME"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/chebi#INN -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/chebi#INN"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/chebi#IUPAC_NAME -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/chebi#IUPAC_NAME"/>
     
 
 
@@ -1823,7 +1804,7 @@ boundary_of: http://purl.obolibrary.org/obo/RO_0002000</obo:IAO_0000115>
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002162">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002320"/>
-        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/OBI_0100026"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/COB_0000022"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002131"/>
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002162"/>
@@ -2635,7 +2616,7 @@ boundary_of: http://purl.obolibrary.org/obo/RO_0002000</obo:IAO_0000115>
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002303">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002321"/>
-        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OBI_0100026"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/COB_0000022"/>
         <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000254"/>
         <obo:IAO_0000112>Hydrozoa (NCBITaxon_6074) SubClassOf &apos;has habitat&apos; some &apos;Hydrozoa habitat&apos;
 where
@@ -4092,6 +4073,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000017">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000020"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/COB_0000502"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
@@ -4131,7 +4113,6 @@ Each of these 3 primitives can be composed to yield a cross-product of different
             </owl:Restriction>
         </rdfs:subClassOf>
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/BFO_0000031"/>
-        <obo:IAO_0000115 xml:lang="en">b is a relational specifically dependent continuant = Def. b is a specifically dependent continuant and there are n &amp;gt; 1 independent continuants c1, … cn which are not spatial regions are such that for all 1  i &amp;lt; j  n, ci  and cj share no common parts, are such that for each 1  i  n, b s-depends_on ci at every time t during the course of b’s existence (axiom label in BFO2 Reference: [131-004])</obo:IAO_0000115>
         <obo:IAO_0000115 xml:lang="en">b is a specifically dependent continuant = Def. b is a continuant &amp; there is some independent continuant c which is not a spatial region and which is such that b s-depends_on c at every time t during the course of b’s existence. (axiom label in BFO2 Reference: [050-003])</obo:IAO_0000115>
         <rdfs:label xml:lang="en">specifically dependent continuant</rdfs:label>
     </owl:Class>
@@ -4158,7 +4139,6 @@ Each of these 3 primitives can be composed to yield a cross-product of different
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000024">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
-        <rdfs:label xml:lang="en">fiat object</rdfs:label>
         <rdfs:label xml:lang="en">fiat object part</rdfs:label>
     </owl:Class>
     
@@ -8782,6 +8762,16 @@ Each of these 3 primitives can be composed to yield a cross-product of different
     
 
 
+    <!-- http://purl.obolibrary.org/obo/CHEBI_33627 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_33627">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33238"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33628"/>
+        <rdfs:label>monoatomic aluminium</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/CHEBI_33628 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_33628">
@@ -11178,6 +11168,17 @@ Each of these 3 primitives can be composed to yield a cross-product of different
     
 
 
+    <!-- http://purl.obolibrary.org/obo/CHEBI_49470 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_49470">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_27153"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33627"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_63062"/>
+        <rdfs:label>aluminium(3+)</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/CHEBI_49475 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_49475">
@@ -12037,7 +12038,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
     <!-- http://purl.obolibrary.org/obo/CHEBI_64047 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_64047">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33232"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_747325"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_78295"/>
         <rdfs:label>food additive</rdfs:label>
     </owl:Class>
@@ -12146,6 +12147,16 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_25248"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_28966"/>
         <rdfs:label>divinyl chlorophyll b</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_747325 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_747325">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33232"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_51086"/>
+        <rdfs:label>additive</rdfs:label>
     </owl:Class>
     
 
@@ -12549,6 +12560,43 @@ Each of these 3 primitives can be composed to yield a cross-product of different
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_9171">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_38460"/>
         <rdfs:label>skatole</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/COB_0000022 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/COB_0000022">
+        <obo:IAO_0000115 xml:lang="en">A material entity that is a maximal functionally integrated unit that develops from a program encoded in a genome</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">organism</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/COB_0000026 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/COB_0000026">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
+        <obo:IAO_0000115 xml:lang="en">A material entity processed by human activity with an intent to produce it.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">processed material entity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/COB_0000502 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/COB_0000502">
+        <rdfs:label xml:lang="en">characteristic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/COB_0001300 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/COB_0001300">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/COB_0000026"/>
+        <obo:IAO_0000115 xml:lang="en">A processed material entity which is designed to be capable of a process.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">device</rdfs:label>
     </owl:Class>
     
 
@@ -13400,7 +13448,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_00000018">
         <obo:IAO_0000115>A river that has either permanently or temporally lost its water.</obo:IAO_0000115>
-        <obo:IAO_0100001 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</obo:IAO_0100001>
+        <obo:IAO_0100001>ENVO:01000995</obo:IAO_0100001>
         <oboInOwl:hasOBONamespace>ENVO</oboInOwl:hasOBONamespace>
         <oboInOwl:id>ENVO:00000018</oboInOwl:id>
         <rdfs:label>obsolete dry river</rdfs:label>
@@ -24518,7 +24566,7 @@ which ended up making incorrect inference. We chose to obsolete this now.</obo:I
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_00000227">
         <obo:IAO_0000115>An estuary whose river output is less than the marine input. Here, turbulence causes mixing of the whole water column, such that salinity varies more longitudinally rather than vertically.</obo:IAO_0000115>
-        <obo:IAO_0100001 rdf:resource="ENVO:00000224"/>
+        <obo:IAO_0100001>ENVO:00000224</obo:IAO_0100001>
         <rdfs:label>obsolete vertically mixed estuary</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -29848,7 +29896,7 @@ SOURCE DEFINITION: Marine brine pools are large areas of brine on the ocean basi
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_00000373">
         <obo:IAO_0000115>An area where wells can be drilled to obtain elements contained in solution in hot brines or to tap heat energy.</obo:IAO_0000115>
-        <obo:IAO_0100001 rdf:resource="ENVO:01001851"/>
+        <obo:IAO_0100001>ENVO:01001851</obo:IAO_0100001>
         <rdfs:label>obsolete geothermal field</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
@@ -37981,7 +38029,7 @@ The lower boundary that separates soil from the nonsoil underneath is most diffi
     <!-- http://purl.obolibrary.org/obo/ENVO_00002041 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_00002041">
-        <obo:IAO_0100001 rdf:resource="ENVO:01001004"/>
+        <obo:IAO_0100001>ENVO:01001004</obo:IAO_0100001>
         <oboInOwl:hasDbXref>EcoLexicon:groundwater</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>LTER:235</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>SWEETRealm:Groundwater</oboInOwl:hasDbXref>
@@ -46115,7 +46163,7 @@ Liming can also improve aggregate stability on clay soils. For this purpose stru
     <!-- http://purl.obolibrary.org/obo/ENVO_00005785 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_00005785">
-        <obo:IAO_0100001 rdf:resource="ENVO:01001841"/>
+        <obo:IAO_0100001>ENVO:01001841</obo:IAO_0100001>
         <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Volcanic_soil</oboInOwl:hasDbXref>
         <rdfs:comment>Incorrect equivalence axiom.</rdfs:comment>
         <rdfs:label>obsolete volcanic soil</rdfs:label>
@@ -55270,7 +55318,7 @@ From https://en.wikipedia.org/wiki/ [A mineral] is different from a rock, which 
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000261">
         <obo:IAO_0000115>A cline within a marine water body where the rate of calcite dissolution changes rapidly with depth. The increase in the rate of calcite dissolution with depth is largely due to the concomitant fall in calcite saturation.</obo:IAO_0000115>
-        <obo:IAO_0100001 rdf:resource="ENVO:01000079"/>
+        <obo:IAO_0100001>ENVO:01000079</obo:IAO_0100001>
         <oboInOwl:created_by>ORCID:0000-0002-4366-3088</oboInOwl:created_by>
         <oboInOwl:creation_date>2013-10-06T20:16:10Z</oboInOwl:creation_date>
         <rdfs:label>obsolete lysocline</rdfs:label>
@@ -59097,7 +59145,7 @@ The relationship between this &quot;forest&quot; class and the mangrove swamp mu
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000404">
         <obo:IAO_0000115>OBSOLETE A (portion of) plastic is an (portion of) anthropogenic environmental material including any of numerous organic synthetic or processed materials which are primarily composed of thermoplastic or thermosetting polymers of high molecular weight.</obo:IAO_0000115>
-        <obo:IAO_0100001 rdf:resource="ENVO:06105112"/>
+        <obo:IAO_0100001>ENVO:06105112</obo:IAO_0100001>
         <rdfs:comment>This term has been replaced by &quot;synthetic plastic&quot; as part of a more coherent set of classes as part of the SDG14.1.1 project (see https://github.com/EnvironmentOntology/envo/projects/17)</rdfs:comment>
         <rdfs:label>obsolete manufactured plastic</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
@@ -68200,7 +68248,7 @@ should be considered, where &quot;rushes&quot;, &quot;sedge&quot;, etc are repre
     <!-- http://purl.obolibrary.org/obo/ENVO_01000785 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000785">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_02500000"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000003"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000011"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -73777,7 +73825,7 @@ Emeritus Professor of Biology.</rdfs:comment>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_02500027"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000003"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000011"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -73789,6 +73837,12 @@ Emeritus Professor of Biology.</rdfs:comment>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002234"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00003074"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002608"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>A planned process during which raw or recycled materials are transformed into products for use or sale using labour and machines, tools, chemical and biological processing, or formulation.</obo:IAO_0000115>
@@ -73814,6 +73868,7 @@ Emeritus Professor of Biology.</rdfs:comment>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01000994">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000993"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_02500027"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000066"/>
@@ -73871,7 +73926,7 @@ Emeritus Professor of Biology.</rdfs:comment>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_02500027"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000003"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000011"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -73895,6 +73950,12 @@ Emeritus Professor of Biology.</rdfs:comment>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002234"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_00000070"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002608"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>An process during which natural or manufactured materials and products are processed and arranged by humans or their technology into structures.</obo:IAO_0000115>
@@ -76551,18 +76612,18 @@ Emeritus Professor of Biology.</rdfs:comment>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01001066">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001763"/>
-        <rdfs:subClassOf rdf:nodeID="genid6959"/>
+        <rdfs:subClassOf rdf:nodeID="genid6961"/>
         <obo:IAO_0000115>An impact event is a collision between astronomical bodies.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">impact between astronomical bodies</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid6959">
+    <owl:Restriction rdf:nodeID="genid6961">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000057"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000799"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001066"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid6959"/>
+        <owl:annotatedTarget rdf:nodeID="genid6961"/>
         <rdfs:comment>QCR: &apos;has participant&apos; min 2 &apos;astronomical body&apos;</rdfs:comment>
     </owl:Axiom>
     <owl:Axiom>
@@ -82185,7 +82246,7 @@ Emeritus Professor of Biology.</rdfs:comment>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01001228">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000029"/>
-        <rdfs:subClassOf rdf:nodeID="genid7838"/>
+        <rdfs:subClassOf rdf:nodeID="genid7840"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001015"/>
@@ -82196,7 +82257,7 @@ Emeritus Professor of Biology.</rdfs:comment>
         <oboInOwl:hasExactSynonym>Roche sphere</oboInOwl:hasExactSynonym>
         <rdfs:label xml:lang="en">Hill sphere</rdfs:label>
     </owl:Class>
-    <owl:Class rdf:nodeID="genid7838">
+    <owl:Class rdf:nodeID="genid7840">
         <owl:intersectionOf rdf:parseType="Collection">
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000067"/>
@@ -82211,7 +82272,7 @@ Emeritus Professor of Biology.</rdfs:comment>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001228"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid7838"/>
+        <owl:annotatedTarget rdf:nodeID="genid7840"/>
         <rdfs:comment>QCR: &apos;process has causal agent&apos; max 1 &apos;astronomical body&apos;</rdfs:comment>
     </owl:Axiom>
     <owl:Axiom>
@@ -82551,7 +82612,6 @@ Emeritus Professor of Biology.</rdfs:comment>
         <oboInOwl:hasDbXref>EcoLexicon:canopy</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>LTER:82</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>SWEETRealm:Canopy</oboInOwl:hasDbXref>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</rdfs:comment>
         <rdfs:label xml:lang="en">canopy</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -85788,18 +85848,18 @@ Emeritus Professor of Biology.</rdfs:comment>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01001353">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000408"/>
-        <rdfs:subClassOf rdf:nodeID="genid8351"/>
+        <rdfs:subClassOf rdf:nodeID="genid8353"/>
         <obo:IAO_0000115>An environmental zone in which the rates of two or more processes are roughly equal to one another.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">environmental zone of processual equilibrium</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid8351">
+    <owl:Restriction rdf:nodeID="genid8353">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000067"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_02500000"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001353"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid8351"/>
+        <owl:annotatedTarget rdf:nodeID="genid8353"/>
         <rdfs:comment>QCR: &apos;contains process&apos; min 2 &apos;environmental system process&apos;</rdfs:comment>
     </owl:Axiom>
     
@@ -86919,7 +86979,7 @@ Emeritus Professor of Biology.</rdfs:comment>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01001387">
         <obo:IAO_0000115>An oceanic mussel reef which is primarily settled by mussels of the genus Bathymodiolus and primarily composed of self-adhered or conglomerated mussel shells</obo:IAO_0000115>
-        <obo:IAO_0100001 rdf:resource="ENVO:01001390"/>
+        <obo:IAO_0100001>ENVO:01001390</obo:IAO_0100001>
         <oboInOwl:created_by rdf:resource="https://orcid.org/0000-0002-4366-3088"/>
         <rdfs:label>obsolete Bathymodiolus-dominated oceanic mussel bed</rdfs:label>
         <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
@@ -88782,7 +88842,7 @@ Add more PATO qualities once they have been added to PATO.</obo:IAO_0000116>
     <!-- http://purl.obolibrary.org/obo/ENVO_01001436 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01001436">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_02500027"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000003"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000011"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -88807,6 +88867,12 @@ Add more PATO qualities once they have been added to PATO.</obo:IAO_0000116>
                         </owl:unionOf>
                     </owl:Class>
                 </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002608"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>A planned process during which humans access and obtain resources, benefits, or services from a natural or anthropised ecosystem.</obo:IAO_0000115>
@@ -90430,6 +90496,7 @@ Add more PATO qualities once they have been added to PATO.</obo:IAO_0000116>
     <!-- http://purl.obolibrary.org/obo/ENVO_01001492 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01001492">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000003"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000011"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -90468,7 +90535,6 @@ Add more PATO qualities once they have been added to PATO.</obo:IAO_0000116>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01001493">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001492"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_02500000"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000057"/>
@@ -94972,7 +95038,6 @@ It may also be marked by an accumulation of sediment or wind-blown dust. It can 
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01001669">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000906"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_02500031"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000066"/>
@@ -97890,20 +97955,20 @@ It may also be marked by an accumulation of sediment or wind-blown dust. It can 
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01001778">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000678"/>
-        <rdfs:subClassOf rdf:nodeID="genid10087"/>
+        <rdfs:subClassOf rdf:nodeID="genid10090"/>
         <obo:IAO_0000115>A tectonic earthquake which occurs at the boundary between two tectonic plates.</obo:IAO_0000115>
         <dc:creator rdf:resource="https://orcid.org/0000-0002-4366-3088"/>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-10-07T15:02:10Z</dc:date>
         <rdfs:label xml:lang="en">interplate earthquake</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid10087">
+    <owl:Restriction rdf:nodeID="genid10090">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000057"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001097"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001778"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid10087"/>
+        <owl:annotatedTarget rdf:nodeID="genid10090"/>
         <rdfs:comment>QCR: &apos;has participant&apos; min 2 &apos;tectonic plate&apos;</rdfs:comment>
     </owl:Axiom>
     <owl:Axiom>
@@ -97919,20 +97984,20 @@ It may also be marked by an accumulation of sediment or wind-blown dust. It can 
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01001779">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000678"/>
-        <rdfs:subClassOf rdf:nodeID="genid10090"/>
+        <rdfs:subClassOf rdf:nodeID="genid10093"/>
         <obo:IAO_0000115>A tectonic earthquake which occurs within the interior parts of a tectonic plate.</obo:IAO_0000115>
         <dc:creator rdf:resource="https://orcid.org/0000-0002-4366-3088"/>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-10-07T15:27:47Z</dc:date>
         <rdfs:label xml:lang="en">intraplate earthquake</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid10090">
+    <owl:Restriction rdf:nodeID="genid10093">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000057"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001097"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001779"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid10090"/>
+        <owl:annotatedTarget rdf:nodeID="genid10093"/>
         <rdfs:comment>QCR: &apos;has participant&apos; max 1 &apos;tectonic plate&apos;</rdfs:comment>
     </owl:Axiom>
     <owl:Axiom>
@@ -99324,14 +99389,14 @@ It may also be marked by an accumulation of sediment or wind-blown dust. It can 
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01001842">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001852"/>
-        <rdfs:subClassOf rdf:nodeID="genid10271"/>
+        <rdfs:subClassOf rdf:nodeID="genid10274"/>
         <obo:IAO_0000115>An environmental process during which momentum is transferred from one material entity to another.</obo:IAO_0000115>
         <dc:creator rdf:resource="https://orcid.org/0000-0002-4366-3088"/>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-11-20T14:50:39Z</dc:date>
         <rdfs:comment>Momentum is a bit tricky, it&apos;s the product of mass and velocity thus can be understood as rest energy and kinetic energy. But this is variable.</rdfs:comment>
         <rdfs:label xml:lang="en">momentum transfer process</rdfs:label>
     </owl:Class>
-    <owl:Class rdf:nodeID="genid10271">
+    <owl:Class rdf:nodeID="genid10274">
         <owl:intersectionOf rdf:parseType="Collection">
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000057"/>
@@ -99346,7 +99411,7 @@ It may also be marked by an accumulation of sediment or wind-blown dust. It can 
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_01001842"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid10271"/>
+        <owl:annotatedTarget rdf:nodeID="genid10274"/>
         <rdfs:comment>QCR: &apos;has participant&apos; min 2 &apos;material entity&apos;</rdfs:comment>
     </owl:Axiom>
     
@@ -99926,7 +99991,7 @@ It may also be marked by an accumulation of sediment or wind-blown dust. It can 
     <!-- http://purl.obolibrary.org/obo/ENVO_01001866 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_01001866">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_02500027"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000003"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000011"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -99945,6 +100010,12 @@ It may also be marked by an accumulation of sediment or wind-blown dust. It can 
                         </owl:unionOf>
                     </owl:Class>
                 </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002608"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>A planned process during which an oil or gas well is modified.</obo:IAO_0000115>
@@ -103512,7 +103583,6 @@ It may also be marked by an accumulation of sediment or wind-blown dust. It can 
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_02000121">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000785"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_02500031"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
@@ -104242,6 +104312,7 @@ It may also be marked by an accumulation of sediment or wind-blown dust. It can 
     <!-- http://purl.obolibrary.org/obo/ENVO_02000148 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_02000148">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_02000146"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -104267,6 +104338,7 @@ It may also be marked by an accumulation of sediment or wind-blown dust. It can 
     <!-- http://purl.obolibrary.org/obo/ENVO_02000149 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_02000149">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000003"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_02000146"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -105073,6 +105145,7 @@ It may also be marked by an accumulation of sediment or wind-blown dust. It can 
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000011"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -105653,6 +105726,7 @@ It may also be marked by an accumulation of sediment or wind-blown dust. It can 
     <!-- http://purl.obolibrary.org/obo/ENVO_02500041 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ENVO_02500041">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000003"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000011"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -123195,7 +123269,7 @@ http://purl.obolibrary.org/obo/APO_0000288</rdfs:comment>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/ENVO_2100000"/>
-                    <rdf:Description rdf:nodeID="genid12566"/>
+                    <rdf:Description rdf:nodeID="genid12570"/>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
@@ -123206,14 +123280,14 @@ http://purl.obolibrary.org/obo/APO_0000288</rdfs:comment>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0015474"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid12566"/>
+        <rdfs:subClassOf rdf:nodeID="genid12570"/>
         <obo:IAO_0000115>An environment that is determined by an axilla skin.</obo:IAO_0000115>
         <oboInOwl:created_by>TermGenie</oboInOwl:created_by>
         <oboInOwl:creation_date>2014-12-15T22:32:00Z</oboInOwl:creation_date>
         <oboInOwl:inSubset>envoMeo</oboInOwl:inSubset>
         <rdfs:label>axilla skin environment</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid12566">
+    <owl:Restriction rdf:nodeID="genid12570">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002507"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0015474"/>
     </owl:Restriction>
@@ -123226,7 +123300,7 @@ http://purl.obolibrary.org/obo/APO_0000288</rdfs:comment>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_08000001"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid12566"/>
+        <owl:annotatedTarget rdf:nodeID="genid12570"/>
         <oboInOwl:is_inferred>true</oboInOwl:is_inferred>
     </owl:Axiom>
     <owl:Axiom>
@@ -123245,7 +123319,7 @@ http://purl.obolibrary.org/obo/APO_0000288</rdfs:comment>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/ENVO_2100000"/>
-                    <rdf:Description rdf:nodeID="genid12574"/>
+                    <rdf:Description rdf:nodeID="genid12578"/>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
@@ -123256,14 +123330,14 @@ http://purl.obolibrary.org/obo/APO_0000288</rdfs:comment>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000165"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid12574"/>
+        <rdfs:subClassOf rdf:nodeID="genid12578"/>
         <obo:IAO_0000115>An environment that is determined by a mouth.</obo:IAO_0000115>
         <oboInOwl:created_by>TermGenie</oboInOwl:created_by>
         <oboInOwl:creation_date>2015-04-10T23:34:03Z</oboInOwl:creation_date>
         <oboInOwl:inSubset>envoMeo</oboInOwl:inSubset>
         <rdfs:label>mouth environment</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid12574">
+    <owl:Restriction rdf:nodeID="genid12578">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002507"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000165"/>
     </owl:Restriction>
@@ -123276,7 +123350,7 @@ http://purl.obolibrary.org/obo/APO_0000288</rdfs:comment>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/ENVO_08000002"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid12574"/>
+        <owl:annotatedTarget rdf:nodeID="genid12578"/>
         <oboInOwl:is_inferred>true</oboInOwl:is_inferred>
     </owl:Axiom>
     <owl:Axiom>
@@ -133330,7 +133404,7 @@ This class is complex as marine mucilage is quite complex. It will also requre n
         <obo:IAO_0000117 xml:lang="en">Damion Dooley</obo:IAO_0000117>
         <obo:IAO_0000118 xml:lang="en">Foodon product type</obo:IAO_0000118>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://en.wikipedia.org/wiki/Food</obo:IAO_0000119>
-        <rdfs:comment xml:lang="en">The FoodOn &quot;food product&quot; class is provided as a branch under which new food product categories and food products themselves can be placed. Here classes are provided to differentiate a food product by its food composition, processing and/or consumption characteristics. This avoids brand name products but it may include generic food dish categories. It has a much greater depth and polyhierarchy than other agency product type schemes have in an effort to group related products together.  The upper level basis of this tree originated in the environment ontology (ENVO) and from the US Code of Federal Regulations.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The FoodOn &quot;food product&quot;class is provided as a branch under which new food product categories and food products themselves can be placed. Here classes are provided to differentiate a food product by its food composition, processing and/or consumption characteristics. This avoids brand name products but it may include generic food dish categories. It has a much greater depth and polyhierarchy than other agency product type schemes have in an effort to group related products together.  The upper level basis of this tree originated in the environment ontology (ENVO) and from the US Code of Federal Regulations.</rdfs:comment>
         <rdfs:label xml:lang="en">food product</rdfs:label>
     </owl:Class>
     
@@ -133371,6 +133445,7 @@ This class is complex as marine mucilage is quite complex. It will also requre n
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00001006">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001092"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00005501"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
         <obo:IAO_0000115>A food product made of meat, the skeletal muscle and associated fat, and other edible tissues such as organs, livers, skin, brains, bone marrow, kidneys, or lungs, of mammals.</obo:IAO_0000115>
         <obo:IAO_0000119 rdf:resource="https://en.wikipedia.org/wiki/Meat"/>
@@ -133484,9 +133559,11 @@ This class is complex as marine mucilage is quite complex. It will also requre n
     <!-- http://purl.obolibrary.org/obo/FOODON_00001015 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00001015">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001002"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00004331"/>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
-        <obo:IAO_0000115 xml:lang="en">This class includes food products which are derived from or produced by a plant.</obo:IAO_0000115>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
+        <obo:IAO_0000115 xml:lang="en">A food product which has as a defining ingredient some plant material.</obo:IAO_0000115>
+        <dc:contributor rdf:resource="https://orcid.org/0000-0002-8844-9165"/>
         <rdfs:label xml:lang="en">plant food product</rdfs:label>
     </owl:Class>
     
@@ -133773,6 +133850,7 @@ This class is complex as marine mucilage is quite complex. It will also requre n
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00001041">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001134"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_02020889"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
         <obo:IAO_0000115 xml:lang="en">A food product that is derived from some cow.</obo:IAO_0000115>
         <terms:contributor>https://orcid.org/0000-0001-5275-8866</terms:contributor>
@@ -134344,10 +134422,11 @@ This class is complex as marine mucilage is quite complex. It will also requre n
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00001092">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00004242"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00005502"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
         <obo:IAO_0000115 xml:lang="en">A food product which is derived from or produced by an animal that has a vertibrae.</obo:IAO_0000115>
         <terms:contributor>Damion Dooley</terms:contributor>
-        <rdfs:label xml:lang="en">vertebrate animal food product</rdfs:label>
+        <rdfs:label xml:lang="en">vertebrate food product</rdfs:label>
     </owl:Class>
     
 
@@ -134657,6 +134736,7 @@ This class is complex as marine mucilage is quite complex. It will also requre n
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00001132">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001006"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00005689"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
         <obo:IAO_0000115 xml:lang="en">Suidae is a family of artiodactyl mammals which are commonly called pigs, hogs or boars. In addition to numerous fossil species, 17 extant species are currently recognized (or 18 counting domestic pigs and wild boars separately), classified into between four and eight genera. The family includes the domestic pig, Sus scrofa domesticus or Sus domesticus, in addition to numerous species of wild pig, such as babirusas and warthogs. All suids, or swine, are native to the Old World, ranging from Asia to Europe and Africa.</obo:IAO_0000115>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://en.wikipedia.org/wiki/Suidae</obo:IAO_0000119>
@@ -134723,7 +134803,7 @@ This class is complex as marine mucilage is quite complex. It will also requre n
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00001138">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001255"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03316079"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00002275"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
         <obo:IAO_0000115 xml:lang="en">A beverage product derived from leaves of the tea plant (Camellia sinensis).</obo:IAO_0000115>
         <obo:IAO_0000119 rdf:resource="https://en.wikipedia.org/wiki/Tea"/>
@@ -134886,9 +134966,25 @@ This class is complex as marine mucilage is quite complex. It will also requre n
     <!-- http://purl.obolibrary.org/obo/FOODON_00001155 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00001155">
-        <obo:IAO_0100001 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_3654"/>
-        <rdfs:label xml:lang="en">obsolete: watermelon plant</rdfs:label>
-        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411283"/>
+        <oboInOwl:hasDbXref rdf:resource="http://eol.org/pages/584423"/>
+        <oboInOwl:hasDbXref rdf:resource="http://www.ars-grin.gov/cgi-bin/npgs/html/taxon.pl?10675"/>
+        <oboInOwl:hasDbXref rdf:resource="http://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&amp;search_value=22356"/>
+        <oboInOwl:hasDbXref rdf:resource="http://www.langual.org/langual_thesaurus.asp?termid=B1391"/>
+        <oboInOwl:hasDbXref>MANSFELD:3905</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PLANTS:CILA3</oboInOwl:hasDbXref>
+        <oboInOwl:hasExactSynonym>watermelon</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>wild melon</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasSynonym xml:lang="en">citrullus lanatus</oboInOwl:hasSynonym>
+        <oboInOwl:hasSynonym xml:lang="en">citrullus vulgaris</oboInOwl:hasSynonym>
+        <oboInOwl:hasSynonym xml:lang="en">colocynthis citrullus</oboInOwl:hasSynonym>
+        <oboInOwl:hasSynonym xml:lang="en">cucurbita citrullus</oboInOwl:hasSynonym>
+        <oboInOwl:hasSynonym xml:lang="en">datiro</oboInOwl:hasSynonym>
+        <oboInOwl:hasSynonym xml:lang="en">edible seed melon</oboInOwl:hasSynonym>
+        <oboInOwl:hasSynonym xml:lang="en">equisi</oboInOwl:hasSynonym>
+        <oboInOwl:hasSynonym xml:lang="en">kaffir melon</oboInOwl:hasSynonym>
+        <oboInOwl:hasSynonym xml:lang="en">momordica lanata</oboInOwl:hasSynonym>
+        <rdfs:label xml:lang="en">watermelon plant</rdfs:label>
     </owl:Class>
     
 
@@ -135105,7 +135201,8 @@ This class is complex as marine mucilage is quite complex. It will also requre n
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00001176">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00004242"/>
-        <rdfs:label xml:lang="en">invertebrate animal food product</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00005522"/>
+        <rdfs:label xml:lang="en">invertebrate food product</rdfs:label>
     </owl:Class>
     
 
@@ -135191,9 +135288,9 @@ This class is complex as marine mucilage is quite complex. It will also requre n
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00001184">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03420116"/>
-        <obo:IAO_0000115 xml:lang="en">This food product type includes food products which are derived from a large, diverse group of photosynthetic organisms.</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="en">Material which derives from algae (including single-celled microalgae and  multicellular macroalgae).</obo:IAO_0000115>
         <oboInOwl:hasDbXref rdf:resource="https://bioregistry.io/reference/siren:F10419"/>
-        <rdfs:label xml:lang="en">algal food material</rdfs:label>
+        <rdfs:label xml:lang="en">algae material</rdfs:label>
         <rdfs:seeAlso rdf:resource="https://ungc-communications-assets.s3.amazonaws.com/docs/publications/The-Seaweed-Manifesto.pdf"/>
     </owl:Class>
     
@@ -135870,15 +135967,11 @@ FAO: The yam bean is a legume but unlike its close relatives the soybean and oth
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00001234">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001231"/>
-        <obo:IAO_0000115>A stable emulsion of oil, and vinegar or lemon juice, with many options for embellishment with other herbs and spices. Egg yolk is the traditional emulsifier.</obo:IAO_0000115>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
+        <obo:IAO_0000115 xml:lang="en">A food product made with mayonnaise as a defining ingredient.</obo:IAO_0000115>
+        <obo:IAO_0000119 rdf:resource="http://en.wikipedia.org/wiki/Mayonnaise"/>
         <rdfs:label xml:lang="en">mayonnaise food product</rdfs:label>
     </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001234"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>A stable emulsion of oil, and vinegar or lemon juice, with many options for embellishment with other herbs and spices. Egg yolk is the traditional emulsifier.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>http://en.wikipedia.org/wiki/Mayonnaise</oboInOwl:hasDbXref>
-    </owl:Axiom>
     
 
 
@@ -135887,15 +135980,11 @@ FAO: The yam bean is a legume but unlike its close relatives the soybean and oth
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00001235">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001078"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00002262"/>
-        <obo:IAO_0000115>A condiment produced by fermenting soybeans with Aspergillus oryzae and Aspergillus soyae molds  along with roasted grain, water, and salt.</obo:IAO_0000115>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
+        <obo:IAO_0000115 xml:lang="en">A condiment with soy sauce as a defining ingredient.</obo:IAO_0000115>
+        <obo:IAO_0000119 rdf:resource="http://en.wikipedia.org/wiki/Soy_sauce"/>
         <rdfs:label xml:lang="en">soy sauce food product</rdfs:label>
     </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001235"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>A condiment produced by fermenting soybeans with Aspergillus oryzae and Aspergillus soyae molds  along with roasted grain, water, and salt.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>http://en.wikipedia.org/wiki/Soy_sauce</oboInOwl:hasDbXref>
-    </owl:Axiom>
     
 
 
@@ -136037,11 +136126,12 @@ FAO: The yam bean is a legume but unlike its close relatives the soybean and oth
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00001251">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001092"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_02020050"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
         <obo:IAO_0000115 xml:lang="en">A food product that is derived from some avian animal.</obo:IAO_0000115>
         <terms:contributor>https://orcid.org/0000-0001-5275-8866</terms:contributor>
         <terms:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-02-01T09:59:11Z</terms:date>
-        <rdfs:label xml:lang="en">avian animal food product</rdfs:label>
+        <rdfs:label xml:lang="en">avian food product</rdfs:label>
     </owl:Class>
     
 
@@ -136098,6 +136188,7 @@ FAO: The yam bean is a legume but unlike its close relatives the soybean and oth
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00001256">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001092"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00005501"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
         <obo:IAO_0000115 xml:lang="en">A dairy food product has mammilian milk or a milk component as an ingredient.</obo:IAO_0000115>
         <terms:contributor xml:lang="en">Damion Dooley</terms:contributor>
@@ -136126,7 +136217,6 @@ FAO: The yam bean is a legume but unlike its close relatives the soybean and oth
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00002645"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
         <obo:IAO_0000115 xml:lang="en">Food material which has been fermented.</obo:IAO_0000115>
-        <obo:IAO_0000116 xml:lang="en">Are all fermented foods considered preserved to some extent?</obo:IAO_0000116>
         <obo:IAO_0000117 xml:lang="en">Damion Dooley</obo:IAO_0000117>
         <rdfs:label xml:lang="en">food (fermented)</rdfs:label>
     </owl:Class>
@@ -136238,6 +136328,7 @@ https://www.politico.com/agenda/story/2016/03/crazy-us-chicken-egg-regulation-gr
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00001275">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001105"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03315102"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
         <obo:IAO_0000115 xml:lang="en">An avian egg food product having chicken eggs or derivatives as a defining ingredient.</obo:IAO_0000115>
         <obo:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://en.wikipedia.org/wiki/Egg_as_food</obo:IAO_0000119>
@@ -136345,6 +136436,7 @@ https://www.politico.com/agenda/story/2016/03/crazy-us-chicken-egg-regulation-gr
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00001283">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001251"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_02020686"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
         <obo:IAO_0000115 xml:lang="en">A food product that is derived from some poultry.</obo:IAO_0000115>
         <obo:IAO_0000119 rdf:resource="https://en.wikipedia.org/wiki/Poultry"/>
@@ -136435,6 +136527,7 @@ https://www.politico.com/agenda/story/2016/03/crazy-us-chicken-egg-regulation-gr
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00001292">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00002044"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00005711"/>
         <rdfs:label xml:lang="en">oyster food product</rdfs:label>
     </owl:Class>
     
@@ -136648,6 +136741,16 @@ https://www.politico.com/agenda/story/2016/03/crazy-us-chicken-egg-regulation-gr
     
 
 
+    <!-- http://purl.obolibrary.org/obo/FOODON_00001761 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00001761">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001133"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001931"/>
+        <rdfs:label xml:lang="en">condiment sauce</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/FOODON_00001771 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00001771">
@@ -136780,6 +136883,15 @@ https://www.politico.com/agenda/story/2016/03/crazy-us-chicken-egg-regulation-gr
     
 
 
+    <!-- http://purl.obolibrary.org/obo/FOODON_00001931 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00001931">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001714"/>
+        <rdfs:label xml:lang="en">gravy or sauce</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/FOODON_00002012 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00002012">
@@ -136895,7 +137007,9 @@ https://www.politico.com/agenda/story/2016/03/crazy-us-chicken-egg-regulation-gr
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00002132">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00002219"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03316579"/>
-        <obo:IAO_0000115 xml:lang="en">A salad food product with one or more plant-based ingredients.</obo:IAO_0000115>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
+        <obo:IAO_0000115 xml:lang="en">A salad food product with one or more plant-based defining ingredients.</obo:IAO_0000115>
+        <terms:contributor rdf:resource="https://orcid.org/0009-0003-2086-0905"/>
         <rdfs:label xml:lang="en">plant based salad food product</rdfs:label>
     </owl:Class>
     
@@ -137058,7 +137172,7 @@ https://www.politico.com/agenda/story/2016/03/crazy-us-chicken-egg-regulation-gr
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001180"/>
         <obo:IAO_0000115 xml:lang="en">A prepared food product consisting of either a salad or a salad ingredient mixture to which a salad dressing is added.</obo:IAO_0000115>
         <obo:IAO_0000119 rdf:resource="https://en.wikipedia.org/wiki/Salad"/>
-        <terms:contributor rdf:resource="https://orcid.org/0000-0003-3480-8238"/>
+        <terms:contributor rdf:resource="https://orcid.org/0009-0003-2086-0905"/>
         <terms:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-07-31</terms:date>
         <rdfs:label xml:lang="en">salad food product</rdfs:label>
         <rdfs:seeAlso rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001290"/>
@@ -137078,7 +137192,7 @@ https://www.politico.com/agenda/story/2016/03/crazy-us-chicken-egg-regulation-gr
     <!-- http://purl.obolibrary.org/obo/FOODON_00002262 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00002262">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001133"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001761"/>
         <rdfs:label xml:lang="en">soybean condiment</rdfs:label>
     </owl:Class>
     
@@ -137087,7 +137201,7 @@ https://www.politico.com/agenda/story/2016/03/crazy-us-chicken-egg-regulation-gr
     <!-- http://purl.obolibrary.org/obo/FOODON_00002265 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00002265">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03304497"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001173"/>
         <rdfs:label xml:lang="en">soybean seed (field) food product</rdfs:label>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://purl.obolibrary.org/obo/FOODON_00002266</rdfs:seeAlso>
     </owl:Class>
@@ -137180,7 +137294,9 @@ https://www.politico.com/agenda/story/2016/03/crazy-us-chicken-egg-regulation-gr
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00002334">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00002132"/>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
         <obo:IAO_0000115 xml:lang="en">A salad food product which contains one or more vegetable ingredients.</obo:IAO_0000115>
+        <terms:contributor rdf:resource="https://orcid.org/0009-0003-2086-0905"/>
         <rdfs:label xml:lang="en">vegetable salad food product</rdfs:label>
     </owl:Class>
     
@@ -137215,8 +137331,8 @@ https://www.politico.com/agenda/story/2016/03/crazy-us-chicken-egg-regulation-gr
         <obo:IAO_0000119 rdf:resource="https://en.wikipedia.org/wiki/Food"/>
         <oboInOwl:hasExactSynonym xml:lang="en">food</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym xml:lang="en">foodstuff</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym xml:lang="en">nourishment</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym xml:lang="en">sustenance</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasNarrowSynonym xml:lang="en">nourishment</oboInOwl:hasNarrowSynonym>
+        <oboInOwl:hasNarrowSynonym xml:lang="en">sustenance</oboInOwl:hasNarrowSynonym>
         <rdfs:comment xml:lang="en">This class is the top of FOODON&apos;s main food product hierarchy which is described in the https://www.foodon.org website, and can be searched in lookup services like https://www.ebi.ac.uk/ols/</rdfs:comment>
         <rdfs:label xml:lang="en">food material</rdfs:label>
     </owl:Class>
@@ -137257,7 +137373,7 @@ https://www.politico.com/agenda/story/2016/03/crazy-us-chicken-egg-regulation-gr
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
         <obo:IAO_0000115 xml:lang="en">Food material which has been categorized by a characteristic such as granularity or temperature.</obo:IAO_0000115>
         <obo:IAO_0000117 xml:lang="en">Damion Dooley</obo:IAO_0000117>
-        <rdfs:comment xml:lang="en">This term was renamed from &quot;food product by quality&quot; to align better with COB &quot;characteristic&quot; label, and as well to disambiguate from other use of &quot;quality&quot; as a food grading. This term is useful for tasks like food inspection where little prior knowledge of how the food came to be is available. Some terms like &quot;food (frozen)&quot; are both a quality descriptor and the output of a process.</rdfs:comment>
+        <rdfs:comment xml:lang="en">This term was renamed from &quot;food product by quality&quot; to align better with COB &quot;characteristic&quot; label, and as well to disambiguate from other use of &quot;quality&quot; as a food grading. This term is useful for tasks like food inspection where little prior knowledge of how the food came to be is available. Some terms like &quot;food (frozen)&quot;are both a quality descriptor and the output of a process.</rdfs:comment>
         <rdfs:label xml:lang="en">food material by characteristic</rdfs:label>
     </owl:Class>
     
@@ -137309,6 +137425,7 @@ Namely, how to characterize the threshold of ingredients that make for multi-com
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00002663">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001132"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_02021649"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
         <obo:IAO_0000115 xml:lang="en">A food product that is derived from some pig.</obo:IAO_0000115>
         <terms:contributor>https://orcid.org/0000-0002-8844-9165</terms:contributor>
@@ -137581,6 +137698,7 @@ Namely, how to characterize the threshold of ingredients that make for multi-com
     <!-- http://purl.obolibrary.org/obo/FOODON_00004242 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00004242">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001002"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03420164"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
         <obo:IAO_0000115 xml:lang="en">A food product that is derived from some animal.</obo:IAO_0000115>
@@ -137646,6 +137764,107 @@ Namely, how to characterize the threshold of ingredients that make for multi-com
     
 
 
+    <!-- http://purl.obolibrary.org/obo/FOODON_00005501 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00005501">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00005502"/>
+        <obo:IAO_0000115 xml:lang="en">Material which derives from one or more mammals.</obo:IAO_0000115>
+        <terms:contributor rdf:resource="https://orcid.org/0000-0002-8844-9165"/>
+        <terms:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-08-26T00:35:09Z</terms:date>
+        <rdfs:label xml:lang="en">mammal material</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FOODON_00005502 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00005502">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03420164"/>
+        <obo:IAO_0000115 xml:lang="en">Material which derives from one or more vertebrate animals.</obo:IAO_0000115>
+        <terms:contributor rdf:resource="https://orcid.org/0000-0002-8844-9165"/>
+        <terms:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-08-26T00:38:18Z</terms:date>
+        <rdfs:label xml:lang="en">vertebrate material</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FOODON_00005522 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00005522">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03420164"/>
+        <terms:contributor rdf:resource="https://orcid.org/0000-0002-8844-9165"/>
+        <terms:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-08-26T00:44:21Z</terms:date>
+        <rdfs:label xml:lang="en">invertebrate material</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FOODON_00005680 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00005680">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00005501"/>
+        <terms:contributor rdf:resource="https://orcid.org/0000-0002-8844-9165"/>
+        <terms:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-11-07T17:38:08Z</terms:date>
+        <rdfs:label xml:lang="en">bovid material</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FOODON_00005683 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00005683">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00005522"/>
+        <terms:contributor rdf:resource="https://orcid.org/0000-0002-8844-9165"/>
+        <terms:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-11-07T22:08:12Z</terms:date>
+        <rdfs:label xml:lang="en">aquatic invertebrate material</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FOODON_00005689 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00005689">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00005501"/>
+        <terms:contributor rdf:resource="https://orcid.org/0000-0002-8844-9165"/>
+        <terms:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-11-10T19:46:00Z</terms:date>
+        <rdfs:label xml:lang="en">swine material</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FOODON_00005702 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00005702">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00005683"/>
+        <terms:contributor rdf:resource="https://orcid.org/0000-0002-8844-9165"/>
+        <terms:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-11-10T19:56:28Z</terms:date>
+        <rdfs:label xml:lang="en">mollusk material</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FOODON_00005705 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00005705">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00005702"/>
+        <terms:contributor rdf:resource="https://orcid.org/0000-0002-8844-9165"/>
+        <terms:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-11-10T20:09:51Z</terms:date>
+        <rdfs:label xml:lang="en">bivalve material</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FOODON_00005711 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00005711">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00005705"/>
+        <terms:contributor rdf:resource="https://orcid.org/0000-0002-8844-9165"/>
+        <terms:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-11-10T20:36:21Z</terms:date>
+        <rdfs:label xml:lang="en">oyster material</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/FOODON_02000412 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_02000412">
@@ -137659,7 +137878,7 @@ Namely, how to characterize the threshold of ingredients that make for multi-com
     <!-- http://purl.obolibrary.org/obo/FOODON_02020050 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_02020050">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03420164"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00005502"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
         <obo:IAO_0000115 xml:lang="en">Material that derives from some avian animal.</obo:IAO_0000115>
         <terms:contributor>https://orcid.org/0000-0001-5275-8866</terms:contributor>
@@ -137667,7 +137886,7 @@ Namely, how to characterize the threshold of ingredients that make for multi-com
         <terms:contributor>https://orcid.org/0000-0002-8844-9165</terms:contributor>
         <terms:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-02-12T14:11:19Z</terms:date>
         <rdfs:comment xml:lang="en">This branch isn&apos;t necessarily food material</rdfs:comment>
-        <rdfs:label xml:lang="en">avian animal material</rdfs:label>
+        <rdfs:label xml:lang="en">avian material</rdfs:label>
     </owl:Class>
     
 
@@ -137676,6 +137895,7 @@ Namely, how to characterize the threshold of ingredients that make for multi-com
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_02020114">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00004242"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_02020115"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
         <obo:IAO_0000115 xml:lang="en">A food product that is derived from some duck.</obo:IAO_0000115>
         <terms:contributor>https://orcid.org/0000-0001-5275-8866</terms:contributor>
@@ -137683,6 +137903,22 @@ Namely, how to characterize the threshold of ingredients that make for multi-com
         <terms:contributor>https://orcid.org/0000-0002-8844-9165</terms:contributor>
         <terms:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-02-12T14:11:19Z</terms:date>
         <rdfs:label xml:lang="en">duck food product</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FOODON_02020115 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_02020115">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_02020050"/>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
+        <obo:IAO_0000115 xml:lang="en">Material that derives from some duck.</obo:IAO_0000115>
+        <terms:contributor>https://orcid.org/0000-0001-5275-8866</terms:contributor>
+        <terms:contributor>https://orcid.org/0000-0002-3410-4655</terms:contributor>
+        <terms:contributor>https://orcid.org/0000-0002-8844-9165</terms:contributor>
+        <terms:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-02-12T14:11:19Z</terms:date>
+        <rdfs:comment xml:lang="en">This branch isn&apos;t necessarily food material</rdfs:comment>
+        <rdfs:label xml:lang="en">duck material</rdfs:label>
     </owl:Class>
     
 
@@ -137706,7 +137942,7 @@ Namely, how to characterize the threshold of ingredients that make for multi-com
     <!-- http://purl.obolibrary.org/obo/FOODON_02020150 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_02020150">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_02020050"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_02020686"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
         <obo:IAO_0000115 xml:lang="en">Material that derives from some chicken.</obo:IAO_0000115>
         <terms:contributor>https://orcid.org/0000-0001-5275-8866</terms:contributor>
@@ -137719,10 +137955,26 @@ Namely, how to characterize the threshold of ingredients that make for multi-com
     
 
 
+    <!-- http://purl.obolibrary.org/obo/FOODON_02020686 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_02020686">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_02020050"/>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
+        <obo:IAO_0000115 xml:lang="en">Material that derives from some poultry.</obo:IAO_0000115>
+        <terms:contributor>https://orcid.org/0000-0001-5275-8866</terms:contributor>
+        <terms:contributor>https://orcid.org/0000-0002-3410-4655</terms:contributor>
+        <terms:contributor>https://orcid.org/0000-0002-8844-9165</terms:contributor>
+        <terms:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-02-12T14:11:19Z</terms:date>
+        <rdfs:comment xml:lang="en">This branch isn&apos;t necessarily food material</rdfs:comment>
+        <rdfs:label xml:lang="en">poultry material</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/FOODON_02020889 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_02020889">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03420164"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00005680"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
         <obo:IAO_0000115 xml:lang="en">Material that derives from some cow.</obo:IAO_0000115>
         <terms:contributor>https://orcid.org/0000-0001-5275-8866</terms:contributor>
@@ -137731,6 +137983,22 @@ Namely, how to characterize the threshold of ingredients that make for multi-com
         <terms:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-02-12T14:11:19Z</terms:date>
         <rdfs:comment xml:lang="en">This branch isn&apos;t necessarily food material</rdfs:comment>
         <rdfs:label xml:lang="en">cow material</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FOODON_02021649 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_02021649">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00005689"/>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
+        <obo:IAO_0000115 xml:lang="en">Material that derives from some pig.</obo:IAO_0000115>
+        <terms:contributor>https://orcid.org/0000-0001-5275-8866</terms:contributor>
+        <terms:contributor>https://orcid.org/0000-0002-3410-4655</terms:contributor>
+        <terms:contributor>https://orcid.org/0000-0002-8844-9165</terms:contributor>
+        <terms:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-02-12T14:11:19Z</terms:date>
+        <rdfs:comment xml:lang="en">This branch isn&apos;t necessarily food material</rdfs:comment>
+        <rdfs:label xml:lang="en">pig material</rdfs:label>
     </owl:Class>
     
 
@@ -137896,20 +138164,6 @@ Namely, how to characterize the threshold of ingredients that make for multi-com
     
 
 
-    <!-- http://purl.obolibrary.org/obo/FOODON_03304497 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03304497">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001173"/>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
-        <oboInOwl:hasDbXref rdf:resource="https://bioregistry.io/reference/siren:F4497"/>
-        <rdfs:comment xml:lang="en">SIREN DB annotation:
-* whole, natural shape FOODON:03430150
-* seed (anatomical part) FOODON:03420155</rdfs:comment>
-        <rdfs:label xml:lang="en">edible seed food product</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/FOODON_03305536 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03305536">
@@ -138025,6 +138279,19 @@ Namely, how to characterize the threshold of ingredients that make for multi-com
     
 
 
+    <!-- http://purl.obolibrary.org/obo/FOODON_03315102 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03315102">
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
+        <obo:IAO_0000115 xml:lang="en">Food material derived from a chicken egg.</obo:IAO_0000115>
+        <oboInOwl:hasDbXref rdf:resource="https://bioregistry.io/reference/siren:F15102"/>
+        <rdfs:comment xml:lang="en">SIREN DB annotation:
+* egg FOODON:03420194</rdfs:comment>
+        <rdfs:label xml:lang="en">chicken egg material</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/FOODON_03315150 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03315150">
@@ -138110,22 +138377,6 @@ Namely, how to characterize the threshold of ingredients that make for multi-com
 * solid FOODON:03430151
 * meat part of animal FOODON:03420103</rdfs:comment>
         <rdfs:label xml:lang="en">pate</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/FOODON_03316079 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03316079">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00002275"/>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
-        <oboInOwl:hasDbXref rdf:resource="https://bioregistry.io/reference/siren:F16079"/>
-        <rdfs:comment xml:lang="en">SIREN DB annotation:
-* liquid FOODON:03430130
-* heat-treated FOODON:03440022
-* part of plant FOODON:03420174
-* steeping FOODON:03450036</rdfs:comment>
-        <rdfs:label xml:lang="en">herbal infusion</rdfs:label>
     </owl:Class>
     
 
@@ -138711,6 +138962,32 @@ The GS1 GPC classification in facet A is currently updated based on June 2017 re
     
 
 
+    <!-- http://purl.obolibrary.org/obo/FOODON_03411140 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03411140">
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
+        <oboInOwl:hasDbXref rdf:resource="http://www.langual.org/langual_thesaurus.asp?termid=B1140"/>
+        <rdfs:label xml:lang="en">fruit-producing plant</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FOODON_03411283 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03411283">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03411140"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03414459"/>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
+        <obo:IAO_0000115 xml:lang="en">Melon is a name given to various members of the plant family *Cucurbitaceae* with sweet flavored, fleshy fruit e.g. gourds or cucurbits. Melon can be referred as a plant or a fruit. Many different cultivars have been produced, particularly of muskmelons.</obo:IAO_0000115>
+        <obo:IAO_0000119>WIKIPEDIA:Melon</obo:IAO_0000119>
+        <oboInOwl:hasDbXref rdf:resource="http://eol.org/pages/38795"/>
+        <oboInOwl:hasDbXref rdf:resource="http://www.langual.org/langual_thesaurus.asp?termid=B1283"/>
+        <oboInOwl:hasSynonym xml:lang="en">cucumis spp.</oboInOwl:hasSynonym>
+        <rdfs:label xml:lang="en">melon plant</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/FOODON_03412344 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03412344">
@@ -138738,6 +139015,48 @@ The GS1 GPC classification in facet A is currently updated based on June 2017 re
     
 
 
+    <!-- http://purl.obolibrary.org/obo/FOODON_03413357 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03413357">
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
+        <oboInOwl:hasDbXref rdf:resource="http://www.langual.org/langual_thesaurus.asp?termid=B3357"/>
+        <rdfs:comment xml:lang="en">LanguaL curation note: This term is for CLASSIFICATION ONLY; DO NOT USE term in indexing. Use a more precise narrower term.</rdfs:comment>
+        <rdfs:label xml:lang="en">plant by taxonomy</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FOODON_03414459 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03414459">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03414460"/>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
+        <obo:IAO_0000115 xml:lang="en">Cucumis is a genus of twining, tendril-bearing plants in the *Cucurbitaceae* family which includes the cucumber (*Cucumis sativus*), muskmelons (*Cucumis melo*, including cantaloupe and honeydew), the horned melon (*Cucumis metuliferus*), and the West Indian gherkin (*Cucumis anguria*). [https://en.wikipedia.org/wiki/Cucumis]</obo:IAO_0000115>
+        <oboInOwl:hasDbXref rdf:resource="http://www.langual.org/langual_thesaurus.asp?termid=B4459"/>
+        <rdfs:label xml:lang="en">cucumis species</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FOODON_03414460 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03414460">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03413357"/>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
+        <obo:IAO_0000115 xml:lang="en">The *Cucurbitaceae*, also called cucurbits and the gourd family, are a plant family consisting of about 965 species in around 95 genera, the most important of which are: 
+  *Cucurbita* - squash, pumpkin, zucchini, some gourds; 
+  *Lagenaria* - calabash, and others that are inedible; 
+  *Citrullus* - watermelon (*C. lanatus, C. colocynthis*) and others; 
+  *Cucumis* - cucumber (*C. sativus*), various melons; 
+  *Luffa* - luffa, loofah</obo:IAO_0000115>
+        <obo:IAO_0000119 rdf:resource="https://en.wikipedia.org/wiki/Cucurbitaceae"/>
+        <oboInOwl:hasDbXref rdf:resource="http://www.langual.org/langual_thesaurus.asp?termid=B4460"/>
+        <oboInOwl:hasSynonym xml:lang="en">cucurbitaceae</oboInOwl:hasSynonym>
+        <rdfs:label xml:lang="en">gourd/squash family</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/FOODON_03420108 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03420108">
@@ -138753,14 +139072,15 @@ The GS1 GPC classification in facet A is currently updated based on June 2017 re
     <!-- http://purl.obolibrary.org/obo/FOODON_03420116 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03420116">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00002403"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
-        <obo:IAO_0000115 xml:lang="en">Food material which is distinguished primarily by the organism(s) it derives from.</obo:IAO_0000115>
-        <obo:IAO_0000116 xml:lang="en">This was renamed from &quot;part of organism&quot; (and from LanguaL&apos;s original &quot;part of plant or animal&quot;) to encompass organism material that is produced by an animal or plant rather than &quot;part of&quot; it, such as an egg, and might not be countable per se, such as milk. Additionally the existing definition&apos;s &quot;from which a food product or its major ingredient is derived.&quot; was removed as an unnecessary constraint. [2023/03/02]</obo:IAO_0000116>
+        <obo:IAO_0000115 xml:lang="en">Material which is distinguished primarily by the organism(s) it derives from.</obo:IAO_0000115>
+        <obo:IAO_0000116 xml:lang="en">This was renamed from &quot;part of organism&quot; (and from LanguaL&apos;s original &quot;part of plant or animal&quot;) to encompass organism material that is produced by an animal or plant rather than &quot;part of&quot; it, such as an egg, and might not be countable per se, such as milk. Additionally the existing definition&apos;s &quot;from which a food product or its major ingredient is derived.&quot;was removed as an unnecessary constraint. [2023/03/02]</obo:IAO_0000116>
+        <oboInOwl:hasDbXref rdf:resource="http://www.langual.org/langual_thesaurus.asp?termid=B0001"/>
+        <oboInOwl:hasDbXref rdf:resource="http://www.langual.org/langual_thesaurus.asp?termid=B1564"/>
         <oboInOwl:hasDbXref rdf:resource="http://www.langual.org/langual_thesaurus.asp?termid=C0116"/>
         <rdfs:comment xml:lang="en">LanguaL curation note: &quot;e.g. *LEAF*, *ROOT OR TUBER*, *ORGAN MEAT*, *MILK* OR *EGG*; it also includes components of parts, such as *CREAM*, and extracts, concentrates or isolates, such as *PROTEIN EXTRACT* or *SUGAR*.&quot;</rdfs:comment>
         <rdfs:comment xml:lang="en">Old definition as of Feb 25, 2025: Anatomical or other part(s) or substances derived from plant or animal or fungal organisms.</rdfs:comment>
-        <rdfs:label xml:lang="en">food material by organism</rdfs:label>
+        <rdfs:label xml:lang="en">organism material</rdfs:label>
     </owl:Class>
     
 
@@ -138794,7 +139114,7 @@ The GS1 GPC classification in facet A is currently updated based on June 2017 re
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03420164">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_03420116"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
-        <obo:IAO_0000115 xml:lang="en">Material that derives from some animal.</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="en">Material that derives from one or more animals</obo:IAO_0000115>
         <terms:contributor>https://orcid.org/0000-0001-5275-8866</terms:contributor>
         <terms:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2023-08-01T21:25:29Z</terms:date>
         <oboInOwl:hasDbXref rdf:resource="http://www.langual.org/langual_thesaurus.asp?termid=C0164"/>
@@ -139324,8 +139644,8 @@ The GS1 GPC classification in facet A is currently updated based on June 2017 re
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/IAO_0000027">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000030"/>
-        <obo:IAO_0000115 xml:lang="en">An information content entity that is intended to be a truthful statement about something (modulo, e.g., measurement precision or other systematic errors) and is constructed/acquired by a method which reliably tends to produce (approximately) truthful statements.</obo:IAO_0000115>
-        <rdfs:label xml:lang="en">data item</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">An information content entity that is intended to be one or more truthful statement(s) about something (modulo, e.g., measurement precision or other systematic errors) and is constructed/acquired by a method which reliably tends to produce (approximately) truthful statements.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">data entity</rdfs:label>
     </owl:Class>
     
 
@@ -139369,9 +139689,9 @@ The GS1 GPC classification in facet A is currently updated based on June 2017 re
     <!-- http://purl.obolibrary.org/obo/IAO_0000100 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/IAO_0000100">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000027"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0001000"/>
         <obo:IAO_0000115 xml:lang="en">A data item that is an aggregate of other data items of the same type that have something in common. Averages and distributions can be determined for data sets.</obo:IAO_0000115>
-        <rdfs:label xml:lang="en">data set</rdfs:label>
+        <rdfs:label xml:lang="en">homogenous data collection</rdfs:label>
     </owl:Class>
     
 
@@ -139435,6 +139755,16 @@ The GS1 GPC classification in facet A is currently updated based on June 2017 re
     
 
 
+    <!-- http://purl.obolibrary.org/obo/IAO_0001000 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/IAO_0001000">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000027"/>
+        <obo:IAO_0000115 xml:lang="en">A data entity that consists of multiple data entities.</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">data collection</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/NCBITaxon_1 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_1">
@@ -139453,15 +139783,6 @@ The GS1 GPC classification in facet A is currently updated based on June 2017 re
         <owl:annotatedTarget>all</owl:annotatedTarget>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon/subsets/taxslim.obo#synonym"/>
     </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/NCBITaxon_10239 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_10239">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0100026"/>
-        <rdfs:label>Viruses</rdfs:label>
-    </owl:Class>
     
 
 
@@ -139487,13 +139808,14 @@ The GS1 GPC classification in facet A is currently updated based on June 2017 re
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_1117">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1798711"/>
+        <oboInOwl:hasExactSynonym>Oxygenic photosynthetic bacteria</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>blue-green algae</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>blue-green bacteria</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>cyanobacteria</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>cyanophytes</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasRelatedSynonym>Cyanobacteria</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>Cyanobacteriophyta</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>Cyanophycota</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>Cyanophyta</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>Oxygenic photosynthetic bacteria</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>Oxyphotobacteria</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>cyanobacteria</oboInOwl:hasRelatedSynonym>
         <rdfs:label>Cyanobacteriota</rdfs:label>
@@ -139601,7 +139923,7 @@ The GS1 GPC classification in facet A is currently updated based on June 2017 re
     <!-- http://purl.obolibrary.org/obo/NCBITaxon_117558 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_117558">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_6547"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_3703731"/>
         <rdfs:label>Bathymodiolinae</rdfs:label>
     </owl:Class>
     
@@ -139714,11 +140036,13 @@ The GS1 GPC classification in facet A is currently updated based on June 2017 re
     <!-- http://purl.obolibrary.org/obo/NCBITaxon_131567 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_131567">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/COB_0000022"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1"/>
         <oboInOwl:hasDbXref>GC_ID:1</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>ncbi_taxonomy</oboInOwl:hasOBONamespace>
         <oboInOwl:hasRelatedSynonym>biota</oboInOwl:hasRelatedSynonym>
         <oboInOwl:id>NCBITaxon:131567</oboInOwl:id>
+        <rdfs:label>cellular organism</rdfs:label>
         <rdfs:label>cellular organisms</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -139733,7 +140057,7 @@ The GS1 GPC classification in facet A is currently updated based on June 2017 re
     <!-- http://purl.obolibrary.org/obo/NCBITaxon_1316646 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_1316646">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1804623"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_3563"/>
         <rdfs:label>Salicornioideae</rdfs:label>
     </owl:Class>
     
@@ -139895,16 +140219,6 @@ The GS1 GPC classification in facet A is currently updated based on June 2017 re
     
 
 
-    <!-- http://purl.obolibrary.org/obo/NCBITaxon_1804623 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_1804623">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_3524"/>
-        <oboInOwl:hasExactSynonym>goosefoot family</oboInOwl:hasExactSynonym>
-        <rdfs:label>Chenopodiaceae</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/NCBITaxon_1890449 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_1890449">
@@ -139986,6 +140300,8 @@ The GS1 GPC classification in facet A is currently updated based on June 2017 re
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_197562">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_197563"/>
+        <oboInOwl:hasExactSynonym>crustaceans and hexapods</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>crustaceans</oboInOwl:hasRelatedSynonym>
         <rdfs:label>Pancrustacea</rdfs:label>
     </owl:Class>
     
@@ -140005,7 +140321,7 @@ The GS1 GPC classification in facet A is currently updated based on June 2017 re
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_2">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_131567"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0100026"/>
+        <oboInOwl:hasExactSynonym>bacteria</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>eubacteria</oboInOwl:hasExactSynonym>
         <oboInOwl:hasRelatedSynonym>Bacteria (ex Cavalier-Smith 1987)</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>Bacteria Woese et al. 2024</oboInOwl:hasRelatedSynonym>
@@ -140041,15 +140357,6 @@ The GS1 GPC classification in facet A is currently updated based on June 2017 re
     
 
 
-    <!-- http://purl.obolibrary.org/obo/NCBITaxon_2157 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_2157">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0100026"/>
-        <rdfs:label>Archaea</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/NCBITaxon_2696291 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_2696291">
@@ -140072,7 +140379,7 @@ The GS1 GPC classification in facet A is currently updated based on June 2017 re
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_2698737">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2759"/>
-        <oboInOwl:hasRelatedSynonym>SAR supergroup</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasExactSynonym>SAR supergroup</oboInOwl:hasExactSynonym>
         <rdfs:label>Sar</rdfs:label>
     </owl:Class>
     
@@ -140093,7 +140400,6 @@ The GS1 GPC classification in facet A is currently updated based on June 2017 re
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_2759">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_131567"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0100026"/>
         <taxslim:has_rank rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_superkingdom"/>
         <oboInOwl:hasDbXref>GC_ID:1</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>PMID:23020233</oboInOwl:hasDbXref>
@@ -140219,7 +140525,7 @@ The GS1 GPC classification in facet A is currently updated based on June 2017 re
     <!-- http://purl.obolibrary.org/obo/NCBITaxon_301957 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_301957">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_6547"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_3703731"/>
         <rdfs:label>Modiolinae</rdfs:label>
     </owl:Class>
     
@@ -140238,6 +140544,7 @@ The GS1 GPC classification in facet A is currently updated based on June 2017 re
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_3028117">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_1117"/>
+        <oboInOwl:hasExactSynonym>c__Cyanobacteriia</oboInOwl:hasExactSynonym>
         <oboInOwl:hasRelatedSynonym>Gloeobacteria</oboInOwl:hasRelatedSynonym>
         <rdfs:label>Cyanophyceae</rdfs:label>
     </owl:Class>
@@ -140280,7 +140587,6 @@ The GS1 GPC classification in facet A is currently updated based on June 2017 re
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_131221"/>
         <oboInOwl:hasExactSynonym>higher plants</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>land plants</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym>plants</oboInOwl:hasExactSynonym>
         <oboInOwl:hasRelatedSynonym>land plants</oboInOwl:hasRelatedSynonym>
         <rdfs:label>Embryophyta</rdfs:label>
     </owl:Class>
@@ -140335,6 +140641,7 @@ The GS1 GPC classification in facet A is currently updated based on June 2017 re
         <oboInOwl:hasExactSynonym>Chlorophyta/Embryophyta group</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>chlorophyte/embryophyte group</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>green plants</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>plants</oboInOwl:hasExactSynonym>
         <oboInOwl:hasRelatedSynonym>Chlorobionta</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>Chloroplastida</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>green plants</oboInOwl:hasRelatedSynonym>
@@ -140434,7 +140741,7 @@ The GS1 GPC classification in facet A is currently updated based on June 2017 re
     <!-- http://purl.obolibrary.org/obo/NCBITaxon_33392 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_33392">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_33340"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_3701061"/>
         <oboInOwl:hasRelatedSynonym>Holometabola</oboInOwl:hasRelatedSynonym>
         <rdfs:label>Endopterygota</rdfs:label>
     </owl:Class>
@@ -140456,6 +140763,7 @@ The GS1 GPC classification in facet A is currently updated based on June 2017 re
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_33630">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2698737"/>
         <oboInOwl:hasExactSynonym>alveolates</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>alveolates</oboInOwl:hasRelatedSynonym>
         <rdfs:label>Alveolata</rdfs:label>
     </owl:Class>
     
@@ -140469,6 +140777,7 @@ The GS1 GPC classification in facet A is currently updated based on June 2017 re
         <oboInOwl:hasRelatedSynonym>Chromophyta</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>Heterokonta</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>Straminipila</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>heterokonts</oboInOwl:hasRelatedSynonym>
         <rdfs:label>Stramenopiles</rdfs:label>
     </owl:Class>
     
@@ -140518,6 +140827,18 @@ The GS1 GPC classification in facet A is currently updated based on June 2017 re
     
 
 
+    <!-- http://purl.obolibrary.org/obo/NCBITaxon_3563 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_3563">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_3524"/>
+        <oboInOwl:hasExactSynonym>amaranth family</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>goosefoot family</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>Chenopodiaceae</oboInOwl:hasRelatedSynonym>
+        <rdfs:label>Amaranthaceae</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/NCBITaxon_365482 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_365482">
@@ -140534,6 +140855,60 @@ The GS1 GPC classification in facet A is currently updated based on June 2017 re
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_91836"/>
         <oboInOwl:hasRelatedSynonym>Capparales</oboInOwl:hasRelatedSynonym>
         <rdfs:label>Brassicales</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCBITaxon_3701028 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_3701028">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_197562"/>
+        <rdfs:label>Altocrustacea</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCBITaxon_3701030 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_3701030">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_3701028"/>
+        <rdfs:label>Allotriocarida</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCBITaxon_3701061 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_3701061">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_33340"/>
+        <rdfs:label>Eumetabola</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCBITaxon_3701062 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_3701062">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_33392"/>
+        <rdfs:label>Aparaglossata</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCBITaxon_3701063 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_3701063">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_3701062"/>
+        <rdfs:label>Panorpida</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCBITaxon_3703731 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_3703731">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_106220"/>
+        <rdfs:label>Modiolidae</rdfs:label>
     </owl:Class>
     
 
@@ -140708,6 +141083,7 @@ The GS1 GPC classification in facet A is currently updated based on June 2017 re
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_436486">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_8492"/>
         <oboInOwl:hasExactSynonym>dinosaurs</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasRelatedSynonym>dinosaurs</oboInOwl:hasRelatedSynonym>
         <rdfs:label>Dinosauria</rdfs:label>
     </owl:Class>
     
@@ -141067,7 +141443,7 @@ The GS1 GPC classification in facet A is currently updated based on June 2017 re
     <!-- http://purl.obolibrary.org/obo/NCBITaxon_6960 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_6960">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_197562"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_3701030"/>
         <oboInOwl:hasExactSynonym>hexapods</oboInOwl:hasExactSynonym>
         <oboInOwl:hasRelatedSynonym>Atelocerata</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>Tracheata</oboInOwl:hasRelatedSynonym>
@@ -141084,7 +141460,7 @@ The GS1 GPC classification in facet A is currently updated based on June 2017 re
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_33341"/>
         <oboInOwl:hasExactSynonym>grasshoppers, crickets &amp; katydids</oboInOwl:hasExactSynonym>
         <oboInOwl:hasRelatedSynonym>Saltatoria</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>grasshoppers, crickets, &amp; katydids</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>grasshoppers, crickets &amp; katydids</oboInOwl:hasRelatedSynonym>
         <rdfs:label>Orthoptera</rdfs:label>
     </owl:Class>
     
@@ -141095,7 +141471,6 @@ The GS1 GPC classification in facet A is currently updated based on June 2017 re
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_7001">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_6993"/>
         <oboInOwl:hasExactSynonym>grasshoppers, groundhoppers &amp; pygmy mole crickets</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasRelatedSynonym>grasshoppers</oboInOwl:hasRelatedSynonym>
         <rdfs:label>Caelifera</rdfs:label>
     </owl:Class>
     
@@ -141156,7 +141531,7 @@ The GS1 GPC classification in facet A is currently updated based on June 2017 re
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_7088">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_85604"/>
         <oboInOwl:hasExactSynonym>moths &amp; butterflies</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasRelatedSynonym>moths</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>moths &amp; butterflies</oboInOwl:hasRelatedSynonym>
         <rdfs:label>Lepidoptera</rdfs:label>
     </owl:Class>
     
@@ -141176,6 +141551,7 @@ The GS1 GPC classification in facet A is currently updated based on June 2017 re
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_71000">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_403651"/>
+        <oboInOwl:hasRelatedSynonym>Pseudopfiesteria</oboInOwl:hasRelatedSynonym>
         <rdfs:label>Pfiesteria</rdfs:label>
     </owl:Class>
     
@@ -141343,7 +141719,7 @@ The GS1 GPC classification in facet A is currently updated based on June 2017 re
     <!-- http://purl.obolibrary.org/obo/NCBITaxon_85604 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_85604">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_33392"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_3701063"/>
         <rdfs:label>Amphiesmenoptera</rdfs:label>
     </owl:Class>
     
@@ -141489,19 +141865,11 @@ The GS1 GPC classification in facet A is currently updated based on June 2017 re
     <!-- http://purl.obolibrary.org/obo/OBI_0000011 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000011">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000115 xml:lang="en">A process that realizes a plan which is the concretization of a plan specification.</obo:IAO_0000115>
-        <rdfs:label xml:lang="en">planned process</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/OBI_0000047 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000047">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
-        <obo:IAO_0000115 xml:lang="en">Is a material entity that is created or changed during material processing.</obo:IAO_0000115>
-        <rdfs:label xml:lang="en">processed material</rdfs:label>
+        <obo:IAO_0100001 rdf:resource="http://purl.obolibrary.org/obo/COB_0000035"/>
+        <rdfs:label>obsolete planned process</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
 
@@ -141519,6 +141887,7 @@ The GS1 GPC classification in facet A is currently updated based on June 2017 re
     <!-- http://purl.obolibrary.org/obo/OBI_0000967 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000967">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/COB_0001300"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000968"/>
         <obo:IAO_0000115 xml:lang="en">A device that can be used to restrict the location of material entities over time</obo:IAO_0000115>
         <rdfs:label>container</rdfs:label>
@@ -141531,9 +141900,11 @@ The GS1 GPC classification in facet A is currently updated based on June 2017 re
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000968">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ENVO_00003074"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000047"/>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000115 xml:lang="en">A material entity that is designed to perform a function in a scientific investigation, but is not a reagent.</obo:IAO_0000115>
-        <rdfs:label>device</rdfs:label>
+        <obo:IAO_0100001 rdf:resource="http://purl.obolibrary.org/obo/COB_0001300"/>
+        <rdfs:label>obsolete device</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
 
@@ -141541,19 +141912,11 @@ The GS1 GPC classification in facet A is currently updated based on June 2017 re
     <!-- http://purl.obolibrary.org/obo/OBI_0100026 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0100026">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_10239"/>
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_2"/>
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_2157"/>
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_2759"/>
-                </owl:unionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
+        <rdfs:subClassOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass"/>
         <obo:IAO_0000115 xml:lang="en">A material entity that is an individual living system, such as animal, plant, bacteria or virus, that is capable of replicating or reproducing, growth and maintenance in the right environment. An organism may be unicellular or made up, like humans, of many billions of cells divided into specialized tissues and organs.</obo:IAO_0000115>
-        <rdfs:label xml:lang="en">organism</rdfs:label>
+        <obo:IAO_0100001 rdf:resource="http://purl.obolibrary.org/obo/COB_0000022"/>
+        <rdfs:label>obsolete organism</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
 
@@ -141561,7 +141924,7 @@ The GS1 GPC classification in facet A is currently updated based on June 2017 re
     <!-- http://purl.obolibrary.org/obo/PATO_0000001 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000001">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000020"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/COB_0000502"/>
         <obo:IAO_0000115>A dependent entity that inheres in a bearer by virtue of how the bearer is related to other entities</obo:IAO_0000115>
         <rdfs:label>quality</rdfs:label>
     </owl:Class>
@@ -145988,6 +146351,7 @@ The GS1 GPC classification in facet A is currently updated based on June 2017 re
     <!-- http://purl.obolibrary.org/obo/PCO_0000000 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PCO_0000000">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PCO_0000031"/>
         <obo:IAO_0000112>Examples include: population, community, species (meaning the collection of organisms that makes up a species, not the taxonomic rank), and family.</obo:IAO_0000112>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000125"/>
@@ -146003,7 +146367,7 @@ The GS1 GPC classification in facet A is currently updated based on June 2017 re
     <!-- http://purl.obolibrary.org/obo/PCO_0000001 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PCO_0000001">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0100026"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/COB_0000022"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PCO_0000018"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -146888,7 +147252,6 @@ Classes for population already  exist in IDO (&apos;organism population&apos;, I
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/PO_0025007"/>
         <obo:IAO_0000115>A cell which is a plant structure (PO:0009011).</obo:IAO_0000115>
         <oboInOwl:hasBroadSynonym>cell (broad)</oboInOwl:hasBroadSynonym>
-        <oboInOwl:hasDbXref>GO:0005623</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>PO_GIT:56</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>c&amp;#233lula vegetal (Spanish, exact)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>植物細胞 (Japanese, exact)</oboInOwl:hasExactSynonym>
@@ -146897,7 +147260,7 @@ Classes for population already  exist in IDO (&apos;organism population&apos;, I
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/po#CL"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/po#TraitNet"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/po#reference"/>
-        <rdfs:comment>Applies to cells that are living or dead at maturity (e.g., fiber cell or tracheid) and includes any external encapsulating structures (if present) such as the plasma membrane and the plant-type cell wall. Definition of cell GO:0005623: &quot;The basic structural and functional unit of all organisms. Includes the plasma membrane and any external encapsulating structures such as the cell wall and cell envelope&quot;. GO:0009505. Definition of plant-type cell wall (GO:0009505): A more or less rigid structure lying outside the cell membrane of a cell and composed of cellulose and pectin and other organic and inorganic substances, synonym; exact: cellulose and pectin-containing cell wall.</rdfs:comment>
+        <rdfs:comment>Applies to cells that are living or dead at maturity (e.g., fiber cell or tracheid) and includes any external encapsulating structures (if present) such as the plasma membrane and the plant-type cell wall.  Definition of cell CL:0000000: &quot;A material entity of anatomical origin (part of or deriving from an organism) that has as its parts a maximally connected cell compartment surrounded by a plasma membrane. The definition of cell is intended to represent all cells, and thus a cell is defined as a material entity and not an anatomical structure, which implies that it is part of an organism (or the entirety of one)&quot;. Definition of plant-type cell wall (GO:0009505): &quot;A more or less rigid structure lying outside the cell membrane of a cell and composed of cellulose and pectin and other organic and inorganic substances.&quot;  Exact synonym: cellulose and pectin-containing cell wall.</rdfs:comment>
         <rdfs:label>plant cell</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -147775,7 +148138,7 @@ Classes for population already  exist in IDO (&apos;organism population&apos;, I
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PO_0025131">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
-        <rdfs:subClassOf rdf:nodeID="genid15303"/>
+        <rdfs:subClassOf rdf:nodeID="genid15300"/>
         <obo:IAO_0000115>An anatomical entity that is or was part of a plant.</obo:IAO_0000115>
         <oboInOwl:created_by>rwalls</oboInOwl:created_by>
         <oboInOwl:creation_date>2010-11-15T11:41:38Z</oboInOwl:creation_date>
@@ -147787,14 +148150,14 @@ Classes for population already  exist in IDO (&apos;organism population&apos;, I
         <rdfs:comment>Includes both material entities such as plant structures and immaterial entities such as plant anatomical spaces. CARO:0000000 &apos;anatomical entity&apos; is defined as: A part of a cellular organism that is either an immaterial entity or a material entity with granularity aboove the level of a protein complex.  Or, a substance produced by a cellular organism with granularity above the level of a protein complex.  Refers to BFO:0000004 &apos;independent continuant&apos;.</rdfs:comment>
         <rdfs:label>plant anatomical entity</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid15303">
+    <owl:Restriction rdf:nodeID="genid15300">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_33090"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PO_0025131"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid15303"/>
+        <owl:annotatedTarget rdf:nodeID="genid15300"/>
         <oboInOwl:source>cjm</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -163072,6 +163435,14 @@ Classes for population already  exist in IDO (&apos;organism population&apos;, I
     
 
 
+    <!-- http://www.geneontology.org/formats/oboInOwl#ObsoleteClass -->
+
+    <owl:Class rdf:about="http://www.geneontology.org/formats/oboInOwl#ObsoleteClass">
+        <rdfs:label>Obsolete Class</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -163811,31 +164182,6 @@ Classes for population already  exist in IDO (&apos;organism population&apos;, I
             </owl:Class>
         </rdfs:subClassOf>
     </owl:Restriction>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000004"/>
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000020"/>
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000031"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000006"/>
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000029"/>
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000140"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000008"/>
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000011"/>
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000015"/>
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000035"/>
-        </owl:members>
-    </rdf:Description>
 </rdf:RDF>
 
 
