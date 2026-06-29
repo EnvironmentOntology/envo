@@ -1,7 +1,7 @@
 format-version: 1.2
-data-version: envo/releases/2025-10-20/subsets/material-hierarchy.owl
+data-version: envo/releases/2026-06-26/subsets/material-hierarchy.owl
 ontology: envo/subsets/material-hierarchy
-property_value: owl:versionInfo "subsets/material-hierarchy.owl 2025-10-20" xsd:string
+property_value: owl:versionInfo "subsets/material-hierarchy.owl 2026-06-26" xsd:string
 
 [Term]
 id: ENVO:00000003
@@ -5613,7 +5613,7 @@ intersection_of: FOODON:03430109 ! food (liquid, low viscosity)
 id: FOODON:00001002
 name: food product
 def: "Food material for humans and animals which is processed with the intention that it be consumable as a whole or added to other food products." []
-comment: The FoodOn "food product" class is provided as a branch under which new food product categories and food products themselves can be placed. Here classes are provided to differentiate a food product by its food composition, processing and/or consumption characteristics. This avoids brand name products but it may include generic food dish categories. It has a much greater depth and polyhierarchy than other agency product type schemes have in an effort to group related products together.  The upper level basis of this tree originated in the environment ontology (ENVO) and from the US Code of Federal Regulations.
+comment: The FoodOn "food product"class is provided as a branch under which new food product categories and food products themselves can be placed. Here classes are provided to differentiate a food product by its food composition, processing and/or consumption characteristics. This avoids brand name products but it may include generic food dish categories. It has a much greater depth and polyhierarchy than other agency product type schemes have in an effort to group related products together.  The upper level basis of this tree originated in the environment ontology (ENVO) and from the US Code of Federal Regulations.
 is_a: FOODON:00002403 ! food material
 property_value: IAO:0000117 "Damion Dooley" xsd:string
 property_value: IAO:0000118 "Foodon product type" xsd:string
@@ -5643,7 +5643,7 @@ id: FOODON:00001006
 name: mammalian meat food product
 def: "A food product made of meat, the skeletal muscle and associated fat, and other edible tissues such as organs, livers, skin, brains, bone marrow, kidneys, or lungs, of mammals." []
 xref: https://bioregistry.io/reference/siren\:F17332
-is_a: FOODON:00001092 ! vertebrate animal food product
+is_a: FOODON:00001092 ! vertebrate food product
 property_value: IAO:0000114 IAO:0000122
 property_value: IAO:0000119 https://en.wikipedia.org/wiki/Meat
 
@@ -5721,9 +5721,10 @@ property_value: IAO:0000119 https://en.wikipedia.org/wiki/Yogurt xsd:anyURI
 [Term]
 id: FOODON:00001015
 name: plant food product
-def: "This class includes food products which are derived from or produced by a plant." []
-is_a: FOODON:00004331 ! plant material
-property_value: IAO:0000114 IAO:0000428
+def: "A food product which has as a defining ingredient some plant material." []
+is_a: FOODON:00001002 ! food product
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-8844-9165
+property_value: IAO:0000114 IAO:0000122
 
 [Term]
 id: FOODON:00001016
@@ -6166,7 +6167,7 @@ intersection_of: FOODON:03307539 ! food (dried)
 
 [Term]
 id: FOODON:00001092
-name: vertebrate animal food product
+name: vertebrate food product
 def: "A food product which is derived from or produced by an animal that has a vertibrae." []
 is_a: FOODON:00004242 ! animal food product
 property_value: http://purl.org/dc/terms/contributor "Damion Dooley" xsd:string
@@ -6251,7 +6252,7 @@ is_a: FOODON:00001250 ! fish egg food product
 id: FOODON:00001105
 name: avian egg food product
 def: "A food product made from an avian egg." []
-is_a: FOODON:00001251 ! avian animal food product
+is_a: FOODON:00001251 ! avian food product
 is_a: FOODON:00001274 ! egg food product
 property_value: IAO:0000114 IAO:0000122
 
@@ -6379,7 +6380,7 @@ name: tea based beverage product
 def: "A beverage product derived from leaves of the tea plant (Camellia sinensis)." []
 comment: "While fermentation is also referred to in the production of brewed teas, this is inaccurate. Some herbal teas on the market today include probiotic cultures alongside tea leaves to maintain gut health but the tea itself hasn't been fermented. Most dried teas however don't use live cultures at all during production. Instead, harvested tea leaves undergo a natural chemical process known as oxidation, which also changes the color, flavor and level of health benefits in the resulting brew." [https://eatcultured.com/blogs/our-awesome-blog/fermented-tea]
 is_a: FOODON:00001255 ! nonfermented plant derived beverage product
-is_a: FOODON:03316079 ! herbal infusion
+is_a: FOODON:00002275 ! steeped beverage product
 property_value: http://purl.org/dc/terms/contributor "Damion Dooley" xsd:string
 property_value: IAO:0000114 IAO:0000122
 property_value: IAO:0000119 https://en.wikipedia.org/wiki/Tea
@@ -6595,14 +6596,14 @@ is_a: FOODON:00001015 ! plant food product
 
 [Term]
 id: FOODON:00001176
-name: invertebrate animal food product
+name: invertebrate food product
 is_a: FOODON:00004242 ! animal food product
 
 [Term]
 id: FOODON:00001177
 name: insect food product
 def: "A food product with insects as a defining ingredient." []
-is_a: FOODON:00001176 ! invertebrate animal food product
+is_a: FOODON:00001176 ! invertebrate food product
 
 [Term]
 id: FOODON:00001178
@@ -6644,14 +6645,6 @@ name: bread food product
 def: "A staple food prepared from a dough of flour (usually wheat) and water, usually by baking" []
 is_a: FOODON:00002456 ! food (baked)
 property_value: IAO:0000119 https://en.wikipedia.org/wiki/Bread
-
-[Term]
-id: FOODON:00001184
-name: algal food material
-def: "This food product type includes food products which are derived from a large, diverse group of photosynthetic organisms." []
-xref: https://bioregistry.io/reference/siren\:F10419
-is_a: FOODON:03420116 ! food material by organism
-property_value: seeAlso https://ungc-communications-assets.s3.amazonaws.com/docs/publications/The-Seaweed-Manifesto.pdf
 
 [Term]
 id: FOODON:00001185
@@ -7015,15 +7008,19 @@ is_a: FOODON:00001087 ! vegetable oil food product
 [Term]
 id: FOODON:00001234
 name: mayonnaise food product
-def: "A stable emulsion of oil, and vinegar or lemon juice, with many options for embellishment with other herbs and spices. Egg yolk is the traditional emulsifier." [http://en.wikipedia.org/wiki/Mayonnaise]
+def: "A food product made with mayonnaise as a defining ingredient." []
 is_a: FOODON:00001231 ! creamy salad dressing
+property_value: IAO:0000114 IAO:0000122
+property_value: IAO:0000119 http://en.wikipedia.org/wiki/Mayonnaise
 
 [Term]
 id: FOODON:00001235
 name: soy sauce food product
-def: "A condiment produced by fermenting soybeans with Aspergillus oryzae and Aspergillus soyae molds  along with roasted grain, water, and salt." [http://en.wikipedia.org/wiki/Soy_sauce]
+def: "A condiment with soy sauce as a defining ingredient." []
 is_a: FOODON:00001078 ! fermented soybean food product
 is_a: FOODON:00002262 ! soybean condiment
+property_value: IAO:0000114 IAO:0000122
+property_value: IAO:0000119 Soy:sauce
 
 [Term]
 id: FOODON:00001241
@@ -7088,7 +7085,7 @@ is_a: FOODON:00001255 ! nonfermented plant derived beverage product
 id: FOODON:00001248
 name: fish food product
 def: "A fish food product includes products made from any fish species (aquatic vertebrate with gills and fins)." []
-is_a: FOODON:00001092 ! vertebrate animal food product
+is_a: FOODON:00001092 ! vertebrate food product
 property_value: http://purl.org/dc/terms/contributor "Damion Dooley" xsd:string
 property_value: IAO:0000114 IAO:0000122
 property_value: IAO:0000119 https://en.wikipedia.org/wiki/Fish
@@ -7101,9 +7098,9 @@ is_a: FOODON:03315173 ! fish product (unspecified species)
 
 [Term]
 id: FOODON:00001251
-name: avian animal food product
+name: avian food product
 def: "A food product that is derived from some avian animal." []
-is_a: FOODON:00001092 ! vertebrate animal food product
+is_a: FOODON:00001092 ! vertebrate food product
 property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0001-5275-8866 xsd:string
 property_value: http://purl.org/dc/terms/date 2025-02-01T09:59:11Z xsd:dateTime
 property_value: IAO:0000114 IAO:0000122
@@ -7141,7 +7138,7 @@ def: "A dairy food product has mammilian milk or a milk component as an ingredie
 synonym: "dairy product" EXACT []
 synonym: "milk product" EXACT []
 xref: langual:thesaurus.asp?termid=H0242
-is_a: FOODON:00001092 ! vertebrate animal food product
+is_a: FOODON:00001092 ! vertebrate food product
 property_value: http://purl.org/dc/terms/contributor "Damion Dooley" xsd:string
 property_value: IAO:0000114 IAO:0000122
 
@@ -7158,7 +7155,6 @@ def: "Food material which has been fermented." []
 is_a: FOODON:00002501 ! multi-component food
 is_a: FOODON:00002645 ! food material by process
 property_value: IAO:0000114 IAO:0000428
-property_value: IAO:0000116 "Are all fermented foods considered preserved to some extent?" xsd:string
 property_value: IAO:0000117 "Damion Dooley" xsd:string
 
 [Term]
@@ -7212,7 +7208,7 @@ id: FOODON:00001274
 name: egg food product
 def: "A food consisting of a round or oval body laid by the female of many animals, consisting of an ovum surrounded by layers of membranes and an outer casing, which acts to nourish and protect a developing embryo and its nutrient reserves." [Wikipedia:Egg_%28food%29]
 comment: Regarding American regulatory aspects of egg products, see this summary:\nhttps://www.politico.com/agenda/story/2016/03/crazy-us-chicken-egg-regulation-graphic-000077
-is_a: FOODON:00001092 ! vertebrate animal food product
+is_a: FOODON:00001092 ! vertebrate food product
 
 [Term]
 id: FOODON:00001275
@@ -7277,7 +7273,6 @@ synonym: "ground beef" EXACT []
 synonym: "hamburger meat" EXACT []
 synonym: "minced beef" EXACT []
 is_a: FOODON:00001041 ! cow food product
-is_a: FOODON:02000412 ! piece(s) of beef
 property_value: http://schema.org/image https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Hackfleisch-1.jpg/631px-Hackfleisch-1.jpg
 property_value: IAO:0000114 IAO:0000122
 property_value: IAO:0000119 https://en.wikipedia.org/wiki/Ground_beef xsd:string
@@ -7286,7 +7281,7 @@ property_value: IAO:0000119 https://en.wikipedia.org/wiki/Ground_beef xsd:string
 id: FOODON:00001283
 name: poultry food product
 def: "A food product that is derived from some poultry." []
-is_a: FOODON:00001251 ! avian animal food product
+is_a: FOODON:00001251 ! avian food product
 property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0002-8844-9165 xsd:string
 property_value: http://purl.org/dc/terms/date 2025-02-01T09:59:11Z xsd:dateTime
 property_value: IAO:0000114 IAO:0000122
@@ -7349,7 +7344,7 @@ is_a: FOODON:00002044 ! mollusc food product
 id: FOODON:00001293
 name: shellfish food product
 is_a: FOODON:00001046 ! animal seafood product
-is_a: FOODON:00001176 ! invertebrate animal food product
+is_a: FOODON:00001176 ! invertebrate food product
 
 [Term]
 id: FOODON:00001294
@@ -7462,6 +7457,12 @@ name: common bean food product
 is_a: FOODON:00001635 ! bean food product
 
 [Term]
+id: FOODON:00001761
+name: condiment sauce
+is_a: FOODON:00001133 ! condiment
+is_a: FOODON:00001931 ! gravy or sauce
+
+[Term]
 id: FOODON:00001771
 name: cow milk based food product
 is_a: FOODON:00001118 ! cattle dairy food product
@@ -7534,6 +7535,11 @@ name: grain based vinegar food product
 is_a: FOODON:00001073 ! vinegar food product
 
 [Term]
+id: FOODON:00001931
+name: gravy or sauce
+is_a: FOODON:00001714 ! food material component
+
+[Term]
 id: FOODON:00002012
 name: lupine bean food product
 synonym: "lupin" EXACT []
@@ -7594,9 +7600,11 @@ is_a: FOODON:00002196 ! refined or partially-refined food product
 [Term]
 id: FOODON:00002132
 name: plant based salad food product
-def: "A salad food product with one or more plant-based ingredients." []
+def: "A salad food product with one or more plant-based defining ingredients." []
 is_a: FOODON:00002219 ! salad food product
 is_a: FOODON:03316579 ! multi-component plant food product
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0009-0003-2086-0905
+property_value: IAO:0000114 IAO:0000122
 
 [Term]
 id: FOODON:00002139
@@ -7686,7 +7694,7 @@ id: FOODON:00002219
 name: salad food product
 def: "A prepared food product consisting of either a salad or a salad ingredient mixture to which a salad dressing is added." []
 is_a: FOODON:00001180 ! prepared food product
-property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0003-3480-8238
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0009-0003-2086-0905
 property_value: IAO:0000119 https://en.wikipedia.org/wiki/Salad
 property_value: seeAlso FOODON:00001290
 
@@ -7698,12 +7706,12 @@ is_a: FOODON:00001127 ! cow milk cheese
 [Term]
 id: FOODON:00002262
 name: soybean condiment
-is_a: FOODON:00001133 ! condiment
+is_a: FOODON:00001761 ! condiment sauce
 
 [Term]
 id: FOODON:00002265
 name: soybean seed (field) food product
-is_a: FOODON:03304497 ! edible seed food product
+is_a: FOODON:00001173 ! plant seed food product
 property_value: seeAlso http://purl.obolibrary.org/obo/FOODON_00002266 xsd:anyURI
 
 [Term]
@@ -7757,6 +7765,8 @@ id: FOODON:00002334
 name: vegetable salad food product
 def: "A salad food product which contains one or more vegetable ingredients." []
 is_a: FOODON:00002132 ! plant based salad food product
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0009-0003-2086-0905
+property_value: IAO:0000114 IAO:0000122
 
 [Term]
 id: FOODON:00002364
@@ -7778,8 +7788,8 @@ def: "Any substance that can be consumed by an organism to satisfy nutritional o
 comment: This class is the top of FOODON's main food product hierarchy which is described in the https://www.foodon.org website, and can be searched in lookup services like https://www.ebi.ac.uk/ols/
 synonym: "food" EXACT []
 synonym: "foodstuff" EXACT []
-synonym: "nourishment" EXACT []
-synonym: "sustenance" EXACT []
+synonym: "nourishment" NARROW []
+synonym: "sustenance" NARROW []
 is_a: ENVO:00010483 ! environmental material
 property_value: IAO:0000119 https://en.wikipedia.org/wiki/Food
 
@@ -7800,7 +7810,7 @@ intersection_of: FOODON:00002501 ! multi-component food
 id: FOODON:00002454
 name: food material by characteristic
 def: "Food material which has been categorized by a characteristic such as granularity or temperature." []
-comment: This term was renamed from "food product by quality" to align better with COB "characteristic" label, and as well to disambiguate from other use of "quality" as a food grading. This term is useful for tasks like food inspection where little prior knowledge of how the food came to be is available. Some terms like "food (frozen)" are both a quality descriptor and the output of a process.
+comment: This term was renamed from "food product by quality" to align better with COB "characteristic" label, and as well to disambiguate from other use of "quality" as a food grading. This term is useful for tasks like food inspection where little prior knowledge of how the food came to be is available. Some terms like "food (frozen)"are both a quality descriptor and the output of a process.
 is_a: FOODON:00002403 ! food material
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000117 "Damion Dooley" xsd:string
@@ -8025,29 +8035,10 @@ property_value: http://purl.org/dc/terms/date 2021-12-24T00:12:16Z xsd:string
 id: FOODON:00004242
 name: animal food product
 def: "A food product that is derived from some animal." []
-is_a: FOODON:03420164 ! animal material
+is_a: FOODON:00001002 ! food product
 property_value: http://purl.org/dc/terms/contributor http://orcid.org/0000-0002-8844-9165 xsd:string
 property_value: http://purl.org/dc/terms/date 2023-08-01T21:25:29Z xsd:dateTime
 property_value: IAO:0000114 IAO:0000122
-
-[Term]
-id: FOODON:00004331
-name: plant material
-def: "Anatomical or other piece(s) or substance derived from one or more plants." []
-is_a: FOODON:03420116 ! food material by organism
-property_value: http://purl.org/dc/terms/date 2023-03-02T22:31:04Z xsd:dateTime
-property_value: IAO:0000114 IAO:0000122
-property_value: IAO:0000117 https://orcid.org/0000-0002-8844-9165
-
-[Term]
-id: FOODON:00004335
-name: piece(s) of animal
-def: "One or more pieces of animals." []
-is_a: FOODON:03420164 ! animal material
-property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0002-8844-9165 xsd:string
-property_value: http://purl.org/dc/terms/date 2023-08-01T21:25:29Z xsd:dateTime
-property_value: IAO:0000114 IAO:0000122
-property_value: IAO:0000117 https://orcid.org/0000-0002-8844-9165
 
 [Term]
 id: FOODON:00004509
@@ -8056,35 +8047,6 @@ def: "A food product made from milling plant material." []
 is_a: FOODON:00001015 ! plant food product
 property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0002-8844-9165
 property_value: http://purl.org/dc/terms/date 2023-10-07T13:41:10Z xsd:dateTime
-property_value: IAO:0000114 IAO:0000122
-
-[Term]
-id: FOODON:00004532
-name: piece(s) of cow
-def: "One or more pieces of cows." []
-is_a: FOODON:00004335 ! piece(s) of animal
-is_a: FOODON:02020889 ! cow material
-property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0002-8844-9165 xsd:string
-property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0002-8844-9165
-property_value: http://purl.org/dc/terms/date 2023-12-15T22:55:22Z xsd:dateTime
-property_value: IAO:0000114 IAO:0000122
-
-[Term]
-id: FOODON:02000412
-name: piece(s) of beef
-def: "One or more pieces of beef." []
-is_a: FOODON:00004532 ! piece(s) of cow
-
-[Term]
-id: FOODON:02020050
-name: avian animal material
-def: "Material that derives from some avian animal." []
-comment: This branch isn't necessarily food material
-is_a: FOODON:03420164 ! animal material
-property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0001-5275-8866 xsd:string
-property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0002-3410-4655 xsd:string
-property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0002-8844-9165 xsd:string
-property_value: http://purl.org/dc/terms/date 2024-02-12T14:11:19Z xsd:dateTime
 property_value: IAO:0000114 IAO:0000122
 
 [Term]
@@ -8103,31 +8065,6 @@ id: FOODON:02020149
 name: chicken food product
 def: "A food product that is derived from some chicken." []
 is_a: FOODON:00004242 ! animal food product
-is_a: FOODON:02020150 ! chicken material
-property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0001-5275-8866 xsd:string
-property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0002-3410-4655 xsd:string
-property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0002-8844-9165 xsd:string
-property_value: http://purl.org/dc/terms/date 2024-02-12T14:11:19Z xsd:dateTime
-property_value: IAO:0000114 IAO:0000122
-
-[Term]
-id: FOODON:02020150
-name: chicken material
-def: "Material that derives from some chicken." []
-comment: This branch isn't necessarily food material
-is_a: FOODON:02020050 ! avian animal material
-property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0001-5275-8866 xsd:string
-property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0002-3410-4655 xsd:string
-property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0002-8844-9165 xsd:string
-property_value: http://purl.org/dc/terms/date 2024-02-12T14:11:19Z xsd:dateTime
-property_value: IAO:0000114 IAO:0000122
-
-[Term]
-id: FOODON:02020889
-name: cow material
-def: "Material that derives from some cow." []
-comment: This branch isn't necessarily food material
-is_a: FOODON:03420164 ! animal material
 property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0001-5275-8866 xsd:string
 property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0002-3410-4655 xsd:string
 property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0002-8844-9165 xsd:string
@@ -8204,7 +8141,7 @@ id: FOODON:03302001
 name: animal-derived food
 comment: SIREN DB annotation:\n* part of animal FOODON:03420164
 xref: https://bioregistry.io/reference/siren\:F2001
-is_a: FOODON:00001092 ! vertebrate animal food product
+is_a: FOODON:00001092 ! vertebrate food product
 property_value: IAO:0000114 IAO:0000428
 
 [Term]
@@ -8236,14 +8173,6 @@ def: "A cultured dairy product is a fermented dairy product in which a microbial
 comment: SIREN DB annotation:\n* milk (mammary secretion) UBERON:0001913\n* microbial/enzymatic modification process FOODON:03460119
 xref: https://bioregistry.io/reference/siren\:F3909
 is_a: FOODON:00001053 ! fermented dairy food product
-property_value: IAO:0000114 IAO:0000428
-
-[Term]
-id: FOODON:03304497
-name: edible seed food product
-comment: SIREN DB annotation:\n* whole, natural shape FOODON:03430150\n* seed (anatomical part) FOODON:03420155
-xref: https://bioregistry.io/reference/siren\:F4497
-is_a: FOODON:00001173 ! plant seed food product
 property_value: IAO:0000114 IAO:0000428
 
 [Term]
@@ -8363,14 +8292,6 @@ comment: SIREN DB annotation:\n* solid FOODON:03430151\n* meat part of animal FO
 xref: https://bioregistry.io/reference/siren\:F15925
 is_a: FOODON:00001010 ! processed meat food product
 is_a: FOODON:03302001 ! animal-derived food
-property_value: IAO:0000114 IAO:0000428
-
-[Term]
-id: FOODON:03316079
-name: herbal infusion
-comment: SIREN DB annotation:\n* liquid FOODON:03430130\n* heat-treated FOODON:03440022\n* part of plant FOODON:03420174\n* steeping FOODON:03450036
-xref: https://bioregistry.io/reference/siren\:F16079
-is_a: FOODON:00002275 ! steeped beverage product
 property_value: IAO:0000114 IAO:0000428
 
 [Term]
@@ -8735,17 +8656,6 @@ is_a: FOODON:03420152 ! carbohydrate extract, concentrate, or isolate
 property_value: IAO:0000114 IAO:0000428
 
 [Term]
-id: FOODON:03420116
-name: food material by organism
-def: "Food material which is distinguished primarily by the organism(s) it derives from." []
-comment: LanguaL curation note: "e.g. *LEAF*, *ROOT OR TUBER*, *ORGAN MEAT*, *MILK* OR *EGG*; it also includes components of parts, such as *CREAM*, and extracts, concentrates or isolates, such as *PROTEIN EXTRACT* or *SUGAR*."
-comment: Old definition as of Feb 25, 2025: Anatomical or other part(s) or substances derived from plant or animal or fungal organisms.
-xref: langual:thesaurus.asp?termid=C0116
-is_a: FOODON:00002403 ! food material
-property_value: IAO:0000114 IAO:0000428
-property_value: IAO:0000116 "This was renamed from \"part of organism\" (and from LanguaL's original \"part of plant or animal\") to encompass organism material that is produced by an animal or plant rather than \"part of\" it, such as an egg, and might not be countable per se, such as milk. Additionally the existing definition's \"from which a food product or its major ingredient is derived.\" was removed as an unnecessary constraint. [2023/03/02]" xsd:string
-
-[Term]
 id: FOODON:03420152
 name: carbohydrate extract, concentrate, or isolate
 def: "Extract, concentrate or isolate high in sugar, oligosaccharide or polysaccharide." []
@@ -8760,18 +8670,6 @@ xref: langual:C0156
 is_a: FOODON:00001083 ! sugar condiment
 is_a: FOODON:03301073 ! sugar (granulated)
 property_value: IAO:0000114 IAO:0000428
-
-[Term]
-id: FOODON:03420164
-name: animal material
-def: "Material that derives from some animal." []
-comment: Langual note: Includes eggs and milk that, although separated from the animal, are produced as integral parts and are affected by the animal's food intake and metabolism.
-comment: This branch isn't necessarily food material
-xref: langual:thesaurus.asp?termid=C0164
-is_a: FOODON:03420116 ! food material by organism
-property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0001-5275-8866 xsd:string
-property_value: http://purl.org/dc/terms/date 2023-08-01T21:25:29Z xsd:dateTime
-property_value: IAO:0000114 IAO:0000122
 
 [Term]
 id: FOODON:03420228

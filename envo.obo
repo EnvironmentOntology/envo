@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: releases/2025-10-20
+data-version: releases/2026-06-26
 subsetdef: disposition_slim "Disposition slim"
 subsetdef: environmental_hazards "environmental_hazards"
 subsetdef: EnvO-Lite-GSC "EnvO-Lite-GSC"
@@ -32,7 +32,6 @@ idspace: foo http://geneontology.org/foo/
 idspace: oboInOwl http://www.geneontology.org/formats/oboInOwl# 
 idspace: schema http://schema.org/ 
 idspace: skos http://www.w3.org/2004/02/skos/core# 
-idspace: swrla http://swrl.stanford.edu/ontologies/3.3/swrla.owl# 
 idspace: terms http://purl.org/dc/terms/ 
 remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/modules/chemical_concentration.owl>) VersionIRI(<null>))) [Axioms: 679 Logical Axioms: 119]
 remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/envo/modules/entity_attribute.owl>) VersionIRI(<null>))) [Axioms: 206 Logical Axioms: 34]
@@ -50,7 +49,7 @@ property_value: dc:title "The Environment Ontology" xsd:string
 property_value: doap:bug-database "https://github.com/EnvironmentOntology/envo/issues/" xsd:anyURI
 property_value: doap:GitRepository "https://github.com/EnvironmentOntology/envo/" xsd:anyURI
 property_value: foaf:homepage "http://environmentontology.org/" xsd:anyURI
-property_value: owl:versionInfo "2025-10-20" xsd:string
+property_value: owl:versionInfo "2026-06-26" xsd:string
 property_value: terms:license https://creativecommons.org/publicdomain/zero/1.0/
 
 [Term]
@@ -78,7 +77,6 @@ name: independent continuant
 def: "b is an independent continuant = Def. b is a continuant which is such that there is no c and no t such that b s-depends_on c at t. (axiom label in BFO2 Reference: [017-002])" [] {IAO:0010000="http://purl.obolibrary.org/obo/bfo/axiom/017-002"}
 is_a: BFO:0000002 ! continuant
 disjoint_from: BFO:0000020 ! specifically dependent continuant
-disjoint_from: BFO:0000020 ! specifically dependent continuant
 disjoint_from: BFO:0000031 ! generically dependent continuant
 relationship: BFO:0000050 BFO:0000004 {all_only="true"} ! part of independent continuant
 
@@ -87,14 +85,12 @@ id: BFO:0000006
 name: spatial region
 is_a: BFO:0000141 ! immaterial entity
 disjoint_from: BFO:0000029 ! site
-disjoint_from: BFO:0000029 ! site
 disjoint_from: BFO:0000140 ! continuant fiat boundary
 
 [Term]
 id: BFO:0000008
 name: temporal region
 is_a: BFO:0000003 ! occurrent
-disjoint_from: BFO:0000011 ! spatiotemporal region
 disjoint_from: BFO:0000011 ! spatiotemporal region
 disjoint_from: BFO:0000015 ! process
 disjoint_from: BFO:0000035 ! process boundary
@@ -121,6 +117,7 @@ id: BFO:0000017
 name: realizable entity
 def: "A specifically dependent continuant  that inheres in continuant  entities and are not exhibited in full at every time in which it inheres in an entity or group of entities. The exhibition or actualization of a realizable entity is a particular manifestation, functioning or process that occurs under certain circumstances." []
 is_a: BFO:0000020 ! specifically dependent continuant
+is_a: COB:0000502 ! characteristic
 disjoint_from: BFO:0000019 ! quality
 relationship: BFO:0000050 BFO:0000017 {all_only="true"} ! part of realizable entity
 
@@ -133,7 +130,6 @@ relationship: BFO:0000050 BFO:0000019 {all_only="true"} ! part of quality
 [Term]
 id: BFO:0000020
 name: specifically dependent continuant
-def: "b is a relational specifically dependent continuant = Def. b is a specifically dependent continuant and there are n &gt; 1 independent continuants c1, … cn which are not spatial regions are such that for all 1  i &lt; j  n, ci  and cj share no common parts, are such that for each 1  i  n, b s-depends_on ci at every time t during the course of b’s existence (axiom label in BFO2 Reference: [131-004])" []
 def: "b is a specifically dependent continuant = Def. b is a continuant & there is some independent continuant c which is not a spatial region and which is such that b s-depends_on c at every time t during the course of b’s existence. (axiom label in BFO2 Reference: [050-003])" [] {IAO:0010000="http://purl.obolibrary.org/obo/bfo/axiom/050-003"}
 is_a: BFO:0000002 ! continuant
 disjoint_from: BFO:0000031 ! generically dependent continuant
@@ -147,7 +143,6 @@ is_a: BFO:0000017 ! realizable entity
 
 [Term]
 id: BFO:0000024
-name: fiat object
 name: fiat object part
 is_a: BFO:0000040 ! material entity
 
@@ -2925,6 +2920,12 @@ is_a: CHEBI:133331 ! metal oxide
 is_a: CHEBI:33620 ! aluminium molecular entity
 
 [Term]
+id: CHEBI:33627
+name: monoatomic aluminium
+is_a: CHEBI:33238 ! monoatomic entity
+is_a: CHEBI:33628 ! elemental aluminium
+
+[Term]
 id: CHEBI:33628
 name: elemental aluminium
 is_a: CHEBI:24835 ! inorganic molecular entity
@@ -4341,6 +4342,13 @@ name: elemental platinum
 is_a: CHEBI:33749 ! platinum molecular entity
 
 [Term]
+id: CHEBI:49470
+name: aluminium(3+)
+is_a: CHEBI:27153 ! monoatomic trication
+is_a: CHEBI:33627 ! monoatomic aluminium
+is_a: CHEBI:63062 ! aluminium cation
+
+[Term]
 id: CHEBI:49475
 name: argon atom
 is_a: CHEBI:33309 ! noble gas atom
@@ -4847,7 +4855,7 @@ is_a: CHEBI:37022 ! amino-acid anion
 [Term]
 id: CHEBI:64047
 name: food additive
-is_a: CHEBI:33232 ! application
+is_a: CHEBI:747325 ! additive
 is_a: CHEBI:78295 ! food component
 
 [Term]
@@ -4915,6 +4923,12 @@ id: CHEBI:73115
 name: divinyl chlorophyll b
 is_a: CHEBI:25248 ! methyl ester
 is_a: CHEBI:28966 ! chlorophyll
+
+[Term]
+id: CHEBI:747325
+name: additive
+is_a: CHEBI:33232 ! application
+is_a: CHEBI:51086 ! chemical role
 
 [Term]
 id: CHEBI:75763
@@ -5146,6 +5160,27 @@ is_a: CHEBI:29067 ! carboxylic acid anion
 id: CHEBI:9171
 name: skatole
 is_a: CHEBI:38460 ! methylindole
+
+[Term]
+id: COB:0000022
+name: organism
+def: "A material entity that is a maximal functionally integrated unit that develops from a program encoded in a genome" []
+
+[Term]
+id: COB:0000026
+name: processed material entity
+def: "A material entity processed by human activity with an intent to produce it." []
+is_a: BFO:0000040 ! material entity
+
+[Term]
+id: COB:0000502
+name: characteristic
+
+[Term]
+id: COB:0001300
+name: device
+def: "A processed material entity which is designed to be capable of a process." []
+is_a: COB:0000026 ! processed material entity
 
 [Term]
 id: ENVO:00000000
@@ -5430,7 +5465,7 @@ id: ENVO:00000018
 name: obsolete dry river
 def: "A river that has either permanently or temporally lost its water." [MA:ma]
 is_obsolete: true
-replaced_by: false
+replaced_by: ENVO:01000995
 
 [Term]
 id: ENVO:00000019
@@ -25146,8 +25181,8 @@ id: ENVO:01000785
 name: material extraction process
 def: "A planned process during which a portion of environmental material is removed from a material entity." []
 comment: Created for SDGIO and intended to be a more general form of resource extraction process.
-is_a: ENVO:02500000 ! environmental system process
-is_a: OBI:0000011 ! planned process
+is_a: BFO:0000003 ! occurrent
+is_a: OBI:0000011 ! obsolete planned process
 relationship: BFO:0000051 ENVO:03000010 ! has part material transport process
 relationship: RO:0000057 ENVO:00010483 ! has participant environmental material
 
@@ -27161,12 +27196,13 @@ id: ENVO:01000993
 name: manufacturing process
 def: "A planned process during which raw or recycled materials are transformed into products for use or sale using labour and machines, tools, chemical and biological processing, or formulation." [https://en.wikipedia.org/wiki/Manufacturing]
 comment: The term may refer to a range of human activity, from handicraft to high tech, but is most commonly applied to industrial production, in which raw materials are transformed into finished goods on a large scale. {xref="https://en.wikipedia.org/wiki/Manufacturing"}
-is_a: ENVO:02500027 ! anthropogenic environmental process
-is_a: OBI:0000011 ! planned process
-intersection_of: OBI:0000011 ! planned process
+is_a: BFO:0000003 ! occurrent
+is_a: OBI:0000011 ! obsolete planned process
+intersection_of: OBI:0000011 ! obsolete planned process
 intersection_of: RO:0002234 ENVO:00003074 ! has output manufactured product
 relationship: BFO:0000051 ENVO:01000952 ! has part anthropisation
 relationship: RO:0002234 ENVO:00003074 ! has output manufactured product
+relationship: RO:0002608 NCBITaxon:9606 ! process has causal agent Homo sapiens
 
 [Term]
 id: ENVO:01000994
@@ -27174,6 +27210,7 @@ name: planetary manufacturing process
 def: "A manufacturing process which occurs on a planet." []
 comment: See https://github.com/EnvironmentOntology/envo/issues/513 for discussion.
 is_a: ENVO:01000993 ! manufacturing process
+is_a: ENVO:02500027 ! anthropogenic environmental process
 relationship: BFO:0000066 ENVO:01000800 ! occurs in planet
 relationship: RO:0002232 ENVO:01000983 ! has end location technosphere
 property_value: IAO:0000116 "Whether this is within the planet's Hill sphere, the region which extends from its exosphere to its core, or some other planetary region is not clear." xsd:string
@@ -27190,14 +27227,15 @@ relationship: RO:0001025 ENVO:0010163 ! located in dry river valley
 id: ENVO:01000996
 name: human-directed construction process
 def: "An process during which natural or manufactured materials and products are processed and arranged by humans or their technology into structures." []
-is_a: ENVO:02500027 ! anthropogenic environmental process
-is_a: OBI:0000011 ! planned process
-intersection_of: OBI:0000011 ! planned process
+is_a: BFO:0000003 ! occurrent
+is_a: OBI:0000011 ! obsolete planned process
+intersection_of: OBI:0000011 ! obsolete planned process
 intersection_of: RO:0002234 ENVO:00000070 ! has output human construction
 relationship: BFO:0000051 ENVO:01000952 ! has part anthropisation
 relationship: BFO:0000051 ENVO:03000010 ! has part material transport process
 relationship: BFO:0000051 ENVO:03000043 ! has part material transformation process
 relationship: RO:0002234 ENVO:00000070 ! has output human construction
+relationship: RO:0002608 NCBITaxon:9606 ! process has causal agent Homo sapiens
 property_value: IAO:0000116 "The nature of \"structures\" must be further specified." xsd:string
 
 [Term]
@@ -29642,7 +29680,6 @@ relationship: BFO:0000050 ENVO:01001244 ! part of cropland ecosystem
 id: ENVO:01001242
 name: canopy
 def: "A vegetation layer which is formed by a collection of individual plant crowns, themselves constituting part of the aboveground portion of a plant community." [https://en.wikipedia.org/wiki/Canopy_%28biology%29]
-comment: false
 xref: EcoLexicon:canopy
 xref: LTER:82
 xref: SWEETRealm:Canopy
@@ -31654,10 +31691,11 @@ created_by: https://orcid.org/0000-0002-4366-3088
 id: ENVO:01001436
 name: planned environmental usage process
 def: "A planned process during which humans access and obtain resources, benefits, or services from a natural or anthropised ecosystem." []
-is_a: ENVO:02500027 ! anthropogenic environmental process
-is_a: OBI:0000011 ! planned process
+is_a: BFO:0000003 ! occurrent
+is_a: OBI:0000011 ! obsolete planned process
 relationship: BFO:0000051 ENVO:01000952 ! has part anthropisation
 relationship: BFO:0000051 ENVO:01001170 ! has part active ecosystem management process
+relationship: RO:0002608 NCBITaxon:9606 ! process has causal agent Homo sapiens
 created_by: https://orcid.org/0000-0002-4366-3088
 
 [Term]
@@ -32188,7 +32226,8 @@ creation_date: 2018-10-05T21:12:47Z
 id: ENVO:01001492
 name: satellite imaging
 def: "A remote sensing process during which image data about an astronomical body or object is generated by sensors mounted on a satellite." [https://en.wikipedia.org/wiki/Satellite_imagery]
-is_a: OBI:0000011 ! planned process
+is_a: BFO:0000003 ! occurrent
+is_a: OBI:0000011 ! obsolete planned process
 relationship: RO:0002234 IAO:0000101 ! has output image
 created_by: https://orcid.org/0000-0002-4366-3088
 creation_date: 2018-10-09T14:59:51Z
@@ -32198,7 +32237,6 @@ id: ENVO:01001493
 name: satellite imaging of a planet
 def: "A remote sensing process during which image data about a planet is generated by sensors mounted on a satellite." [https://en.wikipedia.org/wiki/Satellite_imagery]
 is_a: ENVO:01001492 ! satellite imaging
-is_a: ENVO:02500000 ! environmental system process
 relationship: RO:0000057 ENVO:01000800 ! has participant planet
 created_by: https://orcid.org/0000-0002-4366-3088
 creation_date: 2018-10-09T15:05:27Z
@@ -33711,7 +33749,6 @@ name: mariculture process
 def: "An aquaculture process during which marine organisms are cultivated in the open ocean, an enclosure in the ocean, or in tanks, ponds or raceways which are filled with seawater." [https://en.wikipedia.org/wiki/Mariculture, https://www.sciencedirect.com/topics/agricultural-and-biological-sciences/mariculture]
 synonym: "mariculture" EXACT []
 is_a: ENVO:01000906 ! aquaculture process
-is_a: ENVO:02500031 ! hydrological process
 relationship: BFO:0000066 ENVO:01001671 ! occurs in open cage mariculture facility
 relationship: RO:0000057 ENVO:00002149 ! has participant sea water
 property_value: dc:creator https://orcid.org/0000-0002-4366-3088
@@ -35641,9 +35678,10 @@ id: ENVO:01001866
 name: well intervention
 def: "A planned process during which an oil or gas well is modified." [https://en.wikipedia.org/wiki/Well_intervention]
 comment: Interventions may change state of the well or well geometry, provide well diagnostics, or manage the production of the well. {xref="Well:intervention"}
-is_a: ENVO:02500027 ! anthropogenic environmental process
-is_a: OBI:0000011 ! planned process
+is_a: BFO:0000003 ! occurrent
+is_a: OBI:0000011 ! obsolete planned process
 relationship: BFO:0000051 ENVO:01000952 ! has part anthropisation
+relationship: RO:0002608 NCBITaxon:9606 ! process has causal agent Homo sapiens
 property_value: dc:creator https://orcid.org/0000-0002-4366-3088
 property_value: dc:date "2020-06-02T13:21:28Z" xsd:dateTime
 
@@ -36187,7 +36225,7 @@ name: tissue culture
 def: "Tissue culture is the culture of cells, tissues or organs in a nutrient medium under sterile conditions." [URL:http\://www.fao.org/DOCREP/003/X3910E/X3910E23.htm#TopOfPage]
 comment: This branch should be moved to OBI or a more appropriate ontology.
 xref: https://en.wikipedia.org/wiki/Tissue_culture
-is_a: OBI:0000011 ! planned process
+is_a: OBI:0000011 ! obsolete planned process
 
 [Term]
 id: ENVO:02000008
@@ -37055,7 +37093,6 @@ property_value: dc:creator https://orcid.org/0000-0002-6601-2165
 id: ENVO:02000121
 name: peat extraction
 is_a: ENVO:01000785 ! material extraction process
-is_a: ENVO:02500031 ! hydrological process
 relationship: BFO:0000051 ENVO:02000122 ! has part peat drainage
 property_value: dc:creator https://orcid.org/0000-0002-6601-2165
 
@@ -37252,7 +37289,7 @@ id: ENVO:02000146
 name: chemical engineering process
 def: "A planned process which has the intention of producing, consuming, or transforming materials via the execution of chemical reactions." [https://en.wikipedia.org/wiki/Chemical_engineering, https://www.britannica.com/technology/chemical-engineering]
 synonym: "industrial chemical processing" EXACT []
-is_a: OBI:0000011 ! planned process
+is_a: OBI:0000011 ! obsolete planned process
 property_value: dc:creator https://orcid.org/0000-0002-6601-2165
 
 [Term]
@@ -37269,6 +37306,7 @@ name: Haber-Bosch process
 def: "A chemical engineering process that produces ammonia en masse via artificial nitrogen fixation." []
 comment: This process is the primary synthetic means of producing fertilizer
 synonym: "Haber process" EXACT []
+is_a: BFO:0000015 ! process
 is_a: ENVO:02000146 ! chemical engineering process
 relationship: RO:0002233 CHEBI:17997 ! has input dinitrogen
 relationship: RO:0002234 CHEBI:16134 ! has output ammonia
@@ -37278,6 +37316,7 @@ property_value: dc:creator https://orcid.org/0000-0002-6601-2165
 id: ENVO:02000149
 name: hydrogen production process
 def: "A chemical engineering process which generates hydrogen gas." [https://en.wikipedia.org/wiki/Hydrogen_production]
+is_a: BFO:0000003 ! occurrent
 is_a: ENVO:02000146 ! chemical engineering process
 relationship: RO:0002234 CHEBI:18276 ! has output dihydrogen
 property_value: dc:creator https://orcid.org/0000-0002-6601-2165
@@ -37491,8 +37530,9 @@ id: ENVO:02500026
 name: anthropogenic modulatory intervention process
 def: "A process during which humans apply technology to alter the magnitude, duration, rate, or impact of an environmental process." []
 comment: Relabel the obo foundry unique label to be generic process
-is_a: OBI:0000011 ! planned process
-intersection_of: OBI:0000011 ! planned process
+is_a: BFO:0000015 ! process
+is_a: OBI:0000011 ! obsolete planned process
+intersection_of: OBI:0000011 ! obsolete planned process
 intersection_of: RO:0002211 ENVO:02500000 ! regulates environmental system process
 intersection_of: RO:0002608 NCBITaxon:9606 ! process has causal agent Homo sapiens
 relationship: RO:0002211 ENVO:02500000 ! regulates environmental system process
@@ -37619,7 +37659,8 @@ id: ENVO:02500041
 name: environmental monitoring
 def: "An process in which environmental parameters and variables are continually assayed." []
 synonym: "monitoring" BROAD []
-is_a: OBI:0000011 ! planned process
+is_a: BFO:0000003 ! occurrent
+is_a: OBI:0000011 ! obsolete planned process
 relationship: RO:0002608 NCBITaxon:9606 ! process has causal agent Homo sapiens
 
 [Term]
@@ -44804,7 +44845,7 @@ comment: Examples of marine debris include boating gear, or fishing gear (active
 subset: envoPlastics
 is_a: ENVO:06105120 ! entanglement process
 relationship: RO:0002233 ENVO:03500005 ! has input anthropogenic litter
-relationship: RO:0002233 OBI:0100026 ! has input organism
+relationship: RO:0002233 OBI:0100026 ! has input obsolete organism
 property_value: dc:contributor https://orcid.org/0000-0002-2996-719X
 property_value: dc:contributor https://orcid.org/0000-0002-8166-0486
 property_value: dc:creator https://orcid.org/0000-0003-1072-8081
@@ -45143,7 +45184,7 @@ property_value: dc:creator https://orcid.org/0000-0002-8461-9745
 id: ENVO:06105267
 name: soil profile characterization
 def: "A planned process during which a soil profile is examined and the soil horizons that compose it are described." [http://www.ctahr.hawaii.edu/mauisoil/a_profile.aspx]
-is_a: OBI:0000011 ! planned process
+is_a: OBI:0000011 ! obsolete planned process
 property_value: dc:creator https://orcid.org/0000-0001-6284-4821
 property_value: dc:date "2021-12-23T04:10:36Z" xsd:dateTime
 
@@ -47475,7 +47516,7 @@ intersection_of: FOODON:03430109 ! food (liquid, low viscosity)
 id: FOODON:00001002
 name: food product
 def: "Food material for humans and animals which is processed with the intention that it be consumable as a whole or added to other food products." []
-comment: The FoodOn "food product" class is provided as a branch under which new food product categories and food products themselves can be placed. Here classes are provided to differentiate a food product by its food composition, processing and/or consumption characteristics. This avoids brand name products but it may include generic food dish categories. It has a much greater depth and polyhierarchy than other agency product type schemes have in an effort to group related products together.  The upper level basis of this tree originated in the environment ontology (ENVO) and from the US Code of Federal Regulations.
+comment: The FoodOn "food product"class is provided as a branch under which new food product categories and food products themselves can be placed. Here classes are provided to differentiate a food product by its food composition, processing and/or consumption characteristics. This avoids brand name products but it may include generic food dish categories. It has a much greater depth and polyhierarchy than other agency product type schemes have in an effort to group related products together.  The upper level basis of this tree originated in the environment ontology (ENVO) and from the US Code of Federal Regulations.
 is_a: FOODON:00002403 ! food material
 property_value: IAO:0000117 "Damion Dooley" xsd:string
 property_value: IAO:0000118 "Foodon product type" xsd:string
@@ -47505,7 +47546,8 @@ id: FOODON:00001006
 name: mammalian meat food product
 def: "A food product made of meat, the skeletal muscle and associated fat, and other edible tissues such as organs, livers, skin, brains, bone marrow, kidneys, or lungs, of mammals." []
 xref: https://bioregistry.io/reference/siren\:F17332
-is_a: FOODON:00001092 ! vertebrate animal food product
+is_a: FOODON:00001092 ! vertebrate food product
+is_a: FOODON:00005501 ! mammal material
 property_value: IAO:0000114 IAO:0000122
 property_value: IAO:0000119 https://en.wikipedia.org/wiki/Meat
 
@@ -47583,9 +47625,11 @@ property_value: terms:contributor "Damion Dooley" xsd:string
 [Term]
 id: FOODON:00001015
 name: plant food product
-def: "This class includes food products which are derived from or produced by a plant." []
+def: "A food product which has as a defining ingredient some plant material." []
+is_a: FOODON:00001002 ! food product
 is_a: FOODON:00004331 ! plant material
-property_value: IAO:0000114 IAO:0000428
+property_value: dc:contributor https://orcid.org/0000-0002-8844-9165
+property_value: IAO:0000114 IAO:0000122
 
 [Term]
 id: FOODON:00001016
@@ -47731,6 +47775,7 @@ id: FOODON:00001041
 name: cow food product
 def: "A food product that is derived from some cow." []
 is_a: FOODON:00001134 ! bovine meat food product
+is_a: FOODON:02020889 ! cow material
 property_value: IAO:0000114 IAO:0000122
 property_value: terms:contributor "https://orcid.org/0000-0001-5275-8866" xsd:string
 property_value: terms:date "2025-02-01T09:59:11Z" xsd:dateTime
@@ -48041,9 +48086,10 @@ intersection_of: FOODON:03307539 ! food (dried)
 
 [Term]
 id: FOODON:00001092
-name: vertebrate animal food product
+name: vertebrate food product
 def: "A food product which is derived from or produced by an animal that has a vertibrae." []
 is_a: FOODON:00004242 ! animal food product
+is_a: FOODON:00005502 ! vertebrate material
 property_value: IAO:0000114 IAO:0000122
 property_value: terms:contributor "Damion Dooley" xsd:string
 
@@ -48126,7 +48172,7 @@ is_a: FOODON:00001250 ! fish egg food product
 id: FOODON:00001105
 name: avian egg food product
 def: "A food product made from an avian egg." []
-is_a: FOODON:00001251 ! avian animal food product
+is_a: FOODON:00001251 ! avian food product
 is_a: FOODON:00001274 ! egg food product
 property_value: IAO:0000114 IAO:0000122
 
@@ -48217,6 +48263,7 @@ id: FOODON:00001132
 name: swine food product
 def: "Suidae is a family of artiodactyl mammals which are commonly called pigs, hogs or boars. In addition to numerous fossil species, 17 extant species are currently recognized (or 18 counting domestic pigs and wild boars separately), classified into between four and eight genera. The family includes the domestic pig, Sus scrofa domesticus or Sus domesticus, in addition to numerous species of wild pig, such as babirusas and warthogs. All suids, or swine, are native to the Old World, ranging from Asia to Europe and Africa." []
 is_a: FOODON:00001006 ! mammalian meat food product
+is_a: FOODON:00005689 ! swine material
 property_value: IAO:0000114 IAO:0000122
 property_value: IAO:0000119 "https://en.wikipedia.org/wiki/Suidae" xsd:anyURI
 property_value: oboInOwl:hasSynonym "porcine meat" xsd:string
@@ -48260,7 +48307,7 @@ name: tea based beverage product
 def: "A beverage product derived from leaves of the tea plant (Camellia sinensis)." []
 comment: "While fermentation is also referred to in the production of brewed teas, this is inaccurate. Some herbal teas on the market today include probiotic cultures alongside tea leaves to maintain gut health but the tea itself hasn't been fermented. Most dried teas however don't use live cultures at all during production. Instead, harvested tea leaves undergo a natural chemical process known as oxidation, which also changes the color, flavor and level of health benefits in the resulting brew." [https://eatcultured.com/blogs/our-awesome-blog/fermented-tea]
 is_a: FOODON:00001255 ! nonfermented plant derived beverage product
-is_a: FOODON:03316079 ! herbal infusion
+is_a: FOODON:00002275 ! steeped beverage product
 property_value: IAO:0000114 IAO:0000122
 property_value: IAO:0000119 https://en.wikipedia.org/wiki/Tea
 property_value: terms:contributor "Damion Dooley" xsd:string
@@ -48363,9 +48410,25 @@ property_value: terms:contributor "Damion Dooley" xsd:string
 
 [Term]
 id: FOODON:00001155
-name: obsolete: watermelon plant
-is_obsolete: true
-replaced_by: NCBITaxon:3654
+name: watermelon plant
+synonym: "watermelon" EXACT []
+synonym: "wild melon" EXACT []
+xref: http://eol.org/pages/584423
+xref: http://www.ars-grin.gov/cgi-bin/npgs/html/taxon.pl?10675
+xref: http://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=22356
+xref: langual:thesaurus.asp?termid=B1391
+xref: MANSFELD:3905
+xref: PLANTS:CILA3
+is_a: FOODON:03411283 ! melon plant
+property_value: oboInOwl:hasSynonym "citrullus lanatus" xsd:string
+property_value: oboInOwl:hasSynonym "citrullus vulgaris" xsd:string
+property_value: oboInOwl:hasSynonym "colocynthis citrullus" xsd:string
+property_value: oboInOwl:hasSynonym "cucurbita citrullus" xsd:string
+property_value: oboInOwl:hasSynonym "datiro" xsd:string
+property_value: oboInOwl:hasSynonym "edible seed melon" xsd:string
+property_value: oboInOwl:hasSynonym "equisi" xsd:string
+property_value: oboInOwl:hasSynonym "kaffir melon" xsd:string
+property_value: oboInOwl:hasSynonym "momordica lanata" xsd:string
 
 [Term]
 id: FOODON:00001156
@@ -48489,14 +48552,15 @@ is_a: FOODON:00001015 ! plant food product
 
 [Term]
 id: FOODON:00001176
-name: invertebrate animal food product
+name: invertebrate food product
 is_a: FOODON:00004242 ! animal food product
+is_a: FOODON:00005522 ! invertebrate material
 
 [Term]
 id: FOODON:00001177
 name: insect food product
 def: "A food product with insects as a defining ingredient." []
-is_a: FOODON:00001176 ! invertebrate animal food product
+is_a: FOODON:00001176 ! invertebrate food product
 
 [Term]
 id: FOODON:00001178
@@ -48541,10 +48605,10 @@ property_value: IAO:0000119 https://en.wikipedia.org/wiki/Bread
 
 [Term]
 id: FOODON:00001184
-name: algal food material
-def: "This food product type includes food products which are derived from a large, diverse group of photosynthetic organisms." []
+name: algae material
+def: "Material which derives from algae (including single-celled microalgae and  multicellular macroalgae)." []
 xref: https://bioregistry.io/reference/siren\:F10419
-is_a: FOODON:03420116 ! food material by organism
+is_a: FOODON:03420116 ! organism material
 property_value: seeAlso https://ungc-communications-assets.s3.amazonaws.com/docs/publications/The-Seaweed-Manifesto.pdf
 
 [Term]
@@ -48923,15 +48987,19 @@ is_a: FOODON:00001087 ! vegetable oil food product
 [Term]
 id: FOODON:00001234
 name: mayonnaise food product
-def: "A stable emulsion of oil, and vinegar or lemon juice, with many options for embellishment with other herbs and spices. Egg yolk is the traditional emulsifier." [http://en.wikipedia.org/wiki/Mayonnaise]
+def: "A food product made with mayonnaise as a defining ingredient." []
 is_a: FOODON:00001231 ! creamy salad dressing
+property_value: IAO:0000114 IAO:0000122
+property_value: IAO:0000119 http://en.wikipedia.org/wiki/Mayonnaise
 
 [Term]
 id: FOODON:00001235
 name: soy sauce food product
-def: "A condiment produced by fermenting soybeans with Aspergillus oryzae and Aspergillus soyae molds  along with roasted grain, water, and salt." [http://en.wikipedia.org/wiki/Soy_sauce]
+def: "A condiment with soy sauce as a defining ingredient." []
 is_a: FOODON:00001078 ! fermented soybean food product
 is_a: FOODON:00002262 ! soybean condiment
+property_value: IAO:0000114 IAO:0000122
+property_value: IAO:0000119 Soy:sauce
 
 [Term]
 id: FOODON:00001241
@@ -48996,7 +49064,7 @@ is_a: FOODON:00001255 ! nonfermented plant derived beverage product
 id: FOODON:00001248
 name: fish food product
 def: "A fish food product includes products made from any fish species (aquatic vertebrate with gills and fins)." []
-is_a: FOODON:00001092 ! vertebrate animal food product
+is_a: FOODON:00001092 ! vertebrate food product
 property_value: IAO:0000114 IAO:0000122
 property_value: IAO:0000119 https://en.wikipedia.org/wiki/Fish
 property_value: terms:contributor "Damion Dooley" xsd:string
@@ -49009,9 +49077,10 @@ is_a: FOODON:03315173 ! fish product (unspecified species)
 
 [Term]
 id: FOODON:00001251
-name: avian animal food product
+name: avian food product
 def: "A food product that is derived from some avian animal." []
-is_a: FOODON:00001092 ! vertebrate animal food product
+is_a: FOODON:00001092 ! vertebrate food product
+is_a: FOODON:02020050 ! avian material
 property_value: IAO:0000114 IAO:0000122
 property_value: terms:contributor "https://orcid.org/0000-0001-5275-8866" xsd:string
 property_value: terms:date "2025-02-01T09:59:11Z" xsd:dateTime
@@ -49049,7 +49118,8 @@ def: "A dairy food product has mammilian milk or a milk component as an ingredie
 synonym: "dairy product" EXACT []
 synonym: "milk product" EXACT []
 xref: langual:thesaurus.asp?termid=H0242
-is_a: FOODON:00001092 ! vertebrate animal food product
+is_a: FOODON:00001092 ! vertebrate food product
+is_a: FOODON:00005501 ! mammal material
 property_value: IAO:0000114 IAO:0000122
 property_value: terms:contributor "Damion Dooley" xsd:string
 
@@ -49066,7 +49136,6 @@ def: "Food material which has been fermented." []
 is_a: FOODON:00002501 ! multi-component food
 is_a: FOODON:00002645 ! food material by process
 property_value: IAO:0000114 IAO:0000428
-property_value: IAO:0000116 "Are all fermented foods considered preserved to some extent?" xsd:string
 property_value: IAO:0000117 "Damion Dooley" xsd:string
 
 [Term]
@@ -49120,7 +49189,7 @@ id: FOODON:00001274
 name: egg food product
 def: "A food consisting of a round or oval body laid by the female of many animals, consisting of an ovum surrounded by layers of membranes and an outer casing, which acts to nourish and protect a developing embryo and its nutrient reserves." [Wikipedia:Egg_%28food%29]
 comment: Regarding American regulatory aspects of egg products, see this summary:\nhttps://www.politico.com/agenda/story/2016/03/crazy-us-chicken-egg-regulation-graphic-000077
-is_a: FOODON:00001092 ! vertebrate animal food product
+is_a: FOODON:00001092 ! vertebrate food product
 
 [Term]
 id: FOODON:00001275
@@ -49128,6 +49197,7 @@ name: chicken egg food product
 def: "An avian egg food product having chicken eggs or derivatives as a defining ingredient." []
 xref: https://bioregistry.io/reference/siren\:F1074
 is_a: FOODON:00001105 ! avian egg food product
+is_a: FOODON:03315102 ! chicken egg material
 property_value: IAO:0000114 IAO:0000122
 property_value: IAO:0000119 "https://en.wikipedia.org/wiki/Egg_as_food" xsd:anyURI
 
@@ -49194,7 +49264,8 @@ property_value: schema:image https://upload.wikimedia.org/wikipedia/commons/thum
 id: FOODON:00001283
 name: poultry food product
 def: "A food product that is derived from some poultry." []
-is_a: FOODON:00001251 ! avian animal food product
+is_a: FOODON:00001251 ! avian food product
+is_a: FOODON:02020686 ! poultry material
 property_value: IAO:0000114 IAO:0000122
 property_value: IAO:0000119 https://en.wikipedia.org/wiki/Poultry
 property_value: terms:contributor "https://orcid.org/0000-0002-8844-9165" xsd:string
@@ -49252,12 +49323,13 @@ is_a: FOODON:00002044 ! mollusc food product
 id: FOODON:00001292
 name: oyster food product
 is_a: FOODON:00002044 ! mollusc food product
+is_a: FOODON:00005711 ! oyster material
 
 [Term]
 id: FOODON:00001293
 name: shellfish food product
 is_a: FOODON:00001046 ! animal seafood product
-is_a: FOODON:00001176 ! invertebrate animal food product
+is_a: FOODON:00001176 ! invertebrate food product
 
 [Term]
 id: FOODON:00001294
@@ -49370,6 +49442,12 @@ name: common bean food product
 is_a: FOODON:00001635 ! bean food product
 
 [Term]
+id: FOODON:00001761
+name: condiment sauce
+is_a: FOODON:00001133 ! condiment
+is_a: FOODON:00001931 ! gravy or sauce
+
+[Term]
 id: FOODON:00001771
 name: cow milk based food product
 is_a: FOODON:00001118 ! cattle dairy food product
@@ -49442,6 +49520,11 @@ name: grain based vinegar food product
 is_a: FOODON:00001073 ! vinegar food product
 
 [Term]
+id: FOODON:00001931
+name: gravy or sauce
+is_a: FOODON:00001714 ! food material component
+
+[Term]
 id: FOODON:00002012
 name: lupine bean food product
 synonym: "lupin" EXACT []
@@ -49502,9 +49585,11 @@ is_a: FOODON:00002196 ! refined or partially-refined food product
 [Term]
 id: FOODON:00002132
 name: plant based salad food product
-def: "A salad food product with one or more plant-based ingredients." []
+def: "A salad food product with one or more plant-based defining ingredients." []
 is_a: FOODON:00002219 ! salad food product
 is_a: FOODON:03316579 ! multi-component plant food product
+property_value: IAO:0000114 IAO:0000122
+property_value: terms:contributor https://orcid.org/0009-0003-2086-0905
 
 [Term]
 id: FOODON:00002139
@@ -49596,7 +49681,7 @@ def: "A prepared food product consisting of either a salad or a salad ingredient
 is_a: FOODON:00001180 ! prepared food product
 property_value: IAO:0000119 https://en.wikipedia.org/wiki/Salad
 property_value: seeAlso FOODON:00001290
-property_value: terms:contributor https://orcid.org/0000-0003-3480-8238
+property_value: terms:contributor https://orcid.org/0009-0003-2086-0905
 
 [Term]
 id: FOODON:00002252
@@ -49606,12 +49691,12 @@ is_a: FOODON:00001127 ! cow milk cheese
 [Term]
 id: FOODON:00002262
 name: soybean condiment
-is_a: FOODON:00001133 ! condiment
+is_a: FOODON:00001761 ! condiment sauce
 
 [Term]
 id: FOODON:00002265
 name: soybean seed (field) food product
-is_a: FOODON:03304497 ! edible seed food product
+is_a: FOODON:00001173 ! plant seed food product
 property_value: seeAlso "http://purl.obolibrary.org/obo/FOODON_00002266" xsd:anyURI
 
 [Term]
@@ -49665,6 +49750,8 @@ id: FOODON:00002334
 name: vegetable salad food product
 def: "A salad food product which contains one or more vegetable ingredients." []
 is_a: FOODON:00002132 ! plant based salad food product
+property_value: IAO:0000114 IAO:0000122
+property_value: terms:contributor https://orcid.org/0009-0003-2086-0905
 
 [Term]
 id: FOODON:00002364
@@ -49686,8 +49773,8 @@ def: "Any substance that can be consumed by an organism to satisfy nutritional o
 comment: This class is the top of FOODON's main food product hierarchy which is described in the https://www.foodon.org website, and can be searched in lookup services like https://www.ebi.ac.uk/ols/
 synonym: "food" EXACT []
 synonym: "foodstuff" EXACT []
-synonym: "nourishment" EXACT []
-synonym: "sustenance" EXACT []
+synonym: "nourishment" NARROW []
+synonym: "sustenance" NARROW []
 is_a: ENVO:00010483 ! environmental material
 property_value: IAO:0000119 https://en.wikipedia.org/wiki/Food
 
@@ -49708,7 +49795,7 @@ intersection_of: FOODON:00002501 ! multi-component food
 id: FOODON:00002454
 name: food material by characteristic
 def: "Food material which has been categorized by a characteristic such as granularity or temperature." []
-comment: This term was renamed from "food product by quality" to align better with COB "characteristic" label, and as well to disambiguate from other use of "quality" as a food grading. This term is useful for tasks like food inspection where little prior knowledge of how the food came to be is available. Some terms like "food (frozen)" are both a quality descriptor and the output of a process.
+comment: This term was renamed from "food product by quality" to align better with COB "characteristic" label, and as well to disambiguate from other use of "quality" as a food grading. This term is useful for tasks like food inspection where little prior knowledge of how the food came to be is available. Some terms like "food (frozen)"are both a quality descriptor and the output of a process.
 is_a: FOODON:00002403 ! food material
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000117 "Damion Dooley" xsd:string
@@ -49746,6 +49833,7 @@ id: FOODON:00002663
 name: pig food product
 def: "A food product that is derived from some pig." []
 is_a: FOODON:00001132 ! swine food product
+is_a: FOODON:02021649 ! pig material
 property_value: IAO:0000114 IAO:0000122
 property_value: terms:contributor "https://orcid.org/0000-0002-8844-9165" xsd:string
 property_value: terms:date "2019-06-14T04:23:35Z" xsd:dateTime
@@ -49933,6 +50021,7 @@ property_value: terms:date "2021-12-24T00:12:16Z" xsd:string
 id: FOODON:00004242
 name: animal food product
 def: "A food product that is derived from some animal." []
+is_a: FOODON:00001002 ! food product
 is_a: FOODON:03420164 ! animal material
 property_value: IAO:0000114 IAO:0000122
 property_value: terms:contributor "http://orcid.org/0000-0002-8844-9165" xsd:string
@@ -49942,7 +50031,7 @@ property_value: terms:date "2023-08-01T21:25:29Z" xsd:dateTime
 id: FOODON:00004331
 name: plant material
 def: "Anatomical or other piece(s) or substance derived from one or more plants." []
-is_a: FOODON:03420116 ! food material by organism
+is_a: FOODON:03420116 ! organism material
 property_value: IAO:0000114 IAO:0000122
 property_value: IAO:0000117 https://orcid.org/0000-0002-8844-9165
 property_value: terms:date "2023-03-02T22:31:04Z" xsd:dateTime
@@ -49978,6 +50067,71 @@ property_value: terms:contributor https://orcid.org/0000-0002-8844-9165
 property_value: terms:date "2023-12-15T22:55:22Z" xsd:dateTime
 
 [Term]
+id: FOODON:00005501
+name: mammal material
+def: "Material which derives from one or more mammals." []
+is_a: FOODON:00005502 ! vertebrate material
+property_value: terms:contributor https://orcid.org/0000-0002-8844-9165
+property_value: terms:date "2025-08-26T00:35:09Z" xsd:dateTime
+
+[Term]
+id: FOODON:00005502
+name: vertebrate material
+def: "Material which derives from one or more vertebrate animals." []
+is_a: FOODON:03420164 ! animal material
+property_value: terms:contributor https://orcid.org/0000-0002-8844-9165
+property_value: terms:date "2025-08-26T00:38:18Z" xsd:dateTime
+
+[Term]
+id: FOODON:00005522
+name: invertebrate material
+is_a: FOODON:03420164 ! animal material
+property_value: terms:contributor https://orcid.org/0000-0002-8844-9165
+property_value: terms:date "2025-08-26T00:44:21Z" xsd:dateTime
+
+[Term]
+id: FOODON:00005680
+name: bovid material
+is_a: FOODON:00005501 ! mammal material
+property_value: terms:contributor https://orcid.org/0000-0002-8844-9165
+property_value: terms:date "2025-11-07T17:38:08Z" xsd:dateTime
+
+[Term]
+id: FOODON:00005683
+name: aquatic invertebrate material
+is_a: FOODON:00005522 ! invertebrate material
+property_value: terms:contributor https://orcid.org/0000-0002-8844-9165
+property_value: terms:date "2025-11-07T22:08:12Z" xsd:dateTime
+
+[Term]
+id: FOODON:00005689
+name: swine material
+is_a: FOODON:00005501 ! mammal material
+property_value: terms:contributor https://orcid.org/0000-0002-8844-9165
+property_value: terms:date "2025-11-10T19:46:00Z" xsd:dateTime
+
+[Term]
+id: FOODON:00005702
+name: mollusk material
+is_a: FOODON:00005683 ! aquatic invertebrate material
+property_value: terms:contributor https://orcid.org/0000-0002-8844-9165
+property_value: terms:date "2025-11-10T19:56:28Z" xsd:dateTime
+
+[Term]
+id: FOODON:00005705
+name: bivalve material
+is_a: FOODON:00005702 ! mollusk material
+property_value: terms:contributor https://orcid.org/0000-0002-8844-9165
+property_value: terms:date "2025-11-10T20:09:51Z" xsd:dateTime
+
+[Term]
+id: FOODON:00005711
+name: oyster material
+is_a: FOODON:00005705 ! bivalve material
+property_value: terms:contributor https://orcid.org/0000-0002-8844-9165
+property_value: terms:date "2025-11-10T20:36:21Z" xsd:dateTime
+
+[Term]
 id: FOODON:02000412
 name: piece(s) of beef
 def: "One or more pieces of beef." []
@@ -49985,10 +50139,10 @@ is_a: FOODON:00004532 ! piece(s) of cow
 
 [Term]
 id: FOODON:02020050
-name: avian animal material
+name: avian material
 def: "Material that derives from some avian animal." []
 comment: This branch isn't necessarily food material
-is_a: FOODON:03420164 ! animal material
+is_a: FOODON:00005502 ! vertebrate material
 property_value: IAO:0000114 IAO:0000122
 property_value: terms:contributor "https://orcid.org/0000-0001-5275-8866" xsd:string
 property_value: terms:contributor "https://orcid.org/0000-0002-3410-4655" xsd:string
@@ -50000,6 +50154,19 @@ id: FOODON:02020114
 name: duck food product
 def: "A food product that is derived from some duck." []
 is_a: FOODON:00004242 ! animal food product
+is_a: FOODON:02020115 ! duck material
+property_value: IAO:0000114 IAO:0000122
+property_value: terms:contributor "https://orcid.org/0000-0001-5275-8866" xsd:string
+property_value: terms:contributor "https://orcid.org/0000-0002-3410-4655" xsd:string
+property_value: terms:contributor "https://orcid.org/0000-0002-8844-9165" xsd:string
+property_value: terms:date "2024-02-12T14:11:19Z" xsd:dateTime
+
+[Term]
+id: FOODON:02020115
+name: duck material
+def: "Material that derives from some duck." []
+comment: This branch isn't necessarily food material
+is_a: FOODON:02020050 ! avian material
 property_value: IAO:0000114 IAO:0000122
 property_value: terms:contributor "https://orcid.org/0000-0001-5275-8866" xsd:string
 property_value: terms:contributor "https://orcid.org/0000-0002-3410-4655" xsd:string
@@ -50023,7 +50190,19 @@ id: FOODON:02020150
 name: chicken material
 def: "Material that derives from some chicken." []
 comment: This branch isn't necessarily food material
-is_a: FOODON:02020050 ! avian animal material
+is_a: FOODON:02020686 ! poultry material
+property_value: IAO:0000114 IAO:0000122
+property_value: terms:contributor "https://orcid.org/0000-0001-5275-8866" xsd:string
+property_value: terms:contributor "https://orcid.org/0000-0002-3410-4655" xsd:string
+property_value: terms:contributor "https://orcid.org/0000-0002-8844-9165" xsd:string
+property_value: terms:date "2024-02-12T14:11:19Z" xsd:dateTime
+
+[Term]
+id: FOODON:02020686
+name: poultry material
+def: "Material that derives from some poultry." []
+comment: This branch isn't necessarily food material
+is_a: FOODON:02020050 ! avian material
 property_value: IAO:0000114 IAO:0000122
 property_value: terms:contributor "https://orcid.org/0000-0001-5275-8866" xsd:string
 property_value: terms:contributor "https://orcid.org/0000-0002-3410-4655" xsd:string
@@ -50035,7 +50214,19 @@ id: FOODON:02020889
 name: cow material
 def: "Material that derives from some cow." []
 comment: This branch isn't necessarily food material
-is_a: FOODON:03420164 ! animal material
+is_a: FOODON:00005680 ! bovid material
+property_value: IAO:0000114 IAO:0000122
+property_value: terms:contributor "https://orcid.org/0000-0001-5275-8866" xsd:string
+property_value: terms:contributor "https://orcid.org/0000-0002-3410-4655" xsd:string
+property_value: terms:contributor "https://orcid.org/0000-0002-8844-9165" xsd:string
+property_value: terms:date "2024-02-12T14:11:19Z" xsd:dateTime
+
+[Term]
+id: FOODON:02021649
+name: pig material
+def: "Material that derives from some pig." []
+comment: This branch isn't necessarily food material
+is_a: FOODON:00005689 ! swine material
 property_value: IAO:0000114 IAO:0000122
 property_value: terms:contributor "https://orcid.org/0000-0001-5275-8866" xsd:string
 property_value: terms:contributor "https://orcid.org/0000-0002-3410-4655" xsd:string
@@ -50112,7 +50303,7 @@ id: FOODON:03302001
 name: animal-derived food
 comment: SIREN DB annotation:\n* part of animal FOODON:03420164
 xref: https://bioregistry.io/reference/siren\:F2001
-is_a: FOODON:00001092 ! vertebrate animal food product
+is_a: FOODON:00001092 ! vertebrate food product
 property_value: IAO:0000114 IAO:0000428
 
 [Term]
@@ -50144,14 +50335,6 @@ def: "A cultured dairy product is a fermented dairy product in which a microbial
 comment: SIREN DB annotation:\n* milk (mammary secretion) UBERON:0001913\n* microbial/enzymatic modification process FOODON:03460119
 xref: https://bioregistry.io/reference/siren\:F3909
 is_a: FOODON:00001053 ! fermented dairy food product
-property_value: IAO:0000114 IAO:0000428
-
-[Term]
-id: FOODON:03304497
-name: edible seed food product
-comment: SIREN DB annotation:\n* whole, natural shape FOODON:03430150\n* seed (anatomical part) FOODON:03420155
-xref: https://bioregistry.io/reference/siren\:F4497
-is_a: FOODON:00001173 ! plant seed food product
 property_value: IAO:0000114 IAO:0000428
 
 [Term]
@@ -50219,6 +50402,14 @@ is_a: FOODON:00002645 ! food material by process
 property_value: IAO:0000114 IAO:0000428
 
 [Term]
+id: FOODON:03315102
+name: chicken egg material
+def: "Food material derived from a chicken egg." []
+comment: SIREN DB annotation:\n* egg FOODON:03420194
+xref: https://bioregistry.io/reference/siren\:F15102
+property_value: IAO:0000114 IAO:0000428
+
+[Term]
 id: FOODON:03315150
 name: mammalian milk product
 comment: SIREN DB annotation:\n* milk (mammary secretion) UBERON:0001913
@@ -50271,14 +50462,6 @@ comment: SIREN DB annotation:\n* solid FOODON:03430151\n* meat part of animal FO
 xref: https://bioregistry.io/reference/siren\:F15925
 is_a: FOODON:00001010 ! processed meat food product
 is_a: FOODON:03302001 ! animal-derived food
-property_value: IAO:0000114 IAO:0000428
-
-[Term]
-id: FOODON:03316079
-name: herbal infusion
-comment: SIREN DB annotation:\n* liquid FOODON:03430130\n* heat-treated FOODON:03440022\n* part of plant FOODON:03420174\n* steeping FOODON:03450036
-xref: https://bioregistry.io/reference/siren\:F16079
-is_a: FOODON:00002275 ! steeped beverage product
 property_value: IAO:0000114 IAO:0000428
 
 [Term]
@@ -50663,6 +50846,24 @@ is_a: FOODON:03411013 ! plant used for producing extract or concentrate
 property_value: IAO:0000114 IAO:0000428
 
 [Term]
+id: FOODON:03411140
+name: fruit-producing plant
+xref: langual:thesaurus.asp?termid=B1140
+property_value: IAO:0000114 IAO:0000428
+
+[Term]
+id: FOODON:03411283
+name: melon plant
+def: "Melon is a name given to various members of the plant family *Cucurbitaceae* with sweet flavored, fleshy fruit e.g. gourds or cucurbits. Melon can be referred as a plant or a fruit. Many different cultivars have been produced, particularly of muskmelons." []
+xref: http://eol.org/pages/38795
+xref: langual:thesaurus.asp?termid=B1283
+is_a: FOODON:03411140 ! fruit-producing plant
+is_a: FOODON:03414459 ! cucumis species
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000119 "WIKIPEDIA:Melon" xsd:string
+property_value: oboInOwl:hasSynonym "cucumis spp." xsd:string
+
+[Term]
 id: FOODON:03412344
 name: devils tongue plant
 xref: langual:thesaurus.asp?termid=B2344
@@ -50682,6 +50883,31 @@ property_value: IAO:0000114 IAO:0000428
 property_value: oboInOwl:hasSynonym "amorphophallus rivieri var. konjac" xsd:string
 
 [Term]
+id: FOODON:03413357
+name: plant by taxonomy
+comment: LanguaL curation note: This term is for CLASSIFICATION ONLY; DO NOT USE term in indexing. Use a more precise narrower term.
+xref: langual:thesaurus.asp?termid=B3357
+property_value: IAO:0000114 IAO:0000428
+
+[Term]
+id: FOODON:03414459
+name: cucumis species
+def: "Cucumis is a genus of twining, tendril-bearing plants in the *Cucurbitaceae* family which includes the cucumber (*Cucumis sativus*), muskmelons (*Cucumis melo*, including cantaloupe and honeydew), the horned melon (*Cucumis metuliferus*), and the West Indian gherkin (*Cucumis anguria*). [https://en.wikipedia.org/wiki/Cucumis]" []
+xref: langual:thesaurus.asp?termid=B4459
+is_a: FOODON:03414460 ! gourd/squash family
+property_value: IAO:0000114 IAO:0000428
+
+[Term]
+id: FOODON:03414460
+name: gourd/squash family
+def: "The *Cucurbitaceae*, also called cucurbits and the gourd family, are a plant family consisting of about 965 species in around 95 genera, the most important of which are: \n  *Cucurbita* - squash, pumpkin, zucchini, some gourds; \n  *Lagenaria* - calabash, and others that are inedible; \n  *Citrullus* - watermelon (*C. lanatus, C. colocynthis*) and others; \n  *Cucumis* - cucumber (*C. sativus*), various melons; \n  *Luffa* - luffa, loofah" []
+xref: langual:thesaurus.asp?termid=B4460
+is_a: FOODON:03413357 ! plant by taxonomy
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000119 https://en.wikipedia.org/wiki/Cucurbitaceae
+property_value: oboInOwl:hasSynonym "cucurbitaceae" xsd:string
+
+[Term]
 id: FOODON:03420108
 name: sugar
 def: "A broad term that includes the nutritive sweeteners dextrose, fructose, galactose, lactose, maltose and sucrose, which are simple carbohydrates with molecules composed of one or two saccharide units. Note that on a product label or in a recipe, 'sugar' means *SUCROSE* and should be so indexed. Use the broad term *SUGAR* only if the specific sugar used is not known or not listed in the vocabulary." []
@@ -50691,14 +50917,15 @@ property_value: IAO:0000114 IAO:0000428
 
 [Term]
 id: FOODON:03420116
-name: food material by organism
-def: "Food material which is distinguished primarily by the organism(s) it derives from." []
+name: organism material
+def: "Material which is distinguished primarily by the organism(s) it derives from." []
 comment: LanguaL curation note: "e.g. *LEAF*, *ROOT OR TUBER*, *ORGAN MEAT*, *MILK* OR *EGG*; it also includes components of parts, such as *CREAM*, and extracts, concentrates or isolates, such as *PROTEIN EXTRACT* or *SUGAR*."
 comment: Old definition as of Feb 25, 2025: Anatomical or other part(s) or substances derived from plant or animal or fungal organisms.
+xref: langual:thesaurus.asp?termid=B0001
+xref: langual:thesaurus.asp?termid=B1564
 xref: langual:thesaurus.asp?termid=C0116
-is_a: FOODON:00002403 ! food material
 property_value: IAO:0000114 IAO:0000428
-property_value: IAO:0000116 "This was renamed from \"part of organism\" (and from LanguaL's original \"part of plant or animal\") to encompass organism material that is produced by an animal or plant rather than \"part of\" it, such as an egg, and might not be countable per se, such as milk. Additionally the existing definition's \"from which a food product or its major ingredient is derived.\" was removed as an unnecessary constraint. [2023/03/02]" xsd:string
+property_value: IAO:0000116 "This was renamed from \"part of organism\" (and from LanguaL's original \"part of plant or animal\") to encompass organism material that is produced by an animal or plant rather than \"part of\" it, such as an egg, and might not be countable per se, such as milk. Additionally the existing definition's \"from which a food product or its major ingredient is derived.\"was removed as an unnecessary constraint. [2023/03/02]" xsd:string
 
 [Term]
 id: FOODON:03420152
@@ -50719,11 +50946,11 @@ property_value: IAO:0000114 IAO:0000428
 [Term]
 id: FOODON:03420164
 name: animal material
-def: "Material that derives from some animal." []
+def: "Material that derives from one or more animals" []
 comment: Langual note: Includes eggs and milk that, although separated from the animal, are produced as integral parts and are affected by the animal's food intake and metabolism.
 comment: This branch isn't necessarily food material
 xref: langual:thesaurus.asp?termid=C0164
-is_a: FOODON:03420116 ! food material by organism
+is_a: FOODON:03420116 ! organism material
 property_value: IAO:0000114 IAO:0000122
 property_value: terms:contributor "https://orcid.org/0000-0001-5275-8866" xsd:string
 property_value: terms:date "2023-08-01T21:25:29Z" xsd:dateTime
@@ -51039,8 +51266,8 @@ is_a: IAO:0000033 ! directive information entity
 
 [Term]
 id: IAO:0000027
-name: data item
-def: "An information content entity that is intended to be a truthful statement about something (modulo, e.g., measurement precision or other systematic errors) and is constructed/acquired by a method which reliably tends to produce (approximately) truthful statements." []
+name: data entity
+def: "An information content entity that is intended to be one or more truthful statement(s) about something (modulo, e.g., measurement precision or other systematic errors) and is constructed/acquired by a method which reliably tends to produce (approximately) truthful statements." []
 is_a: IAO:0000030 ! information content entity
 
 [Term]
@@ -51063,9 +51290,9 @@ is_a: IAO:0000030 ! information content entity
 
 [Term]
 id: IAO:0000100
-name: data set
+name: homogenous data collection
 def: "A data item that is an aggregate of other data items of the same type that have something in common. Averages and distributions can be determined for data sets." []
-is_a: IAO:0000027 ! data item
+is_a: IAO:0001000 ! data collection
 
 [Term]
 id: IAO:0000101
@@ -51083,7 +51310,7 @@ is_a: IAO:0000033 ! directive information entity
 id: IAO:0000109
 name: measurement datum
 def: "A measurement datum is an information content entity that is a recording of the output of a measurement such as produced by a device." []
-is_a: IAO:0000027 ! data item
+is_a: IAO:0000027 ! data entity
 
 [Term]
 id: IAO:0000308
@@ -51100,7 +51327,13 @@ is_a: IAO:0000109 ! measurement datum
 id: IAO:0000584
 name: time sampled measurement data set
 def: "A data set that is an aggregate of data recording some measurement at a number of time points. The time series data set is an ordered list of pairs of time measurement data and the corresponding measurement data acquired at that time." []
-is_a: IAO:0000100 ! data set
+is_a: IAO:0000100 ! homogenous data collection
+
+[Term]
+id: IAO:0001000
+name: data collection
+def: "A data entity that consists of multiple data entities." []
+is_a: IAO:0000027 ! data entity
 
 [Term]
 id: NCBITaxon:1
@@ -51111,11 +51344,6 @@ xref: GC_ID:1
 xref: PMID:30365038
 xref: PMID:32761142
 is_a: BFO:0000040 ! material entity
-
-[Term]
-id: NCBITaxon:10239
-name: Viruses
-is_a: OBI:0100026 ! organism
 
 [Term]
 id: NCBITaxon:104431
@@ -51132,12 +51360,13 @@ id: NCBITaxon:1117
 name: Cyanobacteriota
 synonym: "blue-green algae" EXACT []
 synonym: "blue-green bacteria" EXACT []
-synonym: "Cyanobacteria" RELATED []
+synonym: "cyanobacteria" EXACT []
 synonym: "cyanobacteria" RELATED []
+synonym: "Cyanobacteriophyta" RELATED []
 synonym: "Cyanophycota" RELATED []
 synonym: "Cyanophyta" RELATED []
 synonym: "cyanophytes" EXACT []
-synonym: "Oxygenic photosynthetic bacteria" RELATED []
+synonym: "Oxygenic photosynthetic bacteria" EXACT []
 synonym: "Oxyphotobacteria" RELATED []
 is_a: NCBITaxon:1798711 ! Cyanobacteriota/Melainabacteria group
 
@@ -51201,7 +51430,7 @@ is_a: NCBITaxon:1892259 ! Aphanizomenonaceae
 [Term]
 id: NCBITaxon:117558
 name: Bathymodiolinae
-is_a: NCBITaxon:6547 ! Mytilidae
+is_a: NCBITaxon:3703731 ! Modiolidae
 
 [Term]
 id: NCBITaxon:117570
@@ -51265,16 +51494,18 @@ is_a: NCBITaxon:35493 ! Streptophyta
 
 [Term]
 id: NCBITaxon:131567
+name: cellular organism
 name: cellular organisms
 namespace: ncbi_taxonomy
 synonym: "biota" RELATED synonym []
 xref: GC_ID:1
+is_a: COB:0000022 ! organism
 is_a: NCBITaxon:1 ! root
 
 [Term]
 id: NCBITaxon:1316646
 name: Salicornioideae
-is_a: NCBITaxon:1804623 ! Chenopodiaceae
+is_a: NCBITaxon:3563 ! Amaranthaceae
 
 [Term]
 id: NCBITaxon:1329799
@@ -51369,12 +51600,6 @@ name: Cyanobacteriota/Melainabacteria group
 is_a: NCBITaxon:1783272 ! Bacillati
 
 [Term]
-id: NCBITaxon:1804623
-name: Chenopodiaceae
-synonym: "goosefoot family" EXACT []
-is_a: NCBITaxon:3524 ! Caryophyllales
-
-[Term]
 id: NCBITaxon:1890449
 name: Microcystaceae
 is_a: NCBITaxon:1118 ! Chroococcales
@@ -51422,6 +51647,8 @@ is_a: NCBITaxon:7001 ! Caelifera
 [Term]
 id: NCBITaxon:197562
 name: Pancrustacea
+synonym: "crustaceans" RELATED []
+synonym: "crustaceans and hexapods" EXACT []
 is_a: NCBITaxon:197563 ! Mandibulata
 
 [Term]
@@ -51433,6 +51660,7 @@ is_a: NCBITaxon:6656 ! Arthropoda
 [Term]
 id: NCBITaxon:2
 name: Bacteria
+synonym: "bacteria" EXACT []
 synonym: "bacteria" RELATED []
 synonym: "Bacteria (ex Cavalier-Smith 1987)" RELATED []
 synonym: "Bacteria Woese et al. 2024" RELATED []
@@ -51445,7 +51673,6 @@ synonym: "Prokaryotae" RELATED []
 synonym: "prokaryote" RELATED []
 synonym: "prokaryotes" RELATED []
 is_a: NCBITaxon:131567 ! cellular organisms
-is_a: OBI:0100026 ! organism
 
 [Term]
 id: NCBITaxon:207598
@@ -51457,11 +51684,6 @@ is_a: NCBITaxon:9604 ! Hominidae
 id: NCBITaxon:2116530
 name: Salicornia subgen. Amerocornia
 is_a: NCBITaxon:46104 ! Salicornia
-
-[Term]
-id: NCBITaxon:2157
-name: Archaea
-is_a: OBI:0100026 ! organism
 
 [Term]
 id: NCBITaxon:2696291
@@ -51476,7 +51698,7 @@ is_a: NCBITaxon:33317 ! Protostomia
 [Term]
 id: NCBITaxon:2698737
 name: Sar
-synonym: "SAR supergroup" RELATED []
+synonym: "SAR supergroup" EXACT []
 is_a: NCBITaxon:2759 ! Eukaryota
 
 [Term]
@@ -51501,7 +51723,6 @@ xref: GC_ID:1
 xref: PMID:23020233
 xref: PMID:30257078
 is_a: NCBITaxon:131567 ! cellular organisms
-is_a: OBI:0100026 ! organism
 property_value: has_rank NCBITaxon:superkingdom
 
 [Term]
@@ -51549,7 +51770,7 @@ is_a: NCBITaxon:2864 ! Dinophyceae
 [Term]
 id: NCBITaxon:301957
 name: Modiolinae
-is_a: NCBITaxon:6547 ! Mytilidae
+is_a: NCBITaxon:3703731 ! Modiolidae
 
 [Term]
 id: NCBITaxon:301959
@@ -51559,6 +51780,7 @@ is_a: NCBITaxon:6547 ! Mytilidae
 [Term]
 id: NCBITaxon:3028117
 name: Cyanophyceae
+synonym: "c__Cyanobacteriia" EXACT []
 synonym: "Gloeobacteria" RELATED []
 is_a: NCBITaxon:1117 ! Cyanobacteriota
 
@@ -51586,7 +51808,6 @@ name: Embryophyta
 synonym: "higher plants" EXACT []
 synonym: "land plants" EXACT []
 synonym: "land plants" RELATED []
-synonym: "plants" EXACT []
 is_a: NCBITaxon:131221 ! Streptophytina
 
 [Term]
@@ -51623,6 +51844,7 @@ synonym: "chlorophyte/embryophyte group" EXACT []
 synonym: "Chloroplastida" RELATED []
 synonym: "green plants" EXACT []
 synonym: "green plants" RELATED []
+synonym: "plants" EXACT []
 is_a: NCBITaxon:2759 ! Eukaryota
 
 [Term]
@@ -51676,7 +51898,7 @@ is_a: NCBITaxon:33340 ! Neoptera
 id: NCBITaxon:33392
 name: Endopterygota
 synonym: "Holometabola" RELATED []
-is_a: NCBITaxon:33340 ! Neoptera
+is_a: NCBITaxon:3701061 ! Eumetabola
 
 [Term]
 id: NCBITaxon:33511
@@ -51688,6 +51910,7 @@ is_a: NCBITaxon:33213 ! Bilateria
 id: NCBITaxon:33630
 name: Alveolata
 synonym: "alveolates" EXACT []
+synonym: "alveolates" RELATED []
 is_a: NCBITaxon:2698737 ! Sar
 
 [Term]
@@ -51696,6 +51919,7 @@ name: Stramenopiles
 synonym: "Chromophyta" RELATED []
 synonym: "Heterokonta" RELATED []
 synonym: "heterokonts" EXACT []
+synonym: "heterokonts" RELATED []
 synonym: "Straminipila" RELATED []
 is_a: NCBITaxon:2698737 ! Sar
 
@@ -51728,6 +51952,14 @@ name: Streptophyta
 is_a: NCBITaxon:33090 ! Viridiplantae
 
 [Term]
+id: NCBITaxon:3563
+name: Amaranthaceae
+synonym: "amaranth family" EXACT []
+synonym: "Chenopodiaceae" RELATED []
+synonym: "goosefoot family" EXACT []
+is_a: NCBITaxon:3524 ! Caryophyllales
+
+[Term]
 id: NCBITaxon:365482
 name: Salicornia pacifica
 synonym: "Sarcocornia pacifica" RELATED []
@@ -51738,6 +51970,36 @@ id: NCBITaxon:3699
 name: Brassicales
 synonym: "Capparales" RELATED []
 is_a: NCBITaxon:91836 ! malvids
+
+[Term]
+id: NCBITaxon:3701028
+name: Altocrustacea
+is_a: NCBITaxon:197562 ! Pancrustacea
+
+[Term]
+id: NCBITaxon:3701030
+name: Allotriocarida
+is_a: NCBITaxon:3701028 ! Altocrustacea
+
+[Term]
+id: NCBITaxon:3701061
+name: Eumetabola
+is_a: NCBITaxon:33340 ! Neoptera
+
+[Term]
+id: NCBITaxon:3701062
+name: Aparaglossata
+is_a: NCBITaxon:33392 ! Endopterygota
+
+[Term]
+id: NCBITaxon:3701063
+name: Panorpida
+is_a: NCBITaxon:3701062 ! Aparaglossata
+
+[Term]
+id: NCBITaxon:3703731
+name: Modiolidae
+is_a: NCBITaxon:106220 ! Mytiloidea
 
 [Term]
 id: NCBITaxon:37267
@@ -51840,6 +52102,7 @@ is_a: NCBITaxon:91836 ! malvids
 id: NCBITaxon:436486
 name: Dinosauria
 synonym: "dinosaurs" EXACT []
+synonym: "dinosaurs" RELATED []
 is_a: NCBITaxon:8492 ! Archosauria
 
 [Term]
@@ -52060,20 +52323,19 @@ synonym: "hexapods" EXACT []
 synonym: "hexapods" RELATED []
 synonym: "Tracheata" RELATED []
 synonym: "Uniramia" RELATED []
-is_a: NCBITaxon:197562 ! Pancrustacea
+is_a: NCBITaxon:3701030 ! Allotriocarida
 
 [Term]
 id: NCBITaxon:6993
 name: Orthoptera
 synonym: "grasshoppers, crickets & katydids" EXACT []
-synonym: "grasshoppers, crickets, & katydids" RELATED []
+synonym: "grasshoppers, crickets & katydids" RELATED []
 synonym: "Saltatoria" RELATED []
 is_a: NCBITaxon:33341 ! Polyneoptera
 
 [Term]
 id: NCBITaxon:7001
 name: Caelifera
-synonym: "grasshoppers" RELATED []
 synonym: "grasshoppers, groundhoppers & pygmy mole crickets" EXACT []
 is_a: NCBITaxon:6993 ! Orthoptera
 
@@ -52110,8 +52372,8 @@ is_a: NCBITaxon:7008 ! Schistocerca
 [Term]
 id: NCBITaxon:7088
 name: Lepidoptera
-synonym: "moths" RELATED []
 synonym: "moths & butterflies" EXACT []
+synonym: "moths & butterflies" RELATED []
 is_a: NCBITaxon:85604 ! Amphiesmenoptera
 
 [Term]
@@ -52123,6 +52385,7 @@ is_a: NCBITaxon:1955150 ! Acrididea
 [Term]
 id: NCBITaxon:71000
 name: Pfiesteria
+synonym: "Pseudopfiesteria" RELATED []
 is_a: NCBITaxon:403651 ! Pfiesteriaceae
 
 [Term]
@@ -52227,7 +52490,7 @@ is_a: NCBITaxon:50557 ! Insecta
 [Term]
 id: NCBITaxon:85604
 name: Amphiesmenoptera
-is_a: NCBITaxon:33392 ! Endopterygota
+is_a: NCBITaxon:3701063 ! Panorpida
 
 [Term]
 id: NCBITaxon:8782
@@ -52316,15 +52579,11 @@ is_a: NCBITaxon:9605 ! Homo
 
 [Term]
 id: OBI:0000011
-name: planned process
+name: obsolete planned process
 def: "A process that realizes a plan which is the concretization of a plan specification." []
-is_a: BFO:0000015 ! process
-
-[Term]
-id: OBI:0000047
-name: processed material
-def: "Is a material entity that is created or changed during material processing." []
-is_a: BFO:0000040 ! material entity
+is_a: oboInOwl:ObsoleteClass ! Obsolete Class
+is_obsolete: true
+replaced_by: COB:0000035
 
 [Term]
 id: OBI:0000401
@@ -52336,30 +52595,31 @@ is_a: BFO:0000034 ! function
 id: OBI:0000967
 name: container
 def: "A device that can be used to restrict the location of material entities over time" []
-is_a: OBI:0000968 ! device
+is_a: COB:0001300 ! device
+is_a: OBI:0000968 ! obsolete device
 
 [Term]
 id: OBI:0000968
-name: device
+name: obsolete device
 def: "A material entity that is designed to perform a function in a scientific investigation, but is not a reagent." []
 is_a: ENVO:00003074 ! manufactured product
-is_a: OBI:0000047 ! processed material
+is_a: oboInOwl:ObsoleteClass ! Obsolete Class
+is_obsolete: true
+replaced_by: COB:0001300
 
 [Term]
 id: OBI:0100026
-name: organism
+name: obsolete organism
 def: "A material entity that is an individual living system, such as animal, plant, bacteria or virus, that is capable of replicating or reproducing, growth and maintenance in the right environment. An organism may be unicellular or made up, like humans, of many billions of cells divided into specialized tissues and organs." []
-is_a: BFO:0000040 ! material entity
-union_of: NCBITaxon:10239 ! Viruses
-union_of: NCBITaxon:2 ! Bacteria
-union_of: NCBITaxon:2157 ! Archaea
-union_of: NCBITaxon:2759 ! Eukaryota
+is_a: oboInOwl:ObsoleteClass ! Obsolete Class
+is_obsolete: true
+replaced_by: COB:0000022
 
 [Term]
 id: PATO:0000001
 name: quality
 def: "A dependent entity that inheres in a bearer by virtue of how the bearer is related to other entities" []
-is_a: BFO:0000020 ! specifically dependent continuant
+is_a: COB:0000502 ! characteristic
 
 [Term]
 id: PATO:0000008
@@ -55155,6 +55415,7 @@ id: PCO:0000000
 name: collection of organisms
 def: "A material entity that consists of two or more organisms, viruses, or viroids." []
 comment: May be of the same or different species.
+is_a: BFO:0000040 ! material entity
 is_a: PCO:0000031 ! organismal entity
 property_value: IAO:0000112 "Examples include: population, community, species (meaning the collection of organisms that makes up a species, not the taxonomic rank), and family." xsd:string
 property_value: IAO:0000114 IAO:0000125
@@ -55166,7 +55427,7 @@ id: PCO:0000001
 name: population of organisms
 def: "A collection of organisms, all of the same species, that live in the same place." []
 comment: It is sometimes difficult to define the physical boundaries of a population. In the case of sexually reproducing organisms, the individuals within a population have the potential to reproduce with one another during the course of their lifetimes. 'Community', as often used to describe a group of humans, is a type of population of organisms. \n\nClasses for population already  exist in IDO ('organism population', IDO_0000509) and OBI ('population', OBI_0000181). The definitions should be standardized across OBO Foundry ontologies and only one term used.
-is_a: OBI:0100026 ! organism
+is_a: COB:0000022 ! organism
 is_a: PCO:0000018 ! single-species collection of organisms
 relationship: RO:0002303 ENVO:01000739 ! has habitat habitat
 property_value: IAO:0000112 "" xsd:string
@@ -55473,14 +55734,13 @@ id: PO:0009002
 name: plant cell
 namespace: plant_anatomy
 def: "A cell which is a plant structure (PO:0009011)." [CL:0000000, POC:curators]
-comment: Applies to cells that are living or dead at maturity (e.g., fiber cell or tracheid) and includes any external encapsulating structures (if present) such as the plasma membrane and the plant-type cell wall. Definition of cell GO:0005623: "The basic structural and functional unit of all organisms. Includes the plasma membrane and any external encapsulating structures such as the cell wall and cell envelope". GO:0009505. Definition of plant-type cell wall (GO:0009505): A more or less rigid structure lying outside the cell membrane of a cell and composed of cellulose and pectin and other organic and inorganic substances, synonym; exact: cellulose and pectin-containing cell wall.
+comment: Applies to cells that are living or dead at maturity (e.g., fiber cell or tracheid) and includes any external encapsulating structures (if present) such as the plasma membrane and the plant-type cell wall.  Definition of cell CL:0000000: "A material entity of anatomical origin (part of or deriving from an organism) that has as its parts a maximally connected cell compartment surrounded by a plasma membrane. The definition of cell is intended to represent all cells, and thus a cell is defined as a material entity and not an anatomical structure, which implies that it is part of an organism (or the entirety of one)". Definition of plant-type cell wall (GO:0009505): "A more or less rigid structure lying outside the cell membrane of a cell and composed of cellulose and pectin and other organic and inorganic substances."  Exact synonym: cellulose and pectin-containing cell wall.
 subset: CL
 subset: reference
 subset: TraitNet
 synonym: "c&#233lula vegetal (Spanish, exact)" EXACT Spanish [POC:Maria_Alejandra_Gandolfo]
 synonym: "cell (broad)" BROAD []
 synonym: "植物細胞 (Japanese, exact)" EXACT Japanese [NIG:Yukiko_Yamazaki]
-xref: GO:0005623
 xref: PO_GIT:56
 is_a: PO:0009011 ! plant structure
 disjoint_from: PO:0009007 ! portion of plant tissue
@@ -62855,6 +63115,10 @@ intersection_of: UBERON:0000014 ! zone of skin
 intersection_of: BFO:0000050 UBERON:0001421 ! part of pectoral girdle region
 relationship: BFO:0000050 UBERON:0001421 ! part of pectoral girdle region
 
+[Term]
+id: oboInOwl:ObsoleteClass
+name: Obsolete Class
+
 [Typedef]
 id: BFO:0000050
 name: part of
@@ -63456,7 +63720,7 @@ property_value: IAO:0000117 https://orcid.org/0000-0002-6601-2165
 property_value: IAO:0000119 http://www.ncbi.nlm.nih.gov/pubmed/17921072
 property_value: IAO:0000119 http://www.ncbi.nlm.nih.gov/pubmed/20973947
 property_value: seeAlso https://github.com/obophenotype/uberon/wiki/Taxon-constraints
-range: OBI:0100026 ! organism
+range: COB:0000022 ! organism
 holds_over_chain: RO:0002131 RO:0002162
 holds_over_chain: RO:0002150 RO:0002162
 holds_over_chain: RO:0002170 RO:0002162
@@ -63977,7 +64241,7 @@ property_value: IAO:0000112 "Hydrozoa (NCBITaxon_6074) SubClassOf 'has habitat' 
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000117 https://orcid.org/0000-0002-4366-3088
 property_value: IAO:0000118 "adapted for living in" xsd:string
-domain: OBI:0100026 ! organism
+domain: COB:0000022 ! organism
 range: ENVO:01000254 ! environmental system
 is_a: RO:0002321 ! ecologically related to
 
