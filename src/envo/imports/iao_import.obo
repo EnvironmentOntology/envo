@@ -143,8 +143,8 @@ is_a: IAO:0000033 ! directive information entity
 
 [Term]
 id: IAO:0000027
-name: data item
-def: "An information content entity that is intended to be a truthful statement about something (modulo, e.g., measurement precision or other systematic errors) and is constructed/acquired by a method which reliably tends to produce (approximately) truthful statements." []
+name: data entity
+def: "An information content entity that is intended to be one or more truthful statement(s) about something (modulo, e.g., measurement precision or other systematic errors) and is constructed/acquired by a method which reliably tends to produce (approximately) truthful statements." []
 is_a: IAO:0000030 ! information content entity
 
 [Term]
@@ -167,9 +167,9 @@ is_a: IAO:0000030 ! information content entity
 
 [Term]
 id: IAO:0000100
-name: data set
+name: homogenous data collection
 def: "A data item that is an aggregate of other data items of the same type that have something in common. Averages and distributions can be determined for data sets." []
-is_a: IAO:0000027 ! data item
+is_a: IAO:0001000 ! data collection
 
 [Term]
 id: IAO:0000101
@@ -187,7 +187,7 @@ is_a: IAO:0000033 ! directive information entity
 id: IAO:0000109
 name: measurement datum
 def: "A measurement datum is an information content entity that is a recording of the output of a measurement such as produced by a device." []
-is_a: IAO:0000027 ! data item
+is_a: IAO:0000027 ! data entity
 
 [Term]
 id: IAO:0000308
@@ -204,13 +204,13 @@ is_a: IAO:0000109 ! measurement datum
 id: IAO:0000584
 name: time sampled measurement data set
 def: "A data set that is an aggregate of data recording some measurement at a number of time points. The time series data set is an ordered list of pairs of time measurement data and the corresponding measurement data acquired at that time." []
-is_a: IAO:0000100 ! data set
+is_a: IAO:0000100 ! homogenous data collection
 
 [Term]
-id: OBI:0000011
-name: planned process
-def: "A process that realizes a plan which is the concretization of a plan specification." []
-is_a: BFO:0000015 ! process
+id: IAO:0001000
+name: data collection
+def: "A data entity that consists of multiple data entities." []
+is_a: IAO:0000027 ! data entity
 
 [Term]
 id: PATO:0001018
