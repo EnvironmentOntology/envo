@@ -528,6 +528,15 @@ SPARQL_VALIDATION_QUERIES = $(foreach V,$(SPARQL_VALIDATION_CHECKS),$(SPARQLDIR)
 sparql_test: $(SRC)
 	$(ROBOT) verify  --catalog catalog-v001.xml -i $< --queries $(SPARQL_VALIDATION_QUERIES) -O reports/
 
+# ENVO IDs must never be lost: fails if a term labelled in ENVO's own sources
+# at ID_CHECK_BASE (src/envo of another checkout, e.g. the PR base) has no
+# label here. Run in CI on every pull request.
+ID_CHECK_BASE ?=
+.PHONY: check-lost-ids
+check-lost-ids:
+	@test -n "$(ID_CHECK_BASE)" || (echo "Set ID_CHECK_BASE to the src/envo directory of the base revision" && exit 1)
+	bash util/check-lost-ids.sh $(ID_CHECK_BASE) . $(PRE_SRC) $(ALL_MODS_OWL) $(OTHER_SRC)
+
 # ----------------------------------------
 # ROBOT report
 # ----------------------------------------
