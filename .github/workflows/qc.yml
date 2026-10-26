@@ -4,11 +4,11 @@ name: CI
 
 # Controls when the action will run. 
 on:
-  # Triggers the workflow on push or pull request events but only for the main branch
+  # Triggers the workflow on pushes to the main branch and on every pull request,
+  # including pull requests stacked on another branch
   push:
     branches: [ master ]
   pull_request:
-    branches: [ master ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -34,3 +34,26 @@ jobs:
         # called "travis_test", this should probably be renamed something like "ci_test".
         # see: https://github.com/EnvironmentOntology/envo/pull/1172#issuecomment-1035522412
         run: cd src/envo && make ROBOT_ENV='ROBOT_JAVA_ARGS=-Xmx6G' travis_test IMP=false PAT=false
+
+  # Fails if the pull request removes an ENVO term, or strips its label, instead
+  # of obsoleting it. Compares the PR merge result with the base branch.
+  # See https://github.com/EnvironmentOntology/envo/issues/1675
+  id_preservation:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    container: obolibrary/odkfull:v1.6
+    env:
+      ROBOT_JAVA_ARGS: -Xmx6G
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Check out the base revision
+        run: |
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
+          git worktree add --detach /tmp/base ${{ github.event.pull_request.base.sha }}
+
+      - name: Fail if an ENVO ID was lost
+        run: cd src/envo && make check-lost-ids ID_CHECK_BASE=/tmp/base/src/envo
