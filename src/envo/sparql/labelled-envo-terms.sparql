@@ -1,0 +1,10 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+# Every ENVO IRI with a label, used by util/check-lost-ids.sh
+SELECT ?term (SAMPLE(?lab) AS ?label) WHERE {
+	?term rdfs:label ?lab
+	FILTER (isIRI(?term))
+	FILTER (STRSTARTS(str(?term), "http://purl.obolibrary.org/obo/ENVO_"))
+}
+GROUP BY ?term
+ORDER BY ?term
