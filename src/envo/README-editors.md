@@ -99,9 +99,10 @@ For questions on this contact Chris Mungall or email obo-admin AT obofoundry.org
 
 # Continuous integration
 
-GitHub Actions runs the checks in `.github/workflows/qc.yml` and
-`.github/workflows/sssom-qc.yml` on every pull request and on every push
-to master. Travis and Jenkins are no longer used.
+GitHub Actions runs the checks in `.github/workflows/qc.yml` on every
+pull request and on every push to master, and the checks in
+`.github/workflows/sssom-qc.yml` on pull requests that target master and
+on every push to master. Travis and Jenkins are no longer used.
 
 ## General Guidelines
 
