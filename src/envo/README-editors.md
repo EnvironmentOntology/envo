@@ -47,19 +47,21 @@ TODO add instructions here
 ## Release Manager notes
 
 You should only attempt to make a release AFTER the edit version is
-committed and pushed, and the travis build passes.
+committed and pushed, and the GitHub Actions checks pass.
 
 to release:
 
-    cd src/ontology
-    make
+    cd src/envo
+    ./run.sh make
 
 If this looks good type:
 
-    make release
+    ./run.sh make release
 
 This generates derived files such as envo.owl and envo.obo and places
-them in the top level (../..). The versionIRI will be added.
+them in the top level (../..). The versionIRI will be added. `run.sh`
+runs the command in the ODK Docker image; the `release` target depends
+on `all`, so `./run.sh make release` on its own builds everything too.
 
 Commit and push these files.
 
@@ -95,11 +97,11 @@ correct ontologies. Try it!
 
 For questions on this contact Chris Mungall or email obo-admin AT obofoundry.org
 
-# Travis Continuous Integration System
+# Continuous integration
 
-Check the build status here: [![Build Status](https://travis-ci.org/EnvironmentOntology/envo.svg?branch=master)](https://travis-ci.org/EnvironmentOntology/envo)
-
-This replaces Jenkins for this ontology
+GitHub Actions runs the checks in `.github/workflows/qc.yml` and
+`.github/workflows/sssom-qc.yml` on every pull request and on every push
+to master. Travis and Jenkins are no longer used.
 
 ## General Guidelines
 
