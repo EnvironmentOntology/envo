@@ -54,6 +54,13 @@ to release:
     cd src/envo
     ./run.sh make
 
+A plain `make` refreshes only some of the imports: the mirrors whose
+Makefile rule depends on `envo-edit.owl` (pato, obi, iao and others)
+are fetched again whenever the edit file is newer, but chebi, foodon,
+go, ncbitaxon, ro and uberon are fetched only when their file in
+`mirror/` is missing, so delete the `.owl` files in `mirror/` first to
+refresh every import.
+
 If this looks good type:
 
     ./run.sh make release
