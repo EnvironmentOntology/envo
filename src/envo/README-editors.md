@@ -63,13 +63,16 @@ them in the top level (../..). The versionIRI will be added. `run.sh`
 runs the command in the ODK Docker image; the `release` target depends
 on `all`, so `./run.sh make release` on its own builds everything too.
 
-Commit and push these files.
+Commit these files on a branch and open a pull request against
+master. That is how the v2026-10-23 release went in
+(https://github.com/EnvironmentOntology/envo/pull/1678).
 
     git commit -a
 
 And type a brief description of the release in the editor window
 
-IMMEDIATELY AFTERWARDS (do *not* make further modifications) go here:
+After the pull request is merged, and before anything else is merged
+into master, go here:
 
  * https://github.com/EnvironmentOntology/envo/releases
  * https://github.com/EnvironmentOntology/envo/releases/new
