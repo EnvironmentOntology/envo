@@ -357,14 +357,6 @@ mirror/%.owl: mirror/%-local.owl
 	$(OWLTOOLS) $< --remove-annotation-assertions -l --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS)  -o $@
 .PRECIOUS: mirror/%.owl
 
-mirror/agro.owl: envo-edit.owl
-	$(OWLTOOLS) $(OBO)/agro.owl $(REMOVE_SELF_REF) --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/agro.owl -o $@
-.PRECIOUS: mirror/%.owl
-
-mirror/sdgio.owl: envo-edit.owl
-	$(OWLTOOLS) http://purl.unep.org/sdg/sdgio.owl $(REMOVE_SELF_REF)  --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id http://purl.unep.org/sdg/sdgio.owl -o $@
-.PRECIOUS: mirror/%.owl
-
 mirror/obi.owl: envo-edit.owl
 	$(OWLTOOLS) $(OBO)/obi.owl --remove-classes-in-idspace GO --remove-classes-in-idspace ENVO --remove-classes-in-idspace CHEBI --remove-classes-in-idspace UBERON --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/obi.owl -o $@
 .PRECIOUS: mirror/%.owl
@@ -436,10 +428,6 @@ mirror/pco.owl: envo-edit.owl
 
 mirror/iao.owl: envo-edit.owl
 	$(OWLTOOLS) $(OBO)/iao.owl --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/iao.owl -o $@
-.PRECIOUS: mirror/%.owl
-
-mirror/omp.owl: envo-edit.owl
-	$(OWLTOOLS) $(OBO)/omp.owl --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/omp.owl -o $@
 .PRECIOUS: mirror/%.owl
 
 mirror/pato.owl: envo-edit.owl
