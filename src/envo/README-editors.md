@@ -47,27 +47,39 @@ TODO add instructions here
 ## Release Manager notes
 
 You should only attempt to make a release AFTER the edit version is
-committed and pushed, and the travis build passes.
+committed and pushed, and the GitHub Actions checks pass.
 
 to release:
 
-    cd src/ontology
-    make
+    cd src/envo
+    ./run.sh make
+
+A plain `make` refreshes only some of the imports: the mirrors whose
+Makefile rule depends on `envo-edit.owl` (pato, obi, iao and others)
+are fetched again whenever the edit file is newer, but chebi, foodon,
+go, ncbitaxon, ro and uberon are fetched only when their file in
+`mirror/` is missing, so delete the `.owl` files in `mirror/` first to
+refresh every import.
 
 If this looks good type:
 
-    make release
+    ./run.sh make release
 
 This generates derived files such as envo.owl and envo.obo and places
-them in the top level (../..). The versionIRI will be added.
+them in the top level (../..). The versionIRI will be added. `run.sh`
+runs the command in the ODK Docker image; the `release` target depends
+on `all`, so `./run.sh make release` on its own builds everything too.
 
-Commit and push these files.
+Commit these files on a branch and open a pull request against
+master. That is how the v2026-10-23 release went in
+(https://github.com/EnvironmentOntology/envo/pull/1678).
 
     git commit -a
 
 And type a brief description of the release in the editor window
 
-IMMEDIATELY AFTERWARDS (do *not* make further modifications) go here:
+After the pull request is merged, and before anything else is merged
+into master, go here:
 
  * https://github.com/EnvironmentOntology/envo/releases
  * https://github.com/EnvironmentOntology/envo/releases/new
@@ -95,11 +107,12 @@ correct ontologies. Try it!
 
 For questions on this contact Chris Mungall or email obo-admin AT obofoundry.org
 
-# Travis Continuous Integration System
+# Continuous integration
 
-Check the build status here: [![Build Status](https://travis-ci.org/EnvironmentOntology/envo.svg?branch=master)](https://travis-ci.org/EnvironmentOntology/envo)
-
-This replaces Jenkins for this ontology
+GitHub Actions runs the checks in `.github/workflows/qc.yml` on every
+pull request and on every push to master, and the checks in
+`.github/workflows/sssom-qc.yml` on pull requests that target master and
+on every push to master. Travis and Jenkins are no longer used.
 
 ## General Guidelines
 
