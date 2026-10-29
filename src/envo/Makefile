@@ -96,6 +96,7 @@ release: all copy-release
 
 # stages release in top level folder
 copy-release:
+	rm -rf $(RELEASEDIR)/imports
 	cp -pr catalog-v001.xml envo.obo envo.owl envo.json envo-base.owl subsets mappings imports $(RELEASEDIR)
 
 base: envo-base.owl
