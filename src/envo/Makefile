@@ -6,7 +6,7 @@
 # <do not edit above this line>
 #
 # This Makefile is for use by the ENVO Release Manager (currently cjm)
-# Also used for unit tests executed by travis
+# Also used for the checks GitHub Actions runs, see .github/workflows/qc.yml
 #
 # See README-editors.md for more details on release process
 # To make a release, type 'make release' in this directory
@@ -59,12 +59,9 @@ test: all_modules all_imports envo.owl all_reports validate-dl-profile
 # a more limited set of tests that can be run using github actions
 continuous_integration_test: test_python all_reports envo.owl validate-dl-profile
 
-# deprecated alias
-travis_test: continuous_integration_test
-
 full_test: test envo.check-obo subsets/EnvO-Lite-GSC.check-obo
 
-# temp test for travis
+# prints the Python version in the CI log
 test_python:
 	python3 --version
 
@@ -77,7 +74,6 @@ validate-dl-profile: $(PRE_SRC)
 	$(ROBOT) validate-profile --profile DL -i $(TMPDIR)/validate.ofn
 
 test: validate-dl-profile
-travis_test: validate-dl-profile
 
 ## -- main targets --
 ##
