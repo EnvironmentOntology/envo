@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/EnvironmentOntology/envo.svg?branch=master)](https://travis-ci.org/EnvironmentOntology/envo)
+[![CI](https://github.com/EnvironmentOntology/envo/actions/workflows/qc.yml/badge.svg)](https://github.com/EnvironmentOntology/envo/actions/workflows/qc.yml)
 [![DOI](https://zenodo.org/badge/13996/EnvironmentOntology/envo.svg)](https://zenodo.org/badge/latestdoi/13996/EnvironmentOntology/envo)
 
 
