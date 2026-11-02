@@ -6,7 +6,7 @@
 # <do not edit above this line>
 #
 # This Makefile is for use by the ENVO Release Manager (currently cjm)
-# Also used for unit tests executed by travis
+# Also used for the checks GitHub Actions runs, see .github/workflows/qc.yml
 #
 # See README-editors.md for more details on release process
 # To make a release, type 'make release' in this directory
@@ -59,12 +59,9 @@ test: all_modules all_imports envo.owl all_reports validate-dl-profile
 # a more limited set of tests that can be run using github actions
 continuous_integration_test: test_python all_reports envo.owl validate-dl-profile
 
-# deprecated alias
-travis_test: continuous_integration_test
-
 full_test: test envo.check-obo subsets/EnvO-Lite-GSC.check-obo
 
-# temp test for travis
+# prints the Python version in the CI log
 test_python:
 	python3 --version
 
@@ -77,7 +74,6 @@ validate-dl-profile: $(PRE_SRC)
 	$(ROBOT) validate-profile --profile DL -i $(TMPDIR)/validate.ofn
 
 test: validate-dl-profile
-travis_test: validate-dl-profile
 
 ## -- main targets --
 ##
@@ -96,6 +92,7 @@ release: all copy-release
 
 # stages release in top level folder
 copy-release:
+	rm -rf $(RELEASEDIR)/imports
 	cp -pr catalog-v001.xml envo.obo envo.owl envo.json envo-base.owl subsets mappings imports $(RELEASEDIR)
 
 base: envo-base.owl
@@ -357,14 +354,6 @@ mirror/%.owl: mirror/%-local.owl
 	$(OWLTOOLS) $< --remove-annotation-assertions -l --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS)  -o $@
 .PRECIOUS: mirror/%.owl
 
-mirror/agro.owl: envo-edit.owl
-	$(OWLTOOLS) $(OBO)/agro.owl $(REMOVE_SELF_REF) --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/agro.owl -o $@
-.PRECIOUS: mirror/%.owl
-
-mirror/sdgio.owl: envo-edit.owl
-	$(OWLTOOLS) http://purl.unep.org/sdg/sdgio.owl $(REMOVE_SELF_REF)  --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id http://purl.unep.org/sdg/sdgio.owl -o $@
-.PRECIOUS: mirror/%.owl
-
 mirror/obi.owl: envo-edit.owl
 	$(OWLTOOLS) $(OBO)/obi.owl --remove-classes-in-idspace GO --remove-classes-in-idspace ENVO --remove-classes-in-idspace CHEBI --remove-classes-in-idspace UBERON --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/obi.owl -o $@
 .PRECIOUS: mirror/%.owl
@@ -436,10 +425,6 @@ mirror/pco.owl: envo-edit.owl
 
 mirror/iao.owl: envo-edit.owl
 	$(OWLTOOLS) $(OBO)/iao.owl --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/iao.owl -o $@
-.PRECIOUS: mirror/%.owl
-
-mirror/omp.owl: envo-edit.owl
-	$(OWLTOOLS) $(OBO)/omp.owl --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/omp.owl -o $@
 .PRECIOUS: mirror/%.owl
 
 mirror/pato.owl: envo-edit.owl
@@ -592,6 +577,14 @@ fill: envo-edit.csv
 	fill-col1-ids.pl --min 9000000 -m 10000000  $(ALL_MODS_CSV) $<
 
 # meta
+
+# Empty mirror/ and tmp/ so the next build fetches every mirror again, not only
+# the ones whose rules depend on envo-edit.owl. Run before a release.
+# mirror/.gitignore and mirror/README.md are tracked, so only *.owl is removed there.
+.PHONY: clean
+clean:
+	rm -f ./mirror/*.owl
+	rm -rf ./tmp/*
 
 #modules/%.tsv:
 #	blip-findall -i patterns/spec.obo  -consult pmaker.pro -r envo -r chebi -r pato pattern_$*/3 -no_pred -label -use_tabs > $@
