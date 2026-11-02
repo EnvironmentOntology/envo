@@ -582,6 +582,14 @@ fill: envo-edit.csv
 
 # meta
 
+# Empty mirror/ and tmp/ so the next build fetches every mirror again, not only
+# the ones whose rules depend on envo-edit.owl. Run before a release.
+# mirror/.gitignore and mirror/README.md are tracked, so only *.owl is removed there.
+.PHONY: clean
+clean:
+	rm -f mirror/*.owl
+	rm -rf $(TMPDIR)/*
+
 #modules/%.tsv:
 #	blip-findall -i patterns/spec.obo  -consult pmaker.pro -r envo -r chebi -r pato pattern_$*/3 -no_pred -label -use_tabs > $@
 
