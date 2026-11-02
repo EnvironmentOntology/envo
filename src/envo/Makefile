@@ -547,7 +547,7 @@ reports/envo-base-robot-report.tsv: envo-base.owl
 # ENVO plus its whole import closure. Problems that come in through the imports,
 # such as two labels on one term, show up here and not in the reports above.
 # Only recorded for now. It does not fail the build.
-reports/envo-closure-robot-report.tsv: $(PRE_SRC)
+reports/envo-closure-robot-report.tsv: $(PRE_SRC) .FORCE
 	$(ROBOT) merge -i $< --collapse-import-closure true \
 	  report -l true --fail-on NONE --print 5 -o $@
 
