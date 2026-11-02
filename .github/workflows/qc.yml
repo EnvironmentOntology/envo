@@ -29,11 +29,10 @@ jobs:
       - name: Run ontology QC checks
         env:
           DEFAULT_BRANCH: main
-        # note for github actions we want to run a slightly more minimal test where do don't
-        # build all_imports, as this is expensive. For historic reasons this target is
-        # called "travis_test", this should probably be renamed something like "ci_test".
+        # CI runs a smaller set of checks than `make test` and does not rebuild
+        # all_imports, which is expensive.
         # see: https://github.com/EnvironmentOntology/envo/pull/1172#issuecomment-1035522412
-        run: cd src/envo && make ROBOT_ENV='ROBOT_JAVA_ARGS=-Xmx6G' travis_test IMP=false PAT=false
+        run: cd src/envo && make ROBOT_ENV='ROBOT_JAVA_ARGS=-Xmx6G' continuous_integration_test IMP=false PAT=false
 
       - name: Report problems in ENVO and its imports (recorded, does not fail)
         run: cd src/envo && make ROBOT_ENV='ROBOT_JAVA_ARGS=-Xmx6G' closure_report IMP=false PAT=false
