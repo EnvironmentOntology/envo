@@ -587,8 +587,8 @@ fill: envo-edit.csv
 # mirror/.gitignore and mirror/README.md are tracked, so only *.owl is removed there.
 .PHONY: clean
 clean:
-	rm -f mirror/*.owl
-	rm -rf $(TMPDIR)/*
+	rm -f ./mirror/*.owl
+	rm -rf ./tmp/*
 
 #modules/%.tsv:
 #	blip-findall -i patterns/spec.obo  -consult pmaker.pro -r envo -r chebi -r pato pattern_$*/3 -no_pred -label -use_tabs > $@
