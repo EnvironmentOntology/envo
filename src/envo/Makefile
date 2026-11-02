@@ -391,9 +391,14 @@ mirror/bfo.owl: envo-edit.owl
 	$(OWLTOOLS) $(OBO)/bfo.owl --merge-imports-closure --make-subset-by-properties -f // --remove-external-classes BFO --remove-annotation-assertions -l -s -d  --remove-dangling --set-ontology-id $(OBO)/bfo.owl -o $@
 .PRECIOUS: mirror/%.owl
 
+# UBERON is downloaded before owltools reads it because the OWLAPI version inside
+# owltools does not follow the PURL redirect and tries to parse the error page.
+# See https://github.com/EnvironmentOntology/envo/pull/1289
+# The OBO format predates that fix. Mirroring uberon-base.owl with ROBOT, as ODK
+# does, would remove the need for both owltools and the OBO file here.
 mirror/uberon.owl: 
-	wget http://purl.obolibrary.org/obo/uberon.obo # suggest fix for parser error; see https://github.com/EnvironmentOntology/envo/pull/1289
-	$(OWLTOOLS) uberon.obo  --remove-axiom-annotations  --make-subset-by-properties -f $(KEEPRELS) --remove-external-classes UBERON --remove-dangling-annotations --remove-annotation-assertions -l -s -d --set-ontology-id $(OBO)/uberon.owl -o $@
+	mkdir -p $(TMPDIR) && wget http://purl.obolibrary.org/obo/uberon.obo -O $(TMPDIR)/uberon.obo
+	$(OWLTOOLS) $(TMPDIR)/uberon.obo  --remove-axiom-annotations  --make-subset-by-properties -f $(KEEPRELS) --remove-external-classes UBERON --remove-dangling-annotations --remove-annotation-assertions -l -s -d --set-ontology-id $(OBO)/uberon.owl -o $@
 .PRECIOUS: mirror/%.owl
 
 
