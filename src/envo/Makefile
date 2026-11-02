@@ -396,8 +396,8 @@ mirror/bfo.owl: envo-edit.owl
 .PRECIOUS: mirror/%.owl
 
 mirror/uberon.owl: 
-	wget http://purl.obolibrary.org/obo/uberon.obo # suggest fix for parser error; see https://github.com/EnvironmentOntology/envo/pull/1289
-	$(OWLTOOLS) uberon.obo  --remove-axiom-annotations  --make-subset-by-properties -f $(KEEPRELS) --remove-external-classes UBERON --remove-dangling-annotations --remove-annotation-assertions -l -s -d --set-ontology-id $(OBO)/uberon.owl -o $@
+	mkdir -p $(TMPDIR) && wget http://purl.obolibrary.org/obo/uberon.obo -O $(TMPDIR)/uberon.obo # suggest fix for parser error; see https://github.com/EnvironmentOntology/envo/pull/1289
+	$(OWLTOOLS) $(TMPDIR)/uberon.obo  --remove-axiom-annotations  --make-subset-by-properties -f $(KEEPRELS) --remove-external-classes UBERON --remove-dangling-annotations --remove-annotation-assertions -l -s -d --set-ontology-id $(OBO)/uberon.owl -o $@
 .PRECIOUS: mirror/%.owl
 
 
