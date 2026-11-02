@@ -285,7 +285,7 @@ release-diffs:
 ##
 ## By default this is the cross-product of IMPORT_MODULES x FORMATS
 
-IMPORTS = pato uberon chebi ro pco foodon go ncbitaxon  obi po iao fao
+IMPORTS = pato uberon chebi ro pco foodon go ncbitaxon  obi po iao fao bfo
 
 IMPORT_ROOTS = $(patsubst %, imports/%_import, $(IMPORTS))
 IMPORT_OWL_FILES = $(foreach n,$(IMPORT_ROOTS), $(n).owl)
@@ -359,7 +359,7 @@ mirror/%.owl: mirror/%-local.owl
 .PRECIOUS: mirror/%.owl
 
 mirror/obi.owl: envo-edit.owl
-	$(OWLTOOLS) $(OBO)/obi.owl --remove-classes-in-idspace GO --remove-classes-in-idspace ENVO --remove-classes-in-idspace CHEBI --remove-classes-in-idspace UBERON --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/obi.owl -o $@
+	$(OWLTOOLS) $(OBO)/obi/obi-base.owl --remove-classes-in-idspace GO --remove-classes-in-idspace ENVO --remove-classes-in-idspace CHEBI --remove-classes-in-idspace UBERON --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/obi.owl -o $@
 .PRECIOUS: mirror/%.owl
 
 CHEBI_MIRROR=http://purl.obolibrary.org/obo/upheno/chebi_slim.owl
@@ -402,7 +402,7 @@ mirror/uberon.owl:
 
 
 mirror/fao.owl: envo-edit.owl
-	$(OWLTOOLS) $(OBO)/fao.owl --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/fao.owl -o $@
+	$(OWLTOOLS) $(OBO)/fao/fao-base.owl --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/fao.owl -o $@
 .PRECIOUS: mirror/%.owl
 
 mirror/ncbitaxon.owl:
@@ -428,11 +428,13 @@ mirror/pco.owl: envo-edit.owl
 .PRECIOUS: mirror/%.owl
 
 mirror/iao.owl: envo-edit.owl
-	$(OWLTOOLS) $(OBO)/iao.owl --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/iao.owl -o $@
+	curl -L $(OBO)/iao.owl -o $@.download.owl && \
+	$(ROBOT) remove -i $@.download.owl --base-iri $(OBO)/IAO_ --axioms external --preserve-structure false --trim false -o $@.tmp.owl && \
+	$(OWLTOOLS) $@.tmp.owl --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/iao.owl -o $@
 .PRECIOUS: mirror/%.owl
 
 mirror/pato.owl: envo-edit.owl
-	$(OWLTOOLS) $(OBO)/pato.owl --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/pato.owl -o $@
+	$(OWLTOOLS) $(OBO)/pato/pato-base.owl --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS) --set-ontology-id $(OBO)/pato.owl -o $@
 .PRECIOUS: mirror/%.owl
 
 # ----------------------------------------
