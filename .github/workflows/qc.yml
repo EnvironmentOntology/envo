@@ -35,6 +35,9 @@ jobs:
         # see: https://github.com/EnvironmentOntology/envo/pull/1172#issuecomment-1035522412
         run: cd src/envo && make ROBOT_ENV='ROBOT_JAVA_ARGS=-Xmx6G' travis_test IMP=false PAT=false
 
+      - name: Report problems in ENVO and its imports (recorded, does not fail)
+        run: cd src/envo && make ROBOT_ENV='ROBOT_JAVA_ARGS=-Xmx6G' closure_report IMP=false PAT=false
+
   # Fails if the pull request removes an ENVO term, or strips its label, instead
   # of obsoleting it. Compares the PR merge result with the base branch.
   # See https://github.com/EnvironmentOntology/envo/issues/1675
