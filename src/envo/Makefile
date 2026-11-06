@@ -31,7 +31,7 @@ RELEASEDIR=                 ../..
 REPORTDIR=                  reports
 TMPDIR=                     tmp
 SPARQLDIR =                 sparql
-REPORT_FAIL_ON =            NONE
+REPORT_FAIL_ON =            ERROR
 OBO_FORMAT_OPTIONS =        
 ###SPARQL_VALIDATION_CHECKS =  equivalent-classes trailing-whitespace owldef-self-reference xref-syntax nolabels
 SPARQL_VALIDATION_CHECKS =  equivalent-classes trailing-whitespace owldef-self-reference nolabels boolean-property-value
@@ -532,13 +532,15 @@ all_robot_reports: reports/envo-edit-robot-report.tsv reports/envo-base-robot-re
 reports/envo-edit-robot-report.tsv: $(PRE_SRC)
 	$(ROBOT) report -p reports/report_profile_edit.txt -l true -i $< --fail-on ERROR --print 5 -o $@
 
-# default profile
+# default profile. --base-iri limits the report to ENVO's own terms, as ODK does by
+# default, because terms from imports get false missing_label errors in files that
+# leave the imports out.
 reports/envo-src-robot-report.tsv: $(SRC)
-	$(ROBOT) report -l true -i $< --fail-on $(REPORT_FAIL_ON) --print 5 -o $@
+	$(ROBOT) report -l true -i $< --base-iri http://purl.obolibrary.org/obo/ENVO_ --base-iri http://purl.obolibrary.org/obo/envo --fail-on $(REPORT_FAIL_ON) --print 5 -o $@
 
-# default profile
+# default profile, limited to ENVO's own terms as above
 reports/envo-base-robot-report.tsv: envo-base.owl
-	$(ROBOT) report -l true -i $< --fail-on $(REPORT_FAIL_ON) --print 5 -o $@
+	$(ROBOT) report -l true -i $< --base-iri http://purl.obolibrary.org/obo/ENVO_ --base-iri http://purl.obolibrary.org/obo/envo --fail-on $(REPORT_FAIL_ON) --print 5 -o $@
 
 
 # ----------------------------------------
